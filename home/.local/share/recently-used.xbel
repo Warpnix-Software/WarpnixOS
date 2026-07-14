@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+  <bookmark href="file:///home/warpdev/Downloads/61398-new_archive.tar.tar" added="2026-06-04T15:55:04.703856Z" modified="2026-06-04T16:09:08.404174Z" visited="2026-06-04T15:55:04.703857Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-tar"/>
+        <bookmark:applications>
+          <bookmark:application name="Engrampa" exec="&apos;engrampa&apos;" modified="2026-06-04T15:55:04.748955Z" count="2"/>
+          <bookmark:application name="xfce4-appearance-settings" exec="&apos;xfce4-appearance-settings %u&apos;" modified="2026-06-04T16:09:08.404172Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/.cache/.fr-KLg6sz/MacOS-X/xfwm4/readme" added="2026-06-04T15:55:12.554896Z" modified="2026-06-04T15:55:15.207836Z" visited="2026-06-04T15:55:12.554896Z">
+    <desc>Language: ; Encoding: UTF-8; Cursor: 0:0;</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2026-06-04T15:55:15.207835Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/.warpicons/114058891_60x60.jpeg" added="2026-06-04T16:01:53.195618Z" modified="2026-06-04T16:01:53.449887Z" visited="2026-06-04T16:01:53.195619Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;xdg-desktop-portal-gtk %u&apos;" modified="2026-06-04T16:01:53.195620Z" count="1"/>
+          <bookmark:application name="firefox_firefox" exec="&apos;gio open %u&apos;" modified="2026-06-04T16:01:53.449886Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/MacOS-X/index.theme" added="2026-06-04T16:06:17.035732Z" modified="2026-06-04T16:06:17.035734Z" visited="2026-06-04T16:06:17.035733Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-theme"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;Thunar %u&apos;" modified="2026-06-04T16:06:17.035733Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/Dark%20Glass.tar.tar" added="2026-06-04T16:11:21.969420Z" modified="2026-06-04T16:13:48.687882Z" visited="2026-06-04T16:11:21.969420Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-tar"/>
+        <bookmark:applications>
+          <bookmark:application name="Engrampa" exec="&apos;engrampa&apos;" modified="2026-06-04T16:11:21.992560Z" count="2"/>
+          <bookmark:application name="xfce4-appearance-settings" exec="&apos;xfce4-appearance-settings %u&apos;" modified="2026-06-04T16:13:48.687881Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads" added="2026-06-04T16:11:29.583695Z" modified="2026-06-07T14:02:34.504269Z" visited="2026-06-04T16:11:29.583697Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Engrampa" exec="&apos;engrampa %u&apos;" modified="2026-06-07T14:02:34.504266Z" count="9"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/.warpthemes/backgrounds" added="2026-06-04T16:23:02.148556Z" modified="2026-06-04T16:23:02.148558Z" visited="2026-06-04T16:23:02.148556Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="xfdesktop-settings" exec="&apos;xfdesktop-settings %u&apos;" modified="2026-06-04T16:23:02.148556Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/Verdana.zip" added="2026-06-04T16:28:27.129186Z" modified="2026-06-04T16:28:27.151965Z" visited="2026-06-04T16:28:27.129186Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="Engrampa" exec="&apos;engrampa&apos;" modified="2026-06-04T16:28:27.151964Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/Verdana.ttf" added="2026-06-04T16:28:40.744072Z" modified="2026-06-04T16:28:40.744075Z" visited="2026-06-04T16:28:40.744073Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="font/ttf"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;Thunar %u&apos;" modified="2026-06-04T16:28:40.744073Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/BaldisBasicsCR_1.1_Linux.zip" added="2026-06-04T16:55:04.852699Z" modified="2026-06-04T16:55:04.877049Z" visited="2026-06-04T16:55:04.852699Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="Engrampa" exec="&apos;engrampa&apos;" modified="2026-06-04T16:55:04.877048Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/baldi/BALDI.x86_64" added="2026-06-04T16:57:40.110333Z" modified="2026-06-04T16:58:01.401814Z" visited="2026-06-04T16:57:40.110333Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;Thunar %u&apos;" modified="2026-06-04T16:58:01.401812Z" count="7"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Pictures/Screenshot_2026-06-04_13-02-51.png" added="2026-06-04T17:02:52.777807Z" modified="2026-06-04T17:03:07.192232Z" visited="2026-06-04T17:02:52.777808Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="xfce4-screenshooter" exec="&apos;xfce4-screenshooter %u&apos;" modified="2026-06-04T17:02:52.777809Z" count="1"/>
+          <bookmark:application name="steam_steam" exec="&apos;gio open %u&apos;" modified="2026-06-04T17:03:07.187605Z" count="1"/>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;xdg-desktop-portal-gtk %u&apos;" modified="2026-06-04T17:03:07.192226Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/114058891_60x60.jpeg" added="2026-06-04T17:05:53.825677Z" modified="2026-06-04T17:06:11.087002Z" visited="2026-06-04T17:05:53.825677Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;xdg-desktop-portal-gtk %u&apos;" modified="2026-06-04T17:06:11.087001Z" count="2"/>
+          <bookmark:application name="firefox_firefox" exec="&apos;gio open %u&apos;" modified="2026-06-04T17:06:11.081611Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///usr/share/icons/oxygen/icon-theme.cache" added="2026-06-04T17:09:16.066415Z" modified="2026-06-04T17:09:16.066418Z" visited="2026-06-04T17:09:16.066416Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;Thunar %u&apos;" modified="2026-06-04T17:09:16.066417Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///usr/share/icons/oxygen/index.theme" added="2026-06-04T17:09:20.174425Z" modified="2026-06-04T17:09:20.174428Z" visited="2026-06-04T17:09:20.174426Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-theme"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;Thunar %u&apos;" modified="2026-06-04T17:09:20.174427Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///usr/share/icons/oxygen/base/22x22/status/dropboxstatus-logo.png" added="2026-06-04T17:10:17.994274Z" modified="2026-06-04T17:10:17.994278Z" visited="2026-06-04T17:10:17.994275Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="ristretto" exec="&apos;ristretto %u&apos;" modified="2026-06-04T17:10:17.994276Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/warpicons/ubuntu-logo-text-dark%20(copy%201).png" added="2026-06-04T17:14:56.470420Z" modified="2026-06-04T17:14:56.475389Z" visited="2026-06-04T17:14:56.470421Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="firefox_firefox" exec="&apos;gio open %u&apos;" modified="2026-06-04T17:14:56.470422Z" count="1"/>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;xdg-desktop-portal-gtk %u&apos;" modified="2026-06-04T17:14:56.475389Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Desktop/startup.wav" added="2026-06-04T17:44:05.317779Z" modified="2026-06-04T17:44:13.977593Z" visited="2026-06-04T17:44:05.317780Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="audio/vnd.wave"/>
+        <bookmark:applications>
+          <bookmark:application name="parole" exec="&apos;parole %u&apos;" modified="2026-06-04T17:44:13.977592Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Pictures/Screenshot_2026-06-04_16-12-36.png" added="2026-06-04T20:12:39.272663Z" modified="2026-06-04T20:13:25.958161Z" visited="2026-06-04T20:12:39.272664Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="xfce4-screenshooter" exec="&apos;xfce4-screenshooter %u&apos;" modified="2026-06-04T20:12:39.272665Z" count="1"/>
+          <bookmark:application name="firefox_firefox" exec="&apos;gio open %u&apos;" modified="2026-06-04T20:13:25.952797Z" count="1"/>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;xdg-desktop-portal-gtk %u&apos;" modified="2026-06-04T20:13:25.958160Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///" added="2026-06-04T20:18:26.101971Z" modified="2026-06-15T21:11:55.725634Z" visited="2026-06-04T20:18:26.101971Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:groups>
+          <bookmark:group>baobab</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="baobab" exec="&apos;baobab %u&apos;" modified="2026-06-15T21:11:55.725633Z" count="23"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/.warpthemes/backgrounds/background.png" added="2026-06-05T12:59:58.829285Z" modified="2026-06-05T12:59:59.085449Z" visited="2026-06-05T12:59:58.829286Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;xdg-desktop-portal-gtk %u&apos;" modified="2026-06-05T12:59:58.829287Z" count="1"/>
+          <bookmark:application name="firefox_firefox" exec="&apos;gio open %u&apos;" modified="2026-06-05T12:59:59.085448Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/Windows-Whistler-bootscreen.zip" added="2026-06-05T13:16:03.344912Z" modified="2026-06-05T13:16:03.367843Z" visited="2026-06-05T13:16:03.344913Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="Engrampa" exec="&apos;engrampa&apos;" modified="2026-06-05T13:16:03.367843Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/boot" added="2026-06-05T13:16:11.963483Z" modified="2026-06-05T13:16:11.963491Z" visited="2026-06-05T13:16:11.963484Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Engrampa" exec="&apos;engrampa %u&apos;" modified="2026-06-05T13:16:11.963488Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/boot/Windows%20Whistler%20bootscreen/win10/README.md" added="2026-06-05T13:16:39.395369Z" modified="2026-06-05T13:16:41.635004Z" visited="2026-06-05T13:16:39.395369Z">
+    <desc>Language: ; Encoding: UTF-8; Cursor: 0:0;</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2026-06-05T13:16:41.635002Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/boot/Windows%20Whistler%20bootscreen/install.sh" added="2026-06-05T13:18:26.439569Z" modified="2026-06-05T13:20:45.511859Z" visited="2026-06-05T13:18:26.439569Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;Thunar %u&apos;" modified="2026-06-05T13:20:45.511857Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/zoom_amd64.deb" added="2026-06-05T15:17:16.959675Z" modified="2026-06-05T15:17:16.959678Z" visited="2026-06-05T15:17:16.959676Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.debian.binary-package"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;Thunar %u&apos;" modified="2026-06-05T15:17:16.959677Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///usr/bin/zoom" added="2026-06-05T15:19:00.158982Z" modified="2026-06-05T15:19:00.158985Z" visited="2026-06-05T15:19:00.158983Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="exo-desktop-item-edit" exec="&apos;exo-desktop-item-edit %u&apos;" modified="2026-06-05T15:19:00.158983Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev" added="2026-06-05T15:20:51.769713Z" modified="2026-06-05T15:20:51.769716Z" visited="2026-06-05T15:20:51.769714Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:groups>
+          <bookmark:group>baobab</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="baobab" exec="&apos;baobab %u&apos;" modified="2026-06-05T15:20:51.769715Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/ubuntu-mac-style.zip" added="2026-06-05T18:45:57.668294Z" modified="2026-06-05T18:45:57.692714Z" visited="2026-06-05T18:45:57.668294Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="Engrampa" exec="&apos;engrampa&apos;" modified="2026-06-05T18:45:57.692713Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/ArchRogPlymouthTheme.zip" added="2026-06-05T18:46:37.356185Z" modified="2026-06-05T18:46:37.379338Z" visited="2026-06-05T18:46:37.356185Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="Engrampa" exec="&apos;engrampa&apos;" modified="2026-06-05T18:46:37.379337Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/SMOOTH-TUX-BLUE-BGRD-ANIM-NORMAL-SPEED-V1.0-PLYMOUTH-THEME.zip" added="2026-06-05T18:48:21.008154Z" modified="2026-06-05T18:48:21.031320Z" visited="2026-06-05T18:48:21.008155Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="Engrampa" exec="&apos;engrampa&apos;" modified="2026-06-05T18:48:21.031319Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/SMOOTH-TUX-BLUE-BGRD-ANIM-NORMAL-SPEED_V1.0_PLYMOUTH-THEME/MAIN_BOX.PNG" added="2026-06-05T18:50:46.653185Z" modified="2026-06-05T18:50:46.653187Z" visited="2026-06-05T18:50:46.653185Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;Thunar %u&apos;" modified="2026-06-05T18:50:46.653186Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/BOOTLOGO/LOGO.PNG" added="2026-06-05T19:00:56.773639Z" modified="2026-06-05T19:00:56.778263Z" visited="2026-06-05T19:00:56.773640Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="firefox_firefox" exec="&apos;gio open %u&apos;" modified="2026-06-05T19:00:56.773641Z" count="1"/>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;xdg-desktop-portal-gtk %u&apos;" modified="2026-06-05T19:00:56.778262Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/hello-world.tar.gz" added="2026-06-05T19:05:04.031514Z" modified="2026-06-05T19:05:05.134891Z" visited="2026-06-05T19:05:04.031515Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-compressed-tar"/>
+        <bookmark:applications>
+          <bookmark:application name="Engrampa" exec="&apos;engrampa&apos;" modified="2026-06-05T19:05:05.134890Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/hello" added="2026-06-05T19:05:16.666800Z" modified="2026-06-05T19:05:16.666813Z" visited="2026-06-05T19:05:16.666800Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="Engrampa" exec="&apos;engrampa %u&apos;" modified="2026-06-05T19:05:16.666809Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/apple-mac-plymouth.zip" added="2026-06-05T19:08:30.434894Z" modified="2026-06-05T19:08:30.458908Z" visited="2026-06-05T19:08:30.434894Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="Engrampa" exec="&apos;engrampa&apos;" modified="2026-06-05T19:08:30.458907Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/simple-image-manjaro.tar.tar" added="2026-06-05T19:09:25.726081Z" modified="2026-06-05T19:09:25.748988Z" visited="2026-06-05T19:09:25.726082Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-tar"/>
+        <bookmark:applications>
+          <bookmark:application name="Engrampa" exec="&apos;engrampa&apos;" modified="2026-06-05T19:09:25.748986Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/.warpthemes/sounds/shutdown.mp3" added="2026-06-05T19:18:44.197083Z" modified="2026-06-05T19:18:44.197085Z" visited="2026-06-05T19:18:44.197083Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="audio/mpeg"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;Thunar %u&apos;" modified="2026-06-05T19:18:44.197084Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///var/backgrounds" added="2026-06-05T19:20:57.896328Z" modified="2026-06-05T19:21:50.031355Z" visited="2026-06-05T19:20:57.896328Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="xfdesktop-settings" exec="&apos;xfdesktop-settings %u&apos;" modified="2026-06-05T19:21:50.031353Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/.profile" added="2026-06-06T15:32:48.304570Z" modified="2026-06-06T15:33:00.578857Z" visited="2026-06-06T15:32:48.304570Z">
+    <desc>Language: ; Encoding: UTF-8; Cursor: 0:0;</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2026-06-06T15:33:00.578857Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///usr/rm6g2cvw3gxc1.jpeg" added="2026-06-06T15:49:16.820772Z" modified="2026-06-06T15:49:17.070910Z" visited="2026-06-06T15:49:16.820773Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;xdg-desktop-portal-gtk %u&apos;" modified="2026-06-06T15:49:16.820774Z" count="1"/>
+          <bookmark:application name="firefox_firefox" exec="&apos;gio open %u&apos;" modified="2026-06-06T15:49:17.070909Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/rm6g2cvw3gxc1.jpeg" added="2026-06-06T15:49:27.226179Z" modified="2026-06-06T15:49:27.476236Z" visited="2026-06-06T15:49:27.226180Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;xdg-desktop-portal-gtk %u&apos;" modified="2026-06-06T15:49:27.226180Z" count="1"/>
+          <bookmark:application name="firefox_firefox" exec="&apos;gio open %u&apos;" modified="2026-06-06T15:49:27.476236Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/penguins-eggs_26.5.12-1_amd64.deb" added="2026-06-07T14:00:07.227571Z" modified="2026-06-07T14:00:31.939723Z" visited="2026-06-07T14:00:07.227572Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.debian.binary-package"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;gio open %u&apos;" modified="2026-06-07T14:00:07.496847Z" count="2"/>
+          <bookmark:application name="Thunar" exec="&apos;Thunar %u&apos;" modified="2026-06-07T14:00:31.939722Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/Office-window-grub-themes.tar.xz" added="2026-06-07T14:02:27.323231Z" modified="2026-06-07T14:02:30.468212Z" visited="2026-06-07T14:02:27.323231Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-xz-compressed-tar"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;gio open %u&apos;" modified="2026-06-07T14:02:27.573198Z" count="2"/>
+          <bookmark:application name="Engrampa" exec="&apos;engrampa&apos;" modified="2026-06-07T14:02:30.468209Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/warpgrub/1080p/install.sh" added="2026-06-07T19:04:33.620225Z" modified="2026-06-07T19:06:24.992084Z" visited="2026-06-07T19:04:33.620225Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;Thunar %u&apos;" modified="2026-06-07T19:06:24.992082Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/fresh-eggs/fresh-eggs.png" added="2026-06-07T19:14:48.716915Z" modified="2026-06-07T19:14:48.716918Z" visited="2026-06-07T19:14:48.716916Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="ristretto" exec="&apos;ristretto %u&apos;" modified="2026-06-07T19:14:48.716917Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///usr/lib/penguins-eggs/conf/derivatives.yaml" added="2026-06-07T19:59:18.904365Z" modified="2026-06-07T19:59:51.842176Z" visited="2026-06-07T19:59:18.904366Z">
+    <desc>Language: ; Encoding: UTF-8; Cursor: 13:24;</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2026-06-07T19:59:51.842174Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/bleachbit_6.0.0-0_all_ubuntu2604.deb" added="2026-06-07T22:07:39.723001Z" modified="2026-06-07T22:07:39.974391Z" visited="2026-06-07T22:07:39.723001Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;gio open %u&apos;" modified="2026-06-07T22:07:39.974391Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///etc/penguins-eggs.d/eggs.yaml" added="2026-06-07T22:12:33.112629Z" modified="2026-06-07T22:12:34.152155Z" visited="2026-06-07T22:12:33.112630Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/yaml"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;Thunar %u&apos;" modified="2026-06-07T22:12:33.112631Z" count="1"/>
+          <bookmark:application name="LibreOffice 26.2" exec="&apos;soffice %u&apos;" modified="2026-06-07T22:12:34.152154Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/fresh-eggs/SUPPORTED-DISTROS.md" added="2026-06-08T14:02:45.215035Z" modified="2026-06-08T14:02:47.095356Z" visited="2026-06-08T14:02:45.215036Z">
+    <desc>Language: ; Encoding: UTF-8; Cursor: 0:0;</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2026-06-08T14:02:47.095355Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///etc/penguins-eggs.d/addons/warpnix/theme/branding/show.qml" added="2026-06-08T14:16:46.598779Z" modified="2026-06-08T14:16:48.424465Z" visited="2026-06-08T14:16:46.598779Z">
+    <desc>Language: ; Encoding: UTF-8; Cursor: 0:0;</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2026-06-08T14:16:48.424464Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///etc/penguins-eggs.d/addons/warpnix/theme/branding/branding.desc" added="2026-06-08T14:16:49.439402Z" modified="2026-06-08T14:16:51.778957Z" visited="2026-06-08T14:16:49.439402Z">
+    <desc>Language: ; Encoding: UTF-8; Cursor: 0:0;</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2026-06-08T14:16:51.778956Z" count="2"/>
+          <bookmark:application name="Thunar" exec="&apos;Thunar %u&apos;" modified="2026-06-08T14:16:50.137039Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/README.md" added="2026-06-08T14:51:31.601621Z" modified="2026-06-08T14:51:35.585003Z" visited="2026-06-08T14:51:31.601622Z">
+    <desc>Language: ; Encoding: UTF-8; Cursor: 0:0;</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;gio open %u&apos;" modified="2026-06-08T14:51:31.851729Z" count="2"/>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2026-06-08T14:51:35.585002Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/refractainstaller-base_9.6.6_all.deb" added="2026-06-08T15:00:30.354521Z" modified="2026-06-08T15:00:41.521888Z" visited="2026-06-08T15:00:30.354521Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.debian.binary-package"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;gio open %u&apos;" modified="2026-06-08T15:00:30.604519Z" count="2"/>
+          <bookmark:application name="Thunar" exec="&apos;Thunar %u&apos;" modified="2026-06-08T15:00:41.521883Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/refractainstaller-gui_9.6.6_all.deb" added="2026-06-08T15:01:12.705258Z" modified="2026-06-08T15:01:24.960085Z" visited="2026-06-08T15:01:12.705260Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.debian.binary-package"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;gio open %u&apos;" modified="2026-06-08T15:01:12.956093Z" count="2"/>
+          <bookmark:application name="Thunar" exec="&apos;Thunar %u&apos;" modified="2026-06-08T15:01:24.960080Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/refractasnapshot-base_10.4.4~arm64_all.deb" added="2026-06-08T15:08:19.265417Z" modified="2026-06-08T15:08:19.515796Z" visited="2026-06-08T15:08:19.265417Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;gio open %u&apos;" modified="2026-06-08T15:08:19.515796Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/refractasnapshot-base_10.4.3_all.deb" added="2026-06-08T15:08:42.337647Z" modified="2026-06-08T15:08:48.231995Z" visited="2026-06-08T15:08:42.337648Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.debian.binary-package"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;gio open %u&apos;" modified="2026-06-08T15:08:42.587678Z" count="2"/>
+          <bookmark:application name="Thunar" exec="&apos;Thunar %u&apos;" modified="2026-06-08T15:08:48.231982Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/refractasnapshot-gui_10.4.1_all.deb" added="2026-06-08T15:09:04.684161Z" modified="2026-06-08T15:09:10.183661Z" visited="2026-06-08T15:09:04.684161Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.debian.binary-package"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;gio open %u&apos;" modified="2026-06-08T15:09:04.934291Z" count="2"/>
+          <bookmark:application name="Thunar" exec="&apos;Thunar %u&apos;" modified="2026-06-08T15:09:10.183658Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/snapshot/snapshot-20260608_1138.iso.sha256" added="2026-06-08T15:41:55.983677Z" modified="2026-06-08T18:40:17.936273Z" visited="2026-06-08T15:41:55.983678Z">
+    <desc>Language: ; Encoding: UTF-8; Cursor: 0:0;</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2026-06-08T15:41:58.421707Z" count="2"/>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;xdg-desktop-portal-gtk %u&apos;" modified="2026-06-08T18:40:17.936272Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/warpdev/VBox_GAs_7.1.16/VBoxLinuxAdditions.run" added="2026-06-08T15:45:10.842105Z" modified="2026-06-08T15:45:26.122925Z" visited="2026-06-08T15:45:10.842105Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;Thunar %u&apos;" modified="2026-06-08T15:45:26.122922Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/warpdev/VBox_GAs_7.1.16/autorun.sh" added="2026-06-08T15:45:29.499930Z" modified="2026-06-08T15:45:29.499933Z" visited="2026-06-08T15:45:29.499931Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-shellscript"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;Thunar %u&apos;" modified="2026-06-08T15:45:29.499932Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/snapshot/snapshot-20260608_1138.iso" added="2026-06-08T15:58:21.590674Z" modified="2026-06-08T18:40:17.936277Z" visited="2026-06-08T15:58:21.590674Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.efi.iso"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;xdg-desktop-portal-gtk %u&apos;" modified="2026-06-08T18:40:17.936276Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/pinguybuilder_5.1-8_all.deb" added="2026-06-10T15:26:09.097628Z" modified="2026-06-10T15:27:26.639112Z" visited="2026-06-10T15:26:09.097628Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.debian.binary-package"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;gio open %u&apos;" modified="2026-06-10T15:26:09.347599Z" count="2"/>
+          <bookmark:application name="Thunar" exec="&apos;Thunar %u&apos;" modified="2026-06-10T15:27:26.639110Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///usr/share/xfce4/backdrops" added="2026-06-10T17:27:48.435656Z" modified="2026-06-10T17:27:48.435658Z" visited="2026-06-10T17:27:48.435656Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="xfdesktop-settings" exec="&apos;xfdesktop-settings %u&apos;" modified="2026-06-10T17:27:48.435657Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Pictures/browse.png" added="2026-06-10T18:13:34.989115Z" modified="2026-06-10T18:13:34.989117Z" visited="2026-06-10T18:13:34.989115Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="xfce4-screenshooter" exec="&apos;xfce4-screenshooter %u&apos;" modified="2026-06-10T18:13:34.989116Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Pictures/customize.png" added="2026-06-10T18:14:52.084278Z" modified="2026-06-10T18:14:52.084282Z" visited="2026-06-10T18:14:52.084279Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="xfce4-screenshooter" exec="&apos;xfce4-screenshooter %u&apos;" modified="2026-06-10T18:14:52.084280Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Pictures/gs.png" added="2026-06-10T18:15:56.513103Z" modified="2026-06-10T18:15:56.513106Z" visited="2026-06-10T18:15:56.513104Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="xfce4-screenshooter" exec="&apos;xfce4-screenshooter %u&apos;" modified="2026-06-10T18:15:56.513105Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Pictures/music.png" added="2026-06-10T18:16:51.198730Z" modified="2026-06-10T18:16:51.198733Z" visited="2026-06-10T18:16:51.198730Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="xfce4-screenshooter" exec="&apos;xfce4-screenshooter %u&apos;" modified="2026-06-10T18:16:51.198731Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Pictures/office.png" added="2026-06-10T18:18:06.467768Z" modified="2026-06-10T18:18:06.467770Z" visited="2026-06-10T18:18:06.467768Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="xfce4-screenshooter" exec="&apos;xfce4-screenshooter %u&apos;" modified="2026-06-10T18:18:06.467769Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/pengui/assets/pengui.png" added="2026-06-10T18:18:38.427715Z" modified="2026-06-10T18:18:38.427797Z" visited="2026-06-10T18:18:38.427716Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="ristretto" exec="&apos;ristretto %u&apos;" modified="2026-06-10T18:18:38.427797Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///usr/share/xfce4/backdrops/Frutiger%20Bliss.png" added="2026-06-10T18:19:35.795910Z" modified="2026-06-10T18:19:35.795912Z" visited="2026-06-10T18:19:35.795911Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="ristretto" exec="&apos;ristretto %u&apos;" modified="2026-06-10T18:19:35.795912Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Pictures/photos.png" added="2026-06-10T18:19:51.646143Z" modified="2026-06-10T18:19:51.646145Z" visited="2026-06-10T18:19:51.646143Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="xfce4-screenshooter" exec="&apos;xfce4-screenshooter %u&apos;" modified="2026-06-10T18:19:51.646144Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/Welcome-PNG-Clipart.png" added="2026-06-10T18:21:21.339959Z" modified="2026-06-10T18:21:21.590228Z" visited="2026-06-10T18:21:21.339959Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;gio open %u&apos;" modified="2026-06-10T18:21:21.590227Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/distroshare/CD/md5sum.txt" added="2026-06-10T18:36:47.750818Z" modified="2026-06-10T18:36:48.944881Z" visited="2026-06-10T18:36:47.750818Z">
+    <desc>Language: ; Encoding: UTF-8; Cursor: 0:0;</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2026-06-10T18:36:48.944880Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/distroshare/rootfs/bin/acorn" added="2026-06-10T20:27:58.950519Z" modified="2026-06-10T20:28:01.080598Z" visited="2026-06-10T20:27:58.950519Z">
+    <desc>Language: ; Encoding: UTF-8; Cursor: 0:0;</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2026-06-10T20:28:01.080597Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/distroshare/live-cd.iso" added="2026-06-11T14:12:57.880064Z" modified="2026-06-11T14:12:57.912557Z" visited="2026-06-11T14:12:57.880064Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-cd-image"/>
+        <bookmark:applications>
+          <bookmark:application name="Engrampa" exec="&apos;engrampa&apos;" modified="2026-06-11T14:12:57.912556Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///usr/share/xfce4/warpicon.png" added="2026-06-12T15:59:36.085083Z" modified="2026-06-12T15:59:36.085087Z" visited="2026-06-12T15:59:36.085084Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;Thunar %u&apos;" modified="2026-06-12T15:59:36.085085Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/warpdev/Downloads/warpicon.jpeg" added="2026-06-12T16:02:50.788070Z" modified="2026-06-12T16:02:59.852562Z" visited="2026-06-12T16:02:50.788070Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="xdg-desktop-portal-gtk" exec="&apos;gio open %u&apos;" modified="2026-06-12T16:02:51.046430Z" count="2"/>
+          <bookmark:application name="ristretto" exec="&apos;ristretto %u&apos;" modified="2026-06-12T16:02:59.852561Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///etc/calamares/modules/partition.conf" added="2026-06-13T22:16:31.048941Z" modified="2026-06-13T22:17:07.690187Z" visited="2026-06-13T22:16:31.048942Z">
+    <desc>Language: ; Encoding: UTF-8; Cursor: 22:17;</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Thunar" exec="&apos;Thunar %u&apos;" modified="2026-06-13T22:16:31.048943Z" count="1"/>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2026-06-13T22:17:07.690186Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///run/media/warpdev/WarpnixOS-1/boot/grub/x86_64-efi/grub.cfg" added="2026-06-17T15:53:34.400220Z" modified="2026-06-17T15:53:36.044330Z" visited="2026-06-17T15:53:34.400220Z">
+    <desc>Language: ; Encoding: UTF-8; Cursor: 0:0;</desc>
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>Mousepad</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Mousepad" exec="&apos;mousepad %u&apos;" modified="2026-06-17T15:53:36.044328Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+</xbel>

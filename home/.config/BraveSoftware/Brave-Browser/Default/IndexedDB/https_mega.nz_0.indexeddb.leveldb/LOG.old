@@ -1,0 +1,7 @@
+2026/06/08-11:58:06.836 ed6 Reusing MANIFEST /home/warpdev/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_mega.nz_0.indexeddb.leveldb/MANIFEST-000001
+2026/06/08-11:58:06.836 ed6 Recovering log #3
+2026/06/08-11:58:06.836 ed6 Reusing old log /home/warpdev/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_mega.nz_0.indexeddb.leveldb/000003.log 
+2026/06/08-11:58:07.071 ed6 Level-0 table #5: started
+2026/06/08-11:58:07.074 ed6 Level-0 table #5: 13360 bytes OK
+2026/06/08-11:58:07.077 ed6 Delete type=0 #3
+2026/06/08-11:58:07.077 ed6 Manual compaction at level-0 from '\x00\x02\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x03\x00\x00\x00' @ 0 : 0; will stop at (end)

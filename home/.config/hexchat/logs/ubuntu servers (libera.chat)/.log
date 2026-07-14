@@ -1,0 +1,22 @@
+**** BEGIN LOGGING AT Thu Jun  4 16:07:45 2026
+
+Jun 04 16:07:45 *	Connecting to irc.libera.chat (199.193.138.248:6697)
+Jun 04 16:07:45 *	* Subject: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jun 04 16:07:45 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jun 04 16:07:45 *	* Subject: /C=US/O=Let's Encrypt/CN=R12
+Jun 04 16:07:45 *	* Issuer: /C=US/O=Internet Security Research Group/CN=ISRG Root X1
+Jun 04 16:07:45 *	* Subject: /CN=uranium.libera.chat
+Jun 04 16:07:45 *	* Issuer: /C=US/O=Let's Encrypt/CN=R12
+Jun 04 16:07:45 *	* Certification info:
+Jun 04 16:07:45 *	  Subject:
+Jun 04 16:07:45 *	    CN=uranium.libera.chat
+Jun 04 16:07:45 *	  Issuer:
+Jun 04 16:07:45 *	    C=US
+Jun 04 16:07:45 *	    O=Let's Encrypt
+Jun 04 16:07:45 *	    CN=R12
+Jun 04 16:07:45 *	  Public key algorithm: rsaEncryption (4096 bits)
+Jun 04 16:07:45 *	  Sign algorithm sha256WithRSAEncryption
+Jun 04 16:07:45 *	  Valid since May 25 05:15:55 2026 GM to Aug 23 05:15:54 2026 GM
+Jun 04 16:07:45 *	* Cipher info:
+Jun 04 16:07:45 *	  Version: TLSv1.3, cipher TLS_AES_256_GCM_SHA384 (256 bits)
+Jun 04 16:07:45 *	Connected. Now logging in.

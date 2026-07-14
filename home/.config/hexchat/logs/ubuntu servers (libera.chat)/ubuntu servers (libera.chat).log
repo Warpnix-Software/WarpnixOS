@@ -1,0 +1,18 @@
+**** BEGIN LOGGING AT Thu Jun  4 16:07:45 2026
+
+Jun 04 16:07:45 *	*** Checking Ident
+Jun 04 16:07:45 *	*** Looking up your hostname...
+Jun 04 16:07:45 *	*** Found your hostname: c-73-114-243-168.hsd1.ma.comcast.net
+Jun 04 16:07:51 *	*** No Ident response
+Jun 04 16:07:51 *	Capabilities supported: account-notify away-notify batch chghost extended-join multi-prefix sasl=ECDSA-NIST256P-CHALLENGE,EXTERNAL,PLAIN,SCRAM-SHA-512 tls account-tag cap-notify echo-message invite-notify message-tags no-implicit-names server-time solanum.chat/identify-msg solanum.chat/oper solanum.chat/realhost
+Jun 04 16:07:51 *	Capabilities requested: account-notify away-notify chghost extended-join multi-prefix account-tag cap-notify invite-notify server-time solanum.chat/identify-msg 
+Jun 04 16:07:51 *	Capabilities acknowledged: account-notify away-notify chghost extended-join multi-prefix account-tag cap-notify invite-notify server-time solanum.chat/identify-msg
+**** ENDING LOGGING AT Thu Jun  4 16:07:51 2026
+
+**** BEGIN LOGGING AT Thu Jun  4 16:07:51 2026
+
+Jun 04 16:07:51 *	Welcome to the Libera.Chat Internet Relay Chat Network warpdev
+Jun 04 16:07:51 *	Your host is uranium.libera.chat[199.193.138.248/6697], running version solanum-1.0-dev
+Jun 04 16:07:51 *	This server was created __DATE__ at __TIME__
+Jun 04 16:07:51 *	uranium.libera.chat solanum-1.0-dev DGIMQRSZaghilopsuwz CFILMPQRSTbcefgijklmnopqrstuvz bkloveqjfI
+Jun 04 16:07:51 *	ETRACE KNOCK MONITOR=100 FNC WHOX CALLERID=g ACCOUNTEXTBAN=a CHANTYPES=# EXCEPTS INVEX CHANMODES=eIbq,k,flj,CFLMPQRSTcgimnprstuz CHANLIMIT=#:250 :are supported by this server
