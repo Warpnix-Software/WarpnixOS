@@ -47,4 +47,58 @@ WarpnixOS can be run in three different configurations:
 
    1. Hard Disk Installation (Recommended): Overwrites or partitions your internal drive for permanent use and maximum performance.
    2. Live Media Mode: Runs directly off the flashed USB drive without changing your local computer files. Performance depends on your flash drive speed.
-   3. Load to RAM (Not Recommended): Loads the entire OS workspace directly into memory. This heavily restricts memory for apps to run smoothly and requires a minimum of 8 GB RAM to operate.
+      --------------------------------
+## Installation Guide (To Hard Disk)
+
+   1. Shut down the target computer completely.
+   2. Insert your bootable WarpnixOS USB flash drive.
+   3. Turn on the computer while repeatedly pressing your manufacturer's boot menu key (Common keys: Fn, F8, F9, F11, or F12).
+   4. Select your USB drive from the startup boot menu using the arrow keys and press Enter.
+   5. Select the first option from the system bootloader menu.
+   6. Wait for the desktop taskbar and environment icons to completely finish loading.
+   7. Open the system Terminal from the taskbar (located between the File Manager and Brave Browser icons).
+   8. Initialize the installer by running the following command:
+   
+     sudo eggs krill
+   
+   9. If prompted for an administrative password, input: evolution.
+   10. Follow the Krill CLI setup prompt menus:
+   * Choose your system language.
+   * Select your regional Time Zone.
+   * Configure your keyboard layout map (US English is default).
+   * Create a lowercase user account name (no spaces) and password.
+   * Define a separate administrative Root Password (You can also set the same password for both Root and Login, but making seperate ones is safer).
+   * Connect to the internet.
+   * Select your target storage disk and Confirm Erase (Warning: This wipes all existing disk data).
+   * Select Yes to install the GNU|GRUB bootloader if prompted.
+   11. Review the final summary screen and press Enter to copy system files.
+   12. Once the process completes, type this command:
+     
+      sudo reboot
+     
+   13. Unplug the USB drive as the screen turns black to prevent looping the installer.
+
+------------------------------
+## Live Media Guide
+If running directly from the USB drive without installing:
+
+   1. Power down the computer and insert your persistent USB flash drive.
+   2. Boot while tapping your manufacturer's boot key (e.g., F11 or F12).
+   3. Select the USB drive, choose the first boot choice, and wait for the desktop environment to load.
+   4. You can now safely manage files, search using pre-installed applications, or manage extra packages via the Terminal or the Discover Software Center.
+
+--------------------------------
+
+## And that's it! WarpnixOS is a long journey nearly 2 years in the making. So thank you for looking at it (and hopefully) trying it out!
+## And of course, like all good stuff should be, WarpnixOS is FOSS, open sourced under the GNU GPL 3.0 license
+
+##About the Project
+Creator: Yusuf Ali 
+Initial Release Date: 2026 
+Initial development machine: VirtualBox VM on Zorin OS/Thinkpad T410
+Remaster Engine: Penguins' Eggs (Krill CLI Installer Framework) 
+Target Environment: Light-to-medium spec computers running over standard hardware infrastructures.
+
+You can find me on Scratch @Therizinosaurus720. It would be great to give me a follow :-)
+Comment any bugs or errors you find at the WarpnixOS studio on Scratch: https://scratch.mit.edu/studios/51273178/
+to RAM (Not Recommended): Loads the entire OS workspace directly into memory. This heavily restricts memory for apps to run smoothly and requires a minimum of 8 GB RAM to operate.
