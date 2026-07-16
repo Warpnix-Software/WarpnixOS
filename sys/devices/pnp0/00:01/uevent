@@ -1,0 +1,2 @@
+DRIVER=i8042 aux
+MODALIAS=pnp:dPNP0f03

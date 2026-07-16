@@ -1,0 +1,19 @@
+online:              1
+initial_apicid:	    0x0
+apicid:		    0x0
+pkg_id:              0
+die_id:              0
+cu_id:               255
+core_id:             0
+cpu_type:            performance
+logical_pkg_id:      0
+logical_die_id:      0
+logical_core_id:     0
+llc_id:              0
+l2c_id:              65535
+amd_node_id:         0
+amd_nodes_per_pkg:   1
+num_threads:         8
+num_cores:           8
+max_dies_per_pkg:    1
+max_threads_per_core:1

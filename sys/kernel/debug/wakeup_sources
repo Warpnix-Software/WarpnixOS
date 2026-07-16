@@ -1,0 +1,14 @@
+name		active_count	event_count	wakeup_count	expire_count	active_since	total_time	max_time	last_change	prevent_suspend_time
+alarmtimer.0.auto	0		0		0		0		0		0		0		0		0
+rtc_cmos    	3		3		0		0		0		0		0		1342102		0
+serio0      	0		0		0		0		0		0		0		0		0
+0000:00:06.0	0		0		0		0		0		0		0		0		0
+LNXSLPBN:00 	0		0		0		0		0		0		0		0		0
+LNXPWRBN:00 	0		0		0		0		0		0		0		0		0
+AC          	1		1		0		0		0		0		0		673		0
+ACPI0003:00 	0		0		0		0		0		0		0		0		0
+PNP0A03:00  	0		0		0		0		0		0		0		0		0
+LNXVIDEO:00 	0		0		0		0		0		0		0		0		0
+device:00   	0		0		0		0		0		0		0		0		0
+device:02   	0		0		0		0		0		0		0		0		0
+deleted     	0		0		0		0		0		0		0		0		0

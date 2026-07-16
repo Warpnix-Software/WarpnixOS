@@ -1,0 +1,14 @@
+BdiWriteback:                0 kB
+BdiReclaimable:              0 kB
+BdiDirtyThresh:          20388 kB
+DirtyThresh:           2039700 kB
+BackgroundThresh:      1018604 kB
+BdiDirtied:                  0 kB
+BdiWritten:                  0 kB
+BdiWriteBandwidth:      102400 kBps
+b_dirty:                 12028
+b_io:                        0
+b_more_io:                   0
+b_dirty_time:                0
+bdi_list:                    1
+state:                       5

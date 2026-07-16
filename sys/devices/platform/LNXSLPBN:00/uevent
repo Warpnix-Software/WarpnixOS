@@ -1,0 +1,2 @@
+DRIVER=acpi-button
+MODALIAS=acpi:LNXSLPBN:
