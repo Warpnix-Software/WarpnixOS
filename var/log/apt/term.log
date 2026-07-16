@@ -1,0 +1,13 @@
+
+Log started: 2026-07-15  09:37:16
+(Reading database… (Reading database… 5%(Reading database… 10%(Reading database… 15%(Reading database… 20%(Reading database… 25%(Reading database… 30%(Reading database… 35%(Reading database… 40%(Reading database… 45%(Reading database… 50%(Reading database… 55%(Reading database… 60%(Reading database… 65%(Reading database… 70%(Reading database… 75%(Reading database… 80%(Reading database… 85%(Reading database… 90%(Reading database… 95%(Reading database… 100%(Reading database… 442872 files and directories currently installed.)
+Removing brave-browser (1.91.178)…
+Removing brave-keyring (1.20)…
+Processing triggers for gnome-menus (3.38.1-1ubuntu1)…
+Processing triggers for man-db:i386 (2.13.1-1build1)…
+Processing triggers for desktop-file-utils (0.28-1build1)…
+(Reading database… (Reading database… 5%(Reading database… 10%(Reading database… 15%(Reading database… 20%(Reading database… 25%(Reading database… 30%(Reading database… 35%(Reading database… 40%(Reading database… 45%(Reading database… 50%(Reading database… 55%(Reading database… 60%(Reading database… 65%(Reading database… 70%(Reading database… 75%(Reading database… 80%(Reading database… 85%(Reading database… 90%(Reading database… 95%(Reading database… 100%(Reading database… 442611 files and directories currently installed.)
+Purging configuration files for brave-keyring (1.20)…
+Purging configuration files for brave-browser (1.91.178)…
+[1mdpkg:[0m [1;33mwarning:[0m while removing brave-browser, directory '/opt/brave.com/brave' not empty so not removed
+Log ended: 2026-07-15  09:37:18

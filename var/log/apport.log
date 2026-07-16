@@ -1,0 +1,5 @@
+INFO: apport (pid 3387) 2026-06-10 14:09:47,380: called for global pid 1367, signal 6, core limit 0, dump mode 1
+ERROR: apport (pid 3387) 2026-06-10 14:09:48,381: gdbus call error: Error: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.gnome.SessionManager was not provided by any .service files
+
+INFO: apport (pid 3387) 2026-06-10 14:09:48,383: executable: /usr/bin/wireplumber (command line "/usr/bin/wireplumber")
+INFO: apport (pid 3387) 2026-06-10 14:09:49,168: wrote report /var/crash/_usr_bin_wireplumber.112.crash

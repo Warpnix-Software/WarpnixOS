@@ -1,0 +1,5 @@
+
+Start-Date: 2026-07-15  09:37:16
+Commandline: apt purge brave-browser brave-keyring
+Purge: brave-keyring:amd64 (1.20), brave-browser:amd64 (1.91.178)
+End-Date: 2026-07-15  09:37:18

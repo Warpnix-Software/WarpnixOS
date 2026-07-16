@@ -1,0 +1,4 @@
+var/cache/
+var/lib/
+var/tmp/
+*.deb

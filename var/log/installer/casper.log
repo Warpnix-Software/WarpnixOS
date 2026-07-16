@@ -1,0 +1,22 @@
+hostname: Name or service not known
+make-ssl-cert: Could not get FQDN, using '(none)'.
+make-ssl-cert: You may want to fix your /etc/hosts and/or DNS setup and run
+make-ssl-cert: 'make-ssl-cert generate-default-snakeoil --force-overwrite'
+make-ssl-cert: again.
+dbus-daemon[522]: [session uid=1000 pid=18446744073709551615 pidfd=5] Activating service name='org.gtk.vfs.Daemon' requested by ':1.0' (uid=1000 label="unconfined")
+dbus-daemon[522]: [session uid=1000 pid=18446744073709551615 pidfd=5] Successfully activated service 'org.gtk.vfs.Daemon'
+dbus-daemon[522]: [session uid=1000 pid=18446744073709551615 pidfd=5] Activating service name='org.gtk.vfs.Metadata' requested by ':1.0' (uid=1000 label="unconfined")
+fuse: device /dev/fuse not found. Kernel module not loaded?
+dbus-daemon[522]: [session uid=1000 pid=18446744073709551615 pidfd=5] Successfully activated service 'org.gtk.vfs.Metadata'
+A connection to the bus can't be made
+ln: /root/usr/lib/update-notifier/apt-check: No such file or directory
+Ign:1 file:/cdrom resolute InRelease
+Get:2 file:/cdrom resolute Release [658 B]
+Get:2 file:/cdrom resolute Release [658 B]
+Get:3 file:/cdrom resolute Release.gpg [228 B]
+Get:3 file:/cdrom resolute Release.gpg [228 B]
+Get:4 file:/cdrom resolute/main amd64 Packages [10.0 kB]
+Get:5 file:/cdrom resolute/universe amd64 Packages [2158 B]
+Reading package lists...
+chown: warning: '.' should be ':': 'lubuntu.lubuntu'
+chown: warning: '.' should be ':': 'lubuntu.lubuntu'

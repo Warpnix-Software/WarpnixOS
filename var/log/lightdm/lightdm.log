@@ -1,0 +1,162 @@
+[+0.00s] DEBUG: Logging to /var/log/lightdm/lightdm.log
+[+0.00s] DEBUG: Starting Light Display Manager 1.32.0, UID=0 PID=1244
+[+0.00s] DEBUG: Loading configuration dirs from /usr/share/lightdm/lightdm.conf.d
+[+0.00s] DEBUG: Loading configuration from /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf
+[+0.00s] DEBUG: Loading configuration from /usr/share/lightdm/lightdm.conf.d/50-xubuntu-numlock.conf
+[+0.00s] DEBUG: Loading configuration from /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf
+[+0.00s] DEBUG: Loading configuration from /usr/share/lightdm/lightdm.conf.d/60-xubuntu.conf
+[+0.00s] DEBUG: Loading configuration dirs from /usr/local/share/lightdm/lightdm.conf.d
+[+0.00s] DEBUG: Loading configuration dirs from /etc/xdg/lightdm/lightdm.conf.d
+[+0.00s] DEBUG: Loading configuration from /etc/lightdm/lightdm.conf.d/01_debian.conf
+[+0.00s] DEBUG: Loading configuration from /etc/lightdm/lightdm.conf.d/02_ubuntu.conf
+[+0.00s] DEBUG: Loading configuration from /etc/lightdm/lightdm.conf.d/99-root-autologin.conf
+[+0.00s] DEBUG: Loading configuration from /etc/lightdm/lightdm.conf
+[+0.00s] DEBUG: Registered seat module local
+[+0.00s] DEBUG: Registered seat module xremote
+[+0.00s] DEBUG: Using D-Bus name org.freedesktop.DisplayManager
+[+0.00s] DEBUG: _g_io_module_get_default: Found default implementation local (GLocalVfs) for ‘gio-vfs’
+[+0.00s] DEBUG: Monitoring logind for seats
+[+0.00s] DEBUG: New seat added from logind: seat0
+[+0.00s] DEBUG: Seat seat0: Loading properties from config section Seat:*
+[+0.00s] DEBUG: Seat seat0 has property CanMultiSession=no
+[+0.00s] DEBUG: Seat seat0: Starting
+[+0.00s] DEBUG: Seat seat0: Creating user session
+[+0.00s] DEBUG: Loading users from org.freedesktop.Accounts
+[+0.00s] DEBUG: User /org/freedesktop/Accounts/User1000 added
+[+0.05s] DEBUG: Seat seat0: Creating display server of type x
+[+0.05s] DEBUG: Seat seat0: Plymouth is running on VT 1, but this is less than the configured minimum of 7 so not replacing it
+[+0.05s] DEBUG: Quitting Plymouth
+[+0.08s] DEBUG: Using VT 7
+[+0.08s] DEBUG: Seat seat0: Starting local X display on VT 7
+[+0.08s] DEBUG: XServer 0: Logging to /var/log/lightdm/x-0.log
+[+0.08s] DEBUG: XServer 0: Writing X server authority to /var/run/lightdm/root/:0
+[+0.08s] DEBUG: XServer 0: Launching X Server
+[+0.08s] DEBUG: Launching process 1283: /usr/bin/X -core :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch
+[+0.08s] DEBUG: XServer 0: Waiting for ready signal from X server :0
+[+0.08s] DEBUG: Acquired bus name org.freedesktop.DisplayManager
+[+0.08s] DEBUG: Registering seat with bus path /org/freedesktop/DisplayManager/Seat0
+[+0.65s] DEBUG: Got signal 10 from process 1283
+[+0.65s] DEBUG: XServer 0: Got signal from X server :0
+[+0.65s] DEBUG: XServer 0: Connecting to XServer :0
+[+0.66s] DEBUG: Seat seat0: Display server ready, starting session authentication
+[+0.66s] DEBUG: Session pid=1347: Started with service 'lightdm-autologin', username 'root'
+[+0.68s] DEBUG: Session pid=1347: Authentication complete with return value 0: Success
+[+0.68s] DEBUG: Seat seat0: Session authenticated, running command
+[+0.68s] DEBUG: Registering session with bus path /org/freedesktop/DisplayManager/Session0
+[+0.68s] DEBUG: Session pid=1347: Running command /usr/sbin/lightdm-session startxfce4
+[+0.68s] DEBUG: Creating shared data directory /var/lib/lightdm/data/root
+[+0.68s] DEBUG: Session pid=1347: Logging to .xsession-errors
+[+0.92s] DEBUG: Activating VT 7
+[+0.92s] DEBUG: Activating login1 session 1
+[+0.93s] DEBUG: Seat seat0 changes active session to 1
+[+0.93s] DEBUG: Session 1 is already active
+[+0.93s] DEBUG: Seat seat0 changes active session to 1
+[+0.93s] DEBUG: Session 1 is already active
+[+0.00s] DEBUG: Logging to /var/log/lightdm/lightdm.log
+[+0.00s] DEBUG: Starting Light Display Manager 1.32.0, UID=0 PID=1216
+[+0.00s] DEBUG: Loading configuration dirs from /usr/share/lightdm/lightdm.conf.d
+[+0.00s] DEBUG: Loading configuration from /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf
+[+0.00s] DEBUG: Loading configuration from /usr/share/lightdm/lightdm.conf.d/50-xubuntu-numlock.conf
+[+0.00s] DEBUG: Loading configuration from /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf
+[+0.00s] DEBUG: Loading configuration from /usr/share/lightdm/lightdm.conf.d/60-xubuntu.conf
+[+0.00s] DEBUG: Loading configuration dirs from /usr/local/share/lightdm/lightdm.conf.d
+[+0.00s] DEBUG: Loading configuration dirs from /etc/xdg/lightdm/lightdm.conf.d
+[+0.00s] DEBUG: Loading configuration from /etc/lightdm/lightdm.conf.d/01_debian.conf
+[+0.00s] DEBUG: Loading configuration from /etc/lightdm/lightdm.conf.d/02_ubuntu.conf
+[+0.00s] DEBUG: Loading configuration from /etc/lightdm/lightdm.conf.d/99-root-autologin.conf
+[+0.00s] DEBUG: Loading configuration from /etc/lightdm/lightdm.conf
+[+0.00s] DEBUG: Registered seat module local
+[+0.00s] DEBUG: Registered seat module xremote
+[+0.00s] DEBUG: Using D-Bus name org.freedesktop.DisplayManager
+[+0.00s] DEBUG: _g_io_module_get_default: Found default implementation local (GLocalVfs) for ‘gio-vfs’
+[+0.00s] DEBUG: Monitoring logind for seats
+[+0.00s] DEBUG: New seat added from logind: seat0
+[+0.00s] DEBUG: Seat seat0: Loading properties from config section Seat:*
+[+0.00s] DEBUG: Seat seat0 has property CanMultiSession=no
+[+0.00s] DEBUG: Seat seat0: Starting
+[+0.00s] DEBUG: Seat seat0: Creating user session
+[+0.00s] DEBUG: Loading users from org.freedesktop.Accounts
+[+0.00s] DEBUG: User /org/freedesktop/Accounts/User1000 added
+[+0.05s] DEBUG: Seat seat0: Creating display server of type x
+[+0.05s] DEBUG: Seat seat0: Plymouth is running on VT 1, but this is less than the configured minimum of 7 so not replacing it
+[+0.05s] DEBUG: Quitting Plymouth
+[+0.08s] DEBUG: Using VT 7
+[+0.08s] DEBUG: Seat seat0: Starting local X display on VT 7
+[+0.08s] DEBUG: XServer 0: Logging to /var/log/lightdm/x-0.log
+[+0.08s] DEBUG: XServer 0: Writing X server authority to /var/run/lightdm/root/:0
+[+0.08s] DEBUG: XServer 0: Launching X Server
+[+0.08s] DEBUG: Launching process 1255: /usr/bin/X -core :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch
+[+0.08s] DEBUG: XServer 0: Waiting for ready signal from X server :0
+[+0.08s] DEBUG: Acquired bus name org.freedesktop.DisplayManager
+[+0.08s] DEBUG: Registering seat with bus path /org/freedesktop/DisplayManager/Seat0
+[+0.58s] DEBUG: Got signal 10 from process 1255
+[+0.58s] DEBUG: XServer 0: Got signal from X server :0
+[+0.58s] DEBUG: XServer 0: Connecting to XServer :0
+[+0.59s] DEBUG: Seat seat0: Display server ready, starting session authentication
+[+0.59s] DEBUG: Session pid=1285: Started with service 'lightdm-autologin', username 'root'
+[+0.60s] DEBUG: Session pid=1285: Authentication complete with return value 0: Success
+[+0.60s] DEBUG: Seat seat0: Session authenticated, running command
+[+0.60s] DEBUG: Registering session with bus path /org/freedesktop/DisplayManager/Session0
+[+0.61s] DEBUG: Session pid=1285: Running command /usr/sbin/lightdm-session startxfce4
+[+0.61s] DEBUG: Creating shared data directory /var/lib/lightdm/data/root
+[+0.61s] DEBUG: Session pid=1285: Logging to .xsession-errors
+[+0.83s] DEBUG: Activating VT 7
+[+0.83s] DEBUG: Activating login1 session 1
+[+0.83s] DEBUG: Seat seat0 changes active session to 1
+[+0.83s] DEBUG: Session 1 is already active
+[+0.83s] DEBUG: Seat seat0 changes active session to 1
+[+0.83s] DEBUG: Session 1 is already active
+[+0.00s] DEBUG: Logging to /var/log/lightdm/lightdm.log
+[+0.00s] DEBUG: Starting Light Display Manager 1.32.0, UID=0 PID=1329
+[+0.00s] DEBUG: Loading configuration dirs from /usr/share/lightdm/lightdm.conf.d
+[+0.00s] DEBUG: Loading configuration from /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf
+[+0.00s] DEBUG: Loading configuration from /usr/share/lightdm/lightdm.conf.d/50-xubuntu-numlock.conf
+[+0.00s] DEBUG: Loading configuration from /usr/share/lightdm/lightdm.conf.d/60-lightdm-gtk-greeter.conf
+[+0.00s] DEBUG: Loading configuration from /usr/share/lightdm/lightdm.conf.d/60-xubuntu.conf
+[+0.00s] DEBUG: Loading configuration dirs from /usr/local/share/lightdm/lightdm.conf.d
+[+0.00s] DEBUG: Loading configuration dirs from /etc/xdg/lightdm/lightdm.conf.d
+[+0.00s] DEBUG: Loading configuration from /etc/lightdm/lightdm.conf.d/01_debian.conf
+[+0.00s] DEBUG: Loading configuration from /etc/lightdm/lightdm.conf.d/02_ubuntu.conf
+[+0.00s] DEBUG: Loading configuration from /etc/lightdm/lightdm.conf.d/99-root-autologin.conf
+[+0.00s] DEBUG: Loading configuration from /etc/lightdm/lightdm.conf
+[+0.00s] DEBUG: Registered seat module local
+[+0.00s] DEBUG: Registered seat module xremote
+[+0.00s] DEBUG: Using D-Bus name org.freedesktop.DisplayManager
+[+0.00s] DEBUG: _g_io_module_get_default: Found default implementation local (GLocalVfs) for ‘gio-vfs’
+[+0.00s] DEBUG: Monitoring logind for seats
+[+0.00s] DEBUG: New seat added from logind: seat0
+[+0.00s] DEBUG: Seat seat0: Loading properties from config section Seat:*
+[+0.00s] DEBUG: Seat seat0 has property CanMultiSession=no
+[+0.00s] DEBUG: Seat seat0: Starting
+[+0.00s] DEBUG: Seat seat0: Creating user session
+[+0.01s] DEBUG: Loading users from org.freedesktop.Accounts
+[+0.01s] DEBUG: User /org/freedesktop/Accounts/User1000 added
+[+0.06s] DEBUG: Seat seat0: Creating display server of type x
+[+0.07s] DEBUG: Seat seat0: Plymouth is running on VT 1, but this is less than the configured minimum of 7 so not replacing it
+[+0.07s] DEBUG: Quitting Plymouth
+[+0.10s] DEBUG: Using VT 7
+[+0.10s] DEBUG: Seat seat0: Starting local X display on VT 7
+[+0.10s] DEBUG: XServer 0: Logging to /var/log/lightdm/x-0.log
+[+0.10s] DEBUG: XServer 0: Writing X server authority to /var/run/lightdm/root/:0
+[+0.10s] DEBUG: XServer 0: Launching X Server
+[+0.10s] DEBUG: Launching process 1369: /usr/bin/X -core :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch
+[+0.10s] DEBUG: XServer 0: Waiting for ready signal from X server :0
+[+0.10s] DEBUG: Acquired bus name org.freedesktop.DisplayManager
+[+0.10s] DEBUG: Registering seat with bus path /org/freedesktop/DisplayManager/Seat0
+[+0.66s] DEBUG: Got signal 10 from process 1369
+[+0.66s] DEBUG: XServer 0: Got signal from X server :0
+[+0.66s] DEBUG: XServer 0: Connecting to XServer :0
+[+0.67s] DEBUG: Seat seat0: Display server ready, starting session authentication
+[+0.67s] DEBUG: Session pid=1411: Started with service 'lightdm-autologin', username 'root'
+[+0.70s] DEBUG: Session pid=1411: Authentication complete with return value 0: Success
+[+0.70s] DEBUG: Seat seat0: Session authenticated, running command
+[+0.70s] DEBUG: Registering session with bus path /org/freedesktop/DisplayManager/Session0
+[+0.70s] DEBUG: Session pid=1411: Running command /usr/sbin/lightdm-session startxfce4
+[+0.70s] DEBUG: Creating shared data directory /var/lib/lightdm/data/root
+[+0.70s] DEBUG: Session pid=1411: Logging to .xsession-errors
+[+0.99s] DEBUG: Activating VT 7
+[+0.99s] DEBUG: Activating login1 session 1
+[+0.99s] DEBUG: Seat seat0 changes active session to 1
+[+0.99s] DEBUG: Session 1 is already active
+[+0.99s] DEBUG: Seat seat0 changes active session to 1
+[+0.99s] DEBUG: Session 1 is already active

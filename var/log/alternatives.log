@@ -1,0 +1,10 @@
+update-alternatives 2026-07-15 09:37:17: run with --remove x-www-browser /usr/bin/brave-browser-stable
+update-alternatives 2026-07-15 09:37:17: link group x-www-browser fully removed
+update-alternatives 2026-07-15 09:37:17: run with --remove gnome-www-browser /usr/bin/brave-browser-stable
+update-alternatives 2026-07-15 09:37:17: link group gnome-www-browser fully removed
+update-alternatives 2026-07-15 09:37:17: run with --remove brave-browser /usr/bin/brave-browser-stable
+update-alternatives 2026-07-15 09:37:17: link group brave-browser fully removed
+update-alternatives 2026-07-15 09:39:20: run with --install /usr/bin/x-www-browser x-www-browser /usr/bin/opera-gx 120 --slave /usr/share/man/man1/x-www-browser.1.gz x-www-browser.1.gz /usr/share/man/man1/opera-gx.1.gz
+update-alternatives 2026-07-15 09:39:20: link group x-www-browser updated to point to /usr/bin/opera-gx
+update-alternatives 2026-07-15 09:39:20: run with --install /usr/bin/gnome-www-browser gnome-www-browser /usr/bin/opera-gx 120 --slave /usr/share/man/man1/gnome-www-browser.1.gz gnome-www-browser.1.gz /usr/share/man/man1/opera-gx.1.gz
+update-alternatives 2026-07-15 09:39:20: link group gnome-www-browser updated to point to /usr/bin/opera-gx

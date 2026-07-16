@@ -1,0 +1,498 @@
+ProblemType: Crash
+CrashCounter: 1
+CurrentDesktop: XFCE
+Date: Wed Jul 15 09:37:57 2026
+Dependencies:
+ adduser 3.153ubuntu1 [origin: Ubuntu]
+ appstream 1.1.2-1 [origin: Ubuntu]
+ apt 3.2.0 [origin: Ubuntu]
+ base-files 14ubuntu6.1 [modified: usr/lib/os-release] [origin: Ubuntu]
+ base-passwd 3.6.8 [origin: Ubuntu]
+ ca-certificates 20260601~26.04.1 [origin: Ubuntu]
+ dbus 1.16.2-2ubuntu4 [origin: Ubuntu]
+ dbus-bin 1.16.2-2ubuntu4 [origin: Ubuntu]
+ dbus-daemon 1.16.2-2ubuntu4 [origin: Ubuntu]
+ dbus-session-bus-common 1.16.2-2ubuntu4 [origin: Ubuntu]
+ dbus-system-bus-common 1.16.2-2ubuntu4 [origin: Ubuntu]
+ dbus-user-session 1.16.2-2ubuntu4 [origin: Ubuntu]
+ debconf 1.5.92 [origin: Ubuntu]
+ debconf-i18n 1.5.92 [origin: Ubuntu]
+ dirmngr 2.4.8-4ubuntu3 [origin: Ubuntu]
+ distro-info-data 0.68ubuntu0.1 [origin: Ubuntu]
+ dmsetup 2:1.02.205-2ubuntu3 [origin: Ubuntu]
+ gcc-16-base 16-20260322-1ubuntu1 [origin: Ubuntu]
+ gir1.2-girepository-3.0 2.88.0-1 [origin: Ubuntu]
+ gir1.2-glib-2.0 2.88.0-1 [origin: Ubuntu]
+ gir1.2-packagekitglib-1.0 1.3.4-3ubuntu1.1 [origin: Ubuntu]
+ gpg 2.4.8-4ubuntu3 [origin: Ubuntu]
+ gpg-agent 2.4.8-4ubuntu3 [origin: Ubuntu]
+ gpgconf 2.4.8-4ubuntu3 [origin: Ubuntu]
+ gpgv 2.4.8-4ubuntu3 [origin: Ubuntu]
+ init-system-helpers 1.69 [origin: Ubuntu]
+ iso-codes 4.20.1-1 [origin: Ubuntu]
+ krb5-locales 1.22.1-2ubuntu4 [origin: Ubuntu]
+ libacl1 2.3.2-2 [origin: Ubuntu]
+ libapparmor1 5.0.0~beta1-0ubuntu7 [origin: Ubuntu]
+ libappstream5 1.1.2-1 [origin: Ubuntu]
+ libapt-pkg7.0 3.2.0 [origin: Ubuntu]
+ libassuan9 3.0.2-2build1 [origin: Ubuntu]
+ libatomic1 16-20260322-1ubuntu1 [origin: Ubuntu]
+ libaudit-common 1:4.1.2-1build1 [origin: Ubuntu]
+ libaudit1 1:4.1.2-1build1 [origin: Ubuntu]
+ libblkid1 2.41.3-3ubuntu2 [origin: Ubuntu]
+ libbrotli1 1.2.0-3build1 [origin: Ubuntu]
+ libbsd0 0.12.2-2build2 [origin: Ubuntu]
+ libbz2-1.0 1.0.8-6build2 [origin: Ubuntu]
+ libc-gconv-modules-extra 2.43-2ubuntu2 [origin: Ubuntu]
+ libc6 2.43-2ubuntu2 [origin: Ubuntu]
+ libcap-ng0 0.8.5-4build5 [origin: Ubuntu]
+ libcap2 1:2.75-10ubuntu2 [origin: Ubuntu]
+ libcap2-bin 1:2.75-10ubuntu2 [origin: Ubuntu]
+ libcom-err2 1.47.2-3ubuntu4 [origin: Ubuntu]
+ libcrypt1 1:4.5.1-1 [origin: Ubuntu]
+ libcryptsetup12 2:2.8.4-1ubuntu4 [origin: Ubuntu]
+ libcurl3t64-gnutls 8.18.0-1ubuntu2.1 [origin: unknown]
+ libdb5.3t64 5.3.28+dfsg2-10ubuntu1 [origin: Ubuntu]
+ libdbus-1-3 1.16.2-2ubuntu4 [origin: Ubuntu]
+ libdebconfclient0 0.280ubuntu1 [origin: Ubuntu]
+ libdevmapper1.02.1 2:1.02.205-2ubuntu3 [origin: Ubuntu]
+ libduktape207 2.7.0+tests-0ubuntu4 [origin: Ubuntu]
+ libelf1t64 0.194-4 [origin: Ubuntu]
+ libexpat1 2.7.4-1 [origin: Ubuntu]
+ libffi8 3.5.2-4 [origin: Ubuntu]
+ libfyaml0 0.9.4-1 [origin: Ubuntu]
+ libgcc-s1 16-20260322-1ubuntu1 [origin: Ubuntu]
+ libgcrypt20 1.12.0-2ubuntu0.1 [origin: Ubuntu]
+ libgirepository-2.0-0 2.88.0-1 [origin: Ubuntu]
+ libglib2.0-0t64 2.88.0-1 [origin: Ubuntu]
+ libglib2.0-bin 2.88.0-1 [origin: Ubuntu]
+ libglib2.0-data 2.88.0-1 [origin: Ubuntu]
+ libgmp10 2:6.3.0+dfsg-5ubuntu2 [origin: Ubuntu]
+ libgnutls30t64 3.8.12-2ubuntu1.1 [origin: Ubuntu]
+ libgpg-error-l10n 1.58-2 [origin: Ubuntu]
+ libgpg-error0 1.58-2 [origin: Ubuntu]
+ libgpm2 1.20.7-12build1 [origin: Ubuntu]
+ libgssapi-krb5-2 1.22.1-2ubuntu4 [origin: Ubuntu]
+ libgstreamer1.0-0 1.28.2-1 [origin: Ubuntu]
+ libhogweed6t64 3.10.2-1 [origin: Ubuntu]
+ libidn2-0 2.3.8-4build1 [origin: Ubuntu]
+ libjansson4 2.14-2build4 [origin: Ubuntu]
+ libjson-c5 0.18+ds-3 [origin: Ubuntu]
+ libk5crypto3 1.22.1-2ubuntu4 [origin: Ubuntu]
+ libkeyutils1 1.6.3-6ubuntu3 [origin: Ubuntu]
+ libkmod2 34.2-2ubuntu2 [origin: Ubuntu]
+ libkrb5-3 1.22.1-2ubuntu4 [origin: Ubuntu]
+ libkrb5support0 1.22.1-2ubuntu4 [origin: Ubuntu]
+ libksba8 1.6.7-2build1 [origin: Ubuntu]
+ liblastlog2-2 2.41.3-3ubuntu2 [origin: Ubuntu]
+ libldap-common 2.6.10+dfsg-1ubuntu5 [origin: Ubuntu]
+ libldap2 2.6.10+dfsg-1ubuntu5 [origin: Ubuntu]
+ liblocale-gettext-perl 1.07-8 [origin: Ubuntu]
+ liblz4-1 1.10.0-8 [origin: Ubuntu]
+ liblzma5 5.8.3-1 [origin: Ubuntu]
+ libmd0 1.1.0-2build4 [origin: Ubuntu]
+ libmount1 2.41.3-3ubuntu2 [origin: Ubuntu]
+ libncursesw6 6.6+20251231-1 [origin: Ubuntu]
+ libnettle8t64 3.10.2-1 [origin: Ubuntu]
+ libnghttp2-14 1.68.0-2ubuntu0.1 [origin: unknown]
+ libnpth0t64 1.8-3build1 [origin: Ubuntu]
+ libnss-systemd 259.5-0ubuntu3 [origin: Ubuntu]
+ libp11-kit0 0.26.2-2 [origin: Ubuntu]
+ libpackagekit-glib2-18 1.3.4-3ubuntu1.1 [origin: Ubuntu]
+ libpam-cap 1:2.75-10ubuntu2 [origin: Ubuntu]
+ libpam-modules 1.7.0-5ubuntu3 [origin: Ubuntu]
+ libpam-modules-bin 1.7.0-5ubuntu3 [origin: Ubuntu]
+ libpam-runtime 1.7.0-5ubuntu3 [origin: Ubuntu]
+ libpam-systemd 259.5-0ubuntu3 [origin: Ubuntu]
+ libpam0g 1.7.0-5ubuntu3 [origin: Ubuntu]
+ libpcre2-8-0 10.46-1build1 [origin: Ubuntu]
+ libpolkit-agent-1-0 127-2ubuntu1 [origin: Ubuntu]
+ libpolkit-gobject-1-0 127-2ubuntu1 [origin: Ubuntu]
+ libproc2-0 2:4.0.4-9ubuntu1 [origin: Ubuntu]
+ libpsl5t64 0.21.2-1.1build2 [origin: Ubuntu]
+ libpython3-stdlib 3.14.3-0ubuntu2 [origin: Ubuntu]
+ libpython3.14-minimal 3.14.4-1 [origin: Ubuntu]
+ libpython3.14-stdlib 3.14.4-1 [origin: Ubuntu]
+ libreadline8t64 8.3-4 [origin: Ubuntu]
+ librtmp1 2.4+20151223.gitfa8646d.1-3 [origin: Ubuntu]
+ libsasl2-2 2.1.28+dfsg1-9ubuntu3 [origin: Ubuntu]
+ libsasl2-modules 2.1.28+dfsg1-9ubuntu3 [origin: Ubuntu]
+ libsasl2-modules-db 2.1.28+dfsg1-9ubuntu3 [origin: Ubuntu]
+ libseccomp2 2.6.0-2ubuntu5 [origin: Ubuntu]
+ libselinux1 3.9-4build1 [origin: Ubuntu]
+ libsemanage-common 3.9-1build1 [origin: Ubuntu]
+ libsemanage2 3.9-1build1 [origin: Ubuntu]
+ libsepol2 3.9-2 [origin: Ubuntu]
+ libsmartcols1 2.41.3-3ubuntu2 [origin: Ubuntu]
+ libsqlite3-0 3.46.1-9 [origin: Ubuntu]
+ libssh2-1t64 1.11.1-1ubuntu0.26.04.1 [origin: unknown]
+ libssl3t64 3.5.5-1ubuntu3.2 [origin: Ubuntu]
+ libstdc++6 16-20260322-1ubuntu1 [origin: Ubuntu]
+ libstemmer0d 3.0.1-1 [origin: Ubuntu]
+ libsystemd-shared 259.5-0ubuntu3 [origin: Ubuntu]
+ libsystemd0 259.5-0ubuntu3 [origin: Ubuntu]
+ libtasn1-6 4.21.0-2 [origin: Ubuntu]
+ libtext-charwidth-perl 0.04-11build4 [origin: Ubuntu]
+ libtext-iconv-perl 1.7-8.1 [origin: Ubuntu]
+ libtext-wrapi18n-perl 0.06-10 [origin: Ubuntu]
+ libtinfo6 6.6+20251231-1 [origin: Ubuntu]
+ libudev1 259.5-0ubuntu3 [origin: Ubuntu]
+ libunistring5 1.3-2build1 [origin: Ubuntu]
+ libuuid1 2.41.3-3ubuntu2 [origin: Ubuntu]
+ libxml2-16 2.15.2+dfsg-0.1ubuntu0.1 [origin: Ubuntu]
+ libxmlb2 0.3.24-2 [origin: Ubuntu]
+ libxxhash0 0.8.3-2build1 [origin: Ubuntu]
+ libzstd1 1.5.7+dfsg-3 [origin: Ubuntu]
+ linux-sysctl-defaults 4.15ubuntu5 [origin: Ubuntu]
+ login 1:4.16.0-2+really2.41.3-3ubuntu2 [origin: Ubuntu]
+ login.defs 1:4.17.4-2ubuntu3 [origin: Ubuntu]
+ lsb-release 12.1-2build1 [origin: Ubuntu]
+ media-types 14.0.0build1 [origin: Ubuntu]
+ mount 2.41.3-3ubuntu2 [origin: Ubuntu]
+ netbase 6.5build1 [origin: Ubuntu]
+ openssl 3.5.5-1ubuntu3.2 [origin: Ubuntu]
+ openssl-provider-legacy 3.5.5-1ubuntu3.2 [origin: Ubuntu]
+ packagekit 1.3.4-3ubuntu1.1 [origin: Ubuntu]
+ passwd 1:4.17.4-2ubuntu3 [origin: Ubuntu]
+ perl-base 5.40.1-7ubuntu0.1 [origin: Ubuntu]
+ polkitd 127-2ubuntu1 [origin: Ubuntu]
+ procps 2:4.0.4-9ubuntu1 [origin: Ubuntu]
+ psmisc 23.7-2ubuntu2 [origin: Ubuntu]
+ publicsuffix 20260129.1928-1 [origin: Ubuntu]
+ python-apt-common 3.1.0ubuntu1 [origin: Ubuntu]
+ python3 3.14.3-0ubuntu2 [origin: Ubuntu]
+ python3-apt 3.1.0ubuntu1 [origin: Ubuntu]
+ python3-autocommand 2.2.2-4 [origin: Ubuntu]
+ python3-bcrypt 5.0.0-3build1 [origin: Ubuntu]
+ python3-blinker 1.9.0-2build1 [origin: Ubuntu]
+ python3-cryptography 46.0.5-1ubuntu2 [origin: Ubuntu]
+ python3-dbus 1.4.0-1build2 [origin: Ubuntu]
+ python3-distro 1.9.0-1build1 [origin: Ubuntu]
+ python3-distro-info 1.15 [origin: Ubuntu]
+ python3-gi 3.56.2-1 [origin: Ubuntu]
+ python3-httplib2 0.22.0-1build1 [origin: Ubuntu]
+ python3-inflect 7.5.0-1build1 [origin: Ubuntu]
+ python3-jaraco.context 6.0.1-2 [origin: Ubuntu]
+ python3-jaraco.functools 4.1.0-1build1 [origin: Ubuntu]
+ python3-jaraco.text 4.0.0-1build1 [origin: Ubuntu]
+ python3-jwt 2.10.1-4ubuntu1 [origin: Ubuntu]
+ python3-launchpadlib 2.1.0-1build1 [origin: Ubuntu]
+ python3-lazr.restfulclient 0.14.6-3build1 [origin: Ubuntu]
+ python3-lazr.uri 1.0.6-7build1 [origin: Ubuntu]
+ python3-minimal 3.14.3-0ubuntu2 [origin: Ubuntu]
+ python3-more-itertools 10.8.0-1build1 [origin: Ubuntu]
+ python3-oauthlib 3.3.1-1build1 [origin: Ubuntu]
+ python3-pkg-resources 78.1.1-0.1build1 [origin: Ubuntu]
+ python3-pyparsing 3.3.2-2 [origin: Ubuntu]
+ python3-setuptools 78.1.1-0.1build1 [origin: Ubuntu]
+ python3-software-properties 0.120 [origin: Ubuntu]
+ python3-typeguard 4.4.4-2 [origin: Ubuntu]
+ python3-typing-extensions 4.15.0-2 [origin: Ubuntu]
+ python3-wadllib 2.0.0-3 [origin: Ubuntu]
+ python3-zipp 3.23.0-1build1 [origin: Ubuntu]
+ python3.14 3.14.4-1 [origin: Ubuntu]
+ python3.14-minimal 3.14.4-1 [origin: Ubuntu]
+ readline-common 8.3-4 [origin: Ubuntu]
+ sed 4.9-2ubuntu1 [origin: Ubuntu]
+ sensible-utils 0.0.26build1 [origin: Ubuntu]
+ sgml-base 1.31+nmu1build1 [origin: Ubuntu]
+ shared-mime-info 2.4-5build3 [origin: Ubuntu]
+ systemd 259.5-0ubuntu3 [origin: Ubuntu]
+ systemd-cryptsetup 259.5-0ubuntu3 [origin: Ubuntu]
+ systemd-resolved 259.5-0ubuntu3 [origin: Ubuntu]
+ systemd-sysv 259.5-0ubuntu3 [origin: Ubuntu]
+ tzdata 2026a-3ubuntu1 [origin: Ubuntu]
+ ubuntu-keyring 2023.11.28.1build1 [origin: Ubuntu]
+ ucf 3.0052ubuntu1 [origin: Ubuntu]
+ unattended-upgrades 2.12ubuntu9 [origin: Ubuntu]
+ util-linux-extra 2.41.3-3ubuntu2 [origin: Ubuntu]
+ xdg-user-dirs 0.19-1 [origin: Ubuntu]
+ xml-core 0.19build1 [origin: Ubuntu]
+ xz-utils 5.8.3-1 [origin: Ubuntu]
+ zlib1g 1:1.3.dfsg+really1.3.1-1ubuntu3 [origin: Ubuntu]
+ExecutablePath: /usr/bin/add-apt-repository
+ExecutableTimestamp: 1775096629
+InterpreterPath: /usr/bin/python3.14
+OpenFds:
+ 0:/dev/pts/1
+ pos:	0
+ flags:	02
+ mnt_id:	29
+ ino:	4
+ 
+ 1:/dev/pts/1
+ pos:	0
+ flags:	02
+ mnt_id:	29
+ ino:	4
+ 
+ 2:/dev/pts/1
+ pos:	0
+ flags:	02
+ mnt_id:	29
+ ino:	4
+ 
+ 3:/proc/3822
+ pos:	0
+ flags:	012200000
+ mnt_id:	27
+ ino:	18329
+ 
+ 4:/proc/3822/fd
+ pos:	0
+ flags:	02700000
+ mnt_id:	27
+ ino:	18331
+ 
+ 5:/proc/3822/fdinfo
+ pos:	0
+ flags:	02700000
+ mnt_id:	27
+ ino:	18332
+Package: software-properties-common 0.120 [origin: Ubuntu]
+PackageArchitecture: all
+ProcCmdline: /usr/bin/python3 /usr/bin/add-apt-repository deb\ [arch=i386,amd64]\ https://deb.opera.com/opera-stable/\ stable\ non-free
+ProcCwd: /root
+ProcEnviron:
+ LANG=en_US.UTF-8
+ LANGUAGE=
+ LC_ADDRESS=en_US.UTF-8
+ LC_IDENTIFICATION=en_US.UTF-8
+ LC_MEASUREMENT=en_US.UTF-8
+ LC_MONETARY=en_US.UTF-8
+ LC_NAME=en_US.UTF-8
+ LC_NUMERIC=en_US.UTF-8
+ LC_PAPER=en_US.UTF-8
+ LC_TELEPHONE=en_US.UTF-8
+ LC_TIME=en_US.UTF-8
+ PATH=(custom, no user)
+ SHELL=/bin/bash
+ TERM=xterm-256color
+ProcMaps:
+ 00400000-00422000 r--p 00000000 08:01 1440559                            /usr/bin/python3.14
+ 00422000-007a8000 r-xp 00022000 08:01 1440559                            /usr/bin/python3.14
+ 007a8000-00a86000 r--p 003a8000 08:01 1440559                            /usr/bin/python3.14
+ 00a86000-00a87000 r--p 00685000 08:01 1440559                            /usr/bin/python3.14
+ 00a87000-00b22000 rw-p 00686000 08:01 1440559                            /usr/bin/python3.14
+ 00b22000-00b94000 rw-p 00000000 00:00 0 
+ 0f3a9000-0ffe9000 rw-p 00000000 00:00 0                                  [heap]
+ 73940f3b8000-73940fba3000 rw-p 00000000 00:00 0 
+ 73940fbf2000-73940fcf2000 rw-p 00000000 00:00 0 
+ 73940fcf2000-73940fd14000 r--p 00000000 08:01 1443608                    /usr/lib/x86_64-linux-gnu/libssl.so.3
+ 73940fd14000-73940fdc5000 r-xp 00022000 08:01 1443608                    /usr/lib/x86_64-linux-gnu/libssl.so.3
+ 73940fdc5000-73940fdf2000 r--p 000d3000 08:01 1443608                    /usr/lib/x86_64-linux-gnu/libssl.so.3
+ 73940fdf2000-73940fdfc000 r--p 00100000 08:01 1443608                    /usr/lib/x86_64-linux-gnu/libssl.so.3
+ 73940fdfc000-73940fe00000 rw-p 0010a000 08:01 1443608                    /usr/lib/x86_64-linux-gnu/libssl.so.3
+ 73940fe00000-739410400000 rw-p 00000000 00:00 0 
+ 739410400000-7394104e4000 r--p 00000000 08:01 1443607                    /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+ 7394104e4000-739410878000 r-xp 000e4000 08:01 1443607                    /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+ 739410878000-739410997000 r--p 00478000 08:01 1443607                    /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+ 739410997000-739410a14000 r--p 00597000 08:01 1443607                    /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+ 739410a14000-739410a17000 rw-p 00614000 08:01 1443607                    /usr/lib/x86_64-linux-gnu/libcrypto.so.3
+ 739410a17000-739410a1a000 rw-p 00000000 00:00 0 
+ 739410a4b000-739410a5f000 r--p 00000000 08:01 1460913                    /usr/lib/python3.14/lib-dynload/_ssl.cpython-314-x86_64-linux-gnu.so
+ 739410a5f000-739410a6c000 r-xp 00014000 08:01 1460913                    /usr/lib/python3.14/lib-dynload/_ssl.cpython-314-x86_64-linux-gnu.so
+ 739410a6c000-739410a7b000 r--p 00021000 08:01 1460913                    /usr/lib/python3.14/lib-dynload/_ssl.cpython-314-x86_64-linux-gnu.so
+ 739410a7b000-739410a7c000 r--p 0002f000 08:01 1460913                    /usr/lib/python3.14/lib-dynload/_ssl.cpython-314-x86_64-linux-gnu.so
+ 739410a7c000-739410a86000 rw-p 00030000 08:01 1460913                    /usr/lib/python3.14/lib-dynload/_ssl.cpython-314-x86_64-linux-gnu.so
+ 739410aec000-739410b05000 r--p 00000000 08:01 1467222                    /usr/lib/x86_64-linux-gnu/libsystemd.so.0.42.0
+ 739410b05000-739410bbc000 r-xp 00019000 08:01 1467222                    /usr/lib/x86_64-linux-gnu/libsystemd.so.0.42.0
+ 739410bbc000-739410bf6000 r--p 000d0000 08:01 1467222                    /usr/lib/x86_64-linux-gnu/libsystemd.so.0.42.0
+ 739410bf6000-739410bfe000 r--p 0010a000 08:01 1467222                    /usr/lib/x86_64-linux-gnu/libsystemd.so.0.42.0
+ 739410bfe000-739410bff000 rw-p 00112000 08:01 1467222                    /usr/lib/x86_64-linux-gnu/libsystemd.so.0.42.0
+ 739410bff000-739410c00000 rw-p 00000000 00:00 0 
+ 739410c00000-739410c39000 r--p 00000000 08:01 1466636                    /usr/lib/x86_64-linux-gnu/libapt-pkg.so.7.0.0
+ 739410c39000-739410de5000 r-xp 00039000 08:01 1466636                    /usr/lib/x86_64-linux-gnu/libapt-pkg.so.7.0.0
+ 739410de5000-739410e38000 r--p 001e5000 08:01 1466636                    /usr/lib/x86_64-linux-gnu/libapt-pkg.so.7.0.0
+ 739410e38000-739410e40000 r--p 00237000 08:01 1466636                    /usr/lib/x86_64-linux-gnu/libapt-pkg.so.7.0.0
+ 739410e40000-739410e41000 rw-p 0023f000 08:01 1466636                    /usr/lib/x86_64-linux-gnu/libapt-pkg.so.7.0.0
+ 739410e41000-739410e42000 rw-p 00000000 00:00 0 
+ 739410e46000-739410e49000 r--p 00000000 08:01 1460901                    /usr/lib/python3.14/lib-dynload/_hmac.cpython-314-x86_64-linux-gnu.so
+ 739410e49000-739410e66000 r-xp 00003000 08:01 1460901                    /usr/lib/python3.14/lib-dynload/_hmac.cpython-314-x86_64-linux-gnu.so
+ 739410e66000-739410e6a000 r--p 00020000 08:01 1460901                    /usr/lib/python3.14/lib-dynload/_hmac.cpython-314-x86_64-linux-gnu.so
+ 739410e6a000-739410e6b000 r--p 00023000 08:01 1460901                    /usr/lib/python3.14/lib-dynload/_hmac.cpython-314-x86_64-linux-gnu.so
+ 739410e6b000-739410e6c000 rw-p 00024000 08:01 1460901                    /usr/lib/python3.14/lib-dynload/_hmac.cpython-314-x86_64-linux-gnu.so
+ 739410e6c000-739410e6f000 r--p 00000000 08:01 1460926                    /usr/lib/python3.14/lib-dynload/_zstd.cpython-314-x86_64-linux-gnu.so
+ 739410e6f000-739410e75000 r-xp 00003000 08:01 1460926                    /usr/lib/python3.14/lib-dynload/_zstd.cpython-314-x86_64-linux-gnu.so
+ 739410e75000-739410e79000 r--p 00009000 08:01 1460926                    /usr/lib/python3.14/lib-dynload/_zstd.cpython-314-x86_64-linux-gnu.so
+ 739410e79000-739410e7a000 r--p 0000d000 08:01 1460926                    /usr/lib/python3.14/lib-dynload/_zstd.cpython-314-x86_64-linux-gnu.so
+ 739410e7a000-739410e7b000 rw-p 0000e000 08:01 1460926                    /usr/lib/python3.14/lib-dynload/_zstd.cpython-314-x86_64-linux-gnu.so
+ 739410e9d000-739410ea1000 r--p 00000000 08:01 1460900                    /usr/lib/python3.14/lib-dynload/_hashlib.cpython-314-x86_64-linux-gnu.so
+ 739410ea1000-739410ea7000 r-xp 00004000 08:01 1460900                    /usr/lib/python3.14/lib-dynload/_hashlib.cpython-314-x86_64-linux-gnu.so
+ 739410ea7000-739410eab000 r--p 0000a000 08:01 1460900                    /usr/lib/python3.14/lib-dynload/_hashlib.cpython-314-x86_64-linux-gnu.so
+ 739410eab000-739410eac000 r--p 0000d000 08:01 1460900                    /usr/lib/python3.14/lib-dynload/_hashlib.cpython-314-x86_64-linux-gnu.so
+ 739410eac000-739410eae000 rw-p 0000e000 08:01 1460900                    /usr/lib/python3.14/lib-dynload/_hashlib.cpython-314-x86_64-linux-gnu.so
+ 739410eae000-739410eb0000 r--p 00000000 08:01 1467354                    /usr/lib/x86_64-linux-gnu/libxxhash.so.0.8.3
+ 739410eb0000-739410ebd000 r-xp 00002000 08:01 1467354                    /usr/lib/x86_64-linux-gnu/libxxhash.so.0.8.3
+ 739410ebd000-739410ebf000 r--p 0000f000 08:01 1467354                    /usr/lib/x86_64-linux-gnu/libxxhash.so.0.8.3
+ 739410ebf000-739410ec0000 r--p 00010000 08:01 1467354                    /usr/lib/x86_64-linux-gnu/libxxhash.so.0.8.3
+ 739410ec0000-739410ec1000 rw-p 00011000 08:01 1467354                    /usr/lib/x86_64-linux-gnu/libxxhash.so.0.8.3
+ 739410ec1000-739410ec9000 r--p 00000000 08:01 1467253                    /usr/lib/x86_64-linux-gnu/libudev.so.1.7.12
+ 739410ec9000-739410ef0000 r-xp 00008000 08:01 1467253                    /usr/lib/x86_64-linux-gnu/libudev.so.1.7.12
+ 739410ef0000-739410f02000 r--p 0002f000 08:01 1467253                    /usr/lib/x86_64-linux-gnu/libudev.so.1.7.12
+ 739410f02000-739410f07000 r--p 00041000 08:01 1467253                    /usr/lib/x86_64-linux-gnu/libudev.so.1.7.12
+ 739410f07000-739410f08000 rw-p 00046000 08:01 1467253                    /usr/lib/x86_64-linux-gnu/libudev.so.1.7.12
+ 739410f08000-739410f0c000 r--p 00000000 08:01 1467360                    /usr/lib/x86_64-linux-gnu/libzstd.so.1.5.7
+ 739410f0c000-739410fbc000 r-xp 00004000 08:01 1467360                    /usr/lib/x86_64-linux-gnu/libzstd.so.1.5.7
+ 739410fbc000-739410fc9000 r--p 000b4000 08:01 1467360                    /usr/lib/x86_64-linux-gnu/libzstd.so.1.5.7
+ 739410fc9000-739410fca000 r--p 000c1000 08:01 1467360                    /usr/lib/x86_64-linux-gnu/libzstd.so.1.5.7
+ 739410fca000-739410fcb000 rw-p 000c2000 08:01 1467360                    /usr/lib/x86_64-linux-gnu/libzstd.so.1.5.7
+ 739410fcb000-739410fcf000 r--p 00000000 08:01 1466983                    /usr/lib/x86_64-linux-gnu/liblzma.so.5.8.3
+ 739410fcf000-739410ff3000 r-xp 00004000 08:01 1466983                    /usr/lib/x86_64-linux-gnu/liblzma.so.5.8.3
+ 739410ff3000-739410ffe000 r--p 00028000 08:01 1466983                    /usr/lib/x86_64-linux-gnu/liblzma.so.5.8.3
+ 739410ffe000-739410fff000 r--p 00033000 08:01 1466983                    /usr/lib/x86_64-linux-gnu/liblzma.so.5.8.3
+ 739410fff000-739411000000 rw-p 00034000 08:01 1466983                    /usr/lib/x86_64-linux-gnu/liblzma.so.5.8.3
+ 739411000000-7394110a3000 r--p 00000000 08:01 1467217                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.35
+ 7394110a3000-7394111fe000 r-xp 000a3000 08:01 1467217                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.35
+ 7394111fe000-73941128a000 r--p 001fe000 08:01 1467217                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.35
+ 73941128a000-739411299000 r--p 0028a000 08:01 1467217                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.35
+ 739411299000-73941129c000 rw-p 00299000 08:01 1467217                    /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.35
+ 73941129c000-7394112a0000 rw-p 00000000 00:00 0 
+ 7394112a9000-7394112ac000 r--p 00000000 08:01 1466982                    /usr/lib/x86_64-linux-gnu/liblz4.so.1.10.0
+ 7394112ac000-7394112ce000 r-xp 00003000 08:01 1466982                    /usr/lib/x86_64-linux-gnu/liblz4.so.1.10.0
+ 7394112ce000-7394112d0000 r--p 00025000 08:01 1466982                    /usr/lib/x86_64-linux-gnu/liblz4.so.1.10.0
+ 7394112d0000-7394112d1000 r--p 00027000 08:01 1466982                    /usr/lib/x86_64-linux-gnu/liblz4.so.1.10.0
+ 7394112d1000-7394112d2000 rw-p 00028000 08:01 1466982                    /usr/lib/x86_64-linux-gnu/liblz4.so.1.10.0
+ 7394112d2000-7394112d6000 r--p 00000000 08:01 1466836                    /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+ 7394112d6000-7394112fa000 r-xp 00004000 08:01 1466836                    /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+ 7394112fa000-7394112fe000 r--p 00028000 08:01 1466836                    /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+ 7394112fe000-7394112ff000 r--p 0002c000 08:01 1466836                    /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+ 7394112ff000-739411300000 rw-p 0002d000 08:01 1466836                    /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+ 739411300000-739411600000 rw-p 00000000 00:00 0 
+ 739411600000-739411628000 r--p 00000000 08:01 1466693                    /usr/lib/x86_64-linux-gnu/libc.so.6
+ 739411628000-7394117c0000 r-xp 00028000 08:01 1466693                    /usr/lib/x86_64-linux-gnu/libc.so.6
+ 7394117c0000-73941180e000 r--p 001c0000 08:01 1466693                    /usr/lib/x86_64-linux-gnu/libc.so.6
+ 73941180e000-739411812000 r--p 0020d000 08:01 1466693                    /usr/lib/x86_64-linux-gnu/libc.so.6
+ 739411812000-739411814000 rw-p 00211000 08:01 1466693                    /usr/lib/x86_64-linux-gnu/libc.so.6
+ 739411814000-739411821000 rw-p 00000000 00:00 0 
+ 739411827000-739411829000 r--p 00000000 08:01 1466690                    /usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4
+ 739411829000-739411838000 r-xp 00002000 08:01 1466690                    /usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4
+ 739411838000-73941183a000 r--p 00011000 08:01 1466690                    /usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4
+ 73941183a000-73941183b000 r--p 00012000 08:01 1466690                    /usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4
+ 73941183b000-73941183c000 rw-p 00013000 08:01 1466690                    /usr/lib/x86_64-linux-gnu/libbz2.so.1.0.4
+ 73941184a000-73941184d000 r--p 00000000 08:01 1460906                    /usr/lib/python3.14/lib-dynload/_lzma.cpython-314-x86_64-linux-gnu.so
+ 73941184d000-739411851000 r-xp 00003000 08:01 1460906                    /usr/lib/python3.14/lib-dynload/_lzma.cpython-314-x86_64-linux-gnu.so
+ 739411851000-739411854000 r--p 00007000 08:01 1460906                    /usr/lib/python3.14/lib-dynload/_lzma.cpython-314-x86_64-linux-gnu.so
+ 739411854000-739411855000 r--p 00009000 08:01 1460906                    /usr/lib/python3.14/lib-dynload/_lzma.cpython-314-x86_64-linux-gnu.so
+ 739411855000-739411856000 rw-p 0000a000 08:01 1460906                    /usr/lib/python3.14/lib-dynload/_lzma.cpython-314-x86_64-linux-gnu.so
+ 739411856000-73941186b000 r--p 00000000 08:01 1461365                    /usr/lib/python3/dist-packages/apt_pkg.cpython-314-x86_64-linux-gnu.so
+ 73941186b000-73941188c000 r-xp 00015000 08:01 1461365                    /usr/lib/python3/dist-packages/apt_pkg.cpython-314-x86_64-linux-gnu.so
+ 73941188c000-7394118a3000 r--p 00036000 08:01 1461365                    /usr/lib/python3/dist-packages/apt_pkg.cpython-314-x86_64-linux-gnu.so
+ 7394118a3000-7394118a5000 r--p 0004c000 08:01 1461365                    /usr/lib/python3/dist-packages/apt_pkg.cpython-314-x86_64-linux-gnu.so
+ 7394118a5000-7394118ae000 rw-p 0004e000 08:01 1461365                    /usr/lib/python3/dist-packages/apt_pkg.cpython-314-x86_64-linux-gnu.so
+ 7394118ae000-739411910000 rw-p 00000000 00:00 0 
+ 739411910000-73941196b000 r--p 00000000 08:01 1451585                    /usr/lib/locale/C.utf8/LC_CTYPE
+ 73941196b000-73941196d000 rw-p 00000000 00:00 0 
+ 73941196d000-739411971000 r--p 00000000 08:01 1466786                    /usr/lib/x86_64-linux-gnu/libexpat.so.1.11.2
+ 739411971000-73941198f000 r-xp 00004000 08:01 1466786                    /usr/lib/x86_64-linux-gnu/libexpat.so.1.11.2
+ 73941198f000-739411997000 r--p 00022000 08:01 1466786                    /usr/lib/x86_64-linux-gnu/libexpat.so.1.11.2
+ 739411997000-739411999000 r--p 0002a000 08:01 1466786                    /usr/lib/x86_64-linux-gnu/libexpat.so.1.11.2
+ 739411999000-73941199a000 rw-p 0002c000 08:01 1466786                    /usr/lib/x86_64-linux-gnu/libexpat.so.1.11.2
+ 73941199a000-73941199d000 r--p 00000000 08:01 1467356                    /usr/lib/x86_64-linux-gnu/libz.so.1.3.1
+ 73941199d000-7394119b0000 r-xp 00003000 08:01 1467356                    /usr/lib/x86_64-linux-gnu/libz.so.1.3.1
+ 7394119b0000-7394119b6000 r--p 00016000 08:01 1467356                    /usr/lib/x86_64-linux-gnu/libz.so.1.3.1
+ 7394119b6000-7394119b7000 r--p 0001c000 08:01 1467356                    /usr/lib/x86_64-linux-gnu/libz.so.1.3.1
+ 7394119b7000-7394119b8000 rw-p 0001d000 08:01 1467356                    /usr/lib/x86_64-linux-gnu/libz.so.1.3.1
+ 7394119b8000-7394119ca000 r--p 00000000 08:01 1466988                    /usr/lib/x86_64-linux-gnu/libm.so.6
+ 7394119ca000-739411a6a000 r-xp 00012000 08:01 1466988                    /usr/lib/x86_64-linux-gnu/libm.so.6
+ 739411a6a000-739411adc000 r--p 000b2000 08:01 1466988                    /usr/lib/x86_64-linux-gnu/libm.so.6
+ 739411adc000-739411add000 r--p 00123000 08:01 1466988                    /usr/lib/x86_64-linux-gnu/libm.so.6
+ 739411add000-739411ade000 rw-p 00124000 08:01 1466988                    /usr/lib/x86_64-linux-gnu/libm.so.6
+ 739411ae2000-739411ae4000 r--p 00000000 08:01 1460881                    /usr/lib/python3.14/lib-dynload/_bz2.cpython-314-x86_64-linux-gnu.so
+ 739411ae4000-739411ae7000 r-xp 00002000 08:01 1460881                    /usr/lib/python3.14/lib-dynload/_bz2.cpython-314-x86_64-linux-gnu.so
+ 739411ae7000-739411ae9000 r--p 00005000 08:01 1460881                    /usr/lib/python3.14/lib-dynload/_bz2.cpython-314-x86_64-linux-gnu.so
+ 739411ae9000-739411aea000 r--p 00006000 08:01 1460881                    /usr/lib/python3.14/lib-dynload/_bz2.cpython-314-x86_64-linux-gnu.so
+ 739411aea000-739411aeb000 rw-p 00007000 08:01 1460881                    /usr/lib/python3.14/lib-dynload/_bz2.cpython-314-x86_64-linux-gnu.so
+ 739411aeb000-739411af0000 rw-p 00000000 00:00 0 
+ 739411af0000-739411af1000 rw-p 00000000 00:00 0 
+ 739411af1000-739411af8000 r--s 00000000 08:01 1574766                    /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+ 739411af8000-739411afa000 rw-p 00000000 00:00 0 
+ 739411afa000-739411afe000 r--p 00000000 00:00 0                          [vvar]
+ 739411afe000-739411b00000 r--p 00000000 00:00 0                          [vvar_vclock]
+ 739411b00000-739411b02000 r-xp 00000000 00:00 0                          [vdso]
+ 739411b02000-739411b03000 r--p 00000000 08:01 1466366                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+ 739411b03000-739411b32000 r-xp 00001000 08:01 1466366                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+ 739411b32000-739411b3d000 r--p 00030000 08:01 1466366                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+ 739411b3d000-739411b3f000 r--p 0003b000 08:01 1466366                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+ 739411b3f000-739411b40000 rw-p 0003d000 08:01 1466366                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+ 739411b40000-739411b41000 rw-p 00000000 00:00 0 
+ 7ffdeaf63000-7ffdeaf84000 rw-p 00000000 00:00 0                          [stack]
+ ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]
+ProcStatus:
+ Name:	add-apt-reposit
+ Umask:	0022
+ State:	R (running)
+ Tgid:	3822
+ Ngid:	0
+ Pid:	3822
+ PPid:	3821
+ TracerPid:	0
+ Uid:	0	0	0	0
+ Gid:	0	0	0	0
+ FDSize:	64
+ Groups:	0 29 118 119 
+ NStgid:	3822
+ NSpid:	3822
+ NSpgid:	3822
+ NSsid:	3821
+ Kthread:	0
+ VmPeak:	   59716 kB
+ VmSize:	   59716 kB
+ VmLck:	       0 kB
+ VmPin:	       0 kB
+ VmHWM:	   45532 kB
+ VmRSS:	   45532 kB
+ RssAnon:	   28180 kB
+ RssFile:	   17352 kB
+ RssShmem:	       0 kB
+ VmData:	   32692 kB
+ VmStk:	     132 kB
+ VmExe:	    3608 kB
+ VmLib:	   12640 kB
+ VmPTE:	     156 kB
+ VmSwap:	       0 kB
+ HugetlbPages:	       0 kB
+ CoreDumping:	0
+ THP_enabled:	1
+ untag_mask:	0xffffffffffffffff
+ Threads:	1
+ SigQ:	2/38904
+ SigPnd:	0000000000000000
+ ShdPnd:	0000000000000000
+ SigBlk:	0000000000000000
+ SigIgn:	0000000001001000
+ SigCgt:	0000000000000002
+ CapInh:	0000000000000000
+ CapPrm:	000001ffffffffff
+ CapEff:	000001ffffffffff
+ CapBnd:	000001ffffffffff
+ CapAmb:	0000000000000000
+ NoNewPrivs:	0
+ Seccomp:	0
+ Seccomp_filters:	0
+ Speculation_Store_Bypass:	not vulnerable
+ SpeculationIndirectBranch:	conditional enabled
+ Cpus_allowed:	ff
+ Cpus_allowed_list:	0-7
+ Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+ Mems_allowed_list:	0
+ voluntary_ctxt_switches:	155
+ nonvoluntary_ctxt_switches:	1
+ x86_Thread_features:	
+ x86_Thread_features_locked:
+PythonArgs: ['/usr/bin/add-apt-repository', 'deb [arch=i386,amd64] https://deb.opera.com/opera-stable/ stable non-free']
+SourcePackage: software-properties
+Traceback:
+ Traceback (most recent call last):
+   File "/usr/bin/add-apt-repository", line 631, in <module>
+     addaptrepo = AddAptRepository()
+   File "/usr/bin/add-apt-repository", line 40, in __init__
+     self.distro.get_sources(self.sourceslist)
+     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+   File "/usr/lib/python3/dist-packages/aptsources/distro.py", line 92, in get_sources
+     raise NoDistroTemplateException(
+     ...<2 lines>...
+     )
+ aptsources.distro.NoDistroTemplateException: Error: could not find a distribution template for warpnix/premiere
+UserGroups: audio pulse pulse-access
+_HooksRun: no

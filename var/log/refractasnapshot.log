@@ -1,0 +1,36 @@
++ [[ -f /usr/bin/yad ]]
++ DIALOG=yad
++ INFO=image=gtk-dialog-info
++ QUESTION=image=gtk-dialog-question
++ WARNING=image=gtk-dialog-warning
++ ERROR=image=gtk-dialog-error
++ BUTTON0=button
++ BUTTON1=button
++ BUTTON0NUM=:0
++ BUTTON1NUM=:1
++ CENTER=--center
++ [[ -n :0.0 ]]
+++ id -u
++ [[ 0 -eq 0 ]]
++ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
++ check_grub
++ [[ yes = yes ]]
++ dpkg -l
++ grep '^ii'
++ grep grub-efi-amd64
++ grep -v bin
++ [[ ! -e /var/lib/dpkg/info/dosfstools.list ]]
++ choose_task
++ [[ yes = yes ]]
++ uefi_message='uefi enabled'
+++ yad '--title=Refracta Snapshot 10.4.1 (20240922)' --center --borders=10 --height 400 --width 426 $'--text=This utility will create a bootable image that you can burn to CD or DVD or copy to USB with dd or cat. The image will be stored in /home/snapshot.\n\nChoose the first option to create a snapshot. \n\nThis is free software that comes with no warranty or guarantee of any type, including but not limited to express, implied, merchantability or fitness of purpose.\n' --button=OK:0 --button=Help:1 --list --column Num --column 'Choose a task' 01 'Create a snapshot (uefi enabled)' 02 'Re-squash and make iso (no-copy)' 03 'Re-make efi files and iso. (no-copy) (uefi enabled)' 04 'Re-run xorriso only. (make iso, no-copy, no-squash)' 05 'Setup snapshot (edit config file or excludes file)' 06 Exit
++ task='06|Exit|'
++ exit_code=0
++ '[' 0 -ne 0 ']'
++ [[ 06|Exit| =~ 01 ]]
++ [[ 06|Exit| =~ 02 ]]
++ [[ 06|Exit| =~ 03 ]]
++ [[ 06|Exit| =~ 04 ]]
++ [[ 06|Exit| =~ 05 ]]
++ [[ 06|Exit| =~ 06 ]]
++ exit 0

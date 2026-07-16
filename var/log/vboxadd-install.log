@@ -1,0 +1,15 @@
+
+VirtualBox Guest Additions: Starting.
+VirtualBox Guest Additions: Setting up modules
+VirtualBox Guest Additions: Building the VirtualBox Guest Additions kernel 
+modules.  This may take a while.
+VirtualBox Guest Additions: To build modules for other installed kernels, run
+VirtualBox Guest Additions:   /sbin/rcvboxadd quicksetup <version>
+VirtualBox Guest Additions: or
+VirtualBox Guest Additions:   /sbin/rcvboxadd quicksetup all
+VirtualBox Guest Additions: Building the modules for kernel 7.0.0-22-generic.
+
+VirtualBox Guest Additions: Look at /var/log/vboxadd-setup.log to find out what 
+went wrong
+update-initramfs: Generating /boot/initrd.img-7.0.0-22-generic
+live-boot: core filesystems dm-verity devices utils udev blockdev dns.

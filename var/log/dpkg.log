@@ -1,0 +1,55 @@
+2026-07-15 09:37:16 startup packages remove
+2026-07-15 09:37:16 status installed brave-browser:amd64 1.91.178
+2026-07-15 09:37:16 remove brave-browser:amd64 1.91.178 <none>
+2026-07-15 09:37:16 status half-configured brave-browser:amd64 1.91.178
+2026-07-15 09:37:17 status half-installed brave-browser:amd64 1.91.178
+2026-07-15 09:37:17 status triggers-pending man-db:i386 2.13.1-1build1
+2026-07-15 09:37:17 status triggers-pending gnome-menus:amd64 3.38.1-1ubuntu1
+2026-07-15 09:37:17 status triggers-pending desktop-file-utils:amd64 0.28-1build1
+2026-07-15 09:37:17 status config-files brave-browser:amd64 1.91.178
+2026-07-15 09:37:17 status installed brave-keyring:all 1.20
+2026-07-15 09:37:17 remove brave-keyring:all 1.20 <none>
+2026-07-15 09:37:17 status half-configured brave-keyring:all 1.20
+2026-07-15 09:37:17 status half-installed brave-keyring:all 1.20
+2026-07-15 09:37:17 status config-files brave-keyring:all 1.20
+2026-07-15 09:37:17 startup packages configure
+2026-07-15 09:37:17 trigproc gnome-menus:amd64 3.38.1-1ubuntu1 <none>
+2026-07-15 09:37:17 status half-configured gnome-menus:amd64 3.38.1-1ubuntu1
+2026-07-15 09:37:17 status installed gnome-menus:amd64 3.38.1-1ubuntu1
+2026-07-15 09:37:17 trigproc man-db:i386 2.13.1-1build1 <none>
+2026-07-15 09:37:17 status half-configured man-db:i386 2.13.1-1build1
+2026-07-15 09:37:18 status installed man-db:i386 2.13.1-1build1
+2026-07-15 09:37:18 trigproc desktop-file-utils:amd64 0.28-1build1 <none>
+2026-07-15 09:37:18 status half-configured desktop-file-utils:amd64 0.28-1build1
+2026-07-15 09:37:18 status installed desktop-file-utils:amd64 0.28-1build1
+2026-07-15 09:37:18 startup packages purge
+2026-07-15 09:37:18 purge brave-keyring:all 1.20 <none>
+2026-07-15 09:37:18 status config-files brave-keyring:all 1.20
+2026-07-15 09:37:18 status not-installed brave-keyring:all <none>
+2026-07-15 09:37:18 purge brave-browser:amd64 1.91.178 <none>
+2026-07-15 09:37:18 status config-files brave-browser:amd64 1.91.178
+2026-07-15 09:37:18 status not-installed brave-browser:amd64 <none>
+2026-07-15 09:37:18 startup packages configure
+2026-07-15 09:39:15 startup archives install
+2026-07-15 09:39:15 install opera-gx-stable:amd64 <none> 133.0.5932.39
+2026-07-15 09:39:15 status half-installed opera-gx-stable:amd64 133.0.5932.39
+2026-07-15 09:39:17 status triggers-pending gnome-menus:amd64 3.38.1-1ubuntu1
+2026-07-15 09:39:17 status triggers-pending desktop-file-utils:amd64 0.28-1build1
+2026-07-15 09:39:17 status triggers-pending hicolor-icon-theme:all 0.18-2build1
+2026-07-15 09:39:17 status triggers-pending shared-mime-info:amd64 2.4-5build3
+2026-07-15 09:39:17 status unpacked opera-gx-stable:amd64 133.0.5932.39
+2026-07-15 09:39:17 configure opera-gx-stable:amd64 133.0.5932.39 133.0.5932.39
+2026-07-15 09:39:17 status half-configured opera-gx-stable:amd64 133.0.5932.39
+2026-07-15 09:39:20 status installed opera-gx-stable:amd64 133.0.5932.39
+2026-07-15 09:39:20 trigproc gnome-menus:amd64 3.38.1-1ubuntu1 <none>
+2026-07-15 09:39:20 status half-configured gnome-menus:amd64 3.38.1-1ubuntu1
+2026-07-15 09:39:20 status installed gnome-menus:amd64 3.38.1-1ubuntu1
+2026-07-15 09:39:20 trigproc desktop-file-utils:amd64 0.28-1build1 <none>
+2026-07-15 09:39:20 status half-configured desktop-file-utils:amd64 0.28-1build1
+2026-07-15 09:39:20 status installed desktop-file-utils:amd64 0.28-1build1
+2026-07-15 09:39:20 trigproc hicolor-icon-theme:all 0.18-2build1 <none>
+2026-07-15 09:39:20 status half-configured hicolor-icon-theme:all 0.18-2build1
+2026-07-15 09:39:20 status installed hicolor-icon-theme:all 0.18-2build1
+2026-07-15 09:39:20 trigproc shared-mime-info:amd64 2.4-5build3 <none>
+2026-07-15 09:39:20 status half-configured shared-mime-info:amd64 2.4-5build3
+2026-07-15 09:39:22 status installed shared-mime-info:amd64 2.4-5build3

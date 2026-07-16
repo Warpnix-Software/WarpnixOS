@@ -1,0 +1,12 @@
+2026-07-13 19:27:49,760 WARNING Could not figure out development release: [Errno 2] No such file or directory: '/usr/share/distro-info/warpnix.csv'
+2026-07-13 19:27:49,760 INFO Starting unattended upgrades script
+2026-07-13 19:27:49,761 INFO Allowed origins are: o=Warpnix,a=premiere, o=Warpnix,a=premiere-security, o=WarpnixESMApps,a=premiere-apps-security, o=WarpnixESM,a=premiere-infra-security
+2026-07-13 19:27:49,761 INFO Initial blacklist: 
+2026-07-13 19:27:49,761 INFO Initial whitelist (not strict): 
+2026-07-13 19:27:50,208 INFO No packages found that can be upgraded unattended and no pending auto-removals
+2026-07-14 19:00:39,841 WARNING Could not figure out development release: [Errno 2] No such file or directory: '/usr/share/distro-info/warpnix.csv'
+2026-07-14 19:00:39,842 INFO Starting unattended upgrades script
+2026-07-14 19:00:39,842 INFO Allowed origins are: o=Warpnix,a=premiere, o=Warpnix,a=premiere-security, o=WarpnixESMApps,a=premiere-apps-security, o=WarpnixESM,a=premiere-infra-security
+2026-07-14 19:00:39,843 INFO Initial blacklist: 
+2026-07-14 19:00:39,843 INFO Initial whitelist (not strict): 
+2026-07-14 19:00:40,283 INFO No packages found that can be upgraded unattended and no pending auto-removals

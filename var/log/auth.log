@@ -1,0 +1,108 @@
+2026-07-11T16:17:01.176403-04:00 WarpnixOS CRON[5810]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-11T16:17:01.178761-04:00 WarpnixOS CRON[5810]: pam_unix(cron:session): session closed for user root
+2026-07-11T16:30:01.575564-04:00 WarpnixOS CRON[5946]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-11T16:30:01.576699-04:00 WarpnixOS CRON[5946]: pam_unix(cron:session): session closed for user root
+2026-07-12T10:41:50.160117-04:00 WarpnixOS systemd-logind[777]: New seat seat0.
+2026-07-12T10:41:50.160125-04:00 WarpnixOS systemd-logind[777]: Watching system buttons on /dev/input/event0 (Power Button)
+2026-07-12T10:41:50.160128-04:00 WarpnixOS systemd-logind[777]: Watching system buttons on /dev/input/event1 (Sleep Button)
+2026-07-12T10:41:50.160131-04:00 WarpnixOS systemd-logind[777]: Watching system buttons on /dev/input/event2 (AT Translated Set 2 keyboard)
+2026-07-12T10:41:51.961001-04:00 WarpnixOS lightdm: pam_succeed_if(lightdm-autologin:auth): requirement "shell notin /sbin/nologin:/usr/sbin/nologin:/bin/false:/usr/bin/false" was met by user "root"
+2026-07-12T10:41:51.970685-04:00 WarpnixOS lightdm: pam_unix(lightdm-autologin:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-12T10:41:51.981159-04:00 WarpnixOS systemd-logind[777]: New session '1' of user 'root' with class 'user-early' and type 'x11'.
+2026-07-12T10:41:52.015383-04:00 WarpnixOS (systemd): pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-12T10:41:52.016168-04:00 WarpnixOS systemd-logind[777]: New session '2' of user 'root' with class 'manager-early' and type 'unspecified'.
+2026-07-12T10:41:53.236231-04:00 WarpnixOS gnome-keyring-daemon[1995]: The Secret Service was already initialized
+2026-07-12T10:41:53.236474-04:00 WarpnixOS gnome-keyring-daemon[1990]: discover_other_daemon: 1
+2026-07-12T10:42:20.589493-04:00 WarpnixOS dbus-daemon[754]: [system] Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)
+2026-07-12T10:42:28.648951-04:00 WarpnixOS sudo: pam_unix(sudo:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-12T10:42:28.649254-04:00 WarpnixOS sudo: root : TTY=/dev/pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/nano /etc/penguins-eggs.d/eggs.yaml
+2026-07-12T10:43:09.264198-04:00 WarpnixOS sudo: pam_unix(sudo:session): session closed for user root
+2026-07-12T10:43:24.003502-04:00 WarpnixOS sudo: pam_unix(sudo:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-12T10:43:24.003611-04:00 WarpnixOS sudo: root : TTY=/dev/pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/nano /etc/penguins-eggs.d/krill.yaml
+2026-07-12T10:43:32.217219-04:00 WarpnixOS sudo: pam_unix(sudo:session): session closed for user root
+2026-07-13T17:33:15.547127-04:00 WarpnixOS systemd-logind[780]: New seat seat0.
+2026-07-13T17:33:15.547133-04:00 WarpnixOS systemd-logind[780]: Watching system buttons on /dev/input/event0 (Power Button)
+2026-07-13T17:33:15.547135-04:00 WarpnixOS systemd-logind[780]: Watching system buttons on /dev/input/event1 (Sleep Button)
+2026-07-13T17:33:15.547139-04:00 WarpnixOS systemd-logind[780]: Watching system buttons on /dev/input/event2 (AT Translated Set 2 keyboard)
+2026-07-13T17:33:17.324256-04:00 WarpnixOS lightdm: pam_succeed_if(lightdm-autologin:auth): requirement "shell notin /sbin/nologin:/usr/sbin/nologin:/bin/false:/usr/bin/false" was met by user "root"
+2026-07-13T17:33:17.333354-04:00 WarpnixOS lightdm: pam_unix(lightdm-autologin:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-13T17:33:17.344222-04:00 WarpnixOS systemd-logind[780]: New session '1' of user 'root' with class 'user-early' and type 'x11'.
+2026-07-13T17:33:17.374231-04:00 WarpnixOS (systemd): pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-13T17:33:17.375013-04:00 WarpnixOS systemd-logind[780]: New session '2' of user 'root' with class 'manager-early' and type 'unspecified'.
+2026-07-13T17:33:18.590848-04:00 WarpnixOS gnome-keyring-daemon[2016]: The Secret Service was already initialized
+2026-07-13T17:33:18.591426-04:00 WarpnixOS gnome-keyring-daemon[2015]: discover_other_daemon: 1
+2026-07-13T17:33:44.587607-04:00 WarpnixOS dbus-daemon[752]: [system] Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)
+2026-07-13T17:39:43.465142-04:00 WarpnixOS dbus-daemon[752]: [system] Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)
+2026-07-13T18:40:56.565915-04:00 WarpnixOS systemd-logind[779]: New seat seat0.
+2026-07-13T18:40:56.565927-04:00 WarpnixOS systemd-logind[779]: Watching system buttons on /dev/input/event0 (Power Button)
+2026-07-13T18:40:56.565930-04:00 WarpnixOS systemd-logind[779]: Watching system buttons on /dev/input/event1 (Sleep Button)
+2026-07-13T18:40:56.565932-04:00 WarpnixOS systemd-logind[779]: Watching system buttons on /dev/input/event2 (AT Translated Set 2 keyboard)
+2026-07-13T18:40:58.295164-04:00 WarpnixOS lightdm: pam_succeed_if(lightdm-autologin:auth): requirement "shell notin /sbin/nologin:/usr/sbin/nologin:/bin/false:/usr/bin/false" was met by user "root"
+2026-07-13T18:40:58.303788-04:00 WarpnixOS lightdm: pam_unix(lightdm-autologin:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-13T18:40:58.313890-04:00 WarpnixOS systemd-logind[779]: New session '1' of user 'root' with class 'user-early' and type 'x11'.
+2026-07-13T18:40:58.344042-04:00 WarpnixOS (systemd): pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-13T18:40:58.344708-04:00 WarpnixOS systemd-logind[779]: New session '2' of user 'root' with class 'manager-early' and type 'unspecified'.
+2026-07-13T18:40:59.503455-04:00 WarpnixOS gnome-keyring-daemon[2008]: The Secret Service was already initialized
+2026-07-13T18:40:59.503978-04:00 WarpnixOS gnome-keyring-daemon[2007]: discover_other_daemon: 1
+2026-07-13T18:41:26.946456-04:00 WarpnixOS dbus-daemon[754]: [system] Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)
+2026-07-13T19:02:09.924953-04:00 WarpnixOS dbus-daemon[754]: [system] Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)
+2026-07-13T19:17:01.684621-04:00 WarpnixOS CRON[3304]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-13T19:17:01.687396-04:00 WarpnixOS CRON[3304]: pam_unix(cron:session): session closed for user root
+2026-07-13T19:30:01.906018-04:00 WarpnixOS CRON[3437]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-13T19:30:01.907513-04:00 WarpnixOS CRON[3437]: pam_unix(cron:session): session closed for user root
+2026-07-14T18:47:41.910482-04:00 WarpnixOS systemd-logind[781]: New seat seat0.
+2026-07-14T18:47:41.910484-04:00 WarpnixOS systemd-logind[781]: Watching system buttons on /dev/input/event0 (Power Button)
+2026-07-14T18:47:41.910487-04:00 WarpnixOS systemd-logind[781]: Watching system buttons on /dev/input/event1 (Sleep Button)
+2026-07-14T18:47:41.910489-04:00 WarpnixOS systemd-logind[781]: Watching system buttons on /dev/input/event2 (AT Translated Set 2 keyboard)
+2026-07-14T18:47:43.387941-04:00 WarpnixOS lightdm: pam_succeed_if(lightdm-autologin:auth): requirement "shell notin /sbin/nologin:/usr/sbin/nologin:/bin/false:/usr/bin/false" was met by user "root"
+2026-07-14T18:47:43.396801-04:00 WarpnixOS lightdm: pam_unix(lightdm-autologin:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-14T18:47:43.407188-04:00 WarpnixOS systemd-logind[781]: New session '1' of user 'root' with class 'user-early' and type 'x11'.
+2026-07-14T18:47:43.441010-04:00 WarpnixOS (systemd): pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-14T18:47:43.441680-04:00 WarpnixOS systemd-logind[781]: New session '2' of user 'root' with class 'manager-early' and type 'unspecified'.
+2026-07-14T18:47:44.643874-04:00 WarpnixOS gnome-keyring-daemon[2016]: The Secret Service was already initialized
+2026-07-14T18:47:44.644399-04:00 WarpnixOS gnome-keyring-daemon[2015]: discover_other_daemon: 1
+2026-07-14T18:48:12.208993-04:00 WarpnixOS dbus-daemon[753]: [system] Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)
+2026-07-15T09:36:21.362235-04:00 WarpnixOS systemd-logind[780]: New seat seat0.
+2026-07-15T09:36:21.362237-04:00 WarpnixOS systemd-logind[780]: Watching system buttons on /dev/input/event0 (Power Button)
+2026-07-15T09:36:21.362239-04:00 WarpnixOS systemd-logind[780]: Watching system buttons on /dev/input/event1 (Sleep Button)
+2026-07-15T09:36:21.362243-04:00 WarpnixOS systemd-logind[780]: Watching system buttons on /dev/input/event2 (AT Translated Set 2 keyboard)
+2026-07-15T09:36:22.767776-04:00 WarpnixOS lightdm: pam_succeed_if(lightdm-autologin:auth): requirement "shell notin /sbin/nologin:/usr/sbin/nologin:/bin/false:/usr/bin/false" was met by user "root"
+2026-07-15T09:36:22.776428-04:00 WarpnixOS lightdm: pam_unix(lightdm-autologin:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-15T09:36:22.786977-04:00 WarpnixOS systemd-logind[780]: New session '1' of user 'root' with class 'user-early' and type 'x11'.
+2026-07-15T09:36:22.813712-04:00 WarpnixOS (systemd): pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-15T09:36:22.814582-04:00 WarpnixOS systemd-logind[780]: New session '2' of user 'root' with class 'manager-early' and type 'unspecified'.
+2026-07-15T09:36:24.075987-04:00 WarpnixOS gnome-keyring-daemon[2009]: The Secret Service was already initialized
+2026-07-15T09:36:24.076299-04:00 WarpnixOS gnome-keyring-daemon[2008]: discover_other_daemon: 1
+2026-07-15T09:36:41.640649-04:00 WarpnixOS PackageKit: uid 0 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+2026-07-15T09:36:41.641911-04:00 WarpnixOS PackageKit: uid 0 obtained auth for org.freedesktop.packagekit.system-sources-refresh
+2026-07-15T09:36:52.070937-04:00 WarpnixOS dbus-daemon[755]: [system] Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)
+2026-07-15T09:37:12.236283-04:00 WarpnixOS sudo: pam_unix(sudo:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-15T09:37:12.236492-04:00 WarpnixOS sudo: root : TTY=/dev/pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/apt purge brave-browser brave-keyring
+2026-07-15T09:37:18.837138-04:00 WarpnixOS sudo: pam_unix(sudo:session): session closed for user root
+2026-07-15T09:37:18.843064-04:00 WarpnixOS sudo: pam_unix(sudo:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-15T09:37:18.843116-04:00 WarpnixOS sudo: root : TTY=/dev/pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/rm /etc/apt/sources.list.d/brave-browser-release.list
+2026-07-15T09:37:18.844582-04:00 WarpnixOS sudo: pam_unix(sudo:session): session closed for user root
+2026-07-15T09:37:18.883804-04:00 WarpnixOS sudo: pam_unix(sudo:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-15T09:37:18.883857-04:00 WarpnixOS sudo: root : TTY=/dev/pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/apt update
+2026-07-15T09:37:21.823972-04:00 WarpnixOS sudo: pam_unix(sudo:session): session closed for user root
+2026-07-15T09:37:50.149660-04:00 WarpnixOS sudo: pam_unix(sudo:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-15T09:37:50.149807-04:00 WarpnixOS sudo: pam_unix(sudo:session): session closed for user root
+2026-07-15T09:37:57.847637-04:00 WarpnixOS sudo: pam_unix(sudo:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-15T09:37:57.847739-04:00 WarpnixOS sudo: root : TTY=/dev/pts/0 ; PWD=/root ; USER=root ; COMMAND=/usr/bin/add-apt-repository deb [arch=i386,amd64] https://deb.opera.com/opera-stable/ stable non-free
+2026-07-15T09:37:58.905775-04:00 WarpnixOS sudo: pam_unix(sudo:session): session closed for user root
+2026-07-15T09:42:22.788073-04:00 WarpnixOS dbus-daemon[755]: [system] Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)
+2026-07-15T09:42:28.099928-04:00 WarpnixOS sudo: pam_unix(sudo:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-15T09:42:28.100004-04:00 WarpnixOS sudo: root : TTY=/dev/pts/0 ; PWD=/root/Desktop ; USER=root ; COMMAND=/usr/bin/eggs krill
+2026-07-15T09:42:29.103292-04:00 WarpnixOS sudo: pam_unix(sudo:session): session closed for user root
+2026-07-16T18:32:17.914456-04:00 WarpnixOS systemd-logind[779]: New seat seat0.
+2026-07-16T18:32:17.914459-04:00 WarpnixOS systemd-logind[779]: Watching system buttons on /dev/input/event0 (Power Button)
+2026-07-16T18:32:17.914469-04:00 WarpnixOS systemd-logind[779]: Watching system buttons on /dev/input/event1 (Sleep Button)
+2026-07-16T18:32:17.914472-04:00 WarpnixOS systemd-logind[779]: Watching system buttons on /dev/input/event2 (AT Translated Set 2 keyboard)
+2026-07-16T18:32:19.750095-04:00 WarpnixOS lightdm: pam_succeed_if(lightdm-autologin:auth): requirement "shell notin /sbin/nologin:/usr/sbin/nologin:/bin/false:/usr/bin/false" was met by user "root"
+2026-07-16T18:32:19.761529-04:00 WarpnixOS lightdm: pam_unix(lightdm-autologin:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-16T18:32:19.773572-04:00 WarpnixOS systemd-logind[779]: New session '1' of user 'root' with class 'user-early' and type 'x11'.
+2026-07-16T18:32:19.802568-04:00 WarpnixOS (systemd): pam_unix(systemd-user:session): session opened for user root(uid=0) by root(uid=0)
+2026-07-16T18:32:19.803599-04:00 WarpnixOS systemd-logind[779]: New session '2' of user 'root' with class 'manager-early' and type 'unspecified'.
+2026-07-16T18:32:21.296377-04:00 WarpnixOS gnome-keyring-daemon[2081]: The Secret Service was already initialized
+2026-07-16T18:32:21.296736-04:00 WarpnixOS gnome-keyring-daemon[2080]: discover_other_daemon: 1
+2026-07-16T18:32:49.672546-04:00 WarpnixOS dbus-daemon[754]: [system] Failed to activate service 'org.bluez': timed out (service_start_timeout=25000ms)
