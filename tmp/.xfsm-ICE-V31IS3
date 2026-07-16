@@ -1,0 +1,4 @@
+remove protoname=ICE protodata="" netid=local/WarpnixOS:@/tmp/.ICE-unix/1450 authname=MIT-MAGIC-COOKIE-1
+remove protoname=XSMP protodata="" netid=local/WarpnixOS:@/tmp/.ICE-unix/1450 authname=MIT-MAGIC-COOKIE-1
+remove protoname=ICE protodata="" netid=unix/WarpnixOS:/tmp/.ICE-unix/1450 authname=MIT-MAGIC-COOKIE-1
+remove protoname=XSMP protodata="" netid=unix/WarpnixOS:/tmp/.ICE-unix/1450 authname=MIT-MAGIC-COOKIE-1
