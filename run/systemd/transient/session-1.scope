@@ -1,0 +1,17 @@
+# This is a transient unit file, created programmatically via the systemd API. Do not edit.
+[Scope]
+Slice=user-0.slice
+
+[Unit]
+Description=Session 1 of User root
+Requires=user-runtime-dir@0.service
+After=user-runtime-dir@0.service
+Wants=user@0.service
+After=user@0.service
+After=systemd-logind.service
+RequiresMountsFor=/root
+
+[Scope]
+SendSIGHUP=yes
+OOMPolicy=continue
+TasksMax=infinity

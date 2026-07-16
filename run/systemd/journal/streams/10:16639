@@ -1,0 +1,9 @@
+# This is private data. Do not parse
+PRIORITY=30
+LEVEL_PREFIX=1
+FORWARD_TO_SYSLOG=0
+FORWARD_TO_KMSG=0
+FORWARD_TO_CONSOLE=0
+STREAM_ID=ee056e9f1620414e985fbd29bc235df3
+IDENTIFIER=NetworkManager
+UNIT=NetworkManager.service

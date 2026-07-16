@@ -1,0 +1,15 @@
+Log of fsck -C -a -T -t ext4 /dev/sda1 
+Thu Jul 16 22:32:11 2026
+
+lubuntu_2604: recovering journal
+lubuntu_2604: Clearing orphaned inode 916257 (uid=0, gid=0, mode=0100600, size=248)
+lubuntu_2604: Clearing orphaned inode 916260 (uid=0, gid=0, mode=0100600, size=32768)
+lubuntu_2604: Clearing orphaned inode 1050564 (uid=0, gid=0, mode=0100644, size=2853045)
+lubuntu_2604: Clearing orphaned inode 1571247 (uid=0, gid=0, mode=0100644, size=170444)
+lubuntu_2604: Clearing orphaned inode 785125 (uid=0, gid=0, mode=0100664, size=4104)
+lubuntu_2604: Clearing orphaned inode 1572750 (uid=0, gid=0, mode=0100644, size=40596)
+lubuntu_2604: Clearing orphaned inode 1047002 (uid=0, gid=0, mode=0100644, size=57863351)
+lubuntu_2604: clean, 495349/2624496 files, 6078604/10489144 blocks
+
+Thu Jul 16 22:32:12 2026
+----------------

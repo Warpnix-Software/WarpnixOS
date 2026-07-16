@@ -1,0 +1,12 @@
+S:dri/by-path/pci-0000:00:02.0-render
+I:8429087
+E:ID_PATH=pci-0000:00:02.0
+E:ID_PATH_TAG=pci-0000_00_02_0
+E:ID_FOR_SEAT=drm-pci-0000_00_02_0
+G:xaccess-render
+G:uaccess
+G:seat
+Q:xaccess-render
+Q:uaccess
+Q:seat
+V:1

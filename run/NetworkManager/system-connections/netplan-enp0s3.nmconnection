@@ -1,0 +1,20 @@
+[connection]
+id=netplan-enp0s3
+type=ethernet
+uuid=1eef7e45-3b9d-3043-bee3-fc5925c90273
+interface-name=enp0s3
+#Netplan: passthrough setting
+timestamp=1781553276
+
+[ethernet]
+wake-on-lan=0
+
+[ipv4]
+method=auto
+
+[ipv6]
+method=auto
+addr-gen-mode=1
+ip6-privacy=0
+
+[proxy]

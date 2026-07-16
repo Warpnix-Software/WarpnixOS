@@ -1,0 +1,9 @@
+# This is private data. Do not parse.
+WHAT=sleep
+MODE=delay
+UID=0
+PID=2062
+PIDFDID=8449
+WHO="Realtime Kit"
+WHY="Demote realtime scheduling and stop canary."
+FIFO=/run/systemd/inhibit/4.ref

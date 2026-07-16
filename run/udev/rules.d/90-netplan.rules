@@ -1,0 +1,3 @@
+# netplan: network.ethernets.enp0s3 (on NetworkManager allow-list)
+SUBSYSTEM=="net", ACTION=="add|change|move", ENV{ID_NET_NAME}=="enp0s3", ENV{NM_UNMANAGED}="0"
+SUBSYSTEM=="net", ACTION=="add|change|move", ATTR{address}=="08:00:27:1e:da:2f", ENV{NM_UNMANAGED}="0"

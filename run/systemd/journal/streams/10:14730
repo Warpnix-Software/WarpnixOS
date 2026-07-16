@@ -1,0 +1,9 @@
+# This is private data. Do not parse
+PRIORITY=30
+LEVEL_PREFIX=1
+FORWARD_TO_SYSLOG=0
+FORWARD_TO_KMSG=0
+FORWARD_TO_CONSOLE=0
+STREAM_ID=d21f2a3799bc46689526c16b987d57f8
+IDENTIFIER=unattended-upgrade-shutdown
+UNIT=unattended-upgrades.service

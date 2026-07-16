@@ -1,0 +1,9 @@
+# This is private data. Do not parse.
+WHAT=sleep
+MODE=delay
+UID=0
+PID=2697
+PIDFDID=20820
+WHO=xfce4-screensaver
+WHY="Locking screen before sleep"
+FIFO=/run/systemd/inhibit/6.ref

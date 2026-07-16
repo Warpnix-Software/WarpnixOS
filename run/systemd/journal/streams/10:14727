@@ -1,0 +1,9 @@
+# This is private data. Do not parse
+PRIORITY=30
+LEVEL_PREFIX=1
+FORWARD_TO_SYSLOG=0
+FORWARD_TO_KMSG=0
+FORWARD_TO_CONSOLE=0
+STREAM_ID=0d640c1b14304afc94a52787fc74a51b
+IDENTIFIER=pulseaudio
+UNIT=pulseaudio.service

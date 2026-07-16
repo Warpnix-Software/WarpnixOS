@@ -1,0 +1,31 @@
+[up 6.86s] ds-identify 
+policy loaded: mode=search report=false found=all maybe=none notfound=disabled
+/etc/cloud/cloud.cfg.d/90_dpkg.cfg set datasource_list: [ NoCloud, ConfigDrive, OpenNebula, DigitalOcean, Azure, AltCloud, VMware, OVF, MAAS, GCE, OpenStack, CloudSigma, SmartOS, Bigstep, Scaleway, AliYun, Ec2, CloudStack, Hetzner, IBMCloud, Oracle, Exoscale, RbxCloud, UpCloud, Vultr, LXD, NWCS, Akamai, WSL, CloudCIX, None ]
+DMI_PRODUCT_NAME=VirtualBox
+DMI_SYS_VENDOR=innotek GmbH
+DMI_PRODUCT_SERIAL=VirtualBox-cacea4e1-175a-4495-8673-46dedbe2d412
+DMI_PRODUCT_UUID=e1a4ceca-5a17-9544-8673-46dedbe2d412
+PID_1_PRODUCT_NAME=unavailable
+DMI_CHASSIS_ASSET_TAG=
+DMI_BOARD_NAME=VirtualBox
+FS_LABELS=lubuntu_2604
+ISO9660_DEVS=
+KERNEL_CMDLINE=BOOT_IMAGE=/boot/vmlinuz-7.0.0-22-generic root=UUID=d28f9adf-16f0-4a19-9b08-4f5bead6a937 ro quiet splash
+VIRT=oracle
+UNAME_KERNEL_NAME=Linux
+UNAME_KERNEL_VERSION=#22-Ubuntu SMP PREEMPT_DYNAMIC Mon May 25 15:54:34 UTC 2026
+UNAME_MACHINE=x86_64
+DSNAME=
+DSLIST=NoCloud ConfigDrive OpenNebula DigitalOcean Azure AltCloud VMware OVF MAAS GCE OpenStack CloudSigma SmartOS Bigstep Scaleway AliYun Ec2 CloudStack Hetzner IBMCloud Oracle Exoscale RbxCloud UpCloud Vultr LXD NWCS Akamai WSL CloudCIX None
+MODE=search
+ON_FOUND=all
+ON_MAYBE=none
+ON_NOTFOUND=disabled
+pid=305 ppid=282
+is_container=false
+is_ds_enabled(IBMCloud) = true.
+WARN: No check method 'dscheck_MAAS' for datasource 'MAAS'
+is_ds_enabled(IBMCloud) = true.
+ec2 platform is 'Unknown'.
+No ds found [mode=search, notfound=disabled]. Disabled cloud-init [1]
+[up 6.89s] returning 1

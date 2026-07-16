@@ -1,0 +1,19 @@
+[device]
+managed=true
+connection-uuid=1eef7e45-3b9d-3043-bee3-fc5925c90273
+route-metric-default-effective=100
+next-server=10.0.2.2
+dhcp-bootfile=WarpnixOS 1.pxe
+
+[dhcp4]
+dhcp4.dhcp_client_identifier=01:08:00:27:1e:da:2f
+dhcp4.dhcp_lease_time=86400
+dhcp4.dhcp_server_identifier=10.0.2.2
+dhcp4.domain_name_servers=10.0.2.3
+dhcp4.expiry=1784327538
+dhcp4.filename=WarpnixOS 1.pxe
+dhcp4.host_name=vbox
+dhcp4.ip_address=10.0.2.15
+dhcp4.next_server=10.0.2.2
+dhcp4.routers=10.0.2.2
+dhcp4.subnet_mask=255.255.255.0

@@ -1,0 +1,8 @@
+# This is private data. Do not parse
+PRIORITY=30
+LEVEL_PREFIX=1
+FORWARD_TO_SYSLOG=0
+FORWARD_TO_KMSG=0
+FORWARD_TO_CONSOLE=0
+STREAM_ID=05081e729dcb4d09ab7a20cac5f99c7c
+IDENTIFIER=evolution-source-registry
