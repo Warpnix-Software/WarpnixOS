@@ -1,0 +1,193 @@
+#!/bin/bash
+# Backend script for Lubuntu Update (does text processing and update installation, can be run as root and must be in order to install updates)
+
+set -e
+export LC_ALL='C'
+
+# Returns 0 if the release is supported, 1 if unsupported, 2 if if didn't exist at all, and 3 if something went wrong.
+isReleaseSupported () {
+	releaseYear="${1:-}";
+	releaseMonth="${2:-}";
+	metaReleaseStr="${3:-}";
+
+	if [ -z "$releaseYear" ]; then
+		echo '! ! ! releaseYear is blank';
+		return 3;
+	elif [ -z "$releaseMonth" ]; then
+		echo '! ! ! releaseMonth is blank';
+		return 3;
+	elif [ -z "$metaReleaseStr" ]; then
+		echo '! ! ! metaReleaseStr is blank';
+		return 3;
+	fi
+
+	releaseCode="$releaseYear.$releaseMonth";
+	scanForSupported='n';
+
+	while IFS= read -r line || [[ -n $line ]]; do
+		if [[ "$line" =~ $releaseCode ]]; then
+			scanForSupported='y';
+		fi
+		if [ "$scanForSupported" = 'y' ]; then
+			if [[ "$line" =~ Supported ]]; then
+				if [ "$(echo "$line" | cut -d':' -f2 | tail -c+2)" = '0' ]; then
+					return 1;
+				else
+					return 0;
+				fi
+			fi
+		fi
+	done < <(printf '%s' "$metaReleaseStr")
+	return 2;
+}
+
+if [ "$1" = 'pkgver' ]; then
+	shift
+	while [ "$1" != '' ]; do
+		source="$(apt-cache show "$1" | grep 'Source:' | cut -d' ' -f2)"
+		version="$(apt-cache show "$1" | grep Version: | head -n1 | cut -d' ' -f2)"
+		if [ "$source" = '' ]; then
+			echo "$1"
+		else
+			echo "$source"
+		fi
+		echo "$version"
+		shift
+	done
+elif [ "$1" = 'checkupdate' ]; then
+	apt-get -o Apt::Color='0' -o Dpkg::Use-Pty='0' update
+elif [ "$1" = 'doupdate' ]; then
+	# Prepare to be able to grep through the logs
+	rm /run/lubuntu-update-apt-log || true
+	touch /run/lubuntu-update-apt-log
+	chmod 0600 /run/lubuntu-update-apt-log # prevent non-root from being able to trick the script into deleting arbitrary files later on
+
+	# Repair an interrupted upgrade if necessary
+	dpkg --configure -a
+
+	# Run the real update
+	DEBIAN_FRONTEND='noninteractive' apt-get -o Dpkg::Options::='--force-confdef' -o Dpkg::Options::='--force-confold' -o Apt::Color='0' -o Dpkg::Use-Pty='0' -y dist-upgrade |& tee /run/lubuntu-update-apt-log
+
+	# Find all the conffiles
+	doConffiles='y';
+	mapfile conffileRawList <<< "$(grep -P "^Configuration file \'.*\'$" '/run/lubuntu-update-apt-log')"
+	if [ "$(echo "${conffileRawList[0]}" | head -c1)" != 'C' ]; then # Empty or invalid list, we're done
+		doConffiles='n';
+	fi
+
+	if [ "$doConffiles" = 'y' ]; then
+		conffileList=()
+		counter=0
+		while [ "$counter" -lt "${#conffileRawList[@]}" ]; do
+			# Cut off "Configuration file '" from the start and "'" plus a couple trailing characters from the end
+			conffileList[counter]="$(echo "${conffileRawList[$counter]}" | tail -c+21 | head -c-3)"
+			counter=$((counter+1))
+		done
+
+		echo "Lubuntu Update !!! CONFIGURATION FILE LIST START";
+		counter=0
+		while [ "$counter" -lt "${#conffileList[@]}" ]; do
+			echo "${conffileList[$counter]}"
+			counter=$((counter+1))
+		done
+		echo "Lubuntu Update !!! CONFIGURATION FILE LIST END";
+
+		# If we make it this far, there were conffiles to deal with
+		breakLoop='no'
+		gotCommand='no'
+		commandName=''
+		while [ "$breakLoop" = 'no' ]; do
+			read -r inputVal
+			if [ "$gotCommand" = 'no' ]; then
+				if [ "$inputVal" = 'done' ]; then
+					breakLoop='yes'
+				else
+					commandName="$inputVal"
+					gotCommand='yes'
+				fi
+			else
+				if [ "$commandName" = 'replace' ]; then # Replace an existing file
+					counter=0
+					while [ "$counter" -lt "${#conffileList[@]}" ]; do
+						if [ "$inputVal" = "${conffileList[$counter]}" ]; then
+							mv "$inputVal.dpkg-dist" "$inputVal"
+							break
+						fi
+						counter=$((counter+1))
+					done
+				elif [ "$commandName" = 'keep' ]; then # Keep an existing file
+					counter=0
+					while [ "$counter" -lt "${#conffileList[@]}" ]; do
+						if [ "$inputVal" = "${conffileList[$counter]}" ]; then
+							rm "$inputVal.dpkg-dist"
+							break
+						fi
+						counter=$((counter+1))
+					done
+				fi
+				gotCommand='no'
+			fi
+		done
+	fi
+
+	echo 'Checking release status...'
+
+	releaseCode="$(cat /etc/lsb-release | grep "DISTRIB_RELEASE" | cut -d'=' -f2)";
+	releaseYear="$(cut -d'.' -f1 <<< "$releaseCode")";
+	releaseMonth="$(cut -d'.' -f2 <<< "$releaseCode")";
+	metaReleaseData="$(curl https://changelogs.ubuntu.com/meta-release)";
+	#nextReleaseMonth='';
+	#nextReleaseYear='';
+	#nextLTSReleaseMonth='';
+	#nextLTSReleaseYear='';
+
+	while true; do
+		if ((releaseMonth == 4)); then
+			releaseMonth='10';
+		else
+			releaseMonth='04';
+			((releaseYear++));
+		fi
+		releaseSupportedResult="$(isReleaseSupported "$releaseYear" "$releaseMonth" "$metaReleaseData"; echo "$?")";
+		if [ "$releaseSupportedResult" = '0' ]; then
+			echo 'Lubuntu Update !!! NEW RELEASE';
+			echo "$releaseYear.$releaseMonth";
+		elif [ "$releaseSupportedResult" = '2' ]; then
+			break;
+		fi
+	done
+
+#	if ((releaseMonth == 4)); then
+#		nextReleaseMonth=$((releaseMonth + 6));
+#		nextReleaseYear="$releaseYear";
+#		if (((releaseYear % 2) == 0)); then
+#			nextLTSReleaseMonth='04';
+#			nextLTSReleaseYear=$((releaseYear + 2));
+#		fi
+#	else
+#		nextReleaseMonth="$releaseMonth";
+#		nextReleaseYear=$((releaseYear + 1));
+#	fi
+#
+#	if [ -n "$nextLTSReleaseYear" ]; then
+#		if isReleaseSupported "$nextLTSReleaseYear" "$nextLTSReleaseMonth" "$metaReleaseData"; then
+#			echo 'Lubuntu Update !!! NEW RELEASE';
+#			echo "$nextLTSReleaseYear.$nextLTSReleaseMonth";
+#		fi
+#	fi
+#
+#	if ! (((nextReleaseYear == nextLTSReleaseYear) && (nextReleaseMonth == nextLTSReleaseMonth))); then
+#		if isReleaseSupported "$nextReleaseYear" "$nextReleaseMonth" "$metaReleaseData"; then
+#			echo 'Lubuntu Update !!! NEW RELEASE';
+#			echo "$nextReleaseYear.$nextReleaseMonth";
+#		else
+#			echo "Unsupported release: $nextReleaseYear.$nextReleaseMonth";
+#		fi
+#	fi
+
+	echo 'Update installation complete.'
+elif [ "$1" = 'doReleaseUpgrade' ]; then
+	do-release-upgrade -m desktop -f DistUpgradeViewKDE;
+elif [ "$1" = 'declineReleaseUpgrade' ]; then
+	sed -i -E 's/^Prompt=(never|lts|normal)$/Prompt=never/' /etc/update-manager/release-upgrades;
+fi
