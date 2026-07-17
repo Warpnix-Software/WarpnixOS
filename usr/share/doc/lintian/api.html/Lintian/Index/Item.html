@@ -1,0 +1,525 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Lintian::Index::Item</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#INSTANCE-METHODS">INSTANCE METHODS</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Lintian::Index::Item - Lintian representation of a path entry in a package</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>    my ($name, $type, $dir) = (&#39;lintian&#39;, &#39;source&#39;, &#39;/path/to/entry&#39;);</code></pre>
+
+<h1 id="INSTANCE-METHODS">INSTANCE METHODS</h1>
+
+<dl>
+
+<dt>init_from_tar_output</dt>
+<dd>
+
+</dd>
+<dt>get_quoted_filename</dt>
+<dd>
+
+</dd>
+<dt>unescape_c_style</dt>
+<dd>
+
+</dd>
+<dt>bytes_match(REGEX)</dt>
+<dd>
+
+<p>Returns the matched string if REGEX matches the file&#39;s byte contents, or $EMPTY otherwise.</p>
+
+</dd>
+<dt>mentions_in_operation(REGEX)</dt>
+<dd>
+
+<p>Returns the matched string if REGEX matches in a file location that is likely an operation (vs text), or $EMPTY otherwise.</p>
+
+</dd>
+<dt>magic(COUNT)</dt>
+<dd>
+
+<p>Returns the specified COUNT of magic bytes for the file.</p>
+
+</dd>
+<dt><code>hashbang</code></dt>
+<dd>
+
+<p>Returns the <code>hashbang</code> for the file if it is a script.</p>
+
+</dd>
+<dt>interpreter_with_options</dt>
+<dd>
+
+<p>Returns the interpreter requested by a script with options after stripping <code>env</code>.</p>
+
+</dd>
+<dt>interpreter</dt>
+<dd>
+
+<p>Returns the interpreter requested by a script but strips <code>env</code>.</p>
+
+</dd>
+<dt><code>calls_env</code></dt>
+<dd>
+
+<p>Returns true if file is a script that calls <code>env</code>.</p>
+
+</dd>
+<dt><code>is_shell_script</code></dt>
+<dd>
+
+<p>Returns true if file is a script requesting a recognized shell interpreter.</p>
+
+</dd>
+<dt>is_elf</dt>
+<dd>
+
+<p>Returns true if file is an ELF executable, and false otherwise.</p>
+
+</dd>
+<dt>is_script</dt>
+<dd>
+
+<p>Returns true if file is a script and false otherwise.</p>
+
+</dd>
+<dt>is_maintainer_script</dt>
+<dd>
+
+<p>Returns true if file is a maintainer script and false otherwise.</p>
+
+</dd>
+<dt>identity</dt>
+<dd>
+
+<p>Returns the owner and group of the path, separated by a slash.</p>
+
+<p>NB: If only numerical owner information is available in the package, this may return a numerical owner (except uid 0 is always mapped to &quot;root&quot;)</p>
+
+</dd>
+<dt>operm</dt>
+<dd>
+
+<p>Returns the file permissions of this object in octal (e.g. 0644).</p>
+
+<p>NB: This is only well defined for file entries that are subject to permissions (e.g. files). Particularly, the value is not well defined for symlinks.</p>
+
+</dd>
+<dt>octal_permissions</dt>
+<dd>
+
+</dd>
+<dt>children</dt>
+<dd>
+
+<p>Returns a list of children (as Lintian::File::Path objects) of this entry. The list and its contents should not be modified.</p>
+
+<p>Only returns direct children of this directory. The entries are sorted by name.</p>
+
+<p>NB: Returns the empty list for non-dir entries.</p>
+
+</dd>
+<dt>descendants</dt>
+<dd>
+
+<p>Returns a list of children (as Lintian::File::Path objects) of this entry. The list and its contents should not be modified.</p>
+
+<p>Descends recursively into subdirectories and return the descendants in breadth-first order. Children of a given directory will be sorted by name.</p>
+
+<p>NB: Returns the empty list for non-dir entries.</p>
+
+</dd>
+<dt>timestamp</dt>
+<dd>
+
+<p>Returns a Unix timestamp for the given path. This is a number of seconds since the start of Unix epoch in UTC.</p>
+
+</dd>
+<dt>child(BASENAME)</dt>
+<dd>
+
+<p>Returns the child named BASENAME if it is a child of this directory. Otherwise, this method returns <code>undef</code>.</p>
+
+<p>Even for directories, BASENAME should not end with a slash.</p>
+
+<p>When invoked on non-dirs, this method always returns <code>undef</code>.</p>
+
+<p>Example:</p>
+
+<pre><code>  $dir_entry-&gt;child(&#39;foo&#39;) =&gt; $entry OR undef</code></pre>
+
+</dd>
+<dt>is_symlink</dt>
+<dd>
+
+<p>Returns a truth value if this entry is a symlink.</p>
+
+</dd>
+<dt>is_hardlink</dt>
+<dd>
+
+<p>Returns a truth value if this entry is a hardlink to a regular file.</p>
+
+<p>NB: The target of a hardlink is always a regular file (and not a dir etc.).</p>
+
+</dd>
+<dt>is_dir</dt>
+<dd>
+
+<p>Returns a truth value if this entry is a dir.</p>
+
+<p>NB: Unlike the &quot;-d $dir&quot; operator this will never return true for symlinks, even if the symlink points to a dir.</p>
+
+</dd>
+<dt>is_file</dt>
+<dd>
+
+<p>Returns a truth value if this entry is a regular file (or a hardlink to one).</p>
+
+<p>NB: Unlike the &quot;-f $file&quot; operator this will never return true for symlinks, even if the symlink points to a file (or hardlink).</p>
+
+</dd>
+<dt>is_regular_file</dt>
+<dd>
+
+<p>Returns a truth value if this entry is a regular file.</p>
+
+<p>This is eqv. to $path-&gt;is_file and not $path-&gt;is_hardlink.</p>
+
+<p>NB: Unlike the &quot;-f $file&quot; operator this will never return true for symlinks, even if the symlink points to a file.</p>
+
+</dd>
+<dt>link_normalized</dt>
+<dd>
+
+<p>Returns the target of the link normalized against it&#39;s directory name. If the link cannot be normalized or normalized path might escape the package root, this method returns <code>undef</code>.</p>
+
+<p>NB: This method will return the empty string for links pointing to the root dir of the package.</p>
+
+<p>Only available on &quot;links&quot; (i.e. symlinks or hardlinks). On non-links this will croak.</p>
+
+<p><i>Symlinks only</i>: If you want the symlink target as a <a href="https://metacpan.org/pod/Lintian::File::Path">Lintian::File::Path</a> object, use the <a href="#resolve_path-PATH">resolve_path</a> method with no arguments instead.</p>
+
+</dd>
+<dt>is_readable</dt>
+<dd>
+
+<p>Returns a truth value if the permission bits of this entry have at least one bit denoting readability set (bitmask 0444).</p>
+
+</dd>
+<dt>is_writable</dt>
+<dd>
+
+<p>Returns a truth value if the permission bits of this entry have at least one bit denoting writability set (bitmask 0222).</p>
+
+</dd>
+<dt>is_executable</dt>
+<dd>
+
+<p>Returns a truth value if the permission bits of this entry have at least one bit denoting executability set (bitmask 0111).</p>
+
+</dd>
+<dt>all_bits_set</dt>
+<dd>
+
+</dd>
+<dt>is_setuid</dt>
+<dd>
+
+</dd>
+<dt>is_setgid</dt>
+<dd>
+
+</dd>
+<dt>unpacked_path</dt>
+<dd>
+
+<p>Returns the path to this object on the file system, which must be a regular file, a hardlink or a directory.</p>
+
+<p>This method may fail if:</p>
+
+<ul>
+
+<li><p>The object is neither a directory or a file-like object (e.g. a named pipe).</p>
+
+</li>
+<li><p>If the object is dangling symlink or the path traverses a symlink outside the package root.</p>
+
+</li>
+</ul>
+
+<p>To test if this is safe to call, if the target is (supposed) to be a:</p>
+
+<ul>
+
+<li><p>file or hardlink then test with <a href="#is_open_ok">&quot;is_open_ok&quot;</a>.</p>
+
+</li>
+<li><p>dir then assert <a href="#resolve_path-PATH">resolve_path</a> returns a defined entry, for which <a href="#is_dir">&quot;is_dir&quot;</a> returns a truth value.</p>
+
+</li>
+</ul>
+
+</dd>
+<dt>is_open_ok</dt>
+<dd>
+
+<p>Returns a truth value if it is safe to attempt open a read handle to the underlying file object.</p>
+
+<p>Returns a truth value if the path may be opened.</p>
+
+</dd>
+<dt>follow</dt>
+<dd>
+
+<p>Return dereferenced link if applicable</p>
+
+</dd>
+<dt>resolve_path([PATH])</dt>
+<dd>
+
+<p>Resolve PATH relative to this path entry.</p>
+
+<p>If PATH starts with a slash and the file hierarchy has a well-defined root directory, then PATH will instead be resolved relatively to the root dir. If the file hierarchy does not have a well-defined root dir (e.g. for source packages), this method will return <code>undef</code>.</p>
+
+<p>If PATH is omitted, then the entry is resolved and the target is returned if it is valid. Except for symlinks, all entries always resolve to themselves. NB: hardlinks also resolve as themselves.</p>
+
+<p>It is an error to attempt to resolve a PATH against a non-directory and non-symlink entry - as such resolution would always fail (i.e. foo/../bar is an invalid path unless foo is a directory or a symlink to a dir).</p>
+
+<p>The resolution takes symlinks into account and following them provided that the target path is valid (and can be followed safely). If the path is invalid or circular (symlinks), escapes the root directory or follows an unsafe symlink, the method returns <code>undef</code>. Otherwise, it returns the path entry that denotes the target path.</p>
+
+<p>If PATH contains at least one path segment and ends with a slash, then the resolved path will end in a directory (or fail). Otherwise, the resolved PATH can end in any entry <i>except</i> a symlink.</p>
+
+<p>Examples:</p>
+
+<pre><code>  $symlink_entry-&gt;resolve_path =&gt; $nonsymlink_entry OR undef
+
+  $x-&gt;resolve_path =&gt; $x
+
+  For directory or symlink entries (dol), you can also resolve a path:
+
+  $dol_entry-&gt;resolve_path(&#39;some/../where&#39;) =&gt; $nonsymlink_entry OR undef
+
+  # Note the trailing slash
+  $dol_entry-&gt;resolve_path(&#39;some/../where/&#39;) =&gt; $dir_entry OR undef</code></pre>
+
+</dd>
+<dt>name</dt>
+<dd>
+
+<p>Returns the name of the file (relative to the package root).</p>
+
+<p>NB: It will never have any leading &quot;./&quot; (or &quot;/&quot;) in it.</p>
+
+</dd>
+<dt>basename</dt>
+<dd>
+
+<p>Returns the &quot;filename&quot; part of the name, similar basename(1) or File::Basename::basename (without passing a suffix to strip in either case).</p>
+
+<p>NB: Returns the empty string for the &quot;root&quot; dir.</p>
+
+</dd>
+<dt>dirname</dt>
+<dd>
+
+<p>Returns the &quot;directory&quot; part of the name, similar to dirname(1) or File::Basename::dirname. The dirname will end with a trailing slash (except the &quot;root&quot; dir - see below).</p>
+
+<p>NB: Returns the empty string for the &quot;root&quot; dir.</p>
+
+</dd>
+<dt>link</dt>
+<dd>
+
+<p>If this is a link (i.e. is_symlink or is_hardlink returns a truth value), this method returns the target of the link.</p>
+
+<p>If this is not a link, then this returns undef.</p>
+
+<p>If the path is a symlink this method can be used to determine if the symlink is relative or absolute. This is <i>not</i> true for hardlinks, where the link target is always relative to the root.</p>
+
+<p>NB: Even for symlinks, a leading &quot;./&quot; will be stripped.</p>
+
+</dd>
+<dt>normalized</dt>
+<dd>
+
+</dd>
+<dt>faux</dt>
+<dd>
+
+<p>Returns a truth value if this entry absent in the package. This can happen if a package does not include all intermediate directories.</p>
+
+</dd>
+<dt>size</dt>
+<dd>
+
+<p>Returns the size of the path in bytes.</p>
+
+<p>NB: Only regular files can have a non-zero file size.</p>
+
+</dd>
+<dt>date</dt>
+<dd>
+
+<p>Return the modification date as YYYY-MM-DD.</p>
+
+</dd>
+<dt>time</dt>
+<dd>
+
+</dd>
+<dt>perm</dt>
+<dd>
+
+</dd>
+<dt>path_info</dt>
+<dd>
+
+</dd>
+<dt>owner</dt>
+<dd>
+
+<p>Returns the owner of the path entry as a username.</p>
+
+<p>NB: If only numerical owner information is available in the package, this may return a numerical owner (except uid 0 is always mapped to &quot;root&quot;)</p>
+
+</dd>
+<dt>group</dt>
+<dd>
+
+<p>Returns the group of the path entry as a username.</p>
+
+<p>NB: If only numerical owner information is available in the package, this may return a numerical group (except gid 0 is always mapped to &quot;root&quot;)</p>
+
+</dd>
+<dt>uid</dt>
+<dd>
+
+<p>Returns the uid of the owner of the path entry.</p>
+
+<p>NB: If the uid is not available, 0 will be returned. This usually happens if the numerical data is not collected (e.g. in source packages)</p>
+
+</dd>
+<dt>gid</dt>
+<dd>
+
+<p>Returns the gid of the owner of the path entry.</p>
+
+<p>NB: If the gid is not available, 0 will be returned. This usually happens if the numerical data is not collected (e.g. in source packages)</p>
+
+</dd>
+<dt>file_type</dt>
+<dd>
+
+<p>Return the data from <a href="http://man.he.net/man1/file">file(1)</a> if it has been collected.</p>
+
+<p>Note this is only defined for files as Lintian only runs <a href="http://man.he.net/man1/file">file(1)</a> on files.</p>
+
+</dd>
+<dt>java_info</dt>
+<dd>
+
+</dd>
+<dt>strings</dt>
+<dd>
+
+</dd>
+<dt><code>basedir</code></dt>
+<dd>
+
+</dd>
+<dt>index</dt>
+<dd>
+
+</dd>
+<dt>parent_dir</dt>
+<dd>
+
+</dd>
+<dt>child_table</dt>
+<dd>
+
+</dd>
+<dt>sorted_children</dt>
+<dd>
+
+<p>Returns the parent directory entry of this entry as a <a href="https://metacpan.org/pod/Lintian::File::Path">Lintian::File::Path</a>.</p>
+
+<p>NB: Returns <code>undef</code> for the &quot;root&quot; dir.</p>
+
+</dd>
+<dt><code>childnames</code></dt>
+<dd>
+
+</dd>
+<dt>parent_dir</dt>
+<dd>
+
+<p>Return the parent dir entry of this the path entry.</p>
+
+</dd>
+<dt>dereferenced</dt>
+<dd>
+
+</dd>
+<dt>elf</dt>
+<dd>
+
+</dd>
+<dt>elf_by_member</dt>
+<dd>
+
+</dd>
+<dt>pointer</dt>
+<dd>
+
+</dd>
+<dt>bytes</dt>
+<dd>
+
+<p>Returns verbatim file contents as a scalar.</p>
+
+</dd>
+<dt>is_valid_utf8</dt>
+<dd>
+
+<p>Boolean true if file contents are valid UTF-8.</p>
+
+</dd>
+<dt>decoded_utf8</dt>
+<dd>
+
+<p>Returns a decoded, wide-character string if file contents are valid UTF-8.</p>
+
+</dd>
+</dl>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Originally written by Niels Thykier &lt;niels@thykier.net&gt; for Lintian.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>lintian(1)</p>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

@@ -1,0 +1,505 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="search" title="Search" href="../../search.html" /><link rel="copyright" title="Copyright" href="../../copyright.html" /><link rel="next" title="How pip users think about security" href="users-and-security.html" /><link rel="prev" title="About pip’s Users" href="about-our-users.html" />
+
+    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
+        <title>How Users Understand pip - pip documentation v25.1.1</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=ad9e2e31" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=4aa03575" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">pip documentation v25.1.1</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  
+  <span class="sidebar-brand-text">pip documentation v25.1.1</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_guide.html">User Guide</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../topics/index.html">Topic Guides</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Topic Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/authentication.html">Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/caching.html">Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/configuration.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/dependency-resolution.html">Dependency Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/more-dependency-resolution.html">More on Dependency Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/https-certificates.html">HTTPS Certificates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/local-project-installs.html">Local project installs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/repeatable-installs.html">Repeatable Installs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/secure-installs.html">Secure installs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/vcs-support.html">VCS Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/python-option.html">Managing a different Python interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/workflow.html">Pip is not a workflow management tool</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../reference/index.html">Reference</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../reference/build-system/index.html">Build System Interface</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Build System Interface</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/build-system/pyproject-toml.html"><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/build-system/setup-py.html"><code class="docutils literal notranslate"><span class="pre">setup.py</span></code> (legacy)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/requirement-specifiers.html">Requirement Specifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/requirements-file-format.html">Requirements File Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/installation-report.html">Installation Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/inspect-report.html"><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">inspect</span></code> JSON output specification</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../cli/index.html">Commands</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Commands</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cli/pip.html">pip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cli/pip_install.html">pip install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cli/pip_uninstall.html">pip uninstall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cli/pip_inspect.html">pip inspect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cli/pip_list.html">pip list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cli/pip_show.html">pip show</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cli/pip_freeze.html">pip freeze</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cli/pip_check.html">pip check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cli/pip_lock.html">pip lock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cli/pip_download.html">pip download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cli/pip_wheel.html">pip wheel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cli/pip_hash.html">pip hash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cli/pip_search.html">pip search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cli/pip_index.html">pip index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cli/pip_cache.html">pip cache</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cli/pip_config.html">pip config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cli/pip_debug.html">pip debug</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Project</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../development/index.html">Development</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Development</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../development/getting-started.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../development/contributing.html">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../development/ci.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../development/issue-triage.html">Issue Triage</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../development/architecture/index.html">Architecture of pip’s internals</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Architecture of pip’s internals</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../development/architecture/overview.html">Broad functionality overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development/architecture/anatomy.html">Repository anatomy &amp; directory structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development/architecture/configuration-files.html">Configuration File Handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development/architecture/package-finding.html">Finding and choosing files (<code class="docutils literal notranslate"><span class="pre">index</span></code> and <code class="docutils literal notranslate"><span class="pre">PackageFinder</span></code>)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development/architecture/command-line-interface.html">Command Line Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development/architecture/upgrade-options.html">Options that control the installation process</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../development/release-process.html">Release process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../development/vendoring-policy.html">Vendoring Policy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">UX Research &amp; Design</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of UX Research &amp; Design</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../contribute.html">How to Contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guidance.html">UX Guidance</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">UX Research Results</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of UX Research Results</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="about-our-users.html">About pip’s Users</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">How Users Understand pip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="users-and-security.html">How pip users think about security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ci-cd.html">How pip is used in interactive environments (i.e. CI, CD)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="personas.html">pip Personas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prioritizing-features.html">Prioritizing pip Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="override-conflicting-dependencies.html">Providing an override to install packages with conflicting dependencies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pip-force-reinstall.html">pip --force-reinstall</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pip-search.html">pip search</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pip-upgrade-conflict.html">pip Upgrade Conflict</a></li>
+<li class="toctree-l3"><a class="reference internal" href="improving-pips-documentation.html">Improving pip’s Documentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../news.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pypa/.github/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/pypa/pip">GitHub</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../../_sources/ux-research-design/research-results/mental-models.md.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="how-users-understand-pip">
+<h1>How Users Understand pip<a class="headerlink" href="#how-users-understand-pip" title="Link to this heading">¶</a></h1>
+<section id="problem">
+<h2>Problem<a class="headerlink" href="#problem" title="Link to this heading">¶</a></h2>
+<p>We want to understand how pip’s users understand pip as a tool: what they think it is and what it does.</p>
+<p><a class="reference internal" href="#recommendations">Skip to recommendations</a></p>
+</section>
+<section id="research">
+<h2>Research<a class="headerlink" href="#research" title="Link to this heading">¶</a></h2>
+<p>In order to capture participants mental models of pip and how package management works, we asked participants the following questions:</p>
+<ul class="simple">
+<li><p>In your own words, explain what pip is</p></li>
+<li><p>In your own words, explain what happens when pip installs a software package</p></li>
+<li><p>In your own words, explain what a Python package dependency is</p></li>
+</ul>
+<p>When we talk about mental models, we talk about “deep” or “shallow” mental models. When a user has a deep mental models of something, their have a deep understanding with a lot of detail, shallow models are the opposite.</p>
+<p>In order to evaluate those mental models - do they match the reality of pip and package management - we worked with the maintainers to identify 1. pip’s behaviours and activities (18 aspects), and 2. the aspects of package dependencies (13), and what a Python package dependency is (10). We then scored participants’ answers against those.</p>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Link to this heading">¶</a></h2>
+<p>The analysis focused on participants with between 2 and 10 years of Python experience.</p>
+<p>Over 90% of participants did not have a deep understanding of pip - with limited understanding of what pip is, what it does during the install process, and of package management in general.
+However, while participants’ understanding was low, only 4 participants had factually incorrect understandings of what pip is and does.</p>
+<p>Participants had a slightly deeper understanding of what happens during a pip install process. The most in depth answer included 7 of the 13 identified aspects. The median was 3. Answers focused on resolving dependencies, finding possible package names, downloading assets and installing the package.</p>
+<p>Participants’ understanding of software dependencies was again shallow - the most in depth answer included 8 identified aspects. The median was 3. Answers focused on the fact that software dependencies were a result of code reuse, that constraining package versions reduced the possibility of dependency conflicts.</p>
+<p>The full data is available in<a class="reference external" href="https://docs.google.com/spreadsheets/d/1HBiNyehaILxhzZKWcBavkKXDzJr6gIt_Y8Jm8RRgJYg/edit#gid=0"> this spreadsheet</a>.</p>
+<section id="responses-to-in-your-own-words-explain-what-pip-is">
+<h3>Responses to “In your own words, explain what pip is”<a class="headerlink" href="#responses-to-in-your-own-words-explain-what-pip-is" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><p>“pip is a standard command-line tool for managing python packages. It has three primary functions: (1) obtaining &amp; caching python packages and/or their dependencies from a repository (typically pypi), (2) building (if needed) and installing python packages--and related dependencies--to a ‘site-packages’ location in the python path, and (optionally) (3) uninstalling previously-installed packages.” <strong>- participant 242608909 (Scientist, Professor in the Earth and Atmospheric Sciences Department, using Python for 7 - 10 years)</strong></p>
+</div></blockquote>
+<blockquote>
+<div><p>“Pip is a package management system for python. Kind of like apt in linux, it can be used to install packages in public or private repositories into the current version or environment of Python that invoked the pip command.” <strong>- participant 240364032 (Professional software developer using Python for 7-10 years)</strong></p>
+</div></blockquote>
+<blockquote>
+<div><p>“pip allows to install/update remove python libraries in your environment. pip manage the library. you will need something else to manage your environment. To use it the easiest is pip install <code class="docutils literal notranslate"><span class="pre">package-name</span></code> I recommend using a requirements.txt and add as you go the library and do pip install -r requirements.txt each time. it avoid to forget a library at the end of the project :)” <strong>- participant 241178995 (Data scientist working in software engineering)</strong></p>
+</div></blockquote>
+<blockquote>
+<div><p>“python’s npm/cargo/opam… dedicated package manager and ecosystem for python libraries and applications” <strong>- participant 240306262 (self-taught Python creative artist and web developer, using Python for 5-6 years)</strong></p>
+</div></blockquote>
+<blockquote>
+<div><p>“A tool to download &amp; install packages and resolve dependencies. I see it in the same area as yum, zypper or apt-get install in the Linux world.” <strong>- participant 240306204 (Using Python for scientific research and data analysis for 3 - 4 years)</strong></p>
+</div></blockquote>
+<blockquote>
+<div><p>“Pip is the tool primarily used in the Python community to install packages. (“Package” means two different things in Python; it can be a target of the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement that includes modules and other packages, or it can mean a collection of code with a defined interface that can be installed for reuse. I’m referring to the second thing here.) Pip’s implementation defines what it means for a package to be installed in a Python environment. Any other tool that wishes to install software into a Python environment (e.g. conda) must match Pip’s implementation.” <strong>- participant 240313922 (Computer security researcher at a university, using Python for 7-10 years)</strong></p>
+</div></blockquote>
+</section>
+<section id="responses-to-in-your-own-words-explain-what-happens-when-pip-installs-a-software-package">
+<h3>Responses to “In your own words, explain what happens when pip installs a software package”<a class="headerlink" href="#responses-to-in-your-own-words-explain-what-happens-when-pip-installs-a-software-package" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><p>“I think pip looks up package “tea” in the repository of packages (PyPI by default, but can be changed). If it doesn’t find it, it gives an error. If it exists, it downloads some information about the package, like what form it exists in. This can be a wheel, or a package that needs to be built. If it is a wheel, it checks the dependencies and installs them, then it installs the wheel (not sure what this means, probably it extracts it). The wheel is specific to a python distribution and base OS, so it might be available on certain platforms but not others. If it is a package that needs to be built, pip downloads the package source (or clones the repository), and runs setup.py, which installs dependencies and other packages, then the package itself. I forgot to mention that before installing there is some check for checking compatibility of the version required and the versions required by other packages.” <strong>- participant 240426799 (Scientific researcher - data analysis and computer vision models, using Python for 5-6 years)</strong></p>
+</div></blockquote>
+<blockquote>
+<div><p>“pip searches for a package source (and for me uses the default, so Pypi), then ask the package source for a package with the given name and versions (if specified), then if the package is available download the package in the most appropriate format (depending on my platform), then unzip the package and runs the installer (most probably calls setuptools with the included setup.py file) which will perform the required installation steps. This installation process may contain dependencies (typically specified in setup.py), which will trigger the same process for the dependencies, and so on until all dependencies are installed (if everything is OK).” <strong>- participant 240670292 (Software developer industrial systems control, using Python for 5-6 years)</strong></p>
+</div></blockquote>
+<blockquote>
+<div><p>“Pip checks PyPI (default package index, assuming that wasn’t overridden) for the package matching <code class="docutils literal notranslate"><span class="pre">tea</span></code>. It uses the various specifiers (eg. OS compatibility, Python compatibility, etc) to find the latest version of <code class="docutils literal notranslate"><span class="pre">tea</span></code> compatible with my system. Within that version, it finds the best possible installation match (eg. a <code class="docutils literal notranslate"><span class="pre">wheel</span></code>, if supported on my system and my version of <code class="docutils literal notranslate"><span class="pre">pip</span></code> contains the relevant versioned support [eg. most recently manylinux2010], potentially falling back all the way to a source distribution). After downloading the relevant distribution, it performs the same operations recursively up the dependency chain as specified by the <code class="docutils literal notranslate"><span class="pre">install_requires</span></code> of the <code class="docutils literal notranslate"><span class="pre">setuptools.setup()</span></code> method. After grabbing all relevant packages, it performs the installations as specified in their setup methods -- generally, this involves extracting python files to specific system paths, but various levels of complexity may be added as need be such as compilations, system library bindings, etc. I believe the new resolver changes the above by performing all the lookups simultaneously (eg. by building and solving a dependency graph rather than traversing incrementally) but have not yet read the PEP to learn more. I’ve answered the above with setuptools in mind -- I believe there was a step added recently to check pyproject.toml first to allow for alternate systems here, but I find the added customization to be a net negative to the ecosystem and have not yet played with it -- the entire Poetry/Pipenv/Pipfile.lock/Flit thing just seems to be adding unnecessary complexity; users who know what they’re doing have solved all these issues years ago for their packages and users who find the porcelain makes their lives easier are likely going to run into UX trouble no matter the veneer.” <strong>- participant 241463652 (Using Python for 5-6 years)</strong></p>
+</div></blockquote>
+<blockquote>
+<div><p>“pip accesses the tea package from pypi (guessing that’s where, online at least) and downloads a copy of the files into my local venv” <strong>- participant 243434435 (Data analysis &amp; machine learning, using Python for 1-2 years)</strong></p>
+</div></blockquote>
+<blockquote>
+<div><p>“Looking up the latest version of of the package from pypi” <strong>- participant 243897973 (Software testing/writing automated tests using Python 3 - 4 years)</strong></p>
+</div></blockquote>
+<blockquote>
+<div><p>“Download, unpack, sometimes compile a module for my target arch” <strong>- participant 243428875 (System administration using Python 7 - 10 years)</strong></p>
+</div></blockquote>
+</section>
+</section>
+<section id="recommendations">
+<h2>Recommendations<a class="headerlink" href="#recommendations" title="Link to this heading">¶</a></h2>
+<p>It’s difficult to know what to recommend. Some ideas:</p>
+<ul class="simple">
+<li><p>Question: Is it actually necessary for users to know everything that pip is doing?</p></li>
+<li><p>Better documentation:</p>
+<ul>
+<li><p>Describing the “blocks of functionality” that pip carries out and how to deal with them when it breaks</p></li>
+<li><p>Curating package manager training and help</p></li>
+<li><p>Improving pip output to expose the different pip functionality blocks</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="users-and-security.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">How pip users think about security</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="about-our-users.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">About pip’s Users</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                <a href="../../copyright.html">Copyright</a> &#169; The pip developers
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">How Users Understand pip</a><ul>
+<li><a class="reference internal" href="#problem">Problem</a></li>
+<li><a class="reference internal" href="#research">Research</a></li>
+<li><a class="reference internal" href="#results">Results</a><ul>
+<li><a class="reference internal" href="#responses-to-in-your-own-words-explain-what-pip-is">Responses to “In your own words, explain what pip is”</a></li>
+<li><a class="reference internal" href="#responses-to-in-your-own-words-explain-what-happens-when-pip-installs-a-software-package">Responses to “In your own words, explain what happens when pip installs a software package”</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#recommendations">Recommendations</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=22103397"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script type="module" src="../../_static/scripts/furo.js?v=d32f1409"></script>
+    <script src="../../_static/clipboard.min.js?v=66b4909c"></script>
+    <script src="../../_static/copybutton.js?v=80126f2a"></script>
+    <script src="../../_static/tabs.js?v=3ee01567"></script>
+    </body>
+</html>

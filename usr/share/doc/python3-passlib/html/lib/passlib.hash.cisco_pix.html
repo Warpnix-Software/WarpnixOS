@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.hash.cisco_pix - Cisco PIX MD5 hash &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.hash.cisco_asa - Cisco ASA MD5 hash" href="passlib.hash.cisco_asa.html" />
+    <link rel="prev" title="passlib.hash.cisco_type7 - Cisco “Type 7” hash" href="passlib.hash.cisco_type7.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.cisco_asa.html" title="passlib.hash.cisco_asa - Cisco ASA MD5 hash"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.cisco_type7.html" title="passlib.hash.cisco_type7 - Cisco “Type 7” hash"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.cisco_pix</span></code> - Cisco PIX MD5 hash</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-hash-cisco-pix-cisco-pix-md5-hash">
+<span id="index-0"></span><h1><a class="reference internal" href="#passlib.hash.cisco_pix" title="passlib.hash.cisco_pix"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.cisco_pix</span></code></a> - Cisco PIX MD5 hash<a class="headerlink" href="#passlib-hash-cisco-pix-cisco-pix-md5-hash" title="Link to this heading">¶</a></h1>
+<div class="block-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>This algorithm is not considered secure by modern standards.</strong>
+It should only be used when verifying existing hashes,
+or when interacting with applications that require this format.
+For new code, see the list of <a class="reference internal" href="../narr/quickstart.html#recommended-hashes"><span class="std std-ref">recommended hashes</span></a>.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<div class="admonition-todo float-right without-title admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p><strong>Caveat Emptor</strong></p>
+<p>Passlib’s implementations of <a class="reference internal" href="#passlib.hash.cisco_pix" title="passlib.hash.cisco_pix"><code class="xref py py-class docutils literal notranslate"><span class="pre">cisco_pix</span></code></a> and <a class="reference internal" href="#passlib.hash.cisco_asa" title="passlib.hash.cisco_asa"><code class="xref py py-class docutils literal notranslate"><span class="pre">cisco_asa</span></code></a> both need verification.
+For those with access to Cisco PIX and ASA systems, verifying Passlib’s reference vectors
+would be a great help (see <a href="#id1"><span class="problematic" id="id2">:issue:`51`</span></a>). In the mean time, there are no guarantees
+that passlib correctly replicates the official implementation.</p>
+<aside class="system-message" id="id1">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">docs/_fragments/asa_verify_callout.rst</span>, line 7); <em><a href="#id2">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.7.1: </span>A number of <a class="reference internal" href="#passlib-asa96-bug"><span class="std std-ref">bugs</span></a> were fixed after expanding
+the reference vectors, and testing against an ASA 9.6 system.</p>
+</div>
+</div>
+<p>The <a class="reference internal" href="#passlib.hash.cisco_asa" title="passlib.hash.cisco_asa"><code class="xref py py-class docutils literal notranslate"><span class="pre">cisco_asa</span></code></a> class implements the “encrypted” password hash algorithm commonly found on Cisco
+ASA systems. The companion <a class="reference internal" href="#passlib.hash.cisco_pix" title="passlib.hash.cisco_pix"><code class="xref py py-class docutils literal notranslate"><span class="pre">cisco_pix</span></code></a> class
+implements the older variant found on Cisco PIX.
+Aside from internal differences, and slightly different limitations,
+the two hashes have the same format, and in some cases the same output.</p>
+<p>These classes can be used directly to generate or verify a hash for a specific
+user.  Specifying the user account name is required for this hash:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.hash</span> <span class="kn">import</span> <span class="n">cisco_asa</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># hash password using specified username</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span> <span class="o">=</span> <span class="n">cisco_asa</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span>
+<span class="go">&#39;A5XOy94YKDPXCo7U&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># verify correct password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cisco_asa</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># verify correct password w/ wrong username</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cisco_asa</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;other&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># verify incorrect password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cisco_asa</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;letmein&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;user&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>The main “enable” password can be hashes / verified just by omitting
+the <code class="docutils literal notranslate"><span class="pre">user</span></code> parameter, or setting <code class="docutils literal notranslate"><span class="pre">user=&quot;&quot;</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># hash password without associated user account</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hash2</span> <span class="o">=</span> <span class="n">cisco_asa</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hash2</span>
+<span class="go">&#39;NuLKvvWGg.x9HEKO&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># verify password without associated user account</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cisco_asa</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="n">hash2</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>the generic <a class="reference internal" href="../narr/hash-tutorial.html#password-hash-examples"><span class="std std-ref">PasswordHash usage examples</span></a></p>
+</div>
+</section>
+<section id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.cisco_pix">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">cisco_pix</span></span><a class="headerlink" href="#passlib.hash.cisco_pix" title="Link to this definition">¶</a></dt>
+<dd><p>This class implements the password hash used by older Cisco PIX firewalls,
+and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.
+It does a single round of hashing, and relies on the username
+as the salt.</p>
+<p>This class only allows passwords &lt;= 16 bytes, anything larger
+will result in a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasswordSizeError" title="passlib.exc.PasswordSizeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasswordSizeError</span></code></a> if passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code>,
+and be silently rejected if passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">verify()</span></code>.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code></a>,
+<a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.genhash" title="passlib.ifc.PasswordHash.genhash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">genhash()</span></code></a>, and
+<a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.verify" title="passlib.ifc.PasswordHash.verify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">verify()</span></code></a> methods
+all support the following extra keyword:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>user</strong> (<em>str</em>) – <p>String containing name of user account this password is associated with.</p>
+<p>This is <em>required</em> in order to correctly hash passwords associated
+with a user account on the Cisco device, as it is used to salt
+the hash.</p>
+<p>Conversely, this <em>must</em> be omitted or set to <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> in order to correctly
+hash passwords which don’t have an associated user account
+(such as the “enable” password).</p>
+</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.7.1: </span>Passwords &gt; 16 bytes are now rejected / throw error instead of being silently truncated,
+to match Cisco behavior.  A number of <a class="reference internal" href="#passlib-asa96-bug"><span class="std std-ref">bugs</span></a> were fixed
+which caused prior releases to generate unverifiable hashes in certain cases.</p>
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.cisco_asa">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">cisco_asa</span></span><a class="headerlink" href="#passlib.hash.cisco_asa" title="Link to this definition">¶</a></dt>
+<dd><p>This class implements the password hash used by Cisco ASA/PIX 7.0 and newer (2005).
+Aside from a different internal algorithm, it’s use and format is identical
+to the older <a class="reference internal" href="#passlib.hash.cisco_pix" title="passlib.hash.cisco_pix"><code class="xref py py-class docutils literal notranslate"><span class="pre">cisco_pix</span></code></a> class.</p>
+<p>For passwords less than 13 characters, this should be identical to <code class="xref py py-class docutils literal notranslate"><span class="pre">cisco_pix</span></code>,
+but will generate a different hash for most larger inputs
+(See the <a class="reference internal" href="#format-algorithm">Format &amp; Algorithm</a> section for the details).</p>
+<p>This class only allows passwords &lt;= 32 bytes, anything larger
+will result in a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasswordSizeError" title="passlib.exc.PasswordSizeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasswordSizeError</span></code></a> if passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code>,
+and be silently rejected if passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">verify()</span></code>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.7.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.7.1: </span>Passwords &gt; 32 bytes are now rejected / throw error instead of being silently truncated,
+to match Cisco behavior.  A number of <a class="reference internal" href="#passlib-asa96-bug"><span class="std std-ref">bugs</span></a> were fixed
+which caused prior releases to generate unverifiable hashes in certain cases.</p>
+</div>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These hash algorithms have a context-sensitive peculiarity.
+They take in an optional username to salt the hash,
+but have specific restrictions…</p>
+<ul class="simple">
+<li><p>The username <em>must</em> be provided in order to correctly hash passwords
+associated with a user account on the Cisco device.</p></li>
+<li><p>Conversely, the username <em>must not</em> be provided (or must be set to <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>)
+in order to correctly hash passwords which don’t have an associated user
+account (such as the “enable” password).</p></li>
+</ul>
+</div>
+</section>
+<section class="html-toggle" id="format-algorithm">
+<h2>Format &amp; Algorithm<a class="headerlink" href="#format-algorithm" title="Link to this heading">¶</a></h2>
+<p>Cisco PIX &amp; ASA hashes consist of a 12 byte digest, encoded as a 16 character
+<a class="reference internal" href="passlib.utils.binary.html#passlib.utils.binary.h64" title="passlib.utils.binary.h64"><code class="xref py py-data docutils literal notranslate"><span class="pre">HASH64</span></code></a>-encoded string. An example
+hash (of <code class="docutils literal notranslate"><span class="pre">&quot;password&quot;</span></code>, with user <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>) is <code class="docutils literal notranslate"><span class="pre">&quot;NuLKvvWGg.x9HEKO&quot;</span></code>.</p>
+<p>The PIX / ASA digests are calculated as follows:</p>
+<ol class="arabic">
+<li><p>The password is encoded using <code class="docutils literal notranslate"><span class="pre">UTF-8</span></code> (though entering non-ASCII
+characters is subject to interface-specific issues, and may lead
+to problems such as double-encoding).</p>
+<p>If the result is greater than 16 bytes (for PIX), or 32 bytes (for ASA),
+the password is not allowed – it will be rejected when set,
+and simplify not verify during authentication.</p>
+</li>
+<li><p>If the hash is associated with a user account,
+append the first four bytes of the user account name
+to the end of the password. If the hash is NOT associated
+with a user account (e.g. it’s the “enable” password),
+this step should be omitted.</p>
+<p>If the user account is 1-3 bytes, it is repeated until all 4 bytes are filled
+up (e.g. “usr” becomes “usru”).</p>
+<p>For <code class="xref py py-class docutils literal notranslate"><span class="pre">cisco_asa</span></code>,
+this step is omitted if the password is 28 bytes or more.</p>
+</li>
+<li><p>The password+user string is truncated, or right-padded with NULLs,
+until it’s 16 bytes in size.</p>
+<p>For <code class="xref py py-class docutils literal notranslate"><span class="pre">cisco_asa</span></code>,
+if the password+user string is 16 or more bytes,
+a padding size of 32 is used instead.</p>
+</li>
+<li><p>Run the result of step 3 through MD5.</p></li>
+<li><p>Discard every 4th byte of the 16-byte MD5 hash, starting
+with the 4th byte.</p></li>
+<li><p>Encode the 12-byte result using <a class="reference internal" href="passlib.utils.binary.html#passlib.utils.binary.h64" title="passlib.utils.binary.h64"><code class="xref py py-data docutils literal notranslate"><span class="pre">HASH64</span></code></a>.</p></li>
+</ol>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.7.1: </span>Updated to reflect current understanding of the algorithm.</p>
+</div>
+</section>
+<section id="security-issues">
+<h2>Security Issues<a class="headerlink" href="#security-issues" title="Link to this heading">¶</a></h2>
+<p>This algorithm is not suitable for <em>any</em> use besides manipulating existing
+Cisco PIX hashes, due to the following flaws:</p>
+<ul class="simple">
+<li><p>Its use of the username as a salt value (and only the first four characters
+at that), means that common usernames (e.g. <code class="docutils literal notranslate"><span class="pre">admin</span></code>, <code class="docutils literal notranslate"><span class="pre">cisco</span></code>) will occur
+more frequently as salts, weakening the effectiveness of the salt in
+foiling pre-computed tables.</p></li>
+<li><p>Its truncation of the <code class="docutils literal notranslate"><span class="pre">password+user</span></code> combination to 16 characters
+additionally limits the keyspace, and the effectiveness of the username
+as a salt; making pre-computed and brute force attacks much more feasible.</p></li>
+<li><p>Since the keyspace of <code class="docutils literal notranslate"><span class="pre">password+user</span></code> is still a subset of ascii characters,
+existing MD5 lookup tables have an increased chance of being able to
+reverse common hashes.</p></li>
+<li><p>Its simplicity, and the weakness of MD5, makes high-speed brute force attacks
+much more feasible.</p></li>
+<li><p>Furthermore, it discards of 1/4 of MD5’s already small 16 byte digest,
+making collisions much more likely.</p></li>
+</ul>
+</section>
+<section id="deviations">
+<h2>Deviations<a class="headerlink" href="#deviations" title="Link to this heading">¶</a></h2>
+<p>This implementation tries to adhere to the canonical Cisco implementation,
+but without an official specification, there may be other unknown deviations.
+The following are known issues:</p>
+<ul>
+<li><p>Unicode Policy:</p>
+<p>ASA documentation <a class="footnote-reference brackets" href="#charset" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> indicates it uses UTF-8 encoding,
+and Passlib does as well.  However, some ASA interfaces
+have issues such as: ASDM may double-encode unicode characters,
+and SSH connections may drop non-ASCII characters entirely.</p>
+</li>
+<li><p>How usernames are added is not entirely pinned down.  Under ASA, 3-character
+usernames have their last character repeated to make a string of length 4.
+It is currently assumed that a similar repetition would be applied to
+usernames of 1-2 characters, and that this applies to PIX as well;
+though neither assumption has been confirmed.</p></li>
+<li><p id="passlib-asa96-bug"><strong>Passlib 1.7.1 Bugfix</strong>: Prior releases of Passlib had a number of issues
+with their implementation of the PIX &amp; ASA algorithms.   As of 1.7.1,
+the reference vectors were greatly expanded, and then tested against
+an ASA 9.6 system.  This revealed a number of errors in passlib’s implementation,
+which under the following conditions would create hashes that were
+unverifiable on a Cisco system:</p>
+<ul class="simple">
+<li><p>PIX and ASA: Usernames containing 1-3 characters were not appended correctly (step 2, above).</p></li>
+<li><p>ASA omits the user entirely (step 2, above) for passwords with &gt;= 28 characters,
+not &gt;= 27.  Non-enable passwords of exactly 27 characters were previous hashed
+incorrectly.</p></li>
+<li><p>ASA’s padding size decision (step 3, above) is made after the user
+has been appended, not before.  This caused prior releases to
+incorrectly hash non-enable passwords of length 13-15.</p></li>
+</ul>
+<p>Anyone relying on cisco_asa or cisco_pix should upgrade to Passlib 1.7.1 or newer
+to avoid these issues.</p>
+</li>
+</ul>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id5" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>Description of PIX algorithm -
+<a class="reference external" href="http://www.perlmonks.org/index.pl?node_id=797623">http://www.perlmonks.org/index.pl?node_id=797623</a></p>
+</aside>
+<aside class="footnote brackets" id="id6" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>Message threads hinting at how username is handled -
+<a class="reference external" href="http://www.openwall.com/lists/john-users/2010/02/02/7">http://www.openwall.com/lists/john-users/2010/02/02/7</a>,
+<a class="reference external" href="www.freerainbowtables.com/phpBB3/viewtopic.php?f=2&amp;t=1441">www.freerainbowtables.com/phpBB3/viewtopic.php?f=2&amp;t=1441</a></p>
+</aside>
+<aside class="footnote brackets" id="id7" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<p>Partial description of ASA algorithm -
+<a class="reference external" href="https://github.com/stekershaw/asa-password-encrypt/blob/master/README.md">https://github.com/stekershaw/asa-password-encrypt/blob/master/README.md</a></p>
+</aside>
+<aside class="footnote brackets" id="charset" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p>Character set used by ASA 8.4 -
+<a class="reference external" href="http://www.cisco.com/c/en/us/td/docs/security/asa/asa84/configuration/guide/asa_84_cli_config/ref_cli.html#Supported_Character_Sets">http://www.cisco.com/c/en/us/td/docs/security/asa/asa84/configuration/guide/asa_84_cli_config/ref_cli.html#Supported_Character_Sets</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#unix-hashes">Unix Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-modular-crypt-hashes">Other “Modular Crypt” Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ldap-rfc2307-hashes">LDAP / RFC2307 Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#sql-database-hashes">SQL Database Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ms-windows-hashes">MS Windows Hashes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="passlib.hash.html#cisco-hashes">Cisco Hashes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.cisco_type7.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.cisco_type7</span></code> - Cisco “Type 7” hash</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.cisco_pix</span></code> - Cisco PIX MD5 hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.cisco_asa.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.cisco_asa</span></code> - Cisco ASA MD5 hash</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-hashes">Other Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.cisco_asa.html" title="passlib.hash.cisco_asa - Cisco ASA MD5 hash"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.cisco_type7.html" title="passlib.hash.cisco_type7 - Cisco “Type 7” hash"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.cisco_pix</span></code> - Cisco PIX MD5 hash</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

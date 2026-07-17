@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Lintian::Processable::Source::Components</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../../../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#INSTANCE-METHODS">INSTANCE METHODS</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Lintian::Processable::Source::Components - interface to orig tar components</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>   use Moo;
+
+   with &#39;Lintian::Processable::Source::Components&#39;;</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Lintian::Processable::Source::Components provides an interface to data for upstream source components. Most sources only use one tarball.</p>
+
+<h1 id="INSTANCE-METHODS">INSTANCE METHODS</h1>
+
+<dl>
+
+<dt>components</dt>
+<dd>
+
+<p>Returns a reference to a hash containing information about source components listed in the .dsc file. The key is the filename, and the value is the name of the component.</p>
+
+</dd>
+</dl>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Originally written by Adam D. Barratt &lt;adsb@debian.org&gt; for Lintian.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>lintian(1), <a href="https://metacpan.org/pod/Lintian::Processable">Lintian::Processable</a></p>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../../../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

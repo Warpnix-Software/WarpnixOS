@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.pwd – Password generation helpers &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.registry - Password Handler Registry" href="passlib.registry.html" />
+    <link rel="prev" title="passlib.ifc – Password Hash Interface" href="passlib.ifc.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.registry.html" title="passlib.registry - Password Handler Registry"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.ifc.html" title="passlib.ifc – Password Hash Interface"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-pwd-password-generation-helpers">
+<span id="module-passlib.pwd"></span><h1><a class="reference internal" href="#module-passlib.pwd" title="passlib.pwd: password generation helpers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code></a> – Password generation helpers<a class="headerlink" href="#passlib-pwd-password-generation-helpers" title="Link to this heading">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.7.</span></p>
+</div>
+<section id="password-generation">
+<h2>Password Generation<a class="headerlink" href="#password-generation" title="Link to this heading">¶</a></h2>
+<div class="float-center admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Before using these routines, make sure your system’s RNG entropy pool is
+secure and full. Also make sure that <code class="xref py py-func docutils literal notranslate"><span class="pre">genword()</span></code> or <code class="xref py py-func docutils literal notranslate"><span class="pre">genphrase()</span></code>
+is called with a sufficiently high <code class="docutils literal notranslate"><span class="pre">entropy</span></code> parameter
+the intended purpose of the password.</p>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.pwd.genword">
+<span class="sig-prename descclassname"><span class="pre">passlib.pwd.</span></span><span class="sig-name descname"><span class="pre">genword</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entropy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">charset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ascii_62'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chars</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">returns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.pwd.genword" title="Link to this definition">¶</a></dt>
+<dd><p>Generate one or more random passwords.</p>
+<p>This function uses <code class="xref py py-mod docutils literal notranslate"><span class="pre">random.SystemRandom</span></code> to generate
+one or more passwords using various character sets.
+The complexity of the password can be specified
+by size, or by the desired amount of entropy.</p>
+<p>Usage Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># generate a random alphanumeric string with 48 bits of entropy (the default)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib</span> <span class="kn">import</span> <span class="n">pwd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pwd</span><span class="o">.</span><span class="n">genword</span><span class="p">()</span>
+<span class="go">&#39;DnBHvDjMK6&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># generate a random hexadecimal string with 52 bits of entropy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pwd</span><span class="o">.</span><span class="n">genword</span><span class="p">(</span><span class="n">entropy</span><span class="o">=</span><span class="mi">52</span><span class="p">,</span> <span class="n">charset</span><span class="o">=</span><span class="s2">&quot;hex&quot;</span><span class="p">)</span>
+<span class="go">&#39;310f1a7ac793f&#39;</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>entropy</strong> – <p>Strength of resulting password, measured in ‘guessing entropy’ bits.
+An appropriate <strong>length</strong> value will be calculated
+based on the requested entropy amount, and the size of the character set.</p>
+<p>This can be a positive integer, or one of the following preset
+strings: <code class="docutils literal notranslate"><span class="pre">&quot;weak&quot;</span></code> (24), <code class="docutils literal notranslate"><span class="pre">&quot;fair&quot;</span></code> (36),
+<code class="docutils literal notranslate"><span class="pre">&quot;strong&quot;</span></code> (48), and <code class="docutils literal notranslate"><span class="pre">&quot;secure&quot;</span></code> (56).</p>
+<p>If neither this or <strong>length</strong> is specified, <strong>entropy</strong> will default
+to <code class="docutils literal notranslate"><span class="pre">&quot;strong&quot;</span></code> (48).</p>
+</p></li>
+<li><p><strong>length</strong> – <p>Size of resulting password, measured in characters.
+If omitted, the size is auto-calculated based on the <strong>entropy</strong> parameter.</p>
+<p>If both <strong>entropy</strong> and <strong>length</strong> are specified,
+the stronger value will be used.</p>
+</p></li>
+<li><p><strong>returns</strong> – <p>Controls what this function returns:</p>
+<ul>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">None</span></code> (the default), this function will generate a single password.</p></li>
+<li><p>If an integer, this function will return a list containing that many passwords.</p></li>
+<li><p>If the <code class="docutils literal notranslate"><span class="pre">iter</span></code> constant, will return an iterator that yields passwords.</p></li>
+</ul>
+</p></li>
+<li><p><strong>chars</strong> – Optionally specify custom string of characters to use when randomly
+generating a password. This option cannot be combined with <strong>charset</strong>.</p></li>
+<li><p><strong>charset</strong> – <p>The predefined character set to draw from (if not specified by <strong>chars</strong>).
+There are currently four presets available:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;ascii_62&quot;</span></code> (the default) – all digits and ascii upper &amp; lowercase letters.
+Provides ~5.95 entropy per character.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;ascii_50&quot;</span></code> – subset which excludes visually similar characters
+(<code class="docutils literal notranslate"><span class="pre">1IiLl0Oo5S8B</span></code>). Provides ~5.64 entropy per character.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;ascii_72&quot;</span></code> – all digits and ascii upper &amp; lowercase letters,
+as well as some punctuation. Provides ~6.17 entropy per character.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;hex&quot;</span></code> – Lower case hexadecimal.  Providers 4 bits of entropy per character.</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> string containing randomly generated password;
+or list of 1+ passwords if <code class="samp docutils literal notranslate"><span class="pre">returns=</span><em><span class="pre">int</span></em></code> is specified.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.pwd.genphrase">
+<span class="sig-prename descclassname"><span class="pre">passlib.pwd.</span></span><span class="sig-name descname"><span class="pre">genphrase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entropy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wordset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'eff_long'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">words</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">returns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.pwd.genphrase" title="Link to this definition">¶</a></dt>
+<dd><p>Generate one or more random password / passphrases.</p>
+<p>This function uses <code class="xref py py-mod docutils literal notranslate"><span class="pre">random.SystemRandom</span></code> to generate
+one or more passwords; it can be configured to generate
+alphanumeric passwords, or full english phrases.
+The complexity of the password can be specified
+by size, or by the desired amount of entropy.</p>
+<p>Usage Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># generate random phrase with 48 bits of entropy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib</span> <span class="kn">import</span> <span class="n">pwd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pwd</span><span class="o">.</span><span class="n">genphrase</span><span class="p">()</span>
+<span class="go">&#39;gangly robbing salt shove&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># generate a random phrase with 52 bits of entropy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># using a particular wordset</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pwd</span><span class="o">.</span><span class="n">genword</span><span class="p">(</span><span class="n">entropy</span><span class="o">=</span><span class="mi">52</span><span class="p">,</span> <span class="n">wordset</span><span class="o">=</span><span class="s2">&quot;bip39&quot;</span><span class="p">)</span>
+<span class="go">&#39;wheat dilemma reward rescue diary&#39;</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>entropy</strong> – <p>Strength of resulting password, measured in ‘guessing entropy’ bits.
+An appropriate <strong>length</strong> value will be calculated
+based on the requested entropy amount, and the size of the word set.</p>
+<p>This can be a positive integer, or one of the following preset
+strings: <code class="docutils literal notranslate"><span class="pre">&quot;weak&quot;</span></code> (24), <code class="docutils literal notranslate"><span class="pre">&quot;fair&quot;</span></code> (36),
+<code class="docutils literal notranslate"><span class="pre">&quot;strong&quot;</span></code> (48), and <code class="docutils literal notranslate"><span class="pre">&quot;secure&quot;</span></code> (56).</p>
+<p>If neither this or <strong>length</strong> is specified, <strong>entropy</strong> will default
+to <code class="docutils literal notranslate"><span class="pre">&quot;strong&quot;</span></code> (48).</p>
+</p></li>
+<li><p><strong>length</strong> – <p>Length of resulting password, measured in words.
+If omitted, the size is auto-calculated based on the <strong>entropy</strong> parameter.</p>
+<p>If both <strong>entropy</strong> and <strong>length</strong> are specified,
+the stronger value will be used.</p>
+</p></li>
+<li><p><strong>returns</strong> – <p>Controls what this function returns:</p>
+<ul>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">None</span></code> (the default), this function will generate a single password.</p></li>
+<li><p>If an integer, this function will return a list containing that many passwords.</p></li>
+<li><p>If the <code class="docutils literal notranslate"><span class="pre">iter</span></code> builtin, will return an iterator that yields passwords.</p></li>
+</ul>
+</p></li>
+<li><p><strong>words</strong> – Optionally specifies a list/set of words to use when randomly generating a passphrase.
+This option cannot be combined with <strong>wordset</strong>.</p></li>
+<li><p><strong>wordset</strong> – <p>The predefined word set to draw from (if not specified by <strong>words</strong>).
+There are currently four presets available:</p>
+<p><code class="docutils literal notranslate"><span class="pre">&quot;eff_long&quot;</span></code> (the default)</p>
+<blockquote>
+<div><p>Wordset containing 7776 english words of ~7 letters.
+Constructed by the EFF, it offers ~12.9 bits of entropy per word.</p>
+<p>This wordset (and the other <code class="docutils literal notranslate"><span class="pre">&quot;eff_&quot;</span></code> wordsets)
+were <a class="reference external" href="https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases">created by the EFF</a>
+to aid in generating passwords.  See their announcement page
+for more details about the design &amp; properties of these wordsets.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">&quot;eff_short&quot;</span></code></p>
+<blockquote>
+<div><p>Wordset containing 1296 english words of ~4.5 letters.
+Constructed by the EFF, it offers ~10.3 bits of entropy per word.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">&quot;eff_prefixed&quot;</span></code></p>
+<blockquote>
+<div><p>Wordset containing 1296 english words of ~8 letters,
+selected so that they each have a unique 3-character prefix.
+Constructed by the EFF, it offers ~10.3 bits of entropy per word.</p>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">&quot;bip39&quot;</span></code></p>
+<blockquote>
+<div><p>Wordset of 2048 english words of ~5 letters,
+selected so that they each have a unique 4-character prefix.
+Published as part of Bitcoin’s <a class="reference external" href="https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt">BIP 39</a>,
+this wordset has exactly 11 bits of entropy per word.</p>
+<p>This list offers words that are typically shorter than <code class="docutils literal notranslate"><span class="pre">&quot;eff_long&quot;</span></code>
+(at the cost of slightly less entropy); and much shorter than
+<code class="docutils literal notranslate"><span class="pre">&quot;eff_prefixed&quot;</span></code> (at the cost of a longer unique prefix).</p>
+</div></blockquote>
+</p></li>
+<li><p><strong>sep</strong> – Optional separator to use when joining words.
+Defaults to <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;</span></code> (a space), but can be an empty string, a hyphen, etc.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> containing randomly generated passphrase;
+or list of 1+ passphrases if <code class="samp docutils literal notranslate"><span class="pre">returns=</span><em><span class="pre">int</span></em></code> is specified.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="predefined-symbol-sets">
+<h2>Predefined Symbol Sets<a class="headerlink" href="#predefined-symbol-sets" title="Link to this heading">¶</a></h2>
+<p>The following predefined sets are used by the generation functions above,
+but are exported by this module for general use:</p>
+<dl class="object">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">default_charsets</span></span></dt>
+<dd><p>Dictionary mapping charset name -&gt; string of characters, used by <a class="reference internal" href="#passlib.pwd.genword" title="passlib.pwd.genword"><code class="xref py py-func docutils literal notranslate"><span class="pre">genword()</span></code></a>.
+See that function for a list of predefined charsets present in this dict.</p>
+</dd></dl>
+
+<dl class="object">
+<dt class="sig sig-object">
+<span class="sig-name descname"><span class="pre">default_wordsets</span></span></dt>
+<dd><p>Dictionary mapping wordset name -&gt; tuple of words, used by <a class="reference internal" href="#passlib.pwd.genphrase" title="passlib.pwd.genphrase"><code class="xref py py-func docutils literal notranslate"><span class="pre">genphrase()</span></code></a>.
+See that function for a list of predefined wordsets present in this dict.</p>
+<p>(Note that this is actually a special object which will lazy-load
+wordsets from disk on-demand)</p>
+</dd></dl>
+
+</section>
+<section id="password-strength-estimation">
+<h2>Password Strength Estimation<a class="headerlink" href="#password-strength-estimation" title="Link to this heading">¶</a></h2>
+<p>Passlib does not currently offer any password strength estimation routines.
+However, the (javascript-based) <a class="reference external" href="https://github.com/dropbox/zxcvbn">zxcvbn</a>
+project is a <em>very</em> good choice.</p>
+<p>Though there are a few different python ports of ZXCVBN library, as of 2019-11-13,
+<a class="reference external" href="https://pypi.python.org/pypi/zxcvbn">zxcvbn (&#64; pypi)</a> is the most up-to-date,
+and is endorsed by the upstream zxcvbn developers.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#password-generation">Password Generation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.pwd.genword"><code class="docutils literal notranslate"><span class="pre">genword()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.pwd.genphrase"><code class="docutils literal notranslate"><span class="pre">genphrase()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#predefined-symbol-sets">Predefined Symbol Sets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#password-strength-estimation">Password Strength Estimation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.registry.html" title="passlib.registry - Password Handler Registry"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.ifc.html" title="passlib.ifc – Password Hash Interface"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

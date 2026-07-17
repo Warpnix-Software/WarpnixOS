@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Lintian::Reporting::ResourceManager</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#CLASS-METHODS">CLASS METHODS</a></li>
+  <li><a href="#INSTANCE-METHODS">INSTANCE METHODS</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Lintian::Reporting::ResourceManager -- A simple resource manager for html_reports</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code> use Lintian::Reporting::ResourceManager;
+ 
+ my $resMan = Lintian::Reporting::ResourceManager-&gt;new(
+    &#39;html_dir&#39; =&gt; &#39;path/to/HTML-root&#39;,
+ );
+ # Copy the resource
+ $resMan-&gt;install_resource(&#39;path/to/my-image.png&#39;, { install_method =&gt; &#39;copy&#39;} );
+ # Move the resource
+ $resMan-&gt;install_resource(&#39;path/to/generated-styles.css&#39;);
+ print encode_utf8(&#39;Image: &#39; . $resMan-&gt;resource_url(&#39;my-image.png&#39;), &quot;\n&quot;);
+ print encode_utf8(&#39;CSS: &#39; . $resMan-&gt;resource_url(&#39;generated-styles.css&#39;), &quot;\n&quot;);</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>A simple resource manager for Lintian&#39;s reporting tool, <b>html_reports</b>.</p>
+
+<h1 id="CLASS-METHODS">CLASS METHODS</h1>
+
+<dl>
+
+<dt>new(TYPE, OPTS)</dt>
+<dd>
+
+<p>Instantiates a new resource manager.</p>
+
+<p>OPTS is a key-value list, which must contain the key &quot;html_dir&quot; set to the root of the HTML path. It is beneath this path that all resources will be installed</p>
+
+</dd>
+</dl>
+
+<h1 id="INSTANCE-METHODS">INSTANCE METHODS</h1>
+
+<dl>
+
+<dt>install_resource(RESOURCE[, OPT])</dt>
+<dd>
+
+<p>Installs RESOURCE into the html root. The resource may be renamed (based on content etc.).</p>
+
+<p>Note that the basename of RESOURCE must be unique between all resources installed. See <a href="#resource_url-RESOURCE_NAME">&quot;resource_url(RESOURCE_NAME)&quot;</a>.</p>
+
+<p>If OPT is given, it must be a hashref with 0 or more of the following keys (and values).</p>
+
+<dl>
+
+<dt>install_method</dt>
+<dd>
+
+<p>Can be &quot;copy&quot; or &quot;move&quot; (default). If set to &quot;move&quot;, the original file will be renamed into its new location. Otherwise, a copy is done and the original file is left in place.</p>
+
+</dd>
+<dt>source_file</dt>
+<dd>
+
+<p>By default, the path denoted by RESOURCE is both the resource name and the source file. This option can be used to install a given file as RESOURCE regardless of the basename of the source file.</p>
+
+<p>If this is passed, RESOURCE must be a basename (i.e. without any slashes).</p>
+
+</dd>
+</dl>
+
+</dd>
+<dt>resource_url(RESOURCE_NAME)</dt>
+<dd>
+
+<p>Returns the path (relative to the HTML root) to a resource installed via <a href="#install_resource-RESOURCE">&quot;install_resource(RESOURCE)&quot;</a>, where RESOURCE_NAME is the basename of the path given to install_resource.</p>
+
+</dd>
+<dt>resource_integrity_value(RESOURCE_NAME)</dt>
+<dd>
+
+<p>Return a string that is valid in the &quot;integrity&quot; field of a <code>&lt;link&gt;</code> HTML tag. (See https://www.w3.org/TR/SRI/)</p>
+
+</dd>
+</dl>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Originally written by Niels Thykier &lt;niels@thykier.net&gt; for Lintian.</p>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

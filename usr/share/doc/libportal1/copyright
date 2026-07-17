@@ -1,0 +1,52 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: libportal
+Source: https://github.com/flatpak/libportal
+
+Files: *
+Copyright:
+ 2018-2019 Matthias Clasen
+ 2019 Patrick Griffis
+ 2020-2022 Jan Grulich
+ 2021 Georges Basile Stavracas Neto
+ 2021-2024 GNOME Foundation, Inc.
+ 2023 Neal Gompa
+ 2022 Red Hat, Inc.
+License: LGPL-3 and LGPL-2.1+
+
+Files: debian/*
+Copyright:
+ 2019-2024 Collabora Ltd.
+ 2019-2021 Simon McVittie
+License: LGPL-2.1+
+
+License: LGPL-2.1+
+ SPDX-License-Identifier: LGPL-2.1-or-later
+ .
+ This library is free software; you can redistribute it and/or modify it
+ under the terms of the GNU Lesser General Public License as published
+ by the Free Software Foundation; either version 2.1 of the License, or
+ (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public
+ License for more details.
+ .
+ On Debian systems, the text of the LGPL version 2.1 can be found in
+ <file:///usr/share/common-licenses/LGPL-2.1>.
+
+License: LGPL-3
+ SPDX-License-Identifier: LGPL-3.0-only
+ .
+ This file is free software; you can redistribute it and/or modify it
+ under the terms of the GNU Lesser General Public License as
+ published by the Free Software Foundation, version 3.0 of the
+ License.
+ .
+ This file is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ On Debian systems, the text of the LGPL version 3 can be found in
+ <file:///usr/share/common-licenses/LGPL-3>.

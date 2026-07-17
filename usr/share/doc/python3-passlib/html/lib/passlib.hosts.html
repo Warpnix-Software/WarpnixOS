@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.hosts - OS Password Handling &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.ifc – Password Hash Interface" href="passlib.ifc.html" />
+    <link rel="prev" title="passlib.hash.plaintext - Plaintext" href="passlib.hash.plaintext.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.ifc.html" title="passlib.ifc – Password Hash Interface"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.plaintext.html" title="passlib.hash.plaintext - Plaintext"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-passlib.hosts">
+<span id="passlib-hosts-os-password-handling"></span><h1><a class="reference internal" href="#module-passlib.hosts" title="passlib.hosts: hashing &amp; verifying operating system passwords"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code></a> - OS Password Handling<a class="headerlink" href="#module-passlib.hosts" title="Link to this heading">¶</a></h1>
+<p>This module provides some preconfigured <a class="reference internal" href="passlib.context.html#context-reference"><span class="std std-ref">CryptContext</span></a>
+instances for hashing &amp; verifying password hashes tied to user accounts of various operating systems.
+While (most) of the objects are available cross-platform,
+their use is oriented primarily towards Linux and BSD variants.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>for Microsoft Windows, see the list of <a class="reference internal" href="passlib.hash.html#windows-hashes"><span class="std std-ref">MS Windows Hashes</span></a>
+in <a class="reference internal" href="passlib.hash.html#module-passlib.hash" title="passlib.hash: all password hashes provided by Passlib"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code></a>.</p>
+</div>
+<section class="html-toggle" id="usage-example">
+<h2>Usage Example<a class="headerlink" href="#usage-example" title="Link to this heading">¶</a></h2>
+<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code> class itself has a large number of features,
+but to give an example of how to quickly use the instances in this module:</p>
+<p>Each of the objects in this module can be imported directly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># as an example, this imports the linux_context object,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># which is configured to recognized most hashes found in Linux /etc/shadow files.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.apps</span> <span class="kn">import</span> <span class="n">linux_context</span>
+</pre></div>
+</div>
+<p>Hashing a password is simple (and salt generation is handled automatically):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span> <span class="o">=</span> <span class="n">linux_context</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;toomanysecrets&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span>
+<span class="go">&#39;$5$rounds=84740$fYChCy.52EzebF51$9bnJrmTf2FESI93hgIBFF4qAfysQcKoB0veiI0ZeYU4&#39;</span>
+</pre></div>
+</div>
+<p>Verifying a password against an existing hash is just as quick:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">linux_context</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;toomanysocks&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">linux_context</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;toomanysecrets&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<dl>
+<dt>You can also identify hashes::</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">linux_context</span><span class="o">.</span><span class="n">identify</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span>
+<span class="go">&#39;sha512_crypt&#39;</span>
+</pre></div>
+</div>
+</dd>
+<dt>Or encrypt using a specific algorithm::</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">linux_context</span><span class="o">.</span><span class="n">schemes</span><span class="p">()</span>
+<span class="go">(&#39;sha512_crypt&#39;, &#39;sha256_crypt&#39;, &#39;md5_crypt&#39;, &#39;des_crypt&#39;, &#39;unix_disabled&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">linux_context</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;des_crypt&quot;</span><span class="p">)</span>
+<span class="go">&#39;2fmLLcoHXuQdI&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">linux_context</span><span class="o">.</span><span class="n">identify</span><span class="p">(</span><span class="s1">&#39;2fmLLcoHXuQdI&#39;</span><span class="p">)</span>
+<span class="go">&#39;des_crypt&#39;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>the <a class="reference internal" href="../narr/context-tutorial.html#context-tutorial"><span class="std std-ref">CryptContext Tutorial</span></a>
+and <a class="reference internal" href="passlib.context.html#context-reference"><span class="std std-ref">CryptContext Reference</span></a>
+for more information about the CryptContext class.</p>
+</div>
+</section>
+<section id="unix-password-hashes">
+<h2>Unix Password Hashes<a class="headerlink" href="#unix-password-hashes" title="Link to this heading">¶</a></h2>
+<p>Passlib provides a number of pre-configured <code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code> instances
+which can identify and manipulate all the formats used by Linux and BSD.
+See the <a class="reference internal" href="../modular_crypt_format.html#mcf-identifiers"><span class="std std-ref">modular crypt identifier list</span></a> for a complete
+list of which hashes are supported by which operating system.</p>
+<section id="predefined-contexts">
+<h3>Predefined Contexts<a class="headerlink" href="#predefined-contexts" title="Link to this heading">¶</a></h3>
+<p>Passlib provides <code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code> instances
+for the following Unix variants:</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.hosts.linux_context">
+<span class="sig-prename descclassname"><span class="pre">passlib.hosts.</span></span><span class="sig-name descname"><span class="pre">linux_context</span></span><a class="headerlink" href="#passlib.hosts.linux_context" title="Link to this definition">¶</a></dt>
+<dd><p>context instance which recognizes hashes used
+by the majority of Linux distributions.
+encryption defaults to <code class="xref py py-class docutils literal notranslate"><span class="pre">sha512_crypt</span></code>.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.hosts.freebsd_context">
+<span class="sig-prename descclassname"><span class="pre">passlib.hosts.</span></span><span class="sig-name descname"><span class="pre">freebsd_context</span></span><a class="headerlink" href="#passlib.hosts.freebsd_context" title="Link to this definition">¶</a></dt>
+<dd><p>context instance which recognizes all hashes used by FreeBSD 8.
+encryption defaults to <code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code>.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.hosts.netbsd_context">
+<span class="sig-prename descclassname"><span class="pre">passlib.hosts.</span></span><span class="sig-name descname"><span class="pre">netbsd_context</span></span><a class="headerlink" href="#passlib.hosts.netbsd_context" title="Link to this definition">¶</a></dt>
+<dd><p>context instance which recognizes all hashes used by NetBSD.
+encryption defaults to <code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code>.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.hosts.openbsd_context">
+<span class="sig-prename descclassname"><span class="pre">passlib.hosts.</span></span><span class="sig-name descname"><span class="pre">openbsd_context</span></span><a class="headerlink" href="#passlib.hosts.openbsd_context" title="Link to this definition">¶</a></dt>
+<dd><p>context instance which recognizes all hashes used by OpenBSD.
+encryption defaults to <code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code>.</p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All of the above contexts include the <a class="reference internal" href="passlib.hash.unix_disabled.html#passlib.hash.unix_disabled" title="passlib.hash.unix_disabled"><code class="xref py py-class docutils literal notranslate"><span class="pre">unix_disabled</span></code></a> handler
+as a final fallback. This special handler treats all strings as invalid passwords,
+particularly the common strings <code class="docutils literal notranslate"><span class="pre">!</span></code> and <code class="docutils literal notranslate"><span class="pre">*</span></code> which are used to indicate
+that an account has been disabled <a class="footnote-reference brackets" href="#shadow" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+</div>
+</section>
+<section id="current-host-os">
+<h3>Current Host OS<a class="headerlink" href="#current-host-os" title="Link to this heading">¶</a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.hosts.host_context">
+<span class="sig-prename descclassname"><span class="pre">passlib.hosts.</span></span><span class="sig-name descname"><span class="pre">host_context</span></span><a class="headerlink" href="#passlib.hosts.host_context" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Platform<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Unix</p>
+</dd>
+</dl>
+<p>This <a class="reference internal" href="passlib.context.html#passlib.context.CryptContext" title="passlib.context.CryptContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code></a> instance should detect and support
+all the algorithms the native OS <code class="xref py py-func docutils literal notranslate"><span class="pre">crypt()</span></code> offers.
+The main differences between this object and <code class="xref py py-func docutils literal notranslate"><span class="pre">crypt()</span></code>:</p>
+<ul class="simple">
+<li><p>this object provides introspection about <em>which</em> schemes
+are available on a given system (via <code class="docutils literal notranslate"><span class="pre">host_context.schemes()</span></code>).</p></li>
+<li><p>it defaults to the strongest algorithm available,
+automatically configured to an appropriate strength
+for hashing new passwords.</p></li>
+<li><p>whereas <code class="xref py py-func docutils literal notranslate"><span class="pre">crypt()</span></code> typically defaults to using
+<a class="reference internal" href="passlib.hash.des_crypt.html#passlib.hash.des_crypt" title="passlib.hash.des_crypt"><code class="xref py py-mod docutils literal notranslate"><span class="pre">des_crypt</span></code></a>; and provides little introspection.</p></li>
+</ul>
+<p>As an example, this can be used in conjunction with stdlib’s <code class="xref py py-mod docutils literal notranslate"><span class="pre">spwd</span></code> module
+to verify user passwords on the local system:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># NOTE/WARNING: this example requires running as root on most systems.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">spwd</span><span class="o">,</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.hosts</span> <span class="kn">import</span> <span class="n">host_context</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span> <span class="o">=</span> <span class="n">spwd</span><span class="o">.</span><span class="n">getspnam</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;USER&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sp_pwd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">host_context</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;toomanysecrets&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.4: </span>This object is only available on systems where the stdlib <code class="xref py py-mod docutils literal notranslate"><span class="pre">crypt</span></code> module is present.
+In version 1.3 and earlier, it was available on non-Unix systems, though it did nothing useful.</p>
+</div>
+</dd></dl>
+
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="shadow" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Man page for Linux /etc/shadow - <a class="reference external" href="http://linux.die.net/man/5/shadow">http://linux.die.net/man/5/shadow</a></p>
+</aside>
+</aside>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#usage-example">Usage Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unix-password-hashes">Unix Password Hashes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#predefined-contexts">Predefined Contexts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#current-host-os">Current Host OS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.ifc.html" title="passlib.ifc – Password Hash Interface"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.plaintext.html" title="passlib.hash.plaintext - Plaintext"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

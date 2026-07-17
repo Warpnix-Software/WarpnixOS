@@ -1,0 +1,27 @@
+xfonts-efont-unicode for Debian
+-------------------------------
+
+"naga10" is removed, because of copyright problem, to avoid
+this package to go to "non-free".
+
+
+Using xfonts-efont-unicode from xterm
+=====================================
+
+This set of fonts can be used by UTF-8 mode of xterm to provide
+various characters in the worlds including east Asian doublewidth
+characters.  Please write the following settings in your ~/.Xresources
+file and restart your X session.
+
+UXTerm*Font: -misc-fixed-medium-r-semicondensed--13-*-*-*-*-*-iso10646-1
+UXTerm*Font2: -efont-fixed-medium-r-normal-*-12-*-*-*-*-*-iso10646-1
+UXTerm*Font3: -efont-fixed-medium-r-normal-*-14-*-*-*-*-*-iso10646-1
+UXTerm*Font4: -efont-fixed-medium-r-normal-*-16-*-*-*-*-*-iso10646-1
+UXTerm*Font5: -misc-fixed-medium-r-normal--18-*-*-*-*-*-iso10646-1
+UXTerm*Font6: -efont-fixed-medium-r-normal-*-24-*-*-*-*-*-iso10646-1
+
+Though http://mail.nl.linux.org/linux-utf8/2001-11/msg00133.html
+says you need UXTerm*wideFont? settings, you don't need the settings
+because xterm can automatically detect them.
+
+ -- Tomohiro KUBOTA <kubota@debian.org>, Thu, 25 Apr 2002 14:06:18 +0900

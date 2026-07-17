@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Test::Lintian</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#FUNCTIONS">FUNCTIONS</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Test::Lintian -- Check Lintian files for issues</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code> # file 1
+ use Test::Lintian;
+ use Test::More import =&gt; [&#39;done_testing&#39;];
+ test_load_profiles(&#39;some/path&#39;);
+
+ done_testing;
+
+ # file 2
+ use Test::Lintian;
+ use Test::More import =&gt; [&#39;done_testing&#39;];
+ load_profile_for_test(&#39;vendor/profile&#39;, &#39;some/path&#39;, &#39;/usr/share/lintian&#39;);
+ test_check_desc(&#39;some/path/checks&#39;);
+ test_load_checks(&#39;some/path/checks&#39;);
+ test_tags_implemented(&#39;some/path/checks&#39;);
+
+ done_testing;</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>A testing framework for testing various Lintian files for common errors.</p>
+
+<h1 id="FUNCTIONS">FUNCTIONS</h1>
+
+<dl>
+
+<dt>test_check_desc(OPTS, CHECKS...)</dt>
+<dd>
+
+<p>Test check desc files (and the tags in them) for common errors.</p>
+
+<p>OPTS is a HASHREF containing key/value pairs, which are described below.</p>
+
+<p>CHECKS is a list of paths in which to check desc files. Any given element in CHECKS can be either a file or a dir. Files are assumed to be check desc file. Directories are searched and all <i>.desc</i> files in those dirs are processed.</p>
+
+<p>As the number of tests depends on the number of tags in desc, it is difficult to &quot;plan ahead&quot; when using this test. It is therefore recommended to not specify a plan and use done_testing().</p>
+
+<p>This sub uses a Data file (see <a href="#load_profile_for_test-PROFNAME-INC">&quot;load_profile_for_test ([PROFNAME[, INC...]])&quot;</a>).</p>
+
+<p>OPTS may contain the following key/value pairs:</p>
+
+<dl>
+
+<dt>filter</dt>
+<dd>
+
+<p>If defined, it is a filter function that examines $_ (or its first argument) and returns a truth value if <code>$_</code> should be considered or false otherwise. <code>$_</code> will be the path to the current file (or dir) in question; it may be relative or absolute.</p>
+
+<p>NB: <i>all</i> elements in CHECKS are subject to the filter.</p>
+
+<p>CAVEAT: If the filter rejects a directory, none of the files in it will be considered either. Even if the filter accepts a file, that file will only be processed if it has the proper extension (i.e. with <i>.desc</i>).</p>
+
+</dd>
+<dt>translation</dt>
+<dd>
+
+<p>If defined and a truth value, the desc files are expected to contain translations. Otherwise, they must be regular checks.</p>
+
+</dd>
+</dl>
+
+</dd>
+<dt>test_load_profiles(ROOT, INC...)</dt>
+<dd>
+
+<p>Test that all profiles in <i>ROOT/profiles</i> are loadable. INC will be the INC path used as include path for the profile.</p>
+
+<p>If INC is omitted, then the include path will consist of (ROOT, &#39;/usr/share/lintian&#39;). Otherwise, INC will be used as is (and should include ROOT).</p>
+
+<p>This sub will do one test per profile loaded.</p>
+
+</dd>
+<dt>test_load_checks(OPTS, DIR[, CHECKNAMES...])</dt>
+<dd>
+
+<p>Test that the Perl module implementation of the checks can be loaded and has a run sub.</p>
+
+<p>OPTS is a HASHREF containing key/value pairs, which are described below.</p>
+
+<p>DIR is the directory where the checks can be found.</p>
+
+<p>CHECKNAMES is a list of check names. If CHECKNAMES is given, only the checks in this list will be processed. Otherwise, all the checks in DIR will be processed.</p>
+
+<p>For planning purposes, every check processed counts for 2 tests and the call itself does on additional check. So if CHECKNAMES contains 10 elements, then 21 tests will be done (2 * 10 + 1). Filtered out checks will <i>not</i> be counted.</p>
+
+<p>All data files created at compile time or in the file scope will be loaded immediately (instead of lazily as done during the regular runs). This is done to spot missing data files or typos in their names. Therefore, this sub will load a profile if one hasn&#39;t been loaded already. (see <a href="#load_profile_for_test-PROFNAME-INC">&quot;load_profile_for_test ([PROFNAME[, INC...]])&quot;</a>)</p>
+
+<p>OPTS may contain the following key/value pairs:</p>
+
+<dl>
+
+<dt>filter</dt>
+<dd>
+
+<p>If defined, it is a filter function that examines $_ (or its first argument) and returns a truth value if <code>$_</code> should be considered or false otherwise. <code>$_</code> will be the path to the current file (or dir) in question; it may be relative or absolute.</p>
+
+<p>NB: filter is <i>not</i> used if CHECKNAMES is given.</p>
+
+<p>CAVEAT: If the filter rejects a directory, none of the files in it will be considered either. Even if the filter accepts a file, that file will only be processed if it has the proper extension (i.e. with <i>.desc</i>).</p>
+
+</dd>
+</dl>
+
+</dd>
+<dt>load_profile_for_test ([PROFNAME[, INC...]])</dt>
+<dd>
+
+<p>Load a Lintian::Profile and ensure Data files can be used. This is needed if the test needs to access a data file or if a special profile is needed for the test. It does <i>not</i> test the profile for issues.</p>
+
+<p>PROFNAME is the name of the profile to load. It can be omitted, in which case the sub ensures that a profile has been loaded. If no profile has been loaded, &#39;debian/main&#39; will be loaded.</p>
+
+<p>INC is a list of extra &quot;include dirs&quot; (or Lintian &quot;roots&quot;) to be used for finding the profile. If not specified, it defaults to <i>$ENV{&#39;LINTIAN_BASE&#39;}</i> and <i>/usr/share/lintian</i> (in order). INC is ignored if a profile has already been loaded.</p>
+
+<p>CAVEAT: Only one profile can be loaded in a given test. Once a profile has been loaded, it is not possible to replace it with another one. So if this is invoked multiple times, PROFNAME must be omitted or must match the name of the loaded profile.</p>
+
+</dd>
+<dt>program_name_to_perl_paths(PROGNAME)</dt>
+<dd>
+
+<p>Map the program name (e.g. <code>$0</code>) to a list of directories or/and files that should be processed.</p>
+
+<p>This helper sub is mostly useful for splitting up slow tests run over all Perl scripts/modules in Lintian. This allows better use of multiple cores. Example:</p>
+
+<pre><code>  t/scripts/my-test/
+   runner.pl
+   checks.t -&gt; runner.pl
+   collection.t -&gt; runner.pl
+   ...</code></pre>
+
+<p>And then in runner.pl:</p>
+
+<pre><code>  use Test::Lintian;
+  
+  my @paths = program_name_to_perl_paths($0);
+  # test all files/dirs listed in @paths</code></pre>
+
+<p>For a more concrete example, see t/scripts/01-critic/ and the files/symlinks beneath it.</p>
+
+</dd>
+</dl>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

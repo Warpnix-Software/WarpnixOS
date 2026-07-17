@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.hash.crypt16 - Crypt16 &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.hash.argon2 - Argon2" href="passlib.hash.argon2.html" />
+    <link rel="prev" title="passlib.hash.bigcrypt - BigCrypt" href="passlib.hash.bigcrypt.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.argon2.html" title="passlib.hash.argon2 - Argon2"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.bigcrypt.html" title="passlib.hash.bigcrypt - BigCrypt"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.crypt16</span></code> - Crypt16</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-hash-crypt16-crypt16">
+<h1><a class="reference internal" href="#passlib.hash.crypt16" title="passlib.hash.crypt16"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.crypt16</span></code></a> - Crypt16<a class="headerlink" href="#passlib-hash-crypt16-crypt16" title="Link to this heading">¶</a></h1>
+<div class="block-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>This algorithm is dangerously insecure by modern standards.</strong>
+It is trivially broken, and should not be used if at all possible.
+For new code, see the list of <a class="reference internal" href="../narr/quickstart.html#recommended-hashes"><span class="std std-ref">recommended hashes</span></a>.</p>
+</div>
+<p>This class implements the Crypt16 password hash, commonly
+found on Ultrix and Tru64. It’s a minor modification of <a class="reference internal" href="passlib.hash.des_crypt.html#passlib.hash.des_crypt" title="passlib.hash.des_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">des_crypt</span></code></a>,
+which allows passwords of up to 16 characters.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../narr/hash-tutorial.html#password-hash-examples"><span class="std std-ref">password hash usage</span></a> –
+for examples of how to use this class via the common hash interface.</p>
+</div>
+<section id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.crypt16">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">crypt16</span></span><a class="headerlink" href="#passlib.hash.crypt16" title="Link to this definition">¶</a></dt>
+<dd><p>This class implements the crypt16 password hash, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>It supports a fixed-length salt.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">using()</span></code></a> method accepts the following optional keywords:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>salt</strong> (<em>str</em>) – Optional salt string.
+If not specified, one will be autogenerated (this is recommended).
+If specified, it must be 2 characters, drawn from the regexp range <code class="docutils literal notranslate"><span class="pre">[./0-9A-Za-z]</span></code>.</p></li>
+<li><p><strong>truncate_error</strong> (<em>bool</em>) – <p>By default, crypt16 will silently truncate passwords larger than 16 bytes.
+Setting <code class="docutils literal notranslate"><span class="pre">truncate_error=True</span></code> will cause <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code></a>
+to raise a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasswordTruncateError" title="passlib.exc.PasswordTruncateError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasswordTruncateError</span></code></a> instead.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.7.</span></p>
+</div>
+</p></li>
+<li><p><strong>relaxed</strong> (<em>bool</em>) – <p>By default, providing an invalid value for one of the other
+keywords will result in a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>. If <code class="docutils literal notranslate"><span class="pre">relaxed=True</span></code>,
+and the error can be corrected, a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasslibHashWarning" title="passlib.exc.PasslibHashWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasslibHashWarning</span></code></a>
+will be issued instead. Correctable errors include
+<code class="docutils literal notranslate"><span class="pre">salt</span></code> strings that are too long.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="format">
+<h2>Format<a class="headerlink" href="#format" title="Link to this heading">¶</a></h2>
+<p>An example hash (of the string <code class="docutils literal notranslate"><span class="pre">passphrase</span></code>) is <code class="docutils literal notranslate"><span class="pre">aaX/UmCcBrceQ0kQGGWKTbuE</span></code>.
+A crypt16 hash string has the format <code class="samp docutils literal notranslate"><em><span class="pre">salt</span></em><em><span class="pre">checksum_1</span></em><em><span class="pre">checksum_2</span></em></code>, where:</p>
+<ul class="simple">
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">salt</span></em></code> is the salt, stored as a 2 character
+<a class="reference internal" href="passlib.utils.binary.html#passlib.utils.binary.h64" title="passlib.utils.binary.h64"><code class="xref py py-data docutils literal notranslate"><span class="pre">hash64</span></code></a>-encoded 12-bit integer (<code class="docutils literal notranslate"><span class="pre">aa</span></code> in the
+example).</p></li>
+<li><p>each <code class="samp docutils literal notranslate"><em><span class="pre">checksum_i</span></em></code> is a separate checksum, stored as an 11 character
+<a class="reference internal" href="passlib.utils.binary.html#passlib.utils.binary.h64big" title="passlib.utils.binary.h64big"><code class="xref py py-data docutils literal notranslate"><span class="pre">hash64-big</span></code></a>-encoded 64-bit integer
+(<code class="docutils literal notranslate"><span class="pre">X/UmCcBrceQ</span></code> and <code class="docutils literal notranslate"><span class="pre">0kQGGWKTbuE</span></code> in the example).</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This hash is frequently confused with the <a class="reference internal" href="passlib.hash.bigcrypt.html"><span class="doc">bigcrypt</span></a>
+hash algorithm, as it has the same size and uses the same character
+set as a <code class="xref py py-class docutils literal notranslate"><span class="pre">bigcrypt</span></code> hash of a password with 9 to 16
+characters; though the actual algorithms are different.</p>
+</div>
+</section>
+<section class="html-toggle" id="algorithm">
+<h2>Algorithm<a class="headerlink" href="#algorithm" title="Link to this heading">¶</a></h2>
+<p>The crypt16 algorithm uses a weakened version of the des-crypt algorithm:</p>
+<ol class="arabic">
+<li><p>Given a password string and a salt string.</p></li>
+<li><p>The 2 character salt string is decoded to a 12-bit integer salt value;
+The salt string uses little-endian <a class="reference internal" href="passlib.utils.binary.html#passlib.utils.binary.h64" title="passlib.utils.binary.h64"><code class="xref py py-data docutils literal notranslate"><span class="pre">hash64</span></code></a>
+encoding.</p></li>
+<li><p>If the password is larger than 16 bytes, the end is truncated to 16 bytes.
+If the password is smaller than 16 bytes, the end is NULL padded to 16 bytes.</p></li>
+<li><p>The lower 7 bits of the first 8 characters of the password are used
+to form a 56-bit integer; with the first character providing
+the most significant 7 bits, and the 8th character providing
+the least significant 7 bits.</p></li>
+<li><p>20 repeated rounds of modified DES encryption are performed;
+starting with a null input block,
+and using the 56-bit integer from step 4 as the DES key.</p>
+<p>The salt value from step 2 is used to to mutate the normal
+DES encrypt operation by swapping bits <code class="samp docutils literal notranslate"><em><span class="pre">i</span></em></code> and <code class="samp docutils literal notranslate"><em><span class="pre">i</span></em><span class="pre">+24</span></code>
+in the DES E-Box output if and only if bit <code class="samp docutils literal notranslate"><em><span class="pre">i</span></em></code> is set in
+the salt value.</p>
+</li>
+<li><p>The 64-bit result of the last round of step 5 is then
+lsb-padded with 2 zero bits.</p></li>
+<li><p>The resulting 66-bit integer is encoded in big-endian order
+using the <a class="reference internal" href="passlib.utils.binary.html#passlib.utils.binary.h64big" title="passlib.utils.binary.h64big"><code class="xref py py-data docutils literal notranslate"><span class="pre">hash64-big</span></code></a> format.
+This is the first checksum segment.</p></li>
+<li><p>The second checksum segment is created by repeating
+steps 4..7 using the second 8 bytes of the padding password (from step 3).
+The only difference is that step 5 uses only 5 rounds.</p></li>
+<li><p>The final checksum string is the concatenation of the two checksum segments,
+in order.</p></li>
+</ol>
+</section>
+<section id="security-issues">
+<h2>Security Issues<a class="headerlink" href="#security-issues" title="Link to this heading">¶</a></h2>
+<p>Crypt16 is dangerously flawed:</p>
+<ul class="simple">
+<li><p>It suffers from all the flaws of <a class="reference internal" href="passlib.hash.des_crypt.html#passlib.hash.des_crypt" title="passlib.hash.des_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">des_crypt</span></code></a>.</p></li>
+<li><p>Compared to des-crypt, its smaller number of rounds
+makes it even <em>more</em> vulnerable to brute-force attacks.</p></li>
+<li><p>For a given salt, passwords under 9 characters all have the same 2nd checksum.
+Given the 12-bit salt size, all such 2nd checksums can be easily pre-computed;
+making an attack easier, and giving away information about password size.</p></li>
+<li><p>Since both checksums use the same salt, they can be attacked at once
+(by doing 5 rounds, checking the result against checksum 2,
+doing 15 rounds more, and checking the result against checksum 1).</p></li>
+</ul>
+</section>
+<section id="deviations">
+<h2>Deviations<a class="headerlink" href="#deviations" title="Link to this heading">¶</a></h2>
+<p>This implementation of crypt16 deviates from public documentation of the format in one way:</p>
+<ul>
+<li><p>Unicode Policy:</p>
+<p>The original crypt16 algorithm was designed for 7-bit <code class="docutils literal notranslate"><span class="pre">us-ascii</span></code> encoding only
+(as evidenced by the fact that it discards the 8th bit of all password bytes).</p>
+<p>In order to provide support for unicode strings,
+Passlib will encode unicode passwords using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code>
+before running them through crypt16. If a different
+encoding is desired by an application, the password should be encoded
+before handing it to Passlib.</p>
+</li>
+</ul>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id1" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>One source of information about bigcrypt &amp; crypt16 -
+<a class="reference external" href="http://www.mail-archive.com/exim-dev&#64;exim.org/msg00970.html">http://www.mail-archive.com/exim-dev&#64;exim.org/msg00970.html</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#overview">Overview</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="passlib.hash.html#unix-hashes">Unix Hashes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.html#active-unix-hashes">Active Unix Hashes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.html#deprecated-unix-hashes">Deprecated Unix Hashes</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="passlib.hash.html#archaic-unix-hashes">Archaic Unix Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-modular-crypt-hashes">Other “Modular Crypt” Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ldap-rfc2307-hashes">LDAP / RFC2307 Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#sql-database-hashes">SQL Database Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ms-windows-hashes">MS Windows Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#cisco-hashes">Cisco Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-hashes">Other Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.argon2.html" title="passlib.hash.argon2 - Argon2"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.bigcrypt.html" title="passlib.hash.bigcrypt - BigCrypt"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.crypt16</span></code> - Crypt16</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Lintian::Profile</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#INSTANCE-METHODS">INSTANCE METHODS</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Lintian::Profile - Profile parser for Lintian</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code> my $profile = Lintian::Profile-&gt;new (&#39;debian&#39;);</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Lintian::Profile handles finding, parsing and implementation of Lintian Profiles as well as loading the relevant Lintian checks.</p>
+
+<h1 id="INSTANCE-METHODS">INSTANCE METHODS</h1>
+
+<dl>
+
+<dt>$prof-&gt;known_aliases()</dt>
+<dd>
+
+<p>Returns a hash with old names that have new names.</p>
+
+</dd>
+<dt>$prof-&gt;profile_list</dt>
+<dd>
+
+<p>Returns a list ref of the (normalized) names of the profile and its parents. The first element of the list is the name of the profile itself, the second is its parent and so on.</p>
+
+<p>Note: This list is a reference. The contents should not be modified.</p>
+
+</dd>
+<dt>our_vendor</dt>
+<dd>
+
+</dd>
+<dt>$prof-&gt;name</dt>
+<dd>
+
+<p>Returns the name of the profile, which may differ from the name used to create this instance of the profile (e.g. due to symlinks).</p>
+
+</dd>
+<dt>load ([$profname[, $ipath[, $extra]]])</dt>
+<dd>
+
+<p>Loads a new profile. $profname is the name of the profile and $ipath is a list reference containing the path to one (or more) Lintian &quot;roots&quot;.</p>
+
+<p>If $profname is <code>undef</code>, the default vendor will be loaded based on Dpkg::Vendor::get_current_vendor.</p>
+
+<p>If $ipath is not given, a default one will be used.</p>
+
+</dd>
+<dt>$prof-&gt;known_tags</dt>
+<dd>
+
+</dd>
+<dt>$prof-&gt;enabled_tags</dt>
+<dd>
+
+</dd>
+<dt>$prof-&gt;get_tag ($name)</dt>
+<dd>
+
+<p>Returns the Lintian::Tag for $tag if known. Otherwise it returns undef.</p>
+
+</dd>
+<dt>get_current_name</dt>
+<dd>
+
+</dd>
+<dt>set_durable ($tag)</dt>
+<dd>
+
+</dd>
+<dt>$prof-&gt;is_durable ($tag)</dt>
+<dd>
+
+<p>Returns a false value if the tag has been marked as &quot;non-overridable&quot;. Otherwise it returns a truth value.</p>
+
+</dd>
+<dt>$prof-&gt;known_checks</dt>
+<dd>
+
+</dd>
+<dt>$prof-&gt;enabled_checks</dt>
+<dd>
+
+</dd>
+<dt>$prof-&gt;enable_tag ($name)</dt>
+<dd>
+
+<p>Enables a tag.</p>
+
+</dd>
+<dt>$prof-&gt;disable_tag ($name)</dt>
+<dd>
+
+<p>Disable a tag.</p>
+
+</dd>
+<dt>read_profile</dt>
+<dd>
+
+</dd>
+<dt>display_level_for_tag</dt>
+<dd>
+
+</dd>
+<dt>tag_is_enabled(TAG)</dt>
+<dd>
+
+</dd>
+<dt>display(OPERATION, RELATION, VISIBILITY)</dt>
+<dd>
+
+<p>Configure which tags are displayed by visibility. OPERATION is <code>+</code> to display the indicated tags, <code>-</code> to not display the indicated tags, or <code>=</code> to not display any tags except the indicated ones. RELATION is one of <code>&lt;</code>, <code>&lt;=</code>, <code>=</code>, <code>&gt;=</code>, or <code>&gt;</code>. The OPERATION will be applied to all values of visibility that match the given RELATION on the VISIBILITY argument. If either of those arguments are undefined, the action applies to any value for that variable. For example:</p>
+
+<pre><code>    $tags-&gt;display(&#39;=&#39;, &#39;&gt;=&#39;, &#39;error&#39;);</code></pre>
+
+<p>turns off display of all tags and then enables display of any tag of visibility error or higher.</p>
+
+<pre><code>    $tags-&gt;display(&#39;+&#39;, &#39;&gt;&#39;, &#39;warning&#39;);</code></pre>
+
+<p>adds to the current configuration display of all tags with a visibility higher than warning.</p>
+
+<pre><code>    $tags-&gt;display(&#39;-&#39;, &#39;=&#39;, &#39;info&#39;);</code></pre>
+
+<p>turns off display of tags of visibility info.</p>
+
+<p>This method throws an exception on errors, such as an unknown visibility or an impossible constraint (like <code>&gt; serious</code>).</p>
+
+</dd>
+<dt>search_space</dt>
+<dd>
+
+</dd>
+</dl>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Originally written by Niels Thykier &lt;niels@thykier.net&gt; for Lintian.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>lintian(1)</p>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

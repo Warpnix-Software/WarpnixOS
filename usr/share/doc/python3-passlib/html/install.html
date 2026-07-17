@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Installation &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="_static/logo.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="copyright" title="Copyright" href="copyright.html" />
+    <link rel="next" title="Library Overview" href="narr/overview.html" />
+    <link rel="prev" title="Walkthrough &amp; Tutorials" href="narr/index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="narr/overview.html" title="Library Overview"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="narr/index.html" title="Walkthrough &amp; Tutorials"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="narr/index.html" accesskey="U">Walkthrough &amp; Tutorials</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Installation</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h1>
+<section id="supported-platforms">
+<span id="index-0"></span><h2>Supported Platforms<a class="headerlink" href="#supported-platforms" title="Link to this heading">¶</a></h2>
+<p>Passlib requires Python 3.5 or newer.
+It is known to work with the following Python implementations:</p>
+<div class="float-right without-title admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Passlib 1.8 dropped support for Python 2.x, 3.3, and 3.4</strong>;
+If you need support for Python 2.6 - 3.4, use the Passlib 1.7.x series.</p>
+</div>
+<ul class="simple">
+<li><p>CPython 3 – v3.5 or newer.</p></li>
+<li><p>PyPy3 – v5.3 or newer.</p></li>
+</ul>
+<p>Passlib should work with all operating systems and environments,
+as it contains builtin fallbacks for almost all OS-dependant features.
+Google App Engine is supported as well.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.8: </span>Support for Python 2.x, 3.3, and 3.4 was dropped.
+Jython no longer listed, until it has a Python 3 compatible for testing.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.7: </span>Support for Python 2.5, 3.0-3.2 was dropped.
+Support for PyPy 1.x was dropped.</p>
+</div>
+</section>
+<section id="optional-libraries">
+<span id="id1"></span><h2>Optional Libraries<a class="headerlink" href="#optional-libraries" title="Link to this heading">¶</a></h2>
+<ul>
+<li><p><a class="reference external" href="https://pypi.python.org/pypi/bcrypt">bcrypt</a></p>
+<blockquote>
+<div><p>If installed, this will be used to handle :class:~passlib.hash.bcrypt` and
+<a class="reference internal" href="lib/passlib.hash.bcrypt_sha256.html#passlib.hash.bcrypt_sha256" title="passlib.hash.bcrypt_sha256"><code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt_sha256</span></code></a> hashes.  If your system lacks <code class="xref py py-func docutils literal notranslate"><span class="pre">crypt.crypt()</span></code>
+support for bcrypt hashes, this library is <em>required</em> in order for passlib to provide
+bcrypt support.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">passlib[bcrypt]</span></code> to get the recommended bcrypt setup.</p>
+</div></blockquote>
+</li>
+<li><p><a class="reference external" href="https://pypi.python.org/pypi/argon2_cffi">argon2_cffi</a> (&gt;= 18.2.0), or
+<a class="reference external" href="https://pypi.python.org/pypi/argon2pure">argon2pure</a> (&gt;= 1.3)</p>
+<blockquote>
+<div><p>If any of these packages are installed, they will be used to provide
+support for the <a class="reference internal" href="lib/passlib.hash.argon2.html#passlib.hash.argon2" title="passlib.hash.argon2"><code class="xref py py-class docutils literal notranslate"><span class="pre">argon2</span></code></a> hash algorithm.
+<a class="reference external" href="https://pypi.python.org/pypi/argon2_cffi">argon2_cffi</a>  is currently the recommended
+option.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">passlib[argon2]</span></code> to get the recommended argon2 setup.</p>
+</div></blockquote>
+</li>
+<li><p><a class="reference external" href="https://pypi.python.org/pypi/cryptography">Cryptography</a></p>
+<blockquote>
+<div><p>If installed, will be used to enable encryption of TOTP secrets for storage
+(see <a class="reference internal" href="lib/passlib.totp.html#module-passlib.totp" title="passlib.totp: totp / two factor authentaction"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code></a>).</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">passlib[totp]</span></code> to get the recommended TOTP setup.</p>
+</div></blockquote>
+</li>
+<li><p><a class="reference external" href="https://pypi.python.org/pypi/fastpbkdf2">fastpbkdf2</a></p>
+<blockquote>
+<div><p>If installed, will be used to greatly speed up <a class="reference internal" href="lib/passlib.crypto.digest.html#passlib.crypto.digest.pbkdf2_hmac" title="passlib.crypto.digest.pbkdf2_hmac"><code class="xref py py-func docutils literal notranslate"><span class="pre">pbkdf2_hmac()</span></code></a>,
+and any pbkdf2-based hashes.</p>
+</div></blockquote>
+</li>
+<li><p><a class="reference external" href="https://pypi.python.org/pypi/scrypt">SCrypt</a> (&gt;= 0.6)</p>
+<blockquote>
+<div><p>If installed, this will be used to provide support for the <a class="reference internal" href="lib/passlib.hash.scrypt.html#passlib.hash.scrypt" title="passlib.hash.scrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">scrypt</span></code></a>
+hash algorithm.  If not installed, a MUCH slower builtin reference implementation will be used.</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.8: </span>Dropped support for  <code class="docutils literal notranslate"><span class="pre">py-bcrypt</span></code> and <code class="docutils literal notranslate"><span class="pre">bcryptor</span></code> backends.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.7: </span>Added fastpbkdf2, cryptography, argon2_cffi, argon2pure, and scrypt support.
+Removed M2Crypto support.</p>
+</div>
+</section>
+<section id="installation-instructions">
+<h2>Installation Instructions<a class="headerlink" href="#installation-instructions" title="Link to this heading">¶</a></h2>
+<div class="float-right without-title admonition caution">
+<p class="admonition-title">Caution</p>
+<p>All PyPI releases are signed with the gpg key
+<a class="reference external" href="http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0x4D8592DF4CE1ED31">4D8592DF4CE1ED31</a>.</p>
+</div>
+<p>To install from PyPi using <strong class="command">pip</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">passlib</span>
+</pre></div>
+</div>
+<p>To install from the source using <strong class="command">setup.py</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
+</pre></div>
+</div>
+</section>
+<section class="html-toggle" id="testing">
+<span id="index-1"></span><h2>Testing<a class="headerlink" href="#testing" title="Link to this heading">¶</a></h2>
+<p>Passlib contains a comprehensive set of unittests (about 38% of the total code),
+which provide nearly complete coverage, and verification of the hash
+algorithms using multiple external sources (if detected at runtime).</p>
+<p>All unit tests are contained within the <code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.tests</span></code> subpackage,
+and are designed to be run using the
+<a class="reference external" href="http://somethingaboutorange.com/mrl/projects/nose">Nose</a> unit testing library.</p>
+<p>Once Passlib and Nose have been installed, the main suite of tests may be run using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nosetests</span> <span class="o">--</span><span class="n">tests</span> <span class="n">passlib</span><span class="o">.</span><span class="n">tests</span>
+</pre></div>
+</div>
+<p>By default, this runs the main battery of tests, but omits some additional ones
+(such as internal cross-checks, and mock-testing of features not provided natively by the host OS).
+To run these tests as well, set the following environmental variable:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PASSLIB_TEST_MODE</span><span class="o">=</span><span class="s2">&quot;full&quot;</span> <span class="n">nosetests</span> <span class="o">--</span><span class="n">tests</span> <span class="n">passlib</span><span class="o">.</span><span class="n">tests</span>
+</pre></div>
+</div>
+<p>To run a quick check to confirm just basic functionality, with a pared-down set of tests:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PASSLIB_TEST_MODE</span><span class="o">=</span><span class="s2">&quot;quick&quot;</span> <span class="n">nosetests</span> <span class="o">--</span><span class="n">tests</span> <span class="n">passlib</span><span class="o">.</span><span class="n">tests</span>
+</pre></div>
+</div>
+<p>Tests may also be run via <code class="docutils literal notranslate"><span class="pre">setup.py</span> <span class="pre">test</span></code> or the included <code class="docutils literal notranslate"><span class="pre">tox.ini</span></code> file.
+The <code class="docutils literal notranslate"><span class="pre">tox.ini</span></code> file is used to test passlib before each release,
+and contains a number different environment setups.
+These tests require <a class="reference external" href="https://pypi.python.org/pypi/tox">tox</a> 2.5 or later.</p>
+</section>
+<section class="html-toggle" id="building-the-documentation">
+<h2>Building the Documentation<a class="headerlink" href="#building-the-documentation" title="Link to this heading">¶</a></h2>
+<p>The latest copy of this documentation should always be available
+online at <a class="reference external" href="https://passlib.readthedocs.io">https://passlib.readthedocs.io</a>.
+If you wish to generate your own copy of the documentation,
+you will need to:</p>
+<ol class="arabic simple">
+<li><p>Download the Passlib source, extract it, and <code class="docutils literal notranslate"><span class="pre">cd</span></code> into the source directory.</p></li>
+<li><p>Install all the dependencies required via <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.[build_docs]</span></code>.</p></li>
+<li><p>Run <code class="samp docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">build_sphinx</span></code>.</p></li>
+<li><p>Once Sphinx completes its run, point a web browser to the file at <code class="samp docutils literal notranslate"><em><span class="pre">SOURCE</span></em><span class="pre">/build/sphinx/html/index.html</span></code>
+to access the Passlib documentation in html format.</p></li>
+</ol>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="contents.html">
+              <img class="logo" src="_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="narr/index.html">Walkthrough &amp; Tutorials</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#supported-platforms">Supported Platforms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#optional-libraries">Optional Libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-instructions">Installation Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#testing">Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-the-documentation">Building the Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="narr/overview.html">Library Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="narr/quickstart.html">New Application Quickstart Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="narr/hash-tutorial.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">PasswordHash</span></code> Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="narr/context-tutorial.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code> Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="narr/totp-tutorial.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">TOTP</span></code> Tutorial</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lib/index.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="narr/overview.html" title="Library Overview"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="narr/index.html" title="Walkthrough &amp; Tutorials"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="narr/index.html" >Walkthrough &amp; Tutorials</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Installation</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

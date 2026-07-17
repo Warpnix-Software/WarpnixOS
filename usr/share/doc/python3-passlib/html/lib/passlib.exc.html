@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.exc - Exceptions and warnings &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.ext.django - Django Password Hashing Plugin" href="passlib.ext.django.html" />
+    <link rel="prev" title="passlib.crypto.des - DES routines" href="passlib.crypto.des.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.ext.django.html" title="passlib.ext.django - Django Password Hashing Plugin"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.crypto.des.html" title="passlib.crypto.des - DES routines"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-passlib.exc">
+<span id="passlib-exc-exceptions-and-warnings"></span><h1><a class="reference internal" href="#module-passlib.exc" title="passlib.exc: exceptions &amp; warnings raised by Passlib"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code></a> - Exceptions and warnings<a class="headerlink" href="#module-passlib.exc" title="Link to this heading">¶</a></h1>
+<p>This module contains all the custom exceptions &amp; warnings that
+may be raised by Passlib.</p>
+<section id="exceptions">
+<h2>Exceptions<a class="headerlink" href="#exceptions" title="Link to this heading">¶</a></h2>
+<dl class="py exception">
+<dt class="sig sig-object py" id="passlib.exc.MissingBackendError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.exc.</span></span><span class="sig-name descname"><span class="pre">MissingBackendError</span></span><a class="headerlink" href="#passlib.exc.MissingBackendError" title="Link to this definition">¶</a></dt>
+<dd><p>Error raised if multi-backend handler has no available backends;
+or if specifically requested backend is not available.</p>
+<p><code class="xref py py-exc docutils literal notranslate"><span class="pre">MissingBackendError</span></code> derives
+from <code class="xref py py-exc docutils literal notranslate"><span class="pre">RuntimeError</span></code>, since it usually indicates
+lack of an external library or OS feature.
+This is primarily raised by handlers which depend on
+external libraries (which is currently just
+<a class="reference internal" href="passlib.hash.bcrypt.html#passlib.hash.bcrypt" title="passlib.hash.bcrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code></a>).</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="passlib.exc.InternalBackendError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.exc.</span></span><span class="sig-name descname"><span class="pre">InternalBackendError</span></span><a class="headerlink" href="#passlib.exc.InternalBackendError" title="Link to this definition">¶</a></dt>
+<dd><p>Error raised if something unrecoverable goes wrong with backend call;
+such as if <code class="docutils literal notranslate"><span class="pre">crypt.crypt()</span></code> returning a malformed hash.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.7.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py exception" id="index-0">
+<dt class="sig sig-object py" id="passlib.exc.PasswordValueError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.exc.</span></span><span class="sig-name descname"><span class="pre">PasswordValueError</span></span><a class="headerlink" href="#passlib.exc.PasswordValueError" title="Link to this definition">¶</a></dt>
+<dd><p>Error raised if a password can’t be hashed / verified for various reasons.
+This exception derives from the builtin <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>.</p>
+<p>May be thrown directly when password violates internal invariants of hasher
+(e.g. some don’t support NULL characters).  Hashers may also throw more specific subclasses,
+such as <code class="xref py py-exc docutils literal notranslate"><span class="pre">PasswordSizeError</span></code>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.7.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="passlib.exc.PasswordSizeError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.exc.</span></span><span class="sig-name descname"><span class="pre">PasswordSizeError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.exc.PasswordSizeError" title="Link to this definition">¶</a></dt>
+<dd><p>Error raised if a password exceeds the maximum size allowed
+by Passlib (by default, 4096 characters); or if password exceeds
+a hash-specific size limitation.</p>
+<p>This exception derives from <a class="reference internal" href="#passlib.exc.PasswordValueError" title="passlib.exc.PasswordValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasswordValueError</span></code></a> (above).</p>
+<p>Many password hash algorithms take proportionately larger amounts of time and/or
+memory depending on the size of the password provided. This could present
+a potential denial of service (DOS) situation if a maliciously large
+password is provided to an application. Because of this, Passlib enforces
+a maximum size limit, but one which should be <em>much</em> larger
+than any legitimate password. <a class="reference internal" href="#passlib.exc.PasswordSizeError" title="passlib.exc.PasswordSizeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasswordSizeError</span></code></a> derives
+from <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Applications wishing to use a different limit should set the
+<code class="docutils literal notranslate"><span class="pre">PASSLIB_MAX_PASSWORD_SIZE</span></code> environmental variable before
+Passlib is loaded. The value can be any large positive integer.</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.exc.PasswordSizeError.max_size">
+<span class="sig-name descname"><span class="pre">max_size</span></span><a class="headerlink" href="#passlib.exc.PasswordSizeError.max_size" title="Link to this definition">¶</a></dt>
+<dd><p>indicates the maximum allowed size.</p>
+</dd></dl>
+
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="passlib.exc.PasswordTruncateError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.exc.</span></span><span class="sig-name descname"><span class="pre">PasswordTruncateError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.exc.PasswordTruncateError" title="Link to this definition">¶</a></dt>
+<dd><p>Error raised if password would be truncated by hash.
+This derives from <a class="reference internal" href="#passlib.exc.PasswordSizeError" title="passlib.exc.PasswordSizeError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasswordSizeError</span></code></a> (above).</p>
+<p>Hashers such as <a class="reference internal" href="passlib.hash.bcrypt.html#passlib.hash.bcrypt" title="passlib.hash.bcrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code></a> can be configured to raises
+this error by setting <code class="docutils literal notranslate"><span class="pre">truncate_error=True</span></code>.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.exc.PasswordTruncateError.max_size">
+<span class="sig-name descname"><span class="pre">max_size</span></span><a class="headerlink" href="#passlib.exc.PasswordTruncateError.max_size" title="Link to this definition">¶</a></dt>
+<dd><p>indicates the maximum allowed size.</p>
+</dd></dl>
+
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.7.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="passlib.exc.PasslibSecurityError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.exc.</span></span><span class="sig-name descname"><span class="pre">PasslibSecurityError</span></span><a class="headerlink" href="#passlib.exc.PasslibSecurityError" title="Link to this definition">¶</a></dt>
+<dd><p>Error raised if critical security issue is detected
+(e.g. an attempt is made to use a vulnerable version of a bcrypt backend).</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="passlib.exc.UnknownHashError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.exc.</span></span><span class="sig-name descname"><span class="pre">UnknownHashError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.exc.UnknownHashError" title="Link to this definition">¶</a></dt>
+<dd><p>Error raised by <code class="xref py py-class docutils literal notranslate"><span class="pre">lookup_hash</span></code> if hash name is not recognized.
+This exception derives from <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>.</p>
+<p>As of version 1.7.3, this may also be raised if hash algorithm is known,
+but has been disabled due to FIPS mode (message will include phrase “disabled for fips”).</p>
+<p>As of version 1.7.4, this may be raised if a <a class="reference internal" href="passlib.context.html#passlib.context.CryptContext" title="passlib.context.CryptContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code></a>
+is unable to identify the algorithm used by a password hash.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.7.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.7.4: </span>altered call signature.</p>
+</div>
+</dd></dl>
+
+<section id="totp-exceptions">
+<h3>TOTP Exceptions<a class="headerlink" href="#totp-exceptions" title="Link to this heading">¶</a></h3>
+<dl class="py exception">
+<dt class="sig sig-object py" id="passlib.exc.TokenError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.exc.</span></span><span class="sig-name descname"><span class="pre">TokenError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.exc.TokenError" title="Link to this definition">¶</a></dt>
+<dd><p>Base error raised by v:mod:<cite>passlib.totp</cite> when
+a token can’t be parsed / isn’t valid / etc.
+Derives from <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>.</p>
+<p>Usually one of the more specific subclasses below will be raised:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#passlib.exc.MalformedTokenError" title="passlib.exc.MalformedTokenError"><code class="xref py py-class docutils literal notranslate"><span class="pre">MalformedTokenError</span></code></a> – invalid chars, too few digits</p></li>
+<li><p><a class="reference internal" href="#passlib.exc.InvalidTokenError" title="passlib.exc.InvalidTokenError"><code class="xref py py-class docutils literal notranslate"><span class="pre">InvalidTokenError</span></code></a> – no match found</p></li>
+<li><p><a class="reference internal" href="#passlib.exc.UsedTokenError" title="passlib.exc.UsedTokenError"><code class="xref py py-class docutils literal notranslate"><span class="pre">UsedTokenError</span></code></a> – match found, but token already used</p></li>
+</ul>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.7.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="passlib.exc.MalformedTokenError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.exc.</span></span><span class="sig-name descname"><span class="pre">MalformedTokenError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.exc.MalformedTokenError" title="Link to this definition">¶</a></dt>
+<dd><p>Error raised by <a class="reference internal" href="passlib.totp.html#module-passlib.totp" title="passlib.totp: totp / two factor authentaction"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code></a> when a token isn’t formatted correctly
+(contains invalid characters, wrong number of digits, etc)</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="passlib.exc.InvalidTokenError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.exc.</span></span><span class="sig-name descname"><span class="pre">InvalidTokenError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.exc.InvalidTokenError" title="Link to this definition">¶</a></dt>
+<dd><p>Error raised by <a class="reference internal" href="passlib.totp.html#module-passlib.totp" title="passlib.totp: totp / two factor authentaction"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code></a> when a token is formatted correctly,
+but doesn’t match any tokens within valid range.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="passlib.exc.UsedTokenError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.exc.</span></span><span class="sig-name descname"><span class="pre">UsedTokenError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.exc.UsedTokenError" title="Link to this definition">¶</a></dt>
+<dd><p>Error raised by <a class="reference internal" href="passlib.totp.html#module-passlib.totp" title="passlib.totp: totp / two factor authentaction"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code></a> if a token is reused.
+Derives from <a class="reference internal" href="#passlib.exc.TokenError" title="passlib.exc.TokenError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">TokenError</span></code></a>.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.exc.UsedTokenError.expire_time">
+<span class="sig-name descname"><span class="pre">expire_time</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#passlib.exc.UsedTokenError.expire_time" title="Link to this definition">¶</a></dt>
+<dd><p>optional value indicating when current counter period will end,
+and a new token can be generated.</p>
+</dd></dl>
+
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.7.</span></p>
+</div>
+</dd></dl>
+
+</section>
+</section>
+<section id="warnings">
+<h2>Warnings<a class="headerlink" href="#warnings" title="Link to this heading">¶</a></h2>
+<dl class="py exception">
+<dt class="sig sig-object py" id="passlib.exc.PasslibWarning">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.exc.</span></span><span class="sig-name descname"><span class="pre">PasslibWarning</span></span><a class="headerlink" href="#passlib.exc.PasslibWarning" title="Link to this definition">¶</a></dt>
+<dd><p>base class for Passlib’s user warnings,
+derives from the builtin <code class="xref py py-exc docutils literal notranslate"><span class="pre">UserWarning</span></code>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+</dd></dl>
+
+<section id="minor-warnings">
+<h3>Minor Warnings<a class="headerlink" href="#minor-warnings" title="Link to this heading">¶</a></h3>
+<dl class="py exception">
+<dt class="sig sig-object py" id="passlib.exc.PasslibConfigWarning">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.exc.</span></span><span class="sig-name descname"><span class="pre">PasslibConfigWarning</span></span><a class="headerlink" href="#passlib.exc.PasslibConfigWarning" title="Link to this definition">¶</a></dt>
+<dd><p>Warning issued when non-fatal issue is found related to the configuration
+of a <a class="reference internal" href="passlib.context.html#passlib.context.CryptContext" title="passlib.context.CryptContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code></a> instance.</p>
+<p>This occurs primarily in one of two cases:</p>
+<ul class="simple">
+<li><p>The CryptContext contains rounds limits which exceed the hard limits
+imposed by the underlying algorithm.</p></li>
+<li><p>An explicit rounds value was provided which exceeds the limits
+imposed by the CryptContext.</p></li>
+</ul>
+<p>In both of these cases, the code will perform correctly &amp; securely;
+but the warning is issued as a sign the configuration may need updating.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="passlib.exc.PasslibHashWarning">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.exc.</span></span><span class="sig-name descname"><span class="pre">PasslibHashWarning</span></span><a class="headerlink" href="#passlib.exc.PasslibHashWarning" title="Link to this definition">¶</a></dt>
+<dd><p>Warning issued when non-fatal issue is found with parameters
+or hash string passed to a passlib hash class.</p>
+<p>This occurs primarily in one of two cases:</p>
+<ul class="simple">
+<li><p>A rounds value or other setting was explicitly provided which
+exceeded the handler’s limits (and has been clamped
+by the <a class="reference internal" href="passlib.ifc.html#relaxed-keyword"><span class="std std-ref">relaxed</span></a> flag).</p></li>
+<li><p>A malformed hash string was encountered which (while parsable)
+should be re-encoded.</p></li>
+</ul>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="critical-warnings">
+<h3>Critical Warnings<a class="headerlink" href="#critical-warnings" title="Link to this heading">¶</a></h3>
+<dl class="py exception">
+<dt class="sig sig-object py" id="passlib.exc.PasslibRuntimeWarning">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.exc.</span></span><span class="sig-name descname"><span class="pre">PasslibRuntimeWarning</span></span><a class="headerlink" href="#passlib.exc.PasslibRuntimeWarning" title="Link to this definition">¶</a></dt>
+<dd><p>Warning issued when something unexpected happens during runtime.</p>
+<p>The fact that it’s a warning instead of an error means Passlib
+was able to correct for the issue, but that it’s anomalous enough
+that the developers would love to hear under what conditions it occurred.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="passlib.exc.PasslibSecurityWarning">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.exc.</span></span><span class="sig-name descname"><span class="pre">PasslibSecurityWarning</span></span><a class="headerlink" href="#passlib.exc.PasslibSecurityWarning" title="Link to this definition">¶</a></dt>
+<dd><p>Special warning issued when Passlib encounters something
+that might affect security.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#exceptions">Exceptions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.exc.MissingBackendError"><code class="docutils literal notranslate"><span class="pre">MissingBackendError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.exc.InternalBackendError"><code class="docutils literal notranslate"><span class="pre">InternalBackendError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.exc.PasswordValueError"><code class="docutils literal notranslate"><span class="pre">PasswordValueError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.exc.PasswordSizeError"><code class="docutils literal notranslate"><span class="pre">PasswordSizeError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.exc.PasswordTruncateError"><code class="docutils literal notranslate"><span class="pre">PasswordTruncateError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.exc.PasslibSecurityError"><code class="docutils literal notranslate"><span class="pre">PasslibSecurityError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.exc.UnknownHashError"><code class="docutils literal notranslate"><span class="pre">UnknownHashError</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#totp-exceptions">TOTP Exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#warnings">Warnings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.exc.PasslibWarning"><code class="docutils literal notranslate"><span class="pre">PasslibWarning</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#minor-warnings">Minor Warnings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#critical-warnings">Critical Warnings</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.ext.django.html" title="passlib.ext.django - Django Password Hashing Plugin"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.crypto.des.html" title="passlib.crypto.des - DES routines"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

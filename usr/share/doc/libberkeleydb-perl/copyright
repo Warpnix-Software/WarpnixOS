@@ -1,0 +1,25 @@
+This package Debianised by Steve Haslam <araqnid@debian.org> on 
+29th April 2001.
+
+Originally downloaded from CPAN:
+https://metacpan.org/release/BerkeleyDB
+
+********************
+
+                                   BerkeleyDB
+
+                                  Version 0.15
+
+                                  5th April 2001
+
+	Copyright (c) 1997-2001 Paul Marquess. All rights reserved. This
+	program is free software; you can redistribute it and/or modify
+	it under the same terms as Perl itself.
+
+
+********************
+
+See /usr/share/common-licenses/GPL-1 and
+/usr/share/common-licenses/Artistic for the basic licences Perl is
+based on, and /usr/share/doc/perl/copyright for the license for
+Perl itself.

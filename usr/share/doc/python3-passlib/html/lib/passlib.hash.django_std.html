@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.hash.django_digest - Django-specific Hashes &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.hash.grub_pbkdf2_sha512 - Grub’s PBKDF2 Hash" href="passlib.hash.grub_pbkdf2_sha512.html" />
+    <link rel="prev" title="passlib.hash.cisco_asa - Cisco ASA MD5 hash" href="passlib.hash.cisco_asa.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.grub_pbkdf2_sha512.html" title="passlib.hash.grub_pbkdf2_sha512 - Grub’s PBKDF2 Hash"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.cisco_asa.html" title="passlib.hash.cisco_asa - Cisco ASA MD5 hash"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="samp docutils literal notranslate"><span class="pre">passlib.hash.django_</span><em><span class="pre">digest</span></em></code> - Django-specific Hashes</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-hash-django-digest-django-specific-hashes">
+<span id="index-0"></span><h1><code class="samp docutils literal notranslate"><span class="pre">passlib.hash.django_</span><em><span class="pre">digest</span></em></code> - Django-specific Hashes<a class="headerlink" href="#passlib-hash-django-digest-django-specific-hashes" title="Link to this heading">¶</a></h1>
+<p>The <a class="reference external" href="http://www.djangoproject.com">Django</a> web framework
+provides a module for storing user accounts and passwords
+(<code class="xref py py-mod docutils literal notranslate"><span class="pre">django.contrib.auth</span></code>).
+This module’s password hashing code supports a few simple salted digests,
+stored using the format <code class="samp docutils literal notranslate"><em><span class="pre">id</span></em><span class="pre">$</span><em><span class="pre">salt</span></em><span class="pre">$</span><em><span class="pre">checksum</span></em></code> (where <code class="samp docutils literal notranslate"><em><span class="pre">id</span></em></code>
+is an identifier assigned by Django).
+Passlib provides support for all the hashes used up to and including
+Django 1.10.</p>
+<section id="django-1-10-hashes">
+<h2>Django 1.10 Hashes<a class="headerlink" href="#django-1-10-hashes" title="Link to this heading">¶</a></h2>
+<section id="argon2">
+<h3>Argon2<a class="headerlink" href="#argon2" title="Link to this heading">¶</a></h3>
+<p>Django 1.10 added a wrapper for Argon2:</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.django_argon2">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">django_argon2</span></span><a class="headerlink" href="#passlib.hash.django_argon2" title="Link to this definition">¶</a></dt>
+<dd><p>This class implements Django 1.10’s Argon2 wrapper, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>This is identical to <code class="xref py py-class docutils literal notranslate"><span class="pre">argon2</span></code> itself, but with
+the Django-specific prefix <code class="docutils literal notranslate"><span class="pre">&quot;argon2&quot;</span></code> prepended.</p>
+<p>See <a class="reference internal" href="passlib.hash.argon2.html"><span class="doc">argon2</span></a> for more details,
+the usage and behavior is identical.</p>
+<p>This should be compatible with the hashes generated by
+Django 1.10’s <code class="xref py py-class docutils literal notranslate"><span class="pre">Argon2PasswordHasher</span></code> class.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.7.</span></p>
+</div>
+</dd></dl>
+
+<p>This hash has the exact same structure as <a class="reference internal" href="passlib.hash.argon2.html#passlib.hash.argon2" title="passlib.hash.argon2"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash.argon2</span></code></a>,
+except that it has the prefix <code class="docutils literal notranslate"><span class="pre">argon2</span></code> added. For example,
+the django_argon2 hash…:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>argon2$argon2i$v=19$m=256,t=1,p=1$c29tZXNhbHQ$AJFIsNZTMKTAewB4+ETN1A
+</pre></div>
+</div>
+<p>…corresponds to the argon2 hash:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>argon2i$v=19$m=256,t=1,p=1$c29tZXNhbHQ$AJFIsNZTMKTAewB4+ETN1A
+</pre></div>
+</div>
+</section>
+</section>
+<section id="django-1-6-hashes">
+<h2>Django 1.6 Hashes<a class="headerlink" href="#django-1-6-hashes" title="Link to this heading">¶</a></h2>
+<p>Django 1.6 added one new hash:</p>
+<section id="bcrypt-sha256">
+<h3>Bcrypt SHA256<a class="headerlink" href="#bcrypt-sha256" title="Link to this heading">¶</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.django_bcrypt_sha256">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">django_bcrypt_sha256</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ident</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.hash.django_bcrypt_sha256" title="Link to this definition">¶</a></dt>
+<dd><p>This class implements Django 1.6’s Bcrypt+SHA256 hash, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>It supports a variable-length salt, and a variable number of rounds.</p>
+<p>While the algorithm and format is somewhat different,
+the api and options for this hash are identical to <code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code> itself,
+see <a class="reference internal" href="passlib.hash.bcrypt.html"><span class="doc">bcrypt</span></a> for more details.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.2.</span></p>
+</div>
+</dd></dl>
+
+<p>This hash has the exact same structure as <a class="reference internal" href="passlib.hash.bcrypt.html#passlib.hash.bcrypt" title="passlib.hash.bcrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code></a>,
+except that it has the prefix <code class="docutils literal notranslate"><span class="pre">bcrypt$</span></code> added. For example,
+the django_bcrypt_sha256 hash…:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>bcrypt_sha256$$2a$06$/3OeRpbOf8/l6nPPRdZPp.nRiyYqPobEZGdNRBWihQhiFDh1ws1tu
+</pre></div>
+</div>
+<p>…has the same structure as the bcrypt hash.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$2a$06$/3OeRpbOf8/l6nPPRdZPp.nRiyYqPobEZGdNRBWihQhiFDh1ws1tu
+</pre></div>
+</div>
+<p>That said, the hash is calculated slightly differently… the password
+is run through sha256(), the result encoded to lowercase hexadecimal,
+and then handed to bcrypt proper.  This very similar to passlib’s
+<a class="reference internal" href="passlib.hash.bcrypt_sha256.html#passlib.hash.bcrypt_sha256" title="passlib.hash.bcrypt_sha256"><code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt_sha256</span></code></a>, and addresses the same set of issues.</p>
+</section>
+</section>
+<section id="django-1-4-hashes">
+<span id="id1"></span><h2>Django 1.4 Hashes<a class="headerlink" href="#django-1-4-hashes" title="Link to this heading">¶</a></h2>
+<p>Django 1.4 introduced a new “hashers” framework, as well as
+three new modern large-salt variable-cost hash algorithms:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#passlib.hash.django_pbkdf2_sha256" title="passlib.hash.django_pbkdf2_sha256"><code class="xref py py-class docutils literal notranslate"><span class="pre">django_pbkdf2_sha256</span></code></a> - a PBKDF2-HMAC-SHA256 based hash.</p></li>
+<li><p><a class="reference internal" href="#passlib.hash.django_pbkdf2_sha1" title="passlib.hash.django_pbkdf2_sha1"><code class="xref py py-class docutils literal notranslate"><span class="pre">django_pbkdf2_sha1</span></code></a> - a PBKDF2-HMAC-SHA1 based hash.</p></li>
+<li><p><a class="reference internal" href="#passlib.hash.django_bcrypt" title="passlib.hash.django_bcrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">django_bcrypt</span></code></a> - a wrapper around <a class="reference internal" href="passlib.hash.bcrypt.html#passlib.hash.bcrypt" title="passlib.hash.bcrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code></a>.</p></li>
+</ul>
+<p>These classes can be used directly as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.hash</span> <span class="kn">import</span> <span class="n">django_pbkdf2_sha256</span> <span class="k">as</span> <span class="n">handler</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># hash password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">handler</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span>
+<span class="go">&#39;pbkdf2_sha256$10000$s1w0UXDd00XB$+4ORmyvVWAQvoAEWlDgN34vlaJx1ZTZpa1pCSRey2Yk=&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># verify password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">handler</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">handler</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;eville&quot;</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>the generic <a class="reference internal" href="../narr/hash-tutorial.html#password-hash-examples"><span class="std std-ref">PasswordHash usage examples</span></a></p>
+</div>
+<section id="interface">
+<h3>Interface<a class="headerlink" href="#interface" title="Link to this heading">¶</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.django_pbkdf2_sha256">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">django_pbkdf2_sha256</span></span><a class="headerlink" href="#passlib.hash.django_pbkdf2_sha256" title="Link to this definition">¶</a></dt>
+<dd><p>This class implements Django’s PBKDF2-HMAC-SHA256 hash, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>It supports a variable-length salt, and a variable number of rounds.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">using()</span></code></a> method accepts the following optional keywords:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>salt</strong> (<em>str</em>) – Optional salt string.
+If not specified, a 12 character one will be autogenerated (this is recommended).
+If specified, may be any series of characters drawn from the regexp range <code class="docutils literal notranslate"><span class="pre">[0-9a-zA-Z]</span></code>.</p></li>
+<li><p><strong>salt_size</strong> (<em>int</em>) – Optional number of characters to use when autogenerating new salts.
+Defaults to 12, but can be any positive value.</p></li>
+<li><p><strong>rounds</strong> (<em>int</em>) – Optional number of rounds to use.
+Defaults to 29000, but must be within <code class="docutils literal notranslate"><span class="pre">range(1,1&lt;&lt;32)</span></code>.</p></li>
+<li><p><strong>relaxed</strong> (<em>bool</em>) – By default, providing an invalid value for one of the other
+keywords will result in a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>. If <code class="docutils literal notranslate"><span class="pre">relaxed=True</span></code>,
+and the error can be corrected, a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasslibHashWarning" title="passlib.exc.PasslibHashWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasslibHashWarning</span></code></a>
+will be issued instead. Correctable errors include <code class="docutils literal notranslate"><span class="pre">rounds</span></code>
+that are too small or too large, and <code class="docutils literal notranslate"><span class="pre">salt</span></code> strings that are too long.</p></li>
+</ul>
+</dd>
+</dl>
+<p>This should be compatible with the hashes generated by
+Django 1.4’s <code class="xref py py-class docutils literal notranslate"><span class="pre">PBKDF2PasswordHasher</span></code> class.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.django_pbkdf2_sha1">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">django_pbkdf2_sha1</span></span><a class="headerlink" href="#passlib.hash.django_pbkdf2_sha1" title="Link to this definition">¶</a></dt>
+<dd><p>This class implements Django’s PBKDF2-HMAC-SHA1 hash, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>It supports a variable-length salt, and a variable number of rounds.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">using()</span></code></a> method accepts the following optional keywords:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>salt</strong> (<em>str</em>) – Optional salt string.
+If not specified, a 12 character one will be autogenerated (this is recommended).
+If specified, may be any series of characters drawn from the regexp range <code class="docutils literal notranslate"><span class="pre">[0-9a-zA-Z]</span></code>.</p></li>
+<li><p><strong>salt_size</strong> (<em>int</em>) – Optional number of characters to use when autogenerating new salts.
+Defaults to 12, but can be any positive value.</p></li>
+<li><p><strong>rounds</strong> (<em>int</em>) – Optional number of rounds to use.
+Defaults to 131000, but must be within <code class="docutils literal notranslate"><span class="pre">range(1,1&lt;&lt;32)</span></code>.</p></li>
+<li><p><strong>relaxed</strong> (<em>bool</em>) – By default, providing an invalid value for one of the other
+keywords will result in a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>. If <code class="docutils literal notranslate"><span class="pre">relaxed=True</span></code>,
+and the error can be corrected, a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasslibHashWarning" title="passlib.exc.PasslibHashWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasslibHashWarning</span></code></a>
+will be issued instead. Correctable errors include <code class="docutils literal notranslate"><span class="pre">rounds</span></code>
+that are too small or too large, and <code class="docutils literal notranslate"><span class="pre">salt</span></code> strings that are too long.</p></li>
+</ul>
+</dd>
+</dl>
+<p>This should be compatible with the hashes generated by
+Django 1.4’s <code class="xref py py-class docutils literal notranslate"><span class="pre">PBKDF2SHA1PasswordHasher</span></code> class.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.hash.django_bcrypt">
+<span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">django_bcrypt</span></span><a class="headerlink" href="#passlib.hash.django_bcrypt" title="Link to this definition">¶</a></dt>
+<dd><p>This class implements Django 1.4’s BCrypt wrapper, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>This is identical to <code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code> itself, but with
+the Django-specific prefix <code class="docutils literal notranslate"><span class="pre">&quot;bcrypt$&quot;</span></code> prepended.
+See <a class="reference internal" href="passlib.hash.bcrypt.html"><span class="doc">passlib.hash.bcrypt - BCrypt</span></a> for more details,
+the usage and behavior is identical.</p>
+<p>This should be compatible with the hashes generated by
+Django 1.4’s <code class="xref py py-class docutils literal notranslate"><span class="pre">BCryptPasswordHasher</span></code> class.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="format">
+<h3>Format<a class="headerlink" href="#format" title="Link to this heading">¶</a></h3>
+<p>An example <code class="xref py py-class docutils literal notranslate"><span class="pre">django_pbkdf2_sha256</span></code> hash (of <code class="docutils literal notranslate"><span class="pre">password</span></code>) is:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">pbkdf2_sha256$10000$s1w0UXDd00XB$+4ORmyvVWAQvoAEWlDgN34vlaJx1ZTZpa1pCSRey2Yk=</span></code></p>
+</div></blockquote>
+<p>Both of Django’s PBKDF2 hashes have the same basic format,
+<code class="samp docutils literal notranslate"><em><span class="pre">ident</span></em><span class="pre">$</span><em><span class="pre">rounds</span></em><span class="pre">$</span><em><span class="pre">salt</span></em><span class="pre">$</span><em><span class="pre">checksum</span></em></code>, where:</p>
+<ul class="simple">
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">ident</span></em></code> is an identifier (<code class="docutils literal notranslate"><span class="pre">pbkdf2_sha256</span></code> in the case of the example).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">rounds</span></em></code> is a variable cost parameter encoded in decimal.</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">salt</span></em></code> consists of (usually 12) alphanumeric digits
+(<code class="docutils literal notranslate"><span class="pre">s1w0UXDd00XB</span></code> in the example).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">checksum</span></em></code> is the base64 encoding the PBKDF2 digest.</p></li>
+</ul>
+<p>The digest portion is generated by passing the <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> encoded password,
+the <code class="docutils literal notranslate"><span class="pre">ascii</span></code>-encoded salt string, and the number of rounds into
+PBKDF2 using the HMAC-SHA256 prf; and generated a 32 byte checksum,
+which is then encoding using base64.</p>
+<p>The other PBKDF2 wrapper functions similarly.</p>
+</section>
+</section>
+<section id="django-1-0-hashes">
+<h2>Django 1.0 Hashes<a class="headerlink" href="#django-1-0-hashes" title="Link to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>All of the following hashes are very susceptible to brute-force attacks;
+since they are simple single-round salted digests.
+They should not be used for any purpose
+besides manipulating existing Django password hashes.</p>
+</div>
+<p>Django 1.0 supports some basic salted digests, as well as some
+legacy hashes:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#passlib.hash.django_salted_sha1" title="passlib.hash.django_salted_sha1"><code class="xref py py-class docutils literal notranslate"><span class="pre">django_salted_sha1</span></code></a> - simple salted SHA1 digest, Django 1.0-1.3’s default.</p></li>
+<li><p><a class="reference internal" href="#passlib.hash.django_salted_md5" title="passlib.hash.django_salted_md5"><code class="xref py py-class docutils literal notranslate"><span class="pre">django_salted_md5</span></code></a> - simple salted MD5 digest.</p></li>
+<li><p><a class="reference internal" href="#passlib.hash.django_des_crypt" title="passlib.hash.django_des_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">django_des_crypt</span></code></a> - support for legacy <a class="reference internal" href="passlib.hash.des_crypt.html#passlib.hash.des_crypt" title="passlib.hash.des_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">des_crypt</span></code></a> hashes,
+shoehorned into Django’s hash format.</p></li>
+</ul>
+<p>These classes can be used directly as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.hash</span> <span class="kn">import</span> <span class="n">django_salted_sha1</span> <span class="k">as</span> <span class="n">handler</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># hash password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">handler</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span>
+<span class="go">&#39;sha1$c6218$161d1ac8ab38979c5a31cbaba4a67378e7e60845&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># verify password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">handler</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">handler</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;eville&quot;</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>the generic <a class="reference internal" href="../narr/hash-tutorial.html#password-hash-examples"><span class="std std-ref">PasswordHash usage examples</span></a></p>
+</div>
+<section id="id2">
+<h3>Interface<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.django_salted_md5">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">django_salted_md5</span></span><a class="headerlink" href="#passlib.hash.django_salted_md5" title="Link to this definition">¶</a></dt>
+<dd><p>This class implements Django’s Salted MD5 hash, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>It supports a variable-length salt, and uses a single round of MD5.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code></a> and <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.genconfig" title="passlib.ifc.PasswordHash.genconfig"><code class="xref py py-meth docutils literal notranslate"><span class="pre">genconfig()</span></code></a> methods accept the following optional keywords:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>salt</strong> (<em>str</em>) – Optional salt string.
+If not specified, a 12 character one will be autogenerated (this is recommended).
+If specified, may be any series of characters drawn from the regexp range <code class="docutils literal notranslate"><span class="pre">[0-9a-zA-Z]</span></code>.</p></li>
+<li><p><strong>salt_size</strong> (<em>int</em>) – Optional number of characters to use when autogenerating new salts.
+Defaults to 12, but can be any positive value.</p></li>
+</ul>
+</dd>
+</dl>
+<p>This should be compatible with the hashes generated by
+Django 1.4’s <code class="xref py py-class docutils literal notranslate"><span class="pre">MD5PasswordHasher</span></code> class.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.django_salted_sha1">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">django_salted_sha1</span></span><a class="headerlink" href="#passlib.hash.django_salted_sha1" title="Link to this definition">¶</a></dt>
+<dd><p>This class implements Django’s Salted SHA1 hash, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>It supports a variable-length salt, and uses a single round of SHA1.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code></a> and <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.genconfig" title="passlib.ifc.PasswordHash.genconfig"><code class="xref py py-meth docutils literal notranslate"><span class="pre">genconfig()</span></code></a> methods accept the following optional keywords:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>salt</strong> (<em>str</em>) – Optional salt string.
+If not specified, a 12 character one will be autogenerated (this is recommended).
+If specified, may be any series of characters drawn from the regexp range <code class="docutils literal notranslate"><span class="pre">[0-9a-zA-Z]</span></code>.</p></li>
+<li><p><strong>salt_size</strong> (<em>int</em>) – Optional number of characters to use when autogenerating new salts.
+Defaults to 12, but can be any positive value.</p></li>
+</ul>
+</dd>
+</dl>
+<p>This should be compatible with Django 1.4’s <code class="xref py py-class docutils literal notranslate"><span class="pre">SHA1PasswordHasher</span></code> class.</p>
+</dd></dl>
+
+</section>
+<section id="id3">
+<h3>Format<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<p>An example <code class="xref py py-class docutils literal notranslate"><span class="pre">django_salted_sha1</span></code> hash (of <code class="docutils literal notranslate"><span class="pre">password</span></code>) is:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">sha1$f8793$c4cd18eb02375a037885706d414d68d521ca18c7</span></code></p>
+</div></blockquote>
+<p>Both of Django’s salted hashes have the same basic format,
+<code class="samp docutils literal notranslate"><em><span class="pre">ident</span></em><span class="pre">$</span><em><span class="pre">salt</span></em><span class="pre">$</span><em><span class="pre">checksum</span></em></code>, where:</p>
+<ul class="simple">
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">ident</span></em></code> is an identifier (<code class="docutils literal notranslate"><span class="pre">sha1</span></code> in the case of the example,
+<code class="docutils literal notranslate"><span class="pre">md5</span></code> for <code class="xref py py-class docutils literal notranslate"><span class="pre">django_salted_md5</span></code>).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">salt</span></em></code> consists of (usually 5) lowercase hexadecimal digits (<code class="docutils literal notranslate"><span class="pre">f8793</span></code> in the example).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">checksum</span></em></code> is lowercase hexadecimal encoding of the checksum.</p></li>
+</ul>
+<p>The checksum is generated by concatenating the salt digits followed
+by the password, and hashing them using the specified digest (MD5 or SHA-1).
+The digest is then encoded to hexadecimal.
+If the password is unicode, it is converted to <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> first.</p>
+</section>
+<section id="security-issues">
+<h3>Security Issues<a class="headerlink" href="#security-issues" title="Link to this heading">¶</a></h3>
+<p>Django’s salted hashes should not be considered very secure.</p>
+<ul class="simple">
+<li><p>They use only a single round of digests with known collision
+and pre-image attacks (SHA1 &amp; MD5).</p></li>
+<li><p>While it could be increased, they currently use only 20 bits
+of entropy in their salt, which is borderline insufficient to defeat
+rainbow tables.</p></li>
+<li><p>They digest the encoded hexadecimal salt, not the raw bytes,
+increasing the odds that a particular salt+password string
+will be present in a pre-computed tables of ascii digests.</p></li>
+</ul>
+</section>
+</section>
+<section id="des-crypt-wrapper">
+<h2>Des Crypt Wrapper<a class="headerlink" href="#des-crypt-wrapper" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.django_des_crypt">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">django_des_crypt</span></span><a class="headerlink" href="#passlib.hash.django_des_crypt" title="Link to this definition">¶</a></dt>
+<dd><p>This class implements Django’s <a class="reference internal" href="passlib.hash.des_crypt.html#passlib.hash.des_crypt" title="passlib.hash.des_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">des_crypt</span></code></a> wrapper, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>It supports a fixed-length salt.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code></a> and <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.genconfig" title="passlib.ifc.PasswordHash.genconfig"><code class="xref py py-meth docutils literal notranslate"><span class="pre">genconfig()</span></code></a> methods accept the following optional keywords:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>salt</strong> (<em>str</em>) – Optional salt string.
+If not specified, one will be autogenerated (this is recommended).
+If specified, it must be 2 characters, drawn from the regexp range <code class="docutils literal notranslate"><span class="pre">[./0-9A-Za-z]</span></code>.</p></li>
+<li><p><strong>truncate_error</strong> (<em>bool</em>) – <p>By default, django_des_crypt will silently truncate passwords larger than 8 bytes.
+Setting <code class="docutils literal notranslate"><span class="pre">truncate_error=True</span></code> will cause <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code></a>
+to raise a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasswordTruncateError" title="passlib.exc.PasswordTruncateError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasswordTruncateError</span></code></a> instead.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.7.</span></p>
+</div>
+</p></li>
+</ul>
+</dd>
+</dl>
+<p>This should be compatible with the hashes generated by
+Django 1.4’s <code class="xref py py-class docutils literal notranslate"><span class="pre">CryptPasswordHasher</span></code> class.
+Note that Django only supports this hash on Unix systems
+(though <code class="xref py py-class docutils literal notranslate"><span class="pre">django_des_crypt</span></code> is available cross-platform
+under Passlib).</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.6: </span>This class will now accept hashes with empty salt strings,
+since Django 1.4 generates them this way.</p>
+</div>
+</dd></dl>
+
+<section id="id4">
+<h3>Format<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<p>An example <code class="xref py py-class docutils literal notranslate"><span class="pre">django_des_crypt</span></code> hash (of <code class="docutils literal notranslate"><span class="pre">password</span></code>) is
+<code class="docutils literal notranslate"><span class="pre">crypt$cd1a4$cdlRbNJGImptk</span></code>; the general format is the same
+as the salted hashes: <code class="samp docutils literal notranslate"><em><span class="pre">ident</span></em><span class="pre">$</span><em><span class="pre">salt</span></em><span class="pre">$</span><em><span class="pre">checksum</span></em></code>, where:</p>
+<ul class="simple">
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">ident</span></em></code> is the identifier <code class="docutils literal notranslate"><span class="pre">crypt</span></code>.</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">salt</span></em></code> is 5 lowercase hexadecimal digits (<code class="docutils literal notranslate"><span class="pre">cd1a4</span></code> in the example).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">checksum</span></em></code> is a <code class="xref py py-class docutils literal notranslate"><span class="pre">des_crypt</span></code> hash (<code class="docutils literal notranslate"><span class="pre">cdlRbNJGImptk</span></code> in the example).</p></li>
+</ul>
+<p>It should be noted that this class essentially just shoe-horns
+<a class="reference internal" href="passlib.hash.des_crypt.html#passlib.hash.des_crypt" title="passlib.hash.des_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">des_crypt</span></code></a> into a format compatible with the Django salted hashes (above).
+It has a few quirks, such as the fact that only the first two characters
+of the salt are used by <code class="xref py py-class docutils literal notranslate"><span class="pre">des_crypt</span></code>, and they are in turn
+duplicated as the first two characters of the checksum.</p>
+<p>For security issues relating to <code class="xref py py-class docutils literal notranslate"><span class="pre">django_des_crypt</span></code>,
+see <a class="reference internal" href="passlib.hash.des_crypt.html#passlib.hash.des_crypt" title="passlib.hash.des_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">des_crypt</span></code></a>.</p>
+</section>
+</section>
+<section id="other-hashes">
+<h2>Other Hashes<a class="headerlink" href="#other-hashes" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.django_disabled">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">django_disabled</span></span><a class="headerlink" href="#passlib.hash.django_disabled" title="Link to this definition">¶</a></dt>
+<dd><p>This class provides disabled password behavior for Django, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>This class does not implement a hash, but instead
+claims the special hash string <code class="docutils literal notranslate"><span class="pre">&quot;!&quot;</span></code> which Django uses
+to indicate an account’s password has been disabled.</p>
+<ul class="simple">
+<li><p>newly encrypted passwords will hash to <code class="docutils literal notranslate"><span class="pre">&quot;!&quot;</span></code>.</p></li>
+<li><p>it rejects all passwords.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Django 1.6 prepends a randomly generated 40-char alphanumeric string
+to each unusuable password. This class recognizes such strings,
+but for backwards compatibility, still returns <code class="docutils literal notranslate"><span class="pre">&quot;!&quot;</span></code>.</p>
+<p>See <a class="reference external" href="https://code.djangoproject.com/ticket/20079">https://code.djangoproject.com/ticket/20079</a> for why
+Django appends an alphanumeric string.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.6.2: </span>added Django 1.6 support</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.7: </span>started appending an alphanumeric string.</p>
+</div>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some older (pre-1.0) versions of Django encoded
+passwords using <a class="reference internal" href="passlib.hash.hex_digests.html#passlib.hash.hex_md5" title="passlib.hash.hex_md5"><code class="xref py py-class docutils literal notranslate"><span class="pre">hex_md5</span></code></a>,
+though this has been deprecated by Django,
+and should become increasingly rare.</p>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#unix-hashes">Unix Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-modular-crypt-hashes">Other “Modular Crypt” Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ldap-rfc2307-hashes">LDAP / RFC2307 Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#sql-database-hashes">SQL Database Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ms-windows-hashes">MS Windows Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#cisco-hashes">Cisco Hashes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="passlib.hash.html#other-hashes">Other Hashes</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="samp docutils literal notranslate"><span class="pre">passlib.hash.django_</span><em><span class="pre">digest</span></em></code> - Django-specific Hashes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.grub_pbkdf2_sha512.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.grub_pbkdf2_sha512</span></code> - Grub’s PBKDF2 Hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.hex_digests.html"><code class="samp docutils literal notranslate"><span class="pre">passlib.hash.hex_</span><em><span class="pre">digest</span></em></code> - Generic Hexadecimal Digests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.plaintext.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.plaintext</span></code> - Plaintext</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.grub_pbkdf2_sha512.html" title="passlib.hash.grub_pbkdf2_sha512 - Grub’s PBKDF2 Hash"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.cisco_asa.html" title="passlib.hash.cisco_asa - Cisco ASA MD5 hash"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="samp docutils literal notranslate"><span class="pre">passlib.hash.django_</span><em><span class="pre">digest</span></em></code> - Django-specific Hashes</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

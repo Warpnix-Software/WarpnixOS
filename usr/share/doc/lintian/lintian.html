@@ -1,0 +1,1200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.22.4: https://docutils.sourceforge.io/" />
+<title>Lintian User's Manual</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 9511 2024-01-13 09:50:07Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+Despite the name, some widely supported CSS2 features are used.
+
+See https://docutils.sourceforge.io/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+.subscript {
+  vertical-align: sub;
+  font-size: smaller }
+
+.superscript {
+  vertical-align: super;
+  font-size: smaller }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left, table.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right, table.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+.align-top    {
+  vertical-align: top }
+
+.align-middle {
+  vertical-align: middle }
+
+.align-bottom {
+  vertical-align: bottom }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: gray; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic, pre.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="lintian-user-s-manual">
+<h1 class="title">Lintian User's Manual</h1>
+
+<div class="contents topic" id="contents">
+<p class="topic-title"><a class="reference internal" href="#top">Contents</a></p>
+<ul class="auto-toc simple">
+<li><a class="reference internal" href="#introduction" id="toc-entry-1">1&nbsp;&nbsp;&nbsp;Introduction</a><ul class="auto-toc">
+<li><a class="reference internal" href="#about-lintian" id="toc-entry-2">1.1&nbsp;&nbsp;&nbsp;About Lintian</a></li>
+<li><a class="reference internal" href="#the-intention-of-lintian" id="toc-entry-3">1.2&nbsp;&nbsp;&nbsp;The intention of Lintian</a></li>
+<li><a class="reference internal" href="#design-issues" id="toc-entry-4">1.3&nbsp;&nbsp;&nbsp;Design issues</a></li>
+<li><a class="reference internal" href="#disclaimer" id="toc-entry-5">1.4&nbsp;&nbsp;&nbsp;Disclaimer</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#getting-started" id="toc-entry-6">2&nbsp;&nbsp;&nbsp;Getting started</a><ul class="auto-toc">
+<li><a class="reference internal" href="#installing-lintian" id="toc-entry-7">2.1&nbsp;&nbsp;&nbsp;Installing Lintian</a></li>
+<li><a class="reference internal" href="#running-lintian" id="toc-entry-8">2.2&nbsp;&nbsp;&nbsp;Running lintian</a></li>
+<li><a class="reference internal" href="#lintian-tags" id="toc-entry-9">2.3&nbsp;&nbsp;&nbsp;Lintian Tags</a></li>
+<li><a class="reference internal" href="#overrides" id="toc-entry-10">2.4&nbsp;&nbsp;&nbsp;Overrides</a><ul class="auto-toc">
+<li><a class="reference internal" href="#format-of-override-files" id="toc-entry-11">2.4.1&nbsp;&nbsp;&nbsp;Format of override files</a></li>
+<li><a class="reference internal" href="#documenting-overrides" id="toc-entry-12">2.4.2&nbsp;&nbsp;&nbsp;Documenting overrides</a></li>
+<li><a class="reference internal" href="#architecture-specific-overrides" id="toc-entry-13">2.4.3&nbsp;&nbsp;&nbsp;Architecture specific overrides</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#vendor-profiles" id="toc-entry-14">2.5&nbsp;&nbsp;&nbsp;Vendor Profiles</a><ul class="auto-toc">
+<li><a class="reference internal" href="#rules-for-profile-names-and-location" id="toc-entry-15">2.5.1&nbsp;&nbsp;&nbsp;Rules for profile names and location</a></li>
+<li><a class="reference internal" href="#profile-syntax-and-semantics" id="toc-entry-16">2.5.2&nbsp;&nbsp;&nbsp;Profile syntax and semantics</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#vendor-specific-data-files" id="toc-entry-17">2.6&nbsp;&nbsp;&nbsp;Vendor specific data files</a><ul class="auto-toc">
+<li><a class="reference internal" href="#load-paths-and-order" id="toc-entry-18">2.6.1&nbsp;&nbsp;&nbsp;Load paths and order</a></li>
+<li><a class="reference internal" href="#basic-syntax-of-data-files" id="toc-entry-19">2.6.2&nbsp;&nbsp;&nbsp;Basic syntax of data files</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#advanced-usage" id="toc-entry-20">3&nbsp;&nbsp;&nbsp;Advanced usage</a><ul class="auto-toc">
+<li><a class="reference internal" href="#how-lintian-works" id="toc-entry-21">3.1&nbsp;&nbsp;&nbsp;How Lintian works</a></li>
+<li><a class="reference internal" href="#the-laboratory" id="toc-entry-22">3.2&nbsp;&nbsp;&nbsp;The laboratory</a></li>
+<li><a class="reference internal" href="#writing-your-own-lintian-checks" id="toc-entry-23">3.3&nbsp;&nbsp;&nbsp;Writing your own Lintian checks</a><ul class="auto-toc">
+<li><a class="reference internal" href="#check-description-file" id="toc-entry-24">3.3.1&nbsp;&nbsp;&nbsp;Check description file</a></li>
+<li><a class="reference internal" href="#check-perl-module-file" id="toc-entry-25">3.3.2&nbsp;&nbsp;&nbsp;Check Perl module file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<span id="chapter-1"></span><h1><a class="toc-backref" href="#toc-entry-1">1&nbsp;&nbsp;&nbsp;Introduction</a></h1>
+<div class="section" id="about-lintian">
+<span id="section-1-1"></span><h2><a class="toc-backref" href="#toc-entry-2">1.1&nbsp;&nbsp;&nbsp;About Lintian</a></h2>
+<p>Lintian is a Debian package checker. It can be used to check binary and
+source packages for compliance with the Debian policy and for other
+common packaging errors.</p>
+<p>Lintian uses an archive directory, called laboratory, in which it stores
+information about the packages it examines. It can keep this information
+between multiple invocations in order to avoid repeating expensive
+data-collection operations. It's also possible to check the complete
+Debian archive for bugs — in a timely manner.</p>
+</div>
+<div class="section" id="the-intention-of-lintian">
+<span id="section-1-2"></span><h2><a class="toc-backref" href="#toc-entry-3">1.2&nbsp;&nbsp;&nbsp;The intention of Lintian</a></h2>
+<p>Packaging has become complicated—not because dpkg is complicated
+(indeed, dpkg-deb is very simple to use) but because of the high
+requirements of our policy. If a developer releases a new package, she
+has to consider hundreds of guidelines to make the package `policy
+compliant.'</p>
+<p>All parts of our policy have been introduced by the same procedure: Some
+developer has a good idea how to make packages more `unique' with
+respect to a certain aspect—then the idea is discussed and a policy
+proposal is prepared. If we have a consensus about the policy change,
+it's introduced in our manuals.</p>
+<p>Therefore, our policy is <em>not</em> designed to make life harder for the
+maintainers! The intention is to make Debian the best Linux distribution
+out there. With this in mind, lots of policy changes are discussed on
+the mailing lists each week.</p>
+<p>But changing the policy is only a small part of the story: Just having
+some statement included in the manual does not make Debian any better.
+What's needed is for that policy to become `real life,' i.e., it's
+<em>implemented</em> in our packages. And this is where Lintian comes in:
+Lintian checks packages and reports possible policy violations. (Of
+course, not everything can be checked mechanically — but a lot of
+things can and this is what Lintian is for.)</p>
+<p>Thus, Lintian has the following goals:</p>
+<ul>
+<li><p class="first"><em>To give us some impression of the `gap' between theory (written
+policy) and praxis (current state of implementation).</em></p>
+<p>From the results of the first two Lintian checks I implemented, I see
+that there is a big need to make this gap smaller. Introducing more
+policy aspects is worthless unless they are implemented. We first
+should fix packages to comply with current policy before searching
+for new ways to make policy more detailed. (Of course, there are also
+important policy changes that need to be introduced — but this is
+not what's meant here.)</p>
+</li>
+<li><p class="first"><em>To make us re-think about certain aspects of our policy.</em></p>
+<p>For example, it could turn out that some ideas that once sounded
+great in theory are hard to implement in all our packages — in
+which case we should rework this aspect of policy.</p>
+</li>
+<li><p class="first"><em>To show us where to concentrate our efforts in order to make Debian
+a higher quality distribution.</em></p>
+<p>Most release requirements will be implemented through policy. Lintian
+reports provide an easy way to compare <em>all</em> our packages against
+policy and keep track of the fixing process by watching bug reports.
+Note, that all this can be done <em>automatically</em>.</p>
+</li>
+<li><p class="first"><em>To make us avoid making the same mistakes all over again.</em></p>
+<p>Being humans, it's natural for us to make errors. Since we all have
+the ability to learn from our mistakes, this is actually no big
+problem. Once an important bug is discovered, a Lintian check could
+be written to check for exactly this bug. This will prevent the bug
+from appearing in any future revisions of any of our packages.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="design-issues">
+<span id="section-1-3"></span><h2><a class="toc-backref" href="#toc-entry-4">1.3&nbsp;&nbsp;&nbsp;Design issues</a></h2>
+<p>There are three fields of application for Lintian:</p>
+<ul class="simple">
+<li>one person could use Lintian to check the whole Debian archive and
+reports bugs,</li>
+<li>each maintainer runs Lintian over her packages before uploading them,</li>
+<li>dinstall checks packages which are uploaded to master before they are
+installed in the archive.</li>
+</ul>
+<p>The authors of Lintian decided to use a very modular design to achieve
+the following goals:</p>
+<ul class="simple">
+<li>flexibility: Lintian can be used to check single packages or the
+whole archive and to report and keep track of bug reports, etc.</li>
+<li>completeness: Lintian will eventually include checks for (nearly)
+everything that can be checked mechanically.</li>
+<li>uptodateness: Lintian will be updated whenever policy is changed.</li>
+<li>performance: Lintian should make it possible to check single packages
+within seconds or check the full archive within 5 days.</li>
+</ul>
+<p>The design also has a number of constrains that limits the things
+Lintian can check for and what tools it can use:</p>
+<ul class="simple">
+<li>static analysis: The code in a package may be analyzed, but it should
+<em>never</em> be executed. However, Lintian can (and does) use external
+tools to analyze files in the package.</li>
+<li>deterministic replay-ability: Checks should not rely on the state of
+system caches or even the system time. These things makes it harder
+for others to reproduce (the absence of) tags.</li>
+<li>same source analysis: Lintian checks packages in small isolated
+groups based on the source package. Requiring the presence of all the
+dependencies to provide the full results make it harder to run
+lintian (not to mention, it makes &quot;deterministic replay-ability&quot; a
+lot harder as well).</li>
+</ul>
+</div>
+<div class="section" id="disclaimer">
+<span id="section-1-4"></span><h2><a class="toc-backref" href="#toc-entry-5">1.4&nbsp;&nbsp;&nbsp;Disclaimer</a></h2>
+<p>Here is a list of important notes on how to use Lintian:</p>
+<ol class="arabic simple">
+<li>Lintian is not finished yet and will probably never be. Please don't
+use Lintian as a reference for Debian policy. Lintian might miss a
+lot of policy violations while it might also report some violations
+by mistake. If in doubt, please check out the policy manuals.</li>
+<li>The Debian policy gives the maintainers a lot of freedom. In most
+cases, the guidelines included in the manuals allow exceptions. Thus,
+if Lintian reports a policy violation on a package and you think this
+is such an exception (or if you think Lintian has a bug) you can do
+two things: If your package is a bit non-standard and weird in this
+regard, you can install an override. If you think however that the
+check is too easily or outright wrongly triggered, please file a bug
+on the lintian package.</li>
+<li>Please DO NOT use Lintian to file bug reports (neither single ones
+nor mass bug reports). This is done by the authors of Lintian already
+and duplication of efforts and bug reports should be avoided! If you
+think a certain bug is `critical' and should be reported/fixed
+immediately, please contact the maintainer of the corresponding
+package and/or the Lintian maintainers.</li>
+<li>Any feedback about Lintian is welcome! Please send your comments to
+the lintian maintainers <a class="reference external" href="mailto:lintian-maint&#64;debian.org">lintian-maint&#64;debian.org</a>.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="getting-started">
+<span id="chapter-2"></span><h1><a class="toc-backref" href="#toc-entry-6">2&nbsp;&nbsp;&nbsp;Getting started</a></h1>
+<div class="section" id="installing-lintian">
+<span id="section-2-1"></span><h2><a class="toc-backref" href="#toc-entry-7">2.1&nbsp;&nbsp;&nbsp;Installing Lintian</a></h2>
+<p>Before you can start to check your packages with Lintian, you'll have to
+install the lintian Debian package.</p>
+<p>Alternatively you can checkout Lintian from the source repository and
+use that directly. By setting LINTIAN_BASE (or using the --root option)
+lintian can be run from the source directory as if it had been installed
+on your system.</p>
+<p>The only known caveat of using Lintian from the source directory is that
+Lintian requires a C.UTF-8 (or en_US.UTF-8) locale to correctly process
+some files. (Is that still true?)</p>
+</div>
+<div class="section" id="running-lintian">
+<span id="section-2-2"></span><h2><a class="toc-backref" href="#toc-entry-8">2.2&nbsp;&nbsp;&nbsp;Running lintian</a></h2>
+<p>After that, you can run Lintian on a changes file or any Debian binary,
+udeb or source packages like this:</p>
+<pre class="literal-block">
+$ lintian etm_3.2.30-1.1_all.deb
+E: etm: appstream-metadata-legacy-format [usr/share/appdata/etm.appdata.xml]
+W: etm: appstream-metadata-in-legacy-location [usr/share/appdata/etm.appdata.xml]
+I: etm: package-contains-documentation-outside-usr-share-doc [usr/share/etm/etmTk/help/UserManual.html]
+$
+</pre>
+<p>Please note that some checks are cross-package checks and can only be
+(accurately) performed if the binary packages and the source are
+processed together. If Lintian is passed a changes file, it will attempt
+to process all packages listed in the changes file.</p>
+<p>Lintian supports a number of command line options, which are documented
+in the manpage of lintian(1). Some of the options may appear in the
+lintianrc file without leading dashes.</p>
+</div>
+<div class="section" id="lintian-tags">
+<span id="section-2-3"></span><h2><a class="toc-backref" href="#toc-entry-9">2.3&nbsp;&nbsp;&nbsp;Lintian Tags</a></h2>
+<p>Lintian uses a special format for all its error and warning messages.
+With that it is very easy to write other programs which run Lintian and
+interpret the displayed messages.</p>
+<p>The first character of each line indicates the type of message.
+Currently, the following types are supported:</p>
+<dl class="docutils">
+<dt><em>Errors (E)</em></dt>
+<dd>The displayed message indicates a policy violation or a packaging
+error. For policy violations, Lintian will cite the appropriate
+policy section when it is invoked with the <tt class="docutils literal"><span class="pre">-i</span></tt> option.</dd>
+<dt><em>Warnings (W)</em></dt>
+<dd>The displayed message might be a policy violation or packaging error.
+A warning is usually an indication that the check is known to
+sometimes produce false positive alarms, because either the
+corresponding rule in policy has many exceptions or the check uses
+some sort of heuristic to find errors.</dd>
+<dt><em>Info (I)</em></dt>
+<dd>The displayed message is meant to inform the maintainer about a
+certain packaging aspect. Such messages do not usually indicate
+errors, but might still be of interest to the curious. They are not
+displayed unless the <tt class="docutils literal"><span class="pre">-I</span></tt> option is set.</dd>
+<dt><em>Notes (N)</em></dt>
+<dd>The displayed message is a debugging message which informs you about
+the current state of Lintian.</dd>
+<dt><em>Experimental (X)</em></dt>
+<dd>The displayed message is one of the types listed above, but has been
+flagged as `experimental' by the Lintian maintainers. This means
+that the code that generates this message is not as well tested as
+the rest of Lintian, and might still give surprising results. Feel
+free to ignore Experimental messages that do not seem to make sense,
+though of course bug reports are always welcome. They are not
+displayed unless the <tt class="docutils literal"><span class="pre">-E</span></tt> option is set.</dd>
+<dt><em>Overridden (O)</em></dt>
+<dd>The displayed message indicates a previous <em>Warning</em> or <em>Error</em>
+message which has been <em>overridden</em> (see below). They are not
+displayed unless the <tt class="docutils literal"><span class="pre">--show-overrides</span></tt> option is set.</dd>
+<dt><em>Pedantic (P)</em></dt>
+<dd>The displayed message indicates a message of Lintian at its most
+pickiest and include checks for particular Debian packaging styles,
+checks that are very frequently wrong, and checks that many people
+disagree with. They are not displayed unless the <tt class="docutils literal"><span class="pre">--pedantic</span></tt>
+option is set.</dd>
+</dl>
+<p>The type indicator is followed by the name of the package and for
+non-binary packages the type of the package. Then comes the <em>problem</em>
+that was discovered, also known as a <em>tag</em> (for example,
+<tt class="docutils literal"><span class="pre">old-fsf-address-in-copyright-file</span></tt>).</p>
+<p>Depending on which tag has been reported, the line may contain
+additional arguments which tell you, for example, which files are
+involved.</p>
+<p>If you do not understand what a certain tag is about, you can specify
+the <tt class="docutils literal"><span class="pre">-i</span></tt> option when calling Lintian to get a detailed description of
+the reported tags:</p>
+<pre class="literal-block">
+$ lintian --info --tags appstream-metadata-in-legacy-location etm_3.2.30-1.1_all.deb
+N:
+W: etm: appstream-metadata-in-legacy-location [usr/share/appdata/etm.appdata.xml]
+N:
+N:   AppStream metadata file was found in /usr/share/appdata/. The AppStream XML files should be placed in /usr/share/metainfo/.
+N:
+N:   Please refer to https://wiki.debian.org/AppStream/Guidelines for details.
+N:
+N:   Visibility: warning
+N:   Show-Always: no
+N:   Check: appstream-metadata
+N:
+$
+</pre>
+<p>In some cases, the messages contain some additional text with a leading
+hash character (<tt class="docutils literal">#</tt>). This text should be ignored by any other
+programs which interpret Lintian's output because it doesn't follow a
+unique format between different messages and it's only meant as
+additional information for the maintainer.</p>
+</div>
+<div class="section" id="overrides">
+<span id="section-2-4"></span><h2><a class="toc-backref" href="#toc-entry-10">2.4&nbsp;&nbsp;&nbsp;Overrides</a></h2>
+<p>In some cases, the checked package does not have a bug or does not
+violate policy, but Lintian still reports an error or warning. This can
+have the following reasons: Lintian has a bug itself, a specific Lintian
+check is not smart enough to know about a special case allowed by
+policy, or the policy does allow exceptions to some rule in general.</p>
+<p>In the first case (where Lintian has a bug) you should send a bug report
+to the Debian bug tracking system and describe which package you
+checked, which messages have been displayed, and why you think Lintian
+has a bug. Best would be, if you would run Lintian again over your
+packages using the <tt class="docutils literal"><span class="pre">-d</span></tt> (or <tt class="docutils literal"><span class="pre">--debug</span></tt>) option, which will cause
+Lintian to output much more information (debugging info), and include
+these messages in your bug report. This will simplify the debugging
+process for the authors of Lintian.</p>
+<p>In the other two cases (where the error is actually an exception to
+policy), you should probably add an override. If you're unsure though
+whether it's indeed a good case for an override, you should contact the
+Lintian maintainers too, including the Lintian error message and a short
+note, stating why you think this is an exception. This way, the Lintian
+maintainers can be sure the problem is not actually a bug in Lintian or
+an error in the author's reading of policy. Please do not override bugs
+in lintian, they should rather be fixed than overridden.</p>
+<p>Once it has been decided that an override is needed, you can easily add
+one by supplying an overrides file. If the override is for a binary or
+udeb package, you have to place it at
+<tt class="docutils literal"><span class="pre">/usr/share/lintian/overrides/&lt;package&gt;</span></tt> inside the package. The tool
+<tt class="docutils literal">dh_lintian</tt> from the Debian package debhelper may be useful for this
+purpose.</p>
+<p>If the override is for a source package, you have to place it at
+<tt class="docutils literal"><span class="pre">debian/source/lintian-overrides</span></tt> or
+<tt class="docutils literal"><span class="pre">debian/source.lintian-overrides</span></tt> (the former path is preferred). With
+that, Lintian will know about this exception and not report the problem
+again when checking your package. (Actually, Lintian will report the
+problem again, but with type <em>overridden</em>, see above.)</p>
+<p>Note that Lintian extracts the override file from the (u)deb and stores
+it in the laboratory. The files currently installed on the system are
+not used in current Lintian versions.</p>
+<div class="section" id="format-of-override-files">
+<span id="section-2-4-1"></span><h3><a class="toc-backref" href="#toc-entry-11">2.4.1&nbsp;&nbsp;&nbsp;Format of override files</a></h3>
+<p>The format of the overrides file is simple, it consists of one override
+per line (and may contain empty lines and comments, starting with a
+<tt class="docutils literal">#</tt>, on others): <tt class="docutils literal"><span class="pre">[[&lt;package&gt;][</span> <span class="pre">&lt;archlist&gt;][</span> <span class="pre">&lt;type&gt;]:</span> <span class="pre">]&lt;lintian-tag&gt;[</span>
+<span class="pre">[*]&lt;context&gt;[*]]</span></tt>. &lt;package&gt; is the package name;
+&lt;archlist&gt; is an architecture list (see Architecture specific overrides
+for more info); &lt;type&gt; is one of <tt class="docutils literal">binary</tt>, <tt class="docutils literal">udeb</tt> and <tt class="docutils literal">source</tt>,
+and &lt;context&gt; is all additional information provided by Lintian
+except for the tag. What's inside brackets is optional and may be
+omitted if you want to match it all. Additionally, if the context of
+the tag contains paths to files in the package, they're enclosed with
+literal brackets (so called &quot;pointed hints&quot;) so that tools which
+process lintian tags can link to the according file and potentially
+even line in the file.</p>
+<p>An example file for a binary package would look like:</p>
+<pre class="literal-block">
+/usr/share/lintian/overrides/foo, where foo is the name of your package
+
+# We use a non-standard dir permission to only allow the webserver to look
+# into this directory:
+foo binary: non-standard-dir-perm
+foo binary: FSSTND-dir-in-usr [/usr/man/man1/foo.1.gz]
+</pre>
+<p>An example file for a source package would look like:</p>
+<pre class="literal-block">
+debian/source/lintian-overrides in your base source directory
+foo source: debian-files-list-in-source
+# Upstream distributes it like this, repacking would be overkill though, so
+# tell lintian to not complain:
+foo source: configure-generated-file-in-source [config.cache]
+</pre>
+<p>Many tags can occur more than once (e.g. if the same error is found in
+more than one file). You can override a tag either completely by
+specifying its name (first line in the examples) or only one occurrence
+of it by specifying the additional info, too (second line in the
+examples). If you add an asterisk (<tt class="docutils literal">*</tt>) in the additional info, this
+will match arbitrary strings similar to the shell wildcard. For example:</p>
+<pre class="literal-block">
+# Multiple files need to be covered by the override
+source-is-missing [apidoc/html/*.js]
+</pre>
+</div>
+<div class="section" id="documenting-overrides">
+<span id="section-2-4-2"></span><h3><a class="toc-backref" href="#toc-entry-12">2.4.2&nbsp;&nbsp;&nbsp;Documenting overrides</a></h3>
+<p>To assist reviewers, Lintian will extract the comments from the
+overrides file and display the related comments next to the overridden
+tags.</p>
+<p>Comments directly above an override will be shown next to all tags it
+overrides. If an override for the same tags appears on the very next
+line, it will inherit the comment from the override above it.</p>
+<pre class="literal-block">
+# This comment will be shown above all tags overridden by the following
+# two overrides, (because they apply to the same tag and there is no
+# empty line between them)
+foo source: some-tag exact match
+foo source: some-tag wildcard * match
+# This override has its own comment, and it is not shared with the
+# override below (because there is an empty line in between them).
+foo source: some-tag another exact match
+
+foo source: some-tag override without a comment
+</pre>
+<p>Empty lines can be used to disassociate a comment from an override
+following it. This can also be used to make a general comment about the
+overrides that will not be displayed.</p>
+<pre class="literal-block">
+# This is a general comment not connected to any override, since there
+# is one (or more) empty lines after it.
+
+foo source: another-tag without any comments
+</pre>
+</div>
+<div class="section" id="architecture-specific-overrides">
+<span id="section-2-4-3"></span><h3><a class="toc-backref" href="#toc-entry-13">2.4.3&nbsp;&nbsp;&nbsp;Architecture specific overrides</a></h3>
+<p>In rare cases, Lintian tags may be architecture specific. It is possible
+to mark overrides architecture specific by using the optional
+architecture list.</p>
+<p>The architecture list has the same syntax as the architecture list in
+the &quot;Build-Depends&quot; field of a source package. This is described in
+detail in the <a class="reference external" href="https://www.debian.org/doc/debian-policy/#s-controlsyntax">Debian Policy Manual
+§7.1</a>.
+Examples:</p>
+<pre class="literal-block">
+# This is an example override that only applies to the i386
+# architecture.
+foo [i386] binary: some-tag optional-extra
+
+# An architecture wildcard would look like:
+foo [any-i386] binary: another-tag optional-extra
+
+# Negation also works
+foo [!amd64 !i386] binary: some-random-tag optional-extra
+
+# Negation even works for wildcards
+foo [!any-i386] binary: some-tag-not-for-i386 optional-extra
+
+# The package name and the package type is optional, so this
+# also works
+[linux-any]: tag-only-for-linux optional-extra.
+</pre>
+<p>An unknown architecture will trigger a packaging hint. So will an
+architecture-specific override in an architecture-independent
+installable.</p>
+</div>
+</div>
+<div class="section" id="vendor-profiles">
+<span id="section-2-5"></span><h2><a class="toc-backref" href="#toc-entry-14">2.5&nbsp;&nbsp;&nbsp;Vendor Profiles</a></h2>
+<p>Vendor profiles allows vendors and users to customize Lintian without
+having to modify the underlying code. If a profile is not explicitly
+given, Lintian will derive the best possible profile for the current
+vendor from dpkg-vendor.</p>
+<div class="section" id="rules-for-profile-names-and-location">
+<span id="section-2-5-1"></span><h3><a class="toc-backref" href="#toc-entry-15">2.5.1&nbsp;&nbsp;&nbsp;Rules for profile names and location</a></h3>
+<p>Profile names should only consist of the lower case characters ([a-z]),
+underscore (_), dash (-) and forward slashes (/). Particularly note that
+dot (.) are specifically <em>not</em> allowed in a profile name.</p>
+<p>The default profile for a vendor is called <tt class="docutils literal">$VENDOR/main</tt>. If Lintian
+sees a profile name without a slash, it is taken as a short form of the
+default profile for a vendor with that name.</p>
+<p>The filename for the profile is derived from the name by simply
+concatenating it with <tt class="docutils literal">.profile</tt>, Lintian will then look for a file
+with that name in the following directories:</p>
+<ul class="simple">
+<li><tt class="docutils literal">$XDG_DATA_HOME/lintian/profiles</tt></li>
+<li><tt class="docutils literal"><span class="pre">$HOME/.lintian/profiles</span></tt></li>
+<li><tt class="docutils literal">/etc/lintian/profiles</tt></li>
+<li><tt class="docutils literal">$LINTIAN_BASE/profiles</tt></li>
+</ul>
+<p>Note that an implication of the handling of default vendor profiles
+implies that profiles must be in subdirectories of the directories above
+for Lintian to recognise them.</p>
+<p>The directories are checked in the listed order and the first file
+matching the profile will be used. This allows users to override a
+system profile by putting one with the same filename in
+<tt class="docutils literal">$XDG_DATA_HOME/lintian/profiles</tt> or <tt class="docutils literal"><span class="pre">$HOME/.lintian/profiles</span></tt>.</p>
+</div>
+<div class="section" id="profile-syntax-and-semantics">
+<span id="section-2-5-2"></span><h3><a class="toc-backref" href="#toc-entry-16">2.5.2&nbsp;&nbsp;&nbsp;Profile syntax and semantics</a></h3>
+<p>Profiles are written in the same syntax as Debian control files as
+described in the <a class="reference external" href="https://www.debian.org/doc/debian-policy/#s-controlsyntax">Debian Policy Manual
+§5.1</a>.
+Profiles allow comments as described in the Policy Manual.</p>
+<div class="section" id="main-profile-paragraph">
+<span id="section-2-5-2-1"></span><h4>2.5.2.1&nbsp;&nbsp;&nbsp;Main profile paragraph</h4>
+<p>The fields in the first paragraph are:</p>
+<dl class="docutils">
+<dt><em>Profile</em> (simple, mandatory)</dt>
+<dd>Name of the profile.</dd>
+<dt><em>Extends</em> (simple, optional)</dt>
+<dd>Name of the (parent) profile, which this profile extends. Lintian
+will recursively process the extended profile before continuing with
+processing this profile. In the absence of this field, the profile is
+not based on another profile.</dd>
+<dt><em>Load-Checks</em> (folded, optional)</dt>
+<dd><p class="first">Comma-separated list of checks. Lintian will ensure all checks listed
+are loaded (allowing tags from them to be enabled or disabled via
+Enable-Tags or Disable-Tags).</p>
+<p>If a given check was already loaded before this field is processed,
+then it is silently ignored. Otherwise, the check is loaded and all
+of its tags are disabled (as if it had been listed in
+Disable-Tags-From-Check).</p>
+<p class="last">This field is most likely only useful if the profile needs to enable
+a list of tags from a check in addition to any tags already enabled
+from that check (if any).</p>
+</dd>
+<dt><em>Enable-Tags-From-Check</em> (folded, optional)</dt>
+<dd>Comma-separated list of checks. All tags from each check listed will
+be enabled in this profile. The check will be loaded if it wasn't
+already.</dd>
+<dt><em>Disable-Tags-From-Check</em> (folded, optional)</dt>
+<dd>Comma-separated list of checks. All tags from each check listed will
+be disabled in this profile. The check will be loaded if it wasn't
+already.</dd>
+<dt><em>Enable-Tags</em> (folded, optional)</dt>
+<dd>Comma-separated list of tags that should be enabled. It may only list
+tags from checks already loaded or listed in one of the following
+fields &quot;Load-Checks&quot;, &quot;Enable-Tags-From-Check&quot; or
+&quot;Disable-Tags-From-Check&quot; in the current profile.</dd>
+<dt><em>Disable-Tags</em> (folded, optional)</dt>
+<dd>Comma-separated list of tags that should be disabled. It may only
+list tags from checks already loaded or listed in one of the
+following fields &quot;Load-Checks&quot;, &quot;Enable-Tags-From-Check&quot; or
+&quot;Disable-Tags-From-Check&quot; in the current profile.</dd>
+</dl>
+<p>The profile is invalid and is rejected, if Enable-Tags and Disable-Tags
+lists the same tag twice - even if it is in the same field. This holds
+analogously for checks and the three fields Load-Checks,
+Enable-Tags-From-Check and Disable-Tags-From-Check.</p>
+<p>It is allowed to list a tag in Enable-Tags or Disable-Tags even if the
+check that provides this tag is listed in the Disable-Tags-From-Check or
+Enable-Tags-From-Check field. In case of conflict, Enable-Tags /
+Disable-Tags shall overrule Disable-Tags-From-Check /
+Enable-Tags-From-Check within the profile.</p>
+<p>Load-Checks, Enable-Tags-From-Check and Disable-Tags-From-Check can be
+used to load third-party or vendor specific checks.</p>
+<p>It is not an error to load, enable or disable a check or tag that is
+already loaded, enabled or disabled respectively (e.g. by a parent
+profile).</p>
+<p>A profile is invalid if it directly or indirectly extends itself or if
+it extends an invalid profile.</p>
+<p>By default the tags from the check &quot;lintian&quot; will be loaded as they
+assist people in writing and maintaining their overrides file (e.g. by
+emitting <tt class="docutils literal"><span class="pre">malformed-override</span></tt>). However, they can be disabled by
+explicitly adding the check <tt class="docutils literal">lintian</tt> in the Disable-Tags-From-Check
+field.</p>
+</div>
+<div class="section" id="tag-alteration-paragraphs">
+<span id="section-2-5-2-2"></span><h4>2.5.2.2&nbsp;&nbsp;&nbsp;Tag alteration paragraphs</h4>
+<p>The fields in the secondary paragraphs are:</p>
+<dl class="docutils">
+<dt><em>Tags</em> (folded, mandatory)</dt>
+<dd>Comma separated list of tags affected by this paragraph.</dd>
+<dt><em>Overridable</em> (simple, optional)</dt>
+<dd>Either &quot;Yes&quot; or &quot;No&quot;, which decides whether these tags can be
+overridden. Lintian will print an informal message if it sees an
+override for a tag marked as non-overridable (except if --quiet is
+passed).</dd>
+<dt><em>Visibility</em> (simple, optional)</dt>
+<dd><p class="first">The value must be a valid tag visibility other than &quot;classification&quot;.
+The visibility of the affected tags is set to this value. This cannot
+be used on any tag that is defined as a &quot;classification&quot; tag.</p>
+<p class="last">Note that <em>experimental</em> is not a visibility.</p>
+</dd>
+</dl>
+<p>The paragraph must contain at least one other field than the Tag field.</p>
+</div>
+<div class="section" id="an-example-vendor-profile">
+<span id="section-2-5-2-3"></span><h4>2.5.2.3&nbsp;&nbsp;&nbsp;An example vendor profile</h4>
+<p>Below is a small example vendor profile for a fictive vendor called
+&quot;my-vendor&quot;.</p>
+<pre class="literal-block">
+# The default profile for &quot;my-vendor&quot;
+Profile: my-vendor/main
+# It has all the checks and settings from the &quot;debian&quot; profile
+Extends: debian/main
+# Add checks specific to &quot;my-vendor&quot;
+Enable-Tags-From-Check:
+  my-vendor/some-check,
+  my-vendor/another-check,
+# Disable a tag
+Disable-Tags: dir-or-file-in-opt
+
+# Bump visibility of no-md5sums-control-file
+# and file-missing-in-md5sums and make them
+# non-overridable
+Tags: no-md5sums-control-file,
+      file-missing-in-md5sums,
+Visibility: error
+Overridable: no
+</pre>
+</div>
+</div>
+</div>
+<div class="section" id="vendor-specific-data-files">
+<span id="section-2-6"></span><h2><a class="toc-backref" href="#toc-entry-17">2.6&nbsp;&nbsp;&nbsp;Vendor specific data files</a></h2>
+<p>Lintian uses a number of data files for various checks, ranging from
+common spelling mistakes to lists of architectures. While some of these
+data files are generally applicable for all vendors (or Debian
+derivatives), others are not.</p>
+<p>Lintian supports vendor specific data files. This allows vendors to deploy
+their own data files tailored for their kind of system. Lintian supports
+both extending an existing data file and completely overriding it.</p>
+<div class="section" id="load-paths-and-order">
+<span id="section-2-6-1"></span><h3><a class="toc-backref" href="#toc-entry-18">2.6.1&nbsp;&nbsp;&nbsp;Load paths and order</a></h3>
+<p>Lintian will search the following directories in order for vendor
+specific data files:</p>
+<ul class="simple">
+<li><tt class="docutils literal">$XDG_DATA_HOME/lintian/vendors/PROFILENAME/data</tt></li>
+<li><tt class="docutils literal"><span class="pre">$HOME/.lintian/vendors/PROFILENAME/data</span></tt></li>
+<li><tt class="docutils literal">/etc/lintian/vendors/PROFILENAME/data</tt></li>
+<li><tt class="docutils literal">$LINTIAN_BASE/vendors/PROFILENAME/data</tt></li>
+</ul>
+<p>If none of the directories exists or none of them provide the data file
+in question, Lintian will (recursively) retry with the parent of the
+vendor (if any). If the vendor and none of its parents provide the data
+file, Lintian will terminate with an error.</p>
+</div>
+<div class="section" id="basic-syntax-of-data-files">
+<span id="section-2-6-2"></span><h3><a class="toc-backref" href="#toc-entry-19">2.6.2&nbsp;&nbsp;&nbsp;Basic syntax of data files</a></h3>
+<p>Generally, data files are read line by line. Leading whitespace of every
+line is removed and (now) empty lines are ignored. Lines starting with a
+<tt class="docutils literal">#</tt> are comments and are also ignored by the parser. Lines are
+processed in the order they are read.</p>
+<p>If the first character of the line is a <tt class="docutils literal">&#64;</tt>, the first word is parsed
+as a special processing instruction. The rest of the line is a parameter
+to that processing instruction. Please refer to <a class="reference external" href="#section-2.6.2.1">List of processing
+instructions</a>.</p>
+<p>All other lines are read as actual data. If the data file is a table (or
+map), the lines will parsed as key-value pairs. If the data file is a
+list (or set), the full line will be considered a single value of the
+list.</p>
+<p>It is permissible to define the same key twice with a different value.
+In this case, the value associated with the key is generally redefined.
+There are very rare exceptions to this rule, where the data file is a
+table of tables (of values). In this case, a recurring key is used to
+generate the inner table.</p>
+<div class="section" id="list-of-processing-instructions">
+<span id="section-2-6-2-1"></span><h4>2.6.2.1&nbsp;&nbsp;&nbsp;List of processing instructions</h4>
+<p>The following processing instructions are recognised:</p>
+<dl class="docutils">
+<dt><em>&#64;delete ENTRY</em></dt>
+<dd><p class="first">Removes a single entry denoted by ENTRY that has already been parsed.</p>
+<p>It is permissible to list a non-existent entry, in which case the
+instruction has no effect. This instruction does <em>not</em> prevent the
+entry from being (re-)defined later, it only affects the current
+definition of the entry.</p>
+<p class="last">For key-pair based data files, ENTRY must match the key. For single
+value data files, ENTRY must match the line to remove.</p>
+</dd>
+<dt><em>&#64;include-parent</em></dt>
+<dd><p class="first">Processes parent data file of the current data file.</p>
+<p>The informal semantics of this instruction is that it reads the
+&quot;next&quot; data file in the vendor &quot;chain&quot;. The parsing of the parent is
+comparable to a C-style include or sourcing a shell script.</p>
+<p>More formally, let CP be the name of the vendor profile that defines
+the data file containing the instruction. Let the parent of CP be
+referred to as PCP.</p>
+<p class="last">Lintian will search for the data file provided by PCP using the rules
+as specified in <a class="reference external" href="#section-2.6.1">Load paths and order</a>. If no data
+file is found, Lintian will terminate the parsing with an error.
+Thus, this instruction can only be used by profiles that extends
+other profiles.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="advanced-usage">
+<span id="chapter-3"></span><h1><a class="toc-backref" href="#toc-entry-20">3&nbsp;&nbsp;&nbsp;Advanced usage</a></h1>
+<div class="section" id="how-lintian-works">
+<span id="section-3-1"></span><h2><a class="toc-backref" href="#toc-entry-21">3.1&nbsp;&nbsp;&nbsp;How Lintian works</a></h2>
+<p>Lintian is divided into the following layers:</p>
+<dl class="docutils">
+<dt><em>frontend</em></dt>
+<dd>the command line interface (currently, this layer consists of the
+<tt class="docutils literal">lintian</tt> program.</dd>
+<dt><em>checks</em></dt>
+<dd>a set of modules that check different aspects of packages.</dd>
+<dt><em>data collectors</em></dt>
+<dd>a set of scripts that prepares specific information about a package
+needed by the check modules</dd>
+</dl>
+<p>When you check a package with Lintian, the following steps are performed
+(not exactly in this order—but the details aren't important now):</p>
+<ol class="arabic simple">
+<li>An entry is created for the package in the <em>laboratory</em> (or just
+<em>lab</em>).</li>
+<li>Some data is collected about the package. (That is done by the
+so-called <em>data collector</em> scripts.) For example, the <tt class="docutils literal">file</tt>
+program is run on each file in the package and the output is stored
+in the lab.</li>
+<li>The <em>checks</em> are run over the package and report any discovered
+policy violations or other errors. These scripts don't access the
+package contents directly, but use the collected data as input.</li>
+<li>Depending on the <em>lab mode</em> Lintian uses (see below), the whole lab
+directory is removed again. If the lab is not removed, parts of the
+data collected may be auto cleaned to reduce disk space.</li>
+</ol>
+<p>This separation of the <em>check</em> from the <em>data collector scripts</em> makes
+it possible to run Lintian several times over a package without having
+to recollect all the data each time. In addition, the checker scripts do
+not have to worry about packaging details since this is abstracted away
+by the collector scripts.</p>
+</div>
+<div class="section" id="the-laboratory">
+<span id="section-3-2"></span><h2><a class="toc-backref" href="#toc-entry-22">3.2&nbsp;&nbsp;&nbsp;The laboratory</a></h2>
+<p>Lintian creates a temporary lab in <tt class="docutils literal">/tmp</tt> which is removed again after
+Lintian has completed its checks, unless the <tt class="docutils literal"><span class="pre">--keep-lab</span></tt> is used.</p>
+</div>
+<div class="section" id="writing-your-own-lintian-checks">
+<span id="section-3-3"></span><h2><a class="toc-backref" href="#toc-entry-23">3.3&nbsp;&nbsp;&nbsp;Writing your own Lintian checks</a></h2>
+<p>This section describes how to write and deploy your own Lintian checks.
+Lintian will load checks from the following directories (in order):</p>
+<ul class="simple">
+<li><tt class="docutils literal">$LINTIAN_BASE/checks</tt></li>
+</ul>
+<p>Existing checks can be shadowed by placing a check with the same name in
+a directory appearing earlier in the list. This also holds for the
+checks provided by Lintian itself.</p>
+<p>Checks in Lintian consist of a Perl module implementing the actual check
+(.pm). The files names of such checks are expected to be in CamelCase. For
+the check name used on the command line, case transitions are replaced with
+hyphens. Perl's two colons (::) are replaced with a slash.</p>
+<p>Vendors are recommended to use their vendor name before the first slash
+(e.g. &quot;ubuntu/fields&quot;).</p>
+<div class="section" id="check-description-file">
+<span id="section-3-3-1"></span><h3><a class="toc-backref" href="#toc-entry-24">3.3.1&nbsp;&nbsp;&nbsp;Check description file</a></h3>
+<p>The check description file is written in the same syntax as Debian
+control files as described in the <a class="reference external" href="https://www.debian.org/doc/debian-policy/#s-controlsyntax">Debian Policy Manual
+§5.1</a>.
+Check description files allow comments as described in the Policy
+Manual.</p>
+<p>The check description file has two paragraph types. The first is the
+check description itself and must be the first paragraph. The rest of
+the descriptions describe tags, one tag per paragraph.</p>
+<div class="section" id="check-description-paragraph">
+<span id="section-3-3-1-1"></span><h4>3.3.1.1&nbsp;&nbsp;&nbsp;Check description paragraph</h4>
+<p>The fields in the check description paragraph are:</p>
+<dl class="docutils">
+<dt><em>Check-Script</em> (simple, mandatory)</dt>
+<dd>Name of the check. This is used to determine the package name of the
+Perl module implementing the check.</dd>
+<dt><em>Type</em> (simple, mandatory)</dt>
+<dd>Comma separated list of package types for which this check should be
+run. Allowed values in the list are &quot;binary&quot; (.deb files), &quot;changes&quot;
+(.changes files), &quot;source&quot; (.dsc files) and &quot;udeb&quot; (.udeb files).</dd>
+<dt><em>Info</em> (multiline, optional)</dt>
+<dd>A short description of what the check is for.</dd>
+<dt><em>Author</em> (simple, optional)</dt>
+<dd>Name and email of the person, who created (or implemented etc.) the
+check.</dd>
+<dt><em>Abbrev</em> (simple, optional)</dt>
+<dd>Alternative or abbreviated name of the check. These can be used with
+certain command line options as an alternative name for the check.</dd>
+</dl>
+</div>
+<div class="section" id="tag-description-paragraph">
+<span id="section-3-3-1-2"></span><h4>3.3.1.2&nbsp;&nbsp;&nbsp;Tag description paragraph</h4>
+<p>The fields in the tag description paragraph are:</p>
+<dl class="docutils">
+<dt><em>Tag</em> (simple, mandatory)</dt>
+<dd>Name of the tag. It must consist entirely of the lower or/and upper
+case characters ([a-zA-Z]), digits ([0-9]), underscore (_), dash (-)
+and period (.). The tag name should be at most 68 characters long.</dd>
+<dt><em>Severity</em> (simple, mandatory)</dt>
+<dd>Determines the default value for the alert level. The value must be
+one of &quot;error&quot;, &quot;warning&quot;, &quot;info&quot;, &quot;pedantic&quot;, or &quot;classification&quot;.
+This correlates directly to the one-letter code (of non-experimental
+tags).</dd>
+<dt><em>Info</em> (multiline, mandatory)</dt>
+<dd><p class="first">The tag descriptions can be found on Lintian's website
+(&quot;<a class="reference external" href="https://lintian.debian.org">https://lintian.debian.org</a>&quot;). The description is in the standard
+Markdown format.</p>
+<p>The symbols &amp;, &lt; and &gt; must be escaped as &amp;amp;, &amp;lt; and &amp;gt;
+(respectively). Please also escape _ as &amp;lowbar; and * as &amp;ast;.</p>
+<p class="last">Indented lines are considered &quot;pre-formatted&quot; and will not be line
+wrapped. These lines are still subject to the allowed HTML tags and
+above mentioned escape sequences.</p>
+</dd>
+<dt><em>Ref</em> (simple, optional)</dt>
+<dd><p class="first">A comma separated list of references. It can be used to refer to
+extra documentation. It is primarily used for manual references, HTTP
+links or Debian bug references.</p>
+<p>If a reference contains a space, it is taken as a manual reference
+(e.g. &quot;policy 4.14&quot;). These references are recorded in the
+&quot;output/manual-references&quot; data file.</p>
+<p>Other references include manpages (&quot;lintian(1)&quot;), ftp or http(s)
+links (&quot;<a class="reference external" href="https://lintian.debian.org">https://lintian.debian.org</a>&quot;), file references
+(&quot;/usr/share/doc/lintian/changelog.gz&quot;) or Debian bug numbers
+prefixed with a hash (&quot;#651816&quot;).</p>
+<p class="last">Unknown references are (silently) ignored.</p>
+</dd>
+<dt><em>Experimental</em> (simple, optional)</dt>
+<dd>Whether or not the tag is considered &quot;experimental&quot;. Recognised
+values are &quot;no&quot; (default) and &quot;yes&quot;. Experimental tags always use &quot;X&quot;
+as their &quot;one-letter&quot; code.</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="check-perl-module-file">
+<span id="section-3-3-2"></span><h3><a class="toc-backref" href="#toc-entry-25">3.3.2&nbsp;&nbsp;&nbsp;Check Perl module file</a></h3>
+<p>This section describes the requirements for the Perl module implementing
+a given check.</p>
+<p>The Perl package name of the check must be identical to the check name
+(as defined by the &quot;Check-Script&quot; field in the description file) with
+the following transformations:</p>
+<ul class="simple">
+<li>All periods and dashes are replaced with underscores.</li>
+<li>All forward slashes are replaced by two colons (::).</li>
+<li>The resulting value is prefixed with &quot;Lintian::&quot;.</li>
+</ul>
+<p>As an example, the check name <tt class="docutils literal"><span class="pre">contrib/hallo-world</span></tt> will result in the
+Perl package name <tt class="docutils literal"><span class="pre">Lintian::contrib::hallo_world</span></tt>.</p>
+<div class="section" id="api-of-the-run-sub">
+<span id="section-3-3-2-1"></span><h4>3.3.2.1&nbsp;&nbsp;&nbsp;API of the &quot;run&quot; sub</h4>
+<p>The Perl module must implement the sub called <tt class="docutils literal">run</tt> in that Perl
+package. This sub will be run once for each package to be checked with 5
+arguments. These are (in order):</p>
+<ul class="simple">
+<li>The package name.</li>
+<li>The package type being checked in this run. This string is one of
+&quot;binary&quot; (.deb), &quot;changes&quot; (.changes), &quot;source&quot; (.dsc) or &quot;udeb&quot;
+(.udeb).</li>
+<li>An instance of API Lintian::Collect. Its exact type depends on the
+type being processed and is one of Lintian::Collect::Binary (.deb or
+.udeb), Lintian::Collect::Changes (.changes) or
+Lintian::Collect::Source (.dsc).</li>
+<li>An instance of Lintian::Processable that represents the package being
+processed.</li>
+<li>An instance of Lintian::ProcessableGroup that represents the other
+processables in the given group. An instance of the
+Lintian::Collect::Group is available via its &quot;info&quot; method.</li>
+</ul>
+<p>Further arguments may be added in the future after the above mentioned
+ones. Implementations should therefore ignore extra arguments beyond the
+ones they know of.</p>
+<p>If the run sub returns &quot;normally&quot;, the check was run successfully.
+Implementations should ensure the return value is undefined.</p>
+<p>If the run sub invokes a trappable error (e.g. &quot;die&quot;), no further checks
+are done on the package and Lintian will (eventually) exit with 1 to its
+caller. The check may still be run on other packages.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

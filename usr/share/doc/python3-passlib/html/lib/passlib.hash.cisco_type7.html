@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.hash.cisco_type7 - Cisco “Type 7” hash &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.hash.cisco_pix - Cisco PIX MD5 hash" href="passlib.hash.cisco_pix.html" />
+    <link rel="prev" title="passlib.hash.msdcc2 - Windows’ Domain Cached Credentials v2" href="passlib.hash.msdcc2.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.cisco_pix.html" title="passlib.hash.cisco_pix - Cisco PIX MD5 hash"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.msdcc2.html" title="passlib.hash.msdcc2 - Windows’ Domain Cached Credentials v2"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.cisco_type7</span></code> - Cisco “Type 7” hash</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-hash-cisco-type7-cisco-type-7-hash">
+<span id="index-0"></span><h1><a class="reference internal" href="#passlib.hash.cisco_type7" title="passlib.hash.cisco_type7"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.cisco_type7</span></code></a> - Cisco “Type 7” hash<a class="headerlink" href="#passlib-hash-cisco-type7-cisco-type-7-hash" title="Link to this heading">¶</a></h1>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>This is not a hash, this is a reversible plaintext encoding.
+<strong>This format can be trivially decoded</strong>.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+<p>This class implements the “Type 7” password encoding used Cisco IOS.
+This is not actually a true hash, but a reversible XOR Cipher encoding the plaintext
+password. Type 7 strings are (and were designed to be) plaintext equivalent;
+the goal was to protect from “over the shoulder” eavesdropping, and
+little else. They can be trivially decoded.
+This class can be used directly as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.hash</span> <span class="kn">import</span> <span class="n">cisco_type7</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># encode password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">cisco_type7</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span>
+<span class="go">&#39;044B0A151C36435C0D&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># verify password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cisco_type7</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pm</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;letmein&quot;</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="go">False</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># to demonstrate this is an encoding, not a real hash,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># this class supports decoding the resulting string:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cisco_type7</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="go">&quot;password&quot;</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>the generic <a class="reference internal" href="../narr/hash-tutorial.html#password-hash-examples"><span class="std std-ref">PasswordHash usage examples</span></a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This implementation should work correctly for most cases, but may not
+fully implement some edge cases (see <a class="reference internal" href="#deviations">Deviations</a> below).
+Please report any issues encountered.</p>
+</div>
+<section id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.cisco_type7">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">cisco_type7</span></span><a class="headerlink" href="#passlib.hash.cisco_type7" title="Link to this definition">¶</a></dt>
+<dd><p>This class implements the “Type 7” password encoding used by Cisco IOS,
+and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.
+It has a simple 4-5 bit salt, but is nonetheless a reversible encoding
+instead of a real hash.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">using()</span></code></a> method accepts the following optional keywords:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>salt</strong> (<em>int</em>) – This may be an optional salt integer drawn from <code class="docutils literal notranslate"><span class="pre">range(0,16)</span></code>.
+If omitted, one will be chosen at random.</p></li>
+<li><p><strong>relaxed</strong> (<em>bool</em>) – By default, providing an invalid value for one of the other
+keywords will result in a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>. If <code class="docutils literal notranslate"><span class="pre">relaxed=True</span></code>,
+and the error can be corrected, a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasslibHashWarning" title="passlib.exc.PasslibHashWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasslibHashWarning</span></code></a>
+will be issued instead. Correctable errors include
+<code class="docutils literal notranslate"><span class="pre">salt</span></code> values that are out of range.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Note that while this class outputs digests in upper-case hexadecimal,
+it will accept lower-case as well.</p>
+<p>This class also provides the following additional method:</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.hash.cisco_type7.decode">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hash</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'utf-8'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.hash.cisco_type7.decode" title="Link to this definition">¶</a></dt>
+<dd><p>decode hash, returning original password.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hash</strong> – encoded password</p></li>
+<li><p><strong>encoding</strong> – optional encoding to use (defaults to <code class="docutils literal notranslate"><span class="pre">UTF-8</span></code>).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>password as unicode</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section class="html-toggle" id="format-algorithm">
+<h2>Format &amp; Algorithm<a class="headerlink" href="#format-algorithm" title="Link to this heading">¶</a></h2>
+<p>The Cisco Type 7 encoding consists of two decimal digits
+(encoding the salt), followed a series of hexadecimal characters,
+two for every byte in the encoded password.
+An example encoding (of <code class="docutils literal notranslate"><span class="pre">&quot;password&quot;</span></code>) is <code class="docutils literal notranslate"><span class="pre">044B0A151C36435C0D</span></code>.
+This has a salt/offset of 4 (<code class="docutils literal notranslate"><span class="pre">04</span></code> in the example),
+and encodes password via <code class="docutils literal notranslate"><span class="pre">4B0A151C36435C0D</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The following description may not be entirely correct with
+respect to the official algorithm, see the <a class="reference internal" href="#deviations">Deviations</a> section for details.</p>
+</div>
+<p>The algorithm is a straightforward XOR Cipher:</p>
+<ol class="arabic">
+<li><p>The algorithm relies on the following <code class="docutils literal notranslate"><span class="pre">ascii</span></code>-encoded 53-byte
+constant:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;dsfd;kfoA,.iyewrkldJKDHSUBsgvca69834ncxv9873254k;fg87&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>A integer salt should be generated from the range
+0 .. 15. The first two characters of the encoded string are the
+zero-padded decimal encoding of the salt.</p></li>
+<li><p>The remaining characters of the encoded string are generated as follows:
+For each byte in the password (starting with the 0th byte),
+the <code class="samp docutils literal notranslate"><em><span class="pre">i</span></em></code>’th byte of the password is encoded as follows:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>let <code class="docutils literal notranslate"><span class="pre">j=(i</span> <span class="pre">+</span> <span class="pre">salt)</span> <span class="pre">%</span> <span class="pre">53</span></code></p></li>
+<li><p>XOR the <code class="samp docutils literal notranslate"><em><span class="pre">i</span></em></code>’th byte of the password with the <code class="samp docutils literal notranslate"><em><span class="pre">j</span></em></code>’th byte
+of the magic constant.</p></li>
+<li><p>encode the resulting byte as uppercase hexadecimal,
+and append to the encoded string.</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ol>
+</section>
+<section id="deviations">
+<h2>Deviations<a class="headerlink" href="#deviations" title="Link to this heading">¶</a></h2>
+<p>This implementation differs from the official one in a few ways.
+It may be updated as more information becomes available.</p>
+<ul>
+<li><p>Unicode Policy:</p>
+<p>Type 7 encoding is primarily used with <code class="docutils literal notranslate"><span class="pre">ASCII</span></code> passwords,
+how it handles other characters is not known.</p>
+<p>In order to provide support for unicode strings, Passlib will encode unicode
+passwords using <code class="docutils literal notranslate"><span class="pre">UTF-8</span></code> before running them through this algorithm. If a
+different encoding is desired by an application, the password should be
+encoded before handing it to Passlib.</p>
+</li>
+<li><p>Magic Constant:</p>
+<p>Other implementations contain a truncated 26-byte constant instead of the
+53-byte constant listed above. However, it is likely those implementations
+were merely incomplete, as they exhibit other issues as well after
+the 26th byte is reached (throwing an error, truncating the password,
+outputing garbage), and only worked for shorter passwords.</p>
+</li>
+<li><p>Salt Range:</p>
+<p>All known test vectors contain salt values in <code class="docutils literal notranslate"><span class="pre">range(0,16)</span></code>.
+However, the algorithm itself should be able to handle any salt value
+in <code class="docutils literal notranslate"><span class="pre">range(0,53)</span></code> (the size of the key). For maximum compatibility with
+other implementations, Passlib will accept <code class="docutils literal notranslate"><span class="pre">range(0,53)</span></code>, but only
+generate salts in <code class="docutils literal notranslate"><span class="pre">range(0,16)</span></code>.</p>
+</li>
+<li><p>While this implementation handles all known test vectors,
+and tries to make sense of the disparate implementations,
+the actual algorithm has not been published by Cisco,
+so there may be other unknown deviations.</p></li>
+</ul>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id1" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>Description of Type 7 algorithm -
+<a class="reference external" href="http://pen-testing.sans.org/resources/papers/gcih/cisco-ios-type-7-password-vulnerability-100566">http://pen-testing.sans.org/resources/papers/gcih/cisco-ios-type-7-password-vulnerability-100566</a>,
+<a class="reference external" href="http://wiki.nil.com/Deobfuscating_Cisco_IOS_Passwords">http://wiki.nil.com/Deobfuscating_Cisco_IOS_Passwords</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#unix-hashes">Unix Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-modular-crypt-hashes">Other “Modular Crypt” Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ldap-rfc2307-hashes">LDAP / RFC2307 Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#sql-database-hashes">SQL Database Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ms-windows-hashes">MS Windows Hashes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="passlib.hash.html#cisco-hashes">Cisco Hashes</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.cisco_type7</span></code> - Cisco “Type 7” hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.cisco_pix.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.cisco_pix</span></code> - Cisco PIX MD5 hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.cisco_asa.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.cisco_asa</span></code> - Cisco ASA MD5 hash</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-hashes">Other Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.cisco_pix.html" title="passlib.hash.cisco_pix - Cisco PIX MD5 hash"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.msdcc2.html" title="passlib.hash.msdcc2 - Windows’ Domain Cached Credentials v2"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.cisco_type7</span></code> - Cisco “Type 7” hash</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

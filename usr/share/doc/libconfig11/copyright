@@ -1,0 +1,117 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: libconfig
+Upstream-Contact: Mark A Lindner <hyperrealm@gmail.com>
+Source: https://github.com/hyperrealm/libconfig
+
+Files: *
+Copyright: 2004-2023 Mark A Lindner
+           2016 Richard Schubert
+License: LGPL-2.1+
+
+Files: contrib/ls-config/*
+Copyright: 2013, Łukasz A. Grabowski <www@lucas.net.pl>
+License: GPL-2+
+
+Files: lib/grammar.c
+       lib/grammar.h
+Copyright: 1984-2015, Free Software Foundation, Inc.
+License: GPL-3+ with Bison-2.2 exception
+
+Files: contrib/cmake/cmake_work/cmake_uninstall.cmake.in
+Copyright: 2006-2008, The FLWOR Foundation.
+License: Apache-2.0
+
+Files: aux-build/config.rpath
+Copyright: 1996-2007, Free Software Foundation, Inc.
+License: FSFULLR
+
+Files: debian/*
+Copyright: 2006-2009, Jose Luis Tallon <jltallon@adv-solutions.net>
+           2011-2013, Jonathan McCrohan <jmccrohan@gmail.com>
+           2025 Mohammed Bilal <rmb@debian.org>
+License: GPL-2+
+
+License: LGPL-2.1+
+ This package is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public License
+ along with this package; if not, write to the Free Software Foundation,
+ Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+Comment: on Debian systems, the complete text of the GNU Lesser General
+ Public License v2.1 can be found in `/usr/share/common-licenses/LGPL-2.1'.
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License along
+ with this program; if not, write to the Free Software Foundation, Inc.,
+ 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+Comment: on Debian systems, the complete text of the GNU General Public
+ License v2 can be found in `/usr/share/common-licenses/GPL-2'.
+
+License: GPL-3+ with Bison-2.2 exception
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
+ .
+ As a special exception, you may create a larger work that contains
+ part or all of the Bison parser skeleton and distribute that work
+ under terms of your choice, so long as that work isn't itself a
+ parser generator using the skeleton or a modified version thereof
+ as a parser skeleton.  Alternatively, if you modify or redistribute
+ the parser skeleton itself, you may (at your option) remove this
+ special exception, which will cause the skeleton and the resulting
+ Bison output files to be licensed under the GNU General Public
+ License without this special exception.
+ .
+ This special exception was added by the Free Software Foundation in
+ version 2.2 of Bison.
+
+License: Apache-2.0
+ Licensed to the Apache Software Foundation (ASF) under one or more
+ contributor license agreements.  See the NOTICE file distributed with
+ this work for additional information regarding copyright ownership.
+ The ASF licenses this file to You under the Apache License, Version 2.0
+ (the "License"); you may not use this file except in compliance with
+ the License.  You may obtain a copy of the License at
+ .
+     http://www.apache.org/licenses/LICENSE-2.0
+ .
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ .
+ On Debian systems, the complete text of the Apache License,
+ Version 2.0 can be found in '/usr/share/common-licenses/Apache-2.0'.
+
+License: FSFULLR
+ This file is free software; the Free Software Foundation gives
+ unlimited permission to copy and/or distribute it, with or without
+ modifications, as long as this notice is preserved.

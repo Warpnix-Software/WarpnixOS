@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.totp – TOTP / Two Factor Authentication &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.utils - Helper Functions" href="passlib.utils.html" />
+    <link rel="prev" title="passlib.registry - Password Handler Registry" href="passlib.registry.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.utils.html" title="passlib.utils - Helper Functions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.registry.html" title="passlib.registry - Password Handler Registry"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-totp-totp-two-factor-authentication">
+<span id="module-passlib.totp"></span><h1><a class="reference internal" href="#module-passlib.totp" title="passlib.totp: totp / two factor authentaction"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code></a> – TOTP / Two Factor Authentication<a class="headerlink" href="#passlib-totp-totp-two-factor-authentication" title="Link to this heading">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.7.</span></p>
+</div>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> module provides a number of classes for implementing
+two-factor authentication (2FA) using the TOTP <a class="footnote-reference brackets" href="#totpspec" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> specification.
+This page provides a reference to all the classes and methods in this module.</p>
+<p>Passlib’s TOTP support is centered around the <a class="reference internal" href="#passlib.totp.TOTP" title="passlib.totp.TOTP"><code class="xref py py-class docutils literal notranslate"><span class="pre">TOTP</span></code></a> class.  There are also
+some additional helpers, including the <a class="reference internal" href="#passlib.totp.AppWallet" title="passlib.totp.AppWallet"><code class="xref py py-class docutils literal notranslate"><span class="pre">AppWallet</span></code></a> class, which
+helps to securely encrypt TOTP keys for storage.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../narr/totp-tutorial.html#totp-tutorial"><span class="std std-ref">TOTP Tutorial</span></a> –
+Overview of this module and walkthrough of how to use it.</p></li>
+</ul>
+</div>
+</section>
+<section id="totp-class">
+<h2>TOTP Class<a class="headerlink" href="#totp-class" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.totp.TOTP">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.totp.</span></span><span class="sig-name descname"><span class="pre">TOTP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format=&quot;base32&quot;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">\*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">\*\*kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.totp.TOTP" title="Link to this definition">¶</a></dt>
+<dd><p>Helper for generating and verifying TOTP codes.</p>
+<p>Given a secret key and set of configuration options, this object
+offers methods for token generation, token validation, and serialization.
+It can also be used to track important persistent TOTP state,
+such as the last counter used.</p>
+<p>This class accepts the following options
+(only <strong>key</strong> and <strong>format</strong> may be specified as positional arguments).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – <p>The secret key to use. By default, should be encoded as
+a base32 string (see <strong>format</strong> for other encodings).</p>
+<p>Exactly one of <strong>key</strong> or <code class="docutils literal notranslate"><span class="pre">new=True</span></code> must be specified.</p>
+</p></li>
+<li><p><strong>format</strong> (<em>str</em>) – The encoding used by the <strong>key</strong> parameter. May be one of:
+<code class="docutils literal notranslate"><span class="pre">&quot;base32&quot;</span></code> (base32-encoded string),
+<code class="docutils literal notranslate"><span class="pre">&quot;hex&quot;</span></code> (hexadecimal string), or <code class="docutils literal notranslate"><span class="pre">&quot;raw&quot;</span></code> (raw bytes).
+Defaults to <code class="docutils literal notranslate"><span class="pre">&quot;base32&quot;</span></code>.</p></li>
+<li><p><strong>new</strong> (<em>bool</em>) – <p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, a new key will be generated using <code class="xref py py-class docutils literal notranslate"><span class="pre">random.SystemRandom</span></code>.</p>
+<p>Exactly one <code class="docutils literal notranslate"><span class="pre">new=True</span></code> or <strong>key</strong> must be specified.</p>
+</p></li>
+<li><p><strong>label</strong> (<em>str</em>) – Label to associate with this token when generating a URI.
+Displayed to user by most OTP client applications (e.g. Google Authenticator),
+and typically has format such as <code class="docutils literal notranslate"><span class="pre">&quot;John</span> <span class="pre">Smith&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;jsmith&#64;webservice.example.org&quot;</span></code>.
+Defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>.
+See <a class="reference internal" href="#passlib.totp.TOTP.to_uri" title="passlib.totp.TOTP.to_uri"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_uri()</span></code></a> for details.</p></li>
+<li><p><strong>issuer</strong> (<em>str</em>) – String identifying the token issuer (e.g. the domain name of your service).
+Used internally by some OTP client applications (e.g. Google Authenticator) to distinguish entries
+which otherwise have the same label.
+Optional but strongly recommended if you’re rendering to a URI.
+Defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code>.
+See <a class="reference internal" href="#passlib.totp.TOTP.to_uri" title="passlib.totp.TOTP.to_uri"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_uri()</span></code></a> for details.</p></li>
+<li><p><strong>size</strong> (<em>int</em>) – <p>Number of bytes when generating new keys. Defaults to size of hash algorithm (e.g. 20 for SHA1).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Overriding the default values for <code class="docutils literal notranslate"><span class="pre">digits</span></code>, <code class="docutils literal notranslate"><span class="pre">period</span></code>, or <code class="docutils literal notranslate"><span class="pre">alg</span></code> may
+cause problems with some OTP client programs (such as Google Authenticator),
+which may have these defaults hardcoded.</p>
+</div>
+</p></li>
+<li><p><strong>digits</strong> (<em>int</em>) – <p>The number of digits in the generated / accepted tokens. Defaults to <code class="docutils literal notranslate"><span class="pre">6</span></code>.
+Must be in range [6 .. 10].</p>
+<div class="inline-title admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Due to a limitation of the HOTP algorithm, the 10th digit can only take on values 0 .. 2,
+and thus offers very little extra security.</p>
+</div>
+</p></li>
+<li><p><strong>alg</strong> (<em>str</em>) – Name of hash algorithm to use. Defaults to <code class="docutils literal notranslate"><span class="pre">&quot;sha1&quot;</span></code>.
+<code class="docutils literal notranslate"><span class="pre">&quot;sha256&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;sha512&quot;</span></code> are also accepted, per <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc6238.html"><strong>RFC 6238</strong></a>.</p></li>
+<li><p><strong>period</strong> (<em>int</em>) – The time-step period to use, in integer seconds. Defaults to <code class="docutils literal notranslate"><span class="pre">30</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<p>See below for all the <code class="xref py py-class docutils literal notranslate"><span class="pre">TOTP</span></code> methods &amp; attributes…</p>
+</section>
+<section id="alternate-constructors">
+<h2>Alternate Constructors<a class="headerlink" href="#alternate-constructors" title="Link to this heading">¶</a></h2>
+<p>There are a few alternate class constructors offered.
+These range from simple convenience wrappers such as <a class="reference internal" href="#passlib.totp.TOTP.new" title="passlib.totp.TOTP.new"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.new()</span></code></a>,
+to deserialization methods such as <a class="reference internal" href="#passlib.totp.TOTP.from_source" title="passlib.totp.TOTP.from_source"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.from_source()</span></code></a>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.totp.TOTP.new">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">TOTP.</span></span><span class="sig-name descname"><span class="pre">new</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#passlib.totp.TOTP.new" title="Link to this definition">¶</a></dt>
+<dd><p>convenience alias for creating new TOTP key, same as <code class="docutils literal notranslate"><span class="pre">TOTP(new=True)</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.totp.TOTP.from_source">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">TOTP.</span></span><span class="sig-name descname"><span class="pre">from_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.totp.TOTP.from_source" title="Link to this definition">¶</a></dt>
+<dd><p>Load / create a TOTP object from a serialized source.
+This acts as a wrapper for the various deserialization methods:</p>
+<ul class="simple">
+<li><p>TOTP URIs are handed off to <a class="reference internal" href="#passlib.totp.TOTP.from_uri" title="passlib.totp.TOTP.from_uri"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_uri()</span></code></a></p></li>
+<li><p>Any other strings are handed off to <a class="reference internal" href="#passlib.totp.TOTP.from_json" title="passlib.totp.TOTP.from_json"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_json()</span></code></a></p></li>
+<li><p>Dicts are handed off to <a class="reference internal" href="#passlib.totp.TOTP.from_dict" title="passlib.totp.TOTP.from_dict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">from_dict()</span></code></a></p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>source</strong> – Serialized TOTP object.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – <p>If the key has been encrypted, but the application secret isn’t available;
+or if the string cannot be recognized, parsed, or decoded.</p>
+<p>See <a class="reference internal" href="#passlib.totp.TOTP.using" title="passlib.totp.TOTP.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.using()</span></code></a> for how to configure application secrets.</p>
+</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a <a class="reference internal" href="#passlib.totp.TOTP" title="passlib.totp.TOTP"><code class="xref py py-class docutils literal notranslate"><span class="pre">TOTP</span></code></a> instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.totp.TOTP.from_uri">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">TOTP.</span></span><span class="sig-name descname"><span class="pre">from_uri</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uri</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.totp.TOTP.from_uri" title="Link to this definition">¶</a></dt>
+<dd><p>create an OTP instance from a URI (such as returned by <a class="reference internal" href="#passlib.totp.TOTP.to_uri" title="passlib.totp.TOTP.to_uri"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_uri()</span></code></a>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#passlib.totp.TOTP" title="passlib.totp.TOTP"><code class="xref py py-class docutils literal notranslate"><span class="pre">TOTP</span></code></a> instance.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – if the uri cannot be parsed or contains errors.</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../narr/totp-tutorial.html#totp-configuring-clients"><span class="std std-ref">Configuring Clients</span></a> tutorial for a usage example</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.totp.TOTP.from_json">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">TOTP.</span></span><span class="sig-name descname"><span class="pre">from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.totp.TOTP.from_json" title="Link to this definition">¶</a></dt>
+<dd><p>Load / create an OTP object from a serialized json string
+(as generated by <a class="reference internal" href="#passlib.totp.TOTP.to_json" title="passlib.totp.TOTP.to_json"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_json()</span></code></a>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>json</strong> – Serialized output from <a class="reference internal" href="#passlib.totp.TOTP.to_json" title="passlib.totp.TOTP.to_json"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_json()</span></code></a>, as str or ascii bytes.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – <p>If the key has been encrypted, but the application secret isn’t available;
+or if the string cannot be recognized, parsed, or decoded.</p>
+<p>See <a class="reference internal" href="#passlib.totp.TOTP.using" title="passlib.totp.TOTP.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.using()</span></code></a> for how to configure application secrets.</p>
+</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>a <a class="reference internal" href="#passlib.totp.TOTP" title="passlib.totp.TOTP"><code class="xref py py-class docutils literal notranslate"><span class="pre">TOTP</span></code></a> instance.</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../narr/totp-tutorial.html#totp-storing-instances"><span class="std std-ref">Storing TOTP instances</span></a> tutorial for a usage example</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.totp.TOTP.from_dict">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">TOTP.</span></span><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.totp.TOTP.from_dict" title="Link to this definition">¶</a></dt>
+<dd><p>Load / create a TOTP object from a dictionary
+(as generated by <a class="reference internal" href="#passlib.totp.TOTP.to_dict" title="passlib.totp.TOTP.to_dict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_dict()</span></code></a>)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>source</strong> – dict containing serialized TOTP key &amp; configuration.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – <p>If the key has been encrypted, but the application secret isn’t available;
+or if the dict cannot be recognized, parsed, or decoded.</p>
+<p>See <a class="reference internal" href="#passlib.totp.TOTP.using" title="passlib.totp.TOTP.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.using()</span></code></a> for how to configure application secrets.</p>
+</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A <a class="reference internal" href="#passlib.totp.TOTP" title="passlib.totp.TOTP"><code class="xref py py-class docutils literal notranslate"><span class="pre">TOTP</span></code></a> instance.</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../narr/totp-tutorial.html#totp-storing-instances"><span class="std std-ref">Storing TOTP instances</span></a> tutorial for a usage example</p>
+</div>
+</dd></dl>
+
+</section>
+<section id="factory-creation">
+<h2>Factory Creation<a class="headerlink" href="#factory-creation" title="Link to this heading">¶</a></h2>
+<p>One powerful method offered by the TOTP class is <a class="reference internal" href="#passlib.totp.TOTP.using" title="passlib.totp.TOTP.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.using()</span></code></a>.
+This method allows you to quickly create TOTP subclasses with preconfigured defaults,
+for configuration application secrets and setting default TOTP behavior
+for your application:</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.totp.TOTP.using">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">TOTP.</span></span><span class="sig-name descname"><span class="pre">using</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">digits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">issuer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wallet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">now</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.totp.TOTP.using" title="Link to this definition">¶</a></dt>
+<dd><p>Dynamically create subtype of <code class="xref py py-class docutils literal notranslate"><span class="pre">TOTP</span></code> class
+which has the specified defaults set.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>digits, alg, period, issuer</strong>:</p>
+<p>All these options are the same as in the <a class="reference internal" href="#passlib.totp.TOTP" title="passlib.totp.TOTP"><code class="xref py py-class docutils literal notranslate"><span class="pre">TOTP</span></code></a> constructor,
+and the resulting class will use any values you specify here
+as the default for all TOTP instances it creates.</p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>wallet</strong> – Optional <a class="reference internal" href="#passlib.totp.AppWallet" title="passlib.totp.AppWallet"><code class="xref py py-class docutils literal notranslate"><span class="pre">AppWallet</span></code></a> that will be used for encrypting/decrypting keys.</p></li>
+<li><p><strong>encrypt_cost</strong> (<em>secrets</em><em>, </em><em>secrets_path</em><em>,</em>) – If specified, these options will be passed to the <a class="reference internal" href="#passlib.totp.AppWallet" title="passlib.totp.AppWallet"><code class="xref py py-class docutils literal notranslate"><span class="pre">AppWallet</span></code></a> constructor,
+allowing you to directly specify the secret keys that should be used
+to encrypt &amp; decrypt stored keys.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>subclass of <code class="xref py py-class docutils literal notranslate"><span class="pre">TOTP</span></code>.</p>
+</dd>
+</dl>
+<p>This method is useful for creating a TOTP class configured
+to use your application’s secrets for encrypting &amp; decrypting
+keys, as well as create new keys using it’s desired configuration defaults.</p>
+<p>As an example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># your application can create a custom class when it initializes</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.totp</span> <span class="kn">import</span> <span class="n">TOTP</span><span class="p">,</span> <span class="n">generate_secret</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">TotpFactory</span> <span class="o">=</span> <span class="n">TOTP</span><span class="o">.</span><span class="n">using</span><span class="p">(</span><span class="n">secrets</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;1&quot;</span><span class="p">:</span> <span class="n">generate_secret</span><span class="p">()})</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># subsequent TOTP objects created from this factory</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># will use the specified secrets to encrypt their keys...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">totp</span> <span class="o">=</span> <span class="n">TotpFactory</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">totp</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+<span class="go">{&#39;enckey&#39;: {&#39;c&#39;: 14,</span>
+<span class="go">  &#39;k&#39;: &#39;H77SYXWORDPGVOQTFRR2HFUB3C45XXI7&#39;,</span>
+<span class="go">  &#39;s&#39;: &#39;G5DOQPIHIBUM2OOHHADQ&#39;,</span>
+<span class="go">  &#39;t&#39;: &#39;1&#39;,</span>
+<span class="go">  &#39;v&#39;: 1},</span>
+<span class="go"> &#39;type&#39;: &#39;totp&#39;,</span>
+<span class="go"> &#39;v&#39;: 1}</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../narr/totp-tutorial.html#totp-creation"><span class="std std-ref">Creating TOTP Instances</span></a> and <a class="reference internal" href="../narr/totp-tutorial.html#totp-storing-instances"><span class="std std-ref">Storing TOTP instances</span></a> tutorials for a usage example</p>
+</div>
+</dd></dl>
+
+</section>
+<section id="basic-attributes">
+<span id="totp-configuration-attributes"></span><h2>Basic Attributes<a class="headerlink" href="#basic-attributes" title="Link to this heading">¶</a></h2>
+<p>All the TOTP objects offer the following attributes,
+which correspond to the constructor options above.
+Most of this information will be serialized by <a class="reference internal" href="#passlib.totp.TOTP.to_uri" title="passlib.totp.TOTP.to_uri"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.to_uri()</span></code></a> and <a class="reference internal" href="#passlib.totp.TOTP.to_json" title="passlib.totp.TOTP.to_json"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.to_json()</span></code></a>:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.totp.TOTP.key">
+<span class="sig-prename descclassname"><span class="pre">TOTP.</span></span><span class="sig-name descname"><span class="pre">key</span></span><a class="headerlink" href="#passlib.totp.TOTP.key" title="Link to this definition">¶</a></dt>
+<dd><p>secret key as raw bytes</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.totp.TOTP.hex_key">
+<span class="sig-prename descclassname"><span class="pre">TOTP.</span></span><span class="sig-name descname"><span class="pre">hex_key</span></span><a class="headerlink" href="#passlib.totp.TOTP.hex_key" title="Link to this definition">¶</a></dt>
+<dd><p>secret key encoded as hexadecimal string</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.totp.TOTP.base32_key">
+<span class="sig-prename descclassname"><span class="pre">TOTP.</span></span><span class="sig-name descname"><span class="pre">base32_key</span></span><a class="headerlink" href="#passlib.totp.TOTP.base32_key" title="Link to this definition">¶</a></dt>
+<dd><p>secret key encoded as base32 string</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.totp.TOTP.label">
+<span class="sig-prename descclassname"><span class="pre">TOTP.</span></span><span class="sig-name descname"><span class="pre">label</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#passlib.totp.TOTP.label" title="Link to this definition">¶</a></dt>
+<dd><p>default label for <a class="reference internal" href="#passlib.totp.TOTP.to_uri" title="passlib.totp.TOTP.to_uri"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_uri()</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.totp.TOTP.issuer">
+<span class="sig-prename descclassname"><span class="pre">TOTP.</span></span><span class="sig-name descname"><span class="pre">issuer</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#passlib.totp.TOTP.issuer" title="Link to this definition">¶</a></dt>
+<dd><p>default issuer for <a class="reference internal" href="#passlib.totp.TOTP.to_uri" title="passlib.totp.TOTP.to_uri"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_uri()</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.totp.TOTP.digits">
+<span class="sig-prename descclassname"><span class="pre">TOTP.</span></span><span class="sig-name descname"><span class="pre">digits</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">6</span></em><a class="headerlink" href="#passlib.totp.TOTP.digits" title="Link to this definition">¶</a></dt>
+<dd><p>number of digits in the generated tokens.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.totp.TOTP.alg">
+<span class="sig-prename descclassname"><span class="pre">TOTP.</span></span><span class="sig-name descname"><span class="pre">alg</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'sha1'</span></em><a class="headerlink" href="#passlib.totp.TOTP.alg" title="Link to this definition">¶</a></dt>
+<dd><p>name of hash algorithm in use (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;sha1&quot;</span></code>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.totp.TOTP.period">
+<span class="sig-prename descclassname"><span class="pre">TOTP.</span></span><span class="sig-name descname"><span class="pre">period</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">30</span></em><a class="headerlink" href="#passlib.totp.TOTP.period" title="Link to this definition">¶</a></dt>
+<dd><p>number of seconds per counter step.
+<em>(TOTP uses an internal time-derived counter which
+increments by 1 every</em> <code class="xref py py-attr docutils literal notranslate"><span class="pre">period</span></code> <em>seconds)</em>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.totp.TOTP.changed">
+<span class="sig-prename descclassname"><span class="pre">TOTP.</span></span><span class="sig-name descname"><span class="pre">changed</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#passlib.totp.TOTP.changed" title="Link to this definition">¶</a></dt>
+<dd><p>Flag set by deserialization methods to indicate the object needs to be re-serialized.
+This can be for a number of reasons – encoded using deprecated format,
+or encrypted using a deprecated key or too few rounds.</p>
+</dd></dl>
+
+</section>
+<section id="token-generation">
+<h2>Token Generation<a class="headerlink" href="#token-generation" title="Link to this heading">¶</a></h2>
+<p>Token generation is generally useful client-side, and for generating
+values to test your server implementation.
+There is one main generation method:</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.totp.TOTP.generate">
+<span class="sig-prename descclassname"><span class="pre">TOTP.</span></span><span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.totp.TOTP.generate" title="Link to this definition">¶</a></dt>
+<dd><p>Generate token for specified time
+(uses current time if none specified).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>time</strong> – Can be <code class="docutils literal notranslate"><span class="pre">None</span></code>, a <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code>,
+or class:<cite>!float</cite> / <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code> unix epoch timestamp.
+If <code class="docutils literal notranslate"><span class="pre">None</span></code> (the default), uses current system time.
+Naive datetimes are treated as UTC.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <a class="reference internal" href="#passlib.totp.TotpToken" title="passlib.totp.TotpToken"><code class="xref py py-class docutils literal notranslate"><span class="pre">TotpToken</span></code></a> instance, which can be treated
+as a sequence of <code class="docutils literal notranslate"><span class="pre">(token,</span> <span class="pre">expire_time)</span></code> – see that class
+for more details.</p>
+</dd>
+</dl>
+<p>Usage example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># generate a new token, wrapped in a TotpToken instance...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">otp</span> <span class="o">=</span> <span class="n">TOTP</span><span class="p">(</span><span class="s1">&#39;s3jdvb7qd2r7jpxx&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">otp</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="mi">1419622739</span><span class="p">)</span>
+<span class="go">&lt;TotpToken token=&#39;897212&#39; expire_time=1419622740&gt;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># when you just need the token...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">otp</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="mi">1419622739</span><span class="p">)</span><span class="o">.</span><span class="n">token</span>
+<span class="go">&#39;897212&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<div class="float-right admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Tokens should be displayed as strings, as
+they may contain leading zeros which will get stripped if they are
+first converted to an <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>.</p>
+</div>
+<section id="totptoken">
+<h3>TotpToken<a class="headerlink" href="#totptoken" title="Link to this heading">¶</a></h3>
+<p>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.generate()</span></code> method returns instances of the following class,
+which offers up detailed information about the generated token:</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.totp.TotpToken">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.totp.</span></span><span class="sig-name descname"><span class="pre">TotpToken</span></span><a class="headerlink" href="#passlib.totp.TotpToken" title="Link to this definition">¶</a></dt>
+<dd><p>Object returned by <a class="reference internal" href="#passlib.totp.TOTP.generate" title="passlib.totp.TOTP.generate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.generate()</span></code></a>.
+It can be treated as a sequence of <code class="docutils literal notranslate"><span class="pre">(token,</span> <span class="pre">expire_time)</span></code>,
+or accessed via the following attributes:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.totp.TotpToken.token">
+<span class="sig-name descname"><span class="pre">token</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#passlib.totp.TotpToken.token" title="Link to this definition">¶</a></dt>
+<dd><p>Token as decimal-encoded ascii string.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.totp.TotpToken.expire_time">
+<span class="sig-name descname"><span class="pre">expire_time</span></span><a class="headerlink" href="#passlib.totp.TotpToken.expire_time" title="Link to this definition">¶</a></dt>
+<dd><p>Timestamp marking end of period when token is valid</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.totp.TotpToken.counter">
+<span class="sig-name descname"><span class="pre">counter</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#passlib.totp.TotpToken.counter" title="Link to this definition">¶</a></dt>
+<dd><p>HOTP counter value used to generate token (derived from time)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.totp.TotpToken.remaining">
+<span class="sig-name descname"><span class="pre">remaining</span></span><a class="headerlink" href="#passlib.totp.TotpToken.remaining" title="Link to this definition">¶</a></dt>
+<dd><p>number of (float) seconds before token expires</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.totp.TotpToken.valid">
+<span class="sig-name descname"><span class="pre">valid</span></span><a class="headerlink" href="#passlib.totp.TotpToken.valid" title="Link to this definition">¶</a></dt>
+<dd><p>whether token is still valid</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+<section id="token-matching-verification">
+<h2>Token Matching / Verification<a class="headerlink" href="#token-matching-verification" title="Link to this heading">¶</a></h2>
+<p>Matching user-provided tokens is the main operation when implementing server-side TOTP support.
+Passlib offers one main method: <code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.match()</span></code>, as well as a convenience wrapper <code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.verify()</span></code>:</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.totp.TOTP.match">
+<span class="sig-prename descclassname"><span class="pre">TOTP.</span></span><span class="sig-name descname"><span class="pre">match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skew</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_counter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.totp.TOTP.match" title="Link to this definition">¶</a></dt>
+<dd><p>Match TOTP token against specified timestamp.
+Searches within a window before &amp; after the provided time,
+in order to account for transmission delay and small amounts of skew in the client’s clock.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>token</strong> – Token to validate.
+may be integer or string (whitespace and hyphens are ignored).</p></li>
+<li><p><strong>time</strong> – Unix epoch timestamp, can be any of <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, or <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code>.
+if <code class="docutils literal notranslate"><span class="pre">None</span></code> (the default), uses current system time.
+<em>this should correspond to the time the token was received from the client</em>.</p></li>
+<li><p><strong>window</strong> (<em>int</em>) – How far backward and forward in time to search for a match.
+Measured in seconds. Defaults to <code class="docutils literal notranslate"><span class="pre">30</span></code>.  Typically only useful if set
+to multiples of <a class="reference internal" href="#passlib.totp.TOTP.period" title="passlib.totp.TOTP.period"><code class="xref py py-attr docutils literal notranslate"><span class="pre">period</span></code></a>.</p></li>
+<li><p><strong>skew</strong> (<em>int</em>) – <p>Adjust timestamp by specified value, to account for excessive
+client clock skew. Measured in seconds. Defaults to <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>Negative skew (the common case) indicates transmission delay,
+and/or that the client clock is running behind the server.</p>
+<p>Positive skew indicates the client clock is running ahead of the server
+(and by enough that it cancels out any negative skew added by
+the transmission delay).</p>
+<p>You should ensure the server clock uses a reliable time source such as NTP,
+so that only the client clock’s inaccuracy needs to be accounted for.</p>
+<p>This is an advanced parameter that should usually be left at <code class="docutils literal notranslate"><span class="pre">0</span></code>;
+The <strong>window</strong> parameter is usually enough to account
+for any observed transmission delay.</p>
+</p></li>
+<li><p><strong>last_counter</strong> – <p>Optional value of last counter value that was successfully used.
+If specified, verify will never search earlier counters,
+no matter how large the window is.</p>
+<p>Useful when client has previously authenticated,
+and thus should never provide a token older than previously
+verified value.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="passlib.exc.html#passlib.exc.TokenError" title="passlib.exc.TokenError"><strong>TokenError</strong></a> – If the token is malformed, fails to match, or has already been used.</p>
+</dd>
+<dt class="field-odd">Returns TotpMatch<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Returns a <a class="reference internal" href="#passlib.totp.TotpMatch" title="passlib.totp.TotpMatch"><code class="xref py py-class docutils literal notranslate"><span class="pre">TotpMatch</span></code></a> instance on successful match.
+Can be treated as tuple of <code class="docutils literal notranslate"><span class="pre">(counter,</span> <span class="pre">time)</span></code>.
+Raises error if token is malformed / can’t be verified.</p>
+</dd>
+</dl>
+<p>Usage example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">totp</span> <span class="o">=</span> <span class="n">TOTP</span><span class="p">(</span><span class="s1">&#39;s3jdvb7qd2r7jpxx&#39;</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># valid token for this time period</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">totp</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;897212&#39;</span><span class="p">,</span> <span class="mi">1419622729</span><span class="p">)</span>
+<span class="go">&lt;TotpMatch counter=47320757 time=1419622729 cache_seconds=60&gt;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># token from counter step 30 sec ago (within allowed window)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">totp</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;000492&#39;</span><span class="p">,</span> <span class="mi">1419622729</span><span class="p">)</span>
+<span class="go">&lt;TotpMatch counter=47320756 time=1419622729 cache_seconds=60&gt;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># invalid token -- token from 60 sec ago (outside of window)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">totp</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;760389&#39;</span><span class="p">,</span> <span class="mi">1419622729</span><span class="p">)</span>
+<span class="go">Traceback:</span>
+<span class="go">    ...</span>
+<span class="go">InvalidTokenError: Token did not match</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.totp.TOTP.verify">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">TOTP.</span></span><span class="sig-name descname"><span class="pre">verify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.totp.TOTP.verify" title="Link to this definition">¶</a></dt>
+<dd><p>Convenience wrapper around <a class="reference internal" href="#passlib.totp.TOTP.from_source" title="passlib.totp.TOTP.from_source"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.from_source()</span></code></a> and <a class="reference internal" href="#passlib.totp.TOTP.match" title="passlib.totp.TOTP.match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.match()</span></code></a>.</p>
+<p>This parses a TOTP key &amp; configuration from the specified source,
+and tries and match the token.
+It’s designed to parallel the <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.verify" title="passlib.ifc.PasswordHash.verify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">passlib.ifc.PasswordHash.verify()</span></code></a> method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>token</strong> – Token string to match.</p></li>
+<li><p><strong>source</strong> – Serialized TOTP key.
+Can be anything accepted by <a class="reference internal" href="#passlib.totp.TOTP.from_source" title="passlib.totp.TOTP.from_source"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.from_source()</span></code></a>.</p></li>
+<li><p><strong>\*\*kwds</strong> – All additional keywords passed to <a class="reference internal" href="#passlib.totp.TOTP.match" title="passlib.totp.TOTP.match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.match()</span></code></a>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A <a class="reference internal" href="#passlib.totp.TotpMatch" title="passlib.totp.TotpMatch"><code class="xref py py-class docutils literal notranslate"><span class="pre">TotpMatch</span></code></a> instance, or raises a <code class="xref py py-exc docutils literal notranslate"><span class="pre">TokenError</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../narr/totp-tutorial.html#totp-verifying"><span class="std std-ref">Verifying Tokens</span></a> tutorial for a usage example</p>
+</div>
+<section id="totpmatch">
+<h3>TotpMatch<a class="headerlink" href="#totpmatch" title="Link to this heading">¶</a></h3>
+<p>If successful, the <code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.verify()</span></code> method returns instances of the following class,
+which offers up detailed information about the matched token:</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.totp.TotpMatch">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.totp.</span></span><span class="sig-name descname"><span class="pre">TotpMatch</span></span><a class="headerlink" href="#passlib.totp.TotpMatch" title="Link to this definition">¶</a></dt>
+<dd><p>Object returned by <a class="reference internal" href="#passlib.totp.TOTP.match" title="passlib.totp.TOTP.match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.match()</span></code></a> and <a class="reference internal" href="#passlib.totp.TOTP.verify" title="passlib.totp.TOTP.verify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.verify()</span></code></a> on a successful match.</p>
+<p>It can be treated as a sequence of <code class="docutils literal notranslate"><span class="pre">(counter,</span> <span class="pre">time)</span></code>,
+or accessed via the following attributes:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.totp.TotpMatch.counter">
+<span class="sig-name descname"><span class="pre">counter</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#passlib.totp.TotpMatch.counter" title="Link to this definition">¶</a></dt>
+<dd><p>TOTP counter value which matched token.
+(Best practice is to subsequently ignore tokens matching this counter
+or earlier)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.totp.TotpMatch.time">
+<span class="sig-name descname"><span class="pre">time</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#passlib.totp.TotpMatch.time" title="Link to this definition">¶</a></dt>
+<dd><p>Timestamp when verification was performed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.totp.TotpMatch.expected_counter">
+<span class="sig-name descname"><span class="pre">expected_counter</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#passlib.totp.TotpMatch.expected_counter" title="Link to this definition">¶</a></dt>
+<dd><p>Counter value expected for timestamp.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.totp.TotpMatch.skipped">
+<span class="sig-name descname"><span class="pre">skipped</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#passlib.totp.TotpMatch.skipped" title="Link to this definition">¶</a></dt>
+<dd><p>How many steps were skipped between expected and actual matched counter
+value (may be positive, zero, or negative).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.totp.TotpMatch.expire_time">
+<span class="sig-name descname"><span class="pre">expire_time</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#passlib.totp.TotpMatch.expire_time" title="Link to this definition">¶</a></dt>
+<dd><p>Timestamp marking end of period when token is valid</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.totp.TotpMatch.cache_seconds">
+<span class="sig-name descname"><span class="pre">cache_seconds</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">60</span></em><a class="headerlink" href="#passlib.totp.TotpMatch.cache_seconds" title="Link to this definition">¶</a></dt>
+<dd><p>Number of seconds counter should be cached
+before it’s guaranteed to have passed outside of verification window.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.totp.TotpMatch.cache_time">
+<span class="sig-name descname"><span class="pre">cache_time</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#passlib.totp.TotpMatch.cache_time" title="Link to this definition">¶</a></dt>
+<dd><p>Timestamp marking when counter has passed outside of verification window.</p>
+</dd></dl>
+
+<p>This object will always have a <code class="docutils literal notranslate"><span class="pre">True</span></code> boolean value.</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="client-configuration-methods">
+<span id="totp-provisioning"></span><h2>Client Configuration Methods<a class="headerlink" href="#client-configuration-methods" title="Link to this heading">¶</a></h2>
+<p>Once a server has generated a new TOTP key &amp; configuration,
+it needs to be communicated to the user in order for them to store it
+in a suitable TOTP client.</p>
+<p>This can be done by displaying the key &amp; configuration for the user
+to hand-enter into their client, or by encoding TOTP object into a URI <a class="footnote-reference brackets" href="#uriformat" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>.
+These configuration URIs can subsequently be displayed as a QR code,
+for easy transfer to many smartphone-based TOTP clients
+(such as Authy or Google Authenticator).</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.totp.TOTP.to_uri">
+<span class="sig-prename descclassname"><span class="pre">TOTP.</span></span><span class="sig-name descname"><span class="pre">to_uri</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">issuer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.totp.TOTP.to_uri" title="Link to this definition">¶</a></dt>
+<dd><p>Serialize key and configuration into a URI, per
+Google Auth’s <a class="reference external" href="http://code.google.com/p/google-authenticator/wiki/KeyUriFormat">KeyUriFormat</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>label</strong> (<em>str</em>) – <p>Label to associate with this token when generating a URI.
+Displayed to user by most OTP client applications (e.g. Google Authenticator),
+and typically has format such as <code class="docutils literal notranslate"><span class="pre">&quot;John</span> <span class="pre">Smith&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;jsmith&#64;webservice.example.org&quot;</span></code>.</p>
+<p>Defaults to <strong>label</strong> constructor argument. Must be provided in one or the other location.
+May not contain <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>
+</p></li>
+<li><p><strong>issuer</strong> (<em>str</em>) – <p>String identifying the token issuer (e.g. the domain or canonical name of your service).
+Optional but strongly recommended if you’re rendering to a URI.
+Used internally by some OTP client applications (e.g. Google Authenticator) to distinguish entries
+which otherwise have the same label.</p>
+<p>Defaults to <strong>issuer</strong> constructor argument, or <code class="docutils literal notranslate"><span class="pre">None</span></code>.
+May not contain <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – <ul class="simple">
+<li><p>if a label was not provided either as an argument, or in the constructor.</p></li>
+<li><p>if the label or issuer contains invalid characters.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>all the configuration information for this OTP token generator,
+encoded into a URI.</p>
+</dd>
+</dl>
+<p>These URIs are frequently converted to a QRCode for transferring
+to a TOTP client application such as Google Auth.
+Usage example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.totp</span> <span class="kn">import</span> <span class="n">TOTP</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tp</span> <span class="o">=</span> <span class="n">TOTP</span><span class="p">(</span><span class="s1">&#39;s3jdvb7qd2r7jpxx&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">uri</span> <span class="o">=</span> <span class="n">tp</span><span class="o">.</span><span class="n">to_uri</span><span class="p">(</span><span class="s2">&quot;user@example.org&quot;</span><span class="p">,</span> <span class="s2">&quot;myservice.another-example.org&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">uri</span>
+<span class="go">&#39;otpauth://totp/user@example.org?secret=S3JDVB7QD2R7JPXX&amp;issuer=myservice.another-example.org&#39;</span>
+</pre></div>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.7.2: </span>This method now prepends the issuer URI label.  This is recommended by the KeyURI
+specification, for compatibility with older clients.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.totp.TOTP.pretty_key">
+<span class="sig-prename descclassname"><span class="pre">TOTP.</span></span><span class="sig-name descname"><span class="pre">pretty_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'base32'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'-'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.totp.TOTP.pretty_key" title="Link to this definition">¶</a></dt>
+<dd><p>pretty-print the secret key.</p>
+<p>This is mainly useful for situations where the user cannot get the qrcode to work,
+and must enter the key manually into their TOTP client. It tries to format
+the key in a manner that is easier for humans to read.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>format</strong> – format to output secret key. <code class="docutils literal notranslate"><span class="pre">&quot;hex&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;base32&quot;</span></code> are both accepted.</p></li>
+<li><p><strong>sep</strong> – separator to insert to break up key visually.
+can be any of <code class="docutils literal notranslate"><span class="pre">&quot;-&quot;</span></code> (the default), <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">False</span></code> (no separator).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>key as native string.</p>
+</dd>
+</dl>
+<p>Usage example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">TOTP</span><span class="p">(</span><span class="s1">&#39;s3jdvb7qd2r7jpxx&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span><span class="o">.</span><span class="n">pretty_key</span><span class="p">()</span>
+<span class="go">&#39;S3JD-VB7Q-D2R7-JPXX&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p>The <a class="reference internal" href="#passlib.totp.TOTP.from_source" title="passlib.totp.TOTP.from_source"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.from_source()</span></code></a> and <a class="reference internal" href="#passlib.totp.TOTP.from_uri" title="passlib.totp.TOTP.from_uri"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.from_uri()</span></code></a> constructors for decoding URIs.</p></li>
+<li><p>The <a class="reference internal" href="../narr/totp-tutorial.html#totp-configuring-clients"><span class="std std-ref">Configuring Clients</span></a> tutorial for details
+about these methods, and how to render URIs to a QR Code.</p></li>
+</ul>
+</div>
+</section>
+<section id="serialization-methods">
+<span id="totp-serialization"></span><h2>Serialization Methods<a class="headerlink" href="#serialization-methods" title="Link to this heading">¶</a></h2>
+<p>The <a class="reference internal" href="#passlib.totp.TOTP.to_uri" title="passlib.totp.TOTP.to_uri"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.to_uri()</span></code></a> method is useful, but limited, because it requires
+additional information (label &amp; issuer), and lacks the ability to encrypt the key.
+The <a class="reference internal" href="#passlib.totp.TOTP" title="passlib.totp.TOTP"><code class="xref py py-class docutils literal notranslate"><span class="pre">TOTP</span></code></a> provides the following methods for serializing TOTP objects
+to internal storage.  When application secrets are configured via <a class="reference internal" href="#passlib.totp.TOTP.using" title="passlib.totp.TOTP.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.using()</span></code></a>,
+these methods will automatically encrypt the resulting keys.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.totp.TOTP.to_json">
+<span class="sig-prename descclassname"><span class="pre">TOTP.</span></span><span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encrypt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.totp.TOTP.to_json" title="Link to this definition">¶</a></dt>
+<dd><p>Serialize configuration &amp; internal state to a json string,
+mainly useful for persisting client-specific state in a database.
+All keywords passed to <a class="reference internal" href="#passlib.totp.TOTP.to_dict" title="passlib.totp.TOTP.to_dict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_dict()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>json string containing serializes configuration &amp; state.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.totp.TOTP.to_dict">
+<span class="sig-prename descclassname"><span class="pre">TOTP.</span></span><span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encrypt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.totp.TOTP.to_dict" title="Link to this definition">¶</a></dt>
+<dd><p>Serialize configuration &amp; internal state to a dict,
+mainly useful for persisting client-specific state in a database.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>encrypt</strong> – <p>Whether to output should be encrypted.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code> (the default) – uses encrypted key if application
+secrets are available, otherwise uses plaintext key.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code> – uses encrypted key, or raises TypeError
+if application secret wasn’t provided to OTP constructor.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code> – uses raw key.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dictionary, containing basic (json serializable) datatypes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p>The <a class="reference internal" href="#passlib.totp.TOTP.from_source" title="passlib.totp.TOTP.from_source"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.from_source()</span></code></a> and <a class="reference internal" href="#passlib.totp.TOTP.from_json" title="passlib.totp.TOTP.from_json"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.from_json()</span></code></a> constructors for decoding
+the results of these methods.</p></li>
+<li><p>The <a class="reference internal" href="../narr/totp-tutorial.html#totp-storing-instances"><span class="std std-ref">Storing TOTP instances</span></a> tutorial for more details.</p></li>
+</ul>
+</div>
+</section>
+<section id="helper-methods">
+<h2>Helper Methods<a class="headerlink" href="#helper-methods" title="Link to this heading">¶</a></h2>
+<p>While <a class="reference internal" href="#passlib.totp.TOTP.generate" title="passlib.totp.TOTP.generate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.generate()</span></code></a>, <a class="reference internal" href="#passlib.totp.TOTP.match" title="passlib.totp.TOTP.match"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.match()</span></code></a>, and <a class="reference internal" href="#passlib.totp.TOTP.verify" title="passlib.totp.TOTP.verify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.verify()</span></code></a>
+automatically handle normalizing tokens &amp; time values, the following methods
+are exposed in case they are useful in other contexts:</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.totp.TOTP.normalize_token">
+<span class="sig-prename descclassname"><span class="pre">TOTP.</span></span><span class="sig-name descname"><span class="pre">normalize_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.totp.TOTP.normalize_token" title="Link to this definition">¶</a></dt>
+<dd><p>Normalize OTP token representation:
+strips whitespace, converts integers to a zero-padded string,
+validates token content &amp; number of digits.</p>
+<p>This is a hybrid method – it can be called at the class level,
+as <code class="docutils literal notranslate"><span class="pre">TOTP.normalize_token()</span></code>, or the instance level as <code class="docutils literal notranslate"><span class="pre">TOTP().normalize_token()</span></code>.
+It will normalize to the instance-specific number of <a class="reference internal" href="#passlib.totp.TOTP.digits" title="passlib.totp.TOTP.digits"><code class="xref py py-attr docutils literal notranslate"><span class="pre">digits</span></code></a>,
+or use the class default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>token</strong> – token as ascii bytes, str, or an integer.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – if token has wrong number of digits, or contains non-numeric characters.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>token as <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, containing only digits 0-9.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.totp.TOTP.normalize_time">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">TOTP.</span></span><span class="sig-name descname"><span class="pre">normalize_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.totp.TOTP.normalize_time" title="Link to this definition">¶</a></dt>
+<dd><p>Normalize time value to unix epoch seconds.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>time</strong> – Can be <code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code>,
+or unix epoch timestamp as <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>.
+If <code class="docutils literal notranslate"><span class="pre">None</span></code>, uses current system time.
+Naive datetimes are treated as UTC.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>unix epoch timestamp as <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="appwallet">
+<h2>AppWallet<a class="headerlink" href="#appwallet" title="Link to this heading">¶</a></h2>
+<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">AppWallet</span></code> class is used internally by the <a class="reference internal" href="#passlib.totp.TOTP.using" title="passlib.totp.TOTP.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.using()</span></code></a> method
+to store the application secrets provided for handling encrypted keys.
+If needed, they can also be created and passed in directly.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.totp.AppWallet">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.totp.</span></span><span class="sig-name descname"><span class="pre">AppWallet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">secrets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_tag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encrypt_cost</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secrets_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.totp.AppWallet" title="Link to this definition">¶</a></dt>
+<dd><p>This class stores application-wide secrets that can be used
+to encrypt &amp; decrypt TOTP keys for storage.
+It’s mostly an internal detail, applications usually just need
+to pass <code class="docutils literal notranslate"><span class="pre">secrets</span></code> or <code class="docutils literal notranslate"><span class="pre">secrets_path</span></code> to <a class="reference internal" href="#passlib.totp.TOTP.using" title="passlib.totp.TOTP.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.using()</span></code></a>.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../narr/totp-tutorial.html#totp-storing-instances"><span class="std std-ref">Storing TOTP instances</span></a> for more details on this workflow.</p>
+</div>
+<section id="arguments">
+<h3>Arguments<a class="headerlink" href="#arguments" title="Link to this heading">¶</a></h3>
+<dl class="field-list">
+<dt class="field-odd">param secrets<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict of application secrets to use when encrypting/decrypting
+stored TOTP keys.  This should include a secret to use when encrypting
+new keys, but may contain additional older secrets to decrypt
+existing stored keys.</p>
+<p>The dict should map tags -&gt; secrets, so that each secret is identified
+by a unique tag.  This tag will be stored along with the encrypted
+key in order to determine which secret should be used for decryption.
+Tag should be string that starts with regex range <code class="docutils literal notranslate"><span class="pre">[a-z0-9]</span></code>,
+and the remaining characters must be in <code class="docutils literal notranslate"><span class="pre">[a-z0-9_.-]</span></code>.</p>
+<p>It is recommended to use something like a incremental counter
+(“1”, “2”, …), an ISO date (“2016-01-01”, “2016-05-16”, …),
+or a timestamp (“19803495”, “19813495”, …) when assigning tags.</p>
+<p>This mapping be provided in three formats:</p>
+<ul class="simple">
+<li><p>A python dict mapping tag -&gt; secret</p></li>
+<li><p>A JSON-formatted string containing the dict</p></li>
+<li><p>A multiline string with the format <code class="docutils literal notranslate"><span class="pre">&quot;tag:</span> <span class="pre">value\ntag:</span> <span class="pre">value\n...&quot;</span></code></p></li>
+</ul>
+<p>(This last format is mainly useful when loading from a text file via <strong>secrets_path</strong>)</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#passlib.totp.generate_secret" title="passlib.totp.generate_secret"><code class="xref py py-func docutils literal notranslate"><span class="pre">generate_secret()</span></code></a> to create a secret with sufficient entropy</p>
+</div>
+</dd>
+<dt class="field-even">param secrets_path<span class="colon">:</span></dt>
+<dd class="field-even"><p>Alternately, callers can specify a separate file where the
+application-wide secrets are stored, using either of the string
+formats described in <strong>secrets</strong>.</p>
+</dd>
+<dt class="field-odd">param default_tag<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Specifies which tag in <strong>secrets</strong> should be used as the default
+for encrypting new keys. If omitted, the tags will be sorted,
+and the largest tag used as the default.</p>
+<p>if all tags are numeric, they will be sorted numerically;
+otherwise they will be sorted alphabetically.
+this permits tags to be assigned numerically,
+or e.g. using <code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD</span></code> dates.</p>
+</dd>
+<dt class="field-even">param encrypt_cost<span class="colon">:</span></dt>
+<dd class="field-even"><p>Optional time-cost factor for key encryption.
+This value corresponds to log2() of the number of PBKDF2
+rounds used.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The application secret(s) should be stored in a secure location by
+your application, and each secret should contain a large amount
+of entropy (to prevent brute-force attacks if the encrypted keys
+are leaked).</p>
+<p><a class="reference internal" href="#passlib.totp.generate_secret" title="passlib.totp.generate_secret"><code class="xref py py-func docutils literal notranslate"><span class="pre">generate_secret()</span></code></a> is provided as a convenience helper
+to generate a new application secret of suitable size.</p>
+<p>Best practice is to load these values from a file via <strong>secrets_path</strong>,
+and then have your application give up permission to read this file
+once it’s running.</p>
+</div>
+</section>
+<section id="public-methods">
+<h3>Public Methods<a class="headerlink" href="#public-methods" title="Link to this heading">¶</a></h3>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.totp.AppWallet.has_secrets">
+<span class="sig-name descname"><span class="pre">has_secrets</span></span><a class="headerlink" href="#passlib.totp.AppWallet.has_secrets" title="Link to this definition">¶</a></dt>
+<dd><p>whether at least one application secret is present</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.totp.AppWallet.default_tag">
+<span class="sig-name descname"><span class="pre">default_tag</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#passlib.totp.AppWallet.default_tag" title="Link to this definition">¶</a></dt>
+<dd><p>tag for default secret</p>
+</dd></dl>
+
+</section>
+<section id="semi-private-methods">
+<h3>Semi-Private Methods<a class="headerlink" href="#semi-private-methods" title="Link to this heading">¶</a></h3>
+<p>The following methods are used internally by the <a class="reference internal" href="#passlib.totp.TOTP" title="passlib.totp.TOTP"><code class="xref py py-class docutils literal notranslate"><span class="pre">TOTP</span></code></a>
+class in order to encrypt &amp; decrypt keys using the provided application
+secrets.  They will generally not be publically useful, and may have their
+API changed periodically.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.totp.AppWallet.get_secret">
+<span class="sig-name descname"><span class="pre">get_secret</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.totp.AppWallet.get_secret" title="Link to this definition">¶</a></dt>
+<dd><p>resolve a secret tag to the secret (as bytes).
+throws a KeyError if not found.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.totp.AppWallet.encrypt_key">
+<span class="sig-name descname"><span class="pre">encrypt_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.totp.AppWallet.encrypt_key" title="Link to this definition">¶</a></dt>
+<dd><p>Helper used to encrypt TOTP keys for storage.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> – TOTP key to encrypt, as raw bytes.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict containing encrypted TOTP key &amp; configuration parameters.
+this format should be treated as opaque, and potentially subject
+to change, though it is designed to be easily serialized/deserialized
+(e.g. via JSON).</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function requires installation of the external
+<a class="reference external" href="https://cryptography.io">cryptography</a> package.</p>
+</div>
+<p>To give some algorithm details:  This function uses AES-256-CTR to encrypt
+the provided data.  It takes the application secret and randomly generated salt,
+and uses PBKDF2-HMAC-SHA256 to combine them and generate the AES key &amp; IV.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.totp.AppWallet.decrypt_key">
+<span class="sig-name descname"><span class="pre">decrypt_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enckey</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.totp.AppWallet.decrypt_key" title="Link to this definition">¶</a></dt>
+<dd><p>Helper used to decrypt TOTP keys from storage format.
+Consults configured secrets to decrypt key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>source</strong> – source object, as returned by <a class="reference internal" href="#passlib.totp.AppWallet.encrypt_key" title="passlib.totp.AppWallet.encrypt_key"><code class="xref py py-meth docutils literal notranslate"><span class="pre">encrypt_key()</span></code></a>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p><code class="docutils literal notranslate"><span class="pre">(key,</span> <span class="pre">needs_recrypt)</span></code> –</p>
+<p><strong>key</strong> will be the decrypted key, as bytes.</p>
+<p><strong>needs_recrypt</strong> will be a boolean flag indicating
+whether encryption cost or default tag is too old,
+and henace that key needs re-encrypting before storing.</p>
+</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function requires installation of the external
+<a class="reference external" href="https://cryptography.io">cryptography</a> package.</p>
+</div>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+<section id="support-functions">
+<h2>Support Functions<a class="headerlink" href="#support-functions" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.totp.generate_secret">
+<span class="sig-prename descclassname"><span class="pre">passlib.totp.</span></span><span class="sig-name descname"><span class="pre">generate_secret</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">entropy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.totp.generate_secret" title="Link to this definition">¶</a></dt>
+<dd><p>generate a random string suitable for use as an
+<a class="reference internal" href="#passlib.totp.AppWallet" title="passlib.totp.AppWallet"><code class="xref py py-class docutils literal notranslate"><span class="pre">AppWallet</span></code></a> application secret.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>entropy</strong> – number of bits of entropy (controls size/complexity of password).</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="deviations">
+<h2>Deviations<a class="headerlink" href="#deviations" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>The TOTP Spec <a class="footnote-reference brackets" href="#totpspec" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> includes an param (<code class="docutils literal notranslate"><span class="pre">T0</span></code>) providing an optional offset from the base time.
+Passlib omits this parameter (fixing it at <code class="docutils literal notranslate"><span class="pre">0</span></code>), but so do pretty much all other TOTP implementations.</p></li>
+</ul>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="totpspec" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id4">2</a>)</span>
+<p>TOTP Specification - <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc6238.html"><strong>RFC 6238</strong></a></p>
+</aside>
+<aside class="footnote brackets" id="hotpspec" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>HOTP Specification - <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4226.html"><strong>RFC 4226</strong></a></p>
+</aside>
+<aside class="footnote brackets" id="uriformat" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">3</a><span class="fn-bracket">]</span></span>
+<p>Google’s OTPAuth URI format -
+<a class="reference external" href="https://github.com/google/google-authenticator/wiki/Key-Uri-Format">https://github.com/google/google-authenticator/wiki/Key-Uri-Format</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#totp-class">TOTP Class</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP"><code class="docutils literal notranslate"><span class="pre">TOTP</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#alternate-constructors">Alternate Constructors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP.new"><code class="docutils literal notranslate"><span class="pre">TOTP.new()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP.from_source"><code class="docutils literal notranslate"><span class="pre">TOTP.from_source()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP.from_uri"><code class="docutils literal notranslate"><span class="pre">TOTP.from_uri()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP.from_json"><code class="docutils literal notranslate"><span class="pre">TOTP.from_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP.from_dict"><code class="docutils literal notranslate"><span class="pre">TOTP.from_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#factory-creation">Factory Creation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP.using"><code class="docutils literal notranslate"><span class="pre">TOTP.using()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-attributes">Basic Attributes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP.key"><code class="docutils literal notranslate"><span class="pre">TOTP.key</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP.hex_key"><code class="docutils literal notranslate"><span class="pre">TOTP.hex_key</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP.base32_key"><code class="docutils literal notranslate"><span class="pre">TOTP.base32_key</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP.label"><code class="docutils literal notranslate"><span class="pre">TOTP.label</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP.issuer"><code class="docutils literal notranslate"><span class="pre">TOTP.issuer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP.digits"><code class="docutils literal notranslate"><span class="pre">TOTP.digits</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP.alg"><code class="docutils literal notranslate"><span class="pre">TOTP.alg</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP.period"><code class="docutils literal notranslate"><span class="pre">TOTP.period</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP.changed"><code class="docutils literal notranslate"><span class="pre">TOTP.changed</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#token-generation">Token Generation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP.generate"><code class="docutils literal notranslate"><span class="pre">TOTP.generate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#totptoken">TotpToken</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#token-matching-verification">Token Matching / Verification</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP.match"><code class="docutils literal notranslate"><span class="pre">TOTP.match()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP.verify"><code class="docutils literal notranslate"><span class="pre">TOTP.verify()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#totpmatch">TotpMatch</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#client-configuration-methods">Client Configuration Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP.to_uri"><code class="docutils literal notranslate"><span class="pre">TOTP.to_uri()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP.pretty_key"><code class="docutils literal notranslate"><span class="pre">TOTP.pretty_key()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#serialization-methods">Serialization Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP.to_json"><code class="docutils literal notranslate"><span class="pre">TOTP.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP.to_dict"><code class="docutils literal notranslate"><span class="pre">TOTP.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#helper-methods">Helper Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP.normalize_token"><code class="docutils literal notranslate"><span class="pre">TOTP.normalize_token()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.TOTP.normalize_time"><code class="docutils literal notranslate"><span class="pre">TOTP.normalize_time()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#appwallet">AppWallet</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.AppWallet"><code class="docutils literal notranslate"><span class="pre">AppWallet</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#support-functions">Support Functions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.totp.generate_secret"><code class="docutils literal notranslate"><span class="pre">generate_secret()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#deviations">Deviations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.utils.html" title="passlib.utils - Helper Functions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.registry.html" title="passlib.registry - Password Handler Registry"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

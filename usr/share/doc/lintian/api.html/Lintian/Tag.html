@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Lintian::Tag</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#INSTANCE-METHODS">INSTANCE METHODS</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Lintian::Tag - Lintian interface to tag metadata</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>    my $tag = Lintian::Tag-&gt;new;</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>This module provides an interface to tag metadata as gleaned from the *.desc files describing the checks. It can be used to retrieve specific metadata elements or to format the tag description.</p>
+
+<h1 id="INSTANCE-METHODS">INSTANCE METHODS</h1>
+
+<dl>
+
+<dt>name</dt>
+<dd>
+
+</dd>
+<dt>visibility</dt>
+<dd>
+
+</dd>
+<dt>check</dt>
+<dd>
+
+</dd>
+<dt>name_spaced</dt>
+<dd>
+
+</dd>
+<dt>show_always</dt>
+<dd>
+
+</dd>
+<dt>experimental</dt>
+<dd>
+
+</dd>
+<dt>explanation</dt>
+<dd>
+
+</dd>
+<dt>see_also</dt>
+<dd>
+
+</dd>
+<dt>renamed_from</dt>
+<dd>
+
+</dd>
+<dt>profile</dt>
+<dd>
+
+</dd>
+<dt>load(PATH)</dt>
+<dd>
+
+<p>Loads a tag description from PATH.</p>
+
+</dd>
+<dt>code()</dt>
+<dd>
+
+<p>Returns the one-letter code for the tag. This will be a letter chosen from <code>E</code>, <code>W</code>, <code>I</code>, or <code>P</code>, based on the tag visibility, and other attributes (such as whether experimental is set). This code will never be <code>O</code> or <code>X</code>; overrides and experimental tags are handled separately.</p>
+
+</dd>
+</dl>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Originally written by Russ Allbery &lt;rra@debian.org&gt; for Lintian.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>lintian(1)</p>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Passlib 1.8 &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Passlib 1.7" href="1.7.html" />
+    <link rel="prev" title="Release History" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="1.7.html" title="Passlib 1.7"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Release History"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../other.html" >Other Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Release History</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Passlib 1.8</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-1-8">
+<span id="whats-new"></span><h1>Passlib 1.8<a class="headerlink" href="#passlib-1-8" title="Link to this heading">¶</a></h1>
+<section class="emphasize-children toc-always-open" id="not-yet-released">
+<h2><strong>1.8.0</strong> (NOT YET RELEASED)<a class="headerlink" href="#not-yet-released" title="Link to this heading">¶</a></h2>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h3>
+<div class="without-title admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>1.8 is under development,</strong> and tenatively scheduled for release in late 2017.</p>
+<p>See <a class="reference external" href="https://passlib.readthedocs.io/en/stable/history/1.7.html">https://passlib.readthedocs.io/en/stable/history/1.7.html</a> for the latest release.</p>
+</div>
+</section>
+<section id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><strong>Passlib now requires Python &gt;= 3.5.</strong>  As of this release, support for Python 2.x, 3.3,
+and 3.4 has been dropped.   If you need to use Passlib on an earlier version of Python,
+please use the <a class="reference internal" href="1.7.html"><span class="doc">Passlib 1.7</span></a> series, which will be maintained in bugfix-only mode
+for few more releases. (See <a href="#id1"><span class="problematic" id="id2">:issue:`119`</span></a> for rationale).</p>
+<aside class="system-message" id="id1">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.8.rst</span>, line 26); <em><a href="#id2">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+</ul>
+</section>
+<section id="backwards-incompatibilities">
+<h3>Backwards Incompatibilities<a class="headerlink" href="#backwards-incompatibilities" title="Link to this heading">¶</a></h3>
+<p>The following previously-deprecated features were removed,
+though few of these should be in use, as they’ve been deprecated
+for a number of years / releases:</p>
+<blockquote>
+<div><p><strong>passlib.apache:</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../lib/passlib.apache.html#module-passlib.apache" title="passlib.apache: reading/writing htpasswd &amp; htdigest files"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code></a>: A number of deprecated options &amp; methods were removed from
+<a class="reference internal" href="../lib/passlib.apache.html#passlib.apache.HtpasswdFile" title="passlib.apache.HtpasswdFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">HtpasswdFile</span></code></a> and <code class="xref py py-class docutils literal notranslate"><span class="pre">Htdigest</span></code>:</p>
+<ul>
+<li><p>Support for setting <code class="docutils literal notranslate"><span class="pre">encoding=None</span></code> removed, use <code class="docutils literal notranslate"><span class="pre">return_unicode=True</span></code> instead.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">autoload=False</span></code> keyword removed, use <code class="docutils literal notranslate"><span class="pre">new=True</span></code> instead.</p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">load()</span></code> method no longer supports <code class="docutils literal notranslate"><span class="pre">force=False</span></code>, use <a class="reference internal" href="../lib/passlib.apache.html#passlib.apache.HtpasswdFile.load_if_changed" title="passlib.apache.HtpasswdFile.load_if_changed"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load_if_changed()</span></code></a> instead.</p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">update()</span></code> alias removed, use <a class="reference internal" href="../lib/passlib.apache.html#passlib.apache.HtpasswdFile.set_password" title="passlib.apache.HtpasswdFile.set_password"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_password()</span></code></a> instead.</p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">find()</span></code> alias removed, use <a class="reference internal" href="../lib/passlib.apache.html#passlib.apache.HtpasswdFile.get_hash" title="passlib.apache.HtpasswdFile.get_hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_hash()</span></code></a> instead.</p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">verify()</span></code> alias removed, use <a class="reference internal" href="../lib/passlib.apache.html#passlib.apache.HtpasswdFile.check_password" title="passlib.apache.HtpasswdFile.check_password"><code class="xref py py-meth docutils literal notranslate"><span class="pre">check_password()</span></code></a> instead.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">default</span></code> keyword removed, use <code class="docutils literal notranslate"><span class="pre">default_scheme</span></code> instead.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>passlib.context:</strong></p>
+<ul class="simple">
+<li><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.context.CryptPolicy</span></code> class was removed.
+Code should be using the equivalent <a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext" title="passlib.context.CryptContext"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CryptContext()</span></code></a> methods instead.</p></li>
+<li><p>Concurrent with that, <a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext" title="passlib.context.CryptContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code></a>’s <code class="docutils literal notranslate"><span class="pre">policy</span></code> keyword and attribute
+were removed, along with <a class="reference internal" href="../lib/passlib.context.html#passlib.context.LazyCryptContext" title="passlib.context.LazyCryptContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">LazyCryptContext</span></code></a>’s <code class="docutils literal notranslate"><span class="pre">create_policy</span></code> keyword.</p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">CryptContext.replace()</span></code> alias removed, use <code class="xref py py-meth docutils literal notranslate"><span class="pre">CryptContext.using()</span></code> instead.</p></li>
+<li><p><a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext" title="passlib.context.CryptContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code></a>’s <code class="docutils literal notranslate"><span class="pre">min_verify_time</span></code> and <code class="docutils literal notranslate"><span class="pre">harden_verify</span></code> keywords removed.</p></li>
+</ul>
+<p><strong>passlib.hash:</strong></p>
+<ul class="simple">
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.unix_fallback</span></code> was removed, use <a class="reference internal" href="../lib/passlib.hash.unix_disabled.html#passlib.hash.unix_disabled" title="passlib.hash.unix_disabled"><code class="xref py py-class docutils literal notranslate"><span class="pre">unix_disabled</span></code></a> instead.</p></li>
+</ul>
+<p><strong>other modules:</strong></p>
+<ul class="simple">
+<li><p>In <a class="reference internal" href="../lib/passlib.ext.django.html#module-passlib.ext.django" title="passlib.ext.django"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code></a>, support for <code class="docutils literal notranslate"><span class="pre">CONFIG=None</span></code> was dropped.</p></li>
+<li><p>The deprecated <code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.win32</span></code> module was removed, use <a class="reference internal" href="../lib/passlib.hash.lmhash.html#passlib.hash.lmhash" title="passlib.hash.lmhash"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.lmhash</span></code></a> hash instead.</p></li>
+</ul>
+<p><strong>internal details:</strong></p>
+<ul class="simple">
+<li><p>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">passlib.hash.nthash.raw_nthash()</span></code> alias was removed, use <code class="xref py py-meth docutils literal notranslate"><span class="pre">nthash.raw()</span></code> instead.</p></li>
+<li><p>In <a class="reference internal" href="../lib/passlib.utils.handlers.html#module-passlib.utils.handlers" title="passlib.utils.handlers: framework for writing password hashes"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.handlers</span></code></a>: <code class="xref py py-class docutils literal notranslate"><span class="pre">StaticHandler</span></code> subclasses must now always implement
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">_calc_checksum()</span></code>, the old genhash-based style is no longer supported or checked for.</p></li>
+<li><p>The deprecated <code class="xref py py-func docutils literal notranslate"><span class="pre">passlib.utils.des.mdes_encrypt_int_block()</span></code> method was removed.</p></li>
+<li><p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">passlib.utils.pbkdf2.norm_hash_name()</span></code> alias was removed, use <a class="reference internal" href="../lib/passlib.crypto.digest.html#passlib.crypto.digest.norm_hash_name" title="passlib.crypto.digest.norm_hash_name"><code class="xref py py-func docutils literal notranslate"><span class="pre">passlib.crypto.digest.norm_hash_name()</span></code></a> instead.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Many PY2 compatibility helper inside <code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.compat</span></code> have been removed.</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lib/index.html">API Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../other.html">Other Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modular_crypt_format.html">Modular Crypt Format</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Release History</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.8 Series</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#not-yet-released"><strong>1.8.0</strong> (NOT YET RELEASED)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="1.7.html">1.7 Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.6.html">1.6 Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.5.html">1.5 Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ancient.html">1.4 &amp; Earlier</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../copyright.html">Copyrights &amp; Licenses</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="1.7.html" title="Passlib 1.7"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Release History"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../other.html" >Other Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >Release History</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Passlib 1.8</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

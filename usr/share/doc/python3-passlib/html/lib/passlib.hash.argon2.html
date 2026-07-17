@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.hash.argon2 - Argon2 &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.hash.bcrypt_sha256 - BCrypt+SHA256" href="passlib.hash.bcrypt_sha256.html" />
+    <link rel="prev" title="passlib.hash.crypt16 - Crypt16" href="passlib.hash.crypt16.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.bcrypt_sha256.html" title="passlib.hash.bcrypt_sha256 - BCrypt+SHA256"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.crypt16.html" title="passlib.hash.crypt16 - Crypt16"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.argon2</span></code> - Argon2</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-hash-argon2-argon2">
+<h1><a class="reference internal" href="#passlib.hash.argon2" title="passlib.hash.argon2"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.argon2</span></code></a> - Argon2<a class="headerlink" href="#passlib-hash-argon2-argon2" title="Link to this heading">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.7.</span></p>
+</div>
+<p>This hash provides support for the Argon2 <a class="footnote-reference brackets" href="#argon2-home" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> password hash.
+Argon2(i) is a state of the art memory-hard password hash, and the
+winner of the 2013 Password Hashing Competition <a class="footnote-reference brackets" href="#phc" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.  It has seen active development
+and analysis in subsequent years, and while young, and is intended to replace
+<a class="reference internal" href="passlib.hash.pbkdf2_digest.html#passlib.hash.pbkdf2_sha256" title="passlib.hash.pbkdf2_sha256"><code class="xref py py-class docutils literal notranslate"><span class="pre">pbkdf2_sha256</span></code></a>, <a class="reference internal" href="passlib.hash.bcrypt.html#passlib.hash.bcrypt" title="passlib.hash.bcrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code></a>, and <a class="reference internal" href="passlib.hash.scrypt.html#passlib.hash.scrypt" title="passlib.hash.scrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">scrypt</span></code></a>.</p>
+<p>It is one of the four hashes Passlib <a class="reference internal" href="../narr/quickstart.html#recommended-hashes"><span class="std std-ref">recommends</span></a>
+for new applications. This class can be used directly as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.hash</span> <span class="kn">import</span> <span class="n">argon2</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># generate new salt, hash password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">argon2</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span>
+<span class="go">&#39;$argon2i$v=19$m=512,t=2,p=2$aI2R0hpDyLm3ltLa+1/rvQ$LqPKjd6n8yniKtAithoR7A&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># the same, but with an explicit number of rounds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">argon2</span><span class="o">.</span><span class="n">using</span><span class="p">(</span><span class="n">rounds</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="go">&#39;$argon2i$v=19$m=512,t=4,p=2$eM+ZMyYkpDRGaI3xXmuNcQ$c5DeJg3eb5dskVt1mDdxfw&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># verify password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">argon2</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">argon2</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;wrong&quot;</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>the generic <a class="reference internal" href="../narr/hash-tutorial.html#password-hash-examples"><span class="std std-ref">PasswordHash usage examples</span></a></p>
+</div>
+<section id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.argon2">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">argon2</span></span><a class="headerlink" href="#passlib.hash.argon2" title="Link to this definition">¶</a></dt>
+<dd><p>This class implements the Argon2 password hash <a class="footnote-reference brackets" href="#argon2-home" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>Argon2 supports a variable-length salt, and variable time &amp; memory cost,
+and a number of other configurable parameters.</p>
+<p>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">replace()</span></code> method accepts the following optional keywords:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<em>str</em>) – <p>Specify the type of argon2 hash to generate.
+Can be one of “ID”, “I”, “D”.</p>
+<p>This defaults to “ID” if supported by the backend, otherwise “I”.</p>
+</p></li>
+<li><p><strong>salt</strong> (<em>str</em>) – Optional salt string.
+If specified, the length must be between 0-1024 bytes.
+If not specified, one will be auto-generated (this is recommended).</p></li>
+<li><p><strong>salt_size</strong> (<em>int</em>) – Optional number of bytes to use when autogenerating new salts.</p></li>
+<li><p><strong>rounds</strong> (<em>int</em>) – Optional number of rounds to use.
+This corresponds linearly to the amount of time hashing will take.</p></li>
+<li><p><strong>time_cost</strong> (<em>int</em>) – An alias for <strong>rounds</strong>, for compatibility with underlying argon2 library.</p></li>
+<li><p><strong>memory_cost</strong> (<em>int</em>) – Defines the memory usage in kibibytes.
+This corresponds linearly to the amount of memory hashing will take.</p></li>
+<li><p><strong>parallelism</strong> (<em>int</em>) – Defines the parallelization factor.
+<em>NOTE: this will affect the resulting hash value.</em></p></li>
+<li><p><strong>digest_size</strong> (<em>int</em>) – Length of the digest in bytes.</p></li>
+<li><p><strong>max_threads</strong> (<em>int</em>) – <p>Maximum number of threads that will be used.
+-1 means unlimited; otherwise hashing will use <code class="docutils literal notranslate"><span class="pre">min(parallelism,</span> <span class="pre">max_threads)</span></code> threads.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This option is currently only honored by the argon2pure backend.</p>
+</div>
+</p></li>
+<li><p><strong>relaxed</strong> (<em>bool</em>) – By default, providing an invalid value for one of the other
+keywords will result in a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>. If <code class="docutils literal notranslate"><span class="pre">relaxed=True</span></code>,
+and the error can be corrected, a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasslibHashWarning" title="passlib.exc.PasslibHashWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasslibHashWarning</span></code></a>
+will be issued instead. Correctable errors include <code class="docutils literal notranslate"><span class="pre">rounds</span></code>
+that are too small or too large, and <code class="docutils literal notranslate"><span class="pre">salt</span></code> strings that are too long.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.7.2: </span>Added the “type” keyword, and support for type “D” and “ID” hashes.
+(Prior versions could verify type “D” hashes, but not generate them).</p>
+</div>
+<div class="admonition-todo admonition" id="id4">
+<p class="admonition-title">Todo</p>
+<ul class="simple">
+<li><p>Support configurable threading limits.</p></li>
+</ul>
+</div>
+</dd></dl>
+
+<section id="argon2-backends">
+<h3>Argon2 Backends<a class="headerlink" href="#argon2-backends" title="Link to this heading">¶</a></h3>
+<p>This class will use the first available of two possible backends:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://pypi.python.org/pypi/argon2_cffi">argon2_cffi</a>, if installed.
+(this is the recommended option).</p></li>
+<li><p><a class="reference external" href="https://pypi.python.org/pypi/argon2pure">argon2pure</a>, if installed.</p></li>
+</ol>
+<p>If no backends are available, <code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">verify()</span></code>
+will throw <a class="reference internal" href="passlib.exc.html#passlib.exc.MissingBackendError" title="passlib.exc.MissingBackendError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">MissingBackendError</span></code></a> when they are invoked.
+You can check which backend is in use by calling <code class="xref py py-meth docutils literal notranslate"><span class="pre">argon2.get_backend()</span></code>.</p>
+</section>
+</section>
+<section id="format-algorithm">
+<h2>Format &amp; Algorithm<a class="headerlink" href="#format-algorithm" title="Link to this heading">¶</a></h2>
+<p>The Argon2 hash format is defined by the argon2 reference implementation.
+It’s compatible with the <a class="reference internal" href="../modular_crypt_format.html#phc-format"><span class="std std-ref">PHC Format</span></a> and <a class="reference internal" href="../modular_crypt_format.html#modular-crypt-format"><span class="std std-ref">Modular Crypt Format</span></a>,
+and uses <code class="docutils literal notranslate"><span class="pre">$argon2i$</span></code>, <code class="docutils literal notranslate"><span class="pre">$argon2d$</span></code>, or <code class="docutils literal notranslate"><span class="pre">$argon2id$</span></code> as the identifying prefixes
+for all its strings. An example hash (of <code class="docutils literal notranslate"><span class="pre">password</span></code>) is:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$argon2i$v=19$m=512,t=3,p=2$c29tZXNhbHQ$SqlVijFGiPG+935vDSGEsA</span></code></p>
+</div></blockquote>
+<p>This string has the format <code class="samp docutils literal notranslate"><span class="pre">$argon2</span><em><span class="pre">X</span></em><span class="pre">$v=</span><em><span class="pre">V</span></em><span class="pre">$m=</span><em><span class="pre">M</span></em><span class="pre">,t=</span><em><span class="pre">T</span></em><span class="pre">,p=</span><em><span class="pre">P</span></em><span class="pre">$</span><em><span class="pre">salt</span></em><span class="pre">$</span><em><span class="pre">digest</span></em></code>, where:</p>
+<ul class="simple">
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">X</span></em></code> is either <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">d</span></code>, or <code class="docutils literal notranslate"><span class="pre">id</span></code>; depending on the argon2 variant
+(<code class="docutils literal notranslate"><span class="pre">i</span></code> in the example).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">V</span></em></code> is an integer representing the argon2 revision.
+the value (when rendered into hexidecimal) matches the argon2 version
+(in the example, <code class="docutils literal notranslate"><span class="pre">v=19</span></code> corresponds to 0x13, or Argon2 v1.3).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">M</span></em></code> is an integer representing the variable memory cost, in kibibytes
+(512kib in the example).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">T</span></em></code> is an integer representing the variable time cost, in linear iterations.
+(3 in the example).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">P</span></em></code> is a parallelization parameter, which controls how much of the hash calculation
+is parallelization (2 in the example).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">salt</span></em></code> - this is the base64-encoded version of the raw salt bytes
+passed into the Argon2 function (<code class="docutils literal notranslate"><span class="pre">c29tZXNhbHQ</span></code> in the example).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">digest</span></em></code> - this is the base64-encoded version of the raw derived key
+bytes returned from the Argon2 function.  Argon2 supports a variable
+checksum size, though the hashes in passlib will typically be 16 bytes, resulting in a
+22 byte digest (<code class="docutils literal notranslate"><span class="pre">SqlVijFGiPG+935vDSGEsA</span></code> in the example).</p></li>
+</ul>
+<p>All integer values are encoded uses ascii decimal, with no leading zeros.
+All byte strings are encoded using the standard base64 encoding, but without
+any trailing padding (“=”) chars.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="samp docutils literal notranslate"><span class="pre">v=</span><em><span class="pre">version</span></em><span class="pre">$</span></code> segment was added in Argon2 v1.3; older version Argon2 v1.0
+hashes may not include this portion.</p>
+<p>The Argon2 specification also supports an optional <code class="samp docutils literal notranslate"><span class="pre">,data=</span><em><span class="pre">data</span></em></code> suffix
+following <code class="samp docutils literal notranslate"><span class="pre">p=</span><em><span class="pre">parallelism</span></em></code>; but this is not consistently or fully supported.</p>
+</div>
+<p>The algorithm used by all of these schemes is deliberately identical and simple:
+The password is encoded into UTF-8 if not already encoded, and handed off to the Argon2 function.
+A specified number of bytes (16 byte default in passlib) returned result are encoded as the checksum.</p>
+<p>See <a class="reference external" href="https://github.com/P-H-C/phc-winner-argon2">https://github.com/P-H-C/phc-winner-argon2</a> for the canonical description of the Argon2 hash.</p>
+</section>
+<section id="security-issues">
+<h2>Security Issues<a class="headerlink" href="#security-issues" title="Link to this heading">¶</a></h2>
+<p>Argon2 is relatively new compared to other password hash algorithms, having started life in 2013,
+and thus may still harbor some undiscovered issues.  That said, it’s one of <em>very</em> few which were
+designed explicitly with password hashing in mind; and draws strongly on the lessons of the algorithms
+before it.  As of the release of Passlib 1.7, it has no known major security issues.</p>
+</section>
+<section id="deviations">
+<h2>Deviations<a class="headerlink" href="#deviations" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>This implementation currently encodes all unicode passwords using UTF-8 before hashing,
+other implementations may vary, or offer a configurable encoding; though UTF-8 is assumed
+to be the default.</p></li>
+</ul>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="argon2-home" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id3">2</a>)</span>
+<p>the Argon2 homepage -
+<a class="reference external" href="https://github.com/P-H-C/phc-winner-argon2">https://github.com/P-H-C/phc-winner-argon2</a></p>
+</aside>
+<aside class="footnote brackets" id="phc" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>2012 Password Hashing Competition -
+<a class="reference external" href="https://password-hashing.net/">https://password-hashing.net/</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#unix-hashes">Unix Hashes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="passlib.hash.html#other-modular-crypt-hashes">Other “Modular Crypt” Hashes</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="passlib.hash.html#active-hashes">Active Hashes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.html#deprecated-hashes">Deprecated Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ldap-rfc2307-hashes">LDAP / RFC2307 Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#sql-database-hashes">SQL Database Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ms-windows-hashes">MS Windows Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#cisco-hashes">Cisco Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-hashes">Other Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.bcrypt_sha256.html" title="passlib.hash.bcrypt_sha256 - BCrypt+SHA256"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.crypt16.html" title="passlib.hash.crypt16 - Crypt16"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.argon2</span></code> - Argon2</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

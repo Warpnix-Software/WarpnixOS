@@ -1,0 +1,46 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: flags
+Upstream-Contact: Linux Mint Project <root@linuxmint.com>
+Source: https://github.com/linuxmint/flags
+
+Files: *
+Copyright: No copyright claimed
+License: public-domain
+ On October 30, 2003, Brett Roper dedicated to the public domain the
+ works. Before making the dedication, Brett Roper represented that Brett Roper
+ owned all copyrights in the work. By making the dedication, Brett Roper made
+ an overt act of relinquishment in perpetuity of all present and future rights
+ under copyright law, whether vested or contingent, in the works.
+ .
+ Brett Roper understands that such relinquishment of all rights includes the
+ relinquishment of all rights to enforce (by lawsuit or otherwise) those
+ copyrights in the Work.
+ .
+ Brett Roper recognizes that, once placed in the public domain,
+ the works may be freely reproduced, distributed, transmitted, used, modified,
+ built upon, or otherwise exploited by anyone for any purpose, commercial or
+ non-commercial, and in any way, including by methods that have not yet been
+ invented or conceived.
+Comment: The public domain statement includes a different name for each
+ corresponding work, this was replaced by "the works" here to avoid
+ duplicating the statement 248 times.
+
+Files: debian/*
+Copyright: 2016, Linux Mint <root@linuxmint.com>
+           2016-2022, Debian Cinnamon Team <debian-cinnamon@lists.debian.org>
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian GNU/Linux systems, the complete text of the GNU General Public
+ License version 2 can be found in '/usr/share/common-licenses/GPL-2'.

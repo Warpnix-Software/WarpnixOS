@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.apps - Helpers for various applications &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.context - CryptContext Hash Manager" href="passlib.context.html" />
+    <link rel="prev" title="passlib.apache - Apache Password Files" href="passlib.apache.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.context.html" title="passlib.context - CryptContext Hash Manager"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.apache.html" title="passlib.apache - Apache Password Files"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-passlib.apps">
+<span id="passlib-apps-helpers-for-various-applications"></span><h1><a class="reference internal" href="#module-passlib.apps" title="passlib.apps: hashing &amp; verifying passwords used in sql servers and other applications"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code></a> - Helpers for various applications<a class="headerlink" href="#module-passlib.apps" title="Link to this heading">¶</a></h1>
+<p id="predefined-context-example">This module contains a number of preconfigured <a class="reference internal" href="passlib.context.html#context-reference"><span class="std std-ref">CryptContext</span></a> instances
+that are provided by Passlib for easily handling the hash formats used by various applications.</p>
+<section class="html-toggle" id="usage-example">
+<h2>Usage Example<a class="headerlink" href="#usage-example" title="Link to this heading">¶</a></h2>
+<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code> class itself has a large number of features,
+but to give an example of how to quickly use the instances in this module:</p>
+<p>Each of the objects in this module can be imported directly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># as an example, this imports the custom_app_context object,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># a helper to let new applications *quickly* add password hashing.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.apps</span> <span class="kn">import</span> <span class="n">custom_app_context</span>
+</pre></div>
+</div>
+<p>Hashing a password is simple (and salt generation is handled automatically):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span> <span class="o">=</span> <span class="n">custom_app_context</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;toomanysecrets&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span>
+<span class="go">&#39;$5$rounds=84740$fYChCy.52EzebF51$9bnJrmTf2FESI93hgIBFF4qAfysQcKoB0veiI0ZeYU4&#39;</span>
+</pre></div>
+</div>
+<p>Verifying a password against an existing hash is just as quick:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">custom_app_context</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;toomanysocks&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">custom_app_context</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;toomanysecrets&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>the <a class="reference internal" href="../narr/context-tutorial.html#context-tutorial"><span class="std std-ref">CryptContext Tutorial</span></a>
+and <a class="reference internal" href="passlib.context.html#context-reference"><span class="std std-ref">CryptContext Reference</span></a>
+for more information about the CryptContext class.</p>
+</div>
+</section>
+<section id="django">
+<span id="django-contexts"></span><span id="index-0"></span><h2>Django<a class="headerlink" href="#django" title="Link to this heading">¶</a></h2>
+<p>The following objects provide pre-configured <code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code> instances
+for handling <a class="reference external" href="http://www.djangoproject.com">Django</a>
+password hashes, as used by Django’s <code class="docutils literal notranslate"><span class="pre">django.contrib.auth</span></code> module.
+They recognize all the <a class="reference internal" href="passlib.hash.django_std.html"><span class="doc">builtin Django hashes</span></a>
+supported by the particular Django version.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These objects may not match the hashes in your database if a third-party
+library has been used to patch Django to support alternate hash formats.
+This includes the <a class="reference external" href="http://pypi.python.org/pypi/django-bcrypt">django-bcrypt</a>
+plugin, or Passlib’s builtin <a class="reference internal" href="passlib.ext.django.html#module-passlib.ext.django" title="passlib.ext.django"><code class="xref py py-mod docutils literal notranslate"><span class="pre">django</span> <span class="pre">extension</span></code></a>.
+As well, Django 1.4 introduced a very configurable “hashers” framework,
+and individual deployments may support additional hashes and/or
+have other defaults.</p>
+</div>
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.apps.django10_context">
+<span class="sig-prename descclassname"><span class="pre">passlib.apps.</span></span><span class="sig-name descname"><span class="pre">django10_context</span></span><a class="headerlink" href="#passlib.apps.django10_context" title="Link to this definition">¶</a></dt>
+<dd><p>The object replicates the password hashing policy for Django 1.0-1.3.
+It supports all the Django 1.0 hashes, and defaults to
+<a class="reference internal" href="passlib.hash.django_std.html#passlib.hash.django_salted_sha1" title="passlib.hash.django_salted_sha1"><code class="xref py py-class docutils literal notranslate"><span class="pre">django_salted_sha1</span></code></a>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.apps.django14_context">
+<span class="sig-prename descclassname"><span class="pre">passlib.apps.</span></span><span class="sig-name descname"><span class="pre">django14_context</span></span><a class="headerlink" href="#passlib.apps.django14_context" title="Link to this definition">¶</a></dt>
+<dd><p>The object replicates the stock password hashing policy for Django 1.4.
+It supports all the Django 1.0 &amp; 1.4 hashes, and defaults to
+<a class="reference internal" href="passlib.hash.django_std.html#passlib.hash.django_pbkdf2_sha256" title="passlib.hash.django_pbkdf2_sha256"><code class="xref py py-class docutils literal notranslate"><span class="pre">django_pbkdf2_sha256</span></code></a>. It treats all
+Django 1.0 hashes as deprecated.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.apps.django16_context">
+<span class="sig-prename descclassname"><span class="pre">passlib.apps.</span></span><span class="sig-name descname"><span class="pre">django16_context</span></span><a class="headerlink" href="#passlib.apps.django16_context" title="Link to this definition">¶</a></dt>
+<dd><p>The object replicates the stock password hashing policy for Django 1.6.
+It supports all the Django 1.0-1.6 hashes, and defaults to
+<a class="reference internal" href="passlib.hash.django_std.html#passlib.hash.django_pbkdf2_sha256" title="passlib.hash.django_pbkdf2_sha256"><code class="xref py py-class docutils literal notranslate"><span class="pre">django_pbkdf2_sha256</span></code></a>. It treats all
+Django 1.0 hashes as deprecated.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.2.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.apps.django_context">
+<span class="sig-prename descclassname"><span class="pre">passlib.apps.</span></span><span class="sig-name descname"><span class="pre">django_context</span></span><a class="headerlink" href="#passlib.apps.django_context" title="Link to this definition">¶</a></dt>
+<dd><p>This alias will always point to the latest preconfigured Django
+context supported by Passlib, and as such should support
+all historical hashes built into Django.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.6.2: </span>This now points to <a class="reference internal" href="#passlib.apps.django16_context" title="passlib.apps.django16_context"><code class="xref py py-data docutils literal notranslate"><span class="pre">django16_context</span></code></a>.</p>
+</div>
+</dd></dl>
+
+</section>
+<section id="ldap">
+<span id="ldap-contexts"></span><h2>LDAP<a class="headerlink" href="#ldap" title="Link to this heading">¶</a></h2>
+<p>Passlib provides two contexts related to ldap hashes:</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.apps.ldap_context">
+<span class="sig-prename descclassname"><span class="pre">passlib.apps.</span></span><span class="sig-name descname"><span class="pre">ldap_context</span></span><a class="headerlink" href="#passlib.apps.ldap_context" title="Link to this definition">¶</a></dt>
+<dd><p>This object provides a pre-configured <code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code> instance
+for handling LDAPv2 password hashes. It recognizes all
+the <a class="reference internal" href="passlib.hash.html#standard-ldap-hashes"><span class="std std-ref">standard ldap hashes</span></a>.</p>
+<p>It defaults to using the <code class="docutils literal notranslate"><span class="pre">{SSHA}</span></code> password hash.
+For times when there should be another default, using code such as the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.apps</span> <span class="kn">import</span> <span class="n">ldap_context</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ldap_context</span> <span class="o">=</span> <span class="n">ldap_context</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="s2">&quot;ldap_salted_md5&quot;</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># the new context object will now default to {SMD5}:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ldap_context</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="go">&#39;{SMD5}T9f89F591P3fFh1jz/YtW4aWD5s=&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.apps.ldap_nocrypt_context">
+<span class="sig-prename descclassname"><span class="pre">passlib.apps.</span></span><span class="sig-name descname"><span class="pre">ldap_nocrypt_context</span></span><a class="headerlink" href="#passlib.apps.ldap_nocrypt_context" title="Link to this definition">¶</a></dt>
+<dd><p>This object recognizes all the standard ldap schemes that <code class="xref py py-data docutils literal notranslate"><span class="pre">ldap_context</span></code>
+does, <em>except</em> for the <code class="docutils literal notranslate"><span class="pre">{CRYPT}</span></code>-based schemes.</p>
+</dd></dl>
+
+</section>
+<section id="mysql">
+<span id="mysql-contexts"></span><span id="index-1"></span><h2>MySQL<a class="headerlink" href="#mysql" title="Link to this heading">¶</a></h2>
+<p>This module provides two pre-configured <code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code> instances
+for handling MySQL user passwords:</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.apps.mysql_context">
+<span class="sig-prename descclassname"><span class="pre">passlib.apps.</span></span><span class="sig-name descname"><span class="pre">mysql_context</span></span><a class="headerlink" href="#passlib.apps.mysql_context" title="Link to this definition">¶</a></dt>
+<dd><p>This object should recognize the new <a class="reference internal" href="passlib.hash.mysql41.html#passlib.hash.mysql41" title="passlib.hash.mysql41"><code class="xref py py-class docutils literal notranslate"><span class="pre">mysql41</span></code></a> hashes,
+as well as any legacy <a class="reference internal" href="passlib.hash.mysql323.html#passlib.hash.mysql323" title="passlib.hash.mysql323"><code class="xref py py-class docutils literal notranslate"><span class="pre">mysql323</span></code></a> hashes.</p>
+<p>It defaults to mysql41 when generating new hashes.</p>
+<p>This should be used with MySQL version 4.1 and newer.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.apps.mysql3_context">
+<span class="sig-prename descclassname"><span class="pre">passlib.apps.</span></span><span class="sig-name descname"><span class="pre">mysql3_context</span></span><a class="headerlink" href="#passlib.apps.mysql3_context" title="Link to this definition">¶</a></dt>
+<dd><p>This object is for use with older MySQL deploys which only recognize
+the <a class="reference internal" href="passlib.hash.mysql323.html#passlib.hash.mysql323" title="passlib.hash.mysql323"><code class="xref py py-class docutils literal notranslate"><span class="pre">mysql323</span></code></a> hash.</p>
+<p>This should be used only with MySQL version 3.2.3 - 4.0.</p>
+</dd></dl>
+
+</section>
+<section id="phpass">
+<span id="index-2"></span><h2>PHPass<a class="headerlink" href="#phpass" title="Link to this heading">¶</a></h2>
+<p><a class="reference external" href="http://www.openwall.com/phpass/">PHPass</a> is a PHP password hashing library,
+and hashes derived from it are found in a number of PHP applications.
+It is found in a wide range of PHP applications, including Drupal and Wordpress.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.apps.phpass_context">
+<span class="sig-prename descclassname"><span class="pre">passlib.apps.</span></span><span class="sig-name descname"><span class="pre">phpass_context</span></span><a class="headerlink" href="#passlib.apps.phpass_context" title="Link to this definition">¶</a></dt>
+<dd><p>This object following the standard PHPass logic:
+it supports <a class="reference internal" href="passlib.hash.bcrypt.html#passlib.hash.bcrypt" title="passlib.hash.bcrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code></a>, <a class="reference internal" href="passlib.hash.bsdi_crypt.html#passlib.hash.bsdi_crypt" title="passlib.hash.bsdi_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">bsdi_crypt</span></code></a>,
+and implements an custom scheme called the “phpass portable hash” <a class="reference internal" href="passlib.hash.phpass.html#passlib.hash.phpass" title="passlib.hash.phpass"><code class="xref py py-class docutils literal notranslate"><span class="pre">phpass</span></code></a> as a fallback.</p>
+<p>BCrypt is used as the default if support is available,
+otherwise the Portable Hash will be used as the default.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.5: </span>Now uses Portable Hash as fallback if BCrypt isn’t available.
+Previously used BSDI-Crypt as fallback
+(per original PHPass implementation),
+but it was decided PHPass is in fact more secure.</p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.apps.phpbb3_context">
+<span class="sig-prename descclassname"><span class="pre">passlib.apps.</span></span><span class="sig-name descname"><span class="pre">phpbb3_context</span></span><a class="headerlink" href="#passlib.apps.phpbb3_context" title="Link to this definition">¶</a></dt>
+<dd><p>This object supports phpbb3 password hashes, which use a variant of <a class="reference internal" href="passlib.hash.phpass.html#passlib.hash.phpass" title="passlib.hash.phpass"><code class="xref py py-class docutils literal notranslate"><span class="pre">phpass</span></code></a>.</p>
+</dd></dl>
+
+</section>
+<section id="postgresql">
+<span id="index-3"></span><h2>PostgreSQL<a class="headerlink" href="#postgresql" title="Link to this heading">¶</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.apps.postgres_context">
+<span class="sig-prename descclassname"><span class="pre">passlib.apps.</span></span><span class="sig-name descname"><span class="pre">postgres_context</span></span><a class="headerlink" href="#passlib.apps.postgres_context" title="Link to this definition">¶</a></dt>
+<dd><p>This object should recognize password hashes stores in PostgreSQL’s <code class="docutils literal notranslate"><span class="pre">pg_shadow</span></code> table;
+which are all assumed to follow the <a class="reference internal" href="passlib.hash.postgres_md5.html#passlib.hash.postgres_md5" title="passlib.hash.postgres_md5"><code class="xref py py-class docutils literal notranslate"><span class="pre">postgres_md5</span></code></a> format.</p>
+<p>Note that the username must be provided whenever hashing or verifying a postgres hash:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.apps</span> <span class="kn">import</span> <span class="n">postgres_context</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># hashing a password...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">postgres_context</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;somepass&quot;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;dbadmin&quot;</span><span class="p">)</span>
+<span class="go">&#39;md578ed0f0ab2be0386645c1b74282917e7&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># verifying a password...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">postgres_context</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;somepass&quot;</span><span class="p">,</span> <span class="s1">&#39;md578ed0f0ab2be0386645c1b74282917e7&#39;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;dbadmin&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">postgres_context</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;wrongpass&quot;</span><span class="p">,</span> <span class="s1">&#39;md578ed0f0ab2be0386645c1b74282917e7&#39;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;dbadmin&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># forgetting the user will result in an error:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">postgres_context</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;somepass&quot;</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="n">traceback</span> <span class="n">omitted</span><span class="o">&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">user must be unicode or bytes, not None</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="roundup">
+<span id="index-4"></span><h2>Roundup<a class="headerlink" href="#roundup" title="Link to this heading">¶</a></h2>
+<p>The <a class="reference external" href="http://www.roundup-tracker.org">Roundup Issue Tracker</a> has long
+supported a series of different methods for encoding passwords.
+The following contexts are available for reading Roundup password hash fields:</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.apps.roundup10_context">
+<span class="sig-prename descclassname"><span class="pre">passlib.apps.</span></span><span class="sig-name descname"><span class="pre">roundup10_context</span></span><a class="headerlink" href="#passlib.apps.roundup10_context" title="Link to this definition">¶</a></dt>
+<dd><p>This object should recognize all password hashes used by Roundup 1.4.16 and earlier:
+<a class="reference internal" href="passlib.hash.ldap_other.html#passlib.hash.ldap_hex_sha1" title="passlib.hash.ldap_hex_sha1"><code class="xref py py-class docutils literal notranslate"><span class="pre">ldap_hex_sha1</span></code></a> (the default),
+<a class="reference internal" href="passlib.hash.ldap_other.html#passlib.hash.ldap_hex_md5" title="passlib.hash.ldap_hex_md5"><code class="xref py py-class docutils literal notranslate"><span class="pre">ldap_hex_md5</span></code></a>, <a class="reference internal" href="passlib.hash.ldap_crypt.html#passlib.hash.ldap_des_crypt" title="passlib.hash.ldap_des_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">ldap_des_crypt</span></code></a>,
+and <a class="reference internal" href="passlib.hash.ldap_other.html#passlib.hash.roundup_plaintext" title="passlib.hash.roundup_plaintext"><code class="xref py py-class docutils literal notranslate"><span class="pre">roundup_plaintext</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.apps.roundup15_context">
+<span class="sig-prename descclassname"><span class="pre">passlib.apps.</span></span><span class="sig-name descname"><span class="pre">roundup15_context</span></span><a class="headerlink" href="#passlib.apps.roundup15_context" title="Link to this definition">¶</a></dt>
+<dd><p>Roundup 1.4.17 adds support for <a class="reference internal" href="passlib.hash.ldap_pbkdf2_digest.html#passlib.hash.ldap_pbkdf2_sha1" title="passlib.hash.ldap_pbkdf2_sha1"><code class="xref py py-class docutils literal notranslate"><span class="pre">ldap_pbkdf2_sha1</span></code></a>
+as its preferred hash format.
+This context supports all the <a class="reference internal" href="#passlib.apps.roundup10_context" title="passlib.apps.roundup10_context"><code class="xref py py-data docutils literal notranslate"><span class="pre">roundup10_context</span></code></a> hashes,
+but adds that hash as well (and uses it as the default).</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.apps.roundup_context">
+<span class="sig-prename descclassname"><span class="pre">passlib.apps.</span></span><span class="sig-name descname"><span class="pre">roundup_context</span></span><a class="headerlink" href="#passlib.apps.roundup_context" title="Link to this definition">¶</a></dt>
+<dd><p>this is an alias for the latest version-specific roundup context supported
+by passlib, currently the <code class="xref py py-data docutils literal notranslate"><span class="pre">roundup15_context</span></code>.</p>
+</dd></dl>
+
+</section>
+<section id="custom-applications">
+<span id="quickstart-custom-applications"></span><h2>Custom Applications<a class="headerlink" href="#custom-applications" title="Link to this heading">¶</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.apps.custom_app_context">
+<span class="sig-prename descclassname"><span class="pre">passlib.apps.</span></span><span class="sig-name descname"><span class="pre">custom_app_context</span></span><a class="headerlink" href="#passlib.apps.custom_app_context" title="Link to this definition">¶</a></dt>
+<dd><p>This <code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code> object is provided for new python applications
+to quickly and easily add password hashing support.
+It comes preconfigured with:</p>
+<ul class="simple">
+<li><p>Support for <a class="reference internal" href="passlib.hash.sha256_crypt.html#passlib.hash.sha256_crypt" title="passlib.hash.sha256_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">sha256_crypt</span></code></a> and <a class="reference internal" href="passlib.hash.sha512_crypt.html#passlib.hash.sha512_crypt" title="passlib.hash.sha512_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">sha512_crypt</span></code></a></p></li>
+<li><p>Defaults to SHA256-Crypt under 32 bit systems, SHA512-Crypt under 64 bit systems.</p></li>
+<li><p>Large number of <code class="docutils literal notranslate"><span class="pre">rounds</span></code>, for increased time-cost to hedge against attacks.</p></li>
+</ul>
+<p>For applications which want to quickly add a password hash,
+all they need to do is import and use this object, per the
+<a class="reference internal" href="#predefined-context-example"><span class="std std-ref">usage example</span></a> at the top of this page.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>The <a class="reference internal" href="../narr/quickstart.html"><span class="doc">New Application Quickstart Guide</span></a> for additional details.</p>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#usage-example">Usage Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#django">Django</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.apps.django10_context"><code class="docutils literal notranslate"><span class="pre">django10_context</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.apps.django14_context"><code class="docutils literal notranslate"><span class="pre">django14_context</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.apps.django16_context"><code class="docutils literal notranslate"><span class="pre">django16_context</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.apps.django_context"><code class="docutils literal notranslate"><span class="pre">django_context</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ldap">LDAP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.apps.ldap_context"><code class="docutils literal notranslate"><span class="pre">ldap_context</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.apps.ldap_nocrypt_context"><code class="docutils literal notranslate"><span class="pre">ldap_nocrypt_context</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#mysql">MySQL</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.apps.mysql_context"><code class="docutils literal notranslate"><span class="pre">mysql_context</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.apps.mysql3_context"><code class="docutils literal notranslate"><span class="pre">mysql3_context</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#phpass">PHPass</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.apps.phpass_context"><code class="docutils literal notranslate"><span class="pre">phpass_context</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.apps.phpbb3_context"><code class="docutils literal notranslate"><span class="pre">phpbb3_context</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#postgresql">PostgreSQL</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.apps.postgres_context"><code class="docutils literal notranslate"><span class="pre">postgres_context</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#roundup">Roundup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.apps.roundup10_context"><code class="docutils literal notranslate"><span class="pre">roundup10_context</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.apps.roundup15_context"><code class="docutils literal notranslate"><span class="pre">roundup15_context</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.apps.roundup_context"><code class="docutils literal notranslate"><span class="pre">roundup_context</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-applications">Custom Applications</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.apps.custom_app_context"><code class="docutils literal notranslate"><span class="pre">custom_app_context</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.context.html" title="passlib.context - CryptContext Hash Manager"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.apache.html" title="passlib.apache - Apache Password Files"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+nodejs for Debian
+=================
+
+CommonJS global folders
+-----------------------
+
+Documentation at:
+file:///usr/share/doc/nodejs/api/modules.html#loading-from-the-global-folders
+
+The documentation explains that CommonJS module eventually looks into `$PREFIX/lib/node`.
+
+However in Debian, modules are installed in different paths, so the global folders
+have been modified to instead end up searching into:
+
+    * "/usr/lib/<$DEB_HOST_MULTIARCH>/nodejs" for c++ addons
+    * "/usr/share/nodejs" for pure javascript modules
+
+
+ES6 Modules
+-----------
+
+Documentation at:
+file:///usr/share/doc/nodejs/api/esm.html#terminology
+
+There is no global lookup with ESM.
+
+One can easily symlink globally-installed modules into a local package using
+"pkgjs-install-minimal" from the dh-nodejs debian package.
+

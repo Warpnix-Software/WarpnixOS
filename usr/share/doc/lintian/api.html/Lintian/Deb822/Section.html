@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Lintian::Deb822::Section</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#INSTANCE-METHODS">INSTANCE METHODS</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Lintian::Deb822::Section -- A paragraph in a control file</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code> use Lintian::Deb822::Section;</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Represents a paragraph in a Deb822 control file.</p>
+
+<h1 id="INSTANCE-METHODS">INSTANCE METHODS</h1>
+
+<dl>
+
+<dt>legend</dt>
+<dd>
+
+<p>Returns exact field names for their lowercase versions.</p>
+
+</dd>
+<dt>verbatim</dt>
+<dd>
+
+<p>Returns a hash to the raw, unedited and verbatim field values.</p>
+
+</dd>
+<dt>unfolded</dt>
+<dd>
+
+<p>Returns a hash to unfolded field values. Continuations lines have been connected.</p>
+
+</dd>
+<dt>positions</dt>
+<dd>
+
+<p>The original line positions.</p>
+
+</dd>
+<dt>trimmed_list(FIELD [, SEPARATOR])</dt>
+<dd>
+
+</dd>
+<dt>unfolded_value (FIELD)</dt>
+<dd>
+
+<p>This method returns the unfolded value of the control field FIELD in the control file for the package. For a source package, this is the *.dsc file; for a binary package, this is the control file in the control section of the package.</p>
+
+<p>If FIELD is passed but not present, then this method returns undef.</p>
+
+</dd>
+<dt>value (FIELD)</dt>
+<dd>
+
+<p>If FIELD is given, this method returns the value of the control field FIELD.</p>
+
+</dd>
+<dt>untrimmed_value (FIELD)</dt>
+<dd>
+
+<p>If FIELD is given, this method returns the value of the control field FIELD.</p>
+
+</dd>
+<dt>text (FIELD)</dt>
+<dd>
+
+</dd>
+<dt>store (FIELD, VALUE)</dt>
+<dd>
+
+</dd>
+<dt>drop (FIELD)</dt>
+<dd>
+
+</dd>
+<dt>declares (NAME)</dt>
+<dd>
+
+<p>Returns a boolean for whether the named field exists.</p>
+
+</dd>
+<dt>names</dt>
+<dd>
+
+<p>Returns an array with the literal field names.</p>
+
+</dd>
+<dt>literal_name</dt>
+<dd>
+
+<p>Returns an array with the literal, true case field names.</p>
+
+</dd>
+<dt>position</dt>
+<dd>
+
+<p>With an argument, returns the starting line of the named field.</p>
+
+<p>Without an argument, return the starting line of the paragraph.</p>
+
+</dd>
+<dt>extra</dt>
+<dd>
+
+</dd>
+</dl>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Originally written by Felix Lechner &lt;felix.lechner@lease-up.com&gt; for Lintian.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>lintian(1)</p>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

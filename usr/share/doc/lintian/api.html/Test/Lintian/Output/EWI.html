@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Test::Lintian::Output::EWI</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../../../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#FUNCTIONS">FUNCTIONS</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Test::Lintian::Output::EWI -- routines to process EWI hints</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>  use Path::Tiny;
+  use Test::Lintian::Output::EWI qw(to_universal);
+
+  my $ewi = path(&quot;path to an EWI hint file&quot;)-&gt;slurp_utf8;
+  my $universal = to_universal($ewi);</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Helper routines to deal with <code>EWI</code> hints and hint files</p>
+
+<h1 id="FUNCTIONS">FUNCTIONS</h1>
+
+<dl>
+
+<dt>to_universal(STRING)</dt>
+<dd>
+
+<p>Converts the <code>EWI</code> hint data contained in STRING to universal hints. They are likewise delivered in a multi-line string.</p>
+
+</dd>
+</dl>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../../../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

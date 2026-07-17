@@ -1,0 +1,34 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: lxqt-qtplugin
+Source: https://github.com/lxqt/lxqt-qtplugin
+
+Files: *
+Copyright: 2013-2025 LXQt team
+License: LGPL-2.1+
+
+Files: debian/*
+Copyright: 2021-2025 Lubuntu Developers <lubuntu-devel@lists.ubuntu.com>
+           2015      Yukiharu YABUKI <yyabuki@debian.org>
+           2014-2019 Alf Gaida <agaida@siduction.org>
+           2019      Rik Mills <rikmills@kubuntu.org>
+           2021      Raman Sarda <theloudspeaker@lubuntu.me>
+           2019-2021 apt-ghetto <apt-ghetto@protonmail.com>
+           2021      Dan Simmons <kc2bez@lubuntu.me>
+           2018-2025 Simon Quigley <tsimonq2@ubuntu.com>
+           2015-2025 ChangZhuo Chen (陳昌倬) <czchen@debian.org>
+           2023-2026 Aaron Rainbolt <arraybolt3@gmail.com>
+License: LGPL-2.1+
+
+License: LGPL-2.1+
+ This program or library is free software; you can redistribute it
+ and/or modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ On Debian systems, the complete text of the GNU Lesser General
+ Public License version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1".

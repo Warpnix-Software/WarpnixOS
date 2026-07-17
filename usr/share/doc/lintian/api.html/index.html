@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+         "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Lintian (v2.129.0ubuntu2.1) API doc</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script type="text/javascript" src="_podly.js"></script>
+
+</head>
+<body class='contentspage'>
+<h1>Lintian (v2.129.0ubuntu2.1) API doc</h1>
+<p><em>Note: </em>This API is not stable between releases.</p>
+<dl class='superindex'>
+<dt><a name="lintian">Lintian</a></dt>
+<dd>
+  <a href="./Lintian/Archive.html">Lintian::Archive</a>&nbsp;&nbsp;
+  <a href="./Lintian/Changelog.html">Lintian::Changelog</a>&nbsp;&nbsp;
+  <a href="./Lintian/Changelog/Entry.html">Lintian::Changelog::Entry</a>&nbsp;&nbsp;
+  <a href="./Lintian/Changelog/Version.html">Lintian::Changelog::Version</a>&nbsp;&nbsp;
+  <a href="./Lintian/Check.html">Lintian::Check</a>&nbsp;&nbsp;
+  <a href="./Lintian/Conffiles.html">Lintian::Conffiles</a>&nbsp;&nbsp;
+  <a href="./Lintian/Conffiles/Entry.html">Lintian::Conffiles::Entry</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data.html">Lintian::Data</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Architectures.html">Lintian::Data::Architectures</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Archive/AutoRejection.html">Lintian::Data::Archive::AutoRejection</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Archive/Sections.html">Lintian::Data::Archive::Sections</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Authorities.html">Lintian::Data::Authorities</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Authority/DebconfSpecification.html">Lintian::Data::Authority::DebconfSpecification</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Authority/DebianPolicy.html">Lintian::Data::Authority::DebianPolicy</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Authority/DeveloperReference.html">Lintian::Data::Authority::DeveloperReference</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Authority/DocBaseManual.html">Lintian::Data::Authority::DocBaseManual</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Authority/FilesystemHierarchy.html">Lintian::Data::Authority::FilesystemHierarchy</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Authority/JavaPolicy.html">Lintian::Data::Authority::JavaPolicy</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Authority/LintianManual.html">Lintian::Data::Authority::LintianManual</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Authority/MenuManual.html">Lintian::Data::Authority::MenuManual</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Authority/MenuPolicy.html">Lintian::Data::Authority::MenuPolicy</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Authority/NewMaintainer.html">Lintian::Data::Authority::NewMaintainer</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Authority/PerlPolicy.html">Lintian::Data::Authority::PerlPolicy</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Authority/PythonPolicy.html">Lintian::Data::Authority::PythonPolicy</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Authority/VimPolicy.html">Lintian::Data::Authority::VimPolicy</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Buildflags/Hardening.html">Lintian::Data::Buildflags::Hardening</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Debhelper/Addons.html">Lintian::Data::Debhelper::Addons</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Debhelper/Commands.html">Lintian::Data::Debhelper::Commands</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Debhelper/Levels.html">Lintian::Data::Debhelper::Levels</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Fonts.html">Lintian::Data::Fonts</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/InitD/VirtualFacilities.html">Lintian::Data::InitD::VirtualFacilities</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/JoinedLines.html">Lintian::Data::JoinedLines</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Policy/Releases.html">Lintian::Data::Policy::Releases</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/PreambledJSON.html">Lintian::Data::PreambledJSON</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Provides/MailTransportAgent.html">Lintian::Data::Provides::MailTransportAgent</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Stylesheet.html">Lintian::Data::Stylesheet</a>&nbsp;&nbsp;
+  <a href="./Lintian/Data/Traditional.html">Lintian::Data::Traditional</a>&nbsp;&nbsp;
+  <a href="./Lintian/Deb822.html">Lintian::Deb822</a>&nbsp;&nbsp;
+  <a href="./Lintian/Deb822/Constants.html">Lintian::Deb822::Constants</a>&nbsp;&nbsp;
+  <a href="./Lintian/Deb822/Section.html">Lintian::Deb822::Section</a>&nbsp;&nbsp;
+  <a href="./Lintian/Debian/Control.html">Lintian::Debian::Control</a>&nbsp;&nbsp;
+  <a href="./Lintian/Elf/Section.html">Lintian::Elf::Section</a>&nbsp;&nbsp;
+  <a href="./Lintian/Elf/Symbol.html">Lintian::Elf::Symbol</a>&nbsp;&nbsp;
+  <a href="./Lintian/Group.html">Lintian::Group</a>&nbsp;&nbsp;
+  <a href="./Lintian/Hint.html">Lintian::Hint</a>&nbsp;&nbsp;
+  <a href="./Lintian/Hint/Annotated.html">Lintian::Hint::Annotated</a>&nbsp;&nbsp;
+  <a href="./Lintian/Hint/Pointed.html">Lintian::Hint::Pointed</a>&nbsp;&nbsp;
+  <a href="./Lintian/Index.html">Lintian::Index</a>&nbsp;&nbsp;
+  <a href="./Lintian/Index/Ar.html">Lintian::Index::Ar</a>&nbsp;&nbsp;
+  <a href="./Lintian/Index/Elf.html">Lintian::Index::Elf</a>&nbsp;&nbsp;
+  <a href="./Lintian/Index/FileTypes.html">Lintian::Index::FileTypes</a>&nbsp;&nbsp;
+  <a href="./Lintian/Index/Item.html">Lintian::Index::Item</a>&nbsp;&nbsp;
+  <a href="./Lintian/Index/Java.html">Lintian::Index::Java</a>&nbsp;&nbsp;
+  <a href="./Lintian/Index/Md5sums.html">Lintian::Index::Md5sums</a>&nbsp;&nbsp;
+  <a href="./Lintian/Index/Strings.html">Lintian::Index::Strings</a>&nbsp;&nbsp;
+  <a href="./Lintian/IO/Select.html">Lintian::IO::Select</a>&nbsp;&nbsp;
+  <a href="./Lintian/IPC/Run3.html">Lintian::IPC::Run3</a>&nbsp;&nbsp;
+  <a href="./Lintian/Mask.html">Lintian::Mask</a>&nbsp;&nbsp;
+  <a href="./Lintian/Output/EWI.html">Lintian::Output::EWI</a>&nbsp;&nbsp;
+  <a href="./Lintian/Output/Grammar.html">Lintian::Output::Grammar</a>&nbsp;&nbsp;
+  <a href="./Lintian/Output/HTML.html">Lintian::Output::HTML</a>&nbsp;&nbsp;
+  <a href="./Lintian/Output/JSON.html">Lintian::Output::JSON</a>&nbsp;&nbsp;
+  <a href="./Lintian/Output/Markdown.html">Lintian::Output::Markdown</a>&nbsp;&nbsp;
+  <a href="./Lintian/Output/Universal.html">Lintian::Output::Universal</a>&nbsp;&nbsp;
+  <a href="./Lintian/Override.html">Lintian::Override</a>&nbsp;&nbsp;
+  <a href="./Lintian/Pointer/Item.html">Lintian::Pointer::Item</a>&nbsp;&nbsp;
+  <a href="./Lintian/Pool.html">Lintian::Pool</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable.html">Lintian::Processable</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Buildinfo.html">Lintian::Processable::Buildinfo</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Buildinfo/Overrides.html">Lintian::Processable::Buildinfo::Overrides</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Changelog/Version.html">Lintian::Processable::Changelog::Version</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Changes.html">Lintian::Processable::Changes</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Changes/Overrides.html">Lintian::Processable::Changes::Overrides</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Debian/Control.html">Lintian::Processable::Debian::Control</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Diffstat.html">Lintian::Processable::Diffstat</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Fields/Files.html">Lintian::Processable::Fields::Files</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Hardening.html">Lintian::Processable::Hardening</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Installable.html">Lintian::Processable::Installable</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Installable/Changelog.html">Lintian::Processable::Installable::Changelog</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Installable/Class.html">Lintian::Processable::Installable::Class</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Installable/Conffiles.html">Lintian::Processable::Installable::Conffiles</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Installable/Control.html">Lintian::Processable::Installable::Control</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Installable/Installed.html">Lintian::Processable::Installable::Installed</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Installable/Overrides.html">Lintian::Processable::Installable::Overrides</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Installable/Relation.html">Lintian::Processable::Installable::Relation</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/IsNonFree.html">Lintian::Processable::IsNonFree</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/NotJustDocs.html">Lintian::Processable::NotJustDocs</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Overrides.html">Lintian::Processable::Overrides</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Source.html">Lintian::Processable::Source</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Source/Changelog.html">Lintian::Processable::Source::Changelog</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Source/Components.html">Lintian::Processable::Source::Components</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Source/Format.html">Lintian::Processable::Source::Format</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Source/Orig.html">Lintian::Processable::Source::Orig</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Source/Overrides.html">Lintian::Processable::Source::Overrides</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Source/Patched.html">Lintian::Processable::Source::Patched</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Source/Relation.html">Lintian::Processable::Source::Relation</a>&nbsp;&nbsp;
+  <a href="./Lintian/Processable/Source/Repacked.html">Lintian::Processable::Source::Repacked</a>&nbsp;&nbsp;
+  <a href="./Lintian/Profile.html">Lintian::Profile</a>&nbsp;&nbsp;
+  <a href="./Lintian/Relation.html">Lintian::Relation</a>&nbsp;&nbsp;
+  <a href="./Lintian/Relation/Predicate.html">Lintian::Relation::Predicate</a>&nbsp;&nbsp;
+  <a href="./Lintian/Relation/Version.html">Lintian::Relation::Version</a>&nbsp;&nbsp;
+  <a href="./Lintian/Reporting/ResourceManager.html">Lintian::Reporting::ResourceManager</a>&nbsp;&nbsp;
+  <a href="./Lintian/Reporting/Util.html">Lintian::Reporting::Util</a>&nbsp;&nbsp;
+  <a href="./Lintian/Screen.html">Lintian::Screen</a>&nbsp;&nbsp;
+  <a href="./Lintian/SlidingWindow.html">Lintian::SlidingWindow</a>&nbsp;&nbsp;
+  <a href="./Lintian/Spelling.html">Lintian::Spelling</a>&nbsp;&nbsp;
+  <a href="./Lintian/Storage/MLDBM.html">Lintian::Storage::MLDBM</a>&nbsp;&nbsp;
+  <a href="./Lintian/Tag.html">Lintian::Tag</a>&nbsp;&nbsp;
+  <a href="./Lintian/Tutorial.html">Lintian::Tutorial</a>&nbsp;&nbsp;
+  <a href="./Lintian/Tutorial/TestSuite.html">Lintian::Tutorial::TestSuite</a>&nbsp;&nbsp;
+  <a href="./Lintian/Tutorial/WritingChecks.html">Lintian::Tutorial::WritingChecks</a>&nbsp;&nbsp;
+  <a href="./Lintian/Tutorial/WritingTests.html">Lintian::Tutorial::WritingTests</a>&nbsp;&nbsp;
+  <a href="./Lintian/Util.html">Lintian::Util</a>&nbsp;&nbsp;
+  <a href="./Lintian/Version.html">Lintian::Version</a>&nbsp;&nbsp;
+</dd>
+
+<dt><a name="test">Test</a></dt>
+<dd>
+  <a href="./Test/Lintian.html">Test::Lintian</a>&nbsp;&nbsp;
+  <a href="./Test/Lintian/Build.html">Test::Lintian::Build</a>&nbsp;&nbsp;
+  <a href="./Test/Lintian/ConfigFile.html">Test::Lintian::ConfigFile</a>&nbsp;&nbsp;
+  <a href="./Test/Lintian/Filter.html">Test::Lintian::Filter</a>&nbsp;&nbsp;
+  <a href="./Test/Lintian/Helper.html">Test::Lintian::Helper</a>&nbsp;&nbsp;
+  <a href="./Test/Lintian/Hooks.html">Test::Lintian::Hooks</a>&nbsp;&nbsp;
+  <a href="./Test/Lintian/Output/EWI.html">Test::Lintian::Output::EWI</a>&nbsp;&nbsp;
+  <a href="./Test/Lintian/Output/Universal.html">Test::Lintian::Output::Universal</a>&nbsp;&nbsp;
+  <a href="./Test/Lintian/Prepare.html">Test::Lintian::Prepare</a>&nbsp;&nbsp;
+  <a href="./Test/Lintian/Run.html">Test::Lintian::Run</a>&nbsp;&nbsp;
+  <a href="./Test/Lintian/Templates.html">Test::Lintian::Templates</a>&nbsp;&nbsp;
+  <a href="./Test/ScriptAge.html">Test::ScriptAge</a>&nbsp;&nbsp;
+  <a href="./Test/StagedFileProducer.html">Test::StagedFileProducer</a>&nbsp;&nbsp;
+</dd>
+
+</dl>

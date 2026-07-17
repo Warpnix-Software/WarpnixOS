@@ -1,0 +1,168 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Source: https://download.gnome.org/sources/gnome-bluetooth/
+Upstream-Name: GnomeBluetooth
+
+Files: *
+Copyright: 2005-2008 Marcel Holtmann <marcel@holtmann.org>`
+License: GPL-2+
+
+Files: check-news.sh
+Copyright: 2019 Red Hat, Inc.
+License: GPL-3+
+
+Files: debian/tests/gir1.2-gnomebluetooth-3.0
+Copyright: 2022 Canonical Ltd
+License: LGPL-2.1+
+
+Files: lib/*
+Copyright: 2009 Bastien Nocera <hadess@hadess.net>
+License: GPL-2+
+
+Files: lib/bluetooth-agent.*
+       lib/bluetooth-enums.h
+Copyright: 2005-2008 Marcel Holtmann
+License: LGPL-2.1+
+
+Files: lib/bluetooth-client-private.h
+       lib/bluetooth-client.h
+Copyright: 2009-2021 Red Hat Inc.
+           2005-2008 Marcel Holtmann
+License: LGPL-2.1+
+
+Files: lib/bluetooth-client.c
+Copyright: 2013 Intel Corporation.
+           2010 Giovanni Campagna <scampa.giovanni@gmail.com>
+           2009-2021 Red Hat Inc.
+           2005-2008 Marcel Holtmann
+License: LGPL-2.1+
+
+Files: lib/bluetooth-device.*
+       lib/test-client.py
+       lib/test-liststore.c
+Copyright: 2021-2022 Bastien Nocera
+License: LGPL-2.1+
+
+Files: lib/bluetooth-pairing-dialog.c
+       lib/bluetooth-pairing-dialog.h
+       lib/bluetooth-settings-row.c
+       lib/bluetooth-settings-row.h
+       lib/bluetooth-settings-widget.*
+Copyright: 2013 Bastien Nocera
+License: LGPL-2.1+
+
+Files: lib/bluetooth-settings-obexpush.*
+Copyright: 2013 Intel Corporation
+           2004-2008 Red Hat, Inc.
+License: GPL-2+
+
+Files: lib/bluetooth-utils.*
+Copyright: 2010 Giovanni Campagna <scampa.giovanni@gmail.com>
+           2009-2011 Bastien Nocera
+License: LGPL-2.1+
+
+Files: lib/pin-code-database.xml
+       lib/pin.c*
+       lib/test-class.c
+Copyright: 2008-2009, 2021 Bastien Nocera
+License: GPL-2+
+
+Files: lib/test-agent.c
+Copyright: 2005-2008 Marcel Holtmann
+License: GPL-2+
+
+Files: po/*
+Copyright: 2009 the author(s) of gnome-bluetooth
+           2009 Adi Roiban
+           2021, 2022 Alexander Shopov <ash@kambanaria.org>
+           2007 Alexandru Szasz
+           2009-2014, 2018, 2021, 2023, 2024 A S Alam <aalam@users.sf.net>
+           2009 Bluetooth Applet 1.8
+           2010 Fran Diéguez
+           2007-2024 Free Software Foundation, Inc.
+           2022 GNOME Bluetooth's AUTHORS
+           2009 The Gnome Foundation
+           2008-2011 The Gnome Project
+           2007-2024 gnome-bluetooth
+           2004-2024 gnome-bluetooth's copyright holder
+           2019 gnome-bluetooth's Free Software Foundation, Inc.
+           2007-2024, the gnome-bluetooth authors.
+           2015 GNOME i18n Project for Vietnamse
+           2011 Iranian Free Software Users Group (IFSUG.org)translation team.
+           2009 Krasimir "Bfaf" Chonov <mk2616@abv.bg>
+           2009 Lucian Adrian Grijincu
+           2007-2018, 2020, 2022 Rosetta Contributors and Canonical Ltd
+           2011-2012 Swecha Telugu Localisation Team
+           2007, 2009 Timo Jyrinki
+           2024 twlvnn kraftwerk <kraft_werk@tutanota.com>
+License: LGPL-2.1+
+
+Files: sendto/*
+Copyright: 2013 Intel Corporation
+           2005-2008 Marcel Holtmann
+License: GPL-2+
+
+Files: sendto/main.c
+Copyright: 2013 Intel Corporation
+           2005-2008 Marcel Holtmann
+License: GPL-2+
+
+Files: tests/*
+Copyright: 2021, 2022, Bastien Nocera
+License: LGPL-2.1
+
+Files: tests/integration-test.py
+Copyright: 2008-2009, 2021 Bastien Nocera
+License: GPL-2+
+
+Files: tests/unittest_inspector.py
+Copyright: 2020, Canonical Ltd
+License: LGPL-2.1+
+
+License: GPL-2+
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <https://www.gnu.org/licenses/>
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+
+License: GPL-3+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; version 3 dated June, 2007, or (at
+ your option) any later version.
+ On Debian systems, the complete text of version 3 of the GNU General
+ Public License can be found in '/usr/share/common-licenses/GPL-3'.
+
+License: LGPL-2.1
+ This program is free software; you can redistribute it and/or modify it
+ under the terms of the GNU Lesser General Public License as published by the
+ Free Software Foundation; version 2.1 of the License.
+ On Debian systems, the complete text of version 2.1 of the GNU Lesser
+ General Public License can be found in '/usr/share/common-licenses/LGPL-2.1'.
+
+License: LGPL-2.1+
+ This package is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <https://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the complete text of the GNU Lesser General
+ Public License can be found in "/usr/share/common-licenses/LGPL-2.1".

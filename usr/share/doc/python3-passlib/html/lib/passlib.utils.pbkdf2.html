@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.utils.pbkdf2 - PBKDF2 key derivation algorithm [deprecated] &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Other Documentation" href="../other.html" />
+    <link rel="prev" title="passlib.utils.des - DES routines [deprecated]" href="passlib.utils.des.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../other.html" title="Other Documentation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.utils.des.html" title="passlib.utils.des - DES routines [deprecated]"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.utils.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.pbkdf2</span></code> - PBKDF2 key derivation algorithm [deprecated]</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-passlib.utils.pbkdf2">
+<span id="passlib-utils-pbkdf2-pbkdf2-key-derivation-algorithm-deprecated"></span><h1><a class="reference internal" href="#module-passlib.utils.pbkdf2" title="passlib.utils.pbkdf2: PBKDF2 and related key derivation algorithms"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.pbkdf2</span></code></a> - PBKDF2 key derivation algorithm [deprecated]<a class="headerlink" href="#module-passlib.utils.pbkdf2" title="Link to this heading">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This module has been deprecated as of Passlib 1.7,
+and will be removed in Passlib 2.0.
+The functions in this module have been replaced by equivalent
+(but not identical) functions in the <a class="reference internal" href="passlib.crypto.html#module-passlib.crypto" title="passlib.crypto: internal cryptographic helpers for implementing password hashes"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code></a> module.</p>
+</div>
+<p>This module provides a couple of key derivation functions,
+as well as supporting utilities.
+Primarily, it offers <a class="reference internal" href="#passlib.utils.pbkdf2.pbkdf2" title="passlib.utils.pbkdf2.pbkdf2"><code class="xref py py-func docutils literal notranslate"><span class="pre">pbkdf2()</span></code></a>,
+which provides the ability to generate an arbitrary
+length key using the PBKDF2 key derivation algorithm,
+as specified in <a class="reference external" href="http://tools.ietf.org/html/rfc2898">rfc 2898</a>.
+This function can be helpful in creating password hashes
+using schemes which have been based around the pbkdf2 algorithm.</p>
+<section id="pkcs-5-key-derivation-functions">
+<h2>PKCS#5 Key Derivation Functions<a class="headerlink" href="#pkcs-5-key-derivation-functions" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.pbkdf2.pbkdf1">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.pbkdf2.</span></span><span class="sig-name descname"><span class="pre">pbkdf1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">secret</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">salt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keylen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hash</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sha1'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.pbkdf2.pbkdf1" title="Link to this definition">¶</a></dt>
+<dd><p>pkcs#5 password-based key derivation v1.5</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>secret</strong> – passphrase to use to generate key</p></li>
+<li><p><strong>salt</strong> – salt string to use when generating key</p></li>
+<li><p><strong>rounds</strong> – number of rounds to use to generate key</p></li>
+<li><p><strong>keylen</strong> – number of bytes to generate (if <code class="docutils literal notranslate"><span class="pre">None</span></code>, uses digest’s native size)</p></li>
+<li><p><strong>hash</strong> – hash function to use. must be name of a hash recognized by hashlib.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>raw bytes of generated key</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This algorithm has been deprecated, new code should use PBKDF2.
+Among other limitations, <code class="docutils literal notranslate"><span class="pre">keylen</span></code> cannot be larger
+than the digest size of the specified hash.</p>
+</div>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.7: </span>This has been relocated to <a class="reference internal" href="passlib.crypto.digest.html#passlib.crypto.digest.pbkdf1" title="passlib.crypto.digest.pbkdf1"><code class="xref py py-func docutils literal notranslate"><span class="pre">passlib.crypto.digest.pbkdf1()</span></code></a>,
+and this version will be removed in Passlib 2.0.
+<em>Note the call signature has changed.</em></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.pbkdf2.pbkdf2">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.pbkdf2.</span></span><span class="sig-name descname"><span class="pre">pbkdf2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">secret</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">salt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keylen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'hmac-sha1'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.pbkdf2.pbkdf2" title="Link to this definition">¶</a></dt>
+<dd><p>pkcs#5 password-based key derivation v2.0</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>secret</strong> – passphrase to use to generate key</p></li>
+<li><p><strong>salt</strong> – salt string to use when generating key</p></li>
+<li><p><strong>rounds</strong> – number of rounds to use to generate key</p></li>
+<li><p><strong>keylen</strong> – number of bytes to generate.
+if set to <code class="docutils literal notranslate"><span class="pre">None</span></code>, will use digest size of selected prf.</p></li>
+<li><p><strong>prf</strong> – <p>psuedo-random family to use for key strengthening.
+this must be a string starting with <code class="docutils literal notranslate"><span class="pre">&quot;hmac-&quot;</span></code>, followed by the name of a known digest.
+this defaults to <code class="docutils literal notranslate"><span class="pre">&quot;hmac-sha1&quot;</span></code> (the only prf explicitly listed in
+the PBKDF2 specification)</p>
+</p></li>
+</ul>
+</dd>
+<dt class="warning field-even">Returns<span class="colon">:</span></dt>
+<dd class="warning field-even"><p>raw bytes of generated key</p>
+</dd>
+</dl>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.7: </span>This has been deprecated in favor of <a class="reference internal" href="passlib.crypto.digest.html#passlib.crypto.digest.pbkdf2_hmac" title="passlib.crypto.digest.pbkdf2_hmac"><code class="xref py py-func docutils literal notranslate"><span class="pre">passlib.crypto.digest.pbkdf2_hmac()</span></code></a>,
+and will be removed in Passlib 2.0.  <em>Note the call signature has changed.</em></p>
+</div>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The details of PBKDF1 and PBKDF2 are specified in <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2898.html"><strong>RFC 2898</strong></a>.</p>
+</div>
+</section>
+<section id="helper-functions">
+<h2>Helper Functions<a class="headerlink" href="#helper-functions" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.pbkdf2.get_prf">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.pbkdf2.</span></span><span class="sig-name descname"><span class="pre">get_prf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.pbkdf2.get_prf" title="Link to this definition">¶</a></dt>
+<dd><p>Lookup pseudo-random family (PRF) by name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> – <p>This must be the name of a recognized prf.
+Currently this only recognizes names with the format
+<code class="samp docutils literal notranslate"><span class="pre">hmac-</span><em><span class="pre">digest</span></em></code>, where <code class="samp docutils literal notranslate"><em><span class="pre">digest</span></em></code>
+is the name of a hash function such as
+<code class="docutils literal notranslate"><span class="pre">md5</span></code>, <code class="docutils literal notranslate"><span class="pre">sha256</span></code>, etc.</p>
+<p>todo: restore text about callables.</p>
+</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – if the name is not known</p></li>
+<li><p><strong>TypeError</strong> – if the name is not a callable or string</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p>a tuple of <code class="samp docutils literal notranslate"><span class="pre">(</span><em><span class="pre">prf_func</span></em><span class="pre">,</span> <em><span class="pre">digest_size</span></em><span class="pre">)</span></code>, where:</p>
+<ul class="simple">
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">prf_func</span></em></code> is a function implementing
+the specified PRF, and has the signature
+<code class="docutils literal notranslate"><span class="pre">prf_func(secret,</span> <span class="pre">message)</span> <span class="pre">-&gt;</span> <span class="pre">digest</span></code>.</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">digest_size</span></em></code> is an integer indicating
+the number of bytes the function returns.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p>Usage example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.utils.pbkdf2</span> <span class="kn">import</span> <span class="n">get_prf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hmac_sha256</span><span class="p">,</span> <span class="n">dsize</span> <span class="o">=</span> <span class="n">get_prf</span><span class="p">(</span><span class="s2">&quot;hmac-sha256&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hmac_sha256</span>
+<span class="go">&lt;function hmac_sha256 at 0x1e37c80&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dsize</span>
+<span class="go">32</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">digest</span> <span class="o">=</span> <span class="n">hmac_sha256</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;message&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.7: </span>This function is deprecated, and will be removed in Passlib 2.0.
+This only related replacement is <code class="xref py py-func docutils literal notranslate"><span class="pre">passlib.crypto.digest.compile_hmac()</span></code>.</p>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="passlib.utils.html#constants">Constants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.utils.html#unicode-helpers">Unicode Helpers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.utils.html#bytes-helpers">Bytes Helpers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.utils.html#encoding-helpers">Encoding Helpers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.utils.html#randomness">Randomness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.utils.html#interface-tests">Interface Tests</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="passlib.utils.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="passlib.utils.handlers.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.handlers</span></code> - Framework for writing password hashes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.utils.binary.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.binary</span></code> - Binary Helper Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.utils.des.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.des</span></code> - DES routines [deprecated]</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.pbkdf2</span></code> - PBKDF2 key derivation algorithm [deprecated]</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../other.html" title="Other Documentation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.utils.des.html" title="passlib.utils.des - DES routines [deprecated]"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.utils.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.pbkdf2</span></code> - PBKDF2 key derivation algorithm [deprecated]</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

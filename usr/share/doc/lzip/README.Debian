@@ -1,0 +1,112 @@
+Lzip for Debian
+===============
+
+1. Lzip implementations
+-----------------------
+
+Lzip is available in different implementations:
+
+  lzip           original C++ implementation
+  plzip          parallel C++ implementation
+
+  lziprecover    C++ implementation with extra recovery functionality
+  clzip          C implementation
+
+  lunzip         C implementation, decompressor only
+  xlunzip        C implementation using lzip_decompress kernel module, decompressor only
+
+  lzd            simple C implementation, decompressor only, educational purpose
+  minilzip       simple C implementation using lzlib library
+  pdlzip         simple C implementation, Public Domain
+
+All Lzip implementations are fully compatible (files can be compressed and
+decompressed with any implementation interchangeably).
+
+All Lzip implementations support the same command line switches (except for lzd):
+if an option is not implemented it is silently ignored (e.g. the -n option to set
+the number of threads is accepted by all implementations but only plzip makes
+use of it).
+
+
+2. update-alternatives
+----------------------
+
+On Debian based systems all Lzip implementations are installed as
+lzip.$implementation (e.g. /usr/bin/lzip.plzip) and /usr/bin/lzip is a symlink
+managed by update-altenatives to point to the currently selected
+implementation. All Lzip packages provide the virtual lzip-alternatives package.
+
+The following automatic priorities are used:
+
+  Decompressors:
+    xlunzip        -2000
+    lunzip         -1000
+
+  Compressor and decompressors:
+    minilzip       1000
+    pdlzip         2000
+    clzip          3000
+    lziprecover    4000
+    lzip           5000
+    plzip          6000
+
+
+This allows:
+
+  * users to manually switch the implementation conveniently with:
+
+      sudo update-alternative --config lzip
+
+    if more than one Lzip imlementation is installed.
+
+  * automatically have the system use the 'best' implementation installed
+    (using the priorities listed above, e.g. installing plzip will superseed
+    lzip automatically).
+
+  * switching transparently between implementations, e.g. globally using
+    the multi-threaded plzip instead of the single-threaded lzip requires only
+    one command:
+
+       sudo update-alternatives --set lzip /usr/bin/lzip.plzip
+
+    No scripts or commands need to be changed. If you were using lzip
+    before, install plzip and all your Lzip operations are now parallelized
+    automatically.
+
+Additional lzip-compressor and lzip-decompressor are provided, both as virtual
+packages as well as alternatives in /usr/bin. This allows one to use a mixed
+mode of setting lzip alternatives globally, such as using plzip for
+decompression and lzip for compression.
+
+Note: lzd (decompressor only, educational purpose) doesn't provide the '--test'
+parameter to verify compressed file integrity (which now is the base-line
+requirement for all lzip variants providing alternatives) and is therefore
+not providing any update-alternative handling.
+
+
+3. Best practice
+----------------
+
+To make the best use of Lzip, the following should be considered:
+
+  * use lzip in scripts and commands, don't hardcode a specific implementation
+    (e.g. use lzip, not plzip).
+
+  * use alternative depends in debian packages, don't depend on a specific
+    implementation (e.g. use 'Depends: lzip-alternative | lzip' or
+    'Depends: lzip-alternative | plzip', not 'Depends: lzip').
+
+  * use compressor or decompressor explicitly (e.g. use
+    'Depends: lzip-decompressor | lunzip' if you don't need to compress files).
+
+
+4. See also
+-----------
+
+  * tarlz: archiver with multimember lzip compression
+  * zutils: utilities for dealing with compressed files transparently
+
+  * Xz format inadequate for long-term archiving
+    http://lzip.nongnu.org/xz_inadequate.html
+
+ -- Daniel Baumann <daniel@debian.org>  Sun, 26 Aug 2018 11:06:17 +0200

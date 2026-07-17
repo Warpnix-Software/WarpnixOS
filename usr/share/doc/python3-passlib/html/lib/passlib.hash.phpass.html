@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.hash.phpass - PHPass’ Portable Hash &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.hash.pbkdf2_digest - Generic PBKDF2 Hashes" href="passlib.hash.pbkdf2_digest.html" />
+    <link rel="prev" title="passlib.hash.bcrypt_sha256 - BCrypt+SHA256" href="passlib.hash.bcrypt_sha256.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.pbkdf2_digest.html" title="passlib.hash.pbkdf2_digest - Generic PBKDF2 Hashes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.bcrypt_sha256.html" title="passlib.hash.bcrypt_sha256 - BCrypt+SHA256"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.phpass</span></code> - PHPass’ Portable Hash</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-hash-phpass-phpass-portable-hash">
+<span id="index-0"></span><h1><a class="reference internal" href="#passlib.hash.phpass" title="passlib.hash.phpass"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.phpass</span></code></a> - PHPass’ Portable Hash<a class="headerlink" href="#passlib-hash-phpass-phpass-portable-hash" title="Link to this heading">¶</a></h1>
+<p>This algorithm is used primarily by PHP software
+which uses PHPass <a class="footnote-reference brackets" href="#pp" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>,
+a PHP library similar to Passlib. The PHPass Portable Hash
+is a custom password hash used by PHPass as a fallback
+when none of its other hashes are available.
+Due to its reliance on MD5, and the simplistic implementation,
+other hash algorithms should be used if possible.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../narr/hash-tutorial.html#password-hash-examples"><span class="std std-ref">password hash usage</span></a> –
+for examples of how to use this class via the common hash interface.</p>
+</div>
+<section id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.phpass">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">phpass</span></span><a class="headerlink" href="#passlib.hash.phpass" title="Link to this definition">¶</a></dt>
+<dd><p>This class implements the PHPass Portable Hash, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>It supports a fixed-length salt, and a variable number of rounds.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">using()</span></code></a> method accepts the following optional keywords:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>salt</strong> (<em>str</em>) – Optional salt string.
+If not specified, one will be autogenerated (this is recommended).
+If specified, it must be 8 characters, drawn from the regexp range <code class="docutils literal notranslate"><span class="pre">[./0-9A-Za-z]</span></code>.</p></li>
+<li><p><strong>rounds</strong> (<em>int</em>) – Optional number of rounds to use.
+Defaults to 19, must be between 7 and 30, inclusive.
+This value is logarithmic, the actual number of iterations used will be <code class="samp docutils literal notranslate"><span class="pre">2**</span><em><span class="pre">rounds</span></em></code>.</p></li>
+<li><p><strong>ident</strong> (<em>str</em>) – phpBB3 uses <code class="docutils literal notranslate"><span class="pre">H</span></code> instead of <code class="docutils literal notranslate"><span class="pre">P</span></code> for its identifier,
+this may be set to <code class="docutils literal notranslate"><span class="pre">H</span></code> in order to generate phpBB3 compatible hashes.
+it defaults to <code class="docutils literal notranslate"><span class="pre">P</span></code>.</p></li>
+<li><p><strong>relaxed</strong> (<em>bool</em>) – <p>By default, providing an invalid value for one of the other
+keywords will result in a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>. If <code class="docutils literal notranslate"><span class="pre">relaxed=True</span></code>,
+and the error can be corrected, a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasslibHashWarning" title="passlib.exc.PasslibHashWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasslibHashWarning</span></code></a>
+will be issued instead. Correctable errors include <code class="docutils literal notranslate"><span class="pre">rounds</span></code>
+that are too small or too large, and <code class="docutils literal notranslate"><span class="pre">salt</span></code> strings that are too long.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="format">
+<h2>Format<a class="headerlink" href="#format" title="Link to this heading">¶</a></h2>
+<p>An example hash (of <code class="docutils literal notranslate"><span class="pre">password</span></code>) is <code class="docutils literal notranslate"><span class="pre">$P$8ohUJ.1sdFw09/bMaAQPTGDNi2BIUt1</span></code>.
+A phpass portable hash string has the format <code class="samp docutils literal notranslate"><span class="pre">$P$</span><em><span class="pre">rounds</span></em><em><span class="pre">salt</span></em><em><span class="pre">checksum</span></em></code>, where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$P$</span></code> is the prefix used to identify phpass hashes,
+following the <a class="reference internal" href="../modular_crypt_format.html#modular-crypt-format"><span class="std std-ref">Modular Crypt Format</span></a>.</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">rounds</span></em></code>  is a single character encoding a 6-bit integer
+representing the number of rounds used. This is logarithmic,
+the real number of rounds is <code class="docutils literal notranslate"><span class="pre">2**rounds</span></code>. (in the example, rounds is encoded as <code class="docutils literal notranslate"><span class="pre">8</span></code>, or 2**13 iterations).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">salt</span></em></code> is eight characters drawn from <code class="docutils literal notranslate"><span class="pre">[./0-9A-Za-z]</span></code>,
+providing a 48-bit salt (<code class="docutils literal notranslate"><span class="pre">ohUJ.1sd</span></code> in the example).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">checksum</span></em></code> is 22 characters drawn from the same set,
+encoding the 128-bit checksum (<code class="docutils literal notranslate"><span class="pre">Fw09/bMaAQPTGDNi2BIUt1</span></code> in the example).</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that phpBB3 databases uses the alternate prefix <code class="docutils literal notranslate"><span class="pre">$H$</span></code>, both prefixes
+are recognized by this implementation, and the checksums are the same.</p>
+</div>
+</section>
+<section id="algorithm">
+<h2>Algorithm<a class="headerlink" href="#algorithm" title="Link to this heading">¶</a></h2>
+<p>PHPass uses a straightforward algorithm to calculate the checksum:</p>
+<ol class="arabic simple">
+<li><p>an initial result is generated from the MD5 digest of the salt string + the secret.</p></li>
+<li><p>for <code class="samp docutils literal notranslate"><span class="pre">2**</span><em><span class="pre">rounds</span></em></code> iterations, a new result is created from the MD5 digest of the last result + the password.</p></li>
+<li><p>the last result is then encoded according to the format described above.</p></li>
+</ol>
+</section>
+<section id="deviations">
+<h2>Deviations<a class="headerlink" href="#deviations" title="Link to this heading">¶</a></h2>
+<p>This implementation of phpass differs from the specification in one way:</p>
+<ul>
+<li><p>Unicode Policy:</p>
+<p>The underlying algorithm takes in a password specified
+as a series of non-null bytes, and does not specify what encoding
+should be used; though a <code class="docutils literal notranslate"><span class="pre">us-ascii</span></code> compatible encoding
+is implied by nearly all known reference hashes.</p>
+<p>In order to provide support for unicode strings,
+Passlib will encode unicode passwords using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code>
+before running them through phpass. If a different
+encoding is desired by an application, the password should be encoded
+before handing it to Passlib.</p>
+</li>
+</ul>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="pp" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>PHPass homepage, which describes the Portable Hash algorithm -
+<a class="reference external" href="http://www.openwall.com/phpass/">http://www.openwall.com/phpass/</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#unix-hashes">Unix Hashes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="passlib.hash.html#other-modular-crypt-hashes">Other “Modular Crypt” Hashes</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="passlib.hash.html#active-hashes">Active Hashes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.html#deprecated-hashes">Deprecated Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ldap-rfc2307-hashes">LDAP / RFC2307 Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#sql-database-hashes">SQL Database Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ms-windows-hashes">MS Windows Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#cisco-hashes">Cisco Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-hashes">Other Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.pbkdf2_digest.html" title="passlib.hash.pbkdf2_digest - Generic PBKDF2 Hashes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.bcrypt_sha256.html" title="passlib.hash.bcrypt_sha256 - BCrypt+SHA256"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.phpass</span></code> - PHPass’ Portable Hash</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.hash.ldap_digest - RFC2307 Standard Digests &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.hash.ldap_crypt - LDAP crypt() Wrappers" href="passlib.hash.ldap_crypt.html" />
+    <link rel="prev" title="passlib.hash.dlitz_pbkdf2_sha1 - Dwayne Litzenberger’s PBKDF2 hash" href="passlib.hash.dlitz_pbkdf2_sha1.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.ldap_crypt.html" title="passlib.hash.ldap_crypt - LDAP crypt() Wrappers"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.dlitz_pbkdf2_sha1.html" title="passlib.hash.dlitz_pbkdf2_sha1 - Dwayne Litzenberger’s PBKDF2 hash"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="samp docutils literal notranslate"><span class="pre">passlib.hash.ldap_</span><em><span class="pre">digest</span></em></code> - RFC2307 Standard Digests</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-hash-ldap-digest-rfc2307-standard-digests">
+<h1><code class="samp docutils literal notranslate"><span class="pre">passlib.hash.ldap_</span><em><span class="pre">digest</span></em></code> - RFC2307 Standard Digests<a class="headerlink" href="#passlib-hash-ldap-digest-rfc2307-standard-digests" title="Link to this heading">¶</a></h1>
+<p>Passlib provides support for all the standard
+LDAP hash formats specified by <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2307.html"><strong>RFC 2307</strong></a>.
+This includes <code class="docutils literal notranslate"><span class="pre">{MD5}</span></code>, <code class="docutils literal notranslate"><span class="pre">{SMD5}</span></code>, <code class="docutils literal notranslate"><span class="pre">{SHA}</span></code>, <code class="docutils literal notranslate"><span class="pre">{SSHA}</span></code>.
+These schemes range from somewhat to very insecure,
+and should not be used except when required.
+These classes all wrap the underlying hashlib implementations,
+and are can be used directly as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.hash</span> <span class="kn">import</span> <span class="n">ldap_salted_md5</span> <span class="k">as</span> <span class="n">lsm</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># hash password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span> <span class="o">=</span> <span class="n">lsm</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span>
+<span class="go">&#39;{SMD5}OqsUXNHIhHbznxrqHoIM+ZT8DmE=&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># verify password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lms</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lms</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;secret&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../narr/hash-tutorial.html#password-hash-examples"><span class="std std-ref">password hash usage</span></a> – for more usage examples</p></li>
+<li><p><a class="reference internal" href="passlib.hash.ldap_crypt.html"><span class="doc">ldap_{crypt}</span></a> –
+LDAP <code class="docutils literal notranslate"><span class="pre">{CRYPT}</span></code> wrappers for common Unix hash algorithms.</p></li>
+<li><p><a class="reference internal" href="passlib.apps.html#module-passlib.apps" title="passlib.apps: hashing &amp; verifying passwords used in sql servers and other applications"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code></a> – for a list of <a class="reference internal" href="passlib.apps.html#ldap-contexts"><span class="std std-ref">premade ldap contexts</span></a>.</p></li>
+</ul>
+</div>
+<section id="plain-hashes">
+<h2>Plain Hashes<a class="headerlink" href="#plain-hashes" title="Link to this heading">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>These hashes should not be considered secure in any way,
+as they are nothing but raw MD5 &amp; SHA-1 digests,
+which are extremely vulnerable to brute-force attacks.</p>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.ldap_md5">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">ldap_md5</span></span><a class="headerlink" href="#passlib.hash.ldap_md5" title="Link to this definition">¶</a></dt>
+<dd><p>This class stores passwords using LDAP’s plain MD5 format, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code></a> and <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.genconfig" title="passlib.ifc.PasswordHash.genconfig"><code class="xref py py-meth docutils literal notranslate"><span class="pre">genconfig()</span></code></a> methods have no optional keywords.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.ldap_sha1">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">ldap_sha1</span></span><a class="headerlink" href="#passlib.hash.ldap_sha1" title="Link to this definition">¶</a></dt>
+<dd><p>This class stores passwords using LDAP’s plain SHA1 format, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code></a> and <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.genconfig" title="passlib.ifc.PasswordHash.genconfig"><code class="xref py py-meth docutils literal notranslate"><span class="pre">genconfig()</span></code></a> methods have no optional keywords.</p>
+</dd></dl>
+
+<section id="format">
+<h3>Format<a class="headerlink" href="#format" title="Link to this heading">¶</a></h3>
+<p>These hashes have the format <code class="samp docutils literal notranslate"><em><span class="pre">prefix</span></em><em><span class="pre">checksum</span></em></code>.</p>
+<ul class="simple">
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">prefix</span></em></code> is <code class="docutils literal notranslate"><span class="pre">{MD5}</span></code> for ldap_md5, and <code class="docutils literal notranslate"><span class="pre">{SHA}</span></code> for ldap_sha1.</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">checksum</span></em></code> is the base64 encoding
+of the raw message digest of the password,
+using the appropriate digest algorithm.</p></li>
+</ul>
+<p>An example ldap_md5 hash (of <code class="docutils literal notranslate"><span class="pre">password</span></code>) is <code class="docutils literal notranslate"><span class="pre">{MD5}X03MO1qnZdYdgyfeuILPmQ==</span></code>.
+An example ldap_sha1 hash (of <code class="docutils literal notranslate"><span class="pre">password</span></code>) is <code class="docutils literal notranslate"><span class="pre">{SHA}W6ph5Mm5Pz8GgiULbPgzG37mj9g=</span></code>.</p>
+</section>
+</section>
+<section id="salted-hashes">
+<h2>Salted Hashes<a class="headerlink" href="#salted-hashes" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.ldap_salted_md5">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">ldap_salted_md5</span></span><a class="headerlink" href="#passlib.hash.ldap_salted_md5" title="Link to this definition">¶</a></dt>
+<dd><p>This class stores passwords using LDAP’s salted MD5 format, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>It supports a 4-16 byte salt.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">using()</span></code></a> method accepts the following optional keywords:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>salt</strong> (<em>bytes</em>) – Optional salt string.
+If not specified, one will be autogenerated (this is recommended).
+If specified, it may be any 4-16 byte string.</p></li>
+<li><p><strong>salt_size</strong> (<em>int</em>) – Optional number of bytes to use when autogenerating new salts.
+Defaults to 4 bytes for compatibility with the LDAP spec,
+but some systems use larger salts, and Passlib supports
+any value between 4-16.</p></li>
+<li><p><strong>relaxed</strong> (<em>bool</em>) – <p>By default, providing an invalid value for one of the other
+keywords will result in a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>. If <code class="docutils literal notranslate"><span class="pre">relaxed=True</span></code>,
+and the error can be corrected, a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasslibHashWarning" title="passlib.exc.PasslibHashWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasslibHashWarning</span></code></a>
+will be issued instead. Correctable errors include
+<code class="docutils literal notranslate"><span class="pre">salt</span></code> strings that are too long.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.6: </span>This format now supports variable length salts, instead of a fix 4 bytes.</p>
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.ldap_salted_sha1">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">ldap_salted_sha1</span></span><a class="headerlink" href="#passlib.hash.ldap_salted_sha1" title="Link to this definition">¶</a></dt>
+<dd><p>This class stores passwords using LDAP’s “Salted SHA1” format,
+and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>It supports a 4-16 byte salt.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">using()</span></code></a> method accepts the following optional keywords:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>salt</strong> (<em>bytes</em>) – Optional salt string.
+If not specified, one will be autogenerated (this is recommended).
+If specified, it may be any 4-16 byte string.</p></li>
+<li><p><strong>salt_size</strong> (<em>int</em>) – Optional number of bytes to use when autogenerating new salts.
+Defaults to 4 bytes for compatibility with the LDAP spec,
+but some systems use larger salts, and Passlib supports
+any value between 4-16.</p></li>
+<li><p><strong>relaxed</strong> (<em>bool</em>) – <p>By default, providing an invalid value for one of the other
+keywords will result in a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>. If <code class="docutils literal notranslate"><span class="pre">relaxed=True</span></code>,
+and the error can be corrected, a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasslibHashWarning" title="passlib.exc.PasslibHashWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasslibHashWarning</span></code></a>
+will be issued instead. Correctable errors include
+<code class="docutils literal notranslate"><span class="pre">salt</span></code> strings that are too long.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.6: </span>This format now supports variable length salts, instead of a fix 4 bytes.</p>
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.ldap_salted_sha256">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">ldap_salted_sha256</span></span><a class="headerlink" href="#passlib.hash.ldap_salted_sha256" title="Link to this definition">¶</a></dt>
+<dd><p>This class stores passwords using LDAP’s “Salted SHA2-256” format,
+and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>It supports a 4-16 byte salt.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">using()</span></code></a> method accepts the following optional keywords:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>salt</strong> (<em>bytes</em>) – Optional salt string.
+If not specified, one will be autogenerated (this is recommended).
+If specified, it may be any 4-16 byte string.</p></li>
+<li><p><strong>salt_size</strong> (<em>int</em>) – Optional number of bytes to use when autogenerating new salts.
+Defaults to 8 bytes for compatibility with the LDAP spec,
+but Passlib supports any value between 4-16.</p></li>
+<li><p><strong>relaxed</strong> (<em>bool</em>) – By default, providing an invalid value for one of the other
+keywords will result in a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>. If <code class="docutils literal notranslate"><span class="pre">relaxed=True</span></code>,
+and the error can be corrected, a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasslibHashWarning" title="passlib.exc.PasslibHashWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasslibHashWarning</span></code></a>
+will be issued instead. Correctable errors include
+<code class="docutils literal notranslate"><span class="pre">salt</span></code> strings that are too long.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.7.3.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.ldap_salted_sha512">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">ldap_salted_sha512</span></span><a class="headerlink" href="#passlib.hash.ldap_salted_sha512" title="Link to this definition">¶</a></dt>
+<dd><p>This class stores passwords using LDAP’s “Salted SHA2-512” format,
+and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>It supports a 4-16 byte salt.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">using()</span></code></a> method accepts the following optional keywords:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>salt</strong> (<em>bytes</em>) – Optional salt string.
+If not specified, one will be autogenerated (this is recommended).
+If specified, it may be any 4-16 byte string.</p></li>
+<li><p><strong>salt_size</strong> (<em>int</em>) – Optional number of bytes to use when autogenerating new salts.
+Defaults to 8 bytes for compatibility with the LDAP spec,
+but Passlib supports any value between 4-16.</p></li>
+<li><p><strong>relaxed</strong> (<em>bool</em>) – By default, providing an invalid value for one of the other
+keywords will result in a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>. If <code class="docutils literal notranslate"><span class="pre">relaxed=True</span></code>,
+and the error can be corrected, a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasslibHashWarning" title="passlib.exc.PasslibHashWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasslibHashWarning</span></code></a>
+will be issued instead. Correctable errors include
+<code class="docutils literal notranslate"><span class="pre">salt</span></code> strings that are too long.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.7.3.</span></p>
+</div>
+</dd></dl>
+
+<p>These hashes have the format <code class="samp docutils literal notranslate"><em><span class="pre">prefix</span></em><em><span class="pre">data</span></em></code>.</p>
+<ul class="simple">
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">prefix</span></em></code> is <code class="docutils literal notranslate"><span class="pre">{SMD5}</span></code> for ldap_salted_md5,
+and <code class="docutils literal notranslate"><span class="pre">{SSHA}</span></code> for ldap_salted_sha1.</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">data</span></em></code> is the base64 encoding of <code class="samp docutils literal notranslate"><em><span class="pre">checksum</span></em><em><span class="pre">salt</span></em></code>;
+and in turn <code class="samp docutils literal notranslate"><em><span class="pre">salt</span></em></code> is a multi-byte binary salt,
+and <code class="samp docutils literal notranslate"><em><span class="pre">checksum</span></em></code> is the raw digest of the
+the string <code class="samp docutils literal notranslate"><em><span class="pre">password</span></em><em><span class="pre">salt</span></em></code>,
+using the appropriate digest algorithm.</p></li>
+</ul>
+<section id="id1">
+<h3>Format<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<p>An example hash (of <code class="docutils literal notranslate"><span class="pre">password</span></code>) is <code class="docutils literal notranslate"><span class="pre">{SMD5}jNoSMNY0cybfuBWiaGlFw3Mfi/U=</span></code>.
+After decoding, this results in a raw salt string <code class="docutils literal notranslate"><span class="pre">s\x1f\x8b\xf5</span></code>,
+and a raw MD5 checksum of <code class="docutils literal notranslate"><span class="pre">\x8c\xda\x120\xd64s&amp;\xdf\xb8\x15\xa2hiE\xc3</span></code>.</p>
+<p>An example hash (of <code class="docutils literal notranslate"><span class="pre">password</span></code>) is <code class="docutils literal notranslate"><span class="pre">{SSHA}pKqkNr1tq3wtQqk+UcPyA3HnA2NsU5NJ</span></code>.
+After decoding, this results in a raw salt string <code class="docutils literal notranslate"><span class="pre">lS\x93I</span></code>,
+and a raw SHA1 checksum of <code class="docutils literal notranslate"><span class="pre">\xa4\xaa\xa46\xbdm\xab|-B\xa9&gt;Q\xc3\xf2\x03q\xe7\x03c</span></code>.</p>
+</section>
+<section id="security-issues">
+<h3>Security Issues<a class="headerlink" href="#security-issues" title="Link to this heading">¶</a></h3>
+<p>The LDAP salted hashes should not be considered very secure.</p>
+<ul class="simple">
+<li><p>They use only a single round of digests with known collision
+and pre-image attacks (SHA1 &amp; MD5).</p></li>
+<li><p>They currently use only 32 bits of entropy in their salt,
+which is only borderline sufficient to defeat rainbow tables,
+and cannot (portably) be increased.</p></li>
+<li><p>The SHA2 salted hashes (SSHA256, SSHA512) are only marginally better.
+they use the newer SHA2 hash; and 64 bits of entropy in their salt.</p></li>
+</ul>
+</section>
+</section>
+<section id="plaintext">
+<h2>Plaintext<a class="headerlink" href="#plaintext" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.ldap_plaintext">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">ldap_plaintext</span></span><a class="headerlink" href="#passlib.hash.ldap_plaintext" title="Link to this definition">¶</a></dt>
+<dd><p>This class stores passwords in plaintext, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>This class acts much like the generic <code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.plaintext</span></code> handler,
+except that it will identify a hash only if it does NOT begin with the <code class="docutils literal notranslate"><span class="pre">{XXX}</span></code> identifier prefix
+used by RFC2307 passwords.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code></a>, <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.genhash" title="passlib.ifc.PasswordHash.genhash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">genhash()</span></code></a>, and <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.verify" title="passlib.ifc.PasswordHash.verify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">verify()</span></code></a> methods all require the
+following additional contextual keyword:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>encoding</strong> (<em>str</em>) – <p>This controls the character encoding to use (defaults to <code class="docutils literal notranslate"><span class="pre">utf-8</span></code>).</p>
+<p>This encoding will be used to encode <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> passwords
+under Python 2, and decode <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code> hashes under Python 3.</p>
+</p>
+</dd>
+</dl>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.6: </span>The <code class="docutils literal notranslate"><span class="pre">encoding</span></code> keyword was added.</p>
+</div>
+</dd></dl>
+
+<p>This handler does not hash passwords at all,
+rather it encoded them into UTF-8.
+The only difference between this class and <a class="reference internal" href="passlib.hash.plaintext.html#passlib.hash.plaintext" title="passlib.hash.plaintext"><code class="xref py py-class docutils literal notranslate"><span class="pre">plaintext</span></code></a>
+is that this class will NOT recognize any strings that use
+the <code class="docutils literal notranslate"><span class="pre">{SCHEME}HASH</span></code> format.</p>
+</section>
+<section id="deviations">
+<h2>Deviations<a class="headerlink" href="#deviations" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>The salt size for the salted digests appears to vary between applications.
+While OpenLDAP is fixed at 4 bytes, some systems appear to use 8 or more.
+As of 1.6, Passlib can accept and generate strings with salts between 4-16 bytes,
+though various servers may differ in what they can handle.</p></li>
+</ul>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="pwd" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>The manpage for <strong class="command">slappasswd</strong> - <a class="reference external" href="http://gd.tuwien.ac.at/linuxcommand.org/man_pages/slappasswd8.html">http://gd.tuwien.ac.at/linuxcommand.org/man_pages/slappasswd8.html</a>.</p>
+</aside>
+<aside class="footnote brackets" id="rfc" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>The basic format for these hashes is laid out in RFC 2307 - <a class="reference external" href="http://www.ietf.org/rfc/rfc2307.txt">http://www.ietf.org/rfc/rfc2307.txt</a></p>
+</aside>
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<p>OpenLDAP hash documentation - <a class="reference external" href="http://www.openldap.org/doc/admin24/security.html">http://www.openldap.org/doc/admin24/security.html</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#unix-hashes">Unix Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-modular-crypt-hashes">Other “Modular Crypt” Hashes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="passlib.hash.html#ldap-rfc2307-hashes">LDAP / RFC2307 Hashes</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="passlib.hash.html#standard-ldap-schemes">Standard LDAP Schemes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.html#non-standard-ldap-schemes">Non-Standard LDAP Schemes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#sql-database-hashes">SQL Database Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ms-windows-hashes">MS Windows Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#cisco-hashes">Cisco Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-hashes">Other Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.ldap_crypt.html" title="passlib.hash.ldap_crypt - LDAP crypt() Wrappers"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.dlitz_pbkdf2_sha1.html" title="passlib.hash.dlitz_pbkdf2_sha1 - Dwayne Litzenberger’s PBKDF2 hash"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="samp docutils literal notranslate"><span class="pre">passlib.hash.ldap_</span><em><span class="pre">digest</span></em></code> - RFC2307 Standard Digests</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

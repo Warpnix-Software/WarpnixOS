@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Lintian::Output::EWI</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#INSTANCE-METHODS">INSTANCE METHODS</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Lintian::Output::EWI - standard hint output</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>    use Lintian::Output::EWI;</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Provides standard hint output.</p>
+
+<h1 id="INSTANCE-METHODS">INSTANCE METHODS</h1>
+
+<dl>
+
+<dt>tag_count_by_processable</dt>
+<dd>
+
+</dd>
+<dt>issue_hints</dt>
+<dd>
+
+</dd>
+<dt><code>print_hint</code></dt>
+<dd>
+
+</dd>
+<dt><code>_quote_print($string)</code></dt>
+<dd>
+
+<p>Called to quote a string. By default it will replace all non-printables with &quot;?&quot;. Sub-classes can override it if they allow non-ascii printables etc.</p>
+
+</dd>
+<dt><code>osc_hyperlink</code></dt>
+<dd>
+
+</dd>
+<dt>issuedtags</dt>
+<dd>
+
+<p>Hash containing the names of tags which have been issued.</p>
+
+</dd>
+<dt><code>issued_tag($tag_name)</code></dt>
+<dd>
+
+<p>Indicate that the named tag has been issued. Returns a boolean value indicating whether the tag had previously been issued by the object.</p>
+
+</dd>
+<dt>describe_tags</dt>
+<dd>
+
+</dd>
+<dt>describe_tag</dt>
+<dd>
+
+</dd>
+<dt>markdown_to_plain</dt>
+<dd>
+
+</dd>
+</dl>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

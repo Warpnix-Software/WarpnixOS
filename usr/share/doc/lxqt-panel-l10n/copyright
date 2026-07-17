@@ -1,0 +1,64 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: lxqt-panel
+Source: https://github.com/lxqt/lxqt-panel
+
+Files: *
+Copyright: 2010-2013 Razor team
+           2012-2025 LXQt team
+License: LGPL-2.1+
+
+Files: panel/lxqtpanelapplication_p.h
+Copyright: 2016 Luís Pereira <luis.artur.pereira@gmail.com>
+License: LGPL-2.1+
+
+Files: panel/backends/wayland/wlroots/ext-workspace-v1.xml
+Copyright: 2019 Christopher Billington
+           2020 Ilia Bozhinov
+           2022 Victoria Brekenfeld
+License: HPND-sell-variant
+
+Files: debian/*
+Copyright: 2014-2019 Alf Gaida <agaida@siduction.org>
+           2015-2022 Andrew Lee (李健秋) <ajqlee@debian.org>
+           2015      Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+           2016      Ralf Jung <post@ralfj.de>
+           2018      Walter Lapchynski <wxl@ubuntu.com>
+           2020-2021 Raman Sarda <theloudspeaker@lubuntu.me>
+           2021      apt-ghetto <apt-ghetto@protonmail.com>
+           2018-2025 Simon Quigley <tsimonq2@ubuntu.com>
+           2022-2025 ChangZhuo Chen (陳昌倬) <czchen@debian.org>
+           2023-2026 Aaron Rainbolt <arraybolt3@gmail.com>
+License: LGPL-2.1+
+
+License: LGPL-2.1+
+ This program or library is free software; you can redistribute it
+ and/or modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ On Debian systems, the complete text of the GNU Lesser General
+ Public License version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1".
+
+License: HPND-sell-variant
+ Permission to use, copy, modify, distribute, and sell this software and its
+ documentation for any purpose is hereby granted without fee, provided that
+ the above copyright notice appear in all copies and that both that copyright
+ notice  and this permission notice appear in supporting documentation, and
+ that the  name of the copyright holders not be used in advertising or
+ publicity  pertaining to distribution of the software without specific,
+ written prior permission.  The copyright holders make no representations
+ about the suitability of this software for any purpose.  It is provided "as
+ is" without express or implied warranty.
+ .
+ THE COPYRIGHT HOLDERS DISCLAIM ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
+ INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT
+ SHALL THE COPYRIGHT HOLDERS BE LIABLE FOR ANY SPECIAL, INDIRECT OR
+ CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE,
+ DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+ TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE
+ OF THIS SOFTWARE.

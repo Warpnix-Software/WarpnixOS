@@ -1,0 +1,65 @@
+#!/usr/bin/perl
+
+#
+# Output a dot graph of installed reverse dependencies for a package.
+#
+
+use strict;
+use warnings;
+
+use AptPkg::Config '$_config';
+use AptPkg::System '$_system';
+use AptPkg::Cache;
+
+use Getopt::Long;
+
+(my $self = $0) =~ s#.*/##;
+
+# Default is to include recommended packages, but not suggested.
+my %want;
+$want{$_} = 1 for (AptPkg::Dep::Depends, AptPkg::Dep::PreDepends,
+		   AptPkg::Dep::Recommends);
+$want{$_} = 0 for (AptPkg::Dep::Suggests);
+
+die "Usage: $self [--suggests] [--norecommends] PACKAGE\n"
+    unless GetOptions('suggests!' => \$want{AptPkg::Dep::Suggests},
+		      'recommends!' => \$want{AptPkg::Dep::Recommends})
+       and @ARGV == 1;
+
+$_config->init;
+$_system = $_config->system;
+$_config->{quiet} = 2;
+
+my $cache = AptPkg::Cache->new;
+my @todo = @ARGV;
+my %deps;
+my %seen;
+
+do {
+  my @next;
+  for my $pack (@todo) {
+    my $p = $cache->{$pack} or next;
+    next unless $p->{CurrentState} == AptPkg::State::Installed;
+    my $revdeps = $p->{RevDependsList} or next;
+    my @instrevdeps;
+    for my $r (map $_->{ParentPkg}{ShortName},
+	       grep $want{0+$_->{DepType}},
+	       @$revdeps) {
+      next if $seen{$r}++;
+      $p = $cache->{$r} or next;
+      push @instrevdeps, $r if $p->{CurrentState} == AptPkg::State::Installed;
+    }
+    next unless @instrevdeps;
+    $deps{$pack} = \@instrevdeps;
+    push @next, @instrevdeps;
+  }
+  @todo = @next;
+} while (@todo);
+
+$\ = "\n";
+
+print "digraph deps {";
+while (my ($p, $d) = each %deps) {
+  print qq/  "$_" -> "$p"/ for @$d;
+}
+print "}";

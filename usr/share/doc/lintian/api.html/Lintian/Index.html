@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Lintian::Index</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#INSTANCE-METHODS">INSTANCE METHODS</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Lintian::Index - access to collected data about the upstream (orig) sources</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>    use Lintian::Index;</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Lintian::Processable::Source::Orig::Index provides an interface to collected data about the upstream (orig) sources.</p>
+
+<h1 id="INSTANCE-METHODS">INSTANCE METHODS</h1>
+
+<dl>
+
+<dt>identifier</dt>
+<dd>
+
+</dd>
+<dt>catalog</dt>
+<dd>
+
+<p>Returns a reference to a hash with elements catalogued by path names.</p>
+
+</dd>
+<dt><code>basedir</code></dt>
+<dd>
+
+<p>Returns the base directory for file references.</p>
+
+</dd>
+<dt><code>anchored</code></dt>
+<dd>
+
+</dd>
+<dt>unpack_messages</dt>
+<dd>
+
+</dd>
+<dt>lookup (FILE)</dt>
+<dd>
+
+<p>Like <a href="#index">&quot;index&quot;</a> except orig_index is based on the &quot;orig tarballs&quot; of the source packages.</p>
+
+<p>For native packages <a href="#index">&quot;index&quot;</a> and <a href="#orig_index">&quot;orig_index&quot;</a> are generally identical.</p>
+
+<p>NB: If sorted_index includes a debian packaging, it is was contained in upstream part of the source package (or the package is native).</p>
+
+</dd>
+<dt>resolve_path</dt>
+<dd>
+
+</dd>
+<dt>create_from_basedir</dt>
+<dd>
+
+</dd>
+<dt>create_from_piped_tar</dt>
+<dd>
+
+</dd>
+<dt>load</dt>
+<dd>
+
+</dd>
+<dt>merge_in</dt>
+<dd>
+
+</dd>
+<dt>capture_common_prefix</dt>
+<dd>
+
+</dd>
+<dt>drop_common_prefix</dt>
+<dd>
+
+</dd>
+<dt>drop_basedir_segment</dt>
+<dd>
+
+</dd>
+</dl>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Originally written by Felix Lechner &lt;felix.lechner@lease-up.com&gt; for Lintian.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>lintian(1)</p>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

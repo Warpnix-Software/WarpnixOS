@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.hash.scrypt - SCrypt &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.hash.apr_md5_crypt - Apache’s MD5-Crypt variant" href="passlib.hash.apr_md5_crypt.html" />
+    <link rel="prev" title="passlib.hash.scram - SCRAM Hash" href="passlib.hash.scram.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.apr_md5_crypt.html" title="passlib.hash.apr_md5_crypt - Apache’s MD5-Crypt variant"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.scram.html" title="passlib.hash.scram - SCRAM Hash"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.scrypt</span></code> - SCrypt</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-hash-scrypt-scrypt">
+<h1><a class="reference internal" href="#passlib.hash.scrypt" title="passlib.hash.scrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.scrypt</span></code></a> - SCrypt<a class="headerlink" href="#passlib-hash-scrypt-scrypt" title="Link to this heading">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.7.</span></p>
+</div>
+<p>This is a custom hash scheme provided by Passlib which allows storing password hashes
+generated using the SCrypt <a class="footnote-reference brackets" href="#scrypt-home" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> key derivation function, and is designed
+as the of a new generation of “memory hard” functions.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Be careful when using this algorithm, as the memory and CPU requirements
+needed to achieve adequate security are generally higher than acceptable for heavily used
+production systems <a class="footnote-reference brackets" href="#scrypt-cost" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>. This is because (unlike many password hashes), increasing
+the rounds value of scrypt will increase the <em>memory</em> required as well as the time.</p>
+<p>Unless you know what you’re doing, <strong>You probably want</strong> <a class="reference internal" href="passlib.hash.argon2.html"><span class="doc">argon2</span></a> <strong>instead.</strong></p>
+</div>
+<p>This class can be used directly as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.hash</span> <span class="kn">import</span> <span class="n">scrypt</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># generate new salt, hash password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">scrypt</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span>
+<span class="go">&#39;$scrypt$ln=16,r=8,p=1$aM15713r3Xsvxbi31lqr1Q$nFNh2CVHVjNldFVKDHDlm4CbdRSCdEBsjjJxD+iCs5E&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># the same, but with an explicit number of rounds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scrypt</span><span class="o">.</span><span class="n">using</span><span class="p">(</span><span class="n">rounds</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="go">&#39;$scrypt$ln=8,r=8,p=1$WKs1xljLudd6z9kbY0wpJQ$yCR4iDZYDKv+iEJj6yHY0lv/epnfB6f/w1EbXrsJOuQ&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># verify password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scrypt</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scrypt</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;wrong&quot;</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is strongly recommended that you install
+<a class="reference external" href="https://pypi.python.org/pypi/scrypt">scrypt</a>
+when using this hash.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>the generic <a class="reference internal" href="../narr/hash-tutorial.html#password-hash-examples"><span class="std std-ref">PasswordHash usage examples</span></a></p>
+</div>
+<section id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.scrypt">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">scrypt</span></span><a class="headerlink" href="#passlib.hash.scrypt" title="Link to this definition">¶</a></dt>
+<dd><p>This class implements an SCrypt-based password <a class="footnote-reference brackets" href="#scrypt-home" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> hash, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>It supports a variable-length salt, a variable number of rounds,
+as well as some custom tuning parameters unique to scrypt (see below).</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">using()</span></code></a> method accepts the following optional keywords:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>salt</strong> (<em>str</em>) – Optional salt string.
+If specified, the length must be between 0-1024 bytes.
+If not specified, one will be auto-generated (this is recommended).</p></li>
+<li><p><strong>salt_size</strong> (<em>int</em>) – Optional number of bytes to use when autogenerating new salts.
+Defaults to 16 bytes, but can be any value between 0 and 1024.</p></li>
+<li><p><strong>rounds</strong> (<em>int</em>) – <p>Optional number of rounds to use.
+Defaults to 16, but must be within <code class="docutils literal notranslate"><span class="pre">range(1,32)</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Unlike many hash algorithms, increasing the rounds value
+will increase both the time <em>and memory</em> required to hash a password.</p>
+</div>
+</p></li>
+<li><p><strong>block_size</strong> (<em>int</em>) – Optional block size to pass to scrypt hash function (the <code class="docutils literal notranslate"><span class="pre">r</span></code> parameter).
+Useful for tuning scrypt to optimal performance for your CPU architecture.
+Defaults to 8.</p></li>
+<li><p><strong>parallelism</strong> (<em>int</em>) – Optional parallelism to pass to scrypt hash function (the <code class="docutils literal notranslate"><span class="pre">p</span></code> parameter).
+Defaults to 1.</p></li>
+<li><p><strong>relaxed</strong> (<em>bool</em>) – By default, providing an invalid value for one of the other
+keywords will result in a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>. If <code class="docutils literal notranslate"><span class="pre">relaxed=True</span></code>,
+and the error can be corrected, a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasslibHashWarning" title="passlib.exc.PasslibHashWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasslibHashWarning</span></code></a>
+will be issued instead. Correctable errors include <code class="docutils literal notranslate"><span class="pre">rounds</span></code>
+that are too small or too large, and <code class="docutils literal notranslate"><span class="pre">salt</span></code> strings that are too long.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The underlying scrypt hash function has a number of limitations
+on it’s parameter values, which forbids certain combinations of settings.
+The requirements are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">linear_rounds</span> <span class="pre">=</span> <span class="pre">2**&lt;some</span> <span class="pre">positive</span> <span class="pre">integer&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">linear_rounds</span> <span class="pre">&lt;</span> <span class="pre">2**(16</span> <span class="pre">*</span> <span class="pre">block_size)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">block_size</span> <span class="pre">*</span> <span class="pre">parallelism</span> <span class="pre">&lt;=</span> <span class="pre">2**30-1</span></code></p></li>
+</ul>
+</div>
+<div class="admonition-todo admonition" id="id4">
+<p class="admonition-title">Todo</p>
+<p>This class currently does not support configuring default values
+for <code class="docutils literal notranslate"><span class="pre">block_size</span></code> or <code class="docutils literal notranslate"><span class="pre">parallelism</span></code> via a <a class="reference internal" href="passlib.context.html#passlib.context.CryptContext" title="passlib.context.CryptContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code></a>
+configuration.</p>
+</div>
+</dd></dl>
+
+<section id="scrypt-backends">
+<h3>Scrypt Backends<a class="headerlink" href="#scrypt-backends" title="Link to this heading">¶</a></h3>
+<p>This class will use the first available of two possible backends:</p>
+<ol class="arabic simple">
+<li><p>Python stdlib’s <code class="xref py py-func docutils literal notranslate"><span class="pre">hashlib.scrypt()</span></code> method (only present for Python 3.6+ and OpenSSL 1.1+)</p></li>
+<li><p>The C-accelerated <a class="reference external" href="https://pypi.python.org/pypi/scrypt">scrypt</a> package, if installed.</p></li>
+<li><p>A pure-python implementation of SCrypt, built into Passlib.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If <code class="xref py py-func docutils literal notranslate"><span class="pre">hashlib.scrypt()</span></code> is not present on your system, it is strongly recommended to install
+the external scrypt package.
+The pure-python backend is intended as a reference and last-resort implementation only;
+it is 10-100x too slow to be usable in production at a secure <code class="docutils literal notranslate"><span class="pre">rounds</span></code> cost.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.7.2: </span>Added support for using stdlib’s <code class="xref py py-func docutils literal notranslate"><span class="pre">hashlib.scrypt()</span></code></p>
+</div>
+</section>
+</section>
+<section id="format-algorithm">
+<h2>Format &amp; Algorithm<a class="headerlink" href="#format-algorithm" title="Link to this heading">¶</a></h2>
+<p>This Scrypt hash format is compatible with the <a class="reference internal" href="../modular_crypt_format.html#phc-format"><span class="std std-ref">PHC Format</span></a> and <a class="reference internal" href="../modular_crypt_format.html#modular-crypt-format"><span class="std std-ref">Modular Crypt Format</span></a>,
+and uses <code class="docutils literal notranslate"><span class="pre">$scrypt$</span></code> as the identifying prefix
+for all its strings. An example hash (of <code class="docutils literal notranslate"><span class="pre">password</span></code>) is:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$scrypt$ln=16,r=8,p=1$aM15713r3Xsvxbi31lqr1Q$nFNh2CVHVjNldFVKDHDlm4CbdRSCdEBsjjJxD+iCs5E</span></code></p>
+</div></blockquote>
+<p>This string has the format <code class="samp docutils literal notranslate"><span class="pre">$scrypt$ln=</span><em><span class="pre">logN</span></em><span class="pre">,r=</span><em><span class="pre">R</span></em><span class="pre">,p=</span><em><span class="pre">P</span></em><span class="pre">$</span><em><span class="pre">salt</span></em><span class="pre">$</span><em><span class="pre">checksum</span></em></code>, where:</p>
+<ul class="simple">
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">logN</span></em></code> is the exponent for calculating SCRYPT’s cost parameter (N), encoded as a decimal digit,
+(logN is 16 in the example, corresponding to n = 2**16 = 65536).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">R</span></em></code> is the value of SCRYPT’s block size parameter (r), encoded as a decimal digit,
+(r is 8 in the example).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">P</span></em></code> is the value of SCRYPT’s parallel count parameter (p), encoded as a decimal digit,
+(p is 1 in the example).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">salt</span></em></code> - this base64 encoded salt bytes passed into the SCRYPT function
+(<code class="docutils literal notranslate"><span class="pre">aM15713r3Xsvxbi31lqr1Q</span></code> in the example).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">checksum</span></em></code> - this is the base64 encoded derived key bytes returned from the SCRYPT function.
+This hash currently always uses 32 bytes, resulting in a 43-character checksum.
+(<code class="docutils literal notranslate"><span class="pre">nFNh2CVHVjNldFVKDHDlm4CbdRSCdEBsjjJxD+iCs5E</span></code> in the example).</p></li>
+</ul>
+<p>All byte strings are encoded using the standard base64 encoding, but without
+any trailing padding (“=”) chars.  The password is encoded into UTF-8 if not already encoded,
+and run throught the SCRYPT function; along with the salt, and the values of n, r, and p.
+The first 32 bytes of the returned result are encoded as the checksum.</p>
+<p>See <a class="reference external" href="http://www.tarsnap.com/scrypt.html">http://www.tarsnap.com/scrypt.html</a> for the canonical description of the scrypt kdf.</p>
+</section>
+<section id="security-issues">
+<h2>Security Issues<a class="headerlink" href="#security-issues" title="Link to this heading">¶</a></h2>
+<p><a class="reference external" href="http://www.tarsnap.com/scrypt.html">SCrypt</a> is the first in a class of “memory-hard”
+key derivation functions. Initially, it looked very promising as a replacement for BCrypt,
+PBKDF2, and SHA512-Crypt.  However, the fact that it’s <code class="docutils literal notranslate"><span class="pre">N</span></code> parameter controls both
+time <em>and</em> memory cost means the two cannot be varied completely independantly.  This
+eventually proved to be problematic, as <code class="docutils literal notranslate"><span class="pre">N</span></code> values required for even BCrypt levels of security
+resulting in memory requirements that were unacceptable on most production systems.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="passlib.hash.argon2.html#passlib.hash.argon2" title="passlib.hash.argon2"><code class="xref py py-class docutils literal notranslate"><span class="pre">argon2</span></code></a>, a next generation memory-hard KDF designed as the
+successor to SCrypt.</p>
+</div>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="scrypt-home" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id3">2</a>)</span>
+<p>the SCrypt KDF homepage -
+<a class="reference external" href="http://www.tarsnap.com/scrypt.html">http://www.tarsnap.com/scrypt.html</a></p>
+</aside>
+<aside class="footnote brackets" id="scrypt-cost" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>posts discussing security implications of scrypt’s tying memory cost to calculation time -
+<a class="reference external" href="http://blog.ircmaxell.com/2014/03/why-i-dont-recommend-scrypt.html">http://blog.ircmaxell.com/2014/03/why-i-dont-recommend-scrypt.html</a>,
+<a class="reference external" href="http://security.stackexchange.com/questions/26245/is-bcrypt-better-than-scrypt">http://security.stackexchange.com/questions/26245/is-bcrypt-better-than-scrypt</a>,
+<a class="reference external" href="http://security.stackexchange.com/questions/4781/do-any-security-experts-recommend-bcrypt-for-password-storage">http://security.stackexchange.com/questions/4781/do-any-security-experts-recommend-bcrypt-for-password-storage</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#unix-hashes">Unix Hashes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="passlib.hash.html#other-modular-crypt-hashes">Other “Modular Crypt” Hashes</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="passlib.hash.html#active-hashes">Active Hashes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.html#deprecated-hashes">Deprecated Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ldap-rfc2307-hashes">LDAP / RFC2307 Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#sql-database-hashes">SQL Database Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ms-windows-hashes">MS Windows Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#cisco-hashes">Cisco Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-hashes">Other Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.apr_md5_crypt.html" title="passlib.hash.apr_md5_crypt - Apache’s MD5-Crypt variant"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.scram.html" title="passlib.hash.scram - SCRAM Hash"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.scrypt</span></code> - SCrypt</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

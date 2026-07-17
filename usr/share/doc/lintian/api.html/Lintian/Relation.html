@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Lintian::Relation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#INSTANCE-METHODS">INSTANCE METHODS</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Lintian::Relation - Lintian operations on dependencies and relationships</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>    my $depends = Lintian::Relation-&gt;new(&#39;foo | bar, baz&#39;);
+    print encode_utf8(&quot;yes\n&quot;) if $depends-&gt;satisfies(&#39;baz&#39;);
+    print encode_utf8(&quot;no\n&quot;) if $depends-&gt;satisfies(&#39;foo&#39;);</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>This module provides functions for parsing and evaluating package relationship fields such as Depends and Recommends for binary packages and Build-Depends for source packages. It parses a relationship into an internal format and can then answer questions such as &quot;does this dependency require that a given package be installed&quot; or &quot;is this relationship a superset of another relationship.&quot;</p>
+
+<p>A dependency line is viewed as a predicate formula. The comma separator means &quot;and&quot;, and the alternatives separator means &quot;or&quot;. A bare package name is the predicate &quot;a package of this name is available&quot;. A package name with a version clause is the predicate &quot;a package of this name that satisfies this version clause is available.&quot; Architecture restrictions, as specified in Policy for build dependencies, are supported and also checked in the implication logic unless the new_norestriction() constructor is used. With that constructor, architecture restrictions are ignored.</p>
+
+<h1 id="INSTANCE-METHODS">INSTANCE METHODS</h1>
+
+<dl>
+
+<dt>trunk</dt>
+<dd>
+
+</dd>
+<dt>load (RELATION)</dt>
+<dd>
+
+<p>Creates a new Lintian::Relation object corresponding to the parsed relationship RELATION. This object can then be used to ask questions about that relationship. RELATION may be <code>undef</code> or the empty string, in which case the returned Lintian::Relation object is empty (always satisfied).</p>
+
+</dd>
+<dt>load_norestriction (RELATION)</dt>
+<dd>
+
+<p>Creates a new Lintian::Relation object corresponding to the parsed relationship RELATION, ignoring architecture restrictions and restriction lists. This should be used in cases where we only care if a dependency is present in some cases and we don&#39;t want to require that the architectures match (such as when checking for proper build dependencies, since if there are architecture constraints the maintainer is doing something beyond Lintian&#39;s ability to analyze) or that the restrictions list match (Lintian can&#39;t handle dependency implications with build profiles yet). RELATION may be <code>undef</code> or the empty string, in which case the returned Lintian::Relation object is empty (always satisfied).</p>
+
+</dd>
+<dt>logical_and(RELATION, ...)</dt>
+<dd>
+
+<p>Creates a new Lintian::Relation object produced by AND&#39;ing all the relations together. Semantically it is the similar to:</p>
+
+<pre><code> Lintian::Relation-&gt;new (join (&#39;, &#39;, @relations))</code></pre>
+
+<p>Except it can avoid some overhead and it works if some of the elements are Lintian::Relation objects already.</p>
+
+</dd>
+<dt>redundancies()</dt>
+<dd>
+
+<p>Returns a list of duplicated elements within the relation object. Each element of the returned list will be a reference to an anonymous array holding a set of relations considered redundancies of each other. Two relations are considered redundancies if one satisfies the other, meaning that if one relationship is satisfied, the other is necessarily satisfied. This relationship does not have to be commutative: the opposite implication may not hold.</p>
+
+</dd>
+<dt>restriction_less</dt>
+<dd>
+
+<p>Returns a restriction-less variant of this relation.</p>
+
+</dd>
+<dt>satisfies(RELATION)</dt>
+<dd>
+
+<p>Returns true if the relationship satisfies RELATION, meaning that if the Lintian::Relation object is satisfied, RELATION will always be satisfied. RELATION may be either a string or another Lintian::Relation object.</p>
+
+<p>By default, architecture restrictions are honored in RELATION if it is a string. If architecture restrictions should be ignored in RELATION, create a Lintian::Relation object with new_norestriction() and pass that in as RELATION instead of the string.</p>
+
+</dd>
+<dt>implies_array</dt>
+<dd>
+
+</dd>
+<dt>satisfies_inverse(RELATION)</dt>
+<dd>
+
+<p>Returns true if the relationship satisfies that RELATION is certainly false, meaning that if the Lintian::Relation object is satisfied, RELATION cannot be satisfied. RELATION may be either a string or another Lintian::Relation object.</p>
+
+<p>As with satisfies(), by default, architecture restrictions are honored in RELATION if it is a string. If architecture restrictions should be ignored in RELATION, create a Lintian::Relation object with new_norestriction() and pass that in as RELATION instead of the string.</p>
+
+</dd>
+<dt>implies_array_inverse</dt>
+<dd>
+
+</dd>
+<dt>to_string</dt>
+<dd>
+
+<p>Returns the textual form of a relationship. This converts the internal form back into the textual representation and returns that, not the original argument, so the spacing is standardized. Returns undef on internal failures (such as an object in an unexpected format).</p>
+
+</dd>
+<dt>matches (REGEX[, WHAT])</dt>
+<dd>
+
+<p>Check if one of the predicates in this relation matches REGEX. WHAT determines what is tested against REGEX and if not given, defaults to VISIT_PRED_NAME.</p>
+
+<p>This method will return a truth value if REGEX matches at least one predicate or clause (as defined by the WHAT parameter - see below).</p>
+
+<p>NOTE: Often <a href="#satisfies">&quot;satisfies&quot;</a> (or <a href="#satisfies_inverse">&quot;satisfies_inverse&quot;</a>) is a better choice than this method. This method should generally only be used when checking for a &quot;pattern&quot; package (e.g. phpapi-[\d\w+]+).</p>
+
+<p>WHAT can be one of:</p>
+
+<dl>
+
+<dt>VISIT_PRED_NAME</dt>
+<dd>
+
+<p>Match REGEX against the package name in each predicate (i.e. version and architecture constrains are ignored). Each predicate is tested in isolation. As an example:</p>
+
+<pre><code> my $rel = Lintian::Relation-&gt;new (&#39;somepkg | pkg-0 (&gt;= 1)&#39;);
+ # Will match (version is ignored)
+ $rel-&gt;matches (qr/^pkg-\d$/, VISIT_PRED_NAME);</code></pre>
+
+</dd>
+<dt>VISIT_PRED_FULL</dt>
+<dd>
+
+<p>Match REGEX against the full (normalized) predicate (i.e. including version and architecture). Each predicate is tested in isolation. As an example:</p>
+
+<pre><code> my $vrel = Lintian::Relation-&gt;new (&#39;somepkg | pkg-0 (&gt;= 1)&#39;);
+ my $uvrel = Lintian::Relation-&gt;new (&#39;somepkg | pkg-0&#39;);
+
+ # Will NOT match (does not match with version)
+ $vrel-&gt;matches (qr/^pkg-\d$/, VISIT_PRED_FULL);
+ # Will match (this relation does not have a version)
+ $uvrel-&gt;matches (qr/^pkg-\d$/, VISIT_PRED_FULL);
+
+ # Will match (but only because there is a version)
+ $vrel-&gt;matches (qr/^pkg-\d \(.*\)$/, VISIT_PRED_FULL);
+ # Will NOT match (there is no version in the relation)
+ $uvrel-&gt;matches (qr/^pkg-\d  \(.*\)$/, VISIT_PRED_FULL);</code></pre>
+
+</dd>
+<dt>VISIT_OR_CLAUSE_FULL</dt>
+<dd>
+
+<p>Match REGEX against the full (normalized) OR clause. Each predicate will have both version and architecture constrains present. As an example:</p>
+
+<pre><code> my $vpred = Lintian::Relation-&gt;new (&#39;pkg-0 (&gt;= 1)&#39;);
+ my $orrel = Lintian::Relation-&gt;new (&#39;somepkg | pkg-0 (&gt;= 1)&#39;);
+ my $rorrel = Lintian::Relation-&gt;new (&#39;pkg-0 (&gt;= 1) | somepkg&#39;);
+
+ # Will match
+ $vrel-&gt;matches (qr/^pkg-\d(?: \([^\)]\))?$/, VISIT_OR_CLAUSE_FULL);
+ # These Will NOT match (does not match the &quot;|&quot; and the &quot;somepkg&quot; part)
+ $orrel-&gt;matches (qr/^pkg-\d(?: \([^\)]\))?$/, VISIT_OR_CLAUSE_FULL);
+ $rorrel-&gt;matches (qr/^pkg-\d(?: \([^\)]\))?$/, VISIT_OR_CLAUSE_FULL);</code></pre>
+
+</dd>
+</dl>
+
+</dd>
+<dt>equals</dt>
+<dd>
+
+<p>Same for full-string matches. Satisfies the perlcritic policy RegularExpressions::ProhibitFixedStringMatches.</p>
+
+</dd>
+<dt>visit (CODE[, FLAGS])</dt>
+<dd>
+
+<p>Visit clauses or predicates of this relation. Each clause or predicate is passed to CODE as first argument and will be available as <code>$_</code>.</p>
+
+<p>The optional bitmask parameter, FLAGS, can be used to control what is visited and such. If FLAGS is not given, it defaults to VISIT_PRED_NAME. The possible values of FLAGS are:</p>
+
+<dl>
+
+<dt>VISIT_PRED_NAME</dt>
+<dd>
+
+<p>The package name in each predicate is visited, but the version and architecture part(s) are left out (if any).</p>
+
+</dd>
+<dt>VISIT_PRED_FULL</dt>
+<dd>
+
+<p>The full predicates are visited in turn. The predicate will be normalized (by <a href="#to_string">&quot;to_string&quot;</a>).</p>
+
+</dd>
+<dt>VISIT_OR_CLAUSE_FULL</dt>
+<dd>
+
+<p>CODE will be passed the full OR clauses of this relation. The clauses will be normalized (by <a href="#to_string">&quot;to_string&quot;</a>)</p>
+
+<p>Note: It will not visit the underlying predicates in the clause.</p>
+
+</dd>
+<dt>VISIT_STOP_FIRST_MATCH</dt>
+<dd>
+
+<p>Stop the visits the first time CODE returns a truth value. This is similar to <a href="https://metacpan.org/pod/List::Util#first">first</a>, except visit will return the value returned by CODE.</p>
+
+</dd>
+</dl>
+
+<p>Except where a given flag specifies otherwise, the return value of visit is last value returned by CODE (or <code>undef</code> for the empty relation).</p>
+
+</dd>
+<dt>is_empty</dt>
+<dd>
+
+<p>Returns a truth value if this relation is empty (i.e. it contains no predicates).</p>
+
+</dd>
+<dt>unparsable_predicates</dt>
+<dd>
+
+<p>Returns a list of predicates that were unparsable.</p>
+
+<p>They are returned in the original textual representation and are also sorted by said representation.</p>
+
+</dd>
+</dl>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Originally written by Russ Allbery &lt;rra@debian.org&gt; for Lintian.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>lintian(1)</p>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

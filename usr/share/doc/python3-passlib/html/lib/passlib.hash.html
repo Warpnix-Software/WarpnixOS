@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.hash - Password Hashing Schemes &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.hash.bcrypt - BCrypt" href="passlib.hash.bcrypt.html" />
+    <link rel="prev" title="passlib.ext.django - Django Password Hashing Plugin" href="passlib.ext.django.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.bcrypt.html" title="passlib.hash.bcrypt - BCrypt"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.ext.django.html" title="passlib.ext.django - Django Password Hashing Plugin"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-passlib.hash">
+<span id="passlib-hash-password-hashing-schemes"></span><h1><a class="reference internal" href="#module-passlib.hash" title="passlib.hash: all password hashes provided by Passlib"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code></a> - Password Hashing Schemes<a class="headerlink" href="#module-passlib.hash" title="Link to this heading">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> module contains all the password hash algorithms built into Passlib.
+While each hash has its own options and output format,
+they all inherit from the <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash" title="passlib.ifc.PasswordHash"><code class="xref py py-mod docutils literal notranslate"><span class="pre">PasswordHash</span></code></a> base interface.
+The following pages describe each hash in detail,
+including its format, underlying algorithm, and known security issues.</p>
+<div class="float-center admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>Many of the hash algorithms listed below are *NOT* secure.</strong></p>
+<p>Passlib supports a wide array of hash algorithms, primarily to
+support legacy data and systems.
+If you want to choose a secure algorithm for a new application,
+see the <a class="reference internal" href="../narr/quickstart.html"><span class="doc">Quickstart Guide</span></a>.</p>
+</div>
+<div class="float-center admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../narr/hash-tutorial.html#hash-tutorial"><span class="std std-ref">PasswordHash Tutorial</span></a> – for general usage examples</p>
+</div>
+</section>
+<section id="unix-hashes">
+<span id="mcf-hashes"></span><h2>Unix Hashes<a class="headerlink" href="#unix-hashes" title="Link to this heading">¶</a></h2>
+<p>Aside from “archaic” schemes such as <code class="xref py py-class docutils literal notranslate"><span class="pre">des_crypt</span></code>,
+most of the password hashes supported by modern Unix flavors
+adhere to the <a class="reference internal" href="../modular_crypt_format.html#modular-crypt-format"><span class="std std-ref">modular crypt format</span></a>,
+allowing them to be easily distinguished when used within the same file.
+Variants of this format’s basic <code class="samp docutils literal notranslate"><span class="pre">$</span><em><span class="pre">scheme</span></em><span class="pre">$</span><em><span class="pre">salt</span></em><span class="pre">$</span><em><span class="pre">digest</span></em></code> structure have also been adopted for use
+by other applications and password hash schemes.</p>
+<section class="toc-always-open" id="active-unix-hashes">
+<span id="standard-unix-hashes"></span><h3>Active Unix Hashes<a class="headerlink" href="#active-unix-hashes" title="Link to this heading">¶</a></h3>
+<p>All the following schemes are actively in use by various Unix flavors to store user passwords
+They all follow the modular crypt format.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.bcrypt.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.bcrypt</span></code> - BCrypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.sha256_crypt.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.sha256_crypt</span></code> - SHA-256 Crypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.sha512_crypt.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.sha512_crypt</span></code> - SHA-512 Crypt</a></li>
+</ul>
+</div>
+<p>Special note should be made of the following fallback helper,
+which is not an actual hash scheme, but implements the “disabled account marker”
+found in many Linux &amp; BSD password files:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.unix_disabled.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.unix_disabled</span></code> - Unix Disabled Account Helper</a></li>
+</ul>
+</div>
+</section>
+<section class="toc-always-open" id="deprecated-unix-hashes">
+<h3>Deprecated Unix Hashes<a class="headerlink" href="#deprecated-unix-hashes" title="Link to this heading">¶</a></h3>
+<p>The following schemes are supported by various Unix systems
+using the modular crypt format, but are no longer considered secure,
+and have been deprecated in favor of the <a class="reference internal" href="#active-unix-hashes">Active Unix Hashes</a> (above).</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="passlib.hash.nthash.html#passlib.hash.bsd_nthash" title="passlib.hash.bsd_nthash"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.bsd_nthash</span></code></a> - FreeBSD’s MCF-compatible encoding of <a class="reference internal" href="passlib.hash.nthash.html"><span class="doc">nthash</span></a> digests</p></li>
+</ul>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.md5_crypt.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.md5_crypt</span></code> - MD5 Crypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.sha1_crypt.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.sha1_crypt</span></code> - SHA-1 Crypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.sun_md5_crypt.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.sun_md5_crypt</span></code> - Sun MD5 Crypt</a></li>
+</ul>
+</div>
+</section>
+<section class="toc-always-open" id="archaic-unix-hashes">
+<span id="archaic-unix-schemes"></span><h3>Archaic Unix Hashes<a class="headerlink" href="#archaic-unix-hashes" title="Link to this heading">¶</a></h3>
+<p>The following schemes are supported by certain Unix systems,
+but are considered particularly archaic: Not only do they predate
+the modular crypt format, but they’re based on the outmoded DES block cipher,
+and are woefully insecure:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.des_crypt.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.des_crypt</span></code> - DES Crypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.bsdi_crypt.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.bsdi_crypt</span></code> - BSDi Crypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.bigcrypt.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.bigcrypt</span></code> - BigCrypt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.crypt16.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.crypt16</span></code> - Crypt16</a></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="other-modular-crypt-hashes">
+<h2>Other “Modular Crypt” Hashes<a class="headerlink" href="#other-modular-crypt-hashes" title="Link to this heading">¶</a></h2>
+<p>The <a class="reference internal" href="../modular_crypt_format.html#modular-crypt-format"><span class="std std-ref">modular crypt format</span></a> is a loose standard
+for password hash strings which started life under the Unix operating system,
+and is used by many of the Unix hashes (above).  However, it’s
+it’s basic <code class="samp docutils literal notranslate"><span class="pre">$</span><em><span class="pre">scheme</span></em><span class="pre">$</span><em><span class="pre">hash</span></em></code> format has also been adopted by a number
+of application-specific hash algorithms:</p>
+<section class="toc-always-open" id="active-hashes">
+<h3>Active Hashes<a class="headerlink" href="#active-hashes" title="Link to this heading">¶</a></h3>
+<p>While most of these schemes are generally application-specific,
+and are not natively supported by any Unix OS,
+they can be used compatibly along side other modular crypt format hashes:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.argon2.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.argon2</span></code> - Argon2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.bcrypt_sha256.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.bcrypt_sha256</span></code> - BCrypt+SHA256</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.phpass.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.phpass</span></code> - PHPass’ Portable Hash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.pbkdf2_digest.html"><code class="samp docutils literal notranslate"><span class="pre">passlib.hash.pbkdf2_</span><em><span class="pre">digest</span></em></code> - Generic PBKDF2 Hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.scram.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.scram</span></code> - SCRAM Hash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.scrypt.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.scrypt</span></code> - SCrypt</a></li>
+</ul>
+</div>
+</section>
+<section class="toc-always-open" id="deprecated-hashes">
+<h3>Deprecated Hashes<a class="headerlink" href="#deprecated-hashes" title="Link to this heading">¶</a></h3>
+<p>The following are some additional application-specific hashes which are still
+occasionally seen, use the modular crypt format, but are rarely used or weak
+enough that they have been deprecated:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.apr_md5_crypt.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.apr_md5_crypt</span></code> - Apache’s MD5-Crypt variant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.cta_pbkdf2_sha1.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.cta_pbkdf2_sha1</span></code> - Cryptacular’s PBKDF2 hash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.dlitz_pbkdf2_sha1.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.dlitz_pbkdf2_sha1</span></code> - Dwayne Litzenberger’s PBKDF2 hash</a></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="ldap-rfc2307-hashes">
+<span id="ldap-hashes"></span><h2>LDAP / RFC2307 Hashes<a class="headerlink" href="#ldap-rfc2307-hashes" title="Link to this heading">¶</a></h2>
+<p>All of the following hashes use a variant of the password hash format
+used by LDAPv2. Originally specified in <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2307.html"><strong>RFC 2307</strong></a> and used by OpenLDAP <a class="footnote-reference brackets" href="#openldap" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>,
+the basic format <code class="docutils literal notranslate"><span class="pre">{SCHEME}HASH</span></code> has seen widespread adoption in a number of programs.</p>
+<section id="standard-ldap-schemes">
+<span id="standard-ldap-hashes"></span><h3>Standard LDAP Schemes<a class="headerlink" href="#standard-ldap-schemes" title="Link to this heading">¶</a></h3>
+<div class="toctree-wrapper compound">
+</div>
+<p>The following schemes are explicitly defined by RFC 2307,
+and are supported by OpenLDAP.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="passlib.hash.ldap_std.html#passlib.hash.ldap_md5" title="passlib.hash.ldap_md5"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.ldap_md5</span></code></a> - MD5 digest</p></li>
+<li><p><a class="reference internal" href="passlib.hash.ldap_std.html#passlib.hash.ldap_sha1" title="passlib.hash.ldap_sha1"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.ldap_sha1</span></code></a> - SHA1 digest</p></li>
+<li><p><a class="reference internal" href="passlib.hash.ldap_std.html#passlib.hash.ldap_salted_md5" title="passlib.hash.ldap_salted_md5"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.ldap_salted_md5</span></code></a> - salted MD5 digest</p></li>
+<li><p><a class="reference internal" href="passlib.hash.ldap_std.html#passlib.hash.ldap_salted_sha1" title="passlib.hash.ldap_salted_sha1"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.ldap_salted_sha1</span></code></a> - salted SHA1 digest</p></li>
+<li><p><a class="reference internal" href="passlib.hash.ldap_std.html#passlib.hash.ldap_salted_sha256" title="passlib.hash.ldap_salted_sha256"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.ldap_salted_sha256</span></code></a> - salted SHA256 digest</p></li>
+<li><p><a class="reference internal" href="passlib.hash.ldap_std.html#passlib.hash.ldap_salted_sha512" title="passlib.hash.ldap_salted_sha512"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.ldap_salted_sha512</span></code></a> - salted SHA512 digest</p></li>
+</ul>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.ldap_crypt.html"><code class="samp docutils literal notranslate"><span class="pre">passlib.hash.ldap_</span><em><span class="pre">crypt</span></em></code> - LDAP crypt() Wrappers</a></li>
+</ul>
+</div>
+<ul class="simple">
+<li><p><a class="reference internal" href="passlib.hash.ldap_std.html#passlib.hash.ldap_plaintext" title="passlib.hash.ldap_plaintext"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.ldap_plaintext</span></code></a> - LDAP-Aware Plaintext Handler</p></li>
+</ul>
+</section>
+<section id="non-standard-ldap-schemes">
+<h3>Non-Standard LDAP Schemes<a class="headerlink" href="#non-standard-ldap-schemes" title="Link to this heading">¶</a></h3>
+<p>None of the following schemes are actually used by LDAP,
+but follow the LDAP format:</p>
+<div class="toctree-wrapper compound">
+</div>
+<ul class="simple">
+<li><p><a class="reference internal" href="passlib.hash.ldap_other.html#passlib.hash.ldap_hex_md5" title="passlib.hash.ldap_hex_md5"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.ldap_hex_md5</span></code></a> - Hex-encoded MD5 Digest</p></li>
+<li><p><a class="reference internal" href="passlib.hash.ldap_other.html#passlib.hash.ldap_hex_sha1" title="passlib.hash.ldap_hex_sha1"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.ldap_hex_sha1</span></code></a> - Hex-encoded SHA1 Digest</p></li>
+</ul>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.ldap_pbkdf2_digest.html"><code class="samp docutils literal notranslate"><span class="pre">passlib.hash.ldap_pbkdf2_</span><em><span class="pre">digest</span></em></code> - Generic PBKDF2 Hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.atlassian_pbkdf2_sha1.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.atlassian_pbkdf2_sha1</span></code> - Atlassian’s PBKDF2-based Hash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.fshp.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.fshp</span></code> - Fairly Secure Hashed Password</a></li>
+</ul>
+</div>
+<ul class="simple">
+<li><p><a class="reference internal" href="passlib.hash.ldap_other.html#passlib.hash.roundup_plaintext" title="passlib.hash.roundup_plaintext"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.roundup_plaintext</span></code></a> - Roundup-specific LDAP Plaintext Handler</p></li>
+</ul>
+</section>
+</section>
+<section id="sql-database-hashes">
+<span id="database-hashes"></span><h2>SQL Database Hashes<a class="headerlink" href="#sql-database-hashes" title="Link to this heading">¶</a></h2>
+<p>The following schemes are used by various SQL databases
+to encode their own user accounts.
+These schemes have encoding and contextual requirements
+not seen outside those specific contexts:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.mssql2000.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mssql2000</span></code> - MS SQL 2000 password hash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.mssql2005.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mssql2005</span></code> - MS SQL 2005 password hash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.mysql323.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mysql323</span></code> - MySQL 3.2.3 password hash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.mysql41.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mysql41</span></code> - MySQL 4.1 password hash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.postgres_md5.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.postgres_md5</span></code> - PostgreSQL MD5 password hash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.oracle10.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.oracle10</span></code> - Oracle 10g password hash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.oracle11.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.oracle11</span></code> - Oracle 11g password hash</a></li>
+</ul>
+</div>
+</section>
+<section id="ms-windows-hashes">
+<span id="windows-hashes"></span><h2>MS Windows Hashes<a class="headerlink" href="#ms-windows-hashes" title="Link to this heading">¶</a></h2>
+<p>The following hashes are used in various places by Microsoft Windows.
+As they were designed for “internal” use, they generally contain
+no identifying markers, identifying them is pretty much context-dependant.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.lmhash.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.lmhash</span></code> - LanManager Hash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.nthash.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.nthash</span></code> - Windows’ NT-HASH</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.msdcc.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.msdcc</span></code> - Windows’ Domain Cached Credentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.msdcc2.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.msdcc2</span></code> - Windows’ Domain Cached Credentials v2</a></li>
+</ul>
+</div>
+</section>
+<section class="toc-always-toggle" id="cisco-hashes">
+<h2>Cisco Hashes<a class="headerlink" href="#cisco-hashes" title="Link to this heading">¶</a></h2>
+<p><strong>Cisco IOS</strong></p>
+<p>The following hashes are used in various places on Cisco IOS, and
+are usually referred to by a Cisco-assigned “type” code:</p>
+<div class="toctree-wrapper hidden compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.cisco_type7.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.cisco_type7</span></code> - Cisco “Type 7” hash</a></li>
+</ul>
+</div>
+<ul>
+<li><p><a class="reference internal" href="passlib.hash.md5_crypt.html"><span class="doc">passlib.hash.md5_crypt</span></a> – “Type 5” hashes are actually just the standard
+Unix MD5-Crypt hash, the format is identical.</p></li>
+<li><p><a class="reference internal" href="passlib.hash.cisco_type7.html"><span class="doc">passlib.hash.cisco_type7</span></a> – “Type 7” isn’t actually a hash,
+but a reversible encoding designed to obscure passwords from idle view.</p></li>
+<li><p>“Type 8” hashes are based on PBKDF2-HMAC-SHA256;
+but not currently supported by passlib (<a href="#id2"><span class="problematic" id="id3">:issue:`87`</span></a>).</p>
+<aside class="system-message" id="id2">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/lib/passlib.hash.rst</span>, line 269); <em><a href="#id3">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+<li><p>“Type 9” hashes are based on scrypt;
+but not currently supported by passlib (<a href="#id4"><span class="problematic" id="id5">:issue:`87`</span></a>).</p>
+<aside class="system-message" id="id4">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/lib/passlib.hash.rst</span>, line 272); <em><a href="#id5">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+</ul>
+<p><strong>Cisco PIX &amp; ASA</strong></p>
+<p>Separately from this, Cisco PIX &amp; ASA firewalls have their own hash formats,
+generally identified by the “format” parameter in the <code class="samp docutils literal notranslate"><span class="pre">username</span> <em><span class="pre">user</span></em> <span class="pre">password</span> <em><span class="pre">hash</span></em> <em><span class="pre">format</span></em></code> config line
+they occur in.  The following are known &amp; handled by passlib:</p>
+<div class="toctree-wrapper hidden compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.cisco_pix.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.cisco_pix</span></code> - Cisco PIX MD5 hash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.cisco_asa.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.cisco_asa</span></code> - Cisco ASA MD5 hash</a></li>
+</ul>
+</div>
+<ul>
+<li><p><a class="reference internal" href="passlib.hash.cisco_pix.html"><span class="doc">passlib.hash.cisco_pix</span></a> – PIX “encrypted” hashes
+use a simple unsalted MD5-based algorithm.</p></li>
+<li><p><a class="reference internal" href="passlib.hash.cisco_asa.html"><span class="doc">passlib.hash.cisco_asa</span></a> – ASA “encrypted” hashes
+use a similar algorithm to PIX, with some minor improvements.</p></li>
+<li><p>ASA “nt-encrypted” hashes
+are the same as <a class="reference internal" href="passlib.hash.nthash.html#passlib.hash.nthash" title="passlib.hash.nthash"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.nthash</span></code></a>,
+except that they use base64 encoding rather than hexadecimal.</p></li>
+<li><p>ASA 9.5 added support for “pbkdf2” hashes
+(based on PBKDF2-HMAC-SHA512); which aren’t currently supported
+by passlib (<a href="#id6"><span class="problematic" id="id7">:issue:`87`</span></a>).</p>
+<aside class="system-message" id="id6">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/lib/passlib.hash.rst</span>, line 299); <em><a href="#id7">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+</ul>
+</section>
+<section id="other-hashes">
+<span id="id8"></span><h2>Other Hashes<a class="headerlink" href="#other-hashes" title="Link to this heading">¶</a></h2>
+<p>The following schemes are used in various contexts,
+but have formats or uses which cannot be easily placed
+in one of the above categories:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.django_std.html"><code class="samp docutils literal notranslate"><span class="pre">passlib.hash.django_</span><em><span class="pre">digest</span></em></code> - Django-specific Hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.grub_pbkdf2_sha512.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.grub_pbkdf2_sha512</span></code> - Grub’s PBKDF2 Hash</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.hex_digests.html"><code class="samp docutils literal notranslate"><span class="pre">passlib.hash.hex_</span><em><span class="pre">digest</span></em></code> - Generic Hexadecimal Digests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.hash.plaintext.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.plaintext</span></code> - Plaintext</a></li>
+</ul>
+</div>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="openldap" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>OpenLDAP homepage - <a class="reference external" href="http://www.openldap.org/">http://www.openldap.org/</a>.</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unix-hashes">Unix Hashes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#active-unix-hashes">Active Unix Hashes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deprecated-unix-hashes">Deprecated Unix Hashes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#archaic-unix-hashes">Archaic Unix Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#other-modular-crypt-hashes">Other “Modular Crypt” Hashes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#active-hashes">Active Hashes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deprecated-hashes">Deprecated Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ldap-rfc2307-hashes">LDAP / RFC2307 Hashes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#standard-ldap-schemes">Standard LDAP Schemes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#non-standard-ldap-schemes">Non-Standard LDAP Schemes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sql-database-hashes">SQL Database Hashes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.mssql2000.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mssql2000</span></code> - MS SQL 2000 password hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.mssql2005.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mssql2005</span></code> - MS SQL 2005 password hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.mysql323.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mysql323</span></code> - MySQL 3.2.3 password hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.mysql41.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mysql41</span></code> - MySQL 4.1 password hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.postgres_md5.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.postgres_md5</span></code> - PostgreSQL MD5 password hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.oracle10.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.oracle10</span></code> - Oracle 10g password hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.oracle11.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.oracle11</span></code> - Oracle 11g password hash</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ms-windows-hashes">MS Windows Hashes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.lmhash.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.lmhash</span></code> - LanManager Hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.nthash.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.nthash</span></code> - Windows’ NT-HASH</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.msdcc.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.msdcc</span></code> - Windows’ Domain Cached Credentials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.msdcc2.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.msdcc2</span></code> - Windows’ Domain Cached Credentials v2</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#cisco-hashes">Cisco Hashes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.cisco_type7.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.cisco_type7</span></code> - Cisco “Type 7” hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.cisco_pix.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.cisco_pix</span></code> - Cisco PIX MD5 hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.cisco_asa.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.cisco_asa</span></code> - Cisco ASA MD5 hash</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#other-hashes">Other Hashes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.django_std.html"><code class="samp docutils literal notranslate"><span class="pre">passlib.hash.django_</span><em><span class="pre">digest</span></em></code> - Django-specific Hashes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.grub_pbkdf2_sha512.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.grub_pbkdf2_sha512</span></code> - Grub’s PBKDF2 Hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.hex_digests.html"><code class="samp docutils literal notranslate"><span class="pre">passlib.hash.hex_</span><em><span class="pre">digest</span></em></code> - Generic Hexadecimal Digests</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.plaintext.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.plaintext</span></code> - Plaintext</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.bcrypt.html" title="passlib.hash.bcrypt - BCrypt"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.ext.django.html" title="passlib.ext.django - Django Password Hashing Plugin"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

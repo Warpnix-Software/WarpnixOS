@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Lintian::Changelog::Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#CLASS-METHODS">CLASS METHODS</a></li>
+  <li><a href="#INSTANCE-METHODS">INSTANCE METHODS</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Lintian::Changelog::Version -- Parse a literal version string into its constituents</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code> use Lintian::Changelog::Version;
+
+ my $version = Lintian::Changelog::Version-&gt;new;
+ $version-&gt;assign(&#39;1.2.3-4&#39;, undef);</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>A class for parsing literal version strings</p>
+
+<h1 id="CLASS-METHODS">CLASS METHODS</h1>
+
+<dl>
+
+<dt>new ()</dt>
+<dd>
+
+<p>Creates a new Lintian::Changelog::Version object.</p>
+
+</dd>
+</dl>
+
+<h1 id="INSTANCE-METHODS">INSTANCE METHODS</h1>
+
+<dl>
+
+<dt>assign (LITERAL, NATIVE)</dt>
+<dd>
+
+<p>Assign the various members in the Lintian::Changelog::Version object using the LITERAL version string and the NATIVE boolean selector.</p>
+
+</dd>
+<dt>literal</dt>
+<dd>
+
+</dd>
+<dt>epoch</dt>
+<dd>
+
+</dd>
+<dt>no_epoch</dt>
+<dd>
+
+</dd>
+<dt>upstream</dt>
+<dd>
+
+</dd>
+<dt>maintainer_revision</dt>
+<dd>
+
+</dd>
+<dt>debian_source</dt>
+<dd>
+
+</dd>
+<dt>debian_no_epoch</dt>
+<dd>
+
+</dd>
+<dt>source_nmu</dt>
+<dd>
+
+</dd>
+<dt>binary_nmu</dt>
+<dd>
+
+</dd>
+<dt>without_source_nmu</dt>
+<dd>
+
+</dd>
+<dt>debian_without_backport</dt>
+<dd>
+
+</dd>
+<dt>backport_release</dt>
+<dd>
+
+</dd>
+<dt>backport_revision</dt>
+<dd>
+
+</dd>
+<dt>without_backport</dt>
+<dd>
+
+</dd>
+</dl>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Originally written by Felix Lechner &lt;felix.lechner@lease-up.com&gt; for Lintian.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>lintian(1)</p>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

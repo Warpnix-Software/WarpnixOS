@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.hash.pbkdf2_digest - Generic PBKDF2 Hashes &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.hash.scram - SCRAM Hash" href="passlib.hash.scram.html" />
+    <link rel="prev" title="passlib.hash.phpass - PHPass’ Portable Hash" href="passlib.hash.phpass.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.scram.html" title="passlib.hash.scram - SCRAM Hash"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.phpass.html" title="passlib.hash.phpass - PHPass’ Portable Hash"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="samp docutils literal notranslate"><span class="pre">passlib.hash.pbkdf2_</span><em><span class="pre">digest</span></em></code> - Generic PBKDF2 Hashes</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-hash-pbkdf2-digest-generic-pbkdf2-hashes">
+<h1><code class="samp docutils literal notranslate"><span class="pre">passlib.hash.pbkdf2_</span><em><span class="pre">digest</span></em></code> - Generic PBKDF2 Hashes<a class="headerlink" href="#passlib-hash-pbkdf2-digest-generic-pbkdf2-hashes" title="Link to this heading">¶</a></h1>
+<p id="index-0">Passlib provides three custom hash schemes based on the PBKDF2 <a class="footnote-reference brackets" href="#pbkdf2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> algorithm
+which are compatible with the <a class="reference internal" href="../modular_crypt_format.html#modular-crypt-format"><span class="std std-ref">modular crypt format</span></a>:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#passlib.hash.pbkdf2_sha1" title="passlib.hash.pbkdf2_sha1"><code class="xref py py-class docutils literal notranslate"><span class="pre">pbkdf2_sha1</span></code></a></p></li>
+<li><p><a class="reference internal" href="#passlib.hash.pbkdf2_sha256" title="passlib.hash.pbkdf2_sha256"><code class="xref py py-class docutils literal notranslate"><span class="pre">pbkdf2_sha256</span></code></a></p></li>
+<li><p><a class="reference internal" href="#passlib.hash.pbkdf2_sha512" title="passlib.hash.pbkdf2_sha512"><code class="xref py py-class docutils literal notranslate"><span class="pre">pbkdf2_sha512</span></code></a></p></li>
+</ul>
+<p>Security-wise, PBKDF2 is currently one of the leading key derivation functions,
+and has no known security issues.
+Though the original PBKDF2 specification uses the SHA-1 message digest,
+it is not vulnerable to any of the known weaknesses of SHA-1 <a class="footnote-reference brackets" href="#hmac-sha1" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>,
+and can be safely used. However, for those still concerned, SHA-256 and SHA-512
+versions are offered as well.
+PBKDF2-SHA512 is one of the four hashes Passlib
+<a class="reference internal" href="../narr/quickstart.html#recommended-hashes"><span class="std std-ref">recommends</span></a> for new applications.</p>
+<p>All of these classes can be used directly as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.hash</span> <span class="kn">import</span> <span class="n">pbkdf2_sha256</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># generate new salt, hash password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span> <span class="o">=</span> <span class="n">pbkdf2_sha256</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span>
+<span class="go">&#39;$pbkdf2-sha256$6400$0ZrzXitFSGltTQnBWOsdAw$Y11AchqV4b0sUisdZd0Xr97KWoymNE0LNNrnEgY4H9M&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># same, but with an explicit number of rounds and salt length</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pbkdf2_sha256</span><span class="o">.</span><span class="n">using</span><span class="p">(</span><span class="n">rounds</span><span class="o">=</span><span class="mi">8000</span><span class="p">,</span> <span class="n">salt_size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="go">&#39;$pbkdf2-sha256$8000$XAuBMIYQQogxRg$tRRlz8hYn63B9LYiCd6PRo6FMiunY9ozmMMI3srxeRE&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># verify the password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pbkdf2_sha256</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pbkdf2_sha256</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;wrong&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../narr/hash-tutorial.html#password-hash-examples"><span class="std std-ref">password hash usage</span></a> – for more usage examples</p></li>
+<li><p><a class="reference internal" href="passlib.hash.ldap_pbkdf2_digest.html"><span class="doc">ldap_pbkdf2_{digest}</span></a> –
+alternate LDAP-compatible versions of these hashes.</p></li>
+</ul>
+</div>
+<section id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.pbkdf2_sha256">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">pbkdf2_sha256</span></span><a class="headerlink" href="#passlib.hash.pbkdf2_sha256" title="Link to this definition">¶</a></dt>
+<dd><p>This class implements a generic <code class="docutils literal notranslate"><span class="pre">PBKDF2-HMAC-SHA256</span></code>-based password hash, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>It supports a variable-length salt, and a variable number of rounds.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">using()</span></code></a> method accepts the following optional keywords:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>salt</strong> (<em>bytes</em>) – Optional salt bytes.
+If specified, the length must be between 0-1024 bytes.
+If not specified, a 16 byte salt will be autogenerated (this is recommended).</p></li>
+<li><p><strong>salt_size</strong> (<em>int</em>) – Optional number of bytes to use when autogenerating new salts.
+Defaults to 16 bytes, but can be any value between 0 and 1024.</p></li>
+<li><p><strong>rounds</strong> (<em>int</em>) – Optional number of rounds to use.
+Defaults to 29000, but must be within <code class="docutils literal notranslate"><span class="pre">range(1,1&lt;&lt;32)</span></code>.</p></li>
+<li><p><strong>relaxed</strong> (<em>bool</em>) – <p>By default, providing an invalid value for one of the other
+keywords will result in a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>. If <code class="docutils literal notranslate"><span class="pre">relaxed=True</span></code>,
+and the error can be corrected, a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasslibHashWarning" title="passlib.exc.PasslibHashWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasslibHashWarning</span></code></a>
+will be issued instead. Correctable errors include <code class="docutils literal notranslate"><span class="pre">rounds</span></code>
+that are too small or too large, and <code class="docutils literal notranslate"><span class="pre">salt</span></code> strings that are too long.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.pbkdf2_sha512">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">pbkdf2_sha512</span></span><a class="headerlink" href="#passlib.hash.pbkdf2_sha512" title="Link to this definition">¶</a></dt>
+<dd><p>except for the choice of message digest,
+this class is the same as <a class="reference internal" href="#passlib.hash.pbkdf2_sha256" title="passlib.hash.pbkdf2_sha256"><code class="xref py py-class docutils literal notranslate"><span class="pre">pbkdf2_sha256</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.pbkdf2_sha1">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">pbkdf2_sha1</span></span><a class="headerlink" href="#passlib.hash.pbkdf2_sha1" title="Link to this definition">¶</a></dt>
+<dd><p>except for the choice of message digest,
+this class is the same as <a class="reference internal" href="#passlib.hash.pbkdf2_sha256" title="passlib.hash.pbkdf2_sha256"><code class="xref py py-class docutils literal notranslate"><span class="pre">pbkdf2_sha256</span></code></a>.</p>
+</dd></dl>
+
+</section>
+<section id="format-algorithm">
+<span id="mcf-pbkdf2-format"></span><h2>Format &amp; Algorithm<a class="headerlink" href="#format-algorithm" title="Link to this heading">¶</a></h2>
+<p>An example <code class="xref py py-class docutils literal notranslate"><span class="pre">pbkdf2_sha256</span></code> hash (of <code class="docutils literal notranslate"><span class="pre">password</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$pbkdf2-sha256$6400$.6UI/S.nXIk8jcbdHx3Fhg$98jZicV16ODfEsEZeYPGHU3kbrUrvUEXOPimVSQDD44
+</pre></div>
+</div>
+<p>All of the pbkdf2 hashes defined by passlib
+follow the same format, <code class="samp docutils literal notranslate"><span class="pre">$pbkdf2-</span><em><span class="pre">digest</span></em><span class="pre">$</span><em><span class="pre">rounds</span></em><span class="pre">$</span><em><span class="pre">salt</span></em><span class="pre">$</span><em><span class="pre">checksum</span></em></code>.</p>
+<ul class="simple">
+<li><p><code class="samp docutils literal notranslate"><span class="pre">$pbkdf2-</span><em><span class="pre">digest</span></em><span class="pre">$</span></code> is used as the <a class="reference internal" href="../modular_crypt_format.html#modular-crypt-format"><span class="std std-ref">Modular Crypt Format</span></a> identifier
+(<code class="docutils literal notranslate"><span class="pre">$pbkdf2-sha256$</span></code> in the example).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">digest</span></em></code> - this specifies the particular cryptographic hash
+used in conjunction with HMAC to form PBKDF2’s pseudorandom function
+for that particular hash (<code class="docutils literal notranslate"><span class="pre">sha256</span></code> in the example).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">rounds</span></em></code> - the number of iterations that should be performed.
+this is encoded as a positive decimal number with no zero-padding
+(<code class="docutils literal notranslate"><span class="pre">6400</span></code> in the example).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">salt</span></em></code> - this is the <a class="reference internal" href="passlib.utils.binary.html#passlib.utils.binary.ab64_encode" title="passlib.utils.binary.ab64_encode"><code class="xref py py-func docutils literal notranslate"><span class="pre">adapted</span> <span class="pre">base64</span> <span class="pre">encoding</span></code></a>
+of the raw salt bytes passed into the PBKDF2 function.</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">checksum</span></em></code> - this is the <a class="reference internal" href="passlib.utils.binary.html#passlib.utils.binary.ab64_encode" title="passlib.utils.binary.ab64_encode"><code class="xref py py-func docutils literal notranslate"><span class="pre">adapted</span> <span class="pre">base64</span> <span class="pre">encoding</span></code></a>
+of the raw derived key bytes returned from the PBKDF2 function.
+Each scheme uses the digest size of its specific hash algorithm (<code class="samp docutils literal notranslate"><em><span class="pre">digest</span></em></code>)
+as the size of the raw derived key. This is enlarged
+by approximately 4/3 by the base64 encoding,
+resulting in a checksum size of 27, 43, and 86 for each of the respective algorithms listed above.</p></li>
+</ul>
+<p>The algorithm used by all of these schemes is deliberately identical and simple:
+The password is encoded into UTF-8 if not already encoded,
+and run through <a class="reference internal" href="passlib.crypto.digest.html#passlib.crypto.digest.pbkdf2_hmac" title="passlib.crypto.digest.pbkdf2_hmac"><code class="xref py py-func docutils literal notranslate"><span class="pre">pbkdf2_hmac()</span></code></a>
+along with the decoded salt, the number of rounds,
+and a prf built from HMAC + the respective message digest.
+The result is then encoded using <a class="reference internal" href="passlib.utils.binary.html#passlib.utils.binary.ab64_encode" title="passlib.utils.binary.ab64_encode"><code class="xref py py-func docutils literal notranslate"><span class="pre">ab64_encode()</span></code></a>.</p>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="pbkdf2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>The specification for the PBKDF2 algorithm - <a class="reference external" href="http://tools.ietf.org/html/rfc2898#section-5.2">http://tools.ietf.org/html/rfc2898#section-5.2</a>,
+part of <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2898.html"><strong>RFC 2898</strong></a>.</p>
+</aside>
+<aside class="footnote brackets" id="hmac-sha1" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>While SHA1 has fallen to collision attacks, HMAC-SHA1 as used by PBKDF2
+is still considered secure - <a class="reference external" href="http://www.schneier.com/blog/archives/2005/02/sha1_broken.html">http://www.schneier.com/blog/archives/2005/02/sha1_broken.html</a>.</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#unix-hashes">Unix Hashes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="passlib.hash.html#other-modular-crypt-hashes">Other “Modular Crypt” Hashes</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="passlib.hash.html#active-hashes">Active Hashes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.html#deprecated-hashes">Deprecated Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ldap-rfc2307-hashes">LDAP / RFC2307 Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#sql-database-hashes">SQL Database Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ms-windows-hashes">MS Windows Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#cisco-hashes">Cisco Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-hashes">Other Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.scram.html" title="passlib.hash.scram - SCRAM Hash"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.phpass.html" title="passlib.hash.phpass - PHPass’ Portable Hash"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="samp docutils literal notranslate"><span class="pre">passlib.hash.pbkdf2_</span><em><span class="pre">digest</span></em></code> - Generic PBKDF2 Hashes</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Test::Lintian::Helper</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#FUNCTIONS">FUNCTIONS</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Test::Lintian::Helper -- Helper functions for various testing parts</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>  use Test::Lintian::Helper qw(get_latest_policy);
+  my $policy_version = get_latest_policy();</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Helper functions for preparing and running Lintian tests.</p>
+
+<h1 id="FUNCTIONS">FUNCTIONS</h1>
+
+<dl>
+
+<dt>cache_dpkg_architecture_values()</dt>
+<dd>
+
+<p>Ensures that the output from dpkg-architecture has been cached.</p>
+
+</dd>
+<dt>get_latest_policy()</dt>
+<dd>
+
+<p>Returns a list with two elements. The first is the most recent version of the Debian policy. The second is its effective date.</p>
+
+</dd>
+<dt>get_recommended_debhelper_version()</dt>
+<dd>
+
+<p>Returns the version of debhelper recommended in &#39;debhelper/compat-level&#39; via Lintian::Data, relative to the established LINTIAN_BASE.</p>
+
+</dd>
+<dt>copy_dir_contents(SRC_DIR, TARGET_DIR)</dt>
+<dd>
+
+<p>Populates TARGET_DIR with files/dirs from SRC_DIR, preserving all attributes but dereferencing links. For an empty directory, no dummy file is required.</p>
+
+</dd>
+<dt>rfc822date(EPOCH)</dt>
+<dd>
+
+<p>Returns a string with the date and time described by EPOCH, formatted according to RFC822.</p>
+
+</dd>
+</dl>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

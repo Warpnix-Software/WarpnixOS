@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Lintian::Changelog::Entry</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a>
+    <ul>
+      <li><a href="#Methods">Methods</a>
+        <ul>
+          <li><a href="#init">init</a></li>
+          <li><a href="#new">new</a></li>
+          <li><a href="#is_empty">is_empty</a></li>
+        </ul>
+      </li>
+      <li><a href="#Accessors">Accessors</a></li>
+    </ul>
+  </li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Lintian::Changelog::Entry - represents one entry in a Debian changelog</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<h2 id="Methods">Methods</h2>
+
+<h3 id="init">init</h3>
+
+<p>Creates a new object, no options.</p>
+
+<h3 id="new">new</h3>
+
+<p>Alias for init.</p>
+
+<h3 id="is_empty">is_empty</h3>
+
+<p>Checks if the object is actually initialized with data. Due to limitations in Parse::DebianChangelog this currently simply checks if one of the fields Source, Version, Maintainer, Date, or Changes is initialized.</p>
+
+<h2 id="Accessors">Accessors</h2>
+
+<p>The following fields are available via accessor functions (all fields are string values unless otherwise noted):</p>
+
+<dl>
+
+<dt>Source</dt>
+<dd>
+
+</dd>
+<dt>Version</dt>
+<dd>
+
+</dd>
+<dt>Distribution</dt>
+<dd>
+
+</dd>
+<dt>Urgency</dt>
+<dd>
+
+</dd>
+<dt>Urgency_Comment</dt>
+<dd>
+
+</dd>
+<dt><code>Urgency_LC</code></dt>
+<dd>
+
+</dd>
+<dt><code>ExtraFields</code></dt>
+<dd>
+
+<p>Extra_Fields (all fields except for urgency as hash; POD spelling forces the underscore)</p>
+
+</dd>
+<dt>Header</dt>
+<dd>
+
+<p>Header (the whole header in verbatim form)</p>
+
+</dd>
+<dt>Changes</dt>
+<dd>
+
+<p>Changes (the actual content of the bug report, in verbatim form)</p>
+
+</dd>
+<dt>Trailer</dt>
+<dd>
+
+<p>Trailer (the whole trailer in verbatim form)</p>
+
+</dd>
+<dt>Closes</dt>
+<dd>
+
+<p>Closes (Array of bug numbers)</p>
+
+</dd>
+<dt>Maintainer</dt>
+<dd>
+
+</dd>
+<dt><code>MaintainerEmail</code></dt>
+<dd>
+
+</dd>
+<dt>Date</dt>
+<dd>
+
+</dd>
+<dt>Timestamp</dt>
+<dd>
+
+<p>Timestamp (Date expressed in seconds since the epoch)</p>
+
+</dd>
+<dt>ERROR</dt>
+<dd>
+
+<p>Last parse error related to this entry in the format described at Parse::DebianChangelog::get_parse_errors.</p>
+
+</dd>
+<dt>position</dt>
+<dd>
+
+</dd>
+</dl>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>Originally based on Parse::DebianChangelog by Frank Lichtenheld, &lt;frank@lichtenheld.de&gt;</p>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Written by Felix Lechner &lt;felix.lechner@lease-up.com&gt; for Lintian in response to #933134.</p>
+
+<h1 id="COPYRIGHT-AND-LICENSE">COPYRIGHT AND LICENSE</h1>
+
+<p>Please see in the code; FSF&#39;s standard short text triggered a POD spelling error here.</p>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

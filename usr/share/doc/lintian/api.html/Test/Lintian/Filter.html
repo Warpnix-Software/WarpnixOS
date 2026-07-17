@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Test::Lintian::Filter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#FUNCTIONS">FUNCTIONS</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Test::Lintian::Filter -- Functions to select with tests to run</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>  use Test::Lintian::Filter qw(find_selected_lintian_testpaths);
+  my @testpaths = find_selected_lintian_testpaths(&#39;suite:changes&#39;);</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Functions that parse the optional argument &#39;only_run&#39; to find the tests that are supposed to run.</p>
+
+<h1 id="FUNCTIONS">FUNCTIONS</h1>
+
+<dl>
+
+<dt>get_suitepath(TEST_SET, SUITE)</dt>
+<dd>
+
+<p>Returns a string containing all test belonging to suite SUITE relative to path TEST_SET.</p>
+
+</dd>
+<dt>find_selected_scripts(SCRIPT_PATH, ONLY_RUN)</dt>
+<dd>
+
+<p>Find all test scripts in SCRIPT_PATH that are identified by the user&#39;s selection string ONLY_RUN.</p>
+
+</dd>
+<dt>find_selected_lintian_testpaths(TEST_SET, ONLY_RUN)</dt>
+<dd>
+
+<p>Find all those test paths with Lintian tests located in the directory TEST_SET and identified by the user&#39;s selection string ONLY_RUN.</p>
+
+</dd>
+<dt>find_all_testpaths(PATH)</dt>
+<dd>
+
+<p>Returns an array containing all test paths located under PATH. They are identified as test paths by a specially named file containing the test description (presently &#39;desc&#39;).</p>
+
+</dd>
+<dt>find_testpaths_by_name(PATH, NAME)</dt>
+<dd>
+
+<p>Returns an array containing all test paths with the name NAME located under PATH. The test paths are identified as such by a specially named file containing the test description (presently &#39;desc&#39;).</p>
+
+</dd>
+<dt>find_all_tags(TEST_PATH)</dt>
+<dd>
+
+<p>Returns an array containing all tags that somehow concern the test located in TEST_PATH.</p>
+
+</dd>
+</dl>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Lintian::Relation::Version</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#FUNCTIONS">FUNCTIONS</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Lintian::Relation::Version - Comparison operators on Debian versions</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>    print encode_utf8(&quot;yes\n&quot;) if versions_equal(&#39;1.0&#39;, &#39;1.00&#39;);
+    print encode_utf8(&quot;yes\n&quot;) if versions_gte(&#39;1.1&#39;, &#39;1.0&#39;);
+    print encode_utf8(&quot;no\n&quot;) if versions_lte(&#39;1.1&#39;, &#39;1.0&#39;);
+    print encode_utf8(&quot;yes\n&quot;) if versions_gt(&#39;1.1&#39;, &#39;1.0&#39;);
+    print encode_utf8(&quot;no\n&quot;) if versions_lt(&#39;1.1&#39;, &#39;1.1&#39;);
+    print encode_utf8(&quot;yes\n&quot;) if versions_compare(&#39;1.1&#39;, &#39;&lt;=&#39;, &#39;1.1&#39;);</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>This module provides five functions for comparing version numbers. The underlying implementation uses <code>libapt-pkg-perl</code> to ensure that the results match what dpkg will expect.</p>
+
+<h1 id="FUNCTIONS">FUNCTIONS</h1>
+
+<dl>
+
+<dt>versions_equal(A, B)</dt>
+<dd>
+
+<p>Returns true if A is equal to B (<code>=</code>) and false otherwise.</p>
+
+</dd>
+<dt>versions_lte(A, B)</dt>
+<dd>
+
+<p>Returns true if A is less than or equal (<code>&lt;=</code>) to B and false otherwise.</p>
+
+</dd>
+<dt>versions_gte(A, B)</dt>
+<dd>
+
+<p>Returns true if A is greater than or equal (<code>&gt;=</code>) to B and false otherwise.</p>
+
+</dd>
+<dt>versions_lt(A, B)</dt>
+<dd>
+
+<p>Returns true if A is less than (<code>&lt;&lt;</code>) B and false otherwise.</p>
+
+</dd>
+<dt>versions_gt(A, B)</dt>
+<dd>
+
+<p>Returns true if A is greater than (<code>&gt;&gt;</code>) B and false otherwise.</p>
+
+</dd>
+<dt>versions_compare(A, OP, B)</dt>
+<dd>
+
+<p>Returns true if A OP B, where OP is one of <code>=</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>&lt;&lt;</code>, or <code>&gt;&gt;</code>, and false otherwise.</p>
+
+</dd>
+<dt>versions_comparator (A, B)</dt>
+<dd>
+
+<p>Returns -1, 0 or 1 if the version A is (respectively) less than, equal to or greater than B. This is useful for (e.g.) sorting a list of versions:</p>
+
+<pre><code> foreach my $version (sort versions_comparator @versions) {
+    ...
+ }</code></pre>
+
+</dd>
+</dl>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Originally written by Russ Allbery &lt;rra@debian.org&gt; for Lintian and adapted to use libapt-pkg-perl by Adam D. Barratt &lt;adam@adam-barratt-org.uk&gt;.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>lintian(1)</p>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

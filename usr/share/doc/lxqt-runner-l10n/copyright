@@ -1,0 +1,33 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: lxqt-runner
+Source: https://github.com/lxqt/lxqt-runner
+
+Files: *
+Copyright: 2012-2025 LXQt team
+           2010-2013 Razor team
+License: LGPL-2.1+
+
+Files: debian/*
+Copyright: 2014-2019 Alf Gaida <agaida@siduction.org>
+           2015      Andrew Lee <ajqlee@debian.org>
+           2015      Shih-Yuan Lee (FourDollars) <fourdollars@gmail.com>
+           2021      apt-ghetto <apt-ghetto@protonmail.com>
+           2020-2021 Raman Sarda <theloudspeaker@lubuntu.me>
+           2018-2025 Simon Quigley <tsimonq2@ubuntu.com>
+           2015-2025 ChangZhuo Chen <czchen@debian.org>
+           2023-2026 Aaron Rainbolt <arraybolt3@gmail.com>
+License: LGPL-2.1+
+
+License: LGPL-2.1+
+ This program or library is free software; you can redistribute it
+ and/or modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ On Debian systems, the complete text of the GNU Lesser General
+ Public License can be found in "/usr/share/common-licenses/LGPL-2.1".

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.hash.sun_md5_crypt - Sun MD5 Crypt &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.hash.des_crypt - DES Crypt" href="passlib.hash.des_crypt.html" />
+    <link rel="prev" title="passlib.hash.sha1_crypt - SHA-1 Crypt" href="passlib.hash.sha1_crypt.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.des_crypt.html" title="passlib.hash.des_crypt - DES Crypt"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.sha1_crypt.html" title="passlib.hash.sha1_crypt - SHA-1 Crypt"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.sun_md5_crypt</span></code> - Sun MD5 Crypt</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-hash-sun-md5-crypt-sun-md5-crypt">
+<span id="index-0"></span><h1><a class="reference internal" href="#passlib.hash.sun_md5_crypt" title="passlib.hash.sun_md5_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.sun_md5_crypt</span></code></a> - Sun MD5 Crypt<a class="headerlink" href="#passlib-hash-sun-md5-crypt-sun-md5-crypt" title="Link to this heading">¶</a></h1>
+<p>This algorithm was developed by Alec Muffett <a class="footnote-reference brackets" href="#mct" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> for Solaris, as a replacement for the aging <a class="reference internal" href="passlib.hash.des_crypt.html#passlib.hash.des_crypt" title="passlib.hash.des_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">des_crypt</span></code></a>.
+It was introduced in Solaris 9u2. While based on the MD5 message digest, it has very little at all
+in common with the <a class="reference internal" href="passlib.hash.md5_crypt.html#passlib.hash.md5_crypt" title="passlib.hash.md5_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">md5_crypt</span></code></a> algorithm. It supports
+32 bit variable rounds and an 8 character salt.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../narr/hash-tutorial.html#password-hash-examples"><span class="std std-ref">password hash usage</span></a> –
+for examples of how to use this class via the common hash interface.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The original Solaris implementation has some hash encoding quirks
+which may not be properly accounted for in Passlib.
+Until more user feedback and sample hashes have been gathered,
+<em>caveat emptor</em>.</p>
+</div>
+<section id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.sun_md5_crypt">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">sun_md5_crypt</span></span><a class="headerlink" href="#passlib.hash.sun_md5_crypt" title="Link to this definition">¶</a></dt>
+<dd><p>This class implements the Sun-MD5-Crypt password hash, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>It supports a variable-length salt, and a variable number of rounds.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">using()</span></code></a> method accepts the following optional keywords:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>salt</strong> (<em>str</em>) – Optional salt string.
+If not specified, a salt will be autogenerated (this is recommended).
+If specified, it must be drawn from the regexp range <code class="docutils literal notranslate"><span class="pre">[./0-9A-Za-z]</span></code>.</p></li>
+<li><p><strong>salt_size</strong> (<em>int</em>) – If no salt is specified, this parameter can be used to specify
+the size (in characters) of the autogenerated salt.
+It currently defaults to 8.</p></li>
+<li><p><strong>rounds</strong> (<em>int</em>) – Optional number of rounds to use.
+Defaults to 34000, must be between 0 and 4294963199, inclusive.</p></li>
+<li><p><strong>bare_salt</strong> (<em>bool</em>) – Optional flag used to enable an alternate salt digest behavior
+used by some hash strings in this scheme.
+This flag can be ignored by most users.
+Defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>.
+(see <a class="reference internal" href="#smc-bare-salt"><span class="std std-ref">Bare Salt Issue</span></a> for details).</p></li>
+<li><p><strong>relaxed</strong> (<em>bool</em>) – <p>By default, providing an invalid value for one of the other
+keywords will result in a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>. If <code class="docutils literal notranslate"><span class="pre">relaxed=True</span></code>,
+and the error can be corrected, a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasslibHashWarning" title="passlib.exc.PasslibHashWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasslibHashWarning</span></code></a>
+will be issued instead. Correctable errors include <code class="docutils literal notranslate"><span class="pre">rounds</span></code>
+that are too small or too large, and <code class="docutils literal notranslate"><span class="pre">salt</span></code> strings that are too long.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="format">
+<h2>Format<a class="headerlink" href="#format" title="Link to this heading">¶</a></h2>
+<p>An example hash (of <code class="docutils literal notranslate"><span class="pre">passwd</span></code>) is <code class="docutils literal notranslate"><span class="pre">$md5,rounds=5000$GUBv0xjJ$$mSwgIswdjlTY0YxV7HBVm0</span></code>.
+A sun-md5-crypt hash string has the format <code class="samp docutils literal notranslate"><span class="pre">$md5,rounds=</span><em><span class="pre">rounds</span></em><span class="pre">$</span><em><span class="pre">salt</span></em><span class="pre">$$</span><em><span class="pre">checksum</span></em></code>, where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$md5,</span></code> is the prefix used to identify the hash.</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">rounds</span></em></code> is the decimal number of rounds to use (5000 in the example).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">salt</span></em></code> is 0-8 salt characters drawn from <code class="docutils literal notranslate"><span class="pre">[./0-9A-Za-z]</span></code> (<code class="docutils literal notranslate"><span class="pre">GUBv0xjJ</span></code> in the example).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">checksum</span></em></code> is 22 characters drawn from the same set,
+encoding a 128-bit checksum (<code class="docutils literal notranslate"><span class="pre">mSwgIswdjlTY0YxV7HBVm0</span></code> in the example).</p></li>
+</ul>
+<p>An alternate format, <code class="samp docutils literal notranslate"><span class="pre">$md5$</span><em><span class="pre">salt</span></em><span class="pre">$$</span><em><span class="pre">checksum</span></em></code> is used when the rounds value is 0.</p>
+<p>There also exists some hashes which have only a single <code class="docutils literal notranslate"><span class="pre">$</span></code> between the
+salt and the checksum; these have a slightly different checksum calculation
+(see <a class="reference internal" href="#smc-bare-salt"><span class="std std-ref">Bare Salt Issue</span></a> for details).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Solaris seems to deviate from the <a class="reference internal" href="../modular_crypt_format.html#modular-crypt-format"><span class="std std-ref">Modular Crypt Format</span></a> in that
+it considers <code class="docutils literal notranslate"><span class="pre">,</span></code> to indicate the end of the identifier
+in addition to <code class="docutils literal notranslate"><span class="pre">$</span></code>.</p>
+</div>
+</section>
+<section class="html-toggle" id="algorithm">
+<h2>Algorithm<a class="headerlink" href="#algorithm" title="Link to this heading">¶</a></h2>
+<p>The algorithm used is based around the MD5 message digest and the “Muffett Coin Toss” algorithm.</p>
+<ol class="arabic simple">
+<li><p>Given a password, the number of rounds, and a salt string.</p></li>
+</ol>
+<ol class="arabic" id="smc-digest-step" start="2">
+<li><p>an initial MD5 digest is created from the concatenation of the password,
+and the configuration string (using the format <code class="samp docutils literal notranslate"><span class="pre">$md5,rounds=</span><em><span class="pre">rounds</span></em><span class="pre">$</span><em><span class="pre">salt</span></em><span class="pre">$</span></code>,
+or <code class="samp docutils literal notranslate"><span class="pre">$md5$</span><em><span class="pre">salt</span></em><span class="pre">$</span></code> if rounds is 0).</p>
+<p>(See <a class="reference internal" href="#smc-bare-salt"><span class="std std-ref">Bare Salt Issue</span></a> for details about an issue affecting this step)</p>
+</li>
+<li><dl class="simple">
+<dt>for rounds+4096 iterations, a new digest is created:</dt><dd><ol class="lowerroman simple">
+<li><p>a buffer is initialized, containing the previous round’s MD5 digest (for the first round,
+the digest from step 2 is used).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MuffetCoinToss(rounds,</span> <span class="pre">previous</span> <span class="pre">digest)</span></code> is called, resulting in a 0 or 1.</p></li>
+<li><p>If step 3.ii results in a 1, a constant data string is added to the buffer;
+if the result is a 0, the string is not added for this round.
+The constant data string is a 1517 byte excerpt from Hamlet <a class="footnote-reference brackets" href="#f2" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>
+(<code class="docutils literal notranslate"><span class="pre">To</span> <span class="pre">be,</span> <span class="pre">or</span> <span class="pre">not</span> <span class="pre">to</span> <span class="pre">be...all</span> <span class="pre">my</span> <span class="pre">sins</span> <span class="pre">remember'd.\n</span></code>),
+including an appended null character.</p></li>
+<li><p>the current iteration as a zero-indexed integer is converted to a string (not zero-padded) and added to the buffer.</p></li>
+<li><p>the output for this iteration is the MD5 digest of the buffer’s contents.</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><p>The final digest is then encoded into <code class="xref py py-mod docutils literal notranslate"><span class="pre">hash64</span></code> format using the same
+transposed byte order that <a class="reference internal" href="passlib.hash.md5_crypt.html#passlib.hash.md5_crypt" title="passlib.hash.md5_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">md5_crypt</span></code></a> uses, and returned.</p></li>
+</ol>
+<section id="muffet-coin-toss">
+<h3>Muffet Coin Toss<a class="headerlink" href="#muffet-coin-toss" title="Link to this heading">¶</a></h3>
+<p>The Muffet Coin Toss algorithm is as follows:
+Given the current round number, and a 16 byte MD5 digest, it returns a 0 or 1,
+using the following formula:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All references below to a specific bit of the digest should be interpreted mod 128.
+All references below to a specific byte of the digest should be interpreted mod 16.</p>
+</div>
+<ol class="arabic">
+<li><p>A 8-bit integer <code class="samp docutils literal notranslate"><em><span class="pre">X</span></em></code> is generated from the following formula:
+for each <code class="samp docutils literal notranslate"><em><span class="pre">i</span></em></code> in 0..7 inclusive:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>let <code class="samp docutils literal notranslate"><em><span class="pre">A</span></em></code> be the <code class="samp docutils literal notranslate"><em><span class="pre">i</span></em></code>’th byte of the digest, as an 8-bit int.</p></li>
+<li><p>let <code class="samp docutils literal notranslate"><em><span class="pre">B</span></em></code> be the <code class="samp docutils literal notranslate"><em><span class="pre">i</span></em><span class="pre">+3</span></code>’rd byte of the digest, as an 8-bit int.</p></li>
+<li><p>let <code class="samp docutils literal notranslate"><em><span class="pre">R</span></em></code> be <code class="samp docutils literal notranslate"><em><span class="pre">A</span></em></code> shifted right by <code class="samp docutils literal notranslate"><em><span class="pre">B</span></em> <span class="pre">%</span> <span class="pre">5</span></code> bits.</p></li>
+<li><p>let <code class="samp docutils literal notranslate"><em><span class="pre">V</span></em></code> be the <code class="samp docutils literal notranslate"><em><span class="pre">R</span></em></code>’th byte of the digest.</p></li>
+<li><p>if the <code class="samp docutils literal notranslate"><em><span class="pre">A</span></em> <span class="pre">%</span> <span class="pre">8</span></code>’th bit of <code class="samp docutils literal notranslate"><em><span class="pre">B</span></em></code> is 1, divide <code class="samp docutils literal notranslate"><em><span class="pre">V</span></em></code> by 2.</p></li>
+<li><p>use the <code class="samp docutils literal notranslate"><em><span class="pre">V</span></em></code>’th bit of the digest as the <code class="samp docutils literal notranslate"><em><span class="pre">i</span></em></code>’th bit of <code class="samp docutils literal notranslate"><em><span class="pre">X</span></em></code>.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Another 8-bit integer, <code class="samp docutils literal notranslate"><em><span class="pre">Y</span></em></code>, is generated exactly the same manner as <code class="samp docutils literal notranslate"><em><span class="pre">X</span></em></code>, except that:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">A</span></em></code> is the <code class="samp docutils literal notranslate"><em><span class="pre">i</span></em><span class="pre">+8</span></code>’th byte of the digest,</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">B</span></em></code> is the <code class="samp docutils literal notranslate"><em><span class="pre">i</span></em><span class="pre">+11</span></code>’th byte of the digest.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>if bit <code class="samp docutils literal notranslate"><em><span class="pre">round</span></em></code> of the digest is 1, <code class="samp docutils literal notranslate"><em><span class="pre">X</span></em></code> is divided by 2.</p></li>
+<li><p>if bit <code class="samp docutils literal notranslate"><em><span class="pre">round</span></em><span class="pre">+64</span></code> of the digest is 1, <code class="samp docutils literal notranslate"><em><span class="pre">Y</span></em></code> is divided by 2.</p></li>
+<li><p>the final result is <code class="samp docutils literal notranslate"><em><span class="pre">X</span></em></code>’th bit of the digest XORed against <code class="samp docutils literal notranslate"><em><span class="pre">Y</span></em></code>’th bit of the digest.</p></li>
+</ol>
+</section>
+<section id="bare-salt-issue">
+<span id="smc-bare-salt"></span><h3>Bare Salt Issue<a class="headerlink" href="#bare-salt-issue" title="Link to this heading">¶</a></h3>
+<p>According to the only existing documentation of this algorithm <a class="footnote-reference brackets" href="#mct" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>,
+its hashes were supposed to have the format <code class="samp docutils literal notranslate"><span class="pre">$md5$</span><em><span class="pre">salt</span></em><span class="pre">$</span><em><span class="pre">checksum</span></em></code>,
+and include only the bare string <code class="samp docutils literal notranslate"><span class="pre">$md5$</span><em><span class="pre">salt</span></em></code> in the salt digest step
+(see <a class="reference internal" href="#smc-digest-step"><span class="std std-ref">step 2</span></a>, above).</p>
+<p>However, almost all hashes encountered in production environments
+have the format <code class="samp docutils literal notranslate"><span class="pre">$md5$</span><em><span class="pre">salt</span></em><span class="pre">$$</span><em><span class="pre">checksum</span></em></code> (note the double <code class="docutils literal notranslate"><span class="pre">$$</span></code>).
+Unfortunately, it is not merely a cosmetic difference: hashes of this format
+incorporate the first <code class="docutils literal notranslate"><span class="pre">$</span></code> after the salt within the
+salt digest step, so the resulting checksum is different.</p>
+<p>The documentation hints that this stems from a bug within the production
+implementation’s parser. This bug causes the implementation to return
+<code class="docutils literal notranslate"><span class="pre">$$</span></code>-format hashes when passed a configuration string that ends with <code class="docutils literal notranslate"><span class="pre">$</span></code>.
+It returns the intended original format &amp; checksum
+only if there is at least one letter after the <code class="docutils literal notranslate"><span class="pre">$</span></code>, e.g. <code class="samp docutils literal notranslate"><span class="pre">$md5$</span><em><span class="pre">salt</span></em><span class="pre">$x</span></code>.</p>
+<p>Passlib attempts to accommodate both formats using the special <code class="docutils literal notranslate"><span class="pre">bare_salt</span></code>
+keyword. It is set to <code class="docutils literal notranslate"><span class="pre">True</span></code> to indicate a configuration or hash string which
+contains only a single <code class="docutils literal notranslate"><span class="pre">$</span></code>, and does not incorporate it into the hash calculation.
+The <code class="docutils literal notranslate"><span class="pre">$$</span></code> hash is encountered more often in production since it seems
+the Solaris salt generator always appends a <code class="docutils literal notranslate"><span class="pre">$</span></code>; because of this <code class="docutils literal notranslate"><span class="pre">bare_salt=False</span></code>
+was chosen as the default, so that hashes will be generated which by default
+conform to what users are used to.</p>
+</section>
+</section>
+<section id="deviations">
+<h2>Deviations<a class="headerlink" href="#deviations" title="Link to this heading">¶</a></h2>
+<p>Passlib’s implementation of Sun-MD5-Crypt deliberately
+deviates from the official implementation in the following ways:</p>
+<ul>
+<li><p>Unicode Policy:</p>
+<p>The underlying algorithm takes in a password specified
+as a series of non-null bytes, and does not specify what encoding
+should be used; though a <code class="docutils literal notranslate"><span class="pre">us-ascii</span></code> compatible encoding
+is implied by all known reference hashes.</p>
+<p>In order to provide support for unicode strings,
+Passlib will encode unicode passwords using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code>
+before running them through sun-md5-crypt. If a different
+encoding is desired by an application, the password should be encoded
+before handing it to Passlib.</p>
+</li>
+<li><p>Rounds encoding</p>
+<p>The underlying scheme implicitly allows rounds to have zero padding (e.g. <code class="docutils literal notranslate"><span class="pre">$md5,rounds=001$abc$</span></code>),
+and also allows 0 rounds to be specified two ways (<code class="docutils literal notranslate"><span class="pre">$md5$abc$</span></code> and <code class="docutils literal notranslate"><span class="pre">$md5,rounds=0$abc$</span></code>).
+Allowing either of these would result in multiple possible checksums
+for the same password &amp; salt. To prevent ambiguity,
+Passlib will throw a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code> if the rounds value is zero-padded,
+or specified explicitly as 0 (e.g. <code class="docutils literal notranslate"><span class="pre">$md5,rounds=0$abc$</span></code>).</p>
+</li>
+</ul>
+<p id="smc-quirks">Given the lack of documentation, lack of test vectors, and known bugs
+which accompany the original Solaris implementation, Passlib may not
+accurately be able to generate and verify all hashes encountered in a
+Solaris environment. Issues of concern include:</p>
+<ul class="simple">
+<li><p>Some hashes found on the web use a <code class="docutils literal notranslate"><span class="pre">$</span></code> in place of the <code class="docutils literal notranslate"><span class="pre">,</span></code>.
+It is unclear whether this is an accepted alternate format or just a typo,
+nor whether this is supposed to affect the checksum in the resulting hash string.</p></li>
+<li><p>The current implementation needs addition test vectors;
+especially ones which contain an explicitly specific number of rounds.</p></li>
+<li><p>More information is needed about the parsing / formatting issue described
+in the <a class="reference internal" href="#smc-bare-salt"><span class="std std-ref">Bare Salt Issue</span></a> section.</p></li>
+</ul>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="mct" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id3">2</a>)</span>
+<p>Overview of &amp; motivations for the algorithm - <a class="reference external" href="http://dropsafe.crypticide.com/article/1389">http://dropsafe.crypticide.com/article/1389</a></p>
+</aside>
+<aside class="footnote brackets" id="f2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>The source of Hamlet’s speech, used byte-for-byte as the constant data - <a class="reference external" href="http://www.ibiblio.org/pub/docs/books/gutenberg/etext98/2ws2610.txt">http://www.ibiblio.org/pub/docs/books/gutenberg/etext98/2ws2610.txt</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#overview">Overview</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="passlib.hash.html#unix-hashes">Unix Hashes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.html#active-unix-hashes">Active Unix Hashes</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="passlib.hash.html#deprecated-unix-hashes">Deprecated Unix Hashes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.html#archaic-unix-hashes">Archaic Unix Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-modular-crypt-hashes">Other “Modular Crypt” Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ldap-rfc2307-hashes">LDAP / RFC2307 Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#sql-database-hashes">SQL Database Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ms-windows-hashes">MS Windows Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#cisco-hashes">Cisco Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-hashes">Other Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.des_crypt.html" title="passlib.hash.des_crypt - DES Crypt"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.sha1_crypt.html" title="passlib.hash.sha1_crypt - SHA-1 Crypt"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.sun_md5_crypt</span></code> - Sun MD5 Crypt</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

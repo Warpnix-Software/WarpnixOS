@@ -1,0 +1,40 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: WWW-Mechanize
+Upstream-Contact: Olaf Alders <olaf@wundercounter.com>
+Source: https://metacpan.org/release/WWW-Mechanize
+
+Files: *
+Copyright: 2004, Andy Lester <andy@petdance.com>
+License: Artistic or GPL-1+
+
+Files: t/local/LocalServer.pm
+Copyright: 2003-2011, Max Maischein <corion@cpan.org>
+License: Artistic or GPL-1+
+
+Files: debian/*
+Copyright: 2003-2007, Jay Bonci <jaybonci@debian.org>
+ 2004, Kenneth J. Pronovici <pronovic@debian.org>
+ 2007-2009, Rene Mayorga <rmayorga@debian.org>
+ 2008, Kees Cook <kees@debian.org>
+ 2009, Ryan Niebur <ryan@debian.org>
+ 2009-2025, gregor herrmann <gregoa@debian.org>
+ 2010, Ansgar Burchardt <ansgar@debian.org>
+ 2010-2011, Nicholas Bamber <nicholas@periapt.co.uk>
+ 2013-2021, Florian Schlichting <fsfs@debian.org>
+License: Artistic or GPL-1+
+
+License: Artistic
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the Artistic License, which comes with Perl.
+ .
+ On Debian systems, the complete text of the Artistic License
+ can be found in `/usr/share/common-licenses/Artistic'.
+
+License: GPL-1+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 1, or (at your option)
+ any later version.
+ .
+ On Debian systems, the complete text of version 1 of the
+ General Public License can be found in `/usr/share/common-licenses/GPL-1'.

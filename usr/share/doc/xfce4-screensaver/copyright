@@ -1,0 +1,258 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: xfce4-screensaver
+Source: https://gitlab.xfce.org/apps/xfce4-screensaver/
+
+Files: *
+Copyright: 2003, Bill Nottingham <notting@redhat.com>
+           2000, Eazel, Inc
+           1994-2018, Free Software Foundation, Inc
+           1999-2003, Jamie Zawinski <jwz@jwz.org>
+           2012, Jasmine Hassan <jasmine.aura@gmail.com>
+           2008, John Millikin <jmillikin@gmail.com>
+           2005, Matthias Clasen <mclasen@redhat.com>
+           2005, Ray Stro de <rstrode@redhat.com>
+           2007-2008, Red Hat, Inc
+           2004-2008, Rodney Dawes <dobey.pwns@gmail.com>
+           2018-2021, Sean Davis <bluesabre@xfce.org>
+           2006, Sergey V. Udaltsov <svu@gnome.org>
+           2018, Simon Steinbeiss <ochosi@xfce.org>
+           2005, Søren Sandmann <sandmann@redhat.com>
+           1998, Tom Tromey
+           1995-1997, Ulrich Drepper <drepper@gnu.ai.mit.edu>
+           2004-2006, William Jon McCann <mccann@jhu.edu>
+           2002-2021, Xfce Developers
+License: GPL-2+
+
+Files: src/gs-auth-bsdauth.c
+Copyright: 2009, Antoine Jacoutot <ajacoutot@openbsd.org>
+           1993-1998, Jamie Zawinski <jwz@jwz.org>
+           2017, Robert Nagy <robert@openbsd.org>
+           2006, William Jon McCann <mccann@jhu.edu>
+License: ISC
+
+Files: src/subprocs.c
+Copyright: 1991-2004, Jamie Zawinski <jwz@jwz.org>
+           2004, William Jon McCann <mccann@jhu.edu>
+License: MIT
+
+Files: savers/gs-theme-engine.h
+       savers/gste-popsquares.h
+       savers/gste-slideshow.h
+       savers/popsquares.c
+       savers/slideshow.c
+       src/gs-auth.h
+       src/gs-debug.c
+       src/gs-debug.h
+       src/gs-grab.h
+       src/gs-job.h
+       src/gs-listener-dbus.h
+       src/gs-listener-x11.c
+       src/gs-listener-x11.h
+       src/gs-lock-plug.h
+       src/gs-manager.h
+       src/gs-monitor.h
+       src/gs-theme-manager.h
+       src/gs-window.h
+       src/test-passwd.c
+       src/test-window.c
+       src/xfce4-screensaver-command.c
+       src/xfce4-screensaver.h
+Copyright: 2004-2006, William Jon McCann <mccann@jhu.edu>
+License: GPL-2+
+
+Files: savers/gs-theme-engine.c
+       savers/gste-popsquares.c
+       savers/gste-slideshow.c
+       src/gs-grab.c
+       src/gs-job.c
+       src/gs-listener-dbus.c
+       src/gs-manager.c
+       src/gs-monitor.c
+       src/gs-prefs.c
+       src/gs-prefs.h
+       src/gs-theme-manager.c
+       src/gs-window.c
+       src/xfce4-screensaver-preferences.c
+       src/xfce4-screensaver.c
+Copyright: 2018, Sean Davis <bluesabre@xfce.org>
+           2004-2008, William Jon McCann <mccann@jhu.edu>
+License: GPL-2+
+
+Files: src/gs-listener-wayland.c
+       src/gs-listener-wayland.h
+       src/gs-listener.c
+       src/gs-listener.h
+       src/gs-session-lock-manager.c
+       src/gs-session-lock-manager.h
+Copyright: 2024, Gaël Bonithon <gael@xfce.org>
+License: GPL-2+
+
+Files: src/gs-auth-helper.c
+       src/setuid.c
+       src/setuid.h
+       src/subprocs.h
+Copyright: 1991-2004, Jamie Zawinski <jwz@jwz.org>
+License: MIT
+
+Files: src/xfcekbd-indicator.c
+       src/xfcekbd-indicator.h
+Copyright: 2018, Sean Davis <bluesabre@xfce.org>
+           2006, Sergey V. Udaltsov <svu@gnome.org>
+License: LGPL-2+
+
+Files: src/xfce-desktop-utils.c
+       src/xfce-desktop-utils.h
+Copyright: 2018, Sean Davis <bluesabre@xfce.org>
+           1998, Tom Tromey
+License: LGPL-2+
+
+Files: savers/xdg-user-dir-lookup.c
+       savers/xdg-user-dir-lookup.h
+Copyright: 2007, Red Hat, Inc
+License: Expat
+
+Files: src/gs-auth-pam.c
+Copyright: 2003, Bill Nottingham <notting@redhat.com>
+           1993-2003, Jamie Zawinski <jwz@jwz.org>
+           2006, Ray Strode <rstrode@redhat.com>
+           2018, Sean Davis <bluesabre@xfce.org>
+           2006, William Jon McCann <mccann@jhu.edu>
+License: GPL-2+
+
+Files: src/xfce-bg.c
+Copyright: 2000, Eazel, Inc
+           2012, Jasmine Hassan <jasmine.aura@gmail.com>
+           2007-2008, Red Hat, Inc
+           2018, Sean Davis <bluesabre@xfce.org>
+License: LGPL-2+
+
+Files: savers/floaters.c
+Copyright: Matthias Clasen <mclasen@redhat.com>
+           2005, Ray Strode <rstrode@redhat.com>
+           2018, Sean Davis <bluesabre@xfce.org>
+           Søren Sandmann <sandmann@redhat.com>
+License: LGPL-2+
+
+Files: src/xfce4-screensaver-dialog.c
+Copyright: 1991-2004, Jamie Zawinski <jwz@jwz.org>
+           2018, Sean Davis <bluesabre@xfce.org>
+           2004-2006, William Jon McCann <mccann@jhu.edu>
+License: GPL-2+
+
+Files: src/gs-lock-plug.c
+Copyright: 2018, Sean Davis <bluesabre@xfce.org>
+           2018, Simon Steinbeiss <ochosi@xfce.org>
+           2004-2006, William Jon McCann <mccann@jhu.edu>
+License: GPL-2+
+
+Files: src/xfce-bg.h
+Copyright: 2012, Jasmine Hassan <jasmine.aura@gmail.com>
+           2007, Red Hat, Inc
+           2018, Sean Davis <bluesabre@xfce.org>
+License: LGPL-2+
+
+Files: src/gs-auth-pwent.c
+Copyright: 1993-1998, Jamie Zawinski <jwz@jwz.org>
+           2006, William Jon McCann <mccann@jhu.edu>
+License: GPL-2+
+
+Files: protocols/ext-idle-notify-v1.xml
+Copyright: 2015, Martin Gräßlin
+           2022, Simon Ser
+License: MIT
+
+Files: protocols/ext-session-lock-v1.xml
+Copyright: 2021, Isaac Freund
+License: Expat
+
+Files: src/xfce4-screensaver-configure.py
+Copyright: 2019, Sean Davis <bluesabre@xfce.org>
+License: GPL-2+
+
+Files: src/xfce4-screensaver-preferences.ui
+Copyright: 2018, Xfce Developers
+License: GPL-2+
+
+Files: data/xfce4-screensaver-command.1
+Copyright: 2007, Sven Arvidsson <sa@whiz.se>
+License: GPL-2+
+
+Files: debian/*
+Copyright: 2019, Jonathan Carter <jcc@debian.org>
+           2019-2021, Unit 193 <unit193@debian.org>
+License: GPL-2+
+
+License: Expat
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the “Software”), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+License: GPL-2+
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <https://www.gnu.org/licenses/>
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+
+License: ISC
+ Permission to use, copy, modify, and distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+License: LGPL-2+
+ This package is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ You should have received a copy of the GNU Lesser General Public License along
+ with this package; if not, see https://www.gnu.org/licenses/
+ .
+ On Debian systems, the complete text of the GNU Lesser General
+ Public License can be found in `/usr/share/common-licenses/LGPL-2.1'.
+
+License: MIT
+ Permission to use, copy, modify, distribute, and sell this software and its
+ documentation for any purpose is hereby granted without fee, provided that the
+ above copyright notice appear in all copies and that both that copyright
+ notice and this permission notice appear in supporting documentation.  No
+ representations are made about the suitability of this software for any
+ purpose. It is provided "as is" without express or implied warranty.
+

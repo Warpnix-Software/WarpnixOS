@@ -1,0 +1,37 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: lxqt-notificationd
+Source: https://github.com/lxqt/lxqt-notificationd
+
+Files: *
+Copyright: 2012-2025 LXQt team
+           2010-2012 Razor team
+License: LGPL-2.1+
+
+Files: test/main.cpp
+       test/mainwindow.cpp
+       test/mainwindow.h
+Copyright: 2012, Alec Moskvin <alecm@gmx.com>
+License: LGPL-2.1+
+
+Files: debian/*
+Copyright: 2021-2025, Lubuntu Developers <lubuntu-devel@lists.ubuntu.com>
+           2014-2018, Alf Gaida <agaida@siduction.org>
+           2015,      Andrew Lee (李健秋) <ajqlee@debian.org>
+           2025,      ChangZhuo Chen (陳昌倬) <czchen@debian.org>
+           2025-2026, Aaron Rainbolt <arraybolt3@ubuntu.com>
+License: LGPL-2.1+
+
+License: LGPL-2.1+
+ This program or library is free software; you can redistribute it
+ and/or modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ On Debian systems, the complete text of the GNU Lesser General
+ Public License version 2.1 can be found in
+ "/usr/share/common-licenses/LGPL-2.1".

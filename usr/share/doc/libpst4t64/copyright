@@ -1,0 +1,30 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: libpst
+Upstream-Contact: Carl Byington <carl@five-ten-sg.com>
+Source: https://www.five-ten-sg.com/libpst/packages/
+
+Files: *
+Copyright: © 2003-2008 Dave Smith <dave.s@earthcorp.com>
+           © 2003-2007 Joseph Nahmias <joe@nahmias.net>
+           © 2007-2012 Carl Byington <carl@five-ten-sg.com>
+License: GPL-2+
+
+Files:
+ python/*
+ src/pst2dii.*
+ src/nick2ldif.*
+ src/pst2ldif.*
+Copyright: © 2004, 2008 Carl Byington <carl@five-ten-sg.com>
+License: GPL-2+
+
+Files: src/XGetopt.*
+Copyright: © 2002 Hans Dietrich <hdietrich2@hotmail.com>
+License: other
+
+License: GPL-2+
+ On Debian GNU/Linux systems, the complete text of the GNU General
+ Public License v2 can be found in `/usr/share/common-licenses/GPL-2'
+
+License: other
+ This software is released into the public domain.
+ You are free to use it in any way you like.

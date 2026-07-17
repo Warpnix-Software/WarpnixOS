@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Lintian::Pool</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#METHODS">METHODS</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Lintian::Pool -- Pool of processables</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code> use Lintian::Pool;
+ 
+ my $pool = Lintian::Pool-&gt;new;
+ $pool-&gt;add_file(&#39;foo.changes&#39;);
+ $pool-&gt;add_file(&#39;bar.dsc&#39;);
+ $pool-&gt;add_file(&#39;baz.deb&#39;);
+ $pool-&gt;add_file(&#39;qux.buildinfo&#39;);
+ foreach my $gname ($pool-&gt;get_group_names){
+    my $group = $pool-&gt;get_group($gname);
+    process($gname, $group);
+ }</code></pre>
+
+<h1 id="METHODS">METHODS</h1>
+
+<dl>
+
+<dt>$pool-&gt;groups</dt>
+<dd>
+
+<p>Returns a hash reference to the list of processable groups that are currently in the pool. The key is a unique identifier based on name and version.</p>
+
+</dd>
+<dt><code>savedir</code></dt>
+<dd>
+
+</dd>
+<dt>$pool-&gt;basedir</dt>
+<dd>
+
+<p>Returns the base directory for the pool. Most likely it&#39;s a temporary directory.</p>
+
+</dd>
+<dt>$pool-&gt;add_group($group)</dt>
+<dd>
+
+<p>Adds a group to the pool.</p>
+
+</dd>
+<dt>$pool-&gt;process</dt>
+<dd>
+
+<p>Process the pool.</p>
+
+</dd>
+<dt>quantity</dt>
+<dd>
+
+</dd>
+<dt>$pool-&gt;get_group_names</dt>
+<dd>
+
+<p>Returns the name of all the groups in this pool.</p>
+
+<p>Do not modify the list nor its contents.</p>
+
+</dd>
+<dt>$pool-&gt;get_group($name)</dt>
+<dd>
+
+<p>Returns the group called $name or <code>undef</code> if there is no group called $name.</p>
+
+</dd>
+<dt>$pool-&gt;empty</dt>
+<dd>
+
+<p>Returns true if the pool is empty.</p>
+
+</dd>
+</dl>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Originally written by Niels Thykier &lt;niels@thykier.net&gt; for Lintian.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>lintian(1)</p>
+
+<p><a href="https://metacpan.org/pod/Lintian::Processable">Lintian::Processable</a></p>
+
+<p><a href="https://metacpan.org/pod/Lintian::Group">Lintian::Group</a></p>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

@@ -1,0 +1,58 @@
+Configuration of sgt-puzzles
+============================
+
+Simon Tatham writes in the main documentation:
+
+   "The games in this collection deliberately do not ever save
+    information on to the computer they run on: they have no high score
+    tables and no saved preferences. (This is because I expect at least
+    some people to play them at work, and those people will probably
+    appreciate leaving as little evidence as possible!)"
+
+Currently, various settings are configurable through environment
+variables.  These may be replaced by a better configuration mechanism
+in future, and I cannot guarantee that they will continue to work.
+
+Colours
+-------
+
+The colours used by any game can be set using variables of the form:
+
+    <game>_COLOUR_<number>=<red><green><blue>
+
+<game> is the name of the game in capitals, without any "game" suffix.
+<number> identifies the game element that the colour applies to.
+<red>, <green> and <blue> are the levels of these colour components
+as 2 hexadecimal digits each (as used in HTML and CSS).
+
+In particular, the colours used for regions in the Map game can be
+changed using the variables MAP_COLOUR_2, MAP_COLOUR_3, MAP_COLOUR_4
+and MAP_COLOUR_5.  The following colour settings appear to make the
+regions more easily distinguishable for those with red-green colour
+blindness, and may also work for monochromats:
+
+    MAP_COLOUR_2=B27F3F
+    MAP_COLOUR_3=CCB27F
+    MAP_COLOUR_4=7F99BF
+    MAP_COLOUR_5=8C727F
+
+Size
+----
+
+All puzzles are made up of a number of square tiles.  For example, a
+"3x3" Solo puzzle has 9x9 tiles.  The size of the tiles can be changed
+by resizing the window.  The initial size can be set using a variable
+of the form:
+
+    <game>_TILESIZE=<size>
+
+<game> is the name of the game in capitals, without any "game" suffix.
+<size> is the number of pixels on each side of a tile.
+
+Miscellaneous
+-------------
+
+The behaviour of the left and right mouse buttons in Slant can be
+reversed by setting the variable SLANT_SWAP_BUTTONS=y.
+
+ -- Ben Hutchings <ben@decadent.org.uk>  Sun, 29 Oct 2006 02:09:28 +0000

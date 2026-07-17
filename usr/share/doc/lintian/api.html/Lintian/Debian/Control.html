@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Lintian::Debian::Control</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#INSTANCE-METHODS">INSTANCE METHODS</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Lintian::Debian::Control - Lintian interface to d/control fields</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>    use Lintian::Debian::Control;</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Lintian::Debian::Control provides access to fields in d/control.</p>
+
+<h1 id="INSTANCE-METHODS">INSTANCE METHODS</h1>
+
+<dl>
+
+<dt>item =item source_fields =item installable_fields_by_name</dt>
+<dd>
+
+</dd>
+<dt>load</dt>
+<dd>
+
+</dd>
+<dt>installables</dt>
+<dd>
+
+<p>Returns a list of the binary and udeb packages listed in the <i>debian/control</i>.</p>
+
+</dd>
+<dt>installable_package_type (NAME)</dt>
+<dd>
+
+<p>Returns package type based on value of the Package-Type (or if absent, X-Package-Type) field. If the field is omitted, the default value &quot;deb&quot; is used.</p>
+
+<p>If NAME is not an installable listed in the source packages <i>debian/control</i> file, this method return <code>undef</code>.</p>
+
+</dd>
+<dt>installable_fields (PACKAGE)</dt>
+<dd>
+
+<p>Returns the Deb822::Section object for the installable. Returns an empty object if the installable does not exist.</p>
+
+</dd>
+</dl>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Originally written by Russ Allbery &lt;rra@debian.org&gt; for Lintian. Amended by Felix Lechner &lt;felix.lechner@lease-up.com&gt; for Lintian.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>lintian(1)</p>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

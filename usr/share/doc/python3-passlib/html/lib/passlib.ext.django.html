@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.ext.django - Django Password Hashing Plugin &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.hash - Password Hashing Schemes" href="passlib.hash.html" />
+    <link rel="prev" title="passlib.exc - Exceptions and warnings" href="passlib.exc.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.html" title="passlib.hash - Password Hashing Schemes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.exc.html" title="passlib.exc - Exceptions and warnings"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-ext-django-django-password-hashing-plugin">
+<span id="module-passlib.ext.django"></span><span id="index-0"></span><h1><a class="reference internal" href="#module-passlib.ext.django" title="passlib.ext.django"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code></a> - Django Password Hashing Plugin<a class="headerlink" href="#passlib-ext-django-django-password-hashing-plugin" title="Link to this heading">¶</a></h1>
+<div class="float-center without-title admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This extension is a high maintenance, with an uncertain number of users.
+The current plan is to split this out as a separate package concurrent
+with Passlib 1.8, and then judge whether it should continue to be maintained
+in it’s own right. See <a href="#id1"><span class="problematic" id="id2">:issue:`81`</span></a>.</p>
+<aside class="system-message" id="id1">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/lib/passlib.ext.django.rst</span>, line 13); <em><a href="#id2">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</div>
+<p>This module contains a <a class="reference external" href="http://www.djangoproject.com">Django</a> plugin which
+overrides all of Django’s password hashing functions, replacing them
+with wrappers around a Passlib <a class="reference internal" href="passlib.context.html#context-reference"><span class="std std-ref">CryptContext</span></a> object
+whose configuration is controlled from Django’s <code class="docutils literal notranslate"><span class="pre">settings</span></code>.
+While this extension’s utility is diminished with the advent
+of Django 1.4’s <em>hashers</em> framework, this plugin still has a number
+of uses:</p>
+<ul class="simple">
+<li><p>Make use of the new Django 1.4 <a class="reference internal" href="passlib.hash.django_std.html#django-1-4-hashes"><span class="std std-ref">pbkdf2 &amp; bcrypt formats</span></a>,
+even under earlier Django releases.</p></li>
+<li><p>Allow your application to work with any password hash format
+<a class="reference internal" href="passlib.hash.html"><span class="doc">supported</span></a> by Passlib, allowing you to import
+existing hashes from other systems.
+Common examples include SHA512-Crypt, PHPass, and BCrypt.</p></li>
+<li><p>Set different iterations / cost settings based on the type of user account,
+and automatically update hashes that use weaker settings when the user
+logs in.</p></li>
+<li><p>Mark any hash algorithms as deprecated, and automatically migrate to stronger
+hashes when the user logs in.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This plugin should be considered “release candidate” quality.
+It works, and has good unittest coverage, but has seen only
+limited real-world use. Please report any issues.
+It has been tested with Django 1.8 - 3.1.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.7: </span>Support for Django 1.0 - 1.7 was dropped; now requires Django 1.8 or newer.</p>
+</div>
+<div class="without-title admonition warning">
+<p class="admonition-title">Warning</p>
+<p>As of Passlib 1.8, this module will require Django 2.2 or newer.</p>
+</div>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h2>
+<p>Installation is simple: once Passlib itself has been installed, just add
+<code class="docutils literal notranslate"><span class="pre">&quot;passlib.ext.django&quot;</span></code> to Django’s <code class="docutils literal notranslate"><span class="pre">settings.INSTALLED_APPS</span></code>,
+as soon as possible after <code class="docutils literal notranslate"><span class="pre">django.contrib.auth</span></code>.</p>
+<p>Once installed, this plugin will automatically monkeypatch
+Django to use a Passlib <code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code>
+instance in place of the normal Django password authentication routines
+(as an unfortunate side effect, this disables Django 1.4’s hashers framework entirely,
+though the default configuration supports all the built-in Django 1.4 hashers).</p>
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading">¶</a></h2>
+<p>While this plugin will function perfectly well without setting any configuration
+options, you can customize it using the following options in Django’s <code class="docutils literal notranslate"><span class="pre">settings.py</span></code>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">PASSLIB_CONFIG</span></code></p>
+<blockquote>
+<div><p>This option specifies the CryptContext configuration options
+that will be used when the plugin is loaded.</p>
+<ul class="simple">
+<li><p>Its value will usually be an INI-formatted string or a dictionary, containing
+options to be passed to <a class="reference internal" href="passlib.context.html#passlib.context.CryptContext" title="passlib.context.CryptContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code></a>.</p></li>
+<li><p>Alternately, it can be the name of any preset supported by
+<a class="reference internal" href="#passlib.ext.django.utils.get_preset_config" title="passlib.ext.django.utils.get_preset_config"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_preset_config()</span></code></a>, such as
+<code class="docutils literal notranslate"><span class="pre">&quot;passlib-default&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;django-default&quot;</span></code>.</p></li>
+<li><p>Finally, it can be the special string <code class="docutils literal notranslate"><span class="pre">&quot;disabled&quot;</span></code>, which will disable
+this plugin.</p></li>
+</ul>
+<p>At any point after this plugin has been loaded, you can serialize
+its current configuration to a string:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.ext.django.models</span> <span class="kn">import</span> <span class="n">password_context</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">password_context</span><span class="o">.</span><span class="n">to_string</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This string can then be modified, and used as the new value
+of <code class="docutils literal notranslate"><span class="pre">PASSLIB_CONFIG</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is <em>strongly</em> recommended to use a configuration which will support
+the existing Django hashes. Dumping and then modifying one of the
+preset strings is a good starting point.</p>
+</div>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PASSLIB_GET_CATEGORY</span></code></p>
+<blockquote>
+<div><blockquote>
+<div><p>By default, Passlib will assign users to one of three categories:
+<code class="docutils literal notranslate"><span class="pre">&quot;superuser&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;staff&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">None</span></code>; based on the attributes
+of the <code class="docutils literal notranslate"><span class="pre">User</span></code> object. This allows <code class="docutils literal notranslate"><span class="pre">PASSLIB_CONFIG</span></code>
+to have per-category policies, such as a larger number of iterations
+for the superuser account.</p>
+<p>This option allows overriding the function which performs this mapping,
+so that more fine-grained / alternate user categories can be used.
+If specified, the function should have the call syntax
+<code class="docutils literal notranslate"><span class="pre">get_category(user)</span> <span class="pre">-&gt;</span> <span class="pre">category_string|None</span></code>.</p>
+</div></blockquote>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="passlib.context.html#user-categories"><span class="std std-ref">User Categories</span></a> for more details.</p>
+</div>
+</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">PASSLIB_CONTEXT</span></code></p>
+<blockquote>
+<div><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.6: </span>This is a deprecated alias for <code class="docutils literal notranslate"><span class="pre">PASSLIB_CONFIG</span></code>,
+used by the (undocumented) version of this plugin that was
+released with Passlib 1.5. It should not be used by new applications.</p>
+</div>
+</div></blockquote>
+</section>
+<section id="module-passlib.ext.django.models">
+<span id="module-contents"></span><h2>Module Contents<a class="headerlink" href="#module-passlib.ext.django.models" title="Link to this heading">¶</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.ext.django.models.password_context">
+<span class="sig-prename descclassname"><span class="pre">passlib.ext.django.models.</span></span><span class="sig-name descname"><span class="pre">password_context</span></span><a class="headerlink" href="#passlib.ext.django.models.password_context" title="Link to this definition">¶</a></dt>
+<dd><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code> instance that drives this plugin.
+It can be imported and examined to inspect the current configuration,
+changes made to it will immediately alter how Django hashes passwords.</p>
+<p>(Do not replace the reference with another CryptContext, it will break things;
+just update the context in-place).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.ext.django.models.context_changed">
+<span class="sig-prename descclassname"><span class="pre">passlib.ext.django.models.</span></span><span class="sig-name descname"><span class="pre">context_changed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#passlib.ext.django.models.context_changed" title="Link to this definition">¶</a></dt>
+<dd><p>If the context is modified after loading, call this function to clear internal caches.</p>
+</dd></dl>
+
+<dl class="py function" id="module-passlib.ext.django.utils">
+<dt class="sig sig-object py" id="passlib.ext.django.utils.get_preset_config">
+<span class="sig-prename descclassname"><span class="pre">passlib.ext.django.utils.</span></span><span class="sig-name descname"><span class="pre">get_preset_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.ext.django.utils.get_preset_config" title="Link to this definition">¶</a></dt>
+<dd><p>Returns configuration string for one of the preset strings
+supported by the <code class="docutils literal notranslate"><span class="pre">PASSLIB_CONFIG</span></code> setting.
+Currently supported presets:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;passlib-default&quot;</span></code> - default config used by this release of passlib.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;django-default&quot;</span></code> - config matching currently installed django version.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;django-latest&quot;</span></code> - config matching newest django version (currently same as <code class="docutils literal notranslate"><span class="pre">&quot;django-1.6&quot;</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;django-1.0&quot;</span></code> - config used by stock Django 1.0 - 1.3 installs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;django-1.4&quot;</span></code> - config used by stock Django 1.4 installs</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;django-1.6&quot;</span></code> - config used by stock Django 1.6 installs</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.ext.django.utils.PASSLIB_DEFAULT">
+<span class="sig-prename descclassname"><span class="pre">passlib.ext.django.utils.</span></span><span class="sig-name descname"><span class="pre">PASSLIB_DEFAULT</span></span><a class="headerlink" href="#passlib.ext.django.utils.PASSLIB_DEFAULT" title="Link to this definition">¶</a></dt>
+<dd><p>This constant contains the default configuration for <code class="docutils literal notranslate"><span class="pre">PASSLIB_CONFIG</span></code>.
+It provides the following features:</p>
+<ul class="simple">
+<li><p>uses <a class="reference internal" href="passlib.hash.django_std.html#passlib.hash.django_pbkdf2_sha256" title="passlib.hash.django_pbkdf2_sha256"><code class="xref py py-class docutils literal notranslate"><span class="pre">django_pbkdf2_sha256</span></code></a> as the default algorithm.</p></li>
+<li><p>supports all of the Django 1.0-1.4 <a class="reference internal" href="passlib.hash.django_std.html"><span class="doc">hash formats</span></a>.</p></li>
+<li><p>additionally supports SHA512-Crypt, BCrypt, and PHPass.</p></li>
+<li><p>is configured to use a larger number of rounds for the superuser account.</p></li>
+<li><p>is configured to automatically migrate all Django 1.0 hashes
+to use the default hash as soon as each user logs in.</p></li>
+</ul>
+<p>As of Passlib 1.6, it contains the following string:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[passlib]
+
+; list of schemes supported by configuration
+; currently all django 1.4 hashes, django 1.0 hashes,
+; and three common modular crypt format hashes.
+schemes =
+    django_pbkdf2_sha256, django_pbkdf2_sha1, django_bcrypt,
+    django_salted_sha1, django_salted_md5, django_des_crypt, hex_md5,
+    sha512_crypt, bcrypt, phpass
+
+; default scheme to use for new hashes
+default = django_pbkdf2_sha256
+
+; hashes using these schemes will automatically be re-hashed
+; when the user logs in (currently all django 1.0 hashes)
+deprecated =
+    django_pbkdf2_sha1, django_salted_sha1, django_salted_md5,
+    django_des_crypt, hex_md5
+
+; sets some common options, including minimum rounds for two primary hashes.
+; if a hash has less than this number of rounds, it will be re-hashed.
+all__vary_rounds = 0.05
+sha512_crypt__min_rounds = 80000
+django_pbkdf2_sha256__min_rounds = 10000
+
+; set somewhat stronger iteration counts for ``User.is_staff``
+staff__sha512_crypt__default_rounds = 100000
+staff__django_pbkdf2_sha256__default_rounds = 12500
+
+; and even stronger ones for ``User.is_superuser``
+superuser__sha512_crypt__default_rounds = 120000
+superuser__django_pbkdf2_sha256__default_rounds = 15000
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-passlib.ext.django.models">Module Contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ext.django.models.password_context"><code class="docutils literal notranslate"><span class="pre">password_context</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ext.django.models.context_changed"><code class="docutils literal notranslate"><span class="pre">context_changed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ext.django.utils.get_preset_config"><code class="docutils literal notranslate"><span class="pre">get_preset_config()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ext.django.utils.PASSLIB_DEFAULT"><code class="docutils literal notranslate"><span class="pre">PASSLIB_DEFAULT</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.html" title="passlib.hash - Password Hashing Schemes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.exc.html" title="passlib.exc - Exceptions and warnings"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Lintian::Deb822</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#INSTANCE-METHODS">INSTANCE METHODS</a></li>
+  <li><a href="#FUNCTIONS">FUNCTIONS</a>
+    <ul>
+      <li><a href="#Debian-control-parsers">Debian control parsers</a></li>
+    </ul>
+  </li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Lintian::Deb822 -- A deb822 control file</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code> use Lintian::Deb822;</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Represents a paragraph in a Deb822 control file.</p>
+
+<h1 id="INSTANCE-METHODS">INSTANCE METHODS</h1>
+
+<dl>
+
+<dt>sections</dt>
+<dd>
+
+<p>Array of Deb822::Section objects in order of their original appearance.</p>
+
+</dd>
+<dt>positions</dt>
+<dd>
+
+<p>Line positions</p>
+
+</dd>
+<dt>first_mention</dt>
+<dd>
+
+</dd>
+<dt>last_mention</dt>
+<dd>
+
+</dd>
+<dt>read_file</dt>
+<dd>
+
+</dd>
+<dt>parse_string</dt>
+<dd>
+
+</dd>
+</dl>
+
+<h1 id="FUNCTIONS">FUNCTIONS</h1>
+
+<h2 id="Debian-control-parsers">Debian control parsers</h2>
+
+<p>At first glance, this module appears to contain several debian control parsers. In practise, there is only one real parser (<a href="#visit_dpkg_paragraph_string">&quot;visit_dpkg_paragraph_string&quot;</a>) - the rest are convenience functions around it.</p>
+
+<dl>
+
+<dt>read_dpkg_control(FILE[, FLAGS[, LINES]])</dt>
+<dd>
+
+<p>This is a convenience function to ease using <a href="#parse_dpkg_control">&quot;parse_dpkg_control&quot;</a> with paths to files (rather than open handles). The first argument must be the path to a FILE, which should be read as a debian control file. If the file is empty, an empty list is returned.</p>
+
+<p>Otherwise, this behaves like:</p>
+
+<pre><code> use autodie;
+ 
+ open(my $fd, &#39;&lt;:encoding(UTF-8)&#39;, FILE); # or &#39;&lt;&#39;
+ my @p = parse_dpkg_control($fd, FLAGS, LINES);
+ close($fd);
+ return @p;</code></pre>
+
+<p>This goes without saying that may fail with any of the messages that <a href="#parse_dpkg_control-HANDLE-FLAGS-LINES">&quot;parse_dpkg_control(HANDLE[, FLAGS[, LINES]])&quot;</a> do. It can also emit autodie exceptions if open or close fails.</p>
+
+</dd>
+<dt>read_dpkg_control_lc(FILE[, FLAGS[, LINES]])</dt>
+<dd>
+
+</dd>
+<dt>parse_dpkg_control_string(STRING[, FLAGS[, LINES]])</dt>
+<dd>
+
+<p>Reads debian control data from STRING and returns a list of paragraphs in it. A paragraph is represented via a hashref, which maps (lower cased) field names to their values.</p>
+
+<p>FLAGS (if given) is a bitmask of the <i>DCTRL_*</i> constants. Please refer to <a href="#CONSTANTS">&quot;CONSTANTS&quot;</a> for the list of constants and their meaning. The default value for FLAGS is 0.</p>
+
+<p>If LINES is given, it should be a reference to an empty list. On return, LINES will be populated with a hashref for each paragraph (in the same order as the returned list). Each hashref will also have a special key &quot;<i>START-OF-PARAGRAPH</i>&quot; that gives the line number of the first field in that paragraph. These hashrefs will map the field name of the given paragraph to the line number where the field name appeared.</p>
+
+<p>This is a convenience sub around <a href="#visit_dpkg_paragraph">&quot;visit_dpkg_paragraph&quot;</a> and can therefore produce the same errors as it. Please see <a href="#visit_dpkg_paragraph">&quot;visit_dpkg_paragraph&quot;</a> for the finer semantics of how the control file is parsed.</p>
+
+<p>NB: parse_dpkg_control does <i>not</i> close the handle for the caller.</p>
+
+</dd>
+<dt>parse_dpkg_control_string_lc(STRING[, FLAGS[, LINES]])</dt>
+<dd>
+
+</dd>
+<dt>lowercase_field_names</dt>
+<dd>
+
+</dd>
+<dt>visit_dpkg_paragraph_string (CODE, STRING[, FLAGS])</dt>
+<dd>
+
+<p>Reads debian control data from STRING and passes each paragraph to CODE. A paragraph is represented via a hashref, which maps (lower cased) field names to their values.</p>
+
+<p>FLAGS (if given) is a bitmask of the <i>DCTRL_*</i> constants. Please refer to <a href="#CONSTANTS">&quot;CONSTANTS&quot;</a> for the list of constants and their meaning. The default value for FLAGS is 0.</p>
+
+<p>If the file is empty (i.e. it contains no paragraphs), the method will contain an <i>empty</i> list. The deb822 contents may be inside a <i>signed</i> PGP message with a signature.</p>
+
+<p>visit_dpkg_paragraph will require the PGP headers to be correct (if present) and require that the entire file is covered by the signature. However, it will <i>not</i> validate the signature (in fact, the contents of the PGP SIGNATURE part can be empty). The signature should be validated separately.</p>
+
+<p>visit_dpkg_paragraph will pass paragraphs to CODE as they are completed. If CODE can process the paragraphs as they are seen, very large control files can be processed without keeping all the paragraphs in memory.</p>
+
+<p>As a consequence of how the file is parsed, CODE may be passed a number of (valid) paragraphs before parsing is stopped due to a syntax error.</p>
+
+<p>NB: visit_dpkg_paragraph does <i>not</i> close the handle for the caller.</p>
+
+<p>CODE is expected to be a callable reference (e.g. a sub) and will be invoked as the following:</p>
+
+<dl>
+
+<dt>CODE-&gt;(PARA, LINE_NUMBERS)</dt>
+<dd>
+
+<p>The first argument, PARA, is a hashref to the most recent paragraph parsed. The second argument, LINE_NUMBERS, is a hashref mapping each of the field names to the line number where the field name appeared. LINE_NUMBERS will also have a special key &quot;<i>START-OF-PARAGRAPH</i>&quot; that gives the line number of the first field in that paragraph.</p>
+
+<p>The return value of CODE is ignored.</p>
+
+<p>If the CODE invokes die (or similar) the error is propagated to the caller.</p>
+
+</dd>
+</dl>
+
+<p><i>On syntax errors</i>, visit_dpkg_paragraph will call die with the following string:</p>
+
+<pre><code>  &quot;syntax error at line %d: %s\n&quot;</code></pre>
+
+<p>Where %d is the line number of the issue and %s is one of:</p>
+
+<dl>
+
+<dt>Duplicate field %s</dt>
+<dd>
+
+<p>The field appeared twice in the paragraph.</p>
+
+</dd>
+<dt>Continuation line outside a paragraph (maybe line %d should be &quot; .&quot;)</dt>
+<dd>
+
+<p>A continuation line appears outside a paragraph - usually caused by an unintended empty line before it.</p>
+
+</dd>
+<dt>Whitespace line not allowed (possibly missing a &quot;.&quot;)</dt>
+<dd>
+
+<p>An empty continuation line was found. This usually means that a period is missing to denote an &quot;empty line&quot; in (e.g.) the long description of a package.</p>
+
+</dd>
+<dt>Cannot parse line &quot;%s&quot;</dt>
+<dd>
+
+<p>Generic error containing the text of the line that confused the parser. Note that all non-printables in %s will be replaced by underscores.</p>
+
+</dd>
+<dt>Comments are not allowed</dt>
+<dd>
+
+<p>A comment line appeared and FLAGS contained DCTRL_NO_COMMENTS.</p>
+
+</dd>
+<dt>PGP signature seen before start of signed message</dt>
+<dd>
+
+<p>A &quot;BEGIN PGP SIGNATURE&quot; header is seen and a &quot;BEGIN PGP MESSAGE&quot; has not been seen yet.</p>
+
+</dd>
+<dt>Two PGP signatures (first one at line %d)</dt>
+<dd>
+
+<p>Two &quot;BEGIN PGP SIGNATURE&quot; headers are seen in the same file.</p>
+
+</dd>
+<dt>Unexpected %s header</dt>
+<dd>
+
+<p>A valid PGP header appears (e.g. &quot;BEGIN PUBLIC KEY BLOCK&quot;).</p>
+
+</dd>
+<dt>Malformed PGP header</dt>
+<dd>
+
+<p>An invalid or malformed PGP header appears.</p>
+
+</dd>
+<dt>Expected at most one signed message (previous at line %d)</dt>
+<dd>
+
+<p>Two &quot;BEGIN PGP MESSAGE&quot; headers appears in the same message.</p>
+
+</dd>
+<dt>End of file but expected an &quot;END PGP SIGNATURE&quot; header</dt>
+<dd>
+
+<p>The file ended after a &quot;BEGIN PGP SIGNATURE&quot; header without being followed by an &quot;END PGP SIGNATURE&quot;.</p>
+
+</dd>
+<dt>PGP MESSAGE header must be first content if present</dt>
+<dd>
+
+<p>The file had content before PGP MESSAGE.</p>
+
+</dd>
+<dt>Data after the PGP SIGNATURE</dt>
+<dd>
+
+<p>The file had data after the PGP SIGNATURE block ended.</p>
+
+</dd>
+<dt>End of file before &quot;BEGIN PGP SIGNATURE&quot;</dt>
+<dd>
+
+<p>The file had a &quot;BEGIN PGP MESSAGE&quot; header, but no signature was present.</p>
+
+</dd>
+</dl>
+
+</dd>
+</dl>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Originally written Christian Schwarz and many other people.</p>
+
+<p>Moo version by Felix Lechner &lt;felix.lechner@lease-up.com&gt; for Lintian.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>lintian(1)</p>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Passlib 1.7 &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Passlib 1.6" href="1.6.html" />
+    <link rel="prev" title="Passlib 1.8" href="1.8.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="1.6.html" title="Passlib 1.6"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="1.8.html" title="Passlib 1.8"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../other.html" >Other Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Release History</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Passlib 1.7</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-1-7">
+<h1>Passlib 1.7<a class="headerlink" href="#passlib-1-7" title="Link to this heading">¶</a></h1>
+<div class="without-title admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Passlib 1.8 will drop support for Python 2.x, 3.3, and 3.4</strong>;
+and will require Python &gt;= 3.5.  The 1.7 series will be the last
+to support Python 2.7.  (See <a href="#id1"><span class="problematic" id="id2">:issue:`119`</span></a> for rationale).</p>
+<aside class="system-message" id="id1">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 9); <em><a href="#id2">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</div>
+<section id="id3">
+<h2><strong>1.7.4</strong> (2020-10-08)<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<p>Small followup to 1.7.3 release.</p>
+<section id="bugfixes">
+<h3>Bugfixes<a class="headerlink" href="#bugfixes" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p>Fixed some Python 2.6 errors from last release (<a href="#id4"><span class="problematic" id="id5">:issue:`128`</span></a>)</p>
+<aside class="system-message" id="id4">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 21); <em><a href="#id5">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+</ul>
+</section>
+<section id="other-changes">
+<h3>Other Changes<a class="headerlink" href="#other-changes" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><a class="reference internal" href="../lib/passlib.ext.django.html#module-passlib.ext.django" title="passlib.ext.django"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code></a> – updated tests to pass for Django 1.8 - 3.1 (<a href="#id6"><span class="problematic" id="id7">:issue:`98`</span></a>);
+along with some internal refactoring of the test classes.</p>
+<aside class="system-message" id="id6">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 26); <em><a href="#id7">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+<li><p><a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext" title="passlib.context.CryptContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code></a> will now throw <a class="reference internal" href="../lib/passlib.exc.html#passlib.exc.UnknownHashError" title="passlib.exc.UnknownHashError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">UnknownHashError</span></code></a> when it can’t identify
+a hash provided to methods such as <code class="xref py py-meth docutils literal notranslate"><span class="pre">CryptContext.verify()</span></code>.
+Previously it would throw a generic <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>.</p></li>
+</ul>
+</section>
+<section id="deprecations">
+<h3>Deprecations<a class="headerlink" href="#deprecations" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="../lib/passlib.ext.django.html#module-passlib.ext.django" title="passlib.ext.django"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code></a>: This extension will require Django 2.2 or newer as of Passlib 1.8.</p></li>
+</ul>
+</section>
+</section>
+<section id="id8">
+<h2><strong>1.7.3</strong> (2020-10-06)<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h2>
+<p>This release rolls up assorted bug &amp; compatibility fixes since 1.7.2.</p>
+<section id="administrative-changes">
+<h3>Administrative Changes<a class="headerlink" href="#administrative-changes" title="Link to this heading">¶</a></h3>
+<div class="without-title admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Passlib has moved to Heptapod!</strong></p>
+<p>Due to BitBucket deprecating Mercurial support, Passlib’s public repository and issue tracker
+has been relocated.  It’s now located at <a class="reference external" href="https://foss.heptapod.net/python-libs/passlib">https://foss.heptapod.net/python-libs/passlib</a>,
+and is powered by <a class="reference external" href="https://heptapod.net/">Heptapod</a>.</p>
+<p>Hosting for this and other open-source projects graciously provided by the people at
+<a class="reference external" href="https://octobus.net/">Octobus</a> and <a class="reference external" href="https://clever-cloud.com/">CleverCloud</a>!</p>
+<p>The mailing list and documentation urls remain the same.</p>
+</div>
+</section>
+<section id="new-features">
+<h3>New Features<a class="headerlink" href="#new-features" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><a class="reference internal" href="../lib/passlib.hash.ldap_std.html#passlib.hash.ldap_salted_sha512" title="passlib.hash.ldap_salted_sha512"><code class="xref py py-class docutils literal notranslate"><span class="pre">ldap_salted_sha512</span></code></a>: LDAP “salted hash” support added for SHA-256 and SHA-512 (<a href="#id9"><span class="problematic" id="id10">:issue:`124`</span></a>).</p>
+<aside class="system-message" id="id9">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 70); <em><a href="#id10">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+</ul>
+</section>
+<section id="id11">
+<h3>Bugfixes<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><a class="reference internal" href="../lib/passlib.hash.bcrypt.html#passlib.hash.bcrypt" title="passlib.hash.bcrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code></a>: Under python 3, OS native backend wasn’t being detected on BSD platforms.
+This was due to a few internal issues in feature-detection code, which have been fixed.</p></li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">passlib.utils.safe_crypt()</span></code>: Support <code class="xref py py-func docutils literal notranslate"><span class="pre">crypt.crypt()</span></code> unexpectedly
+returning bytes under Python 3 (<a href="#id12"><span class="problematic" id="id13">:issue:`113`</span></a>).</p>
+<aside class="system-message" id="id12">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 80); <em><a href="#id13">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">passlib.utils.safe_crypt()</span></code>: Support <code class="xref py py-func docutils literal notranslate"><span class="pre">crypt.crypt()</span></code> throwing <code class="xref py py-exc docutils literal notranslate"><span class="pre">OSError</span></code>,
+which can happen as of Python 3.9 (<a href="#id14"><span class="problematic" id="id15">:issue:`115`</span></a>).</p>
+<aside class="system-message" id="id14">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 83); <em><a href="#id15">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+<li><p><a class="reference internal" href="../lib/passlib.ext.django.html#module-passlib.ext.django" title="passlib.ext.django"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code></a>: fixed lru_cache import (django 3 compatibility)</p></li>
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.tests</span></code>: fixed bug where <code class="xref py py-meth docutils literal notranslate"><span class="pre">HandlerCase.test_82_crypt_support()</span></code> wasn’t
+being run on systems lacking support for the hasher being tested.
+This test now runs regardless of system support.</p></li>
+</ul>
+</section>
+<section id="id16">
+<h3>Deprecations<a class="headerlink" href="#id16" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Support for Python 2.x, 3.3, and 3.4 is deprecated; and will be dropped in Passlib 1.8.</p></li>
+</ul>
+</section>
+<section id="id17">
+<h3>Other Changes<a class="headerlink" href="#id17" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><a class="reference internal" href="../lib/passlib.hash.bcrypt_sha256.html#passlib.hash.bcrypt_sha256" title="passlib.hash.bcrypt_sha256"><code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt_sha256</span></code></a>:  Internal algorithm has been changed to use HMAC-SHA256 instead of
+plain SHA256.  This should strengthen the hash against brute-force attempts which bypass
+the intermediary hash by using known-sha256-digest lookup tables (<a href="#id18"><span class="problematic" id="id19">:issue:`114`</span></a>).</p>
+<aside class="system-message" id="id18">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 102); <em><a href="#id19">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+<li><p><a class="reference internal" href="../lib/passlib.hash.bcrypt.html#passlib.hash.bcrypt" title="passlib.hash.bcrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code></a>: OS native backend (“os_crypt”) now raises the new <a class="reference internal" href="../lib/passlib.exc.html#passlib.exc.PasswordValueError" title="passlib.exc.PasswordValueError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasswordValueError</span></code></a>
+if password is provided as non-UTF8 bytes under python 3
+(These can’t be passed through, due to limitation in stdlib’s <code class="xref py py-func docutils literal notranslate"><span class="pre">crypt.crypt()</span></code>).
+Prior to this release, it confusingly raised <a class="reference internal" href="../lib/passlib.exc.html#passlib.exc.MissingBackendError" title="passlib.exc.MissingBackendError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">MissingBackendError</span></code></a> instead.</p>
+<p>Also improved legacy bcrypt format workarounds, to support a few more UTF8 edge cases than before.</p>
+</li>
+<li><p>Modified some internals to help run on FIPS systems (<a href="#id20"><span class="problematic" id="id21">:issue:`116`</span></a>):</p>
+<aside class="system-message" id="id20">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 115); <em><a href="#id21">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+<p>In particular, when MD5 hash is not available, <a class="reference internal" href="../lib/passlib.hash.hex_digests.html#passlib.hash.hex_md5" title="passlib.hash.hex_md5"><code class="xref py py-class docutils literal notranslate"><span class="pre">hex_md5</span></code></a>
+will now return a dummy hasher which throws an error if used; rather than throwing
+an uncaught <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code> when an application attempts to import it.  (Similar behavior
+added for the other unsalted digest hashes).</p>
+<p>Also, <a class="reference internal" href="../lib/passlib.crypto.digest.html#passlib.crypto.digest.lookup_hash" title="passlib.crypto.digest.lookup_hash"><code class="xref py py-func docutils literal notranslate"><span class="pre">lookup_hash()</span></code></a>’s <code class="docutils literal notranslate"><span class="pre">required=False</span></code> kwd was modified to report unsupported hashes
+via the <a class="reference internal" href="../lib/passlib.crypto.digest.html#passlib.crypto.digest.HashInfo.supported" title="passlib.crypto.digest.HashInfo.supported"><code class="xref py py-attr docutils literal notranslate"><span class="pre">HashInfo.supported</span></code></a> attribute; rather than letting ValueErrors through uncaught.</p>
+<p>This should allow CryptContext instances to be created on FIPS systems without having
+a load-time error (though they will still receive an error if an attempt is made to actually
+<em>use</em> a FIPS-disabled hash).</p>
+</li>
+<li><p>Internal errors calling stdlib’s <code class="xref py py-func docutils literal notranslate"><span class="pre">crypt.crypt()</span></code>, or third party libraries,
+will now raise the new <a class="reference internal" href="../lib/passlib.exc.html#passlib.exc.InternalBackendError" title="passlib.exc.InternalBackendError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">InternalBackendError</span></code></a> (a RuntimeError);
+where previously it would raise an <code class="xref py py-exc docutils literal notranslate"><span class="pre">AssertionError</span></code>.</p></li>
+<li><p>Various Python 3.9 compatibility fixes (including <code class="docutils literal notranslate"><span class="pre">NotImplemented</span></code>-related warning, <a href="#id22"><span class="problematic" id="id23">:issue:`125`</span></a>)</p>
+<aside class="system-message" id="id22">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 135); <em><a href="#id23">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+</ul>
+</section>
+</section>
+<section id="id24">
+<h2><strong>1.7.2</strong> (2019-11-22)<a class="headerlink" href="#id24" title="Link to this heading">¶</a></h2>
+<p>This release rolls up assorted bug &amp; compatibility fixes since 1.7.1.</p>
+<section id="id25">
+<h3>New Features<a class="headerlink" href="#id25" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><a class="reference internal" href="../lib/passlib.hash.argon2.html#passlib.hash.argon2" title="passlib.hash.argon2"><code class="xref py py-class docutils literal notranslate"><span class="pre">argon2</span></code></a>: Now supports Argon2 “ID” and “D” hashes (assuming new enough backend library).
+Now defaults to “ID” hashes instead of “I” hashes, but this can be overridden via <code class="docutils literal notranslate"><span class="pre">type</span></code> keyword.
+(<a href="#id26"><span class="problematic" id="id27">:issue:`101`</span></a>)</p>
+<aside class="system-message" id="id26">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 148); <em><a href="#id27">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+<li><p><a class="reference internal" href="../lib/passlib.hash.scrypt.html#passlib.hash.scrypt" title="passlib.hash.scrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">scrypt</span></code></a>: Now uses python 3.6 stdlib’s <code class="xref py py-func docutils literal notranslate"><span class="pre">hashlib.scrypt()</span></code> as backend,
+if present (<a href="#id28"><span class="problematic" id="id29">:issue:`86`</span></a>).</p>
+<aside class="system-message" id="id28">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 154); <em><a href="#id29">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+</ul>
+</section>
+<section id="id30">
+<h3>Bugfixes<a class="headerlink" href="#id30" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p>Python 3.8 compatibility fixes</p></li>
+<li><p><a class="reference internal" href="../lib/passlib.apache.html#passlib.apache.HtpasswdFile" title="passlib.apache.HtpasswdFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.apache.HtpasswdFile</span></code></a>: Now generates bcrypt hashes using
+the <code class="docutils literal notranslate"><span class="pre">&quot;$2y$&quot;</span></code> prefix,  which should work properly with Apache 2.4’s <code class="docutils literal notranslate"><span class="pre">htpasswd</span></code> tool.
+Previous releases used the functionally equivalent <code class="docutils literal notranslate"><span class="pre">&quot;$2b$&quot;</span></code> prefix,
+which <code class="docutils literal notranslate"><span class="pre">htpasswd</span></code> was unable to read (<a href="#id31"><span class="problematic" id="id32">:issue:`95`</span></a>).</p>
+<aside class="system-message" id="id31">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 162); <em><a href="#id32">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+<li><p><a class="reference internal" href="../lib/passlib.totp.html#module-passlib.totp" title="passlib.totp: totp / two factor authentaction"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code></a>: The <a class="reference internal" href="../lib/passlib.totp.html#passlib.totp.TOTP.to_uri" title="passlib.totp.TOTP.to_uri"><code class="xref py py-meth docutils literal notranslate"><span class="pre">TOTP.to_uri()</span></code></a> method now prepends the issuer to URI label,
+(per the KeyURI spec).  This should fix some compatibility issues with older TOTP clients
+(<a href="#id33"><span class="problematic" id="id34">:issue:`92`</span></a>)</p>
+<aside class="system-message" id="id33">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 169); <em><a href="#id34">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+<li><p>Fixed error in <code class="xref py py-meth docutils literal notranslate"><span class="pre">argon2.parsehash()</span></code> (<a href="#id35"><span class="problematic" id="id36">:issue:`97`</span></a>)</p>
+<aside class="system-message" id="id35">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 175); <em><a href="#id36">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+<li><p><strong>unittests</strong>: <code class="docutils literal notranslate"><span class="pre">crypt()</span></code> unittests now account for linux systems running libxcrypt
+(such as recent Fedora releases)</p></li>
+</ul>
+</section>
+<section id="id37">
+<h3>Deprecations<a class="headerlink" href="#id37" title="Link to this heading">¶</a></h3>
+<div class="float-center admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Due to lack of <code class="docutils literal notranslate"><span class="pre">pip</span></code> and <code class="docutils literal notranslate"><span class="pre">venv</span></code> support, Passlib is no longer fully tested on Python
+2.6 &amp; 3.3.  There are no known issues, and bugfixes against these versions will still be
+accepted for the Passlib 1.7.x series.
+However, <strong>Passlib 1.8 will drop support for Python 2.x, 3.3, &amp; 3.4,</strong> and require Python &gt;= 3.5.</p>
+</div>
+<ul class="simple">
+<li><p>Support for Python 2.x, 3.3, and 3.4 is deprecated; and will be dropped in Passlib 1.8.
+<em>(2020-10-06: Updated to include all of Python 2.x, 3.3, and 3.4; when 1.7.2 was released,
+only Python 2.6 and 3.3 support was deprecated)</em></p></li>
+<li><p><a class="reference internal" href="../lib/passlib.hash.bcrypt.html#passlib.hash.bcrypt" title="passlib.hash.bcrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code></a>: <code class="docutils literal notranslate"><span class="pre">py-bcrypt</span></code> and <code class="docutils literal notranslate"><span class="pre">bcryptor</span></code> backends are deprecated, and support
+will be removed in Passlib 1.8.  Please switch to the <code class="docutils literal notranslate"><span class="pre">bcrypt</span></code> backend.</p></li>
+</ul>
+</section>
+<section id="id38">
+<h3>Other Changes<a class="headerlink" href="#id38" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><strong>setup.py</strong>: now honors <code class="docutils literal notranslate"><span class="pre">$SOURCE_DATE_EPOCH</span></code> to help with reproducible builds</p></li>
+<li><p><a class="reference internal" href="../lib/passlib.hash.argon2.html#passlib.hash.argon2" title="passlib.hash.argon2"><code class="xref py py-class docutils literal notranslate"><span class="pre">argon2</span></code></a>: Now throws helpful error if “argon2” package is actually an incompatible
+or supported version of argon2_cffi (<a href="#id39"><span class="problematic" id="id40">:issue:`99`</span></a>).</p>
+<aside class="system-message" id="id39">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 208); <em><a href="#id40">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+<li><p><strong>documentation</strong>: Various updates &amp; corrections.
+building the documentation now requires Sphinx 1.6 or newer.</p></li>
+</ul>
+</section>
+</section>
+<section id="id41">
+<h2><strong>1.7.1</strong> (2017-1-30)<a class="headerlink" href="#id41" title="Link to this heading">¶</a></h2>
+<p>This release rolls up assorted bug &amp; compatibility fixes since 1.7.0.</p>
+<section id="id42">
+<h3>Bugfixes<a class="headerlink" href="#id42" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="../lib/passlib.hash.cisco_pix.html#passlib.hash.cisco_asa" title="passlib.hash.cisco_asa"><code class="xref py py-class docutils literal notranslate"><span class="pre">cisco_asa</span></code></a> and <a class="reference internal" href="../lib/passlib.hash.cisco_pix.html#passlib.hash.cisco_pix" title="passlib.hash.cisco_pix"><code class="xref py py-class docutils literal notranslate"><span class="pre">cisco_pix</span></code></a>: Fixed a number of issues
+which under <a class="reference internal" href="../lib/passlib.hash.cisco_pix.html#passlib-asa96-bug"><span class="std std-ref">certain conditions</span></a>
+caused prior releases to generate hashes that were unverifiable
+on Cisco systems.</p></li>
+<li><p><a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a> will now warn if passed any settings
+keywords.  This usage was deprecated in 1.7.0, but warning wasn’t properly enabled.
+See <a class="reference internal" href="../narr/hash-tutorial.html#hash-configuring"><span class="std std-ref">Customizing the Configuration</span></a> for the preferred way to pass settings.</p></li>
+<li><p><strong>setup.py</strong>: Don’t append timestamp when run from an sdist.
+This should fix some downstream build issues.</p></li>
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.tests.test_totp</span></code>: Test suite now traps additional errors that <code class="xref py py-func docutils literal notranslate"><span class="pre">datetime.utcfromtimestamp()</span></code>
+may throw under python 3, which should fix some test failures on architectures with rarer ILP sizes.
+It also works around Python 3.6 bug <a class="reference external" href="https://bugs.python.org/issue29100">29100</a>.</p></li>
+</ul>
+</section>
+<section id="id44">
+<h3>Deprecations<a class="headerlink" href="#id44" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p><a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext" title="passlib.context.CryptContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code></a>: The <code class="docutils literal notranslate"><span class="pre">harden_verify</span></code> flag has been turned into a NOOP and deprecated.
+It will be removed in passlib 1.8 along with the already-deprecated <code class="docutils literal notranslate"><span class="pre">min_verify_time</span></code> (<a href="#id45"><span class="problematic" id="id46">:issue:`83`</span></a>).</p>
+<aside class="system-message" id="id45">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 245); <em><a href="#id46">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+</ul>
+</section>
+<section id="id47">
+<h3>Other Changes<a class="headerlink" href="#id47" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.tests.utils</span></code>: General truncation policy details were hammered out,
+and additional hasher tests were added to enforce them.</p></li>
+<li><p><strong>documentation</strong>: Various updates &amp; corrections.</p></li>
+</ul>
+</section>
+</section>
+<section class="emphasize-children toc-always-open" id="id48">
+<h2><strong>1.7.0</strong> (2016-11-22)<a class="headerlink" href="#id48" title="Link to this heading">¶</a></h2>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><p><em>Welcome to Passlib 1.7!</em></p>
+<p>This release includes a number of new features, cleans up
+some long-standing design issues, and contains a number of internal
+improvements; all part of the roadmap towards a leaner and simpler Passlib 2.0.</p>
+<p><em>Highlights include:</em></p>
+<ul class="simple">
+<li><p>Support for <a class="reference internal" href="../lib/passlib.hash.argon2.html#passlib.hash.argon2" title="passlib.hash.argon2"><code class="xref py py-class docutils literal notranslate"><span class="pre">argon2</span></code></a> and
+<a class="reference internal" href="../lib/passlib.hash.scrypt.html#passlib.hash.scrypt" title="passlib.hash.scrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">scrypt</span></code></a> hashes.</p></li>
+<li><p>TOTP Two-Factor Authentications helpers in the <a class="reference internal" href="../lib/passlib.totp.html#module-passlib.totp" title="passlib.totp: totp / two factor authentaction"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code></a> module.</p></li>
+</ul>
+<ul class="simple">
+<li><p>The misnamed <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.encrypt" title="passlib.ifc.PasswordHash.encrypt"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.encrypt()</span></code></a> method has been renamed to  <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a>
+(and the old alias deprecated).  This is part of a much
+larger project to clean up passlib’s password hashing API,
+see the <a class="reference internal" href="../narr/hash-tutorial.html#hash-tutorial"><span class="std std-ref">PasswordHash Tutorial</span></a> for a walkthrough.</p></li>
+<li><p>Large speedup of the internal PBKDF2 routines.</p></li>
+<li><p>Updated documentation</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Passlib now requires Python 2.6, 2.7, or &gt;= 3.3</strong>.
+Support for Python versions 2.5 and 3.0 through 3.2 have been dropped.
+Support for PyPy 1.x has also been dropped.</p></li>
+<li><p>The <a class="reference internal" href="../lib/passlib.ext.django.html#module-passlib.ext.django" title="passlib.ext.django"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code></a> extension now requires Django 1.8 or better.
+Django 1.7 and earlier are no longer supported.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id49">
+<h3>New Features<a class="headerlink" href="#id49" title="Link to this heading">¶</a></h3>
+<p><em>New Hashes</em></p>
+<blockquote>
+<div><ul>
+<li><p><a class="reference internal" href="../lib/passlib.hash.argon2.html"><span class="doc">passlib.hash.argon2</span></a> –
+Support for the Argon2 password hash (<a href="#id50"><span class="problematic" id="id51">:issue:`69`</span></a>).</p>
+<aside class="system-message" id="id50">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 303); <em><a href="#id51">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+<li><p><a class="reference internal" href="../lib/passlib.hash.scrypt.html"><span class="doc">passlib.hash.scrypt</span></a> –
+New password hash format which uses the SCrypt KDF (<a href="#id52"><span class="problematic" id="id53">:issue:`8`</span></a>).</p>
+<aside class="system-message" id="id52">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 306); <em><a href="#id53">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+<li><p><a class="reference internal" href="../lib/passlib.hash.cisco_asa.html"><span class="doc">passlib.hash.cisco_asa</span></a> –
+Support for Cisco ASA 7.0 and newer hashes (<a href="#id54"><span class="problematic" id="id55">:issue:`51`</span></a>).
+<em>Note: this should be considered experimental, and needs verification
+of it’s test vectors.</em></p>
+<aside class="system-message" id="id54">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 309); <em><a href="#id55">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+</ul>
+</div></blockquote>
+<p><em>New Modules</em></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>New <a class="reference internal" href="../lib/passlib.totp.html#module-passlib.totp" title="passlib.totp: totp / two factor authentaction"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code></a> module provides full support for TOTP tokens
+on both client and server side.  This module contains both low-level primitives,
+and high-level helpers for persisting and tracking client state.</p></li>
+<li><p>New <a class="reference internal" href="../lib/passlib.pwd.html#module-passlib.pwd" title="passlib.pwd: password generation helpers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code></a> module added to aid in password generation.
+Features support for alphanumeric passwords, or generation
+of phrases using the EFF’s password generation wordlist.</p></li>
+</ul>
+</div></blockquote>
+<p><em>CryptContext Features</em></p>
+<blockquote>
+<div><ul>
+<li><p>The <a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext" title="passlib.context.CryptContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code></a> object now has helper
+methods for dealing with hashes representing
+<a class="reference internal" href="../lib/passlib.context.html#context-disabled-hashes"><span class="std std-ref">disabled accounts</span></a> (<a href="#id56"><span class="problematic" id="id57">:issue:`45`</span></a>).</p>
+<aside class="system-message" id="id56">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 326); <em><a href="#id57">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+<li><p>All hashers which truncate passwords (e.g. <a class="reference internal" href="../lib/passlib.hash.bcrypt.html#passlib.hash.bcrypt" title="passlib.hash.bcrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code></a>
+and <a class="reference internal" href="../lib/passlib.hash.des_crypt.html#passlib.hash.des_crypt" title="passlib.hash.des_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">des_crypt</span></code></a>) can now be configured to raise
+a <a class="reference internal" href="../lib/passlib.exc.html#passlib.exc.PasswordTruncateError" title="passlib.exc.PasswordTruncateError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasswordTruncateError</span></code></a> when a overly-large password is provided.
+This configurable via (for example) <code class="docutils literal notranslate"><span class="pre">bcrypt.using(truncate_error=True).hash(secret)</span></code>,
+or globally as an option to CryptContext (<a href="#id58"><span class="problematic" id="id59">:issue:`59`</span></a>).</p>
+<aside class="system-message" id="id58">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 330); <em><a href="#id59">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+</ul>
+</div></blockquote>
+<p><em>Cryptographic Backends</em></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The <a class="reference internal" href="../lib/passlib.crypto.digest.html#passlib.crypto.digest.pbkdf2_hmac" title="passlib.crypto.digest.pbkdf2_hmac"><code class="xref py py-func docutils literal notranslate"><span class="pre">pbkdf2_hmac()</span></code></a> function and all PBKDF2-based
+hashes have been sped up by ~20% compared to Passlib 1.6. For an even greater
+speedup, it will now take advantage of the external <a class="reference external" href="https://pypi.python.org/pypi/fastpbkdf2">fastpbk2</a>
+library, or stdlib’s <code class="xref py py-func docutils literal notranslate"><span class="pre">hashlib.pbkdf2_hmac()</span></code> (when available).</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id60">
+<h3>Other Changes<a class="headerlink" href="#id60" title="Link to this heading">¶</a></h3>
+<p><em>Other changes of note in Passlib 1.7:</em></p>
+<blockquote>
+<div><ul>
+<li><p>New workflows have been for configuring the hashers through <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.using()</span></code></a>,
+and testing hashes through <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.needs_update" title="passlib.ifc.PasswordHash.needs_update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.needs_update()</span></code></a>.
+See the <a class="reference internal" href="../narr/hash-tutorial.html#hash-tutorial"><span class="std std-ref">PasswordHash Tutorial</span></a> for a walkthrough.</p></li>
+<li><p><a class="reference internal" href="../lib/passlib.hash.bcrypt.html#passlib.hash.bcrypt" title="passlib.hash.bcrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code></a> and <a class="reference internal" href="../lib/passlib.hash.bcrypt_sha256.html#passlib.hash.bcrypt_sha256" title="passlib.hash.bcrypt_sha256"><code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt_sha256</span></code></a>
+now default to the “2b” format.</p></li>
+<li><p>Added support for Django’s Argon2 wrapper (<a class="reference internal" href="../lib/passlib.hash.django_std.html#passlib.hash.django_argon2" title="passlib.hash.django_argon2"><code class="xref py py-class docutils literal notranslate"><span class="pre">django_argon2</span></code></a>)</p></li>
+<li><p><a class="reference internal" href="../lib/passlib.apache.html#passlib.apache.HtpasswdFile" title="passlib.apache.HtpasswdFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.apache.HtpasswdFile</span></code></a> has been updated to support all of Apache 2.4’s
+hash schemes, as well as all host OS crypt formats; allowing for much more
+secure hashes in htpasswd files.</p>
+<p>You can now specify if the default hash should be compatible with apache 2.2 or 2.4, and host-specific or portable.
+See the <code class="docutils literal notranslate"><span class="pre">default_schemes</span></code> keyword for details.</p>
+</li>
+<li><p>Large parts of the documentation have been rewritten, to separate
+tutorial &amp; api reference content, and provide more detail on various features.</p></li>
+<li><p>Official documentation is now at <a class="reference external" href="https://passlib.readthedocs.io">https://passlib.readthedocs.io</a></p></li>
+</ul>
+</div></blockquote>
+<p><em>Internal Changes</em></p>
+<blockquote>
+<div><ul>
+<li><p>The majority of CryptContext’s internal rounds handling &amp; migration code has been
+moved to the password hashes themselves, taking advantage of the new <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.using()</span></code></a>
+and <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.needs_update" title="passlib.ifc.PasswordHash.needs_update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.needs_update()</span></code></a> methods.</p>
+<p>This allows much more flexibility when configuring a hasher directly,
+as well making it easier for CryptContext to support hash-specific parameters.</p>
+</li>
+<li><p>The shared <code class="xref py py-class docutils literal notranslate"><span class="pre">PasswordHash</span></code> unittests now check all hash handlers for
+basic thread-safety (motivated by the pybcrypt 0.2 concurrency bug).</p></li>
+<li><p><a class="reference internal" href="../lib/passlib.utils.html#passlib.utils.consteq" title="passlib.utils.consteq"><code class="xref py py-func docutils literal notranslate"><span class="pre">consteq()</span></code></a> is now wraps stdlib’s <code class="xref py py-func docutils literal notranslate"><span class="pre">hmac.compare_digest()</span></code>
+when available (python 2.7.11, python 3.3 and up).</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id61">
+<h3>Bugfixes<a class="headerlink" href="#id61" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><ul>
+<li><p><a class="reference internal" href="../lib/passlib.hash.bcrypt.html#passlib.hash.bcrypt" title="passlib.hash.bcrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code></a>: Passlib will now detect and work around
+a fatal concurrency bug in py-bcrypt 0.2 and earlier
+(a <a class="reference internal" href="../lib/passlib.exc.html#passlib.exc.PasslibSecurityWarning" title="passlib.exc.PasslibSecurityWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasslibSecurityWarning</span></code></a> will also be issued).
+Nevertheless, users are <em>strongly</em> encouraged to upgrade to py-bcrypt 0.3
+or another bcrypt library if you are using the
+<a class="reference internal" href="../lib/passlib.hash.bcrypt.html"><span class="doc">bcrypt</span></a> hash.</p></li>
+<li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code> instances now pass contextual keywords (such as <cite>“user”</cite>)
+to the hashes that support them, but ignore them for hashes that don’t (<a href="#id62"><span class="problematic" id="id63">:issue:`63`</span></a>).</p>
+<aside class="system-message" id="id62">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 397); <em><a href="#id63">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+<li><p>The <a class="reference internal" href="../lib/passlib.apache.html#module-passlib.apache" title="passlib.apache: reading/writing htpasswd &amp; htdigest files"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code></a> htpasswd helpers now preserve blank lines and comments,
+rather than throwing a parse error (<a href="#id64"><span class="problematic" id="id65">:issue:`73`</span></a>).</p>
+<aside class="system-message" id="id64">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 400); <em><a href="#id65">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+<li><p><a class="reference internal" href="../lib/passlib.ext.django.html#module-passlib.ext.django" title="passlib.ext.django"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code></a> and unittests: compatibility fixes for Django 1.9 / 1.10,
+and some internal refactoring (<a href="#id66"><span class="problematic" id="id67">:issue:`68`</span></a>).</p>
+<aside class="system-message" id="id66">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 403); <em><a href="#id67">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+<li><p>The <a class="reference internal" href="../lib/passlib.hash.django_std.html#passlib.hash.django_disabled" title="passlib.hash.django_disabled"><code class="xref py py-class docutils literal notranslate"><span class="pre">django_disabled</span></code></a> hash now appends
+a 40-char alphanumeric string, to match Django’s behavior.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="encrypt-method-cleanup">
+<span id="id68"></span><h3>Deprecations<a class="headerlink" href="#encrypt-method-cleanup" title="Link to this heading">¶</a></h3>
+<p>As part of a long-range plan to restructure and simplify both the API and the internals of Passlib,
+a number of methods have been deprecated &amp; replaced.  The eventually goal is a large cleanup
+and overhaul as part of Passlib 2.0. There will be at least one more 1.x version
+before Passlib 2.0, to provide a final transitional release
+(see the <a class="reference external" href="https://foss.heptapod.net/python-libs/passlib/wikis/roadmap">Project Roadmap</a>).</p>
+<section id="password-hash-api-deprecations">
+<h4>Password Hash API Deprecations<a class="headerlink" href="#password-hash-api-deprecations" title="Link to this heading">¶</a></h4>
+<blockquote>
+<div><p>As part of this cleanup, the <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash" title="passlib.ifc.PasswordHash"><code class="xref py py-class docutils literal notranslate"><span class="pre">PasswordHash</span></code></a> API (used by all hashes in passlib),
+has had a number of changes:</p>
+<div class="float-right admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../narr/hash-tutorial.html#hash-tutorial"><span class="std std-ref">PasswordHash Tutorial</span></a>, which walks through using the new hasher interface.</p>
+</div>
+<ul>
+<li><p><strong>[major]</strong> The <code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.encrypt()</span></code> method
+has been renamed to <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a>,
+to clarify that it’s performing one-way hashing rather than reversiable encryption.
+A compatibility alias will remain in place until Passlib 2.0.
+This should fix the longstanding <a href="#id69"><span class="problematic" id="id70">:issue:`21`</span></a>.</p>
+<aside class="system-message" id="id69">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/history/1.7.rst</span>, line 432); <em><a href="#id70">backlink</a></em></p>
+<p>Unknown interpreted text role “issue”.</p>
+</aside>
+</li>
+<li><p><strong>[major]</strong> Passing explicit configuration options to the <code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.encrypt()</span></code> method
+(now called <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a>) is deprecated.
+To provide settings such as <code class="docutils literal notranslate"><span class="pre">rounds</span></code> and <code class="docutils literal notranslate"><span class="pre">salt_size</span></code>, callers
+should use the new <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.using()</span></code></a>
+method, which generates a new hasher with a customized configuration.
+For example, instead of:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span> <span class="n">sha256_crypt</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="s2">&quot;secret&quot;</span><span class="p">,</span> <span class="n">rounds</span><span class="o">=</span><span class="mi">12345</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>… applications should now use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span> <span class="n">sha256_crypt</span><span class="o">.</span><span class="n">using</span><span class="p">(</span><span class="n">rounds</span><span class="o">=</span><span class="mi">12345</span><span class="p">)</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;secret&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Support for the old syntax will be removed in Passlib 2.0.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This doesn’t apply to contextual options such as <a class="reference internal" href="../lib/passlib.hash.cisco_pix.html#passlib.hash.cisco_pix" title="passlib.hash.cisco_pix"><code class="xref py py-class docutils literal notranslate"><span class="pre">cisco_pix</span></code></a>’s
+<code class="docutils literal notranslate"><span class="pre">user</span></code> keyword, which should still be passed into the <code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code> method.</p>
+</div>
+</li>
+<li><p><strong>[minor]</strong> The little-used <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.genhash" title="passlib.ifc.PasswordHash.genhash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.genhash()</span></code></a> and
+<a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.genconfig" title="passlib.ifc.PasswordHash.genconfig"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.genconfig()</span></code></a> methods have been deprecated.
+Compatibility aliases will remain in place until Passlib 2.0,
+at which point they will be removed entirely.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="crypt-context-api-deprecations">
+<h4>Crypt Context API Deprecations<a class="headerlink" href="#crypt-context-api-deprecations" title="Link to this heading">¶</a></h4>
+<blockquote>
+<div><p>Applications which use passlib’s <a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext" title="passlib.context.CryptContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code></a> should not be
+greatly affected by this release; only one major deprecation was made:</p>
+<ul class="simple">
+<li><p><strong>[major]</strong> To match the <code class="xref py py-class docutils literal notranslate"><span class="pre">PasswordHash</span></code> API changes above,
+the <code class="xref py py-meth docutils literal notranslate"><span class="pre">CryptContext.encrypt()</span></code> method was renamed to <a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext.hash" title="passlib.context.CryptContext.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CryptContext.hash()</span></code></a>.
+A compatibility alias will remain until Passlib 2.0.</p></li>
+</ul>
+<p>A fewer internal options and infrequently used features have been deprecated:</p>
+<ul>
+<li><p><strong>[minor]</strong> <a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext.hash" title="passlib.context.CryptContext.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CryptContext.hash()</span></code></a>, <a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext.verify" title="passlib.context.CryptContext.verify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">verify()</span></code></a>,
+<a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext.verify_and_update" title="passlib.context.CryptContext.verify_and_update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">verify_and_update()</span></code></a>, and
+<a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext.needs_update" title="passlib.context.CryptContext.needs_update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">needs_update()</span></code></a>:
+The <code class="docutils literal notranslate"><span class="pre">scheme</span></code> keyword is now deprecated; support will be removed in Passlib 2.0.</p></li>
+<li><p><strong>[minor]</strong> <a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext.hash" title="passlib.context.CryptContext.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CryptContext.hash()</span></code></a>: Passing
+settings keywords to <code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code> such as <code class="docutils literal notranslate"><span class="pre">rounds</span></code> and <code class="docutils literal notranslate"><span class="pre">salt</span></code> is deprecated.
+Code should now get ahold of the default hasher, and invoke it explicitly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span> <span class="c1"># for example, calls that did this:</span>
+<span class="gp">&gt;&gt;&gt; </span> <span class="n">context</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="n">secret</span><span class="p">,</span> <span class="n">rounds</span><span class="o">=</span><span class="mi">1234</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span> <span class="c1"># should use this instead:</span>
+<span class="gp">&gt;&gt;&gt; </span> <span class="n">context</span><span class="o">.</span><span class="n">handler</span><span class="p">()</span><span class="o">.</span><span class="n">using</span><span class="p">(</span><span class="n">rounds</span><span class="o">=</span><span class="mi">1234</span><span class="p">)</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="n">secret</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>[minor]</strong> The <code class="docutils literal notranslate"><span class="pre">vary_rounds</span></code> option has been deprecated,
+and will be removed in Passlib 2.0.  It provided very little security benefit,
+and was judged not worth the additional code complexity it requires.</p></li>
+<li><p><strong>[minor]</strong> The special wildcard <code class="docutils literal notranslate"><span class="pre">all</span></code> scheme name
+has been deprecated, and will be removed in Passlib 2.0.  The only legitimate use
+was to support <code class="docutils literal notranslate"><span class="pre">vary_rounds</span></code>, which itself will be removed in 2.0.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="other-deprecations">
+<h4>Other Deprecations<a class="headerlink" href="#other-deprecations" title="Link to this heading">¶</a></h4>
+<blockquote>
+<div><p>A few other assorted deprecations have been made:</p>
+<ul>
+<li><p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">passlib.utils.generate_secret()</span></code> function has been deprecated
+in favor of the new <a class="reference internal" href="../lib/passlib.pwd.html#module-passlib.pwd" title="passlib.pwd: password generation helpers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code></a> module, and the old function will be removed
+in Passlib 2.0.</p></li>
+<li><p>Most of passlib’s internal cryptography helpers have been moved from
+<a class="reference internal" href="../lib/passlib.utils.html#module-passlib.utils" title="passlib.utils: internal helpers for implementing password hashes"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code></a> to <a class="reference internal" href="../lib/passlib.crypto.html#module-passlib.crypto" title="passlib.crypto: internal cryptographic helpers for implementing password hashes"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code></a>, and the APIs refactored.
+This allowed unification of various hash management routines,
+some speed ups to the HMAC and PBKDF2 primitives, and opens up the architecture
+to support more optional backend libraries.</p>
+<p>Compatibility wrappers will be kept in place at the old location until Passlib 2.0.</p>
+</li>
+<li><p>Some deprecations and internal changes have been made to the <a class="reference internal" href="../lib/passlib.utils.handlers.html#module-passlib.utils.handlers" title="passlib.utils.handlers: framework for writing password hashes"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.handlers</span></code></a>
+module, which provides the common framework Passlib uses to implement hashers.</p></li>
+</ul>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>More backwards-incompatible relocations are planned for the internal
+<code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> module in the Passlib 1.8 / 1.9 releases.</p>
+</div>
+</div></blockquote>
+</section>
+</section>
+<section id="backwards-incompatibilities">
+<h3>Backwards Incompatibilities<a class="headerlink" href="#backwards-incompatibilities" title="Link to this heading">¶</a></h3>
+<p>Changes in existing behavior:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>[minor]</strong> M2Crypto no longer used to accelerate pbkdf2-hmac-sha1; applications relying on this
+to speed up <a class="reference internal" href="../lib/passlib.hash.pbkdf2_digest.html#passlib.hash.pbkdf2_sha1" title="passlib.hash.pbkdf2_sha1"><code class="xref py py-class docutils literal notranslate"><span class="pre">pbkdf2_sha1</span></code></a> should install
+<a class="reference external" href="https://pypi.python.org/pypi/fastpbkdf2">fastpbkdf2</a>.</p></li>
+</ul>
+</div></blockquote>
+<p>Scheduled removal of features:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>[minor]</strong> <a class="reference internal" href="../lib/passlib.context.html#module-passlib.context" title="passlib.context: CryptContext class, for managing multiple password hash schemes"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code></a>: The <code class="docutils literal notranslate"><span class="pre">min_verify_time</span></code> keyword
+that was deprecated in release 1.6, is now completely ignored.
+Support will be removed entirely in release 1.8.</p></li>
+<li><p><strong>[trivial]</strong> <a class="reference internal" href="../lib/passlib.hash.html#module-passlib.hash" title="passlib.hash: all password hashes provided by Passlib"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code></a>: The internal <code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.parse_rounds()</span></code> method, deprecated in 1.6, has been removed.</p></li>
+</ul>
+</div></blockquote>
+<p>Minor incompatibilities:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>[minor]</strong> <a class="reference internal" href="../lib/passlib.hash.html#module-passlib.hash" title="passlib.hash: all password hashes provided by Passlib"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code></a>: The little-used method <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.genconfig" title="passlib.ifc.PasswordHash.genconfig"><code class="xref py py-meth docutils literal notranslate"><span class="pre">genconfig()</span></code></a>
+will now always return a valid hash, rather than a truncated configuration
+string or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>[minor]</strong> <a class="reference internal" href="../lib/passlib.hash.html#module-passlib.hash" title="passlib.hash: all password hashes provided by Passlib"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code></a>: The little-used method <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.genhash" title="passlib.ifc.PasswordHash.genhash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">genhash()</span></code></a> no longer accepts
+<code class="docutils literal notranslate"><span class="pre">None</span></code> as a config argument.</p></li>
+<li><p><strong>[trivial]</strong> <a class="reference internal" href="../lib/passlib.utils.pbkdf2.html#passlib.utils.pbkdf2.pbkdf2" title="passlib.utils.pbkdf2.pbkdf2"><code class="xref py py-func docutils literal notranslate"><span class="pre">passlib.utils.pbkdf2.pbkdf2()</span></code></a> no longer supports custom PRF callables.
+this was an unused feature, and prevented some useful optimizations.</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lib/index.html">API Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../other.html">Other Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modular_crypt_format.html">Modular Crypt Format</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Release History</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="1.8.html">1.8 Series</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.7 Series</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3"><strong>1.7.4</strong> (2020-10-08)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8"><strong>1.7.3</strong> (2020-10-06)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id24"><strong>1.7.2</strong> (2019-11-22)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id41"><strong>1.7.1</strong> (2017-1-30)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id48"><strong>1.7.0</strong> (2016-11-22)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="1.6.html">1.6 Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.5.html">1.5 Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ancient.html">1.4 &amp; Earlier</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../copyright.html">Copyrights &amp; Licenses</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="1.6.html" title="Passlib 1.6"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="1.8.html" title="Passlib 1.8"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../other.html" >Other Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >Release History</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Passlib 1.7</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

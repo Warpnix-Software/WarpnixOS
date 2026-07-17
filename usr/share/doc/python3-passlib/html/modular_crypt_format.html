@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Modular Crypt Format &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="_static/logo.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="copyright" title="Copyright" href="copyright.html" />
+    <link rel="next" title="Release History" href="history/index.html" />
+    <link rel="prev" title="Frequently Asked Questions" href="faq.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="history/index.html" title="Release History"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="faq.html" title="Frequently Asked Questions"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="other.html" accesskey="U">Other Documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Modular Crypt Format</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section class="html-toggle" id="modular-crypt-format">
+<span id="phc-format"></span><span id="index-0"></span><span id="id1"></span><h1>Modular Crypt Format<a class="headerlink" href="#modular-crypt-format" title="Link to this heading">¶</a></h1>
+<p class="subtitle">A explanation about a standard that isn’t</p>
+<div class="without-title admonition seealso">
+<p class="admonition-title">See also</p>
+<p><strong>Deprecated (as of 2016) in favor of the PHC String Format</strong></p>
+<p>In the opinion of the main Passlib author, the modular crypt format (described below)
+should be considered deprecated when creating new hashes.
+The <a class="reference external" href="https://github.com/P-H-C/phc-string-format/blob/master/phc-sf-spec.md">PHC String Format</a>
+is an attempt to specify a common hash string format
+that’s a restricted &amp; well defined subset of the Modular Crypt Format.
+New hashes are strongly encouraged to adhere to the PHC specification,
+rather than the much looser Modular Crypt Format.</p>
+</div>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<p>A number of the hashes in Passlib are described as adhering to the “Modular Crypt Format”.
+This page is an attempt to document what that means.</p>
+<p>In short, the modular crypt format (MCF) is a standard
+for encoding password hash strings, which requires hashes
+have the format <code class="samp docutils literal notranslate"><span class="pre">$</span><em><span class="pre">identifier</span></em><span class="pre">$</span><em><span class="pre">content</span></em></code>; where
+<code class="samp docutils literal notranslate"><em><span class="pre">identifier</span></em></code> is an short alphanumeric string uniquely
+identifying a particular scheme, and <code class="samp docutils literal notranslate"><em><span class="pre">content</span></em></code>
+is the contents of the scheme, using only the characters
+in the regexp range <code class="docutils literal notranslate"><span class="pre">[a-zA-Z0-9./]</span></code>.</p>
+<p>However, there’s no official specification document describing this format.
+Nor is there a central registry of identifiers, or actual rules.
+The modular crypt format is more of an ad-hoc idea rather than a true standard.</p>
+<p>The rest of this page is an attempt to describe what is known,
+at least as far as the hashes supported by Passlib.</p>
+</section>
+<section id="history">
+<h2>History<a class="headerlink" href="#history" title="Link to this heading">¶</a></h2>
+<p>Historically, most unix systems supported only <a class="reference internal" href="lib/passlib.hash.des_crypt.html#passlib.hash.des_crypt" title="passlib.hash.des_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">des_crypt</span></code></a>.
+Around the same time, many incompatible variations were also developed,
+but their hashes were not easily distinguishable from each other
+(see <a class="reference internal" href="lib/passlib.hash.html#archaic-unix-schemes"><span class="std std-ref">Archaic Unix Hashes</span></a>); making it impossible to use
+multiple hashes on one system, or progressively migrate to a newer scheme.</p>
+<p>This was solved with the advent of the MCF,
+which was introduced around the time that <a class="reference internal" href="lib/passlib.hash.md5_crypt.html#passlib.hash.md5_crypt" title="passlib.hash.md5_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">md5_crypt</span></code></a> was developed.
+This format allows hashes from multiple schemes to exist within the same
+database, by requiring that all hash strings begin with a unique prefix
+using the format <code class="samp docutils literal notranslate"><span class="pre">$</span><em><span class="pre">identifier</span></em><span class="pre">$</span></code>.</p>
+</section>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">¶</a></h2>
+<p>Unfortunately, there is no specification document for this format.
+Instead, it exists in <em>de facto</em> form only; the following
+is an attempt to roughly identify the conventions followed
+by the modular crypt format hashes found in Passlib:</p>
+<ol class="arabic">
+<li><p>Hash strings should use only 7-bit ascii characters.</p>
+<p>No known OS or application generates hashes which violate this rule.
+However, some systems (e.g. Linux) will happily
+accept hashes which contain 8-bit characters in their salt,
+This is probably a case of “permissive in what you accept,
+strict in what you generate”.</p>
+</li>
+<li><p>Hash strings should start with the prefix <code class="samp docutils literal notranslate"><span class="pre">$</span><em><span class="pre">identifier</span></em><span class="pre">$</span></code>,
+where <code class="samp docutils literal notranslate"><em><span class="pre">identifier</span></em></code> is a short string uniquely identifying
+hashes generated by that algorithm, using only lower case ascii
+letters, numbers, and hyphens
+(c.f. the list of <a class="reference internal" href="#mcf-identifiers"><span class="std std-ref">known identifiers</span></a> below).</p>
+<p>When MCF was first introduced, most schemes choose a single digit
+as their identifier (e.g. <code class="docutils literal notranslate"><span class="pre">$1$</span></code> for <a class="reference internal" href="lib/passlib.hash.md5_crypt.html#passlib.hash.md5_crypt" title="passlib.hash.md5_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">md5_crypt</span></code></a>).
+Because of this, some older systems only look at the first
+character when attempting to distinguish hashes.
+However, as Unix variants have branched off,
+new schemes were developed which used larger
+identifying strings (e.g. <code class="docutils literal notranslate"><span class="pre">$sha1$</span></code> for <a class="reference internal" href="lib/passlib.hash.sha1_crypt.html#passlib.hash.sha1_crypt" title="passlib.hash.sha1_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">sha1_crypt</span></code></a>).</p>
+<p>At this point, any new hash schemes should probably use a 6-8 character
+descriptive identifier, to avoid potential namespace clashes.</p>
+</li>
+<li><p>Hashes should only contain the ascii letters <code class="docutils literal notranslate"><span class="pre">a</span></code>-<code class="docutils literal notranslate"><span class="pre">z</span></code> and <code class="docutils literal notranslate"><span class="pre">A</span></code>-<code class="docutils literal notranslate"><span class="pre">Z</span></code>,
+ascii numbers 0-9, and the characters <code class="docutils literal notranslate"><span class="pre">./</span></code>; though additionally
+they may use the <code class="docutils literal notranslate"><span class="pre">$</span></code> character as an internal field separator.</p>
+<p>This is the least adhered-to of any modular crypt format convention.
+Other characters (such as <code class="docutils literal notranslate"><span class="pre">+=,-</span></code>) are used by various formats.</p>
+<p>The only hard and fast stricture
+is that <code class="docutils literal notranslate"><span class="pre">:;!*</span></code> and all non-printable or 8-bit characters be avoided,
+since this would interfere with parsing of the Unix shadow password file,
+where these hashes are typically stored.</p>
+<p>Pretty much all older modular-crypt-format hashes
+use ascii letters, numbers, <code class="docutils literal notranslate"><span class="pre">.</span></code>, and <code class="docutils literal notranslate"><span class="pre">/</span></code>
+to provide base64 encoding of their raw data,
+though the exact character value assignments vary between hashes
+(see <code class="xref py py-data docutils literal notranslate"><span class="pre">passlib.utils.h64</span></code>).
+Many newer hashes use <code class="docutils literal notranslate"><span class="pre">+</span></code> instead of <code class="docutils literal notranslate"><span class="pre">.</span></code>,
+to adhere closer to the base64 standard.</p>
+</li>
+<li><p>Hash schemes should put their “digest” portion
+at the end of the hash, preferably separated
+by a <code class="docutils literal notranslate"><span class="pre">$</span></code>.</p>
+<p>This allows password hashes to be easily truncated
+to a “configuration string” containing just
+the identifying prefix, rounds, salt, etc.</p>
+<p>This configuration string then encodes all the information
+generated needed to generate a new hash
+in order to verify a password, without
+having to perform excessive parsing.</p>
+<p>Most modular crypt format hashes follow this convention,
+though some (like <a class="reference internal" href="lib/passlib.hash.bcrypt.html#passlib.hash.bcrypt" title="passlib.hash.bcrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code></a>) omit the <code class="docutils literal notranslate"><span class="pre">$</span></code> separator
+between the configuration and the digest.</p>
+<p>Furthermore, there is no set standard about whether configuration
+strings should or should not include a trailing <code class="docutils literal notranslate"><span class="pre">$</span></code> at the end,
+though the general rule is that hashing should behave the same in either case
+(<a class="reference internal" href="lib/passlib.hash.sun_md5_crypt.html#passlib.hash.sun_md5_crypt" title="passlib.hash.sun_md5_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">sun_md5_crypt</span></code></a> behaves particularly poorly
+regarding this last point).</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All of the above is guesswork based on examination of existing
+hashes and OS implementations; and was written merely
+to clarify the issue of what the “modular crypt format” is.
+It is drawn from no authoritative sources.</p>
+</div>
+</section>
+<section id="mcf-identifiers">
+<span id="index-1"></span><span id="identifiers-platform-support"></span><h2>Identifiers &amp; Platform Support<a class="headerlink" href="#mcf-identifiers" title="Link to this heading">¶</a></h2>
+<section id="os-defined-hashes">
+<h3>OS Defined Hashes<a class="headerlink" href="#os-defined-hashes" title="Link to this heading">¶</a></h3>
+<p>The following table lists of all the major MCF hashes supported by Passlib,
+and indicates which operating systems offer native support:</p>
+<aside class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/modular_crypt_format.rst</span>, line 157)</p>
+<p>Error in “table” directive:
+unknown option: “column-alignment”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.. table::
+    :column-alignment: llccccc
+    :column-wrapping: nn
+
+    ==================================== ==================== =========== =========== =========== =========== =======
+    Scheme                               Prefix               Linux       FreeBSD     NetBSD      OpenBSD     Solaris
+    ==================================== ==================== =========== =========== =========== =========== =======
+    :class:`~passlib.hash.des_crypt`                          y           y           y           y           y
+    :class:`~passlib.hash.bsdi_crypt`    ``_``                            y           y           y
+    :class:`~passlib.hash.md5_crypt`     ``$1$``              y           y           y           y           y
+    :class:`~passlib.hash.bcrypt`        ``$2$``, ``$2a$``,
+                                         ``$2x$``, ``$2y$``
+                                         ``$2b$``                         y           y           y           y
+    :class:`~passlib.hash.bsd_nthash`    ``$3$``                          y
+    :class:`~passlib.hash.sha256_crypt`  ``$5$``              y           8.3+                                y
+    :class:`~passlib.hash.sha512_crypt`  ``$6$``              y           8.3+                                y
+    :class:`~passlib.hash.sun_md5_crypt` ``$md5$``, ``$md5,``                                                 y
+    :class:`~passlib.hash.sha1_crypt`    ``$sha1$``                                   y
+    ==================================== ==================== =========== =========== =========== =========== =======
+</pre></div>
+</div>
+</aside>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Linux systems using <a class="reference external" href="https://github.com/besser82/libxcrypt">libxcrypt</a> instead of <code class="docutils literal notranslate"><span class="pre">libcrypt</span></code>
+will have native support for additional formats, including nearly all those listed above.</p>
+</div>
+</section>
+<section id="additional-platforms">
+<h3>Additional Platforms<a class="headerlink" href="#additional-platforms" title="Link to this heading">¶</a></h3>
+<p>The modular crypt format is also supported to some degree
+by the following operating systems and platforms:</p>
+<table class="plain docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><strong>MacOS X</strong></p></td>
+<td><p>Darwin’s native <code class="xref py py-func docutils literal notranslate"><span class="pre">crypt()</span></code> provides limited functionality,
+supporting only <a class="reference internal" href="lib/passlib.hash.des_crypt.html#passlib.hash.des_crypt" title="passlib.hash.des_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">des_crypt</span></code></a> and
+<a class="reference internal" href="lib/passlib.hash.bsdi_crypt.html#passlib.hash.bsdi_crypt" title="passlib.hash.bsdi_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">bsdi_crypt</span></code></a>. OS X uses a separate
+system for its own password hashes.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Google App Engine</strong></p></td>
+<td><p>As of 2011-08-19, Google App Engine’s <code class="xref py py-func docutils literal notranslate"><span class="pre">crypt()</span></code>
+implementation appears to match that of a typical Linux
+system (as listed in the previous table).</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="application-defined-hashes">
+<h3>Application-Defined Hashes<a class="headerlink" href="#application-defined-hashes" title="Link to this heading">¶</a></h3>
+<p>The following table lists the other MCF hashes supported by Passlib.
+These hashes can be found in various libraries and applications
+(and are not natively supported by any known OS):</p>
+<aside class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/modular_crypt_format.rst</span>, line 206)</p>
+<p>Error in “table” directive:
+unknown option: “column-wrapping”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.. table::
+    :class: fullwidth
+    :widths: 1 1 2
+    :column-wrapping: nn
+
+    =========================================== =================== ===========================
+    Scheme                                      Prefix              Primary Use (if known)
+    =========================================== =================== ===========================
+    :class:`~passlib.hash.apr_md5_crypt`        ``$apr1$``          Apache htdigest files
+    :class:`~passlib.hash.argon2`               ``$argon2i$``,
+                                                ``$argon2d$``
+    :class:`~passlib.hash.bcrypt_sha256`        ``$bcrypt-sha256$`` Passlib-specific
+    :class:`~passlib.hash.phpass`               ``$P$``, ``$H$``    PHPass-based applications
+    :class:`~passlib.hash.pbkdf2_sha1`          ``$pbkdf2$``        Passlib-specific
+    :class:`~passlib.hash.pbkdf2_sha256`        ``$pbkdf2-sha256$`` Passlib-specific
+    :class:`~passlib.hash.pbkdf2_sha512`        ``$pbkdf2-sha512$`` Passlib-specific
+    :class:`~passlib.hash.scram`                ``$scram$``         Passlib-specific
+    :class:`~passlib.hash.cta_pbkdf2_sha1`      ``$p5k2$`` [#cta]_
+    :class:`~passlib.hash.dlitz_pbkdf2_sha1`    ``$p5k2$`` [#cta]_
+    :class:`~passlib.hash.scrypt`               ``$scrypt$``        Passlib-specific
+    =========================================== =================== ===========================
+</pre></div>
+</div>
+</aside>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="cta" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p><code class="xref py py-class docutils literal notranslate"><span class="pre">cta_pbkdf2_sha1</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">dlitz_pbkdf2_sha1</span></code> both use
+the same identifier. While there are other internal differences,
+the two can be quickly distinguished
+by the fact that cta hashes always end in <code class="docutils literal notranslate"><span class="pre">=</span></code>, while dlitz
+hashes contain no <code class="docutils literal notranslate"><span class="pre">=</span></code> at all.</p>
+</aside>
+</aside>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="contents.html">
+              <img class="logo" src="_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lib/index.html">API Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="other.html">Other Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Modular Crypt Format</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#history">History</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mcf-identifiers">Identifiers &amp; Platform Support</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#os-defined-hashes">OS Defined Hashes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#additional-platforms">Additional Platforms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#application-defined-hashes">Application-Defined Hashes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="history/index.html">Release History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="copyright.html">Copyrights &amp; Licenses</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="history/index.html" title="Release History"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="faq.html" title="Frequently Asked Questions"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="other.html" >Other Documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Modular Crypt Format</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

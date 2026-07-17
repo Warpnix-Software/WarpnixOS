@@ -1,0 +1,59 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: re::engine::RE2
+Upstream-Contact: https://github.com/dgl/re-engine-RE2/issues
+Source: https://github.com/dgl/re-engine-RE2
+ git://github.com/dgl/re-engine-RE2
+ .
+ Repackaged, excluding convenience code copy of libre2.
+Files-Excluded:
+ re2/*
+
+Files: *
+Copyright:
+  2006  Audrey Tang <cpan@audreyt.org>
+  2010  David Leadbeater <dgl@dgl.cx>
+  2006  Yves Orton
+  2007  Ævar Arnfjörð Bjarmason
+License-Grant:
+ This program is free software;
+ you can redistribute it and/or modify it
+ under the same terms as Perl itself.
+License: Artistic or GPL-1+
+Comment:
+ Perl 5 is licensed under either
+ the Artistic license or
+ the GNU General Public License version 1 or later.
+
+Files:
+ ppport.h
+Copyright:
+  1999       Kenneth Albanowski
+  2004-2010  Marcus Holland-Moritz
+  2001       Paul Marquess
+License-Grant:
+ This program is free software;
+ you can redistribute it and/or modify it
+ under the same terms as Perl itself.
+License: Artistic or GPL-1+
+
+Files:
+ debian/*
+Copyright:
+  2018-2021, 2023, 2025  Jonas Smedegaard <dr@jones.dk>
+License-Grant:
+ This program is free software:
+ you can redistribute it and/or modify it
+ under the terms of the GNU General Public License
+ as published by the Free Software Foundation,
+ either version 3 of the License, or (at your option) any later version.
+License: GPL-3+
+Reference: debian/copyright
+
+License: Artistic
+License-Reference: /usr/share/common-licenses/Artistic
+
+License: GPL-1+
+License-Reference: /usr/share/common-licenses/GPL-1
+
+License: GPL-3+
+License-Reference: /usr/share/common-licenses/GPL-3

@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Lintian::Processable::Source::Relation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../../../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#INSTANCE-METHODS">INSTANCE METHODS</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Lintian::Processable::Source::Relation - Lintian interface to source package data collection</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>    my ($name, $type, $dir) = (&#39;foobar&#39;, &#39;source&#39;, &#39;/path/to/lab-entry&#39;);
+    my $collect = Lintian::Processable::Source::Relation-&gt;new($name);
+    if ($collect-&gt;native) {
+        print encode_utf8(&quot;Package is native\n&quot;);
+    }</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Lintian::Processable::Source::Relation provides an interface to package data for source packages. It implements data collection methods specific to source packages.</p>
+
+<p>This module is in its infancy. Most of Lintian still reads all data from files in the laboratory whenever that data is needed and generates that data via collect scripts. The goal is to eventually access all data about source packages via this module so that the module can cache data where appropriate and possibly retire collect scripts in favor of caching that data in memory.</p>
+
+<h1 id="INSTANCE-METHODS">INSTANCE METHODS</h1>
+
+<dl>
+
+<dt>binary_relation (PACKAGE, FIELD)</dt>
+<dd>
+
+<p>Returns a <a href="https://metacpan.org/pod/Lintian::Relation">Lintian::Relation</a> object for the specified FIELD in the binary package PACKAGE in the <i>debian/control</i> file. FIELD should be one of the possible relationship fields of a Debian package or one of the following special values:</p>
+
+<dl>
+
+<dt>All</dt>
+<dd>
+
+<p>The concatenation of Pre-Depends, Depends, Recommends, and Suggests.</p>
+
+</dd>
+<dt>Strong</dt>
+<dd>
+
+<p>The concatenation of Pre-Depends and Depends.</p>
+
+</dd>
+<dt>Weak</dt>
+<dd>
+
+<p>The concatenation of Recommends and Suggests.</p>
+
+</dd>
+</dl>
+
+<p>If FIELD isn&#39;t present in the package, the returned Lintian::Relation object will be empty (present but satisfies nothing).</p>
+
+<p>Any substvars in <i>debian/control</i> will be represented in the returned relation as packages named after the substvar.</p>
+
+</dd>
+<dt>saved_binary_relations</dt>
+<dd>
+
+</dd>
+<dt>relation (FIELD)</dt>
+<dd>
+
+<p>Returns a <a href="https://metacpan.org/pod/Lintian::Relation">Lintian::Relation</a> object for the given build relationship field FIELD. In addition to the normal build relationship fields, the following special field names are supported:</p>
+
+<dl>
+
+<dt>Build-Depends-All</dt>
+<dd>
+
+<p>The concatenation of Build-Depends, Build-Depends-Arch and Build-Depends-Indep.</p>
+
+</dd>
+<dt>Build-Conflicts-All</dt>
+<dd>
+
+<p>The concatenation of Build-Conflicts, Build-Conflicts-Arch and Build-Conflicts-Indep.</p>
+
+</dd>
+</dl>
+
+<p>If FIELD isn&#39;t present in the package, the returned Lintian::Relation object will be empty (present but satisfies nothing).</p>
+
+</dd>
+<dt>saved_relation</dt>
+<dd>
+
+</dd>
+<dt>relation_norestriction (FIELD)</dt>
+<dd>
+
+<p>The same as <a href="#relation-FIELD">&quot;relation (FIELD)&quot;</a>, but ignores architecture restrictions and build profile restrictions in the FIELD field.</p>
+
+</dd>
+<dt>saved_relations_norestriction</dt>
+<dd>
+
+</dd>
+</dl>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Originally written by Russ Allbery &lt;rra@debian.org&gt; for Lintian. Amended by Felix Lechner &lt;felix.lechner@lease-up.com&gt; for Lintian.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>lintian(1)</p>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../../../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.crypto.digest - Hash &amp; Related Helpers &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.crypto.des - DES routines" href="passlib.crypto.des.html" />
+    <link rel="prev" title="passlib.crypto - Cryptographic Helper Functions" href="passlib.crypto.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.crypto.des.html" title="passlib.crypto.des - DES routines"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.crypto.html" title="passlib.crypto - Cryptographic Helper Functions"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.crypto.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto.digest</span></code> - Hash &amp; Related Helpers</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-passlib.crypto.digest">
+<span id="passlib-crypto-digest-hash-related-helpers"></span><h1><a class="reference internal" href="#module-passlib.crypto.digest" title="passlib.crypto.digest: Internal cryptographic helpers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto.digest</span></code></a> - Hash &amp; Related Helpers<a class="headerlink" href="#module-passlib.crypto.digest" title="Link to this heading">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.7.</span></p>
+</div>
+<p>This module provides various cryptographic support functions used by Passlib
+to implement the various password hashes it provides, as well as paper over
+some VM &amp; version incompatibilities.</p>
+<section id="hash-functions">
+<h2>Hash Functions<a class="headerlink" href="#hash-functions" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.crypto.digest.norm_hash_name">
+<span class="sig-prename descclassname"><span class="pre">passlib.crypto.digest.</span></span><span class="sig-name descname"><span class="pre">norm_hash_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'hashlib'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.crypto.digest.norm_hash_name" title="Link to this definition">¶</a></dt>
+<dd><p>Normalize hash function name (convenience wrapper for <a class="reference internal" href="#passlib.crypto.digest.lookup_hash" title="passlib.crypto.digest.lookup_hash"><code class="xref py py-func docutils literal notranslate"><span class="pre">lookup_hash()</span></code></a>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – <p>Original hash function name.</p>
+<p>This name can be a Python <code class="xref py py-mod docutils literal notranslate"><span class="pre">hashlib</span></code> digest name,
+a SCRAM mechanism name, IANA assigned hash name, etc.
+Case is ignored, and underscores are converted to hyphens.</p>
+</p></li>
+<li><p><strong>format</strong> – <p>Naming convention to normalize to.
+Possible values are:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;hashlib&quot;</span></code> (the default) - normalizes name to be compatible
+with Python’s <code class="xref py py-mod docutils literal notranslate"><span class="pre">hashlib</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;iana&quot;</span></code> - normalizes name to IANA-assigned hash function name.
+For hashes which IANA hasn’t assigned a name for, this issues a warning,
+and then uses a heuristic to return a “best guess” name.</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Hash name, returned as native <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.crypto.digest.lookup_hash">
+<span class="sig-prename descclassname"><span class="pre">passlib.crypto.digest.</span></span><span class="sig-name descname"><span class="pre">lookup_hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">digest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_unknown</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.crypto.digest.lookup_hash" title="Link to this definition">¶</a></dt>
+<dd><p>Returns a <a class="reference internal" href="#passlib.crypto.digest.HashInfo" title="passlib.crypto.digest.HashInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">HashInfo</span></code></a> record containing information about a given hash function.
+Can be used to look up a hash constructor by name, normalize hash name representation, etc.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>digest</strong> – <p>This can be any of:</p>
+<ul>
+<li><p>A string containing a <code class="xref py py-mod docutils literal notranslate"><span class="pre">hashlib</span></code> digest name (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;sha256&quot;</span></code>),</p></li>
+<li><p>A string containing an IANA-assigned hash name,</p></li>
+<li><p>A digest constructor function (e.g. <code class="docutils literal notranslate"><span class="pre">hashlib.sha256</span></code>).</p></li>
+</ul>
+<p>Case is ignored, underscores are converted to hyphens,
+and various other cleanups are made.</p>
+</p></li>
+<li><p><strong>required</strong> – <p>By default (True), this function will throw an <a class="reference internal" href="passlib.exc.html#passlib.exc.UnknownHashError" title="passlib.exc.UnknownHashError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">UnknownHashError</span></code></a> if no hash constructor
+can be found, or if the hash is not actually available.</p>
+<p>If this flag is False, it will instead return a dummy <code class="xref py py-class docutils literal notranslate"><span class="pre">HashInfo</span></code> record
+which will defer throwing the error until it’s constructor function is called.
+This is mainly used by <a class="reference internal" href="#passlib.crypto.digest.norm_hash_name" title="passlib.crypto.digest.norm_hash_name"><code class="xref py py-func docutils literal notranslate"><span class="pre">norm_hash_name()</span></code></a>.</p>
+</p></li>
+<li><p><strong>return_unknown</strong> – <div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.7.3: </span>deprecated, and will be removed in passlib 2.0.
+this acts like inverse of <strong>required</strong>.</p>
+</div>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns HashInfo<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#passlib.crypto.digest.HashInfo" title="passlib.crypto.digest.HashInfo"><code class="xref py py-class docutils literal notranslate"><span class="pre">HashInfo</span></code></a> instance containing information about specified digest.</p>
+<p>Multiple calls resolving to the same hash should always
+return the same <code class="xref py py-class docutils literal notranslate"><span class="pre">HashInfo</span></code> instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="float-center admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="xref py py-func docutils literal notranslate"><span class="pre">lookup_hash()</span></code> supports all hashes available directly in <code class="xref py py-mod docutils literal notranslate"><span class="pre">hashlib</span></code>,
+as well as offered through <code class="xref py py-func docutils literal notranslate"><span class="pre">hashlib.new()</span></code>.
+It will also fallback to passlib’s builtin MD4 implementation if one is not natively available.</p>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.crypto.digest.HashInfo">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.crypto.digest.</span></span><span class="sig-name descname"><span class="pre">HashInfo</span></span><a class="headerlink" href="#passlib.crypto.digest.HashInfo" title="Link to this definition">¶</a></dt>
+<dd><p>Record containing information about a given hash algorithm, as returned <a class="reference internal" href="#passlib.crypto.digest.lookup_hash" title="passlib.crypto.digest.lookup_hash"><code class="xref py py-func docutils literal notranslate"><span class="pre">lookup_hash()</span></code></a>.</p>
+<p>This class exposes the following attributes:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.crypto.digest.HashInfo.const">
+<span class="sig-name descname"><span class="pre">const</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#passlib.crypto.digest.HashInfo.const" title="Link to this definition">¶</a></dt>
+<dd><p>Hash constructor function (e.g. <code class="xref py py-func docutils literal notranslate"><span class="pre">hashlib.sha256()</span></code>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.crypto.digest.HashInfo.digest_size">
+<span class="sig-name descname"><span class="pre">digest_size</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#passlib.crypto.digest.HashInfo.digest_size" title="Link to this definition">¶</a></dt>
+<dd><p>Hash’s digest size</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.crypto.digest.HashInfo.block_size">
+<span class="sig-name descname"><span class="pre">block_size</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#passlib.crypto.digest.HashInfo.block_size" title="Link to this definition">¶</a></dt>
+<dd><p>Hash’s block size</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.crypto.digest.HashInfo.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#passlib.crypto.digest.HashInfo.name" title="Link to this definition">¶</a></dt>
+<dd><p>Canonical / hashlib-compatible name (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;sha256&quot;</span></code>).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.crypto.digest.HashInfo.iana_name">
+<span class="sig-name descname"><span class="pre">iana_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#passlib.crypto.digest.HashInfo.iana_name" title="Link to this definition">¶</a></dt>
+<dd><p>IANA assigned name (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;sha-256&quot;</span></code>), may be <code class="docutils literal notranslate"><span class="pre">None</span></code> if unknown.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.crypto.digest.HashInfo.aliases">
+<span class="sig-name descname"><span class="pre">aliases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#passlib.crypto.digest.HashInfo.aliases" title="Link to this definition">¶</a></dt>
+<dd><p>Tuple of other known aliases (may be empty)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.crypto.digest.HashInfo.supported">
+<span class="sig-name descname"><span class="pre">supported</span></span><a class="headerlink" href="#passlib.crypto.digest.HashInfo.supported" title="Link to this definition">¶</a></dt>
+<dd><p>whether hash is available for use
+(if False, constructor will throw UnknownHashError if called)</p>
+</dd></dl>
+
+<p>This object can also be treated a 3-element sequence
+containing <code class="docutils literal notranslate"><span class="pre">(const,</span> <span class="pre">digest_size,</span> <span class="pre">block_size)</span></code>.</p>
+</dd></dl>
+
+</section>
+<section id="pkcs-5-key-derivation-functions">
+<h2>PKCS#5 Key Derivation Functions<a class="headerlink" href="#pkcs-5-key-derivation-functions" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.crypto.digest.pbkdf1">
+<span class="sig-prename descclassname"><span class="pre">passlib.crypto.digest.</span></span><span class="sig-name descname"><span class="pre">pbkdf1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">digest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secret</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">salt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keylen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.crypto.digest.pbkdf1" title="Link to this definition">¶</a></dt>
+<dd><p>pkcs#5 password-based key derivation v1.5</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>digest</strong> – digest name or constructor.</p></li>
+<li><p><strong>secret</strong> – secret to use when generating the key.
+may be <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> (encoded using UTF-8).</p></li>
+<li><p><strong>salt</strong> – salt string to use when generating key.
+may be <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> (encoded using UTF-8).</p></li>
+<li><p><strong>rounds</strong> – number of rounds to use to generate key.</p></li>
+<li><p><strong>keylen</strong> – number of bytes to generate (if omitted / <code class="docutils literal notranslate"><span class="pre">None</span></code>, uses digest’s native size)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>raw <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code> of generated key</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This algorithm has been deprecated, new code should use PBKDF2.
+Among other limitations, <code class="docutils literal notranslate"><span class="pre">keylen</span></code> cannot be larger
+than the digest size of the specified hash.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.crypto.digest.pbkdf2_hmac">
+<span class="sig-prename descclassname"><span class="pre">passlib.crypto.digest.</span></span><span class="sig-name descname"><span class="pre">pbkdf2_hmac</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">digest</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secret</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">salt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rounds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keylen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.crypto.digest.pbkdf2_hmac" title="Link to this definition">¶</a></dt>
+<dd><p>pkcs#5 password-based key derivation v2.0 using HMAC + arbitrary digest.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>digest</strong> – digest name or constructor.</p></li>
+<li><p><strong>secret</strong> – passphrase to use to generate key.
+may be <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> (encoded using UTF-8).</p></li>
+<li><p><strong>salt</strong> – salt string to use when generating key.
+may be <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> (encoded using UTF-8).</p></li>
+<li><p><strong>rounds</strong> – number of rounds to use to generate key.</p></li>
+<li><p><strong>keylen</strong> – number of bytes to generate.
+if omitted / <code class="docutils literal notranslate"><span class="pre">None</span></code>, will use digest’s native output size.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>raw bytes of generated key</p>
+</dd>
+</dl>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.7: </span>This function will use the first available of the following backends:</p>
+<ul class="simple">
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">hashlib.pbkdf2_hmac()</span></code> (only available in py2 &gt;= 2.7.8, and py3 &gt;= 3.4)</p></li>
+</ul>
+<p>See <a class="reference internal" href="#passlib.crypto.digest.PBKDF2_BACKENDS" title="passlib.crypto.digest.PBKDF2_BACKENDS"><code class="xref py py-data docutils literal notranslate"><span class="pre">passlib.crypto.digest.PBKDF2_BACKENDS</span></code></a> to determine
+which backend(s) are in use.</p>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.crypto.digest.PBKDF2_BACKENDS">
+<span class="sig-prename descclassname"><span class="pre">passlib.crypto.digest.</span></span><span class="sig-name descname"><span class="pre">PBKDF2_BACKENDS</span></span><a class="headerlink" href="#passlib.crypto.digest.PBKDF2_BACKENDS" title="Link to this definition">¶</a></dt>
+<dd><p>List of the pbkdf2 backends in use (listed in order of priority).</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.7.</span></p>
+</div>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The details of PBKDF1 and PBKDF2 are specified in <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc2898.html"><strong>RFC 2898</strong></a>.</p>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto.digest</span></code> - Hash &amp; Related Helpers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hash-functions">Hash Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pkcs-5-key-derivation-functions">PKCS#5 Key Derivation Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.crypto.des.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto.des</span></code> - DES routines</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.crypto.des.html" title="passlib.crypto.des - DES routines"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.crypto.html" title="passlib.crypto - Cryptographic Helper Functions"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.crypto.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto.digest</span></code> - Hash &amp; Related Helpers</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

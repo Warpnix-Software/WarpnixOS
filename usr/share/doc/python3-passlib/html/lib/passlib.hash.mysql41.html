@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.hash.mysql41 - MySQL 4.1 password hash &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.hash.postgres_md5 - PostgreSQL MD5 password hash" href="passlib.hash.postgres_md5.html" />
+    <link rel="prev" title="passlib.hash.mysql323 - MySQL 3.2.3 password hash" href="passlib.hash.mysql323.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.postgres_md5.html" title="passlib.hash.postgres_md5 - PostgreSQL MD5 password hash"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.mysql323.html" title="passlib.hash.mysql323 - MySQL 3.2.3 password hash"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mysql41</span></code> - MySQL 4.1 password hash</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-hash-mysql41-mysql-4-1-password-hash">
+<span id="index-0"></span><h1><a class="reference internal" href="#passlib.hash.mysql41" title="passlib.hash.mysql41"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mysql41</span></code></a> - MySQL 4.1 password hash<a class="headerlink" href="#passlib-hash-mysql41-mysql-4-1-password-hash" title="Link to this heading">¶</a></h1>
+<div class="block-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>This algorithm is not considered secure by modern standards.</strong>
+It should only be used when verifying existing hashes,
+or when interacting with applications that require this format.
+For new code, see the list of <a class="reference internal" href="../narr/quickstart.html#recommended-hashes"><span class="std std-ref">recommended hashes</span></a>.</p>
+</div>
+<p>This class implements the second of MySQL’s password hash functions,
+used to store its user account passwords. Introduced in MySQL 4.1.1
+under the function <code class="docutils literal notranslate"><span class="pre">PASSWORD()</span></code>, it replaced the previous
+algorithm (<a class="reference internal" href="passlib.hash.mysql323.html#passlib.hash.mysql323" title="passlib.hash.mysql323"><code class="xref py py-class docutils literal notranslate"><span class="pre">mysql323</span></code></a>) as the default
+used by MySQL, and is still in active use under MySQL 5.
+Users will most likely find the frontends provided by <a class="reference internal" href="passlib.apps.html#module-passlib.apps" title="passlib.apps: hashing &amp; verifying passwords used in sql servers and other applications"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code></a>
+to be more useful than accessing this class directly.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../narr/hash-tutorial.html#password-hash-examples"><span class="std std-ref">password hash usage</span></a> –
+for examples of how to use this class via the common hash interface.</p></li>
+<li><p><a class="reference internal" href="passlib.apps.html#module-passlib.apps" title="passlib.apps: hashing &amp; verifying passwords used in sql servers and other applications"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code></a> for a list of <a class="reference internal" href="passlib.apps.html#mysql-contexts"><span class="std std-ref">premade mysql contexts</span></a>.</p></li>
+</ul>
+</div>
+<section id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.mysql41">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">mysql41</span></span><a class="headerlink" href="#passlib.hash.mysql41" title="Link to this definition">¶</a></dt>
+<dd><p>This class implements the MySQL 4.1 password hash, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>It has no salt and a single fixed round.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code></a> and <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.genconfig" title="passlib.ifc.PasswordHash.genconfig"><code class="xref py py-meth docutils literal notranslate"><span class="pre">genconfig()</span></code></a> methods accept no optional keywords.</p>
+</dd></dl>
+
+</section>
+<section id="format-algorithm">
+<h2>Format &amp; Algorithm<a class="headerlink" href="#format-algorithm" title="Link to this heading">¶</a></h2>
+<p>A mysql-41 password hash consists of an asterisk <code class="docutils literal notranslate"><span class="pre">*</span></code> followed
+by 40 hexadecimal digits, directly encoding the 160 bit checksum.
+An example hash (of <code class="docutils literal notranslate"><span class="pre">password</span></code>) is <code class="docutils literal notranslate"><span class="pre">*2470C0C06DEE42FD1618BB99005ADCA2EC9D1E19</span></code>.
+MySQL always uses upper-case letters,
+and so does Passlib (though Passlib will recognize lower-case letters as well).</p>
+<p>The checksum is calculated simply, as the SHA1 hash of the SHA1 hash of the password,
+which is then encoded into hexadecimal.</p>
+</section>
+<section id="security-issues">
+<h2>Security Issues<a class="headerlink" href="#security-issues" title="Link to this heading">¶</a></h2>
+<p>Lacking any sort of salt, and using only 2 rounds
+of the common SHA1 message digest, it’s not very secure,
+and should not be used for <em>any</em>
+purpose but verifying existing MySQL 4.1+ password hashes.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#unix-hashes">Unix Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-modular-crypt-hashes">Other “Modular Crypt” Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ldap-rfc2307-hashes">LDAP / RFC2307 Hashes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="passlib.hash.html#sql-database-hashes">SQL Database Hashes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.mssql2000.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mssql2000</span></code> - MS SQL 2000 password hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.mssql2005.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mssql2005</span></code> - MS SQL 2005 password hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.mysql323.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mysql323</span></code> - MySQL 3.2.3 password hash</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mysql41</span></code> - MySQL 4.1 password hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.postgres_md5.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.postgres_md5</span></code> - PostgreSQL MD5 password hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.oracle10.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.oracle10</span></code> - Oracle 10g password hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.oracle11.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.oracle11</span></code> - Oracle 11g password hash</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ms-windows-hashes">MS Windows Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#cisco-hashes">Cisco Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-hashes">Other Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.postgres_md5.html" title="passlib.hash.postgres_md5 - PostgreSQL MD5 password hash"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.mysql323.html" title="passlib.hash.mysql323 - MySQL 3.2.3 password hash"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mysql41</span></code> - MySQL 4.1 password hash</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CryptContext Tutorial &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="TOTP Tutorial" href="totp-tutorial.html" />
+    <link rel="prev" title="PasswordHash Tutorial" href="hash-tutorial.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="totp-tutorial.html" title="TOTP Tutorial"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="hash-tutorial.html" title="PasswordHash Tutorial"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Walkthrough &amp; Tutorials</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code> Tutorial</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="cryptcontext-tutorial">
+<span id="context-tutorial"></span><span id="index-0"></span><h1><a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext" title="passlib.context.CryptContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code></a> Tutorial<a class="headerlink" href="#cryptcontext-tutorial" title="Link to this heading">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<p>The <a class="reference internal" href="../lib/passlib.context.html#module-passlib.context" title="passlib.context: CryptContext class, for managing multiple password hash schemes"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code></a> module contains one main class: <code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.context.CryptContext</span></code>.
+This class is designed to take care of many of the more frequent
+coding patterns which occur in applications that need to handle multiple
+password hashes at once:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>identifying the algorithm used by a hash, and then verify a password.</p></li>
+<li><p>configure the default algorithm, load in support for new algorithms,
+deprecate old ones, set defaults for time-cost parameters, etc.</p></li>
+<li><p>migrate hashes / re-hash passwords when an algorithm has been deprecated.</p></li>
+<li><p>load said configuration from a sysadmin configurable file.</p></li>
+</ul>
+</div></blockquote>
+<p>The following sections contain a walkthrough of this class, starting
+with some simple examples, and working up to a complex “full-integration” example.</p>
+<div class="float-center admonition seealso">
+<p class="admonition-title">See also</p>
+<p>The <a class="reference internal" href="../lib/passlib.context.html#module-passlib.context" title="passlib.context: CryptContext class, for managing multiple password hash schemes"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code></a> api reference,
+which lists all the options and methods supported by this class.</p>
+</div>
+</section>
+<section class="emphasize-children" id="walkthrough-outline">
+<span id="index-1"></span><h2>Walkthrough Outline<a class="headerlink" href="#walkthrough-outline" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#basic-usage">Basic Usage</a></p></li>
+<li><p><a class="reference internal" href="#using-default-settings">Using Default Settings</a></p></li>
+<li><p><a class="reference internal" href="#loading-saving-a-cryptcontext">Loading &amp; Saving a CryptContext</a></p></li>
+<li><p><a class="reference internal" href="#deprecation-hash-migration">Deprecation &amp; Hash Migration</a></p></li>
+<li><p><a class="reference internal" href="#full-integration-example">Full Integration Example</a></p></li>
+</ul>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>This tutorial doesn’t yet cover the <a class="reference internal" href="../lib/passlib.context.html#user-categories"><span class="std std-ref">User Categories</span></a> system;
+and a few other parts could use elaboration.</p>
+</div>
+</section>
+<section id="basic-usage">
+<span id="context-basic-example"></span><h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Link to this heading">¶</a></h2>
+<p>At its base, the <code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code> class is just a collection of
+<a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash" title="passlib.ifc.PasswordHash"><code class="xref py py-class docutils literal notranslate"><span class="pre">PasswordHash</span></code></a> objects, imported by name
+from the <a class="reference internal" href="../lib/passlib.hash.html#module-passlib.hash" title="passlib.hash: all password hashes provided by Passlib"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code></a> module. The following snippet creates
+a new context object which supports three hash algorithms
+(<a class="reference internal" href="../lib/passlib.hash.sha256_crypt.html"><span class="doc">sha256_crypt</span></a>,
+<a class="reference internal" href="../lib/passlib.hash.md5_crypt.html"><span class="doc">md5_crypt</span></a>, and
+<a class="reference internal" href="../lib/passlib.hash.des_crypt.html"><span class="doc">des_crypt</span></a>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.context</span> <span class="kn">import</span> <span class="n">CryptContext</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myctx</span> <span class="o">=</span> <span class="n">CryptContext</span><span class="p">(</span><span class="n">schemes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;sha256_crypt&quot;</span><span class="p">,</span> <span class="s2">&quot;md5_crypt&quot;</span><span class="p">,</span> <span class="s2">&quot;des_crypt&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>This new object exposes a very similar set of methods to the <code class="xref py py-class docutils literal notranslate"><span class="pre">PasswordHash</span></code>
+interface, and hashing and verifying passwords is equally as straightforward:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># this loads first algorithm in the schemes list (sha256_crypt),</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># generates a new salt, and hashes the password:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hash1</span> <span class="o">=</span> <span class="n">myctx</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;joshua&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hash1</span>
+<span class="go">&#39;$5$rounds=80000$HFEGd1wnFknpibRl$VZqjyYcTenv7CtOf986hxuE0pRaGXnuLXyfb7m9xL69&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># when verifying a password, the algorithm is identified automatically:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myctx</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;gtnw&quot;</span><span class="p">,</span> <span class="n">hash1</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myctx</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;joshua&quot;</span><span class="p">,</span> <span class="n">hash1</span><span class="p">)</span>
+<span class="go">True</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># alternately, you can explicitly pick one of the configured algorithms,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># through this is rarely needed in practice:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hash2</span> <span class="o">=</span> <span class="n">myctx</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;dogsnamehere&quot;</span><span class="p">,</span> <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;md5_crypt&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hash2</span>
+<span class="go">&#39;$1$e2nig/AC$stejMS1ek6W0/UogYKFao/&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myctx</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;letmein&quot;</span><span class="p">,</span> <span class="n">hash2</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myctx</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;dogsnamehere&quot;</span><span class="p">,</span> <span class="n">hash2</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>If not told otherwise, the context object will use the first algorithm listed
+in <code class="docutils literal notranslate"><span class="pre">schemes</span></code> when creating new hashes. This default can be changed by
+using the <code class="docutils literal notranslate"><span class="pre">default</span></code> keyword:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myctx</span> <span class="o">=</span> <span class="n">CryptContext</span><span class="p">(</span><span class="n">schemes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;sha256_crypt&quot;</span><span class="p">,</span> <span class="s2">&quot;md5_crypt&quot;</span><span class="p">,</span> <span class="s2">&quot;des_crypt&quot;</span><span class="p">],</span>
+<span class="go">                         default=&quot;des_crypt&quot;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span> <span class="o">=</span> <span class="n">myctx</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span>
+<span class="go">&#39;bIwNofDzt1LCY&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myctx</span><span class="o">.</span><span class="n">identify</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span>
+<span class="go">&#39;des_crypt&#39;</span>
+</pre></div>
+</div>
+<p>This concludes the basics of how to use a CryptContext object.
+The rest of the sections detail the various features it offers,
+which probably provide a better argument for <em>why</em> you’d want to use it.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p>the <a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext.hash" title="passlib.context.CryptContext.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CryptContext.hash()</span></code></a>, <a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext.verify" title="passlib.context.CryptContext.verify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">verify()</span></code></a>, and <a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext.identify" title="passlib.context.CryptContext.identify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">identify()</span></code></a> methods.</p></li>
+<li><p>the <a class="reference internal" href="../lib/passlib.context.html#context-schemes-option"><span class="std std-ref">schemes</span></a> and <a class="reference internal" href="../lib/passlib.context.html#context-default-option"><span class="std std-ref">default</span></a> constructor options.</p></li>
+</ul>
+</div>
+</section>
+<section id="using-default-settings">
+<span id="context-default-settings-example"></span><h2>Using Default Settings<a class="headerlink" href="#using-default-settings" title="Link to this heading">¶</a></h2>
+<p>While creating and verifying hashes is useful enough, it’s not much
+more than could be done by importing the objects into a list.
+The next feature of the <code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code> class is that it
+can store various customized settings for the different algorithms,
+instead of hardcoding them into each <code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code> call.
+As an example, the <code class="xref py py-class docutils literal notranslate"><span class="pre">sha256_crypt</span></code>
+algorithm supports a <code class="docutils literal notranslate"><span class="pre">rounds</span></code> parameter which defaults to 80000,
+and the <code class="xref py py-class docutils literal notranslate"><span class="pre">ldap_salted_md5</span></code> algorithm uses
+8-byte salts by default:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.context</span> <span class="kn">import</span> <span class="n">CryptContext</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myctx</span> <span class="o">=</span> <span class="n">CryptContext</span><span class="p">([</span><span class="s2">&quot;sha256_crypt&quot;</span><span class="p">,</span> <span class="s2">&quot;ldap_salted_md5&quot;</span><span class="p">])</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># sha256_crypt using 80000 rounds...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myctx</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;sha256_crypt&quot;</span><span class="p">)</span>
+<span class="go">&#39;$5$rounds=80000$GgU/gwNBs9SaObqs$ohY23/zm.8O0TpkGx5fxk0aeVdFpaeKo9GUkMJ0VrMC&#39;</span>
+<span class="go">           ^^^^^</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># ldap_salted_md5 with an 8 byte salt...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myctx</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;ldap_salted_md5&quot;</span><span class="p">)</span>
+<span class="go">&#39;{SMD5}cIYrPh5f/TeUKg9oghECB5fSeu8=&#39;</span>
+<span class="go">       ^^^^^^^^^^</span>
+</pre></div>
+</div>
+<p>Instead of having to pass <code class="docutils literal notranslate"><span class="pre">rounds=91234</span></code> or <code class="docutils literal notranslate"><span class="pre">salt_size=16</span></code> every time
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">encrypt()</span></code> is called, CryptContext supports setting algorithm-specific
+defaults which will be used every time a CryptContext method is invoked.
+These is done by passing the CryptContext constructor a keyword with the format <code class="samp docutils literal notranslate"><em><span class="pre">scheme</span></em><span class="pre">__</span><em><span class="pre">setting</span></em></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># this reconfigures the existing context object so that</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># sha256_crypt now uses 91234 rounds,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># and ldap_salted_md5 will use 16 byte salts:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myctx</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">sha256_crypt__default_rounds</span><span class="o">=</span><span class="mi">91234</span><span class="p">,</span>
+<span class="gp">... </span>             <span class="n">ldap_salted_md5__salt_size</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># the effect of this can be seen the next time encrypt is called:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myctx</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;sha256_crypt&quot;</span><span class="p">)</span>
+<span class="go">&#39;$5$rounds=91234$GgU/gwNBs9SaObqs$ohY23/zm.8O0TpkGx5fxk0aeVdFpaeKo9GUkMJ0VrMC&#39;</span>
+<span class="go">           ^^^^^</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myctx</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="n">scheme</span><span class="o">=</span><span class="s2">&quot;ldap_salted_md5&quot;</span><span class="p">)</span>
+<span class="go">&#39;{SMD5}NnQh2S2pjnFxwtMhjbVH59TaG6P0/l/r3RsDwPj/n/M=&#39;</span>
+<span class="go">       ^^^^^^^^^^^^^^^^^^^^^</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p>the <a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext.update" title="passlib.context.CryptContext.update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CryptContext.update()</span></code></a> method.</p></li>
+<li><p>the <a class="reference internal" href="../lib/passlib.context.html#context-default-rounds-option"><span class="std std-ref">default_rounds</span></a> and
+<a class="reference internal" href="../lib/passlib.context.html#context-other-option"><span class="std std-ref">per-scheme setting</span></a> constructor options.</p></li>
+</ul>
+</div>
+</section>
+<section id="loading-saving-a-cryptcontext">
+<span id="context-serialization-example"></span><h2>Loading &amp; Saving a CryptContext<a class="headerlink" href="#loading-saving-a-cryptcontext" title="Link to this heading">¶</a></h2>
+<p>The previous example built up a <code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code> instance
+in two stages, first by calling the constructor, and then the <code class="xref py py-meth docutils literal notranslate"><span class="pre">update()</span></code>
+method to make some additional changes. The same configuration
+could of course be done in one step:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.context</span> <span class="kn">import</span> <span class="n">CryptContext</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myctx</span> <span class="o">=</span> <span class="n">CryptContext</span><span class="p">(</span><span class="n">schemes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;sha256_crypt&quot;</span><span class="p">,</span> <span class="s2">&quot;ldap_salted_md5&quot;</span><span class="p">],</span>
+<span class="gp">... </span>                     <span class="n">sha256_crypt__default_rounds</span><span class="o">=</span><span class="mi">91234</span><span class="p">,</span>
+<span class="gp">... </span>                     <span class="n">ldap_salted_md5__salt_size</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is not much more useful, since these settings still have to be
+hardcoded somewhere in the application. This is where the CryptContext’s
+serialization abilities come into play. As a starting point,
+every CryptContext object can dump its configuration as a dictionary
+suitable for passing back into its constructor:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myctx</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+<span class="go">{&#39;schemes&#39;: [&#39;sha256_crypt&#39;, &#39;ldap_salted_md5&#39;],</span>
+<span class="go">&#39;ldap_salted_md5__salt_size&#39;: 16,</span>
+<span class="go">&#39;sha256_crypt__default_rounds&#39;: 91234}</span>
+</pre></div>
+</div>
+<p>However, this has been taken a step further, as CryptContext objects
+can also dump their configuration into a <a class="reference external" href="http://docs.python.org/library/configparser.html">ConfigParser</a>-compatible
+string, allowing the configuration to be written to a file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cfg</span> <span class="o">=</span> <span class="nb">print</span> <span class="n">myctx</span><span class="o">.</span><span class="n">to_string</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">cfg</span>
+<span class="go">[passlib]</span>
+<span class="go">schemes = sha256_crypt, ldap_salted_md5</span>
+<span class="go">ldap_salted_md5__salt_size = 16</span>
+<span class="go">sha256_crypt__default_rounds = 912345</span>
+</pre></div>
+</div>
+<p>This “INI” format consists of a section named <code class="docutils literal notranslate"><span class="pre">&quot;[passlib]&quot;</span></code>,
+following by key/value pairs which correspond exactly to the CryptContext
+constructor keywords (Keywords which accepts lists of names (such as <code class="docutils literal notranslate"><span class="pre">schemes</span></code>)
+are automatically converted to/from a comma-separated string)
+This format allows CryptContext configurations to be created
+in a separate file (say as part of an application’s larger config file),
+and loaded into the CryptContext at runtime. Such strings can be
+loaded directly when creating the context object:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># using the special from_string() constructor to</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># load the exported configuration created in the previous step:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myctx2</span> <span class="o">=</span> <span class="n">CryptContext</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># or it can be loaded from a local file:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myctx3</span> <span class="o">=</span> <span class="n">CryptContext</span><span class="o">.</span><span class="n">from_path</span><span class="p">(</span><span class="s2">&quot;/some/path/on/local/system&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This allows applications to completely extract their password hashing
+policies from the code, and into a configuration file with other security settings.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For CryptContext instances which already exist,
+the <a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext.load" title="passlib.context.CryptContext.load"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load()</span></code></a> and <a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext.load_path" title="passlib.context.CryptContext.load_path"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load_path()</span></code></a>
+methods can be used to replace the existing state.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p>the <a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext.to_dict" title="passlib.context.CryptContext.to_dict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_dict()</span></code></a> and <a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext.to_string" title="passlib.context.CryptContext.to_string"><code class="xref py py-meth docutils literal notranslate"><span class="pre">to_string()</span></code></a> methods.</p></li>
+<li><p>the <a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext.from_string" title="passlib.context.CryptContext.from_string"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CryptContext.from_string()</span></code></a> and <a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext.from_path" title="passlib.context.CryptContext.from_path"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CryptContext.from_path()</span></code></a> constructors.</p></li>
+</ul>
+</div>
+</section>
+<section id="deprecation-hash-migration">
+<span id="context-migration-example"></span><h2>Deprecation &amp; Hash Migration<a class="headerlink" href="#deprecation-hash-migration" title="Link to this heading">¶</a></h2>
+<p>The final and possibly most useful feature of the <a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext" title="passlib.context.CryptContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code></a> class
+is that it can take care of deprecating and migrating existing hashes,
+re-hashing them using the current default algorithm and settings.
+All that is required is that a few settings be added to the configuration,
+and that the application call one extra method whenever a user logs in.</p>
+<section id="deprecating-algorithms">
+<h3>Deprecating Algorithms<a class="headerlink" href="#deprecating-algorithms" title="Link to this heading">¶</a></h3>
+<p>The first setting that enables the hash migration features is the <code class="docutils literal notranslate"><span class="pre">deprecated</span></code>
+setting. This should be a list algorithms which are no longer desirable to have
+around, but are included in <code class="docutils literal notranslate"><span class="pre">schemes</span></code> to provide legacy support.
+For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># this sets a context that supports 3 algorithms, but considers</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># two of them (md5_crypt and des_crypt) to be deprecated...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.context</span> <span class="kn">import</span> <span class="n">CryptContext</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myctx</span> <span class="o">=</span> <span class="n">CryptContext</span><span class="p">(</span><span class="n">schemes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;sha256_crypt&quot;</span><span class="p">,</span> <span class="s2">&quot;md5_crypt&quot;</span><span class="p">,</span> <span class="s2">&quot;des_crypt&quot;</span><span class="p">],</span>
+<span class="go">                         deprecated=[&quot;md5_crypt&quot;, &quot;des_crypt&quot;])</span>
+</pre></div>
+</div>
+<p>All of the basic methods of this object will behave normally, but after
+an application has verified the user entered the correct password, it can
+check to see if the hash has been deprecated using the
+<a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext.needs_update" title="passlib.context.CryptContext.needs_update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">needs_update()</span></code></a> method:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># assume the user&#39;s password was stored as a sha256_crypt hash,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># needs_update will show that the hash is still allowed.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span> <span class="o">=</span> <span class="s1">&#39;$5$rounds=80000$zWZFpsA2egmQY8R9$xp89Vvg1HeDCJ/bTDDN6qkdsCwcMM61vHtM1RNxXur.&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myctx</span><span class="o">.</span><span class="n">needs_update</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span>
+<span class="go">False</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># but if the user&#39;s password was stored as md5_crypt hash,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># need_update will indicate that it is deprecated,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># and that the original password needs to be re-hashed...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span> <span class="o">=</span> <span class="s1">&#39;$1$fmWm78VW$uWjT69xZNMHWyEQjq852d1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myctx</span><span class="o">.</span><span class="n">needs_update</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Internally, this is not the only thing <code class="xref py py-meth docutils literal notranslate"><span class="pre">needs_update()</span></code> does.
+It also checks for other issues, such as rounds / salts which are
+known to be weak under certain algorithms, improperly encoded hash
+strings, and other configurable behaviors that are detailed later.</p>
+</div>
+</section>
+<section id="integrating-hash-migration">
+<h3>Integrating Hash Migration<a class="headerlink" href="#integrating-hash-migration" title="Link to this heading">¶</a></h3>
+<p>To summarize the process described in the previous section,
+all the actions an application would usually need to
+perform can be combined into the following bit of skeleton code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">hash</span> <span class="o">=</span> <span class="n">get_hash_from_user</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+<span class="linenos">2</span><span class="k">if</span> <span class="n">pass_ctx</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="nb">hash</span><span class="p">):</span>
+<span class="linenos">3</span>    <span class="k">if</span> <span class="n">pass_ctx</span><span class="o">.</span><span class="n">needs_update</span><span class="p">(</span><span class="nb">hash</span><span class="p">):</span>
+<span class="linenos">4</span>        <span class="n">new_hash</span> <span class="o">=</span> <span class="n">pass_ctx</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="n">password</span><span class="p">)</span>
+<span class="linenos">5</span>        <span class="n">replace_user_hash</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">new_hash</span><span class="p">)</span>
+<span class="linenos">6</span>    <span class="n">do_successful_things</span><span class="p">()</span>
+<span class="linenos">7</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos">8</span>    <span class="n">reject_user_login</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Since this is a very common pattern, the CryptContext object provides
+a shortcut: the <a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext.verify_and_update" title="passlib.context.CryptContext.verify_and_update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">verify_and_update()</span></code></a> method,
+which allows replacing the above skeleton code with the following
+that uses 2 fewer calls (and is much more efficient internally):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">hash</span> <span class="o">=</span> <span class="n">get_hash_from_user</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+<span class="linenos">2</span><span class="n">valid</span><span class="p">,</span> <span class="n">new_hash</span> <span class="o">=</span> <span class="n">pass_ctx</span><span class="o">.</span><span class="n">verify_and_update</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span>
+<span class="linenos">3</span><span class="k">if</span> <span class="n">valid</span><span class="p">:</span>
+<span class="linenos">4</span>    <span class="k">if</span> <span class="n">new_hash</span><span class="p">:</span>
+<span class="linenos">5</span>        <span class="n">replace_user_hash</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">new_hash</span><span class="p">)</span>
+<span class="linenos">6</span>    <span class="n">do_successful_things</span><span class="p">()</span>
+<span class="linenos">7</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos">8</span>    <span class="n">reject_user_login</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="settings-rounds-limitations">
+<span id="context-min-rounds-example"></span><h3>Settings Rounds Limitations<a class="headerlink" href="#settings-rounds-limitations" title="Link to this heading">¶</a></h3>
+<p>In addition to deprecating entire algorithms, the deprecations system
+also allows you to place limits on algorithms that support the
+variable time-cost parameter <code class="docutils literal notranslate"><span class="pre">rounds</span></code>:</p>
+<p>As an example, take a typical system containing a number of user passwords,
+all stored using <a class="reference internal" href="../lib/passlib.hash.sha256_crypt.html#passlib.hash.sha256_crypt" title="passlib.hash.sha256_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">sha256_crypt</span></code></a>.
+As computers get faster, the minimum number of rounds that should be used
+gets larger, yet the existing passwords will remain in the system
+hashed using their original value. To solve this, the CryptContext
+object lets you place minimum bounds on what <code class="docutils literal notranslate"><span class="pre">rounds</span></code>
+values are allowed, using the <code class="samp docutils literal notranslate"><em><span class="pre">scheme</span></em><span class="pre">__min_rounds</span></code> set of keywords…
+any hashes whose rounds are outside this limit are considered deprecated,
+and in need of re-encoding using the current policy:</p>
+<p>First, we set up a context which requires all <code class="xref py py-class docutils literal notranslate"><span class="pre">sha256_crypt</span></code> hashes
+to have at least 131072 rounds:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.context</span> <span class="kn">import</span> <span class="n">CryptContext</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myctx</span> <span class="o">=</span> <span class="n">CryptContext</span><span class="p">(</span><span class="n">schemes</span><span class="o">=</span><span class="s2">&quot;sha256_crypt&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                     <span class="n">sha256_crypt__min_rounds</span><span class="o">=</span><span class="mi">131072</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>New hashes generated by this context will always honor the minimum
+(just as if <code class="docutils literal notranslate"><span class="pre">default_rounds</span></code> was set to the same value):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># plain call to encrypt:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hash1</span> <span class="o">=</span> <span class="n">myctx</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="go">&#39;$5$rounds=131072$i6xuFK6j8r66ahGn$r.7H8HUk30qiH7fIWRJFJfhWG925nRZh90aYPMdewr3&#39;</span>
+<span class="go">           ^^^^^^</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># hashes with enough rounds won&#39;t show up as deprecated...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myctx</span><span class="o">.</span><span class="n">needs_update</span><span class="p">(</span><span class="n">hash1</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>If an existing hash below the minimum is tested, it will show up as needing rehashing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># this has only 80000 rounds:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hash3</span> <span class="o">=</span> <span class="s1">&#39;$5$rounds=80000$qoCFY.akJr.flB7V$8cIZXLwSTzuCRLcJbgHlxqYKEK0cVCENy6nFIlROj05&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myctx</span><span class="o">.</span><span class="n">needs_update</span><span class="p">(</span><span class="n">hash3</span><span class="p">)</span>
+<span class="go">True</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># and verify_and_update() will upgrade this hash automatically:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myctx</span><span class="o">.</span><span class="n">verify_and_update</span><span class="p">(</span><span class="s2">&quot;wrong&quot;</span><span class="p">,</span> <span class="n">hash3</span><span class="p">)</span>
+<span class="go">(False, None)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myctx</span><span class="o">.</span><span class="n">verify_and_update</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="n">hash3</span><span class="p">)</span>
+<span class="go">(True, &#39;$5$rounds=131072$rnMqBaemVZ6QGu7v$vrAVQLEbsBoxhgem8ynvAbToCae8vpzl6ZuDS3/adlA&#39;)</span>
+<span class="go">                  ^^^^^^</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p>the <a class="reference internal" href="../lib/passlib.context.html#context-deprecated-option"><span class="std std-ref">deprecated</span></a>,
+<a class="reference internal" href="../lib/passlib.context.html#context-min-rounds-option"><span class="std std-ref">min_rounds</span></a>,
+and <a class="reference internal" href="../lib/passlib.context.html#context-max-rounds-option"><span class="std std-ref">max_rounds</span></a> constructor options.</p></li>
+<li><p>the <a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext.needs_update" title="passlib.context.CryptContext.needs_update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">needs_update()</span></code></a> and <a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext.verify_and_update" title="passlib.context.CryptContext.verify_and_update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">verify_and_update()</span></code></a> methods.</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="undocumented-features">
+<h2>Undocumented Features<a class="headerlink" href="#undocumented-features" title="Link to this heading">¶</a></h2>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>Document usage of the <a class="reference internal" href="../lib/passlib.context.html#context-disabled-hashes"><span class="std std-ref">Disabled Hash Managment</span></a> options.</p>
+</div>
+</section>
+<section class="html-toggle" id="full-integration-example">
+<h2>Full Integration Example<a class="headerlink" href="#full-integration-example" title="Link to this heading">¶</a></h2>
+<p>The following is an extended example showing how to fully interface
+a CryptContext object into your application. The sample configuration
+is somewhat more ornate that would usually be needed, just to highlight
+some features, but should none-the-less be secure.</p>
+<section id="policy-configuration-file">
+<h3>Policy Configuration File<a class="headerlink" href="#policy-configuration-file" title="Link to this heading">¶</a></h3>
+<p>The first thing to do is setup a configuration string for the CryptContext to use.
+This can be a dictionary or string defined in a python config file,
+or (in this example), part of a large INI-formatted config file.
+All of the documented <a class="reference internal" href="../lib/passlib.context.html#context-options"><span class="std std-ref">Context Options</span></a> are allowed.</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="c1">; the options file uses the INI file format,</span>
+<span class="c1">; and passlib will only read the section named &quot;passlib&quot;,</span>
+<span class="c1">; so it can be included along with other application configuration.</span>
+
+<span class="k">[passlib]</span>
+
+<span class="c1">; setup the context to support pbkdf2_sha256, and some other hashes:</span>
+<span class="na">schemes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">pbkdf2_sha256, sha512_crypt, sha256_crypt, md5_crypt, des_crypt</span>
+
+<span class="c1">; flag md5_crypt and des_crypt as deprecated</span>
+<span class="na">deprecated</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">md5_crypt, des_crypt</span>
+
+<span class="c1">; set boundaries for the pbkdf2 rounds parameter</span>
+<span class="c1">; (pbkdf2 hashes outside this range will be flagged as needs-updating)</span>
+<span class="na">pbkdf2_sha256__min_rounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">10000</span>
+<span class="na">pbkdf2_sha256__max_rounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">50000</span>
+
+<span class="c1">; set the default rounds to use when hashing new passwords.</span>
+<span class="na">pbkdf2_sha1__default_rounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">15000</span>
+
+<span class="c1">; applications can choose to treat certain user accounts differently,</span>
+<span class="c1">; by assigning different types of account to a &#39;user category&#39;,</span>
+<span class="c1">; and setting special policy options for that category.</span>
+<span class="c1">; this create a category named &#39;admin&#39;, which will have a larger default</span>
+<span class="c1">; rounds value.</span>
+<span class="na">admin__pbkdf2_sha1__min_rounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">18000</span>
+<span class="na">admin__pbkdf2_sha1__default_rounds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">20000</span>
+</pre></div>
+</div>
+</section>
+<section id="initializing-the-cryptcontext">
+<h3>Initializing the CryptContext<a class="headerlink" href="#initializing-the-cryptcontext" title="Link to this heading">¶</a></h3>
+<p>Applications which choose to use a policy file will typically want
+to create the CryptContext at the module level, and then load
+the configuration once the application starts:</p>
+<ol class="arabic">
+<li><p>Within a common module in your application (e.g. <code class="docutils literal notranslate"><span class="pre">myapp.model.security</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># create a crypt context that can be imported and used wherever is needed...</span>
+<span class="c1"># the instance will be configured later.</span>
+<span class="c1">#</span>
+<span class="kn">from</span> <span class="nn">passlib.context</span> <span class="kn">import</span> <span class="n">CryptContext</span>
+<span class="n">user_pwd_context</span> <span class="o">=</span> <span class="n">CryptContext</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>Within some startup function within your application:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># when the app starts, import the context from step 1 and</span>
+<span class="c1"># configure it... such as by loading a policy file (see above)</span>
+<span class="c1">#</span>
+
+<span class="kn">from</span> <span class="nn">myapp.model.security</span> <span class="kn">import</span> <span class="n">user_pwd_context</span>
+
+<span class="k">def</span> <span class="nf">myapp_startup</span><span class="p">():</span>
+
+    <span class="c1">#</span>
+    <span class="c1"># ... other code ...</span>
+    <span class="c1">#</span>
+
+    <span class="c1">#</span>
+    <span class="c1"># load configuration from some application-specified path</span>
+    <span class="c1"># using load_path() ... or use the load() method, which can</span>
+    <span class="c1"># load a dict or in-memory string containing the INI file.</span>
+    <span class="c1">#</span>
+    <span class="c1">##user_pwd_context.load(policy_config_string)</span>
+    <span class="n">user_pwd_context</span><span class="o">.</span><span class="n">load_path</span><span class="p">(</span><span class="n">policy_config_path</span><span class="p">)</span>
+
+    <span class="c1">#</span>
+    <span class="c1"># if you want to reconfigure the context without restarting the application,</span>
+    <span class="c1"># simply repeat the above step at another point.</span>
+    <span class="c1">#</span>
+
+    <span class="c1">#</span>
+    <span class="c1"># ... other code ...</span>
+    <span class="c1">#</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="encrypting-new-passwords">
+<h3>Encrypting New Passwords<a class="headerlink" href="#encrypting-new-passwords" title="Link to this heading">¶</a></h3>
+<p>When it comes time to create a new user’s password, insert
+the following code in the correct function:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">myapp.model.security</span> <span class="kn">import</span> <span class="n">user_pwd_context</span>
+
+<span class="k">def</span> <span class="nf">handle_user_creation</span><span class="p">():</span>
+
+    <span class="c1">#</span>
+    <span class="c1"># ... other code ...</span>
+    <span class="c1">#</span>
+
+    <span class="c1"># vars:</span>
+    <span class="c1">#   &#39;secret&#39; containing the putative password</span>
+    <span class="c1">#   &#39;category&#39; containing a category assigned to the user account</span>
+    <span class="c1">#</span>
+
+    <span class="nb">hash</span> <span class="o">=</span> <span class="n">user_pwd_context</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="n">secret</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="n">category</span><span class="p">)</span>
+
+    <span class="c1">#... perform appropriate actions to store hash...</span>
+
+    <span class="c1">#</span>
+    <span class="c1"># ... other code ...</span>
+    <span class="c1">#</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the above code, the ‘category’ kwd can be omitted entirely, <em>OR</em>
+set to a string matching a user category specified in the policy file.
+In the latter case, any category-specific policy settings will be enforced.</p>
+<p>For the purposes of this example (and the sample config file listed above),
+it’s assumed this value will be <code class="docutils literal notranslate"><span class="pre">None</span></code> for most users, and <code class="docutils literal notranslate"><span class="pre">&quot;admin&quot;</span></code> for special users.
+This namespace is entirely up to the application, it just has to match the
+category names used in the config file.</p>
+<p>See <a class="reference internal" href="../lib/passlib.context.html#user-categories"><span class="std std-ref">User Categories</span></a> for more details.</p>
+</div>
+</section>
+<section id="verifying-migrating-existing-passwords">
+<h3>Verifying &amp; Migrating Existing Passwords<a class="headerlink" href="#verifying-migrating-existing-passwords" title="Link to this heading">¶</a></h3>
+<p>Finally, when it comes time to check a users’ password, insert
+the following code at the correct place:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">myapp.model.security</span> <span class="kn">import</span> <span class="n">user_pwd_context</span>
+
+<span class="k">def</span> <span class="nf">handle_user_login</span><span class="p">():</span>
+
+    <span class="c1">#</span>
+    <span class="c1"># ... other code ...</span>
+    <span class="c1">#</span>
+
+    <span class="c1">#</span>
+    <span class="c1"># this example both checks the user&#39;s password AND upgrades deprecated hashes...</span>
+    <span class="c1">#</span>
+    <span class="c1"># vars:</span>
+    <span class="c1">#   &#39;hash&#39; containing the specified user&#39;s hash.</span>
+    <span class="c1">#   &#39;secret&#39; containing the putative password</span>
+    <span class="c1">#   &#39;category&#39; containing a category assigned to the user account</span>
+    <span class="c1">#</span>
+    <span class="c1"># NOTE: if the user account is missing, or has no hash,</span>
+    <span class="c1">#       you can pass ``hash=None`` to verify_and_update()</span>
+    <span class="c1">#       mask this from the attacker by simulating the delay</span>
+    <span class="c1">#       a real verification would have taken.</span>
+    <span class="c1">#       hash=None will never verify.</span>
+
+    <span class="n">ok</span><span class="p">,</span> <span class="n">new_hash</span> <span class="o">=</span> <span class="n">user_pwd_context</span><span class="o">.</span><span class="n">verify_and_update</span><span class="p">(</span><span class="n">secret</span><span class="p">,</span> <span class="nb">hash</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="n">category</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">ok</span><span class="p">:</span>
+        <span class="c1"># ... password did not match. do mean things ...</span>
+        <span class="k">pass</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1">#... password matched ...</span>
+
+        <span class="k">if</span> <span class="n">new_hash</span><span class="p">:</span>
+            <span class="c1"># old hash was deprecated by policy.</span>
+
+            <span class="c1"># ... replace hash w/ new_hash for user account ...</span>
+            <span class="k">pass</span>
+
+        <span class="c1"># ... do successful login actions ...</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Walkthrough &amp; Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Library Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html">New Application Quickstart Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hash-tutorial.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">PasswordHash</span></code> Tutorial</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code> Tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#walkthrough-outline">Walkthrough Outline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-usage">Basic Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-default-settings">Using Default Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#loading-saving-a-cryptcontext">Loading &amp; Saving a CryptContext</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deprecation-hash-migration">Deprecation &amp; Hash Migration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#deprecating-algorithms">Deprecating Algorithms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#integrating-hash-migration">Integrating Hash Migration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#settings-rounds-limitations">Settings Rounds Limitations</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#undocumented-features">Undocumented Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#full-integration-example">Full Integration Example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#policy-configuration-file">Policy Configuration File</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#initializing-the-cryptcontext">Initializing the CryptContext</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#encrypting-new-passwords">Encrypting New Passwords</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#verifying-migrating-existing-passwords">Verifying &amp; Migrating Existing Passwords</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="totp-tutorial.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">TOTP</span></code> Tutorial</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../lib/index.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="totp-tutorial.html" title="TOTP Tutorial"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="hash-tutorial.html" title="PasswordHash Tutorial"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Walkthrough &amp; Tutorials</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code> Tutorial</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

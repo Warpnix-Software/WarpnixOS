@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.hash.fshp - Fairly Secure Hashed Password &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.hash.mssql2000 - MS SQL 2000 password hash" href="passlib.hash.mssql2000.html" />
+    <link rel="prev" title="passlib.hash.atlassian_pbkdf2_sha1 - Atlassian’s PBKDF2-based Hash" href="passlib.hash.atlassian_pbkdf2_sha1.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.mssql2000.html" title="passlib.hash.mssql2000 - MS SQL 2000 password hash"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.atlassian_pbkdf2_sha1.html" title="passlib.hash.atlassian_pbkdf2_sha1 - Atlassian’s PBKDF2-based Hash"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.fshp</span></code> - Fairly Secure Hashed Password</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-hash-fshp-fairly-secure-hashed-password">
+<h1><a class="reference internal" href="#passlib.hash.fshp" title="passlib.hash.fshp"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.fshp</span></code></a> - Fairly Secure Hashed Password<a class="headerlink" href="#passlib-hash-fshp-fairly-secure-hashed-password" title="Link to this heading">¶</a></h1>
+<div class="admonition note" id="index-0">
+<p class="admonition-title">Note</p>
+<p>While the SHA-2 variants of PBKDF1 have no critical security vulnerabilities,
+PBKDF1 itself has been deprecated in favor of its successor, PBKDF2.
+Furthermore, FSHP has been listed as insecure by its author (for unspecified reasons);
+so this scheme should probably only be used to support existing hashes.</p>
+</div>
+<p>The Fairly Secure Hashed Password (FSHP) scheme <a class="footnote-reference brackets" href="#home" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>
+is a cross-platform hash based on PBKDF1 <a class="footnote-reference brackets" href="#pbk" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>, and uses an LDAP-style hash format.
+It features a variable length salt, variable rounds, and support for cryptographic
+hashes from SHA-1 up to SHA-512.
+This class supports the standard Passlib options for rounds and salt,
+as well as a special digest keyword for selecting the variant of FSHP to use.
+It can be used directly as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.hash</span> <span class="kn">import</span> <span class="n">fshp</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># generate new salt, hash password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span> <span class="o">=</span> <span class="n">fshp</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span>
+<span class="go">&#39;{FSHP1|16|16384}PtoqcGUetmVEy/uR8715TNqKa8+teMF9qZO1lA9lJNUm1EQBLPZ+qPRLeEPHqy6C&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># the same, but with an explicit number of rounds, larger salt, and specific variant</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fshp</span><span class="o">.</span><span class="n">using</span><span class="p">(</span><span class="n">rounds</span><span class="o">=</span><span class="mi">40000</span><span class="p">,</span> <span class="n">salt_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">variant</span><span class="o">=</span><span class="s2">&quot;sha512&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="go">&#39;{FSHP3|32|40000}cB8yE/CuADSgUTQZjWy+YTf/cvbU11D/rHNKiUiB6z4dIaO77U/rmNW</span>
+<span class="go">pgZcZllZbCra5GJ8ZfFRNwCHirPqvYTAnbaQQeFQbWym/frRrRev3buoygFQRYexl4091Pc5m&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># verify password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fshp</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fshp</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;secret&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>the generic <a class="reference internal" href="../narr/hash-tutorial.html#password-hash-examples"><span class="std std-ref">PasswordHash usage examples</span></a></p>
+</div>
+<section id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.fshp">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">fshp</span></span><a class="headerlink" href="#passlib.hash.fshp" title="Link to this definition">¶</a></dt>
+<dd><p>This class implements the FSHP password hash, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>It supports a variable-length salt, and a variable number of rounds.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">using()</span></code></a> method accepts the following optional keywords:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>salt</strong> – Optional raw salt string.
+If not specified, one will be autogenerated (this is recommended).</p></li>
+<li><p><strong>salt_size</strong> – Optional number of bytes to use when autogenerating new salts.
+Defaults to 16 bytes, but can be any non-negative value.</p></li>
+<li><p><strong>rounds</strong> – Optional number of rounds to use.
+Defaults to 480000, must be between 1 and 4294967295, inclusive.</p></li>
+<li><p><strong>variant</strong> – <p>Optionally specifies variant of FSHP to use.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> - uses SHA-1 digest (deprecated).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> - uses SHA-2/256 digest (default).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code> - uses SHA-2/384 digest.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">3</span></code> - uses SHA-2/512 digest.</p></li>
+</ul>
+</p></li>
+<li><p><strong>relaxed</strong> (<em>bool</em>) – <p>By default, providing an invalid value for one of the other
+keywords will result in a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>. If <code class="docutils literal notranslate"><span class="pre">relaxed=True</span></code>,
+and the error can be corrected, a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasslibHashWarning" title="passlib.exc.PasslibHashWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasslibHashWarning</span></code></a>
+will be issued instead. Correctable errors include <code class="docutils literal notranslate"><span class="pre">rounds</span></code>
+that are too small or too large, and <code class="docutils literal notranslate"><span class="pre">salt</span></code> strings that are too long.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="format-algorithm">
+<h2>Format &amp; Algorithm<a class="headerlink" href="#format-algorithm" title="Link to this heading">¶</a></h2>
+<p>All of this scheme’s hashes have the format: <code class="samp docutils literal notranslate"><span class="pre">{FSHP</span><em><span class="pre">variant</span></em><span class="pre">|</span><em><span class="pre">saltsize</span></em><span class="pre">|</span><em><span class="pre">rounds</span></em><span class="pre">}</span><em><span class="pre">data</span></em></code>.
+A example hash (of <code class="docutils literal notranslate"><span class="pre">password</span></code>) is:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">{FSHP1|16|16384}PtoqcGUetmVEy/uR8715TNqKa8+teMF9qZO1lA9lJNUm1EQBLPZ+qPRLeEPHqy6C</span></code></p>
+</div></blockquote>
+<ul>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">variant</span></em></code> is a decimal integer identifying the version of FSHP;
+in particular, which cryptographic hash function should be used
+to calculate the checksum. <code class="docutils literal notranslate"><span class="pre">1</span></code> in the example.
+(see the class description above for a list of possible values).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">saltsize</span></em></code> is a decimal integer identifying the number of bytes
+in the salt. <code class="docutils literal notranslate"><span class="pre">16</span></code> in the example.</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">rounds</span></em></code> is a decimal integer identifying the number
+of rounds to apply when calculating the checksum (see below).
+<code class="docutils literal notranslate"><span class="pre">16384</span></code> in the example.</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">data</span></em></code> is a base64-encoded string which, when decoded,
+contains a salt string of the specified size, followed
+by the checksum. In the example, the data portion decodes to
+a salt value (in hexadecimal octets) of:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">3eda2a70651eb66544cbfb91f3bd794c</span></code></p>
+</div></blockquote>
+<p>and a checksum value (in hexadecimal octets) of:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">da8a6bcfad78c17da993b5940f6524d526d444012cf67ea8f44b7843c7ab2e82</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+<p>FSHP is basically just a wrapper around PBKDF1:
+The checksum is calculated using <a class="reference internal" href="passlib.crypto.digest.html#passlib.crypto.digest.pbkdf1" title="passlib.crypto.digest.pbkdf1"><code class="xref py py-func docutils literal notranslate"><span class="pre">pbkdf1()</span></code></a>,
+passing in the password, the decoded salt string, the number of
+rounds, and hash function specified by the variant identifier.
+FSHP has one quirk in that the password is passed in as the pbkdf1 salt,
+and the salt is passed in as the pbkdf1 password.</p>
+</section>
+<section id="security-issues">
+<h2>Security Issues<a class="headerlink" href="#security-issues" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>A minor issue is that FSHP swaps the location the password and salt
+from what is described in the PBKDF1 standard.
+This issue is mainly noted in order to dismiss it:
+while the swap permits an attacker to pre-calculate part of the initial digest,
+the impact of this is negligible when a large number of rounds is used.</p></li>
+<li><p>Since PBKDF1 is based on repeated composition of a hash,
+it is vulnerable to any first-preimage attacks on the underlying hash.
+This has led to the deprecation of using SHA-1 or earlier hashes with PBKDF1.
+In contrast, its successor PBKDF2 was designed to mitigate
+this weakness (among other things), and enjoys much stronger preimage resistance
+when used with the same cryptographic hashes.</p></li>
+</ul>
+</section>
+<section id="deviations">
+<h2>Deviations<a class="headerlink" href="#deviations" title="Link to this heading">¶</a></h2>
+<ul>
+<li><p>Unicode Policy:</p>
+<p>The official FSHP python implementation takes in a password specified
+as a series of bytes, and does not specify what encoding
+should be used; though a <code class="docutils literal notranslate"><span class="pre">us-ascii</span></code> compatible encoding
+is implied by the implementation,
+as well as all known reference hashes.</p>
+<p>In order to provide support for unicode strings,
+Passlib will encode unicode passwords using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code>
+before running them through FSHP. If a different
+encoding is desired by an application, the password should be encoded
+before handing it to Passlib.</p>
+</li>
+</ul>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="home" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>The FSHP homepage contains implementations in a wide variety of
+programming languages – <a class="reference external" href="https://github.com/bdd/fshp-is-not-secure-anymore">https://github.com/bdd/fshp-is-not-secure-anymore</a>.</p>
+</aside>
+<aside class="footnote brackets" id="pbk" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>rfc defining PBKDF1 &amp; PBKDF2 -
+<a class="reference external" href="http://tools.ietf.org/html/rfc2898">http://tools.ietf.org/html/rfc2898</a> -</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#unix-hashes">Unix Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-modular-crypt-hashes">Other “Modular Crypt” Hashes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="passlib.hash.html#ldap-rfc2307-hashes">LDAP / RFC2307 Hashes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.html#standard-ldap-schemes">Standard LDAP Schemes</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="passlib.hash.html#non-standard-ldap-schemes">Non-Standard LDAP Schemes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#sql-database-hashes">SQL Database Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ms-windows-hashes">MS Windows Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#cisco-hashes">Cisco Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-hashes">Other Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.mssql2000.html" title="passlib.hash.mssql2000 - MS SQL 2000 password hash"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.atlassian_pbkdf2_sha1.html" title="passlib.hash.atlassian_pbkdf2_sha1 - Atlassian’s PBKDF2-based Hash"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.fshp</span></code> - Fairly Secure Hashed Password</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

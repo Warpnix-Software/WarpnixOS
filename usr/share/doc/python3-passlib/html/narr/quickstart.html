@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>New Application Quickstart Guide &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="PasswordHash Tutorial" href="hash-tutorial.html" />
+    <link rel="prev" title="Library Overview" href="overview.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="hash-tutorial.html" title="PasswordHash Tutorial"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="overview.html" title="Library Overview"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Walkthrough &amp; Tutorials</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">New Application Quickstart Guide</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="new-application-quickstart-guide">
+<h1>New Application Quickstart Guide<a class="headerlink" href="#new-application-quickstart-guide" title="Link to this heading">¶</a></h1>
+<p>Need to quickly get password hash support added into your new application,
+but don’t have time to wade through pages of documentation,
+comparing and contrasting all the different schemes? Then read on…</p>
+<section class="toc-always-open" id="choosing-a-hash">
+<span id="recommended-hashes"></span><span id="index-0"></span><h2>Choosing a Hash<a class="headerlink" href="#choosing-a-hash" title="Link to this heading">¶</a></h2>
+<p>If you’d like to set up a configuration that’s right for your
+application, the first thing to do is choose a password hashing scheme.
+Passlib contains a large number of schemes, but most of them
+should only be used when a specific format is explicitly required.</p>
+<div class="float-center without-title admonition seealso">
+<p class="admonition-title">See also</p>
+<p>If you already know what hash algorithm(s) you want to use,
+skip to the next section: <a class="reference internal" href="#creating-and-using-a-cryptcontext">Creating and Using a CryptContext</a>.</p>
+</div>
+<section id="the-options">
+<h3>The Options<a class="headerlink" href="#the-options" title="Link to this heading">¶</a></h3>
+<p>There are currently four good choices <a class="footnote-reference brackets" href="#choices" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> for secure hashing:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="../lib/passlib.hash.argon2.html#passlib.hash.argon2" title="passlib.hash.argon2"><code class="xref py py-class docutils literal notranslate"><span class="pre">argon2</span></code></a></p></li>
+<li><p><a class="reference internal" href="../lib/passlib.hash.bcrypt.html#passlib.hash.bcrypt" title="passlib.hash.bcrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code></a></p></li>
+<li><p><a class="reference internal" href="../lib/passlib.hash.pbkdf2_digest.html#passlib.hash.pbkdf2_sha256" title="passlib.hash.pbkdf2_sha256"><code class="xref py py-class docutils literal notranslate"><span class="pre">pbkdf2_sha256</span></code></a> / <a class="reference internal" href="../lib/passlib.hash.pbkdf2_digest.html#passlib.hash.pbkdf2_sha512" title="passlib.hash.pbkdf2_sha512"><code class="xref py py-class docutils literal notranslate"><span class="pre">pbkdf2_sha512</span></code></a></p></li>
+<li><p><a class="reference internal" href="../lib/passlib.hash.sha256_crypt.html#passlib.hash.sha256_crypt" title="passlib.hash.sha256_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">sha256_crypt</span></code></a> / <a class="reference internal" href="../lib/passlib.hash.sha512_crypt.html#passlib.hash.sha512_crypt" title="passlib.hash.sha512_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">sha512_crypt</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<p>All four hashes share the following properties:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>No known vulnerabilities.</p></li>
+<li><p>Based on documented and widely reviewed algorithms.</p></li>
+<li><p>Public-domain or BSD-licensed reference implementations available.</p></li>
+<li><p>variable rounds for configuring flexible cpu cost on a per-hash basis.</p></li>
+<li><p>At least 96 bits of salt.</p></li>
+<li><p>Basic algorithm has seen heavy scrutiny and use for at least 10 years
+<em>(except for Argon2, born around 2013)</em>.</p></li>
+<li><p>In use across a number of OSes and/or a wide variety of applications.</p></li>
+</ul>
+</div></blockquote>
+<p>While Argon2 is much younger than the others, it has seen heavy scrutiny,
+and was purpose-designed for password hashing.  In the near future, it stands likely to
+become <em>the</em> recommended standard.</p>
+</section>
+<section class="html-toggle" id="detailed-comparison-of-choices">
+<h3>Detailed Comparison of Choices<a class="headerlink" href="#detailed-comparison-of-choices" title="Link to this heading">¶</a></h3>
+<section id="argon2">
+<h4>Argon2<a class="headerlink" href="#argon2" title="Link to this heading">¶</a></h4>
+<p><a class="reference internal" href="../lib/passlib.hash.argon2.html#passlib.hash.argon2" title="passlib.hash.argon2"><code class="xref py py-class docutils literal notranslate"><span class="pre">argon2</span></code></a> is the newest of the four recommended hashes.
+It was selected as the winner of the <a class="reference external" href="https://password-hashing.net/">2013 Password Hashing Competition</a>,
+and draws on the design and lessons from BCrypt, PBKDF2, and SCrypt.  Despite
+being much newer than the others, it has seen heavy scrutiny.  Since the Argon2 project
+had the foresight to provide not just a reference implementation, but a standard
+hash encoding format, these hashes should be reliably interoperatable across all implementations.</p>
+<p><em>Issues:</em> In its default configuration, Argon2 uses more memory than the other hashes.
+However, this is one of its hallmarks as a “memory hard” hashing algorithm, and contributes to its security.
+Furthermore the exact amount used is configurable.  Its only main drawback is that as of 2019-01-12,
+it’s only 6 years old.  It’s seen only a few minor adjustments since 2013,
+but as it is just now gaining widespread use, the next few years are the period in which it will
+likely either prove itself, or be found wanting.  It’s for this reason,
+any cryptographic algorithm less than a decade old is generally considered “young”. :)</p>
+</section>
+<section id="bcrypt">
+<h4>BCrypt<a class="headerlink" href="#bcrypt" title="Link to this heading">¶</a></h4>
+<p><a class="reference internal" href="../lib/passlib.hash.bcrypt.html#passlib.hash.bcrypt" title="passlib.hash.bcrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code></a>
+is <a class="reference external" href="http://www.usenix.org/event/usenix99/provos/provos_html/">based</a>
+on the well-tested Blowfish cipher. In use since 1999,
+it’s the default hash on all BSD variants. If you want your application’s
+hashes to be readable by the native BSD crypt() function, this is the hash to use.
+There is also an alternative LDAP-formatted version
+(<a class="reference internal" href="../lib/passlib.hash.ldap_crypt.html#passlib.hash.ldap_bcrypt" title="passlib.hash.ldap_bcrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">ldap_bcrypt</span></code></a>) available.</p>
+<p><em>Issues:</em> Neither the original Blowfish,
+nor the modified version which BCrypt uses, have been NIST approved;
+this matter of concern is what motivated the development of SHA512-Crypt.
+As well, its rounds parameter is logarithmically scaled,
+making it hard to fine-tune the amount of time taken to verify passwords;
+which can be an issue for applications that handle a large number
+of simultaneous logon attempts (e.g. web apps). Finally, BCrypt only hashes
+the first 72 characters of a password, and will silently truncate longer ones
+(Passlib’s non-standard <a class="reference internal" href="../lib/passlib.hash.bcrypt_sha256.html#passlib.hash.bcrypt_sha256" title="passlib.hash.bcrypt_sha256"><code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt_sha256</span></code></a> works around this last issue).</p>
+</section>
+<section id="pbkdf2">
+<h4>PBKDF2<a class="headerlink" href="#pbkdf2" title="Link to this heading">¶</a></h4>
+<p><a class="reference internal" href="../lib/passlib.hash.pbkdf2_digest.html#passlib.hash.pbkdf2_sha512" title="passlib.hash.pbkdf2_sha512"><code class="xref py py-class docutils literal notranslate"><span class="pre">pbkdf2_sha512</span></code></a> is a custom hash format designed for Passlib.
+However, it directly uses the
+<a class="reference external" href="http://tools.ietf.org/html/rfc2898#section-5.2">PBKDF2</a>
+key derivation function, which was standardized in 2000, and found across a
+<a class="reference external" href="http://en.wikipedia.org/wiki/PBKDF2#Systems_that_use_PBKDF2">wide variety</a>
+of applications and platforms. Unlike the previous two hashes,
+PBKDF2 has a simple and portable design,
+which is resistant (but not immune) to collision and preimage attacks
+on the underlying message digest.
+There is also <a class="reference internal" href="../lib/passlib.hash.pbkdf2_digest.html#passlib.hash.pbkdf2_sha256" title="passlib.hash.pbkdf2_sha256"><code class="xref py py-class docutils literal notranslate"><span class="pre">pbkdf2_sha256</span></code></a>, which may be faster
+on 32 bit processors; as well as LDAP-formatted versions of these (
+<a class="reference internal" href="../lib/passlib.hash.ldap_pbkdf2_digest.html#passlib.hash.ldap_pbkdf2_sha512" title="passlib.hash.ldap_pbkdf2_sha512"><code class="xref py py-class docutils literal notranslate"><span class="pre">ldap_pbkdf2_sha512</span></code></a> and
+<a class="reference internal" href="../lib/passlib.hash.ldap_pbkdf2_digest.html#passlib.hash.ldap_pbkdf2_sha256" title="passlib.hash.ldap_pbkdf2_sha256"><code class="xref py py-class docutils literal notranslate"><span class="pre">ldap_pbkdf2_sha256</span></code></a>).</p>
+<p><em>Issues:</em> PBKDF2 has no major security or portability issues,
+and compares favorably against bcrypt.  However, bcrypt has proven slightly
+more resistant to modern GPU-based cracking techniques.</p>
+</section>
+<section id="sha512-crypt">
+<h4>SHA512-Crypt<a class="headerlink" href="#sha512-crypt" title="Link to this heading">¶</a></h4>
+<p><a class="reference internal" href="../lib/passlib.hash.sha512_crypt.html#passlib.hash.sha512_crypt" title="passlib.hash.sha512_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">sha512_crypt</span></code></a> is
+based on the well-tested <a class="reference internal" href="../lib/passlib.hash.md5_crypt.html#passlib.hash.md5_crypt" title="passlib.hash.md5_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">md5_crypt</span></code></a>
+algorithm. In use since 2008, it’s the default hash on most Linux systems;
+its direct ancestor <code class="xref py py-class docutils literal notranslate"><span class="pre">md5_crypt</span></code> has been in use since 1994 on most Unix systems.
+If you want your application’s hashes to be readable by the
+native Linux crypt() function, this is the hash to use.
+There is also <a class="reference internal" href="../lib/passlib.hash.sha256_crypt.html#passlib.hash.sha256_crypt" title="passlib.hash.sha256_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">sha256_crypt</span></code></a>, which may be faster
+on 32 bit processors; as well as LDAP-formatted versions of these (
+<a class="reference internal" href="../lib/passlib.hash.ldap_crypt.html#passlib.hash.ldap_sha512_crypt" title="passlib.hash.ldap_sha512_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">ldap_sha512_crypt</span></code></a> and
+<a class="reference internal" href="../lib/passlib.hash.ldap_crypt.html#passlib.hash.ldap_sha256_crypt" title="passlib.hash.ldap_sha256_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">ldap_sha256_crypt</span></code></a>).</p>
+<p><em>Issues:</em> Like <a class="reference internal" href="../lib/passlib.hash.md5_crypt.html#passlib.hash.md5_crypt" title="passlib.hash.md5_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">md5_crypt</span></code></a>, its algorithm
+composes the underlying message digest hash in a baroque
+and somewhat arbitrary set of combinations.
+So far this “kitchen sink” design has been successful in its
+primary purpose: to prevent any attempts to create an optimized
+version for use in a pre-computed or brute-force search.
+However, this design also hampers analysis of the algorithm
+for future flaws.</p>
+<p>While this algorithm is still considered secure, it has fallen out of favor
+in comparison to bcrypt and pbkdf2, due to its non-standard construction.</p>
+<p>Furthermore, when compared to Argon2 and BCrypt,
+SHA512-Crypt and PBKDF2 have proven more susceptible to cracking using modern GPU-based techniques.</p>
+<p id="index-1"><a class="reference internal" href="../lib/passlib.hash.sha512_crypt.html#passlib.hash.sha512_crypt" title="passlib.hash.sha512_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">sha512_crypt</span></code></a> is probably the best choice for Google App Engine,
+as Google’s production servers appear to provide native support
+via <code class="xref py py-mod docutils literal notranslate"><span class="pre">crypt</span></code>, which will be used by Passlib.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>References to this algorithm are frequently confused with a raw SHA-512 hash.
+While <code class="xref py py-class docutils literal notranslate"><span class="pre">sha512_crypt</span></code> uses the SHA-512 hash as a cryptographic primitive,
+the algorithm’s resulting password hash is far more secure.</p>
+</div>
+</section>
+</section>
+<section id="making-a-decision">
+<h3>Making a Decision<a class="headerlink" href="#making-a-decision" title="Link to this heading">¶</a></h3>
+<p>For new applications, this decision comes down to a couple of questions:</p>
+<ol class="arabic">
+<li><p>Does the hash need to be natively supported by your operating system’s <code class="xref py py-func docutils literal notranslate"><span class="pre">crypt()</span></code> api,
+in order to allow inter-operation with third-party applications on the host?</p>
+<ul class="simple">
+<li><p>If yes, the right choice is either <a class="reference internal" href="../lib/passlib.hash.bcrypt.html#passlib.hash.bcrypt" title="passlib.hash.bcrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code></a> for BSD variants,
+or <a class="reference internal" href="../lib/passlib.hash.sha512_crypt.html#passlib.hash.sha512_crypt" title="passlib.hash.sha512_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">sha512_crypt</span></code></a> for Linux; since these are natively supported.</p></li>
+<li><p>If no, continue…</p></li>
+</ul>
+</li>
+<li><p>Does your hosting provider allow you to install C extensions?</p>
+<ul class="simple">
+<li><p>If no, you probably want to use <a class="reference internal" href="../lib/passlib.hash.pbkdf2_digest.html#passlib.hash.pbkdf2_sha256" title="passlib.hash.pbkdf2_sha256"><code class="xref py py-class docutils literal notranslate"><span class="pre">pbkdf2_sha256</span></code></a>,
+as this currently has the fastest pure-python backend.</p></li>
+<li><p>If they allow C extensions, continue…</p></li>
+</ul>
+</li>
+<li><p>Do you want to use the latest and greatest, and don’t mind increased memory usage
+when hashing?</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../lib/passlib.hash.argon2.html#passlib.hash.argon2" title="passlib.hash.argon2"><code class="xref py py-class docutils literal notranslate"><span class="pre">argon2</span></code></a> is a next-generation hashing algorithm,
+attempting to become the new standard.  Its design has been being slightly tweaked
+since 2013, but will quite likely become <em>the</em> standard in the next few years.
+You’ll need to install the <a class="reference external" href="https://pypi.python.org/pypi/argon2_cffi">argon2_cffi</a>
+support library.</p></li>
+<li><p>If you want something secure, but more battle tested, continue…</p></li>
+</ul>
+</li>
+<li><p>The top choices left are <a class="reference internal" href="../lib/passlib.hash.bcrypt.html#passlib.hash.bcrypt" title="passlib.hash.bcrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code></a> and <a class="reference internal" href="../lib/passlib.hash.pbkdf2_digest.html#passlib.hash.pbkdf2_sha256" title="passlib.hash.pbkdf2_sha256"><code class="xref py py-class docutils literal notranslate"><span class="pre">pbkdf2_sha256</span></code></a>.</p>
+<p>Both have advantages, and their respective rough edges;
+though currently the balance is in favor of bcrypt
+(pbkdf2 can be cracked somewhat more efficiently).</p>
+<ul class="simple">
+<li><p>If choosing bcrypt, we strongly recommend installing the <a class="reference external" href="https://pypi.python.org/pypi/bcrypt">bcrypt</a>
+support library on non-BSD operating systems.</p></li>
+<li><p>If choosing pbkdf2, especially on python2 &lt; 2.7.8 and python 3 &lt; 3.4,
+you will probably want to install <a class="reference external" href="https://pypi.python.org/pypi/fastpbkdf2">fastpbk2</a>
+support library.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="creating-and-using-a-cryptcontext">
+<h2>Creating and Using a CryptContext<a class="headerlink" href="#creating-and-using-a-cryptcontext" title="Link to this heading">¶</a></h2>
+<p>Once you’ve chosen what password hash(es) you want to use,
+the next step is to define a <a class="reference internal" href="../lib/passlib.context.html#passlib.context.CryptContext" title="passlib.context.CryptContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code></a> object
+to manage your hashes and related policy configuration.
+Insert the following code into your application:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># import the CryptContext class, used to handle all hashing...</span>
+<span class="c1">#</span>
+<span class="kn">from</span> <span class="nn">passlib.context</span> <span class="kn">import</span> <span class="n">CryptContext</span>
+
+<span class="c1">#</span>
+<span class="c1"># create a single global instance for your app...</span>
+<span class="c1">#</span>
+<span class="n">pwd_context</span> <span class="o">=</span> <span class="n">CryptContext</span><span class="p">(</span>
+    <span class="c1"># Replace this list with the hash(es) you wish to support.</span>
+    <span class="c1"># this example sets pbkdf2_sha256 as the default,</span>
+    <span class="c1"># with additional support for reading legacy des_crypt hashes.</span>
+    <span class="n">schemes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;pbkdf2_sha256&quot;</span><span class="p">,</span> <span class="s2">&quot;des_crypt&quot;</span><span class="p">],</span>
+
+    <span class="c1"># Automatically mark all but first hasher in list as deprecated.</span>
+    <span class="c1"># (this will be the default in Passlib 2.0)</span>
+    <span class="n">deprecated</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span>
+
+    <span class="c1"># Optionally, set the number of rounds that should be used.</span>
+    <span class="c1"># Appropriate values may vary for different schemes,</span>
+    <span class="c1"># and the amount of time you wish it to take.</span>
+    <span class="c1"># Leaving this alone is usually safe, and will use passlib&#39;s defaults.</span>
+    <span class="c1">## pbkdf2_sha256__rounds = 29000,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>To start using your CryptContext, import the context you created wherever it’s needed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># import context from where you defined it...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">myapp.model.security</span> <span class="kn">import</span> <span class="n">pwd_context</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># hashing a password...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span> <span class="o">=</span> <span class="n">pwd_context</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;somepass&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span>
+<span class="go">&#39;$pbkdf2-sha256$29000$BSBkLEXIeS9FKMW4F.I85w$SJMzqVU7fw49NDOJZHt2o9vKIfDUVM4cKlAD4MxIgD0&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># verifying a password...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pwd_context</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;somepass&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pwd_context</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;wrongpass&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>There’s many more features packed into the context objects, read
+the walkthrough for more…</p>
+<div class="float-center admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="context-tutorial.html#context-tutorial"><span class="std std-ref">CryptContext Tutorial</span></a> – full details of using the CryptContext class</p></li>
+<li><p><a class="reference internal" href="../lib/passlib.context.html#module-passlib.context" title="passlib.context: CryptContext class, for managing multiple password hash schemes"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code></a> – CryptContext API reference</p></li>
+<li><p><a class="reference internal" href="../lib/passlib.hash.html#module-passlib.hash" title="passlib.hash: all password hashes provided by Passlib"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code></a> – list of all hashes supported by Passlib.</p></li>
+</ul>
+</div>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="choices" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>As of June 2016, the most commonly used password hashes are BCrypt and PBKDF2,
+followed by SHA512-Crypt, with Argon2 rapidly moving up the ranks.
+You should make sure you are reading a current
+copy of the Passlib documentation, in case the state
+of things has changed.</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Walkthrough &amp; Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Library Overview</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">New Application Quickstart Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#choosing-a-hash">Choosing a Hash</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-options">The Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#detailed-comparison-of-choices">Detailed Comparison of Choices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#making-a-decision">Making a Decision</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-and-using-a-cryptcontext">Creating and Using a CryptContext</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hash-tutorial.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">PasswordHash</span></code> Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="context-tutorial.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code> Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="totp-tutorial.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">TOTP</span></code> Tutorial</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../lib/index.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="hash-tutorial.html" title="PasswordHash Tutorial"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="overview.html" title="Library Overview"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Walkthrough &amp; Tutorials</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">New Application Quickstart Guide</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

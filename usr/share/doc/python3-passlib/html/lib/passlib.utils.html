@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.utils - Helper Functions &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.utils.handlers - Framework for writing password hashes" href="passlib.utils.handlers.html" />
+    <link rel="prev" title="passlib.totp – TOTP / Two Factor Authentication" href="passlib.totp.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.utils.handlers.html" title="passlib.utils.handlers - Framework for writing password hashes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.totp.html" title="passlib.totp – TOTP / Two Factor Authentication"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-passlib.utils">
+<span id="passlib-utils-helper-functions"></span><h1><a class="reference internal" href="#module-passlib.utils" title="passlib.utils: internal helpers for implementing password hashes"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code></a> - Helper Functions<a class="headerlink" href="#module-passlib.utils" title="Link to this heading">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This module is primarily used as an internal support module.
+Its interface has not been finalized yet, and may be changed somewhat
+between major releases of Passlib, as the internal code is cleaned up
+and simplified.</p>
+</div>
+<p>This module primarily contains utility functions used internally by Passlib.
+However, end-user applications may find some of the functions useful,
+in particular:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="#passlib.utils.consteq" title="passlib.utils.consteq"><code class="xref py py-func docutils literal notranslate"><span class="pre">consteq()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#passlib.utils.saslprep" title="passlib.utils.saslprep"><code class="xref py py-func docutils literal notranslate"><span class="pre">saslprep()</span></code></a></p></li>
+<li><p><a class="reference internal" href="#passlib.utils.generate_password" title="passlib.utils.generate_password"><code class="xref py py-func docutils literal notranslate"><span class="pre">generate_password()</span></code></a></p></li>
+</ul>
+</div></blockquote>
+<section id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Link to this heading">¶</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.utils.unix_crypt_schemes">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.</span></span><span class="sig-name descname"><span class="pre">unix_crypt_schemes</span></span><a class="headerlink" href="#passlib.utils.unix_crypt_schemes" title="Link to this definition">¶</a></dt>
+<dd><p>List of the names of all the hashes in <a class="reference internal" href="passlib.hash.html#module-passlib.hash" title="passlib.hash: all password hashes provided by Passlib"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code></a>
+which are natively supported by <code class="xref py py-func docutils literal notranslate"><span class="pre">crypt()</span></code> on at least one operating
+system.</p>
+<p>For all hashes in this list, the expression
+<code class="samp docutils literal notranslate"><span class="pre">passlib.hash.</span><em><span class="pre">alg</span></em><span class="pre">.has_backend(&quot;os_crypt&quot;)</span></code>
+will return <code class="docutils literal notranslate"><span class="pre">True</span></code> if the host OS natively supports the hash.
+This list is used by <a class="reference internal" href="passlib.hosts.html#passlib.hosts.host_context" title="passlib.hosts.host_context"><code class="xref py py-data docutils literal notranslate"><span class="pre">host_context</span></code></a>
+and <a class="reference internal" href="passlib.apps.html#passlib.apps.ldap_context" title="passlib.apps.ldap_context"><code class="xref py py-data docutils literal notranslate"><span class="pre">ldap_context</span></code></a> to determine
+which hashes are supported by the host.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../modular_crypt_format.html#mcf-identifiers"><span class="std std-ref">Identifiers &amp; Platform Support</span></a> for a table of which OSes are known to support which hashes.</p>
+</div>
+</dd></dl>
+
+</section>
+<section id="unicode-helpers">
+<h2>Unicode Helpers<a class="headerlink" href="#unicode-helpers" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.consteq">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.</span></span><span class="sig-name descname"><span class="pre">consteq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">left</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.consteq" title="Link to this definition">¶</a></dt>
+<dd><p>Check two strings/bytes for equality.</p>
+<p>This is functionally equivalent to <code class="docutils literal notranslate"><span class="pre">left</span> <span class="pre">==</span> <span class="pre">right</span></code>,
+but attempts to take constant time relative to the size of the righthand input.</p>
+<p>The purpose of this function is to help prevent timing attacks
+during digest comparisons: the standard <code class="docutils literal notranslate"><span class="pre">==</span></code> operator aborts
+after the first mismatched character, causing its runtime to be
+proportional to the longest prefix shared by the two inputs.
+If an attacker is able to predict and control one of the two
+inputs, repeated queries can be leveraged to reveal information about
+the content of the second argument. To minimize this risk, <code class="xref py py-func docutils literal notranslate"><span class="pre">consteq()</span></code>
+is designed to take <code class="docutils literal notranslate"><span class="pre">THETA(len(right))</span></code> time, regardless
+of the contents of the two strings.
+It is recommended that the attacker-controlled input
+be passed in as the left-hand value.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This function is <em>not</em> perfect. Various VM-dependant issues
+(e.g. the VM’s integer object instantiation algorithm, internal unicode representation, etc),
+may still cause the function’s run time to be affected by the inputs,
+though in a less predictable manner.
+<em>To minimize such risks, this function should not be passed</em> <code class="xref py py-class docutils literal notranslate"><span class="pre">unicode</span></code>
+<em>inputs that might contain non-</em> <code class="docutils literal notranslate"><span class="pre">ASCII</span></code> <em>characters</em>.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.7: </span>This is an alias for stdlib’s <code class="xref py py-func docutils literal notranslate"><span class="pre">hmac.compare_digest()</span></code> under Python 3.3 and up.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.saslprep">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.</span></span><span class="sig-name descname"><span class="pre">saslprep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'value'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.saslprep" title="Link to this definition">¶</a></dt>
+<dd><p>Normalizes unicode strings using SASLPrep stringprep profile.</p>
+<p>The SASLPrep profile is defined in <span class="target" id="index-0"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc4013.html"><strong>RFC 4013</strong></a>.
+It provides a uniform scheme for normalizing unicode usernames
+and passwords before performing byte-value sensitive operations
+such as hashing. Among other things, it normalizes diacritic
+representations, removes non-printing characters, and forbids
+invalid characters such as <code class="docutils literal notranslate"><span class="pre">\n</span></code>. Properly internationalized
+applications should run user passwords through this function
+before hashing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> – unicode string to normalize &amp; validate</p></li>
+<li><p><strong>param</strong> – Optional noun identifying source parameter in error messages
+(Defaults to the string <code class="docutils literal notranslate"><span class="pre">&quot;value&quot;</span></code>). This is mainly useful to make the caller’s error
+messages make more sense contextually.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – if any characters forbidden by the SASLPrep profile are encountered.</p></li>
+<li><p><strong>TypeError</strong> – if input is not <code class="xref py py-class docutils literal notranslate"><span class="pre">unicode</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>normalized unicode string</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is not available under Jython,
+as the Jython stdlib is missing the <code class="xref py py-mod docutils literal notranslate"><span class="pre">stringprep</span></code> module
+(<a class="reference external" href="http://bugs.jython.org/issue1758320">Jython issue 1758320</a>).</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="bytes-helpers">
+<h2>Bytes Helpers<a class="headerlink" href="#bytes-helpers" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.xor_bytes">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.</span></span><span class="sig-name descname"><span class="pre">xor_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">left</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#passlib.utils.xor_bytes" title="Link to this definition">¶</a></dt>
+<dd><p>Perform bitwise-xor of two byte strings (must be same size)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.render_bytes">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.</span></span><span class="sig-name descname"><span class="pre">render_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.render_bytes" title="Link to this definition">¶</a></dt>
+<dd><p>Peform <code class="docutils literal notranslate"><span class="pre">%</span></code> formating using bytes in a uniform manner across Python 2/3.</p>
+<p>This function is motivated by the fact that
+<code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code> instances do not support <code class="docutils literal notranslate"><span class="pre">%</span></code> or <code class="docutils literal notranslate"><span class="pre">{}</span></code> formatting under Python 3.
+This function is an attempt to provide a replacement:
+it converts everything to unicode (decoding bytes instances as <code class="docutils literal notranslate"><span class="pre">latin-1</span></code>),
+performs the required formatting, then encodes the result to <code class="docutils literal notranslate"><span class="pre">latin-1</span></code>.</p>
+<p>Calling <code class="docutils literal notranslate"><span class="pre">render_bytes(source,</span> <span class="pre">*args)</span></code> should function roughly the same as
+<code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">%</span> <span class="pre">args</span></code> under Python 2.</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>python &gt;= 3.5 added back limited support for bytes %,
+can revisit when 3.3/3.4 is dropped.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.int_to_bytes">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.</span></span><span class="sig-name descname"><span class="pre">int_to_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.int_to_bytes" title="Link to this definition">¶</a></dt>
+<dd><p>encode integer as single big-endian byte string</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.bytes_to_int">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.</span></span><span class="sig-name descname"><span class="pre">bytes_to_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.bytes_to_int" title="Link to this definition">¶</a></dt>
+<dd><p>decode byte string as single big-endian integer</p>
+</dd></dl>
+
+</section>
+<section id="encoding-helpers">
+<h2>Encoding Helpers<a class="headerlink" href="#encoding-helpers" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.is_same_codec">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.</span></span><span class="sig-name descname"><span class="pre">is_same_codec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">left</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#passlib.utils.is_same_codec" title="Link to this definition">¶</a></dt>
+<dd><p>Check if two codec names are aliases for same codec</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.is_ascii_codec">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.</span></span><span class="sig-name descname"><span class="pre">is_ascii_codec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">codec</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#passlib.utils.is_ascii_codec" title="Link to this definition">¶</a></dt>
+<dd><p>Test if codec is compatible with 7-bit ascii (e.g. latin-1, utf-8; but not utf-16)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.is_ascii_safe">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.</span></span><span class="sig-name descname"><span class="pre">is_ascii_safe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AnyStr</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#passlib.utils.is_ascii_safe" title="Link to this definition">¶</a></dt>
+<dd><p>Check if string (bytes or unicode) contains only 7-bit ascii</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.to_bytes">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.</span></span><span class="sig-name descname"><span class="pre">to_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'utf-8'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'value'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_encoding</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#passlib.utils.to_bytes" title="Link to this definition">¶</a></dt>
+<dd><p>Helper to normalize input to bytes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> – Source bytes/unicode to process.</p></li>
+<li><p><strong>encoding</strong> – Target encoding (defaults to <code class="docutils literal notranslate"><span class="pre">&quot;utf-8&quot;</span></code>).</p></li>
+<li><p><strong>param</strong> – Optional name of variable/noun to reference when raising errors</p></li>
+<li><p><strong>source_encoding</strong> – If this is specified, and the source is bytes,
+the source will be transcoded from <em>source_encoding</em> to <em>encoding</em>
+(via unicode).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>TypeError</strong> – if source is not str or bytes.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>unicode strings will be encoded using <em>encoding</em>, and returned.</p></li>
+<li><p>if <em>source_encoding</em> is not specified, byte strings will be
+returned unchanged.</p></li>
+<li><p>if <em>source_encoding</em> is specified, byte strings will be transcoded
+to <em>encoding</em>.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.to_unicode">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.</span></span><span class="sig-name descname"><span class="pre">to_unicode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AnyStr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'utf-8'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'value'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#passlib.utils.to_unicode" title="Link to this definition">¶</a></dt>
+<dd><p>Helper to normalize input to unicode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> – source bytes/unicode to process.</p></li>
+<li><p><strong>encoding</strong> – encoding to use when decoding bytes instances.</p></li>
+<li><p><strong>param</strong> – optional name of variable/noun to reference when raising errors.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>TypeError</strong> – if source is not str or bytes.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>returns unicode strings unchanged.</p></li>
+<li><p>returns bytes strings decoded using <em>encoding</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.to_native_str">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.</span></span><span class="sig-name descname"><span class="pre">to_native_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AnyStr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'utf-8'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'value'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#passlib.utils.to_native_str" title="Link to this definition">¶</a></dt>
+<dd><p>Take in str or bytes, returns str.
+leaves str alone, decodes bytes using specified encoding.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> – source unicode or bytes string</p></li>
+<li><p><strong>encoding</strong> – encoding to use when encoding unicode or decoding bytes</p></li>
+<li><p><strong>param</strong> – optional name of variable/noun to reference when raising errors</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="randomness">
+<h2>Randomness<a class="headerlink" href="#randomness" title="Link to this heading">¶</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.utils.rng">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.</span></span><span class="sig-name descname"><span class="pre">rng</span></span><a class="headerlink" href="#passlib.utils.rng" title="Link to this definition">¶</a></dt>
+<dd><p>The random number generator used by Passlib to generate
+salt strings and other things which don’t require a
+cryptographically strong source of randomness.</p>
+<p>If <code class="xref py py-func docutils literal notranslate"><span class="pre">os.urandom()</span></code> support is available,
+this will be an instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">random.SystemRandom</span></code>,
+otherwise it will use the default python PRNG class,
+seeded from various sources at startup.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.getrandbytes">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.</span></span><span class="sig-name descname"><span class="pre">getrandbytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rng</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.getrandbytes" title="Link to this definition">¶</a></dt>
+<dd><p>return byte-string containing <em>count</em> number of randomly generated bytes, using specified rng</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.getrandstr">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.</span></span><span class="sig-name descname"><span class="pre">getrandstr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rng</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">charset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.getrandstr" title="Link to this definition">¶</a></dt>
+<dd><p>return string containing <em>count</em> number of chars/bytes, whose elements are drawn from specified charset, using specified rng</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.generate_password">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.</span></span><span class="sig-name descname"><span class="pre">generate_password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size=10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">charset=&lt;default</span> <span class="pre">charset&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.generate_password" title="Link to this definition">¶</a></dt>
+<dd><p>generate random password using given length &amp; charset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> – size of password.</p></li>
+<li><p><strong>charset</strong> – <p>optional string specified set of characters to draw from.</p>
+<p>the default charset contains all normal alphanumeric characters,
+except for the characters <code class="docutils literal notranslate"><span class="pre">1IiLl0OoS5</span></code>, which were omitted
+due to their visual similarity.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> containing randomly generated password.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Using the default character set, on a OS with <code class="xref py py-class docutils literal notranslate"><span class="pre">SystemRandom</span></code> support,
+this function should generate passwords with 5.7 bits of entropy per character.</p>
+</div>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.7: </span>and will be removed in version 2.0, use passlib.pwd.genword() / passlib.pwd.genphrase() instead.</p>
+</div>
+</dd></dl>
+
+</section>
+<section id="interface-tests">
+<h2>Interface Tests<a class="headerlink" href="#interface-tests" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.is_crypt_handler">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.</span></span><span class="sig-name descname"><span class="pre">is_crypt_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.is_crypt_handler" title="Link to this definition">¶</a></dt>
+<dd><p>check if object follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.is_crypt_context">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.</span></span><span class="sig-name descname"><span class="pre">is_crypt_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.is_crypt_context" title="Link to this definition">¶</a></dt>
+<dd><p>check if object appears to be a <a class="reference internal" href="passlib.context.html#passlib.context.CryptContext" title="passlib.context.CryptContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code></a> instance</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.has_rounds_info">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.</span></span><span class="sig-name descname"><span class="pre">has_rounds_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handler</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.has_rounds_info" title="Link to this definition">¶</a></dt>
+<dd><p>check if handler provides the optional <a class="reference internal" href="passlib.ifc.html#rounds-attributes"><span class="std std-ref">rounds information</span></a> attributes</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.has_salt_info">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.</span></span><span class="sig-name descname"><span class="pre">has_salt_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handler</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.has_salt_info" title="Link to this definition">¶</a></dt>
+<dd><p>check if handler provides the optional <a class="reference internal" href="passlib.ifc.html#salt-attributes"><span class="std std-ref">salt information</span></a> attributes</p>
+</dd></dl>
+
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+<p>There are also a few sub modules which provide additional utility functions:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="passlib.utils.handlers.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.handlers</span></code> - Framework for writing password hashes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.utils.binary.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.binary</span></code> - Binary Helper Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.utils.des.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.des</span></code> - DES routines [deprecated]</a></li>
+<li class="toctree-l1"><a class="reference internal" href="passlib.utils.pbkdf2.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.pbkdf2</span></code> - PBKDF2 key derivation algorithm [deprecated]</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#constants">Constants</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.utils.unix_crypt_schemes"><code class="docutils literal notranslate"><span class="pre">unix_crypt_schemes</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#unicode-helpers">Unicode Helpers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.utils.consteq"><code class="docutils literal notranslate"><span class="pre">consteq()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.utils.saslprep"><code class="docutils literal notranslate"><span class="pre">saslprep()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#bytes-helpers">Bytes Helpers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.utils.xor_bytes"><code class="docutils literal notranslate"><span class="pre">xor_bytes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.utils.render_bytes"><code class="docutils literal notranslate"><span class="pre">render_bytes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.utils.int_to_bytes"><code class="docutils literal notranslate"><span class="pre">int_to_bytes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.utils.bytes_to_int"><code class="docutils literal notranslate"><span class="pre">bytes_to_int()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#encoding-helpers">Encoding Helpers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.utils.is_same_codec"><code class="docutils literal notranslate"><span class="pre">is_same_codec()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.utils.is_ascii_codec"><code class="docutils literal notranslate"><span class="pre">is_ascii_codec()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.utils.is_ascii_safe"><code class="docutils literal notranslate"><span class="pre">is_ascii_safe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.utils.to_bytes"><code class="docutils literal notranslate"><span class="pre">to_bytes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.utils.to_unicode"><code class="docutils literal notranslate"><span class="pre">to_unicode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.utils.to_native_str"><code class="docutils literal notranslate"><span class="pre">to_native_str()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#randomness">Randomness</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.utils.rng"><code class="docutils literal notranslate"><span class="pre">rng</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.utils.getrandbytes"><code class="docutils literal notranslate"><span class="pre">getrandbytes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.utils.getrandstr"><code class="docutils literal notranslate"><span class="pre">getrandstr()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.utils.generate_password"><code class="docutils literal notranslate"><span class="pre">generate_password()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#interface-tests">Interface Tests</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.utils.is_crypt_handler"><code class="docutils literal notranslate"><span class="pre">is_crypt_handler()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.utils.is_crypt_context"><code class="docutils literal notranslate"><span class="pre">is_crypt_context()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.utils.has_rounds_info"><code class="docutils literal notranslate"><span class="pre">has_rounds_info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.utils.has_salt_info"><code class="docutils literal notranslate"><span class="pre">has_salt_info()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="passlib.utils.handlers.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.handlers</span></code> - Framework for writing password hashes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.utils.binary.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.binary</span></code> - Binary Helper Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.utils.des.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.des</span></code> - DES routines [deprecated]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.utils.pbkdf2.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.pbkdf2</span></code> - PBKDF2 key derivation algorithm [deprecated]</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.utils.handlers.html" title="passlib.utils.handlers - Framework for writing password hashes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.totp.html" title="passlib.totp – TOTP / Two Factor Authentication"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

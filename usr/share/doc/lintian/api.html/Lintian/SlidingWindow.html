@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Lintian::SlidingWindow</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#CLASS-METHODS">CLASS METHODS</a></li>
+  <li><a href="#INSTANCE-METHODS">INSTANCE METHODS</a></li>
+  <li><a href="#DIAGNOSTICS">DIAGNOSTICS</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Lintian::SlidingWindow - Lintian interface to sliding window match</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>    use Lintian::SlidingWindow;
+
+    my $sfd = Lintian::SlidingWindow-&gt;new(&#39;&lt;&#39;,&#39;someevilfile.c&#39;, sub { $_ = lc($_); });
+    my $window;
+    while ($window = $sfd-&gt;readwindow) {
+       if (index($window, &#39;evil&#39;) &gt; -1) {
+           if($window =~
+                 m/software \s++ shall \s++
+                   be \s++ used \s++ for \s++ good \s*+ ,?+ \s*+
+                   not \s++ evil/xsim) {
+              # do something like : tag &#39;license-problem-json-evil&#39;;
+           }
+       }
+    }</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Lintian::SlidingWindow provides a way of matching some pattern, including multi line pattern, without needing to fully load the file in memory.</p>
+
+<h1 id="CLASS-METHODS">CLASS METHODS</h1>
+
+<dl>
+
+<dt>new(HANDLE[, BLOCKSUB[, BLOCKSIZE]])</dt>
+<dd>
+
+<p>Create a new sliding window by reading from a given HANDLE, which must be open for reading. Optionally run BLOCKSUB against each block. Note that BLOCKSUB should apply transform byte by byte and does not depend of context.</p>
+
+<p>Each window consists of up to two blocks of BLOCKSIZE characters.</p>
+
+</dd>
+</dl>
+
+<h1 id="INSTANCE-METHODS">INSTANCE METHODS</h1>
+
+<dl>
+
+<dt>readwindow</dt>
+<dd>
+
+<p>Return a new block of sliding window. Return undef at end of file.</p>
+
+</dd>
+<dt><code>blocksize</code></dt>
+<dd>
+
+</dd>
+<dt>blocknumber</dt>
+<dd>
+
+</dd>
+<dt>handle</dt>
+<dd>
+
+</dd>
+<dt>blocksub</dt>
+<dd>
+
+</dd>
+</dl>
+
+<h1 id="DIAGNOSTICS">DIAGNOSTICS</h1>
+
+<dl>
+
+<dt>no data type specified</dt>
+<dd>
+
+</dd>
+</dl>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Originally written by Bastien ROUCARIES for Lintian.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>lintian(1)</p>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

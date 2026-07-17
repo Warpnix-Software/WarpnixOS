@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.hash.lmhash - LanManager Hash &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.hash.nthash - Windows’ NT-HASH" href="passlib.hash.nthash.html" />
+    <link rel="prev" title="passlib.hash.oracle11 - Oracle 11g password hash" href="passlib.hash.oracle11.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.nthash.html" title="passlib.hash.nthash - Windows’ NT-HASH"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.oracle11.html" title="passlib.hash.oracle11 - Oracle 11g password hash"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.lmhash</span></code> - LanManager Hash</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-hash-lmhash-lanmanager-hash">
+<span id="index-0"></span><h1><a class="reference internal" href="#passlib.hash.lmhash" title="passlib.hash.lmhash"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.lmhash</span></code></a> - LanManager Hash<a class="headerlink" href="#passlib-hash-lmhash-lanmanager-hash" title="Link to this heading">¶</a></h1>
+<div class="block-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>This algorithm is not considered secure by modern standards.</strong>
+It should only be used when verifying existing hashes,
+or when interacting with applications that require this format.
+For new code, see the list of <a class="reference internal" href="../narr/quickstart.html#recommended-hashes"><span class="std std-ref">recommended hashes</span></a>.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+<p>This class implements the LanManager Hash (aka <em>LanMan</em> or <em>LM</em> hash).
+It was used by early versions of Microsoft Windows to store user passwords,
+until it was supplanted (though not entirely replaced) by
+the <a class="reference internal" href="passlib.hash.nthash.html"><span class="doc">nthash</span></a> algorithm in Windows NT.
+It continues to crop up in production due to its integral role
+in the legacy NTLM authentication protocol.
+This class can be used directly as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.hash</span> <span class="kn">import</span> <span class="n">lmhash</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># hash password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">lmhash</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span>
+<span class="go">&#39;e52cac67419a9a224a3b108f3fa6cb6d&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># verify correct password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lmhash</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># verify incorrect password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lmhash</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;secret&quot;</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>the generic <a class="reference internal" href="../narr/hash-tutorial.html#password-hash-examples"><span class="std std-ref">PasswordHash usage examples</span></a></p>
+</div>
+<section id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.lmhash">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">lmhash</span></span><a class="headerlink" href="#passlib.hash.lmhash" title="Link to this definition">¶</a></dt>
+<dd><p>This class implements the Lan Manager Password hash, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>It has no salt and a single fixed round.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">using()</span></code></a> method accepts a single
+optional keyword:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>truncate_error</strong> (<em>bool</em>) – <p>By default, this will silently truncate passwords larger than 14 bytes.
+Setting <code class="docutils literal notranslate"><span class="pre">truncate_error=True</span></code> will cause <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code></a>
+to raise a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasswordTruncateError" title="passlib.exc.PasswordTruncateError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasswordTruncateError</span></code></a> instead.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.7.</span></p>
+</div>
+</p>
+</dd>
+</dl>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code></a> and <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.verify" title="passlib.ifc.PasswordHash.verify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">verify()</span></code></a> methods accept a single
+optional keyword:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>encoding</strong> (<em>str</em>) – This specifies what character encoding LMHASH should use when
+calculating digest. It defaults to <code class="docutils literal notranslate"><span class="pre">cp437</span></code>, the most
+common encoding encountered.</p>
+</dd>
+</dl>
+<p>Note that while this class outputs digests in lower-case hexadecimal,
+it will accept upper-case as well.</p>
+</dd></dl>
+
+<section id="issues-with-non-ascii-characters">
+<h3>Issues with Non-ASCII Characters<a class="headerlink" href="#issues-with-non-ascii-characters" title="Link to this heading">¶</a></h3>
+<p>Passwords containing only <code class="docutils literal notranslate"><span class="pre">ascii</span></code> characters should hash and compare
+correctly across all LMhash implementations. However, due to historical
+issues, no two LMhash implementations handle non-<code class="docutils literal notranslate"><span class="pre">ascii</span></code> characters in quite
+the same way. While Passlib makes every attempt to behave as close to correct
+as possible, the meaning of “correct” is dependant on the software you are
+interoperating with. If you think you will have passwords containing
+non-<code class="docutils literal notranslate"><span class="pre">ascii</span></code> characters, please read the <a class="reference internal" href="#deviations">Deviations</a> section (below) for
+details about the known interoperability issues. It’s a mess of codepages.</p>
+</section>
+</section>
+<section class="html-toggle" id="format-algorithm">
+<h2>Format &amp; Algorithm<a class="headerlink" href="#format-algorithm" title="Link to this heading">¶</a></h2>
+<p>A LM hash consists of 32 hexadecimal digits,
+which encode the 16 byte digest. An example hash (of <code class="docutils literal notranslate"><span class="pre">password</span></code>) is
+<code class="docutils literal notranslate"><span class="pre">e52cac67419a9a224a3b108f3fa6cb6d</span></code>.</p>
+<p>The digest is calculated as follows:</p>
+<ol class="arabic">
+<li><p>First, the password should be converted to uppercase, and encoded
+using the “OEM Codepage” of the Windows release that the host / target
+server is running <a class="footnote-reference brackets" href="#cp" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
+<p>For pure-ASCII passwords, this step can be performed
+using the <code class="docutils literal notranslate"><span class="pre">us-ascii</span></code> encoding (as most OEM Codepages are ASCII-compatible).
+However, for passwords with non-ASCII characters, this step is fraught
+with compatibility issues and border cases (see <a class="reference internal" href="#deviations">Deviations</a> for details).</p>
+</li>
+<li><p>The password is then truncated to 14 bytes,
+or the end NULL padded to 14 bytes; as appropriate.</p></li>
+<li><p>The first 7 bytes of the truncated password from step 2 are used as a key
+to DES encrypt the constant <code class="docutils literal notranslate"><span class="pre">KGS!&#64;#$%</span></code>, resulting
+in the first 8 bytes of the final digest.</p></li>
+<li><p>Step 3 is repeated using the second 7 bytes of the password from step 2,
+resulting in the second 8 bytes of the final digest.</p></li>
+<li><p>The combined digests from 3 and 4 are then encoded to hexadecimal.</p></li>
+</ol>
+</section>
+<section id="security-issues">
+<h2>Security Issues<a class="headerlink" href="#security-issues" title="Link to this heading">¶</a></h2>
+<p>Due to a myriad of flaws, and the existence high-speed password cracking software
+dedicated to LMHASH, this algorithm should be considered broken. The major flaws include:</p>
+<ul class="simple">
+<li><p>It has no salt, making hashes easily pre-computable.</p></li>
+<li><p>It limits the password to 14 characters, and converts the password to
+uppercase before hashing, greatly reducing the keyspace.</p></li>
+<li><p>By breaking the password into two independent chunks,
+they can be attacked independently and simultaneously.</p></li>
+<li><p>The independence of the chunks reveals significant information
+about the original password: The second 8 bytes of the digest
+are the same for all passwords &lt; 8 bytes; and for passwords
+of 8-9 characters, the second chunk can be broken <em>much</em> faster,
+revealing part of the password, and reducing the likely
+keyspace for the first chunk.</p></li>
+</ul>
+</section>
+<section id="deviations">
+<h2>Deviations<a class="headerlink" href="#deviations" title="Link to this heading">¶</a></h2>
+<p>Passlib’s implementation differs from others in a few ways, all related to
+the handling of non-ASCII characters.</p>
+<ul>
+<li><p>Unicode Policy:</p>
+<p>Officially, unicode passwords should be encoded using the “OEM Codepage”
+used <a class="footnote-reference brackets" href="#cp" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> by the specific release of Windows that the host or target server
+is running. Common encodings include <code class="docutils literal notranslate"><span class="pre">cp437</span></code> (used by the English
+edition of Windows XP), <code class="docutils literal notranslate"><span class="pre">cp580</span></code> (used by many Western European editions
+of XP), and <code class="docutils literal notranslate"><span class="pre">cp866</span></code> (used by many Eastern European editions of XP).
+Complicating matters further, some third-party implementations are known
+to use encodings such as <code class="docutils literal notranslate"><span class="pre">latin-1</span></code> and <code class="docutils literal notranslate"><span class="pre">utf-8</span></code>, which cause
+non-ASCII characters to hash in a manner incompatible with the canonical
+MS Windows implementation.</p>
+<p>Thus if an application wishes to provide support for non-ASCII passwords,
+it must decide which encoding to use.</p>
+<p>Passlib uses <code class="docutils literal notranslate"><span class="pre">cp437</span></code> as it’s default encoding for unicode strings.
+However, if your database used a different encoding, you will need to either
+first encode the passwords into bytes, or override the default encoding
+via <code class="docutils literal notranslate"><span class="pre">lmhash.hash(secret,</span> <span class="pre">encoding=&quot;some-other-codec&quot;)</span></code></p>
+<p>All known encodings are <code class="docutils literal notranslate"><span class="pre">us-ascii</span></code>-compatible, so for ASCII passwords,
+the default should be sufficient.</p>
+</li>
+<li><p>Upper Case Conversion:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Future releases of Passlib may change this behavior
+as new information and code is integrated.</p>
+</div>
+<p>Once critical step in the LMHASH algorithm is converting the password
+to upper case. While ASCII characters are uppercased as normal,
+non-ASCII characters are converted in implementation-dependant ways:</p>
+<p>Windows systems encode the password first, and then
+convert it to uppercase using an codepage-specific table.
+For the most part these tables seem to agree with the Unicode specification,
+but there are some codepoints where they deviate (for example,
+Unicode uppercases U+00B5 -&gt; U+039C, but <code class="docutils literal notranslate"><span class="pre">cp437</span></code> leaves it unchanged <a class="footnote-reference brackets" href="#uc" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>).</p>
+<p>In contrast, most third-party implementations (Passlib included)
+perform the uppercase conversion first using the Unicode specification,
+and then encode the password second; despite the non-ASCII border cases where the
+resulting hash would not match the official Windows hash.</p>
+</li>
+</ul>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id4" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>Article used as reference for algorithm -
+<a class="reference external" href="http://www.linuxjournal.com/article/2717">http://www.linuxjournal.com/article/2717</a>.</p>
+</aside>
+<aside class="footnote brackets" id="cp" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id2">2</a>)</span>
+<p>The OEM codepage used by specific Window XP (and earlier) releases
+can be found at <a class="reference external" href="http://msdn.microsoft.com/nl-nl/goglobal/cc563921%28en-us%29.aspx">http://msdn.microsoft.com/nl-nl/goglobal/cc563921%28en-us%29.aspx</a>.</p>
+</aside>
+<aside class="footnote brackets" id="uc" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>Online discussion dealing with upper-case encoding issues -
+<a class="reference external" href="http://www.openwall.com/lists/john-dev/2011/08/01/2">http://www.openwall.com/lists/john-dev/2011/08/01/2</a>.</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#unix-hashes">Unix Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-modular-crypt-hashes">Other “Modular Crypt” Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ldap-rfc2307-hashes">LDAP / RFC2307 Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#sql-database-hashes">SQL Database Hashes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="passlib.hash.html#ms-windows-hashes">MS Windows Hashes</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.lmhash</span></code> - LanManager Hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.nthash.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.nthash</span></code> - Windows’ NT-HASH</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.msdcc.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.msdcc</span></code> - Windows’ Domain Cached Credentials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.msdcc2.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.msdcc2</span></code> - Windows’ Domain Cached Credentials v2</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#cisco-hashes">Cisco Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-hashes">Other Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.nthash.html" title="passlib.hash.nthash - Windows’ NT-HASH"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.oracle11.html" title="passlib.hash.oracle11 - Oracle 11g password hash"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.lmhash</span></code> - LanManager Hash</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

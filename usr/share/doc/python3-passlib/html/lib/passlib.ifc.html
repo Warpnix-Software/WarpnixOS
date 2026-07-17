@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.ifc – Password Hash Interface &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.pwd – Password generation helpers" href="passlib.pwd.html" />
+    <link rel="prev" title="passlib.hosts - OS Password Handling" href="passlib.hosts.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.pwd.html" title="passlib.pwd – Password generation helpers"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hosts.html" title="passlib.hosts - OS Password Handling"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-ifc-password-hash-interface">
+<span id="module-passlib.ifc"></span><span id="index-0"></span><h1><a class="reference internal" href="#module-passlib.ifc" title="passlib.ifc: abstract interfaces used by Passlib"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code></a> – Password Hash Interface<a class="headerlink" href="#passlib-ifc-password-hash-interface" title="Link to this heading">¶</a></h1>
+<section id="passwordhash-api">
+<span id="password-hash-api"></span><h2>PasswordHash API<a class="headerlink" href="#passwordhash-api" title="Link to this heading">¶</a></h2>
+<p>This module provides the <code class="xref py py-class docutils literal notranslate"><span class="pre">PasswordHash</span></code> abstract base class.
+This class defines the common methods and attributes present
+on all the hashes importable from the <a class="reference internal" href="passlib.hash.html#module-passlib.hash" title="passlib.hash: all password hashes provided by Passlib"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code></a> module.
+Additionally, the <a class="reference internal" href="passlib.context.html#passlib.context.CryptContext" title="passlib.context.CryptContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.context.CryptContext</span></code></a> class is deliberately
+designed to parallel many of this interface’s methods.</p>
+<div class="float-center admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../narr/hash-tutorial.html#hash-tutorial"><span class="std std-ref">PasswordHash Tutorial</span></a> – Overview of this interface and how to use it.</p>
+</div>
+</section>
+<section id="base-abstract-class">
+<h2>Base Abstract Class<a class="headerlink" href="#base-abstract-class" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.ifc.PasswordHash">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.ifc.</span></span><span class="sig-name descname"><span class="pre">PasswordHash</span></span><a class="headerlink" href="#passlib.ifc.PasswordHash" title="Link to this definition">¶</a></dt>
+<dd><p>This class provides an abstract interface for an arbitrary password hasher.</p>
+<p>Applications will generally not construct instances directly –
+most of the operations are performed via classmethods, allowing
+instances of a given class to be an internal detail used to implement
+the various operations.</p>
+<p>While <code class="xref py py-class docutils literal notranslate"><span class="pre">PasswordHash</span></code> offers a number of methods and attributes,
+most applications will only need the two primary methods:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a> - generate new salt, return hash of password.</p></li>
+<li><p><a class="reference internal" href="#passlib.ifc.PasswordHash.verify" title="passlib.ifc.PasswordHash.verify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.verify()</span></code></a> - verify password against existing hash.</p></li>
+</ul>
+<p>Two additional support methods are also provided:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.using()</span></code></a> - create subclass with customized configuration.</p></li>
+<li><p><a class="reference internal" href="#passlib.ifc.PasswordHash.identify" title="passlib.ifc.PasswordHash.identify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.identify()</span></code></a> - check if hash belongs to this algorithm.</p></li>
+</ul>
+<p>Each hash algorithm also provides a number of <a class="reference internal" href="#informational-attributes"><span class="std std-ref">informational attributes</span></a>,
+allowing programmatic inspection of its options and parameter limits.</p>
+</dd></dl>
+
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../narr/hash-tutorial.html#hash-tutorial"><span class="std std-ref">PasswordHash Tutorial</span></a> – Overview of this interface and how to use it.</p>
+</div>
+</section>
+<section id="hashing-verification-methods">
+<span id="primary-methods"></span><h2>Hashing &amp; Verification Methods<a class="headerlink" href="#hashing-verification-methods" title="Link to this heading">¶</a></h2>
+<p>Most applications will only need to use two methods:
+<a class="reference internal" href="#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a> to generate new hashes, and <a class="reference internal" href="#passlib.ifc.PasswordHash.verify" title="passlib.ifc.PasswordHash.verify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.verify()</span></code></a>
+to check passwords against existing hashes.
+These methods provide an easy interface for working with a password hash,
+and abstract away details such as salt generation, hash normalization,
+and hash comparison.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.ifc.PasswordHash.hash">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">PasswordHash.</span></span><span class="sig-name descname"><span class="pre">hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">secret</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">\*\*kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.ifc.PasswordHash.hash" title="Link to this definition">¶</a></dt>
+<dd><p>Digest password using format-specific algorithm,
+returning resulting hash string.</p>
+<p>For most hashes supported by Passlib, the returned string will contain:
+an algorithm identifier, a cost parameter, the salt string,
+and finally the password digest itself.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>secret</strong> (<em>unicode</em><em> or </em><em>bytes</em>) – string containing the password to encode.</p></li>
+<li><p><strong>**kwds</strong> – <p>All additional keywords are algorithm-specific, and will be listed
+in that hash’s documentation; though many of the more common keywords
+are listed under <a class="reference internal" href="#passlib.ifc.PasswordHash.setting_kwds" title="passlib.ifc.PasswordHash.setting_kwds"><code class="xref py py-attr docutils literal notranslate"><span class="pre">PasswordHash.setting_kwds</span></code></a>
+and <a class="reference internal" href="#passlib.ifc.PasswordHash.context_kwds" title="passlib.ifc.PasswordHash.context_kwds"><code class="xref py py-attr docutils literal notranslate"><span class="pre">PasswordHash.context_kwds</span></code></a>.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.7: </span>Passing <a class="reference internal" href="#passlib.ifc.PasswordHash.setting_kwds" title="passlib.ifc.PasswordHash.setting_kwds"><code class="xref py py-attr docutils literal notranslate"><span class="pre">PasswordHash.setting_kwds</span></code></a> such as <code class="docutils literal notranslate"><span class="pre">rounds</span></code> and <code class="docutils literal notranslate"><span class="pre">salt_size</span></code>
+directly into the <a class="reference internal" href="#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code></a> method is deprecated.  Callers should instead
+use <code class="docutils literal notranslate"><span class="pre">handler.using(**settings).hash(secret)</span></code>.  Support for the old method
+is is tentatively scheduled for removal in Passlib 2.0.</p>
+<p>Context keywords such as <code class="docutils literal notranslate"><span class="pre">user</span></code> should still be provided to <code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code>.</p>
+</div>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Resulting password hash, encoded in an algorithm-specific format.
+This will always be an instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>
+(i.e. <code class="xref py py-class docutils literal notranslate"><span class="pre">unicode</span></code> under Python 3, <code class="docutils literal notranslate"><span class="pre">ascii</span></code>-encoded <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code> under Python 2).</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ValueError</strong> – <ul>
+<li><p>If a <code class="docutils literal notranslate"><span class="pre">kwd</span></code>’s value is invalid (e.g. if a <code class="docutils literal notranslate"><span class="pre">salt</span></code> string
+is too small, or a <code class="docutils literal notranslate"><span class="pre">rounds</span></code> value is out of range).</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">secret</span></code> contains characters forbidden by the hash algorithm
+(e.g. <code class="xref py py-class docutils literal notranslate"><span class="pre">des_crypt</span></code> forbids NULL characters).</p></li>
+</ul>
+</p></li>
+<li><p><strong>TypeError</strong> – <ul>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">secret</span></code> is not <code class="xref py py-class docutils literal notranslate"><span class="pre">unicode</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code>.</p></li>
+<li><p>if a <code class="docutils literal notranslate"><span class="pre">kwd</span></code> argument has an incorrect type.</p></li>
+<li><p>if an algorithm-specific required <code class="docutils literal notranslate"><span class="pre">kwd</span></code> is not provided.</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.6: </span>Hashes now raise <code class="xref py py-exc docutils literal notranslate"><span class="pre">TypeError</span></code> if a required keyword is missing,
+rather than <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code> like in previous releases; in order
+to conform with normal Python behavior.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.6: </span>Passlib is now much stricter about input validation: for example,
+out-of-range <code class="docutils literal notranslate"><span class="pre">rounds</span></code> values now cause an error instead of being
+clipped (though applications may set <a class="reference internal" href="#relaxed-keyword"><span class="std std-ref">relaxed=True</span></a>
+to restore the old behavior).</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.7: </span>This method was renamed from <a class="reference internal" href="#passlib.ifc.PasswordHash.encrypt" title="passlib.ifc.PasswordHash.encrypt"><code class="xref py py-meth docutils literal notranslate"><span class="pre">encrypt()</span></code></a>.
+Deprecated support for passing settings directly into <code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code>.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.ifc.PasswordHash.encrypt">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">PasswordHash.</span></span><span class="sig-name descname"><span class="pre">encrypt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">secret</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">\*\*kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.ifc.PasswordHash.encrypt" title="Link to this definition">¶</a></dt>
+<dd><p>Legacy alias for <a class="reference internal" href="#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a>.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.7: </span>This method was renamed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code> in version 1.7.
+This alias will be removed in version 2.0, and should only
+be used for compatibility with Passlib 1.3 - 1.6.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.ifc.PasswordHash.verify">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">PasswordHash.</span></span><span class="sig-name descname"><span class="pre">verify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">secret</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hash</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">\*\*context_kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.ifc.PasswordHash.verify" title="Link to this definition">¶</a></dt>
+<dd><p>Verify a secret using an existing hash.</p>
+<p>This checks if a secret matches against the one stored
+inside the specified hash.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>secret</strong> (<em>unicode</em><em> or </em><em>bytes</em>) – A string containing the password to check.</p></li>
+<li><p><strong>hash</strong> – <p>A string containing the hash to check against,
+such as returned by <a class="reference internal" href="#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a>.</p>
+<p>Hashes may be specified as <code class="xref py py-class docutils literal notranslate"><span class="pre">unicode</span></code> or
+<code class="docutils literal notranslate"><span class="pre">ascii</span></code>-encoded <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code>.</p>
+</p></li>
+<li><p><strong>**kwds</strong> – <p>Very few hashes will have additional keywords.</p>
+<p>The ones that do typically require external contextual information
+in order to calculate the digest. For these hashes,
+the values must match the ones passed to the original
+<a class="reference internal" href="#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a> call when the hash was generated,
+or the password will not verify.</p>
+<p>These additional keywords are algorithm-specific, and will be listed
+in that hash’s documentation; though the more common keywords
+are listed under <a class="reference internal" href="#passlib.ifc.PasswordHash.context_kwds" title="passlib.ifc.PasswordHash.context_kwds"><code class="xref py py-attr docutils literal notranslate"><span class="pre">PasswordHash.context_kwds</span></code></a>.
+Examples of common keywords include <code class="docutils literal notranslate"><span class="pre">user</span></code>.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if the secret matches, otherwise <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>TypeError</strong> – <ul>
+<li><p>if either <code class="docutils literal notranslate"><span class="pre">secret</span></code> or <code class="docutils literal notranslate"><span class="pre">hash</span></code> is not a unicode or bytes instance.</p></li>
+<li><p>if the hash requires additional <code class="docutils literal notranslate"><span class="pre">kwds</span></code> which are not provided,</p></li>
+<li><p>if a <code class="docutils literal notranslate"><span class="pre">kwd</span></code> argument has the wrong type.</p></li>
+</ul>
+</p></li>
+<li><p><strong>ValueError</strong> – <ul>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">hash</span></code> does not match this algorithm’s format.</p></li>
+<li><p>if the <code class="docutils literal notranslate"><span class="pre">secret</span></code> contains forbidden characters (see
+<a class="reference internal" href="#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a>).</p></li>
+<li><p>if a configuration/salt string generated by <a class="reference internal" href="#passlib.ifc.PasswordHash.genconfig" title="passlib.ifc.PasswordHash.genconfig"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.genconfig()</span></code></a>
+is passed in as the value for <code class="docutils literal notranslate"><span class="pre">hash</span></code> (these strings look
+similar to a full hash, but typically lack the digest portion
+needed to verify a password).</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.6: </span>This function now raises <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code> if <code class="docutils literal notranslate"><span class="pre">None</span></code> or a config string is provided
+instead of a properly-formed hash; previous releases were inconsistent
+in their handling of these two border cases.</p>
+</div>
+</dd></dl>
+
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../narr/hash-tutorial.html#hash-verifying"><span class="std std-ref">Hashing &amp; Verifying</span></a> tutorial for a usage example</p></li>
+</ul>
+</div>
+</section>
+<section class="html-toggle" id="crypt-methods">
+<span id="id1"></span><h2>Crypt Methods<a class="headerlink" href="#crypt-methods" title="Link to this heading">¶</a></h2>
+<p>Taken together, the <a class="reference internal" href="#passlib.ifc.PasswordHash.genconfig" title="passlib.ifc.PasswordHash.genconfig"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.genconfig()</span></code></a> and <a class="reference internal" href="#passlib.ifc.PasswordHash.genhash" title="passlib.ifc.PasswordHash.genhash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.genhash()</span></code></a>
+are two tightly-coupled methods that mimic the standard Unix
+“crypt” interface. The first method generates salt / configuration
+strings from a set of settings, and the second hashes the password
+using the provided configuration string.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Most applications will find <a class="reference internal" href="#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a> much more useful,
+as it combines the functionality of these two methods into one.</p>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.ifc.PasswordHash.genconfig">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">PasswordHash.</span></span><span class="sig-name descname"><span class="pre">genconfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">\*\*setting_kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.ifc.PasswordHash.genconfig" title="Link to this definition">¶</a></dt>
+<dd><div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.7: </span>As of 1.7, this method is deprecated, and slated for complete removal in Passlib 2.0.</p>
+<p>For all known real-world uses, <code class="docutils literal notranslate"><span class="pre">.hash(&quot;&quot;,</span> <span class="pre">**settings)</span></code>
+should provide equivalent functionality.</p>
+<p>This deprecation may be reversed if a use-case presents itself in the mean time.</p>
+</div>
+<p>Returns a configuration string encoding settings for hash generation.</p>
+<p>This function takes in all the same <a class="reference internal" href="#passlib.ifc.PasswordHash.setting_kwds" title="passlib.ifc.PasswordHash.setting_kwds"><code class="xref py py-attr docutils literal notranslate"><span class="pre">PasswordHash.setting_kwds</span></code></a>
+as <a class="reference internal" href="#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a>, fills in suitable defaults,
+and encodes the settings into a single “configuration” string,
+suitable passing to <a class="reference internal" href="#passlib.ifc.PasswordHash.genhash" title="passlib.ifc.PasswordHash.genhash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.genhash()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**kwds</strong> – All additional keywords are algorithm-specific, and will be listed
+in that hash’s documentation; though many of the more common keywords
+are listed under <a class="reference internal" href="#passlib.ifc.PasswordHash.setting_kwds" title="passlib.ifc.PasswordHash.setting_kwds"><code class="xref py py-attr docutils literal notranslate"><span class="pre">PasswordHash.setting_kwds</span></code></a>
+Examples of common keywords include <code class="docutils literal notranslate"><span class="pre">salt</span></code> and <code class="docutils literal notranslate"><span class="pre">rounds</span></code>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A configuration string (as <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>).</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong><strong>, </strong><strong>TypeError</strong> – This function raises exceptions for the same
+reasons as <a class="reference internal" href="#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a>.</p>
+</dd>
+</dl>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.7: </span>This should now always return a full hash string, even in cases
+where previous releases would return a truncated “configuration only” string,
+or <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.ifc.PasswordHash.genhash">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">PasswordHash.</span></span><span class="sig-name descname"><span class="pre">genhash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">secret</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">\*\*context_kwds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.ifc.PasswordHash.genhash" title="Link to this definition">¶</a></dt>
+<dd><p>Encrypt secret using specified configuration string.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.7: </span>As of 1.7, this method is deprecated, and slated for complete removal in Passlib 2.0.</p>
+<p>This deprecation may be reversed if a use-case presents itself in the mean time.</p>
+</div>
+<p>This takes in a password and a configuration string,
+and returns a hash for that password.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>secret</strong> (<em>unicode</em><em> or </em><em>bytes</em>) – string containing the password to be encrypted.</p></li>
+<li><p><strong>config</strong> (<em>unicode</em><em> or </em><em>bytes</em>) – <p>configuration string to use when hashing the secret.
+this can either be an existing hash that was previously
+returned by <a class="reference internal" href="#passlib.ifc.PasswordHash.genhash" title="passlib.ifc.PasswordHash.genhash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.genhash()</span></code></a>, or a configuration string
+that was previously created by <a class="reference internal" href="#passlib.ifc.PasswordHash.genconfig" title="passlib.ifc.PasswordHash.genconfig"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.genconfig()</span></code></a>.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.7: </span><code class="docutils literal notranslate"><span class="pre">None</span></code> is no longer accepted for hashes which (prior to 1.7)
+lacked a configuration string format.</p>
+</div>
+</p></li>
+<li><p><strong>**kwds</strong> – <p>Very few hashes will have additional keywords.</p>
+<p>The ones that do typically require external contextual information
+in order to calculate the digest. For these hashes,
+the values must match the ones passed to the original
+<a class="reference internal" href="#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a> call when the hash was generated,
+or the password will not verify.</p>
+<p>These additional keywords are algorithm-specific, and will be listed
+in that hash’s documentation; though the more common keywords
+are listed under :<a class="reference internal" href="#passlib.ifc.PasswordHash.context_kwds" title="passlib.ifc.PasswordHash.context_kwds"><code class="xref py py-attr docutils literal notranslate"><span class="pre">PasswordHash.context_kwds</span></code></a>.
+Examples of common keywords include <code class="docutils literal notranslate"><span class="pre">user</span></code>.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Encoded hash matching specified secret, config, and kwds.
+This will always be a native <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> instance.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong><strong>, </strong><strong>TypeError</strong> – This function raises exceptions for the same
+reasons as <a class="reference internal" href="#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a>.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Traditionally, password verification using the “crypt” interface
+was done by testing if <code class="docutils literal notranslate"><span class="pre">hash</span> <span class="pre">==</span> <span class="pre">genhash(password,</span> <span class="pre">hash)</span></code>.
+This test is only reliable for a handful of algorithms,
+as various hash representation issues may cause false results.
+Applications are strongly urged to use <a class="reference internal" href="#passlib.ifc.PasswordHash.verify" title="passlib.ifc.PasswordHash.verify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">verify()</span></code></a> instead.</p>
+</div>
+</dd></dl>
+
+</section>
+<section id="factory-creation">
+<span id="support-methods"></span><h2>Factory Creation<a class="headerlink" href="#factory-creation" title="Link to this heading">¶</a></h2>
+<p>One powerful method offered by the <code class="xref py py-class docutils literal notranslate"><span class="pre">PasswordHash</span></code> class <a class="reference internal" href="#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.using()</span></code></a>.
+This method allows you to quickly create subclasses of a specific hash,
+providing it with preconfigured defaults specific to your application:</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.ifc.PasswordHash.using">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">PasswordHash.</span></span><span class="sig-name descname"><span class="pre">using</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relaxed=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">\*\*settings</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.ifc.PasswordHash.using" title="Link to this definition">¶</a></dt>
+<dd><p>This method takes in a set of algorithm-specific settings,
+and returns a new handler object which uses the specified default settings instead.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>**settings</strong> – All keywords are algorithm-specific, and will be listed
+in that hash’s documentation; though many of the more common keywords
+are listed under <a class="reference internal" href="#passlib.ifc.PasswordHash.setting_kwds" title="passlib.ifc.PasswordHash.setting_kwds"><code class="xref py py-attr docutils literal notranslate"><span class="pre">PasswordHash.setting_kwds</span></code></a>.
+Examples of common keywords include <code class="docutils literal notranslate"><span class="pre">rounds</span></code> and <code class="docutils literal notranslate"><span class="pre">salt_size</span></code>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A new object which adheres to <code class="xref py py-class docutils literal notranslate"><span class="pre">PasswordHash</span></code> api.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ValueError</strong> – <ul>
+<li><p>If a keywords’s value is invalid (e.g. if a <code class="docutils literal notranslate"><span class="pre">salt</span></code> string
+is too small, or a <code class="docutils literal notranslate"><span class="pre">rounds</span></code> value is out of range).</p></li>
+</ul>
+</p></li>
+<li><p><strong>TypeError</strong> – <ul>
+<li><p>if a <code class="docutils literal notranslate"><span class="pre">kwd</span></code> argument has an incorrect type.</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.7.</span></p>
+</div>
+</dd></dl>
+
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../narr/hash-tutorial.html#hash-configuring"><span class="std std-ref">Customizing the Configuration</span></a> tutorial for a usage example</p>
+</div>
+</section>
+<section id="hash-inspection-methods">
+<h2>Hash Inspection Methods<a class="headerlink" href="#hash-inspection-methods" title="Link to this heading">¶</a></h2>
+<p>There are currently two hash inspection methods, <a class="reference internal" href="#passlib.ifc.PasswordHash.identify" title="passlib.ifc.PasswordHash.identify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.identify()</span></code></a>
+and <a class="reference internal" href="#passlib.ifc.PasswordHash.needs_update" title="passlib.ifc.PasswordHash.needs_update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.needs_update()</span></code></a>.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.ifc.PasswordHash.identify">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">PasswordHash.</span></span><span class="sig-name descname"><span class="pre">identify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hash</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.ifc.PasswordHash.identify" title="Link to this definition">¶</a></dt>
+<dd><p>Quickly identify if a hash string belongs to this algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hash</strong> (<em>unicode</em><em> or </em><em>bytes</em>) – the candidate hash string to check</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">True</span></code> if the input is a configuration string or hash string</dt><dd><p>identifiable as belonging to this scheme (even if it’s malformed).</p>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code> if the input does not belong to this scheme.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>TypeError</strong> – if <code class="samp docutils literal notranslate"><em><span class="pre">hash</span></em></code> is not a unicode or bytes instance.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A small number of the hashes supported by Passlib lack a reliable
+method of identification (e.g. <a class="reference internal" href="passlib.hash.lmhash.html#passlib.hash.lmhash" title="passlib.hash.lmhash"><code class="xref py py-class docutils literal notranslate"><span class="pre">lmhash</span></code></a>
+and <a class="reference internal" href="passlib.hash.nthash.html#passlib.hash.nthash" title="passlib.hash.nthash"><code class="xref py py-class docutils literal notranslate"><span class="pre">nthash</span></code></a> both consist of 32 hexadecimal characters,
+with no distinguishing features). For such hashes, this method
+may return false positives.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>If you are considering using this method to select from multiple
+algorithms (e.g. in order to verify a password), you will be better served
+by the <a class="reference internal" href="passlib.context.html#context-reference"><span class="std std-ref">CryptContext</span></a> class.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.ifc.PasswordHash.needs_update">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">PasswordHash.</span></span><span class="sig-name descname"><span class="pre">needs_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hash</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">secret</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.ifc.PasswordHash.needs_update" title="Link to this definition">¶</a></dt>
+<dd><p>check if hash’s configuration is outside desired bounds,
+or contains some other internal option which requires
+updating the password hash.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hash</strong> – hash string to examine</p></li>
+<li><p><strong>secret</strong> – optional secret known to have verified against the provided hash.
+(this is used by some hashes to detect legacy algorithm mistakes).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>whether secret needs re-hashing.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.7.</span></p>
+</div>
+</dd></dl>
+
+</section>
+<section id="general-informational-attributes">
+<span id="general-attributes"></span><span id="informational-attributes"></span><h2>General Informational Attributes<a class="headerlink" href="#general-informational-attributes" title="Link to this heading">¶</a></h2>
+<p>Each hash provides a handful of informational attributes, allowing
+programs to dynamically adapt to the requirements of different
+hash algorithms. The following attributes should be defined for all
+the hashes in passlib:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.ifc.PasswordHash.name">
+<span class="sig-prename descclassname"><span class="pre">PasswordHash.</span></span><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#passlib.ifc.PasswordHash.name" title="Link to this definition">¶</a></dt>
+<dd><p>Name uniquely identifying this hash.</p>
+<p>For the hashes built into Passlib, this will always match
+the location where it was imported from — <code class="samp docutils literal notranslate"><span class="pre">passlib.hash.</span><em><span class="pre">name</span></em></code> —
+though externally defined hashes may not adhere to this.</p>
+<p>This should always be a <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> consisting of lowercase <code class="docutils literal notranslate"><span class="pre">a-z</span></code>,
+the digits <code class="docutils literal notranslate"><span class="pre">0-9</span></code>, and the underscore character <code class="docutils literal notranslate"><span class="pre">_</span></code>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.ifc.PasswordHash.setting_kwds">
+<span class="sig-prename descclassname"><span class="pre">PasswordHash.</span></span><span class="sig-name descname"><span class="pre">setting_kwds</span></span><a class="headerlink" href="#passlib.ifc.PasswordHash.setting_kwds" title="Link to this definition">¶</a></dt>
+<dd><p>Tuple listing the keywords supported by <a class="reference internal" href="#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.using()</span></code></a> control hash generation,
+and which will be encoded into the resulting hash.</p>
+<dl class="simple">
+<dt>(These keywords will also be accepted by <a class="reference internal" href="#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a> and <a class="reference internal" href="#passlib.ifc.PasswordHash.genconfig" title="passlib.ifc.PasswordHash.genconfig"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.genconfig()</span></code></a>,</dt><dd><p>though that behavior is deprecated as of Passlib 1.7; and will be removed in Passlib 2.0).</p>
+</dd>
+</dl>
+<p>This list commonly includes keywords for controlling salt generation,
+adjusting time-cost parameters, etc. Most of these settings are optional,
+and suitable defaults will be chosen if they are omitted (e.g. salts
+will be autogenerated).</p>
+<p>While the documentation for each hash should have a complete list of
+the specific settings the hash uses, the following keywords should have
+roughly the same behavior for all the hashes that support them:</p>
+<dl id="index-1">
+<dt><code class="docutils literal notranslate"><span class="pre">salt</span></code></dt><dd><p>Specifies a fixed salt string to use, rather than randomly
+generating one.</p>
+<p>This option is supported by most of the hashes in Passlib,
+though typically it isn’t used, as random generation of a salt
+is usually the desired behavior.</p>
+<p>Hashes typically require this to be a <code class="xref py py-class docutils literal notranslate"><span class="pre">unicode</span></code> or
+<code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code> instance, with additional constraints
+appropriate to the algorithm.</p>
+</dd>
+</dl>
+<p id="index-2"><code class="docutils literal notranslate"><span class="pre">salt_size</span></code></p>
+<blockquote>
+<div><p>Most algorithms which support the <code class="docutils literal notranslate"><span class="pre">salt</span></code> setting will
+autogenerate a salt when none is provided. Most of those hashes
+will also offer this option, which allows the caller to specify
+the size of salt which should be generated. If omitted,
+the hash’s default salt size will be used.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>the <a class="reference internal" href="#salt-attributes"><span class="std std-ref">salt info</span></a> attributes (below)</p>
+</div>
+</div></blockquote>
+<dl id="index-3">
+<dt><code class="docutils literal notranslate"><span class="pre">rounds</span></code></dt><dd><p>If present, this means the hash can vary the number
+of internal rounds used in some part of its algorithm,
+allowing the calculation to take a variable amount of processor
+time, for increased security.</p>
+<p>While this is almost always a non-negative integer,
+additional constraints may be present for each algorithm
+(such as the cost varying on a linear or logarithmic scale).</p>
+<p>This value is typically omitted, in which case a default
+value will be used. The defaults for all the hashes in Passlib
+are periodically retuned to strike a balance between
+security and responsiveness.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>the <a class="reference internal" href="#rounds-attributes"><span class="std std-ref">rounds info</span></a> attributes (below)</p>
+</div>
+</dd>
+</dl>
+<dl id="index-4">
+<dt><code class="docutils literal notranslate"><span class="pre">ident</span></code></dt><dd><p>If present, the class supports multiple formats for encoding
+the same hash. The class’s documentation will generally list
+the allowed values, allowing alternate output formats to be selected.</p>
+<p>Note that these values will typically correspond to different
+revision of the hash algorithm itself, and they may not all
+offer the same level of security.</p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">truncate_error</span></code></p>
+<blockquote>
+<div><p>This will be present if and only if the hash truncates passwords
+larger than some limit (reported via it’s <a class="reference internal" href="#passlib.ifc.truncate_size" title="passlib.ifc.truncate_size"><code class="xref py py-attr docutils literal notranslate"><span class="pre">truncate_size</span></code></a> attribute).
+By default, they will silently truncate passwords above their limit.
+Setting <code class="docutils literal notranslate"><span class="pre">truncate_error=True</span></code> will cause <a class="reference internal" href="#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a>
+to raise a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasswordTruncateError" title="passlib.exc.PasswordTruncateError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasswordTruncateError</span></code></a> instead.</p>
+</div></blockquote>
+<span id="index-5"></span><dl id="relaxed-keyword">
+<dt><code class="docutils literal notranslate"><span class="pre">relaxed</span></code></dt><dd><p>By default, passing an invalid value to <a class="reference internal" href="#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.using()</span></code></a>
+will result in a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>. However, if <code class="docutils literal notranslate"><span class="pre">relaxed=True</span></code>
+then Passlib will attempt to correct the error and (if successful)
+issue a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasslibHashWarning" title="passlib.exc.PasslibHashWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasslibHashWarning</span></code></a> instead.
+This warning may then be filtered if desired.
+Correctable errors include (but are not limited to): <code class="docutils literal notranslate"><span class="pre">rounds</span></code>
+and <code class="docutils literal notranslate"><span class="pre">salt_size</span></code> values that are too low or too high, <code class="docutils literal notranslate"><span class="pre">salt</span></code>
+strings that are too large.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute" id="context-keywords">
+<dt class="sig sig-object py" id="passlib.ifc.PasswordHash.context_kwds">
+<span class="sig-prename descclassname"><span class="pre">PasswordHash.</span></span><span class="sig-name descname"><span class="pre">context_kwds</span></span><a class="headerlink" href="#passlib.ifc.PasswordHash.context_kwds" title="Link to this definition">¶</a></dt>
+<dd><p>Tuple listing the keywords supported by <a class="reference internal" href="#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a>,
+<a class="reference internal" href="#passlib.ifc.PasswordHash.verify" title="passlib.ifc.PasswordHash.verify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.verify()</span></code></a>, and <a class="reference internal" href="#passlib.ifc.PasswordHash.genhash" title="passlib.ifc.PasswordHash.genhash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.genhash()</span></code></a>.
+These keywords are different from the settings kwds in that the context keywords
+affect the hash, but are not encoded within it, and thus must be provided each time
+the hash is calculated.</p>
+<p>This list commonly includes a user account, http realm identifier,
+etc. Most of these keywords are required by the hashes which support them,
+as they are frequently used in place of an embedded salt parameter.</p>
+<p><em>Most hash algorithms in Passlib will have no context keywords.</em></p>
+<p>While the documentation for each hash should have a complete list of
+the specific context keywords the hash uses,
+the following keywords should have roughly the same behavior
+for all the hashes that support them:</p>
+<p id="index-6"><code class="docutils literal notranslate"><span class="pre">user</span></code></p>
+<blockquote>
+<div><p>If present, the class requires a username be specified whenever
+performing a hash calculation (e.g.
+<a class="reference internal" href="passlib.hash.postgres_md5.html#passlib.hash.postgres_md5" title="passlib.hash.postgres_md5"><code class="xref py py-class docutils literal notranslate"><span class="pre">postgres_md5</span></code></a> and
+<a class="reference internal" href="passlib.hash.oracle10.html#passlib.hash.oracle10" title="passlib.hash.oracle10"><code class="xref py py-class docutils literal notranslate"><span class="pre">oracle10</span></code></a>).</p>
+</div></blockquote>
+<p id="index-7"><code class="docutils literal notranslate"><span class="pre">encoding</span></code></p>
+<blockquote>
+<div><p>Some hashes have poorly-defined or host-dependant unicode behavior,
+and properly hashing a non-ASCII password requires providing
+the correct encoding (<a class="reference internal" href="passlib.hash.lmhash.html#passlib.hash.lmhash" title="passlib.hash.lmhash"><code class="xref py py-class docutils literal notranslate"><span class="pre">lmhash</span></code></a> is perhaps the worst offender).
+Hashes which provide this keyword will always expose
+their default encoding programmatically via the
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">PasswordHash.default_encoding</span></code> attribute.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.ifc.truncate_size">
+<span class="sig-prename descclassname"><span class="pre">passlib.ifc.</span></span><span class="sig-name descname"><span class="pre">truncate_size</span></span><a class="headerlink" href="#passlib.ifc.truncate_size" title="Link to this definition">¶</a></dt>
+<dd><p>A positive integer, indicating the hash will truncate any passwords larger than this many bytes.
+If <code class="docutils literal notranslate"><span class="pre">None</span></code> (the more common case), indicates the hash will use
+the entire password provided.</p>
+<p>Hashes which specify this setting will also support a <code class="docutils literal notranslate"><span class="pre">truncate_error</span></code>
+flag via their <a class="reference internal" href="#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.using()</span></code></a> method, to configure
+how truncation is handled.</p>
+</dd></dl>
+
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../narr/hash-tutorial.html#hash-configuring"><span class="std std-ref">Customizing the Configuration</span></a> tutorial for a usage example</p>
+</div>
+</section>
+<section id="salt-information-attributes">
+<span id="salt-attributes"></span><h2>Salt Information Attributes<a class="headerlink" href="#salt-information-attributes" title="Link to this heading">¶</a></h2>
+<p>For schemes which support a salt string,
+<code class="docutils literal notranslate"><span class="pre">&quot;salt&quot;</span></code> should be listed in their <a class="reference internal" href="#passlib.ifc.PasswordHash.setting_kwds" title="passlib.ifc.PasswordHash.setting_kwds"><code class="xref py py-attr docutils literal notranslate"><span class="pre">PasswordHash.setting_kwds</span></code></a>,
+and the following attributes should be defined:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.ifc.PasswordHash.max_salt_size">
+<span class="sig-prename descclassname"><span class="pre">PasswordHash.</span></span><span class="sig-name descname"><span class="pre">max_salt_size</span></span><a class="headerlink" href="#passlib.ifc.PasswordHash.max_salt_size" title="Link to this definition">¶</a></dt>
+<dd><p>The maximum number of bytes/characters allowed in the salt.
+Should either be a positive integer, or <code class="docutils literal notranslate"><span class="pre">None</span></code> (indicating
+the algorithm has no effective upper limit).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.ifc.PasswordHash.min_salt_size">
+<span class="sig-prename descclassname"><span class="pre">PasswordHash.</span></span><span class="sig-name descname"><span class="pre">min_salt_size</span></span><a class="headerlink" href="#passlib.ifc.PasswordHash.min_salt_size" title="Link to this definition">¶</a></dt>
+<dd><p>The minimum number of bytes/characters required for the salt.
+Must be an integer between 0 and <a class="reference internal" href="#passlib.ifc.PasswordHash.max_salt_size" title="passlib.ifc.PasswordHash.max_salt_size"><code class="xref py py-attr docutils literal notranslate"><span class="pre">PasswordHash.max_salt_size</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.ifc.PasswordHash.default_salt_size">
+<span class="sig-prename descclassname"><span class="pre">PasswordHash.</span></span><span class="sig-name descname"><span class="pre">default_salt_size</span></span><a class="headerlink" href="#passlib.ifc.PasswordHash.default_salt_size" title="Link to this definition">¶</a></dt>
+<dd><p>The default salt size that will be used when generating a salt,
+assuming <code class="docutils literal notranslate"><span class="pre">salt_size</span></code> is not set explicitly. This is typically
+the same as <a class="reference internal" href="#passlib.ifc.PasswordHash.max_salt_size" title="passlib.ifc.PasswordHash.max_salt_size"><code class="xref py py-attr docutils literal notranslate"><span class="pre">max_salt_size</span></code></a>,
+or a sane default if <code class="docutils literal notranslate"><span class="pre">max_salt_size=None</span></code>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.ifc.PasswordHash.salt_chars">
+<span class="sig-prename descclassname"><span class="pre">PasswordHash.</span></span><span class="sig-name descname"><span class="pre">salt_chars</span></span><a class="headerlink" href="#passlib.ifc.PasswordHash.salt_chars" title="Link to this definition">¶</a></dt>
+<dd><p>A unicode string containing all the characters permitted
+in a salt string.</p>
+<p>For most <a class="reference internal" href="../modular_crypt_format.html#modular-crypt-format"><span class="std std-ref">Modular Crypt Format</span></a> hashes,
+this is equal to <a class="reference internal" href="passlib.utils.binary.html#passlib.utils.binary.HASH64_CHARS" title="passlib.utils.binary.HASH64_CHARS"><code class="xref py py-data docutils literal notranslate"><span class="pre">passlib.utils.binary.HASH64_CHARS</span></code></a>.
+For the rare hashes where the <code class="docutils literal notranslate"><span class="pre">salt</span></code> parameter must be specified
+in bytes, this will be a placeholder <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code> object containing
+all 256 possible byte values.</p>
+</dd></dl>
+
+</section>
+<section id="rounds-information-attributes">
+<span id="rounds-attributes"></span><h2>Rounds Information Attributes<a class="headerlink" href="#rounds-information-attributes" title="Link to this heading">¶</a></h2>
+<p>For schemes which support a variable time-cost parameter,
+<code class="docutils literal notranslate"><span class="pre">&quot;rounds&quot;</span></code> should be listed in their <a class="reference internal" href="#passlib.ifc.PasswordHash.setting_kwds" title="passlib.ifc.PasswordHash.setting_kwds"><code class="xref py py-attr docutils literal notranslate"><span class="pre">PasswordHash.setting_kwds</span></code></a>,
+and the following attributes should be defined:</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.ifc.PasswordHash.max_rounds">
+<span class="sig-prename descclassname"><span class="pre">PasswordHash.</span></span><span class="sig-name descname"><span class="pre">max_rounds</span></span><a class="headerlink" href="#passlib.ifc.PasswordHash.max_rounds" title="Link to this definition">¶</a></dt>
+<dd><p>The maximum number of rounds the scheme allows.
+Specifying a value beyond this will result in a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>.
+This will be either a positive integer, or <code class="docutils literal notranslate"><span class="pre">None</span></code> (indicating
+the algorithm has no effective upper limit).</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.ifc.PasswordHash.min_rounds">
+<span class="sig-prename descclassname"><span class="pre">PasswordHash.</span></span><span class="sig-name descname"><span class="pre">min_rounds</span></span><a class="headerlink" href="#passlib.ifc.PasswordHash.min_rounds" title="Link to this definition">¶</a></dt>
+<dd><p>The minimum number of rounds the scheme allows.
+Specifying a value below this will result in a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>.
+Will always be an integer between 0 and <a class="reference internal" href="#passlib.ifc.PasswordHash.max_rounds" title="passlib.ifc.PasswordHash.max_rounds"><code class="xref py py-attr docutils literal notranslate"><span class="pre">PasswordHash.max_rounds</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.ifc.PasswordHash.default_rounds">
+<span class="sig-prename descclassname"><span class="pre">PasswordHash.</span></span><span class="sig-name descname"><span class="pre">default_rounds</span></span><a class="headerlink" href="#passlib.ifc.PasswordHash.default_rounds" title="Link to this definition">¶</a></dt>
+<dd><p>The default number of rounds that will be used if none is explicitly
+provided to <a class="reference internal" href="#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a>.
+This will always be an integer between <a class="reference internal" href="#passlib.ifc.PasswordHash.min_rounds" title="passlib.ifc.PasswordHash.min_rounds"><code class="xref py py-attr docutils literal notranslate"><span class="pre">PasswordHash.min_rounds</span></code></a>
+and <a class="reference internal" href="#passlib.ifc.PasswordHash.max_rounds" title="passlib.ifc.PasswordHash.max_rounds"><code class="xref py py-attr docutils literal notranslate"><span class="pre">PasswordHash.max_rounds</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.ifc.PasswordHash.rounds_cost">
+<span class="sig-prename descclassname"><span class="pre">PasswordHash.</span></span><span class="sig-name descname"><span class="pre">rounds_cost</span></span><a class="headerlink" href="#passlib.ifc.PasswordHash.rounds_cost" title="Link to this definition">¶</a></dt>
+<dd><p>While the cost parameter <code class="docutils literal notranslate"><span class="pre">rounds</span></code> is an integer, how it corresponds
+to the amount of time taken can vary between hashes. This attribute
+indicates the scale used by the hash:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;linear&quot;</span></code> - time taken scales linearly with rounds value
+(e.g. <a class="reference internal" href="passlib.hash.sha512_crypt.html#passlib.hash.sha512_crypt" title="passlib.hash.sha512_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">sha512_crypt</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;log2&quot;</span></code> - time taken scales exponentially with rounds value
+(e.g. <a class="reference internal" href="passlib.hash.bcrypt.html#passlib.hash.bcrypt" title="passlib.hash.bcrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code></a>)</p></li>
+</ul>
+</dd></dl>
+
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>document the additional <a class="reference internal" href="#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.using()</span></code></a> keywords
+available for setting rounds limits.</p>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#passwordhash-api">PasswordHash API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#base-abstract-class">Base Abstract Class</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ifc.PasswordHash"><code class="docutils literal notranslate"><span class="pre">PasswordHash</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#hashing-verification-methods">Hashing &amp; Verification Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ifc.PasswordHash.hash"><code class="docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ifc.PasswordHash.encrypt"><code class="docutils literal notranslate"><span class="pre">PasswordHash.encrypt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ifc.PasswordHash.verify"><code class="docutils literal notranslate"><span class="pre">PasswordHash.verify()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#crypt-methods">Crypt Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ifc.PasswordHash.genconfig"><code class="docutils literal notranslate"><span class="pre">PasswordHash.genconfig()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ifc.PasswordHash.genhash"><code class="docutils literal notranslate"><span class="pre">PasswordHash.genhash()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#factory-creation">Factory Creation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ifc.PasswordHash.using"><code class="docutils literal notranslate"><span class="pre">PasswordHash.using()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#hash-inspection-methods">Hash Inspection Methods</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ifc.PasswordHash.identify"><code class="docutils literal notranslate"><span class="pre">PasswordHash.identify()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ifc.PasswordHash.needs_update"><code class="docutils literal notranslate"><span class="pre">PasswordHash.needs_update()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#general-informational-attributes">General Informational Attributes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ifc.PasswordHash.name"><code class="docutils literal notranslate"><span class="pre">PasswordHash.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ifc.PasswordHash.setting_kwds"><code class="docutils literal notranslate"><span class="pre">PasswordHash.setting_kwds</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ifc.PasswordHash.context_kwds"><code class="docutils literal notranslate"><span class="pre">PasswordHash.context_kwds</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ifc.truncate_size"><code class="docutils literal notranslate"><span class="pre">truncate_size</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#salt-information-attributes">Salt Information Attributes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ifc.PasswordHash.max_salt_size"><code class="docutils literal notranslate"><span class="pre">PasswordHash.max_salt_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ifc.PasswordHash.min_salt_size"><code class="docutils literal notranslate"><span class="pre">PasswordHash.min_salt_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ifc.PasswordHash.default_salt_size"><code class="docutils literal notranslate"><span class="pre">PasswordHash.default_salt_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ifc.PasswordHash.salt_chars"><code class="docutils literal notranslate"><span class="pre">PasswordHash.salt_chars</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#rounds-information-attributes">Rounds Information Attributes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ifc.PasswordHash.max_rounds"><code class="docutils literal notranslate"><span class="pre">PasswordHash.max_rounds</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ifc.PasswordHash.min_rounds"><code class="docutils literal notranslate"><span class="pre">PasswordHash.min_rounds</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ifc.PasswordHash.default_rounds"><code class="docutils literal notranslate"><span class="pre">PasswordHash.default_rounds</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.ifc.PasswordHash.rounds_cost"><code class="docutils literal notranslate"><span class="pre">PasswordHash.rounds_cost</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.pwd.html" title="passlib.pwd – Password generation helpers"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hosts.html" title="passlib.hosts - OS Password Handling"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

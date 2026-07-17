@@ -1,0 +1,39 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Data-Validate-Domain
+Upstream-Contact: Neil Neely <neil@neely.cx>
+Source: https://metacpan.org/pod/Data::Validate::Domain
+
+Files: *
+Copyright: (c) 2021, Neil Neely <neil@frii.net>
+License: GPL-1+
+
+Files: debian/*
+Copyright: (c) 2012, Alexander Wirt <formorer@debian.org>
+               2024, Dong Xu <me@eipi.fun>
+License: GPL-1+
+
+License: GPL-1+
+ This is free software; you can redistribute it and/or modify it under
+ the same terms as the Perl 5 programming language system itself.
+ .
+ Terms of the Perl programming language system itself
+ .
+ a) the GNU General Public License as published by the Free
+    Software Foundation; either version 1, or (at your option) any
+    later version, or
+ b) the "Artistic License"
+ .
+   The GNU General Public License, Version 1, February 1989
+ .
+                     GNU GENERAL PUBLIC LICENSE
+                      Version 1, February 1989
+ .
+  Copyright (C) 1989 Free Software Foundation, Inc.
+  51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ .
+  Everyone is permitted to copy and distribute verbatim copies
+  of this license document, but changing it is not allowed.
+ .
+ On Debian systems, the complete text of the GNU General Public License v1
+ (GPL) can be found in /usr/share/common-licenses/GPL-1.
+

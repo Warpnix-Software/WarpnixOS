@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PasswordHash Tutorial &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="CryptContext Tutorial" href="context-tutorial.html" />
+    <link rel="prev" title="New Application Quickstart Guide" href="quickstart.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="context-tutorial.html" title="CryptContext Tutorial"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="quickstart.html" title="New Application Quickstart Guide"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Walkthrough &amp; Tutorials</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">PasswordHash</span></code> Tutorial</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passwordhash-tutorial">
+<span id="hash-tutorial"></span><span id="index-0"></span><h1><a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash" title="passlib.ifc.PasswordHash"><code class="xref py py-class docutils literal notranslate"><span class="pre">PasswordHash</span></code></a> Tutorial<a class="headerlink" href="#passwordhash-tutorial" title="Link to this heading">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<p>Passlib supports a large number of hash algorithms,
+all of which can be imported from the <a class="reference internal" href="../lib/passlib.hash.html#module-passlib.hash" title="passlib.hash: all password hashes provided by Passlib"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code></a> module.
+While the exact options and behavior will vary between each algorithm,
+all of the hashes provided by Passlib use the same interface,
+defined by the <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash" title="passlib.ifc.PasswordHash"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.ifc.PasswordHash</span></code></a> abstract class.</p>
+<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">PasswordHash</span></code> class provides a generic interface for interacting
+individually with the various hashing algorithms.
+It offers methods and attributes for a number of use-cases,
+which fall into three general categories:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Creating &amp; verifying hashes</p></li>
+<li><p>Examining the configuration of a hasher,
+and customizing the defaults.</p></li>
+<li><p>Assorting supplementary methods.</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../lib/passlib.ifc.html#module-passlib.ifc" title="passlib.ifc: abstract interfaces used by Passlib"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code></a> – API reference of all the methods and attributes
+of the <code class="xref py py-class docutils literal notranslate"><span class="pre">PasswordHash</span></code> class.</p></li>
+<li><p><a class="reference internal" href="context-tutorial.html#context-tutorial"><span class="std std-ref">passlib.context.CryptContext</span></a> –
+For working with multiple hash formats at once
+(such a user account table with multiple existing hash formats).</p></li>
+</ul>
+</div>
+</section>
+<section id="hashing-verifying">
+<span id="password-hash-examples"></span><span id="hash-verifying"></span><h2>Hashing &amp; Verifying<a class="headerlink" href="#hashing-verifying" title="Link to this heading">¶</a></h2>
+<p>While all the hashers in <a class="reference internal" href="../lib/passlib.hash.html#module-passlib.hash" title="passlib.hash: all password hashes provided by Passlib"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code></a> offer a range of methods and attributes,
+the main activities applications will need to perform is hashing and verifying passwords.
+This can be done with the <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a> and <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.verify" title="passlib.ifc.PasswordHash.verify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.verify()</span></code></a> methods.</p>
+<div class="float-center without-title admonition caution">
+<p class="admonition-title">Caution</p>
+<p><strong>Changed in 1.7:</strong></p>
+<p>Prior releases used <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.encrypt" title="passlib.ifc.PasswordHash.encrypt"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.encrypt()</span></code></a> for hashing,
+which has now been renamed to <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a>.
+A compatibility alias is present in 1.7, but will be removed in Passlib 2.0.</p>
+</div>
+<section id="hashing">
+<h3>Hashing<a class="headerlink" href="#hashing" title="Link to this heading">¶</a></h3>
+<p>First, import the desired hash.  The following example uses the <a class="reference internal" href="../lib/passlib.hash.pbkdf2_digest.html#passlib.hash.pbkdf2_sha256" title="passlib.hash.pbkdf2_sha256"><code class="xref py py-class docutils literal notranslate"><span class="pre">pbkdf2_sha256</span></code></a> class
+(which derives from <code class="xref py py-class docutils literal notranslate"><span class="pre">PasswordHash</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># import the desired hasher</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.hash</span> <span class="kn">import</span> <span class="n">pbkdf2_sha256</span>
+</pre></div>
+</div>
+<p>Use <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a> to hash a password.  This call takes care of unicode encoding,
+picking default rounds values, and generating a random salt:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span> <span class="o">=</span> <span class="n">pbkdf2_sha256</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span>
+<span class="go">&#39;$pbkdf2-sha256$29000$9t7be09prfXee2/NOUeotQ$Y.RDnnq8vsezSZSKy1QNy6xhKPdoBIwc.0XDdRm9sJ8&#39;</span>
+</pre></div>
+</div>
+<p>Note that since each call generates a new salt, the contents of the resulting
+hash will differ between calls (despite using the same password as input):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hash2</span> <span class="o">=</span> <span class="n">pbkdf2_sha256</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hash2</span>
+<span class="go">&#39;$pbkdf2-sha256$29000$V0rJeS.FcO4dw/h/D6E0Bg$FyLs7omUppxzXkARJQSl.ozcEOhgp3tNgNsKIAhKmp8&#39;</span>
+<span class="go">                      ^^^^^^^^^^^^^^^^^^^^^^</span>
+</pre></div>
+</div>
+</section>
+<section id="verifying">
+<h3>Verifying<a class="headerlink" href="#verifying" title="Link to this heading">¶</a></h3>
+<p>Subsequently, you can call <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.verify" title="passlib.ifc.PasswordHash.verify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.verify()</span></code></a> to check user input
+against an existing hash:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pbkdf2_sha256</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span>
+<span class="go">True</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pbkdf2_sha256</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;joshua&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</section>
+<section id="unicode-non-ascii-characters">
+<span id="hash-unicode-behavior"></span><h3>Unicode &amp; non-ASCII Characters<a class="headerlink" href="#unicode-non-ascii-characters" title="Link to this heading">¶</a></h3>
+<p><em>Sidenote regarding unicode passwords &amp; non-ASCII characters:</em></p>
+<p>For the majority of hash algorithms and use-cases, passwords should
+be provided as either <code class="xref py py-class docutils literal notranslate"><span class="pre">unicode</span></code> (or <code class="docutils literal notranslate"><span class="pre">utf-8</span></code>-encoded <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code>).</p>
+<p>One exception is legacy hashes that were generated
+using a different character encoding. In this case, passwords should be
+encoded using the correct encoding before they are passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">verify()</span></code>;
+otherwise users may not be able to log in successfully.</p>
+<p>For proper internationalization, applications should also take care to ensure
+unicode inputs are normalized to a single representation before hashing.
+The <a class="reference internal" href="../lib/passlib.utils.html#passlib.utils.saslprep" title="passlib.utils.saslprep"><code class="xref py py-func docutils literal notranslate"><span class="pre">passlib.utils.saslprep()</span></code></a> function can be used for this purpose.</p>
+</section>
+</section>
+<section id="customizing-the-configuration">
+<span id="hash-configuring"></span><h2>Customizing the Configuration<a class="headerlink" href="#customizing-the-configuration" title="Link to this heading">¶</a></h2>
+<section id="the-using-method">
+<h3>The using() Method<a class="headerlink" href="#the-using-method" title="Link to this heading">¶</a></h3>
+<p>Each hasher contains a number of <a class="reference internal" href="../lib/passlib.ifc.html#informational-attributes"><span class="std std-ref">informational attributes</span></a>.
+many of which can be customized to change the properties of the hashes
+generated by <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a>.  When you want to change the defaults,
+you don’t have to modify the hasher class directly, or pass in the options to each call to <code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code>.</p>
+<p>Instead, all the hashes offer a <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.using()</span></code></a> method.
+This is a powerful method which accepts most hash informational attributes,
+as well as some other hash-specific configuration keywords; and returns
+a subclass of the original hasher (or a object with an identical interface).
+The returned object inherits the defaults settings from it’s parent,
+but integrates any values you choose to override.</p>
+<div class="float-center without-title admonition caution">
+<p class="admonition-title">Caution</p>
+<p><strong>Changed in 1.7:</strong></p>
+<p>Prior releases required you to pass custom settings to each <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.encrypt" title="passlib.ifc.PasswordHash.encrypt"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.encrypt()</span></code></a> call.
+That usage pattern is deprecated, and will be removed in Passlib 2.0;
+code should be switched to use <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.using()</span></code></a>, as shown below.</p>
+</div>
+</section>
+<section id="usage-example">
+<h3>Usage Example<a class="headerlink" href="#usage-example" title="Link to this heading">¶</a></h3>
+<p>As an example, if the hasher you select supports a variable number of iterations
+(such as <a class="reference internal" href="../lib/passlib.hash.pbkdf2_digest.html#passlib.hash.pbkdf2_sha256" title="passlib.hash.pbkdf2_sha256"><code class="xref py py-class docutils literal notranslate"><span class="pre">pbkdf2_sha256</span></code></a>), you can specify a custom value
+using the <code class="docutils literal notranslate"><span class="pre">rounds</span></code> keyword.</p>
+<p>Here, the default class uses 29000 rounds:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.hash</span> <span class="kn">import</span> <span class="n">pbkdf2_sha256</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pbkdf2_sha256</span><span class="o">.</span><span class="n">default_rounds</span>
+<span class="go">29000</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pbkdf2_sha256</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="go">&#39;$pbkdf2-sha256$29000$V0rJeS.FcO4dw/h/D6E0Bg$FyLs7omUppxzXkARJQSl.ozcEOhgp3tNgNsKIAhKmp8&#39;</span>
+<span class="go">                ^^^^^</span>
+</pre></div>
+</div>
+<p>But if we call <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.using()</span></code></a>, we can override this value:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">custom_pbkdf2</span> <span class="o">=</span> <span class="n">pbkdf2_sha256</span><span class="o">.</span><span class="n">using</span><span class="p">(</span><span class="n">rounds</span><span class="o">=</span><span class="mi">123456</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">custom_pbkdf2</span><span class="o">.</span><span class="n">default_rounds</span>
+<span class="go">123456</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">custom_pbkdf2</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="go">&#39;$pbkdf2-sha256$123456$QwjBmJPSOsf4HyNE6L239g$8m1pnP69EYeOiKKb5sNSiYw9M8pJMyeW.CSm0KKO.GI&#39;</span>
+<span class="go">                ^^^^^^</span>
+</pre></div>
+</div>
+</section>
+<section id="other-keywords">
+<h3>Other Keywords<a class="headerlink" href="#other-keywords" title="Link to this heading">¶</a></h3>
+<p>While hashes frequently have additional keywords supported by using,
+the basic set of settings you can customize can be found by inspecting
+the <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.setting_kwds" title="passlib.ifc.PasswordHash.setting_kwds"><code class="xref py py-attr docutils literal notranslate"><span class="pre">PasswordHash.setting_kwds</span></code></a> attribute:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pbkdf2_sha256</span><span class="o">.</span><span class="n">settings_kwds</span>
+<span class="go">(&quot;salt&quot;, &quot;salt_size&quot;, &quot;rounds&quot;)</span>
+</pre></div>
+</div>
+<p>For instance, the following generates pbkdf2 hashes with a 32-byte salt
+instead of the default 16:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pbkdf2_sha256</span><span class="o">.</span><span class="n">using</span><span class="p">(</span><span class="n">salt_size</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="go">&#39;$pbkdf2-sha256$29000$tPZ.r5UyZgyhNEaI8Z5z7r1X6p1zTknJ.T/nHINwbq0$RlM49Qf5qRraHx.L7gq3hKIKSMLttrG1zWmWXyfXqc8&#39;</span>
+<span class="go">                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
+</pre></div>
+</div>
+<p>This method is also used internally by the <a class="reference internal" href="context-tutorial.html#context-tutorial"><span class="std std-ref">CryptContext</span></a>
+class it order to create a custom hasher configured based on the CryptContext policy
+it was provided.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.using()</span></code></a> – API reference</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="context-keywords">
+<h2>Context Keywords<a class="headerlink" href="#context-keywords" title="Link to this heading">¶</a></h2>
+<p>While the <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a> example above works for most hashes,
+a small number of algorithms require you provide external data
+(such as a username) every time a hash is calculated.</p>
+<p>An example of this is the <a class="reference internal" href="../lib/passlib.hash.oracle10.html#passlib.hash.oracle10" title="passlib.hash.oracle10"><code class="xref py py-class docutils literal notranslate"><span class="pre">oracle10</span></code></a> hash,
+where hashing requires a username:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.hash</span> <span class="kn">import</span> <span class="n">oracle10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span> <span class="o">=</span> <span class="n">oracle10</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;secret&quot;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;admin&quot;</span><span class="p">)</span>
+<span class="go">&#39;B858CE295C95193F&#39;</span>
+</pre></div>
+</div>
+<p>The difference between this and specifying something like a rounds setting
+(see <a class="reference internal" href="#hash-configuring"><span class="std std-ref">Customizing the Configuration</span></a> above) is that a configuration option
+only needs to be specified once, and is then encoded into the hash string itself…
+Whereas a context keyword represents something that isn’t stored in the hash string,
+and needs to be specified every time you call <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.hash()</span></code></a> <strong>or</strong>
+<a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.verify" title="passlib.ifc.PasswordHash.verify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.verify()</span></code></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">oracle10</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;secret&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;admin&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>In this example, if either the username OR password is wrong,
+verify() will fail:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">oracle10</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;secret&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;wronguser&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">oracle10</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;wrongpassword&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;admin&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>Forgetting to include a context keywords when it’s required will cause a TypeError:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span> <span class="o">=</span> <span class="n">oracle10</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="n">traceback</span> <span class="n">omitted</span><span class="o">&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">user must be unicode or bytes, not None</span>
+</pre></div>
+</div>
+<p>Whether a hash requires external parameters (such as <code class="docutils literal notranslate"><span class="pre">user</span></code>)
+can be determined from its documentation page; but also programmatically from
+its <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.context_kwds" title="passlib.ifc.PasswordHash.context_kwds"><code class="xref py py-attr docutils literal notranslate"><span class="pre">PasswordHash.context_kwds</span></code></a> attribute:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">oracle10</span><span class="o">.</span><span class="n">context_kwds</span>
+<span class="go">(&quot;user&quot;,)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pbkdf2_sha256</span><span class="o">.</span><span class="n">context_kwds</span>
+<span class="go">()</span>
+</pre></div>
+</div>
+</section>
+<section id="identifying-hashes">
+<h2>Identifying Hashes<a class="headerlink" href="#identifying-hashes" title="Link to this heading">¶</a></h2>
+<p>One of the rarer use-cases is the need to identify whether a string
+recognizably belongs to a given hasher class.  This can be important
+in some cases, because attempting to call <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.verify" title="passlib.ifc.PasswordHash.verify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.verify()</span></code></a>
+with another algorithm’s hash will result in a ValueError:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.hash</span> <span class="kn">import</span> <span class="n">pbkdf2_sha256</span><span class="p">,</span> <span class="n">md5_crypt</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">other_hash</span> <span class="o">=</span> <span class="n">md5_crypt</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pbkdf2_sha256</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="n">other_hash</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="n">traceback</span> <span class="n">omitted</span><span class="o">&gt;</span>
+<span class="gr">ValueError</span>: <span class="n">not a valid pbkdf2_sha256 hash</span>
+</pre></div>
+</div>
+<p>This can be prevented by using the identify method,
+which determines whether a hash belongs to a given algorithm:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span> <span class="o">=</span> <span class="n">pbkdf2_sha256</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pbkdf2_sha256</span><span class="o">.</span><span class="n">identify</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span>
+<span class="go">True</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pbkdf2_sha256</span><span class="o">.</span><span class="n">identify</span><span class="p">(</span><span class="n">other_hash</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="float-center admonition seealso">
+<p class="admonition-title">See also</p>
+<p>In most cases where an application needs to
+distinguish between multiple hash formats, it will be more useful to switch to
+a  <a class="reference internal" href="context-tutorial.html#context-tutorial"><span class="std std-ref">CryptContext</span></a> object, which automatically handles this
+and many similar tasks.</p>
+</div>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Document usage of <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.needs_update" title="passlib.ifc.PasswordHash.needs_update"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.needs_update()</span></code></a>,
+and how it ties into <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PasswordHash.using()</span></code></a>.</p>
+</div>
+</section>
+<section id="choosing-the-right-rounds-value">
+<span id="rounds-selection-guidelines"></span><span id="index-1"></span><h2>Choosing the right rounds value<a class="headerlink" href="#choosing-the-right-rounds-value" title="Link to this heading">¶</a></h2>
+<p>For hash algorithms with a variable time-cost,
+Passlib’s <a class="reference internal" href="../lib/passlib.ifc.html#passlib.ifc.PasswordHash.default_rounds" title="passlib.ifc.PasswordHash.default_rounds"><code class="xref py py-attr docutils literal notranslate"><span class="pre">PasswordHash.default_rounds</span></code></a> values attempt to be secure enough for
+the average <a class="footnote-reference brackets" href="#avgsys" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> system. But the “right” value for a given hash
+is dependant on the server, its cpu, its expected load, and its users.
+Since larger values mean increased work for an attacker…</p>
+<p class="centered">
+<strong>The right <code class="docutils literal notranslate"><span class="pre">rounds</span></code> value for a given hash &amp; server should be the largest
+possible value that doesn’t cause intolerable delay for your users.</strong></p><p>For most public facing services, you can generally have signin
+take upwards of 250ms - 400ms before users start getting annoyed.
+For superuser accounts, it should take as much time as the admin can stand
+(usually ~4x more delay than a regular account).</p>
+<p>Passlib’s <code class="xref py py-attr docutils literal notranslate"><span class="pre">default_rounds</span></code> values are retuned periodically,
+starting with a rough estimate of what an “average” system is capable of,
+and then setting all <code class="samp docutils literal notranslate"><em><span class="pre">hash</span></em><span class="pre">.default_rounds</span></code> values to take ~300ms on such a system.
+However, some older algorithms (e.g. <a class="reference internal" href="../lib/passlib.hash.bsdi_crypt.html#passlib.hash.bsdi_crypt" title="passlib.hash.bsdi_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">bsdi_crypt</span></code></a>) are weak enough that
+a tradeoff must be made, choosing “more secure but intolerably slow” over “fast but unacceptably insecure”.</p>
+<p>For this reason, it is strongly recommended to not use a value much lower than Passlib’s default,
+and to use one of <a class="reference internal" href="quickstart.html#recommended-hashes"><span class="std std-ref">recommended hashes</span></a>, as one of their chief qualifying
+features is the mere <em>existence</em> of rounds values which take a short enough amount of time,
+and yet are still considered secure.</p>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p>Expand this section into a full document, including
+information from the following posts:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://stackoverflow.com/questions/13545677/python-passlib-what-is-the-best-value-for-rounds">http://stackoverflow.com/questions/13545677/python-passlib-what-is-the-best-value-for-rounds</a></p></li>
+<li><p><a class="reference external" href="http://stackoverflow.com/questions/11829602/pbkdf2-and-hash-comparison">http://stackoverflow.com/questions/11829602/pbkdf2-and-hash-comparison</a></p></li>
+</ul>
+<p>As well as maybe JS-interactive calculation helper.</p>
+</div>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="avgsys" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>For Passlib 1.6.3, all hashes were retuned to take ~300ms on a
+system with a 3.0 ghz 64 bit CPU.</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Walkthrough &amp; Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Library Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html">New Application Quickstart Guide</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-class docutils literal notranslate"><span class="pre">PasswordHash</span></code> Tutorial</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hashing-verifying">Hashing &amp; Verifying</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#hashing">Hashing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#verifying">Verifying</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unicode-non-ascii-characters">Unicode &amp; non-ASCII Characters</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#customizing-the-configuration">Customizing the Configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-using-method">The using() Method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#usage-example">Usage Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#other-keywords">Other Keywords</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#context-keywords">Context Keywords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#identifying-hashes">Identifying Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#choosing-the-right-rounds-value">Choosing the right rounds value</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="context-tutorial.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code> Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="totp-tutorial.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">TOTP</span></code> Tutorial</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../lib/index.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="context-tutorial.html" title="CryptContext Tutorial"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="quickstart.html" title="New Application Quickstart Guide"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Walkthrough &amp; Tutorials</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">PasswordHash</span></code> Tutorial</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

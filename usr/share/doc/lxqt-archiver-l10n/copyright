@@ -1,0 +1,77 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: lxqt-archiver
+Source: https://github.com/lxqt/lxqt-archiver
+
+Files: *
+Copyright: 2018-2025 LXQt team
+License: GPL-2+
+Comment: Some of the source code is derived from Engrampa and File
+ Roller
+
+Files: src/passworddialog.cpp
+       src/passworddialog.h
+Copyright: Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
+License: GPL-2+
+
+Files: src/main.cpp
+       src/core/*
+Copyright: 2018-2025 LXQt team
+           2001-2012 Free Software Foundation, Inc.
+License: GPL-2+
+
+Files: src/core/CMakeLists.txt
+       src/core/config.h
+       src/core/tr-wrapper.c
+       src/core/tr-wrapper.h
+       src/core/sh/isoinfo.sh
+Copyright: 2018-2022 LXQt team
+License: GPL-2+
+
+Files: src/core/fr-command-lrzip.c
+       src/core/fr-command-lrzip.h
+Copyright: 2010 Alexander Saprykin
+License: GPL-2+
+
+Files: src/core/fr-enum-types.c
+       src/core/fr-enum-types.h
+       src/core/fr-marshal.c
+       src/core/fr-marshal.h
+Copyright: Unknown, possibly Hong Jen Yee (PCMan) <pcman.tw@gmail.com>
+License: GPL-2+
+
+Files: debian/*
+Copyright: 2021-2025, Lubuntu Developers <lubuntu-devel@lists.ubuntu.com>
+           2018,      Alf Gaida <agaida@siduction.org>
+           2025,      ChangZhuo Chen (陳昌倬) <czchen@debian.org>
+           2025-2026, Aaron Rainbolt <arraybolt3@ubuntu.com>
+License: LGPL-2.1+
+
+License: GPL-2+
+ This program or library is free software; you can redistribute it
+ and/or modify it under the terms of the GNU General Public License
+ as published by the Free Software Foundation; either version 2 of
+ the License, or (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+ .
+ On Debian systems, the complete text of the GNU General Public
+ License version 2 can be found in
+ "/usr/share/common-licenses/GPL-2".
+
+License: LGPL-2.1+
+ This program or library is free software; you can redistribute it
+ and/or modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ On Debian systems, the complete text of the GNU Lesser General
+ Public License version 2.1 can be found in
+ "/usr/share/common-licenses/LGPL-2.1".

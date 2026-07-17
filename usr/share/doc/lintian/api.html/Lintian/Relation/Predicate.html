@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Lintian::Relation::Predicate</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#INSTANCE-METHODS">INSTANCE METHODS</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Lintian::Relation::Predicate - Lintian type for relationship predicates</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>    use Lintian::Relation::Predicate;</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>This module provides functions for parsing and evaluating package relationships such as Depends and Recommends for binary packages and Build-Depends for source packages. It parses a relationship into an internal format and can then answer questions such as &quot;does this dependency require that a given package be installed&quot; or &quot;is this relationship a superset of another relationship.&quot;</p>
+
+<h1 id="INSTANCE-METHODS">INSTANCE METHODS</h1>
+
+<dl>
+
+<dt>literal</dt>
+<dd>
+
+</dd>
+<dt><code>parsable</code></dt>
+<dd>
+
+</dd>
+<dt>name</dt>
+<dd>
+
+</dd>
+<dt>multiarch_qualifier</dt>
+<dd>
+
+</dd>
+<dt>version_operator</dt>
+<dd>
+
+</dd>
+<dt>reference_version</dt>
+<dd>
+
+</dd>
+<dt>build_architecture</dt>
+<dd>
+
+</dd>
+<dt>build_profile</dt>
+<dd>
+
+</dd>
+<dt>parse</dt>
+<dd>
+
+</dd>
+<dt>satisfies</dt>
+<dd>
+
+</dd>
+<dt>satisfies_inverse</dt>
+<dd>
+
+</dd>
+<dt>to_string</dt>
+<dd>
+
+</dd>
+</dl>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Originally written by Russ Allbery &lt;rra@debian.org&gt; for Lintian.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>lintian(1)</p>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

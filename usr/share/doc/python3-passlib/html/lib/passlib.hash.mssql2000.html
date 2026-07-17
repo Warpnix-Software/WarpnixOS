@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.hash.mssql2000 - MS SQL 2000 password hash &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.hash.mssql2005 - MS SQL 2005 password hash" href="passlib.hash.mssql2005.html" />
+    <link rel="prev" title="passlib.hash.fshp - Fairly Secure Hashed Password" href="passlib.hash.fshp.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.mssql2005.html" title="passlib.hash.mssql2005 - MS SQL 2005 password hash"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.fshp.html" title="passlib.hash.fshp - Fairly Secure Hashed Password"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mssql2000</span></code> - MS SQL 2000 password hash</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-hash-mssql2000-ms-sql-2000-password-hash">
+<h1><a class="reference internal" href="#passlib.hash.mssql2000" title="passlib.hash.mssql2000"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mssql2000</span></code></a> - MS SQL 2000 password hash<a class="headerlink" href="#passlib-hash-mssql2000-ms-sql-2000-password-hash" title="Link to this heading">¶</a></h1>
+<div class="block-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>This algorithm is not considered secure by modern standards.</strong>
+It should only be used when verifying existing hashes,
+or when interacting with applications that require this format.
+For new code, see the list of <a class="reference internal" href="../narr/quickstart.html#recommended-hashes"><span class="std std-ref">recommended hashes</span></a>.</p>
+</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+<p>This class implements the hash algorithm used by Microsoft SQL Server 2000
+to store its user account passwords, until it was replaced
+by a slightly more secure variant (<a class="reference internal" href="passlib.hash.mssql2005.html#passlib.hash.mssql2005" title="passlib.hash.mssql2005"><code class="xref py py-class docutils literal notranslate"><span class="pre">mssql2005</span></code></a>)
+in MSSQL 2005.
+This class can be used directly as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.hash</span> <span class="kn">import</span> <span class="n">mssql2000</span> <span class="k">as</span> <span class="n">m20</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># hash password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">m20</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span>
+<span class="go">&#39;0x0100200420C4988140FD3920894C3EDC188E94F428D57DAD5905F6CC1CBAF950CAD4C63F272B2C91E4DEEB5E6444&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># verify correct password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m20</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m20</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;letmein&quot;</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../narr/hash-tutorial.html#password-hash-examples"><span class="std std-ref">password hash usage</span></a> – for more usage examples</p></li>
+<li><p><a class="reference internal" href="passlib.hash.mssql2005.html"><span class="doc">mssql2005</span></a> – the successor to this hash.</p></li>
+</ul>
+</div>
+<section id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.mssql2000">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">mssql2000</span></span><a class="headerlink" href="#passlib.hash.mssql2000" title="Link to this definition">¶</a></dt>
+<dd><p>This class implements the password hash used by MS-SQL 2000, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>It supports a fixed-length salt.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">using()</span></code></a> method accepts the following optional keywords:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>salt</strong> (<em>bytes</em>) – Optional salt string.
+If not specified, one will be autogenerated (this is recommended).
+If specified, it must be 4 bytes in length.</p></li>
+<li><p><strong>relaxed</strong> (<em>bool</em>) – By default, providing an invalid value for one of the other
+keywords will result in a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>. If <code class="docutils literal notranslate"><span class="pre">relaxed=True</span></code>,
+and the error can be corrected, a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasslibHashWarning" title="passlib.exc.PasslibHashWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasslibHashWarning</span></code></a>
+will be issued instead. Correctable errors include
+<code class="docutils literal notranslate"><span class="pre">salt</span></code> strings that are too long.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section class="html-toggle" id="format-algorithm">
+<h2>Format &amp; Algorithm<a class="headerlink" href="#format-algorithm" title="Link to this heading">¶</a></h2>
+<p>MSSQL 2000 hashes are usually presented as a series of 92 upper-case
+hexadecimal characters, prefixed by <code class="docutils literal notranslate"><span class="pre">0x</span></code>. An example MSSQL 2000 hash
+(of <code class="docutils literal notranslate"><span class="pre">&quot;password&quot;</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mh">0x0100200420C4988140FD3920894C3EDC188E94F428D57DAD5905F6CC1CBAF950CAD4C63F272B2C91E4DEEB5E6444</span>
+</pre></div>
+</div>
+<p>This encodes 46 bytes of raw data, consisting of:</p>
+<ul class="simple">
+<li><p>a 2-byte constant <code class="docutils literal notranslate"><span class="pre">0100</span></code></p></li>
+<li><p>4 byte of salt (<code class="docutils literal notranslate"><span class="pre">200420C4</span></code> in the example)</p></li>
+<li><p>the first 20 byte digest (<code class="docutils literal notranslate"><span class="pre">988140FD3920894C3EDC188E94F428D57DAD5905</span></code>
+in the example).</p></li>
+<li><p>a second 20 byte digest (<code class="docutils literal notranslate"><span class="pre">F6CC1CBAF950CAD4C63F272B2C91E4DEEB5E6444</span></code>
+in the example).</p></li>
+</ul>
+<p>The first digest is generated by encoding the unicode password using
+<code class="docutils literal notranslate"><span class="pre">UTF-16-LE</span></code>, and calculating <code class="docutils literal notranslate"><span class="pre">SHA1(encoded_secret</span> <span class="pre">+</span> <span class="pre">salt)</span></code>.</p>
+<p>The second digest is generated the same as the first,
+except that the password is converted to upper-case first.</p>
+<p>Only the second digest is used when verifying passwords (and hence the hash
+is case-insensitive). The first digest is presumably for forward-compatibility:
+MSSQL 2005 removed the second digest, and thus became case sensitive.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>MSSQL 2000 hashes do not actually have a native textual format, as they
+are stored as raw bytes in an SQL table. However, when external programs
+deal with them, MSSQL generally encodes raw bytes as upper-case hexadecimal,
+prefixed with <code class="docutils literal notranslate"><span class="pre">0x</span></code>. This is the representation Passlib uses.</p>
+</div>
+</section>
+<section id="security-issues">
+<h2>Security Issues<a class="headerlink" href="#security-issues" title="Link to this heading">¶</a></h2>
+<p>This algorithm is reasonably weak, and shouldn’t be used for any
+purpose besides manipulating existing MSSQL 2000 hashes, due to the
+following flaws:</p>
+<ul class="simple">
+<li><p>The fact that it is case insensitive greatly reduces the keyspace that
+must be searched by brute-force or pre-computed attacks.</p></li>
+<li><p>Its simplicity, and years of research on high-speed SHA1
+implementations, makes efficient brute force attacks much more feasible.</p></li>
+</ul>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id1" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>Overview hash algorithms used by MSSQL -
+<a class="reference external" href="https://blogs.msdn.com/b/lcris/archive/2007/04/30/sql-server-2005-about-login-password-hashes.aspx?Redirected=true">https://blogs.msdn.com/b/lcris/archive/2007/04/30/sql-server-2005-about-login-password-hashes.aspx?Redirected=true</a>.</p>
+</aside>
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>Description of MSSQL 2000 algorithm -
+<a class="reference external" href="http://www.theregister.co.uk/2002/07/08/cracking_ms_sql_server_passwords/">http://www.theregister.co.uk/2002/07/08/cracking_ms_sql_server_passwords/</a>.</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#unix-hashes">Unix Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-modular-crypt-hashes">Other “Modular Crypt” Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ldap-rfc2307-hashes">LDAP / RFC2307 Hashes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="passlib.hash.html#sql-database-hashes">SQL Database Hashes</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mssql2000</span></code> - MS SQL 2000 password hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.mssql2005.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mssql2005</span></code> - MS SQL 2005 password hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.mysql323.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mysql323</span></code> - MySQL 3.2.3 password hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.mysql41.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mysql41</span></code> - MySQL 4.1 password hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.postgres_md5.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.postgres_md5</span></code> - PostgreSQL MD5 password hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.oracle10.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.oracle10</span></code> - Oracle 10g password hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.oracle11.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.oracle11</span></code> - Oracle 11g password hash</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ms-windows-hashes">MS Windows Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#cisco-hashes">Cisco Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-hashes">Other Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.mssql2005.html" title="passlib.hash.mssql2005 - MS SQL 2005 password hash"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.fshp.html" title="passlib.hash.fshp - Fairly Secure Hashed Password"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mssql2000</span></code> - MS SQL 2000 password hash</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

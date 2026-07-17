@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Test::Lintian::Run</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#FUNCTIONS">FUNCTIONS</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Test::Lintian::Run -- generic runner for all suites</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>  use Test::Lintian::Run qw(runner);
+
+  my $runpath = &quot;test working directory&quot;;
+
+  runner($runpath);</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Generic test runner for all Lintian test suites</p>
+
+<h1 id="FUNCTIONS">FUNCTIONS</h1>
+
+<dl>
+
+<dt>logged_runner(RUN_PATH)</dt>
+<dd>
+
+<p>Starts the generic test runner for the test located in RUN_PATH and logs the output.</p>
+
+</dd>
+<dt>runner(RUN_PATH)</dt>
+<dd>
+
+<p>This routine provides the basic structure for all runners and runs the test located in RUN_PATH.</p>
+
+</dd>
+<dt>check_literal</dt>
+<dd>
+
+</dd>
+<dt>check_hints</dt>
+<dd>
+
+</dd>
+<dt>check_result(DESC, EXPECTED, ACTUAL)</dt>
+<dd>
+
+<p>This routine checks if the EXPECTED hints match the calibrated ACTUAL for the test described by DESC. For some additional checks, also need the ORIGINAL hints before calibration. Returns a list of errors, if there are any.</p>
+
+</dd>
+</dl>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Originally written by Felix Lechner &lt;felix.lechner@lease-up.com&gt; for Lintian.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>lintian(1)</p>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

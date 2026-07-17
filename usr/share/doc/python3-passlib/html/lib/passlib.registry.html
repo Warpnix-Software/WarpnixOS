@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.registry - Password Handler Registry &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.totp – TOTP / Two Factor Authentication" href="passlib.totp.html" />
+    <link rel="prev" title="passlib.pwd – Password generation helpers" href="passlib.pwd.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.totp.html" title="passlib.totp – TOTP / Two Factor Authentication"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.pwd.html" title="passlib.pwd – Password generation helpers"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-passlib.registry">
+<span id="passlib-registry-password-handler-registry"></span><h1><a class="reference internal" href="#module-passlib.registry" title="passlib.registry: registry for tracking password hash handlers."><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code></a> - Password Handler Registry<a class="headerlink" href="#module-passlib.registry" title="Link to this heading">¶</a></h1>
+<p>This module contains the code Passlib uses to track all password hash handlers
+that it knows about. While custom handlers can be used directly within an application,
+or even handed to a <code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code>; it is frequently useful to register
+them globally within a process and then refer to them by name.
+This module provides facilities for that, as well as programmatically
+querying Passlib to detect what algorithms are available.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This module is primarily used as an internal support module.
+Its interface has not been finalized yet, and may be changed somewhat
+between major releases of Passlib, as the internal code is cleaned up
+and simplified.</p>
+<p>Applications should access hashes through the <a class="reference internal" href="passlib.hash.html#module-passlib.hash" title="passlib.hash: all password hashes provided by Passlib"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code></a> module
+where possible (new ones may also be registered by writing to that module).</p>
+</div>
+<section id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.registry.get_crypt_handler">
+<span class="sig-prename descclassname"><span class="pre">passlib.registry.</span></span><span class="sig-name descname"><span class="pre">get_crypt_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#passlib.registry.get_crypt_handler" title="Link to this definition">¶</a></dt>
+<dd><p>return handler for specified password hash scheme.</p>
+<p>this method looks up a handler for the specified scheme.
+if the handler is not already loaded,
+it checks if the location is known, and loads it first.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – name of handler to return</p></li>
+<li><p><strong>default</strong> – optional default value to return if no handler with specified name is found.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>KeyError</strong> – if no handler matching that name is found, and no default specified, a KeyError will be raised.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>handler attached to name, or default value (if specified).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.registry.list_crypt_handlers">
+<span class="sig-prename descclassname"><span class="pre">passlib.registry.</span></span><span class="sig-name descname"><span class="pre">list_crypt_handlers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loaded_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.registry.list_crypt_handlers" title="Link to this definition">¶</a></dt>
+<dd><p>return sorted list of all known crypt handler names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>loaded_only</strong> – if <code class="docutils literal notranslate"><span class="pre">True</span></code>, only returns names of handlers which have actually been loaded.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of names of all known handlers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.registry.register_crypt_handler_path">
+<span class="sig-prename descclassname"><span class="pre">passlib.registry.</span></span><span class="sig-name descname"><span class="pre">register_crypt_handler_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.registry.register_crypt_handler_path" title="Link to this definition">¶</a></dt>
+<dd><p>register location to lazy-load handler when requested.</p>
+<p>custom hashes may be registered via <a class="reference internal" href="#passlib.registry.register_crypt_handler" title="passlib.registry.register_crypt_handler"><code class="xref py py-func docutils literal notranslate"><span class="pre">register_crypt_handler()</span></code></a>,
+or they may be registered by this function,
+which will delay actually importing and loading the handler
+until a call to <a class="reference internal" href="#passlib.registry.get_crypt_handler" title="passlib.registry.get_crypt_handler"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_crypt_handler()</span></code></a> is made for the specified name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – name of handler</p></li>
+<li><p><strong>path</strong> – module import path</p></li>
+</ul>
+</dd>
+</dl>
+<p>the specified module path should contain a password hash handler
+called <code class="samp docutils literal notranslate"><em><span class="pre">name</span></em></code>, or the path may contain a colon,
+specifying the module and module attribute to use.
+for example, the following would cause <code class="docutils literal notranslate"><span class="pre">get_handler(&quot;myhash&quot;)</span></code> to look
+for a class named <code class="docutils literal notranslate"><span class="pre">myhash</span></code> within the <code class="docutils literal notranslate"><span class="pre">myapp.helpers</span></code> module:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.registry</span> <span class="kn">import</span> <span class="n">registry_crypt_handler_path</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">registry_crypt_handler_path</span><span class="p">(</span><span class="s2">&quot;myhash&quot;</span><span class="p">,</span> <span class="s2">&quot;myapp.helpers&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>…while this form would cause <code class="docutils literal notranslate"><span class="pre">get_handler(&quot;myhash&quot;)</span></code> to look
+for a class name <code class="docutils literal notranslate"><span class="pre">MyHash</span></code> within the <code class="docutils literal notranslate"><span class="pre">myapp.helpers</span></code> module:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.registry</span> <span class="kn">import</span> <span class="n">registry_crypt_handler_path</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">registry_crypt_handler_path</span><span class="p">(</span><span class="s2">&quot;myhash&quot;</span><span class="p">,</span> <span class="s2">&quot;myapp.helpers:MyHash&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.registry.register_crypt_handler">
+<span class="sig-prename descclassname"><span class="pre">passlib.registry.</span></span><span class="sig-name descname"><span class="pre">register_crypt_handler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handler</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.registry.register_crypt_handler" title="Link to this definition">¶</a></dt>
+<dd><p>register password hash handler.</p>
+<p>this method immediately registers a handler with the internal passlib registry,
+so that it will be returned by <a class="reference internal" href="#passlib.registry.get_crypt_handler" title="passlib.registry.get_crypt_handler"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_crypt_handler()</span></code></a> when requested.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>handler</strong> – the password hash handler to register</p></li>
+<li><p><strong>force</strong> – force override of existing handler (defaults to False)</p></li>
+<li><p><strong>_attr</strong> – [internal kwd] if specified, ensures <code class="docutils literal notranslate"><span class="pre">handler.name</span></code>
+matches this value, or raises <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>TypeError</strong> – if the specified object does not appear to be a valid handler.</p></li>
+<li><p><strong>ValueError</strong> – if the specified object’s name (or other required attributes)
+contain invalid values.</p></li>
+<li><p><strong>KeyError</strong> – if a (different) handler was already registered with
+the same name, and <code class="docutils literal notranslate"><span class="pre">force=True</span></code> was not specified.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All password hashes registered with passlib
+can be imported by name from the <a class="reference internal" href="passlib.hash.html#module-passlib.hash" title="passlib.hash: all password hashes provided by Passlib"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code></a> module.
+This is true not just of the built-in hashes,
+but for any hash registered with the registration functions
+in this module.</p>
+</div>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h2>
+<p>Example showing how to use <code class="xref py py-func docutils literal notranslate"><span class="pre">registry_crypt_handler_path()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># register the location of a handler without loading it</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.registry</span> <span class="kn">import</span> <span class="n">register_crypt_handler_path</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">register_crypt_handler_path</span><span class="p">(</span><span class="s2">&quot;myhash&quot;</span><span class="p">,</span> <span class="s2">&quot;myapp.support.hashes&quot;</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># even before being loaded, its name will show up as available</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.registry</span> <span class="kn">import</span> <span class="n">list_crypt_handlers</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;myhash&#39;</span> <span class="ow">in</span> <span class="n">list_crypt_handlers</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;myhash&#39;</span> <span class="ow">in</span> <span class="n">list_crypt_handlers</span><span class="p">(</span><span class="n">loaded_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="go">False</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># when the name &quot;myhash&quot; is next referenced,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># the class &quot;myhash&quot; will be imported from the module &quot;myapp.support.hashes&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.context</span> <span class="kn">import</span> <span class="n">CryptContext</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cc</span> <span class="o">=</span> <span class="n">CryptContext</span><span class="p">(</span><span class="n">schemes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;myhash&quot;</span><span class="p">])</span> <span class="c1">#&lt;-- this will cause autoimport</span>
+</pre></div>
+</div>
+<p>Example showing how to load a hash by name:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.registry</span> <span class="kn">import</span> <span class="n">get_crypt_handler</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_crypt_handler</span><span class="p">(</span><span class="s2">&quot;sha512_crypt&quot;</span><span class="p">)</span>
+<span class="go">&lt;class &#39;passlib.handlers.sha2_crypt.sha512_crypt&#39;&gt;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_crypt_handler</span><span class="p">(</span><span class="s2">&quot;missing_hash&quot;</span><span class="p">)</span>
+<span class="go">KeyError: &quot;no crypt handler found for algorithm: &#39;missing_hash&#39;&quot;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_crypt_handler</span><span class="p">(</span><span class="s2">&quot;missing_hash&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#interface">Interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.registry.get_crypt_handler"><code class="docutils literal notranslate"><span class="pre">get_crypt_handler()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.registry.list_crypt_handlers"><code class="docutils literal notranslate"><span class="pre">list_crypt_handlers()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.registry.register_crypt_handler_path"><code class="docutils literal notranslate"><span class="pre">register_crypt_handler_path()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.registry.register_crypt_handler"><code class="docutils literal notranslate"><span class="pre">register_crypt_handler()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.totp.html" title="passlib.totp – TOTP / Two Factor Authentication"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.pwd.html" title="passlib.pwd – Password generation helpers"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

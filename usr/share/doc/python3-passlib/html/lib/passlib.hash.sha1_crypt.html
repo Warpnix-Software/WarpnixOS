@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.hash.sha1_crypt - SHA-1 Crypt &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.hash.sun_md5_crypt - Sun MD5 Crypt" href="passlib.hash.sun_md5_crypt.html" />
+    <link rel="prev" title="passlib.hash.md5_crypt - MD5 Crypt" href="passlib.hash.md5_crypt.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.sun_md5_crypt.html" title="passlib.hash.sun_md5_crypt - Sun MD5 Crypt"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.md5_crypt.html" title="passlib.hash.md5_crypt - MD5 Crypt"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.sha1_crypt</span></code> - SHA-1 Crypt</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-hash-sha1-crypt-sha-1-crypt">
+<h1><a class="reference internal" href="#passlib.hash.sha1_crypt" title="passlib.hash.sha1_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.sha1_crypt</span></code></a> - SHA-1 Crypt<a class="headerlink" href="#passlib-hash-sha1-crypt-sha-1-crypt" title="Link to this heading">¶</a></h1>
+<p>SHA1-Crypt is a hash algorithm introduced by NetBSD in 2004.
+It’s based on a variation of the PBKDF1 algorithm,
+and supports a large salt and variable number of rounds.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="../narr/hash-tutorial.html#password-hash-examples"><span class="std std-ref">password hash usage</span></a> –
+for examples of how to use this class via the common hash interface.</p>
+</div>
+<section id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.sha1_crypt">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">sha1_crypt</span></span><a class="headerlink" href="#passlib.hash.sha1_crypt" title="Link to this definition">¶</a></dt>
+<dd><p>This class implements the SHA1-Crypt password hash, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>It supports a variable-length salt, and a variable number of rounds.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">using()</span></code></a> method accepts the following optional keywords:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>salt</strong> (<em>str</em>) – Optional salt string.
+If not specified, an 8 character one will be autogenerated (this is recommended).
+If specified, it must be 0-64 characters, drawn from the regexp range <code class="docutils literal notranslate"><span class="pre">[./0-9A-Za-z]</span></code>.</p></li>
+<li><p><strong>salt_size</strong> (<em>int</em>) – Optional number of bytes to use when autogenerating new salts.
+Defaults to 8 bytes, but can be any value between 0 and 64.</p></li>
+<li><p><strong>rounds</strong> (<em>int</em>) – Optional number of rounds to use.
+Defaults to 480000, must be between 1 and 4294967295, inclusive.</p></li>
+<li><p><strong>relaxed</strong> (<em>bool</em>) – <p>By default, providing an invalid value for one of the other
+keywords will result in a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>. If <code class="docutils literal notranslate"><span class="pre">relaxed=True</span></code>,
+and the error can be corrected, a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasslibHashWarning" title="passlib.exc.PasslibHashWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasslibHashWarning</span></code></a>
+will be issued instead. Correctable errors include <code class="docutils literal notranslate"><span class="pre">rounds</span></code>
+that are too small or too large, and <code class="docutils literal notranslate"><span class="pre">salt</span></code> strings that are too long.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This class will use the first available of two possible backends:</p>
+<ul class="simple">
+<li><p>stdlib <code class="xref py py-func docutils literal notranslate"><span class="pre">crypt()</span></code>, if the host OS supports sha1-crypt (NetBSD).</p></li>
+<li><p>a pure python implementation of sha1-crypt built into Passlib.</p></li>
+</ul>
+<p>You can see which backend is in use by calling the <code class="xref py py-meth docutils literal notranslate"><span class="pre">get_backend()</span></code> method.</p>
+</div>
+</section>
+<section id="format">
+<h2>Format<a class="headerlink" href="#format" title="Link to this heading">¶</a></h2>
+<p>An example hash (of <code class="docutils literal notranslate"><span class="pre">password</span></code>) is <code class="docutils literal notranslate"><span class="pre">$sha1$40000$jtNX3nZ2$hBNaIXkt4wBI2o5rsi8KejSjNqIq</span></code>.
+An sha1-crypt hash string has the format <code class="samp docutils literal notranslate"><span class="pre">$sha1$</span><em><span class="pre">rounds</span></em><span class="pre">$</span><em><span class="pre">salt</span></em><span class="pre">$</span><em><span class="pre">checksum</span></em></code>, where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$sha1$</span></code> is the prefix used to identify sha1-crypt hashes,
+following the <a class="reference internal" href="../modular_crypt_format.html#modular-crypt-format"><span class="std std-ref">Modular Crypt Format</span></a></p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">rounds</span></em></code> is the decimal number of rounds to use (40000 in the example).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">salt</span></em></code> is 0-64 characters drawn from <code class="docutils literal notranslate"><span class="pre">[./0-9A-Za-z]</span></code>
+(<code class="docutils literal notranslate"><span class="pre">jtNX3nZ2</span></code> in the example).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">checksum</span></em></code> is 28 characters drawn from the same set, encoding a 168-bit
+checksum. (<code class="docutils literal notranslate"><span class="pre">hBNaIXkt4wBI2o5rsi8KejSjNqIq/</span></code> in the example).</p></li>
+</ul>
+</section>
+<section class="html-toggle" id="algorithm">
+<h2>Algorithm<a class="headerlink" href="#algorithm" title="Link to this heading">¶</a></h2>
+<p>The checksum is calculated using a modified version of PBKDF1 <a class="footnote-reference brackets" href="#pbk" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>,
+replacing its use of the SHA1 message digest with HMAC-SHA1,
+(which does not suffer from the current vulnerabilities that SHA1 itself does,
+as well as providing some of the advancements made in PBKDF2).</p>
+<ul class="simple">
+<li><p>first, the HMAC-SHA1 digest of <code class="samp docutils literal notranslate"><em><span class="pre">salt</span></em><span class="pre">$sha1$</span><em><span class="pre">rounds</span></em></code> is generated,
+using the password as the HMAC-SHA1 key.</p></li>
+<li><p>then, for <code class="samp docutils literal notranslate"><em><span class="pre">rounds</span></em><span class="pre">-1</span></code> iterations, the previous HMAC-SHA1 digest
+is fed back through HMAC-SHA1, again using the password
+as the HMAC-SHA1 key.</p></li>
+<li><p>the checksum is then rendered into hash-64 format
+using an ordering that roughly corresponds to big-endian
+encoding of 24-bit chunks (see <code class="xref py py-data docutils literal notranslate"><span class="pre">passlib.hash.sha1_crypt._chk_offsets</span></code> for exact byte order).</p></li>
+</ul>
+</section>
+<section id="deviations">
+<h2>Deviations<a class="headerlink" href="#deviations" title="Link to this heading">¶</a></h2>
+<p>This implementation of sha1-crypt differs from the NetBSD implementation
+in a few ways:</p>
+<ul>
+<li><p>Default Rounds:</p>
+<p>The NetBSD implementation randomly varies the actual number of rounds
+when generating a new configuration string, in order to decrease
+predictability. This feature is provided by Passlib to <em>all</em> hashes,
+via the <code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code> class, and so it omitted
+from this implementation.</p>
+</li>
+<li><p>Zero-Padded Rounds:</p>
+<p>The specification does not specify how to deal with zero-padding
+within the rounds portion of the hash. No existing examples
+or test vectors have zero padding, and allowing it would
+result in multiple encodings for the same configuration / hash.
+To prevent this situation, Passlib will throw an error if the rounds in a hash
+have leading zeros.</p>
+</li>
+<li><p>Restricted salt string character set:</p>
+<p>The underlying algorithm can unambiguously handle salt strings
+which contain any possible byte value besides <code class="docutils literal notranslate"><span class="pre">\x00</span></code> and <code class="docutils literal notranslate"><span class="pre">$</span></code>.
+However, Passlib strictly limits salts to the
+<a class="reference internal" href="passlib.utils.binary.html#passlib.utils.binary.HASH64_CHARS" title="passlib.utils.binary.HASH64_CHARS"><code class="xref py py-data docutils literal notranslate"><span class="pre">hash64</span></code></a> character set,
+as nearly all implementations of sha1-crypt generate
+and expect salts containing those characters.</p>
+</li>
+<li><p>Unicode Policy:</p>
+<p>The underlying algorithm takes in a password specified
+as a series of non-null bytes, and does not specify what encoding
+should be used; though a <code class="docutils literal notranslate"><span class="pre">us-ascii</span></code> compatible encoding
+is implied by nearly all known reference hashes.</p>
+<p>In order to provide support for unicode strings,
+Passlib will encode unicode passwords using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code>
+before running them through sha1-crypt. If a different
+encoding is desired by an application, the password should be encoded
+before handing it to Passlib.</p>
+</li>
+</ul>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="desc" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>description of sha1-crypt algorithm -
+<a class="reference external" href="http://mail-index.netbsd.org/tech-userlevel/2004/05/29/0001.html">http://mail-index.netbsd.org/tech-userlevel/2004/05/29/0001.html</a></p>
+</aside>
+<aside class="footnote brackets" id="source" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>NetBSD implementation of SHA1-Crypt -
+<a class="reference external" href="http://fxr.googlebit.com/source/lib/libcrypt/crypt-sha1.c?v=NETBSD-CURRENT">http://fxr.googlebit.com/source/lib/libcrypt/crypt-sha1.c?v=NETBSD-CURRENT</a></p>
+</aside>
+<aside class="footnote brackets" id="pbk" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">3</a><span class="fn-bracket">]</span></span>
+<p>rfc defining PBKDF1 &amp; PBKDF2 -
+<a class="reference external" href="http://tools.ietf.org/html/rfc2898">http://tools.ietf.org/html/rfc2898</a> -</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#overview">Overview</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="passlib.hash.html#unix-hashes">Unix Hashes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.html#active-unix-hashes">Active Unix Hashes</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="passlib.hash.html#deprecated-unix-hashes">Deprecated Unix Hashes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.html#archaic-unix-hashes">Archaic Unix Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-modular-crypt-hashes">Other “Modular Crypt” Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ldap-rfc2307-hashes">LDAP / RFC2307 Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#sql-database-hashes">SQL Database Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ms-windows-hashes">MS Windows Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#cisco-hashes">Cisco Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-hashes">Other Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.sun_md5_crypt.html" title="passlib.hash.sun_md5_crypt - Sun MD5 Crypt"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.md5_crypt.html" title="passlib.hash.md5_crypt - MD5 Crypt"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.sha1_crypt</span></code> - SHA-1 Crypt</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

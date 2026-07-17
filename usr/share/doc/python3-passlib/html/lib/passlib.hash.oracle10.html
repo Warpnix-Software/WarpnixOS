@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.hash.oracle10 - Oracle 10g password hash &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.hash.oracle11 - Oracle 11g password hash" href="passlib.hash.oracle11.html" />
+    <link rel="prev" title="passlib.hash.postgres_md5 - PostgreSQL MD5 password hash" href="passlib.hash.postgres_md5.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.oracle11.html" title="passlib.hash.oracle11 - Oracle 11g password hash"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.postgres_md5.html" title="passlib.hash.postgres_md5 - PostgreSQL MD5 password hash"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.oracle10</span></code> - Oracle 10g password hash</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-hash-oracle10-oracle-10g-password-hash">
+<h1><a class="reference internal" href="#passlib.hash.oracle10" title="passlib.hash.oracle10"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.oracle10</span></code></a> - Oracle 10g password hash<a class="headerlink" href="#passlib-hash-oracle10-oracle-10g-password-hash" title="Link to this heading">¶</a></h1>
+<div class="block-title admonition danger">
+<p class="admonition-title">Danger</p>
+<p><strong>This algorithm is dangerously insecure by modern standards.</strong>
+It is trivially broken, and should not be used if at all possible.
+For new code, see the list of <a class="reference internal" href="../narr/quickstart.html#recommended-hashes"><span class="std std-ref">recommended hashes</span></a>.</p>
+</div>
+<p>This class implements the hash algorithm used by the Oracle Database up to
+version 10g Rel.2. It was superseded by a newer algorithm in <a class="reference internal" href="passlib.hash.oracle11.html#passlib.hash.oracle11" title="passlib.hash.oracle11"><code class="xref py py-class docutils literal notranslate"><span class="pre">Oracle</span> <span class="pre">11</span></code></a>.
+This class can be used directly as follows (note that this class requires
+a username for all encrypt/verify operations):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.hash</span> <span class="kn">import</span> <span class="n">oracle10</span> <span class="k">as</span> <span class="n">oracle10</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># hash password using specified username</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span> <span class="o">=</span> <span class="n">oracle10</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;username&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span>
+<span class="go">&#39;872805F3F4C83365&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># verify correct password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">oracle10</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;username&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># verify correct password w/ wrong username</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">oracle10</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;somebody&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># verify incorrect password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">oracle10</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;letmein&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="s2">&quot;username&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>the generic <a class="reference internal" href="../narr/hash-tutorial.html#password-hash-examples"><span class="std std-ref">PasswordHash usage examples</span></a></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This implementation has not been compared
+very carefully against the official implementation or reference documentation,
+and its behavior may not match under various border cases.
+<em>caveat emptor</em>.</p>
+</div>
+<section id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.oracle10">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">oracle10</span></span><a class="headerlink" href="#passlib.hash.oracle10" title="Link to this definition">¶</a></dt>
+<dd><p>This class implements the password hash used by Oracle up to version 10g, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>It does a single round of hashing, and relies on the username as the salt.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code></a>, <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.genhash" title="passlib.ifc.PasswordHash.genhash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">genhash()</span></code></a>, and <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.verify" title="passlib.ifc.PasswordHash.verify"><code class="xref py py-meth docutils literal notranslate"><span class="pre">verify()</span></code></a> methods all require the
+following additional contextual keywords:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>user</strong> (<em>str</em>) – name of oracle user account this password is associated with.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section class="html-toggle" id="format-algorithm">
+<h2>Format &amp; Algorithm<a class="headerlink" href="#format-algorithm" title="Link to this heading">¶</a></h2>
+<p>Oracle10 hashes all consist of a series of 16 hexadecimal digits,
+representing the resulting checksum.
+Oracle10 hashes can be formed by the following procedure:</p>
+<ol class="arabic simple">
+<li><p>Concatenate the username and password together.</p></li>
+<li><p>Convert the result to upper case</p></li>
+<li><p>Encoding the result in a multi-byte format <a class="footnote-reference brackets" href="#enc" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> such that ascii characters (eg: <code class="docutils literal notranslate"><span class="pre">USER</span></code>) are represented
+with additional null bytes inserted (eg: <code class="docutils literal notranslate"><span class="pre">\x00U\x00S\x00E\x00R</span></code>).</p></li>
+<li><p>Right-pad the result with null bytes, to bring the total size to an integer multiple of 8.
+this is the final input string.</p></li>
+<li><p>The input string is then encoded using DES in CBC mode.
+The string <code class="docutils literal notranslate"><span class="pre">\x01\x23\x45\x67\x89\xAB\xCD\xEF</span></code> is used as the DES key,
+and a block of null bytes is used as the CBC initialization vector.
+All but the last block of ciphertext is discarded.</p></li>
+<li><p>The input string is then run through DES-CBC a second time;
+this time the last block of ciphertext from step 5 is used as the DES key,
+a block of null bytes is still used as the CBC initialization vector.
+All but the last block of ciphertext is discarded.</p></li>
+<li><p>The last block of ciphertext of step 6 is converted
+to a hexadecimal string, and returned as the checksum.</p></li>
+</ol>
+</section>
+<section id="security-issues">
+<h2>Security Issues<a class="headerlink" href="#security-issues" title="Link to this heading">¶</a></h2>
+<p>This algorithm it not suitable for <em>any</em> use besides manipulating existing
+Oracle10 account passwords, due to the following flaws <a class="footnote-reference brackets" href="#flaws" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>:</p>
+<ul class="simple">
+<li><p>Its use of the username as a salt value means that common usernames
+(e.g. <code class="docutils literal notranslate"><span class="pre">system</span></code>) will occur more frequently as salts,
+weakening the effectiveness of the salt in foiling pre-computed tables.</p></li>
+<li><p>The fact that it is case insensitive, and simply concatenates the username
+and password, greatly reduces the keyspace that must be searched by
+brute-force or pre-computed attacks.</p></li>
+<li><p>Its simplicity, and decades of research on high-speed DES
+implementations, makes efficient brute force attacks much more feasible.</p></li>
+</ul>
+</section>
+<section id="deviations">
+<h2>Deviations<a class="headerlink" href="#deviations" title="Link to this heading">¶</a></h2>
+<p>Passlib’s implementation of the Oracle10g hash may deviate from the official
+implementation in unknown ways, as there is no official documentation.
+There is only one known issue:</p>
+<ul>
+<li><p>Unicode Policy</p>
+<p>Lack of testing (and test vectors) leaves it unclear
+as to how Oracle 10g handles passwords containing non-7bit ascii.
+In order to provide support for unicode strings,
+Passlib will encode unicode passwords using <code class="docutils literal notranslate"><span class="pre">utf-16-be</span></code> <a class="footnote-reference brackets" href="#enc" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>
+before running them through the Oracle10g algorithm.
+This behavior may be altered in the future, if further testing
+reveals another behavior is more in line with the official representation.
+This note applies as well to any provided username,
+as they are run through the same policy.</p>
+</li>
+</ul>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="enc" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id3">2</a>)</span>
+<p>The exact encoding used in step 3 of the algorithm is not clear from known references.
+Passlib uses <code class="docutils literal notranslate"><span class="pre">utf-16-be</span></code>, as this is both compatible with existing test vectors,
+and supports unicode input.</p>
+</aside>
+<aside class="footnote brackets" id="flaws" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Whitepaper analyzing flaws in this algorithm -
+<a class="reference external" href="http://www.isg.rhul.ac.uk/~ccid/publications/oracle_passwd.pdf">http://www.isg.rhul.ac.uk/~ccid/publications/oracle_passwd.pdf</a>.</p>
+</aside>
+<aside class="footnote brackets" id="id4" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<p>Description of Oracle10g and Oracle11g algorithms -
+<a class="reference external" href="http://www.notesbit.com/index.php/scripts-oracle/oracle-11g-new-password-algorithm-is-revealed-by-seclistsorg/">http://www.notesbit.com/index.php/scripts-oracle/oracle-11g-new-password-algorithm-is-revealed-by-seclistsorg/</a>.</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#unix-hashes">Unix Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-modular-crypt-hashes">Other “Modular Crypt” Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ldap-rfc2307-hashes">LDAP / RFC2307 Hashes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="passlib.hash.html#sql-database-hashes">SQL Database Hashes</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.mssql2000.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mssql2000</span></code> - MS SQL 2000 password hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.mssql2005.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mssql2005</span></code> - MS SQL 2005 password hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.mysql323.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mysql323</span></code> - MySQL 3.2.3 password hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.mysql41.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.mysql41</span></code> - MySQL 4.1 password hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.postgres_md5.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.postgres_md5</span></code> - PostgreSQL MD5 password hash</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.oracle10</span></code> - Oracle 10g password hash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.oracle11.html"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.oracle11</span></code> - Oracle 11g password hash</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ms-windows-hashes">MS Windows Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#cisco-hashes">Cisco Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-hashes">Other Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.oracle11.html" title="passlib.hash.oracle11 - Oracle 11g password hash"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.postgres_md5.html" title="passlib.hash.postgres_md5 - PostgreSQL MD5 password hash"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.oracle10</span></code> - Oracle 10g password hash</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

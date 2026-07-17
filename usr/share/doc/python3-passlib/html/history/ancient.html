@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Passlib 1.4 &amp; Earlier &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="Copyrights &amp; Licenses" href="../copyright.html" />
+    <link rel="prev" title="Passlib 1.5" href="1.5.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../copyright.html" title="Copyrights &amp; Licenses"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="1.5.html" title="Passlib 1.5"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../other.html" >Other Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Release History</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Passlib 1.4 &amp; Earlier</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-1-4-earlier">
+<h1>Passlib 1.4 &amp; Earlier<a class="headerlink" href="#passlib-1-4-earlier" title="Link to this heading">¶</a></h1>
+<section id="id1">
+<h2><strong>1.4</strong> (2011-05-04)<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<p>This release contains a large number of changes, both large and small.
+It adds a number of PBKDF2-based schemes, better support
+for LDAP-format hashes, improved documentation,
+and faster load times. In detail…</p>
+<section id="hashes">
+<h3>Hashes<a class="headerlink" href="#hashes" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>added LDAP <code class="docutils literal notranslate"><span class="pre">{CRYPT}</span></code> support for all hashes
+known to be supported by OS crypt()</p></li>
+<li><p>added 3 custom PBKDF2 schemes for general use,
+as well as 3 LDAP-compatible versions.</p></li>
+<li><p>added support for Dwayne Litzenberger’s PBKDF2 scheme.</p></li>
+<li><p>added support for Grub2’s PBKDF2 hash scheme.</p></li>
+<li><p>added support for Atlassian’s PBKDF2 password hash</p></li>
+<li><p>added support for all hashes used by the Roundup Issue Tracker</p></li>
+<li><p>bsdi_crypt, sha1_crypt now check for OS crypt() support</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">salt_size</span></code> keyword added to encrypt() method of all
+the hashes which support variable-length salts.</p></li>
+<li><p>security fix: disabled unix_fallback’s “wildcard password” support
+unless explicitly enabled by user.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="cryptcontext">
+<h3>CryptContext<a class="headerlink" href="#cryptcontext" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>host_context now dynamically detects which formats
+OS crypt() supports, instead of guessing based on sys.platform.</p></li>
+<li><p>added predefined context for Roundup Issue Tracker database.</p></li>
+<li><p>added CryptContext.verify_and_update() convenience method,
+to make it easier to perform both operations at once.</p></li>
+<li><p><em>bugfix:</em> fixed NameError in category+min_verify_time border case</p></li>
+<li><p>apps &amp; hosts modules now use new
+<code class="xref py py-class docutils literal notranslate"><span class="pre">LazyCryptContext</span></code> wrapper class -
+this should speed up initial import,
+and reduce memory by not loading unneeded hashes.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>greatly expanded documentation on how to use CryptContexts.</p></li>
+<li><p>roughly documented framework for writing &amp; testing
+custom password handlers.</p></li>
+<li><p>various minor improvements.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="internals">
+<h3>Internals<a class="headerlink" href="#internals" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>added generate_password() convenience method</p></li>
+<li><p>refactored framework for building hash handlers,
+using new mixin-based system.</p></li>
+<li><p>deprecated old handler framework - will remove in 1.5</p></li>
+<li><p>deprecated list_to_bytes &amp; bytes_to_list - not used, will remove in 1.5</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="other">
+<h3>Other<a class="headerlink" href="#other" title="Link to this heading">¶</a></h3>
+<blockquote>
+<div><ul>
+<li><p>password hash api - as part of cleaning up optional attributes
+specification, renamed a number of them to reduce ambiguity:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>renamed <em>{xxx}_salt_chars</em> attributes -&gt; <em>xxx_salt_size</em></p></li>
+<li><p>renamed <em>salt_charset</em> -&gt; <em>salt_chars</em></p></li>
+<li><p>old attributes still present, but deprecated - will remove in 1.5</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>password hash api - tightened specifications for salt &amp; rounds parameters,
+added support for hashes w/ no max salt size.</p></li>
+<li><p>improved password hash api conformance tests</p></li>
+<li><p>PyPy compatibility</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="id2">
+<h2><strong>1.3.1</strong> (2011-03-28)<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><p>Minor bugfix release.</p>
+<ul class="simple">
+<li><p>bugfix: replaced “sys.maxsize” reference that was failing under py25</p></li>
+<li><p>bugfix: fixed default_rounds&gt;max_rounds border case that could
+cause ValueError during CryptContext.encrypt()</p></li>
+<li><p>minor documentation changes</p></li>
+<li><p>added instructions for building html documentation from source</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id3">
+<h2><strong>1.3</strong> (2011-03-25)<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><p>First public release.</p>
+<ul class="simple">
+<li><p>documentation completed</p></li>
+<li><p>99% unittest coverage</p></li>
+<li><p>some refactoring and lots of bugfixes</p></li>
+<li><p>added support for a number of additional password schemes:
+bigcrypt, crypt16, sun md5 crypt, nthash, lmhash, oracle10 &amp; 11,
+phpass, sha1, generic hex digests, ldap digests.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id4">
+<h2><strong>1.2</strong> (2011-01-06)<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For this and all previous versions, Passlib did not exist independently,
+but as a subpackage of <em>BPS</em>, a private &amp; unreleased toolkit library.</p>
+</div>
+<ul class="simple">
+<li><p>many bugfixes</p></li>
+<li><p>global registry added</p></li>
+<li><p>transitional release for applications using BPS library.</p></li>
+<li><p>first truly functional release since splitting from BPS library (see below).</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id5">
+<h2><strong>1.0</strong> (2009-12-11)<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>CryptContext &amp; CryptHandler framework</p></li>
+<li><p>added support for: des-crypt, bcrypt (via py-bcrypt), postgres, mysql</p></li>
+<li><p>added unit tests</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id6">
+<h2><strong>0.5</strong> (2008-05-10)<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>initial production version</p></li>
+<li><p>consolidated from code scattered across multiple applications</p></li>
+<li><p>MD5-Crypt, SHA256-Crypt, SHA512-Crypt support</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lib/index.html">API Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../other.html">Other Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modular_crypt_format.html">Modular Crypt Format</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Release History</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="1.8.html">1.8 Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.7.html">1.7 Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.6.html">1.6 Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1.5.html">1.5 Series</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.4 &amp; Earlier</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1"><strong>1.4</strong> (2011-05-04)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2"><strong>1.3.1</strong> (2011-03-28)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3"><strong>1.3</strong> (2011-03-25)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4"><strong>1.2</strong> (2011-01-06)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5"><strong>1.0</strong> (2009-12-11)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6"><strong>0.5</strong> (2008-05-10)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../copyright.html">Copyrights &amp; Licenses</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../copyright.html" title="Copyrights &amp; Licenses"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="1.5.html" title="Passlib 1.5"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../other.html" >Other Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >Release History</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Passlib 1.4 &amp; Earlier</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.apache - Apache Password Files &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.apps - Helpers for various applications" href="passlib.apps.html" />
+    <link rel="prev" title="API Reference" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.apps.html" title="passlib.apps - Helpers for various applications"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="API Reference"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-passlib.apache">
+<span id="passlib-apache-apache-password-files"></span><h1><a class="reference internal" href="#module-passlib.apache" title="passlib.apache: reading/writing htpasswd &amp; htdigest files"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code></a> - Apache Password Files<a class="headerlink" href="#module-passlib.apache" title="Link to this heading">¶</a></h1>
+<p>This module provides utilities for reading and writing Apache’s
+htpasswd and htdigest files; though the use of two helper classes.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.6: </span>The api for this module was updated to be more flexible,
+and to have less ambiguous method names.
+The old method and keyword names are deprecated, and
+will be removed in Passlib 1.8.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.7: </span>These classes will now preserve blank lines and “#” comments when updating
+htpasswd files; previous releases would throw a parse error.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.8: </span>A number of methods deprecated since 1.6, have been removed.</p>
+</div>
+<section id="htpasswd-files">
+<span id="index-0"></span><h2>Htpasswd Files<a class="headerlink" href="#htpasswd-files" title="Link to this heading">¶</a></h2>
+<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">HTpasswdFile</span></code> class allows managing of htpasswd files.
+A quick summary of its usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.apache</span> <span class="kn">import</span> <span class="n">HtpasswdFile</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># when creating a new file, set to new=True, add entries, and save.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ht</span> <span class="o">=</span> <span class="n">HtpasswdFile</span><span class="p">(</span><span class="s2">&quot;test.htpasswd&quot;</span><span class="p">,</span> <span class="n">new</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ht</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="s2">&quot;someuser&quot;</span><span class="p">,</span> <span class="s2">&quot;really secret password&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ht</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># loading an existing file to update a password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ht</span> <span class="o">=</span> <span class="n">HtpasswdFile</span><span class="p">(</span><span class="s2">&quot;test.htpasswd&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ht</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="s2">&quot;someuser&quot;</span><span class="p">,</span> <span class="s2">&quot;new secret password&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ht</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># examining file, verifying user&#39;s password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ht</span> <span class="o">=</span> <span class="n">HtpasswdFile</span><span class="p">(</span><span class="s2">&quot;test.htpasswd&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ht</span><span class="o">.</span><span class="n">users</span><span class="p">()</span>
+<span class="go">[ &quot;someuser&quot; ]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ht</span><span class="o">.</span><span class="n">check_password</span><span class="p">(</span><span class="s2">&quot;someuser&quot;</span><span class="p">,</span> <span class="s2">&quot;wrong password&quot;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ht</span><span class="o">.</span><span class="n">check_password</span><span class="p">(</span><span class="s2">&quot;someuser&quot;</span><span class="p">,</span> <span class="s2">&quot;new secret password&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># making in-memory changes and exporting to string</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ht</span> <span class="o">=</span> <span class="n">HtpasswdFile</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ht</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="s2">&quot;someuser&quot;</span><span class="p">,</span> <span class="s2">&quot;mypass&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ht</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="s2">&quot;someuser&quot;</span><span class="p">,</span> <span class="s2">&quot;anotherpass&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">ht</span><span class="o">.</span><span class="n">to_string</span><span class="p">()</span>
+<span class="go">someuser:$apr1$T4f7D9ly$EobZDROnHblCNPCtrgh5i/</span>
+<span class="go">anotheruser:$apr1$vBdPWvh1$GrhfbyGvN/7HalW5cS9XB1</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="xref py py-class docutils literal notranslate"><span class="pre">HtpasswdFile</span></code> currently defaults to using <code class="xref py py-class docutils literal notranslate"><span class="pre">apr_md5_crypt</span></code>,
+as this is the only htpasswd hash guaranteed to be portable across operating systems.
+However, for security reasons Passlib 1.7 will default to using the strongest algorithm
+available on the host platform (e.g. <code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">sha256_crypt</span></code>).
+Applications that are relying on the old behavior should specify
+<code class="docutils literal notranslate"><span class="pre">HtpasswdFile(default_scheme=&quot;portable&quot;)</span></code> (new in Passlib 1.6.3).</p>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.apache.HtpasswdFile">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.apache.</span></span><span class="sig-name descname"><span class="pre">HtpasswdFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autosave=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.apache.HtpasswdFile" title="Link to this definition">¶</a></dt>
+<dd><p>class for reading &amp; writing Htpasswd files.</p>
+<p>The class constructor accepts the following arguments:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>filepath</em>) – <p>Specifies path to htpasswd file, use to implicitly load from and save to.</p>
+<p>This class has two modes of operation:</p>
+<ol class="arabic">
+<li><p>It can be “bound” to a local file by passing a <code class="docutils literal notranslate"><span class="pre">path</span></code> to the class
+constructor. In this case it will load the contents of the file when
+created, and the <a class="reference internal" href="#passlib.apache.HtpasswdFile.load" title="passlib.apache.HtpasswdFile.load"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load()</span></code></a> and <a class="reference internal" href="#passlib.apache.HtpasswdFile.save" title="passlib.apache.HtpasswdFile.save"><code class="xref py py-meth docutils literal notranslate"><span class="pre">save()</span></code></a> methods will automatically
+load from and save to that file if they are called without arguments.</p></li>
+<li><p>Alternately, it can exist as an independant object, in which case
+<a class="reference internal" href="#passlib.apache.HtpasswdFile.load" title="passlib.apache.HtpasswdFile.load"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load()</span></code></a> and <a class="reference internal" href="#passlib.apache.HtpasswdFile.save" title="passlib.apache.HtpasswdFile.save"><code class="xref py py-meth docutils literal notranslate"><span class="pre">save()</span></code></a> will require an explicit path to be
+provided whenever they are called. As well, <code class="docutils literal notranslate"><span class="pre">autosave</span></code> behavior
+will not be available.</p>
+<p>This feature is new in Passlib 1.6, and is the default if no
+<code class="docutils literal notranslate"><span class="pre">path</span></code> value is provided to the constructor.</p>
+</li>
+</ol>
+<p>This is also exposed as a readonly instance attribute.</p>
+</p></li>
+<li><p><strong>new</strong> (<em>bool</em>) – <p>Normally, if <em>path</em> is specified, <a class="reference internal" href="#passlib.apache.HtpasswdFile" title="passlib.apache.HtpasswdFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">HtpasswdFile</span></code></a> will
+immediately load the contents of the file. However, when creating
+a new htpasswd file, applications can set <code class="docutils literal notranslate"><span class="pre">new=True</span></code> so that
+the existing file (if any) will not be loaded.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6: </span>This feature was previously enabled by setting <code class="docutils literal notranslate"><span class="pre">autoload=False</span></code>.
+That alias was removed in Passlib 1.8</p>
+</div>
+</p></li>
+<li><p><strong>autosave</strong> (<em>bool</em>) – <p>Normally, any changes made to an <a class="reference internal" href="#passlib.apache.HtpasswdFile" title="passlib.apache.HtpasswdFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">HtpasswdFile</span></code></a> instance
+will not be saved until <a class="reference internal" href="#passlib.apache.HtpasswdFile.save" title="passlib.apache.HtpasswdFile.save"><code class="xref py py-meth docutils literal notranslate"><span class="pre">save()</span></code></a> is explicitly called. However,
+if <code class="docutils literal notranslate"><span class="pre">autosave=True</span></code> is specified, any changes made will be
+saved to disk immediately (assuming <em>path</em> has been set).</p>
+<p>This is also exposed as a writeable instance attribute.</p>
+</p></li>
+<li><p><strong>encoding</strong> (<em>str</em>) – <p>Optionally specify character encoding used to read/write file
+and hash passwords. Defaults to <code class="docutils literal notranslate"><span class="pre">utf-8</span></code>, though <code class="docutils literal notranslate"><span class="pre">latin-1</span></code>
+is the only other commonly encountered encoding.</p>
+<p>This is also exposed as a readonly instance attribute.</p>
+</p></li>
+<li><p><strong>default_scheme</strong> (<em>str</em>) – <p>Optionally specify default scheme to use when encoding new passwords.</p>
+<p>This can be any of the schemes with builtin Apache support,
+OR natively supported by the host OS’s <code class="xref py py-func docutils literal notranslate"><span class="pre">crypt.crypt()</span></code> function.</p>
+<ul>
+<li><p>Builtin schemes include <code class="docutils literal notranslate"><span class="pre">&quot;bcrypt&quot;</span></code> (apache 2.4+), <code class="docutils literal notranslate"><span class="pre">&quot;apr_md5_crypt&quot;`,</span>
+<span class="pre">and</span> <span class="pre">``&quot;des_crypt&quot;</span></code>.</p></li>
+<li><p>Schemes commonly supported by Unix hosts
+include <code class="docutils literal notranslate"><span class="pre">&quot;bcrypt&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;sha256_crypt&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;des_crypt&quot;</span></code>.</p></li>
+</ul>
+<p>In order to not have to sort out what you should use,
+passlib offers a number of aliases, that will resolve
+to the most appropriate scheme based on your needs:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;portable&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;portable_apache_24&quot;</span></code> – pick scheme that’s portable across hosts
+running apache &gt;= 2.4. <strong>This will be the default as of Passlib 2.0</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;portable_apache_22&quot;</span></code> – pick scheme that’s portable across hosts
+running apache &gt;= 2.4. <strong>This is the default up to Passlib 1.9</strong>.</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">&quot;host&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;host_apache_24&quot;</span></code> – pick strongest scheme supported by</dt><dd><p>apache &gt;= 2.4 and/or host OS.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">&quot;host_apache_22&quot;</span></code> – pick strongest scheme supported by</dt><dd><p>apache &gt;= 2.2 and/or host OS.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6: </span>This keyword was previously named <code class="docutils literal notranslate"><span class="pre">default</span></code>. That alias
+was removed in Passlib 1.8.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.6.3: </span>Added support for <code class="docutils literal notranslate"><span class="pre">&quot;bcrypt&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;sha256_crypt&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;portable&quot;</span></code> alias.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.7: </span>Added apache 2.4 semantics, and additional aliases.</p>
+</div>
+</p></li>
+<li><p><strong>context</strong> (<a class="reference internal" href="passlib.context.html#passlib.context.CryptContext" title="passlib.context.CryptContext"><code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code></a>) – <p><code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code> instance used to create
+and verify the hashes found in the htpasswd file.
+The default value is a pre-built context which supports all
+of the hashes officially allowed in an htpasswd file.</p>
+<p>This is also exposed as a readonly instance attribute.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This option may be used to add support for non-standard hash
+formats to an htpasswd file. However, the resulting file
+will probably not be usable by another application,
+and particularly not by Apache.</p>
+</div>
+</p></li>
+</ul>
+</dd>
+</dl>
+<section id="loading-saving">
+<h3>Loading &amp; Saving<a class="headerlink" href="#loading-saving" title="Link to this heading">¶</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.apache.HtpasswdFile.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PathLike</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#passlib.apache.HtpasswdFile.load" title="Link to this definition">¶</a></dt>
+<dd><p>Load state from local file.
+If no path is specified, attempts to load from <code class="docutils literal notranslate"><span class="pre">self.path</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – local file to load from</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.apache.HtpasswdFile.load_if_changed">
+<span class="sig-name descname"><span class="pre">load_if_changed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#passlib.apache.HtpasswdFile.load_if_changed" title="Link to this definition">¶</a></dt>
+<dd><p>Reload from <code class="docutils literal notranslate"><span class="pre">self.path</span></code> only if file has changed since last load</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.apache.HtpasswdFile.load_string">
+<span class="sig-name descname"><span class="pre">load_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#passlib.apache.HtpasswdFile.load_string" title="Link to this definition">¶</a></dt>
+<dd><p>Load state from unicode or bytes string, replacing current state</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.apache.HtpasswdFile.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PathLike</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#passlib.apache.HtpasswdFile.save" title="Link to this definition">¶</a></dt>
+<dd><p>Save current state to file.
+If no path is specified, attempts to save to <code class="docutils literal notranslate"><span class="pre">self.path</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.apache.HtpasswdFile.to_string">
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#passlib.apache.HtpasswdFile.to_string" title="Link to this definition">¶</a></dt>
+<dd><p>Export current state as a string of bytes</p>
+</dd></dl>
+
+</section>
+<section id="inspection">
+<h3>Inspection<a class="headerlink" href="#inspection" title="Link to this heading">¶</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.apache.HtpasswdFile.users">
+<span class="sig-name descname"><span class="pre">users</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#passlib.apache.HtpasswdFile.users" title="Link to this definition">¶</a></dt>
+<dd><p>Return list of all users in database</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.apache.HtpasswdFile.check_password">
+<span class="sig-name descname"><span class="pre">check_password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.apache.HtpasswdFile.check_password" title="Link to this definition">¶</a></dt>
+<dd><p>Verify password for specified user.
+If algorithm marked as deprecated by CryptContext, will automatically be re-hashed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code> if user not found.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code> if user found, but password does not match.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if user found and password matches.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.6: </span>This method was previously called <code class="docutils literal notranslate"><span class="pre">verify</span></code>, it was renamed
+to prevent ambiguity with the <code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code> method.
+The old alias was removed in Passlib 1.8.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.apache.HtpasswdFile.get_hash">
+<span class="sig-name descname"><span class="pre">get_hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.apache.HtpasswdFile.get_hash" title="Link to this definition">¶</a></dt>
+<dd><p>Return hash stored for user, or <code class="docutils literal notranslate"><span class="pre">None</span></code> if user not found.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.6: </span>This method was previously named <code class="docutils literal notranslate"><span class="pre">find</span></code>, it was renamed
+for clarity. The old name was removed in Passlib 1.8.</p>
+</div>
+</dd></dl>
+
+</section>
+<section id="modification">
+<h3>Modification<a class="headerlink" href="#modification" title="Link to this heading">¶</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.apache.HtpasswdFile.set_password">
+<span class="sig-name descname"><span class="pre">set_password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.apache.HtpasswdFile.set_password" title="Link to this definition">¶</a></dt>
+<dd><p>Set password for user; adds user if needed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if existing user was updated.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code> if user account was added.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.6: </span>This method was previously called <code class="docutils literal notranslate"><span class="pre">update</span></code>, it was renamed
+to prevent ambiguity with the dictionary method.
+The old alias was removed in Passlib 1.8.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.apache.HtpasswdFile.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.apache.HtpasswdFile.delete" title="Link to this definition">¶</a></dt>
+<dd><p>Delete user’s entry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if user deleted.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code> if user not found.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="alternate-constructors">
+<h3>Alternate Constructors<a class="headerlink" href="#alternate-constructors" title="Link to this heading">¶</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.apache.HtpasswdFile.from_string">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span></span></span><a class="headerlink" href="#passlib.apache.HtpasswdFile.from_string" title="Link to this definition">¶</a></dt>
+<dd><p>create new object from raw string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>str</em><em> or </em><em>bytes</em>) – database to load, as single string.</p></li>
+<li><p><strong>**kwds</strong> – all other keywords are the same as in the class constructor</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">¶</a></h3>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.apache.HtpasswdFile.path">
+<span class="sig-name descname"><span class="pre">path</span></span><a class="headerlink" href="#passlib.apache.HtpasswdFile.path" title="Link to this definition">¶</a></dt>
+<dd><p>Path to local file that will be used as the default
+for all <a class="reference internal" href="#passlib.apache.HtpasswdFile.load" title="passlib.apache.HtpasswdFile.load"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load()</span></code></a> and <a class="reference internal" href="#passlib.apache.HtpasswdFile.save" title="passlib.apache.HtpasswdFile.save"><code class="xref py py-meth docutils literal notranslate"><span class="pre">save()</span></code></a> operations.
+May be written to, initialized by the <em>path</em> constructor keyword.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.apache.HtpasswdFile.autosave">
+<span class="sig-name descname"><span class="pre">autosave</span></span><a class="headerlink" href="#passlib.apache.HtpasswdFile.autosave" title="Link to this definition">¶</a></dt>
+<dd><p>Writeable flag indicating whether changes will be automatically
+written to <em>path</em>.</p>
+</dd></dl>
+
+</section>
+<section id="errors">
+<h3>Errors<a class="headerlink" href="#errors" title="Link to this heading">¶</a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">raises ValueError<span class="colon">:</span></dt>
+<dd class="field-odd"><p>All of the methods in this class will raise a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code> if
+any user name contains a forbidden character (one of <code class="docutils literal notranslate"><span class="pre">:\r\n\t\x00</span></code>),
+or is longer than 255 characters.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+<section id="htdigest-files">
+<span id="index-1"></span><h2>Htdigest Files<a class="headerlink" href="#htdigest-files" title="Link to this heading">¶</a></h2>
+<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">HtdigestFile</span></code> class allows management of htdigest files
+in a similar fashion to <a class="reference internal" href="#passlib.apache.HtpasswdFile" title="passlib.apache.HtpasswdFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">HtpasswdFile</span></code></a>.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.apache.HtdigestFile">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.apache.</span></span><span class="sig-name descname"><span class="pre">HtdigestFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_realm=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autosave=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.apache.HtdigestFile" title="Link to this definition">¶</a></dt>
+<dd><p>class for reading &amp; writing Htdigest files.</p>
+<p>The class constructor accepts the following arguments:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>filepath</em>) – <p>Specifies path to htdigest file, use to implicitly load from and save to.</p>
+<p>This class has two modes of operation:</p>
+<ol class="arabic">
+<li><p>It can be “bound” to a local file by passing a <code class="docutils literal notranslate"><span class="pre">path</span></code> to the class
+constructor. In this case it will load the contents of the file when
+created, and the <a class="reference internal" href="#passlib.apache.HtdigestFile.load" title="passlib.apache.HtdigestFile.load"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load()</span></code></a> and <a class="reference internal" href="#passlib.apache.HtdigestFile.save" title="passlib.apache.HtdigestFile.save"><code class="xref py py-meth docutils literal notranslate"><span class="pre">save()</span></code></a> methods will automatically
+load from and save to that file if they are called without arguments.</p></li>
+<li><p>Alternately, it can exist as an independant object, in which case
+<a class="reference internal" href="#passlib.apache.HtdigestFile.load" title="passlib.apache.HtdigestFile.load"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load()</span></code></a> and <a class="reference internal" href="#passlib.apache.HtdigestFile.save" title="passlib.apache.HtdigestFile.save"><code class="xref py py-meth docutils literal notranslate"><span class="pre">save()</span></code></a> will require an explicit path to be
+provided whenever they are called. As well, <code class="docutils literal notranslate"><span class="pre">autosave</span></code> behavior
+will not be available.</p>
+<p>This feature is new in Passlib 1.6, and is the default if no
+<code class="docutils literal notranslate"><span class="pre">path</span></code> value is provided to the constructor.</p>
+</li>
+</ol>
+<p>This is also exposed as a readonly instance attribute.</p>
+</p></li>
+<li><p><strong>default_realm</strong> (<em>str</em>) – <p>If <code class="docutils literal notranslate"><span class="pre">default_realm</span></code> is set, all the <a class="reference internal" href="#passlib.apache.HtdigestFile" title="passlib.apache.HtdigestFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">HtdigestFile</span></code></a>
+methods that require a realm will use this value if one is not
+provided explicitly. If unset, they will raise an error stating
+that an explicit realm is required.</p>
+<p>This is also exposed as a writeable instance attribute.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+</p></li>
+<li><p><strong>new</strong> (<em>bool</em>) – <p>Normally, if <em>path</em> is specified, <a class="reference internal" href="#passlib.apache.HtdigestFile" title="passlib.apache.HtdigestFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">HtdigestFile</span></code></a> will
+immediately load the contents of the file. However, when creating
+a new htpasswd file, applications can set <code class="docutils literal notranslate"><span class="pre">new=True</span></code> so that
+the existing file (if any) will not be loaded.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6: </span>This feature was previously enabled by setting <code class="docutils literal notranslate"><span class="pre">autoload=False</span></code>.
+That alias was removed in Passlib 1.8</p>
+</div>
+</p></li>
+<li><p><strong>autosave</strong> (<em>bool</em>) – <p>Normally, any changes made to an <a class="reference internal" href="#passlib.apache.HtdigestFile" title="passlib.apache.HtdigestFile"><code class="xref py py-class docutils literal notranslate"><span class="pre">HtdigestFile</span></code></a> instance
+will not be saved until <a class="reference internal" href="#passlib.apache.HtdigestFile.save" title="passlib.apache.HtdigestFile.save"><code class="xref py py-meth docutils literal notranslate"><span class="pre">save()</span></code></a> is explicitly called. However,
+if <code class="docutils literal notranslate"><span class="pre">autosave=True</span></code> is specified, any changes made will be
+saved to disk immediately (assuming <em>path</em> has been set).</p>
+<p>This is also exposed as a writeable instance attribute.</p>
+</p></li>
+<li><p><strong>encoding</strong> (<em>str</em>) – <p>Optionally specify character encoding used to read/write file
+and hash passwords. Defaults to <code class="docutils literal notranslate"><span class="pre">utf-8</span></code>, though <code class="docutils literal notranslate"><span class="pre">latin-1</span></code>
+is the only other commonly encountered encoding.</p>
+<p>This is also exposed as a readonly instance attribute.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+<section id="id1">
+<h3>Loading &amp; Saving<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.apache.HtdigestFile.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PathLike</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#passlib.apache.HtdigestFile.load" title="Link to this definition">¶</a></dt>
+<dd><p>Load state from local file.
+If no path is specified, attempts to load from <code class="docutils literal notranslate"><span class="pre">self.path</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – local file to load from</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.apache.HtdigestFile.load_if_changed">
+<span class="sig-name descname"><span class="pre">load_if_changed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#passlib.apache.HtdigestFile.load_if_changed" title="Link to this definition">¶</a></dt>
+<dd><p>Reload from <code class="docutils literal notranslate"><span class="pre">self.path</span></code> only if file has changed since last load</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.apache.HtdigestFile.load_string">
+<span class="sig-name descname"><span class="pre">load_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#passlib.apache.HtdigestFile.load_string" title="Link to this definition">¶</a></dt>
+<dd><p>Load state from unicode or bytes string, replacing current state</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.apache.HtdigestFile.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PathLike</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#passlib.apache.HtdigestFile.save" title="Link to this definition">¶</a></dt>
+<dd><p>Save current state to file.
+If no path is specified, attempts to save to <code class="docutils literal notranslate"><span class="pre">self.path</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.apache.HtdigestFile.to_string">
+<span class="sig-name descname"><span class="pre">to_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="headerlink" href="#passlib.apache.HtdigestFile.to_string" title="Link to this definition">¶</a></dt>
+<dd><p>Export current state as a string of bytes</p>
+</dd></dl>
+
+</section>
+<section id="id2">
+<h3>Inspection<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.apache.HtdigestFile.realms">
+<span class="sig-name descname"><span class="pre">realms</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#passlib.apache.HtdigestFile.realms" title="Link to this definition">¶</a></dt>
+<dd><p>Return list of all realms in database</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.apache.HtdigestFile.users">
+<span class="sig-name descname"><span class="pre">users</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.apache.HtdigestFile.users" title="Link to this definition">¶</a></dt>
+<dd><p>Return list of all users in specified realm.</p>
+<ul class="simple">
+<li><p>uses <code class="docutils literal notranslate"><span class="pre">self.default_realm</span></code> if no realm explicitly provided.</p></li>
+<li><p>returns empty list if realm not found.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.apache.HtdigestFile.check_password">
+<span class="sig-name descname"><span class="pre">check_password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">realm</span></span></em>, <span class="optional">]</span><em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.apache.HtdigestFile.check_password" title="Link to this definition">¶</a></dt>
+<dd><p>Verify password for specified user + realm.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">self.default_realm</span></code> has been set, this may be called
+with the syntax <code class="docutils literal notranslate"><span class="pre">check_password(user,</span> <span class="pre">password)</span></code>,
+otherwise it must be called with all three arguments:
+<code class="docutils literal notranslate"><span class="pre">check_password(user,</span> <span class="pre">realm,</span> <span class="pre">password)</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code> if user or realm not found.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code> if user found, but password does not match.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if user found and password matches.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.6: </span>This method was previously called <code class="docutils literal notranslate"><span class="pre">verify</span></code>, it was renamed
+to prevent ambiguity with the <code class="xref py py-class docutils literal notranslate"><span class="pre">CryptContext</span></code> method.
+The old alias was removed in Passlib 1.8.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.apache.HtdigestFile.get_hash">
+<span class="sig-name descname"><span class="pre">get_hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">realm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.apache.HtdigestFile.get_hash" title="Link to this definition">¶</a></dt>
+<dd><p>Return <code class="xref py py-class docutils literal notranslate"><span class="pre">htdigest</span></code> hash stored for user.</p>
+<ul class="simple">
+<li><p>uses <code class="docutils literal notranslate"><span class="pre">self.default_realm</span></code> if no realm explicitly provided.</p></li>
+<li><p>returns <code class="docutils literal notranslate"><span class="pre">None</span></code> if user or realm not found.</p></li>
+</ul>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.6: </span>This method was previously named <code class="docutils literal notranslate"><span class="pre">find</span></code>, it was renamed
+for clarity. The old name is was removed Passlib 1.8.</p>
+</div>
+</dd></dl>
+
+</section>
+<section id="id3">
+<h3>Modification<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.apache.HtdigestFile.set_password">
+<span class="sig-name descname"><span class="pre">set_password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">realm</span></span></em>, <span class="optional">]</span><em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.apache.HtdigestFile.set_password" title="Link to this definition">¶</a></dt>
+<dd><p>Set password for user; adds user &amp; realm if needed.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">self.default_realm</span></code> has been set, this may be called
+with the syntax <code class="docutils literal notranslate"><span class="pre">set_password(user,</span> <span class="pre">password)</span></code>,
+otherwise it must be called with all three arguments:
+<code class="docutils literal notranslate"><span class="pre">set_password(user,</span> <span class="pre">realm,</span> <span class="pre">password)</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if existing user was updated</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code> if user account added.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.apache.HtdigestFile.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">realm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.apache.HtdigestFile.delete" title="Link to this definition">¶</a></dt>
+<dd><p>Delete user’s entry for specified realm.</p>
+<p>if realm is not specified, uses <code class="docutils literal notranslate"><span class="pre">self.default_realm</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if user deleted,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code> if user not found in realm.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.apache.HtdigestFile.delete_realm">
+<span class="sig-name descname"><span class="pre">delete_realm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.apache.HtdigestFile.delete_realm" title="Link to this definition">¶</a></dt>
+<dd><p>Delete all users for specified realm.</p>
+<p>if realm is not specified, uses <code class="docutils literal notranslate"><span class="pre">self.default_realm</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>number of users deleted (0 if realm not found)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id4">
+<h3>Alternate Constructors<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.apache.HtdigestFile.from_string">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Self</span></span></span><a class="headerlink" href="#passlib.apache.HtdigestFile.from_string" title="Link to this definition">¶</a></dt>
+<dd><p>create new object from raw string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>str</em><em> or </em><em>bytes</em>) – database to load, as single string.</p></li>
+<li><p><strong>**kwds</strong> – all other keywords are the same as in the class constructor</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="id5">
+<h3>Attributes<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.apache.HtdigestFile.default_realm">
+<span class="sig-name descname"><span class="pre">default_realm</span></span><a class="headerlink" href="#passlib.apache.HtdigestFile.default_realm" title="Link to this definition">¶</a></dt>
+<dd><p>The default realm that will be used if one is not provided
+to methods that require it. By default this is <code class="docutils literal notranslate"><span class="pre">None</span></code>,
+in which case an explicit realm must be provided for every
+method call. Can be written to.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.apache.HtdigestFile.path">
+<span class="sig-name descname"><span class="pre">path</span></span><a class="headerlink" href="#passlib.apache.HtdigestFile.path" title="Link to this definition">¶</a></dt>
+<dd><p>Path to local file that will be used as the default
+for all <a class="reference internal" href="#passlib.apache.HtdigestFile.load" title="passlib.apache.HtdigestFile.load"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load()</span></code></a> and <a class="reference internal" href="#passlib.apache.HtdigestFile.save" title="passlib.apache.HtdigestFile.save"><code class="xref py py-meth docutils literal notranslate"><span class="pre">save()</span></code></a> operations.
+May be written to, initialized by the <em>path</em> constructor keyword.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.apache.HtdigestFile.autosave">
+<span class="sig-name descname"><span class="pre">autosave</span></span><a class="headerlink" href="#passlib.apache.HtdigestFile.autosave" title="Link to this definition">¶</a></dt>
+<dd><p>Writeable flag indicating whether changes will be automatically
+written to <em>path</em>.</p>
+</dd></dl>
+
+</section>
+<section id="id6">
+<h3>Errors<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
+<dl class="field-list simple">
+<dt class="field-odd">raises ValueError<span class="colon">:</span></dt>
+<dd class="field-odd"><p>All of the methods in this class will raise a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code> if
+any user name or realm contains a forbidden character (one of <code class="docutils literal notranslate"><span class="pre">:\r\n\t\x00</span></code>),
+or is longer than 255 characters.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id7" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>Htpasswd Manual - <a class="reference external" href="http://httpd.apache.org/docs/current/programs/htpasswd.html">http://httpd.apache.org/docs/current/programs/htpasswd.html</a></p>
+</aside>
+<aside class="footnote brackets" id="id8" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>Apache Auth Configuration - <a class="reference external" href="http://httpd.apache.org/docs/current/howto/auth.html">http://httpd.apache.org/docs/current/howto/auth.html</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#htpasswd-files">Htpasswd Files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.apache.HtpasswdFile"><code class="docutils literal notranslate"><span class="pre">HtpasswdFile</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#htdigest-files">Htdigest Files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#passlib.apache.HtdigestFile"><code class="docutils literal notranslate"><span class="pre">HtdigestFile</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.apps.html" title="passlib.apps - Helpers for various applications"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="API Reference"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

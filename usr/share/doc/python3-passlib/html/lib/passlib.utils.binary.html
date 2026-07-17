@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.utils.binary - Binary Helper Functions &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.utils.des - DES routines [deprecated]" href="passlib.utils.des.html" />
+    <link rel="prev" title="passlib.utils.handlers - Framework for writing password hashes" href="passlib.utils.handlers.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.utils.des.html" title="passlib.utils.des - DES routines [deprecated]"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.utils.handlers.html" title="passlib.utils.handlers - Framework for writing password hashes"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.utils.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.binary</span></code> - Binary Helper Functions</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-passlib.utils.binary">
+<span id="passlib-utils-binary-binary-helper-functions"></span><h1><a class="reference internal" href="#module-passlib.utils.binary" title="passlib.utils.binary: internal helpers for binary data"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.binary</span></code></a> - Binary Helper Functions<a class="headerlink" href="#module-passlib.utils.binary" title="Link to this heading">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This module is primarily used as an internal support module.
+Its interface has not been finalized yet, and may be changed somewhat
+between major releases of Passlib, as the internal code is cleaned up
+and simplified.</p>
+</div>
+<section id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Link to this heading">¶</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.utils.binary.BASE64_CHARS">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.binary.</span></span><span class="sig-name descname"><span class="pre">BASE64_CHARS</span></span><a class="headerlink" href="#passlib.utils.binary.BASE64_CHARS" title="Link to this definition">¶</a></dt>
+<dd><p>Character map used by standard MIME-compatible Base64 encoding scheme.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.utils.binary.HASH64_CHARS">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.binary.</span></span><span class="sig-name descname"><span class="pre">HASH64_CHARS</span></span><a class="headerlink" href="#passlib.utils.binary.HASH64_CHARS" title="Link to this definition">¶</a></dt>
+<dd><p>Base64 character map used by a number of hash formats;
+the ordering is wildly different from the standard base64 character map.</p>
+<p>This encoding system appears to have originated with
+<a class="reference internal" href="passlib.hash.des_crypt.html#passlib.hash.des_crypt" title="passlib.hash.des_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">des_crypt</span></code></a>, but is used by
+<a class="reference internal" href="passlib.hash.md5_crypt.html#passlib.hash.md5_crypt" title="passlib.hash.md5_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">md5_crypt</span></code></a>, <a class="reference internal" href="passlib.hash.sha256_crypt.html#passlib.hash.sha256_crypt" title="passlib.hash.sha256_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">sha256_crypt</span></code></a>,
+and others. Within Passlib, this encoding is referred as the “hash64” encoding,
+to distinguish it from normal base64 and others.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.utils.binary.BCRYPT_CHARS">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.binary.</span></span><span class="sig-name descname"><span class="pre">BCRYPT_CHARS</span></span><a class="headerlink" href="#passlib.utils.binary.BCRYPT_CHARS" title="Link to this definition">¶</a></dt>
+<dd><p>Base64 character map used by <a class="reference internal" href="passlib.hash.bcrypt.html#passlib.hash.bcrypt" title="passlib.hash.bcrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">bcrypt</span></code></a>.
+The ordering is wildly different from both the standard base64 character map,
+and the common hash64 character map.</p>
+</dd></dl>
+
+</section>
+<section id="base64-encoding">
+<h2>Base64 Encoding<a class="headerlink" href="#base64-encoding" title="Link to this heading">¶</a></h2>
+<section id="base64engine-class">
+<h3>Base64Engine Class<a class="headerlink" href="#base64engine-class" title="Link to this heading">¶</a></h3>
+<p>Passlib has to deal with a number of different Base64 encodings,
+with varying endianness, as well as wildly different character &lt;-&gt; value
+mappings. This is all encapsulated in the <a class="reference internal" href="#passlib.utils.binary.Base64Engine" title="passlib.utils.binary.Base64Engine"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base64Engine</span></code></a> class,
+which provides common encoding actions for an arbitrary base64-style encoding
+scheme. There are also a couple of predefined instances which are commonly
+used by the hashes in Passlib.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.utils.binary.Base64Engine">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.utils.binary.</span></span><span class="sig-name descname"><span class="pre">Base64Engine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">charmap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">big</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.binary.Base64Engine" title="Link to this definition">¶</a></dt>
+<dd><p>Provides routines for encoding/decoding base64 data using
+arbitrary character mappings, selectable endianness, etc.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>charmap</strong> – A string of 64 unique characters,
+which will be used to encode successive 6-bit chunks of data.
+A character’s position within the string should correspond
+to its 6-bit value.</p></li>
+<li><p><strong>big</strong> – Whether the encoding should be big-endian (default False).</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This class does not currently handle base64’s padding characters
+in any way what so ever.</p>
+</div>
+<section id="raw-bytes-encoded-bytes">
+<h4>Raw Bytes &lt;-&gt; Encoded Bytes<a class="headerlink" href="#raw-bytes-encoded-bytes" title="Link to this heading">¶</a></h4>
+<p>The following methods convert between raw bytes,
+and strings encoded using the engine’s specific base64 variant:</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.utils.binary.Base64Engine.encode_bytes">
+<span class="sig-name descname"><span class="pre">encode_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.binary.Base64Engine.encode_bytes" title="Link to this definition">¶</a></dt>
+<dd><p>encode bytes to base64 string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>source</strong> – byte string to encode.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>byte string containing encoded data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.utils.binary.Base64Engine.decode_bytes">
+<span class="sig-name descname"><span class="pre">decode_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.binary.Base64Engine.decode_bytes" title="Link to this definition">¶</a></dt>
+<dd><p>decode bytes from base64 string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>source</strong> – byte string to decode.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>byte string containing decoded data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.utils.binary.Base64Engine.encode_transposed_bytes">
+<span class="sig-name descname"><span class="pre">encode_transposed_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offsets</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.binary.Base64Engine.encode_transposed_bytes" title="Link to this definition">¶</a></dt>
+<dd><p>encode byte string, first transposing source using offset list</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.utils.binary.Base64Engine.decode_transposed_bytes">
+<span class="sig-name descname"><span class="pre">decode_transposed_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offsets</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.binary.Base64Engine.decode_transposed_bytes" title="Link to this definition">¶</a></dt>
+<dd><p>decode byte string, then reverse transposition described by offset list</p>
+</dd></dl>
+
+</section>
+<section id="integers-encoded-bytes">
+<h4>Integers &lt;-&gt; Encoded Bytes<a class="headerlink" href="#integers-encoded-bytes" title="Link to this heading">¶</a></h4>
+<p>The following methods allow encoding and decoding
+unsigned integers to and from the engine’s specific base64 variant.
+Endianess is determined by the engine’s <code class="docutils literal notranslate"><span class="pre">big</span></code> constructor keyword.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.utils.binary.Base64Engine.encode_int6">
+<span class="sig-name descname"><span class="pre">encode_int6</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.binary.Base64Engine.encode_int6" title="Link to this definition">¶</a></dt>
+<dd><p>encodes 6-bit integer -&gt; single hash64 character</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.utils.binary.Base64Engine.decode_int6">
+<span class="sig-name descname"><span class="pre">decode_int6</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.binary.Base64Engine.decode_int6" title="Link to this definition">¶</a></dt>
+<dd><p>decode single character -&gt; 6 bit integer</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.utils.binary.Base64Engine.encode_int12">
+<span class="sig-name descname"><span class="pre">encode_int12</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.binary.Base64Engine.encode_int12" title="Link to this definition">¶</a></dt>
+<dd><p>encodes 12-bit integer -&gt; 2 char string</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.utils.binary.Base64Engine.decode_int12">
+<span class="sig-name descname"><span class="pre">decode_int12</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.binary.Base64Engine.decode_int12" title="Link to this definition">¶</a></dt>
+<dd><p>decodes 2 char string -&gt; 12-bit integer</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.utils.binary.Base64Engine.encode_int24">
+<span class="sig-name descname"><span class="pre">encode_int24</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.binary.Base64Engine.encode_int24" title="Link to this definition">¶</a></dt>
+<dd><p>encodes 24-bit integer -&gt; 4 char string</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.utils.binary.Base64Engine.decode_int24">
+<span class="sig-name descname"><span class="pre">decode_int24</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.binary.Base64Engine.decode_int24" title="Link to this definition">¶</a></dt>
+<dd><p>decodes 4 char string -&gt; 24-bit integer</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.utils.binary.Base64Engine.encode_int64">
+<span class="sig-name descname"><span class="pre">encode_int64</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.binary.Base64Engine.encode_int64" title="Link to this definition">¶</a></dt>
+<dd><p>encode 64-bit integer -&gt; 11 char hash64 string</p>
+<p>this format is used primarily by des-crypt &amp; variants to encode
+the DES output value used as a checksum.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.utils.binary.Base64Engine.decode_int64">
+<span class="sig-name descname"><span class="pre">decode_int64</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.binary.Base64Engine.decode_int64" title="Link to this definition">¶</a></dt>
+<dd><p>decode 11 char base64 string -&gt; 64-bit integer</p>
+<p>this format is used primarily by des-crypt &amp; variants to encode
+the DES output value used as a checksum.</p>
+</dd></dl>
+
+</section>
+<section id="informational-attributes">
+<h4>Informational Attributes<a class="headerlink" href="#informational-attributes" title="Link to this heading">¶</a></h4>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.utils.binary.Base64Engine.charmap">
+<span class="sig-name descname"><span class="pre">charmap</span></span><a class="headerlink" href="#passlib.utils.binary.Base64Engine.charmap" title="Link to this definition">¶</a></dt>
+<dd><p>unicode string containing list of characters used in encoding;
+position in string matches 6bit value of character.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.utils.binary.Base64Engine.bytemap">
+<span class="sig-name descname"><span class="pre">bytemap</span></span><a class="headerlink" href="#passlib.utils.binary.Base64Engine.bytemap" title="Link to this definition">¶</a></dt>
+<dd><p>bytes version of <a class="reference internal" href="#passlib.utils.binary.Base64Engine.charmap" title="passlib.utils.binary.Base64Engine.charmap"><code class="xref py py-attr docutils literal notranslate"><span class="pre">charmap</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="passlib.utils.binary.Base64Engine.big">
+<span class="sig-name descname"><span class="pre">big</span></span><a class="headerlink" href="#passlib.utils.binary.Base64Engine.big" title="Link to this definition">¶</a></dt>
+<dd><p>boolean flag indicating this using big-endian encoding.</p>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+<section id="predefined-instances">
+<h3>Predefined Instances<a class="headerlink" href="#predefined-instances" title="Link to this heading">¶</a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.utils.binary.h64">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.binary.</span></span><span class="sig-name descname"><span class="pre">h64</span></span><a class="headerlink" href="#passlib.utils.binary.h64" title="Link to this definition">¶</a></dt>
+<dd><p>Predefined instance of <a class="reference internal" href="#passlib.utils.binary.Base64Engine" title="passlib.utils.binary.Base64Engine"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base64Engine</span></code></a> which uses
+the <code class="xref py py-data docutils literal notranslate"><span class="pre">HASH64_CHARS</span></code> character map and little-endian encoding.
+(see <a class="reference internal" href="#passlib.utils.binary.HASH64_CHARS" title="passlib.utils.binary.HASH64_CHARS"><code class="xref py py-data docutils literal notranslate"><span class="pre">HASH64_CHARS</span></code></a> for more details).</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="passlib.utils.binary.h64big">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.binary.</span></span><span class="sig-name descname"><span class="pre">h64big</span></span><a class="headerlink" href="#passlib.utils.binary.h64big" title="Link to this definition">¶</a></dt>
+<dd><p>Predefined variant of <a class="reference internal" href="#passlib.utils.binary.h64" title="passlib.utils.binary.h64"><code class="xref py py-data docutils literal notranslate"><span class="pre">h64</span></code></a> which uses big-endian encoding.
+This is mainly used by <a class="reference internal" href="passlib.hash.des_crypt.html#passlib.hash.des_crypt" title="passlib.hash.des_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">des_crypt</span></code></a>.</p>
+</dd></dl>
+
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.6: </span>Previous versions of Passlib contained
+a module named <code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.h64</span></code>; As of Passlib 1.6 this
+was replaced by the the <code class="docutils literal notranslate"><span class="pre">h64</span></code> and <code class="docutils literal notranslate"><span class="pre">h64big</span></code> instances of
+the <a class="reference internal" href="#passlib.utils.binary.Base64Engine" title="passlib.utils.binary.Base64Engine"><code class="xref py py-class docutils literal notranslate"><span class="pre">Base64Engine</span></code></a> class;
+the interface remains mostly unchanged.</p>
+</div>
+</section>
+<section id="other">
+<h3>Other<a class="headerlink" href="#other" title="Link to this heading">¶</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.binary.ab64_encode">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.binary.</span></span><span class="sig-name descname"><span class="pre">ab64_encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.binary.ab64_encode" title="Link to this definition">¶</a></dt>
+<dd><p>encode using shortened base64 format which omits padding &amp; whitespace.
+uses custom <code class="docutils literal notranslate"><span class="pre">./</span></code> altchars.</p>
+<p>it is primarily used by Passlib’s custom pbkdf2 hashes.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.binary.ab64_decode">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.binary.</span></span><span class="sig-name descname"><span class="pre">ab64_decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.binary.ab64_decode" title="Link to this definition">¶</a></dt>
+<dd><p>decode from shortened base64 format which omits padding &amp; whitespace.
+uses custom <code class="docutils literal notranslate"><span class="pre">./</span></code> altchars, but supports decoding normal <code class="docutils literal notranslate"><span class="pre">+/</span></code> altchars as well.</p>
+<p>it is primarily used by Passlib’s custom pbkdf2 hashes.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.binary.b64s_encode">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.binary.</span></span><span class="sig-name descname"><span class="pre">b64s_encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.binary.b64s_encode" title="Link to this definition">¶</a></dt>
+<dd><p>encode using shortened base64 format which omits padding &amp; whitespace.
+uses default <code class="docutils literal notranslate"><span class="pre">+/</span></code> altchars.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.binary.b64s_decode">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.binary.</span></span><span class="sig-name descname"><span class="pre">b64s_decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.binary.b64s_decode" title="Link to this definition">¶</a></dt>
+<dd><p>decode from shortened base64 format which omits padding &amp; whitespace.
+uses default <code class="docutils literal notranslate"><span class="pre">+/</span></code> altchars.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.binary.b32encode">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.binary.</span></span><span class="sig-name descname"><span class="pre">b32encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.binary.b32encode" title="Link to this definition">¶</a></dt>
+<dd><p>wrapper around <code class="xref py py-func docutils literal notranslate"><span class="pre">base64.b32encode()</span></code> which strips padding,
+and returns a native string.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="passlib.utils.binary.b32decode">
+<span class="sig-prename descclassname"><span class="pre">passlib.utils.binary.</span></span><span class="sig-name descname"><span class="pre">b32decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.utils.binary.b32decode" title="Link to this definition">¶</a></dt>
+<dd><p>wrapper around <code class="xref py py-func docutils literal notranslate"><span class="pre">base64.b32decode()</span></code>
+which handles common mistyped chars.
+padding optional, ignored if present.</p>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="passlib.utils.html#constants">Constants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.utils.html#unicode-helpers">Unicode Helpers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.utils.html#bytes-helpers">Bytes Helpers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.utils.html#encoding-helpers">Encoding Helpers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.utils.html#randomness">Randomness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.utils.html#interface-tests">Interface Tests</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="passlib.utils.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="passlib.utils.handlers.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.handlers</span></code> - Framework for writing password hashes</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.binary</span></code> - Binary Helper Functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.utils.des.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.des</span></code> - DES routines [deprecated]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.utils.pbkdf2.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.pbkdf2</span></code> - PBKDF2 key derivation algorithm [deprecated]</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.utils.des.html" title="passlib.utils.des - DES routines [deprecated]"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.utils.handlers.html" title="passlib.utils.handlers - Framework for writing password hashes"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.utils.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils.binary</span></code> - Binary Helper Functions</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

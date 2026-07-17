@@ -1,0 +1,46 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Source: https://metacpan.org/release/Text-Xslate
+Upstream-Contact: Fuji, Goro (gfx) <gfuji@cpan.org>.
+Upstream-Name: Text-Xslate
+
+Files: *
+Copyright: 2010-2013, Fuji, Goro (gfx) <gfuji@cpan.org>.
+License: Artistic or GPL-1+
+
+Files: debian/*
+Copyright: 2016, Nick Morrott <knowledgejunkie@gmail.com>
+License: Artistic or GPL-1+
+
+Files: lib/Text/Xslate/PP/Opcode.pm
+       lib/Text/Xslate/PP/State.pm
+       lib/Text/Xslate/PP/Type/Raw.pm
+       lib/Text/Xslate/PP.pm
+       tool/opcode_for_pp.PL
+Copyright: 2010, Makamaka Hannyaharamitu (makamaka)
+License: Artistic or GPL-1+
+
+Files: lib/Text/Xslate/Runner.pm
+       script/xslate
+Copyright: 2010, Maki, Daisuke (lestrrat)
+ 2010, Fuji, Goro (gfx)
+License: Artistic or GPL-1+
+Comment: These files do not contain an explicit statement of
+ copyright ownership. Pursuant to the Berne Convention for the Protection of
+ Literary and Artistic Works, it is assumed that all content is copyright by
+ its respective authors unless otherwise stated.
+
+License: Artistic
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the Artistic License, which comes with Perl.
+ .
+ On Debian systems, the complete text of the Artistic License can be
+ found in `/usr/share/common-licenses/Artistic'.
+
+License: GPL-1+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 1, or (at your option)
+ any later version.
+ .
+ On Debian systems, the complete text of version 1 of the GNU General
+ Public License can be found in `/usr/share/common-licenses/GPL-1'.

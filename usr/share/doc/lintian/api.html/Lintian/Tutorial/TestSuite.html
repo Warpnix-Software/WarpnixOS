@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Lintian::Tutorial::TestSuite</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a>
+    <ul>
+      <li><a href="#Running-a-subset-of-the-tests">Running a subset of the tests</a></li>
+      <li><a href="#Running-tests-under-coverage">Running tests under coverage</a>
+        <ul>
+          <li><a href="#Collecting-the-coverage-you-want-in-a-reasonable-time">Collecting the coverage you want in a reasonable time</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Lintian::Tutorial::TestSuite -- Quick intro to running the Lintian testsuite</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<p>Warning: This document may be out of date.</p>
+
+<p>This guide will quickly introduce you to running the Lintian test suite and some tricks. The Lintian test suite is fairly large and accordingly it can take a substantial amount of time to run. To speed up development, there are various options to limit the tests to run.</p>
+
+<p>If you are looking for a guide on how to write tests, please consult <a href="https://metacpan.org/pod/Lintian::Tutorial::WritingTests">Lintian::Tutorial::WritingTests</a>.</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>The Lintian test suite is an extensive collection of various test cases. The test suite is divided into 4 &quot;sub-suites&quot;. The majority of tests are currently located in the &quot;tests&quot; sub-suite.</p>
+
+<p>To run the full suite:</p>
+
+<pre><code> $ rm -rf debian/test-out; private/build-test-packages; private/runtests</code></pre>
+
+<p>While writing a new tag (or check) you probably only want to run a particular (subset of the) test(s). See <a href="#Running-a-subset-of-the-tests">&quot;Running a subset of the tests&quot;</a> for the available options.</p>
+
+<h2 id="Running-a-subset-of-the-tests">Running a subset of the tests</h2>
+
+<p>First, you have to build the test packages with:</p>
+
+<pre><code> $ rm -rf debian/test-out; private/build-test-packages;</code></pre>
+
+<p>Then, the following options are available:</p>
+
+<dl>
+
+<dt>Running a single test</dt>
+<dd>
+
+<p>To run a single test by its name, use:</p>
+
+<pre><code> $ private/runtests --onlyrun=test:$name</code></pre>
+
+</dd>
+<dt>Running all tests for a check</dt>
+<dd>
+
+<p>To run all tests for a given check, use:</p>
+
+<pre><code> $ private/runtests --onlyrun=check:$name</code></pre>
+
+<p>$check must be the name of a check (it will test for checks/$check.desc) or &quot;legacy&quot;. This will run all tests that start with &quot;$check-&quot;.</p>
+
+</dd>
+<dt>Running all tests designed for a specific tag</dt>
+<dd>
+
+<p>To run all tests that have a &quot;Test-For&quot; or a &quot;Test-Against&quot; for a given tag, use:</p>
+
+<pre><code> $ private/runtests --onlyrun=tag:$name</code></pre>
+
+</dd>
+</dl>
+
+<h2 id="Running-tests-under-coverage">Running tests under coverage</h2>
+
+<p>This feature is currently untested.</p>
+
+<p>It is possible to run most of the tests under <a href="https://metacpan.org/pod/Devel::Cover">Devel::Cover</a>. This is done by passing <i>--coverage</i> to <i>private/runtests</i>. Example:</p>
+
+<pre><code>  $ private/runtests --coverage --dump-logs -j1 -k t debian/test-out</code></pre>
+
+<p>Please note that <a href="https://metacpan.org/pod/Devel::Cover">Devel::Cover</a> does not seem to handle multiple threads too well. You may see spurious warnings/errors if you run the tests with 2 or more active worker threads.</p>
+
+<p><b>Caveat</b> 1: Coverage for collections (i.e. programs in <i>collection/</i>) does not seem to work at the moment. Therefore, they often end up with (next to) zero coverage in the generated reports.</p>
+
+<p><b>Caveat</b> 2: <a href="https://metacpan.org/pod/Devel::Cover">Devel::Cover</a> sometimes changes the output of Lintian or tools called by Lintian. Obviously, this leads to test failures. Therefore, you may see weird test failures (or warnings) when running under coverage.</p>
+
+<h3 id="Collecting-the-coverage-you-want-in-a-reasonable-time">Collecting the coverage you want in a reasonable time</h3>
+
+<p>Collecting coverage is excruciatingly slow. This is not helped by the fact that it becomes unreliable when run under 2 or more threads.</p>
+
+<p>Fortunately, <a href="https://metacpan.org/pod/Devel::Cover">Devel::Cover</a> &quot;appends&quot; to its cover database. This allows you to &quot;slowly&quot; build up the coverage database over multiple runs. Example:</p>
+
+<pre><code>  $ private/runtests --coverage --dump-logs -j1 -k t debian/test-out suite:scripts
+  $ private/runtests --coverage --dump-logs -j1 -k t debian/test-out suite:debs
+  $ private/runtests --coverage --dump-logs -j1 -k t debian/test-out suite:source
+  ...</code></pre>
+
+<p>Or:</p>
+
+<pre><code>  $ private/runtests --coverage --dump-logs -j1 -k t debian/test-out $check
+  $ private/runtests --coverage --dump-logs -j1 -k t debian/test-out legacy</code></pre>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p><a href="https://metacpan.org/pod/Lintian::Tutorial::WritingTests">Lintian::Tutorial::WritingTests</a></p>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

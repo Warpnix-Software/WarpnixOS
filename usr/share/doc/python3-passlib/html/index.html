@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Passlib latest documentation &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="_static/logo.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="copyright" title="Copyright" href="copyright.html" />
+    <link rel="next" title="Walkthrough &amp; Tutorials" href="narr/index.html" />
+    <link rel="prev" title="Table Of Contents" href="contents.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="narr/index.html" title="Walkthrough &amp; Tutorials"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="contents.html" title="Table Of Contents"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="contents.html">Passlib latest Documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Passlib latest documentation</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <img alt="_images/masthead.png" class="align-center show-for-small" src="_images/masthead.png" />
+<div class="float-right admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="history/1.8.html#whats-new"><span class="std std-ref">What’s new in Passlib 1.8</span></a></p>
+</div>
+<section id="passlib-release-documentation">
+<h1>Passlib latest documentation<a class="headerlink" href="#passlib-release-documentation" title="Link to this heading">¶</a></h1>
+<div class="without-title admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>2020-05-01: Passlib’s public repository has moved to Heptapod!</strong></p>
+<p>Due to BitBucket deprecating Mercurial support, Passlib’s public repository and issue tracker
+has been relocated.  It’s now located at <a class="reference external" href="https://foss.heptapod.net/python-libs/passlib">https://foss.heptapod.net/python-libs/passlib</a>,
+and is powered by <a class="reference external" href="https://heptapod.net/">Heptapod</a>.
+Hosting is being graciously provided by the people at
+<a class="reference external" href="https://octobus.net/">Octobus</a> and <a class="reference external" href="https://clever-cloud.com/">CleverCloud</a>!</p>
+</div>
+<section id="welcome">
+<h2>Welcome<a class="headerlink" href="#welcome" title="Link to this heading">¶</a></h2>
+<p>Passlib is a password hashing library for Python 3, which provides
+cross-platform implementations of over 30 password hashing algorithms, as well
+as a framework for managing existing password hashes. It’s designed to be useful
+for a wide range of tasks, from verifying a hash found in /etc/shadow, to
+providing full-strength password hashing for multi-user application.</p>
+<p>As a quick sample, the following code hashes and then verifies a password
+using the <a class="reference internal" href="lib/passlib.hash.pbkdf2_digest.html"><span class="doc">PBKDF2-SHA256</span></a> algorithm:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># import the hash algorithm</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.hash</span> <span class="kn">import</span> <span class="n">pbkdf2_sha256</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># generate new salt, and hash a password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span> <span class="o">=</span> <span class="n">pbkdf2_sha256</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;toomanysecrets&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span>
+<span class="go">&#39;$pbkdf2-sha256$29000$N2YMIWQsBWBMae09x1jrPQ$1t8iyB2A.WF/Z5JZv.lfCIhXXN33N23OSgQYThBYRfk&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># verifying the password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pbkdf2_sha256</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;toomanysecrets&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pbkdf2_sha256</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;joshua&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</section>
+<section class="toc-always-open" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">¶</a></h2>
+<p>This documentation is organized into two main parts:
+a narrative walkthrough of Passlib, and a top-down API reference.</p>
+<p><a class="reference internal" href="install.html"><span class="doc">Installation</span></a></p>
+<blockquote>
+<div><p>See this page for system requirements &amp; installation instructions.</p>
+</div></blockquote>
+<p><a class="reference internal" href="narr/index.html"><span class="doc">Walkthrough &amp; Tutorials</span></a></p>
+<blockquote>
+<div><p>New users in particular will want to visit the walkthrough, as it provides
+introductory documentation including installation requirements,
+an overview of what passlib provides, and a guide for getting started quickly.</p>
+</div></blockquote>
+<p><a class="reference internal" href="lib/index.html"><span class="doc">API Reference</span></a></p>
+<blockquote>
+<div><p>The API reference contains a top-down reference of the <code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib</span></code> package.</p>
+</div></blockquote>
+<p><a class="reference internal" href="other.html"><span class="doc">Other Documentation</span></a></p>
+<blockquote>
+<div><p>This section contains additional things that don’t
+fit anywhere else, including an <a class="reference internal" href="faq.html"><span class="doc">FAQ</span></a> and a complete
+<a class="reference internal" href="history/index.html"><span class="doc">changelog</span></a>.</p>
+</div></blockquote>
+</section>
+<section id="online-resources">
+<h2>Online Resources<a class="headerlink" href="#online-resources" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><aside class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/index.rst</span>, line 90)</p>
+<p>Error in “table” directive:
+unknown option: “column-alignment”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.. table::
+    :class: fullwidth
+    :column-alignment: lr
+
+    =================== ===================================================
+    Latest Docs:        `&lt;https://passlib.readthedocs.io&gt;`_
+    Latest News:        `&lt;https://foss.heptapod.net/python-libs/passlib/wikis/home&gt;`_
+    Public Repo:        `&lt;https://foss.heptapod.net/python-libs/passlib&gt;`_
+    Mailing List:       `&lt;https://groups.google.com/group/passlib-users&gt;`_
+    Downloads @ PyPI:   `&lt;https://pypi.python.org/pypi/passlib&gt;`_
+    =================== ===================================================
+</pre></div>
+</div>
+</aside>
+</div></blockquote>
+</section>
+<section id="hosting">
+<h2>Hosting<a class="headerlink" href="#hosting" title="Link to this heading">¶</a></h2>
+<p>Thanks to the people at <a class="reference external" href="https://octobus.net/">Octobus</a> and <a class="reference external" href="https://clever-cloud.com/">CleverCloud</a>
+for providing the repository / issue tracker hosting, as well as development of <a class="reference external" href="https://heptapod.net/">Heptapod</a>!</p>
+<p>Thanks to <a class="reference external" href="https://readthedocs.io">ReadTheDocs</a> for providing documentation hosting!</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="contents.html">
+              <img class="logo" src="_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#welcome">Welcome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#online-resources">Online Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hosting">Hosting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lib/index.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="narr/index.html" title="Walkthrough &amp; Tutorials"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="contents.html" title="Table Of Contents"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="contents.html">Passlib latest Documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Passlib latest documentation</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

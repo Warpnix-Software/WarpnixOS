@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Lintian::Processable</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#INSTANCE-METHODS">INSTANCE METHODS</a></li>
+  <li><a href="#AUTHOR">AUTHOR</a></li>
+  <li><a href="#SEE-ALSO">SEE ALSO</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Lintian::Processable -- An (abstract) object that Lintian can process</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code> use Lintian::Processable;</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Instances of this perl class are objects that Lintian can process (e.g. deb files). Multiple objects can then be combined into <a href="https://metacpan.org/pod/Lintian::Group">groups</a>, which Lintian will process together.</p>
+
+<h1 id="INSTANCE-METHODS">INSTANCE METHODS</h1>
+
+<dl>
+
+<dt>name</dt>
+<dd>
+
+<p>Returns the name of the package.</p>
+
+</dd>
+<dt>type</dt>
+<dd>
+
+<p>Returns the type of package (e.g. binary, source, udeb ...)</p>
+
+</dd>
+<dt>hints</dt>
+<dd>
+
+</dd>
+<dt>$proc-&gt;version</dt>
+<dd>
+
+<p>Returns the version of the package.</p>
+
+</dd>
+<dt>$proc-&gt;path</dt>
+<dd>
+
+<p>Returns the path to the packaged version of actual package. This path is used in case the data needs to be extracted from the package.</p>
+
+</dd>
+<dt>basename</dt>
+<dd>
+
+<p>Returns the basename of the package path.</p>
+
+</dd>
+<dt>$proc-&gt;architecture</dt>
+<dd>
+
+<p>Returns the architecture(s) of the package. May return multiple values from changes processables. For source processables it is &quot;source&quot;.</p>
+
+</dd>
+<dt>$proc-&gt;source_name</dt>
+<dd>
+
+<p>Returns the name of the source package.</p>
+
+</dd>
+<dt>$proc-&gt;source_version</dt>
+<dd>
+
+<p>Returns the version of the source package.</p>
+
+</dd>
+<dt>$proc-&gt;tainted</dt>
+<dd>
+
+<p>Returns a truth value if one or more fields in this Processable is tainted. On a best effort basis tainted fields will be sanitized to less dangerous (but possibly invalid) values.</p>
+
+</dd>
+<dt>fields</dt>
+<dd>
+
+<p>Lintian::Deb822::Section with primary field values.</p>
+
+</dd>
+<dt>$proc-&gt;pooldir</dt>
+<dd>
+
+<p>Returns a reference to lab this Processable is in.</p>
+
+</dd>
+<dt>$proc-&gt;basedir</dt>
+<dd>
+
+<p>Returns the base directory of this package inside the lab.</p>
+
+</dd>
+<dt><code>identifier</code></dt>
+<dd>
+
+<p>Produces an identifier for this processable. The identifier is based on the type, name, version and architecture of the package.</p>
+
+</dd>
+<dt>clean_field</dt>
+<dd>
+
+<p>Cleans a field of evil characters to prevent traversal or worse.</p>
+
+</dd>
+<dt>guess_name</dt>
+<dd>
+
+</dd>
+</dl>
+
+<h1 id="AUTHOR">AUTHOR</h1>
+
+<p>Originally written by Niels Thykier &lt;niels@thykier.net&gt; for Lintian. Substantial portions written by Russ Allbery &lt;rra@debian.org&gt; for Lintian.</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>lintian(1)</p>
+
+<p><a href="https://metacpan.org/pod/Lintian::Processable::Installable">Lintian::Processable::Installable</a></p>
+
+<p><a href="https://metacpan.org/pod/Lintian::Processable::Buildinfo">Lintian::Processable::Buildinfo</a></p>
+
+<p><a href="https://metacpan.org/pod/Lintian::Processable::Changes">Lintian::Processable::Changes</a></p>
+
+<p><a href="https://metacpan.org/pod/Lintian::Processable::Source">Lintian::Processable::Source</a></p>
+
+<p><a href="https://metacpan.org/pod/Lintian::Group">Lintian::Group</a></p>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

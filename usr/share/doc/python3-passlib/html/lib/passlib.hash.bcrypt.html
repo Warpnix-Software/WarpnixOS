@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.hash.bcrypt - BCrypt &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.hash.sha256_crypt - SHA-256 Crypt" href="passlib.hash.sha256_crypt.html" />
+    <link rel="prev" title="passlib.hash - Password Hashing Schemes" href="passlib.hash.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.sha256_crypt.html" title="passlib.hash.sha256_crypt - SHA-256 Crypt"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.html" title="passlib.hash - Password Hashing Schemes"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.bcrypt</span></code> - BCrypt</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-hash-bcrypt-bcrypt">
+<h1><a class="reference internal" href="#passlib.hash.bcrypt" title="passlib.hash.bcrypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.bcrypt</span></code></a> - BCrypt<a class="headerlink" href="#passlib-hash-bcrypt-bcrypt" title="Link to this heading">¶</a></h1>
+<p>BCrypt was developed to replace <a class="reference internal" href="passlib.hash.md5_crypt.html#passlib.hash.md5_crypt" title="passlib.hash.md5_crypt"><code class="xref py py-class docutils literal notranslate"><span class="pre">md5_crypt</span></code></a> for BSD systems.
+It uses a modified version of the Blowfish stream cipher. Featuring
+a large salt and variable number of rounds, it’s currently the default
+password hash for many systems (notably BSD), and has no known weaknesses.
+It is one of the four hashes Passlib <a class="reference internal" href="../narr/quickstart.html#recommended-hashes"><span class="std std-ref">recommends</span></a>
+for new applications. This class can be used directly as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.hash</span> <span class="kn">import</span> <span class="n">bcrypt</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># generate new salt, hash password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span>
+<span class="go">&#39;$2a$12$NT0I31Sa7ihGEWpka9ASYrEFkhuTNeBQ2xfZskIiiJeyFXhRgS.Sy&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># the same, but with an explicit number of rounds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bcrypt</span><span class="o">.</span><span class="n">using</span><span class="p">(</span><span class="n">rounds</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="go">&#39;$2b$13$HMQTprwhaUwmir.g.ZYoXuRJhtsbra4uj.qJPHrKsX5nGlhpts0jm&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># verify password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bcrypt</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bcrypt</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;wrong&quot;</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is strongly recommended that you install
+<a class="reference external" href="https://pypi.python.org/pypi/bcrypt">bcrypt</a>
+when using this hash.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>the generic <a class="reference internal" href="../narr/hash-tutorial.html#password-hash-examples"><span class="std std-ref">PasswordHash usage examples</span></a></p>
+</div>
+<section id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.bcrypt">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">bcrypt</span></span><a class="headerlink" href="#passlib.hash.bcrypt" title="Link to this definition">¶</a></dt>
+<dd><p>This class implements the BCrypt password hash, and follows the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>It supports a fixed-length salt, and a variable number of rounds.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">using()</span></code></a> method accepts the following optional keywords:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>salt</strong> (<em>str</em>) – Optional salt string.
+If not specified, one will be autogenerated (this is recommended).
+If specified, it must be 22 characters, drawn from the regexp range <code class="docutils literal notranslate"><span class="pre">[./0-9A-Za-z]</span></code>.</p></li>
+<li><p><strong>rounds</strong> (<em>int</em>) – Optional number of rounds to use.
+Defaults to 12, must be between 4 and 31, inclusive.
+This value is logarithmic, the actual number of iterations used will be <code class="samp docutils literal notranslate"><span class="pre">2**</span><em><span class="pre">rounds</span></em></code>
+– increasing the rounds by +1 will double the amount of time taken.</p></li>
+<li><p><strong>ident</strong> (<em>str</em>) – <p>Specifies which version of the BCrypt algorithm will be used when creating a new hash.
+Typically this option is not needed, as the default (<code class="docutils literal notranslate"><span class="pre">&quot;2b&quot;</span></code>) is usually the correct choice.
+If specified, it must be one of the following:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;2&quot;</span></code> - the first revision of BCrypt, which suffers from a minor security flaw and is generally not used anymore.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;2a&quot;</span></code> - some implementations suffered from rare security flaws, replaced by 2b.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;2y&quot;</span></code> - format specific to the <em>crypt_blowfish</em> BCrypt implementation,
+identical to <code class="docutils literal notranslate"><span class="pre">&quot;2b&quot;</span></code> in all but name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;2b&quot;</span></code> - latest revision of the official BCrypt algorithm, current default.</p></li>
+</ul>
+</p></li>
+<li><p><strong>truncate_error</strong> (<em>bool</em>) – <p>By default, BCrypt will silently truncate passwords larger than 72 bytes.
+Setting <code class="docutils literal notranslate"><span class="pre">truncate_error=True</span></code> will cause <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.hash" title="passlib.ifc.PasswordHash.hash"><code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code></a>
+to raise a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasswordTruncateError" title="passlib.exc.PasswordTruncateError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasswordTruncateError</span></code></a> instead.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.7.</span></p>
+</div>
+</p></li>
+<li><p><strong>relaxed</strong> (<em>bool</em>) – <p>By default, providing an invalid value for one of the other
+keywords will result in a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>. If <code class="docutils literal notranslate"><span class="pre">relaxed=True</span></code>,
+and the error can be corrected, a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasslibHashWarning" title="passlib.exc.PasslibHashWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasslibHashWarning</span></code></a>
+will be issued instead. Correctable errors include <code class="docutils literal notranslate"><span class="pre">rounds</span></code>
+that are too small or too large, and <code class="docutils literal notranslate"><span class="pre">salt</span></code> strings that are too long.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+</p></li>
+</ul>
+</dd>
+</dl>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.6: </span>This class now supports <code class="docutils literal notranslate"><span class="pre">&quot;2y&quot;</span></code> hashes, and recognizes
+(but does not support) the broken <code class="docutils literal notranslate"><span class="pre">&quot;2x&quot;</span></code> hashes.
+(see the <a class="reference internal" href="#crypt-blowfish-bug"><span class="std std-ref">crypt_blowfish bug</span></a>
+for details).</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.6: </span>Added a pure-python backend.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.6.3: </span>Added support for <code class="docutils literal notranslate"><span class="pre">&quot;2b&quot;</span></code> variant.</p>
+</div>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.7: </span>Now defaults to <code class="docutils literal notranslate"><span class="pre">&quot;2b&quot;</span></code> variant.</p>
+</div>
+</dd></dl>
+
+<section id="index-0">
+<span id="bcrypt-backends"></span><span id="id1"></span><h3>Bcrypt Backends<a class="headerlink" href="#index-0" title="Link to this heading">¶</a></h3>
+<p class="float-center">This class will use the first available of five possible backends:</p>
+<p>1. <a class="reference external" href="https://pypi.python.org/pypi/bcrypt">bcrypt</a>, if installed.
+4. stdlib’s <code class="xref py py-func docutils literal notranslate"><span class="pre">crypt.crypt()</span></code>, if the host OS supports BCrypt</p>
+<aside class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/lib/passlib.hash.bcrypt.rst</span>, line 58)</p>
+<p>Unexpected indentation.</p>
+</aside>
+<blockquote>
+<div><p>(primarily BSD-derived systems).</p>
+</div></blockquote>
+<aside class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<span class="docutils literal">/build/python-passlib-EzVFOb/python-passlib-1.9.3/docs/lib/passlib.hash.bcrypt.rst</span>, line 59)</p>
+<p>Block quote ends without a blank line; unexpected unindent.</p>
+</aside>
+<ol class="arabic simple" start="5">
+<li><p>A pure-python implementation of BCrypt, built into Passlib.</p></li>
+</ol>
+<p>If no backends are available, <code class="xref py py-meth docutils literal notranslate"><span class="pre">hash()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">verify()</span></code>
+will throw <a class="reference internal" href="passlib.exc.html#passlib.exc.MissingBackendError" title="passlib.exc.MissingBackendError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">MissingBackendError</span></code></a> when they are invoked.
+You can check which backend is in use by calling <code class="xref py py-meth docutils literal notranslate"><span class="pre">bcrypt.get_backend()</span></code>.</p>
+<p>As of Passlib 1.6.3, a one-time check is peformed when the backend is first loaded,
+to detect the backend’s capabilities &amp; bugs.  If this check detects a fatal bug,
+a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasslibSecurityError" title="passlib.exc.PasslibSecurityError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasslibSecurityError</span></code></a> will be raised.  This generally means
+you need to upgrade the external package being used as the backend
+(this will be detailed in the error message).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><em>The pure-python backend (#5) is disabled by default!</em></p>
+<p>That backend is currently too slow to be usable given the number of rounds required
+for security. That said, if you have no other alternative and need to use it,
+set the environmental variable <code class="docutils literal notranslate"><span class="pre">PASSLIB_BUILTIN_BCRYPT=&quot;enabled&quot;</span></code>
+before importing Passlib.</p>
+<p>What’s “too slow”? Passlib’s <a class="reference internal" href="../narr/hash-tutorial.html#rounds-selection-guidelines"><span class="std std-ref">rounds selection guidelines</span></a>
+currently require BCrypt be able to do at least 12 cost in under 300ms. By this standard
+the pure-python backend is 128x too slow under CPython 2.7, and 16x too slow under PyPy 1.8.
+(speedups are welcome!)</p>
+</div>
+</section>
+</section>
+<section id="format-algorithm">
+<h2>Format &amp; Algorithm<a class="headerlink" href="#format-algorithm" title="Link to this heading">¶</a></h2>
+<p>Bcrypt is compatible with the <a class="reference internal" href="../modular_crypt_format.html#modular-crypt-format"><span class="std std-ref">Modular Crypt Format</span></a>, and uses a number of identifying
+prefixes: <code class="docutils literal notranslate"><span class="pre">$2$</span></code>, <code class="docutils literal notranslate"><span class="pre">$2a$</span></code>, <code class="docutils literal notranslate"><span class="pre">$2x$</span></code>, <code class="docutils literal notranslate"><span class="pre">$2y$</span></code>, and <code class="docutils literal notranslate"><span class="pre">$2b$</span></code>.  Each prefix indicates
+a different revision of the BCrypt algorithm; and all but the <code class="docutils literal notranslate"><span class="pre">$2b$</span></code> identifier are
+considered deprecated.</p>
+<p>An example hash (of <code class="docutils literal notranslate"><span class="pre">password</span></code>) is:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">$2b$12$GhvMmNVjRW29ulnudl.LbuAnUtN/LRfe1JsBm1Xu6LE3059z5Tr8m</span></code></p>
+</div></blockquote>
+<p>Bcrypt hashes have the format <code class="samp docutils literal notranslate"><span class="pre">$2a$</span><em><span class="pre">rounds</span></em><span class="pre">$</span><em><span class="pre">salt</span></em><em><span class="pre">checksum</span></em></code>, where:</p>
+<ul class="simple">
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">rounds</span></em></code> is a cost parameter, encoded as 2 zero-padded decimal digits,
+which determines the number of iterations used via <code class="samp docutils literal notranslate"><em><span class="pre">iterations</span></em><span class="pre">=2**</span><em><span class="pre">rounds</span></em></code> (rounds is 12 in the example).</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">salt</span></em></code> is a 22 character salt string, using the characters in the regexp range <code class="docutils literal notranslate"><span class="pre">[./A-Za-z0-9]</span></code> (<code class="docutils literal notranslate"><span class="pre">GhvMmNVjRW29ulnudl.Lbu</span></code> in the example).
+Note that due to padding bits within the encoding, the last character should always be one of <code class="docutils literal notranslate"><span class="pre">[.Oeu]</span></code>:
+under some bcrypt implementations, other final characters may result in false negatives when verifying.</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">checksum</span></em></code> is a 31 character checksum, using the same characters as the salt (<code class="docutils literal notranslate"><span class="pre">AnUtN/LRfe1JsBm1Xu6LE3059z5Tr8m</span></code> in the example).</p></li>
+</ul>
+<p>While BCrypt’s basic algorithm is described in its design document <a class="footnote-reference brackets" href="#f1" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>,
+the OpenBSD implementation <a class="footnote-reference brackets" href="#f2" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> is considered the canonical reference, even
+though it differs from the design document in a few small ways.</p>
+</section>
+<section id="security-issues">
+<h2>Security Issues<a class="headerlink" href="#security-issues" title="Link to this heading">¶</a></h2>
+<ul id="bcrypt-password-truncation">
+<li><p>Password Truncation.</p>
+<p>While not a security issue per-se, bcrypt does have one major limitation:
+password are truncated on the first NULL byte (if any),
+and only the first 72 bytes of a password are hashed… all the rest are ignored.
+Furthermore, bytes 55-72 are not fully mixed into the resulting hash (citation needed!).
+To work around both these issues, many applications first run the password through a message
+digest such as (HMAC-) SHA2-256. Passlib offers the premade <a class="reference internal" href="passlib.hash.bcrypt_sha256.html"><span class="doc">passlib.hash.bcrypt_sha256 - BCrypt+SHA256</span></a>
+to take care of this issue.</p>
+</li>
+</ul>
+</section>
+<section id="deviations">
+<h2>Deviations<a class="headerlink" href="#deviations" title="Link to this heading">¶</a></h2>
+<p>This implementation of bcrypt differs from others in a few ways:</p>
+<ul>
+<li><p>Restricted salt string character set:</p>
+<p>BCrypt does not specify what the behavior should be when
+passed a salt string outside of the regexp range <code class="docutils literal notranslate"><span class="pre">[./A-Za-z0-9]</span></code>.
+In order to avoid this situation, Passlib strictly limits salts to the
+allowed character set, and will throw a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code> if an invalid
+salt character is encountered.</p>
+</li>
+<li><p>Unicode Policy:</p>
+<p>The underlying algorithm takes in a password specified
+as a series of non-null bytes, and does not specify what encoding
+should be used; though a <code class="docutils literal notranslate"><span class="pre">us-ascii</span></code> compatible encoding
+is implied by nearly all implementations of bcrypt
+as well as all known reference hashes.</p>
+<p>In order to provide support for unicode strings,
+Passlib will encode unicode passwords using <code class="docutils literal notranslate"><span class="pre">utf-8</span></code>
+before running them through bcrypt. If a different
+encoding is desired by an application, the password should be encoded
+before handing it to Passlib.</p>
+</li>
+<li><p>Padding Bits</p>
+<p>BCrypt’s base64 encoding results in the last character of the salt
+encoding only 2 bits of data, the remaining 4 are “padding” bits.
+Similarly, the last character of the digest contains 4 bits of data,
+and 2 padding bits. Because of the way they are coded, many BCrypt implementations
+will reject <em>all</em> passwords if these padding bits are not set to 0.
+Due to a legacy <a class="reference internal" href="../history/1.5.html#bcrypt-padding-issue"><span class="std std-ref">issue</span></a> with Passlib &lt;= 1.5.2,
+Passlib will print a warning if it encounters hashes with any padding bits set,
+and then validate the hash as if the padding bits were cleared.
+(This behavior will eventually be deprecated and such hashes
+will throw a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code> instead).</p>
+</li>
+<li><p>The <em>crypt_blowfish</em> 8-bit bug</p>
+<p id="crypt-blowfish-bug">Pre-1.1 versions of the <a class="reference external" href="http://www.openwall.com/crypt/">crypt_blowfish</a>
+bcrypt implementation suffered from a serious flaw <a class="footnote-reference brackets" href="#eight" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>
+in how they handled 8-bit passwords. The manner in which the flaw was fixed resulted
+in <em>crypt_blowfish</em> adding support for two new BCrypt hash identifiers:</p>
+<p><code class="docutils literal notranslate"><span class="pre">$2x$</span></code>, allowing sysadmins to mark any <code class="docutils literal notranslate"><span class="pre">$2a$</span></code> hashes which were potentially
+generated with the buggy algorithm. Passlib 1.6 recognizes (but does not
+currently support generating or verifying) these hashes.</p>
+<p><code class="docutils literal notranslate"><span class="pre">$2y$</span></code>, the default for crypt_blowfish 1.1-1.2, indicates
+the hash was generated with the canonical OpenBSD-compatible algorithm,
+and should match <em>correctly</em> generated <code class="docutils literal notranslate"><span class="pre">$2a$</span></code> hashes.
+Passlib 1.6 can generate and verify these hashes.</p>
+<p>As well, crypt_blowfish 1.2 modified the way it generates <code class="docutils literal notranslate"><span class="pre">$2a$</span></code> hashes,
+so that passwords containing the byte value 0xFF are hashed in a manner
+incompatible with either the buggy or canonical algorithms. Passlib
+does not support this algorithmic variant either, though it should
+be <em>very</em> rarely encountered in practice.</p>
+<p>(crypt_blowfish 1.3 switched to the <code class="docutils literal notranslate"><span class="pre">$2b$</span></code> standard as the default)</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.6.3: </span>Passlib will now throw a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasslibSecurityError" title="passlib.exc.PasslibSecurityError"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasslibSecurityError</span></code></a> if an attempt is
+made to use any backend which is vulnerable to this bug.</p>
+</div>
+</li>
+<li><p>The ‘BSD wraparound’ bug</p>
+<p id="bsd-wraparound-bug">OpenBSD &lt;= 5.4, and most bcrypt libraries derived from it’s source,
+are vulnerable to a ‘wraparound’ bug <a class="footnote-reference brackets" href="#wraparound" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>, where passwords larger
+than 254 characters will be incorrectly hashed using only the first few
+characters of the string, resulting in a severely weakened hash.</p>
+<p>OpenBSD 5.5 <a class="reference external" href="http://undeadly.org/cgi?action=article&amp;sid=20140224132743">fixed</a> this flaw,
+and introduced the <code class="docutils literal notranslate"><span class="pre">$2b$</span></code> hash identifier to indicate the hash was generated with the correct
+algorithm.</p>
+<p>py-bcrypt &lt;= 0.4 is known to be vulnerable to this, as well as the os_crypt
+backend (if running on a vulnerable operating system).</p>
+<p>Passlib 1.6.3 adds the following:</p>
+<ul class="simple">
+<li><p>Support for the <code class="docutils literal notranslate"><span class="pre">$2b$</span></code> hash format (though for backward compat it has not been made
+the default yet).</p></li>
+<li><p>Detects if the active backend is vulnerable to the bug, issues a warning,
+and enables a workaround so that vulnerable passwords will still be hashed correctly.
+(This does mean that existing hashes suffering this vulnerability will no longer verify
+using their correct password).</p></li>
+</ul>
+</li>
+</ul>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="f1" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">1</a><span class="fn-bracket">]</span></span>
+<p>the bcrypt format specification -
+<a class="reference external" href="http://www.usenix.org/event/usenix99/provos/provos_html/">http://www.usenix.org/event/usenix99/provos/provos_html/</a></p>
+</aside>
+<aside class="footnote brackets" id="f2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">2</a><span class="fn-bracket">]</span></span>
+<p>the OpenBSD BCrypt source -
+<a class="reference external" href="http://www.openbsd.org/cgi-bin/cvsweb/src/lib/libc/crypt/bcrypt.c">http://www.openbsd.org/cgi-bin/cvsweb/src/lib/libc/crypt/bcrypt.c</a></p>
+</aside>
+<aside class="footnote brackets" id="eight" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">3</a><span class="fn-bracket">]</span></span>
+<p>The flaw in pre-1.1 crypt_blowfish is described here -
+<a class="reference external" href="http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2011-2483">CVE-2011-2483</a></p>
+</aside>
+<aside class="footnote brackets" id="wraparound" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">4</a><span class="fn-bracket">]</span></span>
+<p>The wraparound flaw is described here -
+<a class="reference external" href="http://www.openwall.com/lists/oss-security/2012/01/02/4">http://www.openwall.com/lists/oss-security/2012/01/02/4</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#overview">Overview</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="passlib.hash.html#unix-hashes">Unix Hashes</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="passlib.hash.html#active-unix-hashes">Active Unix Hashes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.html#deprecated-unix-hashes">Deprecated Unix Hashes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.html#archaic-unix-hashes">Archaic Unix Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-modular-crypt-hashes">Other “Modular Crypt” Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ldap-rfc2307-hashes">LDAP / RFC2307 Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#sql-database-hashes">SQL Database Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ms-windows-hashes">MS Windows Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#cisco-hashes">Cisco Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-hashes">Other Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.sha256_crypt.html" title="passlib.hash.sha256_crypt - SHA-256 Crypt"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.html" title="passlib.hash - Password Hashing Schemes"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.bcrypt</span></code> - BCrypt</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

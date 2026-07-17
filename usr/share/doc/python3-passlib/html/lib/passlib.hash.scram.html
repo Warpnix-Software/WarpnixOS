@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>passlib.hash.scram - SCRAM Hash &#8212; Passlib vlatest Documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    
+    <script src="../_static/documentation_options.js?v=c6e86fd7"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="../_static/logo.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="passlib.hash.scrypt - SCrypt" href="passlib.hash.scrypt.html" />
+    <link rel="prev" title="passlib.hash.pbkdf2_digest - Generic PBKDF2 Hashes" href="passlib.hash.pbkdf2_digest.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.scrypt.html" title="passlib.hash.scrypt - SCrypt"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.pbkdf2_digest.html" title="passlib.hash.pbkdf2_digest - Generic PBKDF2 Hashes"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" accesskey="U"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.scram</span></code> - SCRAM Hash</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="passlib-hash-scram-scram-hash">
+<span id="index-0"></span><h1><a class="reference internal" href="#passlib.hash.scram" title="passlib.hash.scram"><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.scram</span></code></a> - SCRAM Hash<a class="headerlink" href="#passlib-hash-scram-scram-hash" title="Link to this heading">¶</a></h1>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+<p>SCRAM is a password-based challenge response protocol defined by <span class="target" id="index-1"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5802.html"><strong>RFC 5802</strong></a>.
+While Passlib does not provide an implementation of SCRAM, applications
+which use SCRAM on the server side frequently need a way to store
+user passwords in a secure format that can be used to authenticate users over
+SCRAM.</p>
+<p>To accomplish this, Passlib provides the following
+<a class="reference internal" href="../modular_crypt_format.html#modular-crypt-format"><span class="std std-ref">Modular Crypt Format</span></a>-compatible password hash scheme which uses the
+<code class="docutils literal notranslate"><span class="pre">$scram$</span></code> identifier. This format encodes a salt, rounds settings, and one
+or more <a class="reference internal" href="passlib.crypto.digest.html#passlib.crypto.digest.pbkdf2_hmac" title="passlib.crypto.digest.pbkdf2_hmac"><code class="xref py py-func docutils literal notranslate"><span class="pre">pbkdf2_hmac()</span></code></a> digests… one digest for each
+of the hash algorithms the server wishes to support over SCRAM.</p>
+<p>Since this format is PBKDF2-based, it has equivalent security to
+Passlib’s other <a class="reference internal" href="passlib.hash.pbkdf2_digest.html"><span class="doc">pbkdf2 hashes</span></a>,
+and can be used to authenticate users using either the normal <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>
+or the SCRAM-specific class methods documented below.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you aren’t working with the SCRAM protocol, you probably
+don’t need to use this hash format.</p>
+</div>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h2>
+<p>This class can be used like any other Passlib hash, as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">passlib.hash</span> <span class="kn">import</span> <span class="n">scram</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># generate new salt, hash password against default list of algorithms</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span> <span class="o">=</span> <span class="n">scram</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span>
+<span class="go">&#39;$scram$6400$.Z/znnNOKWUsBaCU$sha-1=cRseQyJpnuPGn3e6d6u6JdJWk.0,sha-256=5G</span>
+<span class="go">cjEbRaUIIci1r6NAMdI9OPZbxl9S5CFR6la9CHXYc,sha-512=.DHbIm82ajXbFR196Y.9Ttbs</span>
+<span class="go">gzvGjbMeuWCtKve8TPjRMNoZK9EGyHQ6y0lW9OtWdHZrDZbBUhB9ou./VI2mlw&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># same, but with an explicit number of rounds</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scram</span><span class="o">.</span><span class="n">using</span><span class="p">(</span><span class="n">rounds</span><span class="o">=</span><span class="mi">8000</span><span class="p">)</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="go">&#39;$scram$8000$Y0zp/R/DeO89h/De$sha-1=eE8dq1f1P1hZm21lfzsr3CMbiEA,sha-256=Nf</span>
+<span class="go">kaDFMzn/yHr/HTv7KEFZqaONo6psRu5LBBFLEbZ.o,sha-512=XnGG11X.J2VGSG1qTbkR3FVr</span>
+<span class="go">9j5JwsnV5Fd094uuC.GtVDE087m8e7rGoiVEgXnduL48B2fPsUD9grBjURjkiA&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># verify password</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scram</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scram</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="s2">&quot;secret&quot;</span><span class="p">,</span> <span class="nb">hash</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>See the generic <a class="reference internal" href="../narr/hash-tutorial.html#password-hash-examples"><span class="std std-ref">PasswordHash usage examples</span></a>
+for more details on how to use the common hash interface.</p>
+<hr class="docutils" />
+<p>Additionally, this class provides a number of useful methods for SCRAM-specific actions:</p>
+<ul>
+<li><p>You can override the default list of digests, and/or the number of iterations:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span> <span class="o">=</span> <span class="n">scram</span><span class="o">.</span><span class="n">using</span><span class="p">(</span><span class="n">rounds</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">algs</span><span class="o">=</span><span class="s2">&quot;sha-1,sha-256,md5&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">hash</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hash</span>
+<span class="go">&#39;$scram$1000$RsgZo7T2/l8rBUBI$md5=iKsH555d3ctn795Za4S7bQ,sha-1=dRcE2AUjALLF</span>
+<span class="go">tX5DstdLCXZ9Afw,sha-256=WYE/LF7OntriUUdFXIrYE19OY2yL0N5qsQmdPNFn7JE&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Given a scram hash, you can use a single call to extract all the information
+the SCRAM needs to authenticate against a specific mechanism:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># this returns (salt_bytes, rounds, digest_bytes)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scram</span><span class="o">.</span><span class="n">extract_digest_info</span><span class="p">(</span><span class="nb">hash</span><span class="p">,</span> <span class="s2">&quot;sha-1&quot;</span><span class="p">)</span>
+<span class="go">(&#39;F\xc8\x19\xa3\xb4\xf6\xfe_+\x05@H&#39;,</span>
+<span class="go"> 1000,</span>
+<span class="go"> &#39;u\x17\x04\xd8\x05#\x00\xb2\xc5\xb5~C\xb2\xd7K\tv}\x01\xfc&#39;)</span>
+</pre></div>
+</div>
+</li>
+<li><p>Given a scram hash, you can extract the list of digest algorithms
+it contains information for (<code class="docutils literal notranslate"><span class="pre">sha-1</span></code> will always be present):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">scram</span><span class="o">.</span><span class="n">extract_digest_algs</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span>
+<span class="go">[&quot;md5&quot;, &quot;sha-1&quot;, &quot;sha-256&quot;]</span>
+</pre></div>
+</div>
+</li>
+<li><p>This class also provides a standalone helper which can calculate
+the <code class="docutils literal notranslate"><span class="pre">SaltedPassword</span></code> portion of the SCRAM protocol, taking
+care of the SASLPrep step as well:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">scram</span><span class="o">.</span><span class="n">derive_digest</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x01\x02\x03</span><span class="s1">&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="s2">&quot;sha-1&quot;</span><span class="p">)</span>
+<span class="go">b&#39;k\x086vg\xb3\xfciz\xb4\xb4\xe2JRZ\xaet\xe4`\xe7&#39;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="interface">
+<h2>Interface<a class="headerlink" href="#interface" title="Link to this heading">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This hash format is new in Passlib 1.6, and its SCRAM-specific API
+may change in the next few releases, depending on user feedback.</p>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="passlib.hash.scram">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">passlib.hash.</span></span><span class="sig-name descname"><span class="pre">scram</span></span><a class="headerlink" href="#passlib.hash.scram" title="Link to this definition">¶</a></dt>
+<dd><p>This class provides a format for storing SCRAM passwords, and follows
+the <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a>.</p>
+<p>It supports a variable-length salt, and a variable number of rounds.</p>
+<p>The <a class="reference internal" href="passlib.ifc.html#passlib.ifc.PasswordHash.using" title="passlib.ifc.PasswordHash.using"><code class="xref py py-meth docutils literal notranslate"><span class="pre">using()</span></code></a> method accepts the following optional keywords:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>salt</strong> (<em>bytes</em>) – Optional salt bytes.
+If specified, the length must be between 0-1024 bytes.
+If not specified, a 12 byte salt will be autogenerated
+(this is recommended).</p></li>
+<li><p><strong>salt_size</strong> (<em>int</em>) – Optional number of bytes to use when autogenerating new salts.
+Defaults to 12 bytes, but can be any value between 0 and 1024.</p></li>
+<li><p><strong>rounds</strong> (<em>int</em>) – Optional number of rounds to use.
+Defaults to 100000, but must be within <code class="docutils literal notranslate"><span class="pre">range(1,1&lt;&lt;32)</span></code>.</p></li>
+<li><p><strong>algs</strong> (<em>list</em><em> of </em><em>strings</em>) – <p>Specify list of digest algorithms to use.</p>
+<p>By default each scram hash will contain digests for SHA-1,
+SHA-256, and SHA-512. This can be overridden by specify either be a
+list such as <code class="docutils literal notranslate"><span class="pre">[&quot;sha-1&quot;,</span> <span class="pre">&quot;sha-256&quot;]</span></code>, or a comma-separated string
+such as <code class="docutils literal notranslate"><span class="pre">&quot;sha-1,</span> <span class="pre">sha-256&quot;</span></code>. Names are case insensitive, and may
+use <code class="xref py py-mod docutils literal notranslate"><span class="pre">hashlib</span></code> or <a class="reference external" href="http://www.iana.org/assignments/hash-function-text-names">IANA</a>
+hash names.</p>
+</p></li>
+<li><p><strong>relaxed</strong> (<em>bool</em>) – <p>By default, providing an invalid value for one of the other
+keywords will result in a <code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code>. If <code class="docutils literal notranslate"><span class="pre">relaxed=True</span></code>,
+and the error can be corrected, a <a class="reference internal" href="passlib.exc.html#passlib.exc.PasslibHashWarning" title="passlib.exc.PasslibHashWarning"><code class="xref py py-exc docutils literal notranslate"><span class="pre">PasslibHashWarning</span></code></a>
+will be issued instead. Correctable errors include <code class="docutils literal notranslate"><span class="pre">rounds</span></code>
+that are too small or too large, and <code class="docutils literal notranslate"><span class="pre">salt</span></code> strings that are too long.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.6.</span></p>
+</div>
+</p></li>
+</ul>
+</dd>
+</dl>
+<p>In addition to the standard <a class="reference internal" href="passlib.ifc.html#password-hash-api"><span class="std std-ref">PasswordHash API</span></a> methods,
+this class also provides the following methods for manipulating Passlib
+scram hashes in ways useful for pluging into a SCRAM protocol stack:</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.hash.scram.extract_digest_info">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">extract_digest_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hash</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.hash.scram.extract_digest_info" title="Link to this definition">¶</a></dt>
+<dd><p>return (salt, rounds, digest) for specific hash algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hash</strong> (<em>str</em>) – <code class="xref py py-class docutils literal notranslate"><span class="pre">scram</span></code> hash stored for desired user</p></li>
+<li><p><strong>alg</strong> (<em>str</em>) – <p>Name of digest algorithm (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;sha-1&quot;</span></code>) requested by client.</p>
+<p>This value is run through <a class="reference internal" href="passlib.crypto.digest.html#passlib.crypto.digest.norm_hash_name" title="passlib.crypto.digest.norm_hash_name"><code class="xref py py-func docutils literal notranslate"><span class="pre">norm_hash_name()</span></code></a>,
+so it is case-insensitive, and can be the raw SCRAM
+mechanism name (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;SCRAM-SHA-1&quot;</span></code>), the IANA name,
+or the hashlib name.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>KeyError</strong> – If the hash does not contain an entry for the requested digest
+algorithm.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple containing <code class="docutils literal notranslate"><span class="pre">(salt,</span> <span class="pre">rounds,</span> <span class="pre">digest)</span></code>,
+where <em>digest</em> matches the raw bytes returned by
+SCRAM’s <code class="xref py py-func docutils literal notranslate"><span class="pre">Hi()</span></code> function for the stored password,
+the provided <em>salt</em>, and the iteration count (<em>rounds</em>).
+<em>salt</em> and <em>digest</em> are both raw (unencoded) bytes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.hash.scram.extract_digest_algs">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">extract_digest_algs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hash</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'iana'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.hash.scram.extract_digest_algs" title="Link to this definition">¶</a></dt>
+<dd><p>Return names of all algorithms stored in a given hash.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hash</strong> (<em>str</em>) – The <code class="xref py py-class docutils literal notranslate"><span class="pre">scram</span></code> hash to parse</p></li>
+<li><p><strong>format</strong> (<em>str</em>) – This changes the naming convention used by the
+returned algorithm names. By default the names
+are IANA-compatible; possible values are <code class="docutils literal notranslate"><span class="pre">&quot;iana&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;hashlib&quot;</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns a list of digest algorithms; e.g. <code class="docutils literal notranslate"><span class="pre">[&quot;sha-1&quot;]</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="passlib.hash.scram.derive_digest">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">derive_digest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">salt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rounds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alg</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#passlib.hash.scram.derive_digest" title="Link to this definition">¶</a></dt>
+<dd><p>helper to create SaltedPassword digest for SCRAM.</p>
+<p>This performs the step in the SCRAM protocol described as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SaltedPassword</span>  <span class="o">:=</span> <span class="n">Hi</span><span class="p">(</span><span class="n">Normalize</span><span class="p">(</span><span class="n">password</span><span class="p">),</span> <span class="n">salt</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>password</strong> (<em>str</em><em> or </em><em>utf-8 bytes</em>) – password to run through digest</p></li>
+<li><p><strong>salt</strong> (<em>bytes</em>) – raw salt data</p></li>
+<li><p><strong>rounds</strong> (<em>int</em>) – number of iterations.</p></li>
+<li><p><strong>alg</strong> (<em>str</em>) – name of digest to use (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;sha-1&quot;</span></code>).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>raw bytes of <code class="docutils literal notranslate"><span class="pre">SaltedPassword</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section class="html-toggle" id="format-algorithm">
+<h2>Format &amp; Algorithm<a class="headerlink" href="#format-algorithm" title="Link to this heading">¶</a></h2>
+<p>An example scram hash (of the string <code class="docutils literal notranslate"><span class="pre">password</span></code>) is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$scram$6400$.Z/znnNOKWUsBaCU$sha-1=cRseQyJpnuPGn3e6d6u6JdJWk.0,sha-256=5G
+cjEbRaUIIci1r6NAMdI9OPZbxl9S5CFR6la9CHXYc,sha-512=.DHbIm82ajXbFR196Y.9Ttb
+sgzvGjbMeuWCtKve8TPjRMNoZK9EGyHQ6y0lW9OtWdHZrDZbBUhB9ou./VI2mlw
+</pre></div>
+</div>
+<p>An scram hash string has the format <code class="samp docutils literal notranslate"><span class="pre">$scram$</span><em><span class="pre">rounds</span></em><span class="pre">$</span><em><span class="pre">salt</span></em><span class="pre">$</span><em><span class="pre">alg1</span></em><span class="pre">=</span><em><span class="pre">digest1</span></em><span class="pre">,</span><em><span class="pre">alg2</span></em><span class="pre">=</span><em><span class="pre">digest2</span></em><span class="pre">,...</span></code>, where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$scram$</span></code> is the prefix used to identify Passlib scram hashes,
+following the <a class="reference internal" href="../modular_crypt_format.html#modular-crypt-format"><span class="std std-ref">Modular Crypt Format</span></a></p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">rounds</span></em></code> is the number of decimal rounds to use (6400 in the example),
+zero-padding not allowed. this value must be in <code class="docutils literal notranslate"><span class="pre">range(1,</span> <span class="pre">2**32)</span></code>.</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">salt</span></em></code> is a base64 salt string (<code class="docutils literal notranslate"><span class="pre">.Z/znnNOKWUsBaCU</span></code> in the example),
+encoded using <a class="reference internal" href="passlib.utils.binary.html#passlib.utils.binary.ab64_encode" title="passlib.utils.binary.ab64_encode"><code class="xref py py-func docutils literal notranslate"><span class="pre">ab64_encode()</span></code></a>.</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">alg</span></em></code> is a lowercase IANA hash function name <a class="footnote-reference brackets" href="#hnames" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>, which should
+match the digest in the SCRAM mechanism name.</p></li>
+<li><p><code class="samp docutils literal notranslate"><em><span class="pre">digest</span></em></code> is a base64 digest for the specific algorithm,
+encoded using <a class="reference internal" href="passlib.utils.binary.html#passlib.utils.binary.ab64_encode" title="passlib.utils.binary.ab64_encode"><code class="xref py py-func docutils literal notranslate"><span class="pre">ab64_encode()</span></code></a>.
+Digests for <code class="docutils literal notranslate"><span class="pre">sha-1</span></code>, <code class="docutils literal notranslate"><span class="pre">sha-256</span></code>, and <code class="docutils literal notranslate"><span class="pre">sha-512</span></code> are present in the example.</p></li>
+<li><p>There will always be one or more <code class="samp docutils literal notranslate"><em><span class="pre">alg</span></em><span class="pre">=</span><em><span class="pre">digest</span></em></code> pairs, separated by a
+comma. Per the SCRAM specification, the algorithm <code class="docutils literal notranslate"><span class="pre">sha-1</span></code> should always be present.</p></li>
+</ul>
+<p>There is also an alternate format (<code class="samp docutils literal notranslate"><span class="pre">$scram$</span><em><span class="pre">rounds</span></em><span class="pre">$</span><em><span class="pre">salt</span></em><span class="pre">$</span><em><span class="pre">alg</span></em><span class="pre">,...</span></code>)
+which is used to represent a configuration string that doesn’t contain
+any digests. An example would be:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$scram$6400$.Z/znnNOKWUsBaCU$sha-1,sha-256,sha-512
+</pre></div>
+</div>
+<p>The algorithm used to calculate each digest is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pbkdf2</span><span class="p">(</span><span class="n">salsprep</span><span class="p">(</span><span class="n">password</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">),</span> <span class="n">salt</span><span class="p">,</span> <span class="n">rounds</span><span class="p">,</span> <span class="n">alg_digest_size</span><span class="p">,</span> <span class="s2">&quot;hmac-&quot;</span><span class="o">+</span><span class="n">alg</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>…as laid out in the SCRAM specification <a class="footnote-reference brackets" href="#scram" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. All digests
+should verify against the same password, or the hash is considered malformed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This format is similar in spirit to the LDAP storage format for SCRAM hashes,
+defined in <span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5803.html"><strong>RFC 5803</strong></a>, except that it encodes everything into a single
+string, and does not have any storage requirements (outside of the ability
+to store 512+ character ascii strings).</p>
+</div>
+</section>
+<section id="security">
+<h2>Security<a class="headerlink" href="#security" title="Link to this heading">¶</a></h2>
+<p>The security of this hash is only as strong as the weakest digest used
+by this hash. Since the SCRAM <a class="footnote-reference brackets" href="#scram" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> protocol requires SHA1
+always be supported, this will generally be the weakest link, since
+the other digests will generally be stronger ones (e.g. SHA2-256).</p>
+<p>None-the-less, since PBKDF2 is sufficiently collision-resistant
+on its own, any pre-image weaknesses found in SHA1 should be mitigated
+by the PBKDF2-HMAC-SHA1 wrapper; and should have no flaws outside of
+brute-force attacks on PBKDF2-HMAC-SHA1.</p>
+<p class="rubric">Footnotes</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="scram" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id2">1</a>,<a role="doc-backlink" href="#id3">2</a>)</span>
+<p>The SCRAM protocol is laid out in <span class="target" id="index-3"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5802.html"><strong>RFC 5802</strong></a>.</p>
+</aside>
+<aside class="footnote brackets" id="hnames" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">2</a><span class="fn-bracket">]</span></span>
+<p>The official list of IANA-assigned hash function names -
+<a class="reference external" href="http://www.iana.org/assignments/hash-function-text-names">http://www.iana.org/assignments/hash-function-text-names</a></p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../contents.html">
+              <img class="logo" src="../_static/masthead.png" alt="Logo of Passlib"/>
+            </a></p>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+<h3><a href="../contents.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../narr/index.html">Walkthrough &amp; Tutorials</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="passlib.apache.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apache</span></code> - Apache Password Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.apps.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.apps</span></code> - Helpers for various applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.context.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.context</span></code> - CryptContext Hash Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.crypto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.crypto</span></code> - Cryptographic Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.exc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.exc</span></code> - Exceptions and warnings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ext.django.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ext.django</span></code> - Django Password Hashing Plugin</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="passlib.hash.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#unix-hashes">Unix Hashes</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="passlib.hash.html#other-modular-crypt-hashes">Other “Modular Crypt” Hashes</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="passlib.hash.html#active-hashes">Active Hashes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="passlib.hash.html#deprecated-hashes">Deprecated Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ldap-rfc2307-hashes">LDAP / RFC2307 Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#sql-database-hashes">SQL Database Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#ms-windows-hashes">MS Windows Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#cisco-hashes">Cisco Hashes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="passlib.hash.html#other-hashes">Other Hashes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.hosts.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hosts</span></code> - OS Password Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.ifc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.ifc</span></code> – Password Hash Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.pwd.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.pwd</span></code> – Password generation helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.registry.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.registry</span></code> - Password Handler Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.totp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.totp</span></code> – TOTP / Two Factor Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="passlib.utils.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.utils</span></code> - Helper Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../other.html">Other Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.scrypt.html" title="passlib.hash.scrypt - SCrypt"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="passlib.hash.pbkdf2_digest.html" title="passlib.hash.pbkdf2_digest - Generic PBKDF2 Hashes"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../contents.html">Passlib latest Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="passlib.hash.html" ><code class="xref py py-mod docutils literal notranslate"><span class="pre">passlib.hash</span></code> - Password Hashing Schemes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-class docutils literal notranslate"><span class="pre">passlib.hash.scram</span></code> - SCRAM Hash</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; <a href="../copyright.html">Copyright</a> 2008-2025, Assurance Technologies, LLC. Last Updated 2025-12-21.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

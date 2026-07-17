@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Test::StagedFileProducer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script type="text/javascript" src="<script type="text/javascript" src="../_podly.js"></script>
+"></script>
+</head>
+<body>
+
+
+<ul id="index">
+  <li><a href="#NAME">NAME</a></li>
+  <li><a href="#SYNOPSIS">SYNOPSIS</a></li>
+  <li><a href="#DESCRIPTION">DESCRIPTION</a></li>
+  <li><a href="#FUNCTIONS">FUNCTIONS</a></li>
+</ul>
+
+<h1 id="NAME">NAME</h1>
+
+<p>Test::StagedFileProducer -- mtime-based file production engine</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<pre><code>  use Test::StagedFileProducer;
+
+  my $wherever = &#39;/your/test/directory&#39;;
+
+  my $producer = Test::StagedFileProducer-&gt;new(path =&gt; $wherever);
+  $producer-&gt;exclude(&quot;$wherever/log&quot;, &quot;$wherever/build-stamp&quot;);
+
+  my $output = &quot;$wherever/file.out&quot;;
+  $producer-&gt;add_stage(
+        products =&gt; [$output],
+        build =&gt;sub {
+            print encode_utf8(&quot;Building $output.\n&quot;);
+        },
+        skip =&gt;sub {
+            print encode_utf8(&quot;Skipping $output.\n&quot;);
+        }
+  );
+
+  $producer-&gt;run(minimum_epoch =&gt; time, verbose =&gt; 1);</code></pre>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>Provides a way to define and stack file production stages that all depend on subsets of the same group of files.</p>
+
+<p>After the stages are defined, the processing engine takes an inventory of all files in a target directory. It excludes some files, like logs, that should not be considered.</p>
+
+<p>Each stage adds its own products to the list of files to be excluded before deciding whether to produce them. The decision is based on relative file modification times, in addition to a systemic rebuilding threshold. Before rebuilding, each stage asks a lower stage to make the same determination.</p>
+
+<p>The result is an engine with file production stages that depend on successively larger sets of files.</p>
+
+<h1 id="FUNCTIONS">FUNCTIONS</h1>
+
+<dl>
+
+<dt>new(path =&gt; PATH)</dt>
+<dd>
+
+<p>Create a new instance focused on files in directory PATH.</p>
+
+</dd>
+<dt>exclude(LIST)</dt>
+<dd>
+
+<p>Excludes all absolute paths in LIST from all mtime comparisons. This is especially useful for logs. Calls to Path::Tiny-&gt;realpath are made to ensure the elements are canonical and have a chance of matching something returned by File::Find::Rule.</p>
+
+</dd>
+<dt>add_stage(HASH)</dt>
+<dd>
+
+<p>Add a stage defined by HASH to the processing engine for processing after stages previously added. HASH can define the following keys:</p>
+
+<p>$HASH{products} =&gt; LIST; a list of full-path filenames to be produced.</p>
+
+<p>$HASH{minimum_epoch} =&gt; EPOCH; an integer threshold for maximum age</p>
+
+<p>$HASH{build} =&gt; SUB; a sub executed when production is required.</p>
+
+<p>$HASH{skip} =&gt; SUB; a sub executed when production is not required.</p>
+
+</dd>
+<dt>run(PARAMETERS)</dt>
+<dd>
+
+<p>Runs the defined engine using the given parameters, which are arranged in a matching list suitable for assignment to a hash. The following two parameters are currently available:</p>
+
+<p>minimum_epoch =&gt; EPOCH; a systemic threshold, in epochs, below which rebuilding is mandatory for any product.</p>
+
+<p>verbose =&gt; BOOLEAN; an option to enable more verbose reporting</p>
+
+</dd>
+<dt>_process_remaining_stages(LIST)</dt>
+<dd>
+
+<p>An internal subroutine that is used recursively to execute the stages. The list passed describes the list of files to be excluded from subsequent mtime calculations.</p>
+
+<p>Please note that the bulk of the execution takes place after calling the next lower stage. That is to ensure that any lower build targets (or products, in our parlance) are met before the present stage attempts to do its job.</p>
+
+</dd>
+</dl>
+
+<p class="backlinkbottom"><b><a name="___bottom" href="../index.html" title="All Documents">&lt;&lt;</a></b></p>
+
+

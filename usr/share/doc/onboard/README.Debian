@@ -1,0 +1,12 @@
+Some notes when you want to use onboard without GNOME
+
+run something like these:
+eval $(dbus-launch)
+onboard &
+
+you want to install these:
+onboard dbus-x11 gir1.2-atspi-2.0 gsettings-desktop-schemas
+at-spi2-core dconf-cli
+
+and play with these:
+gsettings list-recursively org.onboard
