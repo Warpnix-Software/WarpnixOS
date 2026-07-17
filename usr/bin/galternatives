@@ -1,0 +1,6 @@
+#! /usr/bin/python3
+
+import runpy
+
+
+runpy.run_module('galternatives', run_name='__main__')

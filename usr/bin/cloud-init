@@ -1,0 +1,9 @@
+#! /usr/bin/python3
+
+# Python wrapper for cloud-init CLI
+
+import sys
+
+from cloudinit.cmd import main
+
+sys.exit(main.main())

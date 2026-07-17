@@ -1,0 +1,698 @@
+#! /usr/bin/python3
+#
+# Copyright 2021 Johannes Schauer Marin Rodrigues <josch@debian.org>
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+
+# This tool is similar to debootstrap but is able to recreate a chroot tarball
+# containing precisely the given package and version selection. The package
+# list is expected on standard input and may be of the format produced by:
+#
+#     dpkg-query --showformat '${binary:Package}=${Version}\n' --show
+
+# The name was suggested by Adrian Bunk as a portmanteau of debootstrap and
+# snapshot.debian.org.
+
+# TODO: Address invalid names
+# pylint: disable=invalid-name
+
+import argparse
+import atexit
+import dataclasses
+import difflib
+import http.server
+import os
+import pathlib
+import re
+import shutil
+import subprocess
+import sys
+import tempfile
+import threading
+from collections import defaultdict
+from contextlib import contextmanager
+from functools import partial
+from operator import itemgetter
+
+import apt
+import requests
+from debian.deb822 import BuildInfo
+
+from devscripts.proxy import setupcache
+
+
+class MyHTTPException(Exception):
+    pass
+
+
+class MyHTTP404Exception(Exception):
+    pass
+
+
+class MyHTTPTimeoutException(Exception):
+    pass
+
+
+class RetryCountExceeded(Exception):
+    pass
+
+
+@dataclasses.dataclass
+class Source:
+    archive: str
+    timestamp: str
+    suite: str
+    components: list[str]
+
+    def deb_line(self) -> str:
+        if self.timestamp:
+            return (
+                "deb [check-valid-until=no]"
+                f" http://snapshot.debian.org/archive/{self.archive}/{self.timestamp}/"
+                f" {self.suite} {' '.join(self.components)}\n"
+            )
+
+        return (
+            "deb [signed-by=/usr/share/keyrings/debian-archive-keyring.gpg]"
+            f" http://deb.debian.org/{self.archive}"
+            f" {self.suite} {' '.join(self.components)}\n"
+        )
+
+
+def parse_buildinfo(val):
+    with open(val, encoding="utf8") as f:
+        buildinfo = BuildInfo(f)
+    pkgs = []
+    for dep in buildinfo.relations["installed-build-depends"]:
+        assert len(dep) == 1
+        dep = dep[0]
+        assert dep["arch"] is None
+        assert dep["restrictions"] is None
+        assert len(dep["version"]) == 2
+        rel, version = dep["version"]
+        assert rel == "="
+        pkgs.append((dep["name"], dep["archqual"], version))
+    return pkgs, buildinfo.get("Build-Architecture")
+
+
+def parse_pkgs(val):
+    if val == "-":
+        val = sys.stdin.read()
+    if val.startswith("./") or val.startswith("/"):
+        val = pathlib.Path(val)
+        if not val.exists():
+            print(f"{val} does not exist", file=sys.stderr)
+            sys.exit(1)
+        val = val.read_text(encoding="utf8")
+    pkgs = []
+    pattern = re.compile(
+        r"""
+            ^[^a-z0-9]*                    # garbage at the beginning
+            ([a-z0-9][a-z0-9+.-]+)         # package name
+            (?:[^a-z0-9+.-]+([a-z0-9-]+))? # optional version
+            [^A-Za-z0-9.+~:-]+             # optional garbage
+            ([A-Za-z0-9.+~:-]+)            # version
+            [^A-Za-z0-9.+~:-]*$            # garbage at the end
+            """,
+        re.VERBOSE,
+    )
+    for line in re.split(r"[,\r\n]+", val):
+        if not line:
+            continue
+        match = pattern.fullmatch(line)
+        if match is None:
+            print(f"cannot parse: {line}", file=sys.stderr)
+            sys.exit(1)
+        pkgs.append(match.groups())
+    return [pkgs]
+
+
+def get_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        description="""\
+
+Combines debootstrap and snapshot.debian.org to create a chroot tarball with
+exact package versions from the past either to reproduce bugs or to test source
+package reproducibility.
+
+To obtain a list of packages run the following command on one machine:
+
+    $ dpkg-query --showformat '${binary:Package}=${Version}\\n' --show
+
+And pass the output to debootsnap with the --packages argument. The result
+will be a chroot tarball with precisely the package versions as they were
+found on the system that ran dpkg-query.
+""",
+        epilog="""\
+
+*EXAMPLES*
+
+On one system run:
+
+    $ dpkg-query --showformat '${binary:Package}=${Version}\\n' --show > pkglist
+
+Then copy over "pkglist" and on another system run:
+
+    $ debootsnap --pkgs=./pkglist > ./chroot.tar
+
+Or use a buildinfo file as input:
+
+    $ debootsnap --buildinfo=./package.buildinfo > ./chroot.tar
+
+A tarball of a chroot with precisely the requested package versions then be
+found in the file `./chroot.tar`.
+
+""",
+    )
+    parser.add_argument(
+        "--architecture",
+        "--nativearch",
+        help="native architecture of the chroot. Ignored if --buildinfo is"
+        " used. Foreign architectures are inferred from the package list."
+        " Not required if packages are architecture qualified.",
+    )
+    parser.add_argument(
+        "--ignore-notfound",
+        action="store_true",
+        help="only warn about packages that cannot be found on "
+        "snapshot.debian.org instead of exiting",
+    )
+    parser.add_argument(
+        "--cache", help="cache directory -- by default $TMPDIR is used", type=str
+    )
+    parser.add_argument(
+        "--port",
+        help="manually choose port number for the apt cache instead of "
+        "automatically choosing a free port",
+        type=int,
+        default=0,
+    )
+    parser.add_argument("--nocache", help="disable cache", action="store_true")
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument(
+        "--buildinfo",
+        type=parse_buildinfo,
+        help="use packages from a buildinfo file. Read buildinfo file from "
+        'standard input if value is "-".',
+    )
+    group.add_argument(
+        "--packages",
+        "--pkgs",
+        action="extend",
+        type=parse_pkgs,
+        help="list of packages, optional architecture and version, separated "
+        "by comma or linebreak. Read list from standard input if value is "
+        '"-". Read list from a file if value starts with "./" or "/". The '
+        "option can be specified multiple times. Package name, "
+        "version and architecture are separated by one or more characters "
+        "that are not legal in the respective adjacent field. Leading and "
+        "trailing illegal characters are allowed. Example: "
+        "pkg1:arch=ver1,pkg2:arch=ver2",
+    )
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument(
+        "--sources-list-only",
+        action="store_true",
+        help="only query metasnap.debian.net and print the sources.list "
+        "needed to create chroot and exit",
+    )
+    group.add_argument(
+        "output",
+        nargs="?",
+        default="-",
+        help="path to output chroot tarball",
+    )
+    return parser
+
+
+def query_apt_repo(pkgs, nativearch, repo, sources: list[Source]):
+    missing = []
+    found_packages = False
+
+    with tempfile.TemporaryDirectory() as tmpdirname:
+        apt.apt_pkg.config.set("Apt::Architecture", nativearch)
+        cache = apt.Cache(rootdir=tmpdirname)
+        apt_sources = pathlib.Path(f"{tmpdirname}/etc/apt/sources.list")
+        apt_sources.write_text(repo.deb_line(), encoding="utf8")
+        cache.open()  # needed for new apt sources
+        cache.update()
+        cache.open()  # needed after apt update
+
+        for name, arch, version in pkgs:
+            qual_name = f"{name}:{arch}"
+            if qual_name in cache and version in cache[qual_name].versions:
+                found_packages = True
+            else:
+                missing.append((name, arch, version))
+
+    if found_packages:
+        sources.append(repo)
+
+    return missing
+
+
+# pylint: disable=too-many-locals
+def query_metasnap(pkgsleft, archive, nativearch, foreignarches):
+    handled_pkgs = set(pkgsleft)
+    r = requests.post(
+        "http://metasnap.debian.net/cgi-bin/api",
+        files={
+            "archive": archive,
+            "arch": nativearch,
+            "pkgs": ",".join([n + ":" + a + "=" + v for n, a, v in handled_pkgs]),
+        },
+        timeout=60,
+    )
+    if r.status_code == 404:
+        for line in r.text.splitlines():
+            n, a, v = line.split()
+            if a == "all" and (n, nativearch, v) in handled_pkgs:
+                handled_pkgs.remove((n, nativearch, v))
+            else:
+                handled_pkgs.remove((n, a, v))
+        r = requests.post(
+            "http://metasnap.debian.net/cgi-bin/api",
+            files={
+                "archive": archive,
+                "arch": nativearch,
+                "pkgs": ",".join([n + ":" + a + "=" + v for n, a, v in handled_pkgs]),
+            },
+            timeout=60,
+        )
+    assert r.status_code == 200, r.text
+
+    suite2pkgs = defaultdict(set)
+    pkg2range = {}
+    for line in r.text.splitlines():
+        n, a, v, s, c, b, e = line.split()
+        # in case the package was only part of arch:all and not added to the
+        # arch specific Packages file metasnap.d.n will return arch:all.
+        # Use that instead and make sure apt downloads the arch:all Packages
+        # file in addition.
+        if a == "all" and (n, nativearch, v) in handled_pkgs:
+            foreignarches.add("all")
+            handled_pkgs.remove((n, nativearch, v))
+            handled_pkgs.add((n, a, v))
+            pkgsleft.remove((n, nativearch, v))
+            pkgsleft.add((n, a, v))
+        assert (n, a, v) in handled_pkgs
+        suite2pkgs[s].add((n, a, v))
+        # this will only keep one range of packages with multiple
+        # ranges but we don't care because we only need one
+        pkg2range[((n, a, v), s)] = (c, b, e)
+
+    return handled_pkgs, suite2pkgs, pkg2range
+
+
+def comp_ts(ranges):
+    last = "19700101T000000Z"  # impossibly early date
+    res = []
+    for c, b, e in ranges:
+        if last >= b:
+            # add the component the current timestamp needs
+            res[-1][1].add(c)
+            continue
+        # add new timestamp with initial component
+        last = e
+        res.append((last, set([c])))
+    return res
+
+
+# pylint: disable=too-many-locals
+def compute_sources(
+    pkgs, nativearch, ignore_notfound, sources: list[Source], foreignarches
+):
+    pkgsleft = set(pkgs)
+    for archive in [
+        "debian",
+        "debian-debug",
+        "debian-security",
+        "debian-ports",
+        "debian-volatile",
+        "debian-backports",
+    ]:
+        if len(pkgsleft) == 0:
+            break
+
+        handled_pkgs, suite2pkgs, pkg2range = query_metasnap(
+            pkgsleft, archive, nativearch, foreignarches
+        )
+
+        # greedy algorithm:
+        # pick the suite covering most packages first
+        while len(handled_pkgs) > 0:
+            bestsuite = sorted(suite2pkgs.items(), key=lambda v: len(v[1]))[-1][0]
+            ranges = [pkg2range[nav, bestsuite] for nav in suite2pkgs[bestsuite]]
+            # sort by end-time
+            ranges.sort(key=itemgetter(2))
+
+            for ts, comps in comp_ts(ranges):
+                sources.append(Source(archive, ts, bestsuite, comps))
+
+            for nav in suite2pkgs[bestsuite]:
+                handled_pkgs.remove(nav)
+                pkgsleft.remove(nav)
+                for suite in suite2pkgs:
+                    if suite == bestsuite:
+                        continue
+                    if nav in suite2pkgs[suite]:
+                        suite2pkgs[suite].remove(nav)
+            del suite2pkgs[bestsuite]
+    if pkgsleft:
+        print("cannot find:", file=sys.stderr)
+        print(
+            "\n".join([f"{pkg[0]}:{pkg[1]}={pkg[2]}" for pkg in pkgsleft]),
+            file=sys.stderr,
+        )
+        if not ignore_notfound:
+            sys.exit(1)
+
+
+def create_install_hook(tmpdirname, deb_files):
+    # manually feed apt install the complete package list
+    # to be sure that the apt solver did not change it.
+    hook = pathlib.Path(tmpdirname) / "apt_install.sh"
+    hook.write_text(
+        "\n".join(
+            [
+                "#!/bin/sh",
+                "cat << END | APT_CONFIG=$MMDEBSTRAP_APT_CONFIG"
+                " xargs apt-get install --yes",
+                "\n".join(deb_files),
+                "END",
+            ]
+        )
+    )
+    hook.chmod(0o755)
+
+
+def create_repo(tmpdirname, pkgs):
+    with open(tmpdirname + "/control", "w", encoding="utf8") as f:
+
+        def pkg2name(n, a, v):
+            if a is None:
+                return f"{n} (= {v})"
+            return f"{n}:{a} (= {v})"
+
+        f.write("Package: debootsnap-dummy\n")
+        f.write(f"Depends: {', '.join([pkg2name(*pkg) for pkg in pkgs])}\n")
+    subprocess.check_call(
+        ["equivs-build", tmpdirname + "/control"],
+        cwd=tmpdirname + "/cache",
+        # equivs-build behaves differently depending on whether TMPDIR is set
+        # or not, so to force the same behaviour independent on whether the
+        # user has TMPDIR set, we set or override that variable with our own
+        # (which is a path below the user's $TMPDIR anyways, if it was set)
+        env={**os.environ, "TMPDIR": tmpdirname + "/cache"},
+    )
+
+    packages_content = subprocess.check_output(
+        ["apt-ftparchive", "packages", "."], cwd=tmpdirname + "/cache"
+    )
+    with open(tmpdirname + "/cache/Packages", "wb") as f:
+        f.write(packages_content)
+    release_content = subprocess.check_output(
+        [
+            "apt-ftparchive",
+            "release",
+            "-oAPT::FTPArchive::Release::Suite=dummysuite",
+            ".",
+        ],
+        cwd=tmpdirname + "/cache",
+    )
+    with open(tmpdirname + "/cache/Release", "wb") as f:
+        f.write(release_content)
+
+
+@contextmanager
+def serve_repo(tmpdirname):
+    httpd = http.server.HTTPServer(
+        ("localhost", 0),
+        partial(http.server.SimpleHTTPRequestHandler, directory=tmpdirname + "/cache"),
+    )
+    # run server in a new thread
+    server_thread = threading.Thread(target=httpd.serve_forever)
+    server_thread.daemon = True
+    # start thread
+    server_thread.start()
+    # retrieve port (in case it was generated automatically)
+    _, port = httpd.server_address
+    try:
+        yield port
+    finally:
+        httpd.shutdown()
+        httpd.server_close()
+        server_thread.join()
+
+
+def run_mmdebstrap(
+    tmpdirname, sources: list[Source], nativearch, foreignarches, output
+):
+    with open(tmpdirname + "/sources.list", "w", encoding="utf8") as f:
+        for source in sources:
+            f.write(source.deb_line())
+    # we serve the directory via http instead of using a copy:// mirror
+    # because the temporary directory is not accessible to the unshared
+    # user
+    with serve_repo(tmpdirname) as port:
+        cmd = [
+            "mmdebstrap",
+            f"--architectures={','.join([nativearch] + list(foreignarches))}",
+            "--variant=essential",
+            "--include=debootsnap-dummy",
+            "--format=tar",
+            "--skip=cleanup/reproducible",
+            '--aptopt=Apt::Key::gpgvcommand "/usr/libexec/mmdebstrap/gpgvnoexpkeysig"',
+            "--hook-dir=/usr/share/mmdebstrap/hooks/maybe-merged-usr",
+            f"--customize={tmpdirname}/apt_install.sh",
+            '--customize-hook=chroot "$1" dpkg -r debootsnap-dummy',
+            '--customize-hook=chroot "$1" dpkg-query --showformat '
+            "'${binary:Package}=${Version}\\n' --show > \"$1/pkglist\"",
+            "--customize-hook=download /pkglist ./pkglist",
+            '--customize-hook=rm "$1/pkglist"',
+            "--customize-hook=upload sources.list /etc/apt/sources.list",
+            "dummysuite",
+            output,
+            f"deb [trusted=yes] http://localhost:{port}/ ./",
+        ]
+        subprocess.check_call(cmd, cwd=tmpdirname)
+
+    newpkgs = set()
+    with open(tmpdirname + "/pkglist", encoding="utf8") as f:
+        for line in f:
+            line = line.rstrip()
+            n, v = line.split("=")
+            a = nativearch
+            if ":" in n:
+                n, a = n.split(":")
+            newpkgs.add((n, a, v))
+
+    return newpkgs
+
+
+# pylint: disable=too-many-locals
+def download_packages(
+    tmpdirname,
+    sources: list[Source],
+    pkgs,
+    nativearch,
+    foreignarches,
+    cache,
+    nocache,
+    port,
+):
+    for d in [
+        "/etc/apt/apt.conf.d",
+        "/etc/apt/sources.list.d",
+        "/etc/apt/preferences.d",
+        "/var/cache/apt",
+        "/var/lib/apt/lists/partial",
+        "/var/lib/dpkg",
+    ]:
+        os.makedirs(tmpdirname + "/" + d)
+    # apt-get update requires /var/lib/dpkg/status
+    with open(tmpdirname + "/var/lib/dpkg/status", "w", encoding="utf8") as f:
+        pass
+    with open(tmpdirname + "/apt.conf", "w", encoding="utf8") as f:
+        f.write(f'Apt::Architecture "{nativearch}";\n')
+        f.write("Apt::Architectures { " + f'"{nativearch}"; ')
+        for a in foreignarches:
+            f.write(f'"{a}"; ')
+        f.write("};\n")
+        f.write('Dir "' + tmpdirname + '";\n')
+        f.write('Dir::Etc::Trusted "/etc/apt/trusted.gpg";\n')
+        f.write('Dir::Etc::TrustedParts "/usr/share/keyrings/";\n')
+        f.write('Acquire::Languages "none";\n')
+        # f.write("Acquire::http::Dl-Limit \"1000\";\n")
+        # f.write("Acquire::https::Dl-Limit \"1000\";\n")
+        f.write('Acquire::Retries "5";\n')
+        # work around proxy.py only supports one connection at a time
+        f.write('Acquire::Queue-Mode "access";\n')
+        # ignore expired signatures
+        f.write('Apt::Key::gpgvcommand "/usr/libexec/mmdebstrap/gpgvnoexpkeysig";\n')
+
+    os.makedirs(tmpdirname + "/cache")
+
+    apt_env = {"APT_CONFIG": tmpdirname + "/apt.conf"}
+    if not nocache:
+        port, teardown = setupcache(cache, port)
+        apt_env["http_proxy"] = f"http://127.0.0.1:{port}"
+        atexit.register(teardown)
+
+    with open(tmpdirname + "/etc/apt/sources.list", "w", encoding="utf8") as f:
+        for source in sources:
+            f.write(source.deb_line())
+    subprocess.check_call(["apt-get", "update", "--error-on=any"], env=apt_env)
+
+    deb_files = []
+    cache = pathlib.Path(tmpdirname, "cache")
+    for i, (name, arch, version) in enumerate(pkgs):
+        pkg = f"{name}:{arch}={version}"
+        print(f"Downloading dependency {i + 1} of {len(pkgs)}: {pkg}")
+        with tempfile.TemporaryDirectory() as tmpdir2:
+            subprocess.check_call(
+                ["apt-get", "download", "--yes", pkg],
+                cwd=tmpdir2,
+                env=apt_env,
+            )
+            debs = os.listdir(tmpdir2)
+            assert len(debs) == 1
+            # Normalize the package name to how it appears in the archive.
+            # Mainly this removes the epoch from the filename, see
+            # https://bugs.debian.org/645895
+            # This avoids apt bugs connected with a percent sign in the
+            # filename as they occasionally appear, for example as
+            # introduced in apt 2.1.15 and later fixed by DonKult:
+            # https://salsa.debian.org/apt-team/apt/-/merge_requests/175
+            subprocess.check_call(["dpkg-name", tmpdir2 + "/" + debs[0]])
+            debs = os.listdir(tmpdir2)
+            assert len(debs) == 1
+            shutil.move(tmpdir2 + "/" + debs[0], cache)
+            deb_files.append((cache / debs[0]).as_posix())
+    return deb_files
+
+
+def handle_packages(architecture, packages):
+    pkgs = [v for sublist in packages for v in sublist]
+    if architecture is None:
+        arches = {a for _, a, _ in pkgs if a is not None}
+        if len(arches) == 0:
+            print("packages are not architecture qualified", file=sys.stderr)
+            print("use --architecture to set the native architecture", file=sys.stderr)
+            sys.exit(1)
+        elif len(arches) > 1:
+            print("more than one architecture in the package list", file=sys.stderr)
+            print("use --architecture to set the native architecture", file=sys.stderr)
+            sys.exit(1)
+        nativearch = arches.pop()
+        assert arches == set()
+    else:
+        nativearch = architecture
+    return pkgs, nativearch
+
+
+def main(arguments: list[str]) -> None:
+    parser = get_parser()
+    args = parser.parse_args(arguments)
+
+    if not args.sources_list_only and args.output == "-" and sys.stdout.isatty():
+        parser.print_usage()
+        print(
+            "E: Refusing to write tarball to interactive tty. "
+            "Redirect stdout to a file or pass the output tarball filename "
+            "as the positional argument [output]."
+        )
+        sys.exit(1)
+
+    if args.packages:
+        pkgs, nativearch = handle_packages(args.architecture, args.packages)
+    else:
+        pkgs, nativearch = args.buildinfo
+    # unknown architectures are the native architecture
+    pkgs = [(n, a if a is not None else nativearch, v) for n, a, v in pkgs]
+    # make package list unique
+    pkgs = list(set(pkgs))
+    # compute foreign architectures
+    foreignarches = set()
+    for _, a, _ in pkgs:
+        if a != nativearch:
+            foreignarches.add(a)
+
+    for tool in [
+        "equivs-build",
+        "apt-ftparchive",
+        "mmdebstrap",
+        "apt-get",
+        "dpkg-name",
+    ]:
+        if shutil.which(tool) is None:
+            print(f"{tool} is required but not installed", file=sys.stderr)
+            sys.exit(1)
+
+    sources = []
+    pkgs_notfound = pkgs
+
+    unstable = Source("debian", None, "unstable", ["main"])
+    pkgs_notfound = query_apt_repo(pkgs_notfound, nativearch, unstable, sources)
+
+    compute_sources(
+        pkgs_notfound, nativearch, args.ignore_notfound, sources, foreignarches
+    )
+
+    if args.sources_list_only:
+        for source in sources:
+            print(source.deb_line(), end="")
+        sys.exit(0)
+
+    with tempfile.TemporaryDirectory() as tmpdirname:
+        # chmod so mmdebstrap can run the generated install hook
+        os.chmod(tmpdirname, 0o711)
+
+        deb_files = download_packages(
+            tmpdirname,
+            sources,
+            pkgs,
+            nativearch,
+            foreignarches,
+            args.cache,
+            args.nocache,
+            args.port,
+        )
+
+        create_install_hook(tmpdirname, deb_files)
+
+        create_repo(tmpdirname, pkgs)
+
+        newpkgs = run_mmdebstrap(
+            tmpdirname, sources, nativearch, foreignarches, args.output
+        )
+
+    # make sure that the installed packages match the requested package
+    # list
+    if set(newpkgs) != set(pkgs):
+        diff = "\n".join(
+            difflib.unified_diff(
+                ["_".join(pkg) for pkg in sorted(pkgs)],
+                ["_".join(pkg) for pkg in sorted(newpkgs)],
+                fromfile="buildinfo",
+                tofile="bootstrapped",
+                lineterm="",
+            )
+        )
+        raise AssertionError(
+            "environment bootstrapped from buildinfo file does not match "
+            "environment in buildinfo file:\n\n" + diff
+        )
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])

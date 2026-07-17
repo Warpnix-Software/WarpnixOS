@@ -1,0 +1,5763 @@
+#!/usr/bin/perl
+
+# bts: This program provides a convenient interface to the Debian
+# Bug Tracking System.
+#
+# Written by Joey Hess <joeyh@debian.org>
+# Modifications by Julian Gilbey <jdg@debian.org>
+# Modifications by Josh Triplett <josh@freedesktop.org>
+# Copyright 2001-2003 Joey Hess <joeyh@debian.org>
+# Modifications Copyright 2001-2003 Julian Gilbey <jdg@debian.org>
+# Modifications Copyright 2007 Josh Triplett <josh@freedesktop.org>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+# Use our own subclass of Pod::Text to
+# a) Strip the POD markup before displaying it via "bts help"
+# b) Automatically display the text which is supposed to be replaced by the
+#    user between <>, as per convention.
+package Pod::BTS;
+use strict;
+
+use parent qw(Pod::Text);
+
+sub cmd_i { return '<' . $_[2] . '>' }
+
+package main;
+
+=head1 NAME
+
+bts - command-line interface for Debian's Bug Tracking System (BTS)
+
+=cut
+
+use 5.010;    # for defined-or
+use strict;
+use warnings;
+use File::Basename;
+use File::Copy;
+use File::HomeDir;
+use File::Path qw(make_path rmtree);
+use File::Spec;
+use File::Temp qw/tempfile/;
+use Net::SMTP;
+use Cwd;
+use IO::File;
+use IO::Handle;
+use Devscripts::DB_File_Lock;
+use Devscripts::Debbugs;
+use Dpkg::Path qw(find_command);
+use Fcntl      qw(O_RDWR O_RDONLY O_CREAT F_SETFD);
+use Getopt::Long;
+use Encode;
+# Need support for ; as query param separator
+use URI 1.37;
+use URI::QueryParam;
+
+use Scalar::Util qw(looks_like_number);
+use POSIX        qw(locale_h strftime isatty WNOHANG);
+
+setlocale(LC_TIME, "C");    # so that strftime is locale independent
+
+# Funny UTF-8 warning messages from HTML::Parse should be ignorable (#292671)
+$SIG{'__WARN__'} = sub {
+    warn $_[0]
+      unless $_[0]
+      =~ /^Parsing of undecoded UTF-8 will give garbage when decoding entities/;
+};
+
+my $it         = undef;
+my $last_user  = '';
+my $lwp_broken = undef;
+my $authen_sasl_broken;
+my $ua;
+
+sub have_lwp() {
+    return ($lwp_broken ? 0 : 1) if defined $lwp_broken;
+    eval {
+        require LWP;
+        require LWP::UserAgent;
+        require HTTP::Status;
+        require HTTP::Date;
+    };
+
+    if ($@) {
+        if ($@ =~ m%^Can\'t locate LWP%) {
+            $lwp_broken = "the libwww-perl package is not installed";
+        } else {
+            $lwp_broken = "couldn't load LWP::UserAgent: $@";
+        }
+    } else {
+        $lwp_broken = '';
+    }
+    return $lwp_broken ? 0 : 1;
+}
+
+sub have_authen_sasl() {
+    return ($authen_sasl_broken ? 0 : 1) if defined $authen_sasl_broken;
+    eval { require Authen::SASL; };
+
+    if ($@) {
+        if ($@ =~ m%^Can't locate Authen/SASL%) {
+            $authen_sasl_broken
+              = 'the libauthen-sasl-perl package is not installed';
+        } else {
+            $authen_sasl_broken = "couldn't load Authen::SASL: $@";
+        }
+    } else {
+        $authen_sasl_broken = '';
+    }
+    return $authen_sasl_broken ? 0 : 1;
+}
+
+# Constants
+sub MIRROR_ERROR      { 0; }
+sub MIRROR_DOWNLOADED { 1; }
+sub MIRROR_UP_TO_DATE { 2; }
+my $NONPRINT = "\\x00-\\x1F\\x7F-\\xFF";    # we need this later for MIME stuff
+
+our $onlinecheck_bypass_msg
+  = "\n  Use the --offline option to bypass this check at your own peril.";
+
+my $progname = basename($0);
+my $modified_conf_msg;
+my $debug = exists $ENV{'DEBUG'} && $ENV{'DEBUG'};
+
+# Program version handling
+# The BTS changed its format :/  Pages downloaded using old versions
+# of bts won't look very good, so we force updating if the last cached
+# version was downloaded by a devscripts version less than
+# $new_cache_format_version
+my $version = '2.26.7';
+$version = '2.9.6' if $version =~ /\#/;    # for testing unconfigured version
+my $new_cache_format_version = '2.9.6';
+
+# The official list is mirrored
+# bugs-mirror.debian.org:/srv/bugs.debian.org/etc/config
+# in the variable @gTags; we copy it verbatim here.
+#
+# Note that it is also in the POD documentation in the bts_tag
+# function below, look for "potato".
+our (@gTags, @valid_tags, %valid_tags);
+#<<< This variable definition should be kept verbatim from the BTS config
+@gTags = ( "patch", "wontfix", "moreinfo", "unreproducible",
+	   "help", "security", "upstream", "pending", "confirmed",
+	   "ipv6", "lfs", "d-i", "l10n", "newcomer", "a11y", "ftbfs",
+	   "fixed-upstream", "fixed", "fixed-in-experimental",
+	   "sid", "experimental",
+	   "potato", "woody",
+	   "sarge", "sarge-ignore", "etch", "etch-ignore",
+	   "lenny", "lenny-ignore", "squeeze", "squeeze-ignore",
+	   "wheezy", "wheezy-ignore", "jessie", "jessie-ignore",
+	   "stretch", "stretch-ignore", "buster", "buster-ignore",
+	   "bullseye", "bullseye-ignore","bookworm","bookworm-ignore",
+	   "trixie","trixie-ignore","forky","forky-ignore",
+         );
+#>>>
+
+*valid_tags = \@gTags;
+%valid_tags = map { $_ => 1 } @valid_tags;
+my @valid_severities = qw(wishlist minor normal important
+  serious grave critical);
+
+$ENV{HOME} = File::HomeDir->my_home;
+my $cachedir
+  = $ENV{XDG_CACHE_HOME} || File::Spec->catdir($ENV{HOME}, '.cache');
+$cachedir = File::Spec->catdir($cachedir, 'devscripts', 'bts');
+
+my $EMAIL = checkemail($ENV{'DEBEMAIL'})
+  || checkemail($ENV{'EMAIL'});
+
+my $timestampdb = File::Spec->catfile($cachedir, 'bts_timestamps.db');
+my $prunestamp  = File::Spec->catfile($cachedir, 'bts_prune.timestamp');
+
+my %timestamp;
+
+END {
+    # This works even if we haven't tied it
+    untie %timestamp;
+}
+
+my %clonedbugs   = ();
+my %donebugs     = ();
+my %fixedbugs    = ();
+my %ccpackages   = ();
+my %ccsubmitters = ();
+
+# Global for commands generating replies
+my %reply = (to => {}, cc => {});
+
+# Global for commands that want to submit@ new bugs.
+my %submit;
+
+# Globals for btsmail() # TODO: rename btsmail -> ctlmail.
+my @ctlcmds;
+my $ctlsubject = '';
+
+# Global for 'subscribe' and 'unsubscribe' commands
+my %scription;
+
+=head1 SYNOPSIS
+
+=head2 Send Bug Change Request
+
+B<bts> [I<options>] I<command> [B<#>I<comment>] [B<,> I<command> [B<#>I<comment>]] ...
+
+=over 2
+
+=item * Bug State I<command>s:
+  B<done>|B<close>, B<reopen>, B<archive>, B<unarchive>.
+
+=item * Bug Organisation I<command>s:
+  B<reassign>, B<clone>, B<merge>, B<forcemerge>, B<unmerge>.
+
+=item * Metadata I<command>s:
+  B<retitle>, B<summary>, B<severity>,
+  B<forwarded>, B<notforwarded>,
+  B<blocked>, B<unblock>,
+  B<submitter>.
+
+=item * Bug Linking I<command>s:
+ B<affects>.
+
+=item * Version Tracking I<command>s:
+  B<found>, B<notfound>, B<fixed>, B<notfixed>.
+
+=item * Tagging I<command>s:
+  B<tags>, B<user>, B<usertags>.
+
+=item * Coordination I<command>s:
+  B<owner>, B<noowner>|B<disown>, B<claim>, B<unclaim>.
+
+=item * Blast radius control I<command>s:
+  B<package>, B<limit>.
+
+=back
+
+
+=head2 Compose Quoted Reply With In-Line Bug Changes
+
+B<bts reply> I<bug-no>[B<#>I<msg-no>] , I<command> [B<#>I<comment>] [I<command> [B<#>I<comment>]]...
+
+=head2 Set Implicit Bug from MUA Message Context
+
+B<bts context>  < bug-message.eml
+
+=head2 Read Bugs (Web or E-Mail)
+
+B<bts show>|B<bugs> I<bug-selection>...
+
+
+=head2 Prepare to Work Offline
+
+B<bts cache>|B<cleancache> I<bug-selection>...
+
+
+=head2 Manage $EMAIL Subscription
+
+B<bts subscribe>|B<unsubscribe> I<bug-number>
+
+
+=head2 Contribute to Spam Fighting
+
+B<bts reportspam>|B<spamreport> I<bug-number>...
+
+=head2 Scripting
+
+=over 2
+
+=item * List matching bug numbers:
+  B<bts select> I<bug-selection>...
+
+=item * Fetch Live Bug Status:
+  B<bts status> I<bug-number>
+
+=item * List bugs in local cache (for shell completion):
+  B<bts listcachedbugs>
+
+=back
+
+
+=head2 About bts(1)
+
+B<bts> B<version>|B<help>
+
+
+
+=head1 EXAMPLE
+
+=head2 Change bugs
+
+ $ bts severity 69042 normal
+ $ bts merge 69042 43233
+ $ bts retitle 69042 This is a better bug description
+
+
+=head2 Many changes at once (new implicit bug syntax)
+
+ $ bts severity 69042 normal , merge with 43233 , retitle Another title
+
+
+=head2 Many changes at once (classic syntax)
+
+ $ bts severity 69042 normal , merge it 43233 , retitle it Another title
+ $ bts severity 69042 normal , merge -1 43233 , retitle -1 Another title
+
+
+=head2 Read complete bug report discussion
+
+ $ bts show 69042         # in a browser
+ $ bts show --mbox 69042  # in a mailreader - all messages
+
+
+=head2 List bugs
+
+ $ bts show wget          # all bugs in a package
+ $ bts show from:$EMAIL   # reported by you
+
+
+=head2 Read all mails for several bugs
+
+ $ bts show --mbox             # in packages maintained by you
+ $ bts show --mbox deb@e.mail  # .. or someone else's
+
+ $ bts show --mbox src:wget    # in a source package
+
+
+=head2 Reply to bug
+
+ $ bts reply 43233            # reply to bug no. 43233
+ $ bts reply 43233 , done     # .. and add pseudoheader to close
+ $ bts done 43233 , reply     # .. other way around also works
+
+ # Quote a message
+ $ bts reply 43233#15         # reply to bug no. 43233 quoting message 15
+ $ bts reply 43233#15 , done  # .. and add Control: pseudoheader to close
+
+
+=head2 Reply to bug on stdin, i.e. from command-line mailreader (MUA)
+
+ $ bts reply -                  # reply and quote piped bug message
+ $ bts reply - , close          #.. and close bug
+ $ bts severity normal , close  #.. 'reply -' is implied inside supported MUA
+
+Hint: Run from (neo)mutt <B<pipe-entry>> command ("B<|>" key).
+
+
+=head2 Change bug from command-line mailreader
+
+ $ bts context , retitle 'flub: Does not nub!' , reassign flub
+
+
+=head2 Subscribe $EMAIL to a bug:
+
+ $ bts subscribe 69042
+
+
+=head2 List selected bugs - for scripting:
+
+ $ bugs=$(bts select src:libc6)
+ $ for bug in $bugs; do echo $bug needs fixing; done
+
+
+
+
+=head1 DESCRIPTION
+
+B<bts> is the command-line interface for Debian's Bug Tracking System
+(BTS). It is intended for use by Debian contributors and if you're reading
+this that means I<*you*>.
+
+B<bts> helps make the many common tasks involving bugs in Debian more
+convenien and enhances your workflow with offline capabilities through
+local caching.
+
+
+=head2 Contributing to Bugs
+
+Debian invites I<everyone> to contribute by reporting, analyzing, replying
+to and triaging bugs -- without the need for permission or so much as an
+account.
+
+A standard e-mail address (see I<$EMAIL>) and a willingness to learn and
+collaborate is all that's needed to participate.
+
+That being said we ask you to use B<bts> and the BTS in general
+responsibly. Start by subscribing to packages (pts-subscribe(1)) or
+particular bugs of interest to you ("bts subscribe 69042"). Try to observe
+other Debian contributors' working conventions. The Debian Mentors
+community <https://wiki.debian.org/DebianMentors> is happy to help if you
+have questions.
+
+You can find more on how we work at <https://wiki.debian.org/BugTriage> and
+<https://wiki.debian.org/BugReport/WorkingOn>.
+
+Mistakes happen, but consider that other busy volunteers may have to use
+time they could otherwise spend fixing bugs to help you clean them up.
+
+To learn from other people in an in-person setting you may find a Bug
+Squashing Party or more general Debian Event to attend near you:
+<https://wiki.debian.org/BSP>,
+<https://wiki.debian.org/DebianEvents>.
+
+
+=head2 Workflows
+
+B<bts> supports reading bugs in a web- or e-mail-based worflow, but to make
+changes B<bts> will always send e-mail to a BTS I<service> e-mail address
+(I<service>B<@bugs.debian.org>).
+
+The web-based workflow supports both graphical and command-line
+browsers. While graphical browsers such as firefox or chromium may be
+familiar, you should consider traditional command-line browsers such as
+w3m(1) or lynx(1) for allowing a more focused workflow without context
+switches out of your terminal.
+
+The software running the Debian BTS, "Debbugs", has first-class support for
+these browsers being from the same era of computing.
+
+To make reading and changing bugs enjoyable a highly configurable
+command-line e-mail client (MUA) such as mutt(1), neomutt(1) or aerc(1) is
+recommended. By using B<bts reply> and B<bts context> together with your
+MUA's pipe command you can make full use of B<bts> without so much as
+leaving your MUA. WARNING: Terminal mailing can be *highly* addictive.
+
+
+=head2 E-Mail Processing
+
+Being E-Mail BTS change requests are asynchrounous and may take
+considerable time to get through anti-spam measures. You should expect up
+to half an hour of delay when making your first change.
+
+You will receive an acknowledgment mail from the BTS when the changes are
+accepted. You can file ACK messages into a folder for mail delivery
+troubleshooting purposes (check the B<X-Debian-PR-Message:> header for
+automated filtering) or suppress them using B<--no-ack> or
+B<BTS_SUPPRESS_ACKS>=yes.
+
+=head2 Sending E-Mail
+
+To get started with B<bts> right now use B<--smtp-reportbug> to send emails
+exclusively to BTS addresses without having to worry about configuration
+until you need more.
+
+Once you want to send mail directly to wider internet destinations outside
+BTS mail addresses (for CC'ing people) B<bts> supports the following:
+
+=over 2
+
+=item * interactive command-line E-Mail clients (MUAs): B<mutt>, B<neomutt> and B<aerc> using B<--mutt>,
+
+=item * connecting directly to an SMTP server using B<--smtp-host>,
+
+=item * system mailer (B<sendmail> compatible) (see B<--sendmail>)
+
+=for comment TIL history: mail is oldest, then came sendmail, then mailx.
+See https://heirloom.sourceforge.net/mailx_history.html
+
+=back
+
+=head2 Control Commands
+
+The commands used by B<bts> mirror Debbugs control commands but with
+support for abbreviations, more relaxed syntax and helpful local validation
+and cross-checking of the current bug state on the BTS server.
+
+Debbugs control reference: <https://www.debian.org/Bugs/server-control>
+
+B<bts> is also less strict about what constitutes a valid bug number. For
+example the following are understood:
+
+ $ bts severity Bug#85942 normal
+ $ bts severity \#85942 normal
+
+In the latter command a POSIX shell will interpret the hash ("#") as
+starting a a comment since it's not in the middle of a shellword, so you
+need to quote or escape it it as we've done here.
+
+B<bts> allows you to abbreviate commands to the shortest unique
+substring. It understands "bts cl 85942" as an alias for the "close"
+command.
+
+
+=head2 Control Command Comments
+
+It is possible to add comments to BTS control commands to explain why the
+changes were made:
+
+ $ bts severity 30321 normal \#Not as severe as claimed
+
+Note that POSIX shells will remove these comments unless the hash "#"
+comment character is escaped with a backslash as we've done above or quoted
+with single '' or double quotes "" as below.
+
+ $ bts severity 30321 normal '# Still not all that severe'
+
+Generally speaking it's preferred to use the B<reply> command to include
+C<Control> pseudoheaders in your response to the bug report
+instead. However including comments can still be useful in that context to
+document what you want to achieve to other contributors in complex cases.
+
+
+=head2 Multiple Commands
+
+You can send multiple commands in a single e-mail by separating them with a
+period or comma, like so:
+
+ $ bts severity 95672 normal , done 96642 0.38-7 \#Fixed by fix-it.patch
+
+It is important the commas are surrounded by whitespace so your shell
+passes them to B<bts> as distinct arguments.
+
+ $ bts severity 95672 normal , merge 95672 95673 \#they are the same!
+
+
+=head2 Consistency Checks
+
+Many commands support internal and online consistency checks. For example:
+
+=over 2
+
+=item * B<fixed>, B<found>: complain when the record that's being made
+already exists in the BTS,
+
+=item * B<notfixed>, B<notfound>: complain when the record being removed doesn't exist,
+
+=item * B<done>: checks whether the bug is alread marked 'done',
+
+=item * B<archive>, B<unarchive>: check whether the bug is already/not yet archived.
+
+=back
+
+When multiple commands all checks must succeed before any email is sent so
+you may fearlessly iterate on B<bts> commands.
+
+Many of the checks involve fetching online information from the BTS. Use
+B<--offline> to disable these. Purely B<bts> internal consistency checks
+such as marking the same bug as B<done> twice cannot be bypassed this way.
+
+
+=head2 The Implicit Bug
+
+To refer to the last mentioned bug number minus one "-1" may be used. The
+deprecated alias "it" is also allowed. For example you could write:
+
+ $ bts severity 95672 wishlist , retitle -1 bts: please add a foo option
+
+Alternatively you can also omit the bug number entirely as long as the
+resulting usage is unambigous, i.e. the argument(s) don't look like
+bug-numbers.
+
+ $ bts done 95672 , fixed 0.1-3
+
+Every command allows at least one keyword of
+B<to>/B<by>/B<from>/B<with>/B<since>/B<email>/B<+>/B<->/B<=> (see B<COMMANDS>) to
+disambiguate the meaning.
+
+Commands that take multiple bug numbers (B<assign>/B<merge>/B<blocked>)
+require the use of a keyword to omit the implicit bug argument, but it is
+optional for other commands.
+
+ $ bts reopen 95672 , merge with 123456   # is equivalent to:
+ $ bts reopen 95672 , merge -1 123456
+
+ $ bts reopen 95672 , blocked by 123456   # is equivalent to:
+ $ bts reopen 95672 , blocked -1 123456
+
+When the B<clone> command is involved the meaning of -1 can become
+confusing. Below we allocate -1 as a "new ID" instead of using it to refer
+to the previously mentioned bug number 95672. Consequently:
+
+ $ bts done 95672 , clone to -1 -2        # is equivalent to:
+ $ bts done 95672 , clone 95672 to -1 -2
+
+and similarly
+
+ $ bts done 95672 , clone -1 -1 -2        # expands to:
+ $ bts done 95672 , clone 95672 -1 -2
+
+Further, after the B<clone -1> command 'B<-1>' no longer refers to the
+implicit bug number, but rather the number newly allocated by the BTS
+server. You can use 'B<it>' or the keyword syntax to disambiguate.
+
+ $ bts clone 95672 to -1 -2 , done        # expands to:
+ $ bts clone 95672 to -1 -2 , done 95672
+
+whereas
+
+ $ bts clone 95672 to -1 -2 , done -1     # is already fully expanded.
+
+
+=head1 OPTIONS
+
+B<bts> examines the B<devscripts> configuration files as described below.
+Command-line options override the configuration file settings as you'd
+expect.
+
+=over 4
+
+=item Workflow Mode Options
+
+See also "Workflows" in B<DESCRIPTION>.
+
+=over 2
+
+=item B<-o>, B<--offline>
+
+Make B<bts> use cached bugs for the B<show> and B<bugs> commands, if a cache
+is available for the requested data. See the B<cache> command, below for
+information on setting up a cache.
+
+=item B<--online>, B<--no-offline>
+
+Opposite of B<--offline>; overrides any configuration file directive to work
+offline.
+
+=item B<-m>|B<--mail>|B<--mbox>
+
+Use command-line e-mail workflow for reading bugs and sending change
+request emails. When asked to display bugs invoke a mail reader
+(B<--mailreader>, B<BTS_MAIL_READER>). When sending emails default to
+composing in a command-line email client (B<--mutt>, B<BTS_MUTT_COMMAND>).
+
+=item B<-w>|B<--web>
+
+Use web workflow for reading bugs. Opposite of B<--mail>. When asked to
+display bugs use a web-browser (I<$BROWSER> or sensible-browser(1)).
+
+=back
+
+=item B<-n>, B<--no-action>
+
+Do not send emails but print them to standard output.
+
+=item B<--cache>, B<--no-cache>
+
+Should we attempt to cache new versions of BTS pages when
+performing B<show>/B<bugs> commands?  Default is to cache.
+
+=item B<--cache-mode=>{B<min>|B<mbox>|B<full>}
+
+When running a B<bts cache> command, should we only mirror the basic
+bug (B<min>), or should we also mirror the mbox version (B<mbox>), or should
+we mirror the whole thing, including the mbox and the boring
+attachments to the BTS bug pages and the acknowledgement emails (B<full>)?
+Default is B<min>.
+
+=item B<--cache-delay=>I<seconds>
+
+Time in seconds to delay between each download, to avoid hammering the BTS
+web server. Default is 0 seconds.
+
+=item B<--mailreader=>I<COMMAND>
+
+A (shell) command invoked to read a bug mailbox.
+
+The I<COMMAND> must contain the replacement marker "B<%s>" which is
+expanded to path to an mbox file.
+
+Default depends on mailreaders available on the system. See
+B<BTS_MAIL_READER> config option.
+
+=item B<--cc-addr=>I<CC_EMAIL_ADDRESS>
+
+Send carbon copies to a list of users. I<CC_EMAIL_ADDRESS> should be a
+comma-separated list of email addresses. Multiple options add more CCs.
+
+=item B<--use-default-cc>
+
+Add the addresses specified in the configuration file option
+B<BTS_DEFAULT_CC> to the list specified using B<--cc-addr>.  This is the
+default.
+
+=item B<--no-use-default-cc>
+
+Do not add addresses specified in B<BTS_DEFAULT_CC> to the carbon copy
+list.
+
+=item B<--sendmail=>I<SENDMAILCMD>
+
+Specify the system mailer (B<sendmail> compatible) command to use for
+sending email.
+
+The command will be split on white space and will not be passed to a shell.
+Default is F</usr/sbin/sendmail>.  The B<-t> option will be automatically
+added if the command is F</usr/sbin/sendmail> or F</usr/sbin/exim*>.  For
+other mailers, if they require a B<-t> option, this must be included in the
+I<SENDMAILCMD>, for example: B<--sendmail="/usr/sbin/mymailer -t">.
+
+Conflicts with explicit B<--mutt>, B<--smtp-hots> and
+B<--smtp-reportbug>. Overrides implicit B<--mutt> and B<BTS_SMTP_HOST>.
+
+=item B<--mutt>
+
+Use interactive command line mail client (B<BTS_MUTT_COMMAND>) for sending
+of mails instead of SMTP (B<--smtp-host>) or system mailer (B<--sendmail>).
+
+Note that one of B<$DEBEMAIL> or B<$EMAIL> must be set in the environment
+in order to use B<mutt> to send emails.
+
+If B<--mutt> is given B<--interactive> and B<--force-interactive> are
+ineffective.
+
+B<--mutt> is implied when B<bts> is invoked from inside a command-line mail
+client as determined by $_ (see B<BTS_MUTT_COMMAND> for detailed logic) and
+e-mail workflow is active (B<--mail>, B<BTS_WORKFLOW=mail>).
+
+=item B<--no-mutt>
+
+Cancel implicit or explicit B<--mutt> reverting to sending with SMTP or
+system mailer instead.
+
+=item B<--soap-timeout=>I<SECONDS>
+
+Timeout when fetching bug status information from the BTS in B<--online>
+mode.
+
+Defaults to 5 seconds when B<--interactive> or B<--mutt> are active; 30
+seconds otherwise (B<--no-interactive>).
+
+=item B<--smtp-host=>I<SMTPHOST>
+
+Specify an SMTP host.  If given, B<bts> will send mail by talking directly to
+this SMTP host rather than by invoking a B<sendmail> command.
+
+The host name may be followed by a colon (":") and a port number in
+order to use a port other than the default.  It may also begin with
+"ssmtp://" or "smtps://" to indicate that SMTPS should be used.
+
+If SMTPS not specified, B<bts> will still try to use STARTTLS if it's advertised
+by the SMTP host.
+
+Note that one of B<$DEBEMAIL> or B<$EMAIL> must be set in the environment
+in order to use direct SMTP connections to send emails.
+
+Conflicts with B<--mutt> and B<--sendmail>. Overridden by B<--smtp-reportbug>.
+
+=item B<--smtp-reportbug>
+
+Use the the reportbug.debian.org SMTP server to send bug reports and change
+requests (no account registration or authentication needed).
+
+Equivalent to B<--smtp-host=reportbug.debian.org:587 --interactive>.
+
+Note that reportbug.debian.org is rate limited to a small number of mails
+per hour and only email destined for bugs.debian.org is
+accepted. Consequently using B<--cc-addr>, B<BTS_DEFAULT_CC>, B<reply> or
+B<reassign> commands will likeley cause mails to be rejected while
+sending.
+
+=item B<--smtp-username=>I<USERNAME>, B<--smtp-password=>I<PASSWORD>
+
+Specify the credentials to use when connecting to the SMTP server specified
+by B<--smtp-host>.  If the server does not require authentication then
+these options should not be used.
+
+If a username is specified but not a password, B<bts> will prompt for
+the password before sending the mail.
+
+=item B<--smtp-helo=>I<HELO>
+
+Specify the name to use in the I<HELO> command when connecting to the SMTP
+server; defaults to the contents of the file F</etc/mailname>, if it
+exists.
+
+Note that some SMTP servers may reject the use of a I<HELO> which either
+does not resolve or does not appear to belong to the host using it.
+
+=item B<--bts-server>
+
+Use a debbugs server other than the default https://bugs.debian.org.
+
+=item B<-f>, B<--force-refresh>
+
+Download a bug report again, even if it does not appear to have
+changed since the last B<cache> command.  Useful if a B<--cache-mode=full> is
+requested for the first time (otherwise unchanged bug reports will not
+be downloaded again, even if the boring bits have not been
+downloaded).
+
+=item B<--no-force-refresh>
+
+Suppress any configuration file B<--force-refresh> option.
+
+=item B<--only-new>
+
+Download only new bugs when caching. Do not check for updates in
+bugs we already have.
+
+=item B<--include-resolved>
+
+When caching bug reports, include those that are marked as resolved.  This
+is the default behaviour.
+
+=item B<--no-include-resolved>
+
+Reverse the behaviour of the previous option.  That is, do not cache bugs
+that are marked as resolved.
+
+=item B<--no-ack>
+
+Suppress acknowledgment mails from the BTS.  Note that this will only
+affect the copies of messages CCed to bugs, not those sent to the
+control bot.
+
+=item B<--ack>
+
+Do not suppress acknowledgement mails.  This is the default behaviour.
+
+=item B<-i>, B<--interactive>
+
+Before sending an e-mail, display the content and allow it to be edited, or
+the sending cancelled.
+
+=item B<--force-interactive>
+
+Force interactive editing immediately. Similar to B<--interactive>, except
+editor is spawned before the send/cancel/edit prompt.
+
+=item B<--no-interactive>
+
+Immediately send bug change request e-mails without confirmation.
+
+This is the default behaviour except if B<--mutt> is implicitly active and
+for some commands which require composing a written reply (B<done>, B<reply>).
+
+=item B<-q>, B<--quiet>
+
+When running B<bts cache>, only display information about newly cached
+pages, not messages saying already cached.  If this option is
+specified twice, only output error messages (to stderr).
+
+=item B<--no-conf>, B<--noconf>
+
+Do not read any configuration files.  This can only be used as the
+first option given on the command-line.
+
+=back
+
+=cut
+
+# Start by setting default values
+
+my $offlinemode  = 0;
+my $caching      = 1;
+my $cachemode    = 'min';
+my $cachemode_re = '^(full|mbox|min)$';
+my $refreshmode  = 0;
+my $updatemode   = 0;
+my $mboxmode     = 0;
+my $mailreader   = '';
+my $muttcmd      = '';
+my $sendmailcmd  = '/usr/sbin/sendmail';
+my $smtphost     = '';
+my $smtpuser     = '';
+my $smtppass     = '';
+my $smtphelo     = '';
+my $expertmode   = 0;
+my $noaction     = 0;
+
+# regexp for mailers which require a -t option
+my $sendmail_t      = '^/usr/sbin/sendmail$|^/usr/sbin/exim';
+my $includeresolved = 1;
+my $requestack      = 1;
+my $interactive_re  = '^(force|no|yes)$';
+my $interactive     = 'no';
+my @ccemails        = ();
+my @bccemails       = ();
+my $toolname        = "";
+my $btsserver       = 'https://bugs.debian.org';
+my $btssmtp         = 'reportbug.debian.org:587';
+my $use_mutt        = 0;
+
+# Next, read read configuration files and then command line
+# The next stuff is boilerplate
+
+if (@ARGV and $ARGV[0] =~ /^--no-?conf$/) {
+    $modified_conf_msg = "  (no configuration files read)";
+    shift;
+} else {
+    my @config_files = ('/etc/devscripts.conf', '~/.devscripts');
+    my %config_vars  = (
+        'BTS_OFFLINE'            => 'no',
+        'BTS_CACHE'              => 'yes',
+        'BTS_CACHE_MODE'         => 'min',
+        'BTS_FORCE_REFRESH'      => 'no',
+        'BTS_ONLY_NEW'           => 'no',
+        'BTS_WORKFLOW'           => 'web',
+        'BTS_MAIL_READER'        => 'mutt -f %s',
+        'BTS_MUTT_COMMAND'       => 'mutt -H %s',
+        'BTS_SENDMAIL_COMMAND'   => '/usr/sbin/sendmail',
+        'BTS_INCLUDE_RESOLVED'   => 'yes',
+        'BTS_SMTP_REPORTBUG'     => 'no',
+        'BTS_SMTP_HOST'          => '',
+        'BTS_SMTP_AUTH_USERNAME' => '',
+        'BTS_SMTP_AUTH_PASSWORD' => '',
+        'BTS_SMTP_HELO'          => '',
+        'BTS_SUPPRESS_ACKS'      => 'no',
+        'BTS_INTERACTIVE'        => 'no',
+        'BTS_DEFAULT_CC'         => '',
+        'BTS_NONMUA_BCC'         => '',
+        'BTS_SERVER'             => $btsserver,
+        'BTS_EXPERT'             => 'no',
+    );
+    my %config_default = %config_vars;
+
+    my $shell_cmd;
+    # Set defaults
+    foreach my $var (keys %config_vars) {
+        $shell_cmd .= qq[$var="$config_vars{$var}";\n];
+    }
+    $shell_cmd .= 'for file in ' . join(" ", @config_files) . "; do\n";
+    $shell_cmd .= '[ -f $file ] && . $file; done;' . "\n";
+    # Read back values
+    foreach my $var (keys %config_vars) { $shell_cmd .= "echo \$$var;\n" }
+    my $shell_out = `/bin/bash -c '$shell_cmd'`;
+    @config_vars{ keys %config_vars } = split /\n/, $shell_out, -1;
+
+    # Check validity # TODO: Migrate rest of vars to die instead of default.
+    $config_vars{'BTS_OFFLINE'} =~ /^(yes|no)$/
+      or $config_vars{'BTS_OFFLINE'} = 'no';
+    $config_vars{'BTS_CACHE'} =~ /^(yes|no)$/
+      or $config_vars{'BTS_CACHE'} = 'yes';
+    $config_vars{'BTS_CACHE_MODE'} =~ $cachemode_re
+      or $config_vars{'BTS_CACHE_MODE'} = 'min';
+    $config_vars{'BTS_FORCE_REFRESH'} =~ /^(yes|no)$/
+      or $config_vars{'BTS_FORCE_REFRESH'} = 'no';
+    $config_vars{'BTS_ONLY_NEW'} =~ /^(yes|no)$/
+      or $config_vars{'BTS_ONLY_NEW'} = 'no';
+    $config_vars{'BTS_WORKFLOW'} =~ /^(web|mail)$/
+      or die "$progname: BTS_WORKFLOW must be 'web' or 'mail'\n";
+    $config_vars{'BTS_MAIL_READER'} =~ /\%s/
+      or die "$progname: BTS_MAIL_READER must contain '%s'.\n";
+    $config_vars{'BTS_MUTT_COMMAND'} =~ /\%s/
+      or die "$progname: BTS_MUTT_COMMAND must contain '%s'.\n";
+    $config_vars{'BTS_SENDMAIL_COMMAND'} =~ /./
+      or $config_vars{'BTS_SENDMAIL_COMMAND'} = '/usr/sbin/sendmail';
+    $config_vars{'BTS_INCLUDE_RESOLVED'} =~ /^(yes|no)$/
+      or $config_vars{'BTS_INCLUDE_RESOLVED'} = 'yes';
+    $config_vars{'BTS_SUPPRESS_ACKS'} =~ /^(yes|no)$/
+      or $config_vars{'BTS_SUPPRESS_ACKS'} = 'no';
+    $config_vars{'BTS_INTERACTIVE'} =~ $interactive_re
+      or die "$progname: BTS_INTERACTIVE must be 'force', 'yes' or 'no'.\n";
+    $config_vars{'BTS_EXPERT'} =~ /^(yes|no)$/
+      or die "$progname: BTS_EXPERT must be 'yes' or 'no'\n";
+    $config_vars{'BTS_SMTP_REPORTBUG'} =~ /^(yes|no)$/
+      or die "$progname: BTS_SMTP_REPORTBUG=$1 must be 'yes' or 'no'!\n";
+
+    if (!length $config_vars{'BTS_SMTP_HOST'}
+        and $config_vars{'BTS_SENDMAIL_COMMAND'} ne '/usr/sbin/sendmail') {
+        my $cmd = (split ' ', $config_vars{'BTS_SENDMAIL_COMMAND'})[0];
+        unless ($cmd =~ /^~?[A-Za-z0-9_\-\+\.\/]*$/) {
+            die
+"BTS_SENDMAIL_COMMAND contained funny characters: $cmd\nPlease fix the configuration file.\n";
+        } elsif (!find_command($cmd)) {
+            die
+"BTS_SENDMAIL_COMMAND $cmd could not be executed.\nPlease fix the configuration file.\n";
+        }
+    }
+
+    foreach my $var (sort keys %config_vars) {
+        if ($config_vars{$var} ne $config_default{$var}) {
+            $modified_conf_msg .= "  $var=$config_vars{$var}\n";
+        }
+    }
+    $modified_conf_msg ||= "  (none)\n";
+    chomp $modified_conf_msg;
+
+    $offlinemode     = $config_vars{'BTS_OFFLINE'} eq 'yes' ? 1 : 0;
+    $caching         = $config_vars{'BTS_CACHE'} eq 'no'    ? 0 : 1;
+    $cachemode       = $config_vars{'BTS_CACHE_MODE'};
+    $refreshmode     = $config_vars{'BTS_FORCE_REFRESH'} eq 'yes' ? 1 : 0;
+    $updatemode      = $config_vars{'BTS_ONLY_NEW'} eq 'yes'      ? 1 : 0;
+    $mboxmode        = $config_vars{'BTS_WORKFLOW'} eq 'mail'     ? 1 : 0;
+    $mailreader      = $config_vars{'BTS_MAIL_READER'};
+    $muttcmd         = $config_vars{'BTS_MUTT_COMMAND'};
+    $sendmailcmd     = $config_vars{'BTS_SENDMAIL_COMMAND'};
+    $smtphost        = $config_vars{'BTS_SMTP_HOST'};
+    $smtphost        = $btssmtp if $config_vars{'BTS_SMTP_REPORTBUG'} eq 'yes';
+    $smtpuser        = $config_vars{'BTS_SMTP_AUTH_USERNAME'};
+    $smtppass        = $config_vars{'BTS_SMTP_AUTH_PASSWORD'};
+    $smtphelo        = $config_vars{'BTS_SMTP_HELO'};
+    $includeresolved = $config_vars{'BTS_INCLUDE_RESOLVED'} eq 'yes' ? 1 : 0;
+    $requestack      = $config_vars{'BTS_SUPPRESS_ACKS'} eq 'no'     ? 1 : 0;
+    $interactive     = $config_vars{'BTS_INTERACTIVE'};
+    $btsserver       = $config_vars{'BTS_SERVER'};
+    $expertmode      = $config_vars{'BTS_EXPERT'} eq 'yes' ? 1 : 0;
+
+    my $conf_cc = $config_vars{'BTS_DEFAULT_CC'};
+    push(@ccemails, split(/,\s*/, $conf_cc)) if $conf_cc;
+    my $conf_bcc = $config_vars{'BTS_NONMUA_BCC'};
+    push(@bccemails, split(/,\s*/, $conf_bcc)) if $conf_bcc;
+}
+
+my ($opt_help,      $opt_version,    $opt_noconf);
+my ($opt_cachemode, $opt_mailreader, $opt_sendmail, $opt_smtphost);
+my ($opt_smtpuser,  $opt_smtppass,   $opt_smtphelo);
+my $opt_cachedelay = 0;
+my ($opt_web, $opt_mail);
+my $opt_mutt;
+my $opt_soap_timeout;
+my $quiet          = 0;
+my @opt_ccemails   = ();
+my $use_default_cc = 1;
+my $ccsecurity     = "";
+
+Getopt::Long::Configure(qw(gnu_compat bundling require_order));
+GetOptions(
+    "help|h"                   => \$opt_help,
+    "version"                  => \$opt_version,
+    "o"                        => \$offlinemode,
+    "offline!"                 => \$offlinemode,
+    "online"                   => sub { $offlinemode = 0; },
+    "cache!"                   => \$caching,
+    "cache-mode|cachemode=s"   => \$opt_cachemode,
+    "cache-delay=i"            => \$opt_cachedelay,
+    "m|mbox|mail"              => \$opt_mail,
+    "w|web"                    => \$opt_web,
+    "mailreader|mail-reader=s" => \$opt_mailreader,
+    "cc-addr=s"                => \@opt_ccemails,
+    "sendmail=s"               => \$opt_sendmail,
+    "smtp-host|smtphost=s"     => \$opt_smtphost,
+    "smtp-reportbug"           =>
+      sub { $opt_smtphost = $btssmtp; $interactive = 'yes'; },
+    "smtp-user|smtp-username=s" => \$opt_smtpuser,
+    "smtp-pass|smtp-password=s" => \$opt_smtppass,
+    "smtp-helo=s"               => \$opt_smtphelo,
+    "f"                         => \$refreshmode,
+    "force-refresh!"            => \$refreshmode,
+    "only-new!"                 => \$updatemode,
+    "n|no-action"               => \$noaction,
+    "q|quiet+"                  => \$quiet,
+    "noconf|no-conf"            => \$opt_noconf,
+    "include-resolved!"         => \$includeresolved,
+    "ack!"                      => \$requestack,
+    "i|interactive"             => sub { $interactive = 'yes'; },
+    "no-interactive"            => sub { $interactive = 'no'; },
+    "force-interactive"         => sub { $interactive = 'force'; },
+    "use-default-cc!"           => \$use_default_cc,
+    "toolname=s"                => \$toolname,
+    "bts-server=s"              => \$btsserver,
+    "mutt!"                     => \$opt_mutt,
+    "soap-timeout:i"            => \$opt_soap_timeout,
+  )
+  or die "Usage: $progname [options]\nRun $progname --help for more details\n";
+
+if ($opt_noconf) {
+    die
+"$progname: --no-conf is only acceptable as the first command-line option!\n";
+}
+if ($opt_help)    { bts_help();    exit 0; }
+if ($opt_version) { bts_version(); exit 0; }
+
+if (!$use_default_cc) {
+    @ccemails = ();
+}
+
+if ($opt_mail && $opt_web) {
+    die "$progname: --mail and --web are mutually exclusive!\n";
+}
+
+$mboxmode = 1 if $opt_mail  && !$opt_web;
+$mboxmode = 0 if !$opt_mail && $opt_web;
+say "bts debug: Workflow is mail" if $debug and $opt_mail;
+say "bts debug: Workflow is web"  if $debug and $opt_web;
+
+my $default_mua = 'mutt';
+$default_mua = 'aerc'    if find_command('aerc');
+$default_mua = 'neomutt' if find_command('neomutt');
+$default_mua = 'mutt'    if find_command('mutt');
+
+# Prefer to use MUA we're running inside of. Checking the underscore
+# environment variable
+#   https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html#index-_005f
+# Yes this is a bash/zsh'ism however when unavailable we degrade gracefully.
+my $inside_mua = $ENV{'_'}
+  if defined $ENV{'_'} and $ENV{'_'} =~ /(^|\/)(aerc|neomutt|mutt)$/;
+$default_mua = $2 if $inside_mua;
+
+# For testing use the following (doesn't work without env):
+#     $ env _=/usr/bin/mutt ./bts.pl
+
+say "bts debug: Detected default MUA: $default_mua" if $debug;
+
+if ($opt_mailreader) {
+    if ($opt_mailreader =~ /\%s/) {
+        $mailreader = $opt_mailreader;
+    } else {
+        warn
+"$progname: ignoring invalid --mailreader option: invalid mail command following it.\n";
+    }
+} elsif (!$mailreader) {
+    my $aerc_I = $inside_mua ? '-I' : '';
+    $mailreader = 'aerc $aerc_I mbox:%s' if $default_mua eq 'aerc';
+    $mailreader = 'neomutt -f %s'        if $default_mua eq 'neomutt';
+    $mailreader = 'mutt -f %s'           if $default_mua eq 'mutt';
+}
+
+if (!$muttcmd) {
+    # TODO: Integrate aerc, Bug#1122192.
+    # $muttcmd = 'aerc-muttwrapper -H %s' if $default_mua eq 'aerc';
+    $muttcmd = 'neomutt -H %s' if $default_mua eq 'neomutt';
+    $muttcmd = 'mutt -H %s'    if $default_mua eq 'mutt';
+}
+
+if ($inside_mua) {    # use explicit path since we have it handy
+    $mailreader =~ s/^\S+/$inside_mua/;
+    $muttcmd    =~ s/^\S+/$inside_mua/;
+}
+say "bts debug: Inside MUA: $inside_mua" if $debug and $inside_mua;
+
+$use_mutt = 1         if $mboxmode && $inside_mua;   # TODO: Remember $sub_mail
+$use_mutt = $opt_mutt if defined $opt_mutt && $opt_mutt;
+$use_mutt = 0         if $opt_sendmail or $opt_smtphost;
+
+say "bts debug: \$mailreader: $mailreader" if $debug and $use_mutt;
+say "bts debug: \$muttcmd: $muttcmd"       if $debug and $use_mutt;
+
+if ($opt_soap_timeout) {
+    Devscripts::Debbugs::soap_timeout($opt_soap_timeout);
+} elsif ($use_mutt or $interactive ne 'no') {
+    Devscripts::Debbugs::soap_timeout(5);
+}
+
+if ($opt_sendmail and $opt_smtphost) {
+    die "$progname: --sendmail and --smtp-host are mutually exclusive!\n";
+} elsif ($opt_sendmail and $opt_mutt) {
+    die "$progname: --sendmail and --mutt mutually exclusive!\n";
+} elsif ($opt_smtphost and $opt_mutt) {
+    die "$progname: --smtp-host and --mutt are mutually exclusive!\n";
+}
+
+$smtphost = $opt_smtphost if $opt_smtphost;
+$smtpuser = $opt_smtpuser if $opt_smtpuser;
+$smtppass = $opt_smtppass if $opt_smtppass;
+$smtphelo = $opt_smtphelo if $opt_smtphelo;
+
+if ($opt_sendmail) {
+    if (    $opt_sendmail ne '/usr/sbin/sendmail'
+        and $opt_sendmail ne $sendmailcmd) {
+        my $cmd = (split ' ', $opt_sendmail)[0];
+        unless ($cmd =~ /^~?[A-Za-z0-9_\-\+\.\/]*$/) {
+            die "--sendmail command contained funny characters: $cmd\n";
+        } elsif (!find_command($cmd)) {
+            die "--sendmail command $cmd could not be executed.\n";
+        }
+    }
+}
+
+if ($opt_sendmail) {
+    $sendmailcmd = $opt_sendmail;
+    $smtphost    = '';              # overrides BTS_SMTP_HOST
+} else {
+    if (length $smtphost and !length $smtphelo) {
+        if (-e "/etc/mailname") {
+            if (open MAILNAME, '<', "/etc/mailname") {
+                $smtphelo = <MAILNAME>;
+                chomp $smtphelo;
+                close MAILNAME;
+            } else {
+                warn
+"Unable to open /etc/mailname: $!\nUsing default HELO for SMTP\n";
+            }
+        }
+    }
+}
+
+if ($opt_cachemode) {
+    if ($opt_cachemode =~ $cachemode_re) {
+        $cachemode = $opt_cachemode;
+    } else {
+        warn
+"$progname: ignoring invalid --cache-mode; must be one of min, mbox, full.\n";
+    }
+}
+
+if ($toolname) {
+    $toolname = " (using $toolname)";
+}
+
+my $btsurl;
+if ($btsserver =~ m%^https?://(.*)/?$%) {
+    $btsurl    = $btsserver . '/';
+    $btsserver = $1;
+} else {
+    $btsurl = "https://$btsserver/";
+}
+$btsurl =~ s%//$%/%;
+my $btscgiurl = $btsurl . 'cgi-bin/';
+if ($btsserver =~ /^debbugs\.gnu\.org/) {
+    $btscgiurl = $btsurl . 'cgi/';
+}
+my $btscgipkgurl   = $btscgiurl . 'pkgreport.cgi';
+my $btscgibugurl   = $btscgiurl . 'bugreport.cgi';
+my $btscgispamurl  = $btscgiurl . 'bugspam.cgi';
+my $btssubmitemail = 'submit@' . $btsserver;
+my $btsctlemail    = 'control@' . $btsserver;
+my $packagesserver = '';
+if ($btsserver =~ /^bugs(-[\w-]+)?\.debian\.org/i) {
+    $packagesserver = 'packages.debian.org';
+    $btscgispamurl =~ s|$btsurl|https://bugs-master.debian.org/|;
+}
+no warnings 'once';
+$Devscripts::Debbugs::btsurl = $btsurl;
+use warnings 'once';
+
+if (@ARGV == 0) {
+    bts_help();
+    exit 0;
+}
+
+# Otherwise, parse the arguments
+my @shortcmd;
+my @args;
+our @comment = ('');
+my $ncommand  = 0;
+my $iscommand = 1;
+
+# 'reply' command is implied for --mail workflow when launched from MUA
+my $implicit_reply = $mboxmode && $inside_mua;
+say "bts debug: Implicit reply active" if $debug and $implicit_reply;
+
+if (!isatty(\*STDIN)) {
+    open(TTY, "+</dev/tty") or die "Cannot open /dev/tty: $!";
+} else {
+    open(TTY, "<&STDIN") or die "Could not dup STDIN: $!";
+}
+# Note: To test /dev/tty failure case use $ setsid -w sh -c './bts.pl reply'
+
+while (@ARGV) {
+    $_ = shift @ARGV;
+    if ($_ =~ /^[\.,]$/) {
+        next if $iscommand;    # ". ." in command line - oops!
+        $ncommand++;
+        $iscommand = 1;
+        $comment[$ncommand] = '';
+    } elsif ($iscommand) {
+        push @shortcmd, $_;
+        $iscommand = 0;
+    } elsif ($comment[$ncommand]) {
+        $comment[$ncommand] .= " $_";
+    } elsif (/^\#/ and not /^\#\d+$/) {
+        $comment[$ncommand] = $_;
+    } else {
+        push @{ $args[$ncommand] }, $_;
+    }
+}
+$ncommand-- if $iscommand;
+
+# Grub through the symbol table to find matching commands.
+my @command;
+our $index;
+
+# First pass, expand (abbreviated) commands.
+for $index (0 .. $ncommand) {
+    my $cmd = $shortcmd[$index];
+    if (exists $::{"bts_$cmd"}) {
+        $command[$index] = "bts_$cmd";
+    } else {
+        my @matches = grep /^bts_\Q$cmd\E/, keys %::;
+        if (@matches != 1) {
+            die
+"$progname: Couldn't find a unique match for the command $cmd!\nRun $progname --help for a list of valid commands.\n";
+        }
+
+        # Replace the abbreviated command with its expanded equivalent
+        $command[$index] = $matches[0];
+    }
+
+    # Some commands cancel implicit reply
+    my %cancel_cmds = (
+        bts_reply   => 1,
+        bts_context => 1,
+        bts_show    => 1,
+        bts_bugs    => 1,
+        bts_status  => 1,
+    );
+    my $lcmd = $command[$index];
+    if (exists $cancel_cmds{$lcmd}) {
+        say "bts debug: Cancelling implicit reply due to '$lcmd" if $debug;
+        $implicit_reply = 0;
+    }
+}
+
+if ($implicit_reply) {
+    unshift(@shortcmd, "reply");
+    unshift(@command,  "bts_reply");
+    unshift(@args,     ['-']);
+    $ncommand++;
+}
+
+# Second pass, actually run commands.
+for $index (0 .. $ncommand) {
+    no strict 'refs';
+
+    if ($command[$index] =~ /^#/) {
+        mailbts('', $shortcmd[$index]);
+    } else {
+        $command[$index]->(@{ $args[$index] });
+    }
+}
+
+main();
+
+# Unnecessary, but we'll do this for clarity, only subs below.
+exit 0;
+
+=head1 COMMANDS
+
+For full details about the commands, see the BTS documentation.
+L<https://www.debian.org/Bugs/server-control>
+
+=over 4
+
+=item B<bugs> [I<options>] [I<bug_number> | I<package> | I<maintainer> | B<:> ] [I<opt>B<=>I<val> ...]
+
+=item B<show> [I<options>] [I<bug number> | I<package> | I<maintainer> | B<:> ] [I<opt>B<=>I<val> ...]
+
+=item B<bugs> [I<options>] [B<src:>I<package> | B<from:>I<submitter>] [I<opt>B<=>I<val> ...]
+
+=item B<show> [I<options>] [B<src:>I<package> | B<from:>I<submitter>] [I<opt>B<=>I<val> ...]
+
+=item B<bugs> [I<options>] [B<tag:>I<tag> | B<usertag:>I<tag> ] [I<opt>B<=>I<val> ...]
+
+=item B<show> [I<options>] [B<tag:>I<tag> | B<usertag:>I<tag> ] [I<opt>B<=>I<val> ...]
+
+=item B<bugs> [B<release-critical> | B<release-critical/>... | B<RC>]
+
+=item B<show> [B<release-critical> | B<release-critical/>... | B<RC>]
+
+Display selected bugs in a web browser (default or B<--web>) or in a mail
+reader when B<--mbox> is given.
+
+Options that may be specified after the B<bugs> sub-command in addition to
+or instead of options at the start of the command-line are:
+B<-o>/B<--offline>/B<--online>, B<-m>/B<--mbox>, B<--mailreader> and
+B<-->[B<no->]B<cache>.  These are described earlier in this manpage.  If
+either the B<-o> or B<--offline> option is used, or there is already an
+up-to-date copy in the local cache, the cached version will be used.
+
+When using B<--mbox> reading more than one bug report's mails at once using
+the argument syntax described below is possible.
+
+The meanings of the possible arguments are as follows:
+
+=over 8
+
+=item (none)
+
+If nothing is specified, B<bts bugs> will display your bugs, assuming
+that either B<DEBEMAIL> or B<EMAIL> (examined in that order) is set to the
+appropriate email address.
+
+=item I<bug_number>
+
+Display bug number I<bug_number>.
+
+=item I<package>
+
+Display the bugs for the package I<package>.
+
+=item B<src:>I<package>
+
+Display the bugs for the source package I<package>.
+
+=item I<maintainer>
+
+Display the bugs for the maintainer email address I<maintainer>.
+
+=item B<from:>I<submitter>
+
+Display the bugs for the submitter email address I<submitter>.
+
+=item B<tag:>I<tag>
+
+Display the bugs which are tagged with I<tag>.
+
+=item B<usertag:>I<tag>
+
+Display the bugs which are tagged with usertag I<tag>.  See the BTS
+documentation for more information on usertags.  This will require the
+use of a B<users=>I<email> option.
+
+=item B<:>
+
+Details of the bug tracking system itself, along with a bug-request
+page with more options than this script, can be found on
+https://bugs.debian.org/.  This page itself will be opened if the
+command 'bts bugs :' is used.
+
+=item B<release-critical>, B<RC>
+
+Display the front page of the release-critical pages on the BTS.  This
+is a synonym for https://bugs.debian.org/release-critical/index.html.
+It is also possible to say release-critical/debian/main.html and the like.
+RC is a synonym for release-critical/other/all.html.
+
+=back
+
+After the argument specifying what to display, you can optionally
+specify options to use to format the page or change what it displayed.
+These are passed to the BTS in the URL downloaded. For example, pass
+dist=stable to see bugs affecting the stable version of a package,
+version=1.0 to see bugs affecting that version of a package, or reverse=yes
+to display newest messages first in a bug log.
+
+If caching has been enabled (that is, B<--no-cache> has not been used,
+and B<BTS_CACHE> has not been set to B<no>), then any page requested by
+B<bts show> will automatically be cached, and be available offline
+thereafter.  Pages which are automatically cached in this way will be
+deleted on subsequent "B<bts show>|B<bugs>|B<cache>" invocations if they have
+not been accessed in 30 days.  Warning: on a filesystem mounted with
+the "noatime" option, running "B<bts show>|B<bugs>" does not update the cache
+files' access times; a cached bug will then be subject to auto-cleaning
+30 days after its initial download, even if it has been accessed in the
+meantime.
+
+=for comment =head2 Execution of Subsequent Commands
+
+=for comment TODO: https://salsa.debian.org/debian/sensible-utils/-/merge_requests/14
+
+Other B<bts> commands following on the command-line will be executed after
+sensible-browser has quit. With most post modern graphical browsers
+(firefox, chromium) will exit immediately, but when using a terminal
+browser B<bts> wait for you to quit it before continuing command execution.
+
+The desired browser can be specified and configured by setting the
+B<BROWSER> environment variable. See L<sensible-browser(1)>.
+
+The value of B<BROWSER> may consist of a colon-separated series of
+browser command parts. These should be tried in order until one
+succeeds. Each command part may optionally contain the string B<%s>; if
+it does, the URL to be viewed is substituted there. If a command part
+does not contain B<%s>, the browser is to be launched as if the URL had
+been supplied as its first argument. The string B<%%> must be substituted
+as a single %.
+
+Rationale: We need to be able to specify multiple browser commands so
+programs obeying this convention can do the right thing in either X or
+console environments, trying X first. Specifying multiple commands may
+also be useful for people who share files like F<.profile> across
+multiple systems. We need B<%s> because some popular browsers have
+remote-invocation syntax that requires it. Unless B<%%> reduces to %, it
+won't be possible to have a literal B<%s> in the string.
+
+=cut
+
+sub bts_show {
+    goto &bts_bugs;
+}
+
+sub bts_bugs {
+    @ARGV = @_;    # needed for GetOptions
+    my ($sub_offlinemode, $sub_caching, $sub_mail, $sub_mailreader);
+    GetOptions(
+        "o"                        => \$sub_offlinemode,
+        "offline!"                 => \$sub_offlinemode,
+        "online"                   => sub { $sub_offlinemode = 0; },
+        "cache!"                   => \$sub_caching,
+        "m|mbox|mail"              => \$sub_mail,
+        "w|web"                    => sub { $sub_mail = 0; },
+        "mailreader|mail-reader=s" => \$sub_mailreader,
+    ) or die "$progname: unknown options for bugs command\n";
+    @_ = @ARGV;    # whatever's left
+
+    if (defined $sub_offlinemode) {
+        ($offlinemode, $sub_offlinemode) = ($sub_offlinemode, $offlinemode);
+    }
+    if (defined $sub_caching) {
+        ($caching, $sub_caching) = ($sub_caching, $caching);
+    }
+    if (defined $sub_mail) {
+        ($mboxmode, $sub_mail) = ($sub_mail, $mboxmode);
+    }
+    if (defined $sub_mailreader) {
+        if ($sub_mailreader =~ /\%s/) {
+            ($mailreader, $sub_mailreader) = ($sub_mailreader, $mailreader);
+        } else {
+            warn
+"$progname: ignoring invalid --mailreader $sub_mailreader option:\ninvalid mail command following it.\n";
+            $sub_mailreader = undef;
+        }
+    }
+
+    my $url = sanitizething(shift);
+    if (!$url) {
+        $url = $EMAIL
+          or die
+"bts bugs: Please set DEBEMAIL or EMAIL to your Debian email address.\n";
+    }
+    if ($url =~ /^.*\s<(.*)>\s*$/) { $url = $1; }
+    $url =~ s/^:$//;
+
+    browse($url, @_);
+
+    # revert options
+    if (defined $sub_offlinemode) {
+        $offlinemode = $sub_offlinemode;
+    }
+    if (defined $sub_caching) {
+        $caching = $sub_caching;
+    }
+    if (defined $sub_mail) {
+        $mboxmode = $sub_mail;
+    }
+    if (defined $sub_mailreader) {
+        $mailreader = $sub_mailreader;
+    }
+}
+
+=item B<select> [I<key>B<:>I<value> ...]
+
+Uses the SOAP interface to output a list of bugs which match the given
+selection requirements.
+
+The following keys are allowed, and may be given multiple times.
+
+=over 8
+
+=item B<package>
+
+Binary package name.
+
+=item B<source>
+
+Source package name.
+
+=item B<maintainer>
+
+E-mail address of the maintainer.
+
+=item B<submitter>
+
+E-mail address of the submitter.
+
+=item B<severity>
+
+Bug severity.
+
+=item B<status>
+
+Completion status of the bug.  One of B<open>, B<done>, or B<forwarded>.
+
+=item B<tag>
+
+Tags applied to the bug. If B<users> is specified, may include
+usertags in addition to the standard tags.
+
+=item B<owner>
+
+Bug's owner.
+
+=item B<correspondent>
+
+Address of someone who sent mail to the log.
+
+=item B<affects>
+
+Bugs which affect this package.
+
+=item B<bugs>
+
+List of bugs to search within.
+
+=item B<users>
+
+Users to use when looking up usertags.
+
+=item B<archive>
+
+Whether to search archived bugs or normal bugs; defaults to B<0>
+(i.e. only search normal bugs). As a special case, if archive is
+B<both>, both archived and unarchived bugs are returned.
+
+=back
+
+For example, to select the set of bugs submitted by
+jrandomdeveloper@example.com and tagged B<wontfix>, one would use
+
+bts select submitter:jrandomdeveloper@example.com tag:wontfix
+
+If a key is used multiple times then the set of bugs selected includes
+those matching any of the supplied values; for example
+
+bts select package:foo severity:wishlist severity:minor
+
+returns all bugs of package foo with either wishlist or minor severity.
+
+=cut
+
+sub bts_select {
+    my @args = @_;
+    my $bugs = Devscripts::Debbugs::select(@args);
+    if (not defined $bugs) {
+        die "Error while retrieving bugs from SOAP server";
+    }
+    print map { qq($_\n) } @{$bugs};
+}
+
+=item B<status> [I<bug> | B<file:>I<file> | B<fields:>I<field>[B<,>I<field> ...] | B<verbose>] ...
+
+Uses the SOAP interface to output status information for the given bugs
+(or as read from the listed files -- use B<-> to indicate STDIN).
+
+By default, all populated fields for a bug are displayed.
+
+If B<verbose> is given, empty fields will also be displayed.
+
+If B<fields> is given, only those fields will be displayed.  No validity
+checking is performed on any specified fields.
+
+=cut
+
+sub fetch_bugs_status {
+    my @bugs   = @_;
+    my $status = Devscripts::Debbugs::status
+      map { [bug => $_] }
+      map { $_ < 0 ? $clonedbugs{$_} : $_ } @bugs;
+    if ($debug > 1) {
+        use Data::Dumper;
+        say Dumper($status);
+    }
+    $status or die 'Failed to fetch bugs status via SOAP.\n';
+    foreach my $bug (@bugs) {
+        my $clone = $clonedbugs{$bug};
+        if (exists $clonedbugs{$bug}) {
+            $$status{$bug} = $$status{$clone};
+        }
+        $$status{$bug} or die 'Failed to fetch Bug#$bug status via SOAP.\n';
+    }
+    return %$status;
+}
+
+sub bts_status {
+    my @args = @_;
+
+    my @bugs;
+    my $showempty = 0;
+    my %field;
+    my @field;
+    for my $bug (@args) {
+        if (looks_like_number($bug)) {
+            push @bugs, $bug;
+        } elsif ($bug =~ m{^file:(.+)}) {
+            my $file = $1;
+            my $fh;
+            if ($file eq '-') {
+                $fh = \*STDIN;
+            } else {
+                $fh = IO::File->new($file, 'r')
+                  or die "Unable to open $file for reading: $!";
+            }
+            while (<$fh>) {
+                chomp;
+                next if /^\s*\#/;
+                s/\s//g;
+                next unless looks_like_number($_);
+                push @bugs, $_;
+            }
+        } elsif ($bug =~ m{^fields:(.+)}) {
+            my $fields = $1;
+            for my $field (split /,/, $fields) {
+                push @field, (lc $field) unless exists $field{$field};
+                $field{ lc $field } = 1;
+            }
+            $showempty = 1;
+        } elsif ($bug =~ m{^verbose$}) {
+            $showempty = 1;
+        }
+    }
+    my $bugs
+      = Devscripts::Debbugs::status(map { [bug => $_, indicatesource => 1] }
+          @bugs);
+    return if ($bugs eq "");
+
+    my $first = 1;
+    for my $bug (keys %{$bugs}) {
+        print "\n" if not $first;
+        $first = 0;
+        my @keys;
+        if (%field) {
+            @keys = @field;
+        } else {
+            @keys = grep { $_ ne 'bug_num' } (sort (keys %{ $bugs->{$bug} }));
+            unshift @keys, 'bug_num';
+        }
+        for my $key (@keys) {
+            if (%field) {
+                next unless exists $field{$key};
+            }
+            my $out;
+            if (ref($bugs->{$bug}{$key}) eq 'ARRAY') {
+                $out .= join(',', @{ $bugs->{$bug}{$key} });
+            } elsif (ref($bugs->{$bug}{$key}) eq 'HASH') {
+                $out .= join(',',
+                    map { $_ . ' => ' . ($bugs->{$bug}{$key}{$_} || '') }
+                      keys %{ $bugs->{$bug}{$key} });
+            } else {
+                $out .= $bugs->{$bug}{$key} || '';
+            }
+            if ($out || $showempty) {
+                print "$key\t$out\n";
+            }
+        }
+    }
+}
+
+# Extract bug number, subject and (body) message from email stream
+# (optionally mbox).
+sub read_bugmail {
+    my $handle  = shift;
+    my $filemsg = shift;
+    my $msgid   = shift;
+
+    my $nomulti = 0;    # 0=Find last message
+
+    # Accumulate
+    my $hdr;
+    my %m;
+    my %last;
+
+    # State
+    use constant { Mbox => 1, Headers => 2, HeaderCont => 3, Body => 4, };
+    my $reading = Mbox;
+    my $empty   = 1;
+    my $msgidx  = 0;      # positive means this is a multi message mbox
+
+    $! = 0;
+    while (my $line = readline($handle)) {
+        chomp($line);
+        $empty = 0;
+
+        if ($reading == Mbox || ($reading == Body && $msgidx)) {
+            # TODO: mutt doesn't escape /^From / lines properly on save wtf?
+            # BTS seems fine from code tho, but should actually test it.
+            if ($line =~ /^From (unknown |[^ @]*@)/) {    # mbox header?
+                $msgidx++;
+                say "read_bugmail: got MBOX header ($msgidx): $line"
+                  if $debug > 1;
+                $reading = Mbox;
+            }
+            if ($reading == Mbox) {    # Reset message state and read headers
+                $reading = Headers;
+                if (exists $m{bug} && exists $m{subject}) {
+                    %last = %m;
+                }
+                %m = ();
+                next;
+            }
+        } elsif ($reading == HeaderCont) {
+            if ($line =~ /^[ \t]/) {    # continuation line
+                $m{$hdr} .= $line;
+            } else {
+                $m{$hdr} =~ s/^\s+|\s+$//g;    # trim spaces
+                $m{$hdr} =~ s/\s+/ /g;         # squash spaces
+                $reading = Headers;
+            }
+        }
+
+        if ($reading == Body) {
+            $m{msg} .= "$line\n";
+        } elsif ($reading == Headers) {
+            if (
+                $line # Avoid automated messages: closed|they-closed|forwarded|ack|ack-info
+                =~ /^X-Debian-PR-Message: (?:report|followup) ([0-9]+)$/i
+            ) {
+                if (exists $m{bug} && $m{bug} ne $1 && $nomulti) {
+                    goto err_several;
+                }
+                $m{bug} = $1;
+            } elsif ($line =~ /^(Subject|Date|From|To|Cc):(.*)$/i) {
+                $hdr = lc($1);
+                $m{$hdr} = $2;
+                say "HeaderCont: $hdr: $m{$hdr}" if $debug > 1;
+                if (exists $m{$hdr} && $nomulti) {
+                    die
+"bts reply: Several '$1' mail headers found! Not supported yet.\n";
+                }
+                $reading = HeaderCont;    # read header continuation lines
+            } elsif ($line
+                =~ /^Content-Type: *text\/plain($|;|; *charset="?(us-ascii|utf-8)"?)/i
+            ) {
+                # ok.
+            } elsif ($line =~ /^(Content-Type:[^;]*)/i) {
+                # others not supported for now
+                say "bts reply: Skipping mail due to unsupported '$1'";
+                $m{msg} = $m{msg}
+                  // ">> bts: Failed to extract message body due to unsupported '$1'";
+                if (exists $m{bug} && exists $m{subject}) {
+                    %last = %m;
+                }
+                %m = ();
+                if ($msgidx) {
+                    $reading = Body;
+                } else {
+                    last;
+                }
+            } elsif ($line eq '') {
+                $reading = Body;
+            }
+        }
+    }
+    if ($!) {
+        warn "bts reply: WARN: unexpected error while reading $filemsg: $!\n";
+    }
+    if ($empty) {
+        warn "bts reply: no input, skipping\n" if $debug;
+        return;
+    }
+    if (!$m{bug} && %last) {
+        %m = %last;
+    }
+
+    if ($debug) {
+        foreach my $key ('bug', 'subject', 'from', 'date') {
+            say "read_bugmail: found $key: $m{$key}" if exists $m{$key};
+        }
+    }
+
+    if ($m{subject} =~ /(?:Bug#([0-9]+):)/) {
+        if ($m{bug} && $m{bug} ne $1 && $nomulti) {
+            goto err_several;
+        }
+        $m{bug} = $1;
+        say "read_bugmail: bug number from Subject is $1" if $debug;
+    }
+
+    return %m;
+
+  err_several:
+    die "bts reply: Several bug numbers were found!
+  => $m{bug} and $2
+This is not yet supported.\n";
+}
+
+sub quote_message {
+    my $msg = shift;
+
+    if (length($msg)) {
+        $msg =~ s/^\s+//;
+        $msg =~ s/^/> /mg;
+    }
+
+    return $msg;
+}
+
+=item B<reply> [I<bug> | I<bug-number>B<#>I<message-no> | B<->]
+
+Compose a reply to a bug BTS including bug changes.
+
+A draft is prepared, quoting I<message-no> or the latest non-automated
+message taken from either 1) the I<bug-number>'s online MBOX message
+archive or 2) the MBOX or single raw email message written to standard
+input (B<->).
+
+All other bug change commands given are included in the mail as
+pseudoheader lines -- mostly 'B<Control:>' but more idiomatic headers
+B<bts> knows about may be used instead.
+
+A B<reply> command reading from STDIN is executed implicitly before other
+commands when B<bts> is invoked from a supported MUA (see B<--mutt>). The
+implicit command is cancelled when an explicit B<reply>, B<context>,
+B<show>|B<bugs> or B<status> command is present.
+
+=cut
+
+sub bts_reply {
+    my %m;
+    my $msgno = '';
+
+    if (@_ > 0 && $_[0] eq '-') {
+        say "bts reply: reading bug mail from stdin" if $debug;
+
+        our $stdin_consumed;
+        if ($stdin_consumed) {
+            die
+"bts reply: reading stdin is only possible once$stdin_consumed\n";
+        }
+        $stdin_consumed = " (reply command)";
+
+        %m = read_bugmail(*STDIN, 'on stdin') or return;
+        $_[0] = delete $m{bug}
+          or die
+"bts reply: no X-Debian-PR-Message line or Bug# Subject found on stdin.\n";
+# TODO: Initial report doesn't have PR-Message line in mbox, but
+# mail delivered to Maintainer/subscribers does. Fix it on Debbugs
+# archival side or add special handling here?
+#
+# Test:
+#   $ curl 'https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=123456;msg=5;mboxmaint=yes' | grep -i X-Debian
+    } elsif (@_ > 0 && $_[0] =~ s/([0-9])#([0-9]+)$/$1/) {
+        $msgno = ";msg=$2";    # additional URL parameter
+    }
+
+    my $bug = bugargs(\@_, 1)
+      or die "bts reply: reply to which bug?\n";
+
+    @_ == 0 or die "bts reply: excess arguments: @_\n";
+
+    # Nothing other than deleted $m{bug} was found?
+    if (!%m && !$offlinemode) {    # Get message from mbox
+        my $mbox_handle;
+        my $filemsg;
+
+        if (!have_lwp()) {
+            die "$progname: Couldn't run bts reply: $lwp_broken\n";
+        }
+        init_agent();
+
+        if ($msgno eq '') {    # download whole bug mbox
+            warn "Downloading Bug#$bug mails ...\n" if $debug;
+            download(
+                $bug,
+                '',    # no urlparams
+                0,     #=manual
+                1,     #=mboxing
+            );
+            my $filemsg = mboxfile($bug);
+            open($mbox_handle, "<", $filemsg);
+        } else {    # download single message
+            warn "Downloading Bug#$bug message $msgno ...\n" if $debug;
+            ($mbox_handle, undef) = tempfile(
+                "bts-bug$bug-XXXXXX",
+                SUFFIX => ".eml",
+                DIR    => File::Spec->tmpdir,
+                UNLINK => 1
+            );
+
+            my $thing = "$bug$msgno";
+            $filemsg = "$thing mbox";
+            my $email = download_mbox($thing);
+            print($mbox_handle $email);
+            seek($mbox_handle, 0, SEEK_SET);
+        }
+
+        if ($mbox_handle) {
+            %m = read_bugmail($mbox_handle, "in $filemsg")
+              or die "bts reply: reading bug mbox failed\n";
+            close($mbox_handle);
+        }
+    }
+
+    # Query bug status if not working offline
+    my $bug_status;
+    if (!$offlinemode) {
+        warn "Querying BTS for Bug#$bug status ...\n";
+        $bug_status = Devscripts::Debbugs::status([bug => $bug]);
+        if ($bug_status->{$bug}->{archived}) {
+            warn
+              "bts reply: Bug#$bug is archived, adding unarchive command.\n";
+            mailbts('', "unarchive $bug")
+              unless grep(/^unarchive $bug/, @ctlcmds);
+        }
+    }
+
+    # Deal with Subject
+    if (!$m{subject} && $bug_status) {
+        $m{subject} = $bug_status->{$bug}->{subject}
+          or die
+          "bts reply: Failed to extract bug subject from bug status object.";
+
+        $m{subject} = "Bug#$bug: $m{subject}";
+    }
+    if (length($m{subject})) {
+        # Keep first seen subject
+        $reply{subject} ||= "Re: $m{subject}";
+    } else {
+        die "bts reply: No bug Subject available.
+  Try --online mode to fetch it from BTS.\n";
+    }
+
+    exists $m{from} or die "bts reply: No From: header found!\n";
+
+    # Validation done, commit to sending
+
+    (my $eml_handle, undef) = tempfile(
+        "bts-reply-bug$bug-XXXXXX",
+        SUFFIX => ".eml",
+        DIR    => File::Spec->tmpdir,
+        UNLINK => 1
+    );
+    $eml_handle or die "bts reply: \$eml_handle is undef";
+
+    # Accumulate To: header
+    $reply{to}->{ $m{from} } = 1;
+
+    # TODO: Support nicer greetings for people in To in complex cases, eg
+    #
+    # Dear Submitter,  # just one, put it first. could fetch submitter name
+    # Hi $m{from},     # cumulative
+
+    # Accumulate CC: header
+    if ($m{cc}) {
+        $reply{cc}->{ $m{cc} } = 1;
+    }
+
+    $reply{greeting} = 1;
+    $reply{body} .= "On $m{date} " if exists $m{date};
+    $reply{body} .= "$m{from} wrote:\n";
+    $reply{body} .= quote_message($m{msg}) . "\n";
+}
+
+=item B<context>
+
+Read email or MBOX from stdin to establish implicit bug context.
+
+Similar to B<reply> but for sending plain control@ messages without
+including a written rationale.
+
+=cut
+
+sub bts_context {
+    my %m;
+    my $msgno = '';
+
+    say "bts context: reading bug mail from stdin" if $debug;
+
+    our $stdin_consumed;
+    if ($stdin_consumed) {
+        die
+          "bts context: reading stdin is only possible once$stdin_consumed\n";
+    }
+    $stdin_consumed = " ('context' command)";
+
+    %m = read_bugmail(*STDIN, 'on stdin') or return;
+    $m{bug}
+      or die
+"bts context: no X-Debian-PR-Message line or Bug# Subject found on stdin.\n";
+    $main::it = $m{bug};
+}
+
+=item B<clone> [I<bug>] [B<to>] I<new_ID> [I<new_ID> ...]
+
+The B<clone> command duplicates a I<bug> report.
+
+It is useful in the case where a single report actually indicates that
+multiple distinct bugs have occurred. "New IDs" are negative numbers,
+separated by spaces, which may be used in subsequent control commands to
+refer to the newly duplicated bugs.  A new report is generated for each new
+ID.
+
+=cut
+
+sub bts_clone {
+    my ($bug, undef) = bugargs(\@_, 1, '^to$')
+      or die "bts clone: clone what bug?\n";
+    @_ or die "bts clone: must specify at least one new ID\n";
+    foreach (@_) {
+        $_ =~ /^-\d+$/ or die "bts clone: new IDs must be negative numbers\n";
+        if (exists $clonedbugs{$_}) {
+            die "bts clone: new ID '$_' not unique!";
+        }
+        $clonedbugs{$_} = $bug;
+    }
+    mailbts("cloning $bug", "clone $bug " . join(" ", @_));
+}
+
+=item B<done> [I<bug>] [B<in>|B<by>|B<since>] [I<version>]
+
+=item B<close> [I<bug>] [B<in>|B<by>|B<since>] [I<version>]
+
+Indicate no further action is expected on I<bug>.
+
+Changes I<bug>'s completion state to "done", closing it for now. Optionally
+add a version tracking record that it was B<fixed> in I<version>.
+
+The BTS will record who completed a I<bug>. You can see this in the bug
+status 'done' field:
+
+    $ bts status 123456 fields:done
+
+The B<done> command always asks you to compose a mail interactively. Please
+document why the bug is being closed in your message.
+
+While you should specify which I<version> of the package fixed the bug if
+possible you can also do this later with the B<fixed> command.
+
+Bugs which remain closed for about a month without email activity are
+archived (made read-only). Use B<unarchive> to undo this.
+
+Closed, but non-archived bugs can be reopened with the B<found> command.
+
+=cut
+
+sub bts_close { goto &bts_done; }
+
+sub bts_done {
+    my ($bug, undef) = bugargs(\@_, 1, '^(in|by|since)$', 'otherargs')
+      or die "bts $shortcmd[$index]: close what bug?\n";
+    my $version = shift // '';
+    opts_done(@_);
+    $version !~ /\//
+      or die
+"bts $shortcmd[$index]: version '$version' must not contain a slash '/'!";
+    !exists $donebugs{$bug}
+      or die "bts $shortcmd[$index]: Duplicate 'done' command for Bug#$bug!";
+
+    $donebugs{$bug} = $index;    # for bts_fixed, fixup_done_bugs
+    if (length($version)) {
+        check_fixedbugs($bug, $version);
+    }
+
+    # Note: Manipulation of globals for mailing happens in fixup_done_bugs.
+}
+
+sub fixup_done_bugs {
+    %donebugs or return;
+
+    # Done mails shouldn't be sent without an explanation. Forces
+    # interactive editing.
+    #$reply{greeting} = 1;
+    $interactive = 'force' if !$use_mutt;
+
+    my %status;
+    if (!$offlinemode) {
+        warn "bts done: Fetching Bug status from BTS ...\n";
+        %status = fetch_bugs_status(keys %donebugs);
+    }
+
+    if (not exists $reply{done}) {
+        $reply{done}
+          .= ">> bts: Explain why you're closing these bugs here:\n";
+        if (%status == 0) {
+            $reply{done}
+              .= ">> Bug #" . join(", #", keys %donebugs) . " <<\n\n";
+        } else {
+            foreach my $bug (sort keys %donebugs) {
+                $reply{done}
+                  .= ">> - Bug #$bug: " . $status{$bug}->{subject} . "\n";
+            }
+            $reply{done} .= "\n\n";
+        }
+    }
+
+    # One done bug can be reply to -done addess, multiple must go to
+    # control@ or Control: pseudoheader.
+    if (0 && %donebugs == 1) {    # Disabled due to IRC feedback
+        my ($bug) = keys %donebugs;
+        $reply{to}->{ "$bug-done@" . $btsserver } = 1;
+        return;
+    }
+
+    foreach my $bug (keys %donebugs) {
+        $reply{to}->{ "$bug-submitter@" . $btsserver } = 1;
+        $index = $donebugs{$bug};    # very ugly global hack FIXME
+        my $version = $fixedbugs{$bug} // '';
+        mailbts("closing $bug", "close $bug $version");
+    }
+}
+
+=item B<reopen> [I<bug>] [I<submitter>]
+
+(Deprecated) Record that a I<bug> previously marked B<done> should be acted
+upon again by the maintainer. Optionally change I<submitter> -- unclear why
+you'd want to do this here.
+
+Clears all B<fixed> version tracking records only if I<bug> is currently
+closed -- not very predictable behaviour and it is somewhat rude.
+
+Instead prefer the more predictable B<found> command (without arguments) if
+you really want to do this, but also consider the more respectful approach
+documented there.
+
+=cut
+
+sub bts_reopen {
+    my $bug       = bugargs(\@_, 1) or die "bts reopen: reopen what bug?\n";
+    my $submitter = shift || '';    # optional
+    opts_done(@_);
+    # TODO: Document = and !
+    # TODO: Add $submitter to CC.
+    # TODO: Add warning about cleared versiontracking records (from SOAP)
+    # TODO: SOAP Check if bug is actually marked 'done'
+    $expertmode
+      or die
+      "bts reopen: Deprecated (expert) command due to unpredictable behaviour.
+
+  Appeal to maintainer using 'reply' command or use more predictable 'found'
+  expert command instead.\n";
+    mailbts("reopening $bug", "reopen $bug $submitter");
+}
+
+=item B<archive> [I<bug>]
+
+Archive a I<bug> that has previously been archived but is currently not.
+The I<bug> must fulfill all of the requirements for archiving with the
+exception of those that are time-based.
+
+=cut
+
+sub bts_archive {
+    my $bug = bugargs(\@_, 1) or die "bts archive: archive what bug?\n";
+    opts_done(@_);
+    mailbts("archiving $bug", "archive $bug");
+}
+
+=item B<unarchive> [I<bug>]
+
+Unarchive a I<bug> that is currently archived.
+
+=cut
+
+sub bts_unarchive {
+    my $bug = bugargs(\@_, 1) or die "bts unarchive: unarchive what bug?\n";
+    opts_done(@_);
+
+    if (!$offlinemode) {
+        my %status     = fetch_bugs_status($bug);
+        my %bug_status = %{ $status{$bug} };
+
+        $bug_status{archived}
+          or die
+          "bts unarchive: Bug#$bug is not archived!$onlinecheck_bypass_msg\n";
+    }
+
+    mailbts("unarchiving $bug", "unarchive $bug");
+}
+
+=item B<retitle> [I<bug>] I<title>
+
+Change the I<title> of the I<bug>.
+
+=cut
+
+sub bts_retitle {
+    my ($bug, $sep) = bugargs(\@_, 1, '^[^0-9-]')
+      or die "bts retitle: retitle what bug?\n";
+    $sep && $sep !~ '^(it|-1)$' && unshift(@_, $sep);
+    my $title = join(" ", @_);
+    if (!length $title) {
+        die "bts retitle: set title of $bug to what?\n";
+    }
+    $title =~ s/^\s+|\s+$//g;    # trim spaces
+
+    my $subject;
+    if (!$offlinemode) {
+        my %status     = fetch_bugs_status($bug);
+        my %bug_status = %{ $status{$bug} };
+        $subject = $bug_status{subject};
+    }
+
+    if (defined $subject && $subject eq $title) {
+        warn "bts retitle: Bug#$bug alread has subject '$title'. Skipping.\n";
+    } else {
+        mailbts("retitle $bug to $title", "retitle $bug $title");
+    }
+}
+
+=item B<summary> [I<bug>] [I<messagenum>]
+
+Select a message number that should be used as
+the summary of a I<bug>.
+
+If no message number is given, the summary is cleared.
+
+=cut
+
+sub bts_summary {
+    my $bug = bugargs(\@_, 1)
+      or die "bts summary: change summary of what bug?\n";
+    my $msg = shift || '';
+    # TODO: Document messagenum=0, make it work nicely with bts_reply.
+    # TODO: Consider adding support for Message-ID on Debbugs side for mail
+    # workflow. Or figure out clientside way to synthesize msgnum also
+    # useful for 'bts reply -#123' to select a message from in an mbox
+    # while offline.
+    mailbts("summary $bug $msg", "summary $bug $msg");
+}
+
+=item B<submitter> [I<bug> ...] I<submitter-email>
+
+Change the submitter mail address of a I<bug> or a number of bugs, with
+B<!> meaning the BTS should use the mail address of the change request
+e-mail message.
+
+=cut
+
+sub bts_submitter {
+    @_ or die "bts submitter: change submitter of what bug?\n";
+    my $submitter = checkemail(pop, 1);
+    if (!defined $submitter) {
+        die "bts submitter: change submitter to what?\n";
+    }
+    my @bugs = bugargs(\@_, 0)
+      or die "bts submitter: invalid bug number\n";
+    @bugs >= 1
+      or die "bts submitter: need at least one bug number\n";
+    foreach (@bugs) {
+        mailbts("submitter $_", "submitter $_ $submitter");
+    }
+}
+
+=item B<assign> [I<bug> ...] [B<to>] I<package>[B<,>I<package> ...] [I<version>]
+
+=item B<reassign> [I<bug> ...] [B<to>] I<package>[B<,>I<package> ...] [I<version>]
+
+Change the assigned I<package> set for all I<bug>s given. This indicates
+all the specified bugs are presumed to need fixing in one of these
+packages.
+
+Clears all existing version tracking records (B<found> and B<fixed>) for
+each I<bug>. If the optional I<version> is given a 'found' record for the
+new packages is added. If the affected version is is not yet known use the
+B<found> command once an analysis is available.
+
+If other packages are merely receiving unactionable reports use the
+B<affects> command to make the I<bug> show up in their bug listings.
+
+If the bug is likeley to need individual fixes across several packages you
+should instead B<clone> the bug and B<reassign> the clone to the other
+package(s). For example:
+
+ $ bts clone 69042 to -1 , assign -1 to other-package
+
+The command adds the maintainers of the new package to CC if B<--mutt> or
+B<--force-interactive> are active.
+
+=cut
+
+sub bts_assign { goto &bts_reassign; }
+
+sub bts_reassign {
+    my @bugs = bugargs(\@_, 0, '^to$', 'otherargs')
+      or die "bts reassign: reassign what bug(s)?\n";
+    my $package = shift
+      or die "bts reassign: reassign bug(s) to what package?\n";
+    my $version = shift // '';
+    if (length $version and $version !~ /\d/) {
+        die "bts reassign: version number $version contains no digits!\n";
+    }
+    opts_done(@_);
+
+    foreach my $bug (@bugs) {
+        mailbts("reassign $bug to $package",
+            "reassign $bug $package $version");
+    }
+
+    foreach my $packagename (split /,/, $package) {
+        $packagename =~ s/^src://;
+        $ccpackages{$packagename} = 1;
+    }
+}
+
+sub check_versiontracking {
+    my $bug     = shift;
+    my $version = shift;
+    my $cmd     = shift;
+    my $verb    = $cmd =~ 'fixed' ? 'fixed' : 'found';
+
+    warn "check_versiontracking: $bug, $version, $cmd, $verb\n"
+      if $debug;
+
+    my %status     = fetch_bugs_status($bug);
+    my %bug_status = %{ $status{$bug} };
+
+    my $done    = $bug_status{done};
+    my $srcpkgs = split(/, /, $bug_status{source});    # can be multiple O_O
+    my $binpkg  = $bug_status{package};
+    my %fixed   = %{ $bug_status{$verb} or {} };       # ugh! perl! :X
+        #^ Note: read %fixed as fixed or found depending on $verb.
+    if ($debug > 1) {
+        use Data::Dumper;
+        say Dumper(\%fixed);
+    }
+
+    my $pkgmsg;
+    my $vermsg = $version;
+    if ($version) {
+        if ($version =~ /^src:/) {
+            die "bts $cmd: Invalid 'fixed' version record '$version'\n";
+        }
+        if ($version =~ /^([^\/]+)\/(.+)$/) {
+            $pkgmsg = "source package src:$1";
+            $vermsg = $2;
+        } else {
+            $pkgmsg = "binary package $binpkg";
+        }
+
+        my $is_fixed = exists $fixed{$version};
+
+        $verb =~ s/^not//;
+
+        my $msg       = "bts $cmd: Bug#$bug";
+        my $tail      = "in $pkgmsg.$onlinecheck_bypass_msg\n";
+        my $fixedvers = %fixed
+          && "\nMaybe you meant one of these '$verb' records:\n"
+          . join('', map { " - " . $_ . "\n" } keys %fixed);
+
+        $cmd !~ '^not'
+          && $is_fixed
+          && die
+"$msg is already recorded as being $verb at version '$vermsg' $tail\n";
+
+        $cmd =~ '^not'
+          && !$is_fixed
+          && die
+"$msg has no record of being $verb at version '$vermsg' $tail$fixedvers\n";
+    }
+
+    return $done;
+}
+
+=item B<found> [I<bug>] [in] [I<source-package>B</>]I<version>
+
+Add a version tracking record to indicate I<bug> was found to be present in
+the given I<version> of the binary package to which I<bug> is currently
+assigned or I<source-package> if given.
+
+This implicitly changes I<bug>'s completion state to not B<done> indicating
+it should be acted upon by the maintainer unless I<version> is less than
+the current highest fixed version on record, see:
+
+    $ bts status 123456 fields:fixed_versions
+
+=item B<found> [I<bug>]
+
+(Expert) Clear all B<fixed> version tracking records in I<bug> and change
+it's completion state to indicate that it is not B<done> and should be
+acted upon my the maintainer -- this is somewhat rude so you better be
+sure.
+
+To be respectful consider using the B<reply> command and appeal to the
+maintainer for why they should still act on the bug. You can simultaniously
+use additional B<found> commands to record which I<version>s you can
+demonstrate to be affected in the BTS.
+
+=cut
+
+sub bts_found {
+    my ($bug, undef) = bugargs(\@_, 1, '^in$', 'otherargs')
+      or die "bts found: found what bug?\n";
+    my $version = shift;
+    if (!defined $version) {
+        $expertmode or die "bts found: what version?\n
+(Enable expert mode to allow clearing fixed_versions implicitly)\n";
+        # TODO: Introduce +-= for versiontracking to make CLI more
+        # consistent.
+        warn
+"bts found: no version given. This will clear 'fixed' version tracking records.
+  Sending to the BTS anyway as your expertly highness requested.\n";
+        $version = "";
+    }
+    opts_done(@_);
+    $offlinemode or check_versiontracking($bug, $version, 'found');
+    mailbts("found $bug in $version", "found $bug $version");
+}
+
+=item B<notfound> [I<bug>] [B<in>] [I<source-package>B</>]I<version>
+
+Remove a mistaken record that I<bug> is present in the given I<version> of
+the binary package to which it is currently assigned or I<source-package>
+if given.
+
+Do not use this if changes were actively made in Debian to address
+I<bug>. Use B<done> or B<fixed> instead as appropriate.
+
+Version tracking records for a bug are cleared entirely by the B<reassign>
+command.
+
+=cut
+
+sub bts_notfound {
+    my ($bug, undef) = bugargs(\@_, 1, '^in$', 'otherargs')
+      or die "bts notfound: what bug?\n";
+    my $version = shift
+      or die "bts notfound: remove record \#$bug from which version?\n";
+    opts_done(@_);
+    $offlinemode or check_versiontracking($bug, $version, 'notfound');
+    mailbts("notfound $bug in $version", "notfound $bug $version");
+}
+
+=item B<fixed> [I<bug>] [B<in>|B<by>|B<since>] [I<source-package>B</>]I<version>
+
+Add a version tracking record to indicate a closed I<bug> was also fixed in
+I<version> of the binary package I<bug> is currently assigned to or
+I<source-package> if given.
+
+This does not affect I<bug>'s completion state. Use the B<done> command to
+indicate no further action is expected on a bug instead.
+
+=cut
+
+sub bts_fixed {
+    my ($bug, undef) = bugargs(\@_, 1, '^(in|by|since)$', 'otherargs')
+      or die "bts fixed: what bug?\n";
+    my $version = shift or die "bts fixed: Bug#$bug fixed in which version?\n";
+    opts_done(@_);
+
+    check_fixedbugs($bug, $version);
+
+    if (!$offlinemode && !check_versiontracking($bug, $version, 'fixed')) {
+        die
+"bts fixed: Bug#$bug not marked as Done yet. Use \"bts done $bug since $version\" to make it so.$onlinecheck_bypass_msg\n"
+          unless exists $donebugs{$bug};
+    }
+    mailbts("fixed $bug in $version", "fixed $bug $version");
+    $fixedbugs{$bug} = $version;
+}
+
+sub check_fixedbugs {
+    my ($bug, $version) = @_;
+    my $prev_ver = $fixedbugs{$bug};
+    $prev_ver
+      and $prev_ver eq $version
+      and die
+"bts $shortcmd[$index]: Preceeding command marked Bug#$bug as fixed in version '$prev_ver'!\n  Fixed vs. not fixed. Please decide.\n";
+    $fixedbugs{$bug} = $version;
+}
+
+=item B<notfixed> [I<bug>] [B<in>|B<by>|B<since>] [I<source-package>B</>]I<version>
+
+Remove an erroniosly added version tracking record for I<bug> being fixed
+in the given I<version> of the binary package to which it currently
+assigned or I<source-package> if given.
+
+This does not affect I<bug>'s completion state. Use the B<found> command to
+reopen a bug that was erroniously marked B<done> and B<fixed> in
+I<version>.
+
+If the bug is not assigned to the correct package use the B<reassign>
+command instead which also removes all version tracking records.
+
+Note: B<notfixed> is equivalent to the sequence of commands "B<found>
+I<bug> I<version>", "B<notfound> I<bug> I<version>".
+
+=cut
+
+sub bts_notfixed {
+    my ($bug, undef) = bugargs(\@_, 1, '^(in|by|since)$', 'otherargs')
+      or die "bts notfixed: what bug?\n";
+    my $version = shift or die "bts notfixed: which version?\n";
+    opts_done(@_);
+
+    check_fixedbugs($bug, $version);
+    $offlinemode or check_versiontracking($bug, $version, 'notfixed');
+
+    mailbts("notfixed $bug in $version", "notfixed $bug $version");
+}
+
+=item B<block> [I<bug>] [B<by>|B<with>] I<blocker-bug> [I<blocker-bug> ...]
+
+=item B<blocked> [I<bug>] [B<by>|B<with>] I<blocker-bug> [I<blocker-bug> ...]
+
+Record that a I<bug> is blocked from being fixed by a set of other blocker-bugs.
+
+=cut
+
+sub bts_blocked {
+    my ($bug, undef) = bugargs(\@_, 1, '^(with|by)$')
+      or die "bts block: what bug is blocked?\n";
+    my @blockers = bugargs(\@_, 0, undef, undef, 'after with/by')
+      or die "bts block: $bug is blocking which other bug?\n";
+    @blockers >= 1
+      or die "bts block: need at least one blocker\n";
+    mailbts("block $bug with @blockers", "block $bug with @blockers");
+}
+
+=item B<unblock> [I<bug>] [B<from>|B<with>|B<by>] I<blocker-bug> [I<blocker-bug> ...]
+
+Remove records that I<bug> is blocked from being fixed by each of the blocker bugs.
+
+=cut
+
+sub bts_unblock {
+    my ($bug, undef) = bugargs(\@_, 1, '^(from|with|by)$')
+      or die "bts unblock: what bug is blocked?\n";
+    my @blockers = bugargs(\@_, 0, undef, undef, 'after from/with/by');
+    @blockers >= 1
+      or die "bts unblock: need at least one blocker\n";
+    mailbts("unblock $bug with @blockers", "unblock $bug with @blockers");
+}
+
+=item B<merge> [I<bug>] [B<with>] I<bug> [I<bug> ...]
+
+Merge a set of bugs together.
+
+=cut
+
+sub bts_merge {
+    @_ >= 1 or die "bts merge: need at least one argument\n";
+    my ($bug, undef) = bugargs(\@_, 1, '^with$')
+      or die "bts merge: which bug(s)?";
+    my @bugs = ($bug);
+    # Note: Disallow implicit expansion after 'with'
+    push @bugs, bugargs(\@_, 0, undef, undef, "after 'with'");
+    @bugs >= 2 or die "bts merge: need at least two bugs\n";
+    mailbts("merging @bugs", "merge @bugs");
+}
+
+=item B<forcemerge> [I<bug>] [B<with>] I<bug> [I<bug> ...]
+
+Forcibly merge a set of bugs together. The first I<bug> listed is the
+master bug, and its settings (those which must be equal in a normal
+B<merge>) are assigned to the bugs listed next.
+
+=cut
+
+sub bts_forcemerge {
+    @_ >= 1 or die "bts forcemerge: need at least one argument\n";
+    my (@bugs, undef) = bugargs(\@_, 1, '^with$');
+    # Note: Disallow implicit expansion after 'with'
+    push @bugs, bugargs(\@_, 0, undef, undef, "after 'with' (or first bug)");
+    @bugs >= 2 or die "bts forcemerge: need at least two bugs\n";
+    mailbts("forcibly merging @bugs", "forcemerge @bugs");
+}
+
+=item B<unmerge> [I<bug>]
+
+Unmerge a I<bug>.
+
+=cut
+
+sub bts_unmerge {
+    my $bug = bugargs(\@_, 1) or die "bts unmerge: unmerge what bug?\n";
+    opts_done(@_);
+    mailbts("unmerging $bug", "unmerge $bug");
+}
+
+=item B<tag> [I<bug>] [B<+>|B<->|B<=>] I<tag> [I<tag> ...]
+
+=item B<tags> [I<bug>] [B<+>|B<->|B<=>] I<tag> [I<tag> ...]
+
+Add or remove a I<tag>s on a I<bug>. The tag must be from the predefined
+list of valid tags below or abbreviated to a unique substring of one.
+
+=over 2
+
+=item Abbreviations
+
+Using B<fixed> will set the tag B<fixed>, not B<fixed-upstream>. However
+B<fix> would not be acceptable.
+
+=item Multiple tags
+
+Operating on several tags in one command is possible. The B<+> or B<->
+operators define whether subsequent tags are added or removed.
+
+=item Adding and removing
+
+The B<tag> command defaults to adding tags (B<+>) while the B<tags> command
+will currently complain if none of B<+>/B<->/B<=> are specified. In a
+future release (Forky+1) the 'tags' default operation will change to
+overriding the tags set (B<=>).
+
+At least one tag must be specified, unless the B<=> flag is used. The
+command below will remove all tags from the specified I<bug>.
+
+ $ bts tags <bug> =
+
+=item CCs
+
+Adding or removing the B<security> tag will add "team@security.debian.org"
+to the CC list of the control email.
+
+=item Avaliable tags
+
+The list of valid tags and their significance is available at
+L<https://www.debian.org/Bugs/Developer#tags>. The current valid tags
+are:
+
+patch, wontfix, moreinfo, unreproducible, fixed, help, security, upstream,
+pending, d-i, confirmed, ipv6, lfs, fixed-upstream, l10n, newcomer,
+a11y, ftbfs
+
+There is also a tag for each release of Debian since "potato". Note
+that this list may be out of date, see the website for the most up to
+date source.
+
+=item Examples
+
+ # Add moreinfo tag
+ $ bts tag 123456 moreinfo
+ $ bts tag 123456 +moreinfo
+ $ bts tag 123456 + moreinfo
+
+ # Add fixed, remove wontfix and unreproducible tags
+ $ bts tag 123456 +fixed -wontfix -unreproducible
+ $ bts tag 123456 +fixed -wontfix  unreproducible
+
+ # Clear tag list
+ $ bts tags 123456 =
+
+=back
+
+=cut
+
+# note that the tag list is also in the @gtag variable, look for
+# "potato" above.
+sub bts_tags {
+    my ($bug, $sep) = bugargs(\@_, 1, '^(\+|-|=)$', 'otherargs')
+      or die "bts tags: tag what bug?\n";
+    $sep && unshift(@_, $sep);
+    if (!@_) {
+        die "bts tags: set what tag?\n";
+    }
+    # Parse the rest of the command line.
+    my $base_command = "tags $bug";
+    my $commands     = [];
+
+    my $curop;
+    foreach my $tag (@_) {
+        if ($tag =~ s/^([-+=])//) {
+            my $op = $1;
+            if ($op eq '=') {
+                $curop      = '=';
+                $commands   = [];
+                $ccsecurity = '';
+            } elsif (!$curop || $curop ne $op) {
+                $curop = $op;
+            }
+            next unless $tag;
+        }
+        if (!$curop) {
+            $curop = '+';
+            if ($command[$index] eq 'tags') {
+                die
+"bts tags: Defaulted + not allowed for 'tags' command anymore (since Forky). Use 'tag' command or explicit '+' instead.\n";
+                # TODO Forky+1: Default to =.
+            }
+        }
+        if (!exists $valid_tags{$tag}) {
+            # Try prefixes
+            my @matches = grep /^\Q$tag\E/, @valid_tags;
+            if (@matches != 1) {
+                die "bts tags: \"$tag\" is not a "
+                  . (@matches > 1 ? "unique" : "valid")
+                  . " tag prefix. Choose from: "
+                  . join(" ", @valid_tags) . "\n";
+            }
+            $tag = $matches[0];
+        }
+        if (!@$commands || $curop ne $commands->[-1]{op}) {
+            push(@$commands, { op => $curop, tags => [] });
+        }
+        push(@{ $commands->[-1]{tags} }, $tag);
+        if ($tag eq "security") {
+            $ccsecurity = "team\@security.debian.org";
+        }
+    }
+
+    my $str = '';
+    foreach my $cmd (@$commands) {
+        if ($cmd->{op} ne '=' && !@{ $cmd->{tags} }) {
+            die "bts tags: set what tag?\n";
+        }
+        $str .= " $cmd->{op} " . join(' ', @{ $cmd->{tags} });
+    }
+    if (!$str && $curop eq '=') {
+        $str = " $curop";
+    }
+
+    if ($str) {
+        mailbts("tagging $bug", $base_command . $str);
+    }
+}
+
+=item B<affects> [I<bug>] [B<+>|B<->|B<=>] I<package> [I<package> ...]
+
+Record that a I<bug> affects a I<package> other than the bug's assigned
+package.
+
+The given I<bug> will be listed in the affected I<package>'s bug list.
+This should generally be used where the I<bug> is severe enough to cause
+multiple reports from users to be assigned to the wrong package.  At least
+one I<package> must be specified, unless the B<=> flag is used. The command
+
+ $ bts affects <bug> =
+
+will remove all indications that I<bug> affects other packages.
+
+=cut
+
+# TODO: Does Debbugs support "affects + foo - bar" like for "tags"?
+
+sub bts_affects {
+    my ($bug, $sep) = bugargs(\@_, 1, '^(\+|-|=)$', 'otherargs')
+      or die "bts affects: mark what bug as affecting another package?\n";
+    $sep && unshift(@_, $sep);
+    @_ or die "bts affects: mark which package as affected?\n";
+
+    # Parse the rest of the command line.
+    my $cmd  = "affects $bug";
+    my $flag = "";
+    if ($_[0] =~ /^[-+=]$/) {
+        $flag = $_[0];
+        $cmd .= " $flag";
+        shift;
+    } elsif ($_[0] =~ s/^([-+=])//) {
+        $flag = $1;
+        $cmd .= " $flag";
+    }
+
+    if ($flag ne '=' && !@_) {
+        die "bts affects: mark which package as affected?\n";
+    }
+
+    foreach my $package (@_) {
+        $cmd .= " $package";
+    }
+
+    mailbts("affects $bug", $cmd);
+}
+
+=item B<user> I<email>
+
+Specify a user I<email> address before using the B<usertags> command.
+
+=cut
+
+sub bts_user {
+    my $email = checkemail(shift)
+      or die "bts user: set user to what email address?\n";
+    if (!length $email) {
+        die "bts user: set user to what email address?\n";
+    }
+    opts_done(@_);
+    if ($email ne $last_user) {
+        mailbts("user $email", "user $email");
+    }
+    $last_user = $email;
+}
+
+=item B<usertag> [I<bug>] [B<+>|B<->|B<=>] [I<freeform-tag> ...]
+
+=item B<usertags> [I<bug>] [B<+>|B<->|B<=>] [I<freeform-tag> ...]
+
+Mirrors B<tags> command, but with freeform tags namespaced by preceding
+B<user> command or $EMAIL/$DEBEMAIL (in that order) from the environment.
+
+Add or remove freeform "usertags" on a I<bug>. The name of I<freeform-tag>s
+must be exact, there is no pre-defined list of valid tag names unlike with
+the B<tags> command.
+
+See B<tags> command for detailed usage. TODO: check usage is exactly the
+same regarding '+moreinfo' vs '+ moreinfo'.
+
+=cut
+
+sub bts_usertags {
+    my ($bug, $sep) = bugargs(\@_, 1, '^(\+|-|=)$', 'otherargs')
+      or die "bts usertags: tag what bug?\n";
+    $sep && unshift(@_, $sep);
+    if (!@_) {
+        die "bts usertags: set what user tag?\n";
+    }
+    # Parse the rest of the command line.
+    # TODO: Common up with bts_tags() logic?
+    my $cmd  = "usertags $bug";
+    my $flag = "";
+    if ($_[0] =~ /^[-+=]$/) {
+        $flag = $_[0];
+        $cmd .= " $flag";
+        shift;
+    } elsif ($_[0] =~ s/^([-+=])//) {
+        $flag = $1;
+        $cmd .= " $flag";
+    }
+
+    if (!$flag) {
+        $flag = '=';
+        if ($command[$index] eq 'usertags') {
+            die
+"bts usertags: Defaulted + not allowed for 'usertags' command anymore (since Forky). Use 'usertag' command or explicit '+' instead .\n";
+            # TODO Forky+1: Default to =.
+        }
+    }
+
+    if ($flag ne '=' && !@_) {
+        die "bts usertags: set what user tag?\n";
+    }
+
+    $cmd .= sprintf(' %s', join(' ', @_));
+
+    mailbts("usertagging $bug", $cmd);
+}
+
+=item B<claim> [I<bug>] [for] [I<claim>]
+
+Record that you have claimed a I<bug> (e.g. for a bug squashing party).
+I<claim> should be a unique token allowing the bugs you have claimed
+to be identified; an e-mail address is often used.
+
+If no I<claim> is specified, the environment variable B<DEBEMAIL>
+or B<EMAIL> (checked in that order) is used.
+
+See L<https://lists.debian.org/msgid-search/20050908170731.GA20584@cyan.localnet>.
+
+=cut
+
+sub bts_claim {
+    my ($bug, $sep) = bugargs(\@_, 1, '^for$')
+      or die "bts claim: claim what bug?\n";
+    $sep && $sep ne 'for' && unshift(@_, $sep);
+    my $claim = shift || $EMAIL || "";
+    checkemail($claim)
+      or die "bts claim: claim '$claim' must be a valid email address!\n";
+    if (!length($claim)) {
+        die "bts claim: use what claim token?\n";
+    }
+    opts_done(@_);
+
+    $claim = extractemail($claim);
+    bts_user("bugsquash\@qa.debian.org");
+    bts_usertags("$bug", "+$claim");
+}
+
+=item B<unclaim> [I<bug>] [B<for>] [I<claim>]
+
+Remove the record that you have claimed a bug.
+
+If no I<claim> is specified, the environment variable B<DEBEMAIL>
+or B<EMAIL> (checked in that order) is used.
+
+=cut
+
+sub bts_unclaim {
+    my ($bug, $sep) = bugargs(\@_, 1, '^for$')
+      or die "bts unclaim: unclaim what bug?\n";
+    $sep && $sep ne 'for' && unshift(@_, $sep);
+    my $claim = shift || $EMAIL || "";
+    checkemail($claim)
+      or die "bts claim: claim '$claim' must be a valid email address!\n";
+    if (!length $claim) {
+        die "bts unclaim: use what claim token?\n";
+    }
+    opts_done(@_);
+
+    $claim = extractemail($claim);
+    bts_user("bugsquash\@qa.debian.org");
+    bts_usertags("$bug", "-$claim");
+}
+
+=item B<severity> [I<bug>] I<severity>
+
+Change the I<severity> of a I<bug>. Available severities are: B<wishlist>, B<minor>, B<normal>,
+B<important>, B<serious>, B<grave>, B<critical>. The severity may be abbreviated to any
+unique substring.
+
+=cut
+
+sub bts_severity {
+    my $bug = bugargs(\@_, 1)
+      or die "bts severity: change the severity of what bug?\n";
+    my $severity = lc(shift // '')
+      or die "bts severity: set \#$bug\'s severity to what?\n";
+    my @matches = grep /^\Q$severity\E/i, @valid_severities;
+    if (@matches != 1) {
+        die
+"bts severity: \"$severity\" is not a valid severity.\nChoose from: @valid_severities\n";
+    }
+    opts_done(@_);
+    mailbts("severity of $bug is $matches[0]", "severity $bug $matches[0]");
+}
+
+=item B<forwarded> [I<bug>] I<address>
+
+Mark the I<bug> as forwarded to the given I<address> (usually an email address or
+a URL for an upstream bug tracker).
+
+=cut
+
+sub bts_forwarded {
+    my $bug = bugargs(\@_, 1)
+      or die "bts forwarded: mark what bug as forwarded?\n";
+    my $email = join(' ', @_);
+    if ($email =~ /$btsserver/) {
+        die
+"bts forwarded: We don't forward bugs within $btsserver, use bts reassign instead\n";
+    }
+    if (!length $email) {
+        die
+          "bts forwarded: mark bug $bug as forwarded to what email address?\n";
+    }
+    mailbts("bug $bug is forwarded to $email", "forwarded $bug $email");
+}
+
+=item B<notforwarded> [I<bug>]
+
+Mark a I<bug> as not forwarded.
+
+=cut
+
+sub bts_notforwarded {
+    my $bug = bugargs(\@_, 1) or die "bts notforwarded: what bug?\n";
+    opts_done(@_);
+    mailbts("bug $bug is not forwarded", "notforwarded $bug");
+}
+
+=item B<package> [I<package> ...]
+
+The following commands will only apply to bugs against the listed
+I<package>s; this acts as a safety mechanism for the BTS.  If no packages
+are listed, this check is turned off again.
+
+=cut
+
+sub bts_package {
+    if (@_) {
+        bts_limit(map { "package:$_" } @_);
+    } else {
+        bts_limit('package');
+    }
+}
+
+=item B<limit> [I<key>[B<:>I<value>]] ...
+
+The following commands will only apply to bugs which meet the specified
+criterion; this acts as a safety mechanism for the BTS.  If no I<value>s are
+listed, the limits for that I<key> are turned off again.  If no I<key>s are
+specified, all limits are reset.
+
+=over 8
+
+=item B<submitter>
+
+E-mail address of the submitter.
+
+=item B<date>
+
+Date the bug was submitted.
+
+=item B<subject>
+
+Subject of the bug.
+
+=item B<msgid>
+
+Message-id of the initial bug report.
+
+=item B<package>
+
+Binary package name.
+
+=item B<source>
+
+Source package name.
+
+=item B<tag>
+
+Tags applied to the bug.
+
+=item B<severity>
+
+Bug severity.
+
+=item B<owner>
+
+Bug's owner.
+
+=item B<affects>
+
+Bugs affecting this package.
+
+=item B<archive>
+
+Whether to search archived bugs or normal bugs; defaults to B<0>
+(i.e. only search normal bugs). As a special case, if archive is
+B<both>, both archived and unarchived bugs are returned.
+
+=back
+
+For example, to limit the set of bugs affected by the subsequent control
+commands to those submitted by jrandomdeveloper@example.com and tagged
+B<wontfix>, one would use
+
+bts limit submitter:jrandomdeveloper@example.com tag:wontfix
+
+If a key is used multiple times then the set of bugs selected includes
+those matching any of the supplied values; for example
+
+bts limit package:foo severity:wishlist severity:minor
+
+only applies the subsequent control commands to bugs of package foo with
+either B<wishlist> or B<minor> severity.
+
+=cut
+
+sub bts_limit {
+    my @args = @_;
+    my %limits;
+    # Ensure we're using the limit fields that debbugs expects.  These are the
+    # keys from Debbugs::Status::fields
+    my %valid_keys = (
+        submitter => 'originator',
+        date      => 'date',
+        subject   => 'subject',
+        msgid     => 'msgid',
+        package   => 'package',
+        source    => 'source',
+        src       => 'source',
+        tag       => 'keywords',
+        severity  => 'severity',
+        owner     => 'owner',
+        affects   => 'affects',
+        archive   => 'unarchived',
+    );
+    for my $arg (@args) {
+        my ($key, $value) = split /:/, $arg, 2;
+        next unless $key;
+        if (!defined $value) {
+            die "bts limit: No value given for '$key'\n";
+        }
+        if (exists $valid_keys{$key}) {
+            # Support "$key:" by making it look like "$key", i.e. no $value
+            # defined
+            undef $value unless length($value);
+            if ($key eq "archive") {
+                if (defined $value) {
+                    # limit looks for unarchived, not archive.  Verify we have
+                    # a valid value and then switch the boolean value to match
+                    # archive => unarchive
+                    if ($value =~ /^yes|1|true|on$/i) {
+                        $value = 0;
+                    } elsif ($value =~ /^no|0|false|off$/i) {
+                        $value = 1;
+                    } elsif ($value ne 'both') {
+                        die "bts limit: Invalid value ($value) for archive\n";
+                    }
+                }
+            }
+            $key = $valid_keys{$key};
+            if (defined $value and $value) {
+                push(@{ $limits{$key} }, $value);
+            } else {
+                $limits{$key} = ();
+            }
+        } elsif ($key eq 'clear') {
+            %limits = ();
+            $limits{$key} = 1;
+        } else {
+            die "bts limit: Unrecognized key: $key\n";
+        }
+    }
+    for my $key (keys %limits) {
+        if ($key eq 'clear') {
+            mailbts('clear all limit(s)', 'limit clear');
+            next;
+        }
+        if (defined $limits{$key}) {
+            my $value = join ' ', @{ $limits{$key} };
+            mailbts("limit $key to $value", "limit $key $value");
+        } else {
+            mailbts("clear $key limit", "limit $key");
+        }
+    }
+}
+
+=item B<owner> [I<bug>] I<owner-email>
+
+Change the "owner" address of a I<bug>, with B<!> meaning
+"use the address on the current email as the new owner address".
+
+The owner of a bug accepts responsibility for dealing with it.
+
+=cut
+
+sub bts_owner {
+    my $bug = bugargs(\@_, 1) or die "bts owner: change owner of what bug?\n";
+    my $owner = checkemail(shift, 1)
+      or die "bts owner: change owner to what?\n";
+    opts_done(@_);
+    mailbts("owner $bug", "owner $bug $owner");
+}
+
+=item B<noowner> [I<bug>]
+
+=item B<disown> [I<bug>]
+
+Mark a bug as having no "owner".
+
+=cut
+
+sub bts_disown { goto &bts_noowner }
+
+sub bts_noowner {
+    my $bug = bugargs(\@_, 1) or die "bts noowner: what bug?\n";
+    opts_done(@_);
+    mailbts("bug $bug has no owner", "noowner $bug");
+}
+
+=item B<subscribe> [I<bug>] [B<email>] [I<email>]
+
+Subscribe the given I<email> address to the specified I<bug> reports.
+
+If no email address is specified, the environment variable B<DEBEMAIL> or
+B<EMAIL> (in that order) is used.  If those are not set, or B<!> is given
+as email address, your mail system will determine the address used.
+
+After executing this command, you will be sent a subscription confirmation to
+which you have to reply.  When subscribed to a bug report, you receive all
+relevant emails and notifications.
+
+Use the B<unsubscribe> command to undo the subscription.
+
+=cut
+
+sub bts_subscribe {
+    my @bugs = bugargs(\@_, 0, '^(email)$', 'otherargs')
+      or die "bts subscribe: subscribe to what bugs?\n";
+    my $email = checkemail(shift, 1);
+    opts_done(@_);
+
+    $scription{$_} = ['sub', $email] foreach @bugs;
+}
+
+=item B<unsubscribe> [I<bug> ...] [B<email>] [I<email>]
+
+Unsubscribe the given email address from the specified I<bug> reports.
+
+As with subscribe above, if no email address is specified, the environment
+variables B<DEBEMAIL> or B<EMAIL> (in that order) is used.  If those are
+not set, or B<!> is given as email address, your mail system will determine
+the address used.
+
+You will receive an unsubscription confirmation to which you need to reply
+for the unsubscription to be effectiv.
+
+Currently there is no self-service mechanism to list all your subscriptions
+or to unsubscribe from all bugs. Contact the Debian Listmaster Team
+<https://wiki.debian.org/Teams/ListMaster> who are responsible for the bug
+subscription infrastructure.
+
+=cut
+
+sub bts_unsubscribe {
+    my @bugs = bugargs(\@_, 0, '^(email)$', 'otherargs')
+      or die "bts unsubscribe: unsubscribe from what bugs?\n";
+    my $email = checkemail(shift, 1);
+    $email = lc($email) if defined $email;
+    opts_done(@_);
+
+    $scription{$_} = ['unsub', $email] foreach @bugs;
+}
+
+=item B<spamreport> [I<bug>] ...
+
+=item B<reportspam> [I<bug>] ...
+
+Record that I<bug> constains SPAM messages. A Debian contributor will
+review the bug log and remove the offending message(s).
+
+=cut
+
+sub bts_spamreport { goto &bts_reportspam; }
+
+sub bts_reportspam {
+    my @bugs = bugargs(\@_, 0)
+      or die "bts reportspam: invalid bug number\n";
+    @bugs >= 1
+      or die "bts reportspam: need at least one bug number\n";
+
+    if (!have_lwp()) {
+        die "$progname: Couldn't run bts reportspam: $lwp_broken\n";
+    }
+    init_agent() unless $ua;
+
+    foreach my $bug (@bugs) {
+        my $url = "$btscgispamurl?bug=$bug;ok=ok";
+        if ($noaction) {
+            print "bts reportspam: would report $bug as containing spam (URL: "
+              . $url . ")\n";
+        } else {
+            my $request  = HTTP::Request->new('GET', $url);
+            my $response = $ua->request($request);
+            if (!$response->is_success) {
+                warn "$progname: failed to report $bug as containing spam: "
+                  . $response->status_line . "\n";
+            }
+        }
+    }
+}
+
+=item B<cache> [I<options>] [I<maint_email> | I<pkg> | B<src:>I<pkg> | B<from:>I<submitter>]
+
+=item B<cache> [I<options>] [B<release-critical> | B<release-critical/>... | B<RC>]
+
+Generate or update a cache of bug reports for the given email address
+or package. By default it downloads all bugs belonging to the email
+address in the B<DEBEMAIL> environment variable (or the B<EMAIL> environment
+variable if B<DEBEMAIL> is unset). This command may be repeated to cache
+bugs belonging to several people or packages. If multiple packages or
+addresses are supplied, bugs belonging to any of the arguments will be
+cached; those belonging to more than one of the arguments will only be
+downloaded once. The cached bugs are stored in
+F<$XDG_CACHE_HOME/devscripts/bts/> or, if B<XDG_CACHE_HOME> is not set, in
+F<~/.cache/devscripts/bts/>.
+
+You can use the cached bugs with the B<-o> switch. For example:
+
+  bts -o bugs
+  bts -o show 12345
+
+Also, B<bts> will update the files in it in a piecemeal fashion as it
+downloads information from the BTS using the B<show> command. You might
+thus set up the cache, and update the whole thing once a week, while
+letting the automatic cache updates update the bugs you frequently
+refer to during the week.
+
+Some options affect the behaviour of the B<cache> command.  The first is
+the setting of B<--cache-mode>, which controls how much B<bts> downloads
+of the referenced links from the bug page, including boring bits such
+as the acknowledgement emails, emails to the control bot, and the mbox
+version of the bug report.  It can take three values: B<min> (the
+minimum), B<mbox> (download the minimum plus the mbox version of the bug
+report) or B<full> (the whole works).  The second is B<--force-refresh> or
+B<-f>, which forces the download, even if the cached bug report is
+up-to-date.  The B<--include-resolved> option indicates whether bug
+reports marked as resolved should be downloaded during caching.
+
+Each of these is configurable from the configuration
+file, as described below.  They may also be specified after the
+B<cache> command as well as at the start of the command-line.
+
+Finally, B<-q> or B<--quiet> will suppress messages about caches being
+up-to-date, and giving the option twice will suppress all cache
+messages (except for error messages).
+
+Beware of caching RC, though: it will take a LONG time!  (With 1000+
+RC bugs and a delay of 5 seconds between bugs, you're looking at a
+minimum of 1.5 hours, and probably significantly more than that.)
+
+=cut
+
+sub bts_cache {
+    @ARGV = @_;
+    my ($sub_cachemode, $sub_refreshmode, $sub_updatemode);
+    my $sub_quiet           = $quiet;
+    my $sub_includeresolved = $includeresolved;
+    GetOptions(
+        "cache-mode|cachemode=s" => \$sub_cachemode,
+        "f"                      => \$sub_refreshmode,
+        "force-refresh!"         => \$sub_refreshmode,
+        "only-new!"              => \$sub_updatemode,
+        "q|quiet+"               => \$sub_quiet,
+        "include-resolved!"      => \$sub_includeresolved,
+    ) or die "$progname: unknown options for cache command\n";
+    @_ = @ARGV;    # whatever's left
+
+    if (defined $sub_refreshmode) {
+        ($refreshmode, $sub_refreshmode) = ($sub_refreshmode, $refreshmode);
+    }
+    if (defined $sub_updatemode) {
+        ($updatemode, $sub_updatemode) = ($sub_updatemode, $updatemode);
+    }
+    if (defined $sub_cachemode) {
+        if ($sub_cachemode =~ $cachemode_re) {
+            ($cachemode, $sub_cachemode) = ($sub_cachemode, $cachemode);
+        } else {
+            warn
+"$progname: ignoring invalid --cache-mode $sub_cachemode;\nmust be one of min, mbox, full.\n";
+        }
+    }
+    # This may be a no-op, we don't mind
+    ($quiet,           $sub_quiet) = ($sub_quiet, $quiet);
+    ($includeresolved, $sub_includeresolved)
+      = ($sub_includeresolved, $includeresolved);
+
+    prunecache();
+    if (!have_lwp()) {
+        die "$progname: Couldn't run bts cache: $lwp_broken\n";
+    }
+
+    if (!-d $cachedir) {
+        my $err;
+        make_path($cachedir, { error => \$err });
+        if (@$err) {
+            my ($path, $msg) = each(%{ $err->[0] });
+            die "$progname: couldn't mkdir $path: $msg\n";
+        }
+    }
+
+    download("css/bugs.css");
+
+    my $tocache;
+    if   (@_ > 0) { $tocache = sanitizething(shift); }
+    else          { $tocache = ''; }
+
+    if (!length $tocache) {
+        $tocache = $EMAIL || '';
+        if ($tocache =~ /^.*\s<(.*)>\s*$/) { $tocache = $1; }
+    }
+    if (!length $tocache) {
+        die "bts cache: cache what?\n";
+    }
+
+    my $sub_thgopts = '';
+    $sub_thgopts = ';pend-exc=done'
+      if (!$includeresolved && $tocache !~ /^release-critical/);
+
+    my %bugs    = ();
+    my %oldbugs = ();
+
+    do {
+        %oldbugs = (%oldbugs,
+            map { $_ => 1 } bugs_from_thing($tocache, $sub_thgopts));
+
+        # download index
+        download($tocache, $sub_thgopts, 1);
+
+        %bugs
+          = (%bugs, map { $_ => 1 } bugs_from_thing($tocache, $sub_thgopts));
+
+        $tocache = sanitizething(shift);
+    } while (defined $tocache);
+
+    # remove old bugs from cache
+    if (keys %oldbugs) {
+        tie(%timestamp, "Devscripts::DB_File_Lock", $timestampdb,
+            O_RDWR() | O_CREAT(),
+            0600, $DB_HASH, "write")
+          or die
+          "$progname: couldn't open DB file $timestampdb for writing: $!\n"
+          if !tied %timestamp;
+    }
+
+    foreach my $bug (keys %oldbugs) {
+        if (!$bugs{$bug}) {
+            deletecache($bug);
+        }
+    }
+
+    untie %timestamp;
+
+    # download bugs
+    my $bugcount = 1;
+    my $bugtotal = scalar keys %bugs;
+    foreach my $bug (keys %bugs) {
+        if (-f cachefile($bug, '') and $updatemode) {
+            print "Skipping $bug as requested ... $bugcount/$bugtotal\n"
+              if !$quiet;
+            $bugcount++;
+            next;
+        }
+        download($bug, '', 1, 0, $bugcount, $bugtotal);
+        sleep $opt_cachedelay;
+        $bugcount++;
+    }
+
+    # revert options
+    if (defined $sub_refreshmode) {
+        $refreshmode = $sub_refreshmode;
+    }
+    if (defined $sub_updatemode) {
+        $updatemode = $sub_updatemode;
+    }
+    if (defined $sub_cachemode) {
+        $cachemode = $sub_cachemode;
+    }
+    $quiet           = $sub_quiet;
+    $includeresolved = $sub_includeresolved;
+}
+
+=item B<cleancache> I<package> | B<src:>I<package> | I<maintainer>
+
+=item B<cleancache from:>I<submitter> | B<tag:>I<tag> | B<usertag:>I<tag> | I<number> | B<ALL>
+
+Clean the cache for the specified I<package>, I<maintainer>, etc., as
+described above for the B<bugs> command, or clean the entire cache if
+B<ALL> is specified. This is useful if you are going to have permanent
+network access or if the database has become corrupted for some
+reason.  Note that for safety, this command does not default to the
+value of B<DEBEMAIL> or B<EMAIL>.
+
+=cut
+
+sub bts_cleancache {
+    prunecache();
+    my $toclean = sanitizething(shift);
+    if (!defined $toclean) {
+        die "bts cleancache: clean what?\n";
+    }
+    if (!-d $cachedir) {
+        return;
+    }
+    if ($toclean eq 'ALL') {
+        if (system("/bin/rm", "-rf", $cachedir) >> 8 != 0) {
+            warn "Problems cleaning cache: $!\n";
+        }
+        return;
+    }
+
+    # clean index
+    tie(%timestamp, "Devscripts::DB_File_Lock", $timestampdb,
+        O_RDWR() | O_CREAT(),
+        0600, $DB_HASH, "write")
+      or die "$progname: couldn't open DB file $timestampdb for writing: $!\n"
+      if !tied %timestamp;
+
+    if ($toclean =~ /^\d+$/) {
+        # single bug only
+        deletecache($toclean);
+    } else {
+        my @bugs_to_clean = bugs_from_thing($toclean);
+        deletecache($toclean);
+
+        # remove old bugs from cache
+        foreach my $bug (@bugs_to_clean) {
+            deletecache($bug);
+        }
+    }
+
+    untie %timestamp;
+}
+
+=item B<listcachedbugs> [I<number>]
+
+List cached bug ids (intended to support bash completion). The optional number argument
+restricts the list to those bug ids that start with that number.
+
+=cut
+
+sub bts_listcachedbugs {
+    my $number = shift;
+    if (not defined $number) {
+        $number = '';
+    }
+    if ($number =~ m{\D}) {
+        return;
+    }
+    my $untie = 0;
+    if (not tied %timestamp) {
+        tie(%timestamp, "Devscripts::DB_File_Lock", $timestampdb,
+            O_RDONLY(), 0600, $DB_HASH, "read")
+          or die
+          "$progname: couldn't open DB file $timestampdb for reading: $!\n";
+        $untie = 1;
+    }
+
+    print join "\n", grep { $_ =~ m{^$number\d+$} } sort keys %timestamp;
+    print "\n";
+
+    if ($untie) {
+        untie %timestamp;
+    }
+}
+
+# Add any new commands here.
+
+=item B<version>
+
+Display version and copyright information.
+
+=cut
+
+sub bts_version {
+    print <<"EOF";
+$progname version $version
+Copyright (C) 2001-2003 by Joey Hess <joeyh\@debian.org>.
+Modifications Copyright (C) 2002-2004 by Julian Gilbey <jdg\@debian.org>.
+Modifications Copyright (C) 2007 by Josh Triplett <josh\@freedesktop.org>.
+It is licensed under the terms of the GPL, either version 2 of the
+License, or (at your option) any later version.
+EOF
+}
+
+=item B<help>
+
+Display a short summary of commands, suspiciously similar to parts of this
+man page.
+
+=cut
+
+# Other supporting subs
+
+# This must be the last bts_* sub
+sub bts_help {
+    my $inlist    = 0;
+    my $insublist = 0;
+    print <<"EOF";
+Usage: $progname [options] command [args] [\#comment] [.|, command ... ]
+Valid options are:
+   -o, --offline          Do not attempt to connect to BTS for show/bug
+                          commands: use cached copy
+   --online, --no-offline Attempt to connect (default)
+   -n, --no-action        Do not send emails but print them to standard output.
+   --no-cache             Do not attempt to cache new versions of BTS
+                          pages when performing show/bug commands
+   --cache                Do attempt to cache new versions of BTS
+                          pages when performing show/bug commands (default)
+   --cache-mode={min|mbox|full}
+                          How much to cache when we are caching: the sensible
+                          bare minimum (default), the mbox as well, or
+                          everything?
+   --cache-delay=seconds  Time to sleep between each download when caching.
+   -m, --mail, --mbox     With show or bugs, open a mailreader to read the mbox
+                          version instead
+   -w, --web              Opposite of --mail, open bugs in a web-browser.
+   --mailreader=CMD       Run CMD to read an mbox; default is 'mutt -f %s'
+                          (must contain %s, which is replaced by mbox name)
+   --cc-addr=CC_EMAIL_ADDRESS
+                          Send carbon copies to a list of users.
+                          CC_EMAIL_ADDRESS should be a comma-separated list of
+                          e-mail addresses. Multiple options add more CCs.
+   --use-default-cc       Send carbon copies to any addresses specified in the
+                          configuration file BTS_DEFAULT_CC (default)
+   --no-use-default-cc    Do not do so
+   --sendmail=cmd         Sendmail command to use (default /usr/sbin/sendmail)
+   --mutt                 Use mutt for sending of mails.
+   --no-mutt              Do not use mutt for sending mail
+   --smtp-host=host       SMTP host to use
+   --smtp-username=user   } Credentials to use when connecting to an SMTP
+   --smtp-password=pass   } server which requires authentication
+   --smtp-helo=helo       HELO to use when connecting to the SMTP server;
+                            (defaults to the content of /etc/mailname)
+   --bts-server           The name of the debbugs server to use
+                            (default https://bugs.debian.org)
+   -f, --force-refresh    Reload all bug reports being cached, even unchanged
+                          ones
+   --no-force-refresh     Do not do so (default)
+   --only-new             Download only new bugs when caching.  Do not check
+                          for updates in bugs we already have.
+   --include-resolved     Cache bugs marked as resolved (default)
+   --no-include-resolved  Do not cache bugs marked as resolved
+   --no-ack               Suppress BTS acknowledgment mails
+   --ack                  Do not do so (default)
+   -i, --interactive      Prompt for confirmation before sending e-mail.
+   --force-interactive    Force interactive editing immediately. Similar to
+                          --interactive, except editor is spawned before prompt.
+   --no-interactive       Send e-mail immediately, without prompt (default).
+   -q, --quiet            Only display information about newly cached pages.
+                          If given twice, only display error messages.
+   --no-conf, --noconf    Do not read devscripts config files;
+                          must be the first option given
+   -h, --help             Display this message
+   -v, --version          Display version and copyright info
+
+Valid commands are:
+EOF
+    my $pod = '';
+    seek DATA, 0, 0;
+    while (<DATA>) {
+        $inlist = 1 if /^=over 4/;
+        next unless $inlist;
+        $insublist = 1 if /^=over [^4]/;
+        $insublist = 0 if /^=back/;
+        if (/^=item\sB<([^->].*)>/ and !$insublist) {
+            if ($1 eq 'help') {
+                last;
+            }
+            $pod .= $_ . "\n";
+        }
+    }
+
+    # Strip POD markup before displaying and ensure we don't wrap
+    # longer lines
+    my $parser = Pod::BTS->new(width => 100);
+    $parser->no_whining(1);
+    $parser->output_fh(\*STDOUT);
+    $parser->parse_string_document($pod);
+
+    print <<"EOF";
+Settings modified from defaults by devscripts configuration files:g
+$modified_conf_msg
+EOF
+}
+
+# Strips any leading # or Bug# and trailing : from a thing if what's left is
+# a pure positive number;
+# also RC is a synonym for release-critical/other/all.html
+sub sanitizething {
+    my $bug = $_[0];
+    defined $bug or return undef;
+
+    return 'release-critical/other/all.html' if $bug eq 'RC';
+    return 'release-critical/index.html'     if $bug eq 'release-critical';
+    $bug =~ s/^(?:(?:Bug)?\#)?(\d+):?$/$1/;
+    return $bug;
+}
+
+# Perform basic validation of an argument which should be an email address,
+# handling ! if allowed
+sub checkemail {
+    my $email     = $_[0] or return;
+    my $allowbang = $_[1];
+
+    if ($email !~ /\@/ && (!$allowbang || $email ne '!')) {
+        return;
+    }
+
+    return $email;
+}
+
+# bugargs($@args, $max_bugs, $sep_re, $quiet, $disallow_implicit_msg);
+# Remove up to $max_bugs arguments looking like bug numbers from $args
+# array reference, stopping at arg matching $sep_re.
+#
+# Implicit bug ($it):
+#
+#   Expansion happens if $@args are empty, $sep_re appears as first arg,
+#   '-1' or 'it' are given. If $disallow_implicit_msg is trueish die
+#   instead.
+#
+# Notes:
+#
+#   - Strips out extraneous leading junk, allowing for things like
+#     "#74041" and "Bug#94921"
+#
+#   - Leaves unconsumed arguments in passed array, so check or reject them
+#     with opts_done(@_)!
+#
+# Examples:
+#
+#  Consume zero or more bugs -- error on invalid bug-number:
+#
+#    Usage: [bug]...
+#    my @bugs = bugargs(\@_) or die 'no bugs!';
+#
+#  Consume at most one bug -- error on invalid bug-number:
+#
+#    Usage: [bug]...
+#    my $bug = bugargs(\@_, 1) or die 'no bugs!';
+#
+#  Consume at most one bug up to a separator or non-bugish arg:
+#
+#    Usage: [bug] [to] [other@non-bugish=args]...
+#    my ($bug, $sep) = bugargs(\@_, 1, '^to$', 'otherargs') or die 'no bugs!';
+#
+#  Consume at most one up to something non-bugish:
+#
+#    Usage: [bug] [some@email]...
+#    my $bug = bugargs(\@_, 1, undef, 'otherargs') or die 'no bugs!';
+#
+#
+# Note on bugargs() transition: The following tricky cases should work:
+#   done 123456 , clone it -1
+#   done 123456 , clone -1 -1
+#   done 123456 , clone to -2
+#
+#   done 123456 , clone to -1 , reassign it -1 to pkg
+#     ==> clone 123456 -1 , reassign 123456 pkg
+#   done 123456 , clone -1 -1 , reassign -1 -1 to pkg
+#     ==> clone 123456 -1 , reassign 123456 pkg
+#   # TODO: Should clone new IDs be assigned to $main::it? Aren't rn.
+#
+#   done 123456 , reassign it pkg
+#
+# These should error:
+#   done 123456 , clone -2
+
+sub bugargs {
+    my $args     = shift;    # reference to caller's args array
+    my $max_bugs = shift;    # 0/undef means consume all valid bug numbers
+    my $sep_re   = shift;
+    my $otherargs             = (shift // '') eq 'otherargs';
+    my $disallow_implicit_msg = shift;
+
+    my $sep  = '';
+    my @bugs = ();
+
+    if (@$args == 0 && defined $main::it) {
+        goto out;
+    } elsif (@$args == 0 && $max_bugs > 0) {
+        die
+"$progname: need at least one bug number (implitic bug not defined)\n";
+    }
+
+    while (@$args) {
+        my $arg = @{$args}[0];
+
+        if ($sep_re && $arg =~ $sep_re) {
+            $sep = $arg;
+            shift @{$args};    # remove from args array
+            last;
+        }
+
+        if ($max_bugs && @bugs >= $max_bugs) {
+            last;
+        }
+
+        # Be careful since '-1' is ambigous if it's already been used as a
+        # 'clone' new ID.
+        my $italias
+          = $arg eq '-1' && defined $main::it && !exists $clonedbugs{-1};
+
+        if ($arg eq 'it' || $italias) {
+            if ($disallow_implicit_msg) {
+                die
+"$progname: The implict bug '$arg' is not allowed $disallow_implicit_msg!\n";
+            }
+            if (not defined $main::it) {
+                die
+"$progname: You provided the implict bug '$arg' without context!\n";
+            }
+            $arg = $main::it;
+            say "bugargs: Using implicit ($main::it)" if $debug;
+            # only allow using $it once
+            $disallow_implicit_msg = 'again';
+            goto valid;
+        }
+
+        # Remove cruft around the raw number
+        $arg =~ s/^(?:(?:bug)?\#)?(-?\d+):?$/$1/i;
+
+        say "bugargs: valid bug? $arg" if $debug;
+
+        if ($arg !~ /^[0-9]{4,}$/ && !exists $clonedbugs{$arg}) {
+            if ($otherargs) {
+                last;
+            } else {
+                my $clones = '';
+                if (%clonedbugs && $arg =~ '^-') {
+                    $clones
+                      = "\nMaybe you meant one of the available clones:\n"
+                      . "    "
+                      . join(", ", keys %clonedbugs) . "?\n";
+                }
+                die "$progname: '$arg' is not a valid bug number!\n$clones";
+            }
+        }
+
+        # Got a valid bug number.
+        $main::it = $arg;    # allow user to refer back to 'it' later
+        say "bugargs: Assigning implicit = $arg" if $debug;
+      valid:
+        shift @{$args};      # remove from caller's args array
+        push @bugs, $arg;
+    }
+
+  out:
+    if (@bugs == 0) {
+        if (defined $main::it) {
+            push @bugs, $main::it if !$disallow_implicit_msg;
+        } else {
+            die "$progname: Implict bug used without context!\n";
+        }
+    }
+
+    say "bugargs: bugs=(@bugs), sep='$sep', args=(@$args)" if $debug;
+    if ($max_bugs == 1 && $sep_re) {
+        return $bugs[0] ? ($bugs[0], $sep) : undef;
+    } elsif ($max_bugs == 1) {
+        return $bugs[0];
+    }
+
+    return @bugs;
+}
+
+# Stores up some extra information for a mail to the bts.
+sub mailbts {
+    my $short_subj = shift;
+    my $cmd        = shift || die 'no cmd';
+
+    if ($ctlsubject eq '') {
+        $ctlsubject = $short_subj;
+    } elsif (length($ctlsubject) + length($short_subj) < 100) {
+        $ctlsubject .= ", $short_subj" if length($short_subj);
+    } elsif ($ctlsubject !~ / ...$/) {
+        $ctlsubject .= " ...";
+    }
+    die '$index undef, called outside command loop?' if not defined $index;
+    push @ctlcmds, "$comment[$index]" if $comment[$index];
+    push @ctlcmds, "$cmd";
+}
+
+sub make_pseudoheader {
+    my $phdr = '';
+    $phdr = (join("\n", @_) . "\n") if @_;
+    foreach (@ctlcmds) {
+        # Optimize pseudoheader a bit.
+        if (keys %donebugs == 1) {
+            s/^close ([0-9]+) ([^ \/]+)$/Version: $2/ && goto out;
+            s/^fixed ([0-9]+) ([^ \/]+)$/Version: $2/ && goto out;
+        }
+        s/^/Control: /;
+      out:
+        $phdr .= $_ . "\n";
+    }
+
+    return $phdr ? ($phdr . "\n") : '';
+}
+
+# Extract an array of email addresses from a string
+sub extract_addresses {
+    my $s = shift;
+    my @addresses;
+
+    # Original regular expression from git-send-email, slightly modified
+    while ($s and $s =~ /([^,<>"\s\@]+\@[^.,<>"\s@]+(?:\.[^.,<>"\s\@]+)+)(.*)/)
+    {
+        push @addresses, $1;
+        $s = $2;
+    }
+    return @addresses;
+}
+
+sub pick_sender {
+    my $from = shift;
+
+    return 'noaction' if $noaction;
+    return 'mua'      if $use_mutt and $from;    # TODO: really needs From?
+    return 'smtp'     if length $smtphost;
+    return 'sendmail';
+}
+
+# Send one full mail message.
+sub send_mail {
+    my ($hdrs, $rcpts, $subject, $body, $from) = @_;
+
+    @$hdrs  or die "no headers given";
+    @$rcpts or die "no rcpts given";
+
+    # TODO: rand() is not cryptographically random, consider switching to
+    # something else.
+    my $msgid
+      = sprintf("%s-%s", time(), int(rand(1000000000))) . '@bts.debian.org';
+    my $date = strftime "%a, %d %b %Y %T %z", localtime;
+
+    my $charset = `locale charmap`;
+    chomp $charset;
+    $charset =~ s/^ANSI_X3\.4-19(68|86)$/US-ASCII/;
+    $subject = MIME_encode_mimewords($subject, 'Charset' => $charset);
+
+    $from = $from // get_from_header();
+    $from = MIME_encode_mimewords($from, 'Charset' => $charset) if $from;
+
+    # TODO: s/$message/$headers/
+    my $message = '';
+    $message .= fold_from_header("From: $from") . "\n" if $from;
+    $message .= join("\n", @{$hdrs}) . "\n";
+    $message .= "X-Debbugs-No-Ack: Yes\n" if not $requestack;
+    $message .= "Subject: $subject\n"     if length $subject;
+    $message
+      .= "Date: $date\n"
+      . "User-Agent: devscripts bts/$version$toolname\n"
+      . "Message-ID: <$msgid>\n" . "\n";
+
+    my $sender = pick_sender($from);
+    say
+"bts debug: Sending using '$sender'. (use_mutt=$use_mutt, interactive=$interactive, noaction=$noaction)"
+      if $debug;
+
+    ($message, $body) = confirmmail($message, $body);
+
+    return if not defined $body;
+
+    $message .= "$body\n";
+
+    if ($sender eq 'noaction') {
+        print "$message\n";
+    } elsif ($sender eq 'mua') {
+        send_using_mua($message);
+    } elsif ($sender eq 'smtp') {
+        send_using_smtp($from, $rcpts, $message);
+    } elsif ($sender eq 'sendmail') {
+        send_using_sendmail($message);
+    } else {
+        die 'unhandled $sender';
+    }
+}
+
+sub get_from_header {
+    if (!$ENV{'DEBEMAIL'} && !$ENV{'EMAIL'}) {
+        return;
+    }
+
+    my ($email, $name);
+    if (exists $ENV{'DEBFULLNAME'}) { $name = $ENV{'DEBFULLNAME'}; }
+    if (exists $ENV{'DEBEMAIL'}) {
+        $email = $ENV{'DEBEMAIL'};
+        if ($email =~ /^(.*?)\s+<(.*)>\s*$/) {
+            $name ||= $1;
+            $email = $2;
+        }
+    }
+    if (exists $ENV{'EMAIL'}) {
+        if ($ENV{'EMAIL'} =~ /^(.*?)\s+<(.*)>\s*$/) {
+            $name  ||= $1;
+            $email ||= $2;
+        } else {
+            $email ||= $ENV{'EMAIL'};
+        }
+    }
+    if (!$name) {
+        # Perhaps not ideal, but it will have to do
+        $name = (getpwuid($<))[6];
+        $name =~ s/,.*//;
+    }
+
+    return $name ? "$name <$email>" : $email;
+}
+
+sub get_interactive_cc {
+    my %cc = ();
+    if ($packagesserver) {
+        $cc{"$_\@$packagesserver"} = 1 foreach keys %ccpackages;
+    }
+    if ($btsserver) {
+        $cc{"$_-submitter\@$btsserver"} = 1 foreach keys %ccsubmitters;
+    }
+    return %cc;
+}
+
+sub get_mail_cc {
+    my %cc;
+    if ($interactive eq 'force' || $use_mutt) {
+        %cc = (%cc, get_interactive_cc());
+    }
+    $cc{$_} = 1 foreach (@ccemails, @opt_ccemails);
+    if ($ccsecurity) {
+        $cc{$ccsecurity} = 1;
+    }
+    return %cc;
+}
+
+sub get_nonmua_bcc {
+    return () if $use_mutt;
+    return map { ($_ => 1) } @bccemails;
+}
+
+sub send_using_mua {
+    my $message = shift;
+
+    my ($fh, $filename) = tempfile(
+        "btsXXXXXX",
+        SUFFIX => ".eml",
+        DIR    => File::Spec->tmpdir,
+        UNLINK => 1
+    );
+    open(MAILOUT, ">&", $fh)
+      or die "$progname: writing to temporary file failed: $!\n";
+
+    print MAILOUT $message;
+
+    my $mailcmd = $muttcmd;
+    $mailcmd =~ s/\%([%s])/$1 eq '%' ? '%' : $filename/eg;
+
+    system("$mailcmd </dev/tty") >> 8 == 0
+      or die "$progname: unable to start MUA '$mailcmd': $!";
+}
+
+sub send_using_smtp {
+    my $from = shift
+      or die
+      "$progname: When sending with SMTP \$EMAIL or \$DEBEMAIL MUST be set to
+determine envelope sender (RCPT FROM).\n";
+    my $rcpts   = shift;
+    my $message = shift;
+
+    my @fromaddresses = extract_addresses($from);
+    @fromaddresses
+      or die "Something went wrong: Couldn't extract From address";
+    my $fromaddress = "$fromaddresses[0]";
+
+    my $smtp;
+
+    my $smtps = $smtphost =~ m%^(?:(?:ssmtp|smtps)://)(.*)$%;
+    if ($smtps) {
+        my ($host, $port) = split(/:/, $1);
+        $port ||= '465';
+
+        $smtp = Net::SMTP->new(
+            $host,
+            Port  => $port,
+            Hello => $smtphelo,
+            SSL   => 1,
+          )
+          or die
+"$progname: failed to open SMTP connection with TLS to $smtphost\n($@)\n";
+    } else {
+        my ($host, $port) = split(/:/, $smtphost);
+        $port ||= '25';
+
+        $smtp = Net::SMTP->new(
+            $host,
+            Port  => $port,
+            Hello => $smtphelo,
+          )
+          or die
+          "$progname: failed to open SMTP connection to $smtphost\n($@)\n";
+    }
+    if ($smtpuser) {
+        if (have_authen_sasl) {
+            $smtppass = getpass() if not $smtppass;
+            # Enforce STARTTLS, unless we're using SMTPS; Net::SMTP will
+            # otherwise refuse auth() in the next step, and terminate the
+            # connection with FIN.
+            $smtp->starttls()
+              or die "$progname: Could not upgrade with STARTTLS"
+              unless $smtps;
+            $smtp->auth($smtpuser, $smtppass)
+              or die "$progname: failed to authenticate to $smtphost\n($@)\n";
+        } else {
+            die
+"$progname: failed to authenticate to $smtphost: $authen_sasl_broken\n";
+        }
+    }
+    $smtp->mail($fromaddress)
+      or die "$progname: failed to set SMTP from address $fromaddress\n($@)\n";
+    foreach my $rcpt (map { extract_addresses($_) } @{$rcpts}) {
+        $smtp->recipient($rcpt)
+          or die "$progname: failed to set SMTP recipient $rcpt\n($@)\n";
+    }
+    $smtp->data($message)
+      or die "$progname: failed to send message as SMTP DATA\n($@)\n";
+    $smtp->quit
+      or die "$progname: failed to quit SMTP connection\n($@)\n";
+}
+
+sub send_using_sendmail {
+    my $message = shift;
+
+    my $pid = open(MAIL, "|-");
+    if (!defined $pid) {
+        die "$progname: Couldn't fork: $!\n";
+    }
+    $SIG{'PIPE'} = sub { die "$progname: pipe for $sendmailcmd broke\n"; };
+    if ($pid) {
+        # parent
+        print MAIL $message;
+        close MAIL or die "$progname: $sendmailcmd error: $!\n";
+    } else {
+        # child
+        if ($debug) {
+            say
+"bts debug: Using 'cat' instead of '$sendmailcmd' due to \$DEBUG\n";
+            system("/bin/cat") >> 8 == 0
+              or die "$progname: error running cat: $!\n";
+        } else {
+            my @mailcmd = split ' ', $sendmailcmd;
+            push @mailcmd, "-t" if $sendmailcmd =~ /$sendmail_t/;
+            system(@mailcmd) >> 8 == 0
+              or die "$progname: error running $sendmailcmd: $!\n";
+        }
+    }
+}
+
+sub send_scriptions {
+    # TODO: Archived bugs don't allow subscriptions. Somehow also do an
+    # unarchive (how without race?) or just complain.
+    foreach my $bug (keys %scription) {
+        my ($act, $email) = @{ $scription{$bug} };
+
+        if (defined $email and $email eq '!') {
+            $email = undef;
+        } else {
+            $email ||= $EMAIL;
+            $email = extractemail($email) if defined $email;
+        }
+
+        mailto(
+            "${act}scription request for bug #$bug",
+            '',       # empty body
+            $bug . "-${act}scribe@" . $btsserver,
+            $email    # From
+        );
+    }
+}
+
+sub main {
+    my @hdrs = ();
+    my %to   = ();
+    my %cc   = ();
+    my %bcc  = get_nonmua_bcc();
+    my $subject;
+    my $body;
+
+    fixup_done_bugs();
+
+    # Decide on control@, submit@ or reply mail.
+    if ($reply{greeting} || %submit) {
+        %to = %{ $reply{to} };
+        %cc = (get_mail_cc(), %{ $reply{cc} });
+
+        if (%submit) {
+            %cc = (%to, %cc);
+            %to = ($btssubmitemail => 1);
+        }
+
+        $subject = $reply{subject} // $ctlsubject;
+        # ctlsubject fallback for 'done' without 'reply'. See
+        # fixup_done_bugs.
+
+        my @phdrs = ();
+        if (%submit) {
+            $subject = $submit{subject};
+
+            (my $package = $submit{package}) =~ s/^/Package: /;
+            push(@phdrs, $package);
+
+            push(@hdrs, "X-Debbugs-CC: " . join(', ', sort keys %cc));
+            #^ Note: In hdrs because phdrs don't support continuation lines
+            # and CC lists tend to get rather long. Grep for 'my %pheader'
+            # in Debbugs.
+            %cc = ();
+        }
+
+        $body = $reply{greeting} ? "Hi,\n\n" : '';
+        $body .= $reply{done} // '';    # Template from fixup_done_bugs
+        $body .= $reply{body} // '';
+        $body = make_pseudoheader(@phdrs) . $body;
+    } elsif (@ctlcmds) {    # control@ mail
+        $to{$btsctlemail} = 1;
+        %cc               = get_mail_cc();
+        $subject          = $ctlsubject;
+        $body             = join "", map { $_ . "\n" } @ctlcmds;
+        $body .= "thanks\n";
+    }
+
+    if (%to) {
+        unshift(@hdrs, "Bcc: " . join(', ', sort keys %bcc)) if %bcc;
+        unshift(@hdrs, "Cc: " . join(', ', sort keys %cc)) if %cc;
+        unshift(@hdrs, "To: " . join(', ', sort keys %to));
+
+        $body = addfooter($body) if not $use_mutt;
+        send_mail(\@hdrs, [keys %to, keys %cc, keys %bcc], $subject, $body);
+    }
+
+    send_scriptions();
+}
+
+sub confirmmail {
+    my ($header, $body) = @_;
+
+    return ($header, $body) if $noaction or $use_mutt;
+    # $use_mutt bypassess code below because it already has an interactive
+    # confirmation.
+
+    $body = edit($body) if $interactive eq 'force';
+    my $setHeader = 0;
+    if ($interactive ne 'no') {
+        while (1) {
+            print "\n", $header, "\n", $body, "\n---\n";
+
+            my $def = 'y';
+            if ($body =~ /^(> )?>> *bts:/m) {
+                warn
+"WARN: Mail contans template message '>> bts: ...' please replace it with your message\n";
+                $def = 'e';
+                print "Send despite warning? [yes/no/Edit] ";
+            } else {
+                print "OK to send? [Yes/no/edit] ";
+            }
+            $_ = <TTY> // die 'reading from TTY failed';
+            if (/^n/i) {
+                print "Not sending as requested.\n";
+                $body = undef;
+                last;
+            } elsif (/^y/i || $def eq 'y') {
+                last;
+            } elsif (/^e/i || $def eq 'e') {
+                # Since the user has chosen to edit the message, we go ahead
+                # and add the $ccpackages Ccs (if they haven't already been
+                # added due to interactive).
+                if ($interactive ne 'force' && !$setHeader) {
+                    $setHeader = 1;
+                    my $ccs = join(', ', get_interactive_cc());
+                    if ($header =~ m/^Cc: (.*?)$/m) {
+                        $ccs = "$1, $ccs";
+                        $header =~ s/^Cc: .*?$/Cc: $ccs/m;
+                    } else {
+                        $header =~ s/^(To: .*?)$/$1\nCc: $ccs/m;
+                    }
+                }
+                $body = edit($body);
+            }
+        }
+    }
+
+    return ($header, $body);
+}
+
+sub addfooter {
+    my $body = shift;
+
+    if (-r $ENV{'HOME'} . "/.signature") {
+        if (open SIG, "<", $ENV{'HOME'} . "/.signature") {
+            $body .= "-- \n";
+            while (<SIG>) {
+                $body .= $_;
+            }
+            close SIG;
+        }
+    }
+
+    return $body;
+}
+
+sub getpass() {
+    system "stty -echo cbreak </dev/tty";
+    die "$progname: error disabling stty echo\n" if $?;
+    print "\a${smtpuser}";
+    print "\@$smtphost" if $smtpuser !~ /\@/;
+    print "'s SMTP password: ";
+    $_ = <TTY> // die 'reading from TTY failed';
+    chomp;
+    print "\n";
+    system "stty echo -cbreak </dev/tty";
+    die "$progname: error enabling stty echo\n" if $?;
+    return $_;
+}
+
+sub extractemail() {
+    my $thing = shift or die "$progname: extract e-mail from what?\n";
+
+    if ($thing =~ /^(.*?)\s+<(.*)>\s*$/) {
+        $thing = $2;
+    }
+
+    return $thing;
+}
+
+# A simplified version of mailbtsall which sends one message only to
+# a specified address using the specified email From: header
+sub mailto {
+    my ($subject, $body, $to, $from) = @_;
+    send_mail(["To: $to"], [$to], $subject, $body, $from);
+}
+
+# The following routines are taken from a patched version of MIME::Words
+# posted at http://mail.nl.linux.org/linux-utf8/2002-01/msg00242.html
+# by Richard Čepas (Chepas) <rch@richard.eu.org>
+
+sub MIME_encode_B {
+    my $str = shift;
+    require MIME::Base64;
+    MIME::Base64::encode_base64($str, '');
+}
+
+sub MIME_encode_Q {
+    my $str = shift;
+    $str
+      =~ s{([_\?\=\015\012\t $NONPRINT])}{$1 eq ' ' ? '_' : sprintf("=%02X", ord($1))}eog
+      ;    # RFC-2047, Q rule 3
+    $str;
+}
+
+sub MIME_encode_mimeword {
+    my $word     = shift;
+    my $encoding = uc(shift || 'Q');
+    my $charset  = uc(shift || 'ISO-8859-1');
+    my $encfunc  = (($encoding eq 'Q') ? \&MIME_encode_Q : \&MIME_encode_B);
+    "=?$charset?$encoding?" . &$encfunc($word) . "?=";
+}
+
+sub MIME_encode_mimewords {
+    my ($rawstr, %params) = @_;
+    # check if we have something to encode
+    $rawstr !~ /[$NONPRINT]/o and $rawstr !~ /\=\?/o and return $rawstr;
+    my $charset = $params{Charset} || 'ISO-8859-1';
+    # if there is 1/3 unsafe bytes, the Q encoded string will be 1.66 times
+    # longer and B encoded string will be 1.33 times longer than original one
+    my $encoding = lc(
+        $params{Encoding}
+          || (
+            length($rawstr) > 3 * ($rawstr =~ tr/[\x00-\x1F\x7F-\xFF]//)
+            ? 'q'
+            : 'b'
+          ));
+
+    # Encode any "words" with unsafe bytes.
+    my ($last_token, $last_word_encoded, $token) = ('', 0);
+    $rawstr =~ s{([^\015\012\t ]+|[\015\012\t ]+)}{     # get next "word"
+	$token = $1;
+	if ($token =~ /[\015\012\t ]+/) {  # white-space
+	    $last_token = $token;
+	} else {
+	    if ($token !~ /[$NONPRINT]/o and $token !~ /\=\?/o) {
+		# no unsafe bytes, leave as it is
+		$last_word_encoded = 0;
+		$last_token = $token;
+	    } else {
+		# has unsafe bytes, encode to one or more encoded words
+		# white-space between two encoded words is skipped on
+		# decoding, so we should encode space in that case
+		$_ = $last_token =~ /[\015\012\t ]+/ && $last_word_encoded ? $last_token.$token : $token;
+		# We limit such words to about 18 bytes, to guarantee that the
+		# worst-case encoding give us no more than 54 + ~10 < 75 bytes
+		s{(.{1,15}[\x80-\xBF]{0,4})}{
+		    # don't split multibyte characters - this regexp should
+		    # work for UTF-8 characters
+		    MIME_encode_mimeword($1, $encoding, $charset).' ';
+		}sxeg;
+		$_ = substr($_, 0, -1); # remove trailing space
+		$last_word_encoded = 1;
+		$last_token = $token;
+		$_;
+	    }
+	}
+    }sxeg;
+    $rawstr;
+}
+
+# This is a stripped-down version of Mail::Header::_fold_line, but is
+# not as general-purpose as the original, so take care if using it elsewhere!
+# The heuristics are changed to prevent splitting in the middle of an
+# encoded word; we should not have any commas or semicolons!
+sub fold_from_header {
+    my $header = shift;
+    chomp $header;    # We assume there wasn't a newline anyhow
+
+    my $maxlen = 76;
+    my $max    = int($maxlen - 5);    # 4 for leading spcs + 1 for [\,\;]
+
+    if (length($header) > $maxlen) {
+        # Split the line up:
+        # first split at a whitespace,
+        # else we are looking at a single word and we won't try to split
+        # it, even though we really ought to
+        # But this could only happen if someone deliberately uses a really
+        # long name with no spaces in it.
+        my @x;
+
+        push @x, $1
+          while (
+            $header =~ s/^\s*
+		  ([^\"]{1,$max}\s
+		   |[^\s\"]*(?:\"[^\"]*\"[ \t]?[^\s\"]*)+\s
+		   |[^\s\"]+\s
+		   )
+		  //x
+          );
+        push @x, $header;
+        map { s/\s*$// } @x;
+        if (@x > 1 and length($x[-1]) + length($x[-2]) < $max) {
+            $x[-2] .= " $x[-1]";
+            pop @x;
+        }
+        $x[0] =~ s/^\s*//;
+        $header = join("\n  ", @x);
+    }
+
+    $header =~ s/^(\S+)\n\s*(?=\S)/$1 /so;
+    return $header;
+}
+
+##########  Browsing and caching subroutines
+
+# Mirrors a given thing
+sub download {
+    my $thing   = shift;
+    my $thgopts = shift || '';
+    my $manual  = shift;         # true="bts cache", false="bts show/bug"
+    my $mboxing = shift;   # true="bts --mbox show/bugs", and only if $manual=0
+    my $bug_current  = shift;    # current bug being downloaded if caching
+    my $bug_total    = shift;    # total things to download if caching
+    my $timestamp    = 0;
+    my $versionstamp = '';
+    my ($url, $urltype);
+
+    my $oldcwd = getcwd;
+
+    # What URL are we to download?
+    if ($thgopts ne '') {
+        # have to be intelligent here :/
+        ($url, undef) = thing_to_url($thing);
+        $url = $url . $thgopts;
+    } else {
+        # let the BTS be intelligent
+        $url = "$btsurl$thing";
+    }
+
+    if (!-d $cachedir) {
+        die "$progname: download() called but no cachedir!\n";
+    }
+
+    chdir($cachedir) || die "$progname: chdir $cachedir: $!\n";
+
+    if (-f cachefile($thing, $thgopts)) {
+        ($timestamp, $versionstamp) = get_timestamp($thing, $thgopts);
+        $timestamp    ||= 0;
+        $versionstamp ||= 0;
+        # And ensure we preserve any manual setting
+        if (is_manual($timestamp)) { $manual = 1; }
+    }
+
+    # do we actually have to do more than we might have thought?
+    # yes, if we've caching with --cache-mode=mbox or full and the bug had
+    # previously been cached in a less thorough format
+    my $forcedownload = 0;
+    if ($thing =~ /^\d+$/ and !$refreshmode) {
+        if (old_cache_format_version($versionstamp)) {
+            $forcedownload = 1;
+        } elsif ($cachemode ne 'min' or $mboxing) {
+            if (!-r mboxfile($thing)) {
+                $forcedownload = 1;
+            } elsif ($cachemode eq 'full' and -d $thing) {
+                opendir DIR, $thing
+                  or die "$progname: opendir $cachedir/$thing: $!\n";
+                my @htmlfiles = grep { /^\d+\.html$/ } readdir(DIR);
+                closedir DIR;
+                $forcedownload = 1 unless @htmlfiles;
+            }
+        }
+    }
+
+    print "Caching $url ... "
+      if !$quiet
+      and $thing ne "css/bugs.css";
+    IO::Handle::flush(\*STDOUT);
+    my ($ret, $msg, $livepage, $contenttype)
+      = bts_mirror($url, $timestamp, $forcedownload);
+    my $charset = $contenttype || '';
+    if ($charset =~ m/charset=(.*?)(;|\Z)/) {
+        $charset = $1;
+    } else {
+        $charset = "";
+    }
+    if ($ret == MIRROR_UP_TO_DATE) {
+        # we have an up-to-date version already, nothing to do
+        # and $timestamp is guaranteed to be well-defined
+        if (is_automatic($timestamp) and $manual) {
+            set_timestamp($thing, $thgopts, make_manual($timestamp),
+                $versionstamp);
+        }
+
+        if (!$quiet and $thing ne "css/bugs.css") {
+            print "(cache already up-to-date) ";
+            print "$bug_current/$bug_total" if $bug_total;
+            print "\n";
+        }
+        chdir $oldcwd or die "$progname: chdir $oldcwd failed: $!\n";
+    } elsif ($ret == MIRROR_DOWNLOADED) {
+        # Note the current timestamp, but don't record it until
+        # we've successfully stashed the data away
+        $timestamp = time;
+
+        die "$progname: empty page downloaded\n" unless length $livepage;
+
+        my $bug2filename = {};
+
+        if ($thing =~ /^\d+$/) {
+            # we've downloaded an individual bug, and it's been updated,
+            # so we need to also download all the attachments
+            $bug2filename
+              = download_attachments($thing, $livepage, $timestamp);
+        }
+
+        my $data      = $livepage;    # work on a copy, not the original
+        my $cachefile = cachefile($thing, $thgopts);
+        open(OUT_CACHE, ">$cachefile")
+          or die "$progname: open $cachefile: $!\n";
+
+        $livepage
+          = mangle_cache_file($livepage, $thing, $bug2filename, $timestamp,
+            $charset ? $contenttype : '');
+        print OUT_CACHE $livepage;
+        close OUT_CACHE
+          or die "$progname: problems writing to $cachefile: $!\n";
+
+        set_timestamp($thing, $thgopts,
+            $manual ? make_manual($timestamp) : make_automatic($timestamp),
+            $version);
+
+        if (!$quiet and $thing ne "css/bugs.css") {
+            print "(cached new version) ";
+            print "$bug_current/$bug_total" if $bug_total;
+            print "\n";
+        } elsif ($quiet == 1 and $manual and $thing ne "css/bugs.css") {
+            print "Caching $url ... (cached new version)\n";
+        } elsif ($quiet > 1) {
+            # do nothing
+        }
+
+        chdir $oldcwd or die "$progname: chdir $oldcwd failed: $!\n";
+    } else {
+        die "$progname: couldn't download $url:\n$msg\n";
+    }
+}
+
+sub download_attachments {
+    my ($thing, $toppage, $timestamp) = @_;
+    my %bug2filename;
+
+    # We search for appropriate strings in the top page, and save the
+    # attachments in files with names as follows:
+    # - if the attachment specifies a filename, save as bug#/msg#-att#/filename
+    # - if not, save as bug#/msg#-att# with suffix .txt if plain/text and
+    #   .html if plain/html, no suffix otherwise (too much like hard work!)
+    # Since messages are never modified retrospectively, we don't download
+    # attachments which have already been downloaded
+
+    # Yuck, yuck, yuck.  This regex splits the $data string at every
+    # occurrence of either "[<a " or plain "<a ", preserving any "[".
+    my @data = split /(?:(?=\[<[Aa]\s)|(?<!\[)(?=<[Aa]\s))/, $toppage;
+    foreach (@data) {
+        next
+          unless
+m%<a(?: class=\".*?\")? href="(?:/cgi(?:-bin)?/)?((bugreport\.cgi[^\"]+)"(?: .*?)?>|(version\.cgi[^\"]+)"><img[^>]* src="(?:/cgi(?:-bin)?/)?([^\"]+)">|(version\.cgi[^\"]+)">)%i;
+
+        my $ref = $5;
+        $ref = $4 if not defined $ref;
+        $ref = $2 if not defined $ref;
+
+        my ($msg, $filename) = href_to_filename($_);
+
+        next unless defined $msg;
+
+        if ($msg =~ /^\d+-\d+$/) {
+            # it's an attachment, must download
+
+            if (-f dirname($filename)) {
+                warn
+"$progname: found file where directory expected; using existing file ("
+                  . dirname($filename) . ")\n";
+                $bug2filename{$msg} = dirname($filename);
+            } else {
+                $bug2filename{$msg} = $filename;
+            }
+
+            # already downloaded?
+            next if -f $bug2filename{$msg} and not $refreshmode;
+        } elsif ($cachemode eq 'full' and $msg =~ /^\d+$/) {
+            $bug2filename{$msg} = $filename;
+            # already downloaded?
+            next if -f $bug2filename{$msg} and not $refreshmode;
+        } elsif ($cachemode eq 'full' and $msg =~ /^\d+-mbox$/) {
+            $bug2filename{$msg} = $filename;
+            # already downloaded?
+            next if -f $bug2filename{$msg} and not $refreshmode;
+        } elsif (($cachemode eq 'full' or $cachemode eq 'mbox' or $mboxmode)
+            and $msg eq 'mbox') {
+            $bug2filename{$msg} = $filename;
+            # This always needs refreshing, as it does change as the bug
+            # changes
+        } elsif ($cachemode eq 'full' and $msg =~ /^(status|raw)mbox$/) {
+            $bug2filename{$msg} = $filename;
+            # Always need refreshing, as they could change each time the
+            # bug does
+        } elsif ($cachemode eq 'full' and $msg eq 'versions') {
+            $bug2filename{$msg} = $filename;
+            # Ensure we always download the full size images for
+            # version graphs, without the informational links
+            $ref =~ s%;info=1%;info=0%;
+            $ref =~ s%(;|\?)(height|width)=\d+%$1%g;
+            # already downloaded?
+            next if -f $bug2filename{$msg} and not $refreshmode;
+        }
+
+        next unless exists $bug2filename{$msg};
+
+        warn "bts debug: downloading $btscgiurl$ref\n" if $debug;
+        init_agent() unless $ua;  # shouldn't be necessary, but do just in case
+        my $request  = HTTP::Request->new('GET', $btscgiurl . $ref);
+        my $response = $ua->request($request);
+        if ($response->is_success) {
+            my $content_length
+              = defined $response->content ? length($response->content) : 0;
+            if ($content_length == 0) {
+                warn
+                  "$progname: failed to download $ref (length 0), skipping\n";
+                next;
+            }
+
+            my $data = $response->content;
+
+            if ($msg =~ /^\d+$/) {
+                # we're dealing with a boring message, and so we must be
+                # in 'full' mode
+                $data =~ s%<HEAD>%<HEAD><BASE href="../">%;
+                $data = mangle_cache_file($data, $thing, 'full', $timestamp);
+            }
+            make_path(dirname($bug2filename{$msg}));
+            open OUT_CACHE, ">$bug2filename{$msg}"
+              or die "$progname: open cache $bug2filename{$msg}\n";
+            print OUT_CACHE $data;
+            close OUT_CACHE;
+        } else {
+            my $status = $response->status_line;
+            warn "$progname: failed to download $ref ($status), skipping\n";
+            next;
+        }
+    }
+
+    return \%bug2filename;
+}
+
+# Download the mailbox for a given bug thing. Appends to $outfile on
+# success, dies on failure.
+sub download_mbox {
+    my $thing = shift;
+
+    if (!have_lwp()) {
+        die "$progname: couldn't run bts --mbox: $lwp_broken\n";
+    }
+    init_agent() unless $ua;
+
+    my $request = HTTP::Request->new('GET',
+        $btscgiurl . "bugreport.cgi?bug=$thing;mboxmaint=yes");
+    my $response = $ua->request($request);
+    if ($response->is_success) {
+        my $content_length
+          = defined $response->content ? length($response->content) : 0;
+        if ($content_length == 0) {
+            die "$progname: failed to download mbox (length 0).\n";
+        }
+
+        return $response->content;
+    } else {
+        my $status = $response->status_line;
+        die "$progname: failed to download mbox ($status).\n";
+    }
+}
+
+# Mangle downloaded file to work in the local cache, so
+# selectively modify the links
+sub mangle_cache_file {
+    my ($data, $thing, $bug2filename, $timestamp, $ctype) = @_;
+    my $fullmode = !ref $bug2filename;
+
+    # Undo unnecessary '+' encoding in URLs
+    while ($data =~ s!(href=\"[^\"]*)\%2b!$1+!ig) { }
+    my $time = localtime(abs($timestamp));
+    $data
+      =~ s%(<BODY.*>)%$1<p><em>[Locally cached on $time by devscripts version $version]</em></p>%i;
+    $data =~ s%href="/css/bugs.css"%href="bugs.css"%;
+    if ($ctype) {
+        $data
+          =~ s%(<HEAD.*>)%$1<META HTTP-EQUIV="Content-Type" CONTENT="$ctype">%i;
+    }
+
+    my @data;
+    # We have to distinguish between release-critical pages and normal BTS
+    # pages as they have a different structure
+    if ($thing =~ /^release-critical/) {
+        @data = split /(?=<[Aa])/, $data;
+        foreach (@data) {
+s%<a href="(https?://$btsserver/cgi(?:-bin)?/bugreport\.cgi.*bug=(\d+)[^\"]*)">(.+?)</a>%<a href="$2.html">$3</a> (<a href="$1">online</a>)%i;
+s%<a href="(https?://$btsserver/cgi(?:-bin)?/pkgreport\.cgi.*pkg=([^\"&;]+)[^\"]*)">(.+?)</a>%<a href="$2.html">$3</a> (<a href="$1">online</a>)%i;
+            # References to other bug lists on bugs.d.o/release-critical
+            if (m%<a href="((?:debian|other)[-a-z/]+\.html)"%i) {
+                my $ref = 'release-critical/' . $1;
+                $ref =~ s%/%_%g;
+s%<a href="((?:debian|other)[-a-z/]+\.html)">(.+?)</a>%<a href="$ref">$2</a> (<a href="${btsurl}release-critical/$1">online</a>)%i;
+            }
+            # Maintainer email address - YUCK!!
+s%<a href="(https?://$btsserver/([^\"?]*\@[^\"?]*))">(.+?)</a>&gt;%<a href="$2.html">$3</a>&gt; (<a href="$1">online</a>)%i;
+            # Graph - we don't download
+s%<img src="graph.png" alt="Graph of RC bugs">%<img src="${btsurl}release-critical/graph.png" alt="Graph of RC bugs (online)">%;
+        }
+    } else {
+        # Yuck, yuck, yuck.  This regex splits the $data string at every
+        # occurrence of either "[<a " or plain "<a ", preserving any "[".
+        @data = split /(?:(?=\[<[Aa]\s)|(?<!\[)(?=<[Aa]\s))/, $data;
+        foreach (@data) {
+            if (
+m%<a(?: class=\".*?\")? href=\"(?:/cgi(?:-bin)?/)?bugreport\.cgi[^\?]*\?.*?;?bug=(\d+)%i
+            ) {
+                my $bug = $1;
+                my ($msg, $filename) = href_to_filename($_);
+                if ($bug eq $thing and defined $msg) {
+                    if ($fullmode
+                        or (!$fullmode and exists $$bug2filename{$msg})) {
+s%<a((?: class=\".*?\")?) href="(?:/cgi(?:-bin)?/)?(bugreport\.cgi[^\"]*)">(.+?)</a>%<a$1 href="$filename">$3</a> (<a$1 href="$btscgiurl$2">online</a>)%i;
+                    } else {
+s%<a((?: class=\".*?\")?) href="(?:/cgi(?:-bin)?/)?(bugreport\.cgi[^\"]*)">(.+?)</a>%$3 (<a$1 href="$btscgiurl$2">online</a>)%i;
+                    }
+                } else {
+s%<a((?: class=\".*?\")?) href="(?:/cgi(?:-bin)?/)?(bugreport\.cgi[^\?]*\?.*?bug=(\d+))"(.*?)>(.+?)</a>%<a$1 href="$3.html"$4>$5</a> (<a$1 href="$btscgiurl$2">online</a>)%i;
+                }
+            } else {
+s%<a((?: class=\".*?\")?) href="(?:/cgi(?:-bin)?/)?(pkgreport\.cgi\?(?:pkg|maint)=([^\"&;]+)[^\"]*)">(.+?)</a>%<a$1 href="$3.html">$4</a> (<a$1 href="$btscgiurl$2">online</a>)%gi;
+s%<a((?: class=\".*?\")?) href="(?:/cgi(?:-bin)?/)?(pkgreport\.cgi\?src=([^\"&;]+)[^\"]*)">(.+?)</a>%<a$1 href="src_$3.html">$4</a> (<a$1 href="$btscgiurl$2">online</a>)%i;
+s%<a((?: class=\".*?\")?) href="(?:/cgi(?:-bin)?/)?(pkgreport\.cgi\?submitter=([^\"&;]+)[^\"]*)">(.+?)</a>%<a$1 href="from_$3.html">$4</a> (<a$1 href="$btscgiurl$2">online</a>)%i;
+s%<a((?: class=\".*?\")?) href="(?:/cgi(?:-bin)?/)?(pkgreport\.cgi\?.*?;?archive=([^\"&;]+);submitter=([^\"&;]+)[^\"]*)">(.+?)</a>%<a$1 href="from_$4_3Barchive_3D$3.html">$5</a> (<a$1 href="$btscgiurl$2">online</a>)%i;
+s%<a((?: class=\".*?\")?) href="(?:/cgi(?:-bin)?/)?(pkgreport\.cgi\?.*?;?package=([^\"&;]+)[^\"]*)">(.+?)</a>%<a$1 href="$3.html">$4</a> (<a$1 href="$btscgiurl$2">online</a>)%gi;
+s%<a((?: class=\".*?\")?) href="(?:/cgi(?:-bin)?/)?(bugspam\.cgi[^\"]+)">%<a$1 href="$btscgiurl$2">%i;
+s%<a((?: class=\".*?\")?) href="/([0-9]+?)">(.+?)</a>%<a$1 href="$2.html">$3</a> (<a$1 href="$btsurl$2">online</a>)%i;
+
+                # Version graphs
+                # - remove 'package=' and move the package to the front
+s%((?:<img[^>]* src=\"|<a[^>]* href=\")(?:/cgi(?:-bin)?/)?version\.cgi\?)([^\"]+)package=([^;\"]+)([^\"]+\"|\")>%$1$3;$2$4>%gi;
+                # - replace 'found=' with '.f.' and 'fixed=' with '.fx.'
+                1 while
+s%((?:<img[^>]* src=\"|<a[^>]* href=\")(?:/cgi(?:-bin)?/)?version\.cgi\?)(.*?;)found=([^\"]+)\">%$1$2.f.$3">%i;
+                1 while
+s%((?:<img[^>]* src=\"|<a[^>]* href=\")(?:/cgi(?:-bin)?/)?version\.cgi\?)(.*?;)fixed=([^\"]+)\">%$1$2.fx.$3">%i;
+                1 while
+s%((?:<img[^>]* src=\"|<a[^>]* href=\")(?:/cgi(?:-bin)?/)?version\.cgi\?found=)([^\"]+)\">%$1.f.$2">%i;
+                1 while
+s%((?:<img[^>]* src=\"|<a[^>]* href=\")(?:/cgi(?:-bin)?/)?version\.cgi\?fixed=)([^\"]+)\">%$1.fx.$2">%i;
+                # - replace '%2F' or '%2C' (a URL-encoded / or ,) with '.'
+                1 while
+s%((?:<img[^>]* src=\"|<a[^>]* href=\")(?:/cgi(?:-bin)?/)?version\.cgi\?[^\%]*)\%2[FC]([^\"]+)\">%$1.$2">%gi;
+                # - display collapsed graph images at 25%
+s%(<img[^>]* src=\"[^\"]+);collapse=1([^\"]+)\">%$1$2.co" width="25\%" height="25\%">%gi;
+                #   - and link to the collapsed graph
+                s%(<a[^>]* href=\"[^\"]+);collapse=1([^\"]+)\">%$1$2.co">%gi;
+                # - remove any other parameters
+                1 while
+s%((?:<img[^>]* src|<a[^>]* href)=\"(?:/cgi(?:-bin)?/)?version\.cgi\?[^\"]+);(?:\w+=\d+)([^>]+)\>%$1$2>%gi;
+                # - remove any +s (encoded spaces)
+                1 while
+s%((?:<img[^>]* src=\"|<a[^>]* href=\")(?:/cgi(?:-bin)?/)?version\.cgi\?[^\+]*)\+([^\"]+)\">%$1$2">%gi;
+                # - remove trailing ";" and ";." from previous substitutions
+                1 while
+s%((?:<img[^>]* src=\"|<a[^>]* href=\")(?:/cgi(?:-bin)?/)?version\.cgi\?[^\"]+);\.(.*?)>%$1.$2>%gi;
+                1 while
+s%((?:<img[^>]* src=\"|<a[^>]* href=\")(?:/cgi(?:-bin)?/)?version\.cgi\?[^\"]+);\">%$1">%gi;
+                # - final reference should be $package.$versions[.co].png
+s%(<img[^>]* src=\"|<a[^>]* href=\")(?:/cgi(?:-bin)?/)?version\.cgi\?([^\"]+)(\"[^>]*)>%$1$2.png$3>%gi;
+            }
+        }
+    }
+
+    return join("", @data);
+}
+
+# Removes a specified thing from the cache
+sub deletecache {
+    my $thing   = shift;
+    my $thgopts = shift || '';
+
+    if (!-d $cachedir) {
+        die "$progname: deletecache() called but no cachedir!\n";
+    }
+
+    delete_timestamp($thing, $thgopts);
+    unlink cachefile($thing, $thgopts);
+    if ($thing =~ /^\d+$/) {
+        rmtree("$cachedir/$thing", 0, 1) if -d "$cachedir/$thing";
+        unlink("$cachedir/$thing.mbox")  if -f "$cachedir/$thing.mbox";
+        unlink("$cachedir/$thing.status.mbox")
+          if -f "$cachedir/$thing.status.mbox";
+        unlink("$cachedir/$thing.raw.mbox") if -f "$cachedir/$thing.raw.mbox";
+    }
+}
+
+# Given a thing, returns the filename for it in the cache.
+sub cachefile {
+    my $thing   = shift;
+    my $thgopts = shift || '';
+    if ($thing eq '') { die "$progname: cachefile given empty argument\n"; }
+    if ($thing =~ /bugs.css$/) { return $cachedir . "bugs.css" }
+    $thing   =~ s/^src:/src_/;
+    $thing   =~ s/^from:/from_/;
+    $thing   =~ s/^tag:/tag_/;
+    $thing   =~ s/^usertag:/usertag_/;
+    $thing   =~ s%^release-critical/index\.html$%release-critical.html%;
+    $thing   =~ s%/%_%g;
+    $thgopts =~ s/;/_3B/g;
+    $thgopts =~ s/=/_3D/g;
+    return File::Spec->catfile($cachedir,
+        $thing . $thgopts . ($thing =~ /\.html$/ ? "" : ".html"));
+}
+
+# Given a thing, returns the filename for its mbox in the cache.
+sub mboxfile {
+    my $thing = shift;
+    return $thing =~ /^\d+$/
+      ? File::Spec->catfile($cachedir, $thing . ".mbox")
+      : undef;
+}
+
+# Given a bug number, returns the dirname for it in the cache.
+sub cachebugdir {
+    my $thing = shift;
+    if ($thing !~ /^\d+$/) {
+        die "$progname: cachebugdir given faulty argument: $thing\n";
+    }
+    return File::Spec->catdir($cachedir, $thing);
+}
+
+# And the reverse: Given a filename in the cache, returns the corresponding
+# "thing".
+sub cachefile_to_thing {
+    my $thing   = basename(shift, '.html');
+    my $thgopts = '';
+    $thing =~ s/^src_/src:/;
+    $thing =~ s/^from_/from:/;
+    $thing =~ s/^tag_/tag:/;
+    $thing =~ s/^usertag_/usertag:/;
+    $thing =~ s%^release-critical\.html$%release-critical/index\.html%;
+    $thing =~ s%_%/%g;
+    $thing =~ s/_3B/;/g;
+    $thing =~ s/_3D/=/g;
+    $thing =~ /^(.*?)((?:;.*)?)$/;
+    ($thing, $thgopts) = ($1, $2);
+    return ($thing, $thgopts);
+}
+
+# Given a thing, gives the official BTS cgi page for it
+sub thing_to_url {
+    my $thing = shift;
+    my $thingurl;
+
+    # have to be intelligent here :/
+    if ($thing =~ /^\d+$/) {
+        $thingurl = $btscgibugurl . "?bug=" . $thing;
+        return ($thingurl, "bug");
+    } elsif ($thing =~ /^from:/) {
+        ($thingurl = $thing) =~ s/^from:/submitter=/;
+        $thingurl = $btscgipkgurl . '?' . $thingurl;
+        return ($thingurl, "submitter");
+    } elsif ($thing =~ /^src:/) {
+        ($thingurl = $thing) =~ s/^src:/src=/;
+        $thingurl = $btscgipkgurl . '?' . $thingurl;
+        return ($thingurl, "src");
+    } elsif ($thing =~ /^tag:/) {
+        ($thingurl = $thing) =~ s/^tag:/tag=/;
+        $thingurl = $btscgipkgurl . '?' . $thingurl;
+        return ($thingurl, "tag");
+    } elsif ($thing =~ /^usertag:/) {
+        ($thingurl = $thing) =~ s/^usertag:/tag=/;
+        $thingurl = $btscgipkgurl . '?' . $thingurl;
+        return ($thingurl, "usertag");
+    } elsif ($thing =~ m%^release-critical(\.html|/(index\.html)?)?$%) {
+        $thingurl = $btsurl . 'release-critical/index.html';
+        return ($thingurl, "RC");
+    } elsif ($thing =~ m%^release-critical/%) {
+        $thingurl = $btsurl . $thing;
+        return ($thingurl, "RC");
+    } elsif ($thing =~ /\@/) {    # so presume it's a maint request
+        $thingurl = $btscgipkgurl . '?maint=' . $thing;
+        return ($thingurl, "maint");
+    } else {                      # it's a package, or had better be...
+        $thingurl = $btscgipkgurl . '?pkg=' . $thing;
+        return ($thingurl, "package");
+    }
+
+    die "$progname: thing_to_url() fell through";
+}
+
+# Given a thing, reads all links to bugs from the corresponding cache file
+# if there is one, and returns a list of them.
+sub bugs_from_thing {
+    my $thing     = shift;
+    my $thgopts   = shift || '';
+    my $cachefile = cachefile($thing, $thgopts);
+
+    if (-f $cachefile) {
+        local $/;
+        open(IN, $cachefile) || die "$progname: open $cachefile: $!\n";
+        my $data = <IN>;
+        close IN;
+
+        return $data =~ m!href="(\d+)\.html"!g;
+    } else {
+        return ();
+    }
+}
+
+# Given an <a href="bugreport.cgi?...>...</a> string, return a
+# msg id and corresponding filename
+sub href_to_filename {
+    my $href = $_[0];
+    my ($msg, $filename);
+
+    if ($href
+        =~ m%\[<a(?: class=\".*?\")? href="((?:/cgi(?:-bin)?/)?bugreport\.cgi([^\?]*)\?[^\"]*)">.*?\(([^,]*), .*?\)\]%
+    ) {
+        # this looks like an attachment; $4 should give the MIME-type
+        my $uri         = URI->new($1);
+        my $urlfilename = $2;
+        my $bug         = $uri->query_param_delete('bug');
+        my $mimetype    = $3;
+
+        my $ref = $uri->query();
+        $ref =~ s/&(?:amp;)?/;/g;    # normalise all hrefs
+        $uri->query($ref);
+
+        $msg = $uri->query_param('msg');
+        my $att = $uri->query_param('att');
+        return undef unless $msg && $att;
+        $msg .= "-$att";
+        $urlfilename ||= $att // '';
+
+        my $fileext = '';
+        if ($urlfilename =~ m%^/%) {
+            $filename = basename($urlfilename);
+        } else {
+            $filename = '';
+            if ($mimetype eq 'text/plain') { $fileext = '.txt'; }
+            if ($mimetype eq 'text/html')  { $fileext = '.html'; }
+        }
+        if (length($filename)) {
+            $filename = "$bug/$msg/$filename";
+        } else {
+            $filename = "$bug/$msg$fileext";
+        }
+    } elsif ($href
+        =~ m%<a(?: class=\".*?\")? href="((?:/cgi(?:-bin)?/)?bugreport\.cgi([^\?]*)\?([^"]*))".*?>%
+    ) {
+        my $uri         = URI->new($1);
+        my $urlfilename = $2;
+        my $bug         = $uri->query_param_delete('bug');
+        $msg = $uri->query_param_delete('msg');
+
+        my $ref = $uri->query // '';
+        $ref =~ s/&(?:amp;)?/;/g;          # normalise all hrefs
+        $ref =~ s/;archive=(yes|no)\b//;
+        $ref =~ s/%3D/=/g;
+        $uri->query($ref);
+
+        my %params = (
+            mboxstatus => '',
+            mboxstat   => '',
+            mboxmaint  => '',
+            mbox       => '',
+            $uri->query_form(),
+        );
+
+        if ($msg && !%params) {
+            $filename = File::Spec->catfile($bug, "$msg.html");
+        } elsif (($params{mboxstat} || $params{mboxstatus}) eq 'yes') {
+            $msg      = 'statusmbox';
+            $filename = "$bug.status.mbox";
+        } elsif ($params{mboxmaint} eq 'yes') {
+            $msg      = 'mbox';
+            $filename = "$bug.mbox";
+        } elsif ($params{mbox} eq 'yes') {
+            if ($msg) {
+                $filename = "$bug/$msg.mbox";
+                $msg .= '-mbox';
+            } else {
+                $filename = "$bug.raw.mbox";
+                $msg      = 'rawmbox';
+            }
+        } elsif (!$ref) {
+            return undef;
+        } else {
+            $href =~ s/>.*/>/s;
+            warn
+"$progname: in href_to_filename: unrecognised BTS URL type: $href\n";
+            return undef;
+        }
+    } elsif ($href
+        =~ m%<(?:a[^>]* href|img [^>]* src)="((?:/cgi(?:-bin)?/)?version\.cgi\?[^"]+)"[^>]*>%i
+    ) {
+        my $uri    = URI->new($1);
+        my %params = $uri->query_form();
+
+        if ($params{package}) {
+            $filename .= $params{package};
+        }
+        if ($params{found}) {
+            $filename .= ".f.$params{found}";
+        }
+        if ($params{fixed}) {
+            $filename .= ".fx.$params{fixed}";
+        }
+        if ($params{collapse}) {
+            $filename .= '.co';
+        }
+
+        # Replace encoded "/" and "," characters with "."
+        $filename =~ s@(?:%2[FC]|/|,)@.@gi;
+        # Remove encoded spaces
+        $filename =~ s/\+//g;
+
+        $msg = 'versions';
+        $filename .= '.png';
+    } else {
+        return undef;
+    }
+
+    return ($msg, $filename);
+}
+
+# Select bugs referred to by thing, download mboxes and launch mailreader.
+sub read_many_bugs {
+    my $thing     = shift;
+    my @opts      = shift || ();
+    my $thingtype = shift;
+
+    my ($temp_handle, $tempfile) = tempfile(
+        "bts-bugsXXXXXX",
+        SUFFIX => ".mbox",
+        DIR    => File::Spec->tmpdir,
+        UNLINK => 1
+    );
+
+    my @bugs = ();
+
+    if ($thingtype eq 'bug') {
+        push @bugs, $thing;
+    } else {
+        s/=/:/g for @opts;
+        if ($thingtype eq 'package') {
+            unshift(@opts, ('package:' . $thing));
+        } elsif ($thingtype eq 'maint') {
+            unshift(@opts, ('maint:' . $thing));
+        } else {
+            unshift(@opts, $thing);
+        }
+
+        # TODO: Could and should support caching with bugs_from_thing()
+
+        my $result = Devscripts::Debbugs::select(@opts);
+        if (not defined $result) {
+            die "$progname: Error while retrieving bugs list from SOAP server";
+        }
+
+        push @bugs, @{$result};
+        my $count = scalar(@bugs);
+        say "Downloading $count bugs ... ";
+    }
+
+    foreach my $bug (@bugs) {
+        warn "bts debug: downloading bug mbox $bug\n"
+          if $debug;
+
+        my $mbox = download_mbox($bug);
+        print $temp_handle $mbox;
+    }
+    close $temp_handle
+      or die "$progname: writing to mbox file $tempfile failed: $!\n";
+
+    runmailreader($tempfile);
+}
+
+# Browses a given thing, with preprocessed list of URL options such as
+# ";opt1=val1;opt2=val2" with possible caching if there are no options
+sub browse {
+    prunecache();
+    my $thing = shift;
+    my @opts  = shift;
+
+    # Are there any options?
+    my $thgopts = '';
+    if (@opts) {
+        $thgopts = join(";", '', @_);    # so it'll be ";opt1=val1;opt2=val2"
+        $thgopts =~ s/:/=/g;
+        $thgopts =~ s/;tag=/;include=/;
+    }
+
+    if ($thing eq '' && $thgopts ne '') {
+        die "$progname: browse: empty \$thing";
+    }
+
+    # Check that if we're requesting a tag, that it's a valid tag
+    if (($thing . $thgopts) =~ /(?:^|;)(?:tag|include|exclude)[:=]([^;]*)/) {
+        unless (exists $valid_tags{$1}) {
+            die
+"$progname: invalid tag requested: $1\nRecognised tag names are: "
+              . join(" ", @valid_tags) . "\n";
+        }
+    }
+
+    if ($offlinemode) {
+        my $cachefile = cachefile($thing, $thgopts);
+        if (!-d $cachedir) {
+            die "\
+$progname: Sorry, you are in offline mode and have no cache.
+Run \"bts cache\" or \"bts show\" to create one.\n";
+        } elsif ((!$mboxmode and !-r $cachefile)
+            or ($mboxmode and !-r mboxfile($thing))) {
+            die "\
+$progname: Sorry, you are in offline mode and that is not cached.
+Use \"bts [--cache-mode=...] cache\" to update the cache.\n";
+        }
+        if ($mboxmode) {
+            runmailreader(mboxfile($thing));
+        } else {
+            runbrowser("file://$cachefile");
+        }
+    }
+    # else we're in online mode
+    elsif (have_lwp() && $thing ne '') {
+        my ($thingurl, $thingtype) = thing_to_url($thing);
+        my $pid;
+        if (!$mboxmode) {
+            # Download cache in background since runbrowser() may or may not
+            # block (www-browser vs x-www-browser).
+            $pid = fork()
+              // die "$progname: fork()ing into background failed!";
+            if ($pid) {
+                # Foreground (parent) process
+                if ($thgopts ne '') {
+                    runbrowser($thingurl . $thgopts);
+                } else {
+                    # let the BTS be intelligent
+                    runbrowser($btsurl . $thing);
+                }
+
+                my $child;
+                if (($child = waitpid($pid, WNOHANG)) == 0) {
+                    print("\nStill downloading cache hang on ... ");
+                    IO::Handle::flush(\*STDOUT);
+                }
+                $child = waitpid($pid, 0) if not $child;
+                $child and say "bts debug: child $child exited $?"
+                  if $debug;
+                return;
+            }
+            say "bts debug: child $$: Doing background download()" if $debug;
+            # Now in background child
+        }
+        # May be in background child
+
+        my $tempmbox = $mboxmode && $thingtype ne 'bug';
+
+        if ($caching && (-d $cachedir || make_path($cachedir))) {
+            download($thing, $thgopts, 0, $mboxmode);
+        } else {
+            $caching
+              && warn "$progname: couldn't create cache $cachedir: $!\n";
+            warn "$progname: Falling back to mbox tempfile download\n"
+              if $debug;
+            $tempmbox = 1;
+        }
+
+        if (defined $pid) {    # Exit if background child
+            exit(0);
+        } elsif ($tempmbox) {
+            read_many_bugs($thing, @opts, $thingtype);
+        } elsif ($mboxmode) {
+            runmailreader(mboxfile($thing));
+        }
+    }
+}
+
+# Removes all files from the cache which were downloaded automatically
+# and have not been accessed for more than 30 days.  We also only run
+# this at most once per day for efficiency.
+
+sub prunecache {
+    # TODO: Remove handling of $oldcache post-Stretch
+    my $oldcache = File::Spec->catdir($ENV{HOME}, '.devscripts_cache', 'bts');
+    if (-d $oldcache && !-d $cachedir) {
+        my $err;
+        make_path(dirname($cachedir), { error => \$err });
+        if (!@$err) {
+            system('mv', $oldcache, $cachedir);
+        }
+    }
+    return unless -d $cachedir;
+    return if -f $prunestamp and -M _ < 1;
+
+    my $oldcwd = getcwd;
+
+    chdir($cachedir) || die "$progname: chdir $cachedir: $!\n";
+
+    # remove the now-defunct live-download file
+    unlink "live_download.html";
+
+    opendir DIR, '.' or die "$progname: opendir $cachedir: $!\n";
+    my @cachefiles = grep { !/^\.\.?$/ } readdir(DIR);
+    closedir DIR;
+
+    # Are there any unexpected files lying around?
+    my @known_files = map { basename($_) }
+      ($timestampdb, $timestampdb . ".lock", $prunestamp);
+
+    my %weirdfiles = map { $_ => 1 } grep { !/\.(html|css|png)$/ } @cachefiles;
+    foreach (@known_files) {
+        delete $weirdfiles{$_} if exists $weirdfiles{$_};
+    }
+    # and bug directories
+    foreach (@cachefiles) {
+        if (/^(\d+)\.html$/) {
+            delete $weirdfiles{$1} if exists $weirdfiles{$1} and -d $1;
+            delete $weirdfiles{"$1.mbox"}
+              if exists $weirdfiles{"$1.mbox"} and -f "$1.mbox";
+            delete $weirdfiles{"$1.raw.mbox"}
+              if exists $weirdfiles{"$1.raw.mbox"} and -f "$1.raw.mbox";
+            delete $weirdfiles{"$1.status.mbox"}
+              if exists $weirdfiles{"$1.status.mbox"} and -f "$1.status.mbox";
+        }
+    }
+
+    warn "$progname: unexpected files/dirs in cache directory $cachedir:\n  "
+      . join("\n  ", keys %weirdfiles) . "\n"
+      if keys %weirdfiles;
+
+    my @oldfiles;
+    foreach (@cachefiles) {
+        next unless /\.(html|css)$/;
+        push @oldfiles, $_ if -A $_ > 30;
+    }
+
+    # We now remove the oldfiles if they're automatically downloaded
+    tie(%timestamp, "Devscripts::DB_File_Lock", $timestampdb,
+        O_RDWR() | O_CREAT(),
+        0600, $DB_HASH, "write")
+      or die "$progname: couldn't open DB file $timestampdb for writing: $!\n"
+      if !tied %timestamp;
+
+    my @unrecognised;
+    foreach my $oldfile (@oldfiles) {
+        my ($thing, $thgopts) = cachefile_to_thing($oldfile);
+        unless (defined get_timestamp($thing, $thgopts)) {
+            push @unrecognised, $oldfile;
+            next;
+        }
+        next if is_manual(get_timestamp($thing, $thgopts));
+
+        # Otherwise, it's automatic and we purge it
+        deletecache($thing, $thgopts);
+    }
+
+    untie %timestamp;
+
+    if (!-e $prunestamp) {
+        open PRUNESTAMP,
+          ">$prunestamp" || die "$progname: prune timestamp: $!\n";
+        close PRUNESTAMP;
+    }
+    chdir $oldcwd || die "$progname: chdir $oldcwd: $!\n";
+    utime time, time, $prunestamp;
+}
+
+# Determines which browser to use
+sub runbrowser {
+    my $URL = shift;
+
+    say("Browsing to $URL");
+    if (system('sensible-browser', $URL) >> 8 != 0) {
+        warn "Problem running sensible-browser: $!\n";
+    }
+    say("bts debug: browser quit.") if $debug;
+}
+
+# Determines which mailreader to use
+sub runmailreader {
+    my $file = shift;
+    my $quotedfile;
+    die "$progname: could not read mbox file $file!\n" unless -r $file;
+
+    if    ($file !~ /\'/)           { $quotedfile = qq['$file']; }
+    elsif ($file !~ /[\"\\\$\'\!]/) { $quotedfile = qq["$file"]; }
+    else {
+        die
+"$progname: could not figure out how to quote the mbox filename \"$file\"\n";
+    }
+
+    my $reader = $mailreader;
+    $reader =~ s/\%([%s])/$1 eq '%' ? '%' : $quotedfile/eg;
+
+    if (system($reader) >> 8 != 0) {
+        warn "Problem running mail reader: $!\n";
+    }
+}
+
+# Timestamp handling
+#
+# We store a +ve timestamp to represent an automatic download and
+# a -ve one to represent a manual download.
+
+sub get_timestamp {
+    my $thing        = shift;
+    my $thgopts      = shift || '';
+    my $timestamp    = undef;
+    my $versionstamp = undef;
+
+    if (tied %timestamp) {
+        ($timestamp, $versionstamp) = split /;/,
+          $timestamp{ $thing . $thgopts }
+          if exists $timestamp{ $thing . $thgopts };
+    } else {
+        tie(%timestamp, "Devscripts::DB_File_Lock", $timestampdb,
+            O_RDONLY(), 0600, $DB_HASH, "read")
+          or die
+          "$progname: couldn't open DB file $timestampdb for reading: $!\n";
+
+        ($timestamp, $versionstamp) = split /;/,
+          $timestamp{ $thing . $thgopts }
+          if exists $timestamp{ $thing . $thgopts };
+
+        untie %timestamp;
+    }
+
+    return wantarray ? ($timestamp, $versionstamp) : $timestamp;
+}
+
+sub set_timestamp {
+    my $thing        = shift;
+    my $thgopts      = shift || '';
+    my $timestamp    = shift;
+    my $versionstamp = shift || $version;
+
+    if (tied %timestamp) {
+        $timestamp{ $thing . $thgopts } = "$timestamp;$versionstamp";
+    } else {
+        tie(%timestamp, "Devscripts::DB_File_Lock", $timestampdb,
+            O_RDWR() | O_CREAT(),
+            0600, $DB_HASH, "write")
+          or die
+          "$progname: couldn't open DB file $timestampdb for writing: $!\n";
+
+        $timestamp{ $thing . $thgopts } = "$timestamp;$versionstamp";
+
+        untie %timestamp;
+    }
+}
+
+sub delete_timestamp {
+    my $thing   = shift;
+    my $thgopts = shift || '';
+
+    if (tied %timestamp) {
+        delete $timestamp{ $thing . $thgopts };
+    } else {
+        tie(%timestamp, "Devscripts::DB_File_Lock", $timestampdb,
+            O_RDWR() | O_CREAT(),
+            0600, $DB_HASH, "write")
+          or die
+          "$progname: couldn't open DB file $timestampdb for writing: $!\n";
+
+        delete $timestamp{ $thing . $thgopts };
+
+        untie %timestamp;
+    }
+}
+
+sub is_manual {
+    return $_[0] < 0;
+}
+
+sub make_manual {
+    return -abs($_[0]);
+}
+
+sub is_automatic {
+    return $_[0] > 0;
+}
+
+sub make_automatic {
+    return abs($_[0]);
+}
+
+# Returns true if current cached version is older than critical version
+# We're only using really simple version numbers here: a.b.c
+sub old_cache_format_version {
+    my $cacheversion = $_[0];
+
+    my @cache = split /\./, $cacheversion;
+    my @new   = split /\./, $new_cache_format_version;
+
+    push @cache, 0, 0, 0, 0;
+    push @new, 0, 0;
+
+    return
+         ($cache[0] < $new[0])
+      || ($cache[0] == $new[0] && $cache[1] < $new[1])
+      || ($cache[0] == $new[0] && $cache[1] == $new[1] && $cache[2] < $new[2])
+      || ( $cache[0] == $new[0]
+        && $cache[1] == $new[1]
+        && $cache[2] == $new[2]
+        && $cache[3] < $new[3]);
+}
+
+# We would love to use LWP::Simple::mirror in this script.
+# Unfortunately, bugs.debian.org does not respect the
+# If-Modified-Since header.  For single bug reports, however,
+# bugreport.cgi will return a Last-Modified header if sent a HEAD
+# request.  So this is a hack, based on code from the LWP modules.  :-(
+# Return value:
+#  (return value, error string)
+#  with return values:  MIRROR_ERROR        failed
+#                       MIRROR_DOWNLOADED   downloaded new version
+#                       MIRROR_UP_TO_DATE   up-to-date
+
+sub bts_mirror {
+    my ($url, $timestamp, $force) = @_;
+
+    init_agent() unless $ua;
+    if ($url =~ m%/\d+$% and !$refreshmode and !$force) {
+        # Single bug, worth doing timestamp checks
+        my $request  = HTTP::Request->new('HEAD', $url);
+        my $response = $ua->request($request);
+
+        if ($response->is_success) {
+            # TODO: Debbugs replaced Last-Modified with ETag.
+            # See https://salsa.debian.org/debbugs-team/debbugs/61c42ddd
+            my $lm = $response->last_modified;
+            if (defined $lm and $lm <= abs($timestamp)) {
+                return (MIRROR_UP_TO_DATE, $response->status_line);
+            }
+        } else {
+            return (MIRROR_ERROR, $response->status_line);
+        }
+    }
+
+    # So now we download the full thing regardless
+    # We don't care if we scotch the contents of $file - it's only
+    # a temporary file anyway
+    my $request  = HTTP::Request->new('GET', $url);
+    my $response = $ua->request($request);
+
+    if ($response->is_success) {
+        # This check from LWP::UserAgent; I don't even know whether
+        # the BTS sends a Content-Length header...
+        my $nominal_content_length = $response->content_length || 0;
+        my $true_content_length
+          = defined $response->content ? length($response->content) : 0;
+        if ($true_content_length == 0) {
+            return (MIRROR_ERROR, $response->status_line);
+        }
+        if ($nominal_content_length > 0) {
+            if ($true_content_length < $nominal_content_length) {
+                return (MIRROR_ERROR,
+"Transfer truncated: only $true_content_length out of $nominal_content_length bytes received"
+                );
+            }
+            if ($true_content_length > $nominal_content_length) {
+                return (MIRROR_ERROR,
+"Content-length mismatch: expected $nominal_content_length bytes, got $true_content_length"
+                );
+            }
+            # else OK
+        }
+
+        return (
+            MIRROR_DOWNLOADED,  $response->status_line,
+            $response->content, $response->header('Content-Type'));
+    } else {
+        return (MIRROR_ERROR, $response->status_line);
+    }
+}
+
+sub init_agent {
+    $ua = new LWP::UserAgent;    # we create a global UserAgent object
+    $ua->agent("LWP::UserAgent/Devscripts/$version");
+    $ua->env_proxy;
+}
+
+sub opts_done {
+    if (@_) {
+        die "$progname: unknown options to '$shortcmd[$index]': @_\n";
+    }
+}
+
+sub edit {
+    my $message = shift;
+    my ($fh, $filename);
+    ($fh, $filename) = tempfile(
+        "btsXXXX",
+        SUFFIX => ".mail",
+        DIR    => File::Spec->tmpdir
+    );
+    open(OUT_MAIL, ">$filename")
+      or die "$progname: writing to temporary file: $!\n";
+    print OUT_MAIL $message;
+    close OUT_MAIL;
+    my $rv = system("sensible-editor $filename </dev/tty") >> 8;
+    undef $message;
+
+    if ($rv == 0) {
+        open(OUT_MAIL, "<$filename")
+          or die "$progname: reading from temporary file: $!\n";
+        while (<OUT_MAIL>) {
+            $message .= $_;
+        }
+        close OUT_MAIL;
+    }
+    unlink($filename);
+    return $message;
+}
+
+=back
+
+=head1 ENVIRONMENT VARIABLES
+
+=over 4
+
+=item B<DEBEMAIL>
+
+If this is set, the From: line in the email will be set to use this email
+address instead of your normal email address (as would be determined by
+B<mail>).
+
+=item B<DEBFULLNAME>
+
+If B<DEBEMAIL> is set, B<DEBFULLNAME> is examined to determine the full name
+to use; if this is not set, B<bts> attempts to determine a name from
+your F<passwd> entry.
+
+=item B<BROWSER>
+
+If set, it specifies the browser to use for the B<show> and B<bugs>
+options. See L<sensible-brower(1)>.
+
+=back
+
+=head1 CONFIGURATION VARIABLES
+
+The two configuration files F</etc/devscripts.conf> and
+F<~/.devscripts> are sourced by a shell in that order to set
+configuration variables.  Command-line options can be used to override
+configuration file settings.  Environment variable settings are
+ignored for this purpose.  The currently recognised variables are:
+
+=for comment TODO: Replace "Same as ..." with more explicit "Overridden by ..."
+
+=over 4
+
+=item B<BTS_OFFLINE>
+
+If this is set to B<yes>, then it is the same as the B<--offline> command
+line parameter being used.  Only has an effect on the B<show> and B<bugs>
+commands.  The default is B<no>.  See the description of the B<show>
+command above for more information.
+
+=item B<BTS_CACHE>
+
+If this is set to B<no>, then it is the same as the B<--no-cache> command
+line parameter being used.  Only has an effect on the B<show> and B<bug>
+commands.  The default is B<yes>.  Again, see the B<show> command above
+for more information.
+
+=item B<BTS_CACHE_MODE=>{B<min>,B<mbox>,B<full>}
+
+How much of the BTS should we mirror when we are asked to cache something?
+Just the minimum, or also the mbox or the whole thing?  The default is
+B<min>, and it has the same meaning as the B<--cache-mode> command-line
+parameter.  Only has an effect on the cache.  See the B<cache> command for more
+information.
+
+=item B<BTS_FORCE_REFRESH>
+
+If this is set to B<yes>, then it is the same as the B<--force-refresh>
+command-line parameter being used.  Only has an effect on the B<cache>
+command.  The default is B<no>.  See the B<cache> command for more
+information.
+
+=item B<BTS_WORKFLOW>={B<mail>,B<web>}
+
+Set the default I<Workflow Mode>. Overridden by "Workflow Mode Options"
+B<--mail> and B<--web>, see B<OPTIONS>. See also "Workflows" in
+B<DESCRIPTION>.
+
+When set to B<mail> unlocks implicit enablement of B<--mutt>.
+
+=item B<BTS_MAIL_READER>
+
+Interactive command-line mail client (MUA) to use for reading mailbox files
+when using the mail workflow (B<--mail>, B<BTS_WORKFLOW=mail>).
+
+Default depends on mailreaders available on the system. The following are
+tried in order (first match wins):
+
+=over 2
+
+=item * A (supported) MUA B<bts> is running inside of as determined by
+examining $_, the 'underscore' environment variable).
+
+=item * 'B<mutt -f %s>' -- if mutt is installed,
+
+=item * 'B<neomutt -f %s>' -- if neomutt is installed,
+
+=item * 'B<aerc -I mbox:%s>' -- if B<bts> is invoked from inside B<aerc>,
+
+=item * 'B<aerc mbox:%s>' -- if aerc is installed otherwise.
+
+=back
+
+Can be overridden by B<--mailreader> command-line option.
+
+The 'B<%s>' is replaced by the path to an MBOX file.
+
+=item B<BTS_MUTT_COMMAND>
+
+Interactive command-line mail client (MUA) to use for interactively
+composing and sending mails when B<--mutt> is active or implied.
+
+Default depends on mail clients available on the system. The following are
+tried in order:
+
+=over 2
+
+=item * A supported MUA B<bts> is running inside of as determined by
+examining $_, the 'underscore' environment variable).
+
+=item * 'B<mutt -H %s>' -- if mutt is installed,
+
+=item * 'B<neomutt -H %s>' -- if neomutt is installed,
+
+=back
+
+The 'B<%s>' is replaced by the path to a raw draft email message file
+including headers.
+
+=item B<BTS_SENDMAIL_COMMAND>
+
+If this is set, specifies a B<sendmail> command to use instead of
+F</usr/sbin/sendmail>.  Same as the B<--sendmail> command-line option.
+
+=item B<BTS_ONLY_NEW>
+
+Download only new bugs when caching. Do not check for updates in
+bugs we already have.  The default is B<no>.  Same as the B<--only-new>
+command-line option.
+
+=item B<BTS_SMTP_HOST>
+
+If this is set, specifies an SMTP host to use for sending mail rather
+than using the B<sendmail> command.  Same as the B<--smtp-host> command-line
+option.
+
+Note that this option takes priority over B<BTS_SENDMAIL_COMMAND> if both are
+set, unless the B<--sendmail> option is used.
+
+=item B<BTS_SMTP_REPORTBUG>
+
+If set to B<yes> use Debian's open submission reportbug.debian.org SMTP
+server to send bug reports and change requests. No account registration or
+authentication is needed but submissions are rate-limited to a couple per
+hour.
+
+If set to B<yes> it is equivalent to setting both
+B<BTS_SMTP_HOST>=reportbug.debian.org:587 and B<BTS_INTERACTIVE>=yes.
+
+=item B<BTS_SMTP_AUTH_USERNAME>, B<BTS_SMTP_AUTH_PASSWORD>
+
+If these options are set, then it is the same as the B<--smtp-username> and
+B<--smtp-password> options being used.
+
+=item B<BTS_SMTP_HELO>
+
+Same as the B<--smtp-helo> command-line option.
+
+=item B<BTS_INCLUDE_RESOLVED>
+
+If this is set to B<no>, then it is the same as the B<--no-include-resolved>
+command-line parameter being used.  Only has an effect on the B<cache>
+command.  The default is B<yes>.  See the B<cache> command for more
+information.
+
+=item B<BTS_SUPPRESS_ACKS>
+
+If this is set to B<yes>, then it is the same as the B<--no-ack> command
+line parameter being used.  The default is B<no>.
+
+=item B<BTS_INTERACTIVE>
+
+If this is set to B<yes> or B<force>, then it is the same as the
+B<--interactive> or B<--force-interactive> command-line parameter being used.
+The default is B<no>.
+
+=item B<BTS_DEFAULT_CC>
+
+Specify a list of e-mail addresses to which a carbon copy of the generated
+e-mail to the control bot should automatically be sent.
+
+=item B<BTS_SERVER>
+
+Specify the name of a debbugs server which should be used instead of
+https://bugs.debian.org.
+
+=back
+
+=head1 SEE ALSO
+
+Please see L<https://www.debian.org/Bugs/server-control> for
+more details on how to control the BTS using emails and
+L<https://www.debian.org/Bugs/> for more information about the BTS.
+
+querybts(1), reportbug(1), pts-subscribe(1), devscripts.conf(5)
+
+=head1 COPYRIGHT
+
+This program is Copyright (C) 2001-2003 by Joey Hess <joeyh@debian.org>.
+Many modifications have been made, Copyright (C) 2002-2005 Julian
+Gilbey <jdg@debian.org> and Copyright (C) 2007 Josh Triplett
+<josh@freedesktop.org>.
+
+It is licensed under the terms of the GPL, either version 2 of the
+License, or (at your option) any later version.
+
+=cut
+
+# Please leave this alone unless you understand the seek above.
+__DATA__
