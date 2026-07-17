@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="bug-filing" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="index#getInvolved"/>
+    <desc>Cómo y dónde informar de problemas.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Toni Estevez</mal:name>
+      <mal:email>toni.estevez@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Francisco Javier F. Serrador</mal:name>
+      <mal:email>serrador@cvs.gnome.org</mal:email>
+      <mal:years>2003-2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Pablo Gonzalo del Campo</mal:name>
+      <mal:email>pablodc@bigfoot.com</mal:email>
+      <mal:years>2002-2003</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Registrar un fallo en Atril</title>
+<p>Atril es mantenido por una comunidad de voluntarios. Es bienvenido a participar. Si se encuentra con un problema, puede registrar un <em>informe de error</em>. Para registrar un fallo, vaya a <link href="https://github.com/mate-desktop/atril/issues"/>.</p>
+   <p>Este es un sistema de seguimiento de errores donde usuarios y desarrolladores pueden registrar los detalles de un fallo, caídas del programa y solicitar mejoras.</p>
+   <p>Para participar, necesita una cuenta que le dará capacidades de acceder, registrar fallos, y hacer comentarios. Asimismo, necesita registrarse para recibir actualizaciones por e-mail sobre el estado de su fallo. Si aún no tiene una cuenta, haga blien en el enlace <gui>Entrar / Registrarse</gui> para crear una.</p>
+   <p>Una vez tenga una cuenta, entre y haga clic en  <gui>Nuevo problema</gui>.</p>
+   <p>Rellene las secciones Título y Descripción, y haga clic en <gui>Enviar Problema</gui>.</p>
+   <p>Su informe recibirá un número ID, y su estado se actualizará según se progrese.</p>
+</page>

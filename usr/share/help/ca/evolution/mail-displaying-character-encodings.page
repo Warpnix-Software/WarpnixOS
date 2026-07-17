@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-displaying-character-encodings" xml:lang="ca">
+
+  <info>
+    <desc>Quan les lletres d'un correu electrònic no es mostren correctament o no apareixen.</desc>
+
+    <link type="guide" xref="mail-displaying-message"/>
+    <link type="guide" xref="index#mail-composing-advanced"/>
+
+    <revision pkgversion="3.3.91" version="0.4" date="2012-02-18" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Codificacions de caràcters</title>
+
+<section id="received-messages">
+<title>Correu rebut</title>
+
+<p>Si l'aplicació de correu electrònic del remitent està trencada o no s'ha configurat correctament, els missatges de text pla poden no incloure informació sobre la codificació de caràcters utilitzada. Si rebeu aquests missatges, trieu <guiseq><gui>Vista</gui><gui>Codificació de caràcters</gui></guiseq> al menú principal i canvieu la codificació de caràcters que heu seleccionat a una altra que sigui la utilitzada pel remitent. Heu de fer aquest canvi cada vegada que consulteu el missatge.</p>
+<p>Per a fer que aquesta sigui la configuració predeterminada, aneu a <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Preferències de correu</gui><gui>General</gui><gui>Visualització de missatges</gui><gui>Codificació de caràcters per defecte</gui></guiseq>.</p>
+
+</section>
+
+<section id="sending-messages">
+<title>Enviar correu</title>
+
+<p>En el cas improbable que vulgueu canviar la codificació de caràcters predeterminada dels missatges que envieu, aneu a <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Preferències del redactor</gui><gui>Comportament predeterminat</gui><gui>Codificació de caràcters</gui></guiseq>.</p>
+<note style="tip"><p>Aquesta configuració només fa referència als missatges de text pla, ja que els <link xref="mail-composer-html">Missatges HTML</link> sempre utilitzen la codificació UTF-8.</p></note>
+
+</section>
+
+</page>

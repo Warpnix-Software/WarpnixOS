@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="base" xml:lang="ja">
+
+    <info>
+        <link type="guide" xref="index#number"/>
+    </info>
+
+	<title>数値ベース</title>
+    
+    <p>特定の数値ベースに数値を入力するには、<link xref="superscript">下付き数値</link>を使用します。次の数値は等価値です。</p>
+    <example>
+    <p>1001011₂</p>    
+    <p>113₈</p>
+    <p>75</p>
+    <p>4B₁₆</p>
+    </example>
+    <p><link xref="mouse">プログラムモード</link>では、バイナリ (<keyseq><key>Ctrl</key><key>B</key></keyseq>)、8進数 (<keyseq><key>Ctrl</key><key>O</key></keyseq>)、16進数 (<keyseq><key>Ctrl</key><key>H</key></keyseq>) のボタンがあります。</p>
+    <p>結果が表示されるベースを設定するには、<link xref="number-display">数字の書式</link>を変更します。</p>
+    <p>現在の結果のベースを変更するには、基本ボタンまたは <keyseq><key>Ctrl</key><key>D</key></keyseq>を使用して 10 進法で表示します。</p>
+</page>

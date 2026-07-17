@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="task" id="index" xml:lang="pt_BR">
+  <info>
+    <title type="link" role="trail">GNOME Sudoku</title>
+    <title type="link">GNOME Sudoku</title>
+    <title type="text">GNOME Sudoku</title>
+
+    <revision pkgversion="3.4" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.15.2" date="2014-01-08" status="final"/>
+    <revision pkgversion="3.26" date="2017-12-05" status="review"/>
+
+    <credit type="author copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="author copyright">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2015</years>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Aprenda a jogar o GNOME Sudoku, um jogo de quebra-cabeça baseado em lógica no qual uma grade deve ser preenchida com os números corretos.</desc>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Vladimir Melo</mal:name>
+      <mal:email>vladimirmelo@foresightlinux.org</mal:email>
+      <mal:years>2007,</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yuri Otávio</mal:name>
+      <mal:email>yuriotavio@hotmail.com</mal:email>
+      <mal:years>2017,</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Fontenelle</mal:name>
+      <mal:email>rafaelff@gnome.org</mal:email>
+      <mal:years>2018.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Leônidas Araújo</mal:name>
+      <mal:email>leorusvellt@hotmail.com</mal:email>
+      <mal:years>2022</mal:years>
+    </mal:credit>
+  </info>
+
+  <title><media type="image" its:translate="no" width="48px" height="48px" src="figures/org.gnome.Sudoku.svg"/> GNOME Sudoku</title>
+
+  <p>GNOME Sudoku é um quebra-cabeça baseado em lógica de colocação de números no qual um quadrado de 9×9 deve ser preenchido pelos dígitos corretos. Os quebra-cabeças únicos podem ser jogados na tela ou <link xref="index#print">impressos</link>. Se você não tiver tempo para finalizar o jogo, você pode <link xref="save-resume#resume">continuá-lo</link> a qualquer momento.</p>
+
+   <section id="play" style="2column">
+    <title>Jogabilidade</title>
+   </section>
+
+   <section id="tips" style="2column">
+    <title>Tipos úteis</title>
+   </section>
+
+   <section id="print" style="2column">
+    <title>Imprimindo</title>
+   </section>
+
+   <section id="get-involved" style="2column">
+    <title>Envolva-se</title>
+   </section>
+</page>

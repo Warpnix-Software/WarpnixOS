@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-html-text" xml:lang="ru">
+
+  <info>
+    <desc>Изменение размера шрифта, стилей и цветов в редакторе сообщений.</desc>
+    <link type="guide" xref="mail-composer-html#formatting-options-html"/>
+
+    <revision pkgversion="3.5.90" version="0.7" date="2012-08-16" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-html -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Форматирование текста в HTML</title>
+
+     <p>Средства форматирования текста, доступные только для формата HTML, находятся на второй панели инструментов, расположенной под строкой <gui>Тема</gui> (эта панель появляется после включения формата HTML). Они также доступны в меню <gui>Вставка</gui> и <gui>Формат</gui>.</p>
+     <p>Для значков на панели инструментов предусмотрены всплывающие подсказки, которые появляются при удержании указателя мыши над кнопками.</p>
+
+<section id="text-styles">
+      <title>Стили текста:</title>
+      <p>Используйте эти кнопки на нижней панели инструментов для определения того, как будет выглядеть письмо. Если текст выделен, стиль применяется к выделенному тексту. Если текст не выделен, стиль применяется к вводимому далее тексту.</p>
+
+<table frame="all" rules="all">
+  <tr>
+    <td><p>Кнопка</p></td>
+    <td><p>Описание</p></td>
+  </tr>
+  <tr>
+    <td><p>По умолчанию</p></td>
+    <td><p>Имя шрифта.</p></td>
+  </tr>
+  <tr>
+    <td><p>+0</p></td>
+    <td><p>Размер шрифта.</p></td>
+  </tr>
+  <tr>
+    <td><p><media type="image" its:translate="no" src="./figures/color-000000.png"/></p></td>
+    <td><p>Цвет текста.</p><p>В поле показан текущий цвет текста. Если текст выделен, цвет применяется к выделенному тексту. Если текст не выделен, цвет применяется к вводимому далее тексту.</p></td>
+  </tr>
+  <tr>
+    <td><p><media type="image" its:translate="no" src="./figures/color-ccccccffffff.png" width="26" height="26"/></p></td>
+    <td><p>Цвет фона текста.</p><p>В поле показан текущий цвет текста. Если текст выделен, цвет применяется к выделенному тексту. Если текст не выделен, цвет применяется к вводимому далее тексту.</p></td>
+  </tr>
+  <tr>
+    <td><p>Жирный A</p></td>
+    <td><p>Сделать текст жирным.</p></td>
+  </tr>
+  <tr>
+    <td><p>Курсив A</p></td>
+    <td><p>Сделать текст наклонным.</p></td>
+  </tr>
+  <tr>
+    <td><p>Подчёркнутый A</p></td>
+    <td><p>Сделать текст подчёркнутым.</p></td>
+  </tr>
+  <tr>
+    <td><p>Перечёркнутый A</p></td>
+    <td><p>Сделать текст перечёркнутым линией.</p></td>
+  </tr>
+</table>
+
+<p>Описание других кнопок доступно в разделе <link xref="mail-composer-html#formatting-options-html"/>.</p>
+
+</section>
+
+</page>

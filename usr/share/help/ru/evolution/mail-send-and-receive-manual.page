@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-send-and-receive-manual" xml:lang="ru">
+
+  <info>
+    <desc>Принудительные отправка и получение писем.</desc>
+
+    <link type="guide" xref="mail-send-and-receive"/>
+
+    <revision pkgversion="3.9.3" version="0.5" date="2013-05-29" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Отправка и получение сообщений вручную</title>
+<p>Чтобы получить новые сообщения с почтового сервера и отправить написанные сообщения, которые хранятся в локальной папке «Исходящие», нажмите кнопку <gui style="button">Отправить / Получить</gui> на панели инструментов или нажмите клавишу <key>F12</key>, или выберите в главном меню пункт <guiseq><gui>Файл</gui><gui>Отправить / Получить</gui></guiseq>.</p>
+<p>Чтобы выполнить отправку и получение почты только для одной из учётных записей или чтобы выполнить только отправку или только получение, нажмите кнопку со стрелкой вниз, расположенную рядом с кнопкой <gui style="button">Отправить / Получить</gui>, для выбора нужного варианта.</p>
+<p>Если требуется просто отправить сообщения, которые находятся в папке «Исходящие», щёлкните по ней правой кнопкой мыши и выберите пункт <gui>Отправить исходящие</gui>.</p>
+
+</page>

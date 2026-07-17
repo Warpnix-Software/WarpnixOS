@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-libreoffice" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#data-migration-and-sync"/>
+
+    <revision pkgversion="3.26.6" version="0.3" date="2018-03-26" status="draft"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Menggunakan data dari buku alamat <app>Evolution</app> di dokumen LibreOffice.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Kontak di LibreOffice</title>
+
+  <p>Anda dapat menggunakan buku alamat <app>Evolution</app> Anda di <app>LibreOffice Writer</app> sebagai sumber data. Langkah-langkah berikut mengacu pada LibreOffice versi 5.4.</p>
+
+  <steps>
+    <item>
+      <p>Klik <guiseq><gui>Sunting</gui><gui>Pertukaran Basis Data...</gui> </guiseq> di bilah menu. Ini akan memunculkan kotak dialog <gui>Pertukaran Basis Data</gui>.</p>
+    </item>
+    <item>
+      <p>Di panel kanan di bawah <gui>Basis Database yang Tersedia</gui>, <gui>EvolutionLocal</gui> tersedia sebagai sumber. Klik segitiga kecil untuk mendapatkan daftar buku alamat <app>Evolution</app> Anda.</p>
+    </item>
+    <item>
+      <p>Choose an address book and click <gui style="button">Define</gui>.</p>
+    </item>
+  </steps>
+
+  <p>Ini membuat alamat <app>Evolution</app> sebagai sumber data baku untuk LibreOffice. Sekarang Anda bisa memilih bidang untuk disisipkan ke dalam dokumen LibreOffice melalui <guiseq><gui>Sisipkan</gui><gui>Bidang</gui></guiseq>.</p>
+
+</page>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-message-templates-save" xml:lang="ru">
+
+  <info>
+   <desc>Сохранение существующего или нового сообщения в качестве шаблона</desc>
+   
+   <link type="guide" xref="mail-composer-message-templates#options"/>
+
+ <revision pkgversion="3.5.90" version="0.3" date="2012-08-17" status="draft"/>
+ <credit type="author">
+   <name its:translate="no">Andre Klapper</name>
+   <email its:translate="no">ak-47@gmx.net</email>
+ </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/b1dlaazl.html.en -->
+ </credit>
+ 
+ <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+     
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Сохранение сообщений в качестве шаблонов</title>
+
+<section id="save-existing">
+<title>Сохранение существующего сообщения в качестве шаблона</title>
+<steps>
+  <item><p>Выберите сообщение.</p></item>
+  <item><p>Щёлкните по сообщению правой кнопкой мыши и выберите пункт <gui>Переместить в папку...</gui> или <gui>Копировать в папку...</gui>.</p></item>
+  <item><p>Выберите папку <gui>Шаблоны</gui> в группе <gui>На этом компьютере</gui>.</p></item>
+</steps>
+<p>Также можно отредактировать существующее сообщение и сохранить его в качестве шаблона:</p>
+<steps>
+  <item><p>Откройте сообщение и нажмите кнопку <gui>Ответить</gui>.</p></item>
+  <item><p>Внесите необходимые изменения в тело письма или адреса.</p></item>
+  <item><p>Выберите пункт меню <guiseq><gui>Файл</gui><gui>Сохранить как шаблон</gui></guiseq>.</p></item>
+ </steps>
+</section>
+
+<section id="save-new">
+ <title>Сохранение нового сообщения в качестве шаблона</title>
+ <steps>
+  <item>
+<p>Нажмите кнопку <gui>Создать</gui> и введите текст шаблона в окне редактора.</p>
+  </item>
+  <item>
+<p>Выберите пункт меню <guiseq><gui>Файл</gui><gui>Сохранить как шаблон</gui></guiseq>.</p>
+  </item>
+ </steps>
+</section>
+
+</page>

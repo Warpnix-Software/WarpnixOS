@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="report-ubuntu-bug" xml:lang="ko">
+
+  <info>
+    <link type="guide" xref="more-help"/>
+    <desc>우분투와 관련된 문제점을 보고하는 방법 및 위치.</desc>
+
+    <revision version="22.04" date="2021-11-28" status="review"/>
+
+    <credit type="author">
+      <name>우분투 문서화 팀</name>
+      <email>ubuntu-doc@lists.ubuntu.com</email>
+    </credit>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+<title>우분투 문제 보고</title>
+
+<p>우분투의 문제점을 발견했다면, <em>버그 리포트</em> 파일을 만들수 있습니다.</p>
+
+<steps>
+ <item>
+  <p>Type <keyseq><key>Alt</key><key>F2</key></keyseq> and type
+<input>ubuntu-bug &lt;package name&gt;</input></p>
+  <p>만약 하드웨어 문제가 있거나 문제가 있는 프로그램의 이름을 모를 경우, <input>ubuntu-bug</input> 를 입력하시오.</p>
+  <note><p>If using <cmd>ubuntu-bug</cmd> does not work for some reason, <link href="https://help.ubuntu.com/community/ReportingBugs#Filing_bugs_manually_at_Launchpad.net">
+    file a bug manually</link> and jump to step 4 in this instruction.</p></note>
+ </item>
+
+ <item><p>위에 제시된 명령어 중 하나를 실행한 뒤, 우분부는 오류와 관련된 정보를 모을 것 입니다. 이 작업은 몇 분 정도 걸릴 수 있습니다. 원한다면 수집된 정보를 검토하십시오. 계속하기 위해 <gui>Send</gui> 를 클릭하십시오.</p>
+ </item>
+
+ <item><p>A new web browser tab will open to continue processing the bug data. Ubuntu uses the 
+website <app>Launchpad</app> to manage its bug reports. If you do not
+have a Launchpad account, you will need to register for one to file a bug and receive
+email updates about its status. You can do this by clicking <gui>Create a new account</gui>.</p>
+ </item>
+
+
+ <item><p>런치패드에 로그인한 후, 요약 필드에 문제에 대한 설명을 입력하십시오.</p>
+ </item>
+
+ <item><p>After clicking <gui>Next</gui> Launchpad will search for similar bugs in case the bug you
+are reporting has already been reported. If the bug has already been reported, you can mark that bug as 
+also affecting you. You can also subscribe to the bug report to receive updates about progress with
+fixing it. If the bug has not already been reported, click <gui>No, I need to report a new bug</gui>.</p>
+ </item>
+
+ <item><p>Fill in the description field with as much information as you can. It's 
+important that you specify three things:</p>
+
+  <list type="disc">
+  <item><p>여러분이 예상한 일</p></item>
+  <item><p>실제로 일어난 일</p></item>
+  <item><p>If possible, a minimal series of steps necessary to make it happen, where step 1 is "start the
+program"</p></item></list>
+
+ </item>
+  <item><p>Your report will be given an ID number, and its status will be updated as it is being dealt with. Thanks for helping make Ubuntu better!</p>
+ </item>
+</steps>
+
+<note><p>"This is not a genuine Ubuntu package" 에러가 발생하면, 이것은 버그보고를 하려는 소프트웨어가 공식 우분투 리파지토리의 소프트웨어가 아님을 의미합니다. 이때는 우분투에 설치되어있는 보고 도구를 사용할수 없습니다.</p></note>
+
+<p>우분투의 버그를 보고하는것에 대해 더많은 정보가 알고싶으시다면, <link href="https://help.ubuntu.com/community/ReportingBugs">online documentation</link> 링크를 방문해주세요.</p>
+</page>

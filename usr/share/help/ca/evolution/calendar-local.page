@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-local" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="calendar-using-several-calendars"/>
+
+    <revision pkgversion="3.10.3" version="0.4" date="2014-01-27" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>S'està afegint un nou calendari local.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Afegir un nou calendari local</title>
+
+  <p>Heu afegit un altre calendari local a <app>Evolution</app>, realitzeu els passos següents:</p>
+
+  <steps>
+    <item>
+      <p>Feu clic a <guiseq><gui>Fitxer</gui><gui>Nou</gui><gui>Calendari</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Seleccioneu el tipus <gui>A aquest ordinador</gui>.</p>
+    </item>
+    <item>
+      <p>Introduïu el nom que preferiu.</p>
+    </item>
+    <item>
+      <p>Opcionalment, seleccioneu un color que vulgueu.</p>
+    </item>
+    <item>
+      <p>Si decidiu utilitzar un fitxer de calendari existent que ja està ubicat al vostre ordinador, haureu de proporcionar la seva ubicació i si <app>Evolution</app> tan sols pot llegir del fitxer o si <app>Evolution</app> pot afegir i modificar els elements del fitxer.</p>
+    </item>
+    <item>
+      <p>Feu clic a <gui style="button">D'acord</gui>.</p>
+    </item>
+  </steps>
+
+  <p>El calendari s'afegirà a la llista de calendaris d'<app>Evolution</app>.</p>
+
+</page>

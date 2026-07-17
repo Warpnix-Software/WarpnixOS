@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-default-folder-locations" xml:lang="ru">
+
+  <info>
+    <desc>Изменение расположения папок <gui>Черновики</gui>, <gui>Отправленные</gui>, <gui>Корзина</gui> и <gui>Спам</gui>.</desc>
+
+    <link type="guide" xref="mail-account-manage-imap-plus#defaults"/>
+    <link type="guide" xref="mail-account-manage-local-delivery#defaults"/>
+    <link type="guide" xref="mail-account-manage-maildir-format-directories#defaults"/>
+    <link type="guide" xref="mail-account-manage-mh-format-directories#defaults"/>
+    <link type="guide" xref="mail-account-manage-pop#defaults"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-directory#defaults"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-file#defaults"/>
+    <link type="guide" xref="mail-account-manage-usenet-news#defaults"/>
+    <link type="guide" xref="mail-account-manage-microsoft-exchange-evo-mapi#defaults"/>
+    <link type="guide" xref="mail-account-manage-microsoft-exchange-evo-ews#defaults"/>
+
+    <revision pkgversion="3.32.0" version="0.4" date="2019-03-14" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Расположение почтовых папок</title>
+
+<p>Можно указать другое место для хранения сообщений из папок <gui>Черновики</gui> и <gui>Отправленные</gui> в разделе настройки <gui>По умолчанию</gui> редактора учётных записей (<guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Учётные записи</gui><gui style="button">Правка</gui><gui>По умолчанию</gui></guiseq>).</p>
+<p>Для учётной записи может быть задана <gui>Архивная папка «На этом компьютере»</gui>, в которую будут перемещены старые сообщения. Для этого сначала необходимо указать резервную папку в разделе настройки <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Настройки почты</gui><gui>Общие</gui><gui>Архивировать почту</gui></guiseq>. При выборе пункта меню<guiseq><gui>Сообщение</gui><gui>Архивировать...</gui></guiseq> в главном окневыделенное сообщение будет перемещено в указанную папку.</p>
+<p>Для учётных записей с удалённым хранением данных (например, IMAP) также можно использовать папки на почтовом сервере в качестве «Спама» и «Корзины»: выберите соответствующий параметр <gui>Использовать реальную папку</gui>. После этого локальные <link xref="mail-search-folders">виртуальные папки</link> <app>Evolution</app> больше не будут использоваться.</p>
+
+</page>

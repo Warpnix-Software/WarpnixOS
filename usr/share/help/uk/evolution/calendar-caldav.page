@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-caldav" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="calendar-using-several-calendars"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+      https://help.gnome.org/users/evolution/2.32/usage-calendar-multiple.html.en
+      -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Користування інтернет-календарем CalDAV.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Користування календарем CalDAV</title>
+
+  <p>Щоб додати такий календар до <app>Evolution</app>, виконайте такі дії:</p>
+
+  <steps>
+    <item>
+      <p>Виберіть пункт <guiseq><gui>Файл</gui><gui>Створити</gui><gui>Календар</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Виберіть тип <gui>CalDAV</gui>.</p>
+    </item>
+    <item>
+      <p>Щоб виявити календарі, оголошені сервером, введіть адресу сервера у полі <gui>URL</gui> і, якщо треба, <gui>Користувач</gui>, а потім натисніть <gui style="button">Знайти календарі</gui>. Виберіть календар і <gui>Пошту користувача</gui>. У результаті буде попередньо заповнено поля <gui>Назва</gui>, <gui>Колір</gui>, <gui>URL</gui> та (див. нижче) <gui>Ел.пошта</gui>. Цей крок необов’язковий, і ви можете перезаписати всі виявлені налаштування.</p>
+    </item>
+    <item>
+      <p>Введіть бажану для вас назву.</p>
+    </item>
+    <item>
+      <p>Якщо хочете, виберіть бажаний колір.</p>
+    </item>
+    <item>
+      <p>Введіть адресу у поле <gui>URL</gui>.</p>
+    </item>
+    <item>
+      <p>Виберіть <gui>Використовувати безпечне з'єднання</gui>, якщо ви хочете захистити з'єднання.</p>
+    </item>
+    <item>
+      <p>Введіть своє ім'я користувача та адресу електронної пошти. Якщо запис зустрічі створюють у календарі, цю адресу електронної пошти буде попередньо вписано до поля «Організатор».</p>
+    </item>
+    <item>
+      <p>При створенні, внесенні змін та вилученні запису зустрічі можна надіслати сповіщення іншим учасникам зустрічі. Якщо позначено пункт <gui>Сервер обробляє запрошення на зустріч</gui>, <app>Evolution</app> вивантажує запис зустрічі і припускає, що сервер інформує інших учасників. Якщо цей пункт не позначено, <app>Evolution</app> надсилає електронний лист самостійно.</p>
+    </item>
+    <item>
+      <p>Натисніть кнопку <gui style="button">Гаразд</gui>.</p>
+    </item>
+  </steps>
+
+  <p>Календар буде додано до списку календарів в <app>Evolution</app>.</p>
+
+  <section>
+    <title>Облікові записи збірок</title>
+    <p>Різні типи пошти, адресних книг, календарів, списків завдань і приміток, що належать одному користувачеві, можна додавати за один крок, за допомогою <link xref="intro-account-types#collection-account">облікового запису збірки</link>.</p>
+  </section>
+</page>

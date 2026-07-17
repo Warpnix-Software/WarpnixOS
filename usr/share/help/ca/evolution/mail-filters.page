@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-filters" xml:lang="ca">
+
+  <info>
+    <desc>Utilitzeu les regles de filtre per a ordenar el correu automàticament en carpetes.</desc>
+
+    <link type="guide" xref="mail-organizing"/>
+
+    <revision pkgversion="3.0.2" version="0.6" date="2012-02-19" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-organize-filters.html.en -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Utilitzar filtres</title>
+
+<p>Els filtres de missatges apliquen accions als missatges en funció de les condicions que hàgiu definit. Podeu definir filtres per a correus electrònics entrants i sortints.</p>
+
+<p>Els filtres s'aplicaran automàticament als missatges entrants dels comptes locals (com POP). Els servidors de correu per a comptes remots (com IMAP) sovint filtren correus directament al servidor, ja que és més ràpid. Si voleu aplicar els vostres filtres a comptes remots a <app>Evolution</app> , o podeu editar a <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Comptes de correu</gui><gui style="button">Edita</gui><gui>Opcions de recepció</gui><gui>Opcions</gui><gui>Apliqueu els filtres als missatges nous de la carpeta d'entrada en aquest servidor</gui></guiseq>.</p>
+
+<p>Per a aplicar manualment filtres als missatges d'una carpeta, seleccioneu els missatges i feu clic a <guiseq><gui>Missatges</gui><gui>Aplica els filtres</gui></guiseq> o premeu <keyseq><key>Ctrl</key><key>Y</key></keyseq>.</p>
+<p>Podeu seleccionar tots els missatges d'una carpeta fent clic a <guiseq><gui>Edita</gui><gui>Selecciona-ho tot</gui></guiseq> o prement <keyseq><key>Ctrl</key><key>A</key></keyseq>.</p>
+
+<section id="adding">
+<title>Crear un filtre</title>
+
+<steps>
+<item><p>Feu clic a <guiseq><gui>Edita</gui><gui>Filtres de missatges</gui></guiseq>, o feu clic a <guiseq><gui>Missatge</gui><gui>Crea</gui></guiseq> i seleccioneu el criteri en què es basarà el filtre.</p></item>
+<item><p>Feu clic a <gui style="button">Afegeix</gui>.</p></item>
+<item><p>Introduïu un nom al camp <gui>Nom de la regla</gui>.</p></item>
+<item><p>Definiu les condicions per a la regla. Per a cada condició, primer seleccioneu quina part del missatge es comprovarà i, a continuació, definiu la comparació.</p><p>Per a obtenir més informació sobre les condicions disponibles, consulteu <link xref="mail-filters-conditions">Condicions de filtre disponibles</link>.</p></item>
+<item><p>Si voleu definir diverses condicions, definiu a <gui>Cerca elements</gui> si s'han d'aplicar totes o no, feu clic a <gui style="button">Afegeix condició</gui> i repetiu el pas previ.</p></item>
+<item>
+<p>Seleccioneu les accions del filtre a la secció <gui>Després</gui>.</p><p>Per a obtenir més informació sobre les accions disponibles, consulteu <link xref="mail-filters-actions">Accions de filtre disponibles</link>.</p>
+
+<note style="warning"><p>L'ordre dels filtres és important. Els filtres s'apliquen al missatge original en seqüència, com una recepta.</p>
+<p>Si el primer filtre té una regla d'<gui>Atura el processament</gui>, aleshores tots els missatges de correu que coincideixin amb aquest filtre ignoraran tots els filtres successius.</p>
+<p>Quan mou un missatge a una altra carpeta, «movent» representa l'efecte d'afegir una còpia del missatge a la carpeta de destinació i de marcar el missatge original per a l'eliminació. Així, qualsevol regla de filtre posterior s'aplicarà al missatge original que ara està marcat per a l'eliminació. Per tant, moure un missatge normalment hauria d'aparèixer al final en la seqüència de regles de filtratge.</p></note>
+
+</item>
+<item><p>Si voleu definir múltiples accions, feu clic a <gui style="button">Afegeix acció</gui> i repetiu el pas anterior. Per exemple, si no voleu que s'apliquin altres filtres existents, trieu <gui>Atura el processament</gui> com a segona acció de la llista.</p></item>
+<item><p>Feu clic a <gui style="button">D'acord</gui>.</p></item>
+</steps>
+
+</section>
+
+<section id="editing">
+<title>Editar els filtres</title>
+<steps>
+<item><p>Feu clic a <guiseq><gui>Edita</gui><gui>Filtres de missatge</gui></guiseq>.</p></item>
+<item><p>Seleccionar el filtre.</p></item>
+<item><p>Feu clic a <gui style="button">Edita</gui>.</p></item>
+<item><p>Feu les correccions desitjades i feu clic a <gui style="button">D'acord</gui> dues vegades.</p></item>
+</steps>
+</section>
+
+<section id="deleting">
+<title>Esborrar filtres</title>
+<steps>
+<item><p>Feu clic a <guiseq><gui>Edita</gui><gui>Filtres de missatge</gui></guiseq>.</p></item>
+<item><p>Seleccionar el filtre.</p></item>
+<item><p>Feu clic a <gui style="button">Suprimeix</gui>.</p></item>
+<item><p>Feu clic a <gui style="button">D'acord</gui>.</p></item>
+</steps>
+</section>
+
+
+
+
+	
+</page>

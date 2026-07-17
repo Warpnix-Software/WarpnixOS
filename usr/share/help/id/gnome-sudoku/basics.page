@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="basics" xml:lang="id">
+  <info>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+    <link type="guide" xref="index#play"/>
+    <credit type="author copyright">
+      <name>Chris Beiser</name>
+      <email>ctbeiser@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020, 2021.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Dasar</title>
+<p>Sudoku dapat dimainkan menggunakan papan ketik, tetikus, atau kombinasi keduanya.</p>
+
+<section id="keyboard">
+<title>Memakai papan tik</title>
+<list>
+  <item><p>Untuk memilih sel, gunakan tombol panah untuk memindahkan kerangka biru ke dalamnya.</p></item>
+  <item><p>Untuk meletakkan angka dalam sel, pilih sel, lalu tekan angka tersebut.</p></item>
+  <item><p>Untuk menghapus angka dari sel, pilih sel, lalu tekan tombol <key>Delete</key>, <key>Backspace</key>, atau <key>0</key>.</p></item>
+</list>
+</section>
+
+
+<section id="mouse">
+<title>Memakai tetikus</title>
+<list>
+	<item><p>Untuk memilih sel, gerakkan tetikus Anda di atasnya dan klik.</p></item>
+	<item><p>Untuk meletakkan angka di sel yang dipilih, klik di tengah sel, lalu klik angka yang ingin Anda masukkan.</p></item>
+	<item><p>Untuk menghapus angka dari sel yang dipilih, klik di tengah sel lalu klik <gui>Hapus</gui>.</p></item>
+</list>
+</section>
+</page>

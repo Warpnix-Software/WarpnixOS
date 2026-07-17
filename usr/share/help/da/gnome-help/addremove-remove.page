@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-remove" xml:lang="da">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntus dokumentationshold</name>
+    </credit>
+    <desc>Fjern programmer som ikke længere bruges.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove" group="#first"/>
+    <link type="seealso" xref="addremove-install-synaptic"/>
+    <revision version="18.04" date="2018-03-18" status="review"/>
+  </info>
+
+  <title>Fjern et program</title>
+
+  <p>Et program er software, som har en grafisk brugergrænseflade (GUI). Du kan bruge <app>App Center</app> til at fjerne programmer, du ikke længere bruger.</p>
+
+   <p>Programmer findes i to formater: snap-pakker og Debian-pakker. Et program tilgængeligt som en snap-pakke kaldes fra nu af en <em>snap</em>. Nogle programmer er tilgængelige i begge formater. I det tilfælde vil snappen vises først i <app>App Center</app>.</p> 
+
+   <p>Du vil måske også fjerne et program uden en GUI. Den type programmer kan fjernes med <link xref="addremove-install-synaptic">Synaptic</link>. Bemærk, at <app>Synaptic</app> ikke viser snapper.</p>
+
+  <p>Fjern et program:</p>
+    
+  <steps>
+    <item>
+      <p>
+        Click the <app>App Center</app> icon in the <gui>Dock</gui>, or search
+        for <input>Software</input> in the <em>Activities</em> search bar.
+      </p>
+    </item>
+    <item>
+      <p>Når <app>App Center</app> åbner, så klik knappen <gui>Installerede</gui> øverst.</p>
+    </item>
+    <item>
+      <p>Find det program, du ønsker at fjerne ved hjælp af søgefeltet eller ved at kigge gennem listen over installerede programmer.</p>
+    </item>
+    <item>
+      <p>Vælg programmet og klik på <gui>Fjern</gui>.</p>
+    </item>
+    <item>
+      <p>Bekræft, at du vil fjerne programmet.</p>
+    </item>
+    <item>
+      <p>Du vil blive bedt om at godkende ved at indtaste din adgangskode. Når du har gjort det, vil programmet blive fjernet.</p>
+    </item>
+
+  </steps>
+
+  <note>
+    <p>Nogle programmer er afhængige af andre programmer for at fungere korrekt. Hvis du forsøger at fjerne et program, der er nødvendigt for et andet program, vil begge blive fjernet. Du vil blive bedt om at bekræfte, om du ønsker, at dette skal ske, før programmerne fjernes.</p>
+  </note>
+
+</page>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-composer-message-templates" xml:lang="ca">
+
+  <info>
+ <desc>Plantilles per a missatges reutilitzables a l'editor.</desc>
+
+ <link type="guide" xref="index#mail-composing-advanced"/>
+
+ <revision pkgversion="3.5.90" version="0.3" date="2012-08-17" status="draft"/>
+ <credit type="author">
+   <name its:translate="no">Andre Klapper</name>
+   <email its:translate="no">ak-47@gmx.net</email>
+ </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/b1dlaazl.html.en -->
+ </credit>
+ 
+ <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Plantilles per a missatges</title>
+<p>Un missatge plantilla és un missatge estàndard que es pot utilitzar en qualsevol moment per a enviar missatges amb un mateix patró.</p>
+<p>Per a activar el connector de plantilla de missatges:</p>
+<steps>
+<item><p>Seleccioneu <guiseq><gui>Edita</gui><gui>Connectors</gui></guiseq>.</p></item>
+<item><p>Activeu <gui>Plantilles</gui>.</p>
+<note style="tip"><p>Si un connector no està disponible a <guiseq><gui>Edita</gui><gui>Connectors</gui></guiseq>, pregunteu en un fòrum d'assistència de la vostra distribució. La vostra distribució podria haver decidit desactivar alguns connectors o distribuir els connectors en un paquet a part.</p></note>
+</item>
+</steps>
+
+
+  <section id="options">
+    <title>Plantilles per a missatges</title>
+  </section>
+
+</page>

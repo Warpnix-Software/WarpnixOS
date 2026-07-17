@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="strategy" xml:lang="id">
+	<info>
+          <revision version="3.4" date="2012-03-08" status="final"/>
+	  <link type="guide" xref="index#play"/>
+	  <credit type="author copyright">
+	    <name>Radoslav Asparuhov</name>
+	    <email>rasparuhov@gmail.com</email>
+	  <years>2011</years>
+	  </credit>
+	  <credit type="editor">
+	    <name>Tiffany Antopolski</name>
+	    <email>tiffany.antopolski@gmail.com</email>
+	  </credit>
+	  <license>
+		<p>Creative Commons Share Alike 3.0</p>
+	  </license>
+	
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020, 2021.</mal:years>
+    </mal:credit>
+  </info>
+
+	<title>Strategi</title>
+        <p>Hanya ada satu kemungkinan untuk setiap sel dalam teka-teki Sudoku. Strategi berikut akan membantu Anda menemukan solusi secara sistematis untuk setiap sel.</p>
+ <section id="strategy1">
+	<title>Strategi 1:</title>
+	  <steps>
+	    <item><p>Pilih baris dengan angka terbanyak di dalamnya.</p>
+                  <note><p>Anda harus memilih baris atau kolom dengan angka terbanyak. Untuk kesederhanaan, instruksi ini ditulis seolah-olah suatu baris memiliki angka terbanyak di dalamnya.</p></note>
+            </item>
+	    <item><p>Menentukan angka mana dalam baris yang hilang.</p></item>
+	    <item><p>Pilih salah satu sel kosong di baris ini. Tentukan angka mana yang hilang dalam kolom tersebut atau dalam kotak 3×3.</p></item>
+	    <item><p>Menggunakan <link xref="earmarks">earmark</link>, masukkan angka yang hilang yang tidak ada di kolom tersebut atau kotak 3×3. Angka-angka ini adalah solusi kandidat untuk sel itu.</p></item>
+	    <item><p>Masuk ke sel kosong berikutnya dari baris yang dipilih dan ulangi metode di atas. Ulangi ini untuk setiap baris dan kolom, mulai dari baris dan kolom dengan angka terbanyak dan lanjutkan hingga yang paling sedikit. Selalu perhatikan dengan seksama angkanya dan jangan lupa kotak 3×3.</p></item>
+	   </steps>
+            <note><p>Strategi ini akan membantu mengungkapkan sel-sel yang hanya memiliki satu pilihan yang mungkin. Ketika terungkap, Anda dapat mengisi sel-sel itu dengan pilihan itu, dan mengulangi strategi lagi sampai seluruh teka-teki diselesaikan.</p></note>
+<figure>
+  <desc>Contoh penggunaan strategi 1.</desc>
+  <media type="image" mime="image/png" src="figures/strategy1.png" width="400" its:translate="no"/>
+</figure>
+
+</section>
+<section id="strategy2">
+
+	<title>Strategi 2:</title>
+	  <steps>
+	    <item><p>Temukan angka yang paling sering muncul.</p></item>
+	    <item><p>Sekarang lihat perataan vertikal kiri kotak 3×3 dan temukan kolom tempat angka ini muncul.</p></item>
+  	    <item><p>Dalam perataan ini, masuk ke kotak 3×3 yang tidak berisi angka ini di salah satu selnya. Dengan menggunakan <link xref="earmarks">earmark</link>, masukkan angka ini di setiap sel kosong kolom tempat nomor ini tidak muncul. Jika angka muncul di baris salah satu sel ini, jangan masukkan ke dalam earmark sel tersebut.</p></item>
+	    <item><p>Ulangi dua langkah terakhir untuk perataan vertikal tengah dan kanan.</p></item>
+            <item><p>Temukan nomor berikutnya yang paling banyak muncul, dan ulangi hingga Anda melakukan ini untuk semua 9 angka.</p></item>
+	  </steps>
+            <note><p>Strategi ini akan membantu mengungkapkan sel-sel yang hanya memiliki satu pilihan yang mungkin. Ketika terungkap, Anda dapat mengisi sel-sel itu dengan pilihan itu, dan mengulangi strategi lagi sampai seluruh teka-teki diselesaikan.</p></note>
+<figure>
+  <desc>Contoh penggunaan strategi 2.</desc>
+  <media type="image" mime="image/png" src="figures/strategy2.png" width="400" its:translate="no"/>
+</figure>
+
+	   <note><p>Jika tidak ada strategi di atas yang memecahkan teka-teki sendiri, Anda dapat mengubah strategi. Anda juga dapat menggabungkan strategi.</p></note>
+</section>
+</page>

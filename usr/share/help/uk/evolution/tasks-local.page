@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="tasks-local" xml:lang="uk">
+
+  <info>
+    <desc>Додавання локального списку завдань або приміток.</desc>
+    
+    <link type="guide" xref="tasks-using-several-tasklists"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Додавання локального списку завдань або приміток</title>
+
+<p>Щоб додати локальний список завдань в <app>Evolution</app>, виконайте такі дії:</p>
+<steps>
+<item><p>Виберіть пункт меню <guiseq><gui>Файл</gui><gui>Створити</gui><gui>Список завдань</gui></guiseq> або <guiseq><gui>Файл</gui><gui>Створити</gui><gui>Список приміток</gui></guiseq>.</p></item>
+<item><p>Виберіть тип <gui>На цьому комп'ютері</gui>.</p></item>
+<item><p>Введіть бажану для вас назву.</p></item>
+<item><p>Якщо хочете, виберіть бажаний колір.</p></item>
+<item><p>Натисніть кнопку <gui style="button">Гаразд</gui>.</p></item>
+</steps>
+
+<p>Список завдань буде додано до списку списків завдань в <app>Evolution</app>.</p>
+
+</page>

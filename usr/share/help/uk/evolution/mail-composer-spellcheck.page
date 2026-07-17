@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:e="http://projectmallard.org/experimental/" xmlns:if="http://projectmallard.org/if/1.0/" type="topic" id="mail-composer-spellcheck" xml:lang="uk">
+
+  <info>
+    <desc>Про перевірку правопису повідомлення електронної пошти у редакторі повідомлень.</desc>
+    
+    <link type="guide" xref="index#mail-composing"/>
+
+    <revision pkgversion="3.20.5" version="0.7" date="2016-11-21" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Перевірка правопису</title>
+
+<!-- Instructions are only valid from Evolution 2.24 on -->
+
+<section id="required-packages">
+<title>Попередні вимоги</title>
+<p>Щоб скористатися засобами перевірки правопису у написаних вами повідомленнях, вам слід спочатку встановити пакунок <sys>hunspell</sys> для потрібної вам мови та пакунок <sys>enchant</sys> за допомогою програми для керування пакунками у вашому дистрибутиві.</p>
+
+<note style="info package">
+  <p>Для виконання цих дій вам, ймовірно, слід встановити <sys>hunspell</sys> і/або <sys>enchant</sys>.</p>
+  <if:choose>
+    <if:when test="action:install">
+      <p><link action="install:hunspell" href="http://hunspell.sourceforge.net/" style="button">Встановити hunspell</link></p>
+      <p><link action="install:enchant" href="http://www.abisource.com/projects/enchant/" style="button">Встановити enchant</link></p>
+    </if:when>
+  </if:choose>
+</note>
+</section>
+
+<section id="global-preferences">
+<title>Загальні налаштування</title>
+
+<p>За допомогою сторінки <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Параметри редактора</gui><gui>Перевірка орфографії</gui><gui>Параметри</gui></guiseq> ви можете визначити, чи буде використано перевірку правопису під час введення тексту.</p>
+
+<p>Ви також можете встановити, які зі встановлених мов буде використано для перевірки правопису, у списку на сторінці <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Параметри редактора</gui><gui>Перевірка орфографії</gui><gui>Мови</gui></guiseq> або у вікні редактора за допомогою пункту <guiseq><gui>Зміни</gui><gui>Поточні мови</gui></guiseq>.</p>
+</section>
+
+<section id="composer">
+<title>Перевірка правопису вручну у вікні редактора повідомлень</title>
+<p>Якщо не позначено пункт <gui>Перевіряти правопис під час набору тексту</gui> у <link xref="#global-preferences">параметрах редактора</link>, ви можете запустити перевірку правопису у редакторі повідомлень за допомогою пункту меню <guiseq><gui>Зміни</gui><gui>Перевірити орфографію…</gui></guiseq> або натискання клавіші <key>F7</key>.</p>
+</section>
+
+</page>

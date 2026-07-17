@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-sorting-folder-list" xml:lang="uk">
+
+  <info>
+    <desc>Упорядковування списку поштових тек на лівій панелі.</desc>
+
+    <link type="guide" xref="mail-organizing"/>
+    <link type="guide" xref="mail-layout-changing"/>
+
+    <revision pkgversion="3.3.91" version="0.2" date="2013-06-22" status="draft"/>
+    <revision pkgversion="3.38.4" version="0.3" date="2021-03-28" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Упорядковування списку поштових тек</title>
+  
+<section id="default-folder-sort-order">
+<title>Типове впорядкування</title>
+<p>Типово, у <link xref="intro-main-window#e-mail">списку поштових тек</link> на лівій панелі вузли верхнього рівня буде показано у такому порядку:</p>
+<list>
+<item><p><gui>На цьому комп'ютері</gui> — містить усю пошту для локальних облікових записів (якщо такі налаштовано)</p></item>
+<item><p>Один або декілька облікових записів із віддаленим зберіганням поштових даних (якщо такі налаштовано)</p></item>
+<item><p><gui><link xref="mail-search-folders">Теки пошуку (віртуальні теки)</link></gui> (якщо такі увімкнено)</p></item>
+</list>
+<p>Теки під кожним вузлом верхнього рівня упорядковано за абеткою.</p>
+</section>
+
+<section id="change-folder-sort-order">
+<title>Зміна упорядкування</title>
+<list>
+<item>
+<p>Ви можете змінити типове упорядковування вузлів верхнього рівня за допомогою сторінки <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Облікові записи</gui></guiseq> перетягуванням пунктів у списку вище або нижче за поточну позицію.</p>
+
+<p>Повернутися до типового упорядкування можна за допомогою пункту <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Облікові записи</gui><gui style="button">Типові значення</gui></guiseq>.</p>
+</item>
+<item>
+<p>Ви можете змінити спосіб упорядкування тек за допомогою пункту меню <guiseq><gui>Тека</gui><gui>Змінити порядок сортування…</gui></guiseq>.</p>
+</item>
+</list>
+</section>
+</page>

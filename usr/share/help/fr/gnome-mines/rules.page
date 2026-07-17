@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="rules" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="index#play"/>
+    <link type="seealso" xref="flags"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2007,2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2007-2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervan@gmail.com</mal:email>
+      <mal:years>2012-2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yoann Fievez</mal:name>
+      <mal:email>yoann.fievez@gmail.com</mal:email>
+      <mal:years>2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Julien Hardelin</mal:name>
+      <mal:email>jhardlin@orange.fr</mal:email>
+      <mal:years>2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jean-Baptiste Holcroft</mal:name>
+      <mal:email>jean-baptiste@holcroft.fr</mal:email>
+      <mal:years>2018</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Charles Monzat</mal:name>
+      <mal:email>charles.monzat@free.fr</mal:email>
+      <mal:years>2017-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Irénée Thirion</mal:name>
+      <mal:email>irenee.thirion@e.email</mal:email>
+      <mal:years>2023</mal:years>
+    </mal:credit>
+  </info>
+
+
+  <title>Règles du jeu</title>
+
+  <p>Le but du jeu <app>Mines</app> est de nettoyer le champ de mines sans en faire exploser une seule.</p>
+
+  <steps>
+    <item>
+      <p>Commencez par choisir une des trois tailles de plateau proposées, ou constituez votre propre plateau personnalisé.</p>
+    </item>
+    <item>
+      <p>Le jeu commence avec le tableau couvert de cases. Cliquez sur n’importe quelle case pour la découvrir. Vous allez découvrir :</p>
+      <list>
+        <item>
+	  <p>Un nombre coloré, qui représente le nombre de mines dans les cases adjacentes. Cela vous aidera à en déduire où se trouvent les mines de sorte que vous pouvez les marquer avec des <link xref="flags">drapeaux</link>.</p>
+        </item>
+        <item>
+	  <p>Une case vide, ce qui signifie qu’il n’y a de mine sous aucune des cases adjacentes.</p>
+        </item>
+        <item>
+	  <p>Une mine, qui explosera et mettra fin à la partie.</p>
+	</item>
+      </list>
+    </item>
+    <item>
+      <p>Recommencez les étapes précédentes jusqu’à avoir retourné toutes les cases du plateau qui ne cachent pas de mine.</p>
+    </item>
+  </steps>
+
+  <p>Si vous avez été suffisamment rapide, votre nom est ajouté à la liste des <link xref="high-scores">meilleurs scores</link>.</p>
+
+</page>

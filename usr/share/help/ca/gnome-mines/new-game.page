@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="new-game" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#play"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.5.5" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.12" date="2014-03-08" status="review"/>
+    <revision pkgversion="3.28.0" version="0.2" date="2018-09-01" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2012</years>
+    </credit>
+    <credit type="author copyright">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+    <credit type="editor">
+      <name>Aruna Sankaranarayanan</name>
+      <email>aruna.evam@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Rashi Aswani</name>
+      <email>aswanirashi19@gmail.com</email>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Joan Duran</mal:name>
+      <mal:email>jodufi@gmail.com</mal:email>
+      <mal:years>2007, 2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Començar una partida</title>
+
+  <p>Per a començar una partida:</p>
+  <steps>
+    <item>
+      <p>Premeu el botó <gui style="button">Juga de nou</gui> de la dreta.</p>
+    </item>
+    <item>
+      <p>Per a canviar la <link xref="board-size">mida del tauler</link>, premeu el botó <gui style="button">Canvia la dificultat</gui> de la dreta.</p>
+    </item>
+  </steps>
+
+  <note>
+  <p>Si esteu jugant una partida i premeu el botó <gui style="button">Comença de nou</gui>, el <app>Mines</app> us demanarà si voleu <gui>Mantenir la partida actual</gui> o <gui>Començar una partida nova</gui>. Si escolliu la segona opció, es perdrà la partida actual.</p>
+  </note>
+</page>

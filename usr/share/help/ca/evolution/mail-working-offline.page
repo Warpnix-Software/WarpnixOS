@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-working-offline" xml:lang="ca">
+
+  <info>
+    <desc>Treballeu amb el correu mentre no esteu connectat a la xarxa.</desc>
+<!-- TODO:POST-3-8: Offline work for web calendars etc also exists => create index page for Offline working? -->
+    <link type="guide" xref="index#mail-basic"/>
+
+    <revision pkgversion="3.28.2" version="0.6" date="2018-07-09" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-offline -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Treballar fora de línia</title>
+
+<p><app>Evolution</app> pot mantenir una còpia local de carpetes ubicades en sistemes de correu remot com IMAP o Exchange, per a permetre-vos llegir missatges.</p>
+
+<note style="warning"><p>El mode fora de línia forçat d'<app>Evolution</app> només es refereix al correu i no s'aplica als contactes i als calendaris.</p></note>
+
+<p>El correu POP descarrega tots els missatges al vostre sistema local, però per als comptes remots generalment només es descarreguen els encapçalaments. La resta, com ara el cos d'un missatge, només es baixarà quan vulgueu llegir el missatge. Abans de forçar <app>Evolution</app> a treballar fora de línia, <app>Evolution</app> descarrega els missatges no llegits de les carpetes que heu triat per a emmagatzemar.</p>
+
+<section id="accounts">
+<title>Paràmetres del compte</title>
+<p>Les <link xref="mail-receiving-options">opcions de recepció</link> dels comptes remots permeten <gui>sincronitzar correu remot localment a totes les carpetes</gui>, la qual cosa s'aplica a totes les carpetes del compte.</p>
+<p>Per a evitar descarregar grans quantitats de dades, també podeu desactivar la sincronització de missatges anteriors a un cert període.</p>
+</section>
+
+<section id="mark-folders">
+<title>Marcar les carpetes per a l'ús fora de línia</title>
+<p>Si no teniu habilitada l'opció <gui>Sincronitza localment el correu remot en totes les carpetes</gui> del compte, podeu sincronitzar carpetes individuals.</p>
+<p>Per a marcar una carpeta de correu per a utilitzar fora de línia,</p>
+<steps>
+<item><p>Feu clic amb el botó dret del ratolí sobre la carpeta, aleshores cliqueu <gui>Propietats</gui>.</p></item>
+<item><p>Feu clic a <gui>Copieu el contingut de la carpeta localment per al seu funcionament fora de línia</gui>.</p></item>
+</steps>
+</section>
+
+<section id="sync-for-offline">
+<title>Sincronització de missatges per a us fora de línia</title>
+<p>L'estat de la vostra connexió es mostra mitjançant una icona a la barra d'estat de la <link xref="intro-main-window">finestra principal</link>. Quan esteu connectat, es mostren dos cables connectats. Quan forceu el mode fora de línia fent clic a la icona o a través de <guiseq><gui>Fitxer</gui><gui>Treballa fora de línia</gui></guiseq>, els cables se separen. Us podeu desconnectar immediatament o sincronitzar les carpetes remotes amb la vostra còpia local abans de desconnectar-vos.</p>
+<p>Per a sincronitzar les carpetes sense desconnectar immediatament, seleccioneu <guiseq><gui>Fitxer</gui><gui>Descarrega els missatges per a ús fora de línia</gui></guiseq>.</p>
+</section>
+
+<section id="network-manager-integration">
+<title>Gestió automàtica de l'estat de la xarxa</title>
+<p><app>Evolution</app> entén automàticament l'estat de xarxa i actua en conseqüència. Per exemple, <app>Evolution</app> canvia a mode fora de línia quan la xarxa cau, i s'activa automàticament quan la xarxa torna a funcionar.</p>
+</section>
+
+</page>

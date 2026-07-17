@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="tasks-caldav" xml:lang="ru">
+
+  <info>
+    <desc>Использование сетевого списка задач или списка заметок CalDAV.</desc>
+    
+    <link type="guide" xref="tasks-using-several-tasklists"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Использование списка задач или заметок CalDAV</title>
+
+<p>Чтобы добавить такой список задач или список заметок в <app>Evolution</app>, выполните следующие действия:</p>
+<steps>
+<item><p>Выберите пункт меню <guiseq><gui>Файл</gui><gui>Создать</gui><gui>Список задач</gui></guiseq> или <guiseq><gui>Файл</gui><gui>Создать</gui><gui>Список заметок</gui></guiseq>.</p></item>
+<item><p>Выберите тип <gui>CalDAV</gui>.</p></item>
+<item>
+   <p>To discover the task lists or memo lists, announced by the server, enter the server address as <gui>URL</gui> and optionally <gui>User</gui>, then click on <gui style="button">Find Task Lists</gui>/<gui style="button">Find Memo Lists</gui>. Select a task or memo list and <gui>User mail</gui>.
+   This prefills the fields <gui>Name</gui>, <gui>Color</gui>, <gui>URL</gui> and (see below) <gui>Email</gui>. The step is optional, and you can overwrite all the discovered settings.</p>
+</item>
+<item><p>Укажите имя.</p></item>
+<item><p>Выберите цвет (это необязательно).</p></item>
+<item><p>Введите адрес в поле <gui>URL</gui>.</p></item>
+<item><p>Чтобы использовать защищённое соединение, выберите <gui>Использовать безопасное соединение</gui>.</p></item>
+<item><p>Enter your username and email address. When an assigned task is created in the task list, this email address is prefilled as Organizer.</p></item>
+    <item>
+      <p>When an assigned task is created, modified or deleted, a notification can be sent to the other parties.
+      If <gui>Server handles meeting invitations</gui> is selected, <app>Evolution</app> uploads the task and assumes
+      that the server informs other parties. When the option is not selected, <app>Evolution</app> sends an email.</p>
+    </item>
+<item><p>Нажмите кнопку <gui style="button">OK</gui>.</p></item>
+</steps>
+
+<p>Список задач будет добавлен в перечень списков задач <app>Evolution</app>.</p>
+
+  <section>
+    <title>Collection accounts</title>
+    <p>Different types of mail, address books, calendars, task and memo lists, belonging to the same user, can be added in one step by utilizing a <link xref="intro-account-types#collection-account">Collection account</link>.</p>
+  </section>
+</page>

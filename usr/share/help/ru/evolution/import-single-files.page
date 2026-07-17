@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="import-single-files" xml:lang="ru">
+
+  <info>
+    <desc>Импорт отдельных файлов.</desc>
+    
+    <link type="guide" xref="import-data"/>
+
+    <revision pkgversion="3.31.91" version="0.3" date="2019-03-01" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Импорт отдельных файлов</title>
+
+<p>Чтобы импортировать отдельные файлы (почты, данных календаря или контактов):</p>
+<steps>
+<item><p>Выберите пункт меню <guiseq><gui>Файл</gui><gui>Импорт...</gui></guiseq>.</p></item>
+<item><p>На вкладке <gui>Тип импортёра</gui> выберите <gui>Импорт одного файла</gui>.</p></item>
+<item><p>Выберите файл.</p><p>Тип файла будет определён автоматически.</p></item>
+<item><p>Выберите назначение (например, папку <app>Evolution</app>) для импортируемых данных.</p></item>
+</steps>
+
+<note style="tip"><p>Также можно импортировать контакты, которые были получены как вложение vCard сообщения электронной почты, с помощью меню этого вложения.</p></note>
+
+<note style="tip"><p>При установке параметра <gui>Тип файла</gui> в значение <gui>Контакты CSV или Tab</gui> заголовки столбцов должны соответствовать первой записи вкаждом из элементов на английском в коде средства импорта для <link href="https://gitlab.gnome.org/GNOME/evolution/blob/bc5f32786d09823247d8188c5f211dcd354097de/src/addressbook/importers/evolution-csv-importer.c#L228"><app>Evolution</app></link>, <link href="https://gitlab.gnome.org/GNOME/evolution/blob/bc5f32786d09823247d8188c5f211dcd354097de/src/addressbook/importers/evolution-csv-importer.c#L188"><app>Mozilla</app></link> и <link href="https://gitlab.gnome.org/GNOME/evolution/blob/bc5f32786d09823247d8188c5f211dcd354097de/src/addressbook/importers/evolution-csv-importer.c#L93"><app>Outlook</app></link>.</p></note>
+</page>

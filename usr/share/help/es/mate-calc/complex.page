@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="complex" xml:lang="es">
+
+    <info>
+        <link type="guide" xref="index#number"/>
+    
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Adolfo Jayme Barrientos</mal:name>
+      <mal:email>fitojb@ubuntu.com</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Toni Estevez</mal:name>
+      <mal:email>toni.estevez@gmail.com</mal:email>
+      <mal:years>2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Francisco Javier F. Serrador</mal:name>
+      <mal:email>serrador@cvs.gnome.org</mal:email>
+      <mal:years>2003-2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Pablo Gonzalo del Campo</mal:name>
+      <mal:email>pablodc@bigfoot.com</mal:email>
+      <mal:years>2002-2003</mal:years>
+    </mal:credit>
+  </info>
+
+	<title>Números complejos</title>
+    
+    <p>
+    <app>MATE Calculator</app> supports complex numbers, as well as the following functions while in <link xref="mouse">Advanced mode</link>.
+    </p>
+
+    <table>
+
+    <tr>
+    <td><p>Re</p></td>
+    <td><p>Returns the real part of a complex number. For example:</p>
+    <example>
+    <p>Re (2-5i) = 2</p>
+    </example>
+    </td>
+    </tr>
+
+    <tr>
+    <td><p>Im</p></td>
+    <td><p>Returns the imaginary part of a complex number. For example:</p>
+    <example>
+    <p>Im (2-5i) = -5</p>
+    </example>
+    </td>
+    </tr>
+
+    <tr>
+    <td><p>conj</p></td>
+    <td><p>Returns the conjugate of a complex number. For example:</p>
+    <example>
+    <p>conj (2-5i) = 2+5i</p>
+    </example>
+    </td>
+    </tr>
+
+    <tr>
+    <td><p>Arg</p></td>
+    <td><p>Devuelve el argumento de un número complejo. Por ejemplo:</p>
+    <example>
+    <p>
+    Arg (2-5i) = -68.1986
+    </p>
+    </example>
+    </td>
+    </tr> 
+
+    </table>
+
+
+</page>

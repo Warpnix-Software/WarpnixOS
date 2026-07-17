@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-displaying-message" xml:lang="cs">
+
+  <info>
+    <desc>Zobrazení e-mailu a práce s jeho přílohami.</desc>
+
+    <link type="guide" xref="index#mail-basic"/>
+    <link type="seealso" xref="mail-composer-html"/>
+
+    <revision pkgversion="3.38.4" version="0.4" date="2021-04-10" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  </info>
+
+<title>Zobrazení zprávy</title>
+
+<p>E-maily mohou být ve dvou formátech <link href="https://en.wikipedia.org/wiki/Email#Plain_text_and_HTML">prostý text nebo HTML</link> (odkazovaný text je v angličtině). Oba formáty mají své výhody i nevýhody.</p>
+
+<p>Můžete určit, jak se budou zprávy v HTML zobrazovat, v <guiseq><gui>Upravit</gui> <gui>Předvolby</gui> <gui>Předvolby pošty</gui> <gui>HTML zprávy</gui></guiseq>. Například je můžete nechat zobrazit jako prostý text nebo blokovat načítání vzdáleného obsahu.</p>
+
+<note style="tip"><p>Jak v editoru e-maily formátovat najdete v kapitole <link xref="mail-composer-html"/>.</p></note>
+
+  <section id="advanced">
+    <title>Pokročilé</title>
+  </section>
+
+</page>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="superscript" xml:lang="ja">
+
+    <info>
+        <!-- Place this at the end of the section -->
+        <title type="sort">_</title>
+        <link type="guide" xref="index#ui"/>
+    </info>
+
+	<title>上付き文字と下付き文字</title>
+
+    <p>数式によっては、数字を上付きまたは下付きの形式で入力する必要があります。例：</p>
+    <example>
+    <p><math alttext="x³+2x²−5"> <mrow> <msup> <mi>x</mi> <mn>3</mn> </msup> <mo>+</mo> <mrow> <mn>2</mn> <msup> <mi>x</mi> <mn>2</mn> </msup> </mrow> <mo>-</mo> <mn>5</mn> </mrow> </math></p>
+    </example>
+    <p>上付き数字をマウスで入力するには、<gui>↑n</gui> および <gui>↓n</gui> ボタンを使用して数字モードを選択します。これらのモードのいずれかがアクティブなときに数字ボタンをクリックすると、数字が上付きまたは下付きで入力されます。通常の数字モードに戻るには、アクティブなボタンをクリックします。</p>
+    <p>キーボードを使用して上付きの数字を入力するには、<key>Ctrl</key> キーを押しながら数字を入力します。下付きの場合は <key>Alt</key> キーを押しながら入力ます。</p>
+    <p>次の数字以外の文字 ( + など) を入力すると、数字モードは通常に戻ります。</p>
+</page>

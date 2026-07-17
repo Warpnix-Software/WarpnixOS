@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:uix="http://projectmallard.org/experimental/ui/" type="guide" style="task" id="addremove" xml:lang="id">
+  <info>
+    <link type="guide" xref="index" group="addremove"/>
+
+    <title role="trail" type="link">Tambah/hapus perangkat lunak</title>
+
+    <credit type="author">
+      <name>Tim Dokumentasi Ubuntu</name>
+    </credit>
+
+    <desc>Menambah dan menghapus aplikasi dan perangkat lunak lainnya. Tangani repositori perangkat lunak tambahan.</desc>
+    <uix:thumb role="experimental-gnome-tiles" src="figures/tile-software.svg"/>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+  <title>Pasang &amp; hapus perangkat lunak</title>
+  <links type="topic" style="2column"/>
+
+</page>

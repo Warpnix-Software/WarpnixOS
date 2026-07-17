@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-meetings-delegating" xml:lang="pt-BR">
+
+  <info>
+    <link type="guide" xref="calendar-meetings"/>
+
+    <revision pkgversion="3.5.91" version="0.3" date="2012-09-14" status="stub"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/bxqatxt.html -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Peça a outra pessoa para dirigir a reunião.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Fontenelle</mal:name>
+      <mal:email>rafaelff@gnome.org</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Delegando reuniões</title>
+
+  <p>Apenas os participantes de uma reunião podem delegar uma reunião, mas não o organizador de uma reunião.</p>
+
+  <steps>
+    <item>
+      <p>Clique com o botão direito na reunião que você deseja delegar.</p>
+    </item>
+    <item>
+      <p>Clique em <gui>Delegar reunião</gui>.</p>
+    </item>
+    <item>
+      <p>Selecione os contatos aos quais você deseja delegar a reunião.</p>
+    </item>
+    <item>
+      <p>Clique em <gui style="button">OK</gui>.</p>
+    </item>
+  </steps>
+
+  <p>Cada contato recebe uma cópia do convite da reunião.</p>
+
+</page>

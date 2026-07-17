@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="exporting-data-mail" xml:lang="id">
+
+  <info>
+    <desc>Bagaimana mengekspor data surel dari <app>Evolution</app>.</desc>
+
+    <link type="guide" xref="exporting-data"/>
+
+    <revision pkgversion="3.0.2" version="0.4" date="2013-04-20" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Mengekspor data surel</title>
+
+<p>Untuk menyimpan surel ke berkas dalam format <link href="https://en.wikipedia.org/wiki/Mbox">mbox</link>, pilih surel dan klik <guiseq><gui>Berkas</gui><gui>Simpan sebagai mbox...</gui></guiseq> atau klik kanan pada pesan dan klik <gui>Simpan sebagai mbox...</gui>.</p>
+
+<p>Langkah yang sama berlaku untuk menyimpan folder surel lengkap, tetapi Anda harus menandai semua pesan di dalamnya terlebih dahulu.</p>
+<p>Anda bisa memilih semua pesan dalam folder dengan mengklik <guiseq><gui>Sunting</gui><gui>Pilih Semua</gui></guiseq> atau menekan <keyseq><key>Ctrl</key><key>A</key></keyseq>.</p>
+
+</page>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-install-synaptic" xml:lang="it">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntu Documentation Team</name>
+    </credit>
+
+		<credit type="editor">
+      <name>Greg Beam</name>
+      <email>ki7mt@yahoo.com</email>
+    </credit>
+
+    <link type="guide" xref="addremove"/>
+    <revision pkgversion="0.80.4" version="0" date="2014-01-11" status="review"/>
+                <revision version="18.04" date="2018-03-18" status="review"/>
+                <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Synaptic è una applicazione potente ma complicata per la gestione del software alternativa a <app>App Center</app>.</desc>
+  </info>
+
+  <title>Usare uno strumento avanzato per gestire applicazioni</title>
+
+  <p><app>Synaptic Package Manager</app> è più potente e in grado di fare alcune attività di gestione del software che <app>App Center</app> non può fare. L'interfaccia di Synaptic è più complicata e non supporta le più recenti caratteristiche di <app>App Center</app> come valutazioni e recensioni e, pertanto, non ne è raccomandato l'uso ai nuovi utenti di Ubuntu.</p>
+
+  <p>Synaptic non è installato di default, ma è possibile <link href="apt:synaptic">installarlo</link> dall'archivio pacchetti di Ubuntu.</p>
+
+  <section id="install-software-with-synaptic">
+    <title>Installare software con Synaptic</title>
+    <steps>
+      <item>
+        <p>Apri <app>Synaptic</app> dalla barra di ricerca <em>Attività</em>. Dovrai inserire la tua password nella finestra <gui>Autenticati</gui>.</p>
+      </item>
+      <item>
+        <p>Una volta aperto, fare clic su <gui>Cerca</gui> per cercare un software da installare oppure selezionare <gui>Sezioni</gui> per sfogliare le varie categorie di applicazioni.</p>
+      </item>
+      <item>
+        <p>Fare clic col pulsante destro del mouse sull'applicazione da installare e selezionare <gui>Installa</gui>.</p>
+      </item>
+      <item>
+        <p>Se viene richiesto di selezionare ulteriori modifiche, fare clic su <gui>Seleziona</gui>.</p>
+      </item>
+      <item>
+        <p>Selezionare tutte le applicazioni da installare.</p>
+      </item>
+      <item>
+        <p>Fare clic su <gui>Applica</gui> e quindi nuovamente su <gui>Applica</gui> nella finestra che appare. Le applicazioni selezionate verranno scaricate e installate.</p>
+      </item>
+    </steps>
+
+    <p>Per ulteriori informazioni sull'utilizzo di <app>Synaptic</app>, consultare la pagina <link href="https://help.ubuntu.com/community/SynapticHowto">Synaptic How To</link>.</p>
+
+  </section>
+
+</page>

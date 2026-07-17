@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:e="http://projectmallard.org/experimental/" xmlns:if="http://projectmallard.org/if/1.0/" xmlns:ui="http://projectmallard.org/ui/1.0/" type="topic" id="intro-account-types" xml:lang="uk">
+
+  <info>
+    <desc>Ознайомлення з тим, якими даними можна керувати.</desc>
+
+    <link type="guide" xref="index#getting-started"/>
+
+    <revision pkgversion="3.28.2" version="0.9" date="2024-09-22" status="stub"/>
+    <credit type="author">
+      <name its:translate="no">Дилян Палаузов</name>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Підтримку яких типів облікових записів передбачено</title>
+
+  <p>У <app>Evolution</app> передбачено підтримку таких типів облікових записів:</p>
+  <list>
+    <item>
+      <p>Доступ до електронної пошти — <link xref="intro-first-run#receiving">отримання</link> і <link xref="intro-first-run#sending">надсилання</link></p>
+    </item>
+    <item>
+      <p><link xref="contacts-using-several-addressbooks">Контакти</link></p>
+    </item>
+    <item>
+      <p><link xref="calendar-using-several-calendars">Календарі</link>, <link xref="tasks-using-several-tasklists">завдання і примітки</link></p>
+    </item>
+    <item>
+      <p>Облікові записи збірок</p>
+    </item>
+    <item>
+      <p>RSS-стрічки</p>
+    </item>
+  </list>
+
+<section id="collection-account">
+  <title>Обліковий запис збірки</title>
+  <p>Цей тип облікового запису може за одним користувачем пов’язати разом кілька джерел даних – електронну пошту (наприклад, IMAP, POP3, SMTP), контакти (як-от CardDAV, LDAP), календарі (як-от CalDAV), списки завдань, списки приміток. Для деяких з них, наприклад облікових записів CalDAV або CardDAV, можна додавати всі адресні книги, календарі, списки завдань або списки нотаток із сервера та підтримувати їх у синхронізації з даними, про які оголошує сервер.</p>
+  <p>Щоб налаштувати цей тип облікового запису, виберіть <guiseq><gui>Файл</gui><gui>Створити</gui><gui>Обліковий запис збірки</gui></guiseq>. Щоб знайти лише джерела, які не потребують автентифікації, залиште <gui>електронну адресу або ім’я користувача</gui> порожніми та заповніть сторінку <guiseq><gui>Додаткові параметри</gui><gui>Сервер</gui></guiseq>.</p>
+</section>
+<section id="rss">
+  <title>RSS-стрічки</title>
+  <p>Щоб налаштувати стрічку RSS, виберіть пункт меню <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Новини і блоги</gui></guiseq>.</p>
+</section>
+<section id="evolution-accounts">
+  <title>Вікно облікових записів Evolution</title>
+  <p>Огляд усіх налаштованих <gui>Облікових записів Evolution</gui> можна отримати за допомогою пункту меню <guiseq><gui>Зміни</gui><gui>Облікові записи</gui></guiseq>.</p>
+  <p>Кожен обліковий запис збірки показує власні облікові записи електронної пошти, адресні книги, календарі, списки нотаток і списки завдань, як про них повідомляє сервер. Розгортання кожного типу надає змогу увімкнути або вимкнути локальну синхронізацію для відповідного джерела.</p>
+  <p>Для увімкнених облікових записів збірки з джерелами CalDAV і CardDAV кнопка <gui style="button">Оновити</gui> отримує список віддалених джерел локально та запитує у сервера про колір і назву колекцій WebDAV. Якщо вони були змінені віддалено, але не локально, локальна назва та колір синхронізуються з сервера. Список джерел оновлюється неявно щодня.</p>
+  <p>Якщо вибрано обліковий запис на основі WebDAV, натискання кнопки <gui>Вибрати</gui> призводить до відкриття вікна редактора WebDAV.</p>
+</section>
+<section id="webdav-editor">
+  <title>Редактор WebDAV</title>
+  <p>WebDAV — це загальний протокол для CalDAV, CardDAV, Notes. Збірка WebDAV – це каталог, який може містити записи подій, контактів та інші збірки. Редактор WebDAV показує збірки, про які оголошено сервером, і надає змогу редагувати деякі їхні властивості на сервері. Надає змогу створювати нові адресні книги, календарі та загальні збірки. Сервери можуть накладати обмеження, як-от забороняти створення календаря під іншим календарем або забороняти змінювати деякі властивості. Єдиний календар WebDAV може зберігати записи подій, завдань, примітки.</p>
+</section>
+</page>

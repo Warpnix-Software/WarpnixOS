@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="bug-filing" xml:lang="da">
+
+  <info>
+    <link type="guide" xref="index#getInvolved"/>
+    <desc>Hvor og hvordan man kan rapportere problemer.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+
+<title>Lav en fejlrapport til Atril</title>
+<p>Atril vedligeholdes af et fællesskab af frivillige. Du er velkommen til at deltage. Hvis du støder ind i et problem, så kan du indsende en <em>fejlrapport</em>. Gør det ved at gå til <link href="https://github.com/mate-desktop/atril/issues"/>.</p>
+   <p>Det er et fejlrapporteringssystem, hvor brugere og udviklere kan rapportere detaljer om fejl eller programnedbrud, og foreslå forbedringer.</p>
+   <p>For at deltage, skal man have en konto, hvor man får mulighed for at få adgang, indmelde fejl og komme med kommentarer. Man skal også registrere sig for at få opdateringer med e-post om status på fejlrapporten. Hvis du ikke allerede har en konto, skal du bare klikke på <gui>Log ind/Registrer</gui> for at oprette den.</p>
+   <p>Når du har en konto, så log ind, og klik på <gui>Ny fejlrapport</gui>.</p>
+   <p>Udfyld titel og beskrivelse og klik på <gui>Indsend fejlrapport</gui>.</p>
+   <p>Din rapport får tildelt et ID-nummer, og dens status bliver opdateret når den behandles nærmere.</p>
+</page>

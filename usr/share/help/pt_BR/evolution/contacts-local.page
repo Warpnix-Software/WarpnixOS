@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-local" xml:lang="pt-BR">
+
+  <info>
+    <link type="guide" xref="contacts-using-several-addressbooks"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Adding another local address book.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Fontenelle</mal:name>
+      <mal:email>rafaelff@gnome.org</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Adding another local address book</title>
+
+  <p>To add another local address book to <app>Evolution</app>, perform the
+  following steps:</p>
+
+  <steps>
+    <item>
+      <p>Clique em <guiseq><gui>Arquivo</gui><gui>Novo</gui> <gui>Catalogo de endereços</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Selecione o tipo <gui>On This Computer</gui>.</p>
+    </item>
+    <item>
+      <p>Digite um nome de sua preferência.</p>
+    </item>
+    <item>
+      <p>Clique em <gui style="button">OK</gui>.</p>
+    </item>
+  </steps>
+
+  <p>O catálogo de endereços será adicionado à lista de catálogos de endereços no <app>Evolution</app>.</p>
+
+</page>

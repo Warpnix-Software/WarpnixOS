@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="startup-applications" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="shell-overview#apps"/>
+    <link type="guide" xref="prefs"/>
+    <desc>Виберіть, які додатки будуть запускатися, при вході у систему.</desc>
+
+    <revision version="18.04" date="2018-03-19" status="review"/>
+
+    <credit type="author">
+      <name>Команда з документування Ubuntu</name>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+  <title>Початкові програми</title>
+
+  <p>Ви можете налаштувати, які програми будуть запускатися під час входу у систему окремо, від вже призначених автоматично стартуючих програм.</p>
+
+  <steps>
+    <item>
+      <p>Відкрийте <gui>Початкові програми</gui> через огляд <gui xref="shell-introduction#activities">Діяльність</gui>. Крім того, ви можете натиснути <keyseq><key>Alt</key><key>F2</key></keyseq> та виконати команду<cmd>gnome-session-properties</cmd>.</p>
+    </item>
+    <item>
+      <p>Клацніть <gui>Додати</gui> і введіть команду, яка буде виконуватися при вході (найменування і опис необов’язкові для заповнення). Наприклад, щоб запускати Firefox автоматично, потрібно ввести <cmd>firefox</cmd> у рядку <gui>Команда</gui> й натиснути кнопку <gui>Додати</gui>.</p>
+    </item>
+  </steps>
+
+  <note>
+    <p>Ви можете ввести команду або клацнути на кнопці <gui>Огляд...</gui> й вибрати команду. Автоматично стартуючі програми зазвичай розташовуються у теці <code>/usr/bin</code>.</p>
+  </note>
+
+</page>

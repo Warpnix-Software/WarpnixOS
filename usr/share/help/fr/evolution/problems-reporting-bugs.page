@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="problems-reporting-bugs" xml:lang="fr">
+
+  <info>
+    <desc>Comment rapporter des anomalies dans l’application.</desc>
+
+    <link type="guide" xref="index#tracking-down-problems"/>
+    <link type="seealso" xref="problems-debug-how-to"/>
+
+    <revision pkgversion="3.34.2" version="0.8" date="2020-01-20" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marc Lorber</mal:name>
+      <mal:email>Linux-Lorber@club-internet.fr</mal:email>
+      <mal:years>2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jonathan Ernst</mal:name>
+      <mal:email>jonathan@ernstfamily.ch</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alexandre Franke</mal:name>
+      <mal:email>alexandre.franke@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012 </mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervan@gmail.com</mal:email>
+      <mal:years>2013-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yvan Masson</mal:name>
+      <mal:email>yvan@masson-informatique.fr</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Charles Monzat</mal:name>
+      <mal:email>charles.monzat@free.fr</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>vanadiae</mal:name>
+      <mal:email>vanadiae35@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Guillaume Bernard</mal:name>
+      <mal:email>associations@guillaume-bernard.fr</mal:email>
+      <mal:years>2021-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jean-Marc Tissières</mal:name>
+      <mal:email>jmetissieres@gmail.com</mal:email>
+      <mal:years>2022</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Rapport d’anomalies</title>
+
+<p>Si vous n’avez pas besoin d’aide concernant la configuration et que vous êtes sûr d’avoir trouvé une erreur ou un comportement défectueux dans le logiciel <app>Evolution</app>, ou si vous voulez demander une nouvelle fonctionnalité, vous pouvez remplir un rapport dans le <link href="https://gitlab.gnome.org/GNOME/evolution/issues/">système de suivi d’anomalies GNOME</link>. Notez qu’il est nécessaire de s’enregistrer au préalable. Essayez de ne pas faire de doublons et consultez d’abord les <link href="https://wiki.gnome.org/Community/GettingInTouch/BugReportingGuidelines">conseils d’écriture d’anomalies</link>.</p><p>Notez également que les distributions de GNOME introduisent parfois leurs propres modifications dans <app>Evolution</app> qui ne sont pas incluses dans <app>Evolution</app> de GNOME. C’est difficile à détecter pour les utilisateurs mais si vous êtes au courant de cela, remplissez plutôt un rapport d’anomalie dans <link href="https://wiki.gnome.org/Bugsquad/TriageGuide/NonGnome#Bug_trackers_for_distributions">le système de suivi d’anomalies de votre distribution GNOME</link>.</p>
+
+<p>Lors de vos rapports d’anomalies, des informations précises sont les bienvenues car cela facilite la reproduction de votre anomalie et la résolution du problème. Si possible, veuillez inclure des informations comme la version d’<app>Evolution</app> (dans le menu <guiseq><gui>Aide</gui><gui>À propos</gui></guiseq>), le nom de votre distribution et les étapes à suivre pour reproduire le problème, clic après clic. Consultez les <link href="https://wiki.gnome.org/Community/GettingInTouch/BugReportingGuidelines">conseils d’écriture d’anomalies</link> pour plus d’informations.</p>
+</page>

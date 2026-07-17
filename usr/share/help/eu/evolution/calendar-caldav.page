@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-caldav" xml:lang="eu">
+
+  <info>
+    <link type="guide" xref="calendar-using-several-calendars"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+      https://help.gnome.org/users/evolution/2.32/usage-calendar-multiple.html.en
+      -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Lineako CalDAV egunkari bat erabiltzea.</desc>
+  </info>
+
+  <title>Lineako CalDAV egunkari bat erabiltzea</title>
+
+  <p>Horrelako eguteko bat Evolution-en gehitzeko, jarraitu honako urratsak:</p>
+
+  <steps>
+    <item>
+      <p>Joan <guiseq><gui>Fitxategia</gui><gui>Berria</gui><gui>Egutegia</gui></guiseq> aukerara.</p>
+    </item>
+    <item>
+      <p>Hautatu <gui>CalDAV</gui> mota.</p>
+    </item>
+    <item>
+      <p>To discover the calendars, announced by the server, enter the server address as <gui>URL</gui> and optionally <gui>User</gui>, then click on <gui style="button">Find Calendars</gui>. Select a calendar and <gui>User mail</gui>.
+         This prefills the fields <gui>Name</gui>, <gui>Color</gui>, <gui>URL</gui> and (see below) <gui>Email</gui>. The step is optional, and you can overwrite all the discovered settings.</p>
+    </item>
+    <item>
+      <p>Sartu erabili nahi duzun izena.</p>
+    </item>
+    <item>
+      <p>Aukeran, aukeratu erabili nahi duzun kolorea.</p>
+    </item>
+    <item>
+      <p>Sartu helbidea <gui>URL</gui> eremuan.</p>
+    </item>
+    <item>
+      <p>Aukeratu <gui>Erabili konexio segurua</gui> modu seguruan konektatzeko.</p>
+    </item>
+    <item>
+      <p>Enter your username and email address. When a meeting is created in the calendar, this email address is prefilled as Organizer.</p>
+    </item>
+    <item>
+      <p>When a meeting is created, modified or deleted, a notification can be sent to the other parties of the meeting.
+      If <gui>Server handles meeting invitations</gui> is selected, <app>Evolution</app> uploads the meeting and assumes
+      that the server informs other parties. When the option is not selected, <app>Evolution</app> sends an email.</p>
+    </item>
+    <item>
+      <p>Egin klik <gui style="button">Ados</gui> botoian.</p>
+    </item>
+  </steps>
+
+  <p>Egutegia <app>Evolution</app> aplikazioaren egutegien zerrendari gehituko zaio.</p>
+
+  <section>
+    <title>Collection accounts</title>
+    <p>Different types of mail, address books, calendars, task and memo lists, belonging to the same user, can be added in one step by utilizing a <link xref="intro-account-types#collection-account">Collection account</link>.</p>
+  </section>
+</page>

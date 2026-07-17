@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-enable-html-format" xml:lang="uk">
+
+  <info>
+    <desc>Вмикання форматування HTML у редакторі повідомлень електронної пошти.</desc>
+    <link type="guide" xref="mail-composer-html#formatting-options-html"/>
+
+    <revision pkgversion="3.5.90" version="0.1" date="2012-08-16" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-html -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Вмикання форматування HTML</title>
+
+<p>Ви можете змінити формат повідомлення електронної пошти зі звичайного тексту на HTML у вікні редактора повідомлень, скориставшись пунктом меню <guiseq><gui>Формат</gui><gui>HTML</gui></guiseq>.</p>
+<p>Крім того, ви можете змінити значення у першому спадному списку під рядком <gui>Тема</gui> зі <gui>Звичайний текст</gui> на <gui>HTML</gui>.</p>
+<p>Якщо ви виберете формат HTML, під рядком <gui>Тема</gui> буде показано другу панель інструментів із кнопками для форматування HTML.</p>
+<p>Щоб ваша пошта типово надсилалася у форматі HTML, позначте пункт <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Параметри редактора</gui><gui>Типова поведінка</gui><gui>Форматувати лист у HTML</gui></guiseq>.</p>
+
+</page>

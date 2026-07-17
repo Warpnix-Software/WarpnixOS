@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="bookmarks" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#annotations"/>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Тиффани Антропольски</name>
+      <email its:translate="no">tiffany@antopolski.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Екатерина Герасимова</name>
+      <email its:translate="no">kittykat3756@gmail.com</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+    <desc>Примечания можно использовать в качестве закладок.</desc>
+  </info>
+
+<title>Закладки</title>
+
+  <p>Вы можете добавлять, переименовывать и удалять закладки с помощью приложения <app>Просмотр документов</app>.</p>
+
+  <p>Когда вы открываете файл, у вас должна быть видна боковая панель в левой части окна. Если она отсутствует, щёлкните <guiseq><gui style="menuitem">Вид</gui> <gui style="menuitem">Боковая панель</gui></guiseq>, или нажмите клавишу <key>F9</key>.</p>
+
+  <p>В нижней части боковой панели, выберите <gui style="button">Закладки</gui> в выпадающем списке.</p>
+
+  <links type="section"/>
+
+<section id="create">
+  <title>Создайте закладку</title>
+
+  <steps>
+    <item>
+      <p>В самом PDF-документе перейдите на страницу, на которую вы хотите добавить закладку.</p>
+    </item>
+    <item>
+      <p>В боковой панели, выберите <gui style="button">Закладки</gui> в выпадающем списке.</p>
+    </item>
+    <item>
+      <p>Нажмите кнопку <gui style="button">+</gui> внизу на боковой панели. По умолчанию имя закладки — это только что добавленная страница</p>
+    </item>
+    <item>
+      <p>Эта закладка теперь отображается в списке закладок</p>
+    </item>
+  </steps>
+
+</section>
+
+<section id="rename">
+  <title>Переименовать закладку</title>
+
+  <steps>
+    <item><p>В боковой панели, выберите <gui style="button">Закладки</gui> в выпадающем списке.</p></item>
+    <item><p>Выберите закладку в боковой панели</p></item>
+    <item><p>Введите имя закладки</p></item>
+    <item><p>Введите новое имя</p></item>
+    <item><p>Нажмите <key>Enter</key></p></item>
+  </steps>
+
+</section>
+
+<section id="delete">
+  <title>Удалить закладку</title>
+
+  <steps>
+   <item><p>В боковой панели, выберите <gui style="button">Закладки</gui> в выпадающем списке.</p></item>
+   <item><p>Нажмите кнопку <gui style="button">-</gui> в нижней части боковой панели.</p></item>
+  </steps>
+
+</section>
+
+</page>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="tip" id="gnome-on-ubuntu" xml:lang="kn">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntu Documentation Team</name>
+    </credit>
+    <desc>
+      A list of notable modifications to the GNOME Desktop in Ubuntu.
+    </desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="shell-overview" group="#first"/>
+    <link type="guide" xref="index" group="intro"/>
+    <revision version="0.1" date="2022-04-28" status="review"/>
+  </info>
+
+  <title>
+    About GNOME on Ubuntu
+  </title>
+
+  <p>
+    Ubuntu Desktop comes installed with a slightly modified version of the GNOME
+    Desktop Environment.  Generally, this desktop guide will make references to
+    GNOME as it is published by GNOME's developers.  Here is a list of the
+    notable differences between GNOME on Ubuntu and "Vanilla" GNOME.
+  </p>
+
+  <list type="disc">
+  <item>
+    <p>
+      Ubuntu comes with Firefox instead of the GNOME Web browser.
+    </p>
+  </item>
+  <item>
+    <p>
+      Ubuntu comes with the Remmina remote desktop client instead of GNOME
+      Connections.
+    </p>
+  </item>
+    <item>
+      <p>
+        The AppIndicators extension is included.  This extension will enable
+        icons in the top right corner of some applications.
+      </p>
+    </item>
+    <item>
+      <p>
+        The Ubuntu Dock extension is included.  This extension provides the left
+        sidebar for running applications.
+      </p>
+    </item>
+    <item>
+      <p>
+        The Desktop Icons NG extension is included.  This extension enables
+        the use of icons on the desktop.
+      </p>
+    </item>
+    <item>
+      <p>
+        In addition to Ubuntu desktop wallpapers, the default theme is Yaru and
+        the default font is Ubuntu.
+      </p>
+    </item>
+    <item>
+      <p>
+        Minimize and maximize buttons are included on window title bars.
+      </p>
+    </item>
+  </list>
+
+
+
+</page>

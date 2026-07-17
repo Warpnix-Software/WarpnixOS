@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="base" xml:lang="ru">
+
+    <info>
+        <link type="guide" xref="index#number"/>
+    </info>
+
+	<title>Системы счисления</title>
+    
+    <p>Для ввода чисел в определённой системе счисления используйте <link xref="superscript">нижние индексы</link>. Следующие записи чисел эквивалентны друг другу.</p>
+    <example>
+    <p>1001011₂</p>    
+    <p>113₈</p>
+    <p>75</p>
+    <p>4B₁₆</p>
+    </example>
+    <p>В режиме <link xref="mouse">Программирование</link> имеются кнопки для двоичного (<keyseq><key>Ctrl</key><key>B</key></keyseq>), восьмиричного (<keyseq><key>Ctrl</key><key>O</key></keyseq>) и шестнадцатиричного (<keyseq><key>Ctrl</key><key>H</key></keyseq>) счисления.</p>
+    <p>Чтобы задать систему счисления, в которой будут отображаться результаты, измените значения параметра <link xref="number-display">формат результатов</link>.</p>
+    <p>Чтобы установить отображение результатов в десятичном формате, используйте кнопку выбора системы исчисления или воспользуйтесь комбинацией клавиш <keyseq><key>Ctrl</key><key>D</key></keyseq>.</p>
+</page>

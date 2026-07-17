@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-organizing" xml:lang="ru">
+
+  <info>
+    <desc>Папки, сортировка, поиск, фильтры, папки поиска и метки.</desc>
+
+    <link type="guide" xref="index#mail-basic"/>
+    <link type="guide" xref="organizing"/>
+
+    <revision pkgversion="2.32.1" version="0.1" date="2011-01-05" status="stub"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Упорядочивание и организация почты</title>
+
+<p><app>Evolution</app> предоставляет несколько параметров для организации почты в соответствии с потребностями пользователя.</p>
+
+  <section id="advanced" style="2column">
+    <title>Расширенные параметры</title>
+  </section>
+</page>

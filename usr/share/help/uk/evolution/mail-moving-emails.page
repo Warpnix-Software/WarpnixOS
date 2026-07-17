@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-moving-emails" xml:lang="uk">
+
+  <info>
+    <desc>Пересування повідомлень з однієї теки до іншої.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="3.8.2" version="0.3" date="2013-05-14" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Пересунуті повідомлення все одно показано у початковій теці</title>
+
+<p>Якщо на вашому поштовому сервері IMAP ще не передбачено підтримки <link href="https://tools.ietf.org/html/rfc6851">можливості «move» IMAP</link>, яку було впроваджено у січні 2013 року, <app>Evolution</app> «пересуватиме» повідомлення копіюванням і вилучення записів. Вилучення у цьому випадку означає «позначення повідомлень до вилучення», отже усі початкові повідомлення лишатимуться на своєму попередньому місці, аж доки ви не витрете повідомлення, які позначено до вилучення.</p>
+
+<p>Ознайомтеся із розділом щодо <link xref="mail-delete-and-undelete">вилучення повідомлень</link>, щоб дізнатися більше про те, як витирати повідомлення електронної пошти. Зауважте, що ці настанови стосуються і інших типів облікових записів.</p>
+
+</page>

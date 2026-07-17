@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="print-blank-puzzles" xml:lang="ru">
+  <info>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+    <revision pkgversion="3.31.90" version="0.3" date="2019-03-03" status="review"/>
+    <link type="guide" xref="index#print"/>
+    <credit type="editor copyright">
+      <years>2011</years>
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ser82-png</mal:name>
+      <mal:email>asvmail.as@gmail.com</mal:email>
+      <mal:years>2022-2024</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Распечатать бланк судоку</title>
+
+<p>Чтобы распечатать один или несколько бланков головоломок:</p>
+
+ <steps>
+ <item><p>Нажмите кнопку меню в правом верхнем углу окна и выберите <gui style="menuitem">Печать</gui>.</p></item>
+ <item><p>Выберите <gui style="menuitem">Печать нескольких головоломок…</gui>.</p></item>
+ <item><p>В появившемся окне выберите количество бланков судоку для печати.</p></item>
+ <item><p>Выберите уровень сложности головоломок, которые хотите распечатать.</p></item>
+ <item><p>Нажмите <gui>Печать</gui>.</p></item>
+ </steps>
+
+
+</page>

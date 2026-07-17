@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="task" id="index" xml:lang="ru">
+  <info>
+    <title type="link" role="trail">Мины</title>
+    <title type="link">Мины</title>
+    <title type="text">Мины</title>
+    <revision pkgversion="3.5.5" version="0.1" date="2012-08-12" status="review"/>
+    <credit type="author">
+      <name>Brian Grohe</name>
+      <email>grohe43@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Екатерина Герасимова (Ekaterina Gerasimova)</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ser82-png</mal:name>
+      <mal:email>asvmail.as@gmail.com</mal:email>
+      <mal:years>2022-2023</mal:years>
+    </mal:credit>
+  </info>
+
+  <title><media type="image" width="48px" height="48px" its:translate="no" src="figures/org.gnome.Mines.svg"/> Мины</title>
+  <p><app>Мины</app> — это клон игры Сапёр. Цель состоит в том, чтобы найти все мины, спрятанные в ячейках на прямоугольном поле. Вам нужно будет использовать комбинацию логики и удачи, чтобы найти все мины, не вызвав взрыва.</p>
+  <section id="play" style="2column">
+    <title>Процесс игры</title>
+  </section>
+  <section id="tips" style="2column">
+    <title>Полезные советы</title>
+  </section>
+
+<!--
+  <section id="advanced" style="2column">
+    <title>Advanced</title>
+  </section>
+-->
+  <section id="get-involved" style="2column">
+    <title>Присоединяйтесь</title>
+  </section>
+
+</page>

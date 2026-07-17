@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="import-apps-kmail" xml:lang="cs">
+
+  <info>
+    <desc>Když import do pošťáka <app>Evolution</app> nemůže najít data z pošťáka <app>KMail</app>.</desc>
+
+    <link type="guide" xref="import-data#import-from-apps"/>
+
+    <revision pkgversion="3.36.2" version="0.1" date="2020-05-31" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+  </info>
+
+  <title>KMail</title>
+
+  <p>Upozorňujeme, že <app>Evolution</app> umí rozpoznat pouze složky z KDE 4:</p>
+  <list>
+  <item><p><file>$HOME/.kde4/share/apps/kmail/mail</file> pro e-maily</p></item>
+  <item><p><file>$HOME/.kde4/share/apps/kabc</file> pro kontakty</p></item>
+  </list>
+  
+  <p>U novějších verzí se řiďte <link href="https://mail.gnome.org/archives/evolution-list/2020-March/msg00168.html">instrukcemi z tohoto příspěvku</link>. Pokud se dostanete do problémů, podívejte se na <link xref="problems-getting-help"/>.</p>
+
+<!-- from https://mail.gnome.org/archives/evolution-list/2019-October/msg00044.html -->
+
+</page>

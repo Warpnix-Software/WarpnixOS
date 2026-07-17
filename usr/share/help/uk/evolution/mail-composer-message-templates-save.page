@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-message-templates-save" xml:lang="uk">
+
+  <info>
+   <desc>Збереження наявного або нового повідомлення як шаблона</desc>
+   
+   <link type="guide" xref="mail-composer-message-templates#options"/>
+
+ <revision pkgversion="3.5.90" version="0.3" date="2012-08-17" status="draft"/>
+ <credit type="author">
+   <name its:translate="no">Andre Klapper</name>
+   <email its:translate="no">ak-47@gmx.net</email>
+ </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/b1dlaazl.html.en -->
+ </credit>
+ 
+ <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+     
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Збереження повідомлень як шаблонів</title>
+
+<section id="save-existing">
+<title>Збереження наявного повідомлення як шаблона</title>
+<steps>
+  <item><p>Виберіть повідомлення.</p></item>
+  <item><p>Клацніть правою кнопкою миші на повідомленні і виберіть у контекстному меню пункт <gui>Пересунути до теки</gui> або <gui>Скопіювати до теки</gui>.</p></item>
+  <item><p>Виберіть теку <gui>Шаблони</gui> у списку <gui>На цьому комп'ютері</gui>.</p></item>
+</steps>
+<p>Ви також можете редагувати наявне повідомлення і зберегти його як шаблон:</p>
+<steps>
+  <item><p>Відкрийте повідомлення і натисніть кнопку <gui>Відповісти</gui>.</p></item>
+  <item><p>Виконайте редагування повідомлення або адрес, відповідно до ваших потреб.</p></item>
+  <item><p>Виберіть пункт меню <guiseq><gui>Файл</gui><gui>Зберегти як шаблон</gui></guiseq>.</p></item>
+ </steps>
+</section>
+
+<section id="save-new">
+ <title>Збереження нового повідомлення як шаблона</title>
+ <steps>
+  <item>
+<p>Натисніть <gui>Створити</gui> і введіть у вікні редактора те, що вам потрібно для шаблона.</p>
+  </item>
+  <item>
+<p>Виберіть пункт меню <guiseq><gui>Файл</gui><gui>Зберегти як шаблон</gui></guiseq>.</p>
+  </item>
+ </steps>
+</section>
+
+</page>

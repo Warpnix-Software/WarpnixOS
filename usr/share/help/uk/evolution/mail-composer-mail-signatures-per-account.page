@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-mail-signatures-per-account" xml:lang="uk">
+
+  <info>
+    <desc>Встановлення типового підпису для облікового запису електронної пошти.</desc>
+    
+    <link type="guide" xref="mail-composer-mail-signatures"/>
+    <link type="guide" xref="mail-account-manage-imap-plus#identity"/>
+    <link type="guide" xref="mail-account-manage-local-delivery#identity"/>
+    <link type="guide" xref="mail-account-manage-maildir-format-directories#identity"/>
+    <link type="guide" xref="mail-account-manage-mh-format-directories#identity"/>
+    <link type="guide" xref="mail-account-manage-pop#identity"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-directory#identity"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-file#identity"/>
+    <link type="guide" xref="mail-account-manage-usenet-news#identity"/>
+    <!-- TODO:POST-3-8: Having 13 guide links here looks really ugly -->
+
+    <revision pkgversion="3.0.2" version="0.3" date="2012-02-19" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Типовий підпис облікового запису</title>
+
+<p>Ви можете визначити типовий <link xref="mail-composer-mail-signatures">підпис</link> для кожного з ваших поштових облікових записів. Підпис можна змінити за допомогою сторінки <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Облікові записи</gui><gui style="button">Редагувати</gui><gui>Особисті дані</gui><gui>Додаткова інформація</gui></guiseq>.</p>
+
+<p>Якщо для вашого облікового запису визначено підпис, але ви не хочете його використовувати у якомусь повідомленні або хочете використати у повідомленні якийсь інший підпис, ви можете змінити підпис за допомогою спадного меню у правому верхньому куті вікна редактора повідомлень електронної пошти.</p>
+
+</page>

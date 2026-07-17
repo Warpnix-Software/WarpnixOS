@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-composer-mail-signatures" xml:lang="ca">
+
+  <info>
+    <desc>Utilitzar les signatures de correu electrònic a la part inferior del missatge que envieu.</desc>
+    
+    <link type="guide" xref="index#mail-composing"/>
+
+    <revision pkgversion="3.25.90" version="0.4" date="2017-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+
+<title>Treballar amb les signatures de correu electrònic</title>
+
+<p>Una signatura consisteix en una o més línies de text (o fins i tot una foto) que s'afegirà al final del correu electrònic que s'envia. Pot contenir informació de contacte o altres coses.</p>
+<note style="tip"><p>«Signatura» també s'utilitza de manera diferent en termes de <link xref="mail-encryption">xifratge</link>.</p></note>
+
+<note style="tip"><p>Per <link href="http://tools.ietf.org/html/rfc3676#section-4.3">una convenció antiga</link>, les signatures sempre comencen amb dos guions i un espai en una línia a part. Això permet que molts clients de correu electrònic eliminin les signatures del text citat en respondre.</p></note>
+</page>
+<!-- TODO: The two dashes and a space signature delimiter can be disabled via dconf in org.gnome.evolution.mail.composer-no-signature.delim but don't really want to advertise that -->

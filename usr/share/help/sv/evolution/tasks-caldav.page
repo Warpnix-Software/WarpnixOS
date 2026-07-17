@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="tasks-caldav" xml:lang="sv">
+
+  <info>
+    <desc>Användning av en nätbaserad CalDAV-uppgiftslista eller memolista.</desc>
+    
+    <link type="guide" xref="tasks-using-several-tasklists"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Sebastian Rasmussen</mal:name>
+      <mal:email>sebras@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017, 2018</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Användning av en CalDAV-uppgifts- eller memolista</title>
+
+<p>För att lägga till en sådan uppgiftslista eller memolista i <app>Evolution</app>, utför följande steg:</p>
+<steps>
+<item><p>Klicka på <guiseq><gui>Arkiv</gui><gui>Nytt</gui><gui>Uppgiftslista</gui></guiseq> eller <guiseq><gui>Arkiv</gui><gui>Nytt</gui><gui>Memolista</gui></guiseq>.</p></item>
+<item><p>Välj typen <gui>CalDAV</gui>.</p></item>
+<item>
+   <p>För att upptäcka uppgiftslistorna eller memolistorna som annonseras av servern, ange serveradressen som <gui>URL</gui> och valfritt <gui>Användare</gui>, klicka sedan på <gui style="button">Sök uppgiftslistor</gui>/<gui style="button">Sök memolistor</gui>. Välj en uppgifts- eller memolista och <gui>Användar-e-post</gui>. Detta förifyller fälten <gui>Namn</gui>, <gui>Färg</gui>, <gui>URL</gui> och (se nedan) <gui>E-post</gui>. Steget är valfritt, och du kan skriva över alla de identifierade inställningarna.</p>
+</item>
+<item><p>Ange ett namn du föredrar.</p></item>
+<item><p>Du kan välja en valfri färg du gillar.</p></item>
+<item><p>Ange adressen i <gui>URL</gui>-fältet.</p></item>
+<item><p>Välj <gui>Använd en säker anslutning</gui> om du vill ansluta säkert.</p></item>
+<item><p>Ange ditt användarnamn och e-postadress. När en tilldelad uppgift skapas i kalendern förifylls denna e-postadress som Organisatör.</p></item>
+    <item>
+      <p>När en tilldelad uppgift skapas, ändras eller tas bort kan en avisering skickas till de andra parterna. Om <gui>Servern hanterar sammanträdesinbjudningar</gui> är valt skickar <app>Evolution</app> uppgiften och antar att servern informerar andra parter. När alternativet inte är valt skickar <app>Evolution</app> ett e-postmeddelande.</p>
+    </item>
+<item><p>Klicka på <gui style="button">OK</gui>.</p></item>
+</steps>
+
+<p>Uppgiftslistan kommer att läggas till i listan över uppgiftslistor i <app>Evolution</app>.</p>
+
+  <section>
+    <title>Samlingskonton</title>
+    <p>Olika typer av e-post, adressböcker, kalendrar, uppgifts- och memolistor som tillhör samma användare kan läggas till i ett steg genom att använda ett <link xref="intro-account-types#collection-account">samlingskonto</link>.</p>
+  </section>
+</page>

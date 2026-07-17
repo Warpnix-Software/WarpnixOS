@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="task" id="index" xml:lang="es">
+  <info>
+    <title type="link" role="trail">GNOME Sudoku</title>
+    <title type="link">GNOME Sudoku</title>
+    <title type="text">GNOME Sudoku</title>
+
+    <revision pkgversion="3.4" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.15.2" date="2014-01-08" status="final"/>
+    <revision pkgversion="3.26" date="2017-12-05" status="review"/>
+
+    <credit type="author copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="author copyright">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2015</years>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Aprenda a jugar a GNOME Sudoku, un puzle de lógica en el que debe rellenar una rejilla con los números correctos.</desc>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2011 - 2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rodrigo Lledó</mal:name>
+      <mal:email>rodhos92@gmail.com</mal:email>
+      <mal:years>2018</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007 - 2010</mal:years>
+    </mal:credit>
+  </info>
+
+  <title><media type="image" its:translate="no" width="48px" height="48px" src="figures/org.gnome.Sudoku.svg"/> GNOME Sudoku</title>
+
+  <p>GNOME Sudoku es un rompecabezas basado en la lógica y en colocar números en el que hay que rellenar un cuadrado de 9x9 con los dígitos correctos. Estos puzles únicos se pueden jugar en la pantalla o <link xref="index#print">imprimirlos</link>. Si no tiene tiempo de terminar una partida, puede <link xref="save-resume#resume">reanudarla</link> en cualquier momento.</p>
+
+   <section id="play" style="2column">
+    <title>Juego</title>
+   </section>
+
+   <section id="tips" style="2column">
+    <title>Consejos útiles</title>
+   </section>
+
+   <section id="print" style="2column">
+    <title>Imprimir</title>
+   </section>
+
+   <section id="get-involved" style="2column">
+    <title>Involucrarse</title>
+   </section>
+</page>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="board-size" xml:lang="da">
+
+  <info>
+    <link type="guide" xref="index#tips"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.3" date="2018-09-01" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2011</years>
+    </credit>
+    <credit type="author copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  </info>
+
+  <title>Sådan ændres spillets brætstørrelse</title>
+
+  <p>Du kan vælge en feltstørrelse i begyndelsen af programmet.</p>
+
+  <p>Vælg en af gitterstørrelserne:</p>
+  <list>
+    <item><p>et bræt på 8 × 8 med 10 miner</p></item>
+    <item><p>et bræt på 16 × 16 med 40 miner</p></item>
+    <item><p>et bræt på 30 × 16 med 99 miner</p></item>
+    <item><p>et tilpasset bræt hvor du kan vælge størrelsen og antallet af miner</p></item>
+  </list>
+
+  <p>For at ændre <link xref="board-size">brætstørrelsen</link> senere trykkes på knappen <gui style="button">Skift sværhedsgrad</gui> til højre.</p>
+
+</page>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="save-resume" xml:lang="cs">
+
+  <info>
+   <link type="guide" xref="index#play"/>
+
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+    <credit type="author copyright">
+      <name>Thomas Hinkle</name>
+      <email>tmhinkle@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+
+<title>Ukládání a obnovování</title>
+
+<section id="save">
+<title>Uložení vaší hry</title>
+  <p>Vaše hra se uloží automaticky, když ukončíte aplikaci.</p>
+</section>
+
+<section id="resume">
+<title>Návrat k rozehrané hře</title>
+  <p>Kdykoliv spustíte <app>Sudoku</app>, otevře se předchozí uložená hra.</p>
+  <p>Pokud si přejete tuto rozehranou hru ukončit a začít jinou, tak zvolte <gui>Nový hlavolam</gui> a začněte novou hru.</p>
+</section>
+
+</page>

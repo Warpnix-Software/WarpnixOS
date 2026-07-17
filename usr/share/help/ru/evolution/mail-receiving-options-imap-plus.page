@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-receiving-options-imap-plus" xml:lang="ru">
+
+  <info>
+    <desc>Параметры получения для учётных записей IMAP+.</desc>
+
+    <link type="guide" xref="mail-receiving-options#common-server-types"/>
+    <link type="guide" xref="mail-account-manage-imap-plus#receiving-email"/>
+    <revision pkgversion="3.12.9" version="0.3" date="2015-02-15" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mainwindow-starting.html.en#bstggh0 -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>IMAP+: параметры получения</title>
+
+<section id="receiving-email-imap-plus">
+<title>Получение почты</title>
+
+<p>На странице <gui>Получение почты</gui> (доступна при выборе пункта меню <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Учётные записи</gui><gui style="button">Правка</gui><gui>Получение почты</gui></guiseq>):</p>
+
+<list>
+<item><p>Введите адрес почтового сервера в поле <gui>Сервер</gui> и укажите своё имя пользователя для этого сервера.</p></item>
+<item><p>Выберите, следует ли использовать защищённое соединение (TLS или его устаревший предшественник — SSL).</p><p>Этот параметр следует включать в том случае, если его поддерживает сервер.</p>
+<note style="tip"><p>Поставщики бесплатных услуг электронной почты часто предоставляют сведения о том, какие из этих параметров можно использовать. Если вы работаете в сети организации, рекомендуется обратиться к системному администратору для получения дополнительных сведений.</p></note></item>
+<item><p>Выберите тип проверки подлинности в списке или нажмите кнопку <gui style="button">Проверить поддерживаемые типы</gui>, чтобы программа <app>Evolution</app> произвела проверку поддерживаемых типов. Некоторые серверы не объявляют механизм аутентификации, который они используют, поэтому нажатие этой кнопки не является гарантией того, что доступные механизмы в действительности сработают.</p></item>
+<item><p>Укажите, следует ли программе <app>Evolution</app> запомнить ваш пароль.</p></item>
+</list>
+
+</section>
+
+<section id="receiving-options-imap-plus">
+<title>Параметры получения</title>
+
+<p>На странице <gui>Параметры получения</gui> (доступна при выборе пункта меню <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Учётные записи</gui><gui style="button">Правка</gui><gui>Параметры получения</gui></guiseq>):</p>
+
+<list>
+<item><p>Если программа <app>Evolution</app> должна автоматически проверять наличие новых сообщений, включите параметр <gui>Проверять _новую почту каждые … минуты</gui> и выберите интервал между проверками в минутах.</p></item>
+<item><p>Включите параметр <gui>Использовать быструю синхронизацию</gui>, если сервер IMAP поддерживает <link href="https://tools.ietf.org/html/rfc5162">расширения IMAP4 для быстрой синхронизации почтового ящика</link>.</p></item>
+<item><p>Если почтовый сервер не поддерживает одновременное использование нескольких соединений <app>Evolution</app> с сервером (например, когда у пользователя имеется несколько учётных записей на этом сервере), установите параметр <gui>Количество одновременно используемых соединений</gui> в значение «1».</p></item>
+<item><p>Также же можно указать, следует ли <app>Evolution</app> проверять наличие новых сообщений во всех папках или только в папках с оформленной подпиской.</p></item>
+<item><p>Выберите, следует ли <app>Evolution</app> отображать только те <link xref="mail-imap-subscriptions">папки, на которые оформлена подписка</link>.</p></item>
+<item><p>Выберите, следует ли автоматически применять к получаемым письмам <link xref="mail-filters">фильтры</link>, автоматически отфильтровывать <link xref="mail-spam-marking">спам</link> и <link xref="mail-working-offline">синхронизировать почту на сервере с локальной копией для доступа к ней автономном режиме</link>.</p></item></list>
+
+</section>
+
+</page>

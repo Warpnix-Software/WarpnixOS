@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="addremove-sources" xml:lang="ca">
+
+  <info>
+    <credit type="author">
+      <name>Equip de documentació de l'Ubuntu</name>
+    </credit>
+    <desc>Afegiu repositoris per estendre les fonts de programari que usa l'Ubuntu per les instaŀlacions i les actualitzacions.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove"/>
+    <revision version="20.10" date="2020-09-13" status="review"/>
+  </info>
+
+  <title>Afegeix repositoris de programari</title>
+
+  <p>Hi ha programari disponibles de fonts de terceres parts, així com dels dipòsits predeterminats de l'Ubuntu. Si voleu instal·lar programari d'un dipòsit de programari d'una tercera part, l'heu d'afegir a la llista de dipòsits disponibles de l'Ubuntu.</p>
+
+  <note style="warning">
+    <p>Afegiu només dipòsits de programari de fonts en les quals confieu.</p>
+    <p>Els dipòsits de programari de terceres parts no estan verificats en quant a la seva seguretat o fiabilitat per membres de l'Ubuntu, i poden contenir programari que pot ser danyí per al vostre ordinador.</p>
+  </note>
+
+<p>
+</p>
+   <p>Per afegir un dipòsit:</p>
+
+  <steps>
+    <item>
+      <p>Obre <app>Programari i actualitzacions</app> mitjançant la barra de cerca <em>Activitats</em>.</p>
+    </item>
+    <item>
+      <p>Canvieu a la pestanya <gui>Altre programari</gui>.</p>
+    </item>
+    <item>
+      <p>Cliqueu <gui>Afegeix</gui> i entre la línia APT per al dipòsit. Això hauria d'estar disponible al lloc web del dipòsit, i hauria de ser semblant a:</p>
+      <p>
+        <code its:translate="no">deb http://archive.ubuntu.com/ubuntu/ resolute main</code>
+      </p>
+    </item>
+    <item>
+      <p>Cliqueu <gui>Afegeix la font</gui>. Entreu la vostra contrasenya a la finestra Autentifica.</p>
+    </item>
+    <item>
+      <p>Tanqueu la finestra del <app>Software &amp; Updates</app>. L'<app>App Center</app> comprovarà les fonts de programari per al programari nou.</p>
+    </item>
+    <item>
+      <p>La majoria dels repositoris proveeixen una clau de signatura per poder verificar els paquets descarregats. Així, a més dels passos de dalt, hauríeu de seguir les instruccions possibles sobre com descarregar i instal·lar la clau de signatura (clau GPG).</p>
+    </item>
+  </steps>
+
+</page>

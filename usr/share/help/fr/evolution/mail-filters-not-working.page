@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-filters-not-working" xml:lang="fr">
+
+  <info>
+    <desc>Résoudre les problèmes avec les filtres de courriel qui ne trient pas et n’organisent pas le courriel comme attendu.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+    <link type="seealso" xref="mail-filters"/>
+
+    <revision pkgversion="3.9.3" version="0.5" date="2013-06-24" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marc Lorber</mal:name>
+      <mal:email>Linux-Lorber@club-internet.fr</mal:email>
+      <mal:years>2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jonathan Ernst</mal:name>
+      <mal:email>jonathan@ernstfamily.ch</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alexandre Franke</mal:name>
+      <mal:email>alexandre.franke@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012 </mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervan@gmail.com</mal:email>
+      <mal:years>2013-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yvan Masson</mal:name>
+      <mal:email>yvan@masson-informatique.fr</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Charles Monzat</mal:name>
+      <mal:email>charles.monzat@free.fr</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>vanadiae</mal:name>
+      <mal:email>vanadiae35@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Guillaume Bernard</mal:name>
+      <mal:email>associations@guillaume-bernard.fr</mal:email>
+      <mal:years>2021-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jean-Marc Tissières</mal:name>
+      <mal:email>jmetissieres@gmail.com</mal:email>
+      <mal:years>2022</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Les filtres de courriel ne fonctionnent pas</title>
+
+<section id="order">
+<title>Ordre des filtres</title>
+<p>L’ordre des filtres est très important. Ils sont appliqués au message d’origine dans l’ordre, comme une recette.</p>
+<p>Si votre premier filtre possède la règle <gui>Arrêter le traitement</gui>, alors tous les messages qui correspondent à ce filtre ignoreront tous les filtres suivants.</p>
+<p>Lorsque vous déplacez un message vers un autre dossier, le « déplacement » signifie en réalité, l’ajout d’une copie du message dans le dossier de destination et le marquage du message d’origine pour suppression. Ainsi, toutes les règles de filtre ultérieures s’appliqueront au message d’origine qui est maintenant marqué pour suppression. Par conséquent, le déplacement d’un message devrait apparaître en dernier dans une séquence de règles de filtre.</p>
+<p>Pour vérifier les règles d’un filtre existant et leur ordre, passez en revue ses actions dans la section <gui>Alors</gui> en <link xref="mail-filters#editing">éditant le filtre</link>.</p>
+</section>
+
+<section id="several-clients">
+<title>Utilisation de plusieurs clients de messagerie</title>
+<p>Une autre chose à garder à l’esprit est que les filtres dépendent du marqueur « nouveau » qui est défini sur le serveur lorsqu’un message de courriel particulier est récupéré à l’origine à partir du serveur. Si vous utilisez un autre client de messagerie en plus d’<app>Evolution</app>, il se peut que vos filtres ne fonctionnent pas automatiquement.</p>
+</section>
+
+<section id="filter-log">
+<title>Actions de filtres d’identification</title>
+<p>Si vous ne savez toujours pas pourquoi les filtres ne fonctionnent pas comme prévu, vous pouvez activer les actions de journalisation des filtres.</p>
+<list>
+<item><p>Fermez <app>Evolution</app>.</p></item>
+<item><p>Ouvrez l’application <app>Terminal</app>.</p></item>
+<item><p>Lancez la commande <cmd>gsettings set org.gnome.evolution.mail filters-log-actions true</cmd>.</p></item>
+<item><p>Exécutez la commande <cmd>gsettings set org.gnome.evolution.mail filters-log-file "/home/monnomdutilisateur/mon-filtre-log"</cmd> et remplacez <cmd>monnomdutilisateur</cmd> par votre nom d’utilisateur. Ceci créera un fichier texte nommé <file>mon-filtre-log</file> dans votre répertoire personnel (/home). Veuillez noter que le chemin absolu vers le nom du fichier doit être fourni ; une syntaxe du style <sys>~</sys> ou <sys>$HOME</sys> ne fonctionne pas.</p></item>
+<item><p>Démarrez <app>Evolution</app>.</p></item>
+<item><p>Téléchargez un courriel pour appliquer des filtres.</p></item>
+<item><p>Ouvrez le fichier <file>mon-filtre-log</file> avec un éditeur de texte pour voir quelles actions ont été appliquées.</p></item>
+</list>
+
+<p>Notez que vous pouvez désactiver l’action du filtre d’identification à nouveau en utilisant la commande <cmd>gsettings set org.gnome.evolution.mail filters-log-actions false</cmd>.</p>
+
+<p>Vous pouvez aussi utiliser l’application <app>dconf-editor</app> pour faire cela.</p>
+</section>
+
+</page>

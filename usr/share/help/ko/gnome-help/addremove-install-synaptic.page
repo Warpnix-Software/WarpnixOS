@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-install-synaptic" xml:lang="ko">
+
+  <info>
+    <credit type="author">
+      <name>우분투 문서화 팀</name>
+    </credit>
+
+		<credit type="editor">
+      <name>Greg Beam</name>
+      <email>ki7mt@yahoo.com</email>
+    </credit>
+
+    <link type="guide" xref="addremove"/>
+    <revision pkgversion="0.80.4" version="0" date="2014-01-11" status="review"/>
+                <revision version="18.04" date="2018-03-18" status="review"/>
+                <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Synaptic 은 <app>App Center</app> 과 비교했을때 복잡하지만 더 강력한 소프트웨어 관리 기능을 제공합니다.</desc>
+  </info>
+
+  <title>더많은 고급 소프트웨어 관리를 위한 시냅틱 사용하기</title>
+
+  <p>
+    <app>Synaptic Package Manager</app> is more powerful and can do some 
+    software management tasks which <app>App Center</app> can't. 
+    Synaptic's interface is more complicated and doesn't support newer
+    <app>App Center</app> features like ratings and reviews and therefore
+    isn't recommended for use by those new to Ubuntu.
+  </p>
+
+  <p>Synaptic 은 기본적으로 설치되지는 않지만, Ubuntu package archive를 통해 <link href="apt:synaptic">설치</link> 할수 있습니다.</p>
+
+  <section id="install-software-with-synaptic">
+    <title>Synaptic으로 소프트웨어 설치</title>
+    <steps>
+      <item>
+        <p><em>Activities</em> 검색 바를 통해 <app>Synaptic</app>을 여십시오. <gui>Authenticate</gui> 창에 비밀번호를 입력해야 할 것 입니다.</p>
+      </item>
+      <item>
+        <p>응용 프로그램을 찾기 위해 <gui>Search</gui> 를 클릭하세요. 또는 <gui>Sections</gui> 를 클릭하고 카테고리를 둘러봐 찾을 수 있습니다.</p>
+      </item>
+      <item>
+        <p>설치를 원하는 어플리케이션을 우클릭하고 <gui>Mark for Installation</gui>를 선택하시오.</p>
+      </item>
+      <item>
+        <p>추가 변경 사항을 표시하도록 요청받은 경우,  <gui>Mark</gui>를 클릭하시오.</p>
+      </item>
+      <item>
+        <p>여러분이 설치하고자 하는 아무 프로그램이나 선택하십시오.</p>
+      </item>
+      <item>
+        <p><gui>Apply</gui>를 클릭하고나서, 화면에 나타난 <gui>Apply</gui>를 클릭하시오. 당신이 선택한 어플리케이션이 다운로드 및 설치될 것입니다.</p>
+      </item>
+    </steps>
+
+    <p><app>Synaptic</app> 사용에 관한 더 많은 정보는 <link href="https://help.ubuntu.com/community/SynapticHowto">Synaptic How To</link>를 참조하시오.</p>
+
+  </section>
+
+</page>

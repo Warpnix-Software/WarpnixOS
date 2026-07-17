@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="synctex-support" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#synctex" group="second"/>
+    <desc>Com afegir el suport per a SyncTeX.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Germán Poo-Caamaño</name>
+      <email>gpoo@mate.org</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Carles Ferrando Garcia</mal:name>
+      <mal:email>carles.ferrando@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert Antoni Buj Gelonch</mal:name>
+      <mal:email>rbuj@fedoraproject.org</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Configureu SyncTeX</title>
+<p>Els paquets següents s'han d'instal·lar per tal d'afegir suport per a SyncTeX:</p>
+<list>
+  <item>
+    <p>Un motor LaTeX amb suport SyncTeX, com pot ser <app>pdflatex</app>.</p>
+  </item>
+  <item>
+    <p>Un editor de text amb suport per a SyncTeX, com <app>pluma</app> amb els pluma-plugins instal·lats.</p>
+  </item>
+</list>
+
+<p>A <app>pluma</app>, habiliteu el plugin SyncTeX:</p>
+<steps>
+   <item>
+    <p>Aneu a la pestanya Connectors, clicant <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Connectors</gui></guiseq>.</p>
+   </item>
+   <item>
+    <p>Marqueu <gui>SyncTeX</gui>.</p>
+   </item>
+</steps>
+</page>

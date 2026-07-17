@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="flatpak-limitations" xml:lang="es">
+
+  <info>
+    <desc>Limitaciones al usar un paquete de Flatpak de <app>Evolution</app>.</desc>
+
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="3.35.91" version="0.1" date="2020-02-21" status="review"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2012 - 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rodrigo Lledó</mal:name>
+      <mal:email>rodhos92@gmail.com</mal:email>
+      <mal:years>2018</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yolanda Álvarez Pérez</mal:name>
+      <mal:email>yolandaa.alvarez.perez@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Francisco Javier F. Serrador</mal:name>
+      <mal:email>serrador@openshine.com</mal:email>
+      <mal:years>2005, 2006</mal:years>
+    </mal:credit>
+  </info>
+
+<title>No se puede imprimir correo, añadir o guardar adjuntos o abrir la ayuda</title>
+
+<p>Si ejecuta una versión <link href="https://flathub.org/">Flatpak</link> de <app>Evolution</app>, hay varias limitaciones. Algunos ejemplos son:</p>
+
+<list>
+  <item><p>Añadir adjuntos a un correo o guardarlos puede no ser posible.</p></item>
+  <item><p>No puede imprimir un correo. Esto es una <link href="https://bugs.webkit.org/show_bug.cgi?id=192748">limitación de la biblioteca WebKitGTK subyacente</link>.</p>
+  <p>Para imprimir un correo en un archivo puede ejecutar <cmd>flatpak run --filesystem=home org.gnome.Evolution</cmd> como solución alternativa.</p></item>
+  <item><p>La documentación del usuario puede no estar incluida, para que el paquete sea más pequeño.</p></item>
+</list>
+</page>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="default-settings" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#faq"/>
+    <desc>Deseu els ajusts actuals com a predeterminats per a nous documents.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Carles Ferrando Garcia</mal:name>
+      <mal:email>carles.ferrando@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert Antoni Buj Gelonch</mal:name>
+      <mal:email>rbuj@fedoraproject.org</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Canvieu els ajusts per defecte</title>
+
+  <p>Quan un document és obert per primera vegada, s'apliquen els ajusts per defecte, com per exemple les preferències de zoom i vista de pàgina. Qualsevol canvi que feu en aquests ajusts es desa pel document.</p>
+  <p>Podeu desa els ajusts actuals com les opcions per defecte per tots els nous documents, prement <gui style="menuitem">Edita</gui> i seleccionant <gui style="menuitem">Desa els ajusts actuals com a predeterminats</gui>.</p>
+
+  <note style="important">
+    <p>Els nous ajusts per defecte no reemplacen els de documents oberts prèviament, s'apliquen només a documents que s'obren per primera vegada.</p>
+  </note>
+
+</page>

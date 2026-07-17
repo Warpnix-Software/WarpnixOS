@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-usage-delete-contact" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="contacts-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.1" date="2011-08-01" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Menghapus kontak dari buku alamat Anda.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Menghapus Kontak</title>
+
+  <p>Jika Anda ingin menghapus kontak di buku alamat Anda, klik kanan kontak dan pilih <gui>Hapus</gui>, atau klik kontak dan klik <gui>Hapus</gui> di bilah alat atau tekan <keyseq> <key>Ctrl</key><key>D</key></keyseq>, atau klik <guiseq><gui>Sunting</gui><gui>Hapus Kontak</gui></guiseq>.</p>
+
+</page>

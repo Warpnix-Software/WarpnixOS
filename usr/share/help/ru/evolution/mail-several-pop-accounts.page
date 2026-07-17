@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-several-pop-accounts" xml:lang="ru">
+
+  <info>
+    <desc>Разделение и сортировка почты при использовании нескольких локальных учётных записей.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+    <link type="seealso" xref="mail-organizing"/>
+    <link type="seealso" xref="mail-receiving-options-pop"/>
+
+    <revision pkgversion="3.5.3" version="0.2" date="2012-06-16" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Разделение почты POP при использовании нескольких учётных записей</title>
+
+<p>В программе не предусмотрено использование отдельных учётных записей на панели учётных записей и списка папок. В <app>Evolution</app> предусмотрена только одна папка «Входящие» для входящих писем.</p>
+<p>Можно либо использовать IMAP вместо POP, либо перемещать входящие письма в другие папки путём создания <link xref="mail-folders">папок</link> и <link xref="mail-filters">фильтров</link>: создайте новую папку и две подпапки (для входящих и исходящих сообщений этой учётной записи). Затем настройте фильтр входящей почты (<guiseq><gui>Правка</gui><gui>Фильтры сообщений</gui><gui style="button">Добавить</gui></guiseq>) для перемещения входящих писем в папку входящих с помощью фильтрации по адресу получателя, а также фильтр исходящей почты для перемещения исходящей почты в папку исходящих с помощью фильтрации по адресу отправителя.</p>
+
+</page>

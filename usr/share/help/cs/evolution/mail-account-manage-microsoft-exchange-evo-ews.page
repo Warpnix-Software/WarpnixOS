@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-account-manage-microsoft-exchange-evo-ews" xml:lang="cs">
+
+  <info>
+    <desc>Jak přidat a upravit účet Microsoft Exchange 2007 a 2010 v aplikaci <app>Evolution</app>.</desc>
+
+  <link type="guide" xref="mail-account-manage-microsoft-exchange" group="#first"/>
+  <title type="link" role="trail">Webové služby</title>
+
+    <revision pkgversion="3.24.4" version="0.6" date="2017-07-28" status="candidate"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  </info>
+
+  <title>Nastavení účtu Exchange Web Services</title>
+
+<section id="account-editor">
+<title>Editor účtu</title>
+<p>Poštovní účet je možné přidat pomocí <guiseq><gui>Soubor</gui> <gui>Nový</gui> <gui>Poštovní účet</gui></guiseq> nebo <guiseq><gui>Upravit</gui> <gui>Předvolby</gui> <gui>Poštovní účty</gui> <gui style="button">Přidat</gui></guiseq>. Kroky jsou z větší části stejné jako u <link xref="intro-first-run">průvodce prvním spuštěním</link>, akorát nebudete dotázání, jestli chcete importovat data z jiné aplikace nebo je obnovit ze zálohy.</p>
+<p>Poštovní účet je možné upravit pomocí <guiseq><gui>Upravit</gui> <gui>Předvolby</gui> <gui>Poštovní účty</gui> <gui style="button">Upravit</gui></guiseq> nebo kliknutím pravým tlačítkem na příslušném uzlu nejvyšší úrovně v seznamu složek a zvolením <gui>Vlastnosti</gui>.</p>
+
+<note style="tip"><p>See also the <link href="https://gitlab.gnome.org/GNOME/evolution/-/wikis/EWS-OAuth2">documentation how to set up and troubleshoot OAuth2</link> authentication.</p></note>
+
+<p>Následující nastavení jsou k dispozici, když upravujete stávající účet:</p>
+
+<section id="identity">
+<info>
+  <title type="link">Identita (účty Exchange Web Services)</title>
+  <title type="link" role="trail">Identita</title>
+</info>
+<title>Identita</title>
+<p>Zde určujete svoje jméno a e-mailovou adresu.</p>
+<p>Volitelně můžete nastavit e-mailovou adresu „Komu odpovědět“ (když chcete, aby odpovědi na zprávy chodily na jinou adresu), nastavit organizaci (společnost, ve které pracujete, nebo organizaci, kterou reprezentujete, když odesíláte e-maily z tohoto účtu), svůj výchozí <link xref="mail-composer-mail-signatures">podpis</link> k tomuto účtu a <link href="https://en.wikipedia.org/wiki/Email_alias">aliasy</link>.</p>
+</section>
+
+<section id="receiving-email">
+<info>
+  <title type="link">Příjem pošty a volby příjmu (účty Exchange Web Services)</title>
+  <title type="link" role="trail">Příjem</title>
+</info>
+<title>Příjem pošty a volby příjmu</title>
+</section>
+
+<section id="defaults">
+<info>
+  <title type="link">Výchozí hodnoty (účty Exchange Web Services)</title>
+  <title type="link" role="trail">Výchozí hodnoty</title>
+</info>
+<title>Výchozí hodnoty</title>
+</section>
+
+<section id="composing-messages">
+<info>
+  <title type="link">Psaní zpráv (účty Exchange Web Services)</title>
+  <title type="link" role="trail">Psaní</title>
+</info>
+<title>Psaní zpráv</title>
+</section>
+
+<section id="security">
+<info>
+  <title type="link">Zabezpečení (účty Exchange Web Services)</title>
+  <title type="link" role="trail">Zabezpečení</title>
+</info>
+<title>Zabezpečení</title>
+</section>
+
+<section id="out-of-office">
+<title>Mimo kancelář</title>
+<p>Definuje odpověď na e-mail, která se automaticky odesílá interním nebo externím osobám ve stanoveném období.</p>
+</section>
+
+<section id="delegates">
+<title>Delegáti</title>
+<p>Určuje, kdo může vaším jménem zasílat e-maily a odpovědi na žádosti o schůzky.</p>
+</section>
+
+</section> <!-- end "account editor" section, now list any account settings stuff related to this account type outside of it -->
+
+</page>

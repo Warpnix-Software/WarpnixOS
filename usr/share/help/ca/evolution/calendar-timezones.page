@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-timezones" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#calendar-advanced"/>
+
+    <revision pkgversion="3.1.5" version="0.4" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/bshlzlu.html.en -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Ús de zones horàries al calendari.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Ús de zones horàries</title>
+
+  <p><app>Evolution</app> suporta l'ús de múltiple zones horàries.</p>
+
+<section id="default-timezone">
+  <title>Configuració de la zona(es) horària(es) global</title>
+
+  <p>Per defecte <app>Evolution</app> utilitza la zona horària de tot el sistema. Es pot canviar a <guiseq><gui>Edita</gui><gui>Preferències</gui> <gui>Calendari i tasques</gui><gui>General</gui><gui>Hora</gui> <gui>Zona horària</gui></guiseq>.</p>
+
+  <p>Si tracteu molt amb gent d'una altra zona horària específica, podeu visualitzar aquesta segona zona horària a la vista de dia del calendari. Podeu configurar una segona zona horària a <guiseq><gui>Edita</gui><gui>Preferències</gui> <gui>Calendari i tasques</gui><gui>General</gui><gui>Hora</gui> <gui>Segona zona</gui></guiseq>.</p>
+
+</section>
+
+<section id="appointment-timezone">
+  <title>Configuració d'una zona horària per a una cita</title>
+
+  <p>També podeu configurar la informació de zona horària específica de cada cita. Per a fer-ho, <link xref="calendar-usage">afegiu o editeu una cita existent</link>. A <gui>Zona horària</gui>, feu clic a <gui style="button">Selecciona…</gui> per a personalitzar la zona horària. Per exemple, si visquéssiu a Nova York però teniu una reunió telefònica amb algú a Califòrnia, hauríeu d'assegurar-vos que els horaris estiguin coordinats. L'establiment de zones horàries específiques per cita ajuda a evitar possibles confusions.</p>
+
+</section>
+
+</page>

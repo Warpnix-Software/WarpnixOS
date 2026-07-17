@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="conv-length" xml:lang="ja">
+
+    <info>
+        <link type="guide" xref="index#conversion"/>
+    </info>
+
+	<title>長さ/面積/体積</title>
+    
+    <p>長さ、面積、体積の単位を変換するには、<em>in</em> 演算子を利用します。</p>
+    <example>
+    <p>6 meters in inches</p>
+    <p>1 acre in cm²</p>
+    <p>1 pint in mL</p>
+    </example>
+    <note>
+    <p>長さ/面積/体積の変換は、キーボードを使って実行してください。</p>
+    </note>
+</page>

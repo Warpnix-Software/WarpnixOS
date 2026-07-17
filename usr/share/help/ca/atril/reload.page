@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="reload" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#faq"/>
+
+    <desc>El vostre document es tornarà a carregar de forma automàtica si una altra aplicació el modifica mentre l'esteu visualitzant.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Carles Ferrando Garcia</mal:name>
+      <mal:email>carles.ferrando@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert Antoni Buj Gelonch</mal:name>
+      <mal:email>rbuj@fedoraproject.org</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Per què el document es torna a carregar una i altra vegada?</title>
+
+<p>Si <app>Atril</app> detecta que el document obert ha canviat (potser perquè una altra aplicació l'ha modificat), es tornarà a carregar automàticament i us mostrarà la versió més recent.</p>
+
+<p>Si el document és eliminat mentre encara l'esteu visualitzant, continuarà obert.</p>
+
+</page>

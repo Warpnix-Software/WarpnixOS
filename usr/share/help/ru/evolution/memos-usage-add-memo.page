@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="memos-usage-add-memo" xml:lang="ru">
+
+  <info>
+    <desc>Добавление заметки в список заметок.</desc>
+    
+    <link type="guide" xref="memos-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.1" date="2011-08-01" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/b15iirao.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Добавление заметки</title>
+
+<steps>
+<item><p>Выберите пункт меню <guiseq><gui>Файл</gui><gui>Создать</gui><gui>Заметка</gui></guiseq> или воспользуйтесь комбинацией клавиш <keyseq><key>Shift</key><key>Ctrl</key><key>O</key></keyseq>.</p></item>
+<item><p>Выберите список заметок в раскрывающемся списке <gui>Список</gui>.</p></item>
+<item><p>Введите данные заметки.</p></item>
+<item><p>Нажмите кнопку <gui style="button">Сохранить</gui> или выберите пункт меню <guiseq><gui>Файл</gui><gui>Сохранить</gui></guiseq>.</p></item>
+</steps>
+
+<p>Если требуется просто быстро добавить заметку путём ввода сводки, это можно сделать непосредственно в списке заметок.</p>
+
+<p>Для заметки также можно задать <link xref="using-categories">категорию</link> или<link xref="calendar-classifications">классификацию</link>, а также добавить вложение.</p>
+
+<section id="shared-memos">
+<title>Общие заметки</title>
+
+<p>Общие заметки похожи на письма за исключением того, что они запланированы на определённый день и отображаются в календаре на эту дату. Общие заметки можно использовать для обозначения отпусков, праздников, дней выдачи зарплаты, дней рождения и тому подобного. Отправленные общие заметки размещаются в вашем календаре на тот день, который вы указали. Они не размещаются в вашем почтовом ящике или в почтовых ящиках других пользователей.</p>
+
+<p>Чтобы отправить общую заметку:</p>
+<steps>
+<item><p>Выберите пункт меню <guiseq><gui>Файл</gui><gui>Создать</gui><gui>Общая заметка</gui></guiseq> или воспользуйтесь комбинацией клавиш <keyseq><key>Shift</key><key>Ctrl</key><key>H</key></keyseq>.</p></item>
+<item><p>Выберите имя учётной записи организатора в раскрывающемся списке, который расположен рядом с полем <gui>Организатор</gui>.</p></item>
+<item><p>В поле <gui>Кому</gui> введите имя пользователя, затем нажмите клавишу <key>Enter</key>. Повторите эти действия для добавления других пользователей.</p></item>
+<item><p>Выберите список задач (пункт <gui>Список</gui>), в котором следует создать запись.</p></item>
+<item><p>Введите краткое описание в поле <gui>Сводка</gui>.</p></item>
+<item><p>В поле <gui>Дата начала</gui> введите день, в который эта заметка должна появиться в календарях получателей.</p></item>
+<item><p>Нажмите кнопку <gui style="button">Сохранить</gui> или выберите пункт меню <guiseq><gui>Файл</gui><gui>Сохранить</gui></guiseq>.</p></item>
+</steps>
+</section>
+
+</page>

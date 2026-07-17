@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="startup-applications" xml:lang="pt">
+
+  <info>
+    <link type="guide" xref="shell-overview#apps"/>
+    <link type="guide" xref="prefs"/>
+    <desc>Escolha que aplicações executar no início de sessão.</desc>
+
+    <revision version="18.04" date="2018-03-19" status="review"/>
+
+    <credit type="author">
+      <name>Equipa de documentação do Ubuntu</name>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+  <title>Aplicações de Arranque</title>
+
+  <p>Pode configurar que aplicações devem ser executadas ao início de sessão juntamente com as aplicações de arranque predefinidas configuradas no sistema.</p>
+
+  <steps>
+    <item>
+      <p>Open <gui>Startup Applications</gui> via the <gui xref="shell-introduction#activities">Activities</gui> overview.
+      Alternatively you can press
+      <keyseq><key>Alt</key><key>F2</key></keyseq> and run the
+      <cmd>gnome-session-properties</cmd> command.</p>
+    </item>
+    <item>
+      <p>Clique em <gui>Adicionar</gui> e introduza o comando a ser executado ao iniciar sessão (nome e comentário são opcionais). Por exemplo, para fazer como que o Firefox se inicie automaticamente, é suficiente introduzir <cmd>firefox</cmd> no campo <gui>Comando</gui> e confirmar com <gui>Adicionar</gui>.</p>
+    </item>
+  </steps>
+
+  <note>
+    <p>Pode tanto escrever o comando ou clicar no botão <gui>Navegar...</gui> e selecionar um comando. As aplicações para início automático estão habitualmente localizadas na pasta <code>/usr/bin</code>.</p>
+  </note>
+
+</page>

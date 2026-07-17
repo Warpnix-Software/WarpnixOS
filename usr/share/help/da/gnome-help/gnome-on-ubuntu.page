@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="tip" id="gnome-on-ubuntu" xml:lang="da">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntus dokumentationshold</name>
+    </credit>
+    <desc>En liste over særlige ændringer til GNOME Skrivebord i Ubuntu.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="shell-overview" group="#first"/>
+    <link type="guide" xref="index" group="intro"/>
+    <revision version="0.1" date="2022-04-28" status="review"/>
+  </info>
+
+  <title>Om GNOME i Ubuntu</title>
+
+  <p>Ubuntu Skrivebord er installeret med en let modificeret version af GNOME-skrivebordsmiljøet. Generelt vil denne skrivebordsvejledning referere til GNOME, som det er udgivet af GNOME-udviklerne. Her er en liste over de særlige forskelle mellem GNOME i Ubuntu og "rå" GNOME.</p>
+
+  <list type="disc">
+  <item>
+    <p>Ubuntu har Firefox i stedet for GNOMEs webbrowser.</p>
+  </item>
+  <item>
+    <p>Ubuntu har Remmina-fjernskrivebordsklienten i stedet for GNOMEs Forbindelser.</p>
+  </item>
+    <item>
+      <p>Udvidelsen AppIndicators er inkluderet. Denne udvidelse vil aktivere ikoner i øverste højre hjørne af visse programmer.</p>
+    </item>
+    <item>
+      <p>Udvidelsen Ubuntu Dock er inkluderet. Denne udvidelse giver en venstre sidebjælke til kørsel af programmer.</p>
+    </item>
+    <item>
+      <p>Udvidelsen Skrivebordsikoner NG er inkluderet. Denne udvidelse tillader brugen af ikoner på skrivebordet.</p>
+    </item>
+    <item>
+      <p>Ud over Ubuntu-skrivebordsbaggrunde er standardtemaet Yaru og standardskrifttypen er Ubuntu.</p>
+    </item>
+    <item>
+      <p>Minimerings- og maksimeringsknapper er medtaget i vinduers titellinjer.</p>
+    </item>
+  </list>
+
+
+
+</page>

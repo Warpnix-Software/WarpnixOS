@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="prefs-language-install" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="addremove" group="#last"/>
+    <link type="seealso" xref="prefs-language"/>
+
+    <desc>Встановити більше перекладів і пов’язаних з мовною підтримкою пакунків.</desc>
+    <revision version="17.10" date="2017-09-25" status="review"/>
+    <credit type="author">
+      <name>Gunnar Hjalmarsson</name>
+      <email>gunnarhj@ubuntu.com</email>
+    </credit>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+  <title>Встановити мови</title>
+
+  <p>Мова, вибрана вами при встановленні Ubuntu, встановлюється спільно з англійською, але можна додати й інші мови.</p>
+
+  <steps>
+    <item>
+      <p>Відкрийте огляд <gui xref="shell-introduction#activities">Діяльність</gui> І почніть вводити <gui>Регіон та мова</gui>.</p>
+    </item>
+    <item>
+      <p>Клацніть на <gui>Регіон та мова</gui> щоб відкрити панель.</p>
+    </item>
+    <item>
+      <p>Клацніть кнопку <gui>Керувати встановленими мовами</gui> щоб відкрити <gui>Мовну підтримку</gui>.</p>
+    </item>
+    <item>
+      <p>Клацніть <gui>Встановлення та вилучення мов...</gui>. Вікно <gui>Встановлені мови</gui> покаже перелік усіх мов що є, вже встановлені мови позначені у переліку.</p>
+    </item>
+    <item>
+      <p>Позначте мови, які потрібно встановити, й зніміть позначки з тих мов, які ви бажаєте вилучити.</p>
+    </item>
+    <item>
+      <p>Натисніть <gui>Застосувати зміни</gui>.</p>
+    </item>
+    <item>
+      <p>Потрібні будуть <link xref="user-admin-explain">адміністративні права</link>. Уведіть ваш пароль або пароль запитуваного облікового запису адміністратора.</p>
+    </item>
+  </steps>
+
+  <p>У додаток до перекладів меню та повідомлень, разом з новою мовою можуть бути встановлені різні компоненти підтримки цієї мови, такі як словники для перевірки правопису, шрифти та методи введення.</p>
+
+  <note>
+    <p>Деякі переклади можуть виявитися неповними, а окремі додатки можуть зовсім не підтримувати вашу мову.</p>
+  </note>
+
+</page>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="annotations-save" xml:lang="ru">
+<info>
+  <link type="guide" xref="index#annotations"/>
+ <desc>Как сохранять примечания.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Тиффани Антропольски</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Шобха Тьяги</name>
+      <email its:translate="no">tyagishobha@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+</info>
+<title>Сохранение копии документа PDF с примечаниями</title>
+ <p>Чтобы сохранить копию PDF-файла с примечанием для последующего просмотра с помощью <app>Atril</app> или любого другого просмотрщика PDF-файлов <em>, поддерживающего примечания:</em>:</p>
+  <steps>
+   <item>
+     <p>Щёлкните <guiseq><gui>Файл</gui><gui>Сохранить как…</gui></guiseq></p>
+   </item>
+   <item>
+     <p>Выберите имя файла и папку, в которой должен быть сохранён файл, затем нажмите <gui>Сохранить</gui>. PDF будет сохранён в указанной папке.</p>
+    </item>
+   </steps>
+   <p>Примечания добавляются в соответствии со спецификацией PDF. Поэтому большинство программ для чтения PDF должны уметь их читать. Известно, что Adobe Reader работает с такими примечаниями.</p>
+
+</page>

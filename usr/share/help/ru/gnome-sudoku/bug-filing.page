@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="bug-filing" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#get-involved"/>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <credit type="editor copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+      <years>2011</years>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ser82-png</mal:name>
+      <mal:email>asvmail.as@gmail.com</mal:email>
+      <mal:years>2022-2024</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Сообщить о проблеме</title>
+<p><app>GNOME Судоку</app> поддерживается сообществом добровольцев. Вы можете принять в этом участие. Если вы заметили проблему, можете отправить <em>отчёт об ошибке</em>. Для этого перейдите по ссылке <link href="https://gitlab.gnome.org/GNOME/gnome-sudoku/issues/"/>.</p>
+   <p>Это система отслеживания ошибок, в которой пользователи и разработчики могут сообщать подробности об ошибках, сбоях и запрашивать улучшения.</p>
+   <p>Для участия вам необходимо войти в систему, которая позволит получить доступ к данным, создавать сообщения об ошибках и оставлять комментарии. Кроме того, вам необходимо зарегистрироваться, чтобы вы могли получать обновления по электронной почте о статусе вашего сообщения об ошибке. Если у вас ещё нет учётной записи, просто нажмите ссылку <gui>Sign in / Register</gui>, чтобы создать её.</p>
+
+  <p>Если у вас есть учётная запись, войдите в неё и нажмите <gui>New issue</gui>. Прежде чем сообщать об ошибке, ознакомьтесь с <link href="https://handbook.gnome.org/issues/reporting.html">руководством по описанию ошибок</link> и, пожалуйста, <link href="https://gitlab.gnome.org/GNOME/gnome-sudoku/issues">просмотрите</link> список ошибок, чтобы убедиться, что о ней ещё никто не сообщил.</p>
+
+   <p>Если вы запрашиваете новую функцию, выберите <gui>1. Feature</gui> в меню <gui>Labels</gui>. Заполните разделы «Title» и «Description» и нажмите <gui>Submit Issue</gui>.</p>
+   <p>Вашему отчёту будет присвоен идентификационный номер, и его статус будет обновляться по мере обработки.</p>
+</page>

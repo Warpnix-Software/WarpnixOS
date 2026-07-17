@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="board-size" xml:lang="gl">
+
+  <info>
+    <link type="guide" xref="index#tips"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.3" date="2018-09-01" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2011</years>
+    </credit>
+    <credit type="author copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Fran Dieguez</mal:name>
+      <mal:email>frandieguez@gnome.org</mal:email>
+      <mal:years>2012-2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marcos Lans</mal:name>
+      <mal:email>marcoslansgarza@gmail.com</mal:email>
+      <mal:years>2018</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Como cambiar o tamaño do taboleiro</title>
+
+  <p>You can select a field size at the start of the application.</p>
+
+  <p>Seleccione un tamaño de grella:</p>
+  <list>
+    <item><p>un taboleiro de 8 x 8 con 10 minas</p></item>
+    <item><p>un taboleiro de 16 x 16 con 40 minas</p></item>
+    <item><p>un taboleiro de 30 x 16 con 99 minas</p></item>
+    <item><p>un taboleiro personalizdo onde pode seleccioar o tamaño e o número de minas</p></item>
+  </list>
+
+  <p>To change the <link xref="board-size">board size</link> later, press the
+  <gui style="button">Change Difficulty</gui> button on the right.</p>
+
+</page>

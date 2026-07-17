@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-access-gmail-imap-account" xml:lang="de">
+
+  <info>
+    <desc>Ein GMail-IMAP-Konto einrichten.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+    <link type="guide" xref="google-services"/>
+    <link type="seealso" xref="mail-account-manage-imap-plus"/>
+
+    <revision pkgversion="3.29.91" version="0.4" date="2018-08-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andre Klapper</mal:name>
+      <mal:email>ak-47@gmx.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009-2013, 2016-2018, 2020-2021</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009-2013, 2015-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Gabor Karsay</mal:name>
+      <mal:email>gabor.karsay@gmx.at</mal:email>
+      <mal:years>2011-2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Tim Sabsch</mal:name>
+      <mal:email>tim@sabsch.com</mal:email>
+      <mal:years>2018, 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jürgen Benvenuti</mal:name>
+      <mal:email>gastornis@posteo.org</mal:email>
+      <mal:years>2022-2024</mal:years>
+    </mal:credit>
+  </info>
+
+<!-- Page only exists for the <note>, apart from that nothing special. -->
+
+<title>Zugriff auf ein GMail-IMAP-Konto mit <app>Evolution</app></title>
+
+<p>Um auf Gmail via IMAP zuzugreifen, müssen Sie IMAP für Ihr Google-Konto einschalten. Lesen Sie die <link href="https://mail.google.com/support/bin/answer.py?answer=77695">Gmail-Hilfe</link> für weitere Informationen.</p>
+
+<p>Es wird empfohlen, Gmail als Online-Konto in GNOME einzurichten. Weitere Informationen finden Sie in der <link xref="help:gnome-help/accounts" href="https://help.gnome.org/users/gnome-help/stable/accounts">GNOME-Benutzerhandbuch</link>. Nachdem Sie dies getan haben, wird das Gmail-Konto in <app>Evolution</app> aufgelistet.</p>
+
+<p>Um ein Konto in <app>Evolution</app> einzurichten, schauen Sie in die <link xref="mail-account-manage-imap-plus">IMAP+ Mail-Kontoeinstellungen</link>. Beachten Sie, dass nicht alle Optionen solcher Konten in <app>Evolution</app> bearbeitet werden und nur in den <app>Online-Konten</app> selbst entfernt werden können.</p>
+
+<!-- Evolution does not support Google's proprietary SASL XOAUTH2 implementation which makes Evolution a "less secure app" for Google. -->
+<p>Als Alternative zur Einrichtung eines Online-Kontos in GNOME können Sie in Ihren Gmail-Einstellungen <link href="https://www.google.com/settings/security/lesssecureapps">weniger sichere Apps zulassen</link>.</p>
+
+<note style="tip"><p>Für hohe Geschwindigkeit wird empfohlen, <gui>einen realen Ordner für den Papierkorb</gui> zu verwenden, indem er auf <gui>[GMail]/Trash</gui> und auf <gui>Einen realen Ordner für unerwünschte E-Mails</gui> eingestellt wird, indem er unter den <link xref="mail-default-folder-locations"><gui>Vorgaben</gui></link> des Kontos auf <gui>[GMail]/Spam</gui> eingestellt wird.</p></note>
+
+</page>

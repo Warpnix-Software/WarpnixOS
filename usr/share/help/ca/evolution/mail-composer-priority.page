@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-composer-priority" xml:lang="ca">
+
+  <info>
+    <desc>Establir una prioritat per a enviar missatges.</desc>
+
+    <link type="guide" xref="index#mail-composing-advanced"/>
+
+    <revision pkgversion="3.13.90" version="0.3" date="2015-03-09" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#BJEHCDFA -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Prioritzar els missatges de sortida</title>
+
+<p>Podeu prioritzar el missatge que s'enviarà, de manera que el destinatari vegi la seva importància relativa. Per a prioritzar un missatge, seleccioneu <guiseq><gui>Opcions</gui><gui>Prioritza el missatge</gui></guiseq> al menú de la finestra de l'editor o feu clic a la icona de la barra d'eines corresponent.</p>
+
+<note style="tip"><p><app>Evolution</app> ignora la prioritat dels missatges entrants perquè el destinatari ha de decidir si el missatge és important o no. Podeu configurar l'indicador «Important» per a qualsevol missatge.</p></note>
+<!-- TODO: Nowhere is explained how to set the Important flag. -->
+</page>

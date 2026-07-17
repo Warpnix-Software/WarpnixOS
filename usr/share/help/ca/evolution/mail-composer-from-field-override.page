@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-from-field-override" xml:lang="ca">
+
+  <info>
+    <desc>Canvieu el nom i l'adreça del remitent sobre la marxa establint valors arbitraris.</desc>
+    
+    <link type="guide" xref="index#mail-composing-advanced"/>
+
+    <revision pkgversion="3.13.91" version="0.1" date="2015-03-10" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Reemplaçar el camp «De»</title>
+
+<p>Per a establir una adreça de correu electrònic personalitzada i el nom del remitent al missatge que voleu enviar, activeu <guiseq><gui>Vista</gui><gui>Ometre el camp De</gui></guiseq> i canvieu el nom predeterminat del remitent i l'adreça de correu electrònic als camps corresponents.</p>
+
+<p its:locNote="Translators: If no Wikipedia article exists for your language and you leave the URL untranslated and pointing to the English Wikipedia, you might want to indicate in your translation text that the link is in English.">This functionality can be useful for <link href="https://en.wikipedia.org/wiki/Qmail#Innovations">wildcard mailboxes when using qmail</link> and <link href="https://en.wikipedia.org/wiki/Email_address#Sub-addressing">sub-addressing</link>.</p>
+
+<note style="important"><p its:locNote="Translators: If no Wikipedia article exists for your language and you leave the URL untranslated and pointing to the English Wikipedia, you might want to indicate in your translation text that the link is in English.">Establir una adreça arbitrària podria entrar en conflicte amb el vostre proveïdor de correu electrònic <link href="https://en.wikipedia.org/wiki/Sender_Policy_Framework">Marc de política del remitent</link> i/o restriccions del mètode d'autentificació <link href="https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail">DomainKeys Identified Mail</link>.</p></note>
+
+</page>

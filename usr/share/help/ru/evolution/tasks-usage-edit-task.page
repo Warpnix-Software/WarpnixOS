@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="tasks-usage-edit-task" xml:lang="ru">
+
+  <info>
+    <desc>Изменение задачи в списке задач.</desc>
+    
+    <link type="guide" xref="tasks-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.1" date="2011-08-01" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Изменение задачи</title>
+
+<p>Если следует изменить уже существующую в списке задачу:</p>
+
+<steps>
+<item><p>Сделайте двойной щелчок по задаче, которую следует изменить, в списке задач или щёлкните по задаче правой кнопкой мыши и выберите пункт <gui>Открыть задачу</gui>.</p></item>
+<item><p>Измените данные задачи.</p></item>
+<item><p>Нажмите кнопку <gui style="button">Сохранить</gui> или выберите пункт меню <guiseq><gui>Файл</gui><gui>Сохранить</gui></guiseq>.</p></item>
+</steps>
+
+</page>

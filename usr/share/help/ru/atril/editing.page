@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="editing" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#faq"/>
+    <desc>Вы не можете использовать Atril для редактирования файлов.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Фил Булл</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  </info>
+
+<title>Могу ли я редактировать документы в приложении для просмотра документов?</title>
+
+
+ <p>Atril нельзя использовать для внесения изменений в документы. Вам нужно использовать соответствующее приложение, предназначенное для редактирования необходимого вам типа файла.</p>
+
+
+<note>
+ <p>Файлы PDF и PostScript (.ps) обычно не предназначены для редактирования, но программное обеспечение для редактирования PDF доступно. Попробуйте, например, <app>LibreOffice Draw</app> или <app>Okular</app>. Кроме того, <app>pdfarranger</app> позволяет переставлять или удалять страницы и объединять файлы.</p>
+</note>
+</page>

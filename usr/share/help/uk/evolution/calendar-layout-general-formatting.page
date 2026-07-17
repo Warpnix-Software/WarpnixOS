@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-layout-general-formatting" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="calendar-layout"/>
+
+    <revision pkgversion="3.13.90" version="0.3" date="2015-03-10" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/config-prefs-cal.html.en#bshpskx
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <!-- TODO:POST-3-8: Just listing the partially busted UI options (also see
+	 calendar-layout-appointment-display) here is very poor and not
+	 task-oriented, but that's it for the time being. Better ideas welcome.
+	 -->
+
+    <desc>Загальні параметри форматування для календаря.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Загальні параметри форматування</title>
+
+  <p>На сторінці <guiseq><gui>Зміни</gui><gui>Параметри</gui> <gui>Календар та завдання</gui><gui>Загальне</gui></guiseq>.</p>
+
+<section id="time">
+  <title>Час</title>
+
+  <list>
+    <item>
+      <p>Формат часу:</p>
+      <p>Виберіть один з варіантів — дванадцятигодинний або двадцятичотиригодинний формат показу часу.</p>
+    </item>
+    <item>
+      <p><link xref="calendar-timezones">Часовий пояс</link> і додатковий часовий пояс:</p>
+      <p>Місто, у якому ви перебуваєте, та, необов'язково, друге місто.</p>
+    </item>
+  </list>
+</section>
+
+<section id="work-week">
+  <title>Робочий тиждень</title>
+
+  <list>
+    <item>
+      <p>Тиждень починається:</p>
+      <p>Виберіть день, який буде першим днем при показі тижнів.</p>
+    </item>
+    <item>
+      <p>Робочі дні:</p>
+      <p>Визначає, які дні тижня є робочими.</p>
+    </item>
+    <item>
+      <p>День починається:</p>
+      <p>Визначає, о котрій годині розпочинається ваш робочий день.</p>
+    </item>
+    <item>
+      <p>День закінчується:</p>
+      <p>Визначає, о котрій годині завершується ваш робочий день.</p>
+    </item>
+  </list>
+
+</section>
+
+<section id="date-time">
+  <title>Формат дати та часу</title>
+
+  <p>Ви можете змінити формат вмісту стовпчика <gui>Дата</gui>, встановивши бажаний для вас формат.</p>
+
+  <p>Замінниками у виразі формату є записи формату strftime. Щоб отримати повний список доступних форматів strftime, віддайте команду <cmd>date --help</cmd> у програмі <app>Термінал</app>.</p>
+
+</section>
+
+</page>

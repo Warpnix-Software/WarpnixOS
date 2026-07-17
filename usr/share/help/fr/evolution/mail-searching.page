@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-searching" xml:lang="fr">
+ 
+  <info>
+    <desc>Recherche de messages.</desc>
+    
+    <link type="guide" xref="searching-items"/>
+    <link type="guide" xref="mail-organizing"/>
+ 
+    <revision pkgversion="3.33.90" version="0.7" date="2019-09-05" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Max Vorobuov</name>
+      <email its:translate="no">vmax0770@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+ 
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marc Lorber</mal:name>
+      <mal:email>Linux-Lorber@club-internet.fr</mal:email>
+      <mal:years>2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jonathan Ernst</mal:name>
+      <mal:email>jonathan@ernstfamily.ch</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alexandre Franke</mal:name>
+      <mal:email>alexandre.franke@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012 </mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervan@gmail.com</mal:email>
+      <mal:years>2013-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yvan Masson</mal:name>
+      <mal:email>yvan@masson-informatique.fr</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Charles Monzat</mal:name>
+      <mal:email>charles.monzat@free.fr</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>vanadiae</mal:name>
+      <mal:email>vanadiae35@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Guillaume Bernard</mal:name>
+      <mal:email>associations@guillaume-bernard.fr</mal:email>
+      <mal:years>2021-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jean-Marc Tissières</mal:name>
+      <mal:email>jmetissieres@gmail.com</mal:email>
+      <mal:years>2022</mal:years>
+    </mal:credit>
+  </info>
+ 
+<title>Recherche de courriel</title>
+
+<section id="search-single">
+<title>Recherche dans un seul message</title>
+<p>Pour trouver un texte dans le message affiché, sélectionnez <guiseq><gui>Édition</gui><gui>Rechercher dans le message</gui></guiseq> dans le menu principal.</p>
+</section>
+
+<section id="search-many">
+<title>Recherche parmi les messages</title>
+
+<section id="quick-search">
+<title>Recherche rapide</title>
+<p>Dans la vue des courriels, vous pouvez faire une recherche rapide de messages en définissant des conditions.</p>
+<steps>
+<item><p>Cliquez sur l’icône de recherche <media type="image" mime="image/png" its:translate="no" src="figures/search-icon.png"/> pour ouvrir la liste déroulante.</p></item>
+<item><p>Sélectionnez le critère de recherche dans la liste.</p>
+<note style="tip"><p>Certaines recherches peuvent être lentes sur les comptes de messagerie distants (par exemple IMAP+). Si vous sélectionnez une condition de recherche telle que <gui>Le corps contient</gui> ou <gui>Le message contient</gui>, qu’<app>Evolution</app> est en mode en ligne et que le ou les dossiers dans lesquels vous êtes sur le point de rechercher ne sont pas <link xref="mail-working-offline">déjà copiés localement pour une utilisation hors ligne</link>, Evolution lance automatiquement la recherche côté serveur de messagerie si le serveur annonce la prise en charge des recherches côté serveur. Lorsque vous effectuez une recherche sur des critères de recherche déjà disponibles localement (par exemple, les destinataires ou l’objet des messages), la recherche sera lancée localement.</p></note>
+</item>
+<item><p>Choisissez la portée dans la liste déroulante à côté de la boîte de texte.</p>
+<note style="tip"><p>Pour la portée du <gui>Compte actuel</gui>, le terme « compte » se réfère aux nœuds de niveau supérieur dans la <link xref="intro-main-window#e-mail">liste des dossiers de courriels</link>, tels que « Sur cet ordinateur » ou les comptes de messagerie distants.</p></note>
+</item>
+<item><p>Saisissez le texte à rechercher et appuyez sur <key>Entrée</key>.</p></item>
+<item><p><app>Evolution</app> affiche les résultats de la recherche.</p></item>
+</steps>
+<note style="tip"><p>Si vous démarrez directement à partir de l’étape 4, le texte sera recherché dans les objets et adresses des courriels et la portée sera le « Dossier actuel ».</p></note>
+<note style="tip"><p>Si vous recherchez assez souvent des messages qui ne sont pas dans les mêmes dossiers, il peut être préférable de créer un dossier de recherche à la place ; consultez <link xref="mail-search-folders">Utilisation des dossiers de recherche</link> pour plus de détails.</p></note>
+<p>Si vous voulez définir plusieurs critères de recherche, vous devriez faire une Recherche avancée, telle que décrite ci-dessous.</p>
+</section>
+
+<!-- As advanced-search, clearing-search, saved-searches, editing-a-saved-search are totally identical in all *-searching.page files, this is centrally in one file that's included by XInclude. See
+http://blogs.gnome.org/shaunm/2011/07/21/understanding-xinclude/ for how it works. -->
+<include xmlns="http://www.w3.org/2001/XInclude" href="xinclude-searching.xml" xpointer="xmlns(mal=http://projectmallard.org/1.0/)xpointer(/mal:info/mal:section)"/>
+
+<section id="free-form-expression">
+<title>Expression de format libre </title>
+<p>L’un des moyens de recherche est l’<gui>Expression de format libre</gui> qui permet de définir des critères complexes. Au départ, une expression de format libre contient des critères sous forme de mots. Si un mot est donné tel quel sans aucune balise le liant à un en-tête alors il est recherché dans les en-têtes « À », « Cc » ou « Objet ». Dans le cas où un critère contient plus d’un mot avec un espace ou un autre caractère spécial, il doit être entouré de doubles guillemets. Pour cela, rajoutez des guillemets « " » au texte déjà entre guillemets ; par exemple : <code>cité ""ici""</code> est considéré comme le mot <code>cité "ici"</code>. Par exemple, <code>f:John Smith</code> filtre les messages ayant <code>John</code> comme expéditeur (en-tête « De ») et contenant <code>Smith</code> dans les en-têtes « À », « Cc » ou « Objet », alors que <code>f:"John Smith"</code> filtre les messages de l’expéditeur <code>John Smith</code>.</p>
+<p>La syntaxe des expressions est <code>&lt;balise&gt;[-&lt;options&gt;]:mot (ou valeur)</code>. Les balises peuvent être :</p>
+<table frame="all" rules="rows cols" shade="rows">
+<tr><td><p>Balise</p></td><td><p>Abréviation</p></td><td><p>Signification</p></td></tr>
+<tr><td><p its:translate="no">from</p></td><td><p its:translate="no">f</p></td><td><p its:locNote="Translators: 'From' is a header name, do not translate it">l’en-tête « From » (De) doit correspondre au critère (*)</p></td></tr>
+<tr><td><p its:translate="no">to</p></td><td><p its:translate="no">t</p></td><td><p its:locNote="Translators: 'To' is a header name, do not translate it">l’en-tête « To » (À) doit correspondre au critère (*)</p></td></tr>
+<tr><td><p its:translate="no">cc</p></td><td><p its:translate="no">c</p></td><td><p its:locNote="Translators: 'CC' is a header name, do not translate it">l’en-tête « Cc » doit correspondre au critère (*)</p></td></tr>
+<tr><td><p its:translate="no">recips</p></td><td><p its:translate="no">r</p></td><td><p its:locNote="Translators: 'To' and 'CC' are the header names, do not translate it">les en-têtes « To » (À) ou « Cc » doivent correspondre au critère (*)</p></td></tr>
+<tr><td><p its:translate="no">subject</p></td><td><p its:translate="no">s</p></td><td><p its:locNote="Translators: 'Subject' is a header name, do not translate it">l’en-tête « Subject » (Objet) doit correspondre au critère (*)</p></td></tr>
+<tr><td><p its:translate="no">list</p></td><td><p/></td><td><p>l’en-tête « Mailing List » (Liste de diffusion) doit correspondre au critère (*)</p></td></tr>
+<tr><td><p its:translate="no">header</p></td><td><p its:translate="no">h</p></td><td><p>l’en-tête donné doit correspondre au critère (*)</p>
+<p>la syntaxe est la suivante : <code>h:nomEnTête=valeur</code>, le signe égal est ici utilisé comme séparateur et non comme règle de correspondance</p></td></tr>
+<tr><td><p its:translate="no">exists</p></td><td><p its:translate="no">e</p></td><td><p>selon que l’en-tête donné existe ou non</p></td></tr>
+<tr><td><p its:translate="no">tag</p></td><td><p/></td><td><p>en-tête personnalisé donné présent dans un message</p></td></tr>
+<tr><td><p its:translate="no">flag</p></td><td><p/></td><td><p>si un marqueur particulier est indiqué ; les valeurs spécifiques connues sont :</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Répondu</code> − Le message est marqué comme répondu à,</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Supprimé</code> − Le message est marqué comme supprimé,</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Brouillon</code> − Le message est marqué comme brouillon,</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Marqué</code> − Le message est marqué comme important,</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Lu</code> − Le message n’est pas marqué comme non lu,</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Pièce jointe</code> − Le message contient une pièce jointe,</p>
+<p>Toute autre valeur est vérifiée comme présente ou non.</p></td></tr>
+<tr><td><p its:translate="no">label</p></td><td><p its:translate="no">l</p></td><td><p>si une <link xref="mail-labels">étiquette</link> donnée est présente dans le message</p></td></tr>
+<tr><td><p its:translate="no">size</p></td><td><p its:translate="no">sz</p></td><td><p>si la taille du message, en Ko, est égale à une valeur donnée ;</p>
+<p>deux options sont possibles, <code>&lt;</code> pour obtenir les messages d’une taille plus petite, et <code>&gt;</code> pour obtenir les messages d’une taille plus grande que la taille donnée. Par exemple : <code>size-&gt;:1024</code> filtre les messages dont la taille est supérieure à 1 Mo</p></td></tr>
+<tr><td><p its:translate="no">score</p></td><td><p its:translate="no">sc</p></td><td><p>compare un <code>nombre</code> dans le message à une valeur donnée ; la comparaison par défaut est basée sur l’égalité, mais, de même que pour la recherche par <code>taille</code>, les options <code>&lt;</code> et <code>&gt;</code> peuvent être utilisées</p></td></tr>
+<tr><td><p its:translate="no">body</p></td><td><p its:translate="no">b</p></td><td><p>cherche dans le corps du message l’existence d'un mot donné ; la comparaison par défaut est <code>contient</code>, mais on peut utiliser une expression régulière avec une option <code>regex</code>, <code>re</code> ou encore <code>r</code></p></td></tr>
+<tr><td><p its:translate="no">sent</p></td><td><p/></td><td><p>la date d’envoi du message doit correspondre au critère (**)</p></td></tr>
+<tr><td><p its:translate="no">received</p></td><td><p its:translate="no">rcv</p></td><td><p>la date de réception du message doit correspondre au critère (**)</p></td></tr>
+<tr><td><p its:translate="no">attachment</p></td><td><p its:translate="no">a</p></td><td><p>le message contient une pièce jointe (si la valeur est différente de <code>no</code>, <code>false</code> ou <code>0</code>). Semblable au marqueur <code>flag:Pièce jointe</code></p></td></tr>
+<tr><td><p its:translate="no">location</p></td><td><p its:translate="no">m</p></td><td><p>cherche l’emplacement du message. La valeur de l’emplacement (URL) peut être trouvée dans les <gui>Propriétés</gui> du dossier. Par exemple : <code>location: « Sur cet ordinateur/Inbox »</code></p></td></tr>
+<tr><td><p its:translate="no">mid</p></td><td><p/></td><td><p>compare l’identifiant du message</p></td></tr>
+</table>
+<p>(*) Les comparaisons dans les en-têtes peuvent correspondre selon différents critères. Par défaut, la recherche est basée sur l’option <code>contains</code>. Les options possibles sont : </p>
+<table frame="all" rules="rows cols" shade="rows">
+<tr><td><p>Option</p></td><td><p>Abréviation</p></td><td><p>Signification</p></td></tr>
+<tr><td><p its:translate="no">contains</p></td><td><p its:translate="no">c</p></td><td><p>correspondance si contient le terme recherché</p></td></tr>
+<tr><td><p its:translate="no">has-words</p></td><td><p its:translate="no">w</p></td><td><p>correspondance si contient le mot recherché en entier</p></td></tr>
+<tr><td><p its:translate="no">matches</p></td><td><p its:translate="no">m</p></td><td><p>correspondance exacte de la valeur recherchée</p></td></tr>
+<tr><td><p its:translate="no">starts-with</p></td><td><p its:translate="no">sw</p></td><td><p>recherche les en-têtes commençant par la valeur recherchée</p></td></tr>
+<tr><td><p its:translate="no">ends-with</p></td><td><p its:translate="no">ew</p></td><td><p>recherche les en-têtes finissant par la valeur recherchée</p></td></tr>
+<tr><td><p its:translate="no">soundex</p></td><td><p its:translate="no">se</p></td><td><p>recherche les en-têtes semblables à la valeur recherchée</p></td></tr>
+<tr><td><p its:translate="no">regex</p></td><td><p its:translate="no">r</p></td><td><p>la valeur recherchée est une expression régulière</p></td></tr>
+<tr><td><p its:translate="no">full-regex</p></td><td><p its:translate="no">fr</p></td><td><p>autre type d’expression régulière</p></td></tr>
+</table>
+<p>(**) Les dates peuvent être spécifiées sous forme de périodes relatives (un nombre positif signifie <code>les X derniers jours</code>, alors qu’un nombre négatif correspond à une période à venir). Par exemple, pour obtenir les messages reçus dans les 10 derniers jours, utilisez <code>recv:10</code>. Il est aussi possible d’utiliser des dates exactes, le format peut être soit <code>YYYY-MM-DD</code> (de préférence), soit le format ISO 8601 ou encore un format local spécifique. Si la recherche par date et heure échoue, alors la condition est omise. La comparaison de dates peut avoir d’autres options qui sont <code>&lt;</code>, <code>=</code> ou encore <code>&gt;</code> , la comparaison par défaut étant <code>&gt;</code>.</p>
+<p>Il existe trois balises spéciales qui imposent une notation particulière. Elles sont :</p>
+<list>
+<item><p><code its:translate="no">not:(....)</code></p></item>
+<item><p><code its:translate="no">and:(....)</code></p></item>
+<item><p><code its:translate="no">or:(....)</code></p></item>
+</list>
+<p>Ces balises permettent de créer des expressions spécialisées. La balise par défaut (la plus utilisée) est <code>and</code>. Pour utiliser <code>or</code> à la place, mettez tout le filtre entre parenthèses comme suit <code>or:(....)</code>. Par exemple : <code>f:Bugzilla t:John</code> filtre les messages ayant <code>Bugzilla</code> comme expéditeur et <code>John</code> comme destinataire, alors que <code>or:(f:Bugzilla t:John)</code> filtre les messages de Bugzilla ou adressés à John.</p>
+</section>
+<section id="free-form-expression-examples">
+<title>Exemples d’expressions de format libre</title>
+<p>Voici une liste de quelques exemples d’expressions de format libre :</p>
+<table rules="rows">
+<tr><td><p>Expression</p></td><td><p>Signification</p></td></tr>
+<tr><td><p><code>f:John</code></p></td><td><p>Messages de <code>John</code></p></td></tr>
+<tr><td><p><code>s-has-words:"green blue"</code></p></td><td><p>Messages qui contiennent les mots <code>green</code> et <code>blue</code> dans le champ Objet</p></td></tr>
+<tr><td><p><code>r-ew:example.com</code></p></td><td><p>Destinataires dont l’adresse (en-têtes « À » ou « Cc ») se termine par <code>example.com</code></p></td></tr>
+<tr><td><p><code>h-starts-with:Cc=Alice</code></p></td><td><p>Messages dont l’en-tête <code>Cc</code> commence par le mot <code>Alice</code></p></td></tr>
+<tr><td><p><code>e:X-Secret-Header</code></p></td><td><p>L’en-tête <code>X-Secret-Header</code> existe dans le message</p></td></tr>
+<tr><td><p><code>l:Bureau</code></p></td><td><p>Messages portant l’étiquette <code>Bureau</code></p></td></tr>
+<tr><td><p><code>sz-&lt;:10</code></p></td><td><p>Messages dont la taille est inférieure à 10 Ko</p></td></tr>
+<tr><td><p><code>sz-&gt;:100</code></p></td><td><p>Messages dont la taille est supérieure à 100 Ko</p></td></tr>
+<tr><td><p><code>b:important</code></p></td><td><p>Messages dont le corps contient le mot <code>important</code></p></td></tr>
+<tr><td><p><code>sent:7</code></p></td><td><p>Messages envoyés les 7 derniers jours</p></td></tr>
+<tr><td><p><code>rcv-=:2020-02-02</code></p></td><td><p>Messages reçus le 2 février 2020</p></td></tr>
+<tr><td><p><code>a:1</code></p></td><td><p>Messages avec pièce jointe</p></td></tr>
+<tr><td><p><code>a:0</code></p></td><td><p>Messages sans pièce jointe</p></td></tr>
+<tr><td><p><code>and:(or:(r:Alice r:Bob) not:(r:Smith))</code></p></td><td><p>Message destinés à <code>Alice</code> ou <code>Bob</code>, mais pas à <code>Smith</code></p></td></tr>
+<tr><td><p><code>f:Bob rcv-&gt;:2020-01-01 rcv-&lt;:2020-12-31</code></p></td><td><p>Messages de <code>Bob</code> reçus au cours de l’année 2020</p></td></tr>
+<tr><td><p><code>not:(flag:Lu) f:Bob rcv-&gt;:2020-01-01 rcv-&lt;:2020-12-31</code></p></td><td><p>Messages non lus de <code>Bob</code> reçus au cours de l’année 2020</p></td></tr>
+<tr><td><p><code>flag:Lu a:1 sz-&gt;:1024 f:Bob rcv:31</code></p></td><td><p>Messages de <code>Bob</code>, lus, et contenant une pièce jointe de plus de 1 Mo, et reçus au cours des 31 derniers jours</p></td></tr>
+<tr><td><p><code>m:"Sur cet ordinateur/Inbox"</code></p></td><td><p>Messages stockés dans le dossier <code>Sur cet ordinateur/Inbox</code></p></td></tr>
+<tr><td><p><code>location-no:"Sur cet ordinateur/Inbox"</code></p></td><td><p>Messages se trouvant dans tout autre dossier que <code>Sur cet ordinateur/Inbox</code></p></td></tr>
+</table>
+</section>
+</section> 
+</page>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="convertSVG" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#tips"/>
+    <desc>Anda dapat mengonversi sebuah dokumen ke SVG dengan "mencetak" itu ke suatu berkas.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Anna Philips</name>
+      <email>anna.cs.au@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kukuh Syafaat</mal:name>
+      <mal:email>syafaatkukuh@gmail.com</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2021, 2022.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Mengonversi sebuah dokumen ke SVG</title>
+<p>Anda dapat mengonversi dokumen dengan tipe format berikut menjadi berkas SVG:</p>
+<list>
+ <item><p>Portable Document Format (.pdf)</p></item>
+</list>
+<p>Ini bekerja dengan membuka berkas dalam <app>Atril</app> dan "mencetak" dokumen sebagai suatu berkas SVG.</p>
+<steps>
+    <item>
+      <p>Pergi ke <guiseq><gui style="menuitem">Berkas</gui> <gui style="menuitem">Cetak</gui></guiseq> dan pilih <gui>Cetak</gui> atau tekan <keyseq><key>Ctrl</key><key>P</key></keyseq>.</p>
+    </item>
+    <item>
+      <p>Pilih <gui>Cetak ke Berkas</gui> dan pilih SVG sebagai <gui>Format keluaran</gui>.</p>
+    </item>
+    <item>
+      <p>Pilih suatu nama dan folder tempat menyimpan berkas, lalu klik <gui>Cetak</gui>. Berkas SVG akan disimpan di folder yang Anda pilih.</p>
+    </item>
+</steps>
+</page>

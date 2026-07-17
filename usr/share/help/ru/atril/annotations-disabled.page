@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="annotations-disabled" xml:lang="ru">
+<info>
+  <link type="guide" xref="index#annotations"/>
+  <link type="seealso" xref="annotations"/>
+ <desc>Аннотации могу быть добавлены только к PDF-документам</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Тиффани Антропольски</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+</info>
+<title>Не удаётся добавить примечание?</title>
+ <p>Примечания можно добавлять только к файлам формата PDF. Если ваш файл не является файлом в формате PDF, то возможность добавления примечаний будет отключена.</p>
+</page>

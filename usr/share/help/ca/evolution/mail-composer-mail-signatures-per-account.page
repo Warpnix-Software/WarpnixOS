@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-mail-signatures-per-account" xml:lang="ca">
+
+  <info>
+    <desc>Configuració d'una signatura predeterminada per a un compte de correu electrònic.</desc>
+    
+    <link type="guide" xref="mail-composer-mail-signatures"/>
+    <link type="guide" xref="mail-account-manage-imap-plus#identity"/>
+    <link type="guide" xref="mail-account-manage-local-delivery#identity"/>
+    <link type="guide" xref="mail-account-manage-maildir-format-directories#identity"/>
+    <link type="guide" xref="mail-account-manage-mh-format-directories#identity"/>
+    <link type="guide" xref="mail-account-manage-pop#identity"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-directory#identity"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-file#identity"/>
+    <link type="guide" xref="mail-account-manage-usenet-news#identity"/>
+    <!-- TODO:POST-3-8: Having 13 guide links here looks really ugly -->
+
+    <revision pkgversion="3.0.2" version="0.3" date="2012-02-19" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Signatura predeterminada del compte</title>
+
+<p>Es pot definir una <link xref="mail-composer-mail-signatures">signatura</link> per cada compte de correu electrònic. Es pot fer a <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Comptes de correu</gui><gui style="button">Edita</gui><gui>Identitat</gui><gui>Informació opcional</gui></guiseq>.</p>
+
+<p>Si teniu una signatura per al vostre compte però excepcionalment no voleu utilitzar-la per a un determinat missatge, o voleu utilitzar-ne una altra, podeu canviar-la a través del menú desplegable a l'extrem superior dret de la finestra d'edició de correu electrònic.</p>
+
+</page>

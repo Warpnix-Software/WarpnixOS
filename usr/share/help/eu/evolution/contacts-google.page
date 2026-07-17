@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-google" xml:lang="eu">
+
+  <info>
+    <link type="guide" xref="contacts-using-several-addressbooks"/>
+    <link type="guide" xref="google-services"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Erabili zure Google kontuko lineako helbide-liburua.</desc>
+  </info>
+
+  <title>Using a Google address book</title>
+
+  <p>Horrelako helbide-liburu bat <app>Evolution</app> aplikazioari gehitzeko, jarraitu honako urratsak:</p>
+
+  <steps>
+    <item>
+      <p>Egin klik <guiseq><gui>Fitxategia</gui><gui>Berria</gui> <gui>Helbide-liburua</gui></guiseq> aukeran.</p>
+    </item>
+    <item>
+      <p>Hautatu <gui>Google</gui> mota.</p>
+    </item>
+    <item>
+      <p>Sartu erabili nahi duzun izena.</p>
+    </item>
+    <item>
+      <p>Aukeratu edukia lineaz kanpo ere ikusiko den ala ez.</p>
+    </item>
+    <item>
+      <p>Sartu zure Google erabiltzaile-izena.</p>
+    </item>
+    <item>
+      <p>Aukeratu <gui>Erabili konexio segurua</gui> modu seguruan konektatzeko.</p>
+    </item>
+    <item>
+      <p>Egin klik <gui style="button">Ados</gui> botoian.</p>
+    </item>
+  </steps>
+
+  <p>Helbide-liburua <app>Evolution</app> aplikazioaren helbide-liburuen zerrendari gehituko zaio.</p>
+
+</page>

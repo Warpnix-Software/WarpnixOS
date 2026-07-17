@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="new-game" xml:lang="da">
+
+  <info>
+    <link type="guide" xref="index#play"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.5.5" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.12" date="2014-03-08" status="review"/>
+    <revision pkgversion="3.28.0" version="0.2" date="2018-09-01" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2012</years>
+    </credit>
+    <credit type="author copyright">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+    <credit type="editor">
+      <name>Aruna Sankaranarayanan</name>
+      <email>aruna.evam@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Rashi Aswani</name>
+      <email>aswanirashi19@gmail.com</email>
+    </credit>
+  </info>
+
+  <title>Start et nyt spil</title>
+
+  <p>Sådan startes et nyt spil:</p>
+  <steps>
+    <item>
+      <p>Tryk på knappen <gui style="button">Nyt spil</gui> til højre.</p>
+    </item>
+    <item>
+      <p>For at ændre <link xref="board-size">brætstørrelsen</link> trykkes på knappen <gui style="button">Skift sværhedsgrad</gui> til højre.</p>
+    </item>
+  </steps>
+
+  <note>
+  <p>Hvis du allerede spiller et spil og trykker på <gui style="button">Start forfra</gui>-knappen, så giver <app>Miner</app> dig mulighed for at vælge <gui>Behold det aktuelle spil</gui> eller <gui>Start et nyt spil</gui>. Hvis du vælger det sidstnævnte, så går dit nuværende spil tabt.</p>
+  </note>
+</page>

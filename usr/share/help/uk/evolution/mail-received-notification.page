@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-received-notification" xml:lang="uk">
+
+  <info>
+    <desc>Параметри сповіщень щодо надходження пошти.</desc>
+
+    <link type="guide" xref="mail-send-and-receive"/>
+    <link type="seealso" xref="calendar-alarms-and-reminders"/>
+
+    <revision pkgversion="3.34.4" version="0.8" date="2020-02-26" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Сповіщення щодо нової пошти</title>
+
+<p><app>Evolution</app> завжди сповіщає вас про надходження нових повідомлень додаванням маленької емблеми до піктограми пошти у вікні <link xref="intro-main-window">перемикача</link>.</p>
+<media type="image" src="./figures/new-mail-switcher.png" width="256" its:locNote="Translators: Please make sure that the screenshot does have the small yellow star in the Mail icon">
+  <p>Перемикач, коли надійшла нове повідомлення</p>
+</media>
+
+<p>Щоб отримувати сповіщення щодо надходження повідомлень за допомогою загальних стільничних сповіщень у GNOME, виконайте такі дії:</p>
+<steps>
+<item><p>Виберіть <guiseq><gui>Зміни</gui><gui>Додатки</gui></guiseq>.</p></item>
+<item><p>Увімкніть <gui>Сповіщення про нову пошту</gui>.</p>
+<note style="tip"><p>Якщо додатка немає у списку меню <guiseq><gui>Зміни</gui><gui>Додатки</gui></guiseq>, будь ласка, скористайтеся для його додавання форумом підтримки вашого дистрибутива. Можливо, у вашому дистрибутиві розробники вирішили вимкнути якісь додатки або виокремити додатки у інший пакунок.</p></note>
+</item>
+<item><p>Відкрийте вкладку <gui style="tab">Налаштування</gui> і встановіть бажані значення параметрів.</p></item>
+<item><p>Відкрийте вкладку <gui style="tab">Облікові записи</gui> і виберіть поштові облікові записи, для яких ви хочете бачити сповіщення.</p></item>
+</steps>
+
+<p>Докладніший опис можна знайти у <link xref="help:gnome-help/shell-notifications" href="https://help.gnome.org/users/gnome-help/stable/shell-notifications">довідці зі стільниці GNOME</link>.</p>
+
+<!-- TODO: Quite short -->
+
+</page>

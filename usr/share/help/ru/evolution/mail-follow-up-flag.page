@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-follow-up-flag" xml:lang="ru">
+
+  <info>
+    <desc>Использование флагов для напоминания о действиях.</desc>
+    
+    <link type="guide" xref="mail-organizing#advanced"/>
+
+    <revision pkgversion="3.0.2" version="0.1" date="2011-08-01" status="candidate"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/stable/usage-mail-organize-columns.html.en#usage-mail-organize-columns-followup -->
+ </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Флаги слежения за письмами</title>
+
+<p>Чтобы точно не забыть о сообщении, можно использовать функцию слежения.</p>
+<steps>
+<item><p>Выберите одно или несколько сообщений.</p></item>
+<item><p>Щёлкните правой кнопкой мыши по одному из сообщений.</p></item>
+<item><p>Выберите пункт <gui>Пометить к исполнению…</gui>.</p></item>
+</steps>
+<p>Также можно выделить сообщение (или несколько сообщений) и выбрать пункт меню <guiseq><gui>Сообщение</gui><gui>Пометить как</gui><gui>К исполнению…</gui></guiseq> или воспользоваться комбинацией клавиш <keyseq><key>Shift</key><key>Ctrl</key><key>G</key></keyseq>.</p>
+
+<p>Откроется диалог, позволяющий установить тип флага и срок исполнения.</p>
+
+<p>Флаг — это действие, о котором требуется напомнить себе. Например, «Позвонить», «Перенаправить», «Ответить».</p>
+
+<p>Добавленный флаг можно пометить как завершённый или удалить его полностью, щёлкнув правой кнопкой мыши по сообщению и выбрав пункт <gui>Метка «Завершено»</gui> или <gui>Очистить отметку</gui>.</p>
+
+<p>При чтении сообщения с флагом состояние этого флага отображается вверху, над заголовком сообщения. Может быть показано уведомление о просрочке наподобие «Просрочено: Позвонить в 07.04.2012 17:00:00».</p>
+
+<p>Флаги предоставляют несколько возможностей организации работы. Например, можно <link xref="mail-change-columns-in-message-list">добавить столбец «Состояние метки»</link> к списку сообщений и сортировать по соответствующему критерию. Либо можно создать <link xref="mail-search-folders">папку поиска</link>,  которая отображает все сообщения с флагами, затем очищать флаги по мере исполнения, так что папка поиска будет содержать только сообщения с приближающимися сроками исполнения.</p>
+
+<note style="tip"><p>Если же требуется более простое напоминание о сообщениях, можно отметить их как важные: щёлкните по сообщению правой кнопкой мыши и выберите пункт <gui>Пометить как важное</gui> или выберите в строке меню пункт <guiseq><gui>Сообщение</gui><gui>Пометить как</gui><gui>Важное</gui></guiseq>.</p></note>
+
+<!-- TODO: Recheck in 3.30 as https://bugzilla.gnome.org/show_bug.cgi?id=240905 introduced some UI changes! -->
+</page>

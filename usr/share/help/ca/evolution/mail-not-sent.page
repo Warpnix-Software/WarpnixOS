@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-not-sent" xml:lang="ca">
+
+  <info>
+    <desc>Possibles motius pels quals no s'envien correus electrònics.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="2.28.3" version="0.1" date="2010-10-16" status="review"/>
+    <revision pkgversion="3.36.2" version="0.2" date="2020-04-29" status="review"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>El correu no s'ha enviat</title>
+
+<p>Pot haver-hi diverses raons per les quals els correus electrònics no s'envien:</p>
+
+<list>
+<item><p>Adreça de correu invàlida. Comproveu si totes les adreces que s'enumeren com a destinataris de correu són correctes. Si el missatge conté una adreça electrònica incorrecta o no vàlida, el missatge no s'enviarà.</p></item>
+<item><p>Configuració SMTP incorrecta. Verifiqueu si la configuració utilitzada per als missatges sortints és correcta. L'ús d'una adreça de servidor o mètode d'autenticació incorrecte, pot fer que no s'enviïn els correus electrònics.</p></item>
+<item><p>Sense connexió. L'<app>Evolution</app> pot estar fora de línia. Comproveu el botó <gui style="button">Envia / rep</gui>; si està en gris, esteu fora de línia. Per a connectar-vos, aneu a <guiseq><gui>Fitxer</gui><gui>Treballa en línia</gui></guiseq>. Ara hauríeu de poder utilitzar el botó <gui style="button">Envia / rep</gui>.</p></item>
+</list>
+
+</page>

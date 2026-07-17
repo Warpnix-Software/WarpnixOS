@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-delete-and-undelete" xml:lang="ru">
+
+  <info>
+    <desc>Удаление, очистка и восстановление почты.</desc>
+
+    <link type="guide" xref="index#mail-basic"/>
+    <link type="seealso" xref="mail-moving-emails"/>
+    <link type="seealso" xref="deleting-emails"/>
+
+    <revision pkgversion="3.35.91" version="0.3" date="2020-02-21" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en#usage-mail-getnsend-delete and https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en#usage-mail-getnsend-undelete -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Удаление и восстановление сообщений</title>
+
+<section id="delete">
+<title>Удаление сообщений</title>
+
+<p>Чтобы удалить сообщение, выберите его и нажмите клавишу <key>Delete</key> или кнопку <gui style="button">Удалить</gui> на панели инструментов или воспользуйтесь комбинацией клавиш <keyseq><key>Ctrl</key><key>D</key></keyseq>, или щёлкните по сообщению правой кнопкой мыши и выберите пункт <gui>Удалить</gui>.</p>
+
+<p>При нажатии кнопки «Удалить» или щелчке по значку <gui>Корзина</gui> письма в действительности не удаляются, а только помечаются для удаления. Все отмеченные для удаления сообщения доступны для просмотра в папке <gui>Корзина</gui>. Чтобы просмотреть удалённые сообщения, выберите пункт меню <guiseq><gui>Вид</gui><gui>Показывать удалённые сообщения</gui></guiseq>. Будут показаны сообщения, отмеченные для последующего удаления.</p>
+
+<p>Чтобы стереть без возможности восстановления все удалённые сообщения в папке, выберите пункт меню <guiseq><gui>Папка</gui><gui>Уничтожить удалённые</gui></guiseq> или воспользуйтесь комбинацией клавиш <keyseq><key>Ctrl</key><key>E</key></keyseq>.</p>
+
+<note style="tip"><p>Когда чтение сообщений выполняется в отдельном окне, после удаления сообщения будет показано следующее сообщение. Если вместо этого следует закрыть окно, выполните команду <cmd>gsettings set org.gnome.evolution.mail browser-close-on-delete-or-junk true</cmd></p></note>
+
+</section>
+
+<section id="undelete">
+<title>Восстановление сообщений</title>
+
+<p>Можно восстановить сообщения, которые были помечены для удаления, но не были уничтожены. Чтобы восстановить сообщение, выберите его и затем выберите пункт меню <guiseq><gui>Правка</gui><gui>Восстановить сообщение</gui></guiseq>. Обратите внимание, что для работы этой функции необходимо включить параметр <guiseq><gui>Вид</gui><gui>Показывать удалённые сообщения</gui></guiseq>.</p>
+
+<p>Если сообщение было помечено для удаления, то его восстановление снимает эту отметку и сообщение исчезает из папки <gui>Корзина</gui>.</p>
+</section>
+
+</page>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="exporting-data-contacts" xml:lang="ru">
+
+  <info>
+    <desc>Экспорт данных контактов из <app>Evolution</app>.</desc>
+
+    <link type="guide" xref="exporting-data"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2012-02-18" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mainwindow-starting.html.en#fourth-step -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Экспорт данных контактов</title>
+
+<p>Файлы контактов хранятся в базе данных, но могут быть сохранены как файл vCard.</p>
+<p>Чтобы экспортировать адресную книгу целиком, выберите пункт меню <guiseq><gui>Файл</gui><gui>Сохранить адресную книгу в формате vCard</gui></guiseq>.</p>
+<p>Если требуется экспортировать только один контакт, выберите пункт меню <guiseq><gui>Файл</gui><gui>Сохранить как vCard...</gui></guiseq> или щёлкните по контакту правой кнопкой мыши и выберите пункт <gui>Сохранить как vCard...</gui>.</p>
+
+</page>

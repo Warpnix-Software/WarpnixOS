@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="invert-colors" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#tips"/>
+
+    <desc>Membalikkan warna dapat membuat lebih mudah untuk membaca sebagian teks.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Anna Philips</name>
+      <email>anna.cs.au@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kukuh Syafaat</mal:name>
+      <mal:email>syafaatkukuh@gmail.com</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2021, 2022.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Membalik warna pada suatu halama</title>
+
+
+ <p>Untuk menukar hitam jadi putih, putih jadi hitam, dan seterusnya, buka menu <gui style="menuitem">Tilik</gui> dan pilih <gui style="menuitem">Balikkan Warna</gui> (atau tekan <keyseq><key>Ctrl</key><key>I</key></keyseq>).</p>
+
+<note style="tip">
+ <p>Melakukan hal ini dapat membuat lebih mudah untuk membaca teks, terutama dalam kasus jenis gangguan penglihatan tertentu.</p>
+</note>
+</page>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="task" id="print-pagescaling" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="printing"/>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Ekaterina Gerasimova</name>
+      <email its:translate="no">kittykat3756@gmail.com</email>
+      <years>2015</years>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal-unported.xml"/>
+
+    <desc>Encongeix o expandeix el document per ajustar-lo a la mida del paper.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Carles Ferrando Garcia</mal:name>
+      <mal:email>carles.ferrando@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert Antoni Buj Gelonch</mal:name>
+      <mal:email>rbuj@fedoraproject.org</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Escala la pàgina per imprimir</title>
+
+  <p>Si voleu canviar la mida del paper del vostre document (per exemple, imprimir un PDF de mida foli en paper A4), podeu canviar el format d'impressió pel document.</p>
+
+  <steps>
+    <item>
+      <p>Obriu el menú a la part superior dreta de la finestra, i escolliu <gui style="menuitem">Imprimeix...</gui>.</p>
+    </item>
+    <item>
+      <p>Seleccioneu la pestanya <gui style="tab">Gestió de la pàgina</gui>.</p>
+    </item>
+    <item>
+      <p>Escolliu un <em>Canvi d'escala de la pàgina</em> de la llista desplegable.</p>
+      <list>
+        <item>
+          <p><em>Cap</em>: no es canvia l'escala de la pàgina.</p>
+        </item>
+        <item>
+          <p><em>Redueix a l'àrea d'impressió</em>: les pàgines més grans que l'àrea d'impressió es redueixen per coincidir amb l'àrea imprimible de la pàgina a la impressora.</p>
+        </item>
+        <item>
+          <p><em>Ajusta a l'àrea d'impressió</em>: les pàgines del document s'amplien o es redueixen per tal de coincidir amb l'àrea imprimible de la pàgina a la impressora.</p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Cliqueu <gui>Imprimeix</gui> per imprimir el vostre document.</p>
+    </item>
+  </steps>
+
+</page>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-add-automatically" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="contacts-usage"/>
+    <link type="seealso" xref="contacts-autocompletion"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-08-19" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Barbara Tobias</name>
+      <email its:translate="no">barbtobias09@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Menambahkan pengirim surel yang telah Anda terima ke kontak Anda secara otomatis.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Menambahkan orang secara otomatis ke kontak saya</title>
+
+  <p>Anda bisa menambahkan orang secara otomatis ke kontak Anda saat membalas surel yang diterima.</p>
+  <steps>
+  <item><p>Pilih <guiseq><gui>Sunting</gui><gui>Plugin</gui></guiseq>.</p></item>
+  <item><p>Aktifkan <gui>Kontak Otomatis</gui>.</p>
+<note style="tip"><p>Jika plugin tidak tersedia di bawah <guiseq><gui>Sunting</gui><gui>Plugins</gui></guiseq>, maka silakan tanyakan di forum dukungan distribusi Anda. Distribusi Anda mungkin telah memutuskan untuk menonaktifkan beberapa plugin atau mengirim plugin dalam paket terpisah.</p></note>
+  </item>
+  <item><p>Buka <guiseq><gui>Sunting</gui><gui>Preferensi</gui><gui>Kontak</gui> <gui>Kontak Otomatis</gui></guiseq>.</p></item>
+  <item><p>Aktifkan <gui>Buat entri buku alamat saat mengirim surel</gui> dan pilih buku alamat di bidang tarik-turun di bawah ini yang akan menerima kontak baru.</p></item>
+  </steps>
+
+  <p>Mulai sekarang, kontak akan secara otomatis dibuat untuk pengirim surel yang diterima saat Anda membalas surel itu.</p>
+
+</page>

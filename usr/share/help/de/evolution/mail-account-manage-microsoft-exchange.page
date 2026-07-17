@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:e="http://projectmallard.org/experimental/" xmlns:if="http://projectmallard.org/if/1.0/" type="guide" id="mail-account-manage-microsoft-exchange" xml:lang="de">
+
+  <info>
+    <desc>Microsoft Exchange-Konto in <app>Evolution</app> hinzufügen und bearbeiten.</desc>
+
+    <link type="guide" xref="mail-account-management#mail-corporate-account-types"/>
+    <title type="link" role="trail">Microsoft Exchange</title>
+
+    <revision pkgversion="2.30.2" version="0.3" date="2011-07-30" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andre Klapper</mal:name>
+      <mal:email>ak-47@gmx.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009-2013, 2016-2018, 2020-2021</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009-2013, 2015-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Gabor Karsay</mal:name>
+      <mal:email>gabor.karsay@gmx.at</mal:email>
+      <mal:years>2011-2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Tim Sabsch</mal:name>
+      <mal:email>tim@sabsch.com</mal:email>
+      <mal:years>2018, 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jürgen Benvenuti</mal:name>
+      <mal:email>gastornis@posteo.org</mal:email>
+      <mal:years>2022-2024</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Einstellungen für Microsoft Exchange-Konten</title>
+
+<note style="important"><p>Abhängig von der Version des Microsoft Exchange-Servers, zu dem Sie eine Verbindung herstellen wollen, müssen Sie sicherstellen, dass ein zusätzliches Paket installiert ist, welches diese Funktionalität bereitstellt.</p>
+
+<p>Für eine Verbindung mit Microsoft Exchange Server (Version 2007 und neuer) oder OpenChange-Server wird das Paket <sys>evolution-ews</sys> empfohlen.</p>
+<if:choose>
+  <if:when test="action:install">
+    <note style="info package">
+      <p><link action="install:evolution-ews" href="https://gitlab.gnome.org/GNOME/evolution/-/wikis/home#get-the-source-code" style="button">Install evolution-ews</link></p>
+    </note>
+  </if:when>
+</if:choose>
+
+<p>Bei älteren Versionen von Microsoft Exchange, oder wenn <sys>evolution-ews</sys> nicht gut funktioniert, versuchen Sie bitte <sys>evolution-mapi</sys>.</p><p>Es verwendet Microsofts Messaging API, das auch von Microsoft Outlook verwendet wird. <sys>evolution-mapi</sys> erfordert jedoch die Installation von <sys>OpenChange</sys> und <sys>Samba 4</sys> und ist nicht so schnell wie <sys>evolution-ews</sys>.</p>
+
+<if:choose>
+  <if:when test="action:install">
+    <note style="info package">
+      <p><link action="install:evolution-mapi" href="https://gitlab.gnome.org/GNOME/evolution/-/wikis/home#get-the-source-code" style="button">Install evolution-mapi</link></p>
+    </note>
+  </if:when>
+</if:choose>
+
+<p>Falls Sie die Version des Microsoft Exchange-Servers nicht kennen, so fragen Sie Ihren Administrator.</p></note>
+
+<p>Themen, die hier nicht angesprochen werden, finden Sie im <link href="https://help.gnome.org/users/evolution/2.32/usage-exchange.html">alten <app>Evolution-Handbuch</app></link>.</p>
+
+</page>

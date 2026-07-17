@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="tip" id="gnome-on-ubuntu" xml:lang="pl">
+
+  <info>
+    <credit type="author">
+      <name>Zespół dokumentacji Ubuntu</name>
+    </credit>
+    <desc>Lista godnych uwagi modyfikacji pulpitu GNOME w Ubuntu.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="shell-overview" group="#first"/>
+    <link type="guide" xref="index" group="intro"/>
+    <revision version="0.1" date="2022-04-28" status="review"/>
+  </info>
+
+  <title>O środowisku GNOME w Ubuntu</title>
+
+  <p>Ubuntu Desktop jest instalowany z nieco zmodyfikowaną wersją środowiska graficznego GNOME. Ogólnie rzecz biorąc, ten przewodnik po pulpicie będzie zawierał odniesienia do środowiska GNOME publikowanego przez programistów GNOME. Oto lista znaczących różnic między GNOME w Ubuntu a „czystym” GNOME.</p>
+
+  <list type="disc">
+  <item>
+    <p>Ubuntu jest dostarczany z przeglądarką Firefox zamiast przeglądarki internetowej GNOME.</p>
+  </item>
+  <item>
+    <p>Ubuntu jest dostarczany z klientem zdalnego pulpitu Remmina zamiast GNOME Connections.</p>
+  </item>
+    <item>
+      <p>Dołączone jest rozszerzenie AppIndicators. To rozszerzenie włączy ikony w prawym górnym rogu niektórych programów.</p>
+    </item>
+    <item>
+      <p>Dołączone jest rozszerzenie Ubuntu Dock. To rozszerzenie zapewnia lewy pasek boczny do uruchamiania programów.</p>
+    </item>
+    <item>
+      <p>Dołączone jest rozszerzenie Desktop Icons NG. To rozszerzenie umożliwia korzystanie z ikon na pulpicie.</p>
+    </item>
+    <item>
+      <p>Oprócz tapet pulpitu Ubuntu domyślnym motywem jest Yaru, a domyślną czcionką jest Ubuntu.</p>
+    </item>
+    <item>
+      <p>Przyciski minimalizacji i maksymalizacji znajdują się na paskach tytułu okien.</p>
+    </item>
+  </list>
+
+
+
+</page>

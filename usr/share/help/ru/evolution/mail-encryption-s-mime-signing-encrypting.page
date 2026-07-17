@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-encryption-s-mime-signing-encrypting" xml:lang="ru">
+
+  <info>
+    <desc>Подписание или шифрование отправляемых сообщений с помощью S/MIME.</desc>
+
+    <link type="guide" xref="mail-encryption#s-mime"/>
+
+    <revision pkgversion="3.13.90" version="0.3" date="2015-03-09" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/encryption.html.en#bsqbdkv -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Подписание или шифрование сообщений</title>
+
+<p>После <link xref="mail-encryption-s-mime-manage">добавления своего сертификата</link> можно подписать или зашифровать сообщение, выбрав в меню редактора сообщений пункт <guiseq><gui>Параметры</gui><gui>Подписать с помощью S/MIME</gui></guiseq> или <gui>Зашифровать с помощью S/MIME</gui> или нажав соответствующий значок на панели инструментов.</p>
+<note style="tip"><p>Строка «Тема» сообщения не будет зашифрована. В ней не следует указывать конфиденциальную информацию.</p></note>
+
+<p>Чтобы подписывать или шифровать каждое сообщение:</p>
+<steps>
+<item><p>Выберите пункт меню <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Учётные записи</gui></guiseq>.</p></item>
+<item><p>Выберите учётную запись, с которой следует использовать функции шифрования.</p></item>
+<item><p>Нажмите кнопку <gui style="button">Правка</gui>.</p></item>
+<item><p>Перейдите на вкладку <gui>Безопасность</gui>.</p></item>
+<item><p>В разделе <gui>Безопасный MIME (S/MIME)</gui> нажмите кнопку <gui style="button">Выбрать</gui>, расположенную рядом с пунктом <gui>Сертификат подписи</gui>, и укажите путь к вашему сертификату подписи. Либо нажмите кнопку <gui style="button">Выбрать</gui>, расположенную рядом с пунктом <gui>Сертификат шифрования</gui>, и укажите путь к вашему сертификату шифрования.</p></item>
+<item><p>Выберите подходящие параметры.</p></item>
+<item><p>Нажмите кнопку <gui style="button">OK</gui>.</p></item>
+</steps>
+</page>

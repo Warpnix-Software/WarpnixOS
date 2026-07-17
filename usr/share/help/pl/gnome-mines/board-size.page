@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="board-size" xml:lang="pl">
+
+  <info>
+    <link type="guide" xref="index#tips"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.3" date="2018-09-01" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2011</years>
+    </credit>
+    <credit type="author copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Piotr Drąg</mal:name>
+      <mal:email>piotrdrag@gmail.com</mal:email>
+      <mal:years>2017-2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Aviary.pl</mal:name>
+      <mal:email>community-poland@mozilla.org</mal:email>
+      <mal:years>2017-2023</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Jak zmienić rozmiar planszy</title>
+
+  <p>Można wybrać rozmiar planszy po uruchomieniu gry.</p>
+
+  <p>Wybierz jeden z rozmiarów:</p>
+  <list>
+    <item><p>8×8 z 10 minami</p></item>
+    <item><p>16×16 z 40 minami</p></item>
+    <item><p>30×16 z 99 minami</p></item>
+    <item><p>niestandardowa plansza, gdzie można wybrać rozmiar i liczbę min</p></item>
+  </list>
+
+  <p>Aby zmienić <link xref="board-size">rozmiar planszy</link> później, kliknij przycisk <gui style="button">Zmień poziom trudności</gui> po prawej stronie.</p>
+
+</page>

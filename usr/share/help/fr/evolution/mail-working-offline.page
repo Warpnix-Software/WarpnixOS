@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-working-offline" xml:lang="fr">
+
+  <info>
+    <desc>Travailler avec vos courriels alors que vous n’êtes pas connecté au réseau.</desc>
+<!-- TODO:POST-3-8: Offline work for web calendars etc also exists => create index page for Offline working? -->
+    <link type="guide" xref="index#mail-basic"/>
+
+    <revision pkgversion="3.28.2" version="0.6" date="2018-07-09" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-offline -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marc Lorber</mal:name>
+      <mal:email>Linux-Lorber@club-internet.fr</mal:email>
+      <mal:years>2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jonathan Ernst</mal:name>
+      <mal:email>jonathan@ernstfamily.ch</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alexandre Franke</mal:name>
+      <mal:email>alexandre.franke@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012 </mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervan@gmail.com</mal:email>
+      <mal:years>2013-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yvan Masson</mal:name>
+      <mal:email>yvan@masson-informatique.fr</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Charles Monzat</mal:name>
+      <mal:email>charles.monzat@free.fr</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>vanadiae</mal:name>
+      <mal:email>vanadiae35@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Guillaume Bernard</mal:name>
+      <mal:email>associations@guillaume-bernard.fr</mal:email>
+      <mal:years>2021-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jean-Marc Tissières</mal:name>
+      <mal:email>jmetissieres@gmail.com</mal:email>
+      <mal:years>2022</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Travail hors ligne</title>
+
+<p><app>Evolution</app> peut conserver une copie locale des dossiers situés sur des systèmes de messagerie distants tels que IMAP ou Exchange, pour vous permettre de lire les messages.</p>
+
+<note style="warning"><p>Le mode hors ligne forcé d’<app>Evolution</app> fait uniquement référence aux courriels et ne s’applique pas aux contacts ni aux agendas.</p></note>
+
+<p>La messagerie POP télécharge tous les messages sur votre système local, mais pour les comptes distants, seuls les en-têtes sont généralement téléchargés. Le reste, comme le corps d’un message, est téléchargé uniquement lorsque vous demandez à lire le message. Avant de forcer <app>Evolution</app> à se mettre hors ligne, il télécharge les messages non lus se trouvant dans les dossiers que vous avez choisis de conserver.</p>
+
+<section id="accounts">
+<title>les paramètres de compte,</title>
+<p>Les <link xref="mail-receiving-options">Options de réception</link> des comptes distants offrent une option pour <gui>Synchroniser les messageries distantes localement dans tous les dossiers</gui>. Cette option est appliquée à tous les dossiers de ce compte.</p>
+<p>Pour éviter de télécharger de grandes quantités de données, vous pouvez désactiver la synchronisation des messages antérieurs à une certaine période.</p>
+</section>
+
+<section id="mark-folders">
+<title>Signalement des dossiers pour utilisation hors ligne</title>
+<p>Si vous n’avez pas <gui>Synchroniser les messageries distantes localement dans tous les dossiers</gui> pour le compte activé, vous pouvez synchroniser des dossiers individuels.</p>
+<p>Pour marquer un dossier de courriel pour une utilisation hors ligne :</p>
+<steps>
+<item><p>Faites un clic droit sur le dossier, puis choisissez <gui>Propriétés</gui>.</p></item>
+<item><p>Cliquez sur <gui>Copier le contenu du dossier en local pour les opérations hors ligne</gui>.</p></item>
+</steps>
+</section>
+
+<section id="sync-for-offline">
+<title>Synchronisation des messages pour une utilisation hors ligne</title>
+<p>L’état de votre connexion est indiqué par une petite icône située dans la barre d’état de la <link xref="intro-main-window">fenêtre principale</link>. Lorsque vous êtes en ligne, cette icône montre deux câbles connectés. Lorsque vous forcez le mode hors ligne en cliquant sur l’icône ou en utilisant le menu <guiseq><gui>Fichier</gui><gui>Travailler hors ligne</gui></guiseq>, les deux câbles se séparent. Vous pouvez soit passer hors ligne immédiatement, soit synchroniser les dossiers distants avec votre copie locale avant de passer hors ligne.</p>
+<p>Pour synchroniser des dossiers sans être directement mis hors ligne, sélectionnez <guiseq><gui>Fichier</gui><gui>Télécharger les messages pour utilisation hors ligne</gui></guiseq>.</p>
+</section>
+
+<section id="network-manager-integration">
+<title>Gestion automatique de l’état du réseau</title>
+<p><app>Evolution</app> détecte automatiquement l’état du réseau et agit en conséquence. Par exemple, <app>Evolution</app> passe en mode hors ligne lorsque le réseau n’est plus disponible et se remet en ligne dès que le réseau est de nouveau opérationnel.</p>
+</section>
+
+</page>

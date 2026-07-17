@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-localized-re-subjects" xml:lang="fr">
+
+  <info>
+    <desc>Éviter les longues lignes « objet » dues aux préfixes « Re : » traduits.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="3.5.90" version="0.1" date="2012-08-16" status="review"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marc Lorber</mal:name>
+      <mal:email>Linux-Lorber@club-internet.fr</mal:email>
+      <mal:years>2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jonathan Ernst</mal:name>
+      <mal:email>jonathan@ernstfamily.ch</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alexandre Franke</mal:name>
+      <mal:email>alexandre.franke@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012 </mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervan@gmail.com</mal:email>
+      <mal:years>2013-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yvan Masson</mal:name>
+      <mal:email>yvan@masson-informatique.fr</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Charles Monzat</mal:name>
+      <mal:email>charles.monzat@free.fr</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>vanadiae</mal:name>
+      <mal:email>vanadiae35@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Guillaume Bernard</mal:name>
+      <mal:email>associations@guillaume-bernard.fr</mal:email>
+      <mal:years>2021-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jean-Marc Tissières</mal:name>
+      <mal:email>jmetissieres@gmail.com</mal:email>
+      <mal:years>2022</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Gestion des « Re : » traduits dans les objets</title>
+
+<p>Un préfixe « Re : » est habituellement ajouté à la ligne objet lors de la réponse à un courriel. Certains programmes de courriel utilisent des termes traduits (comme « SV: » en danois ou « AW: » en allemand). <app>Evolution</app> peut reconnaître ces termes pour éviter que les lignes objet ne deviennent trop longues au fur et à mesure que la conversation se poursuit.</p>
+
+<list>
+<item><p>Ouvrez l’application <app>Terminal</app>.</p></item>
+<item><p>Utilisez la commande <cmd>gsettings set org.gnome.evolution.mail.composer-localized-re 'AW:,SV:'</cmd> (au cas où vous désirez que « AW: » et « SV: » soient reconnus).</p></item>
+</list>
+<p>Vous pouvez aussi utiliser l’application <app>dconf-editor</app> pour faire cela.</p>
+
+</page>

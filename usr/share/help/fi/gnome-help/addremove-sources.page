@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="addremove-sources" xml:lang="fi">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntun dokumentointitiimi</name>
+    </credit>
+    <desc>Lisää ohjelmistolähteitä laajentaaksesi Ubuntun ohjelmistovalikoimaa.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove"/>
+    <revision version="20.10" date="2020-09-13" status="review"/>
+  </info>
+
+  <title>Lisää ohjelmistolähteitä</title>
+
+  <p>Ohjelmia on saatavilla kolmansien osapuolten ohjelmalähteistä (myös <em>ohjelmistolähde</em>) aivan kuten myös Ubuntun omista ohjelmalähteistä. Jos haluat asentaa jotain kolmansien osapuolten ohjelmalähteistä, sinun tulee saattaa kyseiset ohjelmalähteet Ubuntun tietoon.</p>
+
+  <note style="warning">
+    <p>Lisää vain sellaisia ohjelmistolähteitä, joihin luotat!</p>
+    <p>Ubuntun kehittäjät eivät ole tarkastaneet kolmannen osapuolen ohjelmalähteitä tietoturvauhkien varalta, joten ne voivat sisältää jopa haittaohjelmia.</p>
+  </note>
+
+<p>
+</p>
+   <p>Lisää ohjelmistolähde:</p>
+
+  <steps>
+    <item>
+      <p>Avaa <app>Ohjelmistot ja päivitykset</app> <em>Toiminnot</em>-hakupalkin avulla.</p>
+    </item>
+    <item>
+      <p>Siirry <gui>Muut ohjelmistot</gui> -välilehdelle.</p>
+    </item>
+    <item>
+      <p>Napsauta <gui>LIsää</gui> ja syötä ohjelmalähteen APT-rivi. APT-rivin pitäisi olla näkyvissä ohjelmiston verkkosivustolla. APT-rivin pitäisi vaikuttaa samankaltaiselta kuin alla:</p>
+      <p>
+        <code its:translate="no">deb http://archive.ubuntu.com/ubuntu/ resolute main</code>
+      </p>
+    </item>
+    <item>
+      <p>Napsauta <gui>Lisää lähde</gui>. Anna salasanasi todennusikkunaan.</p>
+    </item>
+    <item>
+      <p>Sulje the <app>Ohjelmistot ja päivitykset</app> -ikkuna. <app>Sovelluskeskus</app> tarkistaa sitten onko uusia ohjemistoja saatavilla.</p>
+    </item>
+    <item>
+      <p>Useimmat pakettilähteet julkaisevat allekirjoitusavaimen, jonka avulla ladatut paketit vahvistetaan. Yllä olevien ohjeiden lisäksi on suositeltavaa noudattaa ohjeita, kuinka ladata ja asentaa allekirjoitukseen tarkoitettu GPG-avain.</p>
+    </item>
+  </steps>
+
+</page>

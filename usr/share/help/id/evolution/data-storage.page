@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="data-storage" xml:lang="id">
+
+  <info>
+    <desc>Di mana <app>Evolution</app> menyimpan data saya di harddisk?</desc>
+    
+    <link type="guide" xref="index#common-other-problems"/>
+
+    <revision pkgversion="3.22.5" version="0.6" date="2017-02-19" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Lokasi penyimpanan data</title>
+
+<note style="tip">
+<p>Ini hanya relevan untuk pengguna tingkat lanjut yang ingin men-debug masalah.</p>
+</note>
+
+<p><app>Evolution</app> 3.6 dan yang lebih baru menyimpan datanya sesuai dengan <link href="https://www.freedesktop.org/wiki/Specifications/basedir-spec">Spesifikasi Direktori Dasar XDG</link>. Secara baku ini berarti:</p>
+
+<terms>
+<item>
+<title>Berkas data pengguna</title>
+<p><file>$HOME/.local/share/evolution</file></p>
+</item>
+<item>
+<title>Berbagai berkas konfigurasi dan keadaan</title>
+<p><file>$HOME/.config/evolution</file></p>
+</item>
+<item>
+<title>Pengaturan akun</title>
+<p><file>$HOME/.config/evolution/sources</file></p>
+</item>
+<item>
+<title>Pengaturan konfigurasi di GSettings</title>
+<p><file>$HOME/.config/dconf</file></p>
+<note style="info"><p>Lokasi ini juga mencakup pengaturan aplikasi lain. Untuk menampilkan hanya data terkait Evolution di layar, perintah <link href="https://developer.gnome.org/dconf/"><app>Dconf</app></link> <cmd>dconf dump /org/gnome/evolution/</cmd> dan <cmd>dconf dump /org/gnome/evolution-data-server/</cmd> dapat digunakan.</p></note>
+</item>
+<item>
+<title>Singgahan data sekali pakai</title>
+<p><file>$HOME/.cache/evolution</file></p>
+</item>
+</terms>
+
+</page>

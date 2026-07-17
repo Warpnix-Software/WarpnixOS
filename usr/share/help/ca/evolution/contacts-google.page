@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-google" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="contacts-using-several-addressbooks"/>
+    <link type="guide" xref="google-services"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Utilitzeu la llibreta d'adreces en línia del vostre compte de Google.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Using a Google address book</title>
+
+  <p>Per a afegir aquesta llibreta d'adreces a <app>Evolution</app>, realitzeu els passos següents:</p>
+
+  <steps>
+    <item>
+      <p>Feu clic a <guiseq><gui>Fitxer</gui><gui>Nou</gui> <gui>Llibreta d'Adreces</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Seleccioneu el tipus <gui>Google</gui>.</p>
+    </item>
+    <item>
+      <p>Introduïu el nom que preferiu.</p>
+    </item>
+    <item>
+      <p>Trieu si també voleu veure el contingut quan esteu fora de línia.</p>
+    </item>
+    <item>
+      <p>Introduïu el vostre nom d'usuari de Google.</p>
+    </item>
+    <item>
+      <p>Trieu <gui>Utilitza una connexió segura</gui> si voleu connectar-vos de manera segura.</p>
+    </item>
+    <item>
+      <p>Feu clic a <gui style="button">D'acord</gui>.</p>
+    </item>
+  </steps>
+
+  <p>La llibreta d'adreces s'afegirà a la llista de llibretes d'adreces a <app>Evolution</app>.</p>
+
+</page>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="conv-time" xml:lang="sr">
+
+    <info>
+        <link type="guide" xref="index#conversion"/>
+    </info>
+
+	<title>Време</title>
+    
+    <p>Да претворите између времена користите „<em>у</em>“ операнд.</p>
+    <example>
+    <p>3 године у сате</p>
+    </example>
+    <note>
+    <p>Претварања времена морају се обавити коришћењем тастатуре.</p>
+    </note>
+</page>

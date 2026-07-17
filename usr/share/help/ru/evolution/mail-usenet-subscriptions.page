@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-usenet-subscriptions" xml:lang="ru">
+
+  <info>
+    <desc>Подписка на группы новостей Usenet.</desc>
+    
+    <link type="guide" xref="mail-account-manage-usenet-news#other-settings"/>
+    <link type="seealso" xref="mail-imap-subscriptions"/>
+
+    <revision pkgversion="3.1.5" version="0.2" date="2011-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en#usage-mail-getnsend-get-news -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+
+<title>Подписка на группы новостей</title>
+
+<p>После создания учётной записи групп новостей вы ещё не подписаны ни на одну группу. Чтобы подписаться на группу новостей:</p>
+<steps>
+<item><p>Выберите пункт меню <guiseq><gui>Папка</gui><gui>Подписки...</gui></guiseq>.</p></item>
+<item><p>Если у вас есть учётные записи на нескольких серверах, выберите тот сервер, на котором следует управлять подписками.</p></item>
+<item><p>Установите флажок, чтобы добавить папку к списку подписок.</p></item>
+</steps>
+
+</page>

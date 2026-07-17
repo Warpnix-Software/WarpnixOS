@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="equation" xml:lang="ja">
+
+    <info>
+        <!-- Place this at the start of the section -->
+        <title type="sort">0</title>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>基本的な数式</title>
+    
+    <p>数式は標準的な数学形式で入力されます。たとえば、7 と 2 を足すには、次のように入力します。</p>
+    <example>
+    <p>7+2</p>
+    </example>
+    <p>答えは、マウスで <gui>=</gui> ボタンを押すか、キーボードの <key>Enter</key> キーを押します。</p>
+    <p>計算は数学的な順序で実行されます。乗算と除算は加算と減算の前に実行されます。次の数式は 1 を求めます (3×2 = 6, 7−6 = 1).</p>
+    <example>
+    <p>7−3×2</p>
+    </example>
+    <p>計算の順序を変更するには、カッコを使用します。次の式は 8 が解答です (7-3 = 4, 4×2 = 8)。</p>
+    <example>
+    <p>(7−3)×2</p>
+    </example>
+    <p>表示をクリアするには、<gui>Clr</gui> ボタンまたは <key>Escape</key> キーを押します。</p>
+</page>

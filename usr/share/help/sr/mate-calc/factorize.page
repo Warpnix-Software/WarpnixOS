@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="factorize" xml:lang="sr">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>Факторизација</title>
+
+    <p>Можете да факторизујете тренутно приказан број притиском на <keyseq><key>Ктрл</key><key>F</key></keyseq> или притиском на дугме „<gui>fact</gui>“. Ово дугме је видљиво у <link xref="mouse">програмерском режиму</link>.</p>
+    <p>Да факторизујете целе бројеве веће од 2^64 користе се Милер-Рабинов тест прималитета и Полардов ро алгоритам.</p>
+</page>

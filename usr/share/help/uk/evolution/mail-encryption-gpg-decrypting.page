@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-encryption-gpg-decrypting" xml:lang="uk">
+
+  <info>
+    <desc>Розшифровування та перевірка підписів отриманих повідомлень GPG.</desc>
+
+    <link type="guide" xref="mail-encryption#gpg"/>
+
+    <revision pkgversion="2.32.1" version="0.1" date="2011-01-05" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/encryption.html.en#unencrypting -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Отримання повідомлень, які зашифровано або підписано за допомогою GPG</title>
+
+<section id="decryption">
+<title>Розшифровування отриманого повідомлення</title>
+<p>Якщо ви отримали зашифроване повідомлення, вам слід розшифрувати його, перш ніж ви зможете його прочитати.</p>
+<p>Коли ви захочете переглянути повідомлення, <app>Evolution</app> попросить вас ввести ваш пароль PGP. Введіть пароль, і програма покаже розшифроване повідомлення.</p>
+<note style="tip"><p>Відправники повинні мати ваш відкритий ключ GPG, перш ніж зможуть надсилати вам зашифровані повідомлення.</p></note>
+</section>
+
+<section id="signature">
+<title>Перевірка підпису отриманого повідомлення</title>
+<p>Щоб перевірити підпис відправника отриманого повідомлення, виконайте гортання до нижньої частини повідомлення і натисніть логотип. <app>Evolution</app> покаже <gui>Дані щодо захисту</gui> для повідомлення.</p>
+</section>
+</page>

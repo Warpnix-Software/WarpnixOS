@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="power" xml:lang="it">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>Potenze e Radici</title>
+    
+    <p>Le potenze sono inserite  scrivendo un <link xref="superscript">numero in apice</link> dopo il valore.</p>
+    <example>
+    <p>5²</p>
+    </example>
+    <p>L'inverso di un numero può essere inserito utilizzando il simbolo inverso ⁻¹ (<keyseq><key>Ctrl</key><key>I</key></keyseq>).</p>
+    <example>
+    <p>3⁻¹</p>
+    </example>
+    <p>Le potenze possono essere calcolate utilizzando il simbolo ^. Ciò permette alla potenza di essere un'equazione.</p>
+    <example>
+    <p>5^(6−2)</p>
+    </example>
+    <p>Se la vostra tastiera non mostra il tasto <key>^</key>, potete utilizzare <key>*</key> due volte.</p>
+    <p>Le radici quadrate possono essere calcolate utilizzando il simbolo (<keyseq><key>Ctrl</key><key>R</key></keyseq>).</p>
+    <example>
+    <p>√2</p>
+    </example>
+    <p>Le radici ennensime possono essere calcolate anteponendo un <link xref="superscript">numero in pedice</link> al simbolo della radice quadrata.</p>
+    <example>
+    <p>₃√2</p>
+    </example>
+</page>

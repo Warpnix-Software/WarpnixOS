@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appversion "1.3.0">
+<!ENTITY manrevision "2.1">
+<!ENTITY date "February 2004">
+<!ENTITY app "Character Map">
+]>
+<!-- 
+ (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Apr 11, 2002
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="id"> 
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Manual Peta Karakter</title>
+    <abstract role="description">
+      <para>Peta Karakter adalah sebuah peta karakter Unicode yang mengizinkan Anda untuk memilih karakter dari sebuah tabel dan memasukkannya ke dalam sebuah string teks.</para>
+    </abstract>
+    <copyright><year>2004</year> <holder>Sun Microsystems</holder></copyright>
+    <copyright><year>2003</year> <year>2004</year> <holder>Chee bin HOH</holder></copyright> 
+
+<!-- translators: uncomment this:
+    <copyright>
+      <year>2002</year>
+      <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+    </copyright>
+-->
+
+    <publisher role="maintainer"> 
+      <publishername>Proyek Dokumentasi GNOME</publishername> 
+    </publisher> 
+
+      <legalnotice id="legalnotice">
+	<para lang="en">
+	  Permission is granted to copy, distribute and/or modify this
+	  document under the terms of the GNU Free Documentation
+	  License (GFDL), Version 1.1 or any later version published
+	  by the Free Software Foundation with no Invariant Sections,
+	  no Front-Cover Texts, and no Back-Cover Texts.  You can find
+	  a copy of the GFDL at this <ulink type="help" url="help:fdl">link</ulink> or in the file COPYING-DOCS
+	  distributed with this manual.
+         </para>
+         <para>Manual ini adalah bagian dari koleksi manual GNOME yang didistribusikan di bawah GFDL. Jika Anda ingin mendistribusikan manual ini secara terpisah dari koleksi, Anda dapat melakukannya dengan menambahkan salinan lisensi untuk manual, seperti yang dijelaskan di bagian 6 dari lisensi.</para>
+
+	<para>Banyak nama yang digunakan oleh perusahaan untuk membedakan produk dan layanan mereka diklaim sebagai merek dagang. Di mana nama tersebut muncul dalam dokumentasi GNOME apa pun, dan anggota Proyek Dokumentasi GNOME dibuat mengetahui merek dagang tersebut, maka nama tersebut ditulis dalam huruf kapital atau huruf kapital awal.</para>
+
+	<para>DOKUMEN DAN VERSI MODIFIKASI DOKUMEN YANG DISEDIAKAN MENURUT KETENTUAN DARI LISENSI GNU FREE DOCUMENTATION DENGAN MEMAHAMI LEBIH LANJUT BAHWA: <orderedlist>
+		<listitem>
+		  <para>DOKUMEN INI DISEDIAKAN "SEBAGAIMANA ADANYA" DASAR, TANPA JAMINAN APAPUN, BAIK TERSURAT MAUPUN TERSIRAT, TERMASUK, TANPA BATASAN, JAMINAN BAHWA DOKUMEN ATAU VERSI YANG DIMODIFIKASI DARI DOKUMEN BEBAS DARI CACAT DIPERDAGANGKAN, COCOK UNTUK TUJUAN TERTENTU ATAU TIDAK MELANGGAR. SELURUH RISIKO TERHADAP KUALITAS, AKURASI, DAN KINERJA DOKUMEN ATAU VERSI YANG DIMODIFIKASI DARI DOKUMEN ADALAH DENGAN ANDA. JIKA ADA DOKUMEN ATAU VERSI MODIFIKASI YANG TERBUKTI RUSAK DALAM HAL APA PUN, ANDA (BUKAN PENULIS AWAL, PENULIS, ATAU KONTRIBUTOR APA PUN) MENANGGUNG BIAYA SERVIS, PERBAIKAN, ATAU KOREKSI YANG DIPERLUKAN. PENAFIAN JAMINAN INI MERUPAKAN BAGIAN PENTING DARI LISENSI INI. TIDAK ADA PENGGUNAAN DOKUMEN ATAU VERSI MODIFIKASI DARI DOKUMEN YANG DISAHKAN BERDASARKAN PERJANJIAN INI KECUALI BERDASARKAN DISCLAIMER INI; DAN</para>
+		</listitem>
+		<listitem>
+		  <para>DALAM KEADAAN APA PUN DAN DALAM TIDAK ADA TEORI HUKUM, BAIK DALAM WANPRESTASI (TERMASUK KELALAIAN), KONTRAK, ATAU LAINNYA, AKAN PENULIS, PENULIS AWAL, KONTRIBUTOR APAPUN, ATAU DISTRIBUTOR APAPUN DARI DOKUMEN ATAU VERSI MODIFIKASI DARI DOKUMEN, ATAU PEMASOK APAPUN DARI PIHAK TERSEBUT, BERTANGGUNG JAWAB KEPADA SETIAP ORANG ATAS KERUSAKAN LANGSUNG, TIDAK LANGSUNG, KHUSUS, INSIDENTAL, ATAU KONSEKUENSIAL DARI SETIAP KARAKTER TERMASUK, TANPA BATASAN, KERUSAKAN ATAS KEHILANGAN NIAT BAIK, PENGHENTIAN KERJA, KEGAGALAN KOMPUTER ATAU KERUSAKAN, ATAU SETIAP DAN SEMUA KERUSAKAN ATAU KERUGIAN YANG TIMBUL DARI ATAU BERKAITAN DENGAN PENGGUNAAN DOKUMEN DAN VERSI YANG DIMODIFIKASI DARI DOKUMEN, BAHKAN JIKA PIHAK TERSEBUT TELAH DIBERITAHU TENTANG KEMUNGKINAN KERUSAKAN TERSEBUT.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+   <!-- This file  contains link to license for the documentation (GNU FDL), and 
+        other legal stuff such as "NO WARRANTY" statement. Please do not change 
+	any of this. -->
+
+    <authorgroup> 
+      <author><firstname>Sun</firstname> <surname>Tim Dokumentasi GNOME</surname> <affiliation><orgname>Sun Microsystems</orgname></affiliation></author>
+      <author><firstname>Chee Bin</firstname> <surname>HOH</surname> <affiliation> <orgname>Proyek Dokumentasi GNOME</orgname> <address> <email>cbhoh@gnome.org</email> </address> </affiliation></author> 
+
+<!--
+      <author> 
+        <firstname>Documentation</firstname> 
+          <surname>Writer 1</surname> 
+          <affiliation> 
+            <orgname>GNOME Documentation Project</orgname> 
+            <address> <email>doc-writer1@gnome.org</email> </address> 
+          </affiliation> 
+      </author> 
+-->
+      
+<!-- This is appropriate place for other contributors: translators,
+     maintainers,  etc. Commented out by default.
+      <othercredit role="translator">
+        <firstname>Latin</firstname> 
+	<surname>Translator 1</surname> 
+	<affiliation> 
+          <orgname>Latin Translation Team</orgname> 
+          <address> <email>translator@gnome.org</email> </address> 
+	</affiliation>
+	<contrib>Latin translation</contrib>
+      </othercredit>
+-->
+    </authorgroup>
+    <publisher role="maintainer">
+      <publishername>Proyek Dokumentasi GNOME</publishername>
+    </publisher>
+
+
+    <revhistory>
+      <revision><revnumber>Manual Peta Karakter V2.1</revnumber> <date>2004-02-26</date> <revdescription> 
+	  <para>Diperbarui untuk GNOME 2.6, program versi 1.3.0.</para>
+          <para role="author">Tim Dokumentasi GNOME Sun</para>
+          <para role="publisher">Proyek Dokumentasi GNOME</para>
+        </revdescription></revision> 
+      <revision><revnumber>Manual Peta Karakter Unicode V2.0</revnumber> <date>Oktober 2003</date> <revdescription> 
+          <para role="author">Chee bin HOH <email>cbhoh@gnome.org</email></para>
+          <para role="publisher">Proyek Dokumentasi GNOME</para>
+        </revdescription></revision> 
+    </revhistory> 
+
+    <releaseinfo>Manual ini menjelaskan versi 1.3.0 Peta Karakter.</releaseinfo> 
+
+    <legalnotice> 
+      <title>Umpan balik</title> 
+      <para>Untuk melaporkan bug atau membuat saran terkait aplikasi Peta Karakter atau manual ini, ikuti petunjuk di <ulink url="https://gitlab.gnome.org/GNOME/gucharmap/issues/">Pelacak Masalah GNOME</ulink>.</para>
+<!-- Translators may also add here feedback address for translations -->
+    </legalnotice> 
+  
+    <othercredit class="translator">
+      <personname>
+        <firstname>Andika Triwidada</firstname>
+      </personname>
+      <email>andika@gmail.com</email>
+    </othercredit>
+    <copyright>
+      
+        <year>2020</year>
+      
+        <year>2022.</year>
+      
+      <holder>Andika Triwidada</holder>
+    </copyright>
+  </articleinfo> 
+
+<!-- ============= Index ===================================== -->
+  <indexterm zone="index"><primary>gucharmap</primary></indexterm> 
+  <indexterm zone="index"><primary>Peta Karakter</primary></indexterm>
+  <indexterm zone="index"><primary>Peta Karakter</primary></indexterm>
+
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+  <sect1 id="gucharmap-introduction"> 
+    <title>Perkenalan</title> 
+    <para>Aplikasi <application>Peta Karakter</application> memungkinkan Anda memasukkan karakter khusus ke dalam dokumen atau bidang teks. <application>Peta Karakter</application> menyediakan karakter beraksen, simbol matematika, simbol khusus, dan tanda baca. Gunakan <application>Peta Karakter</application> untuk mengakses karakter yang tidak tersedia pada papan tik Anda.</para>
+    <para><application>Peta Karakter</application> menampilkan semua karakter yang tersedia di semua skrip bahasa pada sistem Anda, menggunakan set karakter Unicode. Unicode adalah satu set karakter standar dengan tujuan untuk memasukkan semua karakter yang digunakan dalam semua bahasa tertulis di dunia.</para>
+  </sect1>
+
+<!-- =========== Getting Started ============================== -->
+
+  <sect1 id="gucharmap-getting-started"> 
+    <title>Memulai</title> 
+
+    <sect2 id="gucharmap-start">
+      <title>Untuk Memulai Peta Karakter</title>
+      <para>Anda dapat memulai <application>Peta Karakter</application> dengan cara berikut:</para> 
+      <variablelist>
+        <varlistentry>
+          <term>Menu <guimenu>Aplikasi</guimenu></term>
+          <listitem>
+            <para>Pilih <menuchoice><guimenu>Aksesori</guimenu><guimenuitem>Peta Karakter</guimenuitem></menuchoice>.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Baris perintah</term>
+	  <listitem>
+            <para>Jalankan perintah berikut: <command>gnome-character-map</command></para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect2>
+
+    <sect2 id="gucharmap-when-start">
+      <title>Ketika Anda Memulai Peta Karakter</title>
+      <para>Ketika Anda memulai <application>Peta Karakter</application>, jendela berikut akan ditampilkan.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="gucharmap-window-fig"> 
+        <title>Jendela Peta Karakter</title> 
+        <screenshot> 
+          <mediaobject><imageobject> <imagedata fileref="figures/gucharmap_window.png" format="PNG"/> </imageobject> <textobject> <phrase>Menampilkan jendela Peta Karakter.</phrase> </textobject></mediaobject> 
+        </screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <!-- Include any descriptions of the GUI immediately after the screenshot of the main UI, -->
+      <!-- for example, the items on the menubar and on the toolbar. This section is optional. -->
+
+      <para>Jendela <application>Peta Karakter</application> berisi elemen berikut:</para>
+      <variablelist>
+        <varlistentry>
+          <term>Bilah Menu</term>
+          <listitem>
+            <para>Menu pada bilah menu berisi sebagian besar perintah yang Anda butuhkan untuk bekerja dengan <application>Peta Karakter</application>.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Bilah Alat</term>
+          <listitem>
+            <para>Bilah alat berisi daftar tarik-turun fonta, tombol gaya fonta, dan kotak puntir zum.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Area tampilan</term>
+          <listitem>
+            <para>Area tampilan berisi komponen berikut:</para>
+            <itemizedlist>
+              <listitem>
+                <para>Kotak daftar <guilabel>Skrip</guilabel> atau <guilabel>Blok Unicode</guilabel></para>
+              </listitem>
+              <listitem>
+                <para>Bagian bertab <guilabel>Tabel Karakter</guilabel></para>
+              </listitem>
+              <listitem>
+                <para>Bagian bertab <guilabel>Rincian Karakter</guilabel></para>
+              </listitem>
+              <listitem>
+                <para>Kotak teks <guilabel>Teks yang akan disalin</guilabel></para>
+              </listitem>
+              <listitem>
+                <para>Tombol <guibutton>Salin</guibutton></para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Bilah Status</term>
+          <listitem>
+            <para>Bilah status menampilkan nomor kode karakter Unicode yang saat ini dipilih dan nama karakter Unicode.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect2>
+  </sect1>
+
+<!-- ================ Usage ================================ --> 
+  <sect1 id="gucharmap-usage">
+    <title>Cara Pakai</title> 
+    
+    <sect2 id="gucharmap-change-view">
+      <title>Untuk Mengubah Daftar Set-Karakter</title>
+      <para>Untuk menampilkan daftar set karakter berdasarkan nama skrip, pilih <menuchoice><guimenu>Tampilan</guimenu><guimenuitem>Berdasarkan Skrip</guimenuitem></menuchoice>.</para>
+      <para>Untuk menampilkan daftar set karakter menurut blok Unicode, pilih <menuchoice><guimenu>Tampilan</guimenu><guimenuitem>Berdasarkan Blok Unicode</guimenuitem></menuchoice>.</para>
+    </sect2>
+    
+    <sect2 id="gucharmap-create-textstring">
+      <title>Untuk Membuat String Teks</title>
+      <para>Untuk membuat string teks dalam bidang <guilabel>Teks yang akan disalin</guilabel>, lakukan langkah-langkah berikut ini:</para>
+      <orderedlist>
+        <listitem>
+          <para>Pilih satu set karakter dari <guilabel>Skrip</guilabel> atau kotak daftar <guilabel>Blok Unicode</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Masukkan karakter dengan salah satu cara berikut:</para>
+          <itemizedlist>
+            <listitem>
+              <para>Klik ganda pada tombol karakter di bagian bertab <guilabel>Tabel Karakter</guilabel>, untuk memasukkan karakter dalam bidang <guilabel>Teks yang akan disalin</guilabel>.</para>
+            </listitem>
+            <listitem>
+              <para>Pilih tombol karakter di bagian bertab <guilabel>Tabel Karakter</guilabel>, lalu tekan <keycap>Return</keycap> untuk memasukkan karakter dalam bidang <guilabel>Teks yang akan disalin</guilabel>.</para>
+            </listitem>
+            <listitem>
+              <para>Pilih tombol karakter di bagian bertab <guilabel>Tabel Karakter</guilabel>, lalu klik dan seret karakter ke bidang <guilabel>Teks yang akan disalin</guilabel>.</para>
+            </listitem>
+            <listitem>
+              <para>Klik pada bidang <guilabel>Teks yang akan disalin</guilabel> untuk memberikan fokus ke bidang. Jika string teks sudah ada di bidang, klik pada string teks pada titik di mana Anda ingin menyisipkan karakter. Tekan suatu tombol karakter pada papan tik untuk menyisipkan karakter tersebut ke dalam bidang.</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </orderedlist>
+    </sect2>
+
+<!-- =============== To Copy and Paste a Text String ====================== -->
+    <sect2 id="gucharmap-copy-textstring">
+      <title>Untuk Menyalin dan Menempel String Teks Anda ke dalam suatu Aplikasi</title>
+      <para>Untuk menyalin dan menempelkan string teks dari bidang <guilabel>Teks yang akan disalin</guilabel> ke dalam suatu aplikasi, lakukan langkah berikut:</para>
+      <orderedlist>
+        <listitem>
+          <para>Klik <guibutton>Salin</guibutton>. Jika tidak satupun atau semua string teks dipilih, semua string disalin ke papan klip. Jika suatu bagian string dipilih, hanya bagian tersebut yang disalin.</para>
+        </listitem>
+        <listitem>
+          <para>Beralih ke aplikasi Anda dan pilih <menuchoice> <guimenu>Sunting</guimenu><guimenuitem>Tempel</guimenuitem></menuchoice>, atau tekan tombol pintas <keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo>.</para>
+        </listitem>
+      </orderedlist>
+      <para>Ketika Anda menyisipkan konten bidang <guilabel>Teks yang akan disalin</guilabel> ke aplikasi lain, string teks akan ditampilkan dalam rangkaian karakter saat ini dari aplikasi.</para>
+      <para>Jika string teks Anda berisi karakter yang tak terlihat, Anda hanya dapat memasukkan string teks ke dalam aplikasi yang mendukung set karakter penuh.</para>
+    </sect2>
+
+    <sect2 id="usage-find-character">
+      <title>Untuk Mencari suatu Karakter</title>
+      <para>Untuk mencari suatu karakter, lakukan langkah berikut:</para>
+      <orderedlist>
+        <listitem>
+          <para>Pilih <menuchoice><guimenu>Cari</guimenu><guimenuitem>Temukan</guimenuitem></menuchoice>, atau tekan tombol pintas <keycombo><keycap>Ctrl</keycap><keycap>F</keycap></keycombo>. Dialog <guilabel>Cari</guilabel> terbuka.</para>
+        </listitem>
+        <listitem>
+          <para>Masukkan teks yang akan dicari di bidang <guilabel>Pencarian</guilabel>.</para>
+          <itemizedlist>            
+             <listitem><para>Pilih <guilabel>Cocok seluruh kata</guilabel> untuk hanya menemukan kata lengkap yang cocok dengan teks Anda.</para></listitem>
+             <listitem><para>Secara baku, hanya nama karakter yang dicari. Pilih <guilabel>Cari di detail karakter</guilabel> untuk mencari di bagian lain dari deskripsi karakter, seperti catatan, setara, dan kira-kira setara.</para></listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para>Klik <guibutton>Berikutnya</guibutton> untuk menemukan kemunculan pertama teks Anda setelah karakter yang dipilih saat ini. <application>Peta Karakter</application> memilih karakter yang ditemukan.</para>
+        </listitem>
+        <listitem>
+          <para>Klik <guibutton>Berikutnya</guibutton> untuk menemukan karakter cocok berikutnya. Atau, pilih <menuchoice><guimenu>Cari</guimenu><guimenuitem>Cari Berikutnya</guimenuitem></menuchoice>, atau tekan tombol pintas <keycombo><keycap>Ctrl</keycap><keycap>G</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Klik <guibutton>Sebelumnya</guibutton> untuk menemukan karakter cocok sebelumnya. Alternatifnya, pilih <menuchoice><guimenu>Cari</guimenu><guimenuitem>Cari Sebelumnya</guimenuitem></menuchoice>, atau tekan tombol pintasan <keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap><keycap>G</keycap></keycombo>.</para>
+        </listitem>
+      </orderedlist>
+    </sect2>
+    
+<!-- =============== To Browse the Character Table  ========================= -->
+    <sect2 id="usage-browse-characters">
+      <title>Untuk Menelusuri Semua Karakter</title>
+      <para>Untuk menelusuri peta karakter, gunakan menu <guimenu>Buka</guimenu>.</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Karakter berikutnya, atau tekan tombol pintas <keycombo><keycap>Ctrl</keycap><keycap>N</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Karakter sebelumnya, atau tekan tombol pintas <keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Skrip berikutnya, atau tekan tombol pintas <keycombo><keycap>Ctrl</keycap><keycap>Page Down</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Skrip sebelumnya, atau tekan tombol pintas <keycombo><keycap>Ctrl</keycap><keycap>Page Up</keycap></keycombo>.</para>
+        </listitem>
+      </itemizedlist>
+        
+      <para>Anda dapat menelusuri peta karakter berdasarkan karakter individu, dan skrip atau dengan blok Unicode. Hal ini tergantung pada apakah peta karakter menampilkan skrip atau blok Unicode. Untuk mengubahnya, pilih <menuchoice><guimenu>Tampilan</guimenu><guimenuitem>Menurut Skrip</guimenuitem></menuchoice> atau <menuchoice><guimenu>Tampilan</guimenu><guimenuitem>Menurut Blok Unicode</guimenuitem></menuchoice>.</para>
+      
+      <para>Tombol-tombol berikut ini juga berfungsi untuk menelusuri peta karakter:</para>
+        
+      <itemizedlist>
+        <listitem>
+          <para>Tekan tombol panah pada papan tik untuk menelusuri karakter.</para>
+        </listitem>
+        <listitem>
+          <para>Tekan tombol <keycap>Page Up</keycap> dan <keycap>Page Down</keycap> untuk menelusuri karakter halaman demi halaman.</para>
+        </listitem>
+        <listitem>
+          <para>Tekan tombol <keycap>Home</keycap> untuk memilih karakter pertama dalam urutan Unicode. Untuk memilih karakter terakhir, tekan tombol <keycap>End</keycap>.</para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
+    
+    <sect2 id="usage-display-details">
+      <title>Untuk Menampilkan Informasi Terperinci Tentang Karakter</title>
+      <para>Untuk menampilkan informasi terperinci tentang sebuah karakter, lakukan langkah berikut:</para>
+      <orderedlist>
+        <listitem>
+          <para>Pilih satu set karakter dari <guilabel>Skrip</guilabel> atau kotak daftar <guilabel>Blok Unicode</guilabel>. Contoh: <guilabel>Basic Latin</guilabel></para>
+        </listitem>
+        <listitem>
+          <para>Pilih karakter dari bagian bertab <guilabel>Tabel Karakter</guilabel>. Contoh: <guilabel>B</guilabel></para>
+        </listitem>
+        <listitem>
+          <para>Klik pada bagian bertab <guilabel>Detail Karakter</guilabel>.</para>
+        </listitem>
+      </orderedlist>
+      <para>Bagian tab <guilabel>Rincian Karakter</guilabel> menampilkan informasi berikut tentang karakter yang dipilih:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Titik kode Unicode</para>
+          <para>Contoh: <guilabel>U+0042</guilabel></para>
+        </listitem>
+        <listitem>
+          <para>Nama karakter Unicode</para>
+          <para>Contoh: <guilabel>LATIN HURUF BESAR B</guilabel></para>
+        </listitem>
+        <listitem>
+          <para><guilabel>Properti Karakter Umum</guilabel></para>
+          <itemizedlist>
+            <listitem>
+              <para>Kategori Unicode</para>
+              <para>Contoh: <guilabel>Huruf, Huruf Besar</guilabel></para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para><guilabel>Berbagai Representasi yang Berguna</guilabel></para>
+          <itemizedlist>
+            <listitem>
+              <para>Pengkodean UTF-8</para>
+              <para>Contoh: <guilabel>0x42</guilabel></para>
+            </listitem>
+            <listitem>
+              <para>Pengkodean UTF-16</para>
+              <para>Contoh: <guilabel>0x0042</guilabel></para>
+            </listitem>
+            <listitem>
+              <para>Pengkodean UTF-8 C oktal dengan escape</para>
+              <para>Contoh: <guilabel>\102</guilabel></para>
+            </listitem>
+            <listitem>
+              <para>Entitas desimal XML</para>
+              <para>Contoh: <guilabel>"&amp;#66"</guilabel></para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para><guilabel>Anotasi dan Referensi Silang</guilabel></para>
+          <para>Contoh: <guilabel>U+212C SKRIP HURUF BESAR B</guilabel></para>
+          <para>Klik pada tautan untuk menampilkan rincian karakter yang direferensikan.</para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
+    
+    <sect2 id="usage-format-character">
+      <title>Untuk Mengubah Format Karakter</title>
+      <para>Untuk mengubah format karakter, lakukan salah satu langkah berikut:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Untuk mengubah fonta, pilih fonta dari daftar tarik-turun fonta.</para>
+        </listitem>
+        <listitem>
+          <para>Untuk mengubah jenis fonta menjadi tipe tebal, klik tombol <guibutton>Tebal</guibutton>, atau tekan tombol pintasan <keycombo><keycap>Alt</keycap><keycap>B</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Untuk mengubah jenis fonta ke tipe miring, klik tombol <guibutton>Miring</guibutton>, atau tekan tombol pintasan <keycombo><keycap>Alt</keycap><keycap>I</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Untuk meningkatkan ukuran fonta, pilih <menuchoice><guimenu>Tampilan</guimenu><guimenuitem>Perbesar</guimenuitem></menuchoice> atau gunakan kotak puntir zum, atau tekan tombol pintas <keycombo><keycap>Ctrl</keycap><keycap>+</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Untuk mengurangi ukuran fonta, pilih <menuchoice><guimenu>Tampilan</guimenu><guimenuitem>Perkecil</guimenuitem></menuchoice> atau gunakan kotak puntir zum, atau tekan tombol pintas <keycombo><keycap>Ctrl</keycap><keycap>-</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Untuk menampilkan ukuran fonta normal, pilih <menuchoice><guimenu>Tampilan</guimenu><guimenuitem>Ukuran Normal</guimenuitem></menuchoice>, atau tekan tombol pintas <keycombo><keycap>Ctrl</keycap><keycap>=</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Untuk memperbesar karakter yang dipilih, tahan <keycap>Shift</keycap>.</para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
+    
+    <sect2 id="usage-format-chartable">
+      <title>Untuk Mengubah Format Tabel Karakter</title>
+      <para>Untuk mengubah format tabel karakter, pilih <menuchoice><guimenu>Tampilkan</guimenu><guimenuitem>Lengketkan Kolom ke Pangkat dari Dua</guimenuitem></menuchoice>.</para>
+      <para><application>Peta Karakter</application> mengubah bagian bertab <guilabel>Tabel Karakter</guilabel> sehingga cacah kolom adalah pangkat dua, misalnya, dua kolom, empat kolom, delapan kolom, dan sebagainya. Cacah kolom bergantung pada ukuran jendela dan ukuran fonta.</para>
+    </sect2>
+
+  </sect1>
+</article>

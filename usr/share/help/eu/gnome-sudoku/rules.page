@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="rules" xml:lang="eu">
+
+  <info>
+   <link type="guide" xref="index#play"/>
+   <link type="seealso" xref="highlighting"/>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <credit type="author copyright">
+      <name>Thomas Hinkle</name>
+      <email>tmhinkle@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+
+<title>Jokoaren arauak</title>
+<p>Puzzlea osatzeko, gelaxka bakoitza 1 eta 9 arteko zenbaki batekin bete behar da, eta ez da zenbakirik errepikatu behar errenkadetan, zutabeetan eta 3x3 koadroetan.</p>
+<p>Ebatzitako sudoku batean, errenkada, zutabe eta 3x3 koadro bakoitzak 1 eta 9 arteko zenbaki guztiak ditu.</p>
+<p>Puzzle bakoitzak ebazpen bakarra dauka.</p>
+
+<figure>
+  <desc>Outline of a row, a column and a 3×3 box using highlighting option.</desc>
+  <media type="image" mime="image/png" src="figures/rowcolumnbox.png" width="400" its:translate="no"/>
+</figure>
+</page>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-default-CC-and-BCC" xml:lang="cs">
+
+  <info>
+    <desc>Jak nastavit, aby někdo dostával všechny kopie vámi odeslané pošty.</desc>
+
+    <link type="guide" xref="mail-account-manage-imap-plus#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-local-delivery#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-maildir-format-directories#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-mh-format-directories#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-pop#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-directory#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-file#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-usenet-news#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-microsoft-exchange-evo-mapi#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-microsoft-exchange-evo-ews#composing-messages"/>
+
+    <revision pkgversion="3.25.90" version="0.4" date="2017-07-28" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  </info>
+
+  <title>Výchozí Kopie a Skrytá kopie</title>
+
+<p>Můžete nastavit e-mailové adresy, které by měly vždy obdržet kopie pošty, kterou odešlete (buď v podobě kopie, což uvidí všechny příjemci, nebo skryté kopie, takže o tom ostatní příjemci nebudou vědět). Nastavení najdete v části <gui>Vytváření zpráv</gui> v editoru poštovního účtu (<guiseq><gui>Upravit</gui> <gui>Předvolby</gui> <gui>Poštovní účty</gui> <gui style="button">Upravit</gui> <gui>Výchozí hodnoty</gui></guiseq>).</p>
+
+
+</page>

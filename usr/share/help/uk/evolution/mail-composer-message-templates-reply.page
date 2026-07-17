@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-message-templates-reply" xml:lang="uk">
+
+  <info>
+   <desc>Використання одного з ваших шаблонів для відповіді на повідомлення</desc>
+   
+   <link type="guide" xref="mail-composer-message-templates#options"/>
+
+ <revision pkgversion="3.5.90" version="0.3" date="2012-08-17" status="draft"/>
+ <credit type="author">
+   <name its:translate="no">Andre Klapper</name>
+   <email its:translate="no">ak-47@gmx.net</email>
+ </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/b1dlaazl.html.en -->
+ </credit>
+ 
+ <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+     
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Використання шаблона як відповіді</title>
+
+ <steps>
+  <item>
+<p>Клацніть правою кнопкою миші на пункті повідомлення, на яке ви хочете відповісти, потім виберіть у контекстному меню пункт <gui>Шаблони</gui>.</p>
+<p>У відповідь буде показано список усіх шаблонів повідомлень у теці <gui>Шаблони</gui>.</p>
+  </item>
+  <item>
+<p>Виберіть потрібний вам шаблон повідомлення. Внесіть до нього зміни, якщо це потрібно, у відкритому програмою вікні редактора повідомлень електронної пошти.</p>
+  </item>
+  <item>
+<p>Натисніть кнопку <gui>Надіслати</gui>.</p>
+<p>Якщо ви вибираєте для відповіді шаблон повідомлення, тему відповіді буде збережено.</p>
+  </item>
+ </steps>
+
+</page>

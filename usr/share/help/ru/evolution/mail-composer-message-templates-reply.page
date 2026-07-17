@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-message-templates-reply" xml:lang="ru">
+
+  <info>
+   <desc>Использование одного из шаблонов для ответа на сообщение</desc>
+   
+   <link type="guide" xref="mail-composer-message-templates#options"/>
+
+ <revision pkgversion="3.5.90" version="0.3" date="2012-08-17" status="draft"/>
+ <credit type="author">
+   <name its:translate="no">Andre Klapper</name>
+   <email its:translate="no">ak-47@gmx.net</email>
+ </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/b1dlaazl.html.en -->
+ </credit>
+ 
+ <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+     
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Использование шаблона для ответа</title>
+
+ <steps>
+  <item>
+<p>Щёлкните правой кнопкой мыши по сообщению, на которое следует ответить, и выберите пункт <gui>Шаблоны</gui>.</p>
+<p>При выборе этого пункта будут показаны все шаблоны сообщений в папке <gui>Шаблоны</gui>.</p>
+  </item>
+  <item>
+<p>Выберите нужный шаблон сообщения. Если требуется, внесите изменения в открывшемся окне редактора сообщений.</p>
+  </item>
+  <item>
+<p>Нажмите кнопку <gui>Отправить</gui>.</p>
+<p>При выборе шаблона сообщения для ответа тема ответа сохраняется.</p>
+  </item>
+ </steps>
+
+</page>

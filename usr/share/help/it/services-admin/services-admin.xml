@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY toolversion "2.15.2">
+<!ENTITY manrevision "2.15.2">
+<!ENTITY date "August 2006">
+<!ENTITY tool "Services Administration Tool">
+]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 06, 2003
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="it">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Manuale di Impostazioni servizi</title> 
+    <copyright lang="en">
+      <year>2004-2006</year>
+      <holder>Carlos Garnacho Parro</holder>
+    </copyright>
+
+<!-- translators: uncomment this:
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+   -->
+
+    <publisher role="maintainer"> 
+	 <publishername>Carlos Garnacho Parro</publishername> 
+    </publisher> 
+
+
+<!-- This file  contains link to license for the documentation (GNU FDL), and 
+     other legal stuff such as "NO WARRANTY" statement. Please do not change 
+     any of this. -->
+
+    <authorgroup> 
+      <author lang="en">
+        <firstname>Carlos</firstname>
+        <surname>Garnacho Parro</surname>
+      </author>
+      <!-- This is appropriate place for other contributors: translators,
+           maintainers,  etc. Commented out by default.
+        <othercredit role="translator">
+	      <firstname>Latin</firstname> 
+	      <surname>Translator 1</surname> 
+	      <affiliation> 
+	      	<orgname>Latin Translation Team</orgname> 
+	       	<address> <email>translator@gnome.org</email> </address> 
+	      </affiliation>
+	      <contrib>Latin translation</contrib>
+        </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+	 <revision lang="en">
+	   <revnumber>Services Administration Tool Manual V2.15.2</revnumber>
+	   <date>August 2006</date>
+	   <revdescription>
+          <para role="author" lang="en">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher" lang="en">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+	 <revision lang="en">
+	   <revnumber>Services Administration Tool Manual V0.35</revnumber>
+	   <date>June 2004</date>
+	   <revdescription>
+          <para role="author" lang="en">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher" lang="en">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+    </revhistory>
+
+    <releaseinfo>Questo manuale riguarda la versione 2.15.2 dello strumento Impostazione servizi</releaseinfo> 
+
+    <legalnotice> 
+	 <title>Commenti</title> 
+	 <para>Per segnalare un bug o fornire un suggerimento riguardo lo strumento Impostazione servizi, seguire le istruzioni contenute nella <ulink url="ghelp:gnome-feedback" type="help">pagina dei commenti di GNOME</ulink>.</para>
+    </legalnotice>
+    <abstract role="description">
+      <para>Lo strumento Impostazioni servizi permette di specificare quali servizi saranno lanciati all'avvio del sistema.</para>
+    </abstract> 
+  </articleinfo> 
+
+  <indexterm zone="index" lang="en"> 
+    <primary>Services Administration Tool</primary> 
+  </indexterm> 
+
+  <!-- ============= Document Body ============================= -->
+  <sect1 id="tool-introduction"> 
+    <title>Introduzione</title> 
+    <para>Lo strumento <application>Impostazioni servizi</application> permette di specificare quali servizi saranno lanciati all'avvio del sistema.</para>
+  </sect1>
+
+  <sect1 id="tool-getting-started">
+    <title>Per iniziare</title>
+
+    <para>È possibile avviare lo strumento <application>Impostazioni servizi</application> nei seguenti modi:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term>Menù <guimenu>Sistema</guimenu></term>
+	   <listitem>
+		<para>Scegliere <menuchoice><guisubmenu>Amministrazione</guisubmenu><guimenuitem>Servizi</guimenuitem></menuchoice>.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>Riga di comando</term>
+	   <listitem>
+		<para>Eseguire il seguente comando: <command>services-admin</command></para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+
+    <para>Quando si avvia lo strumento <application>Impostazioni servizi</application>, sarà chiesta la password di amministratore, questo è necessario perché i cambiamenti avranno effetto sul sistema.</para>
+
+    <para>Dopo avere inserito la password di amministratore, si aprirà la seguente finestra.</para>
+
+    <figure id="services-main-window">
+	 <title>Finestra principale di Impostazioni servizi</title>
+	 <screenshot>
+	   <mediaobject lang="en">
+		<imageobject>
+		  <imagedata fileref="figures/services-tool.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+		  <phrase>Shows Services Administration Tool main window.</phrase>
+		</textobject>
+	   </mediaobject>
+	 </screenshot>
+    </figure>
+
+    <para>La finestra principale dello strumento <application>Impostazioni servizi</application> contiene i seguenti elementi:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term>Elenco dei servizi</term>
+	   <listitem>
+		<para>Questo è un elenco dei principali servizi installati nel sistema, la casella di spunta indica se il servizio è attivo o no.</para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+  </sect1>
+
+  <sect1 id="tool-usage">
+    <title>Utilizzo</title>
+
+    <sect2>
+	 <title>Abilitare o disabilitare un servizio all'avvio</title>
+	 <para>Abilitare o disabilitare la casella di spunta vicino al servizio nell'elenco dei servizi.</para>
+    </sect2>
+  </sect1>
+</article>

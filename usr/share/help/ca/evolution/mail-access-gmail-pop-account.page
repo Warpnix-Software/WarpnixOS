@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-access-gmail-pop-account" xml:lang="ca">
+
+  <info>
+    <desc>Com configurar un compte POP Gmail.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+    <link type="guide" xref="google-services"/>
+    <link type="seealso" xref="mail-account-manage-pop"/>
+
+    <revision pkgversion="3.11.92" version="0.2" date="2014-03-23" status="review"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+
+
+<title>Accés a un compte POP Gmail via <app>Evolution</app></title>
+
+<p>Seguiu aquests passos per a configurar el compte POP de Gmail a <app>Evolution</app>:</p>
+
+<steps>
+<item><p>Inicieu sessió al vostre compte de Gmail.</p></item>
+<item><p>Anar a <guiseq><gui>Configuració</gui><gui>Reenviament i POP/IMAP</gui></guiseq>. Consulteu la secció de descàrrega POP.</p></item>
+<item><p>Activeu la funció de descàrrega POP marcant el botó d'opció corresponent a qualsevol d'aquestes opcions:</p>
+    <list>
+    <item><p>Activar POP per a tots els correus electrònics (fins i tot els correus que ja s'han baixat)</p></item>
+    <item><p>Activar POP per al correu que arribi d'ara endavant</p></item>
+    </list>
+</item>
+<item><p>Especifiqueu la resta de paràmetres necessaris per a aquesta funcionalitat de Gmail.</p></item>
+<item><p>Per a conèixer la configuració del compte de Gmail, feu clic a <gui>Instruccions de configuració</gui>. Trieu <gui>Vull activar POP</gui> i seleccioneu <gui>Altres</gui> a la llista de clients.</p></item>
+<item><p>Al client <app>Evolution</app>, aneu a <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Comptes de correu</gui></guiseq>. Feu clic a <gui style="button">Afegeix</gui>.</p></item>
+<item><p>Proporcioneu la informació necessària. Per a la configuració del compte, consulteu el Pas 5.</p></item>
+<!-- Evolution does not support Google's proprietary SASL XOAUTH2 implementation which makes Evolution a "less secure app" for Google. -->
+<item><p>Permeteu <link href="https://www.google.com/settings/security/lesssecureapps">l'accés d'aplicacions menys segures a la configuració del vostre compte de Gmail</link>.</p></item>
+
+</steps>
+</page>

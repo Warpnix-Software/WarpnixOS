@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:e="http://projectmallard.org/experimental/" xmlns:if="http://projectmallard.org/if/1.0/" type="guide" id="mail-account-manage-microsoft-exchange" xml:lang="cs">
+
+  <info>
+    <desc>Jak v aplikaci <app>Evolution</app> přidat a upravit účet Microsoft Exchange.</desc>
+
+    <link type="guide" xref="mail-account-management#mail-corporate-account-types"/>
+    <title type="link" role="trail">Microsoft Exchange</title>
+
+    <revision pkgversion="2.30.2" version="0.3" date="2011-07-30" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  </info>
+
+  <title>Nastavení účtu Microsoft Exchange</title>
+
+<note style="important"><p>V závislosti na verzi serveru Microsoft Exchange, ke kterému se chcete připojit, je vyžadována instalace různých dodatečných balíčků, které zajistí požadovanou funkcionalitu.</p>
+
+<p>Pro připojování k serverům Microsoft Exchange (verze 2007 a novější) je doporučeno použít balíček <sys>evolution-ews</sys>.</p>
+<if:choose>
+  <if:when test="action:install">
+    <note style="info package">
+      <p><link action="install:evolution-ews" href="https://gitlab.gnome.org/GNOME/evolution/-/wikis/home#get-the-source-code" style="button">Install evolution-ews</link></p>
+    </note>
+  </if:when>
+</if:choose>
+
+<p>Pro starší verze serveru Microsoft Exchange, nebo když vám <sys>evolution-ews</sys> nebude fungovat správně, vyzkoušejte <sys>evolution-mapi</sys>.</p><p>Používá Messaging API firmy Microsoft, stejně jako Microsoft Outlook. Vyžaduje ale navíc instalaci <sys>OpenChange</sys> a <sys>Samba 4</sys> a není tak vykonné jako <sys>evolution-ews</sys>.</p>
+
+<if:choose>
+  <if:when test="action:install">
+    <note style="info package">
+      <p><link action="install:evolution-mapi" href="https://gitlab.gnome.org/GNOME/evolution/-/wikis/home#get-the-source-code" style="button">Install evolution-mapi</link></p>
+    </note>
+  </if:when>
+</if:choose>
+
+<p>Pokud si nejste jistí, která verze Microsoft Exchange je používána, kontaktujte správce svého systému, aby vám informaci poskytl.</p></note>
+
+<p>Témata, která zde nenajdete, mohou být popsána ve <link href="https://help.gnome.org/users/evolution/2.32/usage-exchange.html">starší verzi příručky k aplikaci <app>Evolution</app></link>.</p>
+
+</page>

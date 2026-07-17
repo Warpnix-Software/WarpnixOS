@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" style="task" id="print-2sided" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="printing"/>
+
+    <desc>Двусторонняя печать, печать нескольких страниц на одном листе.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Фил Булл</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  </info>
+
+<title>Двусторонняя печать, печать нескольких страниц на одной стороне</title>
+
+<p>Для печати можно использовать обе стороны страницы:</p>
+
+<steps>
+ <item>
+  <p>Перейдите в <guiseq><gui style="menuitem">Файл</gui><gui style="menuitem">Печать</gui></guiseq> и нажмите кнопку <gui style="button">Печать</gui>.</p>
+ </item>
+ <item>
+  <p>Откройте вкладку <gui>Параметры страницы</gui> в окне печати и выберите соответствующий параметр из выпадающего списка <gui>Двусторонняя</gui>.</p>
+ </item>
+ <item>
+  <p>На одной <em>стороне</em> страницы можно печатать несколько страниц документа. Для этого нужно использовать параметр <gui>Страниц на сторону</gui>.</p>
+ </item>
+</steps>
+
+</page>

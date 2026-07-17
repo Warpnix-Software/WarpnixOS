@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="calendar-recurrence" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#calendar-advanced"/>
+
+    <revision pkgversion="3.0.2" version="0.1" date="2011-08-01" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+      https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#bxmtcp3
+      -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Повторение встреч.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Повторение</title>
+
+  <p>Если встреча проводится регулярно, можно настроить её повторение: нажмите кнопку <gui>Повторение</gui> в <gui>редакторе встреч</gui> или выберите пункт меню <guiseq><gui>Параметры</gui><gui>Повторение</gui></guiseq>.  Затем можно указать дату и время остановки повторения встречи. В поле <gui>Исключения</gui> можно указать отдельные дни, когда встреча не повторяется. Сделайте всё последовательно, и будет сформировано предложение: «Каждые две недели в понедельник и пятницу до 3 января 2008 г.» или «Каждый месяц в первую пятницу для 12 случаев».</p>
+
+</page>

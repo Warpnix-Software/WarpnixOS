@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-usage-add-contact" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="contacts-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.2" date="2011-09-29" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Menambahkan kontak ke buku alamat Anda.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Menambahkan Kontak</title>
+
+  <steps>
+    <item>
+      <p>Klik <guiseq><gui>Berkas</gui><gui>Baru</gui><gui>Kontak</gui></guiseq>, atau klik kanan di ruang kosong dalam daftar kontak dan klik <gui>Kontak Baru...</gui>, atau tekan <keyseq><key>Shift</key><key>Ctrl</key><key>C</key></keyseq>.</p>
+    </item>
+    <item>
+      <p>Pilih buku alamat di bawah <gui>Di mana:</gui> tempat itu akan ditambahkan.</p>
+    </item>
+    <item>
+      <p>Masukkan informasi kontak. Perhatikan bahwa ada beberapa tab.</p>
+    </item>
+    <item>
+      <p>Anda bisa menambahkan foto ke kontak dengan mengklik bidang besar (memperlihatkan orang bergaya) di samping <gui>Nama Lengkap</gui> <gui>dan Kategori</gui>.</p>
+    </item>
+    <item>
+      <p>Klik <gui style="button">OK</gui>.</p>
+    </item>
+  </steps>
+
+<section id="contact-quick-add">
+  <title>Tambahkan-Cepat Kontak dari Jendela Surel</title>
+
+  <p>Anda juga dapat menambahkan kontak langsung dari surel.</p>
+
+  <steps>
+    <item>
+      <p>Klik kanan pada alamat surel di header pesan.</p>
+    </item>
+    <item>
+      <p>Pilih <gui>Tambahkan ke Buku Alamat...</gui>.</p>
+    </item>
+    <item>
+      <p>Tekan <gui style="button">Sunting Lengkap</gui> untuk memunculkan <gui>Penyunting Kontak</gui> lengkap, atau klik <gui style="button">OK</gui> untuk langsung menambahkan kontak ke buku alamat yang dipilih.</p>
+    </item>
+  </steps>
+
+</section>
+
+</page>

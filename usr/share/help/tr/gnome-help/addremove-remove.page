@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-remove" xml:lang="tr">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntu Belgelendirme Takımı</name>
+    </credit>
+    <desc>Artık kullanmadığınız uygulamaları kaldırın.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove" group="#first"/>
+    <link type="seealso" xref="addremove-install-synaptic"/>
+    <revision version="18.04" date="2018-03-18" status="review"/>
+  </info>
+
+  <title>Bir uygulamayı kaldırın</title>
+
+  <p>Uygulama, grafikli kullanıcı arayüzüne (GUI) sahip bir yazılımdır. Artık kullanmadığınız uygulamaları kaldırmak için <app>App Center</app> uygulamasını kullanabilirsiniz.</p>
+
+   <p>Uygulamalar iki biçimde sunulur: snap paketleri ve Debian paketleri. Bir snap paketi olarak sunulan uygulama şu andan itibaren <em>snap</em> olarak anılacaktır. Bazı uygulamalar her iki biçimde de sunulur. Böyle bir durumda snap <app>App Center</app> uygulamasında önce listelenecektir.</p> 
+
+   <p>Bir GUI'ya sahip olmayan bir yazılımı da kaldırmak isteyebilirsiniz. Bu tür bir yazılımı kaldırmak için <link xref="addremove-install-synaptic">Synaptic</link> uygulamasını kullanabilirsiniz. <app>Synaptic</app> uygulamasının snap uygulamaları göstermediğini unutmayın.</p>
+
+  <p>Bir uygulamayı kaldırmak için:</p>
+    
+  <steps>
+    <item>
+      <p>
+        Click the <app>App Center</app> icon in the <gui>Dock</gui>, or search
+        for <input>Software</input> in the <em>Activities</em> search bar.
+      </p>
+    </item>
+    <item>
+      <p>
+        When <app>App Center</app> opens, click the <gui>Installed</gui> button at 
+        the top.
+      </p>
+    </item>
+    <item>
+      <p>Kaldırmak istediğiniz uygulamayı arama kutusunu kullanarak veya kurulu uygulamaların listesinden bulun.</p>
+    </item>
+    <item>
+      <p>Uygulamayı seçin ve <gui>Kaldır</gui>'a tıklayın.</p>
+    </item>
+    <item>
+      <p>Uygulamayı kaldırmak istediğinizi onaylayın.</p>
+    </item>
+    <item>
+      <p>Parolanızı yazarak doğrulamanız rica edilecektir. Bunu yaptıktan sonra, uygulama kaldırılacaktır.</p>
+    </item>
+
+  </steps>
+
+  <note>
+    <p>Bazı uygulamalar düzgün çalışabilmek için diğer uygulamalara ihtiyaç duyarlar. Başka bir uygulamanın ihtiyaç duyduğu bir uygulamayı kaldırırsanız iki uygulama birden kaldırılacaktır. Bu işlemi gerçekleştirmek isteyip istemediğiniz uygulamalar kaldırılmadan önce size sorulacaktır.</p>
+  </note>
+
+</page>

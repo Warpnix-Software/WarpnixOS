@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-search-folders-add" xml:lang="ru">
+
+  <info>
+    <desc>Настройка папки поиска.</desc>
+    
+    <link type="guide" xref="mail-search-folders"/>
+
+    <revision pkgversion="3.0.2" version="0.1" date="2011-07-30" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-organize-vfolders.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Создание папки поиска</title>
+
+<steps>
+<item><p>Если вы раньше не использовали папки поиска, включите параметр <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Учётные записи</gui><gui>Папки поиска</gui></guiseq>.</p></item>
+<item><p>Выберите пункт меню <guiseq><gui>Правка</gui><gui>Папки поиска</gui></guiseq> или выберите пункт меню <guiseq><gui>Сообщение</gui><gui>Создать правило</gui></guiseq> и укажите критерий, на котором будет основываться папка поиска. Если был выполнен поиск, также можно выбрать пункт меню <guiseq><gui>Поиск</gui><gui>Создать умную папку по результатам поиска……</gui></guiseq>.</p></item>
+<item><p>Нажмите кнопку <gui style="button">Добавить</gui>.</p></item>
+<item><p>Введите имя в поле <gui>Название правила</gui>.</p></item>
+<item><p>Укажите условия правила. Для каждого из условий сначала необходимо выбрать ту часть сообщения, которая будет проверяться, а затем задать параметры сравнения.</p><p>Дополнительные сведения о доступных условиях представлены в разделе <link xref="mail-search-folders-conditions">доступные условия папки поиска</link>.</p></item>
+<item><p>Чтобы задать несколько условий, укажите в разделе <gui>Найти элементы</gui>, следует ли применить какие-либо или все условия, затем нажмите кнопку <gui style="button">Добавить условие</gui> и повторите предыдущий шаг.</p></item>
+<item><p>Выберите папки, в которых папка поиска будет осуществлять поиск, в разделе настройки <gui>Источники папок поиска</gui>. Доступные варианты:</p>
+<list>
+  <item><p>Все локальные папки:</p>
+  <p>В качестве источника папок поиска используются все локальные папки, в дополнение к отдельно выбранным папкам.</p></item>
+
+  <item><p>Все активные удалённые папки:</p>
+  <p>Удалённые папки рассматриваются как активные, если компьютер подсоединён к серверу; компьютер должен быть подсоединён к почтовому серверу для того, чтобы папка поиска включала сообщения из этого источника в дополнение к отдельно выбранным папкам.</p></item>
+
+  <item><p>Все локальные и активные удалённые папки:</p>
+  <p>В качестве источника папок поиска используются все локальные и активные удалённые папки, в дополнение к отдельно выбранным папкам.</p></item>
+
+  <item><p>Указанные папки:</p>
+  <p>В качестве источника папок поиска используются отдельные папки. Для выбора этих папок следует нажать кнопку <gui style="button">Добавить</gui>.</p></item>
+</list>
+</item>
+<item><p>Нажмите кнопку <gui style="button">OK</gui>.</p></item>
+</steps>
+
+</page>

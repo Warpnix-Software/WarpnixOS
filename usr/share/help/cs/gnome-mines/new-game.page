@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="new-game" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#play"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.5.5" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.12" date="2014-03-08" status="review"/>
+    <revision pkgversion="3.28.0" version="0.2" date="2018-09-01" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2012</years>
+    </credit>
+    <credit type="author copyright">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+    <credit type="editor">
+      <name>Aruna Sankaranarayanan</name>
+      <email>aruna.evam@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Rashi Aswani</name>
+      <email>aswanirashi19@gmail.com</email>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marek Černocký</mal:name>
+      <mal:email>marek@manet.cz</mal:email>
+      <mal:years>2009, 2013</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Jak spustit novou hru</title>
+
+  <p>Když chcete spustit novou hru:</p>
+  <steps>
+    <item>
+      <p>Zmáčkněte napravo tlačítko <gui style="button">Začít novou</gui>.</p>
+    </item>
+    <item>
+      <p>Když chcete změnit <link xref="board-size">velikost herní desky</link>, zmáčkněte napravo tlačítko <gui style="button">Změnit obtížnost</gui>.</p>
+    </item>
+  </steps>
+
+  <note>
+  <p>V situaci, kdy máte nějakou hru rozehranou a zmáčknete tlačítko <gui style="button">Začít novou</gui>, dotáží se vás <app>Miny</app>, jestli chcete <gui>Zachovat stávající hru</gui> nebo <gui>Začít novou hru</gui>. Pokud zvolíte druhé jmenované, o právě rozehranou hru příjdete.</p>
+  </note>
+</page>

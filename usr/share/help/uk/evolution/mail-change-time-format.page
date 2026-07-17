@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-change-time-format" xml:lang="uk">
+
+  <info>
+    <desc>Зміна форматування дати і часу у списку повідомлень.</desc>
+    <link type="guide" xref="mail-layout-changing"/>
+
+    <revision pkgversion="2.32.2" version="0.3" date="2012-02-18" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Форматування дати і часу</title>
+<p>Ви можете змінити формат вмісту стовпчика <gui>Дата</gui>, встановивши бажаний для вас формат за допомогою пункту <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Параметри пошти</gui><gui>Заголовки</gui><gui>Формат дати та часу</gui></guiseq>.</p>
+<p>Замінниками у виразі формату є записи формату strftime. Щоб отримати повний список доступних форматів strftime, віддайте команду <cmd>date --help</cmd> у програмі <app>Термінал</app>.</p>
+<!-- TODO: Time formats settings for Calendar (calendar-layout-appointment-display), Contacts (Edit>Prefs>Contacts) are split everywhere, probably introduce a guide page linking to these three pages -->
+</page>

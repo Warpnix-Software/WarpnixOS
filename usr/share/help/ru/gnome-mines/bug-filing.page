@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="bug-filing" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#get-involved"/>
+    <revision pkgversion="3.5.5" version="0.1" date="2012-08-12" status="review"/>
+    <credit type="editor copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+      <years>2011</years>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ser82-png</mal:name>
+      <mal:email>asvmail.as@gmail.com</mal:email>
+      <mal:years>2022-2023</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Помочь сделать игру <app>Мины</app> лучше</title>
+
+<section id="bug-report">
+<title>Сообщить об ошибке или предложить улучшение</title>
+<p><app>Мины</app> поддерживается сообществом добровольцев. Вы можете принять в этом участие. Если вы заметили проблему, можете отправить <em>отчёт об ошибке</em>. Для этого перейдите по ссылке <link href="https://gitlab.gnome.org/GNOME/gnome-mines/issues"/>.</p>
+   <p>Это система отслеживания ошибок, в которой пользователи и разработчики могут сообщать подробности об ошибках, сбоях и запрашивать улучшения.</p>
+   <p>Для участия вам необходима учётная запись, которая даст возможность получить доступ, регистрировать ошибки, оставлять комментарии и получать обновления по электронной почте о статусе вашей ошибки. Если у вас ещё нет учетной записи, просто нажмите ссылку <gui>Sign in/Register</gui>, чтобы создать её.</p>
+
+  <p>Если у вас есть учётная запись, войдите в неё и нажмите <gui>New issue</gui>. Прежде чем сообщать об ошибке, ознакомьтесь с <link href="https://wiki.gnome.org/Community/GettingInTouch/BugReportingGuidelines">руководством по написанию ошибок</link> и, пожалуйста, <link href="https://gitlab.gnome.org/GNOME/gnome-mines/issues">просмотрите</link> список ошибок, чтобы убедиться, что о ней ещё никто не сообщил.</p>
+
+   <p>Если вы запрашиваете новую функцию, выберите <gui>Feature</gui> в меню <gui>Labels</gui>. Заполните разделы «Title» и «Description» и нажмите <gui>Submit issue</gui>.</p>
+   <p>Вашему отчёту будет присвоен идентификационный номер, и его статус будет обновляться по мере обработки. Спасибо за помощь в улучшении приложения <app>Мины</app>!</p>
+</section>
+</page>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-receiving-options" xml:lang="uk">
+
+  <info>
+    <desc>Доступні параметри отримання пошти для декількох типів серверів.</desc>
+
+    <revision pkgversion="2.28.3" version="0.1" date="2010-12-09" status="stub"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Параметри отримання пошти</title>
+<!-- Please keep sorting and categorization in sync with intro-first-run.page! -->
+  <section id="common-server-types" style="2column">
+    <title>Параметри отримання пошти для стандартних типів серверів</title>
+  </section>
+  <section id="corporate-server-types" style="2column">
+    <title>Параметри отримання пошти для корпоративних типів серверів</title>
+  </section>
+  <section id="local-account-server-types" style="2column">
+    <title>Параметри отримання пошти для типів серверів для локальних облікових записів</title>
+  </section>
+
+
+</page>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="convertpdf" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#tips"/>
+    <desc>Вы можете преобразовать документ в PDF с помощью «распечатывания» этого файла.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Фил Булл</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Анна Филипс</name>
+      <email>anna.cs.au@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  </info>
+
+<title>Преобразование документа в PDF</title>
+
+<p>Вы можете преобразовать документы следующих типов в формат PDF:</p>
+<list>
+ <item><p>Device Independent file format (.dvi)
+ </p></item>
+ <item><p>PostScript (.ps)
+ </p></item>
+</list>
+<p>Это работает как открытие файла в <app>Atril</app> и «распечатывание» документа в виде PDF-файла.</p>
+<steps>
+    <item>
+      <p>Перейдите в <guiseq><gui style="menuitem">Файл</gui> <gui style="menuitem">Печать</gui></guiseq> и выберите <gui>Печать</gui> или нажмите комбинацию клавиш <keyseq><key>Ctrl</key><key>P</key></keyseq>.</p>
+    </item>
+    <item>
+      <p>Выберите <gui>Печать в файл</gui> и выберите PDF в <gui>Формат вывода</gui>.</p>
+    </item>
+    <item>
+      <p>Выберите имя файла и папку, в которой должен быть сохранён файл, затем нажмите <gui>Печать</gui>. PDF будет сохранён в указанной папке.</p>
+    </item>
+</steps>
+<note>
+<p>В файлах формата PostScript или DVI нельзя выделять текст, но это обычно можно делать в файлах формата PDF. Преобразование файлов из форматов DVI и PostScript в формат PDF не исправит эту ситуацию. Причина в том, что текст сам по себе хранится в файле (это просто изображение, которое выглядит, как текст), поэтому его невозможно восстановить и поместить в PDF. Вы можете воспользоваться <em>приложением для распознавания символов</em>, чтобы извлечь текст из файлов.</p>
+</note>
+
+</page>

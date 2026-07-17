@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="invert-colors" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#tips"/>
+
+    <desc>Инвертирование цветов может упростить чтение некоторых видов текстов.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Фил Булл</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Анна Филипс</name>
+      <email>anna.cs.au@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  </info>
+
+<title>Инвертирование цветов на странице</title>
+
+
+ <p>Чтобы заменить чёрное на белое, белое на чёрное и т. д., перейдите в меню <gui style="menuitem">Вид</gui> и выберите <gui style="menuitem">Инвертированные цвета</gui> (или нажмите <keyseq><key>Ctrl</key><key>I</key></keyseq>).</p>
+
+<note style="tip">
+ <p>В некоторых случаях применение инвертирования может упростить чтение текста.</p>
+</note>
+</page>

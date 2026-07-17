@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-layout-views" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="calendar-layout"/>
+
+    <revision pkgversion="3.28.2" version="0.3" date="2018-07-10" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-view.html.en
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Menggunakan rentang tanggal (hari, minggu, bulan) untuk melihat kalender.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Tampilan yang tersedia</title>
+
+  <p><app>Evolution</app> menawarkan lima tampilan berbeda dari data kalender Anda:</p>
+
+  <list>
+    <item>
+      <p>Tampilan Hari</p>
+    </item>
+    <item>
+      <p>Tampilan Mingguan Hari Kerja</p>
+    </item>
+    <item>
+      <p>Tampilan Minggu</p>
+    </item>
+    <item>
+      <p>Tampilan Bulan</p>
+    </item>
+    <item>
+      <p>Tampilan Tabel</p>
+    </item>
+  </list>
+
+  <p>Anda bisa mengalihkan tampilan dengan menggunakan tombol di bilah alat, atau dengan mengklik <guiseq><gui>Tampilkan</gui><gui>Tampilan Saat Ini</gui></guiseq>.</p>
+
+  <p>You can also select an arbitrary range of days in the small calendar in
+  the sidebar. To do this, select the days that you want to view in your
+  calendar.</p>
+
+  <p>Tombol Sebelumnya dan Berikutnya menggerakkan Anda maju dan mundur di halaman kalender Anda. Jika Anda menggunakan tampilan minggu atau bulan, Anda bisa berpindah menurut minggu atau bulan. Untuk kembali ke daftar hari ini, klik tombol <gui>Pilih hari ini</gui> di antara dua tombol panah di bilah alat.</p>
+
+  <p>Untuk mengunjungi entri kalender untuk tanggal tertentu, klik tombol <gui>Pilih tanggal tertentu</gui> di bilah alat.</p>
+
+</page>

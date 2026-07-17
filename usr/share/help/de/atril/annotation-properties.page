@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" style="task" id="annotation-properties" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="annotations"/>
+    <desc>Wie der Autor, die Farbe, der Stil oder das Symbol einer Anmerkung angepasst werden kann.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+
+ <title>Anmerkungen anpassen</title>
+
+<steps>
+ <item>
+  <p>Mit der rechten Maustaste auf das Anmerkungs-Symbol im Dokument klicken.</p>
+ </item>
+ <item>
+  <p>Wähle <gui>Anmerkungs-Eigenschaften</gui> aus.</p>
+ </item>
+ <item>
+  <p>Im Fenster der <gui>Anmerkungs-Eigenschaften</gui> kann der Autor, die Farbe, der Stil und das Symbol der Notiz verändert werden.</p>
+   <note>
+    <p>Die Anmerkungs-Eigenschaften werden nur auf die veränderte Notiz angewendet. Jede Notiz kann eine eigene Reihe an Eigenschaften haben.</p>
+   </note>
+ </item>
+</steps>
+
+
+<section id="change-default">
+ <title>Können die standardmäßigen Anmerkungs-Eigenschaften dauerhaft angepasst werden?</title>
+<p>Die standardmäßigen Eigenschaften (Autor, Farbe, Stil und Symbol) können, wie oben beschrieben, nur auf einer einzelnen Notiz verändert werden. Wenn also alle Symbole für Notizen <gui>rot</gui> anstatt <gui>gelb</gui> sein sollen, muss der Standard auf jeder einzelnen Notiz von <gui>gelb</gui> zu <gui>rot</gui> geändert werden. Momentan gibt es keine Möglichkeit, verschiedene Standardeinstellungen zu speichern.</p>
+</section>
+
+</page>

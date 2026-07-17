@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-layout-appointment-display" xml:lang="pt-BR">
+
+  <info>
+    <link type="guide" xref="calendar-layout"/>
+
+    <revision pkgversion="3.26.5" version="0.6" date="2018-03-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/config-prefs-cal.html.en#bshpsxa
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Defina a exibição dos compromissos na agenda.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Fontenelle</mal:name>
+      <mal:email>rafaelff@gnome.org</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Aparência dos compromissos</title>
+
+  <!-- TODO:POST-3-8: Just listing the partially busted UI options (also see
+       calendar-layout-general-formatting) here is very poor and not
+       task-oriented, but that's it for the time being. Better ideas welcome.
+       -->
+
+  <p>As seguintes opções relacionadas a agenda estão disponíveis em <guiseq><gui>Editar</gui><gui>Preferências</gui> <gui>Agenda e tarefas</gui><gui>Exibição</gui></guiseq>.</p>
+
+<section id="general">
+  <title>Geral</title>
+
+  <list>
+    <item>
+      <p>Frações de tempo:</p>
+      <p>Define os incrementos de tempo mostrados como linhas finas na visualização diária da agenda.</p>
+    </item>
+    <item>
+      <p>Mostrar hora de término de compromissos nas exibições de semana e mês:</p>
+      <p>Se houver espaço, <app>Evolution</app> mostra os horários de término nas visualizações de semana e mês para cada compromisso.</p>
+    </item>
+    <item>
+      <p>Mostrar ícones de compromissos na visão de mês</p>
+    </item>
+    <item>
+      <p>Comprimir finais de semana na visão de mês:</p>
+      <p>Selecione esta opção para exibir os fins de semana em uma caixa em vez de duas na visualização mensal.</p>
+    </item>
+    <item>
+      <p>Mostrar números da semana:</p>
+      <p>Mostra o número da semana próximo às respectivas semanas na agenda.</p>
+    </item>
+    <item>
+      <p>Mostrar recorrência de eventos em itálico na parte inferior esquerda da agenda.</p>
+    </item>
+    <item>
+      <p>Rolar visão de mês por semana</p>
+    </item>
+  </list>
+
+</section>
+
+<section id="alerts">
+  <title>Alarmes</title>
+
+  <p>Se você deseja ser avisado antes de excluir um compromisso, selecione esta opção.</p>
+
+</section>
+
+</page>

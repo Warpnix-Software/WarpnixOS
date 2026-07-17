@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-install-synaptic" xml:lang="uk">
+
+  <info>
+    <credit type="author">
+      <name>Команда з документування Ubuntu</name>
+    </credit>
+
+		<credit type="editor">
+      <name>Greg Beam</name>
+      <email>ki7mt@yahoo.com</email>
+    </credit>
+
+    <link type="guide" xref="addremove"/>
+    <revision pkgversion="0.80.4" version="0" date="2014-01-11" status="review"/>
+                <revision version="18.04" date="2018-03-18" status="review"/>
+                <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Synaptic — це потужна, але складна альтернатива <app>Центр застосунків</app> для керування програмним забезпеченням.</desc>
+  </info>
+
+  <title>Використовуйте Synaptic для більш глибокого керування програмним забезпеченням</title>
+
+  <p><app>Пакетний менеджер Synaptic</app> потужніший і може виконувати деякі завдання керування програмним забезпеченням, які не може <app>Центр застосунків</app>. Інтерфейс Synaptic складніший і не підтримує новіші функції <app>Центр застосунків</app>, як-от рейтинги та огляди, тому не рекомендується для використання новими користувачами Ubuntu.</p>
+
+  <p>Synaptic не встановлюється початково, але ви можете <link href="apt:synaptic">встановити</link> його з архіву пакунків Ubuntu.</p>
+
+  <section id="install-software-with-synaptic">
+    <title>Встановлення програмного забезпечення з Synaptic</title>
+    <steps>
+      <item>
+        <p>Відкрийте <app>Synaptic</app> через панель пошуку <em>Діяльність</em>. У вікні <gui>Автентифікація</gui> потрібно буде ввести пароль.</p>
+      </item>
+      <item>
+        <p>Натисніть <gui>Пошук</gui> для пошуку програми або натисніть <gui>Розділи</gui> та перегляньте категорії, щоб знайти потрібну програму.</p>
+      </item>
+      <item>
+        <p>Клацніть правою кнопкою на програмі, яку ви бажаєте встановити і виберіть <gui>Позначити на встановлення</gui>.</p>
+      </item>
+      <item>
+        <p>Якщо з’явиться запит про позначення додаткових змін, клацніть <gui>Позначити</gui>.</p>
+      </item>
+      <item>
+        <p>Виберіть інші програми, які хочете встановити.</p>
+      </item>
+      <item>
+        <p>Натисніть <gui>Застосувати</gui>, потім натисніть <gui>Застосувати</gui> у вікні, яке з'явиться. Програми, які ви вибрали будуть завантажені та встановлені.</p>
+      </item>
+    </steps>
+
+    <p>За додатковою інформацією про використання <app>Synaptic</app> зверніться до <link href="https://help.ubuntu.com/community/SynapticHowto">Керівництва з Synaptic</link>.</p>
+
+  </section>
+
+</page>

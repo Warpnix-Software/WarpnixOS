@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-ldap" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="contacts-using-several-addressbooks"/>
+
+    <revision pkgversion="3.1.5" version="0.4" date="2015-03-09" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-contact-sharing.html.en
+	   and
+	   https://help.gnome.org/users/evolution/2.32/config-prefs-contact.html.en#bxmw6w5
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Utilitzeu llibretes d'adreces compartides en una xarxa local.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Afegir l'accés LDAP</title>
+
+  <p>El protocol LDAP es va crear per a permetre als usuaris d'una xarxa compartir informació de contacte mitjançant l'accés a un directori central. LDAP permet a una empresa mantenir un conjunt d'informació de contacte compartida. Moltes empreses mantenen una llibreta d'adreces LDAP comuna per a tots els seus empleats o contactes dels clients.</p>
+
+<section id="add-ldap-addressbook">
+  <title>Afegir una llibreta d'adreces LDAP</title>
+
+  <steps>
+    <item>
+      <p>Feu clic a <guiseq><gui>Fitxer</gui><gui>Nou</gui> <gui>Llibreta d'Adreces</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>In the <gui>Type</gui> field, select
+      <gui>On LDAP Servers</gui>.</p>
+    </item>
+    <item>
+      <p>Introduïu el nom que preferiu.</p>
+    </item>
+    <item>
+      <p>In the <gui>Connecting to LDAP</gui> tab:</p>
+      <list>
+        <item>
+          <p>Introduïu l'adreça del servidor, el número de port (el número predeterminat és 389) i si voleu connectar-vos de manera segura.</p>
+        </item>
+        <item>
+          <p>Definiu el mètode d'inici de sessió i el vostre nom d'usuari.</p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>In the <gui>Using LDAP</gui> tab you define the following
+      settings:</p>
+      <list>
+        <item>
+	  <p>Base de cerca: la base de cerca és el punt de partida d'una cerca a directoris. Poseu-vos en contacte amb l'administrador del sistema per a obtenir informació sobre la configuració correcta.</p>
+        </item>
+        <item>
+	  <p>Àmbit de cerca: l'abast de cerca és l'abast d'una determinada cerca.</p>
+	  <p>Les següents opcions estan disponibles:</p>
+          <list>
+            <item>
+	      <p>Un nivell: cerca una entrada a sota la base de cerca.</p>
+	    </item>
+            <item>
+	      <p>Subarbre: cerca a la base de cerca i a totes les entrades que hi ha a sota.</p>
+            </item>
+          </list>
+        </item>
+        <item>
+	  <p>Filtre de cerca: el filtre de cerca es pot establir per a totes les consultes LDAP. Per exemple:</p>
+          <list>
+            <item>
+              <p><code>ObjectClass=*</code>: Llista tots els objectes del servidor.</p>
+	    </item>
+            <item>
+	      <p><code>ObjectClass=User</code>: Llista només els usuaris.</p>
+	    </item>
+            <item>
+	      <p><code>Filtre (|(ObjectClass=User)(ObjectClass=groupOfNames))</code>: Recupera els objectes de l'usuari i la llista de contactes.</p>
+	    </item>
+            <item>
+	      <p><code>(&amp;(mail=*)(ObjectClass=*))</code>: Llista els objectes associats a les adreces de correu electrònic.</p>
+	    </item>
+          </list>
+        </item>
+        <item>
+	  <p>Download Limit: The maximum number of results for a given search.
+	  Most servers refuse to send more than 500 contacts, but you can set
+	  the number lower if you want to shorten downloads for very broad
+	  searches. This option is ignored, if <gui>Copy book content locally
+	  for offline operation</gui> is checked.</p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Feu clic a <gui style="button">D'acord</gui>.</p>
+    </item>
+  </steps>
+
+  <note style="tip">
+    <p>Si no esteu segurs sobre algunes de les opcions de configuració, pregunteu a l'administrador del vostre sistema.</p>
+  </note>
+
+</section>
+
+<section id="ldap-vs-local-addressbooks">
+  <title>Diferències a les llibretes d'adreces locals</title>
+
+  <p>Les llibretes d'adreces LDAP funcionen com a llibretes d'adreces locals a l'ordinador, amb les següents excepcions:</p>
+
+  <list>
+    <item>
+      <p>Les carpetes en xarxa només estan disponibles quan s'està connectat a la xarxa. Si utilitzeu un ordinador portàtil o teniu una connexió de mòdem, podeu copiar o emmagatzemar a la memòria cau alguns dels directoris de la xarxa. Ho podeu fer arrossegant i deixant anar els contactes desitjats a les llibretes d'adreces locals.</p>
+    </item>
+    <item>
+      <p>També podeu marcar una carpeta en xarxa per a l'ús fora de línia. Per a marcar la carpeta, feu clic amb el botó dret a la carpeta, feu clic a <gui>Propietats</gui> i seleccioneu <gui>Copia el contingut de la carpeta localment per al seu us fora de línia</gui>.</p>
+    </item>
+    <item>
+      <p>Per a prevenir l'excés de tràfic a la xarxa, <app>Evolution</app> normalment no carrega dades del servidor LDAP quan s'obre.</p>
+    </item>
+    <item>
+      <p>Segons la configuració del vostre servidor, és possible que no pugueu editar tots els camps d'un contacte emmagatzemat en un servidor LDAP. Alguns servidors prohibeixen alguns o tots els canvis, i altres n'autoritzen un subconjunt més petit del que <app>Evolution</app> permet. Consulteu amb l'administrador del sistema si necessiteu configuracions diferents.</p>
+    </item>
+  </list>
+
+</section>
+
+</page>

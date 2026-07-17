@@ -1,0 +1,1209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+      (Do not remove this comment block.)
+  Maintained by the MATE Documentation Project
+  http://wiki.mate-desktop.org/dev-doc:doc-team-guide
+  Template version: 2.0 beta
+  Template last modified Jan 30, 2002
+-->
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:id="index" xml:lang="uk">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <info><title>Керівництво по Упоряднику архівів</title> 
+
+     <abstract>
+       <para>Керівник архівів, також відомий як Engrampa, дозволяє створювати продивлятися, модифікувати та розпаковувати архіви.</para>
+     </abstract>
+
+    <copyright xml:lang="en"><year>2019-2021</year> <holder>Проєкт документування MATE</holder></copyright>
+    <copyright><year>2009</year> <holder>Пол Катлер</holder></copyright>	    
+	<copyright><year>2006</year> <year>2008</year> <holder>Паоло Бачилєґа</holder></copyright> 
+     <copyright><year>2003</year> <year>2004</year> <holder>Sun Microsystems</holder></copyright>
+    <copyright><year>2003</year> <holder>Паоло Бачилєґа</holder></copyright> 
+    <copyright><year>2002</year> <holder>Олександр Кірілов</holder></copyright> 
+
+<!-- An address can be added to the publisher information.  If a role is 
+     not specified, the publisher/author is the same for all versions of the 
+     document.  -->
+    <publisher>
+      <publishername>Проєкт документування MATE</publishername>
+    </publisher> 
+    <publisher>
+      <publishername>Проєкт документування GNOME</publishername>
+    </publisher>
+
+  <xi:include href="legal.xml"/>
+  <!-- This file contains link to license for the
+   documentation (GNU FDL), and other legal stuff such as "NO
+   WARRANTY" statement. Please do not change any of this. -->
+
+  <authorgroup>
+      <author><orgname>Проєкт документування MATE</orgname> <affiliation> <orgname>Стільниця MATE</orgname> </affiliation></author>
+      <author><personname> <firstname>Sun </firstname> <surname>Команда документування GNOME</surname> </personname> <affiliation> <orgname>Sun Microsystems</orgname> </affiliation></author>
+      <author><personname> <firstname>Паоло</firstname> <surname>Бакчілага</surname> </personname> <affiliation> <orgname>Проєкт документування GNOME</orgname> </affiliation></author> 
+      <author><personname> <firstname>Олександр</firstname> <surname>Кірілов</surname> </personname> <affiliation> <orgname>Проєкт документування GNOME</orgname> </affiliation> <email>kirillov@math.sunysb.edu</email></author> 
+      <author><personname> <firstname>Пол</firstname> <surname>Катлер</surname> </personname> <affiliation> <orgname>Проєкт документування GNOME </orgname> </affiliation> <email>pcutler@foresightlinux.org</email></author>	  
+  </authorgroup>
+	
+	<releaseinfo revision="1.10" role="review">
+	</releaseinfo>
+
+         <revhistory>
+                <revision xml:lang="en"><revnumber>1.10.0</revnumber> <date>Липень 2015</date> <revdescription>
+                         <para role="author" xml:lang="en">Вольфґанґ Ульбріх</para>
+                         <para role="publisher" xml:lang="en">Проєкт документування MATE</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.26.0</revnumber> <date>Березень 2009</date> <revdescription>
+                         <para role="author">Пол Катлер</para>
+                         <para role="publisher">Проєкт документування GNOME</para>
+                  </revdescription></revision>
+				
+                <revision><revnumber>2.24.0</revnumber> <date>Липень 2008</date> <revdescription>
+                         <para role="author">Паоло Бачілєґа</para>
+                         <para role="publisher">Проєкт документування GNOME</para>
+                  </revdescription></revision>
+				
+                <revision><revnumber>2.6</revnumber> <date>Квітень 2006</date> <revdescription>
+                         <para role="author">Паоло Бачілєґа</para>
+                         <para role="publisher">Проєкт документування GNOME</para>
+                  </revdescription></revision>
+
+                <revision><revnumber>2.5</revnumber> <date>Березень 2004</date> <revdescription>
+                         <para role="author">Сан Команда Документування GNOME </para>
+                         <para role="publisher">Проєкт документування GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.4</revnumber> <date>Лютий 2004</date> <revdescription>
+                         <para role="author">Сан Команда Документування GNOME </para>
+                         <para role="publisher">Проєкт документування GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.3</revnumber> <date>Серпень 2003</date> <revdescription>
+                         <para role="author">Сан Команда Документування GNOME </para>
+                         <para role="publisher">Проєкт документування GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.2</revnumber> <date>Червень 2003</date> <revdescription>
+                         <para role="author">Сан Команда Документування GNOME </para>
+                         <para role="publisher">Проєкт документування GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.1</revnumber> <date>Січень 2003</date> <revdescription>
+                         <para role="author">Паоло Бачілєґа</para>                         
+                         <para role="publisher">Проєкт документування GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.0</revnumber> <date>Червень 2002</date> <revdescription>
+                         <para role="author">Олександр Кірілов</para>                         
+                         <para role="publisher">Проєкт документування GNOME</para>
+                  </revdescription></revision>
+         </revhistory>
+
+    <releaseinfo>У цьому посібнику описано версію 1.22 упорядника архівів.</releaseinfo> 
+  </info> 
+
+  <indexterm zone="index"><primary>Engrampa</primary></indexterm> 
+  <indexterm zone="index"><primary>engrampa</primary></indexterm>
+  <indexterm zone="index"><primary>Архівування</primary></indexterm>
+  <indexterm zone="engrampa-add-files"><primary>Архіви</primary> <secondary>Додавання файлів до</secondary></indexterm> 
+  <indexterm zone="engrampa-delete-files"><primary>Архіви</primary> <secondary>Вилучення файлів з</secondary></indexterm> 
+  <indexterm zone="engrampa-open"><primary>Архіви</primary> <secondary>Відкриття</secondary></indexterm> 
+  <indexterm zone="engrampa-view"><primary>Архіви</primary> <secondary>Перегляд</secondary></indexterm> 
+  <indexterm zone="engrampa-extract"><primary>Архіви</primary> <secondary>Видобування</secondary></indexterm> 
+  <indexterm zone="engrampa-create"><primary>Архіви</primary> <secondary>Створення</secondary></indexterm> 
+
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+<!-- Use the Introduction section to give a brief overview of what
+     the application is and what it does. -->
+  <section xml:id="engrampa-intro"><info><title>Вступ</title></info> 
+     
+    <para>Ви можете скористатись <application>Керівником архівів</application> застосунком для створення, перегляду, модифікації або розпакування архівів. Архів - це файл, який працює як контейнер для інших файлів. Архів може містити багато файлів, тек і підтек, як правило, у стиснутому вигляді.</para>
+    <para><application>Керівник архівів</application> надає лише графічний інтерфейс, використовуючи для самих операцій с архівами засоби командного рядка, такі як <command>tar</command>, <command>gzip</command>, та <command>bzip2</command>.</para>
+    <para>Якщо у вашій системі встановлено відповідні знаряддя командного рядка, <application>Керівник архівів</application> підтримує формати архівів, перераховані в наступній таблиці.</para> 
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Формат</para></entry>
+              <entry colname="COLSPEC1" align="left">
+                <para>Розширення файлу</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para>7-zip архів</para></entry>
+              <entry align="left"><para><filename>.7z</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>ACE архів</para></entry>
+              <entry align="left"><para><filename>.ace</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>AlZip архів</para></entry>
+              <entry align="left"><para><filename>.alz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>AR архів</para></entry>
+              <entry align="left"><para><filename>.ar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>архів у форматі ARJ</para></entry>
+              <entry align="left"><para><filename>.arj</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Microsoft Cabinet архів</para></entry>
+              <entry align="left"><para><filename>.cab</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>архів у форматі CPIO</para></entry>
+              <entry align="left"><para><filename>.cpio</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>пакунок у форматі Debian</para></entry>
+              <entry align="left"><para><filename>.deb</filename>, <filename>.udeb</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Електронне видання</para></entry>
+              <entry align="left"><para><filename>.epub</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>RAW CD образ (ISO 9660)</para></entry>
+              <entry align="left"><para><filename>.iso</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архів Java</para></entry>
+              <entry align="left"><para><filename>.jar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Enterprise Application aRchive</para></entry>
+              <entry align="left"><para><filename>.ear</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Web Application Resource or Web application ARchive</para></entry>
+              <entry align="left"><para><filename>.war</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>архів у форматі LHA</para></entry>
+              <entry align="left"><para><filename>.lha</filename>, <filename>.lzh</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архів RAR (Roshal ARchive)</para></entry>
+              <entry align="left"><para><filename>.rar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para xml:lang="en">Comic Book (RAR-compressed)</para></entry>
+              <entry align="left"><para><filename>.cbr</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>пакунок у форматі RPM</para></entry>
+              <entry align="left"><para><filename>.rpm</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>архів у форматі tar</para></entry>
+              <entry align="left"><para><filename>.tar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архів Tar, стиснений <command>bzip</command></para></entry>
+              <entry align="left"><para><filename>.tar.bz</filename> або <filename>.tbz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архів Tar, стиснений <command>bzip2</command></para></entry>
+              <entry align="left"><para><filename>.tar.bz2</filename> або <filename>.tbz2</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архів Tar, стиснений <command>gzip</command></para></entry>
+              <entry align="left"><para><filename>.tar.gz</filename> або <filename>.tgz</filename> або <filename>.taz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архів Tar, стиснений <command>lzip</command></para></entry>
+              <entry align="left"><para><filename>.tar.lz</filename> або <filename>.tlz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архів Tar, стиснений <command>lzop</command></para></entry>
+              <entry align="left"><para><filename>.tar.lzo</filename> або <filename>.tzo</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архів Tar, стиснений <command>compress</command></para></entry>
+              <entry align="left"><para><filename>.tar.Z</filename> або <filename>.taZ</filename></para></entry>
+            </row>
+             <row valign="top">
+              <entry><para>Архів Tar, стиснений <command>7zip</command></para></entry>
+              <entry align="left"><para><filename>.tar.7z</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>StuffIt архів</para></entry>
+              <entry align="left"><para><filename>.bin</filename> або <filename>.sit</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>ZIP архів</para></entry>
+              <entry align="left"><para><filename>.zip</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para xml:lang="en">Comic Book (ZIP-compressed)</para></entry>
+              <entry align="left"><para><filename>.cbz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>архів у форматі zoo</para></entry>
+              <entry align="left"><para><filename>.zoo</filename></para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    <para>Найбільш поширеним форматом архівів для Linux та Unix-систем є архіватор tar, стиснутий з <command>gzip</command> або <command>bzip2</command>.</para>
+    <para>Найпоширеніший формат архіву для систем Microsoft Windows - це архів, створений за допомогою <application>PKZIP</application> або<application>WinZip</application>.</para>
+    <section xml:id="engrampa-intro-nonarchive"><info><title>Стиснені неархівовані файли</title></info>
+       
+      <para>Стиснений неархівований файл — це файл, створений при використанні <command>bzip2</command>, <command>gzip</command>, <command>lzip</command>, <command>lzop</command>, <command>compress</command> або <command>rzip</command> для стиснення файлу, що не є архівом. Наприклад, <filename>file.txt.gz</filename> створюється при використанні <command>gzip</command> для стиснення файлу <filename>file.txt</filename>.</para>
+      <para>За допомогою <application>Керівника архівів</application> можна створювати, відкривати та видобувати вміст неархівованих файлів.</para> 
+    </section>
+  </section>
+
+<!-- ============= Getting Started =========================== -->
+  <section xml:id="engrampa-get-start"><info><title>Початок роботи</title></info>
+    
+    <para>Цей розділ містить інформацію про те, як запустити <application>Керівник архівів</application>, та описує користувацький інтерфейс <application>Керівника архівів</application>.</para>
+
+<!-- ============= To Start Engrampa ============================ -->
+         <section xml:id="engrampa-to-start"><info><title>Щоб запустити <application>Керівник архівів</application></title></info>
+                
+                <para>Ви можете запустити <application>Керівник архівів</application> у такий спосіб:</para>
+                <variablelist>
+                <varlistentry>
+                <term>Меню <guimenu>Програми</guimenu></term>
+                <listitem>
+                <para>Оберіть <menuchoice><guisubmenu>Стандартні</guisubmenu><guimenuitem>Упорядник архівів</guimenuitem></menuchoice>.</para>
+                </listitem>
+                </varlistentry>
+                <varlistentry>
+                <term>Командний рядок</term>
+                <listitem>
+                <para>Виконайте таку команду: <command>engrampa</command></para>
+                </listitem>
+                </varlistentry>
+                </variablelist>
+        </section>
+
+         <section xml:id="engrampa-when-start"><info><title>Після запуску <application>Керівника архівів</application></title></info>
+                
+                <para>Після запуску <application>Керівника архівів</application>, з'являється таке вікно:</para>
+
+                <figure xml:id="engrampa-FIG-main-window"><info><title>Вікно <application>Керівника архівів</application></title></info>
+                  
+                  <screenshot>
+                         <mediaobject><imageobject> <imagedata fileref="figures/engrampa_main_window.png" format="PNG"/> </imageobject> <textobject> <phrase>Показує головне вікно Engrampa.</phrase> </textobject></mediaobject>
+                  </screenshot>
+                </figure>
+
+                <para>Вікно <application>Керівника архівів</application> містить такі елементи:</para>
+                <variablelist>
+                  <varlistentry> <term>Рядок меню</term>
+                         <listitem>
+                                <para>Рядок меню містить усі команди, необхідні для роботи з архівами в <application>Керівнику архівів</application>.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Панель знарядь</term>
+                         <listitem>
+                                <para>Панель знарядь містить підмножину команд, доступних у рядку меню. <application>Керівник архівів</application> типово показує панель знарядь. Щоб приховати її, виберіть <menuchoice><guimenu>Вигляд</guimenu><guimenuitem>Панель знарядь</guimenuitem></menuchoice>. Щоб знову зробити панель знарядь видимою, ще раз виберіть <menuchoice><guimenu>Вигляд</guimenu><guimenuitem>Панель знарядь</guimenuitem></menuchoice>.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Дерево тек</term>
+                         <listitem>
+                                <para>Панель з деревом тек дозволяє здійснювати навіґацію теками, що містяться в архіві. <application>Керівник архівів</application> показує цю панель лише в режимі показу поточної теки. Докладніше дивіться  <xref linkend="engrampa-view-type-folder"/>.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Область відображення</term>
+                         <listitem>
+                                <para>Область відображення відображає вміст архіву.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Рядок стану</term>
+                         <listitem>
+                                <para>Рядок стану показує інформацію про поточні дії <application>Керівника архівів</application> та контекстну інформацію про вміст архіву. <application>Керівник архівів</application> типово показує рядок стану. Щоб приховати її, виберіть <menuchoice><guimenu>Вигляд</guimenu><guimenuitem>Рядок стану</guimenuitem></menuchoice>. Щоб знову зробити видимим, виберіть <menuchoice><guimenu>Вигляд</guimenu><guimenuitem>Рядок стану</guimenuitem></menuchoice> ще раз.</para>
+                         </listitem>
+                  </varlistentry>
+                </variablelist>
+                <para>Клац правою кнопкою миші у вікні <application>Керівника архівів</application> відкриває виринне контекстне меню, яке містить найчастіше використовувані в даній ситуації команди.</para>
+
+     <section xml:id="engrampa-bookmarks"><info><title>Перегляд файлової системи</title></info>
+        
+        <para>Деякі діалогові вікна <application>Упорядника архівів</application><guilabel>Створити</guilabel>, <guilabel>Відкрити</guilabel>, <guilabel>Видобути</guilabel>та інші) дозволяють продивлятися файли й теки на комп'ютері. Щоб дізнатися, як з ними працювати, зверніться до <link xlink:href="help:mate-user-guide/filechooser-open">Керівництва користувача робочого середовища</link>.</para>
+        <para>У розділі <link xlink:href="help:mate-user-guide/caja-bookmarks">Закладки</link> цього керівництва ви можете дізнатися, як використовувати панель <guilabel>Місця</guilabel> для доступу до вибраних розташувань.</para>
+     </section>
+   </section>
+</section>
+
+
+
+<!-- ======= Working with archives ============= --> 
+
+<section xml:id="engrampa-working"><info><title>Робота з архівами</title></info>
+      
+      <para>При роботі з архівами в <application>Керівнику архівів</application> усі зміни одразу ж зберігаються на диск. Наприклад, якщо ви вилучаєте файл із архіву, то <application>менеджер архівів</application> видалить файл відразу після натискання кнопки <guibutton>Гаразд</guibutton>. Це відрізняється від поведінки більшості додатків, які зберігають зміни на диск тільки після виходу з програми або вибору команди <guimenuitem>Зберегти</guimenuitem> в меню.</para>
+      <para>Якщо архів дуже великий, або у вас повільний комп'ютер, то декотрі дії з архівами можуть зайняти багато часу. Щоб перервати поточну дію, натисніть <keycap>Esc</keycap>. Можна також вибрати <menuchoice><guimenu>Вигляд</guimenu><guimenuitem>Зупинити</guimenuitem></menuchoice>, або натиснути <guibutton>Перервати поточну операцію</guibutton> в панелі знарядь.</para>      
+      <para>У <application>Керівнику архівів</application>, одні й ті ж дії можна виконати у декілька способів. Наприклад, відкрити архів можна так: <informaltable frame="all">
+                    <tgroup cols="2" colsep="1" rowsep="1">
+                      <colspec colname="COLSPEC0" colwidth="50*"/>
+                      <colspec colname="COLSPEC1" colwidth="50*"/>
+                      <thead>
+                        <row valign="top">
+                          <entry colname="COLSPEC0">
+                            <para>Компонент інтерфейсу</para></entry>
+                          <entry colname="COLSPEC1" align="left"> 
+                            <para>Дія</para></entry>
+                        </row>
+                      </thead>
+                      <tbody>
+                        <row valign="top">               
+                          <entry><para>Вікно</para></entry>
+                          <entry><para>Перетягніть архів у вікно <application>Керівника архівів</application> із іншого застосунку, такого як файловий керівник.</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Рядок меню</para></entry>
+                          <entry><para>Вибрати <menuchoice><guimenu>Архів</guimenu><guimenuitem>Відкрити</guimenuitem></menuchoice>.</para>
+           <para>Нещодавно відкривані архіви будуть перелічені безпосередньо в меню <menuchoice><guimenu>Архів</guimenu></menuchoice>.</para> 
+</entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Панель знарядь</para></entry>
+                          <entry><para>Клацніть на кнопці <guibutton>Відкрити</guibutton> в панелі знарядь.</para>
+           <para>Якщо ви нещодавно вже відкривали даний архів, клацніть на стрілці поряд з кнопкою <guibutton>Відкрити</guibutton> .</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Клацніть правою кнопкою миші контекстне меню</para></entry>
+                          <entry><para>Клацніть правою кнопкою на архіві й виберіть <guilabel>Відкрити</guilabel> у виринному меню.</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Швидкі клавіші</para></entry>
+                          <entry><para>Натисніть <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>.</para></entry>
+                        </row>
+                      </tbody>
+                    </tgroup>
+                  </informaltable></para>
+      <para>У цьому керівництві описано виконання дій за допомогою рядка меню.</para>
+
+    <section xml:id="engrampa-pattern"><info><title>Шаблони імен файлів</title></info>
+      
+      <para><application>Керівник архівів</application> дозволяє додавати, видобувати або вилучати декілька файлів одразу. Для того, щоб застосувати дію до усіх файлів, що відповідають певному шаблону, уведіть шаблон в текстовому полі вводу. Шаблон може включати стандартні символи підстановки, такі як <keycap>*</keycap> для відповідности будь якому рядку й <keycap>?</keycap> для відповідности будь якому одинарному символу. Можна вводити декілька шаблонів, розділяючи їх крапкою з комою. <application>Керівник архівів</application> застосує дію до усіх файлів, що задовольняють принаймні один із шаблонів. Приклади в наступній таблиці демонструють, як використовувати шаблони для вибору файлів.</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Шаблон</para></entry>
+              <entry colname="COLSPEC1" align="left"> 
+                <para>Відповідні файли</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">               
+              <entry><para><filename>*</filename></para></entry>
+              <entry align="left"><para>Усі файли</para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>*.tar*</filename></para></entry>
+              <entry align="left"><para>Усі файли з розширенням <filename>tar</filename>, включаючи ті, у яких за розширенням <filename>tar</filename> є будь яка послідовність символів, наприклад, <filename>filename.tar.gz</filename></para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>*.jpg; *.jpeg</filename></para></entry>
+              <entry align="left"><para>Усі файли з розширенням <filename>jpg</filename> й усі файли з розширенням <filename>jpeg</filename></para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>file?.gz</filename></para></entry>
+              <entry align="left"><para>Усі файли з розширенням <filename>gz</filename> й іменем, які є словом "file" і один будь який символ, наприклад: <filename>file2.gz</filename>, <filename>filex.gz</filename>.</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
+
+<!-- ======= To open an archive ============= --> 
+
+<section xml:id="engrampa-open"><info><title>Щоб відкрити Архів</title></info>
+      
+      <para>Щоб відкрити архів, виконайте такі дії:</para>
+      <para><application>Керівник архівів</application> автоматично визначає тип архіву та показує: <itemizedlist>
+          <listitem>
+            <para>Рядок заголовку вікна, назва архіву</para>
+          </listitem>
+          <listitem>
+            <para>Вміст архіву в області показу</para>
+          </listitem>
+          <listitem>
+            <para>Число файлів та тек (об'єктів) в поточному розташуванні і їх розмір (у розпакованому вигляді) в рядку стану</para>
+          </listitem>
+        </itemizedlist></para>
+      <para>Щоб відкрити інший архів, виберіть <menuchoice><guimenu>Архів</guimenu><guimenuitem>Відкрити</guimenuitem></menuchoice> знову. <application>Керівник архівів</application> відкриває кожен архів у окремому вікні. Неможливо відкрити ще один архів в тому ж вікні.</para>
+      <para>Якщо ви спробуєте відкрити архів, створений у форматі, не підтримуваному <application>Керівником архівів</application> то застосунок покаже повідомлення про помилку. Дивіться <xref linkend="engrampa-intro"/> щоб ознайомитися з переліком підтримуваних форматів.</para>
+  </section>
+
+<!-- ======= Selecting files in an archive  ============= --> 
+    <section xml:id="engrampa-select-files"><info><title>Щоб вибрати файли з архіву</title></info>
+      
+    <para>Щоб вибрати усі файли з архіву, виберіть <menuchoice><guimenu>Зміни</guimenu><guimenuitem>Виділити все</guimenuitem></menuchoice> або натисніть <keycombo><keycap>Ctrl</keycap><keycap>A</keycap></keycombo>.</para>
+      <para>Щоб скасувати вибір усіх файлів у архіві, виберіть <menuchoice><guimenu>Зміни</guimenu><guimenuitem>Зняти виділення</guimenuitem></menuchoice> або натисніть <keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap><keycap>A</keycap></keycombo>.</para>
+    </section>
+
+  <!-- =========== Extracting Files From an Archive ==================== -->
+
+  <section xml:id="engrampa-extract"><info><title>Щоб видобути файли з архіву</title></info> 
+     
+    <para>Щоб видобути файли з відкритого архіву, виконайте такі дії: <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>Виберіть файли, які потрібно видобути. Для вибору декількох файлів натисніть та втримуйте <keycap>Ctrl</keycap> і клацайте на файлах, які бажаєте виділити.</para>
+        </listitem>
+        <listitem><para>Виберіть <menuchoice><guimenu>Архів</guimenu><guimenuitem>Розпакувати</guimenuitem></menuchoice> щоб відкрити діялоґове вікно <guilabel>Розпакувати</guilabel> Або клацніть на кнопці <guibutton>Розпакувати</guibutton> в панелі знарядь.</para>
+        </listitem>
+        <listitem><para>Виберіть теку, в яку <application>Керівник архівів</application> повинен видобути файли.</para>
+        </listitem>
+        <listitem><para>Виберіть потрібні параметри розпакування. Докладніше про параметри розпакування дивіться <xref linkend="engrampa-extract-options"/>.</para>
+        </listitem>
+        <listitem><para>Натисніть <guibutton>Видобути</guibutton>.</para>
+        <note>
+          <para>Якщо усі файли в архіві захищені паролем, а ви не вказали його, то <application>Керівник архівів</application> попросить увести пароль.</para>
+          <para>Якщо паролем захищені деякі, але не усі файли в архіві, й ви не вказали пароль, то <application>Керівник архівів</application> не буде запитувати пароль. Замість цього  <application>Керівник архівів</application> розпакує лише не захищені паролем файли.</para>
+          <para>Для отримання додаткової інформації про паролі див <xref linkend="engrampa-encrypt-files"/>.</para>
+        </note>
+        </listitem>
+        </orderedlist></para>
+      <para><application>Керівник архівів</application> надає також способи видобування файлів з архіву прямо у вікні файлового керівника, не відкриваючи вікно <application>Керівника архівів</application> Дивіться <xref linkend="engrampa-fmgr"/> для додаткової інформації.</para>
+    <para>Операція розпакування витягує <emphasis>копії</emphasis> вибраних файлів з архіву. Розпаковані файли мають ті ж права доступу та дату змінювання, що й оригінальні файли, які були додані в архів.</para>
+    <para>Операція розпакування не змінює вміст архіву. Докладніше про те, як вилучити файли з архіву, дивіться <xref linkend="engrampa-delete-files"/>.</para>
+  </section>
+    
+<!-- ======= Closing the Archive ============= --> 
+  <section xml:id="engrampa-archive-close"><info><title>Щоб закрити Архів</title></info>
+    
+    <para>Щоб закрити поточний архів і поточне вікно <application>Керівника архівів</application> виберіть <menuchoice> <guimenu>Архів</guimenu> <guimenuitem>Закрити</guimenuitem> </menuchoice>, або натисніть <keycombo><keycap>Ctrl</keycap><keycap>W</keycap></keycombo>.</para>
+    <note>
+      <para>Неможливо закрити поточний архів, не закриваючи вікна <application>Керівника архівів</application>.</para>
+    </note>
+  </section>
+</section>
+
+
+<!-- =============  Creating Archives ============================= -->
+<section xml:id="engrampa-creating"><info><title>Створення архівів</title></info> 
+     
+    <para>Крім відкриття наявних архівів, ви також можете створювати нові архіви за допомогою <application>Керівника архівів</application>.</para>
+    <section xml:id="engrampa-create"><info><title>Щоб створити Архів</title></info> 
+     
+    <para>Щоб створити архів, виконайте такі кроки: <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Виберіть <menuchoice><guimenu>Архів</guimenu><guimenuitem>Створити</guimenuitem></menuchoice> щоб відкрити діялоґове вікно <guilabel>Створити</guilabel> Можна замість цього натиснути <keycombo><keycap>Ctrl</keycap><keycap>N</keycap></keycombo>, або клацнути на кнопці <guibutton>Створити новий архів</guibutton> в панелі знарядь.</para>
+        </listitem>
+        <listitem>
+          <para>Вкажіть теку у якій <application>Упорядник архівів</application> збереже новий архів, у розкриваному переліку  <guilabel>Зберегти у теці</guilabel>. Якщо потрібної теки немає у переліку, натисніть <guilabel>Перегляньте інші теки</guilabel>та оберіть потрібну. Можна замість цього увести шлях у текстовому полі <guilabel>Ім'я</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Уведіть ім'я нового архіву, включаючи розширення файлу у текстовому полі <guilabel>Ім'я</guilabel> Можна також вказати ім'я архіву без розширення, а потім вибрати тип архіву із випадного меню <guilabel>Формат файлу</guilabel> тоді розширення буде додано автоматично.</para>
+        </listitem>
+        <listitem><para>Виберіть потрібні параметри створення архіву, натиснувши <guilabel>Інші параметри</guilabel>. Докладніше про параметри створення архіву дивіться: <xref linkend="engrampa-create-options"/>.</para>
+        </listitem>
+        <listitem>
+          <para>Натисніть <guibutton>Створити</guibutton>. <application>Керівник архівів</application> створить порожній архів, але поки не стане записувати його на диск.</para>
+        </listitem>
+        <listitem>
+          <para>Додавайте файли до нового архіву, як описано в <xref linkend="engrampa-add-files"/>. <note>
+                  <para><application>Керівник архівів</application> записує новий архів на диск лише коли архів містить хоча б один файл. Якщо ви створите новий архів й вийдете із <application>Керівника архівів</application> не додавши в нього ніякі файли, то<application>Керівник архівів</application> вилучить архів.</para>
+                </note></para>
+        </listitem>
+      </orderedlist></para>
+</section>
+
+    <!-- ======= Adding files to an archive  ============= --> 
+  <section xml:id="engrampa-add-files"><info><title>Щоб додати файли до архіву</title></info>
+    
+    <para>Щоб додати файли до архіву, виконайте такі дії:</para>
+    <para>У діялоґовому вікні <guilabel>Додати файли</guilabel> не вийде додати в архів теки. Про додавання  тек дивіться: <xref linkend="engrampa-add-folder"/>.</para>
+    <para>У діялоґовому вікні <guilabel>Додати файли</guilabel> є опція <guilabel>Додавати лише оновлені файли</guilabel> докладніше про неї дивіться: <xref linkend="engrampa-add-options"/>.</para>
+    <para>Можливо також додати файли в архів прямо у вікні файлового керівника, не відкриваючи вікна <application>Керівника архівів</application> Дивіться: <xref linkend="engrampa-fmgr"/>.</para>
+    <para>Операція додавання додає у архів <emphasis>копії</emphasis> вибраних файлів або тек. <application>Керівник архівів</application> не вилучає початкові файли, вони залишаються неторканими у файловій системі. Копії, додані у архів, мають ті ж права доступу та дату змінювання, що й початкові файли.</para>
+    </section>
+
+<!-- ======= Adding files - Adding folder  ============= --> 
+    <section xml:id="engrampa-add-folder"><info><title>Щоб додати теку до архіву</title></info>
+      
+    <para>Щоб додати теку до архіву, виконайте такі дії: <orderedlist inheritnum="ignore" continuation="restarts">
+         <listitem>
+           <para>Виберіть, де в архіві потрібно додати файли, а потім відкрийте це місце в архіві.</para>
+         </listitem>
+         <listitem>
+           <para>Виберіть <menuchoice><guimenu>Зміни</guimenu><guimenuitem>Додати теку</guimenuitem></menuchoice> , щоб відкрити діялоґове вікно <guilabel>Додати теку</guilabel>.</para> 
+         </listitem>
+         <listitem>
+           <para>Виберіть теку, яку потрібно додати.</para> 
+         </listitem>
+         <listitem>
+           <para>Натисніть кнопку <guibutton>Додати</guibutton>. <application>Керівник архівів</application> додасть вибрану теку у поточну теку архіву.</para> 
+         </listitem>
+      </orderedlist></para>
+    <para>Діялоґове вікно <guilabel>Додати теку</guilabel> містить декілька додаткових параметрів. Докладніше дивіться: <xref linkend="engrampa-add-options"/>.</para>
+    </section>
+
+  <!-- ======= Converting an Archive to Another Format ============= --> 
+  <section xml:id="engrampa-convert-archive"><info><title>Щоб перетворити Архів на інший формат</title></info>
+    
+    <para>Щоб перетворити архів на інший формат та зберегти як новий файл, виконайте такі дії:</para>
+    <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem>
+        <para>Відкрийте архів, який ви хочете конвертувати.</para>
+      </listitem>
+      <listitem>
+        <para>Виберіть <menuchoice><guimenu>Архів</guimenu><guimenuitem>Зберегти як</guimenuitem></menuchoice> щоб відкрити діялоґове вікно <guilabel>Зберегти</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Наберіть ім'я нового архіву у текстовому полі <guilabel>Ім'я</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Виберіть новий формат з випадного переліку <guilabel>Формат файлу</guilabel> Можна замість цього вказати розширення файлу у текстовому полі <guilabel>Ім'я</guilabel> й вибрати <guilabel>За розширенням</guilabel> у випадному переліку <guilabel>Формат файлу</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Виберіть потрібні параметри створення архіву, натиснувши <guilabel>Інші параметри</guilabel>. Докладніше про параметри створення архіву дивіться: <xref linkend="engrampa-create-options"/>.</para>
+      </listitem>      
+      <listitem>
+        <para>Натисніть <guibutton>Зберегти</guibutton>.</para>
+        <note>
+          <para>Якщо усі файли в архіві захищені паролем, а ви не вказали його, то <application>Керівник архівів</application> попросить увести пароль.</para>
+          <para>Якщо деякі (але не всі) файли у архіві захищені паролем, й ви не вказали пароль, то <application>Керівник архівів</application> не запитає пароль. Замість цього <application>Керівник архівів</application> скопіює в новий архів лише незахищені паролем файли.</para>
+          <para>Для отримання додаткової інформації про паролі див <xref linkend="engrampa-encrypt-files"/>.</para>
+        </note>
+      </listitem>
+    </orderedlist>
+  </section>
+</section>
+
+<!-- ======= Operations on Archive Contents ============= --> 
+<section xml:id="engrampa-modify-contents"><info><title>Зміна вмісту архіву</title></info>
+  
+  <para>Ви можете змінювати вміст архіву декількома способами.</para>
+
+<!-- ======= Encrypting files in an archive  ============= --> 
+    <section xml:id="engrampa-encrypt-files"><info><title>Шифрування файлів у архіві</title></info>
+      
+    <para>Для забезпечення безпеки, ви можете захотіти зашифрувати файли, які ви додаєте до архіву.</para>
+      <para>Якщо формат архіву підтримує шифрування, ви можете вказати пароль для шифрування файлів, які ви додаєте до архіву.</para>
+      <note>
+        <para>На даний час шифрування підтримують лише архіви 7-Zip, ZIP, RAR та ARJ.</para>
+      </note>
+     <para>Щоб вказати пароль для шифрування файлів, виконайте такі дії:</para>
+       <orderedlist inheritnum="ignore" continuation="restarts">
+          <listitem><para>Виберіть <menuchoice><guimenu>Зміни</guimenu> <guimenuitem>Пароль</guimenuitem></menuchoice> щоб відкрити діялоґове вікно <guilabel>Пароль</guilabel>.</para></listitem> 
+<listitem><para>Наберіть пароль у текстовому полі <guilabel>Пароль</guilabel>.</para></listitem>
+<listitem><para>Натисніть <guibutton>Так</guibutton>.</para></listitem>
+       </orderedlist>
+    <para><application>Керівник архівів</application> використовує пароль для шифрування файлів, які ви додаєте у поточний архів і для розшифрування файлів, що видобуваються з поточного архіву. <application>Керівник архівів</application> не зберігає пароль після закриття архіву.</para>
+      <para>Про те, як перевірити, чи містить архів зашифровані файли, дивіться <xref linkend="engrampa-extra-info"/>.</para>
+      <note>
+      <para>Шифрування, забезпечуване програмами архівування, є слабким та небезпечним. Якщо для вас важлива безпека, скористайтеся надійнішим знадобом шифрування, наприклад <link xlink:href="http://www.gnupg.org">GNU Privacy Guard</link>.</para>
+      </note>
+    </section>
+
+<!-- ======= Renaming files in an archive  ============= --> 
+  <section xml:id="engrampa-rename-files"><info><title>Щоб перейменувати файл у архіві</title></info>
+    
+    <para>Щоб перейменувати файл у архіві, виконайте такі дії:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Виберіть файл, який потрібно перейменувати.</para>
+        </listitem>
+        <listitem>
+          <para>Виберіть <menuchoice><guimenu>Зміни</guimenu><guimenuitem>Перейменувати</guimenuitem></menuchoice>, або натисніть <keycombo><keycap>F2</keycap></keycombo>, щоб відкрити діялоґове вікно <guilabel>Перейменувати</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Уведіть нове ім'я файлу в текстовому полі <guilabel>Нове ім'я файлу</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Натисніть <guibutton>Перейменувати</guibutton>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Copying files in an archive  ============= --> 
+  <section xml:id="engrampa-copy-files"><info><title>Копіювання файлів у архіві</title></info>
+    
+    <para>Щоб скопіювати файли у архіві, зробіть таке:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Виберіть файли, які потрібно скопіювати.</para>
+        </listitem>
+        <listitem>
+          <para>Виберіть <menuchoice><guimenu>Зміни</guimenu><guimenuitem>Копіювати</guimenuitem></menuchoice>, або натисніть <keycombo><keycap>Ctrl</keycap><keycap>C</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Відкрийте місце, де потрібно розмістити скопійовані файли.</para>
+        </listitem>
+        <listitem>
+          <para>Виберіть <menuchoice><guimenu>Зміни</guimenu><guimenuitem>Вставити</guimenuitem></menuchoice>, або натисніть <keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Moving files in an archive  ============= --> 
+  <section xml:id="engrampa-move-files"><info><title>Переміщення файлів у архіві</title></info>
+    
+    <para>Для переміщення файлів у архіві зробіть таке:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Виділіть файли, які потрібно перемістити.</para>
+        </listitem>
+        <listitem>
+          <para>Виберіть <menuchoice><guimenu>Зміни</guimenu><guimenuitem>Вирізати</guimenuitem></menuchoice>, або натисніть <keycombo><keycap>Ctrl</keycap><keycap>X</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Відкрийте місце, де потрібно розмістити переміщені файли.</para>
+        </listitem>
+        <listitem>
+          <para>Виберіть <menuchoice><guimenu>Зміни</guimenu><guimenuitem>Вставити</guimenuitem></menuchoice>, або натисніть <keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Deleting files from an archive  ============= --> 
+  <section xml:id="engrampa-delete-files"><info><title>Щоб вилучити файли з архіву</title></info>
+    
+    <para>Щоб вилучити файли з архіву, виконайте такі дії:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Виберіть файли, які потрібно вилучити.</para>
+        </listitem>
+        <listitem>
+          <para>Виберіть <menuchoice><guimenu>Зміни</guimenu><guimenuitem>Вилучити</guimenuitem></menuchoice> або натисніть <keycap>Delete</keycap> що відкрити діялоґове вікно <guilabel>Вилучити</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Виберіть один із наступних варіянтів вилучення:</para>
+          <variablelist>
+            <varlistentry>
+              <term><guilabel>Усі файли</guilabel></term>
+              <listitem>
+                <para>Вилучити усі файли з архіву.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term><guilabel>Виділені</guilabel></term>
+              <listitem>
+                <para>Вилучити виділені файли з архіву.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term><guilabel>Файли</guilabel></term>
+              <listitem>
+                <para>Вилучити з архіву усі файли, що відповідають заданому шаблону. Докладніше про шаблони імен файлів дивіться: <xref linkend="engrampa-pattern"/>.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+        <listitem>
+          <para>Натисніть <guibutton>Так</guibutton>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- =============  Modify a File in an Archive ==================== -->
+  <section xml:id="engrampa-modify-archive-file"><info><title>Змінення файлу в архіві</title></info> 
+     
+    <para>Щоб змінити файл у архіві, виконайте такі кроки: <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem><para>Виконайте подвійний клац на файлі, який бажаєте відкрити. Або клацніть правою кнопкою на файлі та виберіть <menuchoice><guimenuitem>Відкрити</guimenuitem></menuchoice>.</para></listitem>
+      <listitem><para>Відредагуйте відкритий вами файл та збережіть зміни.</para></listitem>
+      <listitem><para><application>Керівник архівів</application> запитає схвалення на оновлення у архіві файлу з внесеними вами змінами.</para></listitem>
+      <listitem><para>Натисніть на <guilabel>Оновити</guilabel>.</para></listitem>
+      </orderedlist></para>
+    <para><application>Керівник архівів</application> використовує задані операційною системою асоціяції між типами файлів і додатками, щоб визначити відповідний застосунок для запуску файлу певного типу. Ці асоціяції можна подивитися й змінити у вкладці <guilabel>Відкривати у програмі</guilabel> діялоґу властивостей файлу. Якщо <application>Керівник архівів</application> не може знайти відповідний додаток, <application>Керівник архівів</application> відображає діялоґове вікно <guilabel>Вибрати додаток</guilabel> де ви можете вибрати застосунок, як описано нижче.</para>
+    <section xml:id="engrampa-modifiy-archive-file-custom-app"><info><title>Змінити файл у архіві за допомогою користувацької програми</title></info>
+    
+    <para>Ви можете скористатися вказаним вами додатком, а не типовою програмою, щоб змінити файл. Щоб відкрити файл, використовуйте зовнішню програму: <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem><para>Клацніть правою кнопкою миші файл.</para></listitem>
+      <listitem><para>Виберіть <menuchoice><guimenuitem>Відкрити за допомогою...</guimenuitem></menuchoice>.</para></listitem>
+      </orderedlist></para>    
+    <para><application>Керівник архівів</application> відкриє діялоґове вікно <guilabel>Вибрати додаток</guilabel> з переліком усіх застосунків, здатних відкривати файли даного типу. Щоб вибрати один з додатків, виконайте подвійний клац на його назві або клацніть на назві застосунку, а потім на кнопці<guibutton>Вибрати</guibutton>Можна також увести ім'я застосунку у текстовому полі. <guilabel>Додатки</guilabel> й натиснути кнопку <guibutton>Вибрати</guibutton> щоб запустити вибраний вами застосунок</para>
+    <para>Після запуску програми виконайте вказівки з кроку 2, як описано в <xref linkend="engrampa-modify-archive-file"/>.</para>
+    </section>
+  </section>
+</section>
+
+
+<!-- ======= Viewing an archive ============= --> 
+<section xml:id="engrampa-view"><info><title>Перегляд архівів</title></info>
+  
+  <para><application>Керівник архівів</application> дозволяє продивлятися деякі відомости про архів.</para>
+
+<!-- ======= Archive Properties ============= --> 
+    <section xml:id="engrampa-view-archive-properties"><info><title>Щоб переглянути властивости архіву</title></info>
+      
+      <para>Для перегляду властивостей архіву виберіть <menuchoice><guimenu>Архів</guimenu><guimenuitem>Властивости</guimenuitem></menuchoice> щоб відкрити діялоґове вікно <guilabel>Властивости архіву</guilabel> Діялоґ <guilabel>Властивости архіву</guilabel> показує таку інформацію про архів: <variablelist>
+	      <varlistentry>
+	        <term><guilabel>Ім'я</guilabel></term>
+	        <listitem><para>Назва архіву.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Розташування</guilabel></term>
+	        <listitem><para>Позиція архіву у файловій системі.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Останнє змінювання</guilabel></term>
+	        <listitem><para>Дата та час останнього змінення архіву.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Розмір архіву</guilabel></term>
+	        <listitem><para>Розмір вмісту архіву у стисненому стані.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Розмір вмісту</guilabel></term>
+	        <listitem><para>Розмір розпакованого вмісту архіву. Ця інформація також доступна у рядку стану.</para></listitem>
+	      </varlistentry>
+
+	      <varlistentry>
+	        <term><guilabel>Коефіцієнт стиснення</guilabel></term>
+	        <listitem><para>Коефіцієнт стиснення - це значення, яке використовується для опису зменшення розміру даних. Наприклад, коефіцієнт стиснення 5 означає, що стислий архів складає 1 / 5 розміру початкових даних.</para></listitem>
+	      </varlistentry>
+
+	      <varlistentry>
+	        <term><guilabel>Кількість файлів</guilabel></term>
+	        <listitem><para>Кількість файлів у архіві.</para></listitem>
+	      </varlistentry>
+            </variablelist></para>
+    </section>
+ 
+
+<!-- ======= Archive Contents ============= --> 
+    <section xml:id="engrampa-view-archive-contents"><info><title>Щоб переглянути вміст архіву</title></info>
+      
+
+      <para><application>Керівник архівів</application> показує вміст архіву у головному вікні у вигляді переліку файлів з такими стовпчиками: <variablelist>
+	  <varlistentry>
+	    <term><guilabel>Ім'я</guilabel></term>
+	    <listitem><para>Назва файлу чи теки у архіві.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Розмір</guilabel></term>
+	    <listitem><para>Розмір файлу, коли він видобутий з архіву. Для теки поле <guilabel>Розмір</guilabel> порожнє. Щоб дізнатись, як показати розмір стиснутого файлу, дивіться <xref linkend="engrampa-extra-info"/>.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Тип</guilabel></term>
+	    <listitem><para>Тип файлу. Для теки поле <guilabel>Тип</guilabel> має значення <literal>Тека</literal>.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Дата зміни</guilabel></term>
+	    <listitem><para>Дата останнього змінювання файлу. Для теки поле <guilabel>Дата змінювання</guilabel> порожнє.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Розташування</guilabel></term>
+	    <listitem><para>Шлях до файлу всередині архіву. Цей стовпчик видно лише у режимі показу усього вмісту, а у режимі показу поточної теки місцерозташування файлів показується у текстовому полі <guilabel>Розташування</guilabel> Докладніше про режими перегляду дивіться: <xref linkend="engrampa-view-type-folder"/>.</para></listitem>
+	  </varlistentry>
+        </variablelist></para>
+      <para>Якщо після відкриття архіву у <application>Керівнику архівів</application> вміст архіву був змінений у іншій програмі, виберіть <menuchoice><guimenu>Вигляд</guimenu><guimenuitem>Оновити</guimenuitem></menuchoice> щоб перезавантажити вміст архіву з диска.</para>
+      <para>Про те, як налаштувати показ вмісту архіву в <application>Упоряднику Архіві</application> читайте у розділі <xref linkend="engrampa-archive-custom"/>.</para>
+      <para>Для більш складних завдань використовуйте додаток, встановлений у вашій системі. Для отримання додаткової інформації див <xref linkend="engrampa-view-archive-file"/>.</para>
+    </section>
+
+  <!-- =============  Viewing a File in an Archive ==================== -->
+  <section xml:id="engrampa-view-archive-file"><info><title>Щоб переглянути файл у архіві</title></info> 
+     
+    <para>Щоб продивитися файл у архіві, виконайте дії, описані у розділі <xref linkend="engrampa-modify-archive-file"/>Якщо ви зберегли відкритий файл, натисніть <guilabel>Скасувати</guilabel> , коли <application>Упорядник архівів</application> запитає підтвердження оновлення файлу у архіві.</para>
+  </section>
+
+<!-- =============  Testing the Integrity of an Archive ==================== -->
+  <section xml:id="engrampa-test-archive"><info><title>Щоб перевірити цілісність архіву</title></info> 
+     
+    <para>Інколи архів з якихось причин може виявитися пошкодженим. Щоб перевірити, чи архів не пошкоджено, виберіть <menuchoice><guimenu>Архів</guimenu><guimenuitem>Перевірити цілісність</guimenuitem></menuchoice>: <itemizedlist>
+              <listitem>
+                <para>Якщо помилок у архіві не виявлено, <application>Керівник архівів</application> відкриє діялоґове вікно <guilabel>Результати перевірки</guilabel> у якому перерахує усі файли в архіві з вказуванням, що кожен з них має статус  <literal>Так</literal>.</para>
+              </listitem>
+              <listitem>
+                <para>Якщо у архіві є помилка, <application>Керівник архівів</application> відкриє діялоґове вікно <guilabel>Результати перевірки</guilabel> , в якому буде показана частина архіву, що містить помилку.</para>
+              </listitem>
+            </itemizedlist></para>
+    <para>Пошкоджений архів може бути неможливо розпакувати, що призведе до втрати даних. З цієї причини потрібно перевірити цілісність архіву перед вилученням початкових файлів, які були у нього додані.</para>
+    <para>Якщо архів містить зашифровані файли, <application>Керівник архівів</application> запитає пароль до архіву перед виконанням перевірки.</para>
+    <note>
+      <para>Не усі формати архівів підтримують перевірку цілосности. Перевірка цілосности можлива для таких форматів: 7-Zip, RAR, ZIP, ACE, ARJ та Zoo.</para>
+    </note>
+    <tip><info><title>Підказка</title></info>
+      
+      <para>Щоб переконатися у цілосности архіву, формат якого не підтримує перевірку цілосности, розпакуйте усі файли з архіву й перевірте, що розпакування завершено успішно.</para>      
+    </tip>
+  </section>  
+</section>
+    
+<!-- ======= Customizing the Archive Display ============= --> 
+<section xml:id="engrampa-archive-custom"><info><title>Налаштування показу вмісту архіву</title></info>
+  
+  <para>Ви можете налаштувати відображення вмісту архіву у <application>Менеджері архівів</application>:</para>
+  <itemizedlist>
+    <listitem>
+      <para>Перемикання між переглядом тек і переглядом файлів. Для отримання додаткової інформації див. <xref linkend="engrampa-view-type"/>.</para>
+    </listitem>
+    <listitem>
+      <para>Вкажіть порядок відображення файлів у списку. Для отримання додаткової інформації див. <xref linkend="engrampa-view-sort"/>.</para>
+    </listitem> 
+    <listitem>
+      <para>Показувати додаткові відомості про вміст архіву. Для отримання додаткової інформації див. <xref linkend="engrampa-extra-info"/>.</para>
+    </listitem> 
+  </itemizedlist>
+  <para>При внесенні цих змін <application>Упорядник архівів</application> оновлює режим перегляду миттєво. </para>
+
+  <section xml:id="engrampa-view-type"><info><title>Щоб встановити тип перегляду</title></info>
+    
+    <para> Якщо архів містить теки, ви можете продивлятися його вміст у режимах <xref linkend="engrampa-view-type-folder"/> та <xref linkend="engrampa-view-type-file"/>.</para>
+
+    <section xml:id="engrampa-view-type-folder"><info><title>Перегляд тек</title></info>
+      
+      <para><application>Упорядник архівів</application> показує вміст архіву у режимі перегляду тек усталено. Щоб явним чином обрати режим перегляду тек, натисніть <menuchoice><guimenu>Вигляд</guimenu><guimenuitem>Показувати поточну теку</guimenuitem></menuchoice>.</para>
+      <para>У режимі перегляду тек <application>Упорядник архівів</application> показує теки так само, як <application>Файловий упорядник</application>: теки показані на екрані разом з їх значками й назвами. Щоб продивится вміст теки, двічі клацніть по її назві.</para>
+      <para>Панель тек, яку <application>Упорядник архівів</application> показує лише у режимі перегляду тек, містить компоненти, описані у таблиці нижче.</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Компонент</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Опис</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/engrampa_leftarrow.png" format="PNG"/> </imageobject> <textobject> <phrase>Показує значок для повернення до раніше відвіданого розташування.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para> Натисніть на цю кнопку для навіґації назад переліком відвіданих місць.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/engrampa_rightarrow.png" format="PNG"/> </imageobject> <textobject> <phrase>Показує значок для переміщення вперед по журналу розташувань.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Натисніть на цю кнопку для навіґації вперед переліком відвіданих місць. </para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/engrampa_uparrow.png" format="PNG"/> </imageobject> <textobject> <phrase>Показує значок для переміщення на один рівень вгору у дереві тек</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Натисніть на цю кнопку, щоб переміщуватися вгору на один рівень у дереві тек.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/engrampa_home.png" format="PNG"/> </imageobject> <textobject> <phrase>Показує значок для переміщення у кореневу теку архіву.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Натисніть на цю кнопку, щоб відкрити теку верхнього рівню у архіві.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><guilabel>Розташування</guilabel></para>
+              </entry>
+              <entry>
+                <para>У цьому полі показується повний шлях до поточної теки всередині архіву. </para>
+                <para>Для переміщення на інший рівень у дереві тек наберіть нову адресу у текстовому полі <guilabel>Розташування</guilabel> й натисніть <keycap>Enter</keycap>. <application>Упорядник архівів</application> покаже вміст вказаної адреси.</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
+
+    <section xml:id="engrampa-view-type-file"><info><title>Перегляд файлів</title></info>
+      
+      <para>Щоб увімкнути режим перегляду файлів, натисніть <menuchoice><guimenu>Вигляд</guimenu><guimenuitem>Показувати увесь вміст</guimenuitem></menuchoice>.</para>
+      <para>У цьому режимі <application>Упорядник архівів</application> показує одним переліком усі файли у архіві, включаючи файли у вкладених теках.</para>
+    </section>
+
+  </section>
+
+  <section xml:id="engrampa-view-sort"><info><title>Щоб відґатункувати список файлів</title></info>
+    
+    <para>Ви можете ґатункувати перелік файлів за назвою, розміром, типом, датою модифікації чи розташуванням.</para>
+    <para>Щоб вказати порядок ґатункування, натисніть на заголовок відповідного стовпчика.</para>
+    <para>Щоб змінити порядок ґатункування, знову натисніть заголовок стовпця.</para>
+    <para> 
+Наприклад, щоб відґатункувати перелік файлів за датою змінювання, клацніть по заголовку <guilabel>Дата змінювання</guilabel> <application>Упорядник архівів</application> перекомпонує перелік файлів, аби показати їх у порядку змінювання, від більш ранніх до пізніших. Щоб вгорі розташовувалися файли, змінені  найпізніше, клацніть по заголовку <guilabel>Дата змінювання</guilabel> ще раз.</para>
+    <para><application>Упорядник архівів</application> завжди додатково ґатункує файли за ім'ям. У прикладі вище усі файли, що мають одну й ту ж дату змінювання, <application>Упорядник файлів</application> відґатункує за ім'ям.</para>
+  </section>
+
+  <section xml:id="engrampa-extra-info"><info><title>Щоб показати додаткові відомости</title></info>
+    
+      <para>Щоб відкрити вікно <guilabel>Дієпис повідомлень</guilabel> натисніть <menuchoice><guimenu>Вигляд</guimenu><guimenuitem>Показати дієпис повідомлень</guimenuitem></menuchoice>: <itemizedlist>
+              <listitem>
+                <para>Якщо у поточному сеансі роботи <application>Упорядника архівів</application> ви тестували архів, діалог <guilabel>Журнал повідомлень</guilabel> показує результати останнього тестування. </para>
+              </listitem>
+              <listitem>
+                <para>Якщо у поточному сеансі роботи <application>Упорядника архівів</application> ви не тестували архіви, у вікні <guilabel>Журнал повідомлень</guilabel> показує перелік усіх файлів у архіві без вказування статусу. <guilabel>Журнал повідомлень</guilabel> вказує розмір кожного файлу у стисненому вигляді та ступінь стиснення, а також дату й час останнього змінювання. </para>
+              </listitem>
+            </itemizedlist></para>
+  </section>
+</section>
+
+<!-- ====== Using the File Manager Popup Menu to Manipulate an Archive ===== -->
+
+<section xml:id="engrampa-fmgr"><info><title>Використання файлового керівника для роботи з архівом</title></info> 
+     
+    <para>Ви можете використовувати файловий керівник для додавання файлів до архіву або для вилучення файлів з архіву.</para>
+
+<!-- ======= Adding files Using File Manager Menu  ============= --> 
+    <section xml:id="engrampa-fmgr-add"><info><title>Щоб додати файли до архіву за допомогою файлового керівника</title></info>
+      
+           <para>Ви можете використовувати файловий упорядник для додавання файлів до архіву такими способами: <itemizedlist>
+             <listitem><para>Перетягніть архів у вікно <application>Упорядника Архівів </application> із вікна файлового упорядника.</para>
+             </listitem>
+             <listitem><para>Використовуйте виринне меню керівника файлів, щоб додати файли до архіву.</para>
+             </listitem>
+          </itemizedlist></para>
+      <para>Щоб скористатися виринним меню упорядника файлів для додавання файлів до архіву, виконайте такі дії:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>Клацніть правою кнопкою миші на файлах або теках у вікні файлового керівника.</para>
+        </listitem>
+        <listitem><para>Оберіть <guimenuitem>Створити архів</guimenuitem>, щоб побачити діалог <application>Створити архів</application> <guilabel>Упорядника Архівів</guilabel>.</para>
+        </listitem>
+        <listitem><para>Уведіть ім'я архіву без розширення у текстовому полі <guilabel>Архів</guilabel>.</para>
+        </listitem>
+        <listitem><para>Виберіть тип архіву у розкривному переліку.</para>
+        </listitem>
+        <listitem><para>Оберіть розташування, у якому потрібно зберегти архів, у розкривному переліку  <guilabel>Розташування</guilabel> . Якщо потрібного розташування нема у переліку, натисніть  <guilabel>Инший...</guilabel> щоб обрати його у діалозі  <guilabel>Розташування</guilabel>.</para>
+        </listitem>
+        <listitem><para>Виберіть потрібні параметри створення архіву, натиснувши <guilabel>Інші параметри</guilabel>. Докладніше про параметри створення архіву дивіться: <xref linkend="engrampa-create-options"/>.</para>
+        </listitem>
+        <listitem><para>Натисніть <guilabel>Створити</guilabel>, щоб додати вибрані файли у кореневу теку вказаного архіву.</para>
+                 <note><para>Щоб вказати розширені параметри додавання у архів, запустіть <application>Упорядник Архівів</application>  як написано у розділі <xref linkend="engrampa-to-start"/>.</para></note>
+        </listitem>
+      </orderedlist>
+    </section>
+
+<!-- ======= Extracting files Using File Manager Menu  ============= --> 
+  <section xml:id="engrampa-fmgr-extract"><info><title>Видобування файлів з архіву у файловому упоряднику</title></info>
+      
+           <para>Ви можете видобути файли з архіву в файловому упоряднику такими способами:</para>
+      <para>Щоб скористатися виринним меню упорядника файлів для вилучення файлів з архіву, виконайте такі дії:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>Клацніть правою кнопкою миші на архіві у вікні файлового менеджера.</para>
+        </listitem>
+        <listitem><para>Оберіть <guimenuitem>Розпакувати сюди </guimenuitem>, щоб видобути всі файли з архіву й покласти їх до каталогу, в якому розташовано архів.</para>
+        </listitem>
+      </orderedlist>
+      <note><para>Якщо архів зашифровано, <application>Упорядник Архівів</application> запитає пароль перед виконанням перевірки.</para></note>
+    </section>
+
+</section>
+
+<!-- ======= Create Archive Advanced Options  ============= --> 
+    <section xml:id="engrampa-create-options"><info><title>Створити параметри</title></info>
+      
+      <para>При створенні архіву чи його перетворенні на инший формат ви можете натиснути <guilabel>Инші Параметри</guilabel>, щоб вказати додаткові параметри:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Пароль</guilabel></term>
+	  <listitem>
+	  <para>Введіть пароль, який буде використовуватися для шифрування архіву. Якщо пароль не вказано, архів не буде зашифровано.</para>
+	  <note>
+	    <para>Шифрування доступне не для всіх форматів файлів. Докладніше про шифрування читайте у розділі <xref linkend="engrampa-encrypt-files"/>.</para>
+	  </note>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>	  
+	  <term><guilabel>Шифрувати також перелік файлів</guilabel></term>
+	  <listitem>
+	  <para>Якщо цей параметр вибрано, пароль буде запрошений навіть для перегляду переліку файлів, що містяться в архіві, в іншому випадку буде запропоновано лише витягти файли з архіву. Ця опція доступна, лише якщо вказано пароль.</para>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>	  
+	  <term><guilabel>Розділити на томи</guilabel></term>
+	  <listitem>
+	  <para>Оберіть цей параметр, щоб розділити архів на більше файлів зазначеного виміру.</para>
+	  <note>
+	    <para>Лише 7-Zip і RAR архіви підтримують цю функцію.</para>
+	  </note>
+	  </listitem>
+	</varlistentry>
+      </variablelist>
+    </section>
+
+<!-- ======= Add Advanced Options  ============= --> 
+    <section xml:id="engrampa-add-options"><info><title>Додати параметри</title></info>
+      
+      <para>У діалогах <guilabel>Додати файли</guilabel> та <guilabel>Додати теку</guilabel> доступна така функція::</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Додати лише оновлені файли</guilabel></term>
+	  <listitem>
+            <para>Встановіть цей прапорець, щоб файли додавались до архіву лише у випадку, якщо в архіві їх ще нема або в архіві зберігається більш рання версія. <application>Упорядник Архівів</application> визначає версію файлу за датою змінювання. Якщо версія файлу в архіві найпізніша, <application>Упорядник архівів</application> не додає вибраний файл до архіву.</para>
+	    <para>Якщо цей прапорець не встановлено, <application>Упорядник Архівів</application> додає файл до архіву та перезаписує попередній вміст архіву.</para>
+	    <tip><info><title>Підказка</title></info>
+	      
+	      <para>Параметр <application>Додавати лише оновлені файли</application> дуже корисна, якщо ви використовуєте <guilabel>Упорядник Архівів</guilabel> для створення резервних копій. Припустім, що архів <filename>backup.tar.gz</filename> містить резервну копію вашої домашньої теки тижневої давнини. Щоб оновити архів і створити нову резервну копію, виконайте такі дії: <orderedlist inheritnum="ignore" continuation="restarts">
+                      <listitem>
+                        <para>Відкрийте архів <filename>backup.tar.gz</filename> в <application>Упоряднику Архівів</application>.</para>
+                      </listitem>
+                      <listitem>
+                        <para>Натисніть <menuchoice><guimenu>Зміни</guimenu><guimenuitem>Додати</guimenuitem></menuchoice> для показу діалогу <guilabel>Додати теку</guilabel>.</para> 
+                      </listitem>
+                      <listitem>
+                        <para>Виберіть вашу домашню теку.</para>
+                      </listitem>
+                      <listitem>
+                        <para>Оберіть параметр <guilabel>Додавати лише оновлені файли</guilabel>.</para>
+                      </listitem>
+                      <listitem>
+                        <para>Натисніть <guibutton>Додати</guibutton>.</para>
+                      </listitem>
+                    </orderedlist></para>
+                <para><application>Упорядник Архівів</application> автоматично додасть до архіву всі файли, які ви створили або змінили за останній тиждень. Однак <application>Упорядник Архівів</application> не вилучить файли які ви вилучили за цей тиждень. Оновлення архіву виконується набагато швидше, ніж створення повної резервної копії.</para>
+	  </tip>
+	</listitem>
+      </varlistentry>
+      </variablelist>
+      <section xml:id="engrampa-add-folder-options"><info><title>Додати до параметрів теки</title></info>
+      
+      <para>У діалозі <guilabel>Додати теку</guilabel> доступні опції, що дозволяють самочинно вибрати та додати до архіву всі файли, що відповідають певним критеріям:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Включити файли</guilabel></term>
+	  <listitem>
+            <para>Уведіть шаблон ім'я файлу в цьому текстовому полі, щоб додати файли з відповідними іменами. Докладніше про шаблони імен файлів читайте у розділі <xref linkend="engrampa-pattern"/></para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Виключати теки</guilabel></term>
+	  <listitem>
+            <para>Уведіть шаблон ім'я файлу в цьому текстовому полі, щоб виключити файли з відповідними іменами. Докладніше про шаблони імен файлів читайте у розділі <xref linkend="engrampa-pattern"/>.</para>
+          </listitem>
+	</varlistentry>
+        <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Виключити теки</guilabel></term>
+	  <listitem>
+            <para>Уведіть шаблон ім'я файлу в цьому текстовому полі, щоб виключити теки з відповідними іменами. Докладніше про шаблони імен файлів читайте у розділі <xref linkend="engrampa-pattern"/>.</para>
+          </listitem>
+	</varlistentry>      
+       <!-- ============= -->	
+      <varlistentry>
+	<term><guilabel>Включити підтеки </guilabel></term>
+	<listitem>
+          <para>Оберіть цей параметр, щоб додати всі файли, що відповідають зазначеному шаблону, з поточної теки та з підтек.</para>
+          <note>
+          <para>Ім'я файлу, а не ім'я підтеки, має відповідати вказаному шаблону.</para>
+          </note>
+	  <para>Якщо цей прапорець не встановлено, <application>Упорядник архівів</application> додасть відповідні шаблону файли лише з поточної теки.</para>
+        </listitem>
+      </varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guilabel>Виключати символічні посилання на теки</guilabel></term>
+	  <listitem>
+            <para>Оберіть цей параметр, щоб опустити файли з тек, що є символічними посиланнями. Символічні посилання - це вказівники або ярлики до инших тек.</para>
+	    <para>Якщо цей прапорець не встановлено, <application>Упорядник Архівів</application> додасть відповідні шаблону файли з тек, що є символічними посиланнями.</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->
+     <varlistentry>
+	<term><guibutton>Зберегти параметри</guibutton></term>
+	  <listitem>
+            <para>Натисніть цю кнопку, щоб зберегти вибрані параметри у файл. З'явиться вікно <guilabel>Зберегти параметри</guilabel>. Уведіть пояснювальне ім'я файлу в поле <guilabel>Назва параметрів</guilabel> і натисніть <guibutton>Зберегти</guibutton>.</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guibutton>Параметри завантаження</guibutton></term>
+	  <listitem>
+            <para>Натисніть цю кнопку, щоб завантажити або вилучити раніше збережений набір параметрів. З'явиться вікно <guilabel>Завантажити параметри</guilabel>.</para>
+            <itemizedlist>
+              <listitem>
+                <para>Щоб завантажити набір параметрів, оберіть потрібний файл у переліку та натисніть <guibutton>Застосувати</guibutton>.</para>
+              </listitem>
+              <listitem>
+                <para>Щоб вилучити набір параметрів, оберіть файл у переліку та натисніть <guibutton>Вилучити</guibutton>. Натисніть <guibutton>Закрити</guibutton>, щоб закрити вікно <guilabel>Завантажити параметри</guilabel>.</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guibutton>Скинути параметри</guibutton></term>
+	  <listitem>
+            <para>Натисніть цю кнопку, щоб скинути поточний вибір додаткових параметрів до стандартних значень.</para>
+          </listitem>
+	</varlistentry>
+      </variablelist>
+    </section>
+  </section>
+
+<!-- ======= Extract Options  ============= --> 
+  <section xml:id="engrampa-extract-options"><info><title>Параметри видобування</title></info>
+    
+      
+    <para>У вікні <guilabel>Розпакувати</guilabel> доступний ряд налаштовуваних параметрів, які зберігаються при виході з <application>Упорядника Архівів</application>:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term>Видобути</term>
+	  <listitem>
+            <para>Оберіть файли для вилучення:</para>
+            <variablelist>
+              <varlistentry>
+                <term><guilabel>Усі файли</guilabel></term>
+                <listitem>
+                  <para>Витягнути усі файли з архіву.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term><guilabel>Виділені</guilabel></term>
+                <listitem>
+                  <para>Витягнути обрані файли з архіву.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term><guilabel>Файли</guilabel></term>
+                <listitem>
+                  <para>Розпакувати з архіву всі файли, що відповідають заданому шаблону. Докладніше про шаблони імен файлів читайте у розділі <xref linkend="engrampa-pattern"/>.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+	  </listitem>
+	</varlistentry>
+	<!-- ============= -->	
+	<varlistentry>
+      <term><guilabel>Дії</guilabel></term>
+        <listitem>
+          <para>Ви можете вибрати такі дії, які будуть виконані при розпакуванні архіву:</para>	
+          <variablelist>
+	        <varlistentry>
+	          <term><guilabel>Повторне створення тек</guilabel></term>
+	          <listitem><para>Виберіть цей параметр, щоб відновити структуру тек при вилученні вказаних файлів.</para> 
+                <para>Припустім, ви вибрали <filename>/tmp</filename> у полі <guilabel>Ім'я файлу</guilabel> й вказали, що потрібно розпакувати усі файли. В архіві є вкладена тека з назвою <filename>doc</filename>.<itemizedlist>
+                  <listitem><para>Якщо опція <guilabel>Відтворювати теки</guilabel> вибрана, <application>Упорядник Архівів</application> ррозпакує вміст вкладеної теки в <filename>/tmp/doc</filename>.</para>
+                 </listitem>
+                 <listitem><para>Якщо ця опція не вибрана, <guilabel>Упорядник Архівів</guilabel> не створить ніяких вкладених тек. Усі файли, включаючи файли у вкладених теках, будуть розпаковані в <filename>/tmp</filename>.</para>
+                 </listitem>
+               </itemizedlist> </para></listitem>
+	         </varlistentry>
+             <!-- ============= -->	
+	         <varlistentry>
+	           <term><guilabel>Перезаписати наявні файли</guilabel></term>
+	           <listitem><para>Виберіть цей параметр, щоб перезаписати файли у теці призначення, які мають однакові імена, як вказані файли.</para>
+	             <para>Якщо цей прапорець не встановлено, <application>Упорядник Архівів</application> не буде видобувати вибраний вами файл за наявности у цільовій теці файлу з таким самим іменем.</para>
+	           </listitem>
+	         </varlistentry>
+             <!-- ============= -->	
+	         <varlistentry>
+	           <term><guilabel>Не видобувати старі файли</guilabel></term>
+	           <listitem>
+	             <para>Ця функція ефективна, лише якщо встановлено прапорець <guilabel>Перезаписувати наявні файли</guilabel>.</para>
+	             <para>Встановіть прапорець <guilabel>Пропускати застарілі файли</guilabel>, щоб вказаний файл був розпакований лише у тому випадку, якщо цільова тека не містить цей файл або містить його більш ранню версію. <application>Упорядник Архівів</application> визначає за датою змінювання файлу, яка версія пізніша, й якщо версія в архіві старіша, розпакування файлу не виконується.</para>
+	             <para>Якщо прапорець <guilabel>Перезаписувати наявні файли</guilabel> встановлено, а прапорець <guilabel>Пропускати застарілі файли</guilabel> — ні, <application>Упорядник Архівів</application> розпакує вказаний файл і замінить наявний вміст цільової теки.</para>
+	           </listitem>
+	         </varlistentry>
+	       </variablelist>
+	     </listitem>
+	   </varlistentry>
+     </variablelist>	
+  </section>
+</article>

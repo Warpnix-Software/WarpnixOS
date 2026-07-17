@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="task" id="index" xml:lang="id">
+
+  <info>
+    <title type="link" role="trail"><media type="image" its:translate="no" src="figures/atril-trail.png"/></title>
+    <title type="link">Atril</title>
+    <title type="text">Atril</title>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email its:translate="no">philbull@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Tiffany Antopolski</name>
+      <email its:translate="no">tiffany@antopolski.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal-unported.xml"/>
+
+    <desc><app>Atril</app> dibuat untuk melihat dokumen PDF. Pelajari cara memulai <app>Atril</app> dan fitur-fiturnya.</desc>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kukuh Syafaat</mal:name>
+      <mal:email>syafaatkukuh@gmail.com</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2021, 2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title><media type="image" its:translate="no" src="figures/atril.png"/> Bantuan Atrril</title>
+
+<section id="reading" style="2column">
+    <title>Membaca dokumen</title>
+</section>
+
+<section id="pres" style="2column">
+    <title>Presentasi dan format lain yang didukung</title>
+</section>
+
+<section id="printing" style="2column">
+    <title>Pencetakan</title>
+</section>
+
+<section id="annotations" style="2column">
+    <title>Anotasi dan markah</title>
+</section>
+
+<section id="forms" style="2column">
+    <title>Formulir interaktif</title>
+</section>
+
+<section id="faq" style="2column">
+    <title>Pertanyaan sering muncul</title>
+</section>
+
+<section id="advanced" style="2column">
+   <title>Lanjutan</title>
+</section>
+
+<section id="tips" style="2column">
+    <title>Kiat dan trik</title>
+</section>
+
+<section id="synctex">
+    <title>SyncTeX</title>
+    <links type="topic" style="2column" groups="first second third fourth fifth sixth"/>
+</section>
+
+<section id="getInvolved" style="2column">
+    <title>Ikut terlibat</title>
+</section>
+</page>

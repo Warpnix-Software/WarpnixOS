@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="opening" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#reading"/>
+    <link type="seealso" xref="formats"/>
+    <link type="seealso" xref="commandline"/>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email its:translate="no">tiffany@antopolski.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email its:translate="no">kittykat3756@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal-unported.xml"/>
+
+    <desc>Com obrir un document.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Carles Ferrando Garcia</mal:name>
+      <mal:email>carles.ferrando@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert Antoni Buj Gelonch</mal:name>
+      <mal:email>rbuj@fedoraproject.org</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Obrint un document</title>
+
+  <p>Podeu obrir un document amb qualsevol dels mètodes següents:</p>
+
+  <list>
+    <item>
+      <p>Feu doble clic al fitxer dins de <app>Caja</app> o al vostre <em>gestor de fitxers</em>.</p>
+      <note style="tip">
+        <p>Fent doble clic a fitxers de tipus PDF, PostScript, .djvu, .dvi o Comic Book Archive, aquests s'obren amb <app>Atril</app> per defecte.</p>
+      </note>
+    </item>
+    <item>
+      <p>Feu clic dret sobre la icona del fitxer a <app>Caja</app> i seleccioneu <guiseq><gui>Obre amb</gui><gui>Atril</gui></guiseq>.</p>
+    </item>
+  </list>
+
+  <p>Si ja teniu una finestra buida d'<app>Atril</app> oberta, podeu:</p>
+
+  <list>
+    <item>
+      <p>Arrossegar un fitxer fins la finestra des de <app>Caja</app>. El fitxer s'obrirà en una nova finestra</p>
+    </item>
+    <item>
+      <p>Premeu el botó <gui>Obre…</gui> al cantó esquerre superior de la finestra. Al diàleg <gui>Obre un document</gui>, seleccioneu el fitxer que voleu obrir, i cliqueu <gui>Obre</gui>. El fitxer s'obrirà en una nova finestra.</p>
+    </item>
+  </list>
+
+  <p>Si un document ja és obert en una finestra d'<app>Atril</app>, podeu:</p>
+
+  <list>
+    <item>
+      <p>Arrossegar un fitxer fins la finestra des de <app>Caja</app>. El fitxer s'obrirà en una nova finestra</p>
+    </item>
+    <item>
+      <p>Prémer <keyseq><key>Ctrl</key><key>O</key></keyseq>. Al diàleg <gui>Obre un document</gui>, escolliu el fitxer que voleu obrir, i cliqueu <gui>Obre</gui>. El fitxer s'obrirà en una nova finestra.</p>
+    </item>
+  </list>
+
+</page>

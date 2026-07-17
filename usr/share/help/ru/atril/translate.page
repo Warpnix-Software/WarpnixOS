@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="translate" xml:lang="ru">
+
+  <info>
+   <link type="guide" xref="index#getInvolved"/>
+    <desc>Локализация <app>Atril.</app></desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author copyright">
+      <name>Тиффани Антропольски</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2011</years>
+    </credit>
+     <credit type="editor">
+      <name>Майкл Хилл</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+       <p>Creative Commons Share Alike 3.0</p>
+     </license>
+  </info>
+
+<title>Помочь с переводом</title>
+<p>Пользовательский интерфейс и документация Atrils переводятся международным сообществом добровольцев. Вы можете принять в этом участие.</p>
+<p>Есть много языков, для которых всё ещё нужны переводы.</p>
+<p>Чтобы начать переводить, вам нужно <link href="https://www.transifex.com/signin/">создать учётную запись</link> и присоединиться к <link href="https://www.transifex.com/mate/MATE/">команде переводчиков</link> для вашего языка. Это позволит вам загружать новые переводы.</p>
+
+</page>

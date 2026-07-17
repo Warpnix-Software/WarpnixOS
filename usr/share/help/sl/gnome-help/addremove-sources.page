@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="addremove-sources" xml:lang="sl">
+
+  <info>
+    <credit type="author">
+      <name>Dokumentacijska ekipa Ubuntu</name>
+    </credit>
+    <desc>
+      Add repositories to extend the software sources Ubuntu uses for 
+      installation and upgrades.
+    </desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove"/>
+    <revision version="20.10" date="2020-09-13" status="review"/>
+  </info>
+
+  <title>
+    Add software repositories
+  </title>
+
+  <p>Programi so na voljo iz virov tretjih oseb kot tudi iz privzetih programskih skladišč Ubuntu. V primeru da želite namestiti program iz programskega skladišča tretje osebe, ga morate dodati na Ubuntujev seznam razpoložljivih skladišč.</p>
+
+  <note style="warning">
+    <p>Dodajte skladišča programske opreme iz virov, ki jim zaupate!</p>
+    <p>Skladišč tretjih oseb člani Ubuntu ne preverjajo za varnost ali zanesljivost in morda vsebujejo programe, ki lahko škodljo vašemu računalniku.</p>
+  </note>
+
+<p>
+</p>
+   <p>
+   To add a repository:
+   </p>
+
+  <steps>
+    <item>
+      <p>
+        Open <app>Software &amp; Updates</app> via the <em>Activities</em> search bar.
+      </p>
+    </item>
+    <item>
+      <p>Kliknite na zavihek <gui>Drugi programi</gui>.</p>
+    </item>
+    <item>
+      <p>Kliknite <gui>Dodaj</gui> in vnesite vrstico APT za skladišče. Ta bi morala biti na voljo na spletišču odložišča in bi morala biti videti podobno:</p>
+      <p>
+        <code its:translate="no">deb http://archive.ubuntu.com/ubuntu/ resolute main</code>
+      </p>
+    </item>
+    <item>
+      <p>Kliknite <gui>Dodaj</gui>. Vnesite svoje geslo v overitvenem oknu.</p>
+    </item>
+    <item>
+      <p>
+        Close the <app>Software &amp; Updates</app> window. <app>App Center</app> will then
+        check your software sources for new software.
+      </p>
+    </item>
+    <item>
+      <p>Večina skladišč ponuja ključ za podpisovanje, da lahko preverite prejete pakete. Tako da poleg zgornjih korakov morate slediti tudi korakom kako prejeti in namestiti ključ za podpisovanje (ključ GPG).</p>
+    </item>
+  </steps>
+
+</page>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-plain-text" xml:lang="ca">
+
+  <info>
+    <desc>Canvieu l'alineació de la lletra i el format del paràgraf a l'editor de correu.</desc>
+    <link type="guide" xref="mail-composer-html#formatting-options-plain"/>
+
+    <revision pkgversion="3.5.90" version="0.1" date="2012-08-16" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-html -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Formatar el text en text pla</title>
+
+     <p>Les eines de format de text es troben a la barra d'eines que hi ha a sota de la línia <gui>Assumpte</gui>. També apareixen als menús <gui>Insereix</gui> i <gui>Formata</gui>.</p>
+     <p>Les icones de la barra d'eines s'expliquen als indicadors de funció que apareixen quan es manté el punter del ratolí sobre els botons.</p>
+
+<section id="headers-and-lists">
+ <title>Capçaleres i llistes:</title>
+ <p>A l'esquerra de la barra d'eines superior, podeu triar <gui>Normal</gui> per a l'estil de text predeterminat, o <gui>Capçalera 1</gui> a través <gui>Capçalera 6</gui> per a diferents mides de capçalera des de grans (1) fins a petites (6). Altres estils inclouen <gui>Preformat</gui>, per a utilitzar l'etiqueta HTML per a blocs de text predefinits, i tres tipus de pics per a les llistes.</p>
+ <p>Per exemple, en comptes d'utilitzar asteriscs per a marcar els pics d'una llista, podeu utilitzar l'estil <gui>Llista de pics</gui> de la llista desplegable. <app>Evolution</app> utilitza diferents estils de pic, i controla la compaginació i diversos nivells de sagnat.</p>
+</section>
+
+<section id="alignment">
+      <title>Alineació:</title>
+      <p>Ubicat al costat de les Capçaleres i llistes desplegable, les tres icones de paràgraf deuen ser familiars per als usuaris de la majoria de programari de processament de textos. El botó de més a l'esquerra alinea el text a l'esquerra, el centre centra el text del centre i el botó dret alinea el text a la dreta.</p>
+</section>
+
+<section id="indentation-rules">
+      <title>Regles de sagnat:</title>
+      <p>El botó amb la fletxa que apunta a l'esquerra disminueix el sagnat d'un paràgraf, i la fletxa dreta l'augmenta.</p>
+</section>
+
+</page>

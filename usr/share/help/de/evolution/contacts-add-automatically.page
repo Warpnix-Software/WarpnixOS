@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-add-automatically" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="contacts-usage"/>
+    <link type="seealso" xref="contacts-autocompletion"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-08-19" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Barbara Tobias</name>
+      <email its:translate="no">barbtobias09@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Personen, von denen Sie Nachrichten erhalten haben, automatisch in Ihre Kontakte aufnehmen.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andre Klapper</mal:name>
+      <mal:email>ak-47@gmx.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009-2013, 2016-2018, 2020-2021</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009-2013, 2015-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Gabor Karsay</mal:name>
+      <mal:email>gabor.karsay@gmx.at</mal:email>
+      <mal:years>2011-2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Tim Sabsch</mal:name>
+      <mal:email>tim@sabsch.com</mal:email>
+      <mal:years>2018, 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jürgen Benvenuti</mal:name>
+      <mal:email>gastornis@posteo.org</mal:email>
+      <mal:years>2022-2024</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Personen automatisch in meine Kontakte aufnehmen</title>
+
+  <p>Sie können Personen automatisch zu Ihren Kontakten hinzufügen lassen, wenn Sie auf empfangene E-Mails antworten.</p>
+  <steps>
+  <item><p>Wählen Sie <guiseq><gui>Bearbeiten</gui><gui>Erweiterungen</gui></guiseq>.</p></item>
+  <item><p>Aktivieren Sie <gui>Automatische Kontakte</gui>.</p>
+<note style="tip"><p>Falls eine Erweiterung unter <guiseq><gui>Bearbeiten</gui><gui>Erweiterungen</gui></guiseq> nicht verfügbar ist, fragen Sie bitte in einem Supportforum Ihrer Distribution. Ihre Distribution könnte einige Erweiterungen deaktiviert haben oder diese in einem separaten Paket anbieten.</p></note>
+  </item>
+  <item><p>Wählen Sie <guiseq><gui>Bearbeiten</gui><gui>Einstellungen</gui><gui>Kontakte</gui><gui>Automatische Kontakte</gui></guiseq>.</p></item>
+  <item><p>Aktivieren Sie <gui>Automatische Erstellung von Adressbucheinträgen bei Versendung von E-Mails</gui> und wählen Sie ein Adressbuch in der Auswahlliste darunter, das die neuen Kontakte aufnehmen soll.</p></item>
+  </steps>
+
+  <p>Ab sofort werden Kontakte automatisch für Absender empfangener E-Mails erstellt, sobald Sie diese beantworten.</p>
+
+</page>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-access-gmail-pop-account" xml:lang="ru">
+
+  <info>
+    <desc>Настройка учётной записи POP Gmail.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+    <link type="guide" xref="google-services"/>
+    <link type="seealso" xref="mail-account-manage-pop"/>
+
+    <revision pkgversion="3.11.92" version="0.2" date="2014-03-23" status="review"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+
+
+<title>Доступ к учётной записи POP Gmail с помощью <app>Evolution</app></title>
+
+<p>Чтобы настроить учётную запись POP Gmail в <app>Evolution</app>, выполните следующие действия:</p>
+
+<steps>
+<item><p>Войдите в учётную запись Gmail.</p></item>
+<item><p>Перейдите в раздел <guiseq><gui>Настройки</gui><gui>Пересылка и POP/IMAP</gui></guiseq>. Откройте раздел «Доступ по протоколу POP».</p></item>
+<item><p>Включите функцию доступа по протоколу POP, отметив один из следующих вариантов:</p>
+    <list>
+    <item><p>Включить POP для всех писем (даже для уже загруженных)</p></item>
+    <item><p>Включить POP для писем, полученных с этого момента</p></item>
+    </list>
+</item>
+<item><p>Укажите другие необходимые параметры этой функции Gmail.</p></item>
+<item><p>Для назначения параметров учётной записи Gmail нажмите <gui>Инструкции по настройке</gui>. Выберите <gui>Я хочу включить POP</gui> и выберите <gui>Другой</gui> в списке клиентов.</p></item>
+<item><p>В клиенте <app>Evolution</app> выберите пункт меню <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Учётные записи</gui></guiseq>. Нажмите кнопку <gui style="button">Добавить</gui>.</p></item>
+<item><p>Укажите необходимые сведения. Обратитесь к пункту 5 для получения информации о параметрах учётной записи.</p></item>
+<!-- Evolution does not support Google's proprietary SASL XOAUTH2 implementation which makes Evolution a "less secure app" for Google. -->
+<item><p>Разрешите <link href="https://www.google.com/settings/security/lesssecureapps">доступ для менее защищённых приложений в параметрах вашей учётной записи Gmail</link>.</p></item>
+
+</steps>
+</page>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-message-templates-variables" xml:lang="ru">
+
+  <info>
+   <desc>Настройка переменных в шаблонах и повторное использование элементов из сообщения, на которое выполняется ответ</desc>
+   
+   <link type="guide" xref="mail-composer-message-templates#options"/>
+
+ <revision pkgversion="3.5.90" version="0.3" date="2012-08-17" status="draft"/>
+ <credit type="author">
+   <name its:translate="no">Andre Klapper</name>
+   <email its:translate="no">ak-47@gmx.net</email>
+ </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/b1dlaazl.html.en -->
+ </credit>
+ 
+ <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+     
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Использование переменных в шаблонах</title>
+
+<section id="configure">	
+<title>Настройка переменных для шаблонов сообщений</title>
+<steps>
+<item><p>Выберите пункт меню <guiseq><gui>Правка</gui><gui>Модули</gui></guiseq>.</p></item>
+<item><p>Нажмите <gui>Шаблоны</gui>.</p>
+<note style="tip"><p>Если этот модуль не доступен в разделе <guiseq><gui>Правка</gui><gui>Модули</gui></guiseq>, обратитесь на форум поддержки дистрибутива. Возможно, в вашем дистрибутиве разработчики решили отключить некоторые модули или поставлять их как отдельный пакет.</p></note>
+</item>
+<item><p>Перейдите на вкладку <gui>Настройка</gui>.</p></item>
+<item><p>Можно добавлять, изменять или удалять пары «ключ — значение». Можно указать любое количество пар «ключ — значение».</p></item>
+</steps>
+ <p>В любом шаблоне вхождение $key заменяется соответствующим значением из конфигурации. Например, если для ключа «Manager» задано значение «Иван», все вхождения $Manager будут заменены на «Иван» в сообщении.</p>
+ <p>Допустим, что имеется 1000 шаблонов сообщений, содержащих имя менеджера. Когда на смену этому менеджеру придёт другой, будет непросто вручную заменить имя менеджера во всей этой 1000 сообщений. Если же сообщения содержат значение ключа $Manager, это значение можно переопределить на вкладке настройки этого модуля.</p>
+ <p>По умолчанию все переменные среды используются как пара «ключ — значение». Вхождение $env_variable заменяется значением, которое имеет эта переменная. Например, вхождение переменной $PATH в шаблоне заменяется её значением при использовании шаблона.</p>
+ <p>Замена выполняется с соблюдением следующей очерёдности:</p>
+ <steps>
+  <item>
+<p>$key заменяется значением, заданным на вкладке настройки модуля «Шаблоны».</p>
+  </item>
+  <item>
+<p>Если ключ не найден, вхождение заменяется значением соответствующей переменной среды.</p>
+  </item>
+  <item>
+<p>Если ключ не является ни параметром конфигурации, ни переменной среды, изменения не выполняются.</p>
+  </item>
+ </steps>
+</section>
+
+<section id="reply-variables">
+<title>Использование элементов из сообщения в шаблоне при ответе</title>
+<p>Шаблоны могут содержать не только предустановленный набор <link xref="#configure">пар «ключ — значение»</link>. Можно использовать любые значения из заголовка письма, к которому будет применён шаблон, а также всё тело сообщения.</p>
+
+<p its:locNote="TO TRANSLATORS: Do NOT translate $ORIG[subject] and $ORIG[body] in this sentence!">Для этого воспользуйтесь форматом <code>$ORIG[header_name]</code>, заменив переменную <code>header_name</code> названием заголовка. Например, если требуется вставить тему сообщения, на которое выполняется ответ, используйте <code>$ORIG[subject]</code>. Чтобы вставить всё тело письма, используйте <code>$ORIG[body]</code>.</p>
+
+<p its:locNote="TO TRANSLATORS: Do NOT translate $ORIG[body] and $ORIG[reply-to] in this sentence!">Если для переменной не будет найдена замена, она не удаляется (за исключением <code>$ORIG[body]</code>), а остаётся на месте, позволяя пользователю понять, что что-то пошло не так. Такое может произойти при попытке использования заголовков, которые недоступны в исходном сообщении (например, <code>$ORIG[reply-to]</code>).</p>
+</section>
+
+</page>

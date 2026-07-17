@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-filters-not-working" xml:lang="ca">
+
+  <info>
+    <desc>Corregiu problemes amb els filtres de correu que no ordenen i organitzen el correu tal com s'esperava.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+    <link type="seealso" xref="mail-filters"/>
+
+    <revision pkgversion="3.9.3" version="0.5" date="2013-06-24" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Els filtres de correu no funcionen</title>
+
+<section id="order">
+<title>Ordre dels filtres</title>
+<p>L'ordre dels filtres és molt important. S'apliquen al missatge original en seqüència, com una recepta.</p>
+<p>Si el primer filtre té una regla d'<gui>Atura el processament</gui>, aleshores tots els missatges que coincideixin amb aquest filtre ignoraran tots els filtres successius.</p>
+<p>Quan mou un missatge a una altra carpeta, «movent» representa l'efecte d'afegir una còpia del missatge a la carpeta de destinació i de marcar el missatge original per a l'eliminació. Així, qualsevol regla de filtre posterior s'aplicarà al missatge original que ara està marcat per a l'eliminació. Per tant, moure un missatge normalment hauria d'aparèixer al final en la seqüència de regles de filtratge.</p>
+<p>Per a comprovar les regles i el seu ordre en un filtre existent, reviseu les accions a la secció <gui>Després</gui> mitjançant <link xref="mail-filters#editing">l'edició del filtre</link>.</p>
+</section>
+
+<section id="several-clients">
+<title>Ús de diversos clients de correu</title>
+<p>Una altra cosa que cal tenir en compte és que els filtres depenen de l'indicador «nou» que s'estableix al servidor quan un missatge de correu electrònic determinat s'obté inicialment del servidor. Si utilitzeu un altre client de correu electrònic a part d'<app>Evolution</app>, és possible que els vostres filtres no funcionin automàticament.</p>
+</section>
+
+<section id="filter-log">
+<title>Registre de les accions de filtrat</title>
+<p>Si encara no us queda clar per què els filtres no funcionen com esperàveu, podeu activar el registre de les accions de filtrat.</p>
+<list>
+<item><p>Tancar <app>Evolution</app>.</p></item>
+<item><p>Obrir l'aplicació <app>Terminal</app>.</p></item>
+<item><p>Executar l'ordre <cmd>gsettings set org.gnome.evolution.mail filters-log-actions true</cmd></p></item>
+<item><p>Executar l'ordre <cmd>gsettings set org.gnome.evolution.mail filters-log-file "/home/myusername/my-filter-log"</cmd> i reemplaçar <cmd>myusername</cmd> pel seu usuari. Això crearà un fitxer text anomenat <file>my-filter-log</file> al vostre directori personal. Tingueu en compte que s'ha d'introduir el camí d'accés absolut al nom del fitxer; una sintaxi semblant <sys>~</sys> o <sys>$HOME</sys> no funcionarà.</p></item>
+<item><p>Inicieu <app>Evolution</app>.</p></item>
+<item><p>Recuperar el correu per a aplicar-hi filtres.</p></item>
+<item><p>Obriu el fitxer <file>my-filter-log</file> amb un editor de text per a veure quines accions de filtre s'han aplicat.</p></item>
+</list>
+
+<p>Tingueu en compte que podeu desactivar el registre de les accions de filtrat, utilitzant l'ordre <cmd>gsettings set org.gnome.evolution.mail filters-log-actions false</cmd></p>
+
+<p>També podeu fer-ho utilitzant l'aplicació <app>dconf-editor</app>.</p>
+</section>
+
+</page>

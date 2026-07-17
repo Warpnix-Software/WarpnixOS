@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:e="http://projectmallard.org/experimental/" xmlns:if="http://projectmallard.org/if/1.0/" type="topic" id="calendar-alarms-and-reminders" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="index#calendar"/>
+
+    <revision pkgversion="3.28.2" version="0.5" date="2018-07-10" status="draft"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+     <name its:translate="no">Novell, Inc</name>
+     <!-- Content partially from https://help.gnome.org/users/evolution/2.32/config-prefs-cal.html.en#CACHCGCI -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Налаштовування сповіщень-нагадувань для зустрічей.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Нагадування для зустрічей</title>
+
+<section id="general-settings">
+  <title>Загальні параметри</title>
+
+  <p>У списку <guiseq><gui>Зміни</gui><gui>Параметри</gui> <gui>Календар та завдання</gui><gui>Нагадування</gui></guiseq> ви можете вибрати ті календарі, для яких ви хочете отримувати сповіщення щодо нагадувань. Якщо ви не позначити якогось календаря, ви не отримуватимете нагадувань для будь-яких подій у цьому календарі. Ви також можете визначити, чи слід показувати нагадування щодо будь-якої зустрічі та щодо будь-якого дня народження і річниці.</p>
+
+  <if:choose>
+    <if:when test="platform:gnome-shell">
+      <p>Докладніші відомості щодо показу нагадувань можна знайти у <link xref="help:gnome-help/shell-notifications" href="https://help.gnome.org/users/gnome-help/stable/shell-notifications">довідці щодо стільничного середовища GNOME</link>.</p>
+    </if:when>
+  </if:choose>
+
+</section>
+
+<section id="manual-reminders">
+  <title>Налаштовування нагадувань вручну</title>
+
+  <p>Окрім загальних параметрів, ви можете налаштувати нагадування у редакторі зустрічей для окремих зустрічей:</p>
+
+  <steps>
+    <item>
+      <p>Виберіть пункт <guiseq><gui>Параметри</gui><gui>Нагадування</gui></guiseq> або натисніть кнопку «Нагадування» на панелі інструментів.</p>
+    </item>
+    <item>
+      <p>Зі спадного меню виберіть або один із доступних типових варіантів параметрів показу сповіщення нагадувань, або виберіть варіант <gui>Інше</gui>.</p>
+    </item>
+    <item>
+      <p>У випадку <gui>Інше</gui> нагадуванням може бути контекстна підказка, відтворення звуку, запуск програми або надсилання повідомлення електронної пошти. Ви також можете визначити, чи має повторюватися нагадування.</p>
+    </item>
+  </steps>
+
+<note style="info"> <!-- bug 794085 -->
+  <p>Пункт <gui>Надіслати пошту</gui> доступний, лише якщо у модулі календаря передбачено підтримку таких функціональних можливостей.</p>
+</note>
+
+</section>
+
+</page>

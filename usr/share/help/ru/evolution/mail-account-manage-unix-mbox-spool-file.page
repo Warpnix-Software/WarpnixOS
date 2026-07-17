@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-account-manage-unix-mbox-spool-file" xml:lang="ru">
+
+  <info>
+    <desc>Добавление и изменение учётной записи стандартной для Unix очереди типа mbox в <app>Evolution</app>.</desc>
+
+    <link type="guide" xref="mail-account-management#mail-local-account-types"/>
+    <title type="link" role="trail">файл mbox</title>
+
+    <revision pkgversion="3.4" version="0.4" date="2013-06-22" status="candidate"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Параметры учётной записи стандартной для Unix очереди типа mbox</title>
+
+<section id="account-editor">
+<title>Редактор учётной записи</title>
+<p>Чтобы добавить учётные записи, выберите пункт меню <guiseq><gui>Файл</gui><gui>Создать</gui><gui>Учётная запись почты</gui></guiseq> или пункт меню <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Учётные записи</gui><gui style="button">Добавить</gui></guiseq>. Действия в основном те же, что и во <link xref="intro-first-run">вспомогательной программе первого запуска</link>, за исключением того, что не будет предложено импортировать данные из других приложений или выполнить восстановление из файла резервной копии.</p>
+<p>Учётные записи почты можно редактировать: выберите пункт меню <guiseq>Правка<gui>Параметры</gui><gui>Учётные записи</gui><gui style="button">Правка</gui></guiseq>.</p>
+<p>При редактировании существующей учётной записи доступны следующие параметры:</p>
+
+<section id="identity">
+<info>
+  <title type="link">Профиль (учётные записи стандартной для Unix очереди типа mbox)</title>
+  <title type="link" role="trail">Учётная запись</title>
+</info>
+<title>Учётная запись</title>
+<p>Укажите ваши имя и адрес электронной почты.</p>
+<p>Также можно (необязательно) указать обратный адрес (если ответы на сообщения должны поступать на другой адрес), задать организацию (компанию или организацию, от лица которой вы отправляете письма при использовании этой учётной записи), стандартную <link xref="mail-composer-mail-signatures">подпись</link> для этой учётной записи, а также <link href="https://ru.wikipedia.org/wiki/Алиасы_почтовых_адресов">псевдонимы электронной почты</link>.</p>
+</section>
+
+<section id="receiving-email">
+<info>
+  <title type="link">Получение почты и параметры получения (учётные записи стандартной для Unix очереди типа mbox)</title>
+  <title type="link" role="trail">Получение</title>
+</info>
+<title>Получение почты и параметры получения</title>
+</section>
+
+<section id="sending-email">
+<info>
+  <title type="link">Отправка почты (учётные записи стандартной для Unix очереди типа mbox)</title>
+  <title type="link" role="trail">Отправка</title>
+</info>
+<title>Отправка почты</title>
+</section>
+
+<section id="defaults">
+<info>
+  <title type="link">По умолчанию (учётные записи стандартной для Unix очереди типа mbox)</title>
+  <title type="link" role="trail">По умолчанию</title>
+</info>
+<title>По умолчанию</title>
+</section>
+
+<section id="composing-messages">
+<info>
+  <title type="link">Создание сообщений (учётные записи стандартной для Unix очереди типа mbox)</title>
+  <title type="link" role="trail">Создание</title>
+</info>
+<title>Создание сообщений</title>
+</section>
+
+<section id="security">
+<info>
+  <title type="link">Безопасность (учётные записи стандартной для Unix очереди типа mbox)</title>
+  <title type="link" role="trail">Безопасность</title>
+</info>
+<title>Безопасность</title>
+</section>
+
+</section> <!-- end "account editor" section, now list any account settings stuff related to this account type outside of it -->
+
+<!-- <section id="other-settings">
+<info>
+  <title type="link">Other settings (Standard Unix mbox Spool File accounts)</title>
+</info>
+<title>Other settings</title>
+<p>Other account related settings that are not located in the <gui>Account Editor</gui>:</p>
+</section> -->
+
+</page>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="deleting-appointments" xml:lang="uk">
+
+  <info>
+    <desc>Вилучення записів календаря для зменшення розміру поштової скриньки.</desc>
+    
+    <link type="guide" xref="deleting-to-free-disk-space"/>
+
+    <revision pkgversion="2.32.2" version="0.1" date="2011-07-21" status="candidate"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Остаточне вилучення застарілих записів зустрічей</title>
+
+<p>Щоб остаточно витерти застарілі записи з календаря, скористайтеся пунктом меню <guiseq><gui>Дії</gui><gui>Очистити</gui></guiseq> на панелі перегляду календаря. Програма запитає вас, за скільки днів слід витерти записи подій з календаря. Дію буде застосовано до поточного відкритого календаря (календар можна вибрати зі списку календарів ліворуч); інші календарі лишаться незмінними.</p>
+
+</page>

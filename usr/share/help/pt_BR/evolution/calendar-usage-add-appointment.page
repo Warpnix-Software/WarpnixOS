@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-usage-add-appointment" xml:lang="pt-BR">
+
+  <info>
+    <link type="guide" xref="calendar-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.2" date="2011-08-01" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Adicionando um compromisso.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Fontenelle</mal:name>
+      <mal:email>rafaelff@gnome.org</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Adicionando um compromisso</title>
+
+  <steps>
+    <item>
+      <p>Clique em <guiseq><gui>Arquivo</gui><gui>Novo</gui><gui>Compromisso</gui></guiseq>, ou clique duas vezes em um espaço em branco no calendário para abrir a caixa de diálogo Compromisso. O horário específico na visualização do calendário em que você clicou duas vezes será sugerido para o novo compromisso. Você também pode escrever diretamente no calendário e ajustar a duração arrastando-o com o mouse.</p>
+    </item>
+    <item>
+      <p>Se você usar a caixa de diálogo Compromisso:</p>
+    </item>
+    <item>
+      <p>Selecione uma agenda na lista suspensa <gui>Agenda</gui>.</p>
+    </item>
+    <item>
+      <p>Digite um breve resumo no campo <gui>Resumo</gui>.</p>
+    </item>
+    <item>
+      <p>(Opcional) Digite um local no campo <gui>Local</gui>.</p>
+    </item>
+    <item>
+      <p>Para selecionar este evento como um evento de dia inteiro, clique em <guiseq><gui>Opções</gui><gui>Evento de dia inteiro</gui></guiseq> ou clique no botão <gui>Evento de dia inteiro</gui> na barra de ferramentas.</p>
+    </item>
+    <item>
+      <p>Selecione a data e hora.</p>
+    </item>
+    <item>
+      <p>(Opcional) Insira uma descrição no campo <gui>Descrição</gui>.</p>
+    </item>
+    <item>
+      <p>Para mostrar os tempos como <link xref="calendar-free-busy">ocupado</link> para outros, clique em <guiseq><gui>Opções</gui> <gui>Exibir hora como ocupado</gui></guiseq>.</p>
+    </item>
+  </steps>
+
+  <p>Você também pode definir um <link xref="calendar-timezones">fuso horário</link>, uma <link xref="using-categories">categoria</link>, um <link xref="calendar-alarms-and-reminders">lembrete</link>, uma <link xref="calendar-recurrence">recorrência</link> ou uma <link xref="calendar-classifications">classificação</link> para o evento, ou adicionar um anexo.</p>
+
+</page>

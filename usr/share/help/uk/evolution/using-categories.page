@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="using-categories" xml:lang="uk">
+
+  <info>
+    <desc>Користування категоріями для зустрічей, контактів, приміток та завдань та керування категоріями.</desc>
+
+    <link type="guide" xref="contacts-organizing"/>
+    <link type="guide" xref="tasks-organizing"/>
+    <link type="guide" xref="calendar-organizing"/>
+
+    <revision pkgversion="3.3.91" version="0.6" date="2012-02-19" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-contact-organize.html.en#usage-contact-organize-group-category -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Користування категоріями</title>
+
+<p>Ще одним способом групування контактів, зустрічей, завдань та приміток (усього того, що надалі у цьому тексті ми називатимемо «об'єктами) є позначення їх як таких, що належать до різних категорій. Ви можете позначити будь-який об'єкт як такий, що належить до декількох категорій, або як такий, що не належить до жодної категорії. Наприклад, у вашій адресній книзі ви можете додати запис вашого друга або подруги до категорії «Бізнес», оскільки ви працюєте разом із ним чи нею, і додати запис до категорії «Друзі», оскільки це ваш друг або подруга.</p>
+
+<note style="tip"><p>Щоб наказати програмі показати лише об'єкти із певної категорії, виберіть відповідну категорію на панелі <link xref="searching-items">пошуку</link>.</p></note>
+
+<section id="set-category-for-object">
+<title>Встановлення категорій для об'єкта</title>
+
+<p>Щоб позначити об'єкт як такий, що належить до певної категорії, виконайте такі дії:</p>
+<steps>
+<item><p>Двічі клацніть на об'єкті, щоб відкрити вікно відповідного редактора.</p></item>
+<item><p>Натисніть кнопку <gui style="button">Категорії…</gui>. (Якщо цю кнопку не показано, скористайтеся пунктом меню <guiseq><gui>Перегляд</gui><gui>Категорії</gui></guiseq>.)</p></item>
+<item><p>Виберіть категорію зі списку. Ви можете вибрати довільну кількість відповідних категорій.</p></item>
+</steps>
+
+</section>
+
+<section id="managing-categories">
+<title>Додавання категорій та керування ними</title>
+
+<p>Якщо записів у типовому списку категорій недостатньо для ваших потреб, ви можете додати власні категорії або безпосередньо за допомогою пункту меню <guiseq><gui>Зміни</gui><gui>Доступні категорії</gui></guiseq>, або опосередковано при редагуванні об'єкта:</p>
+<steps>
+<item><p>Двічі клацніть на будь-якому об'єкті, щоб відкрити вікно відповідного редактора.</p></item>
+<item><p>Натисніть кнопку <gui style="button">Категорії…</gui>. (Якщо цю кнопку не показано, скористайтеся пунктом меню <guiseq><gui>Перегляд</gui><gui>Категорії</gui></guiseq>.)</p></item>
+<item><p>Введіть нову категорію до поля у верхній частині вікна.</p></item>
+<item><p>Натисніть кнопку <gui style="button">Гаразд</gui>.</p></item>
+<item><p>Після цього ви зможете побачити категорію у текстовому полі <gui>Категорії</gui> у вікні редактора.</p></item>
+<item><p>Натисніть кнопку <gui style="button">Гаразд</gui>.</p></item>
+</steps>
+
+<p>За допомогою <gui>Редактора категорій</gui> ви можете редагувати і встановлювати колір і піктограму для усіх доступних категорій натисканням кнопки <gui style="button">Редагувати</gui> у нижній частині вікна <gui>Категорії</gui>. Щоб вилучити категорію зі списку, натисніть кнопку <gui style="button">Вилучити</gui>.</p>
+</section>
+
+</page>

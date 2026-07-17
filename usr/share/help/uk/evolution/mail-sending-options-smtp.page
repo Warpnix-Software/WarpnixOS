@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-sending-options-smtp" xml:lang="uk">
+
+  <info>
+    <desc>Параметри надсилання для SMTP.</desc>
+
+    <link type="guide" xref="mail-account-manage-imap-plus#sending-email"/>
+    <link type="guide" xref="mail-account-manage-local-delivery#sending-email"/>
+    <link type="guide" xref="mail-account-manage-maildir-format-directories#sending-email"/>
+    <link type="guide" xref="mail-account-manage-mh-format-directories#sending-email"/>
+    <link type="guide" xref="mail-account-manage-pop#sending-email"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-directory#sending-email"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-file#sending-email"/>
+    <link type="guide" xref="mail-account-manage-usenet-news#sending-email"/>
+    <revision pkgversion="3.0.2" version="0.3" date="2013-06-22" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Параметри надсилання SMTP</title>
+
+<list>
+<item><p>Введіть адресу вашого поштового сервера для надсилання пошти у полі <gui>Сервер</gui> і вкажіть, чи слід проходити розпізнавання на сервері (вводити ім'я користувача і пароль).</p>
+<note style="tip"><p>Надавачі безкоштовних послуг електронної пошти часто надають відомості щодо того, якими з цих параметрів можна скористатися. Якщо ви працюєте у середовищі якоїсь організації, вам варто зв'язатися із адміністратором системи, щоб дізнатися більше про налаштування.</p></note>
+</item>
+<item><p>Якщо для доступу до сервера слід проходити розпізнавання, вам слід надати такі дані:</p>
+<list>
+  <item><p>Виберіть тип розпізнавання зі списку «Автентифікація» або натисніть кнопку <gui>Перевірити підтримувані типи</gui>, щоб наказати <app>Evolution</app> виявити підтримувані механізми розпізнавання. Деякі сервери не показують механізмів розпізнавання, підтримку яких передбачено, тому натискання цієї кнопки не гарантує, що доступні механізми працюватимуть.</p></item>
+  <item><p>Введіть ваше ім'я користувача.</p></item>
+</list>
+</item>
+<item><p>Виберіть <gui>Використовувати безпечне з'єднання</gui>, якщо ви хочете захистити з'єднання.</p></item>
+</list>
+
+</page>

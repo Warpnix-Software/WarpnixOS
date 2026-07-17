@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-access-gmail-imap-account" xml:lang="ru">
+
+  <info>
+    <desc>Настройка учётной записи IMAP Gmail.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+    <link type="guide" xref="google-services"/>
+    <link type="seealso" xref="mail-account-manage-imap-plus"/>
+
+    <revision pkgversion="3.29.91" version="0.4" date="2018-08-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<!-- Page only exists for the <note>, apart from that nothing special. -->
+
+<title>Доступ к учётной записи IMAP Gmail с помощью <app>Evolution</app></title>
+
+<p>Чтобы получить доступ к Gmail с помощью IMAP, необходимо включить IMAP в вашей учётной записи Google. Дополнительные сведения доступны в <link href="https://mail.google.com/support/bin/answer.py?answer=77695">справке Gmail</link>.</p>
+
+<p>Рекомендуется настроить Gmail как сетевую учётную запись в GNOME. Дополнительные сведения доступны в <link xref="help:gnome-help/accounts" href="https://help.gnome.org/users/gnome-help/stable/accounts">справке по рабочей среде GNOME</link>. После выполнения такой настройки учётная запись Gmail появится в Evolution.</p>
+
+<p>Чтобы настроить учётную запись в Evolution, ознакомьтесь с разделом <link xref="mail-account-manage-imap-plus">Параметры учётной записи почты IMAP+</link>. Обратите внимание, что не все параметры таких учётных записей можно изменить в <app>Evolution</app>, а их удаление можно выполнить только в самом модуле <app>Сетевые учётные записи</app>.</p>
+
+<!-- Evolution does not support Google's proprietary SASL XOAUTH2 implementation which makes Evolution a "less secure app" for Google. -->
+<p>Альтернативой настройке сетевой учётной записи в GNOME является разрешение <link href="https://www.google.com/settings/security/lesssecureapps">доступа для менее защищённых приложений в параметрах вашей учётной записи Gmail</link>.</p>
+
+<note style="tip"><p>Для повышения производительности рекомендуется включить параметр <gui>Использовать настоящую папку для корзины</gui> (установив его в значение <gui>[GMail]/Trash</gui>) и параметр <gui>Использовать реальную папку для спама</gui> (установив его в значение <gui>[GMail]/Spam</gui>) в разделе настройки учётной записи <link xref="mail-default-folder-locations"><gui>По умолчанию</gui></link>.</p></note>
+
+</page>

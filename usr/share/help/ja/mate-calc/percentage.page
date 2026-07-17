@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="percentage" xml:lang="ja">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>百分率</title>
+    
+    <p>百分率は、% 記号を使用して計算されます。</p>
+    <p>加算または減算を行うと、パーセント記号は加算または減算される値の 1 パーセントになります。次の計算式では、140 ドルの品目で税金 15 % の価格が計算されます (140+(15÷100)×140)。</p>
+    <example>
+    <p>140+15%</p>
+    </example>
+    <p>それ以外の場合は、百分率記号は 100 の分数になります。次の式は 80 個のリンゴの 4 分の 1 を計算します ((25÷100)×80)。</p>
+    <example>
+    <p>25%×80</p>
+    </example>
+</page>

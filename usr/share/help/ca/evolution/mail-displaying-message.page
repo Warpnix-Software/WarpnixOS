@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-displaying-message" xml:lang="ca">
+
+  <info>
+    <desc>Presentació d'un correu electrònic i gestió dels seus fitxers adjunts.</desc>
+
+    <link type="guide" xref="index#mail-basic"/>
+    <link type="seealso" xref="mail-composer-html"/>
+
+    <revision pkgversion="3.38.4" version="0.4" date="2021-04-10" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Visualització dels missatges</title>
+
+<p>Els correus electrònics poden ser en dos formats: <link href="https://en.wikipedia.org/wiki/Email#Plain_text_and_HTML">text sense format o HTML</link>. Cada format té els seus pros i contres.</p>
+
+<p>Podeu definir com es mostren els missatges HTML rebuts a <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Preferències del correu</gui><gui>Missatges HTML</gui></guiseq>. Per exemple, podeu mostrar-los com a text pla o bloquejar la càrrega de contingut remot.</p>
+
+<note style="tip"><p>Per a formatar correus electrònics a l'editor, consulteu <link xref="mail-composer-html"/>.</p></note>
+
+  <section id="advanced">
+    <title>Avançat</title>
+  </section>
+
+</page>

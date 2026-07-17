@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="singlesided-npage" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="print-booklet#singleSided"/>
+
+    <desc>Печать буклета в n-страниц.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Тиффани Антропольски</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  </info>
+
+<title>n-страничный буклет</title>
+ <note style="important">
+  <p><em>n</em> - число, кратное 4.</p>
+ </note>
+ <p>Если количество страниц документа PDF не кратно 4, необходимо добавить соответствующее количество пустых страниц (1, 2 или 3), чтобы оно стало кратно 4. Чтобы это сделать, можно:</p>
+ <steps>
+ <item>
+  <p>Создать пустой PDF с помощью <app>LibreOffice Writer</app>.</p>
+ </item>
+ <item>
+  <p>Объединить пустые страницы с документом PDF с помощью приложения <app>PDF-Shuffler</app>, поместив в конец пустые страницы.</p>
+ </item>
+</steps>
+
+ <p>Чтобы начать печать:</p>
+  <steps>
+ <item>
+  <p>Перейдите в <guiseq><gui style="menuitem">Файл</gui><gui style="menuitem">Печать</gui></guiseq> и нажмите кнопку <gui style="button">Печать</gui>.</p>
+ </item>
+ <item>
+  <p>Выберите вкладку <gui>Общие</gui>.</p>
+  <p>Под <em>Диапазоном</em> выберите <gui>Страницы</gui>.</p>
+  <tree>
+   <item>Введите номера страниц в таком порядке: <item>n, 1, 2, n-1, n-2, 3, 4, n-3, n-4, 5, 6, n-5, n-6, 7, 8, n-7, n-8, 9, 10, n-9, n-10, 11, 12, n-11...</item> <item>...пока не будет введено n страниц.</item></item>
+  </tree>
+ </item>
+ <item>
+  <p>Выберите вкладку <gui>Параметры страницы</gui>.</p>
+  <p>В разделе <em>Макет</em> в меню <gui>Двухсторонний</gui> выберите <gui>Односторонний</gui>.</p>
+  <p>В меню <gui>Страниц на сторону</gui> выберите <gui>2</gui>.</p>
+  <p>В меню <gui>Порядок страниц</gui> выберите <gui>Слева направо</gui>.</p>
+  <p>В меню <gui>Печатать только</gui> выберите <gui>Нечётные листы</gui>.</p>
+ </item>
+ <item>
+  <p>Нажмите <gui>Печать</gui>.</p>
+ </item>
+   <item>
+    <p>После того, как будут напечатаны все страницы, переверните страницы и поместите их снова в принтер.</p>
+   </item>
+   <item>
+    <p>Перейдите в <guiseq><gui style="menuitem">Файл</gui><gui style="menuitem">Печать</gui></guiseq> и нажмите кнопку <gui style="button">Печать</gui>.</p>
+   </item>
+   <item>
+    <p>Выберите вкладку <gui>Параметры страницы</gui>.</p>
+     <p>В меню <gui>Печатать только</gui> выберите <gui>Чётные листы</gui>.</p>
+   </item>
+   <item>
+    <p>Нажмите <gui>Печать</gui>.</p>
+   </item>
+  </steps>
+</page>

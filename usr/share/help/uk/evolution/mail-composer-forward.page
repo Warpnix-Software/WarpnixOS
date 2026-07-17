@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-forward" xml:lang="uk">
+
+  <info>
+    <desc>Переспрямовування отриманого повідомлення іншому адресату.</desc>
+    
+    <link type="guide" xref="index#mail-composing"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-27" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-fwd -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Переспрямовування повідомлення</title>
+
+<p>Після отримання поштового повідомлення ви можете переспрямувати його до інших зацікавлених осіб або груп.</p>
+<p>Ви можете переспрямувати повідомлення як долучення до нового повідомлення (це типовий варіант, див <link xref="#default-settings">Типові параметри</link>), вбудованим до повідомлення (у вашому повідомлення без символів &gt; на початку кожного рядка) або як цитату (із символом &gt; на початку кожного рядка).</p>
+<p>Переспрямовування у форматі долучення є найкращим варіантом, якщо ви хочете надіслати комусь повідомлення повністю без змін. Варіанти із вбудовуванням або цитуванням можна використати при надсиланні частини повідомлення або якщо ви маєте якісь коментарі до різних частин повідомлення, яке ви переспрямовуєте.</p>
+
+<p>Для переспрямовування повідомлення, яке ви читаєте, виконайте такі дії:</p>
+<steps>
+<item><p>Виберіть пункт <guiseq><gui>Повідомлення</gui><gui>Переслати</gui></guiseq>, натисніть кнопку <gui>Переслати</gui> на панелі інструментів або натисніть комбінацію клавіш <keyseq><key>Ctrl</key><key>F</key></keyseq>, щоб скористатися типовим способом переспрямовування. Якщо ви хочете скористатися іншим способом переспрямовування, виберіть пункт меню <guiseq><gui>Повідомлення</gui><gui>Переслати як</gui></guiseq> або невеличкою кнопкою спадного списку поряд із кнопкою <gui>Переслати</gui> для вибору способу.</p></item>
+<item><p>Виберіть отримувача повідомлення. Тему повідомлення вже введено. Втім, ви можете змінити її, якщо хочете.</p></item>
+<item><p>Додайте ваші коментарі щодо повідомлення у текстовому полі.</p></item>
+<item><p>Натисніть кнопку <gui style="button">Надіслати</gui> або комбінацію клавіш <keyseq><key>Ctrl</key><key>Enter</key></keyseq>.</p></item>
+</steps>
+
+<p>Долучення до повідомлення, яке ви переспрямовуєте, буде переспрямовано, лише якщо ви надсилаєте початкове повідомлення як долучення. Долучення до вбудованих повідомлень не додаються.</p>
+
+<section id="default-settings">
+<title>Типові параметри</title>
+<p>Типові параметр відповідей та пересланих повідомлень можна змінити за допомогою пункту <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Параметри редактора</gui><gui>Загальне</gui><gui>Відповіді та переслані</gui><gui>Стиль пересилання</gui></guiseq>.</p>
+</section>
+
+</page>

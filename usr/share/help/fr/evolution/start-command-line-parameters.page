@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="start-command-line-parameters" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="index#common-other-problems"/>
+
+    <revision pkgversion="3.39.0" version="0.1" date="2020-10-29" status="draft"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Afficher une fenêtre ou un dossier spécifique au démarrage de l’application.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marc Lorber</mal:name>
+      <mal:email>Linux-Lorber@club-internet.fr</mal:email>
+      <mal:years>2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jonathan Ernst</mal:name>
+      <mal:email>jonathan@ernstfamily.ch</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alexandre Franke</mal:name>
+      <mal:email>alexandre.franke@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012 </mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervan@gmail.com</mal:email>
+      <mal:years>2013-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yvan Masson</mal:name>
+      <mal:email>yvan@masson-informatique.fr</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Charles Monzat</mal:name>
+      <mal:email>charles.monzat@free.fr</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>vanadiae</mal:name>
+      <mal:email>vanadiae35@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Guillaume Bernard</mal:name>
+      <mal:email>associations@guillaume-bernard.fr</mal:email>
+      <mal:years>2021-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jean-Marc Tissières</mal:name>
+      <mal:email>jmetissieres@gmail.com</mal:email>
+      <mal:years>2022</mal:years>
+    </mal:credit>
+  </info>
+
+<!-- TODO: Update page with https://gitlab.gnome.org/GNOME/evolution/-/issues/1176#note_946174 -->
+
+  <title>Définition de l’affichage au démarrage d’<app>Evolution</app></title>
+
+  <p>Lorsqu’<app>Evolution</app> démarre, l’application restaure la dernière vue utilisée.</p>
+
+  <p>Pour qu’<app>Evolution</app> affiche autre chose après avoir démarré, vous devez lancer l’application depuis le <app>Terminal</app> et définir les paramètres correspondants.</p>
+
+  <section id="tools">
+    <title>Fenêtres</title>
+
+    <p its:locNote="TO TRANSLATORS: Do NOT translate 'component' here!">Pour démarrer <app>Evolution</app> dans une vue spécifique, définissez le paramètre « component ».</p>
+
+    <p>Exemples :</p>
+    <list>
+      <item><p><cmd its:translate="no">evolution --component=calendar</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution --component=contacts</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution --component=mail</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution --component=memos</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution --component=tasks</cmd></p></item>
+    </list>
+  </section>
+
+  <section id="mail-folders">
+    <title>Dossiers de courriels</title>
+
+    <!-- Introduced in https://gitlab.gnome.org/GNOME/evolution/-/issues/1176 : -->
+    <p its:locNote="TO TRANSLATORS: Do NOT translate 'folder' here!">Pour qu’<app>Evolution</app> ouvre un dossier de courriels spécifique, définissez le paramètre « folder ».</p>
+
+    <p>Exemples :</p>
+    <list>
+      <item><p><cmd its:translate="no">evolution "folder:On This Computer/Inbox"</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution folder:On%20This%20Computer/Inbox</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution folder://local/Inbox</cmd></p></item>
+    </list>
+  </section>
+
+  <section id="mail-composer">
+    <title>Éditeur de courriel</title>
+
+    <p its:locNote="TO TRANSLATORS: Do NOT translate 'folder' here!">Pour qu’<app>Evolution</app> ouvre une fenêtre de composition de messages avec des valeurs et du contenu prédéfinis :</p>
+
+    <p>Exemples :</p>
+    <list>
+      <item><p><cmd its:translate="no">evolution mailto:recipient@example.com?cc=cc@example.com\&amp;subject=Your\ subject\ line\&amp;body=Message\ content\&amp;attach=/home/user/file</cmd></p></item>
+    </list>
+  </section>
+
+</page>

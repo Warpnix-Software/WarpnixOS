@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-received-notification" xml:lang="ca">
+
+  <info>
+    <desc>Opcions sobre notificacions de correu nou rebut.</desc>
+
+    <link type="guide" xref="mail-send-and-receive"/>
+    <link type="seealso" xref="calendar-alarms-and-reminders"/>
+
+    <revision pkgversion="3.34.4" version="0.8" date="2020-02-26" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Rebre notificacions de nous missatges de correu</title>
+
+<p>L'<app>Evolution</app> sempre us avisa dels nous missatges afegint un petit emblema a la icona del gestor de correu del <link xref="intro-main-window">selector</link> de finestres.</p>
+<media type="image" src="./figures/new-mail-switcher.png" width="256" its:locNote="Translators: Please make sure that the screenshot does have the small yellow star in the Mail icon">
+  <p>Aparença del selector quan arriba un nou missatge</p>
+</media>
+
+<p>Per a rebre avisos de missatges nous també a les notificacions de l'escriptori GNOME:</p>
+<steps>
+<item><p>Seleccioneu <guiseq><gui>Edita</gui><gui>Connectors</gui></guiseq>.</p></item>
+<item><p>Activeu la <gui>notificació de correus</gui>.</p>
+<note style="tip"><p>Si un connector no està disponible a <guiseq><gui>Edita</gui><gui>Connectors</gui></guiseq>, pregunteu en un fòrum d'assistència de la vostra distribució. La vostra distribució podria haver decidit desactivar alguns connectors o distribuir els connectors en un paquet a part.</p></note>
+</item>
+<item><p>Obriu la pestanya <gui style="tab">Configuració</gui> i configureu les opcions.</p></item>
+<item><p>Obriu la pestanya <gui style="tab">Comptes</gui> per a seleccionar els comptes de correu dels quals voleu rebre notificacions.</p></item>
+</steps>
+
+<p>Consulteu <link xref="help:gnome-help/shell-notifications" href="https://help.gnome.org/users/gnome-help/stable/shell-notifications">l'ajuda de l'escriptori GNOME</link> per a més informació.</p>
+
+<!-- TODO: Quite short -->
+
+</page>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="calendar-classifications" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#calendar-advanced"/>
+
+    <revision pkgversion="3.28.2" version="0.5" date="2018-07-09" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+      https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#bxmtbjb
+      -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Jak omezit viditelnost událostí na vzdálených serverech.</desc>
+  </info>
+
+  <title>Používání klasifikací</title>
+
+  <p>V případě, že používáte kalendář na vzdáleném serveru (jako je Novell GroupWise nebo Microsoft Exchange), můžete vybrat klasifikaci určující, kdo si jej může zobrazit.</p>
+
+  <p>Když chcete nastavit klasifikaci pro událost, klikněte na <guiseq><gui>Volby</gui> <gui>Klasifikace</gui></guiseq> a v editoru vyberte klasifikaci. <gui>Veřejné</gui> je výchozí kategorie a veřejná událost může být prohlížena kýmkoliv na síti, kde se kalendář sdílí. <gui>Soukromé</gui> znamená jednu úroveň zabezpečení a <gui>Důvěrné</gui> o něco vyšší úroveň.</p>
+
+  <p>Různé úrovně se mění v závislosti na nastavení vašeho serveru. Proberte to se sým správcem systému nebo upravte své nastavení delegování.</p>
+
+  <p>Jestli chcete, aby události, poznámky a úkoly byly standardně klasifikovány jako soukromé, zapněte předvolbu, kterou najdete pod <guiseq><gui>Upravit</gui> <gui>Předvolby</gui> <gui>Kalendář a úkoly</gui> <gui>Obecné</gui> <gui>Různé</gui></guiseq>.</p>
+
+</page>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="rules" xml:lang="ca">
+
+  <info>
+   <link type="guide" xref="index#play"/>
+   <link type="seealso" xref="highlighting"/>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <credit type="author copyright">
+      <name>Thomas Hinkle</name>
+      <email>tmhinkle@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2019</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Regles de joc</title>
+<p>Per a completar el trencaclosques, heu de completar cada cel·la amb un número entre 1 i 9, ambdós inclosos, de manera que cap número estigui repetit en cap fila, en cap columna, ni en cap caixa de 3×3.</p>
+<p>En un sudoku correctament resolt, cada fila, columna i caixa de 3×3 conté tots els números entre 1 i 9.</p>
+<p>Cada trencaclosques té tan sols una solució possible.</p>
+
+<figure>
+  <desc>Ressalteu una fila, una columna i una caixa de 3×3 mitjançant l'opció de realçament.</desc>
+  <media type="image" mime="image/png" src="figures/rowcolumnbox.png" width="400" its:translate="no"/>
+</figure>
+</page>

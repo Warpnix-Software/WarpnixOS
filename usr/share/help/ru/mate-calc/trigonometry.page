@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="trigonometry" xml:lang="ru">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>Тригонометрия</title>
+    
+    <p>Тригонометрические вычисления могут осуществляться с помощью <link xref="function">функций</link>sin, cos и tan.</p>
+    <example>
+    <p>sin 45</p>
+    </example>
+    <p>Используемые единицы измерения углов можно изменить с помощью меню: <guiseq><gui>Калькулятор</gui><gui>Параметры</gui></guiseq>. Кнопки тригонометрических функций становятся видимыми в <link xref="mouse">Расширенном режиме</link>.</p>
+    <p>Гиперболические функции доступны при добавлении «h» к названию тригонометрической функции.</p>
+    <example>
+    <p>sinh 0.34</p>
+    </example>
+    <p>Обратные функции вводятся либо с помощью обратного символа ⁻¹ (<keyseq><key>Ctrl</key><key>I</key></keyseq>), либо с помощью формы «a» функции. Следующие два уравнения эквивалентны.</p>
+    <example>
+    <p>sin⁻¹ 0.5</p>
+    <p>asin 0.5</p>
+    </example>   
+    <p>Для ввода <link xref="variable">π</link> с клавиатуры нажмите <keyseq><key>Ctrl</key><key>P</key></keyseq>.</p>
+</page>

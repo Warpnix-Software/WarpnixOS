@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-default-CC-and-BCC" xml:lang="de">
+
+  <info>
+    <desc>Jemand soll immer Kopien Ihrer verschickten E-Mails erhalten.</desc>
+
+    <link type="guide" xref="mail-account-manage-imap-plus#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-local-delivery#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-maildir-format-directories#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-mh-format-directories#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-pop#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-directory#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-file#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-usenet-news#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-microsoft-exchange-evo-mapi#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-microsoft-exchange-evo-ews#composing-messages"/>
+
+    <revision pkgversion="3.25.90" version="0.4" date="2017-07-28" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andre Klapper</mal:name>
+      <mal:email>ak-47@gmx.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009-2013, 2016-2018, 2020-2021</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009-2013, 2015-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Gabor Karsay</mal:name>
+      <mal:email>gabor.karsay@gmx.at</mal:email>
+      <mal:years>2011-2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Tim Sabsch</mal:name>
+      <mal:email>tim@sabsch.com</mal:email>
+      <mal:years>2018, 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jürgen Benvenuti</mal:name>
+      <mal:email>gastornis@posteo.org</mal:email>
+      <mal:years>2022-2024</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Vorgaben für Kopien und Blindkopien</title>
+
+<p>Sie können E-Mail-Adressen festlegen, an die immer Kopien Ihrer gesendeten Nachrichten geschickt werden sollen, entweder als für alle Empfänger sichtbare Kopie, oder als Blindkopie, die nicht für die anderen Empfänger sichtbar ist. Sie können dies im Abschnitt <gui>Vorgaben</gui> des Nachrichtenkonteneditors einstellen, erreichbar unter <guiseq><gui>Bearbeiten</gui><gui>Einstellungen</gui><gui>E-Mail-Konten</gui><gui style="button">Bearbeiten</gui><gui>Vorgaben</gui></guiseq>.</p>
+
+
+</page>

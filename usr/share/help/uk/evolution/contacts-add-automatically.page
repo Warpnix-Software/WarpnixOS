@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-add-automatically" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="contacts-usage"/>
+    <link type="seealso" xref="contacts-autocompletion"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-08-19" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Barbara Tobias</name>
+      <email its:translate="no">barbtobias09@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Автоматичне додавання відправників отриманої вами пошти до ваших контактів.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Автоматичне додавання кореспондентів до контактів</title>
+
+  <p>Ви можете наказати програма автоматично додавати кореспондентів до ваших контактів при отримання повідомлень електронної пошти.</p>
+  <steps>
+  <item><p>Виберіть <guiseq><gui>Зміни</gui><gui>Додатки</gui></guiseq>.</p></item>
+  <item><p>Позначте пункт <gui>Автоматичні контакти</gui>.</p>
+<note style="tip"><p>Якщо додатка немає у списку меню <guiseq><gui>Зміни</gui><gui>Додатки</gui></guiseq>, будь ласка, скористайтеся для його додавання форумом підтримки вашого дистрибутива. Можливо, у вашому дистрибутиві розробники вирішили вимкнути якісь додатки або виокремити додатки у інший пакунок.</p></note>
+  </item>
+  <item><p>Перейдіть до пункту <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Контакти</gui> <gui>Автоматичні контакти</gui></guiseq>.</p></item>
+  <item><p>Позначте пункт <gui>Автоматично створювати записи у адресній книзі при надсиланні повідомлень</gui> і виберіть адресну книгу, до якої спрямовуватимуться записи контактів, зі спадного списку, який розташовано нижче.</p></item>
+  </steps>
+
+  <p>З цього моменту програма автоматично створюватиме записи контактів для відправників отриманих вами повідомлень, коли ви відповідатимете на повідомлення.</p>
+
+</page>

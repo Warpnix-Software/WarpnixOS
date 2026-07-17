@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-composer-message-templates" xml:lang="uk">
+
+  <info>
+ <desc>Шаблони повідомлень для повторного використання у редакторі повідомлень.</desc>
+
+ <link type="guide" xref="index#mail-composing-advanced"/>
+
+ <revision pkgversion="3.5.90" version="0.3" date="2012-08-17" status="draft"/>
+ <credit type="author">
+   <name its:translate="no">Andre Klapper</name>
+   <email its:translate="no">ak-47@gmx.net</email>
+ </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/b1dlaazl.html.en -->
+ </credit>
+ 
+ <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Шаблони повідомлень</title>
+<p>Шаблон повідомлення є стандартним повідомленням, яким ви можете будь-коли скористатися для надсилання певного типового повідомлення.</p>
+<p>Щоб увімкнути додаток шаблонів повідомлень, виконайте такі дії:</p>
+<steps>
+<item><p>Виберіть <guiseq><gui>Зміни</gui><gui>Додатки</gui></guiseq>.</p></item>
+<item><p>Увімкніть <gui>Шаблони</gui>.</p>
+<note style="tip"><p>Якщо додатка немає у списку меню <guiseq><gui>Зміни</gui><gui>Додатки</gui></guiseq>, будь ласка, скористайтеся для його додавання форумом підтримки вашого дистрибутива. Можливо, у вашому дистрибутиві розробники вирішили вимкнути якісь додатки або виокремити додатки у інший пакунок.</p></note>
+</item>
+</steps>
+
+
+  <section id="options">
+    <title>Шаблони повідомлень</title>
+  </section>
+
+</page>

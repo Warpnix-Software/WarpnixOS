@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="synctex-search" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="index#synctex" group="fifth"/>
+    <desc>Flip between Atril and <app>pluma</app>.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Toni Estevez</mal:name>
+      <mal:email>toni.estevez@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Francisco Javier F. Serrador</mal:name>
+      <mal:email>serrador@cvs.gnome.org</mal:email>
+      <mal:years>2003-2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Pablo Gonzalo del Campo</mal:name>
+      <mal:email>pablodc@bigfoot.com</mal:email>
+      <mal:years>2002-2003</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Búsqueda con SyncTeX</title>
+<p>Tras que <link xref="synctex-compile">compile su archivo TeX con SyncTeX</link>, podrá buscar. SyncTeX incluso admite avanzar y retroceder la búsqueda desde un archivo incluido.</p>
+
+<section id="forward-search">
+    <title>Busqueda adelante: para TeX a PDF (desde <app>pluma</app> hasta Atril)</title>
+     <p>
+     Forward search allows you to click on a specific section of TeX source code, and jump to the associated position in the PDF.  To perform forward search:
+ </p>
+<steps>
+<item>
+<p>Pulse en una línea dentro del archivo TeX.</p>
+</item>
+<item>
+<p>En <app>pluma</app>, pulse <guiseq><gui>Herramientas</gui><gui>Búsqueda Adelante</gui></guiseq>. La línea correspondiente en el PDF será subrayada en rojo.</p>
+<p>Alternativamente, puede pulsar <keyseq><key>Ctrl</key><key>Alt</key><key>F</key></keyseq>, o <keyseq><key>Ctrl</key> pulsación izquierda</keyseq>. La línea correspondiente en el PDF será subrayada en rojo.</p>
+</item>
+</steps>
+<note>
+<p>Si el archivo PDF correspondiente no está abierto, realiza una búsqueda hacia adelante abrirá el PDF en Atril.</p>
+</note>
+<p>Si tiene un proyecto complejo con varios archivos TeX puede poner</p>
+<code>% mainfile: archivo-principal.tex</code>
+<p>o bien en las tres líneas iniciales o finales de cada archivo Tex incluido y búsqueda posterior funcionará. La búsqueda hacia atrás siempre funcionaría, incluso si no añade la línea de modo.</p>
+
+</section>
+
+<section id="backward-search">
+    <title>Búsqueda trasera: desde PDF a TeX (desde Atril a <app>Pluma</app>)</title>
+     <p>Búsqueda trasera le permite que pulse en una línea específica en el archivo PDF, e ir a la línea asociada en el código fuente de TeX.</p>
+<p>Puede realizar una búsqueda trasera pulsando <keyseq><key>Ctrl</key>Izquierda</keyseq> en Atril. La línea correspondiente en el código fuente TeX será resaltada.</p>
+</section>
+
+</page>

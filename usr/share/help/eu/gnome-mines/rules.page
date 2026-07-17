@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="rules" xml:lang="eu">
+
+  <info>
+    <link type="guide" xref="index#play"/>
+    <link type="seealso" xref="flags"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  </info>
+
+
+  <title>Jokoaren arauak</title>
+
+  <p><app>Minak</app> jokoan, xedea da mina-eremua garbitzea minaren bat leherrarazi gabe.</p>
+
+  <steps>
+    <item>
+      <p>Hasteko, aukeratu erabilgarri dauden hiru taula-tamainetako bat edo hautatu taula pertsonalizatu bat.</p>
+    </item>
+    <item>
+      <p>Jokoaren hasieran, taula lauzekin estalita dago. Egin klik edozein lauzatan, hura kentzeko. Hauetako bat ikusiko duzu:</p>
+      <list>
+        <item>
+	  <p>Koloredun zenbaki bat, alboko lauzetan dagoen mina kopurua adierazten duena. Informazio hori erabilita, minak non dauden asmatzeko argibide bat izango duzu, eta haiek <link xref="flags">banderekin</link> markatuko dituzu.</p>
+        </item>
+        <item>
+	  <p>Lauza huts bat. Horrek esan nahi du ez dagoela minarik alboko lauzetan.</p>
+        </item>
+        <item>
+	  <p>Mina bat. Mina lehertu egingo da eta jokoa amaitu egingo da.</p>
+	</item>
+      </list>
+    </item>
+    <item>
+      <p>Errepikatu aurreko urratsa minak ez dituzten lauza guztiak kentzen dituzun arte.</p>
+    </item>
+  </steps>
+
+  <p>Jokoa azkar amaitzen baduzu, zuren izena <link xref="high-scores">puntuazio altuen</link> zerrendari gehituko zaio.</p>
+
+</page>

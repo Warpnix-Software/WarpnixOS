@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="memos-usage-edit-memo" xml:lang="ru">
+
+  <info>
+    <desc>Изменение заметки в списке заметок.</desc>
+    
+    <link type="guide" xref="memos-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.2" date="2012-02-19" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Изменение заметки</title>
+
+<p>Если следует изменить уже существующую в списке заметку:</p>
+
+<steps>
+<item><p>Сделайте двойной щелчок по заметке, которую следует изменить, в списке заметок или щёлкните по заметке правой кнопкой мыши и выберите пункт <gui>Открыть заметку</gui>.</p></item>
+<item><p>Измените данные заметки.</p></item>
+<item><p>Нажмите кнопку <gui style="button">Сохранить</gui> или выберите пункт меню <guiseq><gui>Файл</gui><gui>Сохранить</gui></guiseq>.</p></item>
+</steps>
+</page>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="backup-restore" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#data-migration-and-sync"/>
+    <link type="seealso" xref="data-storage"/>
+
+    <revision pkgversion="3.1.5" version="0.4" date="2014-03-23" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Feu una còpia de seguretat i restaureu les dades i la configuració d'<app>Evolution</app>.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Còpia de seguretat i restauració</title>
+
+  <p>Pot fer una còpia de seguretat de les dades d'<app>Evolution</app>. La còpia de seguretat desa la configuració, el correu, els contactes, les tasques, les notes i els calendaris. S'emmagatzemarà en un arxiu tar de compressió gzip.</p>
+
+<section id="backup">
+  <title>Còpies de seguretat</title>
+
+  <list>
+    <item>
+      <p>Seleccioneu <guiseq><gui>Fitxer</gui> <gui>Còpia de seguretat de les dades d'Evolution…</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Trieu un nom de fitxer i la carpeta on voleu desar la còpia de seguretat, i feu clic a <gui style="button">Desa</gui>.</p>
+    </item>
+    <item>
+      <p>Se us demanarà que tanqueu <app>Evolution</app>. Responeu <gui style="button">Sí</gui>.</p>
+    </item>
+  </list>
+
+  <note style="warning">
+    <p>Fixeu-vos que la configuració del <link xref="mail-spam">filtre de correu brossa</link> no s'inclouen al fitxer de còpia de seguretat, ja que aquesta configuració no està controlada per <app>Evolution</app> i com els desenvolupadors de les eines de filtre de correu brossa podrien canviar els detalls de l'aplicació. Si feu servir Bogofilter necessitareu una còpia de seguretat de la carpeta oculta <file>~/.bogofilter/</file>. Si utilitzeu SpamAssassin necessitareu una còpia de seguretat de la carpeta oculta <file>~/.spamassassin/</file>.</p>
+  </note>
+
+</section>
+
+<section id="restore">
+  <title>Restauració</title>
+
+  <list>
+    <item>
+      <p>Seleccioneu <guiseq><gui>Fitxer</gui> <gui>Restaura les dades d'Evolution…</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Seleccioneu el fitxer, i feu clic a <gui style="button">Obre</gui>.</p>
+    </item>
+    <item>
+      <p>Se us demanarà que tanqueu <app>Evolution</app>. Responeu <gui style="button">Sí</gui>.</p>
+    </item>
+  </list>
+
+  <note style="tip">
+    <p>A l'<link xref="intro-first-run">assistent de primera execució</link>, podeu restaurar les dades d'<app>Evolution</app> des d'un fitxer de còpia de seguretat.</p>
+  </note>
+
+</section>
+
+</page>

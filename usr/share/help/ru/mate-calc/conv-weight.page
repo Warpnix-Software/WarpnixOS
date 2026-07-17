@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="conv-weight" xml:lang="ru">
+
+    <info>
+        <link type="guide" xref="index#conversion"/>
+    </info>
+
+	<title>Масса</title>
+    
+    <p>Для преобразования между единицами массы используйте оператор <em>in</em>.</p>
+    <example>
+    <p>1kg in pounds</p>
+    </example>
+    <note>
+    <p>Преобразования единиц массы должно выполняться с помощью клавиатуры.</p>
+    </note>
+</page>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="strategy" xml:lang="es">
+	<info>
+          <revision version="3.4" date="2012-03-08" status="final"/>
+	  <link type="guide" xref="index#play"/>
+	  <credit type="author copyright">
+	    <name>Radoslav Asparuhov</name>
+	    <email>rasparuhov@gmail.com</email>
+	  <years>2011</years>
+	  </credit>
+	  <credit type="editor">
+	    <name>Tiffany Antopolski</name>
+	    <email>tiffany.antopolski@gmail.com</email>
+	  </credit>
+	  <license>
+		<p>Creative Commons Compartir Igual 3.0</p>
+	  </license>
+	
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2011 - 2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rodrigo Lledó</mal:name>
+      <mal:email>rodhos92@gmail.com</mal:email>
+      <mal:years>2018</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007 - 2010</mal:years>
+    </mal:credit>
+  </info>
+
+	<title>Estrategia</title>
+        <p>Sólo hay una posibilidad para cada casilla en un puzle de Sudoku. Las siguientes estrategias le ayudarán a descubrir sistemáticamente la solución para cada casilla.</p>
+ <section id="strategy1">
+	<title>Estrategia 1:</title>
+	  <steps>
+	    <item><p>Elija la fila que contiene más números.</p>
+                  <note><p>Debe elegir la fila o la columna con más números. Para simplificar, estas instrucciones se han escrito como si una fila tuviera la mayoría de los números.</p></note>
+            </item>
+	    <item><p>Determine qué números faltan en la fila.</p></item>
+	    <item><p>Elija una de las casillas vacías en esta fila. Determine qué números de los que faltan están en esa columna o en ese cuadrado de 3x3.</p></item>
+	    <item><p>Usando las <link xref="notes">notas</link>, introduzca los números que faltan que no están en esa columna o en ese cuadrado de 3x3. Estos números son soluciones candidatas para esa casilla.</p></item>
+	    <item><p>Vaya a la siguiente casilla vacía en la fila elegida y repita el método anterior. Repítalo en cada fila y columna, empezando por aquellas que tienen más números y siguiendo hasta las que tienen menos. Busque los números con cuidado y no olvide los cuadrados de 3x3.</p></item>
+	   </steps>
+            <note><p>Esta estrategia revelará las casillas que sólo tienen una posibilidad. Cuando las haya descubierto, puede rellenar esas casillas con el valor y repetir la estrategia otra vez hasta que resuelva el puzle entero.</p></note>
+<figure>
+  <desc>Ejemplo de uso de la estrategia 1.</desc>
+  <media type="image" mime="image/png" src="figures/strategy1.png" width="400" its:translate="no"/>
+</figure>
+
+</section>
+<section id="strategy2">
+
+	<title>Estrategia 2:</title>
+	  <steps>
+	    <item><p>Encuentre el número que aparece con mayor frecuencia.</p></item>
+	    <item><p>Ahora mire en la alineación vertical izquierda del cuadrado de 3x3 y encuentre la o las columnas en las que aparece este número.</p></item>
+  	    <item><p>En esta alineación, vaya a un cuadrado de 3x3 que no contenga este número en ninguna de sus casillas. Usando las <link xref="notes">notas</link>, introduzca este número en cada casilla vacía de la columna en la que no aparece este número. Si el número aparece en la fila de una de estas casillas, no lo introduzca en las notas de estas casillas.</p></item>
+	    <item><p>Repita los dos últimos pasos para las alineaciones verticales del centro y de la derecha.</p></item>
+            <item><p>Busque el siguiente número que aparece más veces, y repita estos pasos hasta que tenga los 9 números.</p></item>
+	  </steps>
+            <note><p>Esta estrategia revelará las casillas que sólo tienen una posibilidad. Cuando las haya descubierto, puede rellenar esas casillas con el valor y repetir la estrategia otra vez hasta que resuelva el puzle entero.</p></note>
+<figure>
+  <desc>Ejemplo de uso de la estrategia 2.</desc>
+  <media type="image" mime="image/png" src="figures/strategy2.png" width="400" its:translate="no"/>
+</figure>
+
+	   <note><p>Si ninguna de las estrategias anteriores resuelve el puzle por sí sola, puede alternarlas. También puede combinar las estrategias.</p></note>
+</section>
+</page>

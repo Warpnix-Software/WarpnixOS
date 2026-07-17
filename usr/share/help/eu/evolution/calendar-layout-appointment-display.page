@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-layout-appointment-display" xml:lang="eu">
+
+  <info>
+    <link type="guide" xref="calendar-layout"/>
+
+    <revision pkgversion="3.26.5" version="0.6" date="2018-03-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/config-prefs-cal.html.en#bshpsxa
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Definitu egutegiko hitzorduen bistaratzea.</desc>
+  </info>
+
+  <title>Hitzorduen itxura</title>
+
+  <!-- TODO:POST-3-8: Just listing the partially busted UI options (also see
+       calendar-layout-general-formatting) here is very poor and not
+       task-oriented, but that's it for the time being. Better ideas welcome.
+       -->
+
+  <p>The following calendar-related options are available under
+  <guiseq><gui>Edit</gui><gui>Preferences</gui>
+  <gui>Calendar and Tasks</gui><gui>Display</gui></guiseq>.</p>
+
+<section id="general">
+  <title>Orokorra</title>
+
+  <list>
+    <item>
+      <p>Orduen zatiketa:</p>
+      <p>Egutegiaren eguneko ikuspegian orduak lerro fin gisa nola zatituko diren ezartzen du.</p>
+    </item>
+    <item>
+      <p>Erakutsi hitzorduen amaiera-orduak asteko eta hileko ikuspegietan:</p>
+      <p>Zuriune bat badago, <app>Evolution</app> aplikazioak amaiera-orduak asteko eta hileko ikuspegietan erakutsiko ditu hitzordu bakoitzerako.</p>
+    </item>
+    <item>
+      <p>Erakutsi hitzorduen ikonoak hileko ikuspegietan</p>
+    </item>
+    <item>
+      <p>Konprimatu asteburuak hileko ikuspegian:</p>
+      <p>Hautatu aukera hau asteburuak hileko ikuspegian koadro bakar batean erakusteko, bi koadrotan izan beharrean.</p>
+    </item>
+    <item>
+      <p>Erakutsi asteen zenbakiak:</p>
+      <p>Egutegian, aste bakoitzaren ondoan dagokion aste-zenbakia azalduko da.</p>
+    </item>
+    <item>
+      <p>Erakutsi gertaera errepikakorrak letra etzanez beheko ezkerreko egutegian</p>
+    </item>
+    <item>
+      <p>Korritu 'Hileko ikuspegia' aste bat</p>
+    </item>
+  </list>
+
+</section>
+
+<section id="alerts">
+  <title>Abisuak</title>
+
+  <p>Hitzordu bat ezabatu baino lehen abisu bat jaso nahi baduzu, hautatu aukera hau.</p>
+
+</section>
+
+</page>

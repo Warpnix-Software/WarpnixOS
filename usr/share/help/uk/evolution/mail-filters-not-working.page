@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-filters-not-working" xml:lang="uk">
+
+  <info>
+    <desc>Виправлення проблем із фільтрами пошти, які не сортують і не впорядковують пошту належним чином.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+    <link type="seealso" xref="mail-filters"/>
+
+    <revision pkgversion="3.9.3" version="0.5" date="2013-06-24" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Фільтри пошти не працюють</title>
+
+<section id="order">
+<title>Порядок фільтрування</title>
+<p>Порядок фільтрування є дуже важливим. Вони застосовуються до початкового повідомлення послідовно, як у рецепті.</p>
+<p>Якщо вашим першим фільтром було правило <gui>Зупинити обробку</gui>, усі повідомлення, які відповідатимуть цьому фільтру, буде проігноровано в усіх наступних фільтрах.</p>
+<p>Коли ви пересуваєте повідомлення до іншої теки, «пересування» насправді означає дописування копії повідомлення до теки призначення і позначення початкового повідомлення до вилучення. Отже, усі наступні правила фільтрування буде застосовано до початкового повідомлення, яке вже позначено до вилучення. Через це, пересування повідомлення, зазвичай, має бути останнім у послідовності правил фільтрування.</p>
+<p>Щоб перевірити правила та порядок їхнього застосування, перегляньте його дію у розділі <gui>Потім</gui> <link xref="mail-filters#editing">редагуючи фільтр</link>.</p>
+</section>
+
+<section id="several-clients">
+<title>Користування декількома поштовими клієнтами паралельно</title>
+<p>Ще одним фактором, який слід взяти до уваги, є те, що фільтри залежать від прапорця «нове», який встановлюється на сервері, коли певне повідомлення електронної пошти вперше отримується з сервера. Якщо ви використовуєте інший клієнт електронної пошти, а не <app>Evolution</app>, ваші фільтри можуть не працювати автоматично.</p>
+</section>
+
+<section id="filter-log">
+<title>Журналювання дій з фільтрування</title>
+<p>Якщо ви не можете зрозуміти, чому фільтри не працюють очікуваним чином, ви можете увімкнути журналювання дій з фільтрування.</p>
+<list>
+<item><p>Закрийте <app>Evolution</app>.</p></item>
+<item><p>Відкрийте вікно програми <app>Термінал</app>.</p></item>
+<item><p>Віддайте команду <cmd>gsettings set org.gnome.evolution.mail filters-log-actions true</cmd></p></item>
+<item><p>Віддайте команду <cmd>gsettings set org.gnome.evolution.mail filters-log-file "/home/ім'я_користувача/my-filter-log"</cmd>, замінивши <cmd>ім'я_користувача</cmd> на ваше ім'я користувача. У відповідь у вашому домашньому каталозі буде створено текстовий файл з назвою <file>my-filter-log</file>. Зауважте, що слід ввести абсолютний шлях до назви файла; синтаксичні конструкції, подібні до <sys>~</sys> або <sys>$HOME</sys>, не працюватимуть.</p></item>
+<item><p>Запустіть <app>Evolution</app>.</p></item>
+<item><p>Отримайте пошуку для застосування фільтрів.</p></item>
+<item><p>Відкрийте файл <file>my-filter-log</file> за допомогою текстового редактора, щоб переглянути, які дії з фільтрування було застосовано.</p></item>
+</list>
+
+<p>Зауважте, що ви можете знову вимкнути журналювання фільтрів за допомогою команди <cmd>gsettings set org.gnome.evolution.mail filters-log-actions false</cmd></p>
+
+<p>Ви також можете скористатися для цього командою <app>dconf-editor</app>.</p>
+</section>
+
+</page>

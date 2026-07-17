@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="factorize" xml:lang="da">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>Faktorisering</title>
+
+    <p>Du kan faktorisere tallet vist ved at trykke på tasten <keyseq><key>Ctrl</key><key>F</key></keyseq> eller ved at rykke på <gui>fact</gui>-tasten. Denne tast er synlig i <link xref="mouse">programmeringstilstand</link>.</p>
+    <p>For at faktorisere heltal større end 2^64 bliver Miller-Rabin-primality-testen og Pollards rho-algoritme anvendt.</p>
+</page>

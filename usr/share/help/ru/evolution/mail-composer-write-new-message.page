@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-write-new-message" xml:lang="ru">
+
+  <info>
+    <desc>Написание нового письма для отправки получателю.</desc>
+    
+    <link type="guide" xref="index#mail-composing"/>
+
+    <revision pkgversion="3.1.5" version="0.2" date="2011-07-27" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Составление нового сообщения</title>
+
+<p>Чтобы начать писать новое сообщение, выберите пункт меню <guiseq><gui>Файл</gui><gui>Создать</gui><gui>Почтовое сообщение</gui></guiseq>, воспользуйтесь комбинацией клавиш <keyseq><key>Shift</key><key>Ctrl</key><key>M</key></keyseq> или нажмите кнопку <gui>Создать</gui> на панели инструментов.</p>
+
+<p>Введите адрес электронной почты в поле <gui>Кому</gui>. Если требуется указать несколько адресов, разделите их запятыми. Дополнительные сведения об отправке сообщений нескольким получателям доступны в разделе <link xref="mail-composer-several-recipients"/>.</p>
+
+<p>Когда сообщение будет написано, нажмите кнопку <gui>Отправить</gui> или воспользуйтесь комбинацией клавиш <keyseq><key>Ctrl</key><key>Return</key></keyseq>.</p>
+</page>

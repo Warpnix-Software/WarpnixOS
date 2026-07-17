@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="intro-keyboard-shortcuts" xml:lang="hu">
+
+  <info>
+    <desc>Időt spórolhat ezekkel a gyorsbillentyűkkel.</desc>
+
+    <link type="guide" xref="index#getting-started"/>
+    <revision pkgversion="3.30.4" version="0.7" date="2019-01-11" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Raniere Silva</name>
+      <email its:translate="no">raniere@rgaiacs.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en -->
+ </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lukács Bence</mal:name>
+      <mal:email>lukacs.bence1 at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kelemen Gábor</mal:name>
+      <mal:email>kelemeng at gnome dot hu</mal:email>
+      <mal:years>2011, 2012, 2013, 2015, 2017, 2018.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nagy Zoltán</mal:name>
+      <mal:email>dzodzie at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Úr Balázs</mal:name>
+      <mal:email>ur.balazs at fsf dot hu</mal:email>
+      <mal:years>2014, 2019, 2021, 2022, 2023, 2024, 2025.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Gyorsbillentyűk</title>
+
+<p>Ez az oldal bemutatja az <app>Evolution</app> hatékonyabb használatát segítő gyorsbillentyűket.</p>
+
+<note style="tip">
+<p>Az alább felsorolt gyorsbillentyűk mellett használhatja a hívóbetűket is a billentyűzettel történő navigációhoz.</p> 
+<p>Tartsa lenyomva az <key>Alt</key> billentyűt a <em>hívóbetűk</em> megjelenítéséhez: a menüpontokban, a gombokon és egyéb vezérlőelemeken lévő aláhúzott betűkhöz. Nyomja meg az <key>Alt</key> billentyűt és az aláhúzott betűt a vezérlő aktiválásához, mintha csak rákattintott volna.</p>
+</note>
+
+
+<section id="global">
+<title>Globális</title>
+<table rules="rows" frame="top bottom">
+  <tr xml:id="global-ctrl-1">
+    <td><p><keyseq><key>Ctrl</key><key>1</key></keyseq></p></td>
+    <td><p>A levelező komponens kiválasztása.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-2">
+    <td><p><keyseq><key>Ctrl</key><key>2</key></keyseq></p></td>
+    <td><p>A névjegy komponens kiválasztása.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-3">
+    <td><p><keyseq><key>Ctrl</key><key>3</key></keyseq></p></td>
+    <td><p>A naptár komponens kiválasztása.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-4">
+    <td><p><keyseq><key>Ctrl</key><key>4</key></keyseq></p></td>
+    <td><p>A feladatok komponens kiválasztása.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-5">
+    <td><p><keyseq><key>Ctrl</key><key>5</key></keyseq></p></td>
+    <td><p>A feljegyzések komponens kiválasztása.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-n">
+    <td><p><keyseq><key>Ctrl</key><key>N</key></keyseq></p></td>
+    <td><p>Új elem létrehozása az aktuális komponensben.</p></td>
+  </tr>
+  <tr xml:id="global-f6">
+    <td><p><key>F6</key></p></td>
+    <td><p>Fókuszváltás az ablaktáblák közt.</p></td>
+  </tr>
+  <tr xml:id="global-shift-ctrl-q">
+    <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>Q</key></keyseq></p></td>
+    <td><p>A keresősáv törlése.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-w">
+    <td><p><keyseq><key>Ctrl</key><key>W</key></keyseq></p></td>
+    <td><p>Ablak bezárása.</p></td>
+  </tr>
+  <tr xml:id="global-shift-ctrl-w">
+    <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>W</key></keyseq></p></td>
+    <td><p>Új ablak megnyitása.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-q">
+    <td><p><keyseq><key>Ctrl</key><key>Q</key></keyseq></p></td>
+    <td><p>Kilépés az <app>Evolutionből</app>.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-p">
+    <td><p><keyseq><key>Ctrl</key><key>P</key></keyseq></p></td>
+    <td><p>A kijelölés nyomtatása.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-s">
+    <td><p><keyseq><key>Ctrl</key><key>S</key></keyseq></p></td>
+    <td><p>A kijelölés mentése.</p></td>
+  </tr>
+  <tr xml:id="global-del">
+    <td><p><key>Del</key> vagy <key>Backspace</key></p></td>
+    <td><p>Kijelölés törlése.</p></td>
+  </tr>
+  <tr xml:id="global-shift-ctrl-v">
+    <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>V</key></keyseq></p></td>
+    <td><p>Levelek vagy névjegyek áthelyezése mappába.</p></td>
+  </tr>
+  <tr xml:id="global-shift-ctrl-y">
+    <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>Y</key></keyseq></p></td>
+    <td><p>Levelek vagy névjegyek másolása mappába.</p></td>
+  </tr>
+</table>
+</section>
+
+<section id="mail">
+<title>Levelezés</title>
+<table rules="rows" frame="top bottom">
+  <tr xml:id="mail-shift-ctrl-m">
+    <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>M</key></keyseq></p></td>
+    <td><p>Új üzenet létrehozása.</p></td>
+  </tr>
+  <tr xml:id="mail-f12">
+    <td><p><key>F12</key></p></td>
+    <td><p>Üzenetek küldése és fogadása.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-y">
+    <td><p><keyseq><key>Ctrl</key><key>Y</key></keyseq></p></td>
+    <td><p>Szűrők alkalmazása a kijelölésre.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-o">
+    <td><p><keyseq><key>Ctrl</key><key>O</key></keyseq> vagy <key>Enter</key></p></td>
+    <td><p>Kijelölés megnyitása új ablakban.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-f">
+    <td><p><keyseq><key>Ctrl</key><key>F</key></keyseq></p></td>
+    <td><p>Kijelölés továbbítása.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-k">
+    <td><p><keyseq><key>Ctrl</key><key>K</key></keyseq></p></td>
+    <td><p>Kijelölés megjelölése olvasottként.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-shift-k">
+    <td><p><keyseq><key>Ctrl</key><key>Shift</key><key>K</key></keyseq></p></td>
+    <td><p>Kijelölés megjelölése olvasatlanként.</p></td>
+  </tr>
+  <tr xml:id="mail-arrow-down">
+    <td><p><key>↓</key></p></td>
+    <td><p>Ugrás a következő üzenetre.</p></td>
+  </tr>
+  <tr xml:id="mail-arrow-up">
+    <td><p><key>↑</key></p></td>
+    <td><p>Ugrás az előző üzenetre.</p></td>
+  </tr>
+  <tr xml:id="mail-dot">
+    <td><p><key>.</key> vagy <key>]</key></p></td>
+    <td><p>Ugrás a következő olvasatlan üzenetre.</p></td>
+  </tr>
+  <tr xml:id="mail-comma">
+    <td><p><key>,</key> vagy <key>[</key></p></td>
+    <td><p>Ugrás az előző olvasatlan üzenetre.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-r">
+    <td><p><keyseq><key>Ctrl</key><key>R</key></keyseq></p></td>
+    <td><p>Válasz a feladónak.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-l">
+    <td><p><keyseq><key>Ctrl</key><key>L</key></keyseq></p></td>
+    <td><p>Válasz a listára.</p></td>
+  </tr>
+  <tr xml:id="mail-shift-ctrl-r">
+    <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>R</key></keyseq></p></td>
+    <td><p>Válasz az összes címzettnek.</p></td>
+  </tr>
+  <tr xml:id="mail-backspace">
+    <td><p><key>Backspace</key></p></td>
+    <td><p>Görgetés felfelé.</p></td>
+  </tr>
+  <tr xml:id="mail-space">
+    <td><p><key>Szóköz</key></p></td>
+    <td><p>Görgetés lefelé.</p></td>
+  </tr>
+</table>
+
+<p>A <key>Szóköz</key> és a <key>Backspace</key> is lehetővé teszi a navigációt az olvasatlan üzenetekben mappák között:</p>
+<list>
+<item><p>Az első megnyomásakor a következő olvasatlan levélre viszi.</p></item>
+<item><p>Ha a levél egy képernyőnél hosszabb, akkor a <key>Szóköz</key> úgy működik, mint a <key>Page Down</key>.</p></item>
+<item><p>Ha a <key>Szóközt</key> az oldal aljának elérése után nyomja meg, akkor a következő olvasatlan üzenetre viszi.</p></item>
+<item><p>Ha nincs több olvasatlan levél a postafiókban, akkor a <key>Szóköz</key> megnyomása a következő mappa következő olvasatlan levelére viszi.</p></item>
+<item><p>Ha több mappába is érkeznek új üzenetek, akkor a <key>Szóköz</key> a mappák közt vált. Ez a szolgáltatás lehetővé teszi, hogy a következő olvasatlan levélre úgy válthasson át, hogy nem kattint a mappára.</p></item>
+<item><p>A <key>Backspace</key> ugyanilyen működéssel bír, csak fordítva: felgörget egy üzenetben, és a következő olvasatlan üzenetre ugorhat az előző mappában.</p></item>
+</list>
+</section>
+
+<section id="calendar">
+<title>Naptár</title>
+<table rules="rows" frame="top bottom">
+  <tr xml:id="calendar-shift-ctrl-a">
+    <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>A</key></keyseq></p></td>
+    <td><p>Új értekezlet létrehozása.</p></td>
+  </tr>
+  <tr xml:id="calendar-shift-ctrl-e">
+    <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>E</key></keyseq></p></td>
+    <td><p>Új találkozó létrehozása.</p></td>
+  </tr>
+  <tr xml:id="calendar-shift-ctrl-t">
+    <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>T</key></keyseq></p></td>
+    <td><p>Új feladat létrehozása.</p></td>
+  </tr>
+  <tr xml:id="calendar-shift-ctrl-o">
+    <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>O</key></keyseq></p></td>
+    <td><p>Új feljegyzés létrehozása.</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-t">
+    <td><p><keyseq><key>Ctrl</key><key>T</key></keyseq></p></td>
+    <td><p>Ugrás a mai napra.</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-g">
+    <td><p><keyseq><key>Ctrl</key><key>G</key></keyseq></p></td>
+    <td><p>Ugrás dátumra.</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-y">
+    <td><p><keyseq><key>Ctrl</key><key>Y</key></keyseq></p></td>
+    <td><p>Nap nézet</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-j">
+    <td><p><keyseq><key>Ctrl</key><key>J</key></keyseq></p></td>
+    <td><p>Munkahét nézet</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-k">
+    <td><p><keyseq><key>Ctrl</key><key>K</key></keyseq></p></td>
+    <td><p>Hét nézet</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-m">
+    <td><p><keyseq><key>Ctrl</key><key>M</key></keyseq></p></td>
+    <td><p>Hónap nézet</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-l">
+    <td><p><keyseq><key>Ctrl</key><key>L</key></keyseq></p></td>
+    <td><p>Lista nézet</p></td>
+  </tr>
+</table>
+</section>
+
+<section id="contacts">
+<title>Névjegyek</title>
+<table rules="rows" frame="top bottom">
+  <tr xml:id="contacts-shift-ctrl-c">
+    <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>C</key></keyseq></p></td>
+    <td><p>Új névjegy létrehozása.</p></td>
+  </tr>
+  <tr xml:id="contacts-shift-ctrl-l">
+    <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>L</key></keyseq></p></td>
+    <td><p>Új címlista létrehozása.</p></td>
+  </tr>
+</table>
+</section>
+
+<section id="change-keyboard-shortcuts">
+<title>Gyorsbillentyűk megváltoztatása</title>
+<note style="advanced"><p>A gyorsbillentyűk a <guiseq><gui>Nézet</gui><gui>Elrendezés</gui><gui>Személyre szabás…</gui></guiseq> menüpontban változtathatók meg. További információkért nézze meg a <link xref="customize-ui-items">Felhasználói felület személyre szabása</link> szakaszt.</p></note>
+</section>
+
+</page>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-word-wrap" xml:lang="ru">
+
+  <info>
+    <desc>В исходящих письмах перенос слов выполняется, когда строка достигает 72 символов.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="3.0.2" version="0.2" date="2017-02-19" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>В исходящих письмах перенос слов выполняется, когда строка достигает 72 символов</title>
+
+<p>Для улучшения читаемости текста перенос строк выполняется по достижении 72 символов. Это значение жёстко запрограммировано, и его нельзя изменить.</p>
+<p>Чтобы избежать разрывов строк внутри абзаца, отметьте абзац и выберите в меню редактора писем пункт <guiseq><gui>Формат</gui><gui>Стиль абзаца</gui><gui>Выровненный</gui></guiseq>.</p>
+
+</page>

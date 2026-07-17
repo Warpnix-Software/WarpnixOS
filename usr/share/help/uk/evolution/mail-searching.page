@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-searching" xml:lang="uk">
+ 
+  <info>
+    <desc>Пошук у повідомленнях.</desc>
+    
+    <link type="guide" xref="searching-items"/>
+    <link type="guide" xref="mail-organizing"/>
+ 
+    <revision pkgversion="3.33.90" version="0.7" date="2019-09-05" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Max Vorobuov</name>
+      <email its:translate="no">vmax0770@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+ 
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+ 
+<title>Пошук у пошті</title>
+
+<section id="search-single">
+<title>Пошук у окремому повідомленні</title>
+<p>Щоб знайти фрагмент тексту у показаному повідомленні, скористайтеся пунктом <guiseq><gui>Зміни</gui><gui>Знайти у повідомленні…</gui></guiseq> головного меню.</p>
+</section>
+
+<section id="search-many">
+<title>Пошук у різних повідомленнях</title>
+
+<section id="quick-search">
+<title>Швидкий пошук</title>
+<p>За допомогою панелі перегляду пошти ви можете швидко виконувати пошук повідомлень за визначеними умовами.</p>
+<steps>
+<item><p>Натисніть піктограму пошуку <media type="image" mime="image/png" its:translate="no" src="figures/search-icon.png"/>, щоб розгорнути спадний список.</p></item>
+<item><p>Виберіть умову пошуку зі списку.</p>
+<note style="tip"><p>Деякі пошуки можуть виконуватися повільно на облікових записах із віддаленим зберіганням даних (наприклад IMAP+). Якщо вами вибрано умову пошуку <gui>Вміст містить</gui> або <gui>Повідомлення містить</gui>, і <app>Evolution</app> працює у режимі з'єднання з сервером, а теки, у яких ви хочете виконати пошук, <link xref="mail-working-offline">ще не скопійовано локально для автономного користування</link>, Evolution автоматично виконає пошук на боці поштового сервера, якщо сервером оголошено про можливість пошуку на боці сервера. При виконанні пошуку у даних, які вже доступні локально (пошуків отримувачів або теми повідомлення), пошук виконуватиметься локально.</p></note>
+</item>
+<item><p>Виберіть область зі спадного списку, розташованого праворуч від поля для введення тексту.</p>
+<note style="tip"><p>Для області <gui>Поточний обліковий запис</gui> термін «обліковий запис» стосується вузлів найвищого рівня у <link xref="intro-main-window#e-mail">списку поштових тек</link>, подібно до «На цьому комп'ютері» та облікових записів із віддаленим зберіганням даних.</p></note>
+</item>
+<item><p>Введіть текст, який ви хочете знайти, і натисніть клавішу <key>Enter</key>.</p></item>
+<item><p><app>Evolution</app> показує результати пошуку.</p></item>
+</steps>
+<note style="tip"><p>Якщо ви розпочинаєте безпосередньо з четвертого кроку, пошук тексту буде виконано у темах повідомлень та адресах, а областю пошуку буде «Поточна тека».</p></note>
+<note style="tip"><p>Якщо ви шукаєте повідомлення, які зберігаються у різних теках, досить часто вартим уваги рішенням є створення теки пошуку. Докладніший опис наведено у розділі <link xref="mail-search-folders">Користування теками пошуку</link>.</p></note>
+<p>Якщо ви хочете встановити декілька умов пошуку, вам слід скористатися можливістю розширеного пошуку, яку описано нижче.</p>
+</section>
+
+<!-- As advanced-search, clearing-search, saved-searches, editing-a-saved-search are totally identical in all *-searching.page files, this is centrally in one file that's included by XInclude. See
+http://blogs.gnome.org/shaunm/2011/07/21/understanding-xinclude/ for how it works. -->
+<include xmlns="http://www.w3.org/2001/XInclude" href="xinclude-searching.xml" xpointer="xmlns(mal=http://projectmallard.org/1.0/)xpointer(/mal:info/mal:section)"/>
+
+<section id="free-form-expression">
+<title>Вираз у довільній формі</title>
+<p>Одним із варіантів умов пошуку є <gui>Вираз у довільній формі</gui>, за допомогою якого можна визначати складні умови. На першому етапі заданий вираз у довільній формі буде поділено на слова. Якщо у слова немає будь-якого (відомого) префікса-теґу, буде виконано перевірку наявності значення у заголовках «Кому», «Копія» та «Тема». Якщо у критерії пошуку має бути пробіл або будь-який інший спеціальний символ, його слід взяти у подвійні лапки. Щоб використати сам символ подвійних лапок, подвойте його у тексті. Приклад: <code>цитата ""тут""</code> буде оброблено як одне слово <code>цитата "тут"</code>. Наприклад, після фільтрування <code>f:John Smith</code> залишаються повідомлення, у яких поле «Від» містить слово <code>John</code>, а поля «Кому», «Копія» або «Тема» містять слово <code>Smith</code>, а після фільтрування <code>f:"John Smith"</code> у списку лишаються повідомлення з відправником <code>John Smith</code>.</p>
+<p>Синтаксична конструкція теґу є такою: <code>&lt;теґ&gt;[-&lt;параметри&gt;]:значення</code>. Передбачено такі теґи:</p>
+<table frame="all" rules="rows cols" shade="rows">
+<tr><td><p>Теґ</p></td><td><p>Скорочення</p></td><td><p>Значення</p></td></tr>
+<tr><td><p its:translate="no">from</p></td><td><p its:translate="no">f</p></td><td><p its:locNote="Translators: 'From' is a header name, do not translate it">Заголовок «Від» має відповідати (*)</p></td></tr>
+<tr><td><p its:translate="no">to</p></td><td><p its:translate="no">t</p></td><td><p its:locNote="Translators: 'To' is a header name, do not translate it">Заголовок «Кому» має відповідати (*)</p></td></tr>
+<tr><td><p its:translate="no">cc</p></td><td><p its:translate="no">c</p></td><td><p its:locNote="Translators: 'CC' is a header name, do not translate it">Заголовок «Копія» має відповідати (*)</p></td></tr>
+<tr><td><p its:translate="no">recips</p></td><td><p its:translate="no">r</p></td><td><p its:locNote="Translators: 'To' and 'CC' are the header names, do not translate it">Заголовки «Кому» і «Копія» має відповідати (*)</p></td></tr>
+<tr><td><p its:translate="no">subject</p></td><td><p its:translate="no">s</p></td><td><p its:locNote="Translators: 'Subject' is a header name, do not translate it">Заголовок «Тема» має відповідати (*)</p></td></tr>
+<tr><td><p its:translate="no">list</p></td><td><p/></td><td><p>Заголовок «Список листування» має відповідати (*)</p></td></tr>
+<tr><td><p its:translate="no">header</p></td><td><p its:translate="no">h</p></td><td><p>Вказаний заголовок має відповідати (*)</p>
+<p>синтаксис: <code>h:НазваЗаголовка=значення</code>, а знак рівності використовується як роздільник, а не правило відповідності</p></td></tr>
+<tr><td><p its:translate="no">exists</p></td><td><p its:translate="no">e</p></td><td><p>чи існує вказаний заголовок</p></td></tr>
+<tr><td><p its:translate="no">tag</p></td><td><p/></td><td><p>для повідомлення встановлено вказану мітку користувача</p></td></tr>
+<tr><td><p its:translate="no">flag</p></td><td><p/></td><td><p>чи встановлено певний прапорець; відомі спеціальні значення:</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Answered</code> — повідомлення позначене як таке, на яке надіслано відповідь</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Deleted</code> — повідомлення позначено як вилучене</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Draft</code> — повідомлення позначено як чернетку</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Flagged</code> — повідомлення позначено як важливе</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Seen</code> — повідомлення позначено як переглянуте (не непрочитане)</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Attachment</code> — у повідомлення є долучення</p>
+<p>Буде перевірено на заповненість будь-яке інше значення.</p></td></tr>
+<tr><td><p its:translate="no">label</p></td><td><p its:translate="no">l</p></td><td><p>чи встановлено певну <link xref="mail-labels">мітку</link> для повідомлення</p></td></tr>
+<tr><td><p its:translate="no">size</p></td><td><p its:translate="no">sz</p></td><td><p>чи розмір повідомлення у кБ рівний заданому значенню</p>
+<p>Передбачено розпізнавання двох варіантів: <code>&lt;</code> для отримання повідомлень із меншим розміром і <code>&gt;</code> для отримання повідомлень із більшим розміром за вказаний. Приклад: <code>size-&gt;:1024</code> фільтрує повідомлення, розмір яких перевищує 1 МБ.</p></td></tr>
+<tr><td><p its:translate="no">score</p></td><td><p its:translate="no">sc</p></td><td><p>порівнює теґ <code>score</code> повідомлення зі вказаним значенням; типовим режимом порівняння є рівність, але, подібно до <code>size</code>, можна скористатися режимами <code>&lt;</code> і <code>&gt;</code></p></td></tr>
+<tr><td><p its:translate="no">body</p></td><td><p its:translate="no">b</p></td><td><p>перевіряє, чи міститься вказане слово у тексті повідомлення; типовим варіантом порівняння є <code>містить</code>, але може бути використано формальний вираз, якщо варіантом вказано <code>regex</code>, <code>re</code> або <code>r</code>.</p></td></tr>
+<tr><td><p its:translate="no">sent</p></td><td><p/></td><td><p>має бути відповідною дата повідомлення у полі «Надіслано» (**)</p></td></tr>
+<tr><td><p its:translate="no">received</p></td><td><p its:translate="no">rcv</p></td><td><p>має бути відповідною дата повідомлення у полі «Отримано» (**)</p></td></tr>
+<tr><td><p its:translate="no">attachment</p></td><td><p its:translate="no">a</p></td><td><p>повідомлення містить долучення (якщо значення не дорівнює <code>no</code>, <code>false</code>, <code>0</code>). Подібний до теґу <code>flag:attachment</code>.</p></td></tr>
+<tr><td><p its:translate="no">location</p></td><td><p its:translate="no">m</p></td><td><p>Перевіряє розташування повідомлення. Значення розташування (адресу) можна знайти у теці <gui>Властивості</gui>. Приклад: <code>location:"On This Computer/Inbox"</code></p></td></tr>
+<tr><td><p its:translate="no">mid</p></td><td><p/></td><td><p>Порівнює ідентифікатор повідомлення.</p></td></tr>
+</table>
+<p>(*) Порівняння заголовків може містити варіант типу встановлення відповідності. Типовим режимом порівняння є <code>містить</code>. Доступні варіанти:</p>
+<table frame="all" rules="rows cols" shade="rows">
+<tr><td><p>Параметр</p></td><td><p>Скорочення</p></td><td><p>Значення</p></td></tr>
+<tr><td><p its:translate="no">contains</p></td><td><p its:translate="no">c</p></td><td><p>порівнює у режимі «містить»</p></td></tr>
+<tr><td><p its:translate="no">has-words</p></td><td><p its:translate="no">w</p></td><td><p>визначає, чи містить ціле слово</p></td></tr>
+<tr><td><p its:translate="no">matches</p></td><td><p its:translate="no">m</p></td><td><p>точна відповідність значенню</p></td></tr>
+<tr><td><p its:translate="no">starts-with</p></td><td><p its:translate="no">sw</p></td><td><p>значення заголовка починається із вказаного значення</p></td></tr>
+<tr><td><p its:translate="no">ends-with</p></td><td><p its:translate="no">ew</p></td><td><p>значення заголовка завершується вказаним значенням</p></td></tr>
+<tr><td><p its:translate="no">soundex</p></td><td><p its:translate="no">se</p></td><td><p>значення заголовка є подібним до вказаного значення</p></td></tr>
+<tr><td><p its:translate="no">regex</p></td><td><p its:translate="no">r</p></td><td><p>вказане значення є формальним виразом</p></td></tr>
+<tr><td><p its:translate="no">full-regex</p></td><td><p its:translate="no">fr</p></td><td><p>інший тип формального виразу</p></td></tr>
+</table>
+<p>(**) Дати можна записувати відносно (додатне число означає <code>протягом останніх X днів</code>), а від'ємне дає дати у майбутньому. Наприклад, щоб отримати повідомлення, які було отримано протягом останніх 10 днів, скористайтеся таким виразом: <code>recv:10</code>. Можна також скористатися точною датою у форматі <code>РРРР-ММ-ДД</code> (рекомендований формат), форматі ISO 8601 або специфічному для локалі форматі дати або дати і часу. Якщо засобу обробки не вдасться розібрати запис дати і часу, умову буде пропущено. У порівняннях дат також можна скористатися різними варіантами, а саме, <code>&lt;</code>, <code>=</code> або <code>&gt;</code>. Типовим є варіант порівняння <code>&gt;</code>.</p>
+<p>Передбачено три спеціальних теґи, які потребують особливого позначення. Ось вони:</p>
+<list>
+<item><p><code its:translate="no">not:(....)</code></p></item>
+<item><p><code its:translate="no">and:(....)</code></p></item>
+<item><p><code its:translate="no">or:(....)</code></p></item>
+</list>
+<p>який уможливлює створення спеціалізованих виразів. Типовим (найбільш зовнішнім) поєднанням є <code>and</code>. Щоб змінити його на <code>or</code>, скористайтеся такою конструкцією <code>or:(....)</code>. Приклад: <code>f:Bugzilla t:John</code> фільтрує усі повідомлення, які містять <code>Bugzilla</code> у полі «Від» і <code>John</code> у полі «Кому», а <code>or:(f:Bugzilla t:John)</code> фільтрує повідомлення від «Bugzilla» або надіслані користувачу «John».</p>
+</section>
+<section id="free-form-expression-examples">
+<title>Приклади виразу у довільній формі</title>
+<p>Нижче наведено список декількох виразів у довільній формі:</p>
+<table rules="rows">
+<tr><td><p>Вираз</p></td><td><p>Значення</p></td></tr>
+<tr><td><p><code>f:John</code></p></td><td><p>Повідомлення від користувача <code>John</code></p></td></tr>
+<tr><td><p><code>s-has-words:"green blue"</code></p></td><td><p>Повідомлення, у полі теми яких містяться одразу слова <code>green</code> і <code>blue</code></p></td></tr>
+<tr><td><p><code>r-ew:example.com</code></p></td><td><p>Адреса отримувачів (заголовки «Кому/Копія») завершується на <code>example.com</code></p></td></tr>
+<tr><td><p><code>h-starts-with:Cc=Alice</code></p></td><td><p>Поле <code>Копія</code> починається зі слова <code>Alice</code></p></td></tr>
+<tr><td><p><code>e:X-Secret-Header</code></p></td><td><p>У повідомленні є <code>X-Secret-Header</code></p></td></tr>
+<tr><td><p><code>l:work</code></p></td><td><p>Для повідомлення встановлено мітку <code>work</code></p></td></tr>
+<tr><td><p><code>sz-&lt;:10</code></p></td><td><p>Розмір повідомлення є меншим за 10 кБ</p></td></tr>
+<tr><td><p><code>sz-&gt;:100</code></p></td><td><p>Розмір повідомлення перевищує 100 кБ</p></td></tr>
+<tr><td><p><code>b:important</code></p></td><td><p>У тексті повідомлення міститься слово <code>important</code></p></td></tr>
+<tr><td><p><code>sent:7</code></p></td><td><p>Повідомлення надіслано протягом останніх 7 днів</p></td></tr>
+<tr><td><p><code>rcv-=:2020-02-02</code></p></td><td><p>Повідомлення отримано 2 лютого 2020 року</p></td></tr>
+<tr><td><p><code>a:1</code></p></td><td><p>Повідомлення із долученням</p></td></tr>
+<tr><td><p><code>a:0</code></p></td><td><p>Повідомлення без долучень</p></td></tr>
+<tr><td><p><code>and:(or:(r:Alice r:Bob) not:(r:Smith))</code></p></td><td><p>Повідомлення, отримувачем яких є <code>Alice</code> або <code>Bob</code>, але не <code>Smith</code></p></td></tr>
+<tr><td><p><code>f:Bob rcv-&gt;:2020-01-01 rcv-&lt;:2020-12-31</code></p></td><td><p>Повідомлення від <code>Bob</code>, отримані протягом 2020 року</p></td></tr>
+<tr><td><p><code>not:(flag:Seen) f:Bob rcv-&gt;:2020-01-01 rcv-&lt;:2020-12-31</code></p></td><td><p>Непрочитані повідомлення від <code>Bob</code>, отримані протягом 2020 року</p></td></tr>
+<tr><td><p><code>flag:Seen a:1 sz-&gt;:1024 f:Bob rcv:31</code></p></td><td><p>Прочитані повідомлення із долученням, розмір якого перевищує 1 МБ від <code>Bob</code>, отримані протягом останнього 31 дня</p></td></tr>
+<tr><td><p><code>m:"On This Computer/Inbox"</code></p></td><td><p>Повідомлення, які зберігаються у теці <code>On This Computer/Inbox</code></p></td></tr>
+<tr><td><p><code>location-no:"On This Computer/Inbox"</code></p></td><td><p>Повідомлення, які зберігаються будь-де, окрім теки <code>On This Computer/Inbox</code></p></td></tr>
+</table>
+</section>
+</section> 
+</page>

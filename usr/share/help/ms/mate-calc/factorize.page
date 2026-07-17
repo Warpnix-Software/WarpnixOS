@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="factorize" xml:lang="ms">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>Pemfaktoran</title>
+
+    <p>Anda boleh faktorkan nombor terpapar dengan menekan <keyseq><key>Ctrl</key><key>F</key></keyseq> atau dengan menekan butang <gui>fact</gui>. Butang ini kelihatan dalam <link xref="mouse">mod pengaturcaraan</link>.</p>
+    <p>Untuk memfaktorkan integer-integer lebih besar daripada 2^64, ujian primaliti Miller-Rabin dan algoritma rho Pollard digunakan.</p>
+</page>

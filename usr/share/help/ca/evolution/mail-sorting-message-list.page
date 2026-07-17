@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-sorting-message-list" xml:lang="ca">
+
+  <info>
+    <desc>Classificar la llista de missatges d'una carpeta de correu.</desc>
+
+    <link type="guide" xref="mail-organizing"/>
+    <link type="guide" xref="mail-layout-changing"/>
+
+    <revision pkgversion="3.40.4" version="0.11" date="2021-08-20" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-organize-columns.html.en -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Classificar la llista de missatges</title>
+  
+<p><app>Evolution</app> us permet organitzar els missatges de correu electrònic deixant que ordeneu els missatges a la <link xref="intro-main-window#e-mail">llista de missatges</link>.</p>
+
+<section id="email-threads">
+<title>Ordenar els correus als fils de correu electrònic</title>
+<p>Podeu utilitzar la vista per a fils de missatges per a ordenar els correus. Per a activar aquesta funcionalitat, feu clic a <guiseq><gui>Vista</gui><gui>Agrupa per fils</gui></guiseq> o premeu <keyseq><key>Ctrl</key><key>T</key></keyseq>.</p>
+<p>Aquesta funcionalitat, quan està habilitada, agrupa les respostes amb el correu electrònic original i us permet seguir el flux de la conversa d'un missatge a un altre.</p>
+<note style="tip"><p><app>Evolution</app> reconeix <code its:translate="no" its:locNote="Translators: Do NOT translate 'References'">References</code> <code its:translate="no" its:locNote="Translators: Do NOT translate 'In-Reply-To'">In-Reply-To</code> les capçaleres dels correus electrònics. A més, podeu habilitar <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Preferències de correu</gui><gui>General</gui><gui>Visualització dels missatges</gui><gui>Torna a tractar els missatges per tema</gui></guiseq>.</p></note>
+<p>Quan arriba un nou missatge, s'afegirà a sota del missatge principal. Els fils s'ordenen i es mostren en funció de la data del missatge més recent rebut.</p>
+<note style="tip"><p>Els usuaris avançats poden canviar més la configuració del fil executant ordres a l'aplicació <app>Terminal</app> .</p>
+<list>
+<item>
+<p>Per a ordenar cada fil pel missatge més recent en lloc de per data de missatge:</p>
+<p its:translate="no"><cmd>gsettings set org.gnome.evolution.mail thread-latest true</cmd></p>
+</item>
+<item>
+<p>Per a utilitzar l'ordre ascendent de tipus de missatges secundaris en un fil en lloc de l'ordre d'ordenació com en el nivell arrel del fil:</p>
+<p its:translate="no"><cmd>gsettings set org.gnome.evolution.mail thread-children-ascending true</cmd></p>
+</item>
+<item>
+<p>Per a reduir tots els fils per defecte en lloc d'expandir-los:</p>
+<p its:translate="no"><cmd>gsettings set org.gnome.evolution.mail thread-expand false</cmd></p>
+</item>
+</list>
+</note>
+</section>
+
+<section id="column-headers">
+<title>Ordenació de correus amb els encapçalaments de columnes</title>
+<p>La llista de missatges mostra columnes que indiquen si s'ha llegit un missatge si té fitxers adjunts, la importància del missatge, l'emissor, la data i l'assumpte. Per a canviar les columnes utilitzades a la llista de missatges, podeu fer una de les accions següents:</p>
+<list>
+<item><p>Arrossegar i deixar anar les barres de capçalera de la columna</p></item>
+<item><p>Fer clic amb el botó dret a la capçalera.</p></item>
+<item><p>Seleccioneu l'opció <gui>Suprimeix aquesta columna</gui> o <gui>Afegeix una columna</gui>.</p></item>
+</list>
+
+<p><app>Evolution</app> us permet ordenar els vostres missatges usant aquestes columnes. Simplement feu clic a l'etiqueta de la columna per a ordenar els correus. La direcció de la fletxa al costat de l'etiqueta indica la direcció d'ordenació.</p><p>Podeu aplicar un criteri de classificació secundari fent clic a l'etiqueta d'una columna mentre es prem <key>Ctrl</key>.</p>
+
+<note style="tip"><p>Si voleu utilitzar una ordenació o unes columnes diferents amb carpetes de correu específiques, assegureu-vos que la casella <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Preferències del correu</gui><gui>General</gui><gui>Aplica els mateixos paràmetres de visualització a totes les carpetes</gui></guiseq> no estigui marcada. A continuació podeu canviar la visualització i desar els canvis a <guiseq><gui>Visualitza</gui><gui>Visualització actual</gui><gui>Desa la visualització personalitzada...</gui></guiseq> i aplicar la visualització a altres carpetes també.</p></note>
+
+</section>
+
+<section id="sort-options">
+<title>Ús d'altres opcions de classificació</title>
+<p><app>Evolution</app> proporciona altres maneres d'ordenar missatges de correu electrònic. Podeu utilitzar Ordenar per, Ordenació ascendent, Ordenació descendent o Restablir l'ordenació.</p>
+	<section id="sort-options-by">
+	<title>Ordena per</title>
+		<p>També podeu ordenar missatges de correu mitjançant la llista <gui>Ordena per</gui>.</p>
+		<steps>
+		<item><p>Feu clic amb el botó dret sobre les capçaleres de columna de la llista de missatges.</p></item>
+		<item><p>Seleccioneu l'opció <gui>Ordena per</gui>.</p><p>Això ens mostra la llista de criteris d'ordenació de missatges de correu electrònic:</p>
+			<list>
+			<item><p>Assumpte - retallat</p></item>
+			<item><p>Etiquetes</p></item>
+			<item><p>Destinataris</p></item>
+			<item><p>Remitent</p></item>
+			<item><p>Ubicació</p></item>
+			<item><p>Venciment</p></item>
+			<item><p><link xref="mail-follow-up-flag">Marca de seguiment</link></p></item>
+			<item><p>Estat del senyalador</p></item>
+			<item><p>Mida</p></item>
+			<item><p>A</p></item>
+			<item><p>Rebut</p></item>
+			<item><p>Data</p></item>
+			<item><p>Assumpte</p></item>
+			<item><p>De</p></item>
+			<item><p>Fitxer adjunt</p></item>
+			<item><p>Senyalat</p></item>
+			<item><p>Estat</p></item>
+			<item><p>Personalitzat</p></item>
+			</list>
+		</item>
+		<item><p>Seleccioneu l'opció que voleu utilitzar per a ordenar els missatges de correu electrònic.</p></item>
+		</steps>
+	</section>
+
+	<section id="sort-options-ascending">
+	<title>Ordena de manera ascendent</title>
+		<steps>
+		<item><p>Feu clic amb el botó dret sobre les capçaleres de columna de la llista de missatges.</p></item>
+		<item><p>Seleccioneu l'opció <gui>Ordena de manera ascendent</gui>.</p></item>
+		</steps>
+		<p>Els missatges es mostraran amb els més recents a la part inferior.</p>
+	</section>
+
+	<section id="sort-options-descending">
+	<title>Ordena de forma descendent</title>
+		<steps>
+		<item><p>Feu clic amb el botó dret sobre les capçaleres de columna de la llista de missatges.</p></item>
+		<item><p>Seleccioneu l'opció <gui>Ordena de manera descendent</gui>.</p></item>
+		</steps>
+		<p>Els missatges es mostraran amb els més recents a la part superior.</p>
+	</section>
+
+	<section id="sort-options-unsort">
+	<title>Reinicialitzar l'ordre</title>
+		<steps>
+		<item><p>Feu clic amb el botó dret sobre les capçaleres de columna de la llista de missatges.</p></item>
+		<item><p>Seleccioneu l'opció <gui>Reinicialitza l'ordre</gui>.</p></item>
+		</steps>
+		<p>Així s'elimina l'ordenació per la columna, tornant a l'ordre dels missatges segons s'han anat afegint a la carpeta.</p>
+	</section>
+</section>
+
+</page>

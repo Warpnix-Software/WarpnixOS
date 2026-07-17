@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="problems-getting-help" xml:lang="ru">
+
+  <info>
+    <desc>Получение помощи в случае проблем.</desc>
+    
+    <link type="guide" xref="index#tracking-down-problems"/>
+    <link type="seealso" xref="problems-reporting-bugs"/>
+
+    <revision pkgversion="3.44.4" version="0.9" date="2022-10-20" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+
+<title>Получение помощи</title>
+
+<p>Чтобы получить помощь в решении проблем, отправьте письмо в <link href="https://lists.osuosl.org/mailman/listinfo/evolution-users">список рассылки <app>Evolution</app></link>, откройте обсуждение в <link href="https://discourse.gnome.org/tag/evolution"><app>GNOME Discourse</app> с тегом «evolution»</link>, или пообщайтесь с разработчиками и другими пользователями на канале IRC #evolution на сервере irc.gimp.net. Для подключения к серверу IRC можно, например, <link xref="help:polari/" href="https://help.gnome.org/users/polari/stable/">использовать приложение <app>Polari</app></link>.</p>
+</page>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="rules" xml:lang="pt_BR">
+
+  <info>
+    <link type="guide" xref="index#play"/>
+    <link type="seealso" xref="flags"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Gilfran Ribeiro</mal:name>
+      <mal:email>eu@gilfran.net</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Giovanni Almeida</mal:name>
+      <mal:email>giovannilombone.io@gmail.com</mal:email>
+      <mal:years>2024</mal:years>
+    </mal:credit>
+  </info>
+
+
+  <title>Regras do Jogo</title>
+
+  <p>O objetivo do jogo <app>Minas</app> é desvendar um campo repleto de minas terrestres sem detoná-las.</p>
+
+  <steps>
+    <item>
+      <p>Inicie escolhendo um dos três tamanhos padrões do campo, ou selecionando um campo customizado.</p>
+    </item>
+    <item>
+      <p>O jogo começa com o campo coberto de quadrados. Clique em algum deles para desvendá-lo. Você irá revelar:</p>
+      <list>
+        <item>
+	  <p>Um número colorido, que representa o número de minas nos quadrados adjacentes. Isso te ajudará a deduzir onde as minas estão para que, desse modo, você marque-as com <link xref="flags">bandeiras</link>.</p>
+        </item>
+        <item>
+	  <p>Um quadrado em branco, isso indica que não há minas em qualquer quadrado adjacente.</p>
+        </item>
+        <item>
+	  <p>Uma mina, que explode e termina o jogo</p>
+	</item>
+      </list>
+    </item>
+    <item>
+      <p>Repita o passo anterior até que você revele todos os quadrados que não possuem minas dentro.</p>
+    </item>
+  </steps>
+
+  <p>Se o jogo for completo rápido o suficiente, você entrará na lista de <link xref="high-scores">melhores tempos</link></p>
+
+</page>

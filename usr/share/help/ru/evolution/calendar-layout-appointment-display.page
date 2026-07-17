@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-layout-appointment-display" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="calendar-layout"/>
+
+    <revision pkgversion="3.26.5" version="0.6" date="2018-03-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/config-prefs-cal.html.en#bshpsxa
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Настройка отображения встреч в календаре.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Отображение встреч</title>
+
+  <!-- TODO:POST-3-8: Just listing the partially busted UI options (also see
+       calendar-layout-general-formatting) here is very poor and not
+       task-oriented, but that's it for the time being. Better ideas welcome.
+       -->
+
+  <p>Следующие параметры календаря доступны в разделе настройки <guiseq><gui>Правка</gui><gui>Параметры</gui> <gui>Календарь и задачи</gui><gui>Вид</gui></guiseq>.</p>
+
+<section id="general">
+  <title>Общие</title>
+
+  <list>
+    <item>
+      <p>Деления времени:</p>
+      <p>Настраивает дробление времени, отображающееся в виде линий в календаре в режиме обзора дня.</p>
+    </item>
+    <item>
+      <p>Отображать время окончания встреч в обзоре недели и месяца:</p>
+      <p>Если есть место, <app>Evolution</app> отобразит для каждой встречи время окончания в режимах обзора недели и месяца.</p>
+    </item>
+    <item>
+      <p>Показать значки встреч в обзоре месяца</p>
+    </item>
+    <item>
+      <p>Ужимать выходные дни в обзоре месяца:</p>
+      <p>Выберите этот параметр для отображения выходных в одной клетке вместо двух в режиме обзора месяца.</p>
+    </item>
+    <item>
+      <p>Показывать номера недель</p>
+      <p>Показывает номера недель в календаре.</p>
+    </item>
+    <item>
+      <p>Выделять в календаре курсивом повторяющиеся события.</p>
+    </item>
+    <item>
+      <p>Листать обзор месяца по неделям</p>
+    </item>
+  </list>
+
+</section>
+
+<section id="alerts">
+  <title>Сигналы</title>
+
+  <p>Если требуется получить предупреждение перед удалением какой-либо встречи, включите этот параметр.</p>
+
+</section>
+
+</page>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="scientific" xml:lang="ja">
+
+    <info>
+        <link type="guide" xref="index#number"/>
+    </info>
+
+	<title>科学的表記</title>
+    
+    <p>科学的形式で数値を入力するには、<gui>×10x</gui> ボタン (<keyseq><key>Ctrl</key><key>E</key></keyseq>) を使用します。<link xref="superscript">数字モード</link>は自動的に上付きに変更されます。2×10 を入力するには、最初に仮数 (2) を入力します。</p>
+    <example>
+    <p>2</p>
+    </example>
+    <p>次に、科学的表記ボタンを押します (または <keyseq><key>Ctrl</key><key>E</key></keyseq> キーを押します)。</p>
+    <example>
+    <p>2×10</p>
+    </example>
+    <p>次に、指数 (100) を入力します。</p>
+    <example>
+    <p>2×10¹⁰⁰</p>
+    </example>
+    <p>結果を科学的な形式で表示するには、<link xref="number-display">数字の書式</link>を変更します。</p>
+</page>

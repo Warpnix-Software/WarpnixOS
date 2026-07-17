@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="data-storage" xml:lang="cs">
+
+  <info>
+    <desc>Kde na disku <app>Evolution</app> ukládá má data?</desc>
+    
+    <link type="guide" xref="index#common-other-problems"/>
+
+    <revision pkgversion="3.22.5" version="0.6" date="2017-02-19" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  </info>
+
+<title>Místa uložení dat</title>
+
+<note style="tip">
+<p>Tohle téma má význam jen pro pokročilé uživatele, kteří řeší nějaký problém.</p>
+</note>
+
+<p><app>Evolution</app> 3.6 a novější ukládá data v souladu s <link href="https://www.freedesktop.org/wiki/Specifications/basedir-spec">XDG Base Directory Specification</link> (odkazovaný text je v angličtině). Standardně to je:</p>
+
+<terms>
+<item>
+<title>Datové soubory uživatele</title>
+<p><file>$HOME/.local/share/evolution</file></p>
+</item>
+<item>
+<title>Různá nastavení a stavové soubory</title>
+<p><file>$HOME/.config/evolution</file></p>
+</item>
+<item>
+<title>Nastavení účtů</title>
+<p><file>$HOME/.config/evolution/sources</file></p>
+</item>
+<item>
+<title>Nastavení v GSettings</title>
+<p><file>$HOME/.config/dconf</file></p>
+<note style="info"><p>V tomto místě se nachází nastavení i další aplikací. Aby se vypsala na obrazovku pouze data související s aplikací <app>Evolution</app>, lze použít příkazy <cmd>dconf dump /org/gnome/evolution/</cmd> a <cmd>dconf dump /org/gnome/evolution-data-server/</cmd> programu <link href="https://developer.gnome.org/dconf/"><app>Dconf</app></link>.</p></note>
+</item>
+<item>
+<title>Mezipaměti s dočasnými daty</title>
+<p><file>$HOME/.cache/evolution</file></p>
+</item>
+</terms>
+
+</page>

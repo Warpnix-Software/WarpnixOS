@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-display-message-source" xml:lang="uk">
+
+  <info>
+    <desc>Показ початкового коду повідомлення або усіх рядків заголовка.</desc>
+
+    <link type="guide" xref="mail-displaying-message#advanced"/>
+
+    <revision pkgversion="3.4.0" version="0.1" date="2012-03-07" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Джерело повідомлення</title>
+
+<p>Щоб переглянути дані повідомлення, виберіть пункт меню <guiseq><gui>Перегляд</gui><gui>Джерело повідомлення</gui></guiseq> або натисніть комбінацію клавіш <keyseq><key>Ctrl</key><key>U</key></keyseq>. У відповідь програма покаже дані повідомлення у новому вікні.</p>
+
+<p>Щоб переглянути лише усі заголовки повідомлення, виберіть пункт меню <guiseq><gui>Перегляд</gui><gui>Усі заголовки повідомлень</gui></guiseq>. У відповідь програма покаже усі дані заголовків на панелі перегляду.</p> 
+
+</page>

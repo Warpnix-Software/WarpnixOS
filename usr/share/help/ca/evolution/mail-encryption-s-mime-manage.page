@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-encryption-s-mime-manage" xml:lang="ca">
+
+  <info>
+    <desc>Afegir, editar, mostrar i esborrar certificats S/MIME.</desc>
+
+    <link type="guide" xref="mail-encryption#s-mime"/>
+
+    <revision pkgversion="3.2.0" version="0.2" date="2011-10-13" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/bshoty0.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Gestió de certificats S/MIME</title>
+
+<p>Els certificats permeten comunicar-vos amb altres persones de manera segura a través d'una connexió codificada, o bé signar un missatge que confirmi la vostra identitat al contacte. Aquesta configuració només s'aplica al xifrat S/MIME.</p>
+<p>Podeu importar, visualitzar, editar (excepte els propis) i suprimir els certificats a <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Certificats</gui></guiseq>.</p>
+
+<note style="tip"><p>Si obteniu l'error "L'emissor del certificat de parells l'ha marcat com de no confiança per l'usuari. (-8172) - No es pot afegir l'atribut SMIMEEncKeyPrefs" després d'afegir el vostre certificat de correu, aneu a <gui>Autoritats</gui> i activeu <gui>Confia en aquesta CA per a identificar usuaris de correu electrònic</gui> per al certificat.</p></note>
+
+<p><gui>Els vostres certificats</gui> mostra la llista dels certificats que teniu. Per a afegir un certificat, feu clic a <gui style="button">Importa</gui>, seleccioneu el fitxer que voleu importar i, a continuació, feu clic a <gui style="button">Obre</gui> i escriviu una contrasenya.</p>
+<p><gui>Certificats de contacte</gui> mostra la llista de certificats que teniu per als contactes. Aquests certificats us permeten desxifrar missatges i verificar missatges signats.</p>
+<p><gui>Autoritats</gui> mostra una llista de les autoritats certificadores de confiança que verifiquen que el vostre certificat és vàlid.</p>
+</page>

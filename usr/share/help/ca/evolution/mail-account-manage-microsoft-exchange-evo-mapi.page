@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-account-manage-microsoft-exchange-evo-mapi" xml:lang="ca">
+
+  <info>
+    <desc>Afegir i editar un compte de Microsoft Exchange MAPI a <app>Evolution</app>.</desc>
+
+    <link type="guide" xref="mail-account-manage-microsoft-exchange"/>
+    <title type="link" role="trail">MAPI</title>
+
+    <revision pkgversion="3.7" version="0.7" date="2013-06-22" status="candidate"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Configuració d'un compte d'Exchange MAPI</title>
+
+<section id="account-editor">
+<title>Editor de comptes</title>
+<p>Els comptes de correu electrònic es poden afegir a <guiseq><gui>Fitxer</gui><gui>Nou</gui><gui>Compte de correu</gui></guiseq> o via <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Comptes de correu</gui><gui style="button">Afegeix</gui></guiseq>. Els passos són bàsicament els mateixos que els de l'<link xref="intro-first-run">Assistent de la primera execució</link>, excepte perquè no pregunta si voleu importar dades d'altres aplicacions o recuperar-les d'un fitxer de còpia de seguretat.</p>
+<p>Els comptes de correu electrònic es poden editar via <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Comptes de correu</gui><gui style="button">Edita</gui></guiseq> o fent clic amb el botó dret al node superior corresponent a la llista de carpetes i triant <gui>Propietats</gui>.</p>
+<p>Els següents ajustos estan disponibles quan s'edita un compte existent:</p>
+
+<section id="identity">
+<title>Identitat</title>
+<p>Aquí definiu el vostre nom i la vostra adreça de correu electrònic.</p>
+<p>De manera opcional, podeu establir una adreça de correu electrònic de resposta (si voleu que les respostes als missatges s'enviïn a una adreça diferent), establir una organització (una empresa o organització que representeu quan envieu correus electrònics des d'aquest compte), la vostra <link xref="mail-composer-mail-signatures">signatura</link> per defecte d'aquest compte i <link href="https://en.wikipedia.org/wiki/Email_alias">àlies de correu electrònic</link>.</p>
+</section>
+
+<section id="receiving-email">
+<info>
+  <title type="link">Rebre correu electrònic i opcions de recepció (comptes Exchange MAPI)</title>
+  <title type="link" role="trail">Recepció</title>
+</info>
+<title>Rebre correu electrònic i opcions de recepció</title>
+</section>
+
+<section id="defaults">
+<info>
+  <title type="link">Opcions predeterminades (comptes Exchange MAPI)</title>
+  <title type="link" role="trail">Predeterminats</title>
+</info>
+<title>Opcions predeterminades</title>
+</section>
+
+<section id="composing-messages">
+<info>
+  <title type="link">Redacció de missatges (comptes Exchange MAPI)</title>
+  <title type="link" role="trail">Composició</title>
+</info>
+<title>Redacció de missatges</title>
+</section>
+
+<!-- TODO: This might be outdated? -->
+<section id="exchange-settings">
+<title>Configuració d'Exchange</title>
+<p>En aquesta secció podeu veure la mida de totes les carpetes d'Exchange.</p>
+</section>
+
+<section id="security">
+<info>
+  <title type="link">Seguretat (comptes d'Exchange MAPI)</title>
+  <title type="link" role="trail">Seguretat</title>
+</info>
+<title>Seguretat</title>
+</section>
+
+</section> <!-- end "account editor" section, now list any account settings stuff related to this account type outside of it -->
+
+<!-- <section id="other-settings">
+<info>
+  <title type="link">Other settings (Exchange MAPI accounts)</title>
+</info>
+<title>Other settings</title>
+<p>Other account related settings that are not located in the <gui>Account Editor</gui>:</p>
+</section> -->
+
+</page>

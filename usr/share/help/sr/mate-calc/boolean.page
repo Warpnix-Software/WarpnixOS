@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="boolean" xml:lang="sr">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>Логичка алгебра</title>
+    
+    <p>Логичка алгебра се може израчунати коришћењем „AND“, „OR“ и „XOR“ операнда.</p>
+    <example>
+    <p>010011₂ AND 110101₂</p>
+    </example>
+    <p>Дугмад за ове симболе је доступна у <link xref="mouse">програмерском режиму</link>.</p>
+    <p><link xref="function">Функција</link> „NOT“ замењује битове у броју. Величина речи се одређује из изборника „<guiseq><gui>Дигитрон</gui><gui>Поставке</gui></guiseq>“.</p>
+    <example>
+    <p>NOT 010011₂</p>
+    </example>
+</page>

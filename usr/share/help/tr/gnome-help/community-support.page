@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="community-support" xml:lang="tr">
+
+  <info>
+    <link type="guide" xref="more-help"/>
+    <desc>Topluluktan yardım alın</desc>
+
+    <revision version="19.10" date="2019-05-11" status="review"/>
+
+    <credit type="author">
+      <name>Ubuntu Belgelendirme Takımı</name>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+  <title>Topluluk desteği</title>
+
+  <p><link href="https://www.ubuntu.com/support/community-support">Topluluk desteği</link>nde bahsedilen ve bağlantısı verilen çeşitli kaynaklardan destek bulabilirsiniz.</p>
+
+  <p><link href="https://help.ubuntu.com">help.ubuntu.com</link> adresindeki her sayfanın sağ üstte bir arama özelliği vardır. Sorunuzun daha önce cevaplanmış olup olmadığını daha kolay bulmak için Ubuntu belgeleri ve web'deki destek kaynakları üzerinde özel bir Google araması yapmanızı sağlar.</p>
+
+  <p>Kendi dilinizdeki destek belki <link href="http://loco.ubuntu.com/teams/">Yerel Topluluk Ekibi</link>niz tarafında sağlanıyordur.</p>
+
+</page>

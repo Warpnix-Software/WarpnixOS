@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="documentation" xml:lang="el">
+  <info>
+    <revision pkgversion="3.5.5" version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.5.5" version="0.2" date="2012-08-12" status="review"/>
+    <link type="guide" xref="index#get-involved"/>
+    <credit type="editor copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor copyright">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+    <credit type="editor">
+      <name>Aruna Sankaranarayanan</name>
+      <email>aruna.evam@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ελληνική μεταφραστική ομάδα GNOME</mal:name>
+      <mal:email>team@gnome.gr</mal:email>
+      <mal:years>2009-2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μάριος Ζηντίλης</mal:name>
+      <mal:email>m.zindilis@dmajor.org</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μαρία Μαυρίδου</mal:name>
+      <mal:email>mavridou@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Βοήθεια συγγραφής τεκμηρίωσης</title>
+
+  <p>Τα παιχνίδια του GNOME αναπτύσσονται και συντηρούνται από μια εθελοντική κοινότητα. Είσαστε καλοδεχούμενοι να συμμετάσχετε.</p>
+
+<p>To contribute to the Documentation Project, feel free to get in touch with
+us in <link href="https://matrix.to/#/#docs:gnome.org">#docs:gnome.org</link>
+on <link xref="help:gnome-help/help-matrix">Matrix</link> or
+<link href="https://web.libera.chat/#gnome-docs">#gnome-docs</link> on
+irc.libera.chat, or via
+<link href="https://discourse.gnome.org/tag/documentation">GNOME Discourse</link>.</p>
+
+  <p>Our
+  <link href="https://wiki.gnome.org/DocumentationProject/Contributing">wiki</link>
+  page contains useful information.</p>
+
+</page>

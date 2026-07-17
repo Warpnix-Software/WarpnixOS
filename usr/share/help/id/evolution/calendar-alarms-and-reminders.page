@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:e="http://projectmallard.org/experimental/" xmlns:if="http://projectmallard.org/if/1.0/" type="topic" id="calendar-alarms-and-reminders" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#calendar"/>
+
+    <revision pkgversion="3.28.2" version="0.5" date="2018-07-10" status="draft"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+     <name its:translate="no">Novell, Inc</name>
+     <!-- Content partially from https://help.gnome.org/users/evolution/2.32/config-prefs-cal.html.en#CACHCGCI -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Menyiapkan pemberitahuan pengingat untuk janji temu.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Pengingat untuk janji temu</title>
+
+<section id="general-settings">
+  <title>Pengaturan Umum</title>
+
+  <p>Di bawah <guiseq><gui>Sunting</gui><gui>Preferensi</gui> <gui>Kalender dan Tugas</gui><gui>Pengingat</gui></guiseq> Anda bisa memilih kalender yang ingin Anda terima pemberitahuan pengingatnya. Jika Anda tidak memilih kalender, Anda tidak akan menerima pengingat untuk acara apa pun di kalender ini. Anda juga dapat menentukan apakah akan menampilkan pengingat untuk setiap janji temu dan untuk setiap ulang tahun dan hari jadi.</p>
+
+  <if:choose>
+    <if:when test="platform:gnome-shell">
+      <p>Untuk informasi umum tentang menampilkan pengingat, silakan lihat <link xref="help:gnome-help/shell-notifications" href="https://help.gnome.org/users/gnome-help/stable/shell-notifications">Bantuan Desktop GNOME</link>.</p>
+    </if:when>
+  </if:choose>
+
+</section>
+
+<section id="manual-reminders">
+  <title>Pengingat Manual</title>
+
+  <p>Selain pengaturan umum, Anda juga dapat mengatur pengingat di penyunting janji temu hanya untuk janji temu tertentu:</p>
+
+  <steps>
+    <item>
+      <p>Klik <guiseq><gui>Opsi</gui><gui>Pengingat</gui></guiseq> atau tekan tombol Pengingat di bilah alat.</p>
+    </item>
+    <item>
+      <p>Dari menu tarik-turun, pilih salah satu opsi default yang tersedia saat menampilkan pengingat pemberitahuan, atau pilih <gui>Ubahan</gui>.</p>
+    </item>
+    <item>
+      <p>Dalam kasus <gui>Ubahan</gui>, pengingat dapat menjadi popup, suara yang diputar, program yang dijalankan, atau surel yang dikirim. Anda juga dapat menentukan apakah pengingat harus diulang.</p>
+    </item>
+  </steps>
+
+<note style="info"> <!-- bug 794085 -->
+  <p>Opsi <gui>Kirim Surel</gui> hanya tersedia jika backend kalender mendukung fungsionalitas tersebut.</p>
+</note>
+
+</section>
+
+</page>

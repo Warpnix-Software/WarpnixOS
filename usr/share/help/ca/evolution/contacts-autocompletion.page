@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-autocompletion" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#contacts"/>
+    <link type="guide" xref="index#mail-composing"/>
+    <link type="seealso" xref="contacts-add-automatically"/>
+    <link type="seealso" xref="mail-composer-forward"/>
+    <link type="seealso" xref="mail-composer-reply"/>
+    <link type="seealso" xref="mail-composer-write-new-message"/>
+
+    <revision pkgversion="2.32.1" version="0.1" date="2011-01-05" status="draft"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-to
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Compleció automàtica de noms i adreces de correu electrònic introduïdes a l'editor de correu.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Compleció automàtica dels destinataris de correu</title>
+
+  <p>Podeu introduir les tres primeres lletres de noms i adreces de correu electrònic al camp de text de destinataris i <app>Evolution</app> us mostrarà una llista de coincidències de les vostres llibretes d'adreces.</p>
+
+  <p>Per a activar la compleció automàtica, anar a <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Contactes</gui> <gui>Compleció automàtica</gui></guiseq> i trieu les llibretes d'adreces de la llista que <app>Evolution</app> ha de mirar per a cercar coincidències.</p>
+
+  <p>Seleccioneu <gui>Mostra sempre l'adreça del contacte complet automàticament</gui> per a mostrar també l'adreça de correu electrònic juntament amb el nom. Això pot ser útil per a distingir si un contacte té diverses adreces de correu.</p>
+
+  <p>Alternativament, podeu fer clic als botons <gui>A:</gui>, <gui>Cc:</gui>, o <gui>Bcc:</gui> per a obtenir una llista de les adreces electròniques dels vostres contactes. Seleccioneu les adreces i feu clic als botons de fletxa per a moure'ls a les columnes d'adreça adequades.</p>
+
+</page>

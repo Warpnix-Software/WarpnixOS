@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-reply" xml:lang="ca">
+
+  <info>
+    <desc>Respondre un correu electrònic rebut.</desc>
+    
+    <link type="guide" xref="index#mail-composing"/>
+
+    <revision pkgversion="3.3.91" version="0.6" date="2012-02-19" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-reply -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Respondre un missatge</title>
+
+<section id="general-info">
+<title>Respondre un missatge de correu electrònic</title>
+<p>Per a respondre un missatge, seleccioneu el missatge que voleu respondre a la llista de missatges i feu clic al botó <gui>Respon</gui> a la barra d'eines, o feu clic amb el botó dret del ratolí en el missatge i seleccioneu <gui>Respondre al remitent</gui>. Així s'obre l'editor de missatges. Els camps <gui>Per a::</gui> i <gui>Assumpte:</gui> ja s'han omplert, tot i que podeu modificar-los. A més, el text complet del missatge antic s'insereix al nou missatge, ja sigui en gris amb una línia blava a un costat (a la visualització HTML) o amb el caràcter &gt; abans de cada línia (en mode text pla), per a indicar que forma part del missatge anterior.</p>
+<p>Si esteu llegint un missatge amb diversos destinataris, podeu utilitzar <gui>Respondre a tothom</gui> en comptes de <gui>Respon</gui>. Si hi ha un gran nombre de persones als camps <gui>Cc:</gui> o <gui>Per a:</gui>, pot estalviar-vos molta estona.</p>
+</section>
+
+<section id="reply-to-all">
+<title>Ús de la funció Respon a tothom</title>
+<p>Un Jordi envia un correu electrònic a un client i n'envia còpies a l'Oriol i a una llista de col·laboradors. Si l'Oriol vol fer un comentari perquè tots puguin llegir-lo, fa servir <gui>Respon a tots</gui>, però si només vol dir al Jordi que hi està d'acord, utilitza <gui>Respon</gui>. La resposta no arriba a ningú més de la llista CCO del Jordi, perquè aquesta llista no es comparteix amb ningú.</p>
+<p>Si us subscriviu a una llista de correu i voleu que la vostra resposta es dirigeixi a la llista més que al remitent, seleccioneu <gui>Respon a la llista</gui> en comptes de <gui>Respon</gui> o <gui>Respondre a tothom</gui>.</p>
+</section>
+
+<section id="keyboard-shortcuts">
+<title>Dreceres de teclat</title>
+<table frame="all" rules="all">
+ <tr>
+  <td><p>Acció</p></td><td><p>Dreceres de teclat</p></td>
+ </tr><tr>
+  <td><p>Respon al remitent</p></td><td><p><keyseq><key>Ctrl</key><key>R</key></keyseq></p></td>
+ </tr><tr>
+  <td><p>Respon a la llista de correu</p></td><td><p><keyseq><key>Ctrl</key><key>L</key></keyseq></p></td>
+ </tr><tr>
+  <td><p>Respon a tots</p></td><td><p><keyseq><key>Maj</key><key>Ctrl</key><key>R</key></keyseq></p></td>
+ </tr>
+</table>
+</section>
+
+<section id="default-settings">
+<title>Paràmetres predeterminats</title>
+<p>Podeu canviar la configuració predeterminada per a respondre i reenviar a <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Preferències del redactor</gui><gui>General</gui><gui>Respostes i reenviaments</gui><gui>Estil de la resposta</gui></guiseq>.</p>
+</section>
+
+</page>

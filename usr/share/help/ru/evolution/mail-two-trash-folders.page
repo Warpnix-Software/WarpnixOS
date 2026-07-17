@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-two-trash-folders" xml:lang="ru">
+
+  <info>
+    <desc>Настройка только одной корзины или папки спама для учётной записи.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+    <link type="seealso" xref="mail-default-folder-locations"/>
+
+    <revision pkgversion="3.7.4" version="0.2" date="2013-01-23" status="final"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Для одной и той же учётной записи отображаются две папки «Корзина» или <gui>Спам</gui></title>
+
+<p>Если используется учётная запись с удалённым хранением почтовых данных, которая также имеет папку «Спам» и/или <gui>Корзина</gui> на сервере, в <app>Evolution</app> могут появиться дубликаты папок.</p>
+<p>Две папки <gui>Корзина</gui> легко различить по значкам. У папки <gui>Корзина</gui> <app>Evolution</app> есть особый значок, в то время как другая, физическая папка <gui>Корзина</gui> выглядит как обычная папка.</p>
+
+<p>По умолчанию в <app>Evolution</app> папки <gui>Корзина</gui> и <gui>Спам</gui> являются <link xref="mail-search-folders">папками поиска</link>. Они не существуют на самом деле, а лишь отображают все сообщения, отмеченные в качестве спама или для удаления в каких-либо папках этой учётной записи.</p>
+
+<p>Чтобы использовать только папки «Спам» и «Корзина» с почтового сервера, выберите соответствующий параметр <gui>Использовать реальную папку</gui> в разделе настройки <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Учётные записи</gui><gui style="button">Правка</gui><gui>По умолчанию</gui></guiseq>. После этого локальные виртуальные папки <app>Evolution</app> больше не будут использоваться.</p>
+
+</page>

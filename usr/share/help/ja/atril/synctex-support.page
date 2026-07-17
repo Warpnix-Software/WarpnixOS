@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="synctex-support" xml:lang="ja">
+
+  <info>
+    <link type="guide" xref="index#synctex" group="second"/>
+    <desc>SyncTeX のサポートを追加する方法。</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Germán Poo-Caamaño</name>
+      <email>gpoo@mate.org</email>
+    </credit>
+    <license>
+      <p>クリエイティブ・コモンズ表示継承 3.0</p>
+    </license>
+
+  </info>
+
+<title>SyncTeX のセットアップ</title>
+<p>SyncTeX サポートを追加するには、以下のパッケージをインストールする必要があります：</p>
+<list>
+  <item>
+    <p><app>pdflatex</app> のような、SyncTeX をサポートする LaTeX エンジン。</p>
+  </item>
+  <item>
+    <p>pluma-plugins をインストールした <app>Pluma</app> など、SyncTeX をサポートするテキストエディタ。</p>
+  </item>
+</list>
+
+<p><app>Pluma</app> で、SyncTeX Plugin を有効にするには：</p>
+<steps>
+   <item>
+    <p><guiseq><gui>編集</gui><gui>設定</gui><gui>プラグイン</gui></guiseq> タブをクリックします。</p>
+   </item>
+   <item>
+    <p><gui>SyncTeX</gui> をチェックしてください。</p>
+   </item>
+</steps>
+</page>

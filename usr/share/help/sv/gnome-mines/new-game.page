@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="new-game" xml:lang="sv">
+
+  <info>
+    <link type="guide" xref="index#play"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.5.5" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.12" date="2014-03-08" status="review"/>
+    <revision pkgversion="3.28.0" version="0.2" date="2018-09-01" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2012</years>
+    </credit>
+    <credit type="author copyright">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+    <credit type="editor">
+      <name>Aruna Sankaranarayanan</name>
+      <email>aruna.evam@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Rashi Aswani</name>
+      <email>aswanirashi19@gmail.com</email>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Erik Sköldås</mal:name>
+      <mal:email>erik.skoldas@tele2.se</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017, 2018</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Starta ett nytt spel</title>
+
+  <p>För att starta ett nytt spel:</p>
+  <steps>
+    <item>
+      <p>Tryck på knappen <gui style="button">Spela igen</gui> till höger.</p>
+    </item>
+    <item>
+      <p>För att ändra <link xref="board-size">brädstorleken</link> trycker du på knappen <gui style="button">Ändra svårighetsgrad</gui> till höger.</p>
+    </item>
+  </steps>
+
+  <note>
+  <p>Om du spelar ett spel och trycker på knappen <gui style="button">Börja om</gui>, kommer <app>Minor</app> att fråga om du vill <gui>Behålla aktuellt spel</gui> eller <gui>Starta nytt spel</gui>. Om du väljer det senare kommer ditt nuvarande spel att gå förlorat.</p>
+  </note>
+</page>

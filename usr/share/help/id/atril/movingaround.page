@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="movingaround" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#reading"/>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email its:translate="no">philbull@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Anna Philips</name>
+      <email its:translate="no">anna.cs.au@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal-unported.xml"/>
+
+    <desc>Menavigasi, menggulir, dan memperbesar.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kukuh Syafaat</mal:name>
+      <mal:email>syafaatkukuh@gmail.com</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2021, 2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Berpindah-pindah dalam dokumen</title>
+
+  <p>Anda bisa berpindah antar halaman dokumen dengan salah satu metode berikut:</p>
+
+  <list>
+    <item>
+      <p>Menggulir naik dan turun menggunakan roda tetikus. Untuk berpindah antar halaman hanya dengan menggerakkan tetikus:</p>
+      <steps>
+        <item>
+          <p>Klik kanan halaman dan pilih <gui>Autoscroll</gui>.</p>
+        </item>
+        <item>
+          <p>Gerakkan penunjuk tetikus ke bagian bawah jendela untuk menggulir ke bawah; itu akan bergulir lebih cepat tergantung pada seberapa jauh ke bawah jendela yang Anda tuju.</p>
+        </item>
+        <item>
+          <p>Untuk berhenti menggulir otomatis, klik di mana pun dalam dokumen.</p>
+        </item>
+      </steps>
+    </item>
+    <item>
+      <p>Menggunakan bilah gulir pada jendela dokumen.</p>
+    </item>
+    <item>
+      <p>Memakai tombol panah naik dan turun dari papan ketik.</p>
+    </item>
+    <item>
+      <p>Menyeret halaman dengan tetikus Anda, seolah-olah Anda sedang menggenggamnya. Untuk melakukan ini:</p>
+      <list>
+        <item>
+          <p>Gerakkan penunjuk tetikus ke atas halaman dan tahan tombol tengah tetikus untuk menyeretnya.</p>
+        </item>
+        <item>
+          <p>Jika Anda tidak memiliki tombol tengah tetikus, tahan tombol kiri dan kanan tetikus secara bersamaan, lalu seret.</p>
+        </item>
+      </list>
+    </item>
+  </list>
+
+<section id="between-pages">
+  <title>Bertukar antar halaman</title>
+
+  <p>Anda dapat berpindah antar halaman dari suatu dokumen memakai salah satu dari metode berikut:</p>
+
+  <list>
+    <item>
+      <p>Tekan tombol <keyseq><key>Ctrl</key><key>Page Up</key></keyseq> atau <keyseq><key>Ctrl</key><key>Page Down</key></keyseq> pada papan ketik.</p>
+    </item>
+    <item>
+      <p>Untuk menuju ke halaman tertentu:</p>
+      <list>
+        <item>
+          <p>Ketikkan suatu nomor halaman dalam <gui style="input">Pilih Halaman</gui> dan tekan <key>Enter</key>.</p>
+        </item>
+        <item>
+          <p>Bila Anda ingin berpindah ke awal atau akhir dokumen:</p>
+          <list>
+            <item>
+              <p>Tekan <keyseq><key>Ctrl</key><key>Home</key></keyseq> pada papan ketik Anda.</p>
+            </item>
+            <item>
+              <p>Tekan <keyseq><key>Ctrl</key><key>End</key></keyseq> pada papan ketik Anda.</p>
+            </item>
+          </list>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Untuk berpindah sepuluh halaman, tekan <keyseq><key>Shift</key><key>Page Up</key></keyseq> atau <keyseq><key>Shift</key><key>Page Down</key></keyseq>.</p>
+      <note style="tip">
+        <p>Anda hanya dapat berpindah satu halaman pada satu waktu, secara default. Jika Anda ingin berpindah antar halaman hanya dengan menggulir atau menyeret, buka menu <gui style="menuitem">Tampilan</gui> dan pilih <gui style="menuitem">Berkelanjutan</gui>.</p>
+      </note>
+    </item>
+  </list>
+
+</section>
+
+<section id="navigating">
+  <title>Menavigasi dengan suatu daftar halaman atau daftar isi</title>
+
+  <p>Ketika Anda membuka sebuah berkas, Anda mestinya memiliki panel sisi di sisi kiri jendela. Bila panel sisi tidak tampak, klik <guiseq><gui style="menuitem">Tilik</gui><gui style="menuitem">Panel Sisi</gui></guiseq> atau tekan tombol <key>F9</key> pada papan ketik.</p>
+
+  <p>Panel sisi menunjukkan pratinjau dari semua halaman dalam dokumen.</p>
+
+  <p>Anda dapat berpindah antar halaman dengan mengklik mereka dalam panel sisi.</p>
+
+  <note>
+    <p>Beberapa dokumen memiliki indeks atau daftar isi, yang dapat Anda tampilkan di panel sisi. Pilih Kotak Kombo <gui>Gambar Mini</gui> di puncak panel sisi dan pilih <gui>Indeks</gui> untuk melihatnya.</p>
+    <note style="tip">
+      <p>Kebanyakan dokumen tak memakai fitur ini, sehingga Anda tak akan bisa melihat indeks mereka di panel sisi.</p>
+    </note>
+  </note>
+
+</section>
+
+<section id="zoom">
+  <title>Memperbesar dan memperkecil</title>
+
+  <p>Untuk menyetel tingkat zum:</p>
+
+  <list>
+    <item>
+      <p>Pilih persentase zum yang diinginkan dari kotak kombo dalam bilah alat.</p>
+    </item>
+    <item>
+      <p>Atau, gunakan pintasan papan ketik <keyseq><key>Ctrl</key><key>+</key></keyseq> untuk memperbesar, atau <keyseq><key>Ctrl</key><key>-</key></keyseq> untuk memperkecil.</p>
+    </item>
+    <item>
+      <p>Atau, tahan <key>Ctrl</key> dan gunakan roda gulir tetikus Anda untuk mengatur zum.</p>
+    </item>
+  </list>
+
+  <note>
+    <p>Opsi <gui>Pas Halaman</gui> akan membuat halaman dokumen pas dengan seluruh <em>tinggi</em> jendela.</p>
+    <p>Opsi <gui>Pas Lebar</gui> akan membuat halaman dokumen mengisi seluruh <em>lebar</em> jendela.</p>
+    <p>Bila Anda ingin melihat dua halaman sekaligus, bersebelahan, seperti dalam sebuah buku, pergilah ke <guiseq><gui style="menuitem">Tampilan</gui><gui style="menuitem">Ganda</gui></guiseq> dan tekan <gui style="menuitem">Ganda</gui>.</p>
+    <p>Jika gsetting allow-links-change-zoom diatur ke false, tautan diblokir agar tidak mengubah tingkat zoom Anda.</p>
+  </note>
+
+  <p>Anda dapat memakai seluruh layar untuk melihat dokumen:</p>
+
+  <list>
+    <item>
+      <p>Tekan <key>F11</key>.</p>
+    </item>
+    <item>
+      <p>Untuk keluar dari mode layar penuh:</p>
+      <p>Tekan <key>F11</key> atau <key>Escape</key></p>
+    </item>
+  </list>
+</section>
+
+</page>

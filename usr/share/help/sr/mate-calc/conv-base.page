@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="conv-base" xml:lang="sr">
+
+    <info>
+        <link type="guide" xref="index#conversion"/>
+    </info>
+
+	<title>Основе бројева</title>
+    
+    <p>Да претворите основе броја упишите број (или решите једначину) и промените <link xref="number-display">формат резултата</link> из изборника „<guiseq><gui>Дигитрон</gui><gui>Поставке</gui></guiseq>“.</p>
+</page>

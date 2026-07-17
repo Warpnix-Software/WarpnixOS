@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="synctex-search" xml:lang="ja">
+
+  <info>
+    <link type="guide" xref="index#synctex" group="fifth"/>
+    <desc>Atril と <app>Pluma</app>.のあいだで反転させます。</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>クリエイティブ・コモンズ表示継承 3.0</p>
+    </license>
+
+  </info>
+
+<title>SyncTeX を使った検索</title>
+<p><link xref="synctex-compile">SyncTeX で TeX ファイルをコンパイル</link>した後には、検索が可能になります。SyncTeX は、インクルードされたファイルからの前方検索と後方検索もサポートしています。</p>
+
+<section id="forward-search">
+    <title>前方検索：TeX から PDF へ（<app>Pluma</app> から Atril へ）</title>
+     <p>前方検索では、TeX ソースコードの特定のセクションをクリックし、PDF 内の関連する位置へ移動することができます。前方検索を実行するには：</p>
+<steps>
+<item>
+<p>TeX ファイル内にある行をクリックします。</p>
+</item>
+<item>
+<p><app>Pluma</app> で、<guiseq><gui>ツール</gui><gui>前方検索</gui></guiseq>をクリックします。PDF の対応する行が赤色で表示されます。</p>
+<p>または、<keyseq><key>Ctrl</key><key>Alt</key><key>F</key></keyseq> を押すか、<keyseq><key>Ctrl</key> 左クリック</keyseq>します。PDF の対応する行が赤く表示されます。</p>
+</item>
+</steps>
+<note>
+<p>対応する PDF ファイルが開いていない場合、前方検索を実行すると Atril で PDF が開きます。</p>
+</note>
+<p>複数の TeX ファイルを含む複雑なプロジェクトがある場合は、次のようにします</p>
+<code>% mainfile: mainfile.tex</code>
+<p>各 TeX ファイルの最初か最後の3行にインクルードすれば、前方検索が機能します。後方検索は、モードラインを追加しなくても常に機能するはずです。</p>
+
+</section>
+
+<section id="backward-search">
+    <title>後方検索：PDF から TeX へ（Atril から <app>Pluma</app> へ）</title>
+     <p>後方検索では、PDF ファイル内の特定の行をクリックすると、TeX ソースコード内の関連する行へ移動することができます。</p>
+<p>Atril で <keyseq><key>Ctrl</key> 左クリック</keyseq>で、後方検索ができます。TeX ソースコードの対応する行が強調表示されます。</p>
+</section>
+
+</page>

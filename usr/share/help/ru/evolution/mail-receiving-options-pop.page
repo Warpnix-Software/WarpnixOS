@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-receiving-options-pop" xml:lang="ru">
+
+  <info>
+    <desc>Параметры получения для учётных записей POP.</desc>
+
+    <link type="guide" xref="mail-receiving-options#common-server-types"/>
+    <link type="guide" xref="mail-account-manage-pop#receiving-email"/>
+    <revision pkgversion="3.23.2" version="0.6" date="2016-11-29" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Barbara Tobias</name>
+      <email its:translate="no">barbtobias09@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mainwindow-starting.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>POP: параметры получения</title>
+
+<section id="receiving-email-pop">
+<title>Получение почты</title>
+
+<p>На странице <gui>Получение почты</gui> (доступна при выборе пункта меню <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Учётные записи</gui><gui style="button">Правка</gui><gui>Получение почты</gui></guiseq>):</p>
+
+<list>
+<item><p>Введите адрес почтового сервера в поле <gui>Сервер</gui> и укажите своё имя пользователя для этого сервера.</p></item>
+<item><p>Выберите, следует ли использовать защищённое соединение (TLS или его устаревший предшественник — SSL).</p><p>Этот параметр следует включать в том случае, если его поддерживает сервер.</p>
+<note style="tip"><p>Поставщики бесплатных услуг электронной почты часто предоставляют сведения о том, какие из этих параметров можно использовать. Если вы работаете в сети организации, рекомендуется обратиться к системному администратору для получения дополнительных сведений.</p></note></item>
+<item><p>Выберите тип проверки подлинности в списке или нажмите кнопку <gui style="button">Проверить поддерживаемые типы</gui>, чтобы программа <app>Evolution</app> произвела проверку поддерживаемых типов. Некоторые серверы не объявляют механизм аутентификации, который они используют, поэтому нажатие этой кнопки не является гарантией того, что доступные механизмы в действительности сработают.</p></item>
+<item><p>Укажите, следует ли программе <app>Evolution</app> запомнить ваш пароль.</p></item>
+</list>
+
+</section>
+
+<section id="receiving-options-pop">
+<title>Параметры получения</title>
+
+<p>На странице <gui>Параметры получения</gui> (доступна при выборе пункта меню <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Учётные записи</gui><gui style="button">Правка</gui><gui>Параметры получения</gui></guiseq>):</p>
+
+<list>
+<item><p>Если программа <app>Evolution</app> должна автоматически проверять наличие новых сообщений, включите параметр <gui>Проверять _новую почту каждые … минуты</gui> и выберите интервал между проверками в минутах.</p></item>
+<item><p>Если сообщения должны оставаться на сервере в течение определённого периода времени, включите параметр <gui>Оставлять сообщения на сервере</gui> и параметр <gui>Удалить через ... дней</gui> и укажите количество дней, в течение которого сообщения будут оставаться на сервере. Установка значения «0» приведёт к тому, что сообщения останутся на сервере навсегда.</p></item>
+<item><p>Параметр <gui>Отключить поддержку всех расширений POP3</gui> полезен только при доступе к устаревшим или неверно настроенным почтовым серверам. <link href="https://tools.ietf.org/html/rfc2449">Расширения POP3</link> предоставляют улучшенную функциональность, но поддерживаются только некоторыми серверами. Если при получении почты возникнут проблемы, включение этого параметра может помочь.</p></item>
+</list>
+
+</section>
+
+</page>

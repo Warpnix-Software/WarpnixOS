@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="video-dvd-restricted" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="media#music" group="#last"/>
+    <link type="seealso" xref="video-dvd"/>
+    
+    <desc>Більшість комерційних DVD закодовані й не будуть відтворюватися без декодуючого програмного забезпечення.</desc>
+    
+    <credit type="author">
+      <name>Проект з документування Ubuntu</name>
+      <email>ubuntu-doc@lists.ubuntu.com</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+<title>Як мені активувати кодек для відтворення DVD?</title>
+
+<p>Типово підтримка DVD в Ubuntu не може бути надана з-за правових та технічних обмежень. Більшість комерційних DVD закодовані й для відтворення потребують використання декодуючого програмного забезпечення.</p>
+
+<section id="restricted">
+ <title>Використовуйте інше програмне забезпечення для декодування</title>
+
+ <note style="warning"><p>У деяких країнах використання неліцензійного декодуючого програмного забезпечення не дозволено законом. Перевірте, що ви маєте право використовувати таке ПЗ.</p></note>
+
+ <steps>
+  <item><p>Установіть <link href="apt:libdvdnav4">libdvdnav4</link>, <link href="apt:libdvdread8">libdvdread8</link>, <link href="apt:gstreamer1.0-plugins-bad">gstreamer1 .0-plugins-bad</link>, <link href="apt:gstreamer1.0-plugins-ugly">gstreamer1.0-plugins-ugly</link> та <link href="apt:libdvd-pkg ">libdvd-pkg</link>.</p></item>
+  <item><p>Відкрийте вікно терміналу натиснувши <keyseq><key>Ctrl</key><key>Alt</key><key>T</key></keyseq>.</p></item>
+  <item><p>Виконайте команду</p>
+    <p><cmd its:translate="no">sudo dpkg-reconfigure libdvd-pkg</cmd></p>
+    <p>та підтвердіть щоб встановити <em>libdvdcss2</em>.</p>
+  </item>
+</steps>
+</section>
+</page>

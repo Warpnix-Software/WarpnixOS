@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="power" xml:lang="sr">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>Степени и корени</title>
+    
+    <p>Степени се уписују стављањем <link xref="superscript">броја изложиоца</link> после вредности.</p>
+    <example>
+    <p>5²</p>
+    </example>
+    <p>Инверзни број се може уписати коришћењем симбола инверзије ⁻¹ (<keyseq><key>Ктрл</key><key>I</key></keyseq>).</p>
+    <example>
+    <p>3⁻¹</p>
+    </example>
+    <p>Степени се могу такође израчунати коришћењем симбола ^. Ово омогућава степену да буде једначина.</p>
+    <example>
+    <p>5^(6−2)</p>
+    </example>
+    <p>Ако ваша тастатура нема тастер <key>^</key>, можете користити <key>*</key> два пута.</p>
+    <p>Квадратни корен се може израчунати коришћењем симбола (<keyseq><key>Ктрл</key><key>R</key></keyseq>).</p>
+    <example>
+    <p>√2</p>
+    </example>
+    <p>n-ти корен се може израчунати стављањем <link xref="superscript">броја индекса</link> пре знака корена.</p>
+    <example>
+    <p>₃√2</p>
+    </example>
+</page>

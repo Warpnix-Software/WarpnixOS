@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="strategy" xml:lang="da">
+	<info>
+          <revision version="3.4" date="2012-03-08" status="final"/>
+	  <link type="guide" xref="index#play"/>
+	  <credit type="author copyright">
+	    <name>Radoslav Asparuhov</name>
+	    <email>rasparuhov@gmail.com</email>
+	  <years>2011</years>
+	  </credit>
+	  <credit type="editor">
+	    <name>Tiffany Antopolski</name>
+	    <email>tiffany.antopolski@gmail.com</email>
+	  </credit>
+	  <license>
+		<p>Creative Commons Deling på samme vilkår 3.0</p>
+	  </license>
+	
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>scootergrisen</mal:name>
+      <mal:email/>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+	<title>Strategi</title>
+        <p>Der findes kun én løsning til hver celle i en Sudoku-opgave. Følgende strategier hjælper dig med systematisk at finde løsningen til hver celle.</p>
+ <section id="strategy1">
+	<title>Strategi 1:</title>
+	  <steps>
+	    <item><p>Vælg den række som har flest tal.</p>
+                  <note><p>Du bør vælge den række eller den kolonne med de fleste tal. For enkelthedens skyld er instruktionerne skrevet, som var det en række, der havde de fleste tal.</p></note>
+            </item>
+	    <item><p>Fastslå hvilke tal, der mangler i en række.</p></item>
+	    <item><p>Vælg en af de tomme celler i rækken. Fastslå hvilke af de manglende tal som er i kolonnen eller i 3×3-boksen.</p></item>
+	    <item><p>Med <link xref="earmarks">øremærker</link> indtastes de manglende tal som ikke er i kolonnen eller 3×3-boksen. Tallene er kandidatløsninger til cellen.</p></item>
+	    <item><p>Gå til den næste tomme celle i den valgte række og gentag metoden ovenfor. Gentag den for hver række og kolonne, start i dem med flest tal og fortsæt til dem med færrest. Kig altid omhyggeligt på tallene og husk 3×3-boksene.</p></item>
+	   </steps>
+            <note><p>Strategien hjælper dig med at afsløre hvilke celler, som kun har ét muligt valg. Når det er afsløret, så kan du udfylde cellerne med det valg og gentage strategien igen indtil hele opgaven er løst.</p></note>
+<figure>
+  <desc>Eksempel på brug af strategi 1.</desc>
+  <media type="image" mime="image/png" src="figures/strategy1.png" width="400" its:translate="no"/>
+</figure>
+
+</section>
+<section id="strategy2">
+
+	<title>Strategi 2:</title>
+	  <steps>
+	    <item><p>Find det tal, som optræder mest.</p></item>
+	    <item><p>Kig nu på den venstre lodrette opstilling af 3×3-boksene og find de kolonner, hvor tallet optræder.</p></item>
+  	    <item><p>I denne opstilling gås til en 3×3-boks som ikke indeholder tallet i nogen af sine celler. Med <link xref="earmarks">øremærker</link> indtastes tallet i alle de tomme celler i kolonnen, hvor tallet ikke optræder. Hvis tallet optræder i en rækken i en af disse celler, så undlad at indtaste det i cellens øremærke.</p></item>
+	    <item><p>Gentag de sidste to trin for de lodrette opstillinger i midten og til højre.</p></item>
+            <item><p>Find det næste tal som optræder mest, og gentag indtil du har gjort det for alle 9 tal.</p></item>
+	  </steps>
+            <note><p>Strategien hjælper dig med at afsløre hvilke celler, som kun har ét muligt valg. Når det er afsløret, så kan du udfylde cellerne med det valg og gentage strategien igen indtil hele opgaven er løst.</p></note>
+<figure>
+  <desc>Eksempel på brug af strategi 2.</desc>
+  <media type="image" mime="image/png" src="figures/strategy2.png" width="400" its:translate="no"/>
+</figure>
+
+	   <note><p>Hvis ingen af strategierne ovenfor løser opgaven på egen hånd, så kan du skifte mellem strategierne. Du kan også kombinere strategierne.</p></note>
+</section>
+</page>

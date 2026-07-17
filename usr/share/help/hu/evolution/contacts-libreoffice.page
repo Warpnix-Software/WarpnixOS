@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-libreoffice" xml:lang="hu">
+
+  <info>
+    <link type="guide" xref="index#data-migration-and-sync"/>
+
+    <revision pkgversion="3.26.6" version="0.3" date="2018-03-26" status="draft"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc><app>Evolution</app> címjegyzékekből származó adatok használata LibreOffice dokumentumokban.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lukács Bence</mal:name>
+      <mal:email>lukacs.bence1 at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kelemen Gábor</mal:name>
+      <mal:email>kelemeng at gnome dot hu</mal:email>
+      <mal:years>2011, 2012, 2013, 2015, 2017, 2018.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nagy Zoltán</mal:name>
+      <mal:email>dzodzie at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Úr Balázs</mal:name>
+      <mal:email>ur.balazs at fsf dot hu</mal:email>
+      <mal:years>2014, 2019, 2021, 2022, 2023, 2024, 2025.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Névjegyek a LibreOfficeban</title>
+
+  <p>Az <app>Evolution</app> címjegyzékeit felhasználhatja adatforrásként a <app>LibreOffice Writerben</app>. A következő lépések a LibreOffice 5.4-es verziójára vonatkoznak.</p>
+
+  <steps>
+    <item>
+      <p>Válassza a menüsáv <guiseq><gui>Szerkesztés</gui><gui>Adatbázis kicserélése</gui></guiseq> menüpontját. Ezután megjelenik az <gui>Adatbázisok kicserélése</gui> ablak.</p>
+    </item>
+    <item>
+      <p>A jobb oldali mezőben az <gui>Elérhető adatbázisok alatt</gui> az <gui>EvolutionLocal</gui> az egyik elérhető forrás. Kattintson a kis háromszögre az <app>Evolution</app> címjegyzékek listájának lekéréséhez.</p>
+    </item>
+    <item>
+      <p>Válassza ki a címjegyzéket, és nyomja meg a <gui style="button">Megadás</gui> gombot.</p>
+    </item>
+  </steps>
+
+  <p>Ez az <app>Evolution</app> címjegyzéket a LibreOffice alapértelmezett adatforrásává teszi. Ezután egy LibreOffice dokumentumba szúrandó mezőt a <guiseq><gui>Beszúrás</gui><gui>Mező</gui></guiseq> menüpont használatával választhat ki.</p>
+
+</page>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-displaying-images-in-html" xml:lang="ca">
+
+  <info>
+    <desc>En imatges incrustades en missatges HTML rebuts.</desc>
+
+    <link type="guide" xref="mail-displaying-message"/>
+
+    <revision pkgversion="3.30.4" version="0.5" date="2019-01-19" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en#usage-mail-getnsend-get-attach-html -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Imatges en missatges HTML</title>
+
+<p>Quan algú us envia un correu HTML que inclou una imatge al cos del missatge (per exemple, el missatge de benvinguda a la safata d'entrada), <app>Evolution</app> mostra la imatge dins del missatge.</p>
+
+<section id="loading">
+<title>Càrrega de les imatges</title>
+<p>Algunes imatges són enllaços en un missatge, en lloc de formar part del missatge. <app>Evolution</app> pot descarregar aquestes imatges d'Internet, però no ho fa a menys que ho sol·liciti. Això és degut al fet que les imatges allotjades de manera remota poden ser lentes de carregar i mostrar, i fins i tot poden ser utilitzades pels spammers per a fer un seguiment de qui llegeix el correu electrònic. No carregar automàticament imatges ajuda a protegir la seva privadesa.</p>
+
+<p>Per a carregar les imatges d'un missatge, feu clic a <guiseq><gui>Vista</gui><gui>Carrega imatges</gui></guiseq> o premeu <keyseq><key>Ctrl</key><key>I</key></keyseq>.</p>
+
+<p>Per a definir l'acció predeterminada per a carregar imatges, aneu a <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Preferències pel correu</gui><gui>Missatges HTML</gui><gui>S'està carregant el contingut remot</gui></guiseq>.</p>
+</section>
+
+<section id="automatically-download">
+<title>Descarrega automàticament les imatges als correus electrònics de persones que coneixes</title>
+
+<p>Podeu descarregar-vos imatges dels correus electrònics enviats pels vostres contactes. Per a fer-ho, aneu a <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Preferències del correu</gui><gui>Missatges HTML</gui><gui>Carrega imatges</gui></guiseq>. Activeu l'opció <gui>Carrega imatges només en els missatges dels contactes</gui>.</p>
+
+<p>Seguidament, aneu a <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Contactes</gui><gui>Compleció automàtica</gui></guiseq>. Habilita la compleció automàtica marcant la casella de selecció <gui>Mostra sempre l'adreça del contacte que s'ha completat automàticament</gui>.</p>
+</section>
+
+<section id="saving">
+<title>Desar les imatges</title>
+<p>Per a desar una imatge que estigui incrustada en un correu electrònic en format HTML, feu clic amb el botó dret sobre la imatge i feu clic a <gui>Desa imatge…</gui>.</p>
+</section>
+
+</page>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="scientific" xml:lang="sr">
+
+    <info>
+        <link type="guide" xref="index#number"/>
+    </info>
+
+	<title>Научно бележење</title>
+    
+    <p>Да упишете бројеве у научном запису користите дугме „<gui>×10x</gui>“ (<keyseq><key>Ктрл</key><key>E</key></keyseq>). „<link xref="superscript">Режим броја</link>“ сам пребацује у изложилац. Да упишете 2×10¹⁰⁰, почните уписивањем мантисе (2):</p>
+    <example>
+    <p>2</p>
+    </example>
+    <p>Затим притисните дугме научног бележења (или притисните <keyseq><key>Ктрл</key><key>E</key></keyseq>):</p>
+    <example>
+    <p>2×10</p>
+    </example>
+    <p>Затим упишите изложилац (100):</p>
+    <example>
+    <p>2×10¹⁰⁰</p>
+    </example>
+    <p>Да прикажете резултате у научном облику измените <link xref="number-display">формат резултата</link>.</p>
+</page>

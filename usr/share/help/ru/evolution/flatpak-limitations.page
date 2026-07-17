@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="flatpak-limitations" xml:lang="ru">
+
+  <info>
+    <desc>Ограничения при использовании пакета Flatpak <app>Evolution</app>.</desc>
+
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="3.35.91" version="0.1" date="2020-02-21" status="review"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Невозможно распечатывать письма, добавлять или сохранять вложения, а также открывать справку</title>
+
+<p>Если используется <link href="https://flathub.org/">Flatpak</link>-версия <app>Evolution</app>, существуют несколько ограничений. Среди них:</p>
+
+<list>
+  <item><p>Может быть невозможно добавлять вложения в письма или сохранять вложения из писем.</p></item>
+  <item><p>Невозможно отправить письмо на печать. Это <link href="https://bugs.webkit.org/show_bug.cgi?id=192748">ограничение базовой библиотеки WebKitGTK</link>.</p>
+  <p>Чтобы обойти проблему и сохранить письмо в файл, можно выполнить команду <cmd>flatpak run --filesystem=home org.gnome.Evolution</cmd>.</p></item>
+  <item><p>С целью уменьшения размеров пакета разработчики могут исключить из неголокальную документацию.</p></item>
+</list>
+</page>

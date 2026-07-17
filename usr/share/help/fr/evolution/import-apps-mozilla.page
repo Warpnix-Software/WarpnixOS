@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="import-apps-mozilla" xml:lang="fr">
+
+  <info>
+    <desc>Importer des données à partir de Mozilla <app>Thunderbird</app>.</desc>
+    
+    <link type="guide" xref="import-data#import-from-apps"/>
+
+    <revision pkgversion="3.6.4" version="0.5" date="2016-05-13" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marc Lorber</mal:name>
+      <mal:email>Linux-Lorber@club-internet.fr</mal:email>
+      <mal:years>2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jonathan Ernst</mal:name>
+      <mal:email>jonathan@ernstfamily.ch</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alexandre Franke</mal:name>
+      <mal:email>alexandre.franke@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012 </mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervan@gmail.com</mal:email>
+      <mal:years>2013-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yvan Masson</mal:name>
+      <mal:email>yvan@masson-informatique.fr</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Charles Monzat</mal:name>
+      <mal:email>charles.monzat@free.fr</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>vanadiae</mal:name>
+      <mal:email>vanadiae35@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Guillaume Bernard</mal:name>
+      <mal:email>associations@guillaume-bernard.fr</mal:email>
+      <mal:years>2021-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jean-Marc Tissières</mal:name>
+      <mal:email>jmetissieres@gmail.com</mal:email>
+      <mal:years>2022</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Mozilla</title>
+<!-- <guiseq><gui>File</gui><gui>Import</gui><gui>Import data and settings from older programs</gui></guiseq> does NOT recognize Outlook and Thunderbird automatically in 3.8." -->
+
+<!-- TODO: Fix this page properly and find time to try: -->
+<note style="warning"><p>Les instructions ci-dessous sont peut-être obsolètes et peuvent ne plus fonctionner.</p><p>Suivez cette <link href="https://mail.gnome.org/archives/evolution-list/2019-February/msg00055.html">publication de liste de discussion (en anglais)</link> pour une méthode alternative que vous pourriez essayer.</p></note>
+
+<steps>
+<item><p><link href="https://support.mozilla.org/fr/kb/profils-dans-thunderbird#w_comment-trouver-son-profila">Trouver votre dossier de profil <app>Thunderbird</app>.</link></p></item>
+<item><p>Cliquez sur <guiseq><gui>Fichier</gui><gui>Importer</gui></guiseq>.</p></item>
+<item><p>Dans l’onglet <gui>Type d’importateurs</gui>, cliquez sur <gui>Importer un seul fichier</gui>.</p></item>
+<item><p>Allez dans le dossier où <app>Thunderbird</app> stocke ses données. Assurez-vous que <link xref="help:gnome-help/files-hidden#show-hidden" href="https://help.gnome.org/users/gnome-help/stable/files-hidden#show-hidden">Afficher les fichiers cachés</link> est bien coché dans la boîte de dialogue du navigateur de fichiers.</p></item>
+<item>
+<list>
+<item><p>Si vous souhaitez importer le courriel de <app>Thunderbird</app>, allez dans <file>Courriel/Dossiers locaux</file> (pour les comptes courriels locaux) ou dans <file>Courriel Imap/Nom du serveur</file> (pour les comptes courriels distants). <file>Nom du serveur</file> est l’adresse de votre fournisseur de comptes courriels distants. Les fichiers sans extension contiennent vos messages (pas les fichiers <file>.msf</file>).</p></item>
+<item><p>Si vous souhaitez importer les données de l’agenda <app>Thunderbird/Lightning</app>, la bonne méthode consiste à exporter d’abord vos évènements <app>Thunderbird</app> sous forme de fichiers <file>.ical</file>/<file>.ics</file>, puis de les importer dans <app>Evolution</app>. Cela est indispensable, car <app>Thunderbird</app> ne stocke pas ses données d’agenda sous forme de base de données standard.</p></item>
+</list>
+<p>Le type de fichier est déterminé automatiquement.</p></item>
+<item><p>Choisissez la destination (par ex. le dossier ou l’agenda dans <app>Evolution</app>) pour les données importées.</p></item>
+<item><p>Effectuez de nouveau les étapes d’importation jusqu’à l’obtention complète de toutes les données.</p></item>
+</steps>
+</page>

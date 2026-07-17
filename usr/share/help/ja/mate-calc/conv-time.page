@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="conv-time" xml:lang="ja">
+
+    <info>
+        <link type="guide" xref="index#conversion"/>
+    </info>
+
+	<title>時刻</title>
+    
+    <p>時間を変換するには、<em>in</em> 演算子を使用します。</p>
+    <example>
+    <p>3 years in hours</p>
+    </example>
+    <note>
+    <p>時刻の変換は、キーボードを使って実行してください。</p>
+    </note>
+</page>

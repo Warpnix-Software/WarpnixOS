@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-meetings-replying-to-invitation" xml:lang="pt-BR">
+
+  <info>
+    <desc>Aceitando e respondendo a um convite de reunião</desc>
+    
+    <link type="guide" xref="calendar-meetings"/>
+
+    <revision pkgversion="3.1.5" version="0.6" date="2011-08-25" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+ <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#replying-to-rsvp -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+      
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Fontenelle</mal:name>
+      <mal:email>rafaelff@gnome.org</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Respondendo a um pedido de reunião</title>
+<p>Os pedidos de reunião são enviados como anexos e exibidas como o corpo de um e-mail. Todos os detalhes do evento são mostrados, incluindo horário e datas.</p>
+<p>Você pode escolher se e como responder ao convite e adicionar um comentário pessoal à sua resposta. As opções disponíveis são <gui>Recusar</gui>, Aceitar provisoriamente (<gui>Preliminar</gui>) ou <gui>Aceitar</gui>. Você também pode decidir se o horário da reunião ainda será mostrado como livre em sua agenda.</p>
+
+<p>Se o pedido de reunião já inclui um <link xref="calendar-alarms-and-reminder">lembrete</link>, você pode importar o lembrete para o seu calendário ativando <gui>Herdar lembretes</gui>.</p>
+
+<p>Se você clicar para <gui>Aceitar</gui> o evento é adicionado automaticamente à agenda que você escolheu.</p>
+<p>Depois de adicionar a reunião à sua agenda, você pode fazer alterações na reunião, mas se o organizador original enviar uma atualização, suas alterações podem ser substituídas.</p>
+
+<note style="tip"><p>Sob <guiseq><gui>Editar</gui><gui>Preferências</gui><gui>Agenda e tarefas</gui><gui>Convites de reuniões</gui><gui>Pesquisa de conflitos</gui></guiseq> você pode definir quais agendas são usadas para avisar você de conflitos de reuniões.</p></note>
+</page>

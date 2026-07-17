@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="earmarks" xml:lang="ko">
+  <info>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+   <link type="guide" xref="index#tips"/>
+    <credit type="author copyright">
+      <name>Thomas Hinkle</name>
+      <email>tmhinkle@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Chris Beiser</name>
+      <email>ctbeiser@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+      <p>크리에이티브 커먼즈 동일조건변경허락 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>전민석</mal:name>
+      <mal:email>cheon7886@naver.com</mal:email>
+      <mal:years>2017, 2018</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>조성호</mal:name>
+      <mal:email>shcho@gnome.org</mal:email>
+      <mal:years>2021, 2023</mal:years>
+    </mal:credit>
+  </info>
+
+<title>귀퉁이 표시</title>
+<p>귀퉁이 표시(조그마한 숫자 메모)는 어느 칸에든 남길 수 있습니다. 해당 칸에 들어갈 수 있는 값을 적을 수 있습니다. 귀퉁이 표시에 칸에 들어가는 여러 숫자를 적어둘 수 있습니다. 각 숫자는 한번만 선택할 수 있습니다.</p>
+
+<p>칸에 귀퉁이 표시를 추가하려면:</p>
+
+<steps>
+  <item><p>칸을 선택합니다.</p></item>
+  <item><p><keyseq><key>Ctrl</key><key>1</key></keyseq>부터 <keyseq><key>Ctrl</key><key>9</key></keyseq>까지 누릅니다.</p></item>
+</steps>
+
+<p><keyseq><key>Ctrl</key><key>1</key></keyseq>부터 <keyseq><key>Ctrl</key><key>9</key></keyseq>까지를 다시 누르면 귀퉁이 표시를 지울 수 있습니다.</p>
+
+<note><p><key>Ctrl</key> 키를 누르는 동안 칸을 눌러 귀퉁이 표시를 추가하거나, 칸에 마우스 커서를 올려둔 후 오른쪽 단추를 누른 다음 숫자를 선택할 수 있습니다.</p></note>
+
+</page>

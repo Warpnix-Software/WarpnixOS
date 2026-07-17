@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="synctex-compile" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#synctex" group="third"/>
+    <desc>Cara mengompilasi dokumen TeX Anda dengan SyncTeX</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kukuh Syafaat</mal:name>
+      <mal:email>syafaatkukuh@gmail.com</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2021, 2022.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Kompilasi TeX dengan SyncTeX</title>
+<p>Menambahkan baris <em>\synctex=1</em> dalam pembukaan berkas TeX Anda akan memicu sinkronisasi dengan SyncTeX.</p>
+<code>
+\documentclass{article}
+\synctex=1
+\usepackage{fullpage}
+\begin{document}
+...
+\end{document}
+</code>
+<p>Atau, Anda dapat menjalankan perintah pdflatex dengan opsi <em>-synctex=1</em>:</p>
+<screen>pdflatex -synctex=1 berkasmu.tex</screen>
+</page>

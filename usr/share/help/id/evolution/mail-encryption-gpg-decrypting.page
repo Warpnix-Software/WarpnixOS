@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-encryption-gpg-decrypting" xml:lang="id">
+
+  <info>
+    <desc>Mendekripsi dan memeriksa tanda tangan pesan GPG yang diterima.</desc>
+
+    <link type="guide" xref="mail-encryption#gpg"/>
+
+    <revision pkgversion="2.32.1" version="0.1" date="2011-01-05" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/encryption.html.en#unencrypting -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Menerima pesan yang dienkripsi atau ditandatangani melalui GPG</title>
+
+<section id="decryption">
+<title>Mendekripsi pesan yang diterima</title>
+<p>Jika Anda menerima pesan terenkripsi, Anda perlu mendekripsinya sebelum Anda dapat membacanya.</p>
+<p>Saat Anda melihat pesan, <app>Evolution</app> akan meminta kata sandi PGP Anda. Masukkan, dan pesan yang tidak terenkripsi ditampilkan.</p>
+<note style="tip"><p>Pengirim harus memiliki kunci publik GPG Anda sebelum mereka dapat mengirimi Anda pesan terenkripsi.</p></note>
+</section>
+
+<section id="signature">
+<title>Memeriksa tanda tangan pesan yang diterima</title>
+<p>To check the sender's signature of a received message, scroll down to the bottom of the message and click the logo. <app>Evolution</app> will display <gui>Security Information</gui> for the message.</p>
+</section>
+</page>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-forward" xml:lang="ca">
+
+  <info>
+    <desc>Reenviament d'un correu electrònic rebut a algú.</desc>
+    
+    <link type="guide" xref="index#mail-composing"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-27" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-fwd -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Reenviament d'un missatge</title>
+
+<p>Quan rebeu un correu electrònic, podeu reenviar-lo a altres persones o grups que puguin estar interessats.</p>
+<p>Podeu reenviar un missatge com a fitxer adjunt a un nou missatge (aquesta és la configuració predeterminada, consulteu <link xref="#default-settings">Configuració predeterminada</link>), en línia (al missatge sense el caràcter &gt; abans de cada línia), o citat (amb el caràcter &gt; abans de cada línia).</p>
+<p>El reenviament com adjunt és millor si es vol enviar el missatge sencer i complet a una altra persona. El reenviament en línia o citat és el millor si es volen enviar porcions d'un missatge o si es té una gran quantitat de comentaris sobre diferents seccions del missatge que es reenvia.</p>
+
+<p>Per a reenviar un missatge que s'està llegint:</p>
+<steps>
+<item><p>Feu clic a <guiseq><gui>Missatge</gui><gui>Reenvia</gui></guiseq>, el botó <gui>Reenvia</gui> a la barra d'eines, o premeu <keyseq><key>Ctrl</key><key>F</key></keyseq> per a utilitzar el mètode de reenviament predeterminat. En cas que vulgueu utilitzar un mètode diferent, feu clic a <guiseq><gui>Missatge</gui><gui>Reenvia com</gui></guiseq> o la petita fletxa desplegable al costat del botó <gui>Reenvia</gui> a la barra d'eines per a triar el mètode.</p></item>
+<item><p>Seleccioneu un destinatari del missatge. L'assumpte ja s'ha introduït, tot i que el podeu modificar si voleu.</p></item>
+<item><p>Afegiu els vostres comentaris al camp de text del missatge .</p></item>
+<item><p>Feu clic a <gui style="button">Envia</gui> o premeu <keyseq><key>Ctrl</key><key>Retorn</key></keyseq>.</p></item>
+</steps>
+
+<p>Els fitxers adjunts a un missatge que reenvieu, només es reenvien quan envieu el missatge original com a fitxer adjunt. Els missatges en línia no reenvien cap fitxer adjunt.</p>
+
+<section id="default-settings">
+<title>Paràmetres predeterminats</title>
+<p>Podeu canviar la configuració per defecte per a respondre i reenviar a <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Preferències del redactor</gui><gui>General</gui><gui>Respostes i reenviaments</gui><gui>Estil de reenviament</gui></guiseq>.</p>
+</section>
+
+</page>

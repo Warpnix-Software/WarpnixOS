@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="print-blank-puzzles" xml:lang="de">
+  <info>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+    <revision pkgversion="3.31.90" version="0.3" date="2019-03-03" status="review"/>
+    <link type="guide" xref="index#print"/>
+    <credit type="editor copyright">
+      <years>2011</years>
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2008, 2011-2012, 2018-2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@googlemail.com</mal:email>
+      <mal:years>2011, 2014-2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Tim Sabsch</mal:name>
+      <mal:email>tim@sabsch.com</mal:email>
+      <mal:years>2023</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Leere Sudokus drucken</title>
+
+<p>So drucken Sie ein oder mehrere leere Puzzles aus:</p>
+
+ <steps>
+ <item><p>Klicken Sie auf den Menüknopf in der rechten oberen Ecke des Fensters und wählen Sie <gui style="menuitem">Drucken</gui>.</p></item>
+ <item><p>Klicken Sie auf <gui style="menuitem">Mehrere Rätsel drucken …</gui>.</p></item>
+ <item><p>Wählen Sie die Gesamtanzahl der zu druckenden Sudokus in der Auswahlliste aus.</p></item>
+ <item><p>Wählen Sie den Schwierigkeitsgrad der auszudruckenden Spiele aus.</p></item>
+ <item><p>Klicken Sie auf <gui>Drucken</gui>.</p></item>
+ </steps>
+
+
+</page>

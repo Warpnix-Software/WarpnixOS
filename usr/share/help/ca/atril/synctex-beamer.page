@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="synctex-beamer" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#synctex" group="sixth"/>
+    <desc>Usant SyncTeX amb la classe LaTeX Beamer.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Carles Ferrando Garcia</mal:name>
+      <mal:email>carles.ferrando@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert Antoni Buj Gelonch</mal:name>
+      <mal:email>rbuj@fedoraproject.org</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Beamer amb SyncTeX</title>
+<p>Beamer és una classe de LaTeX per crear diapositives per a presentacions.</p>
+<p>Podeu fer cerques endavant i enrere en una presentació <em>Beamer-LaTeX</em> de manera similar a la <link xref="synctex-search">cerca</link> en altres fitxers TeX compilats amb SyncTeX. Malgrat això, la cerca us condueix al marc (diapositiva) corresponent, no necessàriament a la línia de text. Aquesta diferència es descriu amb detall a continuació.</p>
+<section id="forward-search">
+    <title>Cerca endavant: de la font Beamer-LaTeX a PDF (<app>pluma</app> a Atril)</title>
+    <p>Amb la <link xref="synctex-search#forward-search">cerca endavant</link>, podeu clicar sobre una línia específica de codi font Beamer-LaTeX. La <em>part superior</em> de la diapositiva corresponent al PDF es destacarà en vermell. Aquesta normalment serà el <em>frametitle</em>.</p>
+</section>
+
+<section id="backward-search">
+
+    <title>Cerca cap enrere: de PDF a la font Beamer-LaTeX (de Atril a <app>pluma</app>)</title>
+     <p>Amb la <link xref="synctex-search#backward-search">cerca cap enrere</link>, cliqueu sobre un text en un marc, i la línia corresponent de codi LaTex que finalitza aquell marc és destacada. Aquesta línia normalment serà:</p>
+ <code>\end{frame}</code>
+<p>corresponent al marc on vau fer clic.</p>
+
+
+</section>
+
+
+</page>

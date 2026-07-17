@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="tip" id="get-involved" xml:lang="ko">
+
+  <info>
+    <link type="guide" xref="more-help"/>
+    <link type="seealso" xref="report-ubuntu-bug"/>
+    <desc>이 도움말 항목의 문제점을 보고하는 방법 및 위치.</desc>
+
+    <revision pkgversion="3.4.0" date="2012-02-19" status="review"/>
+    <revision version="13.10" date="2013-09-12" status="review"/>
+
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+  <title>이 가이드 개선에 참여</title>
+
+
+<p>이 도움말 시스템은 자원 봉사자 커뮤니티에 의해 만들어지며 여러분도 참여하실 수 있습니다. 오타, 잘못된 해결법 또는 누락된 사항 등 도움말 페이지에 문제가 있는 경우 <em>버그 보고서</em>를 제출할 수 있습니다.</p>
+
+ <p>버그를 신고하려면 <keyseq><key>Alt</key><key>F2</key></keyseq>를 누르고 <input>ubuntu-bug ubuntu-docs</input>을 입력하십시오. <gui>Enter</gui>를 눌러 버그 수집 프로세스를 시작하십시오.</p>
+
+ <p>버그를 저장하는 방법에 대한 자세한 내용은 <link xref="report-ubuntu-bug">우분투 버그 보고 지침서</link>를 참조하십시오.</p>
+
+ <p>우분투 도움말을 개선하는 데 도움을 주셔서 감사합니다!</p>
+</page>

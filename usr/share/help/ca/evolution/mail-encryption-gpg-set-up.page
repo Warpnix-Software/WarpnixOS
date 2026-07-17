@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-encryption-gpg-set-up" xml:lang="ca">
+
+  <info>
+    <desc>Activar GPG al vostre compte de correu per a signar i xifrar o desxifrar missatges.</desc>
+
+    <link type="guide" xref="mail-encryption#gpg"/>
+
+    <revision pkgversion="3.13.90" version="0.4" date="2015-03-09" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/encryption.html.en#encrypt-evo-integ -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Activar GPG al vostre compte de correu electrònic</title>
+<!-- TODO:POST-3-8: Update and rewrite using Seahorse. Needs a rewrite once https://gitlab.gnome.org/GNOME/libcryptui/-/issues/3 is fixed; see also https://bugzilla.gnome.org/show_bug.cgi?id=508744 -->
+
+<note style="tip"><p>Es necessita una clau GPG. si encara no en disposa d'una, consulti <link xref="mail-encryption-gpg-create-key">Crear una clau GPG</link>.</p></note>
+
+<steps>
+<item><p>Seleccioneu <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Comptes de Correu</gui></guiseq>.</p></item>
+<item><p>Seleccioneu el compte que vulgueu utilitzar de forma segura i, a continuació, feu clic a <gui style="button">Edita</gui>.</p></item>
+<item><p>Fer clic a la pestanya <gui>Seguretat</gui>.</p></item>
+<item><p>Especifiqueu el vostre identificador de clau al camp <gui>OpenPGP Key ID</gui>.</p>
+<note style="tip"><p>A sota del camp podeu triar si sempre voleu signar els missatges de sortida quan feu servir aquest compte, i altres opcions.</p></note>
+</item>
+<item><p>Feu clic a <gui style="button">D'acord</gui>.</p></item>
+<item><p>Feu clic a <gui style="button">Tanca</gui>.</p></item>
+</steps>
+<p><app>Evolution</app> requereix que conegui la seva clau d'identificació. Si no la recordeu, inicieu <app>Claus i contrasenyes</app>, anar a <gui>Claus GnuPG </gui>, seleccioneu la clau GPG desitjada, feu-hi clic amb el botó dret del ratolí, seleccioneu <gui>Propietats</gui> i copieu el <gui>ID de la clau</gui>. El vostre identificador de clau és una cadena de vuit caràcters amb números i lletres aleatòries.</p>
+
+</page>

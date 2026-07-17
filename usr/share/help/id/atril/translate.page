@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="translate" xml:lang="id">
+
+  <info>
+   <link type="guide" xref="index#getInvolved"/>
+    <desc>Melokalkan <app>Atril</app></desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2011</years>
+    </credit>
+     <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+       <p>Creative Commons Share Alike 3.0</p>
+     </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kukuh Syafaat</mal:name>
+      <mal:email>syafaatkukuh@gmail.com</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2021, 2022.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Bantu menerjemahkan</title>
+<p>Antar muka pengguna dan dokumentasi Atril sedang diterjemahkan oleh komunitas voluntir seluruh dunia. Anda dipersilakan berpartisipasi.</p>
+<p>Ada banyak bahasa yang terjemahannya masih diperlukan.</p>
+<p>Untuk mulai menerjemahkan, Anda harus <link href="https://www.transifex.com/signin/">membuat akun</link> dan bergabung dengan <link href="https://www.transifex.com/mate/MATE/">tim penerjemahan</link> untuk bahasa Anda. Ini akan memberi Anda kemampuan untuk mengunggah terjemahan baru.</p>
+
+</page>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="rules" xml:lang="da">
+
+  <info>
+    <link type="guide" xref="index#play"/>
+    <link type="seealso" xref="flags"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  </info>
+
+
+  <title>Spilregler</title>
+
+  <p>Målet i <app>Miner</app> er at rydde minefeltet uden at detonere nogen af minerne.</p>
+
+  <steps>
+    <item>
+      <p>Start med at vælge en af de tre standardbrætstørrelser eller ved at vælge et tilpasset bræt.</p>
+    </item>
+    <item>
+      <p>Spillet begynder med et bræt som er dækket af fliser. Klik på en flise for at se hvad den gemmer. Du afdækker:</p>
+      <list>
+        <item>
+	  <p>Et farvet tal, som viser antallet af miner i de tilstødende fliser. Det hjælper dig med at finde ud af hvor minerne er, så du kan markere dem med <link xref="flags">flag</link>.</p>
+        </item>
+        <item>
+	  <p>En tom flise som betyder, at der ikke er nogen miner under nogen af de tilstødende fliser.</p>
+        </item>
+        <item>
+	  <p>En mine som detonerer og afslutter spillet.</p>
+	</item>
+      </list>
+    </item>
+    <item>
+      <p>Gentag de forrige trin indtil du har afdækket alle de fliser, som ikke har nogen miner under.</p>
+    </item>
+  </steps>
+
+  <p>Hvis du fuldfører spillet hurtigt nok, så filøjes du på listen med <link xref="high-scores">bedste resultater</link>.</p>
+
+</page>

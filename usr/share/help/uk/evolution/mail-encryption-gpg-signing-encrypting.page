@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-encryption-gpg-signing-encrypting" xml:lang="uk">
+
+  <info>
+    <desc>Підписування або шифрування надісланих вами повідомлень за допомогою GPG.</desc>
+
+    <link type="guide" xref="mail-encryption#gpg"/>
+
+    <revision pkgversion="3.13.90" version="0.4" date="2015-03-09" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/encryption.html.en#bspya9p -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Підписування або шифрування повідомлень</title>
+
+<!--A seahorse help page(what-is-pgp-key.page) links to this page. So please
+     change/delete the link in the Seahorse help if you are renaming or
+     deleting this page-->
+
+
+<p>Після <link xref="mail-encryption-gpg-set-up">налаштовування вашого ключа GPG</link> ви зможете підписувати і шифрувати повідомлення за допомогою пункту меню <guiseq><gui>Параметри</gui><gui>Підписати використовуючи PGP</gui></guiseq>, або пункту <gui>Підписати використовуючи PGP</gui> з меню редактора повідомлень, або відповідної кнопки панелі інструментів.</p>
+<note style="tip"><p>Рядок «Тема» повідомлення не буде зашифровано — його не слід використовувати для надання якоїсь конфіденційної інформації.</p></note>
+
+<p>Щоб усі повідомлення підписувалися або шифрувалися, виконайте такі дії:</p>
+<steps>
+<item><p>Виберіть пункт меню <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Облікові записи</gui></guiseq>.</p></item>
+<item><p>Виберіть поштовий обліковий запис для шифрування повідомлень.</p></item>
+<item><p>Натисніть <gui style="button">Змінити</gui>.</p></item>
+<item><p>Перейдіть на вкладку <gui>Безпека</gui>.</p></item>
+<item><p>Позначте пункт <gui>Завжди підписувати листи, коли використовуєте цей обліковий запис</gui>.</p></item>
+<item><p>Натисніть кнопку <gui style="button">Гаразд</gui>.</p></item>
+<item><p>Натисніть кнопку <gui style="button">Закрити</gui>.</p></item>
+</steps>
+
+</page>

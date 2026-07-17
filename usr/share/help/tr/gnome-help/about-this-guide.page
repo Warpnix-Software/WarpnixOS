@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="tip" id="about-this-guide" xml:lang="tr">
+
+  <info>
+    <credit type="author">
+      <name>GNOME Belgelendirme Projesi</name>
+      <email>gnome-doc-list@gnome.org</email>
+    </credit>
+    <credit type="author">
+      <name>Ubuntu Belgelendirme Takımı</name>
+    </credit>
+    <desc>Ubuntu Masaüstü Rehberinin kullanımına yönelik birkaç ipucu.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="more-help"/>
+    <revision version="17.10" date="2017-05-02" status="review"/>
+  </info>
+
+  <title>Bu rehber hakkında</title>
+
+  <p>Bu rehber size Ubuntu masaüstünün özelliklerini tanıtır, bilgisayarla ilgili sorularınızı cevaplar ve bilgisayarınızı daha verimli kullanmaya yönelik ipuçları sağlar.</p>
+
+  <list type="disc">
+    <item>
+      <p>Bu rehber bölümler yerine küçük, görev odaklı konulara bölünmüştür. Bu, sorularınıza cevap bulmak için tüm rehberi taramanız gerekmediği anlamına gelir.</p>
+    </item>
+    <item>
+      <p>Alakalı ögeler bir araya toplanmıştır. Bazı sayfaların altındaki "Ayrıca Bakınız" bağlantıları sizi ilgili konulara yönlendirir.</p>
+    </item>
+    <item>
+      <p>Bu rehberin üstündeki metin girdisi kutusu, bir <em>arama çubuğu</em> olarak işlev görür ve yazmaya başladığınız anda ilgili sonuçları altında görüntülenmeye başlar.</p>
+    </item>
+    <item>
+      <p>Bu rehber sürekli geliştirilmektedir. Size kapsamlı, yardımcı bilgi sunmaya çalışsak da tüm sorularınıza burada cevap sağlayamayacağımızı biliyoruz. Ama yine de rehberi daha faydalı yapmak için  sürekli yeni bilgiler eklemeye devam edeceğiz.</p>
+    </item>
+  </list>
+
+  <p><em>Ubuntu Masaüstü Rehberi</em>'ni okumaya zaman ayırdığınız için teşekkür ederiz.</p>
+
+  <p>Ubuntu Belgelendirme takımı</p>
+
+</page>

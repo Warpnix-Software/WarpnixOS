@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-encryption-gpg-signing-encrypting" xml:lang="ru">
+
+  <info>
+    <desc>Подписание или шифрование отправляемых сообщений с помощью GPG.</desc>
+
+    <link type="guide" xref="mail-encryption#gpg"/>
+
+    <revision pkgversion="3.13.90" version="0.4" date="2015-03-09" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/encryption.html.en#bspya9p -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Подписание или шифрование сообщений</title>
+
+<!--A seahorse help page(what-is-pgp-key.page) links to this page. So please
+     change/delete the link in the Seahorse help if you are renaming or
+     deleting this page-->
+
+
+<p>После <link xref="mail-encryption-gpg-set-up">настройки ключа GPG</link> можно подписать или зашифровать сообщение, выбрав в меню редактора сообщений пункт <guiseq><gui>Параметры</gui><gui>Подписать с помощью PGP</gui></guiseq> или <gui>Зашифровать с помощью PGP</gui> или нажав соответствующий значок на панели инструментов.</p>
+<note style="tip"><p>Строка «Тема» сообщения не будет зашифрована. В ней не следует указывать конфиденциальную информацию.</p></note>
+
+<p>Чтобы подписывать или шифровать каждое сообщение:</p>
+<steps>
+<item><p>Выберите пункт меню <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Учётные записи</gui></guiseq>.</p></item>
+<item><p>Выберите учётную запись, с которой следует использовать функции шифрования.</p></item>
+<item><p>Нажмите кнопку <gui style="button">Правка</gui>.</p></item>
+<item><p>Перейдите на вкладку <gui>Безопасность</gui>.</p></item>
+<item><p>Включите параметр <gui>Всегда подписывать исходящие сообщения, когда используется эта учётная запись</gui>.</p></item>
+<item><p>Нажмите кнопку <gui style="button">OK</gui>.</p></item>
+<item><p>Нажмите кнопку <gui style="button">Закрыть</gui>.</p></item>
+</steps>
+
+</page>

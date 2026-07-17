@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-duplicates" xml:lang="uk">
+
+  <info>
+    <desc>Як працювати із дублікатами повідомлень електронної пошти</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="3.7.4" version="0.6" date="2013-01-23" status="final"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Отримано дублікати повідомлень електронної пошти</title>
+
+<section id="remove">
+<title>Вилучення дублікатів повідомлень</title>
+<p>Щоб вилучити дублікати повідомлень з теки, позначте декілька повідомлень (або позначте усі повідомлення у теці за допомогою пункту меню <guiseq><gui>Зміни</gui><gui>Вибрати все</gui></guiseq> або натискання комбінації клавіш <keyseq><key>Ctrl</key><key>A</key></keyseq>) і виберіть пункт меню <guiseq><gui>Повідомлення</gui><gui>Вилучити подвійні повідомлення</gui></guiseq>.</p>
+<!-- available by default since 2.91, as per http://mail.gnome.org/archives/evolution-list/2011-August/msg00000.html -->
+</section>
+
+<section id="reasons">
+<title>Причини</title>
+<p>Причин отримання дублікатів повідомлень може бути декілька:</p>
+<list>
+<item><p>У поштовій скриньці зберігається декілька копій того самого повідомлення</p></item>
+<item><p>В <app>Evolution</app> виникли проблеми із розширенням UIDL.</p></item>
+<item><p>Файли кешу, які зберігаються у <file>$HOME/.local/share/evolution/mail/local/</file>, є непридатними до запису.</p></item>
+</list>
+</section>
+
+</page>

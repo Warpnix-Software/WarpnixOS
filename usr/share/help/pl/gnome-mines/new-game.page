@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="new-game" xml:lang="pl">
+
+  <info>
+    <link type="guide" xref="index#play"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.5.5" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.12" date="2014-03-08" status="review"/>
+    <revision pkgversion="3.28.0" version="0.2" date="2018-09-01" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2012</years>
+    </credit>
+    <credit type="author copyright">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+    <credit type="editor">
+      <name>Aruna Sankaranarayanan</name>
+      <email>aruna.evam@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Rashi Aswani</name>
+      <email>aswanirashi19@gmail.com</email>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Piotr Drąg</mal:name>
+      <mal:email>piotrdrag@gmail.com</mal:email>
+      <mal:years>2017-2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Aviary.pl</mal:name>
+      <mal:email>community-poland@mozilla.org</mal:email>
+      <mal:years>2017-2023</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Rozpoczynanie nowej gry</title>
+
+  <p>Aby rozpocząć nową grę:</p>
+  <steps>
+    <item>
+      <p>Kliknij przycisk <gui style="button">Zagraj jeszcze raz</gui> po prawej stronie.</p>
+    </item>
+    <item>
+      <p>Aby zmienić <link xref="board-size">rozmiar planszy</link>, kliknij przycisk <gui style="button">Zmień poziom trudności</gui> po prawej stronie.</p>
+    </item>
+  </steps>
+
+  <note>
+  <p>Jeśli gra już trwa i klikniesz przycisk <gui style="button">Zacznij od początku</gui>, to użytkownik zostanie zapytany, czy kontynuować obecną grę, czy rozpocząć nową. Wybranie nowej gry spowoduje utratę obecnej.</p>
+  </note>
+</page>

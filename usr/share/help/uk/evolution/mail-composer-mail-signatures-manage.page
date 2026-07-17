@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-mail-signatures-manage" xml:lang="uk">
+
+  <info>
+    <desc>Додавання, зміна, редагування та вилучення підписів повідомлень електронної пошти.</desc>
+    
+    <link type="guide" xref="mail-composer-mail-signatures"/>
+
+    <revision pkgversion="3.25.5" version="0.4" date="2017-07-16" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Керування підписами</title>
+
+<p>Ви можете додавати, редагувати та вилучати усі підписи за допомогою пункту <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Параметри редактора</gui><gui>Підписи</gui></guiseq>.</p>
+<p>Призначити типовий підпис для облікового запису електронної пошти слід за допомогою <link xref="mail-composer-mail-signatures-per-account">параметрів облікового запису</link>.</p>
+
+<note style="tip"><p>За <link href="https://tools.ietf.org/html/rfc3676#section-4.3">загальноприйнятою давньою угодою</link> підписи завжди починаються із двох дефісів і пробілу в окремому рядку. Це надає змогу багатьом клієнтам електронної пошти автоматично вилучати підписи із цитованого тексту під час створення відповідей.</p></note>
+</page>

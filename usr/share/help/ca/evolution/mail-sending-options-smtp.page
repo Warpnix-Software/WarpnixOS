@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-sending-options-smtp" xml:lang="ca">
+
+  <info>
+    <desc>Opcions d'enviament SMTP.</desc>
+
+    <link type="guide" xref="mail-account-manage-imap-plus#sending-email"/>
+    <link type="guide" xref="mail-account-manage-local-delivery#sending-email"/>
+    <link type="guide" xref="mail-account-manage-maildir-format-directories#sending-email"/>
+    <link type="guide" xref="mail-account-manage-mh-format-directories#sending-email"/>
+    <link type="guide" xref="mail-account-manage-pop#sending-email"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-directory#sending-email"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-file#sending-email"/>
+    <link type="guide" xref="mail-account-manage-usenet-news#sending-email"/>
+    <revision pkgversion="3.0.2" version="0.3" date="2013-06-22" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Opcions d'enviament SMTP</title>
+
+<list>
+<item><p>Introduïu l'adreça del vostre servidor de correu per a enviar missatges al camp <gui>Servidor</gui> i seleccioneu si el servidor requereix autenticació (introduint un nom d'usuari i una contrasenya).</p>
+<note style="tip"><p>Els proveïdors de webmail gratuïts solen proporcionar informació sobre quina d'aquestes opcions es pot utilitzar. Si us trobeu en l'entorn d'una organització, podeu contactar amb l'administrador del sistema per a obtenir més informació.</p></note>
+</item>
+<item><p>Si el servidor requereix autenticació, heu de proporcionar la informació següent:</p>
+<list>
+  <item><p>Seleccioneu el tipus d'autenticació a la llista Autenticació, o feu clic <gui>Comprova els tipus disponibles</gui> per a que <app>Evolution</app> els comprovi. Alguns servidors no ho admeten, de manera que fer clic en aquest botó no garanteix que els mecanismes disponibles funcionin realment.</p></item>
+  <item><p>Introduïu el vostre nom d'usuari.</p></item>
+</list>
+</item>
+<item><p>Trieu <gui>Utilitza una connexió segura</gui> si voleu connectar-vos de manera segura.</p></item>
+</list>
+
+</page>

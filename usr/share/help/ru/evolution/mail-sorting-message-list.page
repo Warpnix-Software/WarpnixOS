@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-sorting-message-list" xml:lang="ru">
+
+  <info>
+    <desc>Сортировка списка сообщений в почтовой папке.</desc>
+
+    <link type="guide" xref="mail-organizing"/>
+    <link type="guide" xref="mail-layout-changing"/>
+
+    <revision pkgversion="3.40.4" version="0.11" date="2021-08-20" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-organize-columns.html.en -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Сортировка списка сообщений</title>
+  
+<p><app>Evolution</app> позволяет организовывать письма путём их сортировки в <link xref="intro-main-window#e-mail">списке сообщений</link>.</p>
+
+<section id="email-threads">
+<title>Упорядочивание почты в обсуждениях</title>
+<p>Для сортировки писем можно использовать режим просмотра обсуждений. Чтобы включить эту возможность, выберите пункт меню <guiseq><gui>Вид</gui><gui>Группировать по обсуждениям</gui></guiseq> или воспользуйтесь комбинацией клавиш <keyseq><key>Ctrl</key><key>T</key></keyseq>.</p>
+<p>При включении этой функции ответы на письмо группируются с исходным письмом, что позволяет отслеживать ход обсуждения путём последовательного чтения сообщений.</p>
+<note style="tip"><p><app>Evolution</app> распознаёт заголовки писем <code its:translate="no" its:locNote="Translators: Do NOT translate 'References'">References</code> и <code its:translate="no" its:locNote="Translators: Do NOT translate 'In-Reply-To'">In-Reply-To</code>. Кроме того, можно включить параметр <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Настройки почты</gui><gui>Общие</gui><gui>Отображение сообщений</gui><gui>Вернуться к обсуждению по теме</gui></guiseq>.</p></note>
+<p>При получении новое сообщение добавляется под родительским сообщением. Обсуждения сортируются и отображаются на основе даты последнего полученного сообщения.</p>
+<note style="tip"><p>Опытные пользователи могут выполнить дальнейшее изменение параметров обсуждений путём запуска команд в приложении <app>Терминал</app>.</p>
+<list>
+<item>
+<p>Чтобы упорядочить каждое обсуждение по последнему сообщению, а не по дате сообщения:</p>
+<p its:translate="no"><cmd>gsettings set org.gnome.evolution.mail thread-latest true</cmd></p>
+</item>
+<item>
+<p>Чтобы упорядочить дочерние сообщения в обсуждении по возрастанию, а не использовать тот же порядок сортировки, что и в корне обсуждения:</p>
+<p its:translate="no"><cmd>gsettings set org.gnome.evolution.mail thread-children-ascending true</cmd></p>
+</item>
+<item>
+<p>Чтобы по умолчанию сворачивать все обсуждения, а не разворачивать их:</p>
+<p its:translate="no"><cmd>gsettings set org.gnome.evolution.mail thread-expand false</cmd></p>
+</item>
+</list>
+</note>
+</section>
+
+<section id="column-headers">
+<title>Сортировка почты по заголовкам столбцов</title>
+<p>Список сообщений обычно имеет столбцы, отображающие, было ли сообщение прочитано, имеется ли вложение, насколько оно важно, отправителя, дату и тему письма. Чтобы изменить столбцы, которые используются в списке сообщений, можно выполнить одно из следующих действий:</p>
+<list>
+<item><p>Перетащить строки заголовков столбцов</p></item>
+<item><p>Щёлкнуть правой кнопкой мыши по заголовку.</p></item>
+<item><p>Выбрать пункт <gui>Убрать этот столбец</gui> или <gui>Add a Column</gui>.</p></item>
+</list>
+
+<p><app>Evolution</app> позволяет упорядочивать сообщения с помощью этих столбцов. Для сортировки писем достаточно просто щёлкнуть по заголовку столбца. Направление стрелки рядом с текстом заголовка обозначает порядок сортировки.</p><p>Можно применить вторичный критерий сортировки: щёлкните по заголовку столбца, удерживая нажатой клавишу <key>Ctrl</key>.</p>
+
+<note style="tip"><p>Если требуется изменить порядок сортировки и/или компоновку столбцов для отдельных почтовых папок, убедитесь, что параметр  меню <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Настройки почты</gui><gui>Общие</gui><gui>Применить эти параметры отображения для всех папок</gui></guiseq> отключён. После этого будет можно изменить параметры просмотра и сохранить изменения, выбрав пункт меню <guiseq><gui>Вид</gui><gui>Текущий вид</gui><gui>Сохранить режим просмотра…</gui></guiseq>, а затем применить соответствующий режим просмотра к другим папкам.</p></note>
+
+</section>
+
+<section id="sort-options">
+<title>Использование других параметров сортировки</title>
+<p>В <app>Evolution</app> предусмотрены другие способы сортировки писем: «Сортировать по», «Упорядочить по возрастанию», «Упорядочить по убыванию», «Сброс упорядочивания».</p>
+	<section id="sort-options-by">
+	<title>Сортировать по</title>
+		<p>Сообщения также можно сортировать с помощью списка <gui>Сортировать по</gui>.</p>
+		<steps>
+		<item><p>Щёлкните правой кнопкой мыши по заголовку столбца в списке сообщений.</p></item>
+		<item><p>Выберите параметр <gui>Сортировать по</gui>.</p><p>Появится список критериев сортировки писем:</p>
+			<list>
+			<item><p>(без темы)</p></item>
+			<item><p>Метки</p></item>
+			<item><p>Получатели</p></item>
+			<item><p>Отправитель</p></item>
+			<item><p>Адрес</p></item>
+			<item><p>До</p></item>
+			<item><p><link xref="mail-follow-up-flag">Метка «К исполнению»</link></p></item>
+			<item><p>Состояние метки</p></item>
+			<item><p>Размер</p></item>
+			<item><p>Кому</p></item>
+			<item><p>Получено</p></item>
+			<item><p>Дата</p></item>
+			<item><p>Тема</p></item>
+			<item><p>От</p></item>
+			<item><p>Вложение</p></item>
+			<item><p>Отмечено</p></item>
+			<item><p>Состояние</p></item>
+			<item><p>Другой</p></item>
+			</list>
+		</item>
+		<item><p>Выберите параметр сортировки сообщений.</p></item>
+		</steps>
+	</section>
+
+	<section id="sort-options-ascending">
+	<title>Упорядочить по возрастанию</title>
+		<steps>
+		<item><p>Щёлкните правой кнопкой мыши по заголовку столбца в списке сообщений.</p></item>
+		<item><p>Выберите параметр <gui>Упорядочить по возрастанию</gui>.</p></item>
+		</steps>
+		<p>Самые последние сообщения будут показаны в конце списка.</p>
+	</section>
+
+	<section id="sort-options-descending">
+	<title>Упорядочить по убыванию</title>
+		<steps>
+		<item><p>Щёлкните правой кнопкой мыши по заголовку столбца в списке сообщений.</p></item>
+		<item><p>Выберите параметр <gui>Упорядочить по убыванию</gui>.</p></item>
+		</steps>
+		<p>Самые последние сообщения будут показаны в начале списка.</p>
+	</section>
+
+	<section id="sort-options-unsort">
+	<title>Сброс упорядочивания</title>
+		<steps>
+		<item><p>Щёлкните правой кнопкой мыши по заголовку столбца в списке сообщений.</p></item>
+		<item><p>Выберите параметр <gui>Сброс упорядочивания</gui>.</p></item>
+		</steps>
+		<p>Упорядочивание по столбцу будет отменено, и сообщения будут показаны в том порядке, который использовался при их добавлении в папку.</p>
+	</section>
+</section>
+
+</page>

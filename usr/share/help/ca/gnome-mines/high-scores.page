@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="high-scores" xml:lang="ca">
+  <info>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.5.5" version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.2" date="2018-09-01" status="review"/>
+    <revision pkgversion="3.31.91" version="0.3" date="2019-03-03" status="review"/>
+    <link type="guide" xref="index#tips"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2012</years>
+    </credit>
+    <credit type="author copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Joan Duran</mal:name>
+      <mal:email>jodufi@gmail.com</mal:email>
+      <mal:years>2007, 2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Puntuacions màximes</title>
+
+  <p>La llista de puntuacions màximes conté les deu neteges més ràpides de cada tipus de camp de mines.</p>
+
+  <p>Per a visualitzar les puntuacions màximes, premeu el botó de menu de la cantonada superior dreta de la finestra i seleccioneu <gui style="menuitem">Puntuacions</gui>. El diàleg mostrarà la mida de camp <gui>petita</gui> per defecte; per a visualitzar altres mides, seleccioneu-les al menú desplegable de la part superior del diàleg.</p>
+
+</page>

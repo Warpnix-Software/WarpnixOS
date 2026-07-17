@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="factorize" xml:lang="ru">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>Разложение на множители</title>
+
+    <p>Чтобы разложить на множители текущее число, нажмите <keyseq><key>Ctrl</key><key>F</key></keyseq> или кнопку <gui>fact</gui>. Эта кнопка видна в <link xref="mouse">режиме программирования</link>.</p>
+    <p>Для разложения на множители целых чисел больше 2^64 используются тест простоты Миллера-Рабина и Ро-алгоритм Полларда.</p>
+</page>

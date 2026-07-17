@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="import-supported-file-formats" xml:lang="ru">
+
+  <info>
+    <desc>Поддерживаемые форматы файлов для импорта данных.</desc>
+    
+    <link type="guide" xref="import-data"/>
+
+    <revision pkgversion="3.0.2" version="0.3" date="2011-10-13" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/importing-mail-and-settings.html.en#importing-mail -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Поддерживаемые форматы файлов</title>
+
+<p><app>Evolution</app> может импортировать следующие типы файлов:</p>
+
+<section id="mail">
+<title>Почта</title>
+<list>
+<item><p>Berkeley Mailbox (расширение *.mbox или вообще без расширения):</p>
+<p>Формат электронной почты, используемый <app>Mozilla</app>, <app>Netscape</app>, <app>Evolution</app> (для локальных папок до версии 2.32) и многими другими почтовыми клиентами.</p></item>
+<item><p>Maildir (без расширения):</p>
+<p>Формат, используемый <app>Evolution</app> (для локальных папок, начиная с версии 3.0). Потребности в импорте файлов Maildir нет, поскольку можно <link xref="mail-account-manage-maildir-format-directories">настроить учётную запись Maildir</link> в <app>Evolution</app> и указать папку, в которой хранятся файлы Maildir.</p></item>
+<item><p>Персональные папки Outlook Express 5/6 (.dbx):</p>
+<p>Формат электронной почты, используемый <app>Microsoft Outlook Express 5/6</app>. Для более новых версий рекомендуется использовать импорт данных PST.</p></item>
+</list>
+</section>
+
+<section id="calendar">
+<title>Календарь</title>
+<list>
+<item><p>vCalendar (.vcs):</p>
+<p>Формат для хранения файлов календаря, который обычно используется <app>Evolution</app>, <app>Microsoft Outlook</app>, <app>Sunbird</app> и <app>Korganizer</app>.</p></item>
+<item><p>iCalendar или iCal (.ics):</p>
+<p>Формат для хранения файлов календаря. iCalendar используется <app>Evolution</app>, <app>Microsoft Outlook</app>, Palm OS handhelds и другими программами.</p></item>
+</list>
+</section>
+
+<section id="contacts">
+<title>Контакты</title>
+<list>
+<item><p>Формат обмена данными LDAP (.ldif):</p>
+<p>Стандартный формат данных для карточек контактов.</p></item>
+<item><p>vCard (.vcf, .gcrd):</p>
+<p>Формат адресной книги, используемый GNOME, KDE и многими другими программами для управления контактами. Как правило, экспорт данных в формате vCard можно выполнить из любой программы для работы с адресными книгами.</p></item>
+</list>
+</section>
+
+<section id="misc">
+<title>Прочее</title>
+<list>
+<item><p><app>Evolution</app>/Mozilla/Outlook CSV/Tab (.csv, .tab):</p>
+<p>Файлы CSV (значения, разделённые запятыми) или файлы с табуляцией, сохранённые с помощью <app>Evolution</app>, <app>Microsoft Outlook</app> и <app>Mozilla</app>.</p></item>
+<item><p>Персональные папки Outlook (.pst):</p>
+<p>Формат файлов, используемый для хранения локальных копийсообщений, записей событий календаря и других записей в программномобеспечении Microsoft, в частности <app>Microsoft Exchange Client</app>, <app>Windows Messaging</app> и <app>Microsoft Outlook</app>. Этот форматтакже называют «Personal Storage Table» («персональная таблица хранения»).</p>
+<p>Подробнее: <link xref="import-apps-outlook"/>.</p>
+</item>
+</list>
+</section>
+
+</page>

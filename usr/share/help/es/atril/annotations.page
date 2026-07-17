@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="task" id="annotations" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="index#annotations"/>
+    <desc>Como crear y personalizar anotaciones</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <credit type="author">
+      <name>Andre Klapper</name>
+      <email>ak-47@gmx.net</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Toni Estevez</mal:name>
+      <mal:email>toni.estevez@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Francisco Javier F. Serrador</mal:name>
+      <mal:email>serrador@cvs.gnome.org</mal:email>
+      <mal:years>2003-2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Pablo Gonzalo del Campo</mal:name>
+      <mal:email>pablodc@bigfoot.com</mal:email>
+      <mal:years>2002-2003</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Añadiendo anotaciones</title>
+<p>Una anotacion es una nota o comentario añadido a un documento PDF. Puedes añadir anotaciones usando Atril.</p>
+<p>Cuando abre un fichero, debe tener un panel lateral en el lado izquierdo de la ventana. Si no tiene un panel lateral visible, haga clic en <guiseq><gui style="menuitem">Ver</gui> <gui style="menuitem">Panel lateral</gui></guiseq> o pulse la tecla  <key>F9</key> en su teclado.</p>
+
+<p>En la parte superior del panel lateral, los elementos de la lista desplegable  <gui>Miniaturas</gui>, <gui>Índice</gui>, <gui>Anotaciones</gui> y <gui>Marcadores</gui> le permiten elegir qué mostrar en el panel lateral. (Algunas opciones pueden no estar disponibles para algunos documentos).</p>
+<p>Para crear una anotación:</p>
+<steps>
+ <item>
+  <p>Seleccione <gui style="button">Anotaciones</gui> en la lista desplegable:</p>
+ </item>
+ <item>
+  <p>Haga clic en <gui style="button">Añadir</gui> para añadir una anotación de texto.</p>
+ </item>
+ <item>
+  <p>Haga clic en el sitio de la ventana del documento en la que quiera añadir la anotación. Su ventana de <em>anotación</em> se abrirá.</p>
+ </item>
+ <item>
+  <p>Escriba su texto dentro de la ventana de <em>anotación</em> .</p>
+   <note>
+    <p>Puede cambiar el tamaño de la nota pulsando y manteniendo el botón izquierdo del ratón en una de las esquinas de la nota, y moviéndolo según necesite.</p>
+   </note>
+ </item>
+ <item>
+  <p>Cierre la nota haciendo clic en la <gui>x</gui> de la esquina superior de la nota.</p>
+ </item>
+</steps>
+
+
+</page>

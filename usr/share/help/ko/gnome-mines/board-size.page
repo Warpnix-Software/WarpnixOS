@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="board-size" xml:lang="ko">
+
+  <info>
+    <link type="guide" xref="index#tips"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.3" date="2018-09-01" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2011</years>
+    </credit>
+    <credit type="author copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>임준열</mal:name>
+      <mal:email>purum@postech.ac.kr</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>조성호</mal:name>
+      <mal:email>shcho@gnome.org</mal:email>
+      <mal:years>2021, 2022, 2023</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>게임 판의 크기 바꾸기</title>
+
+  <p>프로그램을 시작할 때 게임판 크기를 선택할 수 있습니다.</p>
+
+  <p>격자 크기 중에서 하나를 선택합니다:</p>
+  <list>
+    <item><p>10 개 지뢰가 숨겨진 8 x 8 크기의 게임판</p></item>
+    <item><p>40 개 지뢰가 숨겨진 16 x 16 크기의 게임판</p></item>
+    <item><p>99 개의 지뢰가 숨겨진 30 x 16 크기의 게임판</p></item>
+    <item><p>사용자가 게임판의 크기와 지뢰 개수를 지정하는 게임판</p></item>
+  </list>
+
+  <p>나중에 <link xref="board-size">게임판 크기를</link> 바꾸리면 우측의 <gui style="button">난이도 바꾸기</gui>를 누릅니다.</p>
+
+</page>

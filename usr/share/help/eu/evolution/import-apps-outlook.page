@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="import-apps-outlook" xml:lang="eu">
+
+  <info>
+    <desc>Datuak Microsoft Outlook aplikaziotik inportatzea.</desc>
+    
+    <link type="guide" xref="import-data#import-from-apps"/>
+
+    <revision pkgversion="3.0.2" version="0.5" date="2011-09-02" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/outlook-migration-mail.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  </info>
+
+  <title>Outlook</title>
+<!-- "Import data and settings from older programs" cannot recognize Outlook, as there obviously is no default storage location for Outlook *under Linux* -->
+
+<!-- TODO: Potentially cover https://www.davical.org ? See https://mail.gnome.org/archives/evolution-list/2017-August/msg00009.html -->
+
+<p>These steps refer to locally stored data such as POP accounts. For remote data (like IMAP) this is not necessary, since the data is still on the server and does not need to be manually transferred. You can set up the corresponding account in <app>Evolution</app> and the data will be downloaded.</p>
+
+<section id="prerequisites">
+<title>Aurreskakizunak Window sisteman</title>
+<p>Lehenengo, MIcrosoft Windows erabiltzean, prestatu zure mezuak inportatuak izan daitezen:</p>
+<steps>
+<item><p>Aurkitu zure Outlook fitxategiak (normalean <file>.pst</file> edo <file>.ost</file> luzapena duten fitxategiak dira):</p>
+<table frame="all" rules="all">
+  <tr>
+    <td/><td><p>Windows 7, Windows Vista</p></td><td><p>Windows XP</p></td>
+  </tr>
+  <tr>
+    <td><p>Outlook 2010</p></td><td><p><file>C:\Users\username\My Documents\Outlook Files</file></p></td><td><p><file>C:\Documents and Settings\username\My Documents\Outlook Files</file></p></td>
+  </tr>
+  <tr>
+    <td><p>Outlook 2007 eta zaharragoak</p></td><td><p><file>C:\Users\username\AppData\Local\Microsoft\Outlook</file></p></td><td><p><file>C:\Documents and Settings\username\AppData\Local\Microsoft\Outlook</file></p></td>
+  </tr>
+</table>
+<p>(Ordeztu "username" zure erabiltzaile-izenarekin.)</p>
+</item>
+<!-- File locations taken from http://support.microsoft.com/kb/2291280 and http://answers.microsoft.com/en-us/windows/forum/windows_7-files/where-is-location-of-outlookpst-file-in-windows-7/3a4c03c3-e8ad-4912-9e37-f1c62057d1f9 -->
+<item><p>Copy the Outlook files to the system or partition that <app>Evolution</app> is installed on.</p>
+<p>Zure Windows unitatea ziur aski NTFS formatuan egongo denez, zenbait Linux sistemak ezin dute irakurri software gehigarria instalatu gabe. Sinpleagoa izan daiteke posta-karpetak USB unitate batean kopiatzea.</p></item>
+</steps>
+</section>
+
+<section id="importing">
+<title><app>Evolution</app> aplikaziora inportatzea</title>
+<steps>
+<item><p>Zure azken urratsaren arabera, txertatu datuak dituen USB gailua eta itxaron fitxategi-kudeatzailea ireki arte, edo muntatu zure Windows unitatea.</p></item>
+<item><p>Kopiatu posta-fitxategi guztiak direktorio nagusian, edo komeni den beste lekuren batean.</p></item>
+<item><p>Abiarazi <app>Evolution</app>.</p></item>
+<item><p>Optionally select <guiseq><gui>File</gui><gui>New</gui><gui>Mail Folder</gui></guiseq> to create the <link xref="mail-folders">folders</link> you want.</p></item>
+
+<item><p>Egin klik <guiseq><gui>Fitxategia</gui><gui>Inportatu</gui></guiseq> aukeran.</p></item>
+<item><p>In the <gui>Importer Type</gui> tab, click <gui>Import a single file</gui>.</p></item>
+<item><p>Choose the Outlook personal folders (.pst) file that you would like to import.</p><p>Fitxategi mota automatikoki zehaztuko da.</p>
+<note style="tip"><p>If the option to import Outlook personal folders (.pst files) is not available under <guiseq><gui>File</gui><gui>Import</gui><gui>Import single file</gui><gui>File type</gui></guiseq>, your distribution might have not enabled this functionality in Evolution. Please ask in a support forum of your distribution.</p></note>
+</item>
+<item><p>Choose the destination (e.g. the folder in <app>Evolution</app>) for the imported data.</p></item>
+<item><p>Errepikatu inportazio-urratsak datu guztiak inportatu arte.</p></item>
+</steps>
+
+</section>
+
+</page>

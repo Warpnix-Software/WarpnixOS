@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-working-offline" xml:lang="de">
+
+  <info>
+    <desc>Mit Ihren E-Mails auch ohne bestehende Netzwerkverbindung arbeiten.</desc>
+<!-- TODO:POST-3-8: Offline work for web calendars etc also exists => create index page for Offline working? -->
+    <link type="guide" xref="index#mail-basic"/>
+
+    <revision pkgversion="3.28.2" version="0.6" date="2018-07-09" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-offline -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andre Klapper</mal:name>
+      <mal:email>ak-47@gmx.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009-2013, 2016-2018, 2020-2021</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009-2013, 2015-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Gabor Karsay</mal:name>
+      <mal:email>gabor.karsay@gmx.at</mal:email>
+      <mal:years>2011-2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Tim Sabsch</mal:name>
+      <mal:email>tim@sabsch.com</mal:email>
+      <mal:years>2018, 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jürgen Benvenuti</mal:name>
+      <mal:email>gastornis@posteo.org</mal:email>
+      <mal:years>2022-2024</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Offline arbeiten</title>
+
+<p><app>Evolution</app> kann eine lokale Kopie von Ordnern auf entfernten E-Mail-Systemen anlegen, wie zum Beispiel IMAP oder Exchange, um Ihnen das Lesen der Nachrichten zu ermöglichen.</p>
+
+<note style="warning"><p>Der erzwungene Offline-Modus von <app>Evolution</app> bezieht sich nur auf E-Mails und betrifft nicht Kontakte und Kalender.</p></note>
+
+<p>POP lädt alle Nachrichten auf Ihre lokale Festplatte herunter. Für entfernte Konten werden normalerweise nur die Kopfzeilen herunter geladen, und alles weitere wie zum Beispiel der Nachrichtenkörper erst dann, wenn Sie die Nachricht wirklich lesen wollen. Bevor Sie <app>Evolution</app> zwingen offline zu gehen, lädt <app>Evolution</app> die ungelesenen Nachrichten aus den Ordnern herunter, die Sie zur Speicherung ausgewählt haben.</p>
+
+<section id="accounts">
+<title>Konteneinstellungen</title>
+<p>Die <link xref="mail-receiving-options">Empfangsoptionen</link> für entfernte Konten enthalten eine Einstellung, um <gui>Entfernte E-Mails automatisch lokal in allen Ordnern abgleichen</gui> zu können, die auf alle Ordner dieses Kontos angewendet wird.</p>
+<p>Um das Herunterladen großer Datenmengen zu verhindern, können Sie auch den Abgleich von Nachrichten deaktivieren, die älter als eine bestimmte angegebene Zeitspanne sind.</p>
+</section>
+
+<section id="mark-folders">
+<title>Ordner für die Offline-Nutzung markieren</title>
+<p>Wenn Sie <gui>Entfernte E-Mails automatisch lokal in allen Ordnern abgleichen</gui> für das Konto nicht aktiviert haben, können Sie einzelne Ordner individuell abgleichen.</p>
+<p>Um einen Ordner für die Offline-Nutzung zu markieren,</p>
+<steps>
+<item><p>Klicken Sie mit der rechten Maustaste auf den Ordner, und wählen Sie <gui>Eigenschaften</gui>.</p></item>
+<item><p>Klicken Sie auf <gui>Ordnerinhalt lokal zum Arbeiten im Offline-Modus kopieren</gui>.</p></item>
+</steps>
+</section>
+
+<section id="sync-for-offline">
+<title>Nachrichten für Offline-Benutzung herunterladen</title>
+<p>Der Verbindungsstatus wird als kleines Symbol in der Statusleiste des <link xref="intro-main-window">Hauptfensters</link> angezeigt. Wenn Sie online sind, werden zwei verbundene Kabel dargestellt. Wenn Sie durch Anklicken des Symbols oder mittels <guiseq><gui>Datei</gui><gui>Offline arbeiten</gui></guiseq> offline gehen, werden die beiden Kabel getrennt. Sie werden gefragt, ob Sie unverzüglich offline gehen wollen oder vorher lokale Ordner mit entfernten Ordnern abgeglichen werden sollen.</p>
+<p>Wählen Sie <guiseq><gui>Datei</gui><gui>Nachrichten für Offline-Modus herunterladen</gui></guiseq>, um Ordner abzugleichen, ohne sofort Offline zu gehen.</p>
+</section>
+
+<section id="network-manager-integration">
+<title>Automatische Erkennung des Verbindungsstatus</title>
+<p><app>Evolution</app> erkennt automatisch den Netzwerkstatus und verhält sich dementsprechend. <app>Evolution</app> geht zum Beispiel automatisch in den Offline-Modus, wenn die Netzwerkverbindung getrennt wird und geht in den Online-Modus, wenn das Netzwerk wieder verfügbar ist.</p>
+</section>
+
+</page>

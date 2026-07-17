@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="tip" id="gnome-on-ubuntu" xml:lang="hu">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntu dokumentációs csapat</name>
+    </credit>
+    <desc>Az Ubuntuban lévő GNOME asztali környezeten végrehajtott említésre méltó módosítások listája.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="shell-overview" group="#first"/>
+    <link type="guide" xref="index" group="intro"/>
+    <revision version="0.1" date="2022-04-28" status="review"/>
+  </info>
+
+  <title>Az Ubuntuban lévő GNOME-ról</title>
+
+  <p>Az Ubuntu asztali környezet a GNOME asztali környezet egy kissé módosított változatával van telepítve. Általánosságban ez a felhasználói kézikönyv a GNOME-ra hivatkozik, mivel azt a GNOME fejlesztői adták ki. Az alábbi lista az Ubuntuban lévő GNOME és az „eredeti” GNOME közötti jelentős különbségeket sorolja fel.</p>
+
+  <list type="disc">
+  <item>
+    <p>Az Ubuntu a Firefox böngészővel érkezik a GNOME webböngésző helyett.</p>
+  </item>
+  <item>
+    <p>Az Ubuntu a Remmina távoli asztali klienssel érkezik a GNOME Kapcsolatok helyett.</p>
+  </item>
+    <item>
+      <p>Az AppIndicator kiegészítő előre telepítve van. Ez a kiegészítő ikonokat engedélyez egyes alkalmazások jobb felső sarkában.</p>
+    </item>
+    <item>
+      <p>Az Ubuntu Dock kiegészítő előre telepítve van. Ez a kiegészítő biztosítja a bal oldalsávot a futó alkalmazások számára.</p>
+    </item>
+    <item>
+      <p>A Desktop Icons NG kiegészítő előre telepítve van. Ez a kiegészítő engedélyezi az ikonok használatát az asztalon.</p>
+    </item>
+    <item>
+      <p>Az Ubuntu asztali háttérképek mellett az alapértelmezett téma a Yaru, az alapértelmezett betűkészlet pedig az Ubuntu.</p>
+    </item>
+    <item>
+      <p>A minimalizálás és a maximalizálás gombok megjelennek az ablakok címsorán.</p>
+    </item>
+  </list>
+
+
+
+</page>

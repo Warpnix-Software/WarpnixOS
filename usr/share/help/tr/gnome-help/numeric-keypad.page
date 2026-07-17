@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="numeric-keypad" xml:lang="tr">
+
+  <info>
+    <link type="guide" xref="keyboard"/>
+    <desc>Sayısal klavyeyi varsayılan olarak etkinleştirin.</desc>
+
+    <revision version="18.04" date="2018-03-19" status="review"/>
+
+    <credit type="author">
+      <name>Ubuntu Belgelendirme Takımı</name>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+  <title>Sayısal klavye</title>
+
+  <p><key>Num Lock</key> tuşuyla klavyenizdeki sayısal tuş takımını manuel olarak açabilir veya kapatabilirsiniz. Ayrıca, bilgisayarların BIOS ayarları, bilgisayarın sayısal tuş takımı etkinleştirilmiş olarak başlatılmasına ihtiyaç olup olmadığına karar vermek için genellikle bir seçenek içerir. Aksi takdirde, bu, onu yapılandırmanın bir yoludur:</p>
+
+  <steps>
+    <item>
+      <p><em>Numlockx</em> paketini <link href="apt:numlockx">yükleyin</link>.</p>
+    </item>
+    <item>
+      <p><app><link xref="startup-applications">Başlangıç Uygulamaları</link></app> uygulamasını açın ve şu komutla bir başlangıç programı ekleyin: <cmd>numlockx on</cmd></p>
+    </item>
+  </steps>
+
+  <note style="tip">
+    <p>İkinci adım bilgisayarınızda gereksiz olabilir, bu yüzden önce onsuz deneyin.</p>
+  </note>
+
+</page>

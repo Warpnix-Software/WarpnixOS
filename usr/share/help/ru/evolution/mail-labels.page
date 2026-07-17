@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-labels" xml:lang="ru">
+
+  <info>
+    <desc>Использование меток для разбивки почты на категории при её хранении в папках.</desc>
+
+    <link type="guide" xref="mail-organizing#advanced"/>
+    <link type="seealso" xref="using-categories"/>
+
+    <revision pkgversion="3.29.90" version="0.4" date="2018-07-25" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Использование меток</title>
+
+<p>К письмам можно добавлять цветные метки для присвоения им категорий. Добавление таких меток аналогично назначению <link xref="using-categories">категорий</link> в других окнах <app>Evolution</app>.</p>
+
+<p>Поиск сообщений с конкретными метками можно выполнить с помощью <link xref="mail-searching">раскрывающегося списка быстрого поиска</link>. Кроме того, можно создать <link xref="mail-search-folders">папки поиска</link> на основе меток.</p>
+
+<section id="add">
+<title>Добавление метки к сообщению</title>
+<p>Чтобы назначить сообщению метку, либо выберите пункт меню <guiseq><gui>Сообщение</gui><gui>Пометить как</gui><gui>Метка</gui></guiseq> и укажите метку, которую следует применить, либо щёлкните по сообщению правой кнопкой мыши, выберите пункт <gui>Метка</gui> и укажите метку для применения.</p>
+<p>Кроме того, можно быстро добавить новую метку путём выбора параметра <gui>Новая метка</gui>.</p>
+</section>
+
+<section id="manage">
+<title>Управление метками</title>
+<p>Метки можно добавлять, изменять и удалять в разделе настройки <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Настройки почты</gui><gui>Метки</gui></guiseq>. Обратите внимание, что стандартные метки удалить нельзя.</p>
+</section>
+
+</page>

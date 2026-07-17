@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-webdav" xml:lang="eu">
+
+  <info>
+    <link type="guide" xref="calendar-using-several-calendars"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Using an online Webcal/HTTP calendar.</desc>
+  </info>
+
+  <title>Using a Webcal calendar</title>
+
+  <p>Mota horretako egutegiak soilik irakurtzekoak dira.</p>
+
+  <p>Horrelako eguteko bat Evolution-en gehitzeko, jarraitu honako urratsak:</p>
+
+  <steps>
+    <item>
+      <p>Joan <guiseq><gui>Fitxategia</gui><gui>Berria</gui><gui>Egutegia</gui></guiseq> aukerara.</p>
+    </item>
+    <item>
+      <p>Select the type <gui>On the Web</gui>.</p>
+    </item>
+    <item>
+      <p>Sartu erabili nahi duzun izena.</p>
+    </item>
+    <item>
+      <p>Aukeran, aukeratu erabili nahi duzun kolorea.</p>
+    </item>
+    <item>
+      <p>Aukeratu edukia lineaz kanpo ere ikusiko den ala ez.</p>
+    </item>
+    <item>
+      <p>Sartu helbidea <gui>URL</gui> eremuan.</p>
+    </item>
+    <item>
+      <p>Aukeratu <gui>Erabili konexio segurua</gui> modu seguruan konektatzeko.</p>
+    </item>
+    <item>
+      <p>Sartu zure erabiltzaile-izena.</p>
+    </item>
+    <item>
+      <p>Egin klik <gui style="button">Ados</gui> botoian.</p>
+    </item>
+  </steps>
+
+  <p>Egutegia <app>Evolution</app> aplikazioaren egutegien zerrendari gehituko zaio.</p>
+
+</page>

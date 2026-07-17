@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-forward" xml:lang="ru">
+
+  <info>
+    <desc>Пересылка полученного письма.</desc>
+    
+    <link type="guide" xref="index#mail-composing"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-27" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-fwd -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Пересылка сообщения</title>
+
+<p>Полученное письмо можно переслать другим заинтересованным пользователям или группам пользователей.</p>
+<p>Сообщение можно переслать в виде вложения в новое сообщение (это стандартный вариант, смотрите раздел <link xref="#default-settings">Настройки по умолчанию</link>), во встроенном виде (в сообщении без символа &gt; перед каждой строкой) или как цитату (с символом &gt; перед каждой строкой).</p>
+<p>Пересылка в формате вложения — лучший вариант, если требуется отправить другому пользователю сообщение полностью, без каких-либо изменений. Варианты с встраиванием или цитированием можно использовать, если требуется отправить части сообщения или если имеется много комментариев к разным частям пересылаемого сообщения.</p>
+
+<p>Чтобы переслать читаемое сообщение:</p>
+<steps>
+<item><p>Чтобы использовать стандартный способ пересылки сообщения, выберите пункт меню <guiseq><gui>Сообщение</gui><gui>Переслать</gui></guiseq>, нажмите кнопку <gui>Переслать</gui> на панели инструментов или воспользуйтесь комбинацией клавиш <keyseq><key>Ctrl</key><key>F</key></keyseq>. Если требуется использовать другой способ, выберите пункт меню <guiseq><gui>Сообщение</gui><gui>Перенаправить как</gui></guiseq> или нажмите кнопку со стрелкой, расположенную рядом с кнопкой <gui>Переслать</gui>, для выбора нужного способа.</p></item>
+<item><p>Выберите адресата сообщения. Тема уже введена, хотя при желании можно её изменить.</p></item>
+<item><p>Добавьте свои комментарии к сообщению в текстовом поле.</p></item>
+<item><p>Нажмите кнопку <gui style="button">Отправить</gui> или воспользуйтесь комбинацией клавиш <keyseq><key>Ctrl</key><key>Return</key></keyseq>.</p></item>
+</steps>
+
+<p>Вложения к пересылаемым сообщениям пересылаются только в том случае, если оригинальное сообщение отправляется как вложение. При встраивании сообщений вложения не пересылаются.</p>
+
+<section id="default-settings">
+<title>Настройки по умолчанию</title>
+<p>Стандартные параметры ответа и пересылки можно изменить в разделе настройки <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Настройки редактора</gui><gui>Общие</gui><gui>Ответы и перенаправления</gui><gui>Стиль пересылки</gui></guiseq>.</p>
+</section>
+
+</page>

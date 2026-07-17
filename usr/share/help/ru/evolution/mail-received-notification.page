@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-received-notification" xml:lang="ru">
+
+  <info>
+    <desc>Параметры уведомления о новых полученных сообщениях.</desc>
+
+    <link type="guide" xref="mail-send-and-receive"/>
+    <link type="seealso" xref="calendar-alarms-and-reminders"/>
+
+    <revision pkgversion="3.34.4" version="0.8" date="2020-02-26" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Уведомление о получении новых писем</title>
+
+<p><app>Evolution</app> всегда сообщает пользователю о факте получения новых писем, добавляя маленькую эмблему рядом со значком почты в <link xref="intro-main-window">переключателе</link> окон.</p>
+<media type="image" src="./figures/new-mail-switcher.png" width="256" its:locNote="Translators: Please make sure that the screenshot does have the small yellow star in the Mail icon">
+  <p>Вид переключателя при получении нового сообщения</p>
+</media>
+
+<p>Чтобы также получать уведомление о новых сообщениях с помощью уведомлений рабочего стола GNOME:</p>
+<steps>
+<item><p>Выберите пункт меню <guiseq><gui>Правка</gui><gui>Модули</gui></guiseq>.</p></item>
+<item><p>Включите модуль <gui>Уведомление о новой почте</gui>.</p>
+<note style="tip"><p>Если этот модуль не доступен в разделе <guiseq><gui>Правка</gui><gui>Модули</gui></guiseq>, обратитесь на форум поддержки дистрибутива. Возможно, в вашем дистрибутиве разработчики решили отключить некоторые модули или поставлять их как отдельный пакет.</p></note>
+</item>
+<item><p>Перейдите на вкладку <gui style="tab">Настройка</gui> и укажите необходимые параметры.</p></item>
+<item><p>Перейдите на вкладку <gui style="tab">Учётные записи</gui> и выберите учётные записи почты, для которых следует показывать уведомления.</p></item>
+</steps>
+
+<p>Дополнительные сведения доступны в <link xref="help:gnome-help/shell-notifications" href="https://help.gnome.org/users/gnome-help/stable/shell-notifications">справке GNOME</link>.</p>
+
+<!-- TODO: Quite short -->
+
+</page>

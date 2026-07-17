@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="forms-saving" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#forms"/>
+    <desc>Убедитесь, что вы сохранили форму, иначе вся введённая информация будет потеряна.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Тиффани Антропольски</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Анна Филипс</name>
+      <email>anna.cs.au@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+
+<title>Сохранение формы</title>
+
+<p>После заполнения формы её можно сохранить одним из двух способов:</p>
+
+<list type="numbered">
+<item><p>Чтобы сохранить копию, которую можно будет изменить в будущем (форма остаётся интерактивной):</p>
+   <steps>
+      <item>
+        <p>Перейдите в <guiseq><gui style="menuitem">Файл</gui> <gui style="menuitem">Печать</gui></guiseq> и выберите <gui>Сохранить как…</gui> или нажмите комбинацию клавиш <keyseq><key>Ctrl</key><key>S</key></keyseq>.</p>
+     </item>
+ <item>
+      <p>Выберите имя файла и папку, в которой должен быть сохранён файл, затем нажмите <gui>Сохранить</gui>. PDF будет сохранён в указанной папке.</p>
+    </item>
+   </steps>
+</item>
+<item><p>Чтобы сохранить копию, которую нельзя будет изменить (например, если форму предполагается отправить по эл. почте или сделать доступной в сети):</p>
+   <steps>
+    <item>
+        <p>Перейдите в <guiseq><gui style="menuitem">Файл</gui> <gui style="menuitem">Печать</gui></guiseq> и выберите <gui>Печать</gui> или нажмите комбинацию клавиш <keyseq><key>Ctrl</key><key>P</key></keyseq>.</p>
+    </item>
+
+
+    <item>
+      <p>Выберите <gui>Печать в файл</gui> и выберите PDF в <gui>Формат вывода</gui>.</p>
+    </item>
+    <item>
+      <p>Выберите имя файла и папку, в которой должен быть сохранён файл, затем нажмите <gui>Печать</gui>. PDF будет сохранён в указанной папке.</p>
+    </item>
+   </steps>
+</item>
+</list>
+
+<note style="bug">
+<p>Копии зашифрованных файлов нельзя сохранять или выводить на печать.</p>
+</note>
+
+</page>

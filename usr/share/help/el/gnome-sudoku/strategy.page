@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="strategy" xml:lang="el">
+	<info>
+          <revision version="3.4" date="2012-03-08" status="final"/>
+	  <link type="guide" xref="index#play"/>
+	  <credit type="author copyright">
+	    <name>Radoslav Asparuhov</name>
+	    <email>rasparuhov@gmail.com</email>
+	  <years>2011</years>
+	  </credit>
+	  <credit type="editor">
+	    <name>Tiffany Antopolski</name>
+	    <email>tiffany.antopolski@gmail.com</email>
+	  </credit>
+	  <license>
+		<p>Creative Commons Share Alike 3.0</p>
+	  </license>
+	
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2013, 2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Χρήστος Τριανταφύλλης</mal:name>
+      <mal:email>christriant1995@gmail.com</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+
+	<title>Στρατηγική</title>
+        <p>Υπάρχει μόνο μία πιθανότητα για κάθε κελί σε ένα παζλ του Σουντόκου. Οι ακόλουθες στρατηγικές θα σας βοηθήσουν να ανακαλύψετε συστηματικά τη λύση για κάθε κελί.</p>
+ <section id="strategy1">
+	<title>Στρατηγική 1:</title>
+	  <steps>
+	    <item><p>Επιλέξτε τη γραμμή με τους περισσότερους αριθμούς.</p>
+                  <note><p>Πρέπει να επιλέγετε τη γραμμή ή τη στήλη με τους περισσότερους αριθμούς. Για λόγους απλότητας, αυτές οι οδηγίες έχουν γραφεί σαν μια γραμμή να έχει τους περισσότερους αριθμούς.</p></note>
+            </item>
+	    <item><p>Καθορίστε ποιοι αριθμοί λείπουν από τη γραμμή.</p></item>
+	    <item><p>Choose one of the empty cells in this row. Determine which of the missing numbers are in that column or in that 3×3 box.</p></item>
+	    <item><p>Using <link xref="earmarks">earmarks</link>, enter the missing numbers which are not in that column or 3×3 box. These numbers are candidate solutions for that cell.</p></item>
+	    <item><p>Go to the next empty cell of the chosen row and repeat the above method. Repeat this for every row and column, starting at those with the most numbers and continuing through to the least. Always look carefully for the numbers and don’t forget the 3×3 boxes.</p></item>
+	   </steps>
+            <note><p>Αυτή η στρατηγική θα σας βοηθήσει να αποκαλύψετε τα κελιά τα οποία έχουν μόνο μία δυνατή επιλογή. Όταν αποκαλυφθούν, μπορείτε να συμπληρώσετε αυτά τα κελιά, και να επαναλάβετε τη στρατηγική μέχρι να λυθεί ολόκληρο το παζλ.</p></note>
+<figure>
+  <desc>Παράδειγμα χρήσης της στρατηγικής 1.</desc>
+  <media type="image" mime="image/png" src="figures/strategy1.png" width="400" its:translate="no"/>
+</figure>
+
+</section>
+<section id="strategy2">
+
+	<title>Στρατηγική 2:</title>
+	  <steps>
+	    <item><p>Βρείτε τον αριθμό που εμφανίζεται συχνότερα.</p></item>
+	    <item><p>Now look at the left vertical alignment of the 3×3 boxes and locate the column(s) in which this number appears.</p></item>
+  	    <item><p>In this alignment, go to a 3×3 box which does not contain this number in any of its cells.  Using <link xref="earmarks">earmarks</link>, enter this number in every empty cell of the column in which this number does not appear. If the number appears in the row of one of these cells, do not enter it in that cell’s earmarks.</p></item>
+	    <item><p>Επαναλάβετε τα δύο τελευταία βήματα για την κεντρική και τη δεξιά κάθετη ευθυγράμμιση.</p></item>
+            <item><p>Βρείτε τον επόμενο αριθμό που εμφανίζεται περισσότερο, και επαναλάβετε το για όλους τους 9 αριθμούς.</p></item>
+	  </steps>
+            <note><p>Αυτή η στρατηγική θα σας βοηθήσει να αποκαλύψετε τα κελιά τα οποία έχουν μόνο μία δυνατή επιλογή. Όταν αποκαλυφθούν, μπορείτε να συμπληρώσετε αυτά τα κελιά, και να επαναλάβετε τη στρατηγική μέχρι να λυθεί ολόκληρο το παζλ.</p></note>
+<figure>
+  <desc>Example use of strategy 2.</desc>
+  <media type="image" mime="image/png" src="figures/strategy2.png" width="400" its:translate="no"/>
+</figure>
+
+	   <note><p>Αν καμία από τις παραπάνω στρατηγικές δε λύνει το παζλ, τότε μπορείτε να αλλάξετε στρατηγικές. Μπορείτε επίσης να τις συνδυάσετε.</p></note>
+</section>
+</page>

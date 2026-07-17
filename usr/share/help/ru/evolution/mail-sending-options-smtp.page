@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-sending-options-smtp" xml:lang="ru">
+
+  <info>
+    <desc>Параметры отправки для SMTP.</desc>
+
+    <link type="guide" xref="mail-account-manage-imap-plus#sending-email"/>
+    <link type="guide" xref="mail-account-manage-local-delivery#sending-email"/>
+    <link type="guide" xref="mail-account-manage-maildir-format-directories#sending-email"/>
+    <link type="guide" xref="mail-account-manage-mh-format-directories#sending-email"/>
+    <link type="guide" xref="mail-account-manage-pop#sending-email"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-directory#sending-email"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-file#sending-email"/>
+    <link type="guide" xref="mail-account-manage-usenet-news#sending-email"/>
+    <revision pkgversion="3.0.2" version="0.3" date="2013-06-22" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>SMTP: параметры отправки</title>
+
+<list>
+<item><p>Введите адрес почтового сервера для отправки почты в поле <gui>Сервер</gui> и укажите, требуется ли на этом сервере аутентификация (ввод имени пользователя и пароля).</p>
+<note style="tip"><p>Поставщики бесплатных услуг электронной почты часто предоставляют сведения о том, какие из этих параметров можно использовать. Если вы работаете в сети организации, рекомендуется обратиться к системному администратору для получения дополнительных сведений.</p></note>
+</item>
+<item><p>Если на сервере требуется аутентификация, нужно предоставить следующую информацию:</p>
+<list>
+  <item><p>Выберите тип аутентификации в списке или нажмите кнопку <gui>Проверить поддерживаемые типы</gui>, чтобы программа <app>Evolution</app> произвела проверку поддерживаемых типов. Некоторые серверы не поддерживают такую возможность, поэтому нажатие этой кнопки не будет гарантией того, что доступные механизмы в действительности сработают.</p></item>
+  <item><p>Введите своё имя пользователя.</p></item>
+</list>
+</item>
+<item><p>Чтобы использовать защищённое соединение, выберите <gui>Использовать безопасное соединение</gui>.</p></item>
+</list>
+
+</page>

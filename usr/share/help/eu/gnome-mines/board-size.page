@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="board-size" xml:lang="eu">
+
+  <info>
+    <link type="guide" xref="index#tips"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.3" date="2018-09-01" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2011</years>
+    </credit>
+    <credit type="author copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  </info>
+
+  <title>Nola aldatu joko-taularen tamaina</title>
+
+  <p>Eremu-tamaina bat hautatu daiteke aplikazioaren hasieran.</p>
+
+  <p>Hautatu honako sareta-tamainetako bat:</p>
+  <list>
+    <item><p>8 × 8 taula 10 minarekin</p></item>
+    <item><p>16 × 16 taula 40 minarekin</p></item>
+    <item><p>30 × 16 taula 99 minarekin</p></item>
+    <item><p>taula pertsonalizatua, tamaina ete minen kopurua hautatu dezakezu</p></item>
+  </list>
+
+  <p><link xref="board-size">Taularen tamaina</link> geroago aldatzeko, sakatu eskuineko <gui style="button">Aldatu zailtasuna</gui> botoia.</p>
+
+</page>

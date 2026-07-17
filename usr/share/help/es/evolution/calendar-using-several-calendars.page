@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="calendar-using-several-calendars" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="calendar-organizing"/>
+
+    <revision pkgversion="3.1.5" version="0.2" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-multiple.html.en
+	   and
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-view.html.en
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Añadir y usar más de un calendario y diferentes tipos de calendarios.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2012 - 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rodrigo Lledó</mal:name>
+      <mal:email>rodhos92@gmail.com</mal:email>
+      <mal:years>2018</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yolanda Álvarez Pérez</mal:name>
+      <mal:email>yolandaa.alvarez.perez@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Francisco Javier F. Serrador</mal:name>
+      <mal:email>serrador@openshine.com</mal:email>
+      <mal:years>2005, 2006</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Usar varios calendarios</title>
+
+  <p>You can have multiple calendars and overlay them one over the other. For
+  example, you might have a schedule of events for work, one for home, and one
+  for your favorite sports team. The sidebar lists those calendars, and you
+  can select or deselect the boxes next to them to show and hide the
+  appointments in your calendar view. By hiding and showing different sets of
+  appointments, you can be sure to avoid conflicts, while keeping a minimum of
+  clutter in your view.</p>
+
+  <p>Appointments for each calendar appear in a different color.</p>
+
+  <p>También puede usar calendarios que no estén en su equipo, tales como calendarios en Internet o en una red local.</p>
+
+  <p>Por ejemplo, la <ulink url="http://icalshare.com">página web de icalshare.com</ulink> tiene una extensa lista de calendarios compartidos en línea, incluyendo fiestas nacionales y religiosas, fases de la luna, deportes y acontecimientos locales y regionales.</p>
+  <p>New events and meetings are created in the selected calendar in the Calendar window. If no calendar is selected, new events are created in the default calendar.</p>
+</page>

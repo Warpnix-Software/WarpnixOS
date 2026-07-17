@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="shortcuts" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Посмотреть список всех комбинаций клавиш.</desc>
+
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Фил Булл</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <credit type="author">
+       <name>Тиффани Антропольски</name>
+       <email>tiffany.antopolski@gmail.com</email>
+    </credit>
+    <credit type="editor">
+       <name>Taufan Lubis</name>
+       <email>taufanlinux@gmail.com</email>
+    </credit>
+   <credit type="editor">
+       <name>Ronaldi Santosa</name>
+       <email>ronald.santosa@gmail.com</email>
+    </credit>
+   <credit type="editor">
+       <name>Ibnu Amansyah</name>
+       <email>javalander9@gmail.com</email>
+    </credit>
+   <credit type="editor">
+       <name>Андре Клаппер</name>
+       <email>ak-47@gmx.net</email>
+    </credit>
+   <credit type="editor">
+       <name>Герман Поо-Кааманьо (Germán Poo-Caamaño)</name>
+       <email>gpoo@gnome.org</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  </info>
+
+
+<title>Комбинации клавиш</title>
+
+<section id="default-shortcuts"><title>Комбинации клавиш, установленные по умолчанию</title>
+<section id="open-close-save-print">
+  <title>Открытие, закрытие, сохранение и печать</title>
+  <table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Открыть документ.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>O</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Открыть копию текущего документа.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>N</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Сохранить копию текущего документа с новым названием.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>S</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Печать текущего документа.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>P</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Закрыть текущее окно документа.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>W</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Перезагрузить документ (фактически закрыть и снова открыть документ).</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>R</key></keyseq></p></td>
+    </tr>
+  </table>
+</section>
+
+<section id="move-around">
+    <title>Перемещение по документу</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Переместиться по странице вверх/вниз.</p></td>
+        <td><p>Клавиши со стрелками</p></td>
+    </tr>
+    <tr>
+        <td><p>Переместиться по странице на несколько строк вверх/вниз.</p></td>
+        <td><p><key>Page Up</key> / <key>Page Down</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Перейти к предыдущей странице.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>Page Up</key></keyseq> / <key>P</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Перейти к следующей странице.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>Page Down</key></keyseq> / <key>N</key></p></td>
+    </tr>
+<tr>
+        <td><p>Перейти к странице по номеру.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>L</key></keyseq>, затем номер страницы и <key>Enter</key></p></td>
+</tr>
+    <tr>
+        <td><p>Перейти к началу страницы (Если в главном меню, расположенном в верхнем правом углу, выбрано <gui>Непрерывно</gui>, будет переход к началу документа).</p></td>
+         <td><p><key>Home</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Перейти в конец страницы (Если в главном меню, расположенном в верхнем правом углу, выбрано <gui>Непрерывно</gui>, будет переход в конец документа).</p></td>
+        <td><p><key>End</key></p></td>
+    </tr>
+    <tr>
+    	<td><p>Перейти в начало документа.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>Home</key></keyseq></p></td>
+    </tr>
+    <tr>
+    	<td><p>Перейти в конец документа.</p></td>
+         <td><p><keyseq><key>Ctrl</key><key>End</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Добавить закладку на текущей странице.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>D</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Удалить закладку с текущей страницы, если она имеется.</p></td>
+        <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>D</key></keyseq></p></td>
+    </tr>
+    <tr>
+         <td><p>Отобразить боковую панель с «Содержанием» и «Закладками».</p></td>
+         <td><p><key>F9</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Включить навигацию с помощью каретки, размещая подвижный курсор на текстовых страницах, что позволит перемещаться и выделять текст с помощью клавиатуры.</p></td>
+        <td><p><key>F7</key></p></td>
+    </tr>
+  </table>
+</section>
+
+<section id="copy">
+    <title>Выделение и копирование текста</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Копировать выделенный текст.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>C</key></keyseq> / <keyseq><key>Ctrl</key><key>Insert</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Выделить весь текст в документе.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>A</key></keyseq></p></td>
+    </tr>
+</table>
+</section>
+
+<section id="find">
+    <title>Поиск текста</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Показать панель, позволяющую проводить текстовый поиск в документе. Когда вы нажимаете эту кнопку, поле поиска будет автоматически выделено, и поиск будет проводиться по мере набора текста. Если вы, перед тем как начать поиск, выделите текст в документе, то этот текст будет использован в качестве входных данных для поиска.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>F</key></keyseq> / <key>/</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Перейти к следующему результату поиска.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>G</key></keyseq> / <key>F3</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Перейти к предыдущему результату поиска.</p></td>
+        <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>G</key></keyseq> / <keyseq><key>Shift</key><key>F3</key></keyseq></p></td>
+    </tr>
+</table>
+</section>
+
+<section id="rotate-zoom">
+    <title>Поворот и масштабирование</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Повернуть страницу на 90 градусов против часовой стрелки.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>Стрелка влево</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Повернуть страницу на 90 градусов по часовой стрелке.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>Стрелка вправо</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Исходный масштаб.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>0</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Увеличить.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>+</key></keyseq> / <key>=</key> / <keyseq><key>Ctrl</key><key>=</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Уменьшить.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>-</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Вписать страницу в окно.</p></td>
+        <td><p><key>F</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Вписать в окно по ширине страницы.</p></td>
+        <td><p><key>W</key></p></td>
+    </tr>
+</table>
+</section>
+
+<section id="window">
+    <title>Окно</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Использовать полноэкранный режим при просмотре документа.</p></td>
+        <td><p><key>F11</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Начать презентацию.</p></td>
+        <td><p><key>F5</key> / <keyseq><key>Shift</key><key>F5</key></keyseq></p></td>
+    </tr>
+</table>
+</section>
+
+<section id="document">
+    <title>Отображение документа</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Инвертировать цвета фона и текста.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>I</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Переключение между непрерывным и постраничным отображением документа.</p></td>
+        <td><p><key>C</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Отображать по две страницы.</p></td>
+        <td><p><key>D</key></p></td>
+    </tr>
+</table>
+</section>
+
+<section id="presentation">
+    <title>Режим презентации</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Переключиться на чёрный экран.</p></td>
+        <td><p><key>B</key> / <key>.</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Переключиться на белый экран.</p></td>
+        <td><p><key>W</key></p></td>
+    </tr>
+</table>
+</section>
+
+</section>
+
+</page>

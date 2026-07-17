@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-imap-subscriptions" xml:lang="de">
+
+  <info>
+    <desc>IMAP-Ordnerabonnements.</desc>
+    
+    <link type="guide" xref="index#mail-advanced"/>
+    <link type="guide" xref="mail-account-manage-imap-plus#other-settings"/>
+
+    <revision pkgversion="3.0.2" version="0.3" date="2011-08-05" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-subscriptions.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andre Klapper</mal:name>
+      <mal:email>ak-47@gmx.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009-2013, 2016-2018, 2020-2021</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009-2013, 2015-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Gabor Karsay</mal:name>
+      <mal:email>gabor.karsay@gmx.at</mal:email>
+      <mal:years>2011-2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Tim Sabsch</mal:name>
+      <mal:email>tim@sabsch.com</mal:email>
+      <mal:years>2018, 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jürgen Benvenuti</mal:name>
+      <mal:email>gastornis@posteo.org</mal:email>
+      <mal:years>2022-2024</mal:years>
+    </mal:credit>
+  </info>
+
+
+<title>IMAP-Abonnements</title>
+
+<p>Weil das Öffnen vieler IMAP-Ordner auf dem Server Zeit beansprucht, können Sie festlegen, welche IMAP-Ordner abgefragt und in <app>Evolution</app> angezeigt werden sollen, und welche vorerst ignoriert werden sollen. Die Einstellung erfolgt in der <gui>IMAP-Abonnementverwaltung</gui>.</p>
+<steps>
+<item><p>Wählen Sie <guiseq><gui>Ordner</gui><gui>Abonnements</gui></guiseq>, oder klicken Sie mit der rechten Maustaste auf den obersten Knoten eines E-Mail-Kontos in der Ordnerliste und wählen Sie <gui>Abonnements verwalten</gui>.</p></item> 
+<item><p>Falls Sie Konten auf mehreren Servern besitzen, wählen Sie den Server aus, für den Sie Ihre Abonnements verwalten möchten.</p></item>
+<item><p><app>Evolution</app> zeigt Ihnen eine Liste der auf dem IMAP-Server verfügbaren Dateien und Ordner an.</p></item>
+<item><p>Wählen Sie eine Datei oder einen Ordner aus, indem Sie darauf klicken.</p>
+<p>Sie sollten zumindest den <gui>Eingangsordner</gui> auswählen. Je nachdem wie Ihr IMAP-Server konfiguriert ist, kann die Liste der verfügbaren Dateien auch Nicht-E-Mail-Ordner enthalten. Falls dies der Fall ist, so ignorieren Sie diese.</p></item>
+<item><p>Wählen Sie die zu abonnierenden Ordner aus, indem Sie das Ankreuzfeld anwählen.</p></item>
+</steps>
+
+</page>

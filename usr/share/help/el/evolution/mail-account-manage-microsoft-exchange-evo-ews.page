@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-account-manage-microsoft-exchange-evo-ews" xml:lang="el">
+
+  <info>
+    <desc>Add and edit a Microsoft Exchange 2007 or 2010 account in <app>Evolution</app>.</desc>
+
+  <link type="guide" xref="mail-account-manage-microsoft-exchange" group="#first"/>
+  <title type="link" role="trail">Web Services</title>
+
+    <revision pkgversion="3.24.4" version="0.6" date="2017-07-28" status="candidate"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ελληνική μεταφραστική ομάδα GNOME</mal:name>
+      <mal:email>team@gnome.gr</mal:email>
+      <mal:years>2009-2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2012-2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Φώτης Τσάμης</mal:name>
+      <mal:email>ftsamis@gmail.com</mal:email>
+      <mal:years>2010-2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μάριος Ζηντίλης</mal:name>
+      <mal:email>m.zindilis@dmajor.org</mal:email>
+      <mal:years>2009-2010</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Ρυθμίσεις λογαριασμού υπηρεσιών ιστού στο Exchange</title>
+
+<section id="account-editor">
+<title>Επεξεργαστής λογαριασμού</title>
+<p>Λογαριασμοί αλληλογραφίας μπορούν να προστεθούν επιλέγοντας <guiseq><gui>αρχείο</gui><gui>νέο</gui><gui>λογαριασμός αλληλογραφίας</gui></guiseq> ή μέσα από <guiseq><gui>επεξεργασία</gui><gui>προτιμήσεις</gui><gui>λογαριασμοί αλληλογραφίας</gui><gui style="button">προσθήκη</gui></guiseq>. Τα βήματα είναι βασικά τα ίδια όπως για το <link xref="intro-first-run">βοηθός πρώτης εκτέλεσης</link>, εκτός από ότι δεν σας ζητείται εάν θα εισάγετε δεδομένα από άλλες εφαρμογές ή εάν θα επαναφέρετε από εφεδρικό αρχείο.</p>
+<p>Λογαριασμοί αλληλογραφίας μπορούν να επεξεργαστούν μέσα από <guiseq><gui>Επεξεργασία</gui><gui>Προτιμήσεις</gui><gui>Λογαριασμοί αλληλογραφίας</gui><gui style="button">Επεξεργασία</gui></guiseq> ή με δεξιοπατώντας στον αντίστοιχο κόμβο κορυφαίου επιπέδου στον κατάλογο φακέλων και επιλέγοντας <gui>Ιδιότητες</gui>.</p>
+
+<note style="tip"><p>See also the <link href="https://gitlab.gnome.org/GNOME/evolution/-/wikis/EWS-OAuth2">documentation how to set up and troubleshoot OAuth2</link> authentication.</p></note>
+
+<p>Οι παρακάτω ρυθμίσεις είναι διαθέσιμες όταν επεξεργαζόσαστε έναν υπάρχοντα λογαριασμό:</p>
+
+<section id="identity">
+<info>
+  <title type="link">Identity (Exchange Web Services accounts)</title>
+  <title type="link" role="trail">Identity</title>
+</info>
+<title>Ταυτότητα</title>
+<p>Εδώ ορίζετε το όνομά σας και τη διεύθυνση αλληλογραφίας.</p>
+<p>Optionally you can set a Reply-To email address (if you want replies to messages sent to a different address), set an organization (a company or organization you represent when you send email from this account), your default <link xref="mail-composer-mail-signatures">signature</link> for this account, and <link href="https://en.wikipedia.org/wiki/Email_alias">email aliases</link>.</p>
+</section>
+
+<section id="receiving-email">
+<info>
+  <title type="link">Λήψη αλληλογραφίας και επιλογές λήψης (λογαριασμοί υπηρεσιών ιστού Exchange)</title>
+  <title type="link" role="trail">Receiving</title>
+</info>
+<title>Επιλογές λήψης αλληλογραφίας</title>
+</section>
+
+<section id="defaults">
+<info>
+  <title type="link">Προεπιλογές (λογαριασμοί υπηρεσιών ιστού Exchange)</title>
+  <title type="link" role="trail">Defaults</title>
+</info>
+<title>Προεπιλογές</title>
+</section>
+
+<section id="composing-messages">
+<info>
+  <title type="link">Composing Messages (Exchange Web Services accounts)</title>
+  <title type="link" role="trail">Composing</title>
+</info>
+<title>Composing Messages</title>
+</section>
+
+<section id="security">
+<info>
+  <title type="link">Ασφάλεια (λογαριασμοί υπηρεσιών ιστού Exchange)</title>
+  <title type="link" role="trail">Security</title>
+</info>
+<title>Ασφάλεια</title>
+</section>
+
+<section id="out-of-office">
+<title>Out of Office</title>
+<p>Define the email reply to automatically send to internal or external persons in a certain time period.</p>
+</section>
+
+<section id="delegates">
+<title>Delegates</title>
+<p>Define who can send emails and reply to meeting requests on your behalf.</p>
+</section>
+
+</section> <!-- end "account editor" section, now list any account settings stuff related to this account type outside of it -->
+
+</page>

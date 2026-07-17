@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-account-manage-microsoft-exchange-evo-ews" xml:lang="uk">
+
+  <info>
+    <desc>Додавання і редагування облікового запису Microsoft Exchange 2007 або 2010 в <app>Evolution</app>.</desc>
+
+  <link type="guide" xref="mail-account-manage-microsoft-exchange" group="#first"/>
+  <title type="link" role="trail">Вебслужби</title>
+
+    <revision pkgversion="3.24.4" version="0.6" date="2017-07-28" status="candidate"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Параметри облікового запису Web Services Exchange</title>
+
+<section id="account-editor">
+<title>Редактор облікових записів</title>
+<p>Облікові записи пошти можна додати за допомогою сторінки <guiseq><gui>Файл</gui><gui>Створити</gui><gui>Обліковий запис</gui></guiseq> або <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Облікові записи</gui><gui style="button">Додати</gui></guiseq>. Дії здебільшого такі самі, як у <link xref="intro-first-run">помічнику першого запуску</link>, окрім того, що програма не питатиме вас, слід імпортувати дані з інших програм чи відновлювати дані з файла резервної копії.</p>
+<p>До облікових записів пошти можна внести зміни за допомогою пункту <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Облікові записи</gui><gui style="button">Редагувати</gui></guiseq> або клацання правою кнопкою миші на відповідному вузлі верхнього рівня у списку тек і вибору у контекстному меню пункту <gui>Властивості</gui>.</p>
+
+<note style="tip"><p>Ознайомтеся також із <link href="https://gitlab.gnome.org/GNOME/evolution/-/wikis/EWS-OAuth2">документацією щодо налаштовування і діагностики розпізнавання OAuth2</link>.</p></note>
+
+<p>При редагуванні наявного облікового запису ви отримаєте доступ до таких параметрів:</p>
+
+<section id="identity">
+<info>
+  <title type="link">Профіль (облікові записи Web Services Exchange)</title>
+  <title type="link" role="trail">Профіль</title>
+</info>
+<title>Особисті дані</title>
+<p>Тут ви визначаєте ваше ім'я та вашу адресу електронної пошти.</p>
+<p>Якщо хочете, можете налаштувати адресу для відповідей (якщо ви хочете, щоб відповіді на повідомлення надсилалися на іншу адресу), вказати організацію (компанію або установу, яку ви представляєте при надсиланні повідомлень з цього облікового запису), ваш типовий <link xref="mail-composer-mail-signatures">підпис</link> для облікового запису та <link href="https://en.wikipedia.org/wiki/Email_alias">альтернативну адресу електронної пошти</link>.</p>
+</section>
+
+<section id="receiving-email">
+<info>
+  <title type="link">Параметри отримання електронної пошти (облікові записи Web Services Exchange)</title>
+  <title type="link" role="trail">Отримання</title>
+</info>
+<title>Отримання і параметри отримання електронної пошти</title>
+</section>
+
+<section id="defaults">
+<info>
+  <title type="link">Типові параметри (облікові записи Web Services Exchange)</title>
+  <title type="link" role="trail">Типове</title>
+</info>
+<title>Умовчання</title>
+</section>
+
+<section id="composing-messages">
+<info>
+  <title type="link">Створення повідомлень (облікові записи Web Services Exchange)</title>
+  <title type="link" role="trail">Створення</title>
+</info>
+<title>Створення повідомлення</title>
+</section>
+
+<section id="security">
+<info>
+  <title type="link">Безпека (облікові записи Web Services Exchange)</title>
+  <title type="link" role="trail">Безпека</title>
+</info>
+<title>Безпека</title>
+</section>
+
+<section id="out-of-office">
+<title>За межами офісу</title>
+<p>Визначення відповіді електронною поштою для автоматичного надсилання працівникам організації та за межі організації у певний період часу.</p>
+</section>
+
+<section id="delegates">
+<title>Делегати</title>
+<p>Визначення того, хто може надсилання повідомлення та відповіді на запити щодо засідань від вашого імені.</p>
+</section>
+
+</section> <!-- end "account editor" section, now list any account settings stuff related to this account type outside of it -->
+
+</page>

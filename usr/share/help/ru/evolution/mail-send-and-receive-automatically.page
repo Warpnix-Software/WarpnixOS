@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-send-and-receive-automatically" xml:lang="ru">
+
+  <info>
+    <desc>Автоматическая и регулярная проверка наличия новых писем.</desc>
+
+    <link type="guide" xref="mail-send-and-receive"/>
+
+    <revision pkgversion="3.10.3" version="0.4" date="2014-01-27" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Автоматическая проверка наличия новых писем</title>
+<p>Если программа <app>Evolution</app> должна автоматически проверять наличие новых сообщений, включите параметр <gui>Проверять _новую почту каждые … минуты</gui> на странице <gui>Параметры получения</gui> параметров учётной записи почты (доступна при выборе пункта меню via <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Учётные записи</gui><gui style="button">Правка</gui><gui>Параметры получения</gui></guiseq>) и выберите интервал между проверками в минутах.</p>
+
+<note style="advanced"><p><app>Evolution</app> поддерживает использование <link href="https://en.wikipedia.org/wiki/IMAP_IDLE">IMAP IDLE</link> для текущей выбранной папки и частично поддерживает расширение <link href="https://tools.ietf.org/search/rfc5465">IMAP NOTIFY</link>.</p></note>
+
+</page>

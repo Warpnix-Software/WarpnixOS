@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="question" id="flags" xml:lang="uk">
+  <info>
+
+    <link type="guide" xref="index#play"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.5.5" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.3" date="2018-09-01" status="review"/>
+    <revision pkgversion="3.31.91" version="0.4" date="2019-03-03" status="review"/>
+
+    <credit type="author copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+    <credit type="author">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2012</years>
+    </credit>
+
+    <credit type="author copyright editor">
+      <name>Єкатерина Герасимова (Ekaterina Gerasimova)</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Як користуватися прапорцями</title>
+  <table>
+  <tr>
+   <td>
+     <media type="image" mime="image/svg" src="figures/flags.png" its:translate="no"/>
+   </td>
+   <td>
+     <p>Прапорці використовуються для позначення плиток, під якими, як ви підозрюєте, ховаються міни. Розташовування прапорця на плитці запобігає випадковому клацанню на плитці, яке може спричинити вибух, що призведе до завершення гри.</p>
+     <p>Точний вигляд прапорців залежить від теми гри. Ви можете змінити тему натисканням кнопки меню у верхньому правому куті вікна із наступним вибором пункту <gui style="menuitem">Вигляд</gui>.</p>
+    </td>
+   </tr>
+  </table>
+
+  <section id="flags-put">
+    <title>Як розташувати прапорець на плитці</title>
+    <table>
+      <tr>
+        <td>
+	  <p>На плитках з прапорцями не можна клацати. Щоб розташувати прапорець на плитці, виконайте такі дії:</p>
+          <list>
+            <item><p>Клацніть правою кнопкою на порожній плитці.</p></item>
+          </list>
+        </td>
+        <td>
+          <media type="image" mime="image/svg" width="60" src="figures/flag.svg" its:translate="no"/>
+        </td>
+        </tr>
+      </table>
+
+  </section>
+
+  <section id="flags-blue">
+    <title>Користування прапорцем <em>знак питання</em></title>
+    <p>Якщо ви не певні щодо того, чи ховається під плиткою міна, ви можете скористатися прапорцем <em>знак питання</em>.</p>
+    <table>
+      <tr>
+        <td>
+          <p>Щоб розташувати на плитці прапорець <em>Немає певності</em>, виконайте такі дії:</p>
+          <list>
+	    <item><p>Двічі клацніть правою кнопкою миші на порожній плитці або один раз клацніть правою кнопкою миші на плитці з прапорцем.</p></item>
+          </list>
+        </td>
+        <td>
+          <media type="image" mime="image/svg" width="60" src="figures/flag-question.svg" its:translate="no"/>
+        </td>
+      </tr>
+    </table>
+
+  <note>
+    <p>Щоб увімкнути ці прапорці, натисніть кнопку меню у верхньому правому куті вікна програми і увімкніть пункт <gui style="checkbox">Використовувати прапорці «?»</gui>.</p>
+  </note>
+
+  </section>
+  
+</page>

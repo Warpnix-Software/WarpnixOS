@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="tip" id="gnome-on-ubuntu" xml:lang="uk">
+
+  <info>
+    <credit type="author">
+      <name>Команда з документування Ubuntu</name>
+    </credit>
+    <desc>Список помітних модифікацій робочого столу GNOME в Ubuntu.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="shell-overview" group="#first"/>
+    <link type="guide" xref="index" group="intro"/>
+    <revision version="0.1" date="2022-04-28" status="review"/>
+  </info>
+
+  <title>Про GNOME в Ubuntu</title>
+
+  <p>Ubuntu Desktop встановлюється з дещо зміненою версією робочого середовища GNOME. Загалом у цьому посібнику для робочого столу будуть посилання на GNOME, оскільки він опублікований розробниками GNOME. Ось список помітних відмінностей між GNOME на Ubuntu та «ванільним» GNOME.</p>
+
+  <list type="disc">
+  <item>
+    <p>Ubuntu поставляється з Firefox на заміну бравзера  GNOME</p>
+  </item>
+  <item>
+    <p>Ubuntu поставляється з клієнтом віддаленого доступу Remmina на заміну GNOME З`єднання</p>
+  </item>
+    <item>
+      <p>Розширення AppIndicators ввімкнено. Це розширення активує піктограми у верхньому правому куті деяких програм.</p>
+    </item>
+    <item>
+      <p>Розширення Ubuntu Dock ввімкнено. Це розширення забезпечує ліву бічну панель для запуску програм.</p>
+    </item>
+    <item>
+      <p>Розширення Desktop Icons NG ввімкнено. Це розширення дозволяє використовувати піктограми на робочому столі.</p>
+    </item>
+    <item>
+      <p>Окрім шпалер для робочого столу Ubuntu, темою за умовчанням є Yaru, а шрифтом за замовчуванням є Ubuntu.</p>
+    </item>
+    <item>
+      <p>Кнопки мінімізації та максимізації включені в рядок заголовка вікна.</p>
+    </item>
+  </list>
+
+
+
+</page>

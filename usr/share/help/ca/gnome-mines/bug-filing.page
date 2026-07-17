@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="bug-filing" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#get-involved"/>
+    <revision pkgversion="3.5.5" version="0.1" date="2012-08-12" status="review"/>
+    <credit type="editor copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+      <years>2011</years>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Joan Duran</mal:name>
+      <mal:email>jodufi@gmail.com</mal:email>
+      <mal:years>2007, 2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Ajudar a millorar el <app>Mines</app></title>
+
+<section id="bug-report">
+<title>Informar d'un error o suggerir una millora</title>
+<p>El <app>Mines</app> el manté una comunitat de voluntaris. Si voleu, hi podeu participar. Si detecteu un problema, podeu enviar un <em>informe d'error</em>. Per a informar d'un error, aneu a <link href="https://gitlab.gnome.org/GNOME/gnome-mines/issues"/>.</p>
+   <p>Es tracta d'un sistema de seguiment d'errors en què els usuaris i els desenvolupadors poden enviar detalls sobre errors i problemes o sol·licitar millores.</p>
+   <p>Per a participar-hi, necessiteu un compte, el qual us donarà accés i us permetrà informar d'errors, fer comentaris i rebre actualitzacions per correu electrònic sobre l'estat de l'error. Si encara no teniu cap compte, feu clic a l'enllaç <gui>Sign in/Register</gui> per a crear-ne un.</p>
+
+  <p>Quan tingueu un compte, inicieu la sessió i feu clic a <gui>New issue</gui>. Abans d'informar d'un error, llegiu les <link href="https://wiki.gnome.org/Community/GettingInTouch/BugReportingGuidelines">pautes d'escriptura d'errors</link> i <link href="https://gitlab.gnome.org/GNOME/gnome-mines/issues">cerqueu</link> l'error per a comprovar si ja existeix.</p>
+
+   <p>Si sol·liciteu una funció nova, trieu <gui>Feature</gui> al menú <gui>Labels</gui>. Ompliu les seccions de títol i descripció i feu clic a <gui>Submit issue</gui>.</p>
+   <p>El vostre informe tindrà un número d'identificació i el seu estat s'actualitzarà a mesura que es vagi gestionant. Gràcies per ajudar a millorar el <app>Mines</app>!</p>
+</section>
+</page>

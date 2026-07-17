@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="mouse" xml:lang="sr">
+
+    <info>
+        <link type="guide" xref="index#ui"/>
+    </info>
+
+	<title>Коришћење миша</title>
+
+    <p>Све једначине се могу унети коришћењем миша. Да приступите свим дугмићима постоји више режима које можете изабрати из изборника „<gui>Режим</gui>“.</p>
+    <table>
+    <tr>
+    <td><p>Основно</p></td>
+    <td><p>Обезбеђује дугмад потребну за <link xref="equation">основне једначине</link></p></td>
+    </tr>
+    <tr>
+    <td><p>Напредно</p></td>
+    <td><p>Обезбеђује дугмад потребну за напредну математику као што је <link xref="trigonometry"/></p></td>
+    </tr>
+    <tr>
+    <td><p>Финансијски</p></td>
+    <td><p>Обезбеђује дугмад потребну за <link xref="financial">финансијске једначине</link></p></td>
+    </tr>
+    <tr>
+    <td><p>Програмирање</p></td>
+    <td><p>Обезбеђује дугмад потребну програмерима за рад</p></td>
+    </tr>
+    </table>
+</page>

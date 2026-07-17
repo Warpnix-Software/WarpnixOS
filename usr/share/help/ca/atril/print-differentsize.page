@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="task" id="print-differentsize" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="printing"/>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email its:translate="no">philbull@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name>Ekaterina Gerasimova</name>
+      <email its:translate="no">kittykat3756@gmail.com</email>
+      <years>2015</years>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Imprimint un document en paper de mida o orientació diferent.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Carles Ferrando Garcia</mal:name>
+      <mal:email>carles.ferrando@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert Antoni Buj Gelonch</mal:name>
+      <mal:email>rbuj@fedoraproject.org</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Canviant la mida del paper quan imprimim</title>
+
+  <p>Si voleu canviar la mida del paper del vostre document (per exemple, imprimir un PDF de mida foli en paper A4), podeu canviar el format d'impressió pel document.</p>
+
+  <steps>
+    <item>
+      <p>Aneu a <guiseq><gui style="menuitem">Fitxer</gui><gui style="menuitem">Imprimeix...</gui></guiseq> i premeu el botó <gui style="button">Imprimir</gui>.</p>
+    </item>
+    <item>
+      <p>Seleccioneu la pestanya <gui>Configuració de la pàgina</gui>.</p>
+    </item>
+    <item>
+      <p>A la columna <em>Paper</em>, seleccioneu la vostra <em>Mida del paper</em> de la llista desplegable.</p>
+    </item>
+    <item>
+      <p>Cliqueu <gui>Imprimeix</gui> i el vostre document hauria d'imprimir-se.</p>
+    </item>
+  </steps>
+
+  <p>També podeu usar el menú <em>Orientació</em> per escollir una orientació diferent:</p>
+
+  <list>
+    <item>
+      <p><gui>Vertical</gui></p>
+    </item>
+    <item>
+      <p><gui>Apaïsat</gui></p>
+    </item>
+    <item>
+      <p><gui>Vertical del revés</gui></p>
+    </item>
+    <item>
+      <p><gui>Apaïsat del revés</gui></p>
+    </item>
+  </list>
+
+</page>

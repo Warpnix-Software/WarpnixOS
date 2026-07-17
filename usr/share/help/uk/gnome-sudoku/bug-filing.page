@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="bug-filing" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="index#get-involved"/>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <credit type="editor copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+      <years>2011</years>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Звітування про проблеми</title>
+<p>Супроводом програми <app>Судоку GNOME</app> займається спільнота добровольців. Ми будемо раді вашій допомозі. Якщо ви виявили проблему у програмі, ви можете створити <em>звіт щодо вади</em>. Для створення такого звіту перейдіть на сторінку <link href="https://gitlab.gnome.org/GNOME/gnome-sudoku/issues/"/>.</p>
+   <p>Це сторінка системи стеження за вадами, де користувачі і розробники можуть спілкуватися щодо подробиць вади, аварійного завершення роботи програми або запитів щодо реалізації додаткових можливостей.</p>
+   <p>Щоб взяти участь у обговореннях, вам потрібен обліковий запис, який надасть вам змогу отримувати доступ до сайта, створювати записи вад і додавати коментарі. Крім того, вам слід зареєструватися, щоб отримувати оновлення щодо стану вашої вади електронною поштою. Якщо у вас ще немає облікового запису, натисніть посилання <gui>Sign in / Register</gui>, щоб створити обліковий запис.</p>
+
+  <p>Щойно ваш обліковий запис буде зареєстровано, увійдіть до нього і натисніть кнопку <gui>New issue</gui> («Нова вада»). Перш ніж повідомляти про ваду, будь ласка, ознайомтеся із <link href="https://handbook.gnome.org/issues/reporting.html">настановами щодо створення повідомлень про вади</link>, і, будь ласка, <link href="https://gitlab.gnome.org/GNOME/gnome-sudoku/issues">перегляньте</link> список вад, щоб переконатися у тому, що про виявлену вами ваду ще ніхто не повідомив.</p>
+
+   <p>Якщо ви надсилаєте запит щодо реалізації нової можливості, виберіть <gui>1. Feature</gui> («1. Можливість») у меню <gui>Labels</gui> («Мітки»). Заповніть поля назви («Title») і опису («Description») і натисніть кнопку <gui>Submit Issue</gui> («Надіслати ваду»).</p>
+   <p>Вашому звіту буде надано ідентифікаційного номера, його стан буде оновлено, щойно над ним попрацює хтось із розробників.</p>
+</page>

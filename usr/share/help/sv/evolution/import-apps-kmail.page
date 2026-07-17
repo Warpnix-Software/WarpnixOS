@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="import-apps-kmail" xml:lang="sv">
+
+  <info>
+    <desc>Om <app>KMail</app>-data inte kan hittas av <app>Evolution</app>-importören.</desc>
+
+    <link type="guide" xref="import-data#import-from-apps"/>
+
+    <revision pkgversion="3.36.2" version="0.1" date="2020-05-31" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Sebastian Rasmussen</mal:name>
+      <mal:email>sebras@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017, 2018</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>KMail</title>
+
+  <p>Observera att <app>Evolution</app> endast känner igen KDE 4-kataloger:</p>
+  <list>
+  <item><p><file>$HOME/.kde4/share/apps/kmail/mail</file> för e-post</p></item>
+  <item><p><file>$HOME/.kde4/share/apps/kabc</file> för kontakter</p></item>
+  </list>
+  
+  <p>För senare versioner, följ <link href="https://mail.gnome.org/archives/evolution-list/2020-March/msg00168.html">instruktionerna i detta meddelande</link>. Om du stöter på problem, följ <link xref="problems-getting-help"/>.</p>
+
+<!-- from https://mail.gnome.org/archives/evolution-list/2019-October/msg00044.html -->
+
+</page>

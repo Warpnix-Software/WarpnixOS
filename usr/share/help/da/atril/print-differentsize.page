@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="task" id="print-differentsize" xml:lang="da">
+
+  <info>
+    <link type="guide" xref="printing"/>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email its:translate="no">philbull@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name>Ekaterina Gerasimova</name>
+      <email its:translate="no">kittykat3756@gmail.com</email>
+      <years>2015</years>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Udskriv et dokument på papir af en anden størrelse eller orientering.</desc>
+  </info>
+
+  <title>Ændr papirformatet ved udskrivning</title>
+
+  <p>Hvis du vil ændre papirstørrelsen på dit dokument (for eksempel udskrive en PDF-fil i US Letter-format på A4-papir), kan du ændre dokumentets udskriftsformat.</p>
+
+  <steps>
+    <item>
+      <p>Gå til <guiseq><gui style="menuitem">Fil</gui><gui style="menuitem">Udskriv</gui></guiseq> og tryk på knappen <gui style="button">Udskriv</gui>.</p>
+    </item>
+    <item>
+      <p>Vælg fanebladet <gui>Sideopsætning</gui>.</p>
+    </item>
+    <item>
+      <p>I kolonnen <em>Papir</em> skal du vælge <em>Papirstørrelse</em> fra rullegardinslisten.</p>
+    </item>
+    <item>
+      <p>Klik på <gui>Udskriv</gui>, så udskrives dit dokument.</p>
+    </item>
+  </steps>
+
+  <p>Du kan også bruge menuen <em>Orientering</em> for at vælge en anden orientering:</p>
+
+  <list>
+    <item>
+      <p><gui>Portræt</gui></p>
+    </item>
+    <item>
+      <p><gui>Landskab</gui></p>
+    </item>
+    <item>
+      <p><gui>Omvendt portræt</gui></p>
+    </item>
+    <item>
+      <p><gui>Omvendt landskab</gui></p>
+    </item>
+  </list>
+
+</page>

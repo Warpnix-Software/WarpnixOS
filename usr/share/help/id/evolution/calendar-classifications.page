@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="calendar-classifications" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#calendar-advanced"/>
+
+    <revision pkgversion="3.28.2" version="0.5" date="2018-07-09" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+      https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#bxmtbjb
+      -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Membatasi visibilitas janji temu pada server jarak jauh.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Menggunakan Klasifikasi</title>
+
+  <p>Jika Anda menggunakan kalender di server jarak jauh (seperti Novell GroupWise atau Microsoft Exchange), Anda bisa memilih klasifikasi untuk menentukan siapa yang bisa melihatnya.</p>
+
+  <p>Untuk mengatur klasifikasi untuk janji temu, klik <guiseq><gui>Opsi</gui><gui>Klasifikasi</gui></guiseq> dan pilih klasifikasi di penyunting. <gui>Publik</gui> adalah kategori baku, dan janji publik bisa dilihat oleh siapa saja di jaringan berbagi kalender. <gui>Privat</gui> menunjukkan satu tingkat keamanan, dan <gui>Konfidensial</gui> adalah yang lebih tinggi.</p>
+
+  <p>Tingkat yang berbeda bervariasi tergantung pada pengaturan server Anda; periksa dengan administrator sistem Anda atau sesuaikan pengaturan delegasi Anda.</p>
+
+  <p>Jika Anda ingin acara, memo, dan tugas diklasifikasikan sebagai privat secara baku, fungsikan preferensi di bawah <guiseq><gui>Sunting</gui><gui>Preferensi</gui><gui>Kalender dan Tugas</gui><gui>Umum</gui><gui>Rupa-rupa</gui></guiseq>.</p>
+
+</page>

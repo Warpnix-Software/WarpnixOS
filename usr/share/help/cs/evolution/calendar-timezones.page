@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-timezones" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#calendar-advanced"/>
+
+    <revision pkgversion="3.1.5" version="0.4" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/bshlzlu.html.en -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Jak v kalendáři použít časová pásma.</desc>
+  </info>
+
+  <title>Používání časových pásem</title>
+
+  <p><app>Evolution</app> podporuje použití více časových pásem.</p>
+
+<section id="default-timezone">
+  <title>Nastavení vašeho hlavního časového pásma</title>
+
+  <p>Standardně používá <app>Evolution</app> časové pásmo podle nastavení systému. Můžete ho ale změnit v <guiseq><gui>Upravit</gui> <gui>Předvolby</gui> <gui>Kalendář a úkoly</gui> <gui>Obecné</gui> <gui>Čas</gui> <gui>Časové pásmo</gui></guiseq>.</p>
+
+  <p>Jste-li v kontaktu s lidmi v jiném konkrétním časovém pásmu, můžete si zobrazit toto druhé časové pásmo v denním zobrazení kalendáře. Druhé časové pásmo můžete nastavit v <guiseq><gui>Upravit</gui> <gui>Předvolby</gui> <gui>Kalendáře a úkoly</gui> <gui>Obecné</gui> <gui>Čas</gui> <gui>Druhé pásmo</gui></guiseq>.</p>
+
+</section>
+
+<section id="appointment-timezone">
+  <title>Nastavení časového pásma pro událost</title>
+
+  <p>Můžete také nastavit časové pásmo u jednotlivé události. Začněte <link xref="calendar-usage">přidáním nové události nebo úpravou některé stávající</link>. Časové pásmo pak změníte kliknutím na tlačítko <gui style="button">Vybrat…</gui> pod <gui>Časovým pásmem</gui>. Například pokud žijete v Brně, ale budete mít telefonát domluvený na poledne s někým ze Sydney, musíte si být jistí, že jsou vaše rozvrhy zkoordinovány. Nastavení časových pásem pro každou událost samostatně pomáhá vyhnout se případným nedorozuměním.</p>
+
+</section>
+
+</page>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="default-settings" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#faq"/>
+    <desc>Сохранить текущие настройки по умолчанию для новых документов.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Синдху С</name>
+      <email>sindhus@live.in</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  </info>
+
+  <title>Изменить настройки по умолчанию</title>
+
+  <p>При первом открытии документа применяются настройки по умолчанию, такие как масштаб и параметры просмотра страницы. Любые изменения, внесенные в эти настройки, сохраняются для документа.</p>
+  <p>Вы можете сохранить текущие параметры как настройки по умолчанию для всех новых документов, нажав <gui style="menuitem">Правка</gui> и выбрав <gui style="menuitem">Сохранить текущие параметры как параметры по умолчанию</gui>.</p>
+
+  <note style="important">
+    <p>Новые настройки по умолчанию не отменяют настройки ранее открытых документов, они применяются только к документам, открытым впервые.</p>
+  </note>
+
+</page>

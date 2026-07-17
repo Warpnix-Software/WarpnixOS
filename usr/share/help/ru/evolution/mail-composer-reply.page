@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-reply" xml:lang="ru">
+
+  <info>
+    <desc>Ответ на полученное письмо.</desc>
+    
+    <link type="guide" xref="index#mail-composing"/>
+
+    <revision pkgversion="3.3.91" version="0.6" date="2012-02-19" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-reply -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Ответ на сообщение</title>
+
+<section id="general-info">
+<title>Ответ на электронные письма</title>
+<p>Чтобы ответить на сообщение, выберите нужное сообщение в списке сообщений и нажмите кнопку <gui>Ответить</gui> на панели инструментов или щёлкните правой кнопкой мыши внутри сообщения и выберите пункт <gui>Ответить отправителю</gui>. При этом открывается окно редактора сообщений. Поля <gui>Кому</gui> и <gui>Тема</gui> уже заполнены, хотя при необходимости их содержимое можно изменить. Кроме того, в новое сообщение вставляется полный текст старого сообщения, отмеченный или серым цветом с синей полосой сбоку (для отображения HTML), или символом &gt; перед каждой строкой (в режиме простого текста); это означает, что этот текст является частью предыдущего сообщения.</p>
+<p>Если в сообщении несколько получателей, можно использовать функцию <gui>Ответить всем</gui> вместо <gui>Ответить</gui>. Если в полях <gui>Копия</gui> или <gui>Кому</gui> перечислено много людей, это поможет сэкономить значительное количество времени.</p>
+</section>
+
+<section id="reply-to-all">
+<title>Использование функции «Ответить всем»</title>
+<p>Света отправляет электронное письмо клиенту, копии рассылает Толе и сотрудникам, присутствующим во внутреннем почтовом списке рассылки компании. Если Толе требуется, чтобы его комментарий прочитали все, он использует функцию <gui>Ответить всем</gui>, но если ему нужно только сказать Свете, что он согласен с ней, он использует функцию <gui>Ответить</gui>. Его ответ не поступает всем тем, кого Света указала в своём списке скрытых копий, так как этот список не доступен кому-либо ещё.</p>
+<p>Если вы подписались на список рассылки и хотите, чтобы ваш ответ поступил только в список рассылки, но не отправителю, выберите <gui>Ответить в список</gui> вместо <gui>Ответить</gui> или <gui>Ответить всем</gui>.</p>
+</section>
+
+<section id="keyboard-shortcuts">
+<title>Комбинации клавиш</title>
+<table frame="all" rules="all">
+ <tr>
+  <td><p>Действие</p></td><td><p>Комбинации клавиш</p></td>
+ </tr><tr>
+  <td><p>Ответить отправителю</p></td><td><p><keyseq><key>Ctrl</key><key>R</key></keyseq></p></td>
+ </tr><tr>
+  <td><p>Ответить в список</p></td><td><p><keyseq><key>Ctrl</key><key>L</key></keyseq></p></td>
+ </tr><tr>
+  <td><p>Ответить всем</p></td><td><p><keyseq><key>Shift</key><key>Ctrl</key><key>R</key></keyseq></p></td>
+ </tr>
+</table>
+</section>
+
+<section id="default-settings">
+<title>Настройки по умолчанию</title>
+<p>Стандартные параметры ответа и пересылки можно изменить в разделе настройки <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Настройки редактора</gui><gui>Общие</gui><gui>Ответы и перенаправления</gui><gui>Стиль ответа</gui></guiseq>.</p>
+</section>
+
+</page>

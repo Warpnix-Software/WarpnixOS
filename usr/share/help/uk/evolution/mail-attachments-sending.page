@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-attachments-sending" xml:lang="uk">
+
+  <info>
+    <desc>Долучення файлів до повідомлень, які ви хочете надіслати.</desc>
+
+    <link type="guide" xref="index#mail-composing"/>
+    <link type="guide" xref="mail-attachments"/>
+
+    <revision pkgversion="3.0.2" version="0.2" date="2011-07-30" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-compose and https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#b17rcxmf -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Додавання долучень до повідомлення електронної пошти</title>
+
+<section id="attaching">
+<title>Долучення файлів</title>
+<p>Щоб долучити файл до вашого повідомлення у редакторі повідомлень, виконайте такі дії:</p>
+<steps>
+<item><p>Натисніть кнопку <gui>Додати долучення…</gui>, або виберіть пункт меню <guiseq><gui>Вставка</gui><gui>Долучення</gui></guiseq>, або натисніть комбінацію клавіш <keyseq><key>Ctrl</key><key>M</key></keyseq>.</p></item>
+<item><p>Виберіть файл, який ви хочете долучити.</p></item>
+<item><p>Натисніть кнопку <gui style="button">Гаразд</gui>.</p></item>
+</steps>
+<p>Ви також можете перетягнути пункт файла долучення на панель долучень вікна редактора повідомлень.</p>
+
+<p>При надсиланні повідомлення буде надіслано копію долученого до нього файла. Зауважте, що долучення великих файлів може призвести до уповільнення надсилання і отримання повідомлень.</p>
+</section>
+
+<section id="reminders">
+<title>Нагадування про долучення</title>
+
+<p>У <app>Evolution</app> передбачено додаток нагадування щодо долучень, яким ви можете скористатися для того, щоб не забути долучити файл до повідомлення. Якщо додатку вдасться встановити, що ви забули долучити файл, він нагадає про це за допомогою вікна сповіщення під час надсилання повідомлення.</p>
+
+<p>Щоб увімкнути додаток «Нагадування про долучення», виконайте такі дії:</p>
+<steps>
+<item><p>Виберіть <guiseq><gui>Зміни</gui><gui>Додатки</gui></guiseq>.</p></item>
+<item><p>Позначте <gui>Нагадування про долучення</gui>.</p>
+<note style="tip"><p>Якщо додатка немає у списку меню <guiseq><gui>Зміни</gui><gui>Додатки</gui></guiseq>, будь ласка, скористайтеся для його додавання форумом підтримки вашого дистрибутива. Можливо, у вашому дистрибутиві розробники вирішили вимкнути якісь додатки або виокремити додатки у інший пакунок.</p></note>
+</item>
+<item><p>Перейдіть на вкладку <gui>Налаштовування</gui>.</p></item>
+<item><p>Натисніть кнопку <gui style="button">Додати</gui> і введіть ключові слова вашою рідною мовою, наприклад «долучити» або «вкладено».</p></item>
+</steps>
+<p><app>Evolution</app> виконуватиме пошук доданих вами ключових слів у тексті повідомлень, які ви надсилатимете. Якщо буде знайдено якесь із цих слів, і не буде виявлено долучених файлів, програма покаже вікно з нагадуванням щодо долучення файла.</p>
+
+</section>
+
+</page>

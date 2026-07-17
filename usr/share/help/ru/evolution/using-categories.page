@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="using-categories" xml:lang="ru">
+
+  <info>
+    <desc>Использование и управление категориями встреч, контактов, заметок и задач.</desc>
+
+    <link type="guide" xref="contacts-organizing"/>
+    <link type="guide" xref="tasks-organizing"/>
+    <link type="guide" xref="calendar-organizing"/>
+
+    <revision pkgversion="3.3.91" version="0.6" date="2012-02-19" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-contact-organize.html.en#usage-contact-organize-group-category -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Использование категорий</title>
+
+<p>Ещё один способ группировки контактов, встреч, задач и заметок (далее — «объекты») заключается в том, чтобы отметить их как принадлежащие к разным категориям. Объекту можно назначить несколько категорий или вообще ни одной. Например, в адресной книге можно поместить карточку друга в категорию «Бизнес», так как он работает с вами, а также в категорию «Друзья», потому что он является вашим другом.</p>
+
+<note style="tip"><p>Чтобы отображались только объекты из определённой категории, выберите соответствующую категорию на панели быстрого <link xref="searching-items">поиска</link>.</p></note>
+
+<section id="set-category-for-object">
+<title>Настройка категорий для объекта</title>
+
+<p>Чтобы указать категорию объекта:</p>
+<steps>
+<item><p>Сделайте двойной щелчок по объекту для вызова окна соответствующего редактора.</p></item>
+<item><p>Нажмите кнопку <gui style="button">Категории…</gui>. (Если эта кнопка недоступна, выберите пункт меню <guiseq><gui>Вид</gui><gui>Категории</gui></guiseq>.)</p></item>
+<item><p>Выберите категорию из списка. Вы можете выбрать столько категорий, сколько вам нужно.</p></item>
+</steps>
+
+</section>
+
+<section id="managing-categories">
+<title>Добавление и управление категориями</title>
+
+<p>Если списка категорий по умолчанию недостаточно, можно добавить свои собственные категории: либо напрямую путём использования пункта меню <guiseq><gui>Правка</gui><gui>Доступные категории</gui></guiseq>, либо косвенно (при редактировании объекта):</p>
+<steps>
+<item><p>Сделайте двойной щелчок по объекту для вызова окна соответствующего редактора.</p></item>
+<item><p>Нажмите кнопку <gui style="button">Категории…</gui>. (Если эта кнопка недоступна, выберите пункт меню <guiseq><gui>Вид</gui><gui>Категории</gui></guiseq>.)</p></item>
+<item><p>Введите новую категорию в поле ввода вверху.</p></item>
+<item><p>Нажмите кнопку <gui style="button">OK</gui>.</p></item>
+<item><p>Категория появится в текстовом поле <gui>Категории</gui> редактора.</p></item>
+<item><p>Нажмите кнопку <gui style="button">OK</gui>.</p></item>
+</steps>
+
+<p>В <gui>редакторе категорий</gui> можно изменить или задать цвет и значок для каждой из доступных категорий путём нажатия кнопки <gui style="button">Правка</gui> в нижней части окна <gui>Категории</gui>. Чтобы удалить категорию из списка, воспользуйтесь кнопкой <gui style="button">Удалить</gui>.</p>
+</section>
+
+</page>

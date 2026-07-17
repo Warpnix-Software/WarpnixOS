@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-cannot-see" xml:lang="cs">
+
+  <info>
+    <desc>Když pošlete nebo obdržíte zprávu, ale nemůžete ji nikde najít.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="3.31.5" version="0.5" date="2019-01-18" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Phil Bull</name>
+      <email its:translate="no">philbull@gmail.com</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  </info>
+
+<title>Nemohu najít některé zprávy, kde jsou?</title>
+
+<list>
+ <item>
+  <p>Zkontrolujte, jestli <link xref="mail-filters-not-working">nepoužíváte filtry</link> příchozích (nebo odchozích) zpráv. Tím se mohou vaše zprávy automaticky přesouvat na jiná místa.</p>
+ </item>
+ <item>
+  <p>Zkontrolujte <link xref="mail-searching#search-many">zobrazení hledání ve vyhledávacím poli</link> vpravo nad seznamem zpráv. Třeba jestli rozbalovací seznam <gui>Zobrazit</gui> není nastaven na filtrování typu <gui>Přečtené zprávy</gui> nebo jestli v textovém poli není zadaná nějaká hodnota. Vyhledávací pole můžete vyčistit kliknutím na ikonu koštěte.</p>
+ </item>
+ <item>
+  <p>Pokud nevidíte žádnou poštu ze složky, podívejte se, jestli nemáte maximalizovaný náhled zpráv (v takovém případě je panel se seznamem zpráv skrytý). Uděláte to kliknutím na <guiseq><gui>Zobrazit</gui> <gui>Náhled</gui> <gui>Náhled zprávy</gui></guiseq>.</p>
+ </item>
+ <item>
+  <p>Klikněte na <guiseq><gui>Zobrazit</gui><gui>Zobrazit smazané zprávy</gui></guiseq> a <guiseq><gui>Zobrazit</gui><gui>Zobrazit nevyžádané zprávy</gui></guiseq>, abyste měli jistotu, že jsou vidět všechny zprávy.</p>
+ </item>
+ <item>
+  <p><link xref="mail-default-folder-locations">Zkontrolujte své nastavení složek.</link> Možná je máte nastavené na jiné složky, než si myslíte.</p>
+ </item>
+</list>
+
+</page>

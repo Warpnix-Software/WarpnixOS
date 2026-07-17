@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="conv-character" xml:lang="ja">
+
+    <info>
+        <link type="guide" xref="index#conversion"/>
+    </info>
+
+	<title>文字コード</title>
+    
+    <p><link xref="mouse">プログラムモード</link>では、<gui>á</gui> ボタンを押すと、文字を文字コードに変換するダイアログが表示されます。</p>
+    <note>
+    <p>キーボードを使って文字変換することはできません。</p>
+    </note>
+</page>

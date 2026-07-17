@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-carddav" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="contacts-using-several-addressbooks"/>
+
+    <revision pkgversion="3.55" version="0.1" date="2024-11-02" status="final"/>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Using an online CardDAV address book.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marc Lorber</mal:name>
+      <mal:email>Linux-Lorber@club-internet.fr</mal:email>
+      <mal:years>2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jonathan Ernst</mal:name>
+      <mal:email>jonathan@ernstfamily.ch</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alexandre Franke</mal:name>
+      <mal:email>alexandre.franke@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012 </mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervan@gmail.com</mal:email>
+      <mal:years>2013-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yvan Masson</mal:name>
+      <mal:email>yvan@masson-informatique.fr</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Charles Monzat</mal:name>
+      <mal:email>charles.monzat@free.fr</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>vanadiae</mal:name>
+      <mal:email>vanadiae35@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Guillaume Bernard</mal:name>
+      <mal:email>associations@guillaume-bernard.fr</mal:email>
+      <mal:years>2021-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jean-Marc Tissières</mal:name>
+      <mal:email>jmetissieres@gmail.com</mal:email>
+      <mal:years>2022</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Using a CardDAV address book</title>
+
+  <p>To add such an address book, perform the following steps:</p>
+
+  <steps>
+    <item>
+      <p>Click
+      <guiseq><gui>File</gui><gui>New</gui><gui>Address Book</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Select the type <gui>CardDAV</gui>.</p>
+    </item>
+    <item>
+      <p>To discover the address books, announced by the server, enter the server address as <gui>URL</gui> and optionally <gui>User</gui>, then click on <gui style="button">Find Address Books</gui>. Select the address book.
+         This prefills the fields <gui>Name</gui> and <gui>URL</gui>. The step is optional, and you can overwrite all the discovered settings.</p>
+    </item>
+    <item>
+      <p>Saisissez le nom que vous voulez.</p>
+    </item>
+    <item>
+      <p>Saisissez l’adresse dans le champ <gui>URL</gui>.</p>
+    </item>
+    <item>
+      <p>Choisissez <gui>Utiliser une connexion sécurisée</gui> si vous souhaitez vous connecter en toute sécurité.</p>
+    </item>
+    <item>
+      <p>Saisissez votre nom d’utilisateur.</p>
+    </item>
+    <item>
+      <p>Cliquez sur <gui style="button">Valider</gui>.</p>
+    </item>
+  </steps>
+
+  <p>The address book will be added to the list of address books in <app>Evolution</app>, <app>GNOME Contacts</app>.</p>
+</page>

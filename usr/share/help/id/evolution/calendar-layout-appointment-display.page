@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-layout-appointment-display" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="calendar-layout"/>
+
+    <revision pkgversion="3.26.5" version="0.6" date="2018-03-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/config-prefs-cal.html.en#bshpsxa
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Tentukan menampilkan janji di kalender.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Penampakan Janji Temu</title>
+
+  <!-- TODO:POST-3-8: Just listing the partially busted UI options (also see
+       calendar-layout-general-formatting) here is very poor and not
+       task-oriented, but that's it for the time being. Better ideas welcome.
+       -->
+
+  <p>Opsi terkait kalender berikut ini tersedia di bawah <guiseq><gui>Sunting</gui><gui>Preferensi</gui> <gui>Kalender dan Tugas</gui><gui>Tampilan</gui></guiseq>.</p>
+
+<section id="general">
+  <title>Umum</title>
+
+  <list>
+    <item>
+      <p>Divisi Waktu:</p>
+      <p>Mengatur penambahan waktu yang diperlihatkan sebagai garis halus pada tampilan harian di kalender.</p>
+    </item>
+    <item>
+      <p>Memperlihatkan waktu akhir janji dalam tampilan minggu dan bulan:</p>
+      <p>Jika ada ruang, <app>Evolution</app> menunjukkan waktu akhir dalam tampilan minggu dan bulan untuk setiap janji temu.</p>
+    </item>
+    <item>
+      <p>Tampilkan ikon janji pertemuan dalam tampilan bulan</p>
+    </item>
+    <item>
+      <p>Padatkan akhir pekan dalam tampilan bulan:</p>
+      <p>Pilih opsi ini untuk menampilkan akhir pekan dalam satu kotak, bukan dua dalam tampilan bulan.</p>
+    </item>
+    <item>
+      <p>Tampilkan nomor minggu:</p>
+      <p>Memperlihatkan nomor minggu di samping minggu masing-masing di kalender.</p>
+    </item>
+    <item>
+      <p>Memperlihatkan acara berulang di kiri bawah kalender.</p>
+    </item>
+    <item>
+      <p>GulirTampilan Bulan seminggu</p>
+    </item>
+  </list>
+
+</section>
+
+<section id="alerts">
+  <title>Waspada</title>
+
+  <p>Jika Anda ingin diperingatkan sebelum menghapus janji temu apa pun, pilih opsi ini.</p>
+
+</section>
+
+</page>

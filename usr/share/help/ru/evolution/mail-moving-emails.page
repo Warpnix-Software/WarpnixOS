@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-moving-emails" xml:lang="ru">
+
+  <info>
+    <desc>Перемещение писем из одной папки в другую.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="3.8.2" version="0.3" date="2013-05-14" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Перемещённые письма продолжают отображаться в исходной папке</title>
+
+<p>Если ваш почтовый сервер IMAP ещё не поддерживает <link href="https://tools.ietf.org/html/rfc6851">функцию «перемещения» IMAP</link>, которая была внедрена в январе 2013 года, <app>Evolution</app> будет «перемещать» сообщения путём копирования и удаления писем. Удаление подразумевает «пометку сообщений для удаления», поэтому все исходные сообщения будут сохраняться до момента уничтожения писем, отмеченных для удаления.</p>
+
+<p>Сведения об уничтожении сообщений доступны в разделе об <link xref="mail-delete-and-undelete">удалении писем</link>. Обратите внимание, что это относится и к другим типам учётных записей.</p>
+
+</page>

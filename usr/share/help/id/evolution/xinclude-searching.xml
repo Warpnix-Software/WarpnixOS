@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<info xmlns="http://projectmallard.org/1.0/">
+
+<section id="advanced-search">
+<title>Pencarian Lanjutan</title>
+<steps>
+<item><p>Pilih menu <guiseq><gui>Cari</gui><gui>Pencarian Lanjutan</gui></guiseq> untuk membuka kotak dialog.</p></item>
+<item><p>Klik <gui style="button">Tambahkan Kondisi</gui> untuk menambahkan seberapapun aturan.</p></item>
+<item><p>Pilih kondisi dari daftar tarik-turun, lalu ketik entri pencarian di bidang.</p></item>
+<item><p>Klik <gui style="button">OK</gui> untuk menampilkan hasil pencarian.</p></item>
+</steps>
+</section>
+
+<section id="clearing-search">
+<title>Menghapus hasil Pencarian</title>
+<p>Untuk menghapus tampilan pencarian Anda dan kembali ke tampilan baku, klik ikon <gui>Bersihkan</gui> di bidang string pencarian, atau pilih <guiseq><gui>Cari</gui><gui>Bersihkan</gui></guiseq> dari bilah menu. Anda juga dapat menekan <keyseq><key>Shift</key><key>Ctrl</key><key>Q</key></keyseq> untuk menghapus pencarian.</p>
+</section>
+
+<section id="saved-searches">
+<title>Pencarian Tersimpan</title>
+<p>Jika Anda mencari sesuatu yang agak sering, Anda akan lebih suka tidak mengetiknya berkali-kali. Dalam hal ini Anda dapat menggunakan pencarian tersimpan.</p>
+<p>Untuk menyimpan hasil pencarian Anda, klik <gui>Simpan</gui> alih-alih <gui>OK</gui> dalam dialog Pencarian, atau jika hasil pencarian sudah ditampilkan, pilih <guiseq><gui>Cari</gui><gui>Simpan Pencarian</gui></guiseq>. Mulai sekarang pencarian ini akan langsung tersedia dari menu <gui>Cari</gui>.</p>
+</section>
+
+<section id="editing-a-saved-search">
+<title>Menyunting Pencarian Tersimpan</title>
+<steps>
+<item><p>Pilih <guiseq><gui>Cari</gui><gui>Sunting Pencarian Tersimpan</gui></guiseq> dari bilah menu untuk membuka jendela.</p></item>
+<item><p>Klik tombol <gui style="button">Sunting</gui> untuk membuka jendela <gui>Sunting Aturan</gui>.</p></item>
+<item><p>Sunting kondisi judul atau pencarian dari kotak dialog.</p></item>
+<item><p>Klik <gui>OK</gui>.</p></item>
+</steps>
+</section>
+
+</info>

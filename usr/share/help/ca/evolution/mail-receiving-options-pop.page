@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-receiving-options-pop" xml:lang="ca">
+
+  <info>
+    <desc>Recepció d'opcions per a comptes POP.</desc>
+
+    <link type="guide" xref="mail-receiving-options#common-server-types"/>
+    <link type="guide" xref="mail-account-manage-pop#receiving-email"/>
+    <revision pkgversion="3.23.2" version="0.6" date="2016-11-29" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Barbara Tobias</name>
+      <email its:translate="no">barbtobias09@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mainwindow-starting.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Opcions de recepció POP</title>
+
+<section id="receiving-email-pop">
+<title>Recepció de correu</title>
+
+<p>A la pàgina <gui>Rebre correu</gui> (accessible via <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Comptes de correu</gui><gui style="button">Edita</gui><gui>Rebre correu</gui></guiseq>):</p>
+
+<list>
+<item><p>Introduïu l'adreça del servidor de correu electrònic al camp <gui>Servidor</gui> i introduïu el vostre nom d'usuari per a aquest servidor.</p></item>
+<item><p>Seleccioneu si voleu utilitzar una connexió segura (TLS o el predecessor obsolet SSL).</p><p>Heu d'habilitar aquesta opció si el vostre servidor ho admet.</p>
+<note style="tip"><p>Els proveïdors de webmail gratuïts solen proporcionar informació sobre quina d'aquestes opcions es pot utilitzar. Si us trobeu en l'entorn d'una organització, podeu contactar amb l'administrador del sistema per a obtenir més informació.</p></note></item>
+<item><p>Seleccioneu el tipus d'autenticació a la llista d'autenticació o feu clic a <gui style="button">Comprova els tipus disponibles</gui> per tal que <app>Evolution</app> comprovi els mecanismes d'autentificació suportats. Alguns servidors no avisen dels mecanismes que admeten, de manera que fer clic en aquest botó no garanteix que els mecanismes disponibles funcionin.</p></item>
+<item><p>Seleccionar si voleu que <app>Evolution</app> recordi la vostra contrasenya.</p></item>
+</list>
+
+</section>
+
+<section id="receiving-options-pop">
+<title>Opcions de recepció</title>
+
+<p>A la pàgina <gui>Opcions de recepció</gui> (accessible via <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Comptes de correu</gui><gui style="button">Edita</gui><gui>Opcions de recepció</gui></guiseq>):</p>
+
+<list>
+<item><p>Si voleu que <app>Evolution</app> comprovi automàticament l'existència de nous missatges, feu clic a l'opció <gui>Comproveu si hi ha missatges nous cada … minuts</gui> i seleccioneu la freqüència en minuts.</p></item>
+<item><p>Si voleu que els missatges es mantinguin al servidor durant un període de temps, feu clic a l'opció <gui>Deixa els missatges al servidor</gui> i l'opció <gui>Suprimeix després de ... dies</gui> i seleccioneu el nombre de dies que es permet que els missatges es mantinguin al servidor. Establiu 0 dies per a mantenir els missatges al servidor per sempre.</p></item>
+<item><p>L'opció <gui>Desactiva el suport per a totes les extensions POP3</gui> només és útil per a accedir a servidors de correu antics o mal configurats. Les <link href="https://tools.ietf.org/html/rfc2449">extensions POP3</link> proporcionen una funcionalitat millorada, però tan sols alguns servidors les admeten. En cas de tenir problemes amb la recepció de correu, habilitar aquesta configuració pot ajudar.</p></item>
+</list>
+
+</section>
+
+</page>

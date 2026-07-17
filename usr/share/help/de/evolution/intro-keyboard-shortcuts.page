@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="intro-keyboard-shortcuts" xml:lang="de">
+
+  <info>
+    <desc>Tastenkombinationen, mit denen Sie Zeit sparen können.</desc>
+
+    <link type="guide" xref="index#getting-started"/>
+    <revision pkgversion="3.30.4" version="0.7" date="2019-01-11" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Raniere Silva</name>
+      <email its:translate="no">raniere@rgaiacs.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en -->
+ </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andre Klapper</mal:name>
+      <mal:email>ak-47@gmx.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009-2013, 2016-2018, 2020-2021</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009-2013, 2015-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Gabor Karsay</mal:name>
+      <mal:email>gabor.karsay@gmx.at</mal:email>
+      <mal:years>2011-2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Tim Sabsch</mal:name>
+      <mal:email>tim@sabsch.com</mal:email>
+      <mal:years>2018, 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jürgen Benvenuti</mal:name>
+      <mal:email>gastornis@posteo.org</mal:email>
+      <mal:years>2022-2024</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Tastenkombinationen</title>
+
+<p>Hier finden Sie einen Überblick über Tastenkombinationen, mit deren Hilfe Sie mit <app>Evolution</app> effizienter arbeiten können.</p>
+
+<note style="tip">
+<p>Zusätzlich zu den unten aufgeführten Tastenkürzeln können Sie auch Mnemonics verwenden, um mit der Tastatur zu navigieren.</p> 
+<p>Halten Sie die <key>Alt</key>-Taste gedrückt, damit sich <em>Mnemonics</em> zeigen: Unterstrichene Buchstaben in Menüeinträgen, Knöpfen und anderen Kontrollelementen. Drücken Sie <key>Alt</key> und den unterstrichenen Buchstaben, um den dazugehörigen Befehl zu aktivieren.</p>
+</note>
+
+
+<section id="global">
+<title>Global</title>
+<table rules="rows" frame="top bottom">
+  <tr xml:id="global-ctrl-1">
+    <td><p><keyseq><key>Strg</key><key>1</key></keyseq></p></td>
+    <td><p>Nachrichten-Komponente auswählen.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-2">
+    <td><p><keyseq><key>Strg</key><key>2</key></keyseq></p></td>
+    <td><p>Kontakte-Komponente auswählen.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-3">
+    <td><p><keyseq><key>Strg</key><key>3</key></keyseq></p></td>
+    <td><p>Kalender-Komponente auswählen.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-4">
+    <td><p><keyseq><key>Strg</key><key>4</key></keyseq></p></td>
+    <td><p>Aufgaben-Komponente auswählen.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-5">
+    <td><p><keyseq><key>Strg</key><key>5</key></keyseq></p></td>
+    <td><p>Notizen-Komponente auswählen.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-n">
+    <td><p><keyseq><key>Strg</key><key>N</key></keyseq></p></td>
+    <td><p>Einen neuen Eintrag in der aktuellen Komponente anlegen.</p></td>
+  </tr>
+  <tr xml:id="global-f6">
+    <td><p><key>F6</key></p></td>
+    <td><p>Zwischen Teilfenstern wechseln.</p></td>
+  </tr>
+  <tr xml:id="global-shift-ctrl-q">
+    <td><p><keyseq><key>Umschalttaste</key><key>Strg</key><key>Q</key></keyseq></p></td>
+    <td><p>Suchleiste leeren.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-w">
+    <td><p><keyseq><key>Strg</key><key>W</key></keyseq></p></td>
+    <td><p>Fenster schließen.</p></td>
+  </tr>
+  <tr xml:id="global-shift-ctrl-w">
+    <td><p><keyseq><key>Umschalttaste</key><key>Strg</key><key>W</key></keyseq></p></td>
+    <td><p>Ein neues Fenster öffnen.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-q">
+    <td><p><keyseq><key>Strg</key><key>Q</key></keyseq></p></td>
+    <td><p><app>Evolution</app> beenden.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-p">
+    <td><p><keyseq><key>Strg</key><key>P</key></keyseq></p></td>
+    <td><p>Auswahl drucken.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-s">
+    <td><p><keyseq><key>Strg</key><key>S</key></keyseq></p></td>
+    <td><p>Auswahl speichern.</p></td>
+  </tr>
+  <tr xml:id="global-del">
+    <td><p><key>Entfernen</key> oder <key>Rücktaste</key></p></td>
+    <td><p>Auswahl löschen.</p></td>
+  </tr>
+  <tr xml:id="global-shift-ctrl-v">
+    <td><p><keyseq><key>Umschalttaste</key><key>Strg</key><key>V</key></keyseq></p></td>
+    <td><p>Nachrichten oder Kontakte in einen Ordner verschieben.</p></td>
+  </tr>
+  <tr xml:id="global-shift-ctrl-y">
+    <td><p><keyseq><key>Umschalttaste</key><key>Strg</key><key>Y</key></keyseq></p></td>
+    <td><p>Nachrichten oder Kontakte in einen Ordner kopieren.</p></td>
+  </tr>
+</table>
+</section>
+
+<section id="mail">
+<title>E-Mail</title>
+<table rules="rows" frame="top bottom">
+  <tr xml:id="mail-shift-ctrl-m">
+    <td><p><keyseq><key>Umschalttaste</key><key>Strg</key><key>M</key></keyseq></p></td>
+    <td><p>Eine neue E-Mail-Nachricht verfassen.</p></td>
+  </tr>
+  <tr xml:id="mail-f12">
+    <td><p><key>F12</key></p></td>
+    <td><p>Nachrichten senden und abrufen.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-y">
+    <td><p><keyseq><key>Strg</key><key>Y</key></keyseq></p></td>
+    <td><p>Filter auf die Auswahl anwenden.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-o">
+    <td><p><keyseq><key>Strg</key><key>O</key></keyseq> oder <key>Eingabetaste</key></p></td>
+    <td><p>Die Auswahl in einem neuen Fenster öffnen.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-f">
+    <td><p><keyseq><key>Strg</key><key>F</key></keyseq></p></td>
+    <td><p>Auswahl weiterleiten.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-k">
+    <td><p><keyseq><key>Strg</key><key>K</key></keyseq></p></td>
+    <td><p>Die Auswahl als gelesen markieren.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-shift-k">
+    <td><p><keyseq><key>Strg</key><key>Umschalttaste</key><key>K</key></keyseq></p></td>
+    <td><p>Die Auswahl als ungelesen markieren.</p></td>
+  </tr>
+  <tr xml:id="mail-arrow-down">
+    <td><p><key>↓</key></p></td>
+    <td><p>Zur nächsten Nachricht wechseln.</p></td>
+  </tr>
+  <tr xml:id="mail-arrow-up">
+    <td><p><key>↑</key></p></td>
+    <td><p>Zur vorherigen Nachricht wechseln.</p></td>
+  </tr>
+  <tr xml:id="mail-dot">
+    <td><p><key>.</key> oder <key>]</key></p></td>
+    <td><p>Zur nächsten ungelesenen Nachricht wechseln.</p></td>
+  </tr>
+  <tr xml:id="mail-comma">
+    <td><p><key>,</key> oder <key>[</key></p></td>
+    <td><p>Zur vorhergehenden ungelesenen Nachricht wechseln.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-r">
+    <td><p><keyseq><key>Strg</key><key>R</key></keyseq></p></td>
+    <td><p>Antwort an Absender.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-l">
+    <td><p><keyseq><key>Strg</key><key>L</key></keyseq></p></td>
+    <td><p>Antwort an Liste.</p></td>
+  </tr>
+  <tr xml:id="mail-shift-ctrl-r">
+    <td><p><keyseq><key>Umschalttaste</key><key>Strg</key><key>R</key></keyseq></p></td>
+    <td><p>Antwort an alle Empfänger senden.</p></td>
+  </tr>
+  <tr xml:id="mail-backspace">
+    <td><p><key>Rücktaste</key></p></td>
+    <td><p>Hinauf rollen.</p></td>
+  </tr>
+  <tr xml:id="mail-space">
+    <td><p><key>Leertaste</key></p></td>
+    <td><p>Hinunter rollen.</p></td>
+  </tr>
+</table>
+
+<p>Die <key>Leertaste</key> und <key>Rücktaste</key> ermöglichen auch das Navigieren in ungelesenen Nachrichten über Ordnergrenzen hinweg:</p>
+<list>
+<item><p>Wenn Sie die Leertaste das erste Mal drücken, so wird die nächste ungelesene Nachricht angezeigt.</p></item>
+<item><p>Falls die Nachricht länger als eine Bildschirmlänge ist, so arbeitet die <key>Leertaste</key> wie die Taste <key>Bild ↓</key>.</p></item>
+<item><p>Wenn die <key>Leertaste</key> am Ende der Nachricht gedrückt wird, so wird die nächste ungelesene Nachricht angezeigt.</p></item>
+<item><p>Falls keine weiteren ungelesenen Nachrichten im Postfach vorhanden sind, so wird durch das Drücken der <key>Leertaste</key> die erste ungelesene Nachricht im nächsten Ordner angezeigt.</p></item>
+<item><p>Falls Sie neue Nachrichten in mehreren Ordnern erhalten haben, so ermöglicht die <key>Leertaste</key> das Springen zu den Ordnern. Es ist hiermit nicht mehr nötig, erst den nächsten Ordner auszuwählen.</p></item>
+<item><p>Die <key>Rücktaste</key> verhält sich genauso, nur umgekehrt: Sie blättert innerhalb einer Nachricht nach oben und kann zur nächsten ungelesenen Nachricht im vorherigen Ordner springen.</p></item>
+</list>
+</section>
+
+<section id="calendar">
+<title>Kalender</title>
+<table rules="rows" frame="top bottom">
+  <tr xml:id="calendar-shift-ctrl-a">
+    <td><p><keyseq><key>Umschalttaste</key><key>Strg</key><key>A</key></keyseq></p></td>
+    <td><p>Einen neuen Termin anlegen.</p></td>
+  </tr>
+  <tr xml:id="calendar-shift-ctrl-e">
+    <td><p><keyseq><key>Umschalttaste</key><key>Strg</key><key>E</key></keyseq></p></td>
+    <td><p>Eine neue Besprechung anlegen.</p></td>
+  </tr>
+  <tr xml:id="calendar-shift-ctrl-t">
+    <td><p><keyseq><key>Umschalttaste</key><key>Strg</key><key>T</key></keyseq></p></td>
+    <td><p>Eine neue Aufgabe anlegen.</p></td>
+  </tr>
+  <tr xml:id="calendar-shift-ctrl-o">
+    <td><p><keyseq><key>Umschalttaste</key><key>Strg</key><key>O</key></keyseq></p></td>
+    <td><p>Eine neue Notiz anlegen.</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-t">
+    <td><p><keyseq><key>Strg</key><key>T</key></keyseq></p></td>
+    <td><p>Zum heutigen Tag wechseln.</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-g">
+    <td><p><keyseq><key>Strg</key><key>G</key></keyseq></p></td>
+    <td><p>Zu Datum wechseln.</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-y">
+    <td><p><keyseq><key>Strg</key><key>Y</key></keyseq></p></td>
+    <td><p>Tagesansicht</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-j">
+    <td><p><keyseq><key>Strg</key><key>J</key></keyseq></p></td>
+    <td><p>Arbeitswochenansicht</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-k">
+    <td><p><keyseq><key>Strg</key><key>K</key></keyseq></p></td>
+    <td><p>Wochenansicht</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-m">
+    <td><p><keyseq><key>Strg</key><key>M</key></keyseq></p></td>
+    <td><p>Monatsansicht</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-l">
+    <td><p><keyseq><key>Strg</key><key>L</key></keyseq></p></td>
+    <td><p>Listenansicht</p></td>
+  </tr>
+</table>
+</section>
+
+<section id="contacts">
+<title>Kontakte</title>
+<table rules="rows" frame="top bottom">
+  <tr xml:id="contacts-shift-ctrl-c">
+    <td><p><keyseq><key>Umschalttaste</key><key>Strg</key><key>C</key></keyseq></p></td>
+    <td><p>Eine Kontaktliste erstellen.</p></td>
+  </tr>
+  <tr xml:id="contacts-shift-ctrl-l">
+    <td><p><keyseq><key>Umschalttaste</key><key>Strg</key><key>L</key></keyseq></p></td>
+    <td><p>Eine Kontaktliste erstellen.</p></td>
+  </tr>
+</table>
+</section>
+
+<section id="change-keyboard-shortcuts">
+<title>Tastenkombinationen ändern</title>
+<note style="advanced"><p>Keyboard shortcuts can be changed in <guiseq><gui>View</gui><gui>Layout</gui><gui>Customize…</gui></guiseq>. See the <link xref="customize-ui-items">Customizing user interface</link> section for more information.</p></note>
+</section>
+
+</page>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-search-folders" xml:lang="cs">
+
+  <info>
+    <desc>Jak použít vyhledávací složky k zobrazení zpráv v jedné složce, zatímco fyzicky zůstanou ve svých původních složkách.</desc>
+
+    <link type="guide" xref="mail-organizing#advanced"/>
+
+    <revision pkgversion="3.25.90" version="0.5" date="2017-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-organize-vfolders.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+  </info>
+
+  <title>Používaní vyhledávacích složek</title>
+  
+<p>Pokud neshledáte <link xref="mail-filters">filtry</link> dostatečně pružnými, nebo zjistíte, že provádíte to samé <link xref="mail-searching">hledání</link> znovu a znovu, zvažte použití vyhledávací složky.</p>
+
+<p>Vyhledávací složka vypadá jako <link xref="mail-folders">složka</link>, chová se jako <link xref="mail-searching">vyhledávání</link> a můžete ji nastavit jako <link xref="mail-filters">filtr</link>. Zatímco obyčejná složka skutečně obsahuje zprávy, vyhledávací složka je zobrazení zpráv, které mohou být v několika různých složkách. Zprávy, které obsahuje, jsou za běhu vybírány podle kritérií, které nastavíte při vytváření složky.</p>
+
+<p><gui>Vyhledávací složky</gui> jsou zobrazené ve spodní části <link xref="intro-main-window#e-mail">seznamu poštovních složek</link>.</p>
+
+<note style="tip"><p>Jestliže nemáte vyhledávací složky doposud použité, povolte je v <guiseq><gui>Upravit</gui> <gui>Předvolby</gui> <gui>Poštovní účty</gui> <gui style="button">Vyhledávací složky</gui></guiseq>.</p></note>
+
+<p><app>Evolution</app> automaticky aktualizuje obsah vyhledávacích složek, kdykoliv dorazí nová zpráva, nebo je zpráva smazána. Vyhledávací složku můžete aktualizovat také ručně tak, že se přepnete do jiné složky a zase zpátky, nebo kliknete pravým tlačítkem na vyhledávací složku a zvolíte <gui>Aktualizovat</gui>.</p>
+
+<p>Vyhledávací složka <gui>Nepřiřazené</gui> je opakem ostatních vyhledávacích složek: zobrazuje všechny zprávy, které se neobjevují v ostatních vyhledávacích složkách. </p>
+
+<p>Používáte-li vzdálené úložiště e-mailů jako IMAP a vytvořili jste si vyhledávací složky, aby ho prohledávaly, bude vyhledávací složka <gui>Nepřiřazené</gui> prohledávat také vzdálené složky. Pokud jste nevytvořili žádnou vyhledávací složku, která prohledává vzdálená úložiště, vyhledávací složka <gui>Nepřiřazené</gui> je nebude prohledávat také.</p>
+
+<note style="tip"><p>Pokud potřebujete znát, ve které fyzické složce se zpráva zobrazená ve vyhledávací složce nachází, do seznamu zpráv <link xref="mail-change-columns-in-message-list">přidejte sloupec <gui>Umístění</gui></link>.</p></note>
+
+</page>

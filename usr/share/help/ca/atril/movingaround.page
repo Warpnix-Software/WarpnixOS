@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="movingaround" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#reading"/>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email its:translate="no">philbull@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Anna Philips</name>
+      <email its:translate="no">anna.cs.au@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal-unported.xml"/>
+
+    <desc>Navegació, desplaçament i zoom.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Carles Ferrando Garcia</mal:name>
+      <mal:email>carles.ferrando@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert Antoni Buj Gelonch</mal:name>
+      <mal:email>rbuj@fedoraproject.org</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Movent-se pel document</title>
+
+  <p>Us podeu moure per les pàgines d'un document per qualsevol dels mètodes següents:</p>
+
+  <list>
+    <item>
+      <p>Desplaçament amunt i avall amb la rodeta del ratolí. Si us voleu moure per la pàgina amb el simple moviment del ratolí:</p>
+      <steps>
+        <item>
+          <p>Feu clic dret a la pàgina i seleccioneu <gui>Desplaça automàticament</gui>.</p>
+        </item>
+        <item>
+          <p>Moveu el punter del ratolí cap a la part inferior de la finestra i us desplaçareu document avall; el desplaçament serà més ràpid com més avall us situeu.</p>
+        </item>
+        <item>
+          <p>Per atura l'autodesplaçament, feu clic a qualsevol lloc del document.</p>
+        </item>
+      </steps>
+    </item>
+    <item>
+      <p>Utilitzant la barra de desplaçament de la finestra del document.</p>
+    </item>
+    <item>
+      <p>Utilitzant les tecles amb les fletxes amunt i avall del vostre teclat.</p>
+    </item>
+    <item>
+      <p>Arrossegant la pàgina amb el ratolí, com si l'estiguéssiu agafant. Per fer això:</p>
+      <list>
+        <item>
+          <p>Moveu el punter del ratolí sobre la pàgina i premeu el botó central del ratolí per arrossegar-la.</p>
+        </item>
+        <item>
+          <p>Si el vostre ratolí no té botó central, premeu a la vegada el botó esquerre i el dret, i arrossegueu.</p>
+        </item>
+      </list>
+    </item>
+  </list>
+
+<section id="between-pages">
+  <title>Passant les pàgines</title>
+
+  <p>Us podeu desplaçar entre pàgines del document mitjançant algun dels mètodes següents:</p>
+
+  <list>
+    <item>
+      <p>Premeu les tecles <keyseq><key>Ctrl</key><key>Retrocedir Pàgina</key></keyseq> o <keyseq><key>Ctrl</key><key>Avançar Pàgina</key></keyseq> al vostre teclat.</p>
+    </item>
+    <item>
+      <p>Per anar a una pàgina específica:</p>
+      <list>
+        <item>
+          <p>Teclegeu un número de pàgina a <gui style="input">Selecciona la pàgina</gui> i premeu <key>Enter</key>.</p>
+        </item>
+        <item>
+          <p>Si voleu anar a l'inici o al final del document:</p>
+          <list>
+            <item>
+              <p>Premeu <keyseq><key>Ctrl</key><key>Inici</key></keyseq> al vostre teclat.</p>
+            </item>
+            <item>
+              <p>Premeu <keyseq><key>Ctrl</key><key>Fi</key></keyseq> al vostre teclat.</p>
+            </item>
+          </list>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Per desplaçar-vos deu pàgines cada vegada, premeu <keyseq><key>Shift</key><key>Retrocedir Pàgina</key></keyseq> o <keyseq><key>Shift</key><key>Avançar Pàgina</key></keyseq>.</p>
+      <note style="tip">
+        <p>Per defecte, només us podeu desplaçar per dins una pàgina cada vegada. Si us voleu moure entre pàgines amb la rodeta del ratolí o arrossegant, aneu al menú <gui style="menuitem">Vista</gui> i seleccioneu <gui style="menuitem">Continu</gui>.</p>
+      </note>
+    </item>
+  </list>
+
+</section>
+
+<section id="navigating">
+  <title>Navegant amb una llista de pàgines o taula de continguts</title>
+
+  <p>Quan obriu un fitxer, hauríeu de tenir un plafó lateral a l'esquerra de la finestra. Si no el veieu, aneu a <guiseq><gui style="menuitem">Vista</gui> <gui style="menuitem">Plafó lateral</gui></guiseq> o premeu F9 al vostre teclat.</p>
+
+  <p>El plafó lateral mostra una vista prèvia de totes les pàgines del document.</p>
+
+  <p>Us podeu desplaçar entre pàgines clicant-les al plafó lateral.</p>
+
+  <note>
+    <p>Alguns documents tenen un índex o taula de continguts, que podeu mostrar al plafó lateral. Desplegueu la caixa combinada <gui>Miniatures</gui>, a la part superior del plafó lateral, i seleccioneu <gui>Índex</gui> per veure'l.</p>
+    <note style="tip">
+      <p>La majoria de documents no utilitzen aquesta característica, i no podreu veure el seu índex al plafó lateral.</p>
+    </note>
+  </note>
+
+</section>
+
+<section id="zoom">
+  <title>Augmentant i disminuint el zoom</title>
+
+  <p>Per ajustar el nivell de zoom:</p>
+
+  <list>
+    <item>
+      <p>Seleccioneu el nivell de zoom desitjat a la caixa combinada de la barra d'eines.</p>
+    </item>
+    <item>
+      <p>Alternativament, useu les dreceres de teclat <keyseq><key>Ctrl</key><key>+</key></keyseq> per augmentar el zoom, o <keyseq><key>Ctrl</key><key>-</key></keyseq> per disminuir-lo.</p>
+    </item>
+    <item>
+      <p>Com alternativa, premeu la tecla <key>Ctrl</key> i moveu la rodeta del ratolí per ajustar el zoom.</p>
+    </item>
+  </list>
+
+  <note>
+    <p>L'opció <gui>Ajusta a la pàgina</gui> farà que una pàgina del document s'ajusti a l'<em>alçada</em> de la finestra.</p>
+    <p>L'opció <gui>Encaixa a l'amplada</gui> farà que una pàgina del document s'ajusti a l'<em>amplada</em> de la finestra.</p>
+    <p>Si voleu veure dues pàgines a la vegada, una al costat de l'altra, aneu a <guiseq><gui style="menuitem">Vista</gui><gui style="menuitem"> Dual</gui></guiseq> i premeu <gui style="menuitem">Dual</gui>.</p>
+    <p>Si el paràmetre gsetting allow-links-change-zoom té valor fals, els enllaços no poden canviar el vostre nivell de zoom.</p>
+  </note>
+
+  <p>Podeu usar la pantalla sencera per visualitzar el document:</p>
+
+  <list>
+    <item>
+      <p>Premeu <key>F11</key>.</p>
+    </item>
+    <item>
+      <p>Per abandonar el mode de pantalla sencera:</p>
+      <p>Premeu <key>F11</key> o <key>Escape</key></p>
+    </item>
+  </list>
+</section>
+
+</page>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="annotations-delete" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#annotations"/>
+    <link type="seealso" xref="annotations-save"/>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Дэвид Кинг</name>
+      <email its:translate="no">davidk@mate.org</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal-unported.xml"/>
+
+    <desc>Удалить аннотацию из PDF-документа</desc>
+  </info>
+
+  <title>Удаление аннотаций</title>
+
+  <p>Примечание - это заметка или комментарий, добавленный в документ PDF. Вы можете удалить примечания, добавленные вами или другими людьми.</p>
+
+  <steps>
+    <item>
+      <p>Просмотр страницы, на которой есть примечание. Если вы не уверены, на каких страницах есть примечания, найдите их в <link xref="annotations-navigate">боковой панели примесаний</link>.</p>
+    </item>
+    <item>
+      <p>Щелкните правой кнопкой мыши значок примечания в документе и выберите <gui style="menuitem">Удалить примечание</gui>.</p>
+    </item>
+    <item>
+      <p>Сохраните изменения в документе, кликнув <gui style="menuitem">"Файл"</gui>, далее <gui style="menuitem">"Сохранить как"</gui></p>
+    </item>
+  </steps>
+
+</page>

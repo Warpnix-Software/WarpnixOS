@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="variable" xml:lang="sr">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>Променљиве</title>
+    
+    <p>Да доделите вредност променљивој користите симбол = или изаберите променљиву којој ћете доделити вредност дугметом „<gui>x</gui>“ у <link xref="mouse">напредном режиму</link>. Назив променљиве мора да садржи само велика или мала слова.</p>
+    <example>
+    <p>x=5</p>
+    <p>вредност=82</p>
+    </example>
+    <p>Променљиве се могу користити у свакој једначини и бивају замењене додељеном вредношћу. Променљиве се могу уписати коришћењем дугмета „<gui>x</gui>“.</p>
+    <example>
+    <p>6x+3</p>
+    <p>xy−3x+7y−21</p>
+    </example>
+    <p>Следеће променљиве су увек дефинисане.</p>
+    <table>
+    <tr>
+    <td><p>ans</p></td>
+    <td><p>Резултат претходног прорачуна</p></td>
+    </tr>
+    <tr>
+    <td><p>e</p></td>
+    <td><p><link xref="logarithm">Ојлеров број</link></p></td>
+    </tr>
+    <tr>
+    <td><p>π</p></td>
+    <td><p><link xref="trigonometry">Пи</link></p></td>
+    </tr>
+    <tr>
+    <td><p>rand</p></td>
+    <td><p>Насумична вредност у опсегу [0,1] (мења се при сваком читању)</p></td>
+    </tr>
+    </table>
+</page>

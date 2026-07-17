@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="basics" xml:lang="gl">
+  <info>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+    <link type="guide" xref="index#play"/>
+    <credit type="author copyright">
+      <name>Chris Beiser</name>
+      <email>ctbeiser@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Fran Diéguez</mal:name>
+      <mal:email>frandieguez@gnome.org</mal:email>
+      <mal:years>2012-2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Conceptos básicos</title>
+<p>Pode xogar a Sudoku usando o teclado, o rato ou calquera combinación de dous.</p>
+
+<section id="keyboard">
+<title>Usando o rato</title>
+<list>
+  <item><p>Para seleccionar un cadrado, use as teclas de frechas para mover o bordo azul até ela.</p></item>
+  <item><p>Para poñer un número nun cadrado, seleccione o cadrado e prema no número.</p></item>
+  <item><p>Para quitar un número dun cadrado, seleccióneo e prema a tecla <key>Supr</key>, a tecla <key>Retroceso</key> ou a tecla <key>0</key></p></item>
+</list>
+</section>
+
+
+<section id="mouse">
+<title>Usando o rato</title>
+<list>
+	<item><p>Para seleccionar un cadrado, prema sobre el co rato.</p></item>
+	<item><p>Para poñer un número nun cadrado seleccionado, prema no centro do cadrado e prema no número que quere introducir.</p></item>
+	<item><p>Para quitar un número dunha cela seleccionada, prema no centro da celda e seleccione <gui>Limpar</gui>.</p></item>
+</list>
+</section>
+</page>

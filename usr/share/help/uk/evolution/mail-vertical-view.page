@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-vertical-view" xml:lang="uk">
+
+  <info>
+    <desc>Налаштовування панелі перегляду пошти на роботу із широкоекранними дисплеями.</desc>
+    <link type="guide" xref="mail-layout-changing"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+   <credit type="author">
+     <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en#b131ni8g -->
+   </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Вертикальний вигляд</title>
+
+<p>Окрім класичного режиму перегляду, в <app>Evolution</app> передбачено вертикальний режим перегляду. У вертикальному режимі панель попереднього перегляду повідомлень буде розташовано праворуч від списку повідомлень, а у звичайному режимі цю панель розташовано під списком повідомлень. У вертикальному режимі програма використовує додаткову ширину зображення на широкоформатних моніторах.</p>
+
+<p>Щоб перемкнутися у вертикальний режим, скористайтеся пунктом меню <guiseq><gui>Перегляд</gui><gui>Попередній перегляд</gui><gui>Вертикальний вигляд</gui></guiseq>.</p>
+
+<p>У вертикальному режимі список повідомлень містить подвійні рядки стиснених заголовків, що надає змогу скористатися додатковою шириною у стовпчику попереднього перегляду. У стиснених стовпчиках міститимуться дані щодо імені відправника і адреси електронної пошти; піктограму долучень, дату і тему буде показано у другому рядку.</p>
+
+<p>Щоб повернутися до класичного режиму перегляду, скористайтеся пунктом меню <guiseq><gui>Перегляд</gui><gui>Попередній перегляд</gui><gui>Класичний вигляд</gui></guiseq>.</p>
+
+</page>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="addremove-sources" xml:lang="pl">
+
+  <info>
+    <credit type="author">
+      <name>Zespół dokumentacji Ubuntu</name>
+    </credit>
+    <desc>Dodawanie repozytoriów, aby rozszerzyć źródła oprogramowania wykorzystywane przez Ubuntu do instalacji i aktualizacji.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove"/>
+    <revision version="20.10" date="2020-09-13" status="review"/>
+  </info>
+
+  <title>Dodawanie repozytoriów oprogramowania</title>
+
+  <p>Dostępne jest oprogramowanie ze źródeł dostarczanych przez stronę trzecią, a także z domyślnych repozytoriów Ubuntu. Aby zainstalować oprogramowanie ze źródła dostarczanego przez stronę trzecią, należy dodać je do listy dostępnych repozytoriów.</p>
+
+  <note style="warning">
+    <p>Dodawaj repozytoria oprogramowania tylko z zaufanych źródeł!</p>
+    <p>Repozytoria oprogramowania stron trzecich nie są sprawdzane pod kątem bezpieczeństwa i jakości przez programistów Ubuntu, więc mogą zawierać oprogramowanie szkodliwe dla komputera.</p>
+  </note>
+
+<p>
+</p>
+   <p>Aby dodać repozytorium:</p>
+
+  <steps>
+    <item>
+      <p>Otwórz <app>Oprogramowanie i aktualizacje</app> za pomocą paska wyszukiwania na <em>ekranie podglądu</em>.</p>
+    </item>
+    <item>
+      <p>Przejdź do karty <gui>Inne oprogramowanie</gui>.</p>
+    </item>
+    <item>
+      <p>Kliknij przycisk <gui>Dodaj</gui> i wpisz wiersz APT dla repozytorium. Powinien być dostępny na stronie internetowej repozytorium i wyglądać podobnie do tego:</p>
+      <p>
+        <code its:translate="no">deb http://archive.ubuntu.com/ubuntu/ resolute main</code>
+      </p>
+    </item>
+    <item>
+      <p>Kliknij przycisk <gui>Dodaj źródło</gui>. Wpisz hasło w oknie uwierzytelnienia.</p>
+    </item>
+    <item>
+      <p>Zamknij okno <app>Oprogramowanie i aktualizacje</app>. <app>Centrum programów</app> wyszuka nowe oprogramowanie w źródłach.</p>
+    </item>
+    <item>
+      <p>Większość repozytoriów zawiera klucz do weryfikacji pobieranych pakietów. Oprócz powyższych kroków zalecane jest skorzystanie z instrukcji pobierania i instalowania klucza do podpisywania (klucz GPG).</p>
+    </item>
+  </steps>
+
+</page>

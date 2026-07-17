@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="high-scores" xml:lang="uk">
+  <info>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.5.5" version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.2" date="2018-09-01" status="review"/>
+    <revision pkgversion="3.31.91" version="0.3" date="2019-03-03" status="review"/>
+    <link type="guide" xref="index#tips"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2012</years>
+    </credit>
+    <credit type="author copyright editor">
+      <name>Єкатерина Герасимова (Ekaterina Gerasimova)</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Найкращі результати</title>
+
+  <p>У списку найкращих результатів буде показано десять найшвидших часів, протягом яких було розміновано поле кожного з типів.</p>
+
+  <p>Щоб переглянути найкращі результати, натисніть кнопку меню у верхньому правому куті вікна програми і виберіть пункт <gui style="menuitem">Результати</gui>. У показаному діалоговому вікні типово буде вибрано розмір поля <gui>Малий</gui>. Щоб вибрати інші варіанти розмірів, скористайтеся спадним меню у верхній частині діалогового вікна.</p>
+
+</page>

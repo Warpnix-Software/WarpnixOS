@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-usage-add-appointment" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="calendar-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.2" date="2011-08-01" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Menambahkan janji.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Menambahkan Janji</title>
+
+  <steps>
+    <item>
+      <p>Klik <guiseq><gui>Berkas</gui><gui>Baru</gui><gui>Janji</gui></guiseq>, atau klik ganda di ruang kosong di kalender untuk membuka dialog Janji. Waktu tertentu pada tampilan kalender yang telah Anda klik ganda akan disarankan untuk janji baru. Anda juga dapat langsung menulis di kalender lalu menyesuaikan durasi dengan menyeretnya dengan tetikus.</p>
+    </item>
+    <item>
+      <p>Jika Anda menggunakan dialog Janji:</p>
+    </item>
+    <item>
+      <p>Pilih kalender di daftar tarik-turun <gui>Kalender</gui>.</p>
+    </item>
+    <item>
+      <p>Masukkan ringkasan singkat di bidang <gui>Ringkasan</gui>.</p>
+    </item>
+    <item>
+      <p>(Opsional) Ketik lokasi di bidang <gui>Lokasi</gui>.</p>
+    </item>
+    <item>
+      <p>Untuk memilih acara ini sebagai acara sepanjang hari, klik <guiseq><gui>Opsi</gui><gui>Acara Sepanjang Hari</gui></guiseq>, atau klik tombol <gui>Acara Sepanjang Hari</gui> pada bilah alat.</p>
+    </item>
+    <item>
+      <p>Pilih tanggal dan waktu.</p>
+    </item>
+    <item>
+      <p>(Opsional) Masukkan deskripsi di bidang <gui>Deskripsi</gui>.</p>
+    </item>
+    <item>
+      <p>Untuk memperlihatkan waktu sebagai <link xref="calendar-free-busy">sibuk</link> bagi orang lain, klik <guiseq><gui>Opsi </gui> <gui>Perlihatkan Waktu sebagai Sibuk</gui></guiseq>.</p>
+    </item>
+  </steps>
+
+  <p>Anda juga dapat menentukan <link xref="calendar-timezones">zona waktu</link>, <link xref="using-categories">kategori</link>, <link xref="calendar-alarms-and-reminders">pengingat</link>, <link xref="calendar-recurrence">pengulangan</link>, atau <link xref="calendar-classifications">klasifikasi</link> untuk acara tersebut, atau menambahkan lampiran.</p>
+
+</page>

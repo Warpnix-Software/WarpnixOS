@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="community-support" xml:lang="hu">
+
+  <info>
+    <link type="guide" xref="more-help"/>
+    <desc>Segítségkérés a közösségtől</desc>
+
+    <revision version="19.10" date="2019-05-11" status="review"/>
+
+    <credit type="author">
+      <name>Ubuntu dokumentációs csapat</name>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+  <title>Közösségi támogatás</title>
+
+  <p>Többféle forrásból kaphat támogatást, amelyeket a <link href="https://www.ubuntu.com/support/community-support">közösségi támogatásnál</link> említünk és hivatkozunk.</p>
+
+  <p>A <link href="https://help.ubuntu.com">help.ubuntu.com</link> minden oldala rendelkezik keresési funkcióval a jobb felső sarokban. Lehetővé teszi, hogy egyéni Google-keresést végezzen az Ubuntu dokumentációban és a webes támogatási erőforrásokban, így könnyebben megtudja, hogy a kérdésére már válaszoltak-e.</p>
+
+  <p>A saját nyelven nyújtott támogatást a <link href="http://loco.ubuntu.com/teams/">helyi közösségi csapat</link> biztosíthatja.</p>
+
+</page>

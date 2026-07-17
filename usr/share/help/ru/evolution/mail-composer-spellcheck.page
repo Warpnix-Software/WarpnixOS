@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:e="http://projectmallard.org/experimental/" xmlns:if="http://projectmallard.org/if/1.0/" type="topic" id="mail-composer-spellcheck" xml:lang="ru">
+
+  <info>
+    <desc>Проверка орфографии в редакторе.</desc>
+    
+    <link type="guide" xref="index#mail-composing"/>
+
+    <revision pkgversion="3.20.5" version="0.7" date="2016-11-21" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Проверка орфографии</title>
+
+<!-- Instructions are only valid from Evolution 2.24 on -->
+
+<section id="required-packages">
+<title>Предварительные требования</title>
+<p>Чтобы использовать функцию проверки орфографии в составляемых письмах, сначала необходимо установить пакет <sys>hunspell</sys> для используемого языка и пакет <sys>enchant</sys> с помощью средства управления программами вашего дистрибутива.</p>
+
+<note style="info package">
+  <p>Для выполнения этих действий может потребоваться установка пакетов <sys>hunspell</sys> и/или <sys>enchant</sys>.</p>
+  <if:choose>
+    <if:when test="action:install">
+      <p><link action="install:hunspell" href="http://hunspell.sourceforge.net/" style="button">Установить hunspell</link></p>
+      <p><link action="install:enchant" href="http://www.abisource.com/projects/enchant/" style="button">Установить enchant</link></p>
+    </if:when>
+  </if:choose>
+</note>
+</section>
+
+<section id="global-preferences">
+<title>Общие параметры</title>
+
+<p>В разделе настройки <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Настройки редактора</gui><gui>Проверка орфографии</gui><gui>Параметры</gui></guiseq> можно указать, следует ли проверять орфографию по мере ввода текста.</p>
+
+<p>Также можно указать, какие из установленных словарей следует использовать для проверки орфографии: перейдите в раздел настройки <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Настройки редактора</gui><gui>Проверка орфографии</gui><gui>Языки</gui></guiseq> или выберите пункт меню <guiseq><gui>Правка</gui><gui>Текущие языки</gui></guiseq> в окне редактора сообщений.</p>
+</section>
+
+<section id="composer">
+<title>Проверка орфографии вручную в окне редактора сообщений</title>
+<p>Если параметр <gui>Проверять орфографию в процессе ввода текста</gui> не включён в разделе <link xref="#global-preferences">Настройки редактора</link>, в окне редактора можно запустить проверку орфографии путём выбора пункта меню <guiseq><gui>Правка</gui><gui>Проверить правописание……</gui></guiseq> или нажатия клавиши <key>F7</key>.</p>
+</section>
+
+</page>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-search-folders" xml:lang="ca">
+
+  <info>
+    <desc>Utilitzeu les carpetes de cerca per a veure els missatges d'una carpeta mentre encara els manté a les carpetes originals.</desc>
+
+    <link type="guide" xref="mail-organizing#advanced"/>
+
+    <revision pkgversion="3.25.90" version="0.5" date="2017-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-organize-vfolders.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Ús de les carpetes de cerca</title>
+  
+<p>Si els <link xref="mail-filters">filtres</link> no són prou flexibles, o esteu fent la mateixa <link xref="mail-searching">cerca</link> una vegada i una altra, considereu utilitzar una carpeta de cerca.</p>
+
+<p>Una carpeta de cerca es mostra com a una <link xref="mail-folders">carpeta</link>, que actua com a <link xref="mail-searching">cerca</link>, i la configureu com a <link xref="mail-filters">filtre</link>. Tot i que una carpeta convencional actualment conté els missatges, una carpeta de cerca és una vista de missatges que poden estar en diverses carpetes. Els missatges que conté es determinen al vol utilitzant el conjunt de criteris que heu escollit en configurar la carpeta de cerca.</p>
+
+<p>Les <gui>carpetes de cerca</gui> es mostren a la part inferior de la <link xref="intro-main-window#e-mail">llista de carpetes de correu</link>.</p>
+
+<note style="tip"><p>Si no heu utilitzat carpetes de cerca abans, activeu <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Comptes de correu</gui><gui>Carpetes de cerca</gui></guiseq>.</p></note>
+
+<p><app>Evolution</app> actualitza automàticament el contingut de la carpeta de cerca quan es reben missatges nous o se n'eliminen. També podeu actualitzar manualment la carpeta de cerca, ja sigui canviant a una altra carpeta i després tornant-hi de nou, o fent-hi clic amb el botó dret i seleccionant <gui>Refresca</gui>.</p>
+
+<p>La carpeta de cerca <gui>sense coincidència</gui> és el contrari d'altres carpetes de cerca: mostra tots els missatges que no apareixen en altres carpetes de cerca.</p>
+
+<p>Si utilitzeu un emmagatzematge remot de correu electrònic com IMAP, i heu creat carpetes de cerca, la carpeta de cerca <gui>sense coincidència</gui> també cerca les carpetes remotes. Si no creeu cap carpeta de cerca que cerqui a les carpetes de correu remot, la carpeta de cerca <gui>sense coincidència</gui> tampoc hi cerca.</p>
+
+<note style="tip"><p>Si necessiteu localitzar a quina carpeta física es troba en un missatge que es mostra en una carpeta de cerca, <link xref="mail-change-columns-in-message-list"> afegiu la columna <gui>Localització</gui></link> a la llista de missatges.</p></note>
+
+</page>

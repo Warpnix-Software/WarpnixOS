@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="addremove-sources" xml:lang="fa">
+
+  <info>
+    <credit type="author">
+      <name>تیم مستندسازی اوبونتو</name>
+    </credit>
+    <desc>برای گسترش منابع نرم‌افزاری‌ای که اوبونتو برای نصب و به‌روز رسانی‌ها استفاده می‌کند، مخازن را بیفزایید.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove"/>
+    <revision version="20.10" date="2020-09-13" status="review"/>
+  </info>
+
+  <title>افزودن مخازن نرم‌افزاری</title>
+
+  <p>
+    Software is available from third-party sources, as well as from the default 
+    Ubuntu software repositories. If you want to install software from a 
+    third-party software repository, you must add it to Ubuntu's list of 
+    available repositories.
+  </p>
+
+  <note style="warning">
+    <p>مخازن نرم‌افزاری را فقط از منابعی که به آن‌ها اعتماد دارید بیفزایید!</p>
+    <p>
+      Third-party software repositories are not checked for security or 
+      reliability by Ubuntu members, and may contain software which is harmful 
+      to your computer.
+    </p>
+  </note>
+
+<p>
+</p>
+   <p>
+   To add a repository:
+   </p>
+
+  <steps>
+    <item>
+      <p>
+        Open <app>Software &amp; Updates</app> via the <em>Activities</em> search bar.
+      </p>
+    </item>
+    <item>
+      <p>
+        Switch to the <gui>Other Software</gui> tab.
+      </p>
+    </item>
+    <item>
+      <p>
+        Click <gui>Add</gui> and enter the APT line for the repository. This 
+        should be available from the website of the repository, and should look 
+        similar to:
+      </p>
+      <p>
+        <code its:translate="no">deb http://archive.ubuntu.com/ubuntu/ resolute main</code>
+      </p>
+    </item>
+    <item>
+      <p>
+        Click <gui>Add Source</gui>. Enter your password in the Authenticate
+        window.
+      </p>
+    </item>
+    <item>
+      <p>
+        Close the <app>Software &amp; Updates</app> window. <app>App Center</app> will then
+        check your software sources for new software.
+      </p>
+    </item>
+    <item>
+      <p>
+        Most repositories provide a signing key to be able to verify downloaded packages.
+        So in addition to the steps above, you should follow possible instructions on how to
+        download and install the signing key (GPG key).
+      </p>
+    </item>
+  </steps>
+
+</page>

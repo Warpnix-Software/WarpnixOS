@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="task" id="index" xml:lang="uk">
+  <info>
+    <title type="link" role="trail">Судоку GNOME</title>
+    <title type="link">Судоку GNOME</title>
+    <title type="text">Судоку GNOME</title>
+
+    <revision pkgversion="3.4" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.15.2" date="2014-01-08" status="final"/>
+    <revision pkgversion="3.26" date="2017-12-05" status="review"/>
+
+    <credit type="author copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="author copyright">
+      <name>Єкатерина Герасимова (Ekaterina Gerasimova)</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2015</years>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Дізнайтеся про те, як грати у «Судоку GNOME» — логічну гру-головоломку, у якій слід заповнити таблицю відповідними до правил числами.</desc>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title><media type="image" its:translate="no" width="48px" height="48px" src="figures/org.gnome.Sudoku.svg"/> Судоку GNOME</title>
+
+  <p>«Судоку GNOME» — логічна гра у заповнення квадратної таблиці розміром 9×9 відповідними до правил числами. У головоломки можна грати на екрані або <link xref="index#print">друкувати</link>. Якщо у вас недостатньо часу для завершення гри за один сеанс, ви можете будь-коли <link xref="save-resume#resume">відновити</link> гру.</p>
+
+   <section id="play" style="2column">
+    <title>Ігровий процес</title>
+   </section>
+
+   <section id="tips" style="2column">
+    <title>Корисні поради</title>
+   </section>
+
+   <section id="print" style="2column">
+    <title>Друк</title>
+   </section>
+
+   <section id="get-involved" style="2column">
+    <title>Приєднатися до команди</title>
+   </section>
+</page>

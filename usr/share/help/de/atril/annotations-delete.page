@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="annotations-delete" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#annotations"/>
+    <link type="seealso" xref="annotations-save"/>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>David King</name>
+      <email its:translate="no">davidk@mate.org</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal-unported.xml"/>
+
+    <desc>Anmerkungen aus einem PDF-Dokument entfernen.</desc>
+  </info>
+
+  <title>Anmerkungen entfernen</title>
+
+  <p>Eine Anmerkung ist eine Notiz oder ein Kommentar, der zu einem PDF-Dokument hinzugefügt wurde. Du kannst Anmerkungen, die du oder andere Personen hinzugefügt haben, löschen.</p>
+
+  <steps>
+    <item>
+      <p>Schaue dir eine Seite mit Anmerkungen an. Falls du nicht sicher bist, welche Seiten Anmerkungen haben, kannst du diese über die <link xref="annotations-navigate">Anmerkungs-Seitenleiste</link> finden.</p>
+    </item>
+    <item>
+      <p>Klicke mit der rechten Maustaste auf das Anmerkungs-Symbol im Dokument und klicke dann auf <gui style="menuitem">Anmerkung entfernen</gui>.</p>
+    </item>
+    <item>
+      <p>Speichere die Änderungen an einem neuen Dokument, indem zu auf <gui style="menuitem">Datei</gui> und danach auf <gui style="menuitem">Speichern unter...</gui> klickst.</p>
+    </item>
+  </steps>
+
+</page>

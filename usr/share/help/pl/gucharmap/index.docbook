@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appversion "1.3.0">
+<!ENTITY manrevision "2.1">
+<!ENTITY date "February 2004">
+<!ENTITY app "Character Map">
+]>
+<!-- 
+ (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Apr 11, 2002
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="pl"> 
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Podręcznik tablicy znaków</title>
+    <abstract role="description">
+      <para>Tablica znaków Unicode umożliwia wybieranie znaków z tablicy i wstawianie ich do tekstu.</para>
+    </abstract>
+    <copyright><year>2004</year> <holder>Sun Microsystems</holder></copyright>
+    <copyright><year>2003</year> <year>2004</year> <holder>Chee Bin HOH</holder></copyright> 
+
+<!-- translators: uncomment this:
+    <copyright>
+      <year>2002</year>
+      <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+    </copyright>
+-->
+
+    <publisher role="maintainer"> 
+      <publishername>Projekt dokumentacji GNOME</publishername> 
+    </publisher> 
+
+      <legalnotice id="legalnotice">
+	<para lang="en">
+	  Permission is granted to copy, distribute and/or modify this
+	  document under the terms of the GNU Free Documentation
+	  License (GFDL), Version 1.1 or any later version published
+	  by the Free Software Foundation with no Invariant Sections,
+	  no Front-Cover Texts, and no Back-Cover Texts.  You can find
+	  a copy of the GFDL at this <ulink type="help" url="help:fdl">link</ulink> or in the file COPYING-DOCS
+	  distributed with this manual.
+         </para>
+         <para>Ten podręcznik jest częścią kolekcji podręczników użytkownika GNOME rozprowadzanych na zasadach GFDL. Jeśli chcesz rozpowszechniać ten podręcznik w odłączeniu od kolekcji, możesz to zrobić dodając kopię licencji do podręcznika, jak wyjaśniono to w sekcji 6. licencji.</para>
+
+	<para>Nazwy używane przez firmy, by wyróżniać swoje produkty i usługi są zazwyczaj zarejestrowanymi znakami towarowymi. Jeśli występują one w dokumentacji GNOME, w przypadku gdy są znane przez członków Projektu Dokumentacji GNOME, są one napisane wielkimi literami lub zaczynają się od wielkiej litery.</para>
+
+	<para>DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: <orderedlist>
+		<listitem>
+		  <para>DOCUMENT IS PROVIDED ON AN “AS IS” BASIS, WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND</para>
+		</listitem>
+		<listitem>
+		  <para>UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGES.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+   <!-- This file  contains link to license for the documentation (GNU FDL), and 
+        other legal stuff such as "NO WARRANTY" statement. Please do not change 
+	any of this. -->
+
+    <authorgroup> 
+      <author><firstname>Sun</firstname> <surname>Zespół dokumentacji GNOME</surname> <affiliation><orgname>Sun Microsystems</orgname></affiliation></author>
+      <author><firstname>Chee Bin</firstname> <surname>HOH</surname> <affiliation> <orgname>Zespół dokumentacji GNOME</orgname> <address> <email>cbhoh@gnome.org</email> </address> </affiliation></author> 
+
+<!--
+      <author> 
+        <firstname>Documentation</firstname> 
+          <surname>Writer 1</surname> 
+          <affiliation> 
+            <orgname>GNOME Documentation Project</orgname> 
+            <address> <email>doc-writer1@gnome.org</email> </address> 
+          </affiliation> 
+      </author> 
+-->
+      
+<!-- This is appropriate place for other contributors: translators,
+     maintainers,  etc. Commented out by default.
+      <othercredit role="translator">
+        <firstname>Latin</firstname> 
+	<surname>Translator 1</surname> 
+	<affiliation> 
+          <orgname>Latin Translation Team</orgname> 
+          <address> <email>translator@gnome.org</email> </address> 
+	</affiliation>
+	<contrib>Latin translation</contrib>
+      </othercredit>
+-->
+    </authorgroup>
+    <publisher role="maintainer">
+      <publishername>Projekt dokumentacji GNOME</publishername>
+    </publisher>
+
+
+    <revhistory>
+      <revision><revnumber>Podręcznik tablicy znaków 2.1</revnumber> <date>2004-02-26</date> <revdescription> 
+	  <para>Aktualizacja dla GNOME 2.6, wersji programu 1.3.0.</para>
+          <para role="author">Zespół dokumentacji GNOME firmy Sun</para>
+          <para role="publisher">Projekt dokumentacji GNOME</para>
+        </revdescription></revision> 
+      <revision><revnumber>Podręcznik tablicy znaków unikodu 2.0</revnumber> <date>październik 2003</date> <revdescription> 
+          <para role="author">Chee Bin HOH <email>cbhoh@gnome.org</email></para>
+          <para role="publisher">Projekt dokumentacji GNOME</para>
+        </revdescription></revision> 
+    </revhistory> 
+
+    <releaseinfo>Ten podręcznik opisuje wersję 1.3.0 tablicy znaków.</releaseinfo> 
+
+    <legalnotice> 
+      <title>Informacje zwrotne</title> 
+      <para><ulink url="https://gitlab.gnome.org/GNOME/gucharmap/issues/">Serwis zgłaszania błędów GNOME</ulink> zawiera instrukcje, jak zgłosić błąd lub propozycję zmiany Tablicy znaków lub tego podręcznika.</para>
+<!-- Translators may also add here feedback address for translations -->
+    </legalnotice> 
+  
+    <othercredit class="translator">
+      <personname>
+        <firstname>Piotr Drąg</firstname>
+      </personname>
+      <email>piotrdrag@gmail.com</email>
+    </othercredit>
+    <copyright>
+      
+        <year>2017-2020</year>
+      
+      <holder>Piotr Drąg</holder>
+    </copyright>
+  
+    <othercredit class="translator">
+      <personname>
+        <firstname>Aviary.pl</firstname>
+      </personname>
+      <email>community-poland@mozilla.org</email>
+    </othercredit>
+    <copyright>
+      
+        <year>2017-2020</year>
+      
+      <holder>Aviary.pl</holder>
+    </copyright>
+  </articleinfo> 
+
+<!-- ============= Index ===================================== -->
+  <indexterm zone="index"><primary>gucharmap</primary></indexterm> 
+  <indexterm zone="index"><primary>Tablica znaków</primary></indexterm>
+  <indexterm zone="index"><primary>Tablica znaków</primary></indexterm>
+
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+  <sect1 id="gucharmap-introduction"> 
+    <title>Wprowadzenie</title> 
+    <para><application>Tablica znaków</application> umożliwia wstawianie znaków specjalnych do dokumentów i pól tekstowych. Dostarcza ona litery diakrytyzowane, symbole matematyczne, symbole specjalne i znaki przestankowe. Można używać <application>Tablicy znaków</application> do stosowania znaków niedostępnych na klawiaturze.</para>
+    <para><application>Tablica znaków</application> wyświetla wszystkie znaki dostępne we wszystkich pismach na komputerze za pomocą zestawu znaków Unicode. Unicode to standardowy zestaw znaków mający na celu dołączenie wszystkich znaków używanych we wszystkich piśmiennych językach na świecie.</para>
+  </sect1>
+
+<!-- =========== Getting Started ============================== -->
+
+  <sect1 id="gucharmap-getting-started"> 
+    <title>Pierwsze kroki</title> 
+
+    <sect2 id="gucharmap-start">
+      <title>Uruchamianie tablicy znaków</title>
+      <para>Można uruchomić <application>Tablicę znaków</application> na jeden z tych sposobów:</para> 
+      <variablelist>
+        <varlistentry>
+          <term>Menu <guimenu>Programy</guimenu></term>
+          <listitem>
+            <para>Wybierz <menuchoice><guimenu>Akcesoria</guimenu><guimenuitem>Tablica znaków</guimenuitem></menuchoice>.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Wiersz poleceń</term>
+	  <listitem>
+            <para>Wykonaj polecenie: <command>gnome-character-map</command></para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect2>
+
+    <sect2 id="gucharmap-when-start">
+      <title>Po uruchomieniu tablicy znaków</title>
+      <para>Po uruchomieniu <application>Tablicy znaków</application> wyświetlone zostanie poniższe okno.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="gucharmap-window-fig"> 
+        <title>Okno tablicy znaków</title> 
+        <screenshot> 
+          <mediaobject><imageobject> <imagedata fileref="figures/gucharmap_window.png" format="PNG"/> </imageobject> <textobject> <phrase>Okno tablicy znaków.</phrase> </textobject></mediaobject> 
+        </screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <!-- Include any descriptions of the GUI immediately after the screenshot of the main UI, -->
+      <!-- for example, the items on the menubar and on the toolbar. This section is optional. -->
+
+      <para>Okno <application>Tablicy znaków</application> zawiera następujące elementy:</para>
+      <variablelist>
+        <varlistentry>
+          <term>Pasek menu</term>
+          <listitem>
+            <para>Menu na pasku menu zawierają większość poleceń potrzebnych do używania <application>Tablicy znaków</application>.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Pasek narzędziowy</term>
+          <listitem>
+            <para>Pasek narzędziowy zawiera rozwijaną listę czcionek, przyciski stylu czcionki i przycisk powiększania.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Obszar wyświetlania</term>
+          <listitem>
+            <para>Obszar wyświetlania zawiera następujące części:</para>
+            <itemizedlist>
+              <listitem>
+                <para>Lista <guilabel>Pismo</guilabel> lub <guilabel>Blok Unicode</guilabel></para>
+              </listitem>
+              <listitem>
+                <para>Karta <guilabel>Tablicy znaków</guilabel></para>
+              </listitem>
+              <listitem>
+                <para>Karta <guilabel>Informacje o znaku</guilabel></para>
+              </listitem>
+              <listitem>
+                <para>Pole tekstowe <guilabel>Tekst do skopiowania</guilabel></para>
+              </listitem>
+              <listitem>
+                <para>Przycisk <guibutton>Skopiuj</guibutton></para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Pasek stanu</term>
+          <listitem>
+            <para>Pasek stanu wyświetla punkt kodowy i nazwę Unicode wybranego znaku.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect2>
+  </sect1>
+
+<!-- ================ Usage ================================ --> 
+  <sect1 id="gucharmap-usage">
+    <title>Użycie</title> 
+    
+    <sect2 id="gucharmap-change-view">
+      <title>Zmiana listy zestawów znaków</title>
+      <para>Aby wyświetlić zestawy znaków według nazw pism, wybierz <menuchoice><guimenu>Widok</guimenu><guimenuitem>Według pisma</guimenuitem></menuchoice>.</para>
+      <para>Aby wyświetlić zestawy znaków według bloków Unicode, wybierz <menuchoice><guimenu>Widok</guimenu><guimenuitem>Według bloku Unicode</guimenuitem></menuchoice>.</para>
+    </sect2>
+    
+    <sect2 id="gucharmap-create-textstring">
+      <title>Tworzenie tekstu</title>
+      <para>Aby utworzyć tekst w polu <guilabel>Tekst do skopiowania</guilabel>:</para>
+      <orderedlist>
+        <listitem>
+          <para>Wybierz zestaw znaków z listy <guilabel>Pismo</guilabel> lub <guilabel>Blok Unicode</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Wstaw znak na jeden z tych sposobów:</para>
+          <itemizedlist>
+            <listitem>
+              <para>Podwójnie kliknij przycisk znaku w karcie <guilabel>Tablica znaków</guilabel>, aby wstawić go do pola <guilabel>Tekst do skopiowania</guilabel>.</para>
+            </listitem>
+            <listitem>
+              <para>Wybierz przycisk znaku w karcie <guilabel>Tablica znaków</guilabel>, a następnie naciśnij klawisz <keycap>Enter</keycap>, aby wstawić go do pola <guilabel>Tekst do skopiowania</guilabel>.</para>
+            </listitem>
+            <listitem>
+              <para>Wybierz przycisk znaku w karcie <guilabel>Tablica znaków</guilabel>, a następnie kliknij i przeciągnij go do pola <guilabel>Tekst do skopiowania</guilabel>.</para>
+            </listitem>
+            <listitem>
+              <para>Kliknij pole <guilabel>Tekst do skopiowania</guilabel>, aby je uaktywnić. Jeśli tekst już w nim jest, to kliknij tekst w miejscu, w którym go wkleić. Naciśnij klawisz znaku na klawiaturze, aby wstawić ten znak do pola.</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </orderedlist>
+    </sect2>
+
+<!-- =============== To Copy and Paste a Text String ====================== -->
+    <sect2 id="gucharmap-copy-textstring">
+      <title>Kopiowanie i wklejanie tekstu do programu</title>
+      <para>Aby skopiować i wkleić tekst z pola <guilabel>Tekst do skopiowania</guilabel> do programu:</para>
+      <orderedlist>
+        <listitem>
+          <para>Kliknij przycisk <guibutton>Skopiuj</guibutton>. Jeśli tekst w ogóle nie jest zaznaczony lub jest całkowicie zaznaczony, całość tekstu jest kopiowana do schowka. Jeśli część tekstu jest zaznaczona, to tylko ta część jest kopiowana.</para>
+        </listitem>
+        <listitem>
+          <para>Przejdź do programu i wybierz <menuchoice><guimenu>Edycja</guimenu><guimenuitem>Wklej</guimenuitem></menuchoice> lub naciśnij klawisz skrótu <keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo>.</para>
+        </listitem>
+      </orderedlist>
+      <para>Po wklejeniu zawartości pola <guilabel>Tekst do skopiowania</guilabel> do innego programu pojawi się ona w bieżącym zestawie znaków programu.</para>
+      <para>Jeśli tekst zawiera niewidoczne znaki, to można go wklejać tylko do programów obsługujących pełny zestaw znaków.</para>
+    </sect2>
+
+    <sect2 id="usage-find-character">
+      <title>Wyszukiwanie znaku</title>
+      <para>Aby wyszukać znak:</para>
+      <orderedlist>
+        <listitem>
+          <para>Wybierz <menuchoice><guimenu>Wyszukiwanie</guimenu><guimenuitem>Znajdź</guimenuitem></menuchoice> lub naciśnij klawisz skrótu <keycombo><keycap>Ctrl</keycap><keycap>F</keycap></keycombo>. Otworzy się okno <guilabel>Wyszukiwanie</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Wpisz tekst do wyszukania w polu <guilabel>Wyszukiwanie</guilabel>.</para>
+          <itemizedlist>            
+             <listitem><para>Wybierz <guilabel>Dopasowanie całego słowa</guilabel>, aby wyszukać tylko pełne słowa pasujące do wpisanego tekstu.</para></listitem>
+             <listitem><para>Domyślnie wyszukiwane są tylko nazwy znaków. Wybierz <guilabel>Wyszukiwanie w informacjach o znaku</guilabel>, aby wyszukać w pozostałych częściach opisu znaku, takich jak uwagi, odpowiedniki i przybliżone odpowiedniki.</para></listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para>Kliknij przycisk <guibutton>Następny</guibutton>, aby wyszukać pierwsze wystąpienie wpisanego tekstu po obecnie wybranym znaku. <application>Tablica znaków</application> zaznacza wyszukany znak.</para>
+        </listitem>
+        <listitem>
+          <para>Kliknij przycisk <guibutton>Następny</guibutton>, aby wyszukać następny pasujący znak. Można też wybrać <menuchoice><guimenu>Wyszukiwanie</guimenu><guimenuitem>Znajdź następne</guimenuitem></menuchoice> lub nacisnąć klawisz skrótu <keycombo><keycap>Ctrl</keycap><keycap>G</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Kliknij przycisk <guibutton>Poprzedni</guibutton>, aby wyszukać poprzedni pasujący znak. Można też wybrać <menuchoice><guimenu>Wyszukiwanie</guimenu><guimenuitem>Znajdź poprzednie</guimenuitem></menuchoice> lub nacisnąć klawisz skrótu <keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap><keycap>G</keycap></keycombo>.</para>
+        </listitem>
+      </orderedlist>
+    </sect2>
+    
+<!-- =============== To Browse the Character Table  ========================= -->
+    <sect2 id="usage-browse-characters">
+      <title>Przeglądanie wszystkich znaków</title>
+      <para>Aby przeglądać całą tablicę znaków, użyj menu <guimenu>Przejdź</guimenu>.</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Następny znak lub naciśnij klawisz skrótu <keycombo><keycap>Ctrl</keycap><keycap>N</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Poprzedni znak lub naciśnij klawisz skrótu <keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Następny pismo lub naciśnij klawisz skrótu <keycombo><keycap>Ctrl</keycap><keycap>Page Down</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Poprzednie pismo lub naciśnij klawisz skrótu <keycombo><keycap>Ctrl</keycap><keycap>Page Up</keycap></keycombo>.</para>
+        </listitem>
+      </itemizedlist>
+        
+      <para>Można przeglądać tablicę znaków według pojedynczych znaków i pism lub według bloku Unicode. Zależy to od tego, czy tablica znaków wyświetla pisma lub bloki Unicode. Aby to zmienić, wybierz <menuchoice><guimenu>Widok</guimenu><guimenuitem>Według pisma</guimenuitem></menuchoice> lub <menuchoice><guimenu>Widok</guimenu><guimenuitem>Według bloku Unicode</guimenuitem></menuchoice>.</para>
+      
+      <para>Można też używać tych klawiszy:</para>
+        
+      <itemizedlist>
+        <listitem>
+          <para>Naciśnij klawisze strzałek na klawiaturze, aby przeglądać znaki.</para>
+        </listitem>
+        <listitem>
+          <para>Naciśnij klawisze <keycap>Page Up</keycap> i <keycap>Page Down</keycap>. aby przeglądać znaki strona po stronie.</para>
+        </listitem>
+        <listitem>
+          <para>Naciśnij klawisz <keycap>Home</keycap>, aby wybrać pierwszy znak w sekwencji Unicode. Aby wybrać ostatni znak, naciśnij klawisz <keycap>End</keycap>.</para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
+    
+    <sect2 id="usage-display-details">
+      <title>Wyświetlanie szczegółowych informacji o znaku</title>
+      <para>Aby wyświetlić szczegółowe informacje o znaku:</para>
+      <orderedlist>
+        <listitem>
+          <para>Wybierz zestaw znaków z pola <guilabel>Pismo</guilabel> lub <guilabel>Blok Unicode</guilabel>. Przykład: <guilabel>Podstawowy łaciński</guilabel></para>
+        </listitem>
+        <listitem>
+          <para>Wybierz znak z karty <guilabel>Tablica znaków</guilabel>. Przykład: <guilabel>B</guilabel></para>
+        </listitem>
+        <listitem>
+          <para>Kliknij kartę <guilabel>Informacje o znaku</guilabel>.</para>
+        </listitem>
+      </orderedlist>
+      <para>Karta <guilabel>Informacje o znaku</guilabel> wyświetla następujące informacje o wybranym znaku:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Punkt kodowy Unicode</para>
+          <para>Przykład: <guilabel>U+0042</guilabel></para>
+        </listitem>
+        <listitem>
+          <para>Nazwa znaku Unicode</para>
+          <para>Przykład: <guilabel>LATIN CAPITAL LETTER B</guilabel></para>
+        </listitem>
+        <listitem>
+          <para><guilabel>Ogólne właściwości znaku</guilabel></para>
+          <itemizedlist>
+            <listitem>
+              <para>Kategoria Unicode</para>
+              <para>Przykład: <guilabel>Litera, wielka</guilabel></para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para><guilabel>Przydatne reprezentacje</guilabel></para>
+          <itemizedlist>
+            <listitem>
+              <para>Kodowanie UTF-8</para>
+              <para>Przykład: <guilabel>0x42</guilabel></para>
+            </listitem>
+            <listitem>
+              <para>Kodowanie UTF-16</para>
+              <para>Przykład: <guilabel>0x0042</guilabel></para>
+            </listitem>
+            <listitem>
+              <para>Ósemkowa reprezentacja UTF-8 (w języku C)</para>
+              <para>Przykład: <guilabel>\102</guilabel></para>
+            </listitem>
+            <listitem>
+              <para>Postać dziesiętna w XML</para>
+              <para>Przykład: <guilabel>"&amp;#66"</guilabel></para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para><guilabel>Przypisy i odsyłacze</guilabel></para>
+          <para>Przykład: <guilabel>U+212C SCRIPT CAPITAL B</guilabel></para>
+          <para>Kliknij odnośnik, aby wyświetlić informacje o wymienionym znaku.</para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
+    
+    <sect2 id="usage-format-character">
+      <title>Zmiana formatu znaku</title>
+      <para>Aby zmienić format znaku:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Aby zmienić czcionkę, wybierz ją z rozwijanej listy czcionek.</para>
+        </listitem>
+        <listitem>
+          <para>Aby zmienić czcionkę na pogrubioną, kliknij przycisk <guibutton>Pogrubione</guibutton> lub naciśnij klawisz skrótu <keycombo><keycap>Alt</keycap><keycap>B</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Aby zmienić czcionkę na pogrubioną, kliknij przycisk <guibutton>Pochylone</guibutton> lub naciśnij klawisz skrótu <keycombo><keycap>Alt</keycap><keycap>I</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Aby zwiększyć rozmiar czcionki, wybierz <menuchoice><guimenu>Widok</guimenu><guimenuitem>Powiększ</guimenuitem></menuchoice>, użyj suwaka powiększenia albo naciśnij klawisz skrótu <keycombo><keycap>Ctrl</keycap><keycap>+</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Aby zmniejszyć rozmiar czcionki, wybierz <menuchoice><guimenu>Widok</guimenu><guimenuitem>Pomniejsz</guimenuitem></menuchoice>, użyj suwaka powiększenia albo naciśnij klawisz skrótu <keycombo><keycap>Ctrl</keycap><keycap>-</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Aby wyświetlić zwykły rozmiar czcionki, wybierz <menuchoice><guimenu>Widok</guimenu><guimenuitem>Zwykły rozmiar</guimenuitem></menuchoice> lub naciśnij klawisz skrótu <keycombo><keycap>Ctrl</keycap><keycap>=</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Aby powiększyć wybrany znak, przytrzymaj klawisz <keycap>Shift</keycap>.</para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
+    
+    <sect2 id="usage-format-chartable">
+      <title>Zmiana formatu tablicy znaków</title>
+      <para>Aby zmienić format tablicy znaków, wybierz <menuchoice><guimenu>Widok</guimenu><guimenuitem>Łamanie kolumn na potęgach dwójki</guimenuitem></menuchoice>.</para>
+      <para>Program <application>Tablica znaków</application> zmienia kartę <guilabel>Tablica znaków</guilabel> tak, aby liczba kolumn była potęgą dwójki, czyli dwie, cztery, osiem kolumn i tak dalej. Liczba kolumn zależy od rozmiaru okna i rozmiaru czcionki.</para>
+    </sect2>
+
+  </sect1>
+</article>

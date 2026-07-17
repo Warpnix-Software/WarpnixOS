@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-spam-marking" xml:lang="ru">
+
+  <info>
+    <desc>Пометка нежелательной почты и спама.</desc>
+
+    <link type="guide" xref="mail-spam"/>
+
+    <revision pkgversion="3.3.91" version="0.4" date="2012-03-07" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Pete Biggs</name>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Barbara Tobias</name>
+      <email its:translate="no">barbtobias09@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-organize-spam.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Пометка сообщений как спама</title>
+
+<p>SpamAssassin поставляется с набором заранее определённых правил, а Bogofilter следует сначала обучить для автоматической фильтрации спама. Если обучать Bogofilter только на нежелательных сообщениях, программа будет предполагать, что нежелательными являются все сообщения (потому что ей не будет известна разница); следовательно, она не будет принимать никаких решений, пока не будет накоплена достаточно большая база данных для определения того, что является или не является спамом. В любом случае, при начале использования функции блокировки спама регулярно проверяйте папку <gui>Спам</gui>, чтобы убедиться, что обычные письма не были ошибочно отмечены в качестве спама.</p>
+
+<section id="marking-junk">
+<title>Пометка сообщений как спама вручную</title>
+<p>Если <app>Evolution</app> пропускает спам, щёлкните по сообщению правой кнопкой мыши и выберите пункт <gui>Пометить как спам</gui> или отметьте сообщение и воспользуйтесь комбинацией клавиш <keyseq><key>Ctrl</key><key>J</key></keyseq> или нажмите кнопку <gui>Спам</gui> на панели инструментов. После этого фильтр сможет распознавать похожие сообщения и будет работать точнее.</p>
+<p>Если в качестве спама было отмечено обычное письмо, уберите его из папки <gui>Спам</gui>: щелкните по нему правой кнопкой мыши и выберите пункт <gui>Пометить как не спам</gui> или воспользуйтесь комбинацией клавиш <keyseq><key>Shift</key><key>Ctrl</key><key>J</key></keyseq>, или отметьте сообщение и нажмите кнопку <gui>Не спам</gui>.</p>
+
+</section>
+</page>

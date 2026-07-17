@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="new-game" xml:lang="ko">
+
+  <info>
+    <link type="guide" xref="index#play"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.5.5" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.12" date="2014-03-08" status="review"/>
+    <revision pkgversion="3.28.0" version="0.2" date="2018-09-01" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2012</years>
+    </credit>
+    <credit type="author copyright">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+    <credit type="editor">
+      <name>Aruna Sankaranarayanan</name>
+      <email>aruna.evam@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Rashi Aswani</name>
+      <email>aswanirashi19@gmail.com</email>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>임준열</mal:name>
+      <mal:email>purum@postech.ac.kr</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>조성호</mal:name>
+      <mal:email>shcho@gnome.org</mal:email>
+      <mal:years>2021, 2022, 2023</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>새 게임 시작하기</title>
+
+  <p>새 게임 시작하려면:</p>
+  <steps>
+    <item>
+      <p>우측의 <gui style="button">다시 플레이</gui>를 누릅니다.</p>
+    </item>
+    <item>
+      <p><link xref="board-size">게임판 크기</link>를 바꾸려면, 우측의 <gui style="button">난이도 바꾸기</gui>를 누릅니다.</p>
+    </item>
+  </steps>
+
+  <note>
+  <p>여러분이 이미 게임을 하는 중이라면 <gui style="button">처음부터 시작</gui> 을 눌렀을 때 <app>지뢰</app> 게임에서 <gui>새 게임 시작하기</gui> 또는 <gui>현재 게임 계속하기</gui>를 물어봅니다.</p>
+  </note>
+</page>

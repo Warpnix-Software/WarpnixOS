@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="tip" id="gnome-on-ubuntu" xml:lang="hr">
+
+  <info>
+    <credit type="author">
+      <name>Tim Ubuntu dokumentacije</name>
+    </credit>
+    <desc>Popis primjetnih promjena GNOME radnog okruženja na Ubuntu.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="shell-overview" group="#first"/>
+    <link type="guide" xref="index" group="intro"/>
+    <revision version="0.1" date="2022-04-28" status="review"/>
+  </info>
+
+  <title>O GNOMU na Ubuntu</title>
+
+  <p>Ubuntu radno okruženje dolazi instalirano s malo promijenjenom inačicom GNOME radnog okruženja. Općenito, ovaj priručnik radnog okruženja odnosit će se na GNOME jer je objavljen od strane GNOME razvijatelja. Ovdje je popis primjetnih razlika između GNOMA na Ubuntu i "Vanilla" GNOMA.</p>
+
+  <list type="disc">
+  <item>
+    <p>Ubuntu dolazi s Firefoxom umjesto GNOME Web preglednikom.</p>
+  </item>
+  <item>
+    <p>Ubuntu dolazi s Remmina klijentom udaljene radne površine umjesto GNOME Povezivanjima.</p>
+  </item>
+    <item>
+      <p>AppIndicators proširenje je uključeno. Ovo proširenje omogućuje ikone u gornjem desnom kutu pojedinih aplikacija.</p>
+    </item>
+    <item>
+      <p>Ubuntu pokretač proširenje. Ovo proširenje omogućuje lijevi bočni panel za pokrenute aplikacije.</p>
+    </item>
+    <item>
+      <p>Ikone radne površine NG proširenje je uključeno. Ovo proširenje omogućuje korištenje ikona na radnoj površini.</p>
+    </item>
+    <item>
+      <p>Kao dodatak pozadini Ubuntu radne površine, zadana tema je Yaru a zadana slova su Ubuntu.</p>
+    </item>
+    <item>
+      <p>Tipke smanjenja i uvećanja su uključena u naslovnu traku prozora.</p>
+    </item>
+  </list>
+
+
+
+</page>

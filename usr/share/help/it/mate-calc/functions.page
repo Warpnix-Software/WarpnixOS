@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="function" xml:lang="it">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>Funzioni</title>
+    
+    <p>Le funzioni possono essere utilizzate inserendo il nome della funzione seguito dall'argomento della funzione. Se l'argomento non è un numero o una <link xref="variable">variabile</link>, utilizzare le parentesi attorno ad esso.</p>
+    <example>
+    <p>sin 30</p>
+    <p>abs (5−9)</p>
+    </example>
+    <p>Sono definite le seguenti funzioni.</p>
+    <table>
+    <tr>
+    <td><p>abs</p></td>
+    <td><p><link xref="absolute">Valore Assoluto</link></p></td>
+    </tr>
+    <tr>
+    <td><p>cos</p></td>
+    <td><p><link xref="trigonometry">Coseno</link></p></td>
+    </tr>
+    <tr>
+    <td><p>cosh</p></td>
+    <td><p><link xref="trigonometry">Coseno iperbolico</link></p></td>
+    </tr>
+    <tr>
+    <td><p>erf</p></td>
+    <td><p>Funzione errore di Gauss</p></td>
+    </tr>
+    <tr>
+    <td><p>frac</p></td>
+    <td><p>Parte frazionaria</p></td>
+    </tr>
+    <tr>
+    <td><p>int</p></td>
+    <td><p>Parte intera</p></td>
+    </tr>
+    <tr>
+    <td><p>ln</p></td>
+    <td><p><link xref="logarithm">Logaritmo Naturale</link></p></td>
+    </tr>
+    <tr>
+    <td><p>log</p></td>
+    <td><p><link xref="logarithm">Logaritmo</link></p></td>
+    </tr>
+    <tr>
+    <td><p>not</p></td>
+    <td><p><link xref="boolean">NOT Booleano</link></p></td>
+    </tr>
+    <tr>
+    <td><p>ones</p></td>
+    <td><p>Complemento a uno</p></td>
+    </tr>
+    <tr>
+    <td><p>sin</p></td>
+    <td><p><link xref="trigonometry">Seno</link></p></td>
+    </tr>
+    <tr>
+    <td><p>sinh</p></td>
+    <td><p><link xref="trigonometry">Seno Iperbolico</link></p></td>
+    </tr>
+    <tr>
+    <td><p>sqrt</p></td>
+    <td><p><link xref="power">Radice Quadrata</link></p></td>
+    </tr>
+    <tr>
+    <td><p>tan</p></td>
+    <td><p><link xref="trigonometry">Tangente</link></p></td>
+    </tr>
+    <tr>
+    <td><p>tanh</p></td>
+    <td><p><link xref="trigonometry">Tangente Iperbolica</link></p></td>
+    </tr>
+    <tr>
+    <td><p>twos</p></td>
+    <td><p>Complemento a due</p></td>
+    </tr>
+    <tr>
+    <td><p>zeta</p></td>
+    <td><p>Funzione zeta di Riemann</p></td>
+    </tr>
+    </table>
+    <p><app>MATE Calculator</app> non supporta le funzioni definite dall'utente.</p>
+</page>

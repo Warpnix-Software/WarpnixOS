@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="exporting-data-mail" xml:lang="uk">
+
+  <info>
+    <desc>Як експортувати дані пошти з <app>Evolution</app>.</desc>
+
+    <link type="guide" xref="exporting-data"/>
+
+    <revision pkgversion="3.0.2" version="0.4" date="2013-04-20" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Експортування даних пошти</title>
+
+<p>Щоб зберегти повідомлення електронної пошти до файла у форматі <link href="https://en.wikipedia.org/wiki/Mbox">mbox</link>, виберіть повідомлення електронної пошти і скористайтеся пунктом меню <guiseq><gui>Файл</gui><gui>Зберегти як mbox…</gui></guiseq> або клацніть правою кнопкою миші на повідомленні і виберіть у контекстному меню пункт <gui>Зберегти як mbox…</gui>.</p>
+
+<p>Ті самі кроки можна застосувати для збереження усієї теки пошти, але вам слід спочатку позначити усі повідомлення у теці.</p>
+<p>Ви можете позначити усі повідомлення у теці вибором пункту меню <guiseq><gui>Зміни</gui><gui>Вибрати все</gui></guiseq> або натисканням комбінації клавіш <keyseq><key>Ctrl</key><key>A</key></keyseq>.</p>
+
+</page>

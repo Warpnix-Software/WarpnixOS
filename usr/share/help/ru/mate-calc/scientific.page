@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="scientific" xml:lang="ru">
+
+    <info>
+        <link type="guide" xref="index#number"/>
+    </info>
+
+	<title>Научная запись</title>
+    
+    <p>Для ввода числа в научном формате используйте кнопку <gui>×10x</gui> (<keyseq><key>Ctrl</key><key>E</key></keyseq>). <link xref="superscript">Режим ввода цифр</link> автоматически меняется на надстрочный. Чтобы ввести 2×10¹⁰⁰, начните с набора мантиссы (2):</p>
+    <example>
+    <p>2</p>
+    </example>
+    <p>Затем нажмите кнопку экспоненциальной записи (или комбинацию клавиш <keyseq><key>Ctrl</key><key>E</key></keyseq>):</p>
+    <example>
+    <p>2×10</p>
+    </example>
+    <p>После этого введите показатель степени (100):</p>
+    <example>
+    <p>2×10¹⁰⁰</p>
+    </example>
+    <p>Чтобы задать систему счисления, в которой будут отображаться результаты в научном формате, измените значения параметра <link xref="number-display">формат результатов</link>.</p>
+</page>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-received-notification" xml:lang="de">
+
+  <info>
+    <desc>Optionen für Benachrichtigungen für neu eingegangene Nachrichten.</desc>
+
+    <link type="guide" xref="mail-send-and-receive"/>
+    <link type="seealso" xref="calendar-alarms-and-reminders"/>
+
+    <revision pkgversion="3.34.4" version="0.8" date="2020-02-26" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andre Klapper</mal:name>
+      <mal:email>ak-47@gmx.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009-2013, 2016-2018, 2020-2021</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009-2013, 2015-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Gabor Karsay</mal:name>
+      <mal:email>gabor.karsay@gmx.at</mal:email>
+      <mal:years>2011-2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Tim Sabsch</mal:name>
+      <mal:email>tim@sabsch.com</mal:email>
+      <mal:years>2018, 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jürgen Benvenuti</mal:name>
+      <mal:email>gastornis@posteo.org</mal:email>
+      <mal:years>2022-2024</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Benachrichtigungen bei neuen E-Mails</title>
+
+<p><app>Evolution</app> benachrichtigt Sie immer über neue Nachrichten mit einem kleinen Zeichen, das dem Symbol des E-Mail-Programms im <link xref="intro-main-window">Umschalter</link> vorangestellt wird.</p>
+<media type="image" src="./figures/new-mail-switcher.png" width="256" its:locNote="Translators: Please make sure that the screenshot does have the small yellow star in the Mail icon">
+  <p>Layout der Umschalter-Knöpfe, sobald eine neue Nachricht eingetroffen ist</p>
+</media>
+
+<p>Wenn Sie auch im Benachrichtigungssystem der GNOME-Arbeitsumgebung über das Eintreffen neuer Nachrichten informiert werden wollen:</p>
+<steps>
+<item><p>Wählen Sie <guiseq><gui>Bearbeiten</gui><gui>Erweiterungen</gui></guiseq>.</p></item>
+<item><p>Aktivieren Sie die <gui>E-Mail-Benachrichtigungen</gui>.</p>
+<note style="tip"><p>Falls eine Erweiterung unter <guiseq><gui>Bearbeiten</gui><gui>Erweiterungen</gui></guiseq> nicht verfügbar ist, fragen Sie bitte in einem Supportforum Ihrer Distribution. Ihre Distribution könnte einige Erweiterungen deaktiviert haben oder diese in einem separaten Paket anbieten.</p></note>
+</item>
+<item><p>Öffnen Sie den Reiter <gui style="tab">Konfiguration</gui> und legen Sie die gewünschten Optionen fest.</p></item>
+<item><p>Öffnen Sie den Reiter <gui style="tab">Konten</gui>, um die E-Mail-Konten auszuwählen, für die Sie Benachrichtigungen anzeigen lassen wollen.</p></item>
+</steps>
+
+<p>Lesen Sie bitte <link xref="help:gnome-help/shell-notifications" href="https://help.gnome.org/users/gnome-help/stable/shell-notifications">das Handbuch der GNOME-Arbeitsumgebung</link> für allgemeine Informationen.</p>
+
+<!-- TODO: Quite short -->
+
+</page>

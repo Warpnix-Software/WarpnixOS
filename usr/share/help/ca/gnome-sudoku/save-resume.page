@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="save-resume" xml:lang="ca">
+
+  <info>
+   <link type="guide" xref="index#play"/>
+
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+    <credit type="author copyright">
+      <name>Thomas Hinkle</name>
+      <email>tmhinkle@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2019</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Desar i reprendre</title>
+
+<section id="save">
+<title>Desar la partida</title>
+  <p>La partida actual es desa automàticament quan tanqueu l'aplicació.</p>
+</section>
+
+<section id="resume">
+<title>Reprendre la partida</title>
+  <p>Quan torneu a iniciar <app>Sudoku</app>, la vostra partida desada s'obrirà de nou.</p>
+  <p>Si voleu abandonar aquesta partida i començar-ne una de nova, simplement feu clic a <gui>Trencaclosques nou</gui> i comenceu una nova partida.</p>
+</section>
+
+</page>

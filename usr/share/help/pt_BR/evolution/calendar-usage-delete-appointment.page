@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-usage-delete-appointment" xml:lang="pt-BR">
+
+  <info>
+    <link type="guide" xref="calendar-usage"/>
+
+    <revision pkgversion="3.3.91" version="0.3" date="2012-02-19" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Excluindo um compromisso em sua agenda.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Fontenelle</mal:name>
+      <mal:email>rafaelff@gnome.org</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Excluindo um compromisso</title>
+
+  <p>Se você deseja excluir um compromisso de suas agendas, clique com o botão direito do mouse no compromisso no calendário e selecione <gui>Excluir compromisso</gui>, ou clique no compromisso e clique em <gui>Excluir</gui> na barra de ferramentas ou pressione <keyseq><key>Ctrl</key><key>D</key></keyseq>. Se você está na <link xref="calendar-layout-views">visão de lista</link> você também pode usar <guiseq><gui>Editar</gui><gui>Excluir compromisso</gui></guiseq>.</p>
+
+</page>

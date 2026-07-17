@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="import-single-files" xml:lang="ca">
+
+  <info>
+    <desc>Importació de fitxers individuals.</desc>
+    
+    <link type="guide" xref="import-data"/>
+
+    <revision pkgversion="3.31.91" version="0.3" date="2019-03-01" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Importació de fitxers individuals</title>
+
+<p>Per a importar fitxers individuals (correu electrònic, dades de calendari o contactes):</p>
+<steps>
+<item><p>Feu clic a <guiseq><gui>Fitxer</gui><gui>Importa</gui></guiseq>.</p></item>
+<item><p>A la pestanya <gui>Tipus d'importador</gui>, feu clic a <gui>Importa un sol fitxer</gui>.</p></item>
+<item><p>Trieu el fitxer.</p><p>El tipus de fitxer es determinarà automàticament.</p></item>
+<item><p>Trieu la destinació (p. ex., La carpeta a <app>Evolution</app>) per a les dades importades.</p></item>
+</steps>
+
+<note style="tip"><p>També podeu importar contactes que hàgiu rebut com a fitxer adjunt de vCard en un correu electrònic des del seu menú d'adjunts.</p></note>
+
+<note style="tip"><p>Quan s'estableixen <gui>contactes CSV o Tab</gui> com a <gui>tipus de fitxer</gui>, els encapçalaments de les columnes han de correspondre a la primera entrada de cada element en anglès en el codi d'importador de l'<link href="https://gitlab.gnome.org/GNOME/evolution/blob/bc5f32786d09823247d8188c5f211dcd354097de/src/addressbook/importers/evolution-csv-importer.c#L228"><app>Evolution</app></link>, el <link href="https://gitlab.gnome.org/GNOME/evolution/blob/bc5f32786d09823247d8188c5f211dcd354097de/src/addressbook/importers/evolution-csv-importer.c#L188"><app>Mozilla</app></link> i l'<link href="https://gitlab.gnome.org/GNOME/evolution/blob/bc5f32786d09823247d8188c5f211dcd354097de/src/addressbook/importers/evolution-csv-importer.c#L93"><app>Outlook</app></link>.</p></note>
+</page>

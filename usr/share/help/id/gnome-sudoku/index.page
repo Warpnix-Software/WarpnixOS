@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="task" id="index" xml:lang="id">
+  <info>
+    <title type="link" role="trail">GNOME Sudoku</title>
+    <title type="link">GNOME Sudoku</title>
+    <title type="text">GNOME Sudoku</title>
+
+    <revision pkgversion="3.4" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.15.2" date="2014-01-08" status="final"/>
+    <revision pkgversion="3.26" date="2017-12-05" status="review"/>
+
+    <credit type="author copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="author copyright">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2015</years>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Belajarlah untuk memainkan GNOME Sudoku, permainan teka-teki berbasis logika di mana kisi harus diisi dengan angka yang benar.</desc>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020, 2021.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title><media type="image" its:translate="no" width="48px" height="48px" src="figures/org.gnome.Sudoku.svg"/> GNOME Sudoku</title>
+
+  <p>GNOME Sudoku adalah teka-teki penempatan angka berbasis logika di mana persegi 9×9 harus diisi dengan digit yang benar. Teka-teki unik dapat dimainkan di layar atau <link xref="index#print">dicetak</link>. Jika Anda tidak punya waktu untuk menyelesaikan permainan, Anda dapat <link xref="save-resume#resume">melanjutkannya</link> kapan saja.</p>
+
+   <section id="play" style="2column">
+    <title>Cara Bermain</title>
+   </section>
+
+   <section id="tips" style="2column">
+    <title>Kiat berguna</title>
+   </section>
+
+   <section id="print" style="2column">
+    <title>Pencetakan</title>
+   </section>
+
+   <section id="get-involved" style="2column">
+    <title>Ikut Terlibat</title>
+   </section>
+</page>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="task" id="index" xml:lang="ko">
+  <info>
+    <title type="link" role="trail">지뢰</title>
+    <title type="link">지뢰</title>
+    <title type="text">지뢰</title>
+    <revision pkgversion="3.5.5" version="0.1" date="2012-08-12" status="review"/>
+    <credit type="author">
+      <name>Brian Grohe</name>
+      <email>grohe43@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+    <license>
+      <p>크리에이티브 커먼즈 동일조건변경허락 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>임준열</mal:name>
+      <mal:email>purum@postech.ac.kr</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>조성호</mal:name>
+      <mal:email>shcho@gnome.org</mal:email>
+      <mal:years>2021, 2022, 2023</mal:years>
+    </mal:credit>
+  </info>
+
+  <title><media type="image" width="48px" height="48px" its:translate="no" src="figures/org.gnome.Mines.svg"/> 지뢰</title>
+  <p><app>지뢰</app>는 마인스위퍼 게임의 복제본입니다. 이 게임의 목적은 사각 게임판에 있는 타일 아래 숨겨놓은 지뢰를 모두 찾아내는 것입니다. 지뢰를 터뜨리지 않고 모든 지뢰를 찾아내려면 논리적인 사고와 운이 필요합니다.</p>
+  <section id="play" style="2column">
+    <title>게임 플레이</title>
+  </section>
+  <section id="tips" style="2column">
+    <title>유용한 정보</title>
+  </section>
+
+<!--
+  <section id="advanced" style="2column">
+    <title>Advanced</title>
+  </section>
+-->
+  <section id="get-involved" style="2column">
+    <title>참여하기</title>
+  </section>
+
+</page>

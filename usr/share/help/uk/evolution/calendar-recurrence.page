@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="calendar-recurrence" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="index#calendar-advanced"/>
+
+    <revision pkgversion="3.0.2" version="0.1" date="2011-08-01" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+      https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#bxmtcp3
+      -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Повторення зустрічей.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Використання повторень</title>
+
+  <p>Якщо у вас є зустріч, яка відбувається регулярно, ви можете визначити її повторюваність натисканням кнопки <gui>Повторення</gui> у <gui>Редакторі зустрічей</gui> або вибором пункту меню <guiseq><gui>Параметри</gui><gui>Повторення</gui></guiseq>. Далі, ви можете вибрати час і дату, коли зустріч припиняє повторюватися, і, на панелі <gui>Виключення</gui>, вибрати окремі дні, коли зустріч не повторюється. Вкажіть параметри зліва праворуч, і у вас вийде речення: «Кожні два тижні у понеділок і п'ятницю до 3 січня 2015 року» або «Кожного місяця у першу п'ятницю 12 разів».</p>
+
+</page>

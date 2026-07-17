@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:if="http://projectmallard.org/if/1.0/" type="topic" style="task" id="noprint" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#printing"/>
+    <desc>Автор мог наложить ограничения на печать документа.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Фил Булл</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  </info>
+
+<title>Не удаётся напечатать документ</title>
+<section id="why">
+ <title>Возможные причины при отказе печати</title>
+<p>Причины, по которым не удаётся напечатать документ:</p>
+ <list>
+  <item><p>Проблемы с принтером</p></item>
+  <item><p>Ограничения на печать PDF.</p></item>
+ </list>
+</section>
+
+<section id="printer-problems">
+  <title>Проблемы, связанные с принтером</title>
+  <p>Есть множество причин, по которым ваш принтер может не работать. Например, в нём могла закончиться бумага или чернила, возможно, принтер не подключён или поломан.</p>
+  <p>Возможно, вы захотите проверить конфигурацию своего принтера в Центре управления.</p>
+</section>
+
+<section id="pdf-restrictions">
+  <title>Ограничения на печать PDF</title>
+  <p>Некоторые PDF-документы имеют настройку, запрещающую их печать. Авторы могут установить запрет печати при создании документа. Atril это ограничение по умолчанию отменяет, но вы можете проверить, не отключено ли оно:</p>
+
+  <note style="important">
+    <p>Для изменения этого параметра на вашем компьютере должен быть установлен <app>dconf Editor</app>.</p>
+  </note>
+
+  <steps>
+    <item>
+      <p>Откройте <gui>dconf Editor</gui>.</p>
+    </item>
+    <item>
+      <p>Перейдите к <sys>/org/mate/atril</sys>.</p>
+    </item>
+    <item>
+      <p>Убедитесь, что опция <gui>override-restrictions</gui> отмечена.</p>
+    </item>
+    <item>
+      <p>Вернитесь в <app>Atril</app> и попробуйте снова распечатать документ.</p>
+    </item>
+  </steps>
+</section>
+
+</page>

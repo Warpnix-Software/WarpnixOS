@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="function" xml:lang="es">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Adolfo Jayme Barrientos</mal:name>
+      <mal:email>fitojb@ubuntu.com</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Toni Estevez</mal:name>
+      <mal:email>toni.estevez@gmail.com</mal:email>
+      <mal:years>2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Francisco Javier F. Serrador</mal:name>
+      <mal:email>serrador@cvs.gnome.org</mal:email>
+      <mal:years>2003-2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Pablo Gonzalo del Campo</mal:name>
+      <mal:email>pablodc@bigfoot.com</mal:email>
+      <mal:years>2002-2003</mal:years>
+    </mal:credit>
+  </info>
+
+	<title>Funciones</title>
+    
+    <p>
+    Functions can be used by inserting the name of the function followed by the function argument.
+    If the argument is not a number or <link xref="variable">variable</link> then use parenthesis around the argument.
+    </p>
+    <example>
+    <p>sen 30</p>
+    <p>
+    abs (5−9)
+    </p>
+    </example>
+    <p>Las funciones siguientes están definidas.</p>
+    <table>
+    <tr>
+    <td><p>abs</p></td>
+    <td><p><link xref="absolute">Valor absoluto</link></p></td>
+    </tr>
+    <tr>
+    <td><p>cos</p></td>
+    <td><p><link xref="trigonometry">Coseno</link></p></td>
+    </tr>
+    <tr>
+    <td><p>cosh</p></td>
+    <td><p><link xref="trigonometry">Hyperbolic Cosine</link></p></td>
+    </tr>
+    <tr>
+    <td><p>erf</p></td>
+    <td><p>Gauss Error function</p></td>
+    </tr>
+    <tr>
+    <td><p>frac</p></td>
+    <td><p>Parte fraccionaria</p></td>
+    </tr>
+    <tr>
+    <td><p>int</p></td>
+    <td><p>Parte entera</p></td>
+    </tr>
+    <tr>
+    <td><p>ln</p></td>
+    <td><p><link xref="logarithm">Natural Logarithm</link></p></td>
+    </tr>
+    <tr>
+    <td><p>log</p></td>
+    <td><p><link xref="logarithm">Logarithm</link></p></td>
+    </tr>
+    <tr>
+    <td><p>not</p></td>
+    <td><p><link xref="boolean">Boolean NOT</link></p></td>
+    </tr>
+    <tr>
+    <td><p>ones</p></td>
+    <td><p>Ones complement</p></td>
+    </tr>
+    <tr>
+    <td><p>sin</p></td>
+    <td><p><link xref="trigonometry">Sine</link></p></td>
+    </tr>
+    <tr>
+    <td><p>sinh</p></td>
+    <td><p><link xref="trigonometry">Hyperbolic Sine</link></p></td>
+    </tr>
+    <tr>
+    <td><p>sqrt</p></td>
+    <td><p><link xref="power">Raíz cuadrada</link></p></td>
+    </tr>
+    <tr>
+    <td><p>tan</p></td>
+    <td><p><link xref="trigonometry">Tangent</link></p></td>
+    </tr>
+    <tr>
+    <td><p>tanh</p></td>
+    <td><p><link xref="trigonometry">Hyperbolic Tangent</link></p></td>
+    </tr>
+    <tr>
+    <td><p>twos</p></td>
+    <td><p>Dos complementos</p></td>
+    </tr>
+    <tr>
+    <td><p>zeta</p></td>
+    <td><p>Función zeta de Riemann</p></td>
+    </tr>
+    </table>
+    <p>La <app>Calculadora MATE</app> no mantiene funciones definidas por el usuario.</p>
+</page>

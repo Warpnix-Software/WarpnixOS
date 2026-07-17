@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-imap-change-send-method" xml:lang="ca">
+
+  <info>
+    <desc>Canvieu l'enviament de correu mitjançant SMTP a Sendmail o viceversa.</desc>
+
+    <link type="guide" xref="index#common-mail-problems"/>
+    <link type="guide" xref="mail-account-manage-imap-plus#other-settings"/>
+
+    <revision pkgversion="3.34.4" version="0.1" date="2020-03-22" status="review"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Canviar el mètode de sortida d'un compte IMAP+</title>
+
+<p>No hi ha cap interfície d'usuari per a canviar el mètode de sortida d'un compte IMAP.</p>
+
+<p>Si heu utilitzat Sendmail fins ara però voleu passar a utilitzar una connexió SMTP:</p>
+
+<list>
+<item><p>Tancar <app>Evolution</app>.</p></item>
+<item><p>Cerqueu el fitxer de compte corresponent a <file>$HOME/.config/evolution/sources/</file> i obriu-lo amb un editor de text.</p></item>
+<item><p>A la secció <code>[Mail Transport]</code>, reemplaceu <code>BackendName=sendmail</code> per <code>BackendName=smtp</code> o viceversa.</p></item>
+<item><p>Reinicieu el procés en segon pla <code>evolution-source-registry</code>, per exemple, reiniciant el sistema.</p></item>
+<item><p>Inicieu l'<app>Evolution</app> i editeu els paràmetres SMTP del compte si s'escau.</p></item>
+</list>
+
+</page>

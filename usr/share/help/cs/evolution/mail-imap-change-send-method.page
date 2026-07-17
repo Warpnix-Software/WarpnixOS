@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-imap-change-send-method" xml:lang="cs">
+
+  <info>
+    <desc>Jak přepnout odesílání pošty přes SMTP na odesílání přes Sendmail a naopak.</desc>
+
+    <link type="guide" xref="index#common-mail-problems"/>
+    <link type="guide" xref="mail-account-manage-imap-plus#other-settings"/>
+
+    <revision pkgversion="3.34.4" version="0.1" date="2020-03-22" status="review"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+
+</info>
+
+<title>Změna odchozí metody u účtů IMAP+</title>
+
+<p>Pro změnut odchozí metody u účtu IMAP není k dispozici žádné nastavení v uživatelském rozhraní.</p>
+
+<p>Pokud zatím používáte Sendmail, ale od teď chcete raději používat připojení SMTP:</p>
+
+<list>
+<item><p>Zavřete <app>Evolution</app>.</p></item>
+<item><p>Najděte a pomocí textového editoru otevřete příslušný soubor účtu v <file>$HOME/.config/evolution/sources/</file>.</p></item>
+<item><p>V části <code>[Mail Transport]</code> nahraďte <code>BackendName=sendmail</code> za <code>BackendName=smtp</code>, případně naopak.</p></item>
+<item><p>Restartujte proces na pozadí <code>evolution-source-registry</code>, třeba tím, že restartujete počítač.</p></item>
+<item><p>Spusťte <app>Evolution</app> a upravte nastavení účtu SMTP pro účet podle potřeby.</p></item>
+</list>
+
+</page>

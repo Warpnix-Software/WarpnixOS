@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-usage-add-appointment" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="calendar-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.2" date="2011-08-01" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Afegir una cita.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Afegir una cita</title>
+
+  <steps>
+    <item>
+      <p>Feu clic a <guiseq><gui>Fitxer</gui><gui>Nou</gui><gui>Cita</gui></guiseq>, o feu doble clic en un espai en blanc del calendari per a obrir el diàleg de cites. L'hora concreta sobre la qual hàgiu fet doble clic se suggerirà com a hora per a la nova cita. També podeu escriure directament al calendari i ajustar la durada arrossegant el ratolí.</p>
+    </item>
+    <item>
+      <p>Si utilitzeu el diàleg de Cites:</p>
+    </item>
+    <item>
+      <p>Seleccioneu un calendari a la llista desplegable <gui>Calendari</gui>.</p>
+    </item>
+    <item>
+      <p>Introduïu un breu resum al camp <gui>Sumari</gui>.</p>
+    </item>
+    <item>
+      <p>(Opcional) Escriviu una ubicació al camp <gui>Localització</gui>.</p>
+    </item>
+    <item>
+      <p>Per a marcar aquest esdeveniment com a un esdeveniment per tot el dia, feu clic a <guiseq><gui>Opcions</gui><gui>Esdeveniment per tot el dia</gui></guiseq>, o feu clic al botó <gui>Esdeveniment per tot el dia</gui> a la barra d'eines.</p>
+    </item>
+    <item>
+      <p>Seleccioneu la data i l'hora.</p>
+    </item>
+    <item>
+      <p>(Opcional) Introduïu la descripció al camp <gui>Descripció</gui>.</p>
+    </item>
+    <item>
+      <p>Per a mostrar l'hora com a <link xref="calendar-free-busy">ocupada</link> als altres, feu clic <guiseq><gui>Opcions</gui> <gui>Mostra l'hora com a ocupada</gui></guiseq>.</p>
+    </item>
+  </steps>
+
+  <p>També pot definir una zona horària a <link xref="calendar-timezones">zona horària</link>, a <link xref="using-categories">categoria</link>, a <link xref="calendar-alarms-and-reminders">recordatori</link>, a <link xref="calendar-recurrence">repetició</link>, o a <link xref="calendar-classifications">classificació</link> per l'esdeveniment, o afegir un adjunt.</p>
+
+</page>

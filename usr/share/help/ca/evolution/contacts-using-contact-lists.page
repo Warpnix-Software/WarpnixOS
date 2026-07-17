@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-using-contact-lists" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="contacts-organizing"/>
+
+    <revision pkgversion="2.32.1" version="0.2" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-contact-organize.html.en#usage-contact-organize-group-list
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Ús de llistes de contactes per a agrupar contactes.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Ús de llistes de contactes</title>
+
+  <p>Una llista de contactes és un conjunt de contactes amb un únic sobrenom. Quan envieu correus electrònics a aquest sobrenom, s'envia a tots els membres de la llista. Això difereix d'una llista de correu «real», ja que només existeix a l'ordinador com a comoditat per a l'usuari, i no com una adreça electrònica real gestionada per una aplicació de llistes de correu a un servidor.</p>
+
+  <p>Per exemple, podeu crear un contacte per a cada membre de la família i, a continuació, afegir-los a una llista de contactes anomenada «família». A continuació, en lloc d'introduir l'adreça electrònica de cada persona individualment, podeu enviar correus electrònics a «família» i els missatges s'enviaran a tots.</p>
+
+<section id="create-contact-list">
+  <title>Crear una llista de contactes</title>
+
+  <steps>
+    <item>
+      <p>Feu clic a <guiseq><gui>Fitxer</gui><gui>Nou</gui> <gui>Llista de contactes</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Introduïu el nom que preferiu.</p>
+    </item>
+    <item>
+      <p>Seleccioneu la llibreta d'adreces <gui>On:</gui> a la qual s'afegirà.</p>
+    </item>
+    <item>
+      <p>Especifiqueu els membres de la llista introduint els noms o adreces de correu electrònic dels contactes (el camp de text admet l'autocompleció automàtica), o arrossegant els contactes des de la finestra Contactes a la llista, o utilitzant el botó <gui style="button">Selecciona…</gui>.</p>
+    </item>
+    <item>
+      <p>Trieu si voleu amagar les adreces electròniques quan envieu un missatge a la llista.</p><p>A menys que sigui una llista molt petita, es recomana deixar les adreces amagades. És el mateix que utilitzar la funcionalitat "Bcc:" comentada <link xref="mail-composer-several-recipients">Enviament d'un missatge a diversos destinataris</link>.</p>
+    </item>
+    <item>
+      <p>Feu clic a <gui style="button">D'acord</gui>.</p>
+    </item>
+  </steps>
+
+  <p>La llista de contactes s'afegirà a la llibreta d'adreces seleccionada a <app>Evolution</app>.</p>
+
+</section>
+
+<section id="send-to-contact-list">
+  <title>Enviar missatges a la llista de contactes</title>
+
+  <p>Per a enviar un missatge a la llista de contactes, introduïu el nom que heu triat per a la llista de contactes com a destinatari quan escriviu el correu. També podeu fer clic amb el botó dret a la llista de contactes de la vostra llibreta d'adreces i selecciona <gui>Envia un missatge a la llista</gui>.</p>
+
+</section>
+
+</page>

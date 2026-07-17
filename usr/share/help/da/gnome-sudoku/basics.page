@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="basics" xml:lang="da">
+  <info>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+    <link type="guide" xref="index#play"/>
+    <credit type="author copyright">
+      <name>Chris Beiser</name>
+      <email>ctbeiser@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Deling på samme vilkår 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>scootergrisen</mal:name>
+      <mal:email/>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Grundlæggende</title>
+<p>Sudoku kan spilles med tastaturet, med musen eller en kombination af de to.</p>
+
+<section id="keyboard">
+<title>Med tastaturet</title>
+<list>
+  <item><p>For at vælge en celle bruges piletasterne til at flytte det blå omrids oven på den.</p></item>
+  <item><p>For at tilføje et tal i en celle vælges cellen og så trykkes på tallet.</p></item>
+  <item><p>For at fjerne et tal fra en celle vælges cellen og så trykkes på tasten <key>Delete</key>, <key>Backspace</key> eller <key>0</key>.</p></item>
+</list>
+</section>
+
+
+<section id="mouse">
+<title>Med musen</title>
+<list>
+	<item><p>For at vælge en celle skal du flytte din mus oven på den og klikke.</p></item>
+	<item><p>For at tilføje et tal i en valgt celle klikkes i midten af cellen og så klikkes på det tal du vil indsætte.</p></item>
+	<item><p>For at fjerne et tal fra en valgt celle klikkes i midten af cellen og så klikkes på <gui>Ryd</gui>.</p></item>
+</list>
+</section>
+</page>

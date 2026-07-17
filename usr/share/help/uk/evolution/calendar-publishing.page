@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-publishing" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="calendar-sharing-information"/>
+
+    <revision pkgversion="3.1.5" version="0.4" date="2011-08-24" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from Reuse
+	   https://help.gnome.org/users/evolution/2.32/config-prefs-cal.html.en#bxjng8p
+	   and
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#publishing-freebusy
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Оприлюднення вмісту ваших календарів.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Публікація календарів</title>
+
+  <p>Щоб зробити один з ваших календарів загальнодоступним, увімкніть додаток оприлюднення календарів за допомогою пункту меню <guiseq><gui>Зміни</gui><gui>Параметри</gui> <gui>Додатки</gui></guiseq> і перезапустіть <app>Evolution</app>, щоб задіяти його.</p>
+  <p>Ви можете визначити календарі, які вивантажуватимуться на вебсервер, за допомогою кнопки <guiseq><gui>Зміни</gui><gui>Параметри</gui> <gui>Календар та завдання</gui> <gui>Оприлюднення інформації</gui> <gui>Адреси</gui><gui style="button">Додати</gui></guiseq>.</p>
+
+  <p>Ви можете вказати адресу у мережі, частоту оприлюднення, календарі для оприлюднення та дані для розпізнавання при оприлюдненні.</p>
+
+  <p>Ви можете оприлюднити дані календаря і зайнятості на сервері WebDAV, сервері FTP, віддаленому комп'ютері із доступом за допомогою SSH або на будь-якому іншому вебсервері за допомогою підтримки PUT HTTP.</p>
+
+  <p>Щоб негайно оприлюднити дані календаря, натисніть <guiseq><gui>Дії</gui><gui>Публікувати відомості календаря</gui></guiseq> на панелі календаря.</p>
+
+</page>

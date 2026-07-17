@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-enable-html-format" xml:lang="ca">
+
+  <info>
+    <desc>Activeu el format HTML per a la composició del correu electrònic.</desc>
+    <link type="guide" xref="mail-composer-html#formatting-options-html"/>
+
+    <revision pkgversion="3.5.90" version="0.1" date="2012-08-16" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-html -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Activar el format HTML</title>
+
+<p>Podeu canviar el format d'un missatge de correu electrònic de text pla a HTML al compositor de correu electrònic triant <guiseq><gui>Format</gui><gui>HTML</gui></guiseq> des de la barra de menú.</p>
+<p>Alternativament, també podeu canviar la primera llista desplegable a sota de la línia <gui>Assumpte</gui> de <gui>Text pla </gui> a <gui>HTML</gui>.</p>
+<p>Si trieu el format HTML, es mostrarà una segona barra d'eines a sota de la línia de l'<gui>Assumpte</gui> amb les opcions només vàlides per l'HTML.</p>
+<p>Per a enviar tot el correu com a HTML per defecte, activeu-ho a <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Preferències del redactor</gui><gui>Comportament predeterminat</gui><gui>Format dels missatges en HTML</gui></guiseq>.</p>
+
+</page>

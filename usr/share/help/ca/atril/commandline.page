@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="commandline" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">Línia d'ordres</title>
+    <desc>La comanda <cmd>atril</cmd>pot obrir qualsevol nombre de fitxers, per pàgines específiques i en diversos modes.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <credit type="editor">
+    <name>Tiffany Antopolski</name>
+    <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Carles Ferrando Garcia</mal:name>
+      <mal:email>carles.ferrando@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert Antoni Buj Gelonch</mal:name>
+      <mal:email>rbuj@fedoraproject.org</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  </info>
+
+<title>La línia de comandes</title>
+<p>Per engegar <app>Atril</app> des de la línia d'ordres, escriviu <cmd>atril</cmd>. Podreu obrir un fitxer específic si escriviu el seu nom darrere l'ordre atril:</p>
+
+<screen>atril fitxer.pdf</screen>
+<p>Podeu obrir múltiples fitxers escrivint els seus noms darrere l'ordre atril, separant els noms amb un espai:</p>
+<screen>atril fitxer1.pdf fitxer2.pdf</screen>
+<p>Atril també suporta el maneig de fitxers a la web. Per exemple, darrere l'ordre atril podeu escriure la localització d'un fitxer a la web:</p>
+<section id="open">
+    <title>Obrint un document per una pàgina específica</title>
+    <p>Podeu emprar el modificador <cmd>--page-label</cmd> per obrir un document per una pàgina específica. Per exemple, per obrir un document per la pàgina 3, escriuríeu:</p>
+    <screen>atril --page-label=3 fitxer.pdf</screen>
+    <p>L'indicador de pàgina ha d'estar en el mateix format que el nombre de pàgina que apareix a la barra superior d'<app>Atril</app>,.</p>
+</section>
+<section id="fullsreen">
+    <title>Obrint un document en mode de pantalla completa</title>
+    <screen>atril --fullscreen fitxer.pdf</screen>
+</section>
+<section id="presentation">
+    <title>Obrint un document en mode de presentació</title>
+    <screen>atril --presentation fitxer.pdf</screen>
+</section>
+<section id="preview">
+    <title>Obrint un document en mode de visualització prèvia</title>
+    <screen>atril --preview fitxer.pdf</screen>
+</section>
+</page>

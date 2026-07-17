@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-remove" xml:lang="lt">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntu documentacijos komanda</name>
+    </credit>
+    <desc>Pašalinti nebereikalingas programas.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove" group="#first"/>
+    <link type="seealso" xref="addremove-install-synaptic"/>
+    <revision version="18.04" date="2018-03-18" status="review"/>
+  </info>
+
+  <title>Pašalinti programą</title>
+
+  <p>An application is software that has a graphical user interface (GUI).
+    You can use <app>App Center</app> to remove applications that you 
+    no longer use.</p>
+
+   <p>Applications are available in two formats: snap packages and Debian packages. 
+   An application available as a snap package is from now on referred to as a <em>snap</em>.
+   Some applications are available in both formats. In such a case in
+   <app>App Center</app> the snap will be listed first.</p> 
+
+   <p>Norėdami pašalinti programinės įrangos paketus, kurie nerodomi <app>Programų centre</app> galite naudoti <link xref="addremove-install-synaptic">Paketų tvarkytuvę Synaptic</link> arba <input>apt</input> komandą. Nepamirškite - <app>Synaptic</app> bei <input>apt</input> įrankiai skirti patyrusiems ir nepalaiko <em>snap</em> paketų.</p>
+
+  <p>Programų pašalinimui:</p>
+    
+  <steps>
+    <item>
+      <p>
+        Click the <app>App Center</app> icon in the <gui>Dock</gui>, or search
+        for <input>Software</input> in the <em>Activities</em> search bar.
+      </p>
+    </item>
+    <item>
+      <p>
+        When <app>App Center</app> opens, click the <gui>Installed</gui> button at 
+        the top.
+      </p>
+    </item>
+    <item>
+      <p>Naudodami paiešką viršuje arba paprasčiausiai peržiūrėdami įdiegtų programų sąrašą raskite programą, kurią norite pašalinti.</p>
+    </item>
+    <item>
+      <p>Pasirinkite programą ir paspauskite mygtuką <gui>Pašalinti</gui>.</p>
+    </item>
+    <item>
+      <p>Patvirtinkite, jei tikrai norite pašalinti tą programą.</p>
+    </item>
+    <item>
+      <p>Jei paprašys patvirtinti tapatybę - įveskite savo arba programų šalinimo teises turinčio naudotojo slaptažodį. Įvedus tinkamą slaptažodį programa bus pašalinta.</p>
+    </item>
+
+  </steps>
+
+  <note>
+    <p>Kai kurių programų veikimui reikia kad būtų įdiegtos kitos programos. Jei šalinsite programą reikalingą kitai programai, tuomet bus pašalintos abi programos. Patvirtinimo lange bus parašyta kokios programos bus pašalintos, todėl šalindami bei įdiegdami programas įdėmiai perskaitykite kas bus pašalinta.</p>
+  </note>
+
+</page>

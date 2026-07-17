@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-plain-text" xml:lang="uk">
+
+  <info>
+    <desc>Зміна вирівнювання шрифту та форматування абзаців у редакторі повідомлень.</desc>
+    <link type="guide" xref="mail-composer-html#formatting-options-plain"/>
+
+    <revision pkgversion="3.5.90" version="0.1" date="2012-08-16" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-html -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Форматування тексту у режимі звичайного тексту</title>
+
+     <p>Кнопки форматування тексту розташовано на панелі інструментів під рядком <gui>Тема</gui>. Відповідні пункти меню можна знайти у меню <gui>Вставка</gui> і <gui>Формат</gui>.</p>
+     <p>Пояснення щодо піктограм на панелі інструментів наведено у підказках, які з'являються, якщо ви наведете вказівник миші на відповідну кнопку і затримаєте його.</p>
+
+<section id="headers-and-lists">
+ <title>Заголовки і списки:</title>
+ <p>У лівій частині верхньої панелі інструментів, ви можете вибрати <gui>Звичайний</gui> для типового стилю тексту або пункти з <gui>Заголовок 1</gui> до <gui>Заголовок 6</gui> для різних розмірів заголовків, від великого (1) до маленького (6). Серед інших стилів, <gui>Попередньо сформатовані</gui> для теґу HTML, який відповідає попередньо форматованим блокам тексту, та три типи позначок для неупорядкованих списків.</p>
+ <p>Наприклад, замість використання символу зірочок для неупорядкованого списку, ви можете скористатися стилем <gui>Список з позначками</gui> зі спадного списку стилів. У <app>Evolution</app> можна скористатися різними стилями з позначками, використати перенесення рядків та вкладені рівні відступів у списках.</p>
+</section>
+
+<section id="alignment">
+      <title>Вирівнювання:</title>
+      <p>Користувачам більшості текстових процесорів мають бути знайомими три піктограми абзаців, які розташовано поряд зі спадним списком заголовків і списків. За допомогою лівої кнопки можна вирівняти фрагмент тексту ліворуч, за допомогою середньої — за серединою, а за допомогою правої — праворуч.</p>
+</section>
+
+<section id="indentation-rules">
+      <title>Правила встановлення відступів:</title>
+      <p>Кнопка зі стрілкою, яка вказує ліворуч, зменшує відступ абзацу, а кнопка зі стрілкою, яка вказує праворуч, збільшує відступ.</p>
+</section>
+
+</page>

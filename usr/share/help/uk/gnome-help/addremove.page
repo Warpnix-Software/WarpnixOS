@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:uix="http://projectmallard.org/experimental/ui/" type="guide" style="task" id="addremove" xml:lang="uk">
+  <info>
+    <link type="guide" xref="index" group="addremove"/>
+
+    <title role="trail" type="link">Додати/вилучити програмне забезпечення</title>
+
+    <credit type="author">
+      <name>Команда з документування Ubuntu</name>
+    </credit>
+
+    <desc>Додавайте і вилучайте додатки та інше програмне забезпечення. Керуйте репозиторіями з додатковими програмами.</desc>
+    <uix:thumb role="experimental-gnome-tiles" src="figures/tile-software.svg"/>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+  <title>Встановлення та видалення програмного забезпечення</title>
+  <links type="topic" style="2column"/>
+
+</page>

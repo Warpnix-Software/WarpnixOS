@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-add-automatically" xml:lang="sv">
+
+  <info>
+    <link type="guide" xref="contacts-usage"/>
+    <link type="seealso" xref="contacts-autocompletion"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-08-19" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Barbara Tobias</name>
+      <email its:translate="no">barbtobias09@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Lägg automatiskt till avsändare till dina kontakter för e-postmeddelande som du tagit emot.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Sebastian Rasmussen</mal:name>
+      <mal:email>sebras@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017, 2018</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Lägga till folk automatiskt till mina kontakter</title>
+
+  <p>Du kan automatiskt lägga till personer till dina kontakter när du svarar på mottagen e-post.</p>
+  <steps>
+  <item><p>Välj <guiseq><gui>Redigera</gui><gui>Insticksmoduler</gui></guiseq>.</p></item>
+  <item><p>Aktivera <gui>Automatiska kontakter</gui>.</p>
+<note style="tip"><p>Om en insticksmodul inte finns tillgänglig under <guiseq><gui>Redigera</gui><gui>Insticksmoduler</gui></guiseq>, fråga i ett supportforum för din distribution. Din distribution kan ha beslutat att inaktivera vissa insticksmoduler eller att skeppa insticksmoduler i ett separat paket.</p></note>
+  </item>
+  <item><p>Gå till <guiseq><gui>Redigera</gui><gui>Inställningar</gui><gui>Kontakter</gui><gui>Automatiska kontakter</gui></guiseq>.</p></item>
+  <item><p>Aktivera <gui>Skapa poster i adressboken när meddelanden skickas</gui> och välj en adressbok i rullgardinsfältet nedan som kommer erhålla de nya kontakterna.</p></item>
+  </steps>
+
+  <p>Från om med nu kommer kontakter automatiskt att skapas för avsändare av mottagen e-post när du svarar på det e-postmeddelandet.</p>
+
+</page>

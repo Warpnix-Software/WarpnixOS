@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="synctex-beamer" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#synctex" group="sixth"/>
+    <desc>Menggunakan SyncTeX dengan kelas LaTeX Beamer.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kukuh Syafaat</mal:name>
+      <mal:email>syafaatkukuh@gmail.com</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2021, 2022.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Beamer dengan SyncTeX</title>
+<p>Beamer adalah kelas LaTeX untuk membuat salindia untuk presentasi.</p>
+<p>Anda dapat melakukan pencarian maju dan mundur dalam presentasi <em>Beamer-LaTeX</em> dengan cara yang mirip dengan <link xref="synctex-search">mencari</link> melalui berkas TeX lain yang dikompilasi dengan SyncTeX. Namun pencarian membawa Anda ke bingkai (salindia) yang sesuai, belum tentu baris teks yang terkait. Perbedaan ini diuraikan secara rinci di bawah.</p>
+<section id="forward-search">
+    <title>Pencarian maju: dari sumber Beamer-LaTeX ke PDF (<app>pluma</app> ke Atril)</title>
+    <p>Dengan <link xref="synctex-search#forward-search">pencarian maju</link>, Anda dapat mengklik baris tertentu dari kode sumber Beamer-LaTeX. Bagian <em>atas</em> slide yang sesuai dalam PDF akan disorot dengan warna merah. Ini sering kali adalah <em>frametitle</em>.</p>
+</section>
+
+<section id="backward-search">
+
+    <title>Pencarian mundur: dari PDF ke sumber Beamer-LaTeX (dari Atril ke <app>pluma</app>)</title>
+     <p>Dengan <link xref="synctex-search#backward-search">pencarian mundur</link>, Anda mengklik sebagian teks dalam bingkai, dan baris yang sesuai dari kode LaTex yang berakhir pada bingkai tersebut disorot. Ini biasanya adalah baris:</p>
+ <code>\end{frame}</code>
+<p>sesuai dengan bingkai yang Anda klik.</p>
+
+
+</section>
+
+
+</page>

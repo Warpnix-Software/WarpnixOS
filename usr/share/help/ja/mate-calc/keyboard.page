@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="keyboard" xml:lang="ja">
+
+    <info>
+        <link type="guide" xref="index#ui"/>
+    </info>
+
+	<title>キーボードを使用する</title>
+
+    <p>すべての数式は、キーボードを使って入力できます。</p>
+    <p>次のキーの組み合わせを使用して、キーボードで使用できないキーを入力できます。</p>
+    <table>
+    <tr>
+    <td><p>×</p></td>
+    <td><p><key>*</key></p></td>
+    </tr>
+    <tr>
+    <td><p>÷</p></td>
+    <td><p><key>/</key></p></td>
+    </tr>
+    <tr>
+    <td><p>^</p></td>
+    <td><p><key>*</key> ２回</p></td>
+    </tr>
+    <tr>
+    <td><p>√</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>R</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>π</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>P</key></keyseq></p></td>
+    </tr>
+    </table>
+    <p><link xref="superscript">上付き数字</link>を入力するには <keyseq><key>Ctrl</key>数字</keyseq>を使用し、下付き数字を入力するには <keyseq><key>Alt</key>数字</keyseq>を使用します。</p>
+    <p><link xref="mouse">プログラムモード</link>で基本数字の間を循環するには、以下を使用します。</p>
+    <table>
+    <tr>
+    <td><p>2進数</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>B</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>8進数</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>O</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>10進数</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>D</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>16進数</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>H</key></keyseq></p></td>
+    </tr>
+    </table>
+    <p>履歴エントリ間を循環するには、次のようにします。</p>
+    <table>
+    <tr>
+    <td><p>前のエントリ</p></td>
+    <td><p><keyseq><key>Alt</key><key>Up</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>次のエントリ</p></td>
+    <td><p><keyseq><key>Alt</key><key>Down</key></keyseq></p></td>
+    </tr>
+    </table>
+</page>

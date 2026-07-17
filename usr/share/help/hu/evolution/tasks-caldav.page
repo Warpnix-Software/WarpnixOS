@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="tasks-caldav" xml:lang="hu">
+
+  <info>
+    <desc>Interneten lévő CalDAV feladatlista vagy feljegyzéslista használata.</desc>
+    
+    <link type="guide" xref="tasks-using-several-tasklists"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lukács Bence</mal:name>
+      <mal:email>lukacs.bence1 at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kelemen Gábor</mal:name>
+      <mal:email>kelemeng at gnome dot hu</mal:email>
+      <mal:years>2011, 2012, 2013, 2015, 2017, 2018.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nagy Zoltán</mal:name>
+      <mal:email>dzodzie at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Úr Balázs</mal:name>
+      <mal:email>ur.balazs at fsf dot hu</mal:email>
+      <mal:years>2014, 2019, 2021, 2022, 2023, 2024, 2025.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>CalDAV feladat- vagy feljegyzéslista használata</title>
+
+<p>Tegye a következőket egy ilyen feladat- vagy feljegyzéslista felvételéhez az <app>Evolutionbe</app>:</p>
+<steps>
+<item><p>Válassza a <guiseq><gui>Fájl</gui><gui>Új</gui><gui>Feladatlista</gui></guiseq> vagy a <guiseq><gui>Fájl</gui><gui>Új</gui><gui>Feljegyzéslista</gui></guiseq> menüpontot.</p></item>
+<item><p>Válassza a <gui>CalDAV</gui> típust.</p></item>
+<item>
+   <p>A kiszolgáló által bejelentett feladatlisták vagy feljegyzéslisták felderítéséhez adja meg a kiszolgáló címét <gui>URL</gui>-ként, és választhatóan a <gui>Felhasználót</gui>, majd kattintson a <gui style="button">Feladatlisták keresése</gui> vagy <gui style="button">Feljegyzéslisták keresése</gui> gombra. Válasszon egy feladatlistát vagy feljegyzéslistát és <gui>Felhasználói e-mail-címet</gui>. Ez előre kitölti a <gui>Név</gui>, <gui>Szín</gui>, <gui>URL</gui> és (lásd alább) <gui>E-mail</gui> mezőket. Ez a lépés nem kötelező, és felülírhatja az összes felfedezett beállítást.</p>
+</item>
+<item><p>Írjon be egy nevet.</p></item>
+<item><p>Kiválaszthat egy Ön által kedvelt színt is.</p></item>
+<item><p>Adja meg a címet az <gui>URL</gui> mezőben.</p></item>
+<item><p>Válassza a <gui>Biztonságos kapcsolat használata</gui> lehetőséget, amennyiben biztonságosan szeretne kapcsolódni.</p></item>
+<item><p>Adja meg felhasználónevét és e-mail-címét. Ha hozzárendelt feladatot hoz létre a feladatlistában, akkor ez az e-mail-cím előre kitöltésre kerül szervezőként.</p></item>
+    <item>
+      <p>Ha hozzárendelt feladatot hoznak létre, módosítanak vagy törölnek, akkor értesítést lehet küldeni a többi résztvevőnek. Ha az <gui>A kiszolgáló kezeli a találkozómeghívásokat</gui> ki van választva, akkor az <app>Evolution</app> feltölti a feladatot, és feltételezi, hogy a kiszolgáló értesíti a többi résztvevőt. Ha a lehetőség nincs kiválasztva, akkor az <app>Evolution</app> küld e-mailt.</p>
+    </item>
+<item><p>Nyomja meg az <gui style="button">OK</gui> gombot.</p></item>
+</steps>
+
+<p>A feladatlista hozzáadásra kerül a feladatlisták listájához az <app>Evolutionben</app>.</p>
+
+  <section>
+    <title>Gyűjteményfiókok</title>
+    <p>A különböző típusú levelek, címjegyzékek, naptárak, feladatok és feljegyzéslisták, amelyek ugyanahhoz a felhasználóhoz tartoznak, egy lépésben hozzáadhatók egy <link xref="intro-account-types#collection-account">gyűjteményfiók</link> használatával.</p>
+  </section>
+</page>

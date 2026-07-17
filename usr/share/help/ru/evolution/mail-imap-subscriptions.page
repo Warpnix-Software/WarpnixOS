@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-imap-subscriptions" xml:lang="ru">
+
+  <info>
+    <desc>Подписка на папки IMAP.</desc>
+    
+    <link type="guide" xref="index#mail-advanced"/>
+    <link type="guide" xref="mail-account-manage-imap-plus#other-settings"/>
+
+    <revision pkgversion="3.0.2" version="0.3" date="2011-08-05" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-subscriptions.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+
+<title>Подписки IMAP</title>
+
+<p>Так открытие многочисленных папок IMAP на сервере занимает время, можно указать, какие папки IMAP следует проверить и отобразить в <app>Evolution</app>, а какие — пока проигнорировать. Это выполняется с помощью <gui>окна управления подписками IMAP</gui>.</p>
+<steps>
+<item><p>Выберите пункт меню <guiseq><gui>Папка</gui><gui>Подписки...</gui></guiseq> или щёлкните правой кнопкой мыши по узлу верхнего уровня учётной записи в списке папок и выберите пункт <gui>Управление подписками</gui>.</p></item> 
+<item><p>Если у вас есть учётные записи на нескольких серверах, выберите тот сервер, на котором следует управлять подписками.</p></item>
+<item><p><app>Evolution</app> отобразит список файлов и папок, доступных на этом сервере IMAP.</p></item>
+<item><p>Выберите файл или папку щелчком мыши.</p>
+<p>Нужно выбрать по крайней мере папку <gui>Входящие</gui>. В зависимости от способа настройки сервера IMAP, список доступных файлов может включать папки, не являющиеся почтовыми. Если это так, эти папки можно игнорировать.</p></item>
+<item><p>Установите флажок, чтобы добавить папку к списку подписок.</p></item>
+</steps>
+
+</page>

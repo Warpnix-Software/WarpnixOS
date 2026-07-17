@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-search" xml:lang="uk">
+
+  <info>
+    <desc>Пошук тексту у редакторі повідомлень.</desc>
+    
+    <link type="guide" xref="index#mail-composing"/>
+    <link type="guide" xref="searching-items"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2013-04-20" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Пошук у редакторі повідомлень</title>
+
+<p>У меню <gui>Зміни</gui> редактора повідомлень ви знайдете декілька пунктів для пошуку фрагментів тексту.</p>
+
+<list>
+<item><p><gui>Знайти</gui>:</p><p>Введіть слово або фразу, а <app>Evolution</app> знайде їх у вашому повідомленні.</p></item>
+
+<item><p><gui>Знайти знову</gui>:</p><p>Виберіть цей пункт, щоб повторити останній виконаний вами пошук.</p></item>
+
+<item><p><gui>Замінити</gui>:</p><p>Пошук слова чи фрази із заміною їх на якісь інші слова або фрази.</p></item>
+</list>
+
+<p>Для усіх цих пунктів меню ви можете вказати, чи слід шукати у зворотному напрямку документа щодо поточної позиції курсора. Ви можете вказати, чи слід враховувати під час пошуку регістр символів при визначенні відповідника.</p>
+<p>Якщо ви маєте відповідні знання, ви можете скористатися для пошуку <link href="https://en.wikipedia.org/wiki/Regular_expression">формальними виразами</link>.</p>
+
+</page>

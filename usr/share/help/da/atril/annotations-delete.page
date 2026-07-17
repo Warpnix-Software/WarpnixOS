@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="annotations-delete" xml:lang="da">
+
+  <info>
+    <link type="guide" xref="index#annotations"/>
+    <link type="seealso" xref="annotations-save"/>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>David King</name>
+      <email its:translate="no">davidk@mate.org</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal-unported.xml"/>
+
+    <desc>Slet annotationer i et PDF-dokument.</desc>
+  </info>
+
+  <title>Fjern annotationer</title>
+
+  <p>En annotation er et notat eller en kommentar, der tilføjes til et PDF-dokument. Du kan fjerne annotationer, som du eller andre har tilføjet.</p>
+
+  <steps>
+    <item>
+      <p>Se på en side som har en annotation. Hvis du ikke er sikker på, hvilke sider der har annotationer, så find dem i <link xref="annotations-navigate">annotationssidepanelet</link>.</p>
+    </item>
+    <item>
+      <p>Højreklik på annotationsikonet i dokumentet, og klik <gui style="menuitem">Fjern annotation</gui>.</p>
+    </item>
+    <item>
+      <p>Gem ændringerne til et nyt dokument ved at klikke på menuknappen øverst til højre, efterfulgt af <gui style="menuitem">Gem som …</gui>.</p>
+    </item>
+  </steps>
+
+</page>

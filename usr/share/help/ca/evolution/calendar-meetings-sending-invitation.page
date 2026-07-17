@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-meetings-sending-invitation" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="calendar-meetings"/>
+
+    <revision pkgversion="3.28.2" version="0.3" date="2018-07-09" status="stub"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#usage-calendar-rsvp
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>S'està enviant una invitació a una reunió.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Enviar una invitació a una reunió</title>
+
+  <p>Quan creeu una reunió (cita grupal), podeu classificar els assistents en diverses categories, com ara «cadira» o «obligat». Quan deseu la llista de reunions s'envia a cada assistent un correu electrònic amb la informació de la reunió, que també els dona l'opció de respondre.</p>
+
+  <p>Si no necessiteu recopilar informació d'assistència quan programeu un esdeveniment, i tan sols voleu anunciar-lo, feu clic amb el botó dret a la reunió i seleccioneu. <gui>Reenvia com a iCalendar...</gui>. Aleshores s'obrirà un nou missatge de correu electrònic amb la notificació de l'esdeveniment adjunta. Els destinataris podran afegir l'esdeveniment als seus calendaris amb un sol clic, però no se us enviarà automàticament un correu electrònic sobre si tenen previst assistir-hi o no.</p>
+
+  <p>Per a programar una reunió:</p>
+
+  <steps>
+    <item>
+      <p>Feu clic a <guiseq><gui>Fitxer</gui><gui>Nou</gui><gui>Reunió</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Si teniu diversos comptes de correu electrònic, seleccioneu el que voleu utilitzar seleccionant un element en el camp <gui>Organitzador</gui>.</p>
+    </item>
+    <item>
+      <p>Seleccioneu un calendari a la llista desplegable <gui>Calendari</gui>.</p>
+    </item>
+    <item>
+      <p>Feu clic a <gui style="button">Afegeix</gui> per a afegir les adreces de correu electrònic de les persones que voleu convidar.</p>
+    </item>
+    <item>
+      <p>Feu clic a <gui>Vista</gui> a la barra de menú per a mostrar o ocultar els camps <gui>Tipus</gui>, <gui>Rols</gui>, <gui>Estatus</gui>, i <gui>RSVP</gui>.</p>
+    </item>
+    <item>
+      <p>Introduïu un breu resum al camp <gui>Sumari</gui>.</p>
+    </item>
+    <item>
+      <p>(Opcional) Escriviu una ubicació al camp <gui>Localització</gui>.</p>
+    </item>
+    <item>
+      <p>Per a marcar aquest esdeveniment com a un esdeveniment per tot el dia, feu clic a <guiseq><gui>Opcions</gui><gui>Esdeveniment per tot el dia</gui></guiseq>, o feu clic al botó <gui>Esdeveniment per tot el dia</gui> a la barra d'eines.</p>
+    </item>
+    <item>
+      <p>Seleccioneu la data i l'hora.</p>
+    </item>
+    <item>
+      <p>Si l'esdeveniment no és per tot un dia, seleccioneu <gui>Per</gui> per a indicar la durada, o seleccioneu <gui>Fins a</gui> per a especificar el temps de finalització de l'esdeveniment.</p>
+    </item>
+    <item>
+      <p>(Opcional) Introduïu la descripció al camp <gui>Descripció</gui>.</p>
+    </item>
+    <item>
+      <p>Per a consultar l'estat <link xref="calendar-free-busy">lliure/ocupat</link> dels assistents, feu clic al botó <gui style="button">Commuta la visualització del temps com a ocupat</gui> de la barra d'eines o a la pestanya <gui>Planificació</gui>.</p>
+    </item>
+    <item>
+      <p>Feu clic a <gui>Desa</gui> per a desar la reunió.</p>
+    </item>
+  </steps>
+
+  <p>S'envia un correu electrònic a tots els destinataris, convidant-los a l'esdeveniment.</p>
+
+  <p>També pot definir una zona horària a <link xref="calendar-timezones">zona horària</link>, a <link xref="using-categories">categoria</link>, a <link xref="calendar-alarms-and-reminders">recordatori</link>, a <link xref="calendar-recurrence">repetició</link>, o a <link xref="calendar-classifications">classificació</link> per l'esdeveniment, o afegir un adjunt.</p>
+
+  <note style="tip">
+    <p>A <app>Evolution</app>, una reunió només pot tenir un organitzador, i només l'organitzador pot afegir-hi participant. Tot i que és possible canviar l'organitzador d'una reunió, no és recomanable com a mitjà per a convidar participants addicionals. Si voleu convidar altres persones a una reunió i no sou l'organitzador d'aquesta reunió, es recomana que reenvieu el missatge d'invitació que vàreu rebre de l'organitzador de la reunió original als nous participants.</p>
+  </note>
+
+</page>

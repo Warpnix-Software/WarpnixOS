@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="shortcuts" xml:lang="da">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Se en list over alle genveje.</desc>
+
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <credit type="author">
+       <name>Tiffany Antopolski</name>
+       <email>tiffany.antopolski@gmail.com</email>
+    </credit>
+    <credit type="editor">
+       <name>Taufan Lubis</name>
+       <email>taufanlinux@gmail.com</email>
+    </credit>
+   <credit type="editor">
+       <name>Ronaldi Santosa</name>
+       <email>ronald.santosa@gmail.com</email>
+    </credit>
+   <credit type="editor">
+       <name>Ibnu Amansyah</name>
+       <email>javalander9@gmail.com</email>
+    </credit>
+   <credit type="editor">
+       <name>Andre Klapper</name>
+       <email>ak-47@gmx.net</email>
+    </credit>
+   <credit type="editor">
+       <name>Germán Poo-Caamaño</name>
+       <email>gpoo@gnome.org</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  </info>
+
+
+<title>Tastaturgenveje</title>
+
+<section id="default-shortcuts"><title>Standardgenveje</title>
+<section id="open-close-save-print">
+  <title>Åbne, lukke, gemme og udskrive</title>
+  <table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Sådan åbnes et dokument.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>O</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Åbn en kopi af det aktuelle dokument.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>N</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Gem en kopi af det aktuelle dokument med et nyt filnavn.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>S</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Udskriv det aktuelle dokument.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>P</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Luk det aktuelle dokumentvindue.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>W</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Genindlæs dokumentet (i virkeligheden lukkes dokumentet, for så at åbnes igen).</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>R</key></keyseq></p></td>
+    </tr>
+  </table>
+</section>
+
+<section id="move-around">
+    <title>Naviger i dokumentet</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Flyt en side op eller ned.</p></td>
+        <td><p>Piletaster</p></td>
+    </tr>
+    <tr>
+        <td><p>Flyt flere linjer op eller ned på en side ad gangen.</p></td>
+        <td><p><key>PgUp</key> / <key>PgDn</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Gå til forrige side.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>Side op</key></keyseq> / <key>P</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Gå til næste side.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>Side ned</key></keyseq> / <key>N</key></p></td>
+    </tr>
+<tr>
+        <td><p>Gå til sidenummer.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>L</key></keyseq> efterfulgt af sidenummeret og <key>Retur</key></p></td>
+</tr>
+    <tr>
+        <td><p>Gå til starten af en side (starten af dokumentet, hvis <gui>Fortløbende</gui>er valgt i hovedmenuen i øverste højre hjørne).</p></td>
+         <td><p><key>Home</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Gå til slutningen af en side (slutningen af dokumentet, hvis <gui>Fortløbende</gui> er valgt i hovedmenuen i øverste højre hjørne).</p></td>
+        <td><p><key>End</key></p></td>
+    </tr>
+    <tr>
+    	<td><p>Gå til begyndelsen af dokumentet.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>Home</key></keyseq></p></td>
+    </tr>
+    <tr>
+    	<td><p>Gå til slutningen af dokumentet.</p></td>
+         <td><p><keyseq><key>Ctrl</key><key>End</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Tilføj et bogmærke i den nuværende side.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>D</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Slet bogmærket i den nuværende side, his der er et.</p></td>
+        <td><p><keyseq><key>Skift</key><key>Ctrl</key><key>D</key></keyseq></p></td>
+    </tr>
+    <tr>
+         <td><p>Vis sidepanelet med en indholdsfortegnelse og bogmærker.</p></td>
+         <td><p><key>F9</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Aktiver markørnavigation ved at placere et flytbar markør i tekstsider, så du kan flytte rundt og vælge tekst med tastaturet.</p></td>
+        <td><p><key>F7</key></p></td>
+    </tr>
+  </table>
+</section>
+
+<section id="copy">
+    <title>Marker og kopier tekst</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Kopier den markerede tekst.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>C</key></keyseq> / <keyseq><key>Ctrl</key><key>Indsæt</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Vælg al tekst i et dokument.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>A</key></keyseq></p></td>
+    </tr>
+</table>
+</section>
+
+<section id="find">
+    <title>Find tekst</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Vis værktøjslinjen som gør det muligt at søge efter ord i dokumentet. Når du trykker på den, er søgeboksen automatisk markeret, og søgningen begynder, når du skriver tekst i den. Hvis du vælger noget tekst i dokumentet før søgning, så vil søgningen begynde med den tekst.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>F</key></keyseq> / <key>/</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Gå til næste søgeresultat.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>G</key></keyseq> / <key>F3</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Gå til foregående søgeresultat.</p></td>
+        <td><p><keyseq><key>Skift</key><key>Ctrl</key><key>G</key></keyseq> / <keyseq><key>Skift</key><key>F3</key></keyseq></p></td>
+    </tr>
+</table>
+</section>
+
+<section id="rotate-zoom">
+    <title>Roter og zoom</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Roter siderne 90 grader mod uret.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>venstrepil</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Roter siderne 90 grader med uret.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>højrepil</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Standardzoom.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>0</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Zoom ind.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>+</key></keyseq> / <key>=</key> / <keyseq><key>Ctrl</key><key>=</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Zoom ud.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>-</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Tilpas siden til vinduet.</p></td>
+        <td><p><key>F</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Tilpas indholdsbredden til den tilgængelige plads.</p></td>
+        <td><p><key>W</key></p></td>
+    </tr>
+</table>
+</section>
+
+<section id="window">
+    <title>Vindue</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Brug hele skærmen til at få vist dokumentet.</p></td>
+        <td><p><key>F11</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Start en præsentation.</p></td>
+        <td><p><key>F5</key> / <keyseq><key>Skift</key><key>F5</key></keyseq></p></td>
+    </tr>
+</table>
+</section>
+
+<section id="document">
+    <title>Dokumentvisning</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Vend baggrund og tekstfarver om.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>I</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Skift mellem fortsættende og side om side-visning af dokumentet.</p></td>
+        <td><p><key>C</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Vis to sider side om side.</p></td>
+        <td><p><key>D</key></p></td>
+    </tr>
+</table>
+</section>
+
+<section id="presentation">
+    <title>Præsentationstilstand</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Aktiver/deaktiver sort skærm.</p></td>
+        <td><p><key>B</key> / <key>.</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Aktiver/deaktiver hvid skærm.</p></td>
+        <td><p><key>W</key></p></td>
+    </tr>
+</table>
+</section>
+
+</section>
+
+</page>

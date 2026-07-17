@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="conv-currency" xml:lang="sr">
+
+    <info>
+        <link type="guide" xref="index#conversion"/>
+    </info>
+
+	<title>Валута</title>
+
+    <p>Да претворите валуте, уђите у <link xref="financial">финансијски режим</link>, и користите контроле валута.</p>
+    <p>Можете такође да претворите валуте коришћењем тастатуре и операнда „<em>у</em>“.</p>
+    <example>
+    <p>13.65 USD у GBP</p>
+    </example>
+    <note>
+    <p>Информација валуте је приближна и не треба је узимати за тачну приликом доношења финансијских одлука.</p>
+    </note>
+</page>

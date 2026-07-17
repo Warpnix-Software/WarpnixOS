@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="license" xml:lang="ca">
+  
+  <info>
+    <link type="seealso" xref="index"/>
+    <revision pkgversion="3.5.5" version="0.1" date="2012-08-12" status="review"/>
+    <desc>Informació legal.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Joan Duran</mal:name>
+      <mal:email>jodufi@gmail.com</mal:email>
+      <mal:years>2007, 2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Llicència</title>
+  <p>Aquesta obra es distribueix sota una llicència no adaptada CreativeCommons Reconeixement-Compartir Igual 3.0.</p>
+  <p>Podeu:</p>
+  <terms>
+    <item>
+      <title><em>Compartir</em></title>
+      <p>Copiar, distribuir i transmetre l'obra.</p>
+    </item>
+    <item>
+      <title><em>Adaptar</em></title>
+      <p>Adaptar l'obra.</p> 
+    </item>
+  </terms>
+  <p>Amb les condicions següents:</p>
+  <terms>
+    <item>
+      <title><em>Atribució</em></title>
+      <p>Heu d'atribuir l'obra de la manera especificada per l'autor o llicenciador (però no d'una manera que suggereixi que el llicenciador us patrocina o patrocina l'ús que feu de l'obra).</p>
+    </item>
+    <item>
+      <title><em>Compartir igual</em></title>
+      <p>Si altereu, transformeu o creeu a partir d'aquesta obra, només podeu distribuir l'obra resultant amb la mateixa llicència, una de similar o una de compatible.</p>
+    </item>
+  </terms>
+  <p>Per al text complet de la llicència, vegeu el <link href="http://creativecommons.org/licenses/by-sa/3.0/legalcode">lloc web de CreativeCommons</link> o llegiu el <link href="http://creativecommons.org/licenses/by-sa/3.0/">document complet de l'acte</link>.</p>
+</page>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-html-rule" xml:lang="ru">
+
+  <info>
+    <desc>Вставка горизонтальной линии в редакторе сообщений.</desc>
+    <link type="guide" xref="mail-composer-html#formatting-options-html"/>
+
+    <revision pkgversion="3.5.90" version="0.4" date="2012-08-16" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#bsait2c -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Вставка разделителя в HTML</title>
+
+<p>В письмо можно вставить горизонтальную линию (в текущей позиции курсора) для разделения его на две части:</p>
+<steps>
+<item><p>Выберите в строке меню пункт <guiseq><gui>Вставка</gui><gui>Разделитель…</gui></guiseq>.</p></item>
+<item><p>Выберите ширину, размер и выравнивание.</p></item>
+<item><p>Включите <gui>Затенение</gui>, если требуется.</p></item>
+<item><p>Нажмите кнопку <gui>Закрыть</gui>.</p></item>
+</steps>
+
+<p>Также можно нажать значок <media type="image" its:translate="no" src="./figures/html-composer-insert-rule.png"/>, расположенный на второй панели под строкой <gui>Тема</gui>.</p>
+
+</page>

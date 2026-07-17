@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="earmarks" xml:lang="ru">
+  <info>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+   <link type="guide" xref="index#tips"/>
+    <credit type="author copyright">
+      <name>Thomas Hinkle</name>
+      <email>tmhinkle@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Chris Beiser</name>
+      <email>ctbeiser@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ser82-png</mal:name>
+      <mal:email>asvmail.as@gmail.com</mal:email>
+      <mal:years>2022-2024</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Метки</title>
+<p>Метки (небольшие числовые заметки) могут быть добавлены к любой ячейке. Они позволяют отметить возможные значения для ячейки. Метки позволяют хранить любое количество цифр в ячейке. Каждая цифра может быть выбрана только один раз.</p>
+
+<p>Чтобы добавить метки в ячейку:</p>
+
+<steps>
+  <item><p>Выберите ячейку.</p></item>
+  <item><p>Нажмите необходимую комбинацию клавиш от <keyseq><key>Ctrl</key><key>1</key></keyseq> до <keyseq><key>Ctrl</key><key>9</key></keyseq>.</p></item>
+</steps>
+
+<p>Вы можете удалить номер из меток, нажав комбинацию клавиш от <keyseq><key>Ctrl</key><key>1</key></keyseq> до <keyseq><key>Ctrl</key><key>9</key></keyseq> ещё раз.</p>
+
+<note><p>Вы также можете добавить метки с помощью мыши, щёлкнув ячейку, удерживая нажатой клавишу <key>Ctrl</key>, или щёлкнув ячейку правой кнопкой мыши и выбрать число.</p></note>
+
+</page>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="contacts-using-several-addressbooks" xml:lang="hu">
+
+  <info>
+    <link type="guide" xref="contacts-organizing"/>
+
+    <revision pkgversion="3.8.2" version="0.4" date="2013-06-20" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Különböző típusú címjegyzékek hozzáadása és több címjegyzék használata.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lukács Bence</mal:name>
+      <mal:email>lukacs.bence1 at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kelemen Gábor</mal:name>
+      <mal:email>kelemeng at gnome dot hu</mal:email>
+      <mal:years>2011, 2012, 2013, 2015, 2017, 2018.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nagy Zoltán</mal:name>
+      <mal:email>dzodzie at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Úr Balázs</mal:name>
+      <mal:email>ur.balazs at fsf dot hu</mal:email>
+      <mal:years>2014, 2019, 2021, 2022, 2023, 2024, 2025.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Címjegyzékek hozzáadása és létrehozása</title>
+
+  <p>Több címjegyzéket is használhat. Az egyikben tárolhatja például a munkájával kapcsolatos névjegyeket, a másikban pedig a személyes névjegyeket. Az oldalsáv felsorolja ezeket a címjegyzékeket, és kiválaszthatja az éppen megjelenítendőt.</p>
+
+  <p>Nem csak a számítógépén, az interneten (például: Google) vagy a helyi hálózaton (például: LDAP) lévő címjegyzékeket is használhat.</p>
+  <p>Az új névjegyek a Névjegyek ablakban kiválasztott címjegyzékben jönnek létre. Ha nincs címjegyzék kiválasztva, akkor az új névjegyek az alapértelmezett címjegyzékben jönnek létre.</p>
+
+  <section>
+    <title>Gyűjteményfiókok</title>
+    <p>A különböző típusú levelek, címjegyzékek, naptárak, feladatok és feljegyzéslisták, amelyek ugyanahhoz a felhasználóhoz tartoznak, egy lépésben hozzáadhatók egy <link xref="intro-account-types#collection-account">gyűjteményfiók</link> használatával.</p>
+  </section>
+</page>

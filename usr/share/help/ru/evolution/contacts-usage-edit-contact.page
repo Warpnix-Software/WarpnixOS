@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-usage-edit-contact" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="contacts-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.1" date="2011-08-01" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Изменение контакта в адресной книге.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Изменение контакта</title>
+
+  <p>Чтобы изменить контакт, который уже имеется в адресных книгах, выполните следующие действия:</p>
+
+  <steps>
+    <item>
+      <p>Дважды щёлкните в списке контактов по контакту, который следует изменить, или выберите контакт и нажмите клавишу <key>Enter</key>.</p>
+    </item>
+    <item>
+      <p>Изменение контактной информации.</p>
+    </item>
+    <item>
+      <p>Нажмите кнопку <gui style="button">OK</gui>.</p>
+    </item>
+  </steps>
+
+</page>

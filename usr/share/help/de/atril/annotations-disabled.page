@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="annotations-disabled" xml:lang="de">
+<info>
+  <link type="guide" xref="index#annotations"/>
+  <link type="seealso" xref="annotations"/>
+ <desc>Anmerkungen können nur zu PDF-Dateien hinzugefügt werden.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+</info>
+<title>Können keine Anmerkungen hinzugefügt werden?</title>
+ <p>Anmerkungen können nur zu PDF-Dateien hinzugefügt werden. Falls die Datei in einem anderen Format als PDF vorliegen sollte, wird die Option zum Hinzufügen von Anmerkungen grau dargestellt (deaktiviert).</p>
+</page>

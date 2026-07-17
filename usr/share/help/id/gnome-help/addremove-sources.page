@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="addremove-sources" xml:lang="id">
+
+  <info>
+    <credit type="author">
+      <name>Tim Dokumentasi Ubuntu</name>
+    </credit>
+    <desc>Menambahkan repositori untuk memperluas sumber perangkat lunak yang digunakan Ubuntu untuk instalasi dan peningkatan.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove"/>
+    <revision version="20.10" date="2020-09-13" status="review"/>
+  </info>
+
+  <title>Menambahkan repositori perangkat lunak</title>
+
+  <p>Perangkat lunak tersedia dari sumber pihak ketiga, serta dari repositori perangkat lunak Ubuntu baku. Jika Anda ingin menginstal perangkat lunak dari repositori perangkat lunak pihak ketiga, Anda harus menambahkannya ke daftar repositori yang tersedia di Ubuntu.</p>
+
+  <note style="warning">
+    <p>Tambahkan repositori perangkat lunak hanya dari sumber yang Anda percayai!</p>
+    <p>Repositori perangkat lunak pihak ketiga tidak diperiksa untuk keamanan atau keandalan oleh anggota Ubuntu, dan mungkin berisi perangkat lunak yang berbahaya bagi komputer Anda.</p>
+  </note>
+
+<p>
+</p>
+   <p>Untuk menambahkan repositori:</p>
+
+  <steps>
+    <item>
+      <p>Buka <app>Perangkat Lunak &amp; Pemutakhiran</app> melalui bilah pencarian <em>Aktivitas</em>.</p>
+    </item>
+    <item>
+      <p>Beralih ke tab <gui>Perangkat Lunak Lain</gui>.</p>
+    </item>
+    <item>
+      <p>Klik <gui>Tambah</gui> dan masukkan baris APT untuk repositori. Ini mestinya tersedia dari situs web repositori, dan harus terlihat seperti:</p>
+      <p>
+        <code its:translate="no">deb http://archive.ubuntu.com/ubuntu/ resolute main</code>
+      </p>
+    </item>
+    <item>
+      <p>Klik <gui>Tambahkan Sumber</gui>. Masukkan kata sandi Anda di jendela Autentikasi.</p>
+    </item>
+    <item>
+      <p>
+        Close the <app>Software &amp; Updates</app> window. <app>App Center</app> will then
+        check your software sources for new software.
+      </p>
+    </item>
+    <item>
+      <p>Sebagian besar repositori menyediakan kunci penandatanganan untuk dapat memverifikasi paket yang diunduh. Jadi, selain langkah di atas, Anda harus mengikuti kemungkinan petunjuk tentang cara mengunduh dan menginstal kunci penandatanganan (kunci GPG).</p>
+    </item>
+  </steps>
+
+</page>

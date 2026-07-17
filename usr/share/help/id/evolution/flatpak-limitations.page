@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="flatpak-limitations" xml:lang="id">
+
+  <info>
+    <desc>Keterbatasan saat menggunakan paket Flatpak <app>Evolution</app>.</desc>
+
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="3.35.91" version="0.1" date="2020-02-21" status="review"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Tidak bisa mencetak surel, menambahkan atau menyimpan lampiran, atau membuka bantuan</title>
+
+<p>Jika Anda menjalankan Versi <link href="https://flathub.org/">Flatpak</link> dari <app>Evolution</app>, maka ada beberapa keterbatasan. Contohnya adalah:</p>
+
+<list>
+  <item><p>Menambahkan lampiran ke surel atau menyimpan lampiran dari surel mungkin tidak bisa.</p></item>
+  <item><p>Anda tak bisa mencetak surel ke pencetak. Ini adalah <link href="https://bugs.webkit.org/show_bug.cgi?id=192748">batasan dari pustaka WebKitGTK yang mendasarinya</link>.</p>
+  <p>Untuk mencetak surel ke berkas, Anda dapat menjalankan <cmd>flatpak run --filesystem=home org.gnome.Evolution</cmd> sebagai solusinya.</p></item>
+  <item><p>Dokumentasi pengguna lokal mungkin tidak disertakan, untuk membuat paket lebih kecil.</p></item>
+</list>
+</page>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:e="http://projectmallard.org/experimental/" xmlns:if="http://projectmallard.org/if/1.0/" type="guide" id="mail-account-manage-microsoft-exchange" xml:lang="uk">
+
+  <info>
+    <desc>Додавання і редагування облікового запису Microsoft Exchange в <app>Evolution</app>.</desc>
+
+    <link type="guide" xref="mail-account-management#mail-corporate-account-types"/>
+    <title type="link" role="trail">Microsoft Exchange</title>
+
+    <revision pkgversion="2.30.2" version="0.3" date="2011-07-30" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Параметри облікового запису Microsoft Exchange</title>
+
+<note style="important"><p>Залежно від версії сервера Microsoft Exchange, з яким ви хочете встановити з'єднання, слід переконатися, що у системі встановлено додатковий пакунок, який забезпечує працездатність відповідних можливостей.</p>
+
+<p>Для роботи із сервером Microsoft Exchange (версії 2007 або новішої) або сервером OpenChange рекомендуємо вам скористатися пакунком <sys>evolution-ews</sys>.</p>
+<if:choose>
+  <if:when test="action:install">
+    <note style="info package">
+      <p><link action="install:evolution-ews" href="https://gitlab.gnome.org/GNOME/evolution/-/wikis/home#get-the-source-code" style="button">Встановлення evolution-ews</link></p>
+    </note>
+  </if:when>
+</if:choose>
+
+<p>Для роботи із застарілими версіями Microsoft Exchange або у випадках непрацездатності <sys>evolution-ews</sys> спробуйте скористатися <sys>evolution-mapi</sys>.</p><p>У цьому пакунку використано програмний інтерфейс обміну повідомленнями Microsoft, який також використовується у Microsoft Outlook. Втім, <sys>evolution-mapi</sys> потребує встановлення <sys>OpenChange</sys> і <sys>Samba 4</sys> і працює не так швидко, як <sys>evolution-ews</sys>.</p>
+
+<if:choose>
+  <if:when test="action:install">
+    <note style="info package">
+      <p><link action="install:evolution-mapi" href="https://gitlab.gnome.org/GNOME/evolution/-/wikis/home#get-the-source-code" style="button">Встановлення evolution-mapi</link></p>
+    </note>
+  </if:when>
+</if:choose>
+
+<p>Якщо ви не певні щодо того, яку версію сервера Microsoft Exchange використано, ви можете зв'язатися із адміністратором вашої системи, щоб дізнатися більше.</p></note>
+
+<p>Щодо тем, які не вісвітлено у цьому підручнику, зверніться до <link href="https://help.gnome.org/users/evolution/2.32/usage-exchange.html">старого підручника з <app>Evolution</app></link>.</p>
+
+</page>

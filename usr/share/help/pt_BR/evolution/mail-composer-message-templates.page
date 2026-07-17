@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-composer-message-templates" xml:lang="pt-BR">
+
+  <info>
+ <desc>Message templates to reuse in the composer.</desc>
+
+ <link type="guide" xref="index#mail-composing-advanced"/>
+
+ <revision pkgversion="3.5.90" version="0.3" date="2012-08-17" status="draft"/>
+ <credit type="author">
+   <name its:translate="no">Andre Klapper</name>
+   <email its:translate="no">ak-47@gmx.net</email>
+ </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/b1dlaazl.html.en -->
+ </credit>
+ 
+ <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Fontenelle</mal:name>
+      <mal:email>rafaelff@gnome.org</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Message Templates</title>
+<p>A message template is a standard message that you can use at any time to send mail with the same pattern.</p>
+<p>To enable the Message Template Plugin:</p>
+<steps>
+<item><p>Selecione <guiseq><gui>Editar</gui><gui>Plug-ins</gui></guiseq>.</p></item>
+<item><p>Enable <gui>Templates</gui>.</p>
+<note style="tip"><p>Se um plug-in não estiver disponível em <guiseq><gui>Editar</gui><gui>Plug-ins</gui></guiseq>, pergunte em um fórum de suporte de sua distribuição. Sua distribuição pode ter decidido desabilitar alguns plug-ins ou enviar plug-ins em um pacote separado.</p></note>
+</item>
+</steps>
+
+
+  <section id="options">
+    <title>Message Templates</title>
+  </section>
+
+</page>

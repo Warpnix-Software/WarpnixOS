@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="tasks-usage-delete-task" xml:lang="uk">
+
+  <info>
+    <desc>Вилучення завдання з вашого списку завдань.</desc>
+    
+    <link type="guide" xref="tasks-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.1" date="2011-08-01" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Вилучення завдання</title>
+
+<p>Якщо ви хочете вилучити завдання з ваших списків завдань, клацніть правою кнопкою миші на пункті завдання і виберіть у контекстному меню пункт <gui>Вилучити</gui>, або клацніть на завданні і натисніть кнопку <gui>Вилучити</gui> на панелі інструментів чи комбінацію клавіш <keyseq><key>Ctrl</key><key>D</key></keyseq>, або виберіть пункт меню <guiseq><gui>Зміни</gui><gui>Вилучити завдання</gui></guiseq>.</p>
+
+</page>

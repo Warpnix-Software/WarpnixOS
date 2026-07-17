@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-account-manage-imap-plus" xml:lang="hu">
+
+  <info>
+    <desc>IMAP+ levelezőfiók hozzáadása és szerkesztése az <app>Evolutionben</app>.</desc>
+
+    <link type="guide" xref="mail-account-management#mail-common-account-types"/>
+    <title type="link" role="trail">IMAP+</title>
+
+    <revision pkgversion="3.4" version="0.4" date="2013-06-22" status="candidate"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lukács Bence</mal:name>
+      <mal:email>lukacs.bence1 at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kelemen Gábor</mal:name>
+      <mal:email>kelemeng at gnome dot hu</mal:email>
+      <mal:years>2011, 2012, 2013, 2015, 2017, 2018.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nagy Zoltán</mal:name>
+      <mal:email>dzodzie at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Úr Balázs</mal:name>
+      <mal:email>ur.balazs at fsf dot hu</mal:email>
+      <mal:years>2014, 2019, 2021, 2022, 2023, 2024, 2025.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>IMAP+ levelezőfiók beállításai</title>
+
+<section id="account-editor">
+<title>Postafiók-szerkesztő</title>
+<p>Postafiókokat a <guiseq><gui>Fájl</gui><gui>Új</gui><gui>Postafiók</gui></guiseq> menüpont kiválasztásával, vagy a <guiseq><gui>Szerkesztés</gui><gui>Beállítások</gui><gui>Postafiókok</gui><gui style="button">Hozzáadás</gui></guiseq> gomb megnyomásával vehet fel. A lépések nagyrészt azonosak a <link xref="intro-first-run">fiókvarázslóéival</link>, azonban ez nem kérdez rá a más alkalmazásokból való importálásra vagy a biztonsági mentés visszaállítására.</p>
+<p>A postafiókokat a <guiseq><gui>Szerkesztés</gui><gui>Beállítások</gui><gui>Postafiókok</gui><gui style="button">Szerkesztés</gui></guiseq> gomb megnyomásával, vagy a mappalista megfelelő felső szintű elemének helyi menüjéből a <gui>Tulajdonságok</gui> menüpont kiválasztásával szerkesztheti.</p>
+<p>A következő beállítások érhetők el meglévő fiók szerkesztésekor:</p>
+
+<section id="identity">
+<info>
+  <title type="link">Személyazonosság (IMAP+ fiókok)</title>
+  <title type="link" role="trail">Személyazonosság</title>
+</info>
+<title>Személyazonosság</title>
+<p>Itt megadhatja nevét és e-mail-címét.</p>
+<p>Beállíthat válaszcímet (ha a válaszokat másik címre szeretné megkapni) és beállíthat szervezetet (a munkahelye, vagy az a szervezet, amelyet a postafiókból való levélküldéskor képvisel), az alapértelmezett <link xref="mail-composer-mail-signatures">aláírást</link>ehhez a fiókhoz, és <link href="https://en.wikipedia.org/wiki/Email_alias">e-mail álneveket</link>.</p>
+</section>
+
+<section id="receiving-email">
+<info>
+  <title type="link">E-mailek fogadása és fogadási beállítások (IMAP+ fiókok)</title>
+  <title type="link" role="trail">Fogadás</title>
+</info>
+<title>E-mailek fogadása és fogadási beállítások</title>
+</section>
+
+<section id="sending-email">
+<info>
+  <title type="link">E-mail küldése (IMAP+ fiókok)</title>
+  <title type="link" role="trail">Küldés</title>
+</info>
+<title>Levél küldése</title>
+</section>
+
+<section id="defaults">
+<info>
+  <title type="link">Alapbeállítások (IMAP+ fiókok)</title>
+  <title type="link" role="trail">Alapértékek</title>
+</info>
+<title>Alapértékek</title>
+</section>
+
+<section id="composing-messages">
+<info>
+  <title type="link">Üzenetek írása (IMAP+ fiókok)</title>
+  <title type="link" role="trail">Levélírás</title>
+</info>
+<title>Üzenetek írása</title>
+</section>
+
+<section id="security">
+<info>
+  <title type="link">Biztonság (IMAP+ fiókok)</title>
+  <title type="link" role="trail">Biztonság</title>
+</info>
+<title>Biztonság</title>
+</section>
+
+<!-- Note: There is no "IMAP Headers" tab for IMAP+ under Edit>Prefs>MailAccounts>Edit existing as it was for IMAP. See https://bugzilla.gnome.org/show_bug.cgi?id=655519 -->
+
+</section> <!-- end "account editor" section, now list any account settings stuff related to this account type outside of it -->
+
+<section id="other-settings">
+<info>
+  <title type="link">Egyéb beállítások (IMAP+ fiókok)</title>
+  <title type="link" role="trail">Egyéb beállítások</title>
+</info>
+<title>Egyéb beállítások</title>
+<p>Fiókokkal kapcsolatos további beállítások, amelyek nem a <gui>Postafiók-szerkesztőből</gui> érhetők el:</p>
+</section>
+
+</page>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<info xmlns="http://projectmallard.org/1.0/">
+
+<section id="advanced-search">
+<title>Cerca avançada</title>
+<steps>
+<item><p>Seleccioneu el menú <guiseq><gui>Cerca</gui><gui>Cerca avançada</gui></guiseq> per a obrir el quadre de diàleg.</p></item>
+<item><p>Feu clic a <gui style="button">Afegir una condició</gui> per a afegir qualsevol quantitat de regles.</p></item>
+<item><p>Seleccioneu la condició de la llista desplegable i, a continuació, escriviu una entrada per a cercar al camp.</p></item>
+<item><p>Feu clic <gui style="button">D'acord</gui> per a mostrar els resultats de la cerca.</p></item>
+</steps>
+</section>
+
+<section id="clearing-search">
+<title>Netejar els resultats de la cerca</title>
+<p>Per a esborrar la vista de cerca i tornar a la vista per defecte, feu clic a la <gui>Neteja</gui> icona en el camp de la cadena de cerca, o trieu <guiseq><gui>Cerca</gui><gui>Neteja</gui></guiseq>des de la barra d'eines. També podeu prémer <keyseq><key>Maj</key><key>Ctrl</key><key>Q</key></keyseq> per a netejar la cerca.</p>
+</section>
+
+<section id="saved-searches">
+<title>Cerques desades</title>
+<p>Si cerqueu alguna cosa molt sovint, us podeu estimar més no haver d'escriure-ho moltes vegades. En aquest cas, podeu utilitzar cerques desades.</p>
+<p>Per a desar els resultats de la cerca, feu clic a <gui>Desa</gui> en comptes de <gui>D'acord</gui> al quadre de diàleg Cerca o, en cas que els resultats de la cerca ja es mostrin, seleccioneu <guiseq><gui>Cerca</gui><gui>Desa la cerca</gui></guiseq>. Des d'ara aquesta cerca estarà directament disponible des del <gui>Cerca</gui> menú.</p>
+</section>
+
+<section id="editing-a-saved-search">
+<title>Edició d'una cerca desada</title>
+<steps>
+<item><p>Seleccioneu <guiseq><gui>Cerca</gui><gui>Edita les cerques desades</gui></guiseq> des de la barra de menú per a obrir la finestra.</p></item>
+<item><p>Feu clic al <gui style="button">Edita</gui>botó per a obrir <gui>Edita la regla</gui> la finestra.</p></item>
+<item><p>Editeu el títol o les condicions de cerca des del quadre de diàleg.</p></item>
+<item><p>Clic <gui>D'acord</gui>.</p></item>
+</steps>
+</section>
+
+</info>

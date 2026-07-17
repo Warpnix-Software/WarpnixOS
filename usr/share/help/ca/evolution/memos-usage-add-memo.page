@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="memos-usage-add-memo" xml:lang="ca">
+
+  <info>
+    <desc>Afegir una nota a la llista d'anotacions.</desc>
+    
+    <link type="guide" xref="memos-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.1" date="2011-08-01" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/b15iirao.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Afegir una nota</title>
+
+<steps>
+<item><p>Feu clic a <guiseq><gui>Fitxer</gui><gui>Nova</gui><gui>Anotació</gui></guiseq>, o premeu <keyseq><key>Maj</key><key>Ctrl</key><key>O</key></keyseq>.</p></item>
+<item><p>Seleccioneu una llista d'anotacions de la llista desplegable de <gui>Llista</gui>.</p></item>
+<item><p>Introduïu la informació de la nota.</p></item>
+<item><p>Feu clic al botó <gui style="button">Desa</gui>, o <guiseq><gui>Fitxer</gui><gui>Desa</gui></guiseq>.</p></item>
+</steps>
+
+<p>Si voleu afegir ràpidament una nota introduint-ne un breu resum, podeu fer-ho directament a la llista de notes.</p>
+
+<p>Podeu definir una <link xref="using-categories">categoria</link>, o una <link xref="calendar-classifications">classificació</link> per a la nota, o afegir un adjunt.</p>
+
+<section id="shared-memos">
+<title>Notes compartides</title>
+
+<p>Les notes compartides són com a missatges de correu, excepte que estan programades per a un dia concret i que apareixen al calendari en aquesta data. Podeu utilitzar notes compartides per a mostrar vacances, festes, dies de pagament, aniversaris, etc. Les notes compartides publicades es col·loquen al calendari en la data que especifiqueu. No es col·loquen a la bústia de correu ni a la bústia d'un altre usuari.</p>
+
+<p>Per a enviar una nota compartida,</p>
+<steps>
+<item><p>Feu clic <guiseq><gui>Fitxer</gui><gui>Nova</gui><gui>Anotació compartida</gui></guiseq>, o premeu <keyseq><key>Maj</key><key>Ctrl</key><key>H</key></keyseq>.</p></item>
+<item><p>Seleccioneu el nom del compte de l'organitzador a la llista desplegable que hi ha al costat del camp <gui>Organitzador</gui>.</p></item>
+<item><p>Al camp <gui>Per a</gui>, escrigui un usuari, aleshores premi <key>Retorn</key>. Repetir-ho per als usuaris addicionals.</p></item>
+<item><p>Seleccioneu la llista de tasques (a <gui>Llista</gui>) on voleu crear l'entrada.</p></item>
+<item><p>Introduïu un breu resum al camp <gui>Sumari</gui>.</p></item>
+<item><p>Al camp <gui>Data d'inici</gui>, escrigui la data en què aquesta nota compartida hauria d'aparèixer als calendaris dels destinataris.</p></item>
+<item><p>Feu clic al botó <gui style="button">Desa</gui>, o <guiseq><gui>Fitxer</gui><gui>Desa</gui></guiseq>.</p></item>
+</steps>
+</section>
+
+</page>

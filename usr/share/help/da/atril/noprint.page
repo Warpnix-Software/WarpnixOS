@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:if="http://projectmallard.org/if/1.0/" type="topic" style="task" id="noprint" xml:lang="da">
+
+  <info>
+    <link type="guide" xref="index#printing"/>
+    <desc>Forfatteren kan have lagt begrænsninger i dokumentet hvad angår udskrivning.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  </info>
+
+<title>Jeg kan ikke udskrive et dokument</title>
+<section id="why">
+ <title>Mulige årsager til at udskrivning mislykkes</title>
+<p>Hvis et dokument ikke kan udskrives, kan det skyldes:</p>
+ <list>
+  <item><p>Printerproblemer eller,</p></item>
+  <item><p>Begrænsninger i udskriften af PDF.</p></item>
+ </list>
+</section>
+
+<section id="printer-problems">
+  <title>Printerproblemer</title>
+  <p>Der kan være mange grunde til at din printer ikke fungerer. Den kan for eksempel mangle papir eller blæk. Eller den kan være i stykker, eller måske er den ikke tilsluttet.</p>
+  <p>Du kan eventuelt kontroller din printerkonfiguration i kontrolcenteret.</p>
+</section>
+
+<section id="pdf-restrictions">
+  <title>Begrænsninger i udskriften af PDF</title>
+  <p>Nogle PDF-dokumenter har en indstilling, der forhindrer, at de kan udskrives. Under oprettelsen af et dokument kan forfatteren lægge denne begrænsning på udskrivningen. Som standard tilsidesætter Atril begrænsningen, men du kan undersøge om dette er blevet deaktiveret:</p>
+
+  <note style="important">
+    <p>Du skal have <app>dconf-redigeringsprogrammet</app> installeret på din computer for at ændre denne indstilling.</p>
+  </note>
+
+  <steps>
+    <item>
+      <p>Åbn <gui>dconf-redigeringsprogram</gui>.</p>
+    </item>
+    <item>
+      <p>Gå til <sys>/org/mate/atril</sys>.</p>
+    </item>
+    <item>
+      <p>Sørg for at der er sat hak ved <gui>tilsidesæt begrænsninger</gui>.</p>
+    </item>
+    <item>
+      <p>Vend tilbage til <app>Atril</app> og prøv igen at udskrive dokumentet.</p>
+    </item>
+  </steps>
+</section>
+
+</page>

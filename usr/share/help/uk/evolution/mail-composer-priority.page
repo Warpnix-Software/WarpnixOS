@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-composer-priority" xml:lang="uk">
+
+  <info>
+    <desc>Встановлення пріоритетності повідомлень, які буде надіслано.</desc>
+
+    <link type="guide" xref="index#mail-composing-advanced"/>
+
+    <revision pkgversion="3.13.90" version="0.3" date="2015-03-09" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#BJEHCDFA -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Встановлення пріоритетності вихідних повідомлень</title>
+
+<p>Ви можете зробити надіслане повідомлення пріоритетним, щоб отримувач знав про його важливість. Щоб зробити повідомлення пріоритетним, скористайтеся пунктом меню <guiseq><gui>Параметри</gui><gui>Змінити пріоритет повідомлення</gui></guiseq> у вікні редактора повідомлень або натисніть відповідну кнопку на панелі інструментів.</p>
+
+<note style="tip"><p><app>Evolution</app> ігнорує пріоритетність вхідних повідомлень, оскільки визначати важливість повідомлень має отримувач. Ви можете встановлювати прапорець «Важливе» для будь-яких повідомлень.</p></note>
+<!-- TODO: Nowhere is explained how to set the Important flag. -->
+</page>

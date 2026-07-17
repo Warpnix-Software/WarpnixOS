@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="tip" id="gnome-on-ubuntu" xml:lang="de">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntu-Dokumentations-Team</name>
+    </credit>
+    <desc>Eine Liste bemerkenswerter Änderungen am GNOME-Desktop in Ubuntu.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="shell-overview" group="#first"/>
+    <link type="guide" xref="index" group="intro"/>
+    <revision version="0.1" date="2022-04-28" status="review"/>
+  </info>
+
+  <title>Über GNOME in Ubuntu</title>
+
+  <p>Ubuntu Desktop wird mit einer leicht modifizierten Version der GNOME-Desktop-Umgebung installiert. Im Allgemeinen wird in dieser Desktop-Anleitung auf GNOME verwiesen, wie es von den GNOME-Entwicklern veröffentlicht wird. Hier ist eine Liste der wesentlichen Unterschiede zwischen GNOME unter Ubuntu und "Vanilla" GNOME.</p>
+
+  <list type="disc">
+  <item>
+    <p>Ubuntu wird mit Firefox anstelle des GNOME-Webbrowsers ausgeliefert.</p>
+  </item>
+  <item>
+    <p>Ubuntu wird mit dem Remote-Desktop-Client Remmina anstelle von GNOME Connections ausgeliefert.</p>
+  </item>
+    <item>
+      <p>Die AppIndicator-Erweiterung ist enthalten. Diese Erweiterung aktiviert Symbole in der oberen rechten Ecke einiger Anwendungen.</p>
+    </item>
+    <item>
+      <p>Die Ubuntu Dock-Erweiterung ist enthalten. Diese Erweiterung stellt die linke Seitenleiste für laufende Anwendungen zur Verfügung.</p>
+    </item>
+    <item>
+      <p>Die Desktop Icons NG-Erweiterung ist enthalten. Diese Erweiterung ermöglicht die Verwendung von Symbolen auf dem Desktop.</p>
+    </item>
+    <item>
+      <p>Neben dem Ubuntu-Desktop-Hintergrundbild ist das Standardthema Yaru und die Standardschriftart Ubuntu.</p>
+    </item>
+    <item>
+      <p>Die Schaltflächen zum Minimieren und Maximieren sind in den Titelleisten der Fenster enthalten.</p>
+    </item>
+  </list>
+
+
+
+</page>

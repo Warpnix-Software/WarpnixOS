@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="convertSVG" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#tips"/>
+    <desc>Вы можете преобразовывать документы в формат SVG, выполнив их печать в файл.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Фил Булл</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Анна Филипс</name>
+      <email>anna.cs.au@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  </info>
+
+<title>Конвертация документа в SVG</title>
+<p>Документы следующих форматов можно преобразовывать в файлы формата SVG:</p>
+<list>
+ <item><p>Portable Document Format (.pdf)</p></item>
+</list>
+<p>Это работает как открытие файла в <app>Atril</app> и «распечатывание» документа в виде SVG-файла.</p>
+<steps>
+    <item>
+      <p>Перейдите в <guiseq><gui style="menuitem">Файл</gui> <gui style="menuitem">Печать</gui></guiseq> и выберите <gui>Печать</gui> или нажмите комбинацию клавиш <keyseq><key>Ctrl</key><key>P</key></keyseq>.</p>
+    </item>
+    <item>
+      <p>Выберите <gui>Печать в файл</gui> и выберите SVG в <gui>Формат вывода</gui>.</p>
+    </item>
+    <item>
+      <p>Выберите имя файла и папку, в которой должен быть сохранён файл, затем нажмите <gui>Печать</gui>. SVG будет сохранён в указанной папке.</p>
+    </item>
+</steps>
+</page>

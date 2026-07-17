@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-install" xml:lang="it">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntu Documentation Team</name>
+    </credit>
+    <desc>Usa <app>App Center</app> per installare applicazioni aggiuntive e rendere più utile Ubuntu.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove" group="#first"/>
+    <link type="seealso" xref="addremove-remove"/>
+    <link type="seealso" xref="addremove-install-synaptic"/>
+    <link type="seealso" xref="prefs-language-install"/>
+    <revision version="18.04" date="2018-03-18" status="review"/>
+  </info>
+
+  <title>Installa applicazioni aggiuntive</title>
+
+  <p>Un'applicazione è un software dotato di un'interfaccia utente grafica (GUI). Il team di sviluppo di Ubuntu ha scelto un set predefinito di applicazioni che riteniamo renda Ubuntu molto utile per la maggior parte delle attività quotidiane. Tuttavia, vorrai sicuramente installare più applicazioni per rendere Ubuntu più utile per te. Per installare un'applicazione, puoi utilizzare <app>App Center</app>.</p>
+
+   <p>Le applicazioni sono disponibili in due formati: pacchetti snap e pacchetti Debian. Un'applicazione disponibile come pacchetto snap d'ora in poi verrà chiamata <em>snap</em>. Alcune applicazioni sono disponibili in entrambi i formati. In tal caso nell'<app>App Center</app> lo snap verrà elencato per primo.</p>
+
+   <p>Potresti anche voler installare un software che non ha una GUI. Per installare tale software, è possibile utilizzare <link xref="addremove-install-synaptic">Synaptic</link>. Nota che <app>Synaptic</app> non elenca gli snap.</p>
+
+  <p>Per installare un'applicazione:</p>
+
+  <steps>
+    <item>
+      <p>Clicca l'icona <app>App Center</app> nella <gui>Dock</gui>, o cerca <input>Software</input> nella barra di ricerca <em>Attività</em>.</p>
+    </item>
+    <item>
+      <p>Lancia <app>App Center</app> per cercare una applicazione, oppure per selezionare una categoria e trovare una applicazione dalla lista.</p>
+    </item>
+    <item>
+      <p>Seleziona l'applicazione che desideri installare e fai clic su <gui>Installa</gui>.</p>
+    </item>
+    <item>
+      <p>Ti verrà chiesto di autenticarti inserendo la tua password. Una volta fatto, l'installazione avrà inizio. L'installazione di solito termina rapidamente, ma potrebbe richiedere del tempo se si dispone di una connessione Internet lenta.</p>
+
+    </item>
+
+  </steps>
+  
+</page>

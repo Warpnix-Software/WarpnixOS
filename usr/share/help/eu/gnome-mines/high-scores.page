@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="high-scores" xml:lang="eu">
+  <info>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.5.5" version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.2" date="2018-09-01" status="review"/>
+    <revision pkgversion="3.31.91" version="0.3" date="2019-03-03" status="review"/>
+    <link type="guide" xref="index#tips"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2012</years>
+    </credit>
+    <credit type="author copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  </info>
+
+  <title>Puntuaziorik onenak</title>
+
+  <p>Puntuaziorik onenen zerrendan, mina-eremuen motetako bakoitza garbitzeko erabili diren hamar denborarik azkarrenak ageri dira.</p>
+
+  <p>Puntuaziorik altuenak ikusteko, sakatu leihoaren goiko eskuinako izkinan dagoen menu-botoia eta hautatu <gui style="menuitem">Puntuazioak</gui>. Elkarrizketa-koadroak <gui>Txikia</gui> eremu-tamaina erakutsiko du bista lehenetsian; beste tamainak ikusteko, hautatu haiek elkarrizketa-koadroaren goiko aldeko goitibeherako menuan.</p>
+
+</page>

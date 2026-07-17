@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="flatpak-limitations" xml:lang="sv">
+
+  <info>
+    <desc>Begränsningar då ett Flatpak-paket av <app>Evolution</app> används.</desc>
+
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="3.35.91" version="0.1" date="2020-02-21" status="review"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Sebastian Rasmussen</mal:name>
+      <mal:email>sebras@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017, 2018</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Det går inte att skriva ut e-post, lägga till eller spara bilagor, eller öppna hjälpen</title>
+
+<p>Om du kör en <link href="https://flathub.org/">Flatpak</link>-version av <app>Evolution</app> så finns det flera begränsningar. Exempel på detta:</p>
+
+<list>
+  <item><p>Det är kanske inte möjligt att lägga till bilagor till ett e-postmeddelande eller att spara bilagor från ett e-postmeddelande.</p></item>
+  <item><p>Du kan inte skriva ut ett e-postmeddelande till en skrivare. Detta är en <link href="https://bugs.webkit.org/show_bug.cgi?id=192748">begränsning i det underliggande WebKitGTK-biblioteket</link>.</p>
+  <p>För att skriva ut ett e-postmeddelande till en fil kan du köra <cmd>flatpak run --filesystem=home org.gnome.Evolution</cmd> som en tillfällig lösning.</p></item>
+  <item><p>Den lokala användardokumentationen kanske inte inkluderas för att göra paketet mindre.</p></item>
+</list>
+</page>

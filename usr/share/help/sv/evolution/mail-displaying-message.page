@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-displaying-message" xml:lang="sv">
+
+  <info>
+    <desc>Rendering av ett e-postmeddelande och hantering av dess bilagor.</desc>
+
+    <link type="guide" xref="index#mail-basic"/>
+    <link type="seealso" xref="mail-composer-html"/>
+
+    <revision pkgversion="3.38.4" version="0.4" date="2021-04-10" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Sebastian Rasmussen</mal:name>
+      <mal:email>sebras@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017, 2018</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Visa ett meddelande</title>
+
+<p>E-postmeddelanden kan ha två format: <link href="https://en.wikipedia.org/wiki/Email#Plain_text_and_HTML">Vanlig text eller HTML</link>. Båda formaten har sina fördelar och nackdelar.</p>
+
+<p>Du kan definiera hur mottagna HTML-meddelanden visas via <guiseq><gui>Redigera</gui><gui>Inställningar</gui><gui>E-postinställningar</gui><gui>HTML-meddelanden</gui></guiseq>. Du kan exempelvis visa dem som text eller blockera inläsning av fjärrinnehåll.</p>
+
+<note style="tip"><p>För att formatera e-post i redigeraren, se <link xref="mail-composer-html"/>.</p></note>
+
+  <section id="advanced">
+    <title>Avancerat</title>
+  </section>
+
+</page>

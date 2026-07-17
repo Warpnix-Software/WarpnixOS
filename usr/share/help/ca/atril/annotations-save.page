@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="annotations-save" xml:lang="ca">
+<info>
+  <link type="guide" xref="index#annotations"/>
+ <desc>Com desar les vostres anotacions.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Shobha Tyagi</name>
+      <email its:translate="no">tyagishobha@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Carles Ferrando Garcia</mal:name>
+      <mal:email>carles.ferrando@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert Antoni Buj Gelonch</mal:name>
+      <mal:email>rbuj@fedoraproject.org</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  </info>
+<title>Desar una còpia d'un document PDF anotat.</title>
+ <p>Per desar una còpia del vostre PDF, conservant les anotacions per veure-les amb <app>Atril</app> o qualsevol visualitzador de PDF <em>amb suport per anotacions</em>:</p>
+  <steps>
+   <item>
+     <p>Cliqueu <guiseq><gui>Fitxer</gui><gui>Anomena i desa...</gui></guiseq></p>
+   </item>
+   <item>
+     <p>Escolliu un nom i carpeta on desar el fitxer, i cliqueu <gui>Desa</gui>. El PDF es desarà a la carpeta que heu escollit.</p>
+    </item>
+   </steps>
+   <p>Les anotacions s'incorporen seguint l'especificació PDF. Per tant, la majoria de lectors de PDF les haurien de reconèixer. Adobe Reader ho fa.</p>
+
+</page>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="startup-applications" xml:lang="tr">
+
+  <info>
+    <link type="guide" xref="shell-overview#apps"/>
+    <link type="guide" xref="prefs"/>
+    <desc>Giriş yaptığınızda hangi uygulamaların başlayacağını seçin.</desc>
+
+    <revision version="18.04" date="2018-03-19" status="review"/>
+
+    <credit type="author">
+      <name>Ubuntu Belgelendirme Takımı</name>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+  <title>Başlangıç Uygulamaları</title>
+
+  <p>Sistemde yapılandırılmış varsayılan başlatma uygulamalarına ek olarak, oturum açıldığında hangi uygulamaların başlatılması gerektiğini yapılandırabilirsiniz.</p>
+
+  <steps>
+    <item>
+      <p><gui xref="shell-introduction#activities">Etkinlikler</gui> genel görünümü <gui>Başlangıç ​​Uygulamaları</gui>'nı açın. Alternatif olarak, <keyseq><key>Alt</key><key>F2</key></keyseq> tuşlarına basabilir ve <cmd>gnome-session-properties</cmd> komutunu çalıştırabilirsiniz.</p>
+    </item>
+    <item>
+      <p><gui>Ekle</gui>'yi tıklayın ve oturum açma sırasında yürütülecek komutu girin (ad ve yorum isteğe bağlıdır). Örneğin, Firefox'u otomatik olarak başlatmak için <gui>Komut</gui> alanına <cmd>firefox</cmd> yazıp <gui>Ekle</gui> ile onaylamanız yeterlidir.</p>
+    </item>
+  </steps>
+
+  <note>
+    <p>Komutu yazabilir veya <gui>Gözat...</gui> düğmesini tıklayıp bir komut seçebilirsiniz. Otomatik başlatma uygulamaları genellikle <code>/usr/bin</code> klasöründe bulunur.</p>
+  </note>
+
+</page>

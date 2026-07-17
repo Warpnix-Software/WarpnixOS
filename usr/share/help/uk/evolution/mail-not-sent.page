@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-not-sent" xml:lang="uk">
+
+  <info>
+    <desc>Можливі причини того, що повідомлення не надсилаються.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="2.28.3" version="0.1" date="2010-10-16" status="review"/>
+    <revision pkgversion="3.36.2" version="0.2" date="2020-04-29" status="review"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Пошта не надсилається</title>
+
+<p>Існує декілька причин, через які повідомлення не надсилаються:</p>
+
+<list>
+<item><p>Некоректна адреса електронної пошти. Перевірте, чи усі адреси у списку отримувачів повідомлень є правильними. Якщо у повідомленні міститься помилкова або некоректна адреса електронної пошти, повідомлення не буде надіслано.</p></item>
+<item><p>Помилкові параметри SMTP. Перевірте, чи правильно вказано параметри для вихідних повідомлень. Використання помилкової адреси сервера або способу розпізнавання призводить до неможливості надіслати повідомлення.</p></item>
+<item><p>Стан «Поза мережею». <app>Evolution</app> може працювати в автономному режимі. Перевірте це за допомогою кнопки <gui style="button">Надіслати / Отримати</gui> — якщо її показано сірим кольором, програма працює в автономному режимі. Щоб встановити з'єднання, скористайтеся пунктом меню <guiseq><gui>Файл</gui><gui>Працювати у мережі</gui></guiseq>. Після цього, ви маєте отримати можливість користуватися кнопкою <gui style="button">Надіслати / Отримати</gui>.</p></item>
+</list>
+
+</page>

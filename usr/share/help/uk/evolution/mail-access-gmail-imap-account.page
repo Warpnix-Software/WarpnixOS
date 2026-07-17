@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-access-gmail-imap-account" xml:lang="uk">
+
+  <info>
+    <desc>Як налаштувати обліковий запис IMAP Gmail.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+    <link type="guide" xref="google-services"/>
+    <link type="seealso" xref="mail-account-manage-imap-plus"/>
+
+    <revision pkgversion="3.29.91" version="0.4" date="2018-08-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<!-- Page only exists for the <note>, apart from that nothing special. -->
+
+<title>Доступ до облікового запису IMAP Gmail з <app>Evolution</app></title>
+
+<p>Щоб отримати доступ до Gmail за допомогою IMAP, вам слід увімкнути IMAP у вашому обліковому записі Google. Див. <link href="https://mail.google.com/support/bin/answer.py?answer=77695">довідку Gmail</link>, щоб дізнатися більше.</p>
+
+<p>Рекомендуємо налаштувати Gmail як мережевих обліковий запис у GNOME. Будь ласка, зверніться до <link xref="help:gnome-help/accounts" href="https://help.gnome.org/users/gnome-help/stable/accounts">довідки зі стільниці GNOME</link>, щоб дізнатися більше. Після налаштовування обліковий запис Gmail буде показано у списку облікових записів Evolution.</p>
+
+<p>Якщо ви хочете налаштувати обліковий запис в Evolution, скористайтеся настановами щодо <link xref="mail-account-manage-imap-plus">параметрів поштового облікового запису IMAP+</link>. Зауважте, що в <app>Evolution</app> можна редагувати не усі параметри таких облікових записів, а вилучити такий обліковий запис можна лише за допомогою самого модуля <app>Мережеві облікові записи</app>.</p>
+
+<!-- Evolution does not support Google's proprietary SASL XOAUTH2 implementation which makes Evolution a "less secure app" for Google. -->
+<p>Альтернативою налаштовуванню мережевого облікового запису у GNOME є вмикання <link href="https://www.google.com/settings/security/lesssecureapps">доступу для менш захищених програм у параметрах вашого облікового запису Gmail</link>.</p>
+
+<note style="tip"><p>З міркувань забезпечення якнайкращої швидкодії, рекомендуємо позначити пункт <gui>Використовувати справжню теку для смітника</gui> і встановити значення <gui>[GMail]/Trash</gui>, а також позначити пункт <gui>Використовувати справжню теку для спаму</gui> і встановити значення <gui>[GMail]/Spam</gui> на сторінці <link xref="mail-default-folder-locations"><gui>Умовчання</gui></link> облікового запису.</p></note>
+
+</page>

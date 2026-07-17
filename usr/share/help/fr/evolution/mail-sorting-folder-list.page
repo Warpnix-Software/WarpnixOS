@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-sorting-folder-list" xml:lang="fr">
+
+  <info>
+    <desc>Trier la liste des dossiers de courriels dans le panneau de gauche.</desc>
+
+    <link type="guide" xref="mail-organizing"/>
+    <link type="guide" xref="mail-layout-changing"/>
+
+    <revision pkgversion="3.3.91" version="0.2" date="2013-06-22" status="draft"/>
+    <revision pkgversion="3.38.4" version="0.3" date="2021-03-28" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marc Lorber</mal:name>
+      <mal:email>Linux-Lorber@club-internet.fr</mal:email>
+      <mal:years>2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jonathan Ernst</mal:name>
+      <mal:email>jonathan@ernstfamily.ch</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alexandre Franke</mal:name>
+      <mal:email>alexandre.franke@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012 </mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervan@gmail.com</mal:email>
+      <mal:years>2013-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yvan Masson</mal:name>
+      <mal:email>yvan@masson-informatique.fr</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Charles Monzat</mal:name>
+      <mal:email>charles.monzat@free.fr</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>vanadiae</mal:name>
+      <mal:email>vanadiae35@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Guillaume Bernard</mal:name>
+      <mal:email>associations@guillaume-bernard.fr</mal:email>
+      <mal:years>2021-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jean-Marc Tissières</mal:name>
+      <mal:email>jmetissieres@gmail.com</mal:email>
+      <mal:years>2022</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Tri de la liste des dossiers de courriels</title>
+  
+<section id="default-folder-sort-order">
+<title>Ordre de tri par défaut</title>
+<p>Par défaut la <link xref="intro-main-window#e-mail">liste des dossiers de courriels</link> dans le panneau de gauche contient des nœuds de niveau supérieur dans l’ordre suivant :</p>
+<list>
+<item><p><gui>Sur cet ordinateur</gui>  - contient tous les courriels pour les comptes locaux (si configurés)</p></item>
+<item><p>Un ou plusieurs comptes distants de courriels (si configurés)</p></item>
+<item><p><gui><link xref="mail-search-folders">Dossiers de recherche</link></gui> (si activés)</p></item>
+</list>
+<p>Les dossiers sous chaque nœud de niveau supérieur sont triés par ordre alphabétique.</p>
+</section>
+
+<section id="change-folder-sort-order">
+<title>Modification de l’ordre de tri</title>
+<list>
+<item>
+<p>Vous pouvez changer l’ordre de tri par défaut des nœuds de niveau supérieur sous <guiseq><gui>Édition</gui><gui>Préférences</gui><gui>Comptes de messagerie</gui></guiseq> en faisant glisser un compte présent dans la liste vers le haut ou vers le bas.</p>
+
+<p>Vous pouvez réinitialiser votre ordre de tri personnalisé en choisissant <guiseq><gui>Édition</gui><gui>Préférences</gui><gui>Comptes de messagerie</gui><gui style="button">Réinitialiser l’ordre</gui></guiseq>.</p>
+</item>
+<item>
+<p>Vous pouvez modifier l’ordre de tri des dossiers sous <guiseq><gui>Dossier</gui><gui>Modifier l’ordre de tri…</gui></guiseq>.</p>
+</item>
+</list>
+</section>
+</page>

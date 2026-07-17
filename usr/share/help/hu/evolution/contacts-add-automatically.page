@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-add-automatically" xml:lang="hu">
+
+  <info>
+    <link type="guide" xref="contacts-usage"/>
+    <link type="seealso" xref="contacts-autocompletion"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-08-19" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Barbara Tobias</name>
+      <email its:translate="no">barbtobias09@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Fogadott levelek minden feladójának felvétele a névjegyek közé.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lukács Bence</mal:name>
+      <mal:email>lukacs.bence1 at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kelemen Gábor</mal:name>
+      <mal:email>kelemeng at gnome dot hu</mal:email>
+      <mal:years>2011, 2012, 2013, 2015, 2017, 2018.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nagy Zoltán</mal:name>
+      <mal:email>dzodzie at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Úr Balázs</mal:name>
+      <mal:email>ur.balazs at fsf dot hu</mal:email>
+      <mal:years>2014, 2019, 2021, 2022, 2023, 2024, 2025.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Partnerek automatikus felvétele a címjegyzékbe</title>
+
+  <p>Automatikusan hozzáadhatja az embereket a névjegyeihez, ha a fogadott e-mailre válaszol.</p>
+  <steps>
+  <item><p>Válassza a <guiseq><gui>Szerkesztés</gui><gui>Bővítmények</gui></guiseq> menüpontot.</p></item>
+  <item><p>Engedélyezze az <gui>Automatikus névjegyek</gui> bővítményt.</p>
+<note style="tip"><p>Ha egy bővítmény nem érhető el a <guiseq><gui>Szerkesztés</gui><gui>Bővítmények</gui></guiseq> alatt, akkor kérdezzen rá a disztribúciója támogatási fórumán. A disztribúciója dönthetett úgy, hogy letilt néhány bővítményt, vagy a bővítményeket külön csomagban szállítja.</p></note>
+  </item>
+  <item><p>Menjen a <guiseq><gui>Szerkesztés</gui><gui>Beállítások</gui><gui>Névjegyek</gui><gui>Automatikus névjegyek</gui></guiseq> lapra.</p></item>
+  <item><p>Engedélyezze a <gui>Levelek küldésekor címjegyzék-bejegyzések létrehozása</gui> jelölőnégyzetet, és válasszon egy olyan címjegyzéket a lenti legördülő listából, amely az új névjegyeket fogadni fogja.</p></item>
+  </steps>
+
+  <p>Ezután a fogadott levelekre való válaszoláskor automatikusan létrejönnek az azok feladóihoz tartozó névjegyek.</p>
+
+</page>

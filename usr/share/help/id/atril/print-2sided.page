@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" style="task" id="print-2sided" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="printing"/>
+
+    <desc>Mencetak dua sisi dan beberapa halaman per lembar.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kukuh Syafaat</mal:name>
+      <mal:email>syafaatkukuh@gmail.com</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2021, 2022.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Tata letak dua sisi dan beberapa halaman per sisi untuk pencetakan</title>
+
+<p>Anda dapat mencetak pada kedua sisi dari setiap lembar kertas:</p>
+
+<steps>
+ <item>
+  <p>Pergi ke <guiseq><gui style="menuitem">Berkas</gui><gui style="menuitem">Cetak</gui></guiseq> dan tekan tombol <gui style="button">Cetak</gui>.</p>
+ </item>
+ <item>
+  <p>Masuk ke tab <gui>Penyetelan Halaman</gui> dari jendela Cetak dan pilih opsi dari daftar turun bawah <gui>Dua Sisi</gui> .</p>
+ </item>
+ <item>
+  <p>Anda juga dapat mencetak lebih dari satu halaman dokumen per <em>sisi</em> kertas. Gunakan opsi <gui>Halaman per sisi</gui> untuk melakukan ini.</p>
+ </item>
+</steps>
+
+</page>

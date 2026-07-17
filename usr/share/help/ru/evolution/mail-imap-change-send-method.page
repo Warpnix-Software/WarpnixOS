@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-imap-change-send-method" xml:lang="ru">
+
+  <info>
+    <desc>Переключение между отправкой почты с помощью SMTP и Sendmail.</desc>
+
+    <link type="guide" xref="index#common-mail-problems"/>
+    <link type="guide" xref="mail-account-manage-imap-plus#other-settings"/>
+
+    <revision pkgversion="3.34.4" version="0.1" date="2020-03-22" status="review"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Изменение способа работы с исходящей почтой для учётной записи IMAP+</title>
+
+<p>Нельзя изменить способ работы с исходящей почтой для учётной записи IMAP+ с помощью интерфейса пользователя.</p>
+
+<p>Если использовалась программа Sendmail, но теперь требуется использовать соединение SMTP:</p>
+
+<list>
+<item><p>Закройте <app>Evolution</app>.</p></item>
+<item><p>Найдите и откройте в текстовом редакторе файл соответствующей учётной записи: <file>$HOME/.config/evolution/sources/</file>.</p></item>
+<item><p>В разделе <code>[Mail Transport]</code> замените <code>BackendName=sendmail</code> на <code>BackendName=smtp</code> или наоборот.</p></item>
+<item><p>Перезапустите фоновый процесс <code>evolution-source-registry</code> (например, перезагрузив систему).</p></item>
+<item><p>Запустите программу <app>Evolution</app> и внесите необходимые изменения в параметры SMTP учётной записи.</p></item>
+</list>
+
+</page>

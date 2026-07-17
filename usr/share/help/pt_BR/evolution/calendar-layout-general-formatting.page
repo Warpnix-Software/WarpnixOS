@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-layout-general-formatting" xml:lang="pt-BR">
+
+  <info>
+    <link type="guide" xref="calendar-layout"/>
+
+    <revision pkgversion="3.13.90" version="0.3" date="2015-03-10" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/config-prefs-cal.html.en#bshpskx
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <!-- TODO:POST-3-8: Just listing the partially busted UI options (also see
+	 calendar-layout-appointment-display) here is very poor and not
+	 task-oriented, but that's it for the time being. Better ideas welcome.
+	 -->
+
+    <desc>Opções gerais de formatação para a agenda.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Fontenelle</mal:name>
+      <mal:email>rafaelff@gnome.org</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Opções gerais de formatação</title>
+
+  <p>As opções a seguir estão disponíveis sob <guiseq><gui>Editar</gui><gui>Preferências</gui> <gui>Agenda e tarefas</gui><gui>Geral</gui></guiseq>.</p>
+
+<section id="time">
+  <title>Hora</title>
+
+  <list>
+    <item>
+      <p>Formato de hora:</p>
+      <p>Escolha entre formato de hora de doze horas (AM/PM) ou de vinte e quatro horas.</p>
+    </item>
+    <item>
+      <p><link xref="calendar-timezones">Fuso horário</link> e fuso horário secundário:</p>
+      <p>A cidade na qual você está localizado e, opcionalmente, uma segunda cidade.</p>
+    </item>
+  </list>
+</section>
+
+<section id="work-week">
+  <title>Semana útil</title>
+
+  <list>
+    <item>
+      <p>A semana começa na:</p>
+      <p>Seleciona o dia para exibir como o primeira de cada semana.</p>
+    </item>
+    <item>
+      <p>Dias úteis:</p>
+      <p>Define quais dias da semana são dias úteis.</p>
+    </item>
+    <item>
+      <p>O dia começa às:</p>
+      <p>Define que horas seu dia útil começa.</p>
+    </item>
+    <item>
+      <p>O dia termina às:</p>
+      <p>Define que horas seu dia útil termina.</p>
+    </item>
+  </list>
+
+</section>
+
+<section id="date-time">
+  <title>Formato de data/hora</title>
+
+  <p>Você pode alterar o formato da coluna <gui>Data</gui> definindo seu formato preferido.</p>
+
+  <p>Os marcadores de posição na expressão de formato são formatos strftime. Para obter uma lista completa dos formatos strftime disponíveis, execute <cmd>date --help</cmd> no aplicativo <app>Terminal</app>.</p>
+
+</section>
+
+</page>

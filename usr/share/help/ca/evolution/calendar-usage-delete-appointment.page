@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-usage-delete-appointment" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="calendar-usage"/>
+
+    <revision pkgversion="3.3.91" version="0.3" date="2012-02-19" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Esborrar una cita del calendari.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Esborrar una cita</title>
+
+  <p>Si voleu suprimir una cita dels vostres calendaris, feu clic amb el botó dret a la cita del calendari i seleccioneu <gui>Suprimeix la cita</gui>, o feu clic a la cita i feu clic a <gui>Suprimeix</gui> a la barra d'eines o premeu <keyseq><key>Ctrl</key><key>D</key></keyseq>. Si us trobeu a la <link xref="calendar-layout-views">visualització en llista</link> també podeu utilitzar <guiseq><gui>Edita</gui><gui>Suprimeix la cita</gui></guiseq>.</p>
+
+</page>

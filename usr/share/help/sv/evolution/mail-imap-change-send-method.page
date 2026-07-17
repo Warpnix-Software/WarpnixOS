@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-imap-change-send-method" xml:lang="sv">
+
+  <info>
+    <desc>Växla från att sända e-post via SMTP till Sendmail eller tvärtom.</desc>
+
+    <link type="guide" xref="index#common-mail-problems"/>
+    <link type="guide" xref="mail-account-manage-imap-plus#other-settings"/>
+
+    <revision pkgversion="3.34.4" version="0.1" date="2020-03-22" status="review"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Sebastian Rasmussen</mal:name>
+      <mal:email>sebras@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017, 2018</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Ändra utgående metod för ett IMAP+-konto</title>
+
+<p>Det finns inget användargränssnitt för att ändra den utgående metoden för ett IMAP-konto.</p>
+
+<p>Om du har använt Sendmail så här långt men nu vill använda en SMTP-anslutning i stället:</p>
+
+<list>
+<item><p>Stäng <app>Evolution</app>.</p></item>
+<item><p>Hitta och öppna den motsvarande kontofilen i <file>$HOME/.config/evolution/sources/</file> med en textredigerare.</p></item>
+<item><p>Ersätt <code>BackendName=sendmail</code> med <code>BackendName=smtp</code> eller tvärtom i avsnittet <code>[Mail Transport]</code>.</p></item>
+<item><p>Starta om bakgrundsprocessen <code>evolution-source-registry</code>, till exempel genom att starta om ditt system.</p></item>
+<item><p>Starta <app>Evolution</app> och redigera SMTP-kontoinställningarna för kontot enligt behov.</p></item>
+</list>
+
+</page>

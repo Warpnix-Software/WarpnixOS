@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-duplicates" xml:lang="ru">
+
+  <info>
+    <desc>Обработка дубликатов сообщений</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="3.7.4" version="0.6" date="2013-01-23" status="final"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Загрузка дубликатов писем</title>
+
+<section id="remove">
+<title>Удаление дубликатов писем</title>
+<p>Чтобы удалить дубликаты сообщений в папке, выделите несколько писем (или выделите все письма в папке с помощью пункта меню <guiseq><gui>Правка</gui><gui>Выделить всё</gui></guiseq> или комбинации клавиш <keyseq><key>Ctrl</key><key>A</key></keyseq>) и затем выберите пункт меню <guiseq><gui>Сообщение</gui><gui>Удалить дублируемые сообщения</gui></guiseq>.</p>
+<!-- available by default since 2.91, as per http://mail.gnome.org/archives/evolution-list/2011-August/msg00000.html -->
+</section>
+
+<section id="reasons">
+<title>Причины</title>
+<p>Загрузка дубликатов писем может происходить по одной из следующих причин:</p>
+<list>
+<item><p>В почтовом ящике имеется несколько копий одного и того же сообщения</p></item>
+<item><p>В <app>Evolution</app> некорректно работает расширение UIDL.</p></item>
+<item><p>Файлы кэша, расположенные в папке <file>$HOME/.local/share/evolution/mail/local/</file>, недоступны для записи.</p></item>
+</list>
+</section>
+
+</page>

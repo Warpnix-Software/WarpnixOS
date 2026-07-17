@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="question" id="flags" xml:lang="pt_BR">
+  <info>
+
+    <link type="guide" xref="index#play"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.5.5" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.3" date="2018-09-01" status="review"/>
+    <revision pkgversion="3.31.91" version="0.4" date="2019-03-03" status="review"/>
+
+    <credit type="author copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+    <credit type="author">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2012</years>
+    </credit>
+
+    <credit type="author copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Gilfran Ribeiro</mal:name>
+      <mal:email>eu@gilfran.net</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Giovanni Almeida</mal:name>
+      <mal:email>giovannilombone.io@gmail.com</mal:email>
+      <mal:years>2024</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Como usar as bandeiras</title>
+  <table>
+  <tr>
+   <td>
+     <media type="image" mime="image/svg" src="figures/flags.png" its:translate="no"/>
+   </td>
+   <td>
+     <p>Flags are used to mark tiles which you suspect may hide a mine. Putting
+     a flag on a tile prevents you from clicking on it and possibly causing an
+     explosion, which would end the game.</p>
+     <p>A aparência das bandeiras depende do tema em uso. Você pode mudá-lo clicando no botão na parte direita do canto superior dentro do menu inicial e indo em <gui style="menuitem">Aparência</gui>.</p>
+    </td>
+   </tr>
+  </table>
+
+  <section id="flags-put">
+    <title>Como colocar uma bandeira num quadrado</title>
+    <table>
+      <tr>
+        <td>
+	  <p>Flags cannot be clicked. To place a flag on a tile:</p>
+          <list>
+            <item><p>right click on a blank tile.</p></item>
+          </list>
+        </td>
+        <td>
+          <media type="image" mime="image/svg" width="60" src="figures/flag.svg" its:translate="no"/>
+        </td>
+        </tr>
+      </table>
+
+  </section>
+
+  <section id="flags-blue">
+    <title>Use of the <em>question</em> flag</title>
+    <p>If you are not sure whether a tile hides a mine, you can use the
+    <em>question</em> flag.</p>
+    <table>
+      <tr>
+        <td>
+          <p>Para colocar uma bandeira <em>Não tenho certeza</em> num quadrado:</p>
+          <list>
+	    <item><p>Right-click twice on a blank tile or once on a 
+	    flag.</p></item>
+          </list>
+        </td>
+        <td>
+          <media type="image" mime="image/svg" width="60" src="figures/flag-question.svg" its:translate="no"/>
+        </td>
+      </tr>
+    </table>
+
+  <note>
+    <p>Para ativar essas bandeiras, clique no botão da parte superior no canto direito da tela e ative <gui style="checkbox">Usar bandeiras de interrogação</gui>.</p>
+  </note>
+
+  </section>
+  
+</page>

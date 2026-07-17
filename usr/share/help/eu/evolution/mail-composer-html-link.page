@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-html-link" xml:lang="eu">
+
+  <info>
+    <desc>Txertatu webgune baterako esteka bat posta-konposatzailean.</desc>
+    <link type="guide" xref="mail-composer-html#formatting-options-html"/>
+
+    <revision pkgversion="3.5.90" version="0.4" date="2012-08-16" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#bsait2a -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+  </info>
+
+<title>Esteka bat txertatzea HTML kodean</title>
+
+
+<p>Estekak txertatu daitezke posta-mezuan:</p>
+<steps>
+<item><p>Hautatu esteka bihurtuko den testua.</p></item>
+<item><p>Either click <guiseq><gui>Insert</gui><gui>Link…</gui></guiseq> in the menubar, or right-click on the selected text and click <gui>Insert Link</gui>.</p></item>
+<item><p>Sartu helbidea <gui>URL</gui> eremuan.</p></item>
+<item><p>Egin klik <gui>Itxi</gui> aukeran.</p></item>
+</steps>
+
+<p>Alternately, you can also use the <media type="image" its:translate="no" src="./figures/html-composer-insert-link.png"/> icon in the second bar below the <gui>Subject</gui> line.</p>
+
+<p>If you do not want a special link text you can just enter the address of the link directly. It will be automatically recognized as a link.</p>
+</page>

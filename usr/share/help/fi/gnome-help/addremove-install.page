@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-install" xml:lang="fi">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntun dokumentointitiimi</name>
+    </credit>
+    <desc>Käytä <app>Sovelluskeskusta</app> asentaaksesi hyödyllisiä lisäsovelluksia Ubuntuun.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove" group="#first"/>
+    <link type="seealso" xref="addremove-remove"/>
+    <link type="seealso" xref="addremove-install-synaptic"/>
+    <link type="seealso" xref="prefs-language-install"/>
+    <revision version="18.04" date="2018-03-18" status="review"/>
+  </info>
+
+  <title>Asenna lisäsovelluksia</title>
+
+  <p>Sovellus on ohjelma jolla graafinen käyttöliittymä. Ubuntun kehitystiimi on valinnut Ubuntuun hyödyllisiä oletussovellukset, jotka sopivat päivittäisiin tarpeisiin. On kuitenkin paljon muitakin hyödyllisiä sovelluksia, jotka voivat sopia juuri sinun käyttöösi. Käytä <app>Sovelluskeskusta</app> sovellusten asentamiseen.</p>
+
+   <p>Sovelluksia on saatavilla kahdessa muodossa: snap-paketteina ja Debian-paketteina. Snap-pakettina saatavila olevia sovelluksia kutsutaan jatkossa <em>snapeiksi</em>. Jotkin sovellukset ovat saatavilla molemmissa muodoissa. Tällöin <app>Sovelluskeskus</app> näyttää snapin ensin.</p>
+
+   <p>Saatat haluta myös asentaa ohjelmistoja, joissa ei ole graafista käyttöliittymää. Voit asentaa niitä esimerkiksi <link xref="addremove-install-synaptic">Synapticilla</link>. Otathan huomioon, ettei <app>Synaptic</app> listaa snap-paketteja.</p>
+
+  <p>Asenna sovellus:</p>
+
+  <steps>
+    <item>
+      <p>Napsauta <app>Sovelluskeskus</app>-kuvaketta <gui>Telakassa</gui>, tai etsi <input>Ohjelmistoja</input> in the <em>Toiminnot</em> -hakupalkissa.</p>
+    </item>
+    <item>
+      <p>Kun <app>Sovelluskeskus</app> käynnistyy, etsi sovellusta tai valitse luokka löytääksesi sovelluksen luettelosta.</p>
+    </item>
+    <item>
+      <p>Valitse sovellus, jonka haluat asentaa, ja napsauta <gui>Asenna</gui>.</p>
+    </item>
+    <item>
+      <p>Sinua pyydetään tunnistautumaan eli antamaan salasanasi. Kun olet tehnyt sen, asennus alkaa. Asennus tapahtuu yleensä nopeasti, mutta siinä saattaa kestää jos verkkoyhteys on hidas.</p>
+
+    </item>
+
+  </steps>
+  
+</page>

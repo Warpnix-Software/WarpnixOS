@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-encryption-gpg-set-up" xml:lang="uk">
+
+  <info>
+    <desc>Налаштовування GPG для вашого облікового запису пошти для підписування і/або шифрування та розшифровування повідомлень.</desc>
+
+    <link type="guide" xref="mail-encryption#gpg"/>
+
+    <revision pkgversion="3.13.90" version="0.4" date="2015-03-09" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/encryption.html.en#encrypt-evo-integ -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Налаштовування GPG для вашого поштового облікового запису</title>
+<!-- TODO:POST-3-8: Update and rewrite using Seahorse. Needs a rewrite once https://gitlab.gnome.org/GNOME/libcryptui/-/issues/3 is fixed; see also https://bugzilla.gnome.org/show_bug.cgi?id=508744 -->
+
+<note style="tip"><p>Для цього вам потрібен ключ GPG. Якщо у вас немає такого ключа, будь ласка, ознайомтеся із розділом щодо <link xref="mail-encryption-gpg-create-key">створення ключа GPG</link>.</p></note>
+
+<steps>
+<item><p>Виберіть пункт меню <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Облікові записи</gui></guiseq>.</p></item>
+<item><p>Виберіть обліковий запис, повідомлення якого ви хочете захистити, і натисніть кнопку <gui style="button">Редагувати</gui>.</p></item>
+<item><p>Перейдіть на вкладку <gui>Безпека</gui>.</p></item>
+<item><p>Вкажіть ваш ідентифікатор ключа у полі <gui>Ідентифікатор ключа OpenPGP</gui>.</p>
+<note style="tip"><p>Під полем ви можете визначити, чи слід завжди підписувати вихідні повідомлення при використанні цього облікового запису, та інші параметри.</p></note>
+</item>
+<item><p>Натисніть кнопку <gui style="button">Гаразд</gui>.</p></item>
+<item><p>Натисніть кнопку <gui style="button">Закрити</gui>.</p></item>
+</steps>
+<p><app>Evolution</app> потрібно, щоб ви знали ідентифікатор вашого ключа. Якщо ви його не пам'ятаєте, запустіть програму <app>Паролі й ключі</app>, відкрийте сторінку <gui>Ключі GnuPG</gui>, виберіть потрібний вам ключ GPG, клацніть правою кнопкою миші на його пункті, виберіть у контекстному меню пункт <gui>Властивості</gui> і скопіюйте <gui>Ідентифікатор ключа</gui>. Ідентифікатором вашого ключа є восьмисимвольний рядок, який складено з різних цифр і літер.</p>
+
+</page>

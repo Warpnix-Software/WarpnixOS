@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="keyboard" xml:lang="ru">
+
+    <info>
+        <link type="guide" xref="index#ui"/>
+    </info>
+
+	<title>Использование клавиатуры</title>
+
+    <p>Все математические выражения могут быть введены с клавиатуры.</p>
+    <p>Для ввода отсутствующих на клавиатуре символов можно использовать следующие комбинации клавиш.</p>
+    <table>
+    <tr>
+    <td><p>×</p></td>
+    <td><p><key>*</key></p></td>
+    </tr>
+    <tr>
+    <td><p>÷</p></td>
+    <td><p><key>/</key></p></td>
+    </tr>
+    <tr>
+    <td><p>^</p></td>
+    <td><p><key>*</key> дважды</p></td>
+    </tr>
+    <tr>
+    <td><p>√</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>R</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>π</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>P</key></keyseq></p></td>
+    </tr>
+    </table>
+    <p>Для ввода <link xref="superscript">надстрочных индексов</link> используйте <keyseq><key>Ctrl</key>цифра</keyseq>, для подстрочных индексов используйте <keyseq><key>Alt</key>цифра</keyseq>.</p>
+    <p>В <link xref="mouse">режиме программирования</link> переключение между основными системами счисления осуществляется с помощью:</p>
+    <table>
+    <tr>
+    <td><p>Двоичная</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>B</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>Восьмеричная</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>O</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>Десятичная</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>D</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>Шестнадцатиричная</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>H</key></keyseq></p></td>
+    </tr>
+    </table>
+    <p>Для переключения между записями истории вы можете использовать:</p>
+    <table>
+    <tr>
+    <td><p>Предыдущая запись</p></td>
+    <td><p><keyseq><key>Alt</key><key>Up</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>Следующая запись</p></td>
+    <td><p><keyseq><key>Alt</key><key>Down</key></keyseq></p></td>
+    </tr>
+    </table>
+</page>

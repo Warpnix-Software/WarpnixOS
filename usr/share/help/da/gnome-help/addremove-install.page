@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-install" xml:lang="da">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntus dokumentationshold</name>
+    </credit>
+    <desc>Brug <app>App Center</app> for at installere yderligere programmer og gøre Ubuntu mere nyttig.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove" group="#first"/>
+    <link type="seealso" xref="addremove-remove"/>
+    <link type="seealso" xref="addremove-install-synaptic"/>
+    <link type="seealso" xref="prefs-language-install"/>
+    <revision version="18.04" date="2018-03-18" status="review"/>
+  </info>
+
+  <title>Installér yderligere programmer</title>
+
+  <p>Et program er software, som har en grafisk brugergrænseflade (GUI). Ubuntus udviklerhold har udvalgt et sæt programmer, som vi mener, gør Ubuntu meget anvendelig til de fleste daglige opgaver. Du vil dog helt sikkert ønske at installere flere programmer for at gøre Ubuntu mere anvendeligt for dig. Du kan installere et program med <app>App Center</app>.</p>
+
+   <p>Programmer findes i to formater: snap-pakker og Debian-pakker. Et program tilgængeligt som en snap-pakke kaldes fra nu af en <em>snap</em>. Nogle programmer er tilgængelige i begge formater. I det tilfælde vil snappen vises først i <app>App Center</app>.</p>
+
+   <p>Du vil måske også installere et program uden en GUI. Den type programmer kan installeres med <link xref="addremove-install-synaptic">Synaptic</link>. Bemærk, at <app>Synaptic</app> ikke viser snapper.</p>
+
+  <p>Installér et program:</p>
+
+  <steps>
+    <item>
+      <p>
+        Click the <app>App Center</app> icon in the <gui>Dock</gui>, or search
+        for <input>Software</input> in the <em>Activities</em> search bar.
+      </p>
+    </item>
+    <item>
+      <p>Når <app>App Center</app> er startet, så søg efter et program eller vælge en kategori og find et program på listen.</p>
+    </item>
+    <item>
+      <p>Vælg det program, du vil installere, og klik <gui>Installér</gui>.</p>
+    </item>
+    <item>
+      <p>Du vil blive bedt om at godkende ved at indtaste din adgangskode. Når du har gjort det, vil programmet blive installeret. Det er sædvanligvis hurtigt overstået, men kan tage noget tid på en langsom internetforbindelse.</p>
+
+    </item>
+
+  </steps>
+  
+</page>

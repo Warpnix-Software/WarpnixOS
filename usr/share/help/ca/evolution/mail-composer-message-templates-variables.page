@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-message-templates-variables" xml:lang="ca">
+
+  <info>
+   <desc>Configureu variables a les plantilles i reutilitzeu elements del missatge al qual responeu</desc>
+   
+   <link type="guide" xref="mail-composer-message-templates#options"/>
+
+ <revision pkgversion="3.5.90" version="0.3" date="2012-08-17" status="draft"/>
+ <credit type="author">
+   <name its:translate="no">Andre Klapper</name>
+   <email its:translate="no">ak-47@gmx.net</email>
+ </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/b1dlaazl.html.en -->
+ </credit>
+ 
+ <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+     
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Ús de variables a les Plantilles</title>
+
+<section id="configure">	
+<title>Configurar Variables per a les Plantilles de Missatges</title>
+<steps>
+<item><p>Seleccioneu <guiseq><gui>Edita</gui><gui>Connectors</gui></guiseq>.</p></item>
+<item><p>Feu clic a <gui>Plantilles</gui>.</p>
+<note style="tip"><p>Si un connector no està disponible a <guiseq><gui>Edita</gui><gui>Connectors</gui></guiseq>, pregunteu en un fòrum d'assistència de la vostra distribució. La vostra distribució podria haver decidit desactivar alguns connectors o distribuir els connectors en un paquet a part.</p></note>
+</item>
+<item><p>Fer clic a la pestanya <gui>Configuració</gui>.</p></item>
+<item><p>Podeu afegir, editar o eliminar les parelles de valor-clau. Podeu especificar qualsevol nombre de parelles valor-clau.</p></item>
+</steps>
+ <p>A qualsevol plantilla, l'ocurrència de cada $clau se substitueix pel valor que té a la configuració. Per exemple, si estableix la clau a Gestor i el valor a Harry, qualsevol aparició de $Gestor se substituirà per Harry en el missatge.</p>
+ <p>Assumeixi que té 1000 plantilles de missatges amb el nom del vostre gestor. Quan el gestor actual se substitueix per un de nou, no és fàcil reemplaçar manualment el nom del gestor en tots els missatges. Si els missatges tenen un valor de clau $Gestor, podreu establir-ne el valor a la pestanya Configuració d'aquest connector.</p>
+ <p>De manera predeterminada, totes les variables d'entorn s'utilitzen com a parelles de valor-clau. Una ocurrència de $env_variable es reemplaça pel valor que conté. Per exemple, una ocurrència de $PATH se substitueix pel seu valor quan s'utilitza la plantilla.</p>
+ <p>El procés de substitució utilitza el següent ordre de prioritat:</p>
+ <steps>
+  <item>
+<p>La $clau se substitueix pel valor establert a la pestanya Configuració del connector Plantilles.</p>
+  </item>
+  <item>
+<p>Si no es troba la clau, es reemplaça amb el valor de la seva variable d'entorn.</p>
+  </item>
+  <item>
+<p>Si la clau no és ni una opció de configuració ni una variable d'entorn, no es faran canvis.</p>
+  </item>
+ </steps>
+</section>
+
+<section id="reply-variables">
+<title>Ús d'elements d'un missatge en una plantilla quan es respon</title>
+<p>Les plantilles poden contenir més que el conjunt predefinit de parelles <link xref="#configure">clau-valor</link>. També podeu obtenir els valors de capçalera del missatge des del correu electrònic en què s'aplica la plantilla, més el cos complet del missatge.</p>
+
+<p its:locNote="TO TRANSLATORS: Do NOT translate $ORIG[subject] and $ORIG[body] in this sentence!">Per a fer-ho, utilitzeu el format <code>$ORIG[header_name]</code> i reemplaceu la variable <code>header_name</code> per l'encapçalament real. Per exemple, si voleu inserir la línia d'assumpte del missatge al qual responeu, utilitzeu <code>$ORIG[subject]</code>. Per a inserir el cos complet, utilitzeu <code>$ORIG[body]</code>.</p>
+
+<p its:locNote="TO TRANSLATORS: Do NOT translate $ORIG[body] and $ORIG[reply-to] in this sentence!">Si no hi ha cap reemplaçament per a una variable, la variable no s'elimina (excepte <code>$ORIG[body]</code>) que es deixa al lloc per a mostrar que alguna cosa no ha sortit bé. Això pot passar quan es volen utilitzar encapçalaments que no estan sempre disponibles al missatge original (per exemple <code>$ORIG[reply-to]</code>).</p>
+</section>
+
+</page>

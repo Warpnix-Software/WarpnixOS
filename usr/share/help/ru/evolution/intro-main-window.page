@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="intro-main-window" xml:lang="ru">
+
+  <info>
+    <desc>Описание областей окна <app>Evolution</app>.</desc>
+
+    <link type="guide" xref="index#getting-started"/>
+    <link type="seealso" xref="calendar-layout"/>
+    <link type="seealso" xref="mail-layout-changing"/>
+
+    <revision pkgversion="3.28.2" version="0.9" date="2018-07-09" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Barbara M. Tobias</name>
+      <email its:translate="no">barbtobias09@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/ui-intro.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Главное окно <app>Evolution</app></title>
+
+<p>В <app>Evolution</app> предусмотрены функциональные возможности для работы с почтой, календарём, контактами, задачами и заметками. Переключаться между функциональными возможностями позволяют кнопки переключения, расположенные в левом нижнем углу окна. Элементы, которые отображаются в окне, зависят от выбранной функциональной возможности.</p>
+
+<section id="e-mail">
+<title>Почта</title>
+
+<media type="image" src="./figures/window-overview-layers.png" width="800">
+  <p>Главное окно почты <app>Evolution</app></p>
+</media>
+
+<p>Соответствующие элементы в главном окне почты:</p>
+<table frame="all" rules="all">
+  <tr>
+    <td colspan="3"><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-c4a000.png" width="10"/> Строка меню</p></td>
+  </tr>
+  <tr>
+    <td colspan="3"><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-ce5c00.png" width="10"/> Панель инструментов</p></td>
+  </tr>
+  <tr>
+    <td rowspan="3"><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-8f5902.png" width="10"/> Список папок</p></td>
+    <td colspan="2"><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-4e9a06.png" width="10"/> Панель поиска</p></td>
+  </tr>
+  <tr>
+    <td><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-204a87.png" width="10"/> Список сообщений</p></td>
+    <td rowspan="3"><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-a40000.png" width="10"/> Панель дел</p></td>
+  </tr>
+  <tr>
+    <td rowspan="2"><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-5c3566.png" width="10"/> Панель предварительного просмотра</p></td>
+  </tr>
+  <tr>
+    <td><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-a40000.png" width="10"/> Переключатель</p></td>
+  </tr>
+  <tr>
+    <td colspan="3"><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-2e3436.png" width="10"/> Строка состояния</p></td>
+  </tr>
+</table>
+
+<terms>
+<item>
+<title>Список папок</title>
+<p>В списке папок представлены доступные папки для каждой учётной записи. Для просмотра содержимого папки щёлкните по имени папки, и содержимое отобразится в списке сообщений.</p>
+<note style="tip"><p>Дополнительные сведения доступны в разделе <link xref="mail-folders">Использование папок</link>.</p></note>
+</item>
+<item>
+<title>Список сообщений</title>
+<p>В списке сообщений представлены все прочитанные и непрочитанные сообщения, которые находятся в выбранной папке. Для просмотра письма на панели предварительного просмотра щёлкните по сообщению в списке сообщений.</p>
+</item>
+<item>
+<title>Переключатель</title>
+<p>The switcher at the bottom of the sidebar lets you switch between the <app>Evolution</app> tools:  Mail, Contacts, Calendars, Memos and Tasks. The appearance of the Switcher, including whether the buttons should be shown at all, can be changed in the menu <guiseq><gui>View</gui><gui>Switcher Appearance</gui></guiseq>.</p>
+<note style="tip"><p>You can disable the folder list and the switcher sidebar by toggling <guiseq><gui>View</gui><gui>Layout</gui><gui>Show Sidebar</gui></guiseq> or pressing <key>F9</key>.</p></note>
+</item>
+<item>
+<title>Панель предварительного просмотра</title>
+<p>Панель предварительного просмотра отображает текущее сообщение, выбранное в списке сообщений.</p>
+<note style="tip"><p>Чтобы отключить панель предварительного просмотра, выберите пункт меню <guiseq><gui>Вид</gui><gui>Предварительный просмотр</gui><gui>Предварительный просмотр сообщения</gui></guiseq>.</p></note>
+</item>
+<item>
+<title>Панель дел</title>
+<p>На панели дел показаны встречи из календаря и задачи, запланированные к выполнению в ближайшие семь дней.</p>
+<note style="tip"><p>Чтобы отключить панель дел, выберите пункт меню <guiseq><gui>Вид</gui><gui>Панели инструментов</gui><gui>Показывать панель дел</gui></guiseq>.</p></note>
+</item>
+</terms>
+<note style="tip"><p>Если строка меню была скрыта по ошибке, нажмите клавишу <key>Alt</key> и снова включите показ строки, выбрав пункт меню  <guiseq><gui>Вид</gui><gui>Панели инструментов</gui><gui>Показывать строку меню</gui></guiseq>.</p></note>
+</section>
+
+<section id="calendar">
+<title>Календарь</title>
+<p>Элементы главного окна календаря:</p>
+<table frame="all" rules="all">
+  <tr>
+    <td colspan="3"><p><media type="image" its:translate="no" src="./figures/color-c4a000.png" width="10"/> Строка меню</p></td>
+  </tr>
+  <tr>
+    <td colspan="3"><p><media type="image" its:translate="no" src="./figures/color-ce5c00.png" width="10"/> Панель инструментов</p></td>
+  </tr>
+  <tr>
+    <td rowspan="2"><p><media type="image" its:translate="no" src="./figures/color-8f5902.png" width="10"/> Список календарей</p></td>
+    <td colspan="2"><p><media type="image" its:translate="no" src="./figures/color-4e9a06.png" width="10"/> Панель поиска</p></td>
+  </tr>
+  <tr>
+    <td rowspan="3"><p><media type="image" its:translate="no" src="./figures/color-204a87.png" width="10"/> Список встреч</p></td>
+    <td><p>Список задач</p></td>
+  </tr>
+  <tr>
+    <td><p>Панель месяцев</p></td>
+    <td rowspan="2"><p>Список заметок</p></td>
+  </tr>
+  <tr>
+    <td><p><media type="image" its:translate="no" src="./figures/color-a40000.png" width="10"/> Переключатель</p></td>
+  </tr>
+  <tr>
+    <td colspan="3"><p><media type="image" its:translate="no" src="./figures/color-2e3436.png" width="10"/> Строка состояния</p></td>
+  </tr>
+</table>
+<terms>
+<item>
+<title>Список встреч</title>
+<p>В списке встреч показаны все запланированные встречи в указанном диапазоне времени.</p>
+</item>
+<item>
+<title>Панель месяцев</title>
+<p>Панель месяцев — это уменьшенный вид календарного месяца. Для отображения дополнительных месяцев переместите границу панели вправо. На панели месяцев можно также выбрать диапазон дней для просмотра нестандартного диапазона дней в списке встреч.</p>
+</item>
+<item>
+<title>Список задач и список заметок</title>
+<p>Задачи и заметки показаны для удобства, они не связаны с какими-либо встречами. Используйте <gui>переключатель</gui> для перехода к их главным окнам.</p>
+</item>
+</terms>
+
+</section>
+
+<section id="contacts">
+<title>Контакты</title>
+<p>Элементы главного окна контактов:</p>
+<table frame="all" rules="all">
+  <tr>
+    <td colspan="2"><p><media type="image" its:translate="no" src="./figures/color-c4a000.png" width="10"/> Строка меню</p></td>
+  </tr>
+  <tr>
+    <td colspan="2"><p><media type="image" its:translate="no" src="./figures/color-ce5c00.png" width="10"/> Панель инструментов</p></td>
+  </tr>
+  <tr>
+    <td rowspan="2"><p><media type="image" its:translate="no" src="./figures/color-8f5902.png" width="10"/> Список адресных книг</p></td>
+    <td><p><media type="image" its:translate="no" src="./figures/color-4e9a06.png" width="10"/> Панель поиска</p></td>
+  </tr>
+  <tr>
+    <td><p><media type="image" its:translate="no" src="./figures/color-204a87.png" width="10"/> Список контактов</p></td>
+  </tr>
+  <tr>
+    <td><p><media type="image" its:translate="no" src="./figures/color-a40000.png" width="10"/> Переключатель</p></td>
+    <td><p><media type="image" its:translate="no" src="./figures/color-5c3566.png" width="10"/> Предварительный просмотр контакта</p></td>
+  </tr>
+  <tr>
+    <td colspan="2"><p><media type="image" its:translate="no" src="./figures/color-2e3436.png" width="10"/> Строка состояния</p></td>
+  </tr>
+</table>
+<note style="tip"><p>Чтобы отключить предварительный просмотр контакта, выберите пункт меню <guiseq><gui>Вид</gui><gui>Предварительный просмотр</gui><gui>Предварительный просмотр контакта</gui></guiseq>.</p></note>
+</section>
+</page>

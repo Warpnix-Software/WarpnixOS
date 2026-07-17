@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-vertical-view" xml:lang="ru">
+
+  <info>
+    <desc>Изменение представления почты для широкоформатных экранов.</desc>
+    <link type="guide" xref="mail-layout-changing"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+   <credit type="author">
+     <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en#b131ni8g -->
+   </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Вертикальный вид</title>
+
+<p>В дополнение к классическому виду <app>Evolution</app> предоставляет возможность просмотра в вертикальном виде. По сравнению с классическим видом, когда панель просмотра сообщений размещена ниже списка сообщений, при вертикальном виде панель просмотра сообщений размещена справа от списка сообщений. Вертикальный вид даёт возможность использовать дополнительную ширину широкоэкранных мониторов.</p>
+
+<p>Для переключения на вертикальный вид выберите пункт меню <guiseq><gui>Вид</gui><gui>Предварительный просмотр</gui><gui>Вертикальный вид</gui></guiseq>.</p>
+
+<p>При вертикальном виде список сообщений содержит двухстрочные сокращённые заголовки, что даёт возможность воспользоваться дополнительной шириной монитора в поле предварительного просмотра. Сокращённые столбцы содержат имя отправителя и адрес его электронной почты, значок вложения, дату и тему сообщения.</p>
+
+<p>Для возврата к классическому виду выберите пункт меню <guiseq><gui>Вид</gui><gui>Предварительный просмотр</gui><gui>Классический вид</gui></guiseq>.</p>
+
+</page>

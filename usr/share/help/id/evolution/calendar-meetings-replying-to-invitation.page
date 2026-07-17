@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-meetings-replying-to-invitation" xml:lang="id">
+
+  <info>
+    <desc>Menerima dan membalas undangan rapat.</desc>
+    
+    <link type="guide" xref="calendar-meetings"/>
+
+    <revision pkgversion="3.1.5" version="0.6" date="2011-08-25" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+ <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#replying-to-rsvp -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+      
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Membalas Permintaan Rapat</title>
+<p>Permintaan rapat dikirim sebagai lampiran dan ditampilkan sebagai isi surel. Semua detail tentang acara ditampilkan, termasuk waktu dan tanggal.</p>
+<p>Anda dapat memilih apakah dan bagaimana membalas undangan dan menambahkan komentar pribadi ke balasan Anda. Pilihan yang tersedia adalah <gui>Menolak</gui>, Menerima Tentatif (<gui>Tentatif</gui>), atau <gui>Menerima</gui>. Anda juga bisa memutuskan apakah waktu rapat masih akan diperlihatkan sebagai bebas di kalender Anda.</p>
+
+<p>Jika permintaan rapat sudah menyertakan <link xref="calendar-alarms-and-reminders">pengingat</link>, Anda bisa mengimpor pengingat ke kalender Anda dengan mengaktifkan <gui>Warisi pengingat</gui>.</p>
+
+<p>Jika Anda mengklik <gui>Terima</gui>acara ditambahkan secara otomatis ke kalender yang telah Anda pilih.</p>
+<p>Setelah Anda menambahkan rapat ke kalender, Anda bisa membuat perubahan pada rapat, tetapi jika penyelenggara asli mengirimkan pembaruan, perubahan Anda mungkin ditimpa.</p>
+
+<note style="tip"><p>Di bawah <guiseq><gui>Sunting</gui><gui>Preferensi</gui>Kalender dan Tugas<gui/><gui>Undangan Rapat</gui><gui>Pencarian Konflik</gui></guiseq> Anda bisa menentukan kalender mana yang digunakan untuk memperingatkan Anda tentang konflik rapat.</p></note>
+</page>

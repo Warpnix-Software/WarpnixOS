@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="conv-character" xml:lang="sr">
+
+    <info>
+        <link type="guide" xref="index#conversion"/>
+    </info>
+
+	<title>Кодни знакови</title>
+    
+    <p>Када сте у <link xref="mouse">програмерском режиму</link> дугме „<gui>á</gui>“ отвара прозорче за претварање знакова у кодне знакове.</p>
+    <note>
+    <p>Знакови се не могу претворити коришћењем тастатуре.</p>
+    </note>
+</page>

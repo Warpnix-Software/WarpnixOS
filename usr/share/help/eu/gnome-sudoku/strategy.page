@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="strategy" xml:lang="eu">
+	<info>
+          <revision version="3.4" date="2012-03-08" status="final"/>
+	  <link type="guide" xref="index#play"/>
+	  <credit type="author copyright">
+	    <name>Radoslav Asparuhov</name>
+	    <email>rasparuhov@gmail.com</email>
+	  <years>2011</years>
+	  </credit>
+	  <credit type="editor">
+	    <name>Tiffany Antopolski</name>
+	    <email>tiffany.antopolski@gmail.com</email>
+	  </credit>
+	  <license>
+		<p>Creative Commons Share Alike 3.0</p>
+	  </license>
+	</info>
+
+	<title>Estrategia</title>
+        <p>Aukera bakarra dago gelaxka bakoitzerako Sudoku puzzle batean. Honako estrategiak erabiltzen badituzu sistematikoki gelaxka bakoitzaren ebazpena aurkituko duzu.</p>
+ <section id="strategy1">
+	<title>1. estrategia:</title>
+	  <steps>
+	    <item><p>Aukeratu zenbaki gehien dituen errenkada.</p>
+                  <note><p>Zenbaki gehien dituen errenkada edo zutabea aukeratu behar duzu. Errazago ulertzeko, argibide hauek idaztean, zenbaki gehien dituena errenkada bat dela zehaztu da.</p></note>
+            </item>
+	    <item><p>Begiratu zein zenbaki falta diren errenkadan.</p></item>
+	    <item><p>Aukeratu errenkada horretako gelaxka hutsetako bat. Begiratu errenkadan falta diren zenbakietatik zeintzuk dauden zutabe berean edo 3x3 koadro berean.</p></item>
+	    <item><p>Using <link xref="earmarks">earmarks</link>, enter the missing numbers which are not in that column or 3×3 box. These numbers are candidate solutions for that cell.</p></item>
+	    <item><p>Go to the next empty cell of the chosen row and repeat the above method. Repeat this for every row and column, starting at those with the most numbers and continuing through to the least. Always look carefully for the numbers and don’t forget the 3×3 boxes.</p></item>
+	   </steps>
+            <note><p>This strategy will help reveal the cells which have only one possible choice. When revealed, you can fill those cells in with that choice, and repeat the strategy again until the entire puzzle is solved.</p></note>
+<figure>
+  <desc>1. estrategiaren adibidea.</desc>
+  <media type="image" mime="image/png" src="figures/strategy1.png" width="400" its:translate="no"/>
+</figure>
+
+</section>
+<section id="strategy2">
+
+	<title>2. estrategia:</title>
+	  <steps>
+	    <item><p>Aurkitu gehien ageri den zenbakia.</p></item>
+	    <item><p>Now look at the left vertical alignment of the 3×3 boxes and locate the column(s) in which this number appears.</p></item>
+  	    <item><p>In this alignment, go to a 3×3 box which does not contain this number in any of its cells.  Using <link xref="earmarks">earmarks</link>, enter this number in every empty cell of the column in which this number does not appear. If the number appears in the row of one of these cells, do not enter it in that cell’s earmarks.</p></item>
+	    <item><p>Repeat the last two steps for the center and right vertical alignments.</p></item>
+            <item><p>Find the next number which appears most, and repeat until you have done this for all 9 numbers.</p></item>
+	  </steps>
+            <note><p>This strategy will help reveal the cells which have only one possible choice. When revealed, you can fill those cells in with that choice, and repeat the strategy again until the entire puzzle is solved.</p></note>
+<figure>
+  <desc>2. estrategiaren adibidea.</desc>
+  <media type="image" mime="image/png" src="figures/strategy2.png" width="400" its:translate="no"/>
+</figure>
+
+	   <note><p>Goiko estrategiek bakoitzak bere aldetik funtzionatzen ez badu, txandaka erabili ditzakezu. Bi estrategiak konbinatuta ere ebatzi daitezke puzzleak.</p></note>
+</section>
+</page>

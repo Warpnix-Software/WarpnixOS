@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-received-notification" xml:lang="cs">
+
+  <info>
+    <desc>Jak navolit upozorňování na nově příchozí poštu.</desc>
+
+    <link type="guide" xref="mail-send-and-receive"/>
+    <link type="seealso" xref="calendar-alarms-and-reminders"/>
+
+    <revision pkgversion="3.34.4" version="0.8" date="2020-02-26" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  </info>
+
+<title>Upozorňování na novou poštu</title>
+
+<p><app>Evolution</app> vždy upozorňuje na nové zprávy přidáním malé značky k ikoně poštovního klienta v <link xref="intro-main-window">přepínači</link> oken.</p>
+<media type="image" src="./figures/new-mail-switcher.png" width="256" its:locNote="Translators: Please make sure that the screenshot does have the small yellow star in the Mail icon">
+  <p>Vzhled přepínače, když přijde nová pošta</p>
+</media>
+
+<p>Abyste byli navíc upozorněni na nové zprávy i pomocí upozornění uživatelského prostředí GNOME:</p>
+<steps>
+<item><p>Vyberte <guiseq><gui>Upravit</gui> <gui>Zásuvné moduly</gui></guiseq>.</p></item>
+<item><p>Zapněte <gui>Upozornění na novou poštu</gui>.</p>
+<note style="tip"><p>Pokud se zásuvný modul v <guiseq><gui>Upravit</gui><gui>Zásuvné moduly</gui></guiseq> nenachází, obraťte se prosím do diskuzního fóra podpory své distribuce. Možná se ve vaší distribuci rozhodli zásuvný modul zakázat, nebo jej šíří v samostatném balíčku.</p></note>
+</item>
+<item><p>Otevřete kartu <gui style="tab">Nastavení</gui> a nastavte své upřednostňované volby.</p></item>
+<item><p>Otevřete kartu <gui style="tab">Účty</gui>, abyste mohli vybrat poštovní účet, pro který chcete upozornění vidět.</p></item>
+</steps>
+
+<p>Více informací viz <link xref="help:gnome-help/shell-notifications" href="https://help.gnome.org/users/gnome-help/stable/shell-notifications">Nápověda k uživatelskému prostředí GNOME</link>.</p>
+
+<!-- TODO: Quite short -->
+
+</page>

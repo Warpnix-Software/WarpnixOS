@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY toolversion "2.15.2">
+<!ENTITY manrevision "2.15.2">
+<!ENTITY date "August 2006">
+<!ENTITY tool "Shared Folders Administration Tool">
+]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 06, 2003
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="de">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Handbuch des Verwaltungswerkzeugs für freigegebene Ordner</title> 
+    <copyright lang="en">
+      <year>2006</year>
+      <holder>Carlos Garnacho Parro</holder>
+    </copyright>
+
+<!-- translators: uncomment this:
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+   -->
+
+    <publisher role="maintainer"> 
+	 <publishername>Carlos Garnacho Parro</publishername> 
+    </publisher> 
+
+
+<!-- This file  contains link to license for the documentation (GNU FDL), and 
+     other legal stuff such as "NO WARRANTY" statement. Please do not change 
+     any of this. -->
+
+    <authorgroup> 
+      <author lang="en">
+        <firstname>Carlos</firstname>
+        <surname>Garnacho Parro</surname>
+      </author>
+      <!-- This is appropriate place for other contributors: translators,
+           maintainers,  etc. Commented out by default.
+        <othercredit role="translator">
+	      <firstname>Latin</firstname> 
+	      <surname>Translator 1</surname> 
+	      <affiliation> 
+	      	<orgname>Latin Translation Team</orgname> 
+	       	<address> <email>translator@gnome.org</email> </address> 
+	      </affiliation>
+	      <contrib>Latin translation</contrib>
+        </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+	 <revision lang="en">
+	   <revnumber>Shared Folders Administration Tool Manual V2.15.2</revnumber>
+	   <date>August 2006</date>
+	   <revdescription>
+          <para role="author" lang="en">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher" lang="en">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+    </revhistory>
+
+    <releaseinfo>Dieses Handbuch beschreibt Version 2.15.2 des Verwaltungswerkzeugs für freigegebene Ordner.</releaseinfo> 
+
+    <legalnotice> 
+	 <title>Rückmeldungen</title> 
+	 <para>Um einen Fehler zu melden oder einen Vorschlag zum Verwaltungswerkzeug für freigegebene Ordner oder zu diesem Handbuch zu machen, folgen Sie den Anweisungen auf der <ulink url="ghelp:gnome-feedback" type="help">GNOME-Seite für Rückmeldungen</ulink>.</para>
+    </legalnotice>
+    <abstract role="description">
+      <para>Das Verwaltungswerkzeug für freigegebene Ordner erlaubt Ihnen, den Zugriff auf Ordner für andere Rechner in Ihrem Netzwerk oder im Internet freizugeben.</para>
+    </abstract> 
+  </articleinfo> 
+
+  <indexterm zone="index" lang="en"> 
+    <primary>Services Administration Tool</primary> 
+  </indexterm> 
+
+  <!-- ============= Document Body ============================= -->
+  <sect1 id="tool-introduction"> 
+    <title>Einführung</title> 
+    <para>Das <application>Verwaltungswerkzeug für freigegebene Ordner</application> erlaubt Ihnen, den Zugriff auf Ordner für andere Rechner in Ihrem Netzwerk oder im Internet freizugeben.</para> 
+  </sect1>
+
+  <sect1 id="tool-getting-started">
+    <title>Erste Schritte</title>
+
+    <para>Sie können das <application>Verwaltungswerkzeug für freigegebene Ordner</application> auf folgende Arten starten:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term>Menü <guimenu>System</guimenu></term>
+	   <listitem>
+		<para>Wählen Sie <menuchoice><guisubmenu>Systemverwaltung</guisubmenu><guimenuitem>Freigegebene Ordner</guimenuitem></menuchoice>.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>Kontextmenü von Nautilus</term>
+	   <listitem>
+		<para>Klicken Sie mit der rechten Maustaste auf einen beliebigen lokalen Ordner und wählen Sie <menuchoice><guisubmenu>Ordner freigeben</guisubmenu></menuchoice>, um den Ordner freizugeben oder die Freigabe zu beenden.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>Befehlszeile</term>
+	   <listitem>
+		<para>Führen Sie den folgenden Befehl aus: <command>shares-admin</command>.</para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+
+    <para>Beim Start des <application>Verwaltungswerkzeugs für freigegebene Ordner</application> werden Sie um die Eingabe des Systemverwalterpassworts gebeten. Dies ist erforderlich, weil die hier getätigten Einstellungen auf das gesamte System Einfluss nehmen.</para>
+
+    <para>Nach der Eingabe des Systemverwalter-Passworts wird das folgende Fenster angezeigt.</para>
+
+    <figure id="shares-main-window">
+	 <title>Hauptfenster des Verwaltungswerkzeugs für freigegebene Ordner</title>
+	 <screenshot>
+	   <mediaobject lang="en">
+		<imageobject>
+		  <imagedata fileref="figures/shares-tool.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+		  <phrase>Shows Shared Folders Administration Tool main window.</phrase>
+		</textobject>
+	   </mediaobject>
+	 </screenshot>
+    </figure>
+
+    <para>Das Hauptfenster des <application>Verwaltungswerkzeugs für freigegebene Ordner</application> enthält die folgenden Elemente:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term>Freigegebene Ordner</term>
+	   <listitem>
+		<para>Dies ermöglicht Ihnen anzugeben, welche Ordner über das Netzwerk freigegeben werden.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>Allgemeine Eigenschaften</term>
+	   <listitem>
+		<para>Legt globale Einstellungen für eine Gruppe von freigegebenen Ordnern fest.</para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+  </sect1>
+
+  <sect1 id="tool-usage">
+    <title>Benutzung</title>
+
+    <sect2>
+      <title>Einen Ordner freigeben</title>
+	 <para>Es gibt drei Möglichkeiten, einen Ordner freizugeben:</para>
+	 <orderedlist>
+	   <listitem><para>Klicken Sie im Reiter <guilabel>Freigegebene Ordner</guilabel> auf den Knopf <guilabel>Hinzufügen</guilabel>. Geben Sie im Dialog <guilabel>Freigegebene Ordner</guilabel> den Namen des Ordners ein, den Sie freigeben wollen.</para></listitem>
+	   <listitem><para>Klicken sie mit der rechten Maustaste auf den lokalen Ordner und wählen Sie die Option <menuchoice><guisubmenu>Ordner freigeben</guisubmenu></menuchoice>.</para></listitem>
+	   <listitem><para>Ziehen Sie den Ordner in die Liste der freigegebenen Ordner im Hauptfenster und legen Sie ihn dort ab.</para></listitem>
+	 </orderedlist>
+    </sect2>
+
+    <sect2>
+      <title>Freigabe eines Ordners beenden</title>
+	 <para>Es gibt zwei Möglichkeiten, die Freigabe eines Ordners zu beenden:</para>
+	 <orderedlist>
+	   <listitem><para>Wählen Sie im Reiter <guilabel>Freigegebene Ordner</guilabel> den Ordner aus, dessen Freigabe Sie beenden wollen und klicken Sie dann auf den Knopf <guilabel>Löschen</guilabel>.</para></listitem>
+	   <listitem><para>Klicken Sie mit der rechten Maustaste auf einen lokalen Ordner und wählen Sie die Option <menuchoice><guisubmenu>Ordner freigeben</guisubmenu></menuchoice>, dann wählen Sie im Kombinationsfeld <guilabel>Freigeben über:</guilabel> die Art der Freigabe aus.</para></listitem>
+	 </orderedlist>
+    </sect2>
+
+    <sect2>
+      <title>Eigenschaften einer Ordnerfreigabe ändern</title>
+	 <para>Wählen Sie im Reiter <guilabel>Freigegebene Ordner</guilabel> den Ordner aus, dessen Eigenschaften Sie anpassen wollen und klicken Sie dann auf den Knopf <guilabel>Eigenschaften</guilabel>.</para>
+    </sect2>
+
+    <sect2>
+      <title>Eigenschaften der Freigabe global anpassen</title>
+	 <para>Im Reiter <guilabel>Allgemeine Eigenschaften</guilabel> können Sie jeden der Werte anpassen.</para>
+    </sect2>
+  </sect1>
+</article>

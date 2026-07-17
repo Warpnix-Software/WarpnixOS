@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:e="http://projectmallard.org/experimental/" xmlns:if="http://projectmallard.org/if/1.0/" type="topic" id="mail-spam-settings" xml:lang="ca">
+
+  <info>
+    <desc>Com configurar la gestió el correu brossa i el correu no desitjat.</desc>
+
+    <link type="guide" xref="mail-spam"/>
+    <link type="seealso" xref="mail-spam-marking"/>
+
+    <revision pkgversion="3.25.3" version="0.13" date="2017-07-04" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Patrick O'Callaghan</name>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Pete Biggs</name>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/config-prefs-mail.html.en#mail-prefs-junk -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Paràmetres del correu brossa</title>
+
+<section id="junk-tools">
+<title>Eines</title>
+<p><app>Evolution</app> us permet comprovar si hi ha correu brossa o no desitjat utilitzant les eines <app>Bogofilter</app> o <app>SpamAssassin</app>. Per a utilitzar aquestes eines, heu d'assegurar-vos que estiguin instal·lades mitjançant l'eina de gestió de programari de la vostra distribució.</p>
+
+<note style="info package">
+  <p>Pot ser necessari que instal·leu <app>Bogofilter</app> o <app>SpamAssassin</app> per a dur a terme aquests passos.</p>
+  <if:choose>
+    <if:when test="action:install">
+      <p><link action="install:bogofilter" href="http://bogofilter.sourceforge.net/" style="button">Instal·la bogofilter</link></p>
+      <p><link action="install:spamassassin" href="http://spamassassin.apache.org/" style="button">Instal·la spamassassin</link></p>
+    </if:when>
+  </if:choose>
+</note>
+
+<p>SpamAssassin funciona a través d'un conjunt de regles predefinides, per tant, pot determinar el correu brossa immediatament. Bogofilter no ve amb un conjunt predeterminat de criteris per a detectar el correu brossa, de manera que no es filtrarà automàticament després d'instal·lar-lo. Heu d'<link xref="mail-spam-marking">entrenar-lo</link> primer per a fer-lo funcionar. També podeu modificar les accions de SpamAssassin.</p>
+</section>
+
+<section id="junk-folder">
+<title>Carpeta de correu brossa</title>
+<p>Els missatges marcats com a brossa (ja sigui manualment per l'usuari o automàticament a través de SpamAssassin o Bogofilter) es traslladaran a la carpeta de correu <gui>Brossa</gui>.</p>
+<p>La localització exacta depèn de la <link xref="mail-default-folder-locations">configuració de la carpeta de brossa</link>.</p>
+</section>
+
+<section id="preferences">
+<title>Preferències del correu brossa</title>
+<p>Podeu modificar com <app>Evolution</app> gestiona el correu brossa canviant les preferències:</p>
+<steps>
+<item><p>Feu clic a <guiseq><gui>Edita</gui><gui>Preferències</gui></guiseq> o premeu <keyseq><key>Maj</key><key>Ctrl</key><key>S</key></keyseq>.</p></item>
+<item><p>Seleccioneu <gui>Preferències de correu</gui>.</p></item>
+<item><p>Feu clic a la pestanya <gui>Correu brossa</gui>. Hi podreu especificar la següent configuració global, que s'aplicarà a tots els comptes de correu:</p>
+<list>
+<item><p>Comprovació de correu escombraries en missatges entrants. És una configuració global: si no està habilitada, habilitar les opcions de correu brossa per a un compte específic (vegeu a sota) no tindrà cap efecte.</p></item>
+<item><p>Eliminar els missatges no desitjats a la sortida, i la freqüència amb què s'han de suprimir els missatges de correu brossa.</p></item>
+<item><p>Marca els missatges com a no brossa si el remitent està a la llibreta d'adreces.</p></item>
+<item><p>Comprovació de les capçaleres de correu personalitzades (afegides pel vostre servidor de correu) per a detectar correu escombraries.</p></item>
+</list>
+</item>
+<item><p>La configuració de correu brossa per a un compte de correu específic (disponible per a tots els tipus de compte, excepte els comptes POP, que utilitzen la configuració global) es pot configurar a <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Comptes de correu</gui><gui style="button">Edita</gui><gui>Opcions de recepció</gui><gui>Comprova el contingut escombraries pels missatges nous</gui></guiseq>.</p></item>
+</steps>
+
+<note style="tip"><p>Per a obtenir més informació i preguntes relacionades amb la configuració de Bogofilter o SpamAssassin, es recomana consultar les Preguntes freqüents de <link href="http://bogofilter.sourceforge.net/faq.shtml">Bogofilter</link> i de <link href="https://wiki.apache.org/spamassassin/FrequentlyAskedQuestions">SpamAssassin</link>.</p></note>
+</section>
+
+</page>

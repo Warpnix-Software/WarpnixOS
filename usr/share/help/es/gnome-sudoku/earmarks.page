@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="earmarks" xml:lang="es">
+  <info>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+   <link type="guide" xref="index#tips"/>
+    <credit type="author copyright">
+      <name>Thomas Hinkle</name>
+      <email>tmhinkle@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Chris Beiser</name>
+      <email>ctbeiser@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2011 - 2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rodrigo Lledó</mal:name>
+      <mal:email>rodhos92@gmail.com</mal:email>
+      <mal:years>2018</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007 - 2010</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Notas</title>
+<p>Las notas se pueden añadir a cualquier casilla. Le permiten marcar los valores posibles de una casilla. Las notas le permiten almacenar cualquier cantidad de dígitos en la casilla. Cada dígito se puede seleccionar solo una vez.</p>
+
+<p>Para añadir notas en una casilla:</p>
+
+<steps>
+  <item><p>Seleccione la casilla.</p></item>
+  <item><p>Pulse <keyseq><key>Ctrl</key><key>1</key></keyseq> hasta <keyseq><key>Ctrl</key><key>9</key></keyseq>.</p></item>
+</steps>
+
+<p>Puede quitar un número de las notas pulsando desde <keyseq><key>Ctrl</key><key>1</key></keyseq> hasta <keyseq><key>Ctrl</key><key>9</key></keyseq> nuevamente.</p>
+
+<note><p>También puede añadir notas pulsando en la casilla mientras mantiene pulsado <key>Ctrl</key>, o pulsando con el botón derecho en la casilla y luego seleccionando un número.</p></note>
+
+</page>

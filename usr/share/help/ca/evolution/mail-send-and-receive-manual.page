@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-send-and-receive-manual" xml:lang="ca">
+
+  <info>
+    <desc>Forçar l'enviament i recepció de missatges de correu electrònic.</desc>
+
+    <link type="guide" xref="mail-send-and-receive"/>
+
+    <revision pkgversion="3.9.3" version="0.5" date="2013-05-29" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Enviar i rebre missatges manualment</title>
+<p>Per a rebre nous missatges del servidor de correu i enviar els missatges que heu escrit i que es trobin a la safata de sortida, feu clic al botó <gui style="button">Envia / rep</gui> a la barra d'eines, o premeu <key>F12</key>, o trieu <guiseq><gui>Fitxer</gui><gui>Envia / rep</gui></guiseq> des del menú principal.</p>
+<p>Per a enviar i rebre per només un dels vostres comptes de correu, o només per a enviar o rebre, feu clic a la petita fletxa cap avall que hi ha al costat del botó <gui style="button">Envia / rep</gui> i trieu l'opció corresponent.</p>
+<p>Si només voleu enviar missatges que es troben a la safata de sortida, podeu fer clic amb el botó dret a la bústia de sortida i fer clic a <gui>Buida la safata de sortida</gui>.</p>
+
+</page>

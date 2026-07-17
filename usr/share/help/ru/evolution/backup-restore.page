@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="backup-restore" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#data-migration-and-sync"/>
+    <link type="seealso" xref="data-storage"/>
+
+    <revision pkgversion="3.1.5" version="0.4" date="2014-03-23" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Создание резервной копии и восстановление данных и параметров <app>Evolution</app>.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Резервная копия и восстановление</title>
+
+  <p>Можно создать резервную копию данных <app>Evolution</app>. Врезервной копии будут сохранены параметры, почта, контакты, задачи,примечания и календари. Данные сохраняются в формате сжатого с помощьюgzip архива tar.</p>
+
+<section id="backup">
+  <title>Создание резервной копии</title>
+
+  <list>
+    <item>
+      <p>Выберите пункт меню <guiseq><gui>Файл</gui> <gui>Сделать резервную копию данных…</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Укажите имя файла и папку для сохранения файла резервной копии, затем нажмите кнопку <gui style="button">Сохранить</gui>.</p>
+    </item>
+    <item>
+      <p>Будет предложено закрыть окно <app>Evolution</app>. Ответьте <gui style="button">Да</gui>.</p>
+    </item>
+  </list>
+
+  <note style="warning">
+    <p>Обратите внимание, что параметры <link xref="mail-spam">фильтрации спама</link> не будут включены в файл резервной копии, поскольку ими управляет не приложение <app>Evolution</app>, а разработчики средств фильтрации могутизменить реализацию. Если используется Bogofilter, следуетсоздать резервную копию скрытой папки <file>~/.bogofilter/</file>. Если используется SpamAssassin, следует создать резервную копию скрытой папки <file>~/.spamassassin/</file>.</p>
+  </note>
+
+</section>
+
+<section id="restore">
+  <title>Восстановление</title>
+
+  <list>
+    <item>
+      <p>Выберите пункт меню <guiseq><gui>Файл</gui> <gui>Восстановить данные Evolution…</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Выберите файл и нажмите кнопку <gui style="button">Открыть</gui>.</p>
+    </item>
+    <item>
+      <p>Будет предложено закрыть окно <app>Evolution</app>. Ответьте <gui style="button">Да</gui>.</p>
+    </item>
+  </list>
+
+  <note style="tip">
+    <p>Во <link xref="intro-first-run">вспомогательной программе первого запуска</link> можно восстановить данные <app>Evolution</app> из файла резервной копии.</p>
+  </note>
+
+</section>
+
+</page>

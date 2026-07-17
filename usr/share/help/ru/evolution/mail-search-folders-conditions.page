@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-search-folders-conditions" xml:lang="ru">
+
+  <info>
+    <desc>Доступные условия для настройки папок поиска.</desc>
+
+    <link type="seealso" xref="mail-search-folders"/>
+
+    <revision pkgversion="3.6.4" version="0.4" date="2013-04-20" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-organize-vfolders.html.en -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Доступные условия папок <gui>поиска</gui></title>
+
+<list>
+
+<!-- As filter and search folder conditions share a fair amount of options, those ones are centrally in one file that's 
+included by XInclude. See http://blogs.gnome.org/shaunm/2011/07/21/understanding-xinclude/ for how it works. -->
+<include xmlns="http://www.w3.org/2001/XInclude" href="xinclude-filter-vfolder-conditions.xml" xpointer="xmlns(mal=http://projectmallard.org/1.0/)xpointer(/mal:info/mal:item)"/>
+
+<item><p>Местоположение сообщения:</p>
+<p>Проверяет, расположено ли сообщение в определённой папке.</p><p>Обратите внимание, что папки <app>Evolution</app> <gui>Корзина</gui> и <gui>Спам</gui> по умолчанию являются папками <link xref="mail-search-folders"><gui>поиска</gui></link>; по этой причине они не представлены в списке.</p></item>
+
+<item><p>Соответствует всем:</p>
+<p>Применяет действие к любому сообщению без каких-либо последующих условий. Полезно использовать в конце списка папок поиска, чтобы охватить те письма, которые не соответствуют условиям предыдущих папок поиска в списке.</p></item>
+</list>
+</page>

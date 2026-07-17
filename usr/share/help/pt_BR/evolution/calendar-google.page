@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-google" xml:lang="pt-BR">
+
+  <info>
+    <link type="guide" xref="calendar-using-several-calendars"/>
+    <link type="guide" xref="google-services"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-view.html.en#b1a47igh
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Usando a agenda online da sua conta Google.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Fontenelle</mal:name>
+      <mal:email>rafaelff@gnome.org</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Usando um agenda do Google</title>
+
+  <p>Para adicionar tal agenda ao <app>Evolution</app>, execute as seguintes etapas:</p>
+
+  <steps>
+    <item>
+      <p>Clique em <guiseq><gui>Arquivo</gui><gui>Novo</gui><gui>Agenda</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Selecione o tipo <gui>Google</gui>.</p>
+    </item>
+    <item>
+      <p>Digite um nome de sua preferência.</p>
+    </item>
+    <item>
+      <p>Opcionalmente, escolha uma cor de sua preferência.</p>
+    </item>
+    <item>
+      <p>Escolha se você deseja ser capaz de visualizar o conteúdo também enquanto estiver desconectado.</p>
+    </item>
+    <item>
+      <p>Insira seu nome de usuário Google.</p>
+    </item>
+    <item>
+      <p>Se você tiver mais de uma agenda Google, defina qual delas deseja usar.</p>
+    </item>
+    <item>
+      <p>Clique em <gui style="button">OK</gui>.</p>
+    </item>
+  </steps>
+
+  <p>A agenda será adicionada à lista de agendas em <app>Evolution</app>.</p>
+
+</page>

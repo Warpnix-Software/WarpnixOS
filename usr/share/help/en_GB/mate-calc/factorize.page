@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="factorize" xml:lang="en_GB">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>Factorisation</title>
+
+    <p>You can factorise the number currently displayed by pressing <keyseq><key>Ctrl</key><key>F</key></keyseq> or by pressing the <gui>fact</gui> button. This button is visible in <link xref="mouse">programming mode</link>.</p>
+    <p>To factorise integers bigger than 2^64 the Miller-Rabin primality test and Pollard's rho algorithm are used.</p>
+</page>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:e="http://projectmallard.org/experimental/" xmlns:if="http://projectmallard.org/if/1.0/" type="topic" id="calendar-alarms-and-reminders" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#calendar"/>
+
+    <revision pkgversion="3.28.2" version="0.5" date="2018-07-10" status="draft"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+     <name its:translate="no">Novell, Inc</name>
+     <!-- Content partially from https://help.gnome.org/users/evolution/2.32/config-prefs-cal.html.en#CACHCGCI -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Установка напоминаний о встречах.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Напоминания о встречах</title>
+
+<section id="general-settings">
+  <title>Общие параметры</title>
+
+  <p>В списке <guiseq><gui>Правка</gui><gui>Параметры</gui> <gui>Календарь и задачи</gui><gui>Напоминания</gui></guiseq> можно выбрать те календари, для которых следует показывать напоминания. Если календарь не выбран, напоминания о событиях в нём не будут появляться. Также можно указать, следует ли отображать напоминание о каждой встрече или каждом дне рождения и годовщине.</p>
+
+  <if:choose>
+    <if:when test="platform:gnome-shell">
+      <p>Дополнительные сведения о показе напоминаний доступны в <link xref="help:gnome-help/shell-notifications" href="https://help.gnome.org/users/gnome-help/stable/shell-notifications">справке по рабочей среде GNOME</link>.</p>
+    </if:when>
+  </if:choose>
+
+</section>
+
+<section id="manual-reminders">
+  <title>Настройка напоминаний вручную</title>
+
+  <p>Помимо общих параметров, в редакторе встреч также можно настроить напоминания только для отдельных встреч:</p>
+
+  <steps>
+    <item>
+      <p>Выберите пункт <guiseq><gui>Параметры</gui><gui>Напоминания</gui></guiseq> или нажмите кнопку «Напоминание» на панели инструментов.</p>
+    </item>
+    <item>
+      <p>Выберите один из доступных вариантов по умолчанию в раскрывающемся списке, либо укажите свой вариант (<gui>Другое</gui>).</p>
+    </item>
+    <item>
+      <p>Если выбран вариант <gui>Другое</gui>, напоминание может представлять собой всплывающее окно, воспроизводимый звук, запускаемую программу или отправляемое сообщение электронной почты. Также можно указать, следует ли повторять напоминание.</p>
+    </item>
+  </steps>
+
+<note style="info"> <!-- bug 794085 -->
+  <p>Пункт <gui>Отправить эл. письмо</gui> доступен только в том случае, если модуль календаря поддерживает соответствующую функциональную возможность.</p>
+</note>
+
+</section>
+
+</page>

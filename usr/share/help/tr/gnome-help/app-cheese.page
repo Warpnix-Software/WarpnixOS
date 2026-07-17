@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="app-cheese" xml:lang="tr">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntu Belgelendirme Takımı</name>
+      <email>ubuntu-doc@lists.ubuntu.com</email>
+    </credit>
+    <desc>Kendi kişisel fotoğraf çekme kabininiz gibidir.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="media#videos"/>
+    <revision version="16.04" date="2016-03-16" status="review"/>
+  </info>
+
+  <title>Web kameranızı kullanarak eğlenceli fotoğraflar ve videolar oluşturun.</title>
+
+  <p><app>Cheese</app> uygulaması ve web kameranız ile birlikte resim ve videolar çekebilir, üzerlerinde özel efektler uygulayabilir ve eğlencenizi başkalarıyla paylaşabilirsiniz.</p>
+
+  <p>Peynir'i kullanmada yardım almak için <link href="help:cheese">Peynir kullanım kılavuzu</link>'nu okuyun.</p>
+
+</page>

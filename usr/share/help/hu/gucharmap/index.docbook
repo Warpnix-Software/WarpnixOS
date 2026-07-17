@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY appversion "1.3.0">
+<!ENTITY manrevision "2.1">
+<!ENTITY date "February 2004">
+<!ENTITY app "Character Map">
+]>
+<!-- 
+ (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Apr 11, 2002
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="hu"> 
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>A Karaktertábla felhasználói kézikönyve</title>
+    <abstract role="description">
+      <para>A Karaktertábla alkalmazás egy Unicode karaktertábla, amellyel karaktereket választhat ki egy táblázatból, és karakterláncokba szúrhatja be őket.</para>
+    </abstract>
+    <copyright><year>2004</year> <holder>Sun Microsystems</holder></copyright>
+    <copyright><year>2003</year> <year>2004</year> <holder>Chee Bin HOH</holder></copyright> 
+
+<!-- translators: uncomment this:
+    <copyright>
+      <year>2002</year>
+      <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+    </copyright>
+-->
+
+    <publisher role="maintainer"> 
+      <publishername>GNOME dokumentációs projekt</publishername> 
+    </publisher> 
+
+      <legalnotice id="legalnotice">
+	<para lang="en">
+	  Permission is granted to copy, distribute and/or modify this
+	  document under the terms of the GNU Free Documentation
+	  License (GFDL), Version 1.1 or any later version published
+	  by the Free Software Foundation with no Invariant Sections,
+	  no Front-Cover Texts, and no Back-Cover Texts.  You can find
+	  a copy of the GFDL at this <ulink type="help" url="help:fdl">link</ulink> or in the file COPYING-DOCS
+	  distributed with this manual.
+         </para>
+         <para>Ez a leírás egy GNOME leírásgyűjtemény része, és a GFDL licenc alatt kerül terjesztésre. Ha a gyűjteményen kívül szeretné terjeszteni, akkor csatolja a licenc egy másolatát a leíráshoz, úgy ahogyan erről a licenc 6. fejezete rendelkezik.</para>
+
+	<para>A cégek által használt termék- és szolgáltatás nevek nagy része védjegy. Ahol ezek a nevek a GNOME dokumentációban szerepelnek, és a GNOME Dokumentációs Projekt tagjai tudnak erről, ott az ilyen neveket nagybetűkkel, vagy nagy kezdőbetűvel jelöljük.</para>
+
+	<para>A DOKUMENTUM ÉS A DOKUMENTUM MÓDOSÍTOTT VERZIÓJA A GNU FREE DOCUMENTATION LICENSE (GFDL) ALATT JELENIK MEG AZ ALÁBBI ÉRTELMEZÉSSEL: <orderedlist>
+		<listitem>
+		  <para>A DOKUMENTUM „JELEN ÁLLAPOTÁBAN” KERÜL KIADÁSRA MINDENFÉLE GARANCIAVÁLLALÁS NÉLKÜL, LEGYEN AZ KIFEJEZETT VAGY BELEÉRTETT, BELEÉRTVE, DE NEM KIZÁRÓLAGOSAN A FORGALOMBA HOZHATÓSÁGRA VAGY ALKALMAZHATÓSÁGRA, A JELEN DOKUMENTUMNAK VAGY ANNAK MÓDOSÍTOTT VERZIÓJÁNAK HIBAMENTESSÉGÉRE VONATKOZÓ GARANCIÁKAT. A DOKUMENTUM VAGY ANNAK MÓDOSÍTOTT VÁLTOZATÁNAK MINŐSÉGÉBŐL ÉS FELHASZNÁLHATÓSÁGÁBÓL FAKADÓ ÖSSZES KOCKÁZAT A FELHASZNÁLÓT TERHELI. HA A DOKUMENTUM BIZONYÍTOTTAN HIBÁS, A FELHASZNÁLÓNAK MAGÁNAK (NEM A DOKUMENTUM ÍRÓJÁNAK, KIADÓJÁNAK VAGY BÁRMELY KÖZREMŰKÖDŐNEK) KELL VÁLLALNIA A JAVÍTÁSHOZ SZÜKSÉGES MINDEN KÖLTSÉGET. A JELEN GARANCIAELUTASÍTÁS A JELEN LICENC LÉNYEGI RÉSZE. A LEFEDETT DOKUMENTUM VAGY ANNAK MÓDOSÍTOTT VERZIÓJÁNAK HASZNÁLATA CSAK A JELEN ELUTASÍTÁSSAL EGYÜTT ENGEDÉLYEZETT, ÉS</para>
+		</listitem>
+		<listitem>
+		  <para>SEMMILYEN KÖRÜLMÉNYEK KÖZÖTT ÉS SEMMILYEN JOGI MEGFONTOLÁSBÓL, LEGYEN AZ MAGÁNJOGI VÉTKES CSELEKMÉNY (BELEÉRTVE A HANYAGSÁGOT), SZERZŐDÉS VAGY BÁRMELY MÁS DOLOG, NEM FELELŐS ÖN, A LEFEDETT KÓD ELSŐ FEJLESZTŐJE ÉS TÖBBI KÖZREMŰKÖDŐJE VAGY EZEK BÁRMELY SZÁLLÍTÓJA SEMMILYEN MÁS SZEMÉLY FELÉ SEMMILYEN FAJTA KÖZVETLEN, SPECIÁLIS, VÉLETLEN VAGY KÖVETKEZMÉNYES KÁRÉRT, BELEÉRTVE DE NEM KIZÁRÓLAG A HÍRNÉV ELVESZTÉSÉBŐL, MUNKA LEÁLLÁSÁBÓL, SZÁMÍTÓGÉP MEGHIBÁSODÁSÁBÓL VAGY HELYTELEN MŰKÖDÉSÉBŐL SZÁRMAZÓ, VAGY BÁRMELY EGYÉB KERESKEDELMI KÁROKAT ÉS VESZTESÉGEKET, MÉG AKKOR IS, HA AZ ILYEN FÉL INFORMÁLVA LETT AZ ILYEN KÁROK ELŐFORDULÁSÁNAK LEHETŐSÉGÉRŐL. A FELELŐSSÉG EZEN KORLÁTOZÁSA NEM ALKALMAZHATÓ ABBAN AZ ESETBEN, HA HALÁL VAGY SZEMÉLYI SÉRÜLÉS TÖRTÉNT A FÉL HANYAGSÁGÁBÓL KIFOLYÓLAG, OLYAN MÉRTÉKBEN, AMENNYIRE AZ ALKALMAZHATÓ TÖRVÉNYEK MEGTILTJÁK AZ ILYEN KORLÁTOZÁSOKAT.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+   <!-- This file  contains link to license for the documentation (GNU FDL), and 
+        other legal stuff such as "NO WARRANTY" statement. Please do not change 
+	any of this. -->
+
+    <authorgroup> 
+      <author><firstname>Sun</firstname> <surname>GNOME dokumentációs csapat</surname> <affiliation><orgname>Sun Microsystems</orgname></affiliation></author>
+      <author><firstname>Chee Bin</firstname> <surname>HOH</surname> <affiliation> <orgname>GNOME dokumentációs projekt</orgname> <address> <email>cbhoh@gnome.org</email> </address> </affiliation></author> 
+
+<!--
+      <author> 
+        <firstname>Documentation</firstname> 
+          <surname>Writer 1</surname> 
+          <affiliation> 
+            <orgname>GNOME Documentation Project</orgname> 
+            <address> <email>doc-writer1@gnome.org</email> </address> 
+          </affiliation> 
+      </author> 
+-->
+      
+<!-- This is appropriate place for other contributors: translators,
+     maintainers,  etc. Commented out by default.
+      <othercredit role="translator">
+        <firstname>Latin</firstname> 
+	<surname>Translator 1</surname> 
+	<affiliation> 
+          <orgname>Latin Translation Team</orgname> 
+          <address> <email>translator@gnome.org</email> </address> 
+	</affiliation>
+	<contrib>Latin translation</contrib>
+      </othercredit>
+-->
+    </authorgroup>
+    <publisher role="maintainer">
+      <publishername>GNOME dokumentációs projekt</publishername>
+    </publisher>
+
+
+    <revhistory>
+      <revision><revnumber>Karaktertábla felhasználói kézikönyv V2.1</revnumber> <date>2004.02.26.</date> <revdescription> 
+	  <para>Frissítve a GNOME 2.6-hoz, a program verziója 1.3.0.</para>
+          <para role="author">Sun GNOME dokumentációs csapat</para>
+          <para role="publisher">GNOME dokumentációs projekt</para>
+        </revdescription></revision> 
+      <revision><revnumber>Unicode karaktertábla felhasználói kézikönyv V2.0</revnumber> <date>2003 október</date> <revdescription> 
+          <para role="author">Chee Bin HOH <email>cbhoh@gnome.org</email></para>
+          <para role="publisher">GNOME dokumentációs projekt</para>
+        </revdescription></revision> 
+    </revhistory> 
+
+    <releaseinfo>Ez a leírás a Karaktertábla 1.3.0-s verzióját mutatja be.</releaseinfo> 
+
+    <legalnotice> 
+      <title>Visszajelzés</title> 
+      <para>Ha hibát szeretne bejelenti, vagy javaslata van a Karaktertábla alkalmazással vagy a kézikönyvvel kapcsolatban, akkor azt a <ulink url="https://gitlab.gnome.org/GNOME/gucharmap/issues/">GNOME hibakövető</ulink> segítségével teheti meg.</para>
+<!-- Translators may also add here feedback address for translations -->
+    </legalnotice> 
+  
+    <othercredit class="translator">
+      <personname>
+        <firstname>Meskó Balázs</firstname>
+      </personname>
+      <email>mesko dot balazs at fsf dot hu</email>
+    </othercredit>
+    <copyright>
+      
+        <year>2015.</year>
+      
+      <holder>Meskó Balázs</holder>
+    </copyright>
+  </articleinfo> 
+
+<!-- ============= Index ===================================== -->
+  <indexterm zone="index"><primary>gucharmap</primary></indexterm> 
+  <indexterm zone="index"><primary>Karaktertábla</primary></indexterm>
+  <indexterm zone="index"><primary>Karaktertábla</primary></indexterm>
+
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+  <sect1 id="gucharmap-introduction"> 
+    <title>Bevezetés</title> 
+    <para>A <application>Karaktertábla</application> alkalmazással különleges karaktereket szúrhat be dokumentumokba és szöveges mezőkbe. A <application>Karaktertábla</application> ékezetes karaktereket, matematikai és különleges szimbólumokat, valamint írásjeleket is biztosít. Az alkalmazást arra használhatja, hogy olyan karaktereket is elérjen, amelyek nem szerepelnek a billentyűzetén.</para>
+    <para>A <application>Karaktertábla</application> megjelenít minden elérhető karaktert, minden elérhető írásrendszerben, az Unicode karakterkészlet használatával. A Unicode egy karakterkészlet-szabvány, amelynek a célja, hogy a világ írott nyelveinek összes karakterét tartalmazza.</para>
+  </sect1>
+
+<!-- =========== Getting Started ============================== -->
+
+  <sect1 id="gucharmap-getting-started"> 
+    <title>Első lépések</title> 
+
+    <sect2 id="gucharmap-start">
+      <title>A Karaktertábla elindítása</title>
+      <para>A <application>Karaktertábla</application> a következőképpen indítható el:</para> 
+      <variablelist>
+        <varlistentry>
+          <term><guimenu>Alkalmazások</guimenu> menü</term>
+          <listitem>
+            <para>Válassza a <menuchoice><guimenu>Kellékek</guimenu><guimenuitem>Karaktertábla</guimenuitem></menuchoice> menüpontot.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Parancssor</term>
+	  <listitem>
+            <para>Hajtsa végre a következő parancsot: <command>gnome-character-map</command></para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect2>
+
+    <sect2 id="gucharmap-when-start">
+      <title>A Karaktertábla indítása</title>
+      <para>Amikor elindítja a <application>Karaktertábla</application> alkalmazást, a következő képernyő jelenik meg.</para>
+
+      <!-- ==== Figure ==== -->
+      <figure id="gucharmap-window-fig"> 
+        <title>Karaktertábla ablak</title> 
+        <screenshot> 
+          <mediaobject><imageobject> <imagedata fileref="figures/gucharmap_window.png" format="PNG"/> </imageobject> <textobject> <phrase>A Karaktertábla ablakát mutatja.</phrase> </textobject></mediaobject> 
+        </screenshot> 
+      </figure>
+      <!-- ==== End of Figure ==== -->
+
+      <!-- Include any descriptions of the GUI immediately after the screenshot of the main UI, -->
+      <!-- for example, the items on the menubar and on the toolbar. This section is optional. -->
+
+      <para>A <application>Karaktertábla</application> ablak a következő elemeket tartalmazza:</para>
+      <variablelist>
+        <varlistentry>
+          <term>Menüsáv</term>
+          <listitem>
+            <para>A menüsávon található menük tartalmazzák a parancsok többségét, amelyekre a <application>Karaktertábla</application> alkalmazás kezeléséhez szüksége lesz.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Eszköztár</term>
+          <listitem>
+            <para>Az eszköztár tartalmazza a betűkészletek legördülő listáját, a betűstílus gombokat és a nagyítási léptetőgombot.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Megjelenítési terület</term>
+          <listitem>
+            <para>A megjelenítési terület a következő elemeket tartalmazza:</para>
+            <itemizedlist>
+              <listitem>
+                <para><guilabel>Írásrendszer szerint</guilabel> vagy <guilabel>Unicode-blokk szerint</guilabel> legördülő lista</para>
+              </listitem>
+              <listitem>
+                <para><guilabel>Karaktertábla</guilabel> lapfül</para>
+              </listitem>
+              <listitem>
+                <para><guilabel>Karakter adatai</guilabel> lapfül</para>
+              </listitem>
+              <listitem>
+                <para><guilabel>Másolandó szöveg</guilabel> szövegmező</para>
+              </listitem>
+              <listitem>
+                <para><guibutton>Másolás</guibutton> gomb</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Állapotsor</term>
+          <listitem>
+            <para>Az állapotsor megjeleníti a jelenleg kiválasztott karakter Unicode-kódpontját és a karakter nevét.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect2>
+  </sect1>
+
+<!-- ================ Usage ================================ --> 
+  <sect1 id="gucharmap-usage">
+    <title>Használat</title> 
+    
+    <sect2 id="gucharmap-change-view">
+      <title>Karakterkészlet-lista megváltoztatása</title>
+      <para>A karakterkészletek írásrendszer szerinti felsorolásához válassza a <menuchoice><guimenu>Nézet</guimenu><guimenuitem>Írásrendszer szerint</guimenuitem></menuchoice> beállítást.</para>
+      <para>A karakterkészletek Unicode-blokk szerinti felsorolásához válassza a <menuchoice><guimenu>Nézet</guimenu><guimenuitem>Unicode-blokk szerint</guimenuitem></menuchoice> beállítást.</para>
+    </sect2>
+    
+    <sect2 id="gucharmap-create-textstring">
+      <title>Karakterlánc létrehozása</title>
+      <para>A <guilabel>Másolandó szöveg</guilabel> mezőben lévő karakterlánc létrehozásához tegye a következőket:</para>
+      <orderedlist>
+        <listitem>
+          <para>Válasszon ki egy karakterkészletet az <guilabel>Írásrendszer</guilabel> vagy a <guilabel>Unicode-blokk</guilabel> listapanelből.</para>
+        </listitem>
+        <listitem>
+          <para>Szúrjon be karaktereket a következő módokon:</para>
+          <itemizedlist>
+            <listitem>
+              <para>Kattintson kétszer a karakter gombra a <guilabel>Karaktertábla</guilabel> lapfülön a karakter beszúrásához a <guilabel>Másolandó szöveg</guilabel> mezőbe.</para>
+            </listitem>
+            <listitem>
+              <para>Válasszon ki egy karakter gombot a <guilabel>Karaktertábla</guilabel> lapfülön, majd nyomja meg az <keycap>Enter</keycap> billentyűt a karakter beszúrásához a <guilabel>Másolandó szöveg</guilabel> mezőbe.</para>
+            </listitem>
+            <listitem>
+              <para>Válasszon ki egy karakter gombot a <guilabel>Karaktertábla</guilabel> lapfülön, majd kattintson, és húzza a karaktert a <guilabel>Másolandó szöveg</guilabel> mezőre.</para>
+            </listitem>
+            <listitem>
+              <para>Kattintson a <guilabel>Másolandó szöveg</guilabel> mezőre az aktiválásához. Ha már van szöveg a mezőben, akkor kattintson a karakterláncra azon a ponton, ahová beilleszteni szeretne. Üsse le a beilleszteni kívánt karaktert a billentyűzeten a mezőbe beszúráshoz.</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </orderedlist>
+    </sect2>
+
+<!-- =============== To Copy and Paste a Text String ====================== -->
+    <sect2 id="gucharmap-copy-textstring">
+      <title>Karakterlánc másolása és beillesztése egy alkalmazásba</title>
+      <para>A <guilabel>Másolandó szöveg</guilabel> mezőben található karakterlánc másoláshoz és más alkalmazásba beillesztéséhez tegye a következőket:</para>
+      <orderedlist>
+        <listitem>
+          <para>Kattintson a <guibutton>Másolás</guibutton> gombra. Ha semmi sincs kijelölve, vagy ha minden karakter ki van jelölve, akkor a teljes szöveg a vágólapra kerül. Ha csak a szöveg egy része van kijelölve, akkor csak az a rész másolódik.</para>
+        </listitem>
+        <listitem>
+          <para>Váltson át az alkalmazásra, és válassza a <menuchoice><guimenu>Szerkesztés</guimenu><guimenuitem>Beillesztés</guimenuitem></menuchoice> menüpontot, vagy nyomja le a <keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo> billentyűkombinációt.</para>
+        </listitem>
+      </orderedlist>
+      <para>Amikor beilleszti a <guilabel>Másolandó szöveg</guilabel> mező tartalmát egy másik alkalmazásba, akkor a karakterlánc az alkalmazás aktuális karakterkészletében jelenik meg.</para>
+      <para>Ha a karakterlánc nem látható karaktereket is tartalmaz, akkor csak abban az esetben illeszthető be alkalmazásokba, ha az támogatja a teljes karakterkészletet.</para>
+    </sect2>
+
+    <sect2 id="usage-find-character">
+      <title>Karakter keresése</title>
+      <para>Karakter kereséséhez hajtsa végre az alábbi lépéseket:</para>
+      <orderedlist>
+        <listitem>
+          <para>Válassza a <menuchoice><guimenu>Keresés</guimenu><guimenuitem>Keresés</guimenuitem></menuchoice> menüpontot, vagy nyomja le a <keycombo><keycap>Ctrl</keycap><keycap>F</keycap></keycombo> billentyűkombinációt. Ekkor megnyílik a <guilabel>Keresés</guilabel> párbeszédablak.</para>
+        </listitem>
+        <listitem>
+          <para>Írja be a keresendő szöveget a <guilabel>Keresés</guilabel> mezőbe.</para>
+          <itemizedlist>            
+             <listitem><para>Jelölje be a <guilabel>Teljes szó</guilabel> négyzetet, ha csak teljes szavakra keresne.</para></listitem>
+             <listitem><para>Alapesetben csak a karakternevek között történik a keresés. Jelölje be a <guilabel>Keresés a karakter adatai közt</guilabel> négyzetet a karakter leírásában történő kereséshez: mint például jegyzetek, egyenértékű és közel egyenértékű karakterek.</para></listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para>Kattintson a <guibutton>Következő</guibutton> gombra a szöveg első előfordulásának megkereséséhez az éppen kiválasztott karakter után. A <application>Karaktertábla</application> kiválasztja a megtalált karaktert.</para>
+        </listitem>
+        <listitem>
+          <para>Kattintson a <guibutton>Következő</guibutton> gombra a következő illeszkedő karakter megtalálásához. Egyéb lehetőségként válassza a <menuchoice><guimenu>Keresés</guimenu><guimenuitem>Következő találat</guimenuitem></menuchoice> menüpontot, vagy nyomja meg a <keycombo><keycap>Ctrl</keycap><keycap>G</keycap></keycombo> billentyűkombinációt.</para>
+        </listitem>
+        <listitem>
+          <para>Kattintson az <guibutton>Előző</guibutton> gombra az előző illeszkedő karakter megtalálásához. Egyéb lehetőségként válassza a <menuchoice><guimenu>Keresés</guimenu><guimenuitem>Előző találat</guimenuitem></menuchoice> menüpontot, vagy nyomja meg a <keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap><keycap>G</keycap></keycombo> billentyűkombinációt.</para>
+        </listitem>
+      </orderedlist>
+    </sect2>
+    
+<!-- =============== To Browse the Character Table  ========================= -->
+    <sect2 id="usage-browse-characters">
+      <title>Böngészés az összes karakter között</title>
+      <para>A karaktertábla böngészéséhez használja az <guimenu>Ugrás</guimenu> menüt.</para>
+
+      <itemizedlist>
+        <listitem>
+          <para>Következő karakter menüpont, vagy <keycombo><keycap>Ctrl</keycap><keycap>N</keycap></keycombo> billentyűkombináció.</para>
+        </listitem>
+        <listitem>
+          <para>Előző karakter menüpont, vagy <keycombo><keycap>Ctrl</keycap><keycap>P</keycap></keycombo> billentyűkombináció.</para>
+        </listitem>
+        <listitem>
+          <para>Előző írásrendszer menüpont, vagy <keycombo><keycap>Ctrl</keycap><keycap>Page Down</keycap></keycombo> billentyűkombináció.</para>
+        </listitem>
+        <listitem>
+          <para>Következő írásrendszer menüpont, vagy <keycombo><keycap>Ctrl</keycap><keycap>Page Up</keycap></keycombo> billentyűkombináció.</para>
+        </listitem>
+      </itemizedlist>
+        
+      <para>A karaktertáblát egyedi karakterenként, írásrendszerenként vagy Unicode blokkonként is böngészheti. Ez attól függ, hogy a karaktertábla megjeleníti-e az írásrendszereket vagy Unicode-blokkokat. A beállításhoz használja a <menuchoice><guimenu>Nézet</guimenu><guimenuitem>Írásrendszer szerint</guimenuitem></menuchoice> és <menuchoice><guimenu>Nézet</guimenu><guimenuitem>Unicode-blokk szerint</guimenuitem></menuchoice> menüpontokat.</para>
+      
+      <para>A következő billentyűk is használhatóak a karaktertábla böngészéséhez.</para>
+        
+      <itemizedlist>
+        <listitem>
+          <para>Használja a nyílbillentyűket a navigációhoz a karaktertáblában.</para>
+        </listitem>
+        <listitem>
+          <para>Nyomja le a <keycap>Page Up</keycap> vagy <keycap>Page Down</keycap> billentyűt a karakterek oldalankénti böngészéséhez.</para>
+        </listitem>
+        <listitem>
+          <para>Nyomja le a <keycap>Home</keycap> billentyűt az első karakterhez ugráshoz a táblázatban. Az utolsó karakter kiválasztásához használja az <keycap>End</keycap> billentyűt.</para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
+    
+    <sect2 id="usage-display-details">
+      <title>Részletes információk megjelenítése egy karakterről</title>
+      <para>A részletes információk megjelenítéséhez tegye a következőket:</para>
+      <orderedlist>
+        <listitem>
+          <para>Válassza ki a karakterkészletet az <guilabel>Írásrendszer</guilabel> vagy <guilabel>Unicode-blokk</guilabel> listadobozból. Például: <guilabel>Latin alap</guilabel></para>
+        </listitem>
+        <listitem>
+          <para>Válasszon ki egy karaktert a <guilabel>Karaktertábla</guilabel> fülön. Például: <guilabel>B</guilabel></para>
+        </listitem>
+        <listitem>
+          <para>Kattintson a <guilabel>Karakter adatai</guilabel> lapfülre.</para>
+        </listitem>
+      </orderedlist>
+      <para>A <guilabel>Karakter adatai</guilabel> lapfül a következő információkat jeleníti meg a kiválasztott karakterről:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Unicode-kódpont</para>
+          <para>Például: <guilabel>U+0042</guilabel></para>
+        </listitem>
+        <listitem>
+          <para>Unicode-karakternév</para>
+          <para>Példa: <guilabel>LATIN CAPITAL LETTER B</guilabel></para>
+        </listitem>
+        <listitem>
+          <para><guilabel>Általános karaktertulajdonságok</guilabel></para>
+          <itemizedlist>
+            <listitem>
+              <para>Unicode-kategória</para>
+              <para>Például: <guilabel>Betű, nagybetű</guilabel></para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para><guilabel>Néhány hasznos reprezentáció</guilabel></para>
+          <itemizedlist>
+            <listitem>
+              <para>UTF-8 kódolás</para>
+              <para>Például: <guilabel>0x42</guilabel></para>
+            </listitem>
+            <listitem>
+              <para>UTF-16 kódolás</para>
+              <para>Például: <guilabel>0x0042</guilabel></para>
+            </listitem>
+            <listitem>
+              <para>C oktális escape-elt UTF-8 kódolás</para>
+              <para>Például: <guilabel>\102</guilabel></para>
+            </listitem>
+            <listitem>
+              <para>XML decimális entitás</para>
+              <para>Például: <guilabel>„&amp;#66”</guilabel></para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para><guilabel>Magyarázó jegyzetek és kereszthivatkozások</guilabel></para>
+          <para>Például: <guilabel>U+212C SCRIPT CAPITAL B</guilabel></para>
+          <para>A hivatkozott karakter adatainak megjelenítéséhez kattintson a hivatkozásra.</para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
+    
+    <sect2 id="usage-format-character">
+      <title>Karakter formátumának megváltoztatása</title>
+      <para>Egy karakter formátumának megváltoztatáshoz tegye következők egyikét:</para>
+      <itemizedlist>
+        <listitem>
+          <para>A betűkészlet módosításához válasszon ki egy betűkészletet a legördülő listából.</para>
+        </listitem>
+        <listitem>
+          <para>A betű félkövérré tételéhez kattintson a <guibutton>Félkövér</guibutton> gombra, vagy nyomja le az <keycombo><keycap>Alt</keycap><keycap>B</keycap></keycombo> billentyűkombinációt.</para>
+        </listitem>
+        <listitem>
+          <para>A betű dőltté tételéhez kattintson a <guibutton>Dőlt</guibutton> gombra, vagy nyomja le az <keycombo><keycap>Alt</keycap><keycap>I</keycap></keycombo> billentyűkombinációt.</para>
+        </listitem>
+        <listitem>
+          <para>A betűméret növeléséhez válassza a <menuchoice><guimenu>Nézet</guimenu><guimenuitem>Nagyítás</guimenuitem></menuchoice> menüpontot, a betűméret-állító léptetőgombot, vagy a <keycombo><keycap>Ctrl</keycap><keycap>+</keycap></keycombo> billentyűkombinációt.</para>
+        </listitem>
+        <listitem>
+          <para>A betűméret csökkentéséhez válassza a <menuchoice><guimenu>Nézet</guimenu><guimenuitem>Kicsinyítés</guimenuitem></menuchoice> menüpontot, a betűméret-állító léptetőgombot, vagy a <keycombo><keycap>Ctrl</keycap><keycap>-</keycap></keycombo> billentyűkombinációt.</para>
+        </listitem>
+        <listitem>
+          <para>A normál betűméret visszaállításához válassza a <menuchoice><guimenu>Nézet</guimenu><guimenuitem>Normál méret</guimenuitem></menuchoice> menüpontot, vagy nyomja le a <keycombo><keycap>Ctrl</keycap><keycap>=</keycap></keycombo> billentyűkombinációt.</para>
+        </listitem>
+        <listitem>
+          <para>A kiválasztott karakter nagyításához tartsa nyomva a <keycap>Shift</keycap> billentyűt.</para>
+        </listitem>
+      </itemizedlist>
+    </sect2>
+    
+    <sect2 id="usage-format-chartable">
+      <title>A karaktertábla formátumának módosítása</title>
+      <para>A karaktertábla megjelenésének módosításához válassza a <menuchoice><guimenu>Nézet</guimenu><guimenuitem>Oszlopok igazítása kettő hatványaira</guimenuitem></menuchoice> menüpontot.</para>
+      <para>A <guilabel>Karaktertábla</guilabel> lapfül megváltozik úgy, hogy az oszlopok száma kettő hatványa lesz, például: kettő, négy vagy nyolc oszlop és így tovább. A oszlopok száma az ablakszélességtől és a betűmérettől függ.</para>
+    </sect2>
+
+  </sect1>
+</article>

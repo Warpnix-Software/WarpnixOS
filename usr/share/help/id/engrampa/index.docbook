@@ -1,0 +1,1264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+      (Do not remove this comment block.)
+  Maintained by the MATE Documentation Project
+  http://wiki.mate-desktop.org/dev-doc:doc-team-guide
+  Template version: 2.0 beta
+  Template last modified Jan 30, 2002
+-->
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:id="index" xml:lang="id">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <info><title>Manual Manajer Arsip</title> 
+
+     <abstract>
+       <para>Manajer Arsip, juga dikenal sebagai Engrampa, memungkinkan Anda membuat, melihat, mengubah, dan membongkar suatu arsip.</para>
+     </abstract>
+
+    <copyright xml:lang="en"><year>2019-2021</year> <holder>Proyek Dokumentasi MATE</holder></copyright>
+    <copyright><year>2009</year> <holder>Paul Cutler</holder></copyright>	    
+	<copyright><year>2006</year> <year>2008</year> <holder>Paolo Bacchilega</holder></copyright> 
+     <copyright><year>2003</year> <year>2004</year> <holder>Sun Microsystems</holder></copyright>
+    <copyright><year>2003</year> <holder>Paolo Bacchilega</holder></copyright> 
+    <copyright><year>2002</year> <holder>Alexander Kirillov</holder></copyright> 
+
+<!-- An address can be added to the publisher information.  If a role is 
+     not specified, the publisher/author is the same for all versions of the 
+     document.  -->
+    <publisher>
+      <publishername>Projek Dokumentasi MATE</publishername>
+    </publisher> 
+    <publisher>
+      <publishername>Projek Dokumentasi GNOME</publishername>
+    </publisher>
+
+  <xi:include href="legal.xml"/>
+  <!-- This file contains link to license for the
+   documentation (GNU FDL), and other legal stuff such as "NO
+   WARRANTY" statement. Please do not change any of this. -->
+
+  <authorgroup>
+      <author><orgname>Projek Dokumentasi MATE</orgname> <affiliation> <orgname>Desktop MATE</orgname> </affiliation></author>
+      <author><personname> <firstname>Sun</firstname> <surname>Tim Dokumentasi GNOME</surname> </personname><affiliation> <orgname>Sun Microsystems</orgname></affiliation></author>
+      <author><personname> <firstname>Paolo</firstname> <surname>Bacchilega</surname> </personname> <affiliation> <orgname>Proyek Dokumentasi GNOME</orgname> </affiliation></author> 
+      <author><personname> <firstname>Alexander</firstname> <surname>Kirillov</surname> </personname> <affiliation> <orgname>Proyek Dokumentasi GNOME</orgname> </affiliation> <email>kirillov@math.sunysb.edu</email></author> 
+      <author><personname> <firstname>Paul</firstname> <surname>Cutler</surname> </personname> <affiliation> <orgname>Proyek Dokumentasi GNOME</orgname> </affiliation> <email>pcutler@foresightlinux.org</email></author>	  
+  </authorgroup>
+	
+	<releaseinfo revision="1.10" role="review">
+	</releaseinfo>
+
+         <revhistory>
+                <revision xml:lang="en"><revnumber>1.10.0</revnumber> <date>Juli 2015</date> <revdescription>
+                         <para role="author" xml:lang="en">Wolfgang Ulbrich</para>
+                         <para role="publisher" xml:lang="en">Projek Dokumentasi MATE</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.26.0</revnumber> <date>Maret 2009</date> <revdescription>
+                         <para role="author">Paul Cutler</para>
+                         <para role="publisher">Projek Dokumentasi GNOME</para>
+                  </revdescription></revision>
+				
+                <revision><revnumber>2.24.0</revnumber> <date>Juli 2008</date> <revdescription>
+                         <para role="author">Paolo Bacchilega</para>
+                         <para role="publisher">Projek Dokumentasi GNOME</para>
+                  </revdescription></revision>
+				
+                <revision><revnumber>2.6</revnumber> <date>April 2006</date> <revdescription>
+                         <para role="author">Paolo Bacchilega</para>
+                         <para role="publisher">Projek Dokumentasi GNOME</para>
+                  </revdescription></revision>
+
+                <revision><revnumber>2.5</revnumber> <date>Maret 2004</date> <revdescription>
+                         <para role="author">Tim Dokumentasi Sun GNOME</para>
+                         <para role="publisher">Projek Dokumentasi GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.4</revnumber> <date>Februari 2004</date> <revdescription>
+                         <para role="author">Tim Dokumentasi Sun GNOME</para>
+                         <para role="publisher">Projek Dokumentasi GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.3</revnumber> <date>Agustus 2003</date> <revdescription>
+                         <para role="author">Tim Dokumentasi Sun GNOME</para>
+                         <para role="publisher">Projek Dokumentasi GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.2</revnumber> <date>Juni 2003</date> <revdescription>
+                         <para role="author">Tim Dokumentasi Sun GNOME</para>
+                         <para role="publisher">Projek Dokumentasi GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.1</revnumber> <date>Januari 2003</date> <revdescription>
+                         <para role="author">Paolo Bacchilega</para>                         
+                         <para role="publisher">Projek Dokumentasi GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.0</revnumber> <date>Juni 2002</date> <revdescription>
+                         <para role="author">Alexander Kirillov</para>                         
+                         <para role="publisher">Projek Dokumentasi GNOME</para>
+                  </revdescription></revision>
+         </revhistory>
+
+    <releaseinfo>Manual ini menjelaskan versi 1.22 dari Manajer Arsip.</releaseinfo> 
+  
+    <db:othercredit xmlns:db="http://docbook.org/ns/docbook" class="translator">
+      <db:personname>
+        <db:firstname>Kukuh Syafaat</db:firstname>
+      </db:personname>
+      <db:email>syafaatkukuh@gmail.com</db:email>
+    </db:othercredit>
+    <db:copyright xmlns:db="http://docbook.org/ns/docbook">
+      
+        <db:year>2017.</db:year>
+      
+      <db:holder>Kukuh Syafaat</db:holder>
+    </db:copyright>
+  
+    <db:othercredit xmlns:db="http://docbook.org/ns/docbook" class="translator">
+      <db:personname>
+        <db:firstname>Andika Triwidada</db:firstname>
+      </db:personname>
+      <db:email>andika@gmail.com</db:email>
+    </db:othercredit>
+    <db:copyright xmlns:db="http://docbook.org/ns/docbook">
+      
+        <db:year>2021</db:year>
+      
+        <db:year>2022.</db:year>
+      
+      <db:holder>Andika Triwidada</db:holder>
+    </db:copyright>
+  </info> 
+
+  <indexterm zone="index"><primary>Engrampa</primary></indexterm> 
+  <indexterm zone="index"><primary>engrampa</primary></indexterm>
+  <indexterm zone="index"><primary>Pengarsipan</primary></indexterm>
+  <indexterm zone="engrampa-add-files"><primary>Arsip</primary> <secondary>Menambahkan berkas ke</secondary></indexterm> 
+  <indexterm zone="engrampa-delete-files"><primary>Arsip</primary> <secondary>Menghapus berkas dari</secondary></indexterm> 
+  <indexterm zone="engrampa-open"><primary>Arsip</primary> <secondary>Membuka</secondary></indexterm> 
+  <indexterm zone="engrampa-view"><primary>Arsip</primary> <secondary>Melihat</secondary></indexterm> 
+  <indexterm zone="engrampa-extract"><primary>Arsip</primary> <secondary>Mengekstrak</secondary></indexterm> 
+  <indexterm zone="engrampa-create"><primary>Arsip</primary> <secondary>Membuat</secondary></indexterm> 
+
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+<!-- Use the Introduction section to give a brief overview of what
+     the application is and what it does. -->
+  <section xml:id="engrampa-intro"><info><title>Pengantar</title></info> 
+     
+    <para>Anda dapat menggunakan aplikasi <application>Manajer Arsip</application> untuk membuat, melihat, memodifikasi, atau membongkar arsip. Arsip adalah berkas yang bertindak sebagai wadah untuk berkas lain. Arsip dapat berisi banyak berkas, folder, dan subfolder, biasanya dalam bentuk terkompresi.</para>
+    <para><application>Manajer Arsip</application> hanya menyediakan antarmuka grafis, dan bergantung pada utilitas baris perintah seperti <command>tar</command>, <command>gzip</command>, dan <command>bzip2</command> untuk operasi arsip.</para>
+    <para>Jika Anda memiliki alat baris perintah yang sesuai yang diinstal pada sistem Anda, <application>Manajer Arsip</application> mendukung format arsip yang tercantum dalam tabel berikut.</para> 
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Format</para></entry>
+              <entry colname="COLSPEC1" align="left">
+                <para>Ekstensi Nama Berkas</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para>arsip 7-zip</para></entry>
+              <entry align="left"><para><filename>.7z</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>arsip ACE</para></entry>
+              <entry align="left"><para><filename>.ace</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>arsip AlZip</para></entry>
+              <entry align="left"><para><filename>.alz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>arsip AR</para></entry>
+              <entry align="left"><para><filename>.ar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>arsip ARJ</para></entry>
+              <entry align="left"><para><filename>.arj</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>arsip Microsoft Cabinet</para></entry>
+              <entry align="left"><para><filename>.cab</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>arsip CPIO</para></entry>
+              <entry align="left"><para><filename>.cpio</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>paket Debian</para></entry>
+              <entry align="left"><para><filename>.deb</filename>, <filename>.udeb</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Publikasi Elektronik</para></entry>
+              <entry align="left"><para><filename>.epub</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>image CD RAW (ISO 9660)</para></entry>
+              <entry align="left"><para><filename>.iso</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>arsip Java</para></entry>
+              <entry align="left"><para><filename>.jar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Enterprise Application aRchive</para></entry>
+              <entry align="left"><para><filename>.ear</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Web Application Resource atau Web application ARchive</para></entry>
+              <entry align="left"><para><filename>.war</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>arsip LHA</para></entry>
+              <entry align="left"><para><filename>.lha</filename>, <filename>.lzh</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Roshal ARchive</para></entry>
+              <entry align="left"><para><filename>.rar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Buku Komik (terkompresi RAR)</para></entry>
+              <entry align="left"><para><filename>.cbr</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>paket RPM</para></entry>
+              <entry align="left"><para><filename>.rpm</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>arsip Tar</para></entry>
+              <entry align="left"><para><filename>.tar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>arsip Tar dikompresi dengan <command>bzip</command></para></entry>
+              <entry align="left"><para><filename>.tar.bz</filename> atau <filename>.tbz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>arsip Tar dikompresi dengan <command>bzip2</command></para></entry>
+              <entry align="left"><para><filename>.tar.bz2</filename> atau <filename>.tbz2</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>arsip Tar dikompresi dengan <command>gzip</command></para></entry>
+              <entry align="left"><para><filename>.tar.gz</filename> atau <filename>.tgz</filename> atau <filename>.taz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>arsip Tar dikompresi dengan <command>lzip</command></para></entry>
+              <entry align="left"><para><filename>.tar.lz</filename> atau <filename>.tlz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>arsip Tar dikompresi dengan <command>lzop</command></para></entry>
+              <entry align="left"><para><filename>.tar.lzo</filename> atau <filename>.tzo</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>arsip Tar dikompresi dengan <command>compress</command></para></entry>
+              <entry align="left"><para><filename>.tar. Z</filename> atau <filename>.taZ</filename></para></entry>
+            </row>
+             <row valign="top">
+              <entry><para>arsip Tar dikompresi dengan <command>7zip</command></para></entry>
+              <entry align="left"><para><filename>.tar.7z</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>arsip StuffIt</para></entry>
+              <entry align="left"><para><filename>.bin</filename> atau <filename>.sit</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>arsip ZIP</para></entry>
+              <entry align="left"><para><filename>.zip</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Buku Komik (terkompresi ZIP)</para></entry>
+              <entry align="left"><para><filename>.cbz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>arsip zoo</para></entry>
+              <entry align="left"><para><filename>.zoo</filename></para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    <para>Format arsip yang paling umum pada Linux dan sistem mirip Unix adalah arsip tar dikompresi dengan <command>gzip</command> atau <command>bzip2</command>.</para>
+    <para>Format arsip yang paling umum pada sistem Microsoft Windows adalah arsip yang dibuat dengan <application>PKZIP</application> atau <application>WinZip</application>.</para>
+    <section xml:id="engrampa-intro-nonarchive"><info><title>Berkas Non-Arsip Terkompresi</title></info>
+       
+      <para>Berkas non-arsip terkompresi adalah berkas yang dibuat saat Anda menggunakan <command>bzip2</command>, <command>gzip</command>, <command>lzip</command>, <command>lzop</command>, <command>compress</command>, atau <command>rzip</command> untuk memampatkan berkas non-arsip. Misalnya, <filename>file.txt.gz</filename> dibuat ketika Anda menggunakan <command>gzip</command> untuk mengompres <filename>file.txt</filename>.</para>
+      <para>Anda dapat memakai <application>Manajer Arsip</application> untuk membuat, membuka, dan mengekstrak sebuah berkas non-arsip yang terkompresi.</para> 
+    </section>
+  </section>
+
+<!-- ============= Getting Started =========================== -->
+  <section xml:id="engrampa-get-start"><info><title>Memulai</title></info>
+    
+    <para>Bagian ini menyediakan informasi tentang cara memulai <application>Manajer Arsip</application>, dan menjelaskan antarmuka pengguna <application>Archive Manajer Arsip</application>.</para>
+
+<!-- ============= To Start Engrampa ============================ -->
+         <section xml:id="engrampa-to-start"><info><title>Untuk Memulai <application>Manajer Arsip</application></title></info>
+                
+                <para>Anda dapat memulai <application>Manajer Arsip</application> dengan cara berikut:</para>
+                <variablelist>
+                <varlistentry>
+                <term>Menu <guimenu>Aplikasi</guimenu></term>
+                <listitem>
+                <para>Pilih <menuchoice> <guisubmenu>Aksesori</guisubmenu><guimenuitem>Manajer Arsip</guimenuitem></menuchoice>.</para>
+                </listitem>
+                </varlistentry>
+                <varlistentry>
+                <term>Baris perintah</term>
+                <listitem>
+                <para>Jalankan perintah berikut: <command>engrampa</command></para>
+                </listitem>
+                </varlistentry>
+                </variablelist>
+        </section>
+
+         <section xml:id="engrampa-when-start"><info><title>Ketika Anda Memulai <application>Manajer Arsip</application></title></info>
+                
+                <para>Saat Anda memulai <application>Manajer Arsip</application>, jendela berikut ditampilkan:</para>
+
+                <figure xml:id="engrampa-FIG-main-window"><info><title><application>Manajer Arsip</application> Jendela</title></info>
+                  
+                  <screenshot>
+                         <mediaobject><imageobject> <imagedata fileref="figures/engrampa_main_window.png" format="PNG"/> </imageobject> <textobject> <phrase>Menunjukkan jendela utama Engrampa.</phrase> </textobject></mediaobject>
+                  </screenshot>
+                </figure>
+
+                <para>Jendela <application>Manajer Arsip</application> berisi elemen-elemen berikut:</para>
+                <variablelist>
+                  <varlistentry> <term>Bilah menu</term>
+                         <listitem>
+                                <para>Menu di bilah menu berisi semua perintah yang Anda butuhkan untuk bekerja dengan arsip di <application>Manajer Arsip</application>.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Bilah Alat</term>
+                         <listitem>
+                                <para>Bilah alat berisi subset perintah yang dapat Anda akses dari bilah menu. <application>Manajer Arsip</application> menampilkan bilah alat secara baku. Untuk menyembunyikan bilah alat, pilih <menuchoice><guimenu>Tilik</guimenu><guimenuitem>Bilah Alat</guimenuitem></menuchoice>. Untuk memperlihatkan bilah alat, pilih <menuchoice> <guimenu>Tilik</guimenu><guimenuitem>Bilah Alat</guimenuitem></menuchoice> lagi.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Bilah folder</term>
+                         <listitem>
+                                <para>Bilah folder memungkinkan Anda menavigasi di antara folder dalam arsip. <application>Manajer Arsip</application> hanya menampilkan bilah folder dalam tampilan folder. Lihat <xref linkend="engrampa-view-type-folder"/> untuk informasi lebih lanjut.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Area tampilan</term>
+                         <listitem>
+                                <para>Area tampilan menampilkan isi arsip.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Bilah status</term>
+                         <listitem>
+                                <para>Bilah status menampilkan informasi tentang aktivitas <application>Manajer Arsip</application> saat ini dan informasi kontekstual tentang konten arsip. <application>Manajer Arsip</application> menampilkan bilah status secara baku. Untuk menyembunyikan bilah status, pilih <menuchoice><guimenu>Tampilan</guimenu><guimenuitem>Bilah Status</guimenuitem></menuchoice>. Untuk memperlihatkan bilah status, pilih <menuchoice><guimenu>Tampilan</guimenu><guimenuitem>Bilah Status</guimenuitem></menuchoice> lagi.</para>
+                         </listitem>
+                  </varlistentry>
+                </variablelist>
+                <para>Saat Anda mengklik kanan di jendela <application>Manajer Arsip</application>, aplikasi menampilkan menu popup. Menu popup berisi perintah arsip kontekstual yang paling umum.</para>
+
+     <section xml:id="engrampa-bookmarks"><info><title>Meramban Sistem Berkas</title></info>
+        
+        <para>Beberapa dialog <application>Manajer Arsip</application> (<guilabel>Baru</guilabel>, <guilabel>Buka</guilabel>, <guilabel>Ekstrak</guilabel>,...) memungkinkan Anda untuk menelusuri berkas dan folder di komputer Anda. Lihat <link xlink:href="help:mate-user-guide/filechooser-open">Panduan Pengguna Desktop</link> untuk mempelajari selengkapnya tentang menggunakan dialog penjelajahan berkas.</para>
+        <para>Anda juga dapat merujuk ke <link xlink:href="help:mate-user-guide/caja-bookmarks"> Bagian markah</link> dari Panduan Pengguna Desktop untuk mempelajari cara menggunakan panel <guilabel>Tempat</guilabel> untuk mengakses lokasi favorit Anda.</para>
+     </section>
+   </section>
+</section>
+
+
+
+<!-- ======= Working with archives ============= --> 
+
+<section xml:id="engrampa-working"><info><title>Bekerja Dengan Arsip</title></info>
+      
+      <para>Ketika Anda menggunakan <application>Manajer Arsip</application> untuk bekerja dengan arsip, semua perubahan disimpan ke disk seketika. Misalnya, jika Anda menghapus berkas dari arsip, <application>Manajer Arsip</application> akan menghapus berkas tersebut begitu Anda mengklik <guibutton>OK</guibutton>. Perilaku ini berbeda dengan kebanyakan aplikasi, yang menyimpan perubahan ke disk hanya ketika Anda keluar dari aplikasi atau pilih <guimenuitem>Simpan</guimenuitem> di menu.</para>
+      <para>Jika arsip sangat besar, atau Anda memiliki sistem yang lambat, beberapa tindakan arsip dapat memakan waktu yang signifikan. Untuk membatalkan tindakan saat ini, tekan <keycap>Esc</keycap>. Atau, pilih <menuchoice><guimenu>Tampilan</guimenu><guimenuitem>Berhenti</guimenuitem></menuchoice>, atau klik <guibutton>Berhenti</guibutton> di bilah alat.</para>      
+      <para>Di <application>Manajer Arsip</application>, Anda dapat melakukan tindakan yang sama dengan beberapa cara. Misalnya, Anda dapat membuka arsip dengan cara berikut: <informaltable frame="all">
+                    <tgroup cols="2" colsep="1" rowsep="1">
+                      <colspec colname="COLSPEC0" colwidth="50*"/>
+                      <colspec colname="COLSPEC1" colwidth="50*"/>
+                      <thead>
+                        <row valign="top">
+                          <entry colname="COLSPEC0">
+                            <para>Komponen UI</para></entry>
+                          <entry colname="COLSPEC1" align="left"> 
+                            <para>Aksi</para></entry>
+                        </row>
+                      </thead>
+                      <tbody>
+                        <row valign="top">               
+                          <entry><para>Jendela</para></entry>
+                          <entry><para>Seret arsip ke jendela <application>Manajer Arsip</application> dari aplikasi lain seperti manajer berkas.</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Bilah menu</para></entry>
+                          <entry><para>Pilih <menuchoice><guimenu>Arsip</guimenu><guimenuitem>Buka</guimenuitem></menuchoice>.</para>
+           <para>Jika Anda baru saja membuka arsip, arsip tersebut akan langsung dicantumkan di menu <menuchoice><guimenu>Arsip</guimenu></menuchoice> .</para> 
+</entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Bilah Alat</para></entry>
+                          <entry><para>Klik pada tombol <guibutton>Buka</guibutton> bilah alat.</para>
+           <para>Jika Anda baru saja membuka arsip, klik panah bawah di dekat tombol <guibutton>Buka</guibutton> bilah alat.</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Klik kanan menu popup</para></entry>
+                          <entry><para>Klik kanan pada arsip, lalu pilih <guilabel>Buka</guilabel> dari menu popup.</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Tombol pintas</para></entry>
+                          <entry><para>Tekan <keycombo> <keycap>Ctrl</keycap><keycap>O</keycap></keycombo>.</para></entry>
+                        </row>
+                      </tbody>
+                    </tgroup>
+                  </informaltable></para>
+      <para>Manual ini mendokumentasikan fungsionalitas dari bilah menu.</para>
+
+    <section xml:id="engrampa-pattern"><info><title>Pola Nama Berkas</title></info>
+      
+      <para><application>Manajer Arsip</application> memungkinkan Anda untuk menambah, mengekstrak, atau menghapus beberapa berkas sekaligus. Untuk menerapkan tindakan ke semua berkas yang cocok dengan pola tertentu, masukkan pola dalam kotak teks. Polanya dapat mencakup simbol wildcard standar seperti <keycap>*</keycap> agar cocok dengan string apa pun, dan <keycap>?</keycap> agar cocok dengan simbol tunggal apa pun. Anda dapat memasukkan beberapa pola yang dipisah oleh titik koma. <application>Manajer Arsip</application> menerapkan tindakan ke semua berkas yang cocok dengan setidaknya satu pola. Contoh dalam tabel berikut menunjukkan cara menggunakan pola nama berkas untuk memilih berkas.</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Pola</para></entry>
+              <entry colname="COLSPEC1" align="left"> 
+                <para>Berkas yang Cocok</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">               
+              <entry><para><filename>*</filename></para></entry>
+              <entry align="left"><para>Semua berkas</para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>*.tar*</filename></para></entry>
+              <entry align="left"><para>Semua berkas dengan ekstensi <filename>tar</filename>, termasuk yang di mana ekstensi <filename>tar</filename> diikuti oleh urutan simbol apa pun, seperti <filename>nama_berkas.tar.gz</filename></para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>*.jpg; *.jpeg</filename></para></entry>
+              <entry align="left"><para>Semua berkas dengan ekstensi <filename>jpg</filename> dan semua berkas dengan ekstensi <filename>jpeg</filename></para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>file?.gz</filename></para></entry>
+              <entry align="left"><para>Semua berkas dengan ekstensi <filename>gz</filename> yang memiliki nama "file" diikuti oleh karakter tunggal, misalnya <filename>file2.gz</filename>, <filename>filex.gz</filename>.</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
+
+<!-- ======= To open an archive ============= --> 
+
+<section xml:id="engrampa-open"><info><title>Untuk Membuka suatu Arsip</title></info>
+      
+      <para>Untuk membuka arsip, lakukan langkah-langkah berikut: <orderedlist inheritnum="ignore" continuation="restarts">
+          <listitem>
+           <para>Pilih <menuchoice><guimenu>Arsip</guimenu><guimenuitem>Buka</guimenuitem></menuchoice> untuk menampilkan dialog <guilabel>Buka</guilabel>. Atau tekan <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>, atau klik <guibutton>Buka</guibutton> di bilah alat.</para> 
+          </listitem>
+          <listitem>
+           <para>Pilih arsip yang ingin Anda buka.</para> 
+          </listitem>
+          <listitem>
+           <para>Klik <guibutton>Buka</guibutton>.</para> 
+          </listitem>
+        </orderedlist></para>
+      <para><application>Manajer Arsip</application> secara otomatis menentukan jenis arsip, dan menampilkan: <itemizedlist>
+          <listitem>
+            <para>Nama arsip di bilah judul jendela</para>
+          </listitem>
+          <listitem>
+            <para>Konten arsip di area tampilan</para>
+          </listitem>
+          <listitem>
+            <para>Banyaknya berkas dan folder (objek) di lokasi saat ini, dan ukurannya saat tidak terkompresi, di bilah status</para>
+          </listitem>
+        </itemizedlist></para>
+      <para>Untuk membuka arsip lain, pilih lagi <menuchoice><guimenu>Arsip</guimenu><guimenuitem>Buka</guimenuitem></menuchoice>. <application>Manajer Arsip</application> membuka setiap arsip di jendela baru. Anda tidak dapat membuka arsip lain di jendela yang sama.</para>
+      <para>Jika Anda mencoba membuka arsip yang dibuat dalam format yang tidak dikenali oleh <application>Manajer Arsip</application>, aplikasi akan menampilkan pesan kesalahan. Lihat <xref linkend="engrampa-intro"/> untuk daftar format yang didukung.</para>
+  </section>
+
+<!-- ======= Selecting files in an archive  ============= --> 
+    <section xml:id="engrampa-select-files"><info><title>Untuk Memilih Berkas dalam Arsip</title></info>
+      
+    <para>Untuk memilih semua berkas dalam arsip, pilih <menuchoice><guimenu>Sunting</guimenu><guimenuitem>Pilih Semua</guimenuitem></menuchoice> atau tekan <keycombo><keycap>Ctrl</keycap><keycap>A</keycap></keycombo>.</para>
+      <para>Untuk membatalkan pilihan semua berkas dalam arsip, pilih <menuchoice><guimenu>Sunting</guimenu><guimenuitem>Batal Pilih Semua</guimenuitem></menuchoice> atau tekan <keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap><keycap>A</keycap></keycombo>.</para>
+    </section>
+
+  <!-- =========== Extracting Files From an Archive ==================== -->
+
+  <section xml:id="engrampa-extract"><info><title>Untuk Mengekstrak Berkas Dari Arsip</title></info> 
+     
+    <para>Untuk mengekstrak berkas dari arsip terbuka, lakukan langkah-langkah berikut: <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>Pilih berkas yang ingin Anda ekstrak. Untuk memilih lebih banyak berkas, tekan dan tahan <keycap>Ctrl</keycap> dan klik pada berkas yang ingin Anda pilih.</para>
+        </listitem>
+        <listitem><para>Pilih <menuchoice><guimenuitem>Arsip</guimenuitem><guimenu>Ekstrak</guimenu></menuchoice> untuk menampilkan dialog <guilabel>Ekstrak</guilabel>. Atau klik <guibutton>Ekstrak</guibutton> di bilah alat.</para>
+        </listitem>
+        <listitem><para>Pilih folder tempat <application>Manajer Arsip</application> mengekstrak berkas.</para>
+        </listitem>
+        <listitem><para>Pilih opsi ekstrak yang diperlukan. Untuk informasi selengkapnya tentang opsi ekstrak, lihat <xref linkend="engrampa-extract-options"/>.</para>
+        </listitem>
+        <listitem><para>Klik <guibutton>Ekstrak</guibutton>.</para>
+        <note>
+          <para>Jika semua berkas dalam arsip dilindungi oleh kata sandi, dan Anda belum menentukannya, <application>Manajer Arsip</application> meminta Anda untuk memasukkan kata sandi.</para>
+          <para>Jika beberapa tetapi tidak semua berkas dalam arsip dilindungi oleh kata sandi, dan Anda belum menentukan kata sandi, <application>Manajer Arsip</application> tidak meminta kata sandi. Namun, <application>Manajer Arsip</application> hanya mengekstrak berkas yang tidak dilindungi.</para>
+          <para>Untuk informasi selengkapnya tentang kata sandi, lihat <xref linkend="engrampa-encrypt-files"/>.</para>
+        </note>
+        </listitem>
+        </orderedlist></para>
+      <para><application>Manajer Arsip</application> juga menyediakan cara mengekstrak berkas dari arsip di jendela manajer berkas, tanpa membuka jendela <application>Manajer Arsip</application>. Lihat <xref linkend="engrampa-fmgr"/> untuk informasi lebih lanjut.</para>
+    <para>Operasi Ekstrak mengekstrak <emphasis>salinan</emphasis> berkas yang ditentukan dari arsip. Berkas yang diekstrak memiliki izin dan tanggal modifikasi yang sama dengan berkas asli yang ditambahkan ke arsip.</para>
+    <para>Operasi Ekstrak tidak mengubah isi arsip. Untuk informasi tentang cara menghapus berkas dari arsip, lihat <xref linkend="engrampa-delete-files"/>.</para>
+  </section>
+    
+<!-- ======= Closing the Archive ============= --> 
+  <section xml:id="engrampa-archive-close"><info><title>Untuk Menutup Arsip</title></info>
+    
+    <para>Untuk menutup arsip saat ini dan jendela <application>Manajer Arsip</application> saat ini, pilih <menuchoice> <guimenu>Arsip</guimenu> <guimenuitem>Tutup</guimenuitem> </menuchoice>, atau tekan <keycombo><keycap>Ctrl</keycap><keycap>W</keycap></keycombo>.</para>
+    <note>
+      <para>Tidak ada cara untuk menutup arsip saat ini tetapi bukan jendela <application>Manajer Arsip</application> .</para>
+    </note>
+  </section>
+</section>
+
+
+<!-- =============  Creating Archives ============================= -->
+<section xml:id="engrampa-creating"><info><title>Membuat Arsip</title></info> 
+     
+    <para>Selain membuka arsip yang sudah ada, Anda juga bisa membuat arsip baru dengan <application>Manajer Arsip</application>.</para>
+    <section xml:id="engrampa-create"><info><title>Untuk Membuat suatu Arsip</title></info> 
+     
+    <para>Untuk membuat arsip, lakukan langkah-langkah berikut: <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Pilih <menuchoice><guimenu>Arsip</guimenu><guimenuitem>Baru</guimenuitem></menuchoice> untuk menampilkan dialog <guilabel>Baru</guilabel>. Atau tekan <keycombo><keycap>Ctrl</keycap><keycap>N</keycap></keycombo>, atau klik <guibutton>Baru</guibutton> di bilah alat.</para>
+        </listitem>
+        <listitem>
+          <para>Nyatakan folder tempat <application>Manajer Arsip</application> menempatkan arsip baru dengan mengklik entri di daftar tarik turun <guilabel>Simpan dalam folder</guilabel>. Jika folder tidak ada dalam daftar, klik <guilabel>Telusuri folder lain</guilabel>, dan pilih folder. Atau, masukkan path dalam kotak teks <guilabel>Nama</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Masukkan nama arsip baru, termasuk ekstensi berkas, dalam kotak teks <guilabel>Nama</guilabel>. Atau Anda dapat menentukan nama arsip tanpa ekstensi, dan kemudian memilih jenis arsip dari menu drop-down <guilabel>Jenis arsip</guilabel>, dengan cara ini ekstensi akan ditambahkan secara otomatis.</para>
+        </listitem>
+        <listitem><para>Pilih opsi pembuatan yang diperlukan dengan mengklik <guilabel>Opsi Lain</guilabel>. Untuk informasi selengkapnya tentang opsi pembuatan, lihat <xref linkend="engrampa-create-options"/>.</para>
+        </listitem>
+        <listitem>
+          <para>Klik <guibutton>Baru</guibutton>. <application>Manajer Arsip</application> membuat arsip kosong, tetapi belum menulis arsip ke disk.</para>
+        </listitem>
+        <listitem>
+          <para>Tambahkan berkas ke arsip baru seperti yang dijelaskan dalam <xref linkend="engrampa-add-files"/>. <note>
+                  <para><application>Manajer Arsip</application> menulis arsip baru ke disk hanya ketika arsip berisi setidaknya satu berkas. Jika Anda membuat arsip baru dan keluar dari <application>Manajer Arsip</application> sebelum menambahkan berkas apa pun ke arsip, <application>Manajer Arsip</application> akan menghapus arsip tersebut.</para>
+                </note></para>
+        </listitem>
+      </orderedlist></para>
+</section>
+
+    <!-- ======= Adding files to an archive  ============= --> 
+  <section xml:id="engrampa-add-files"><info><title>Untuk Menambahkan Berkas ke Arsip</title></info>
+    
+    <para>Untuk menambahkan berkas ke arsip, lakukan langkah-langkah berikut: <orderedlist inheritnum="ignore" continuation="restarts">
+         <listitem>
+           <para>Tentukan di mana dalam arsip Anda ingin menambahkan berkas, lalu buka lokasi itu di arsip.</para> 
+         </listitem>
+         <listitem>
+           <para>Pilih <menuchoice><guimenu>Sunting</guimenu><guimenuitem>Tambahkan Berkas</guimenuitem></menuchoice> untuk menampilkan dialog <guilabel>Tambahkan Berkas</guilabel>, atau klik <guibutton>Tambahkan Berkas</guibutton> di bilah alat.</para> 
+         </listitem>
+         <listitem>
+           <para>Pilih berkas yang ingin Anda tambahkan. Untuk memilih lebih banyak berkas tekan dan tahan <keycap>Ctrl</keycap> dan klik berkas.</para> 
+         </listitem>
+         <listitem>
+           <para>Klik <guibutton>Tambahkan</guibutton>. <application>Manajer Arsip</application> menambahkan berkas ke folder saat ini di arsip.</para> 
+         </listitem>
+      </orderedlist></para>
+    <para>Anda tidak dapat menambahkan folder ke arsip dengan dialog <guilabel>Tambahkan Berkas</guilabel>. Untuk menambahkan folder lihat <xref linkend="engrampa-add-folder"/>.</para>
+    <para>Dialog <guilabel>Tambahkan Berkas</guilabel> menyediakan opsi <guilabel>Tambahkan hanya jika lebih baru</guilabel>, lihat <xref linkend="engrampa-add-options"/> untuk lebih banyak informasi tentang opsi ini.</para>
+    <para>Anda juga dapat menambahkan berkas ke arsip di jendela manajer berkas, tanpa membuka jendela <application>Manajer Arsip</application>. Lihat <xref linkend="engrampa-fmgr"/> untuk informasi lebih lanjut.</para>
+    <para>Operasi Tambahkan menambahkan <emphasis>salinan</emphasis> berkas atau folder yang ditentukan ke arsip. <application>Manajer Arsip</application> tidak menghapus berkas asli, yang tetap tidak berubah dalam sistem berkas. Salinan yang ditambahkan ke arsip memiliki izin dan tanggal modifikasi yang sama dengan berkas asli.</para>
+    </section>
+
+<!-- ======= Adding files - Adding folder  ============= --> 
+    <section xml:id="engrampa-add-folder"><info><title>Untuk Menambahkan Folder ke Arsip</title></info>
+      
+    <para>Untuk menambahkan folder ke arsip, lakukan langkah-langkah berikut: <orderedlist inheritnum="ignore" continuation="restarts">
+         <listitem>
+           <para>Tentukan di mana dalam arsip Anda ingin menambahkan berkas, lalu buka lokasi itu di arsip.</para>
+         </listitem>
+         <listitem>
+           <para>Pilih <menuchoice><guimenu>Sunting</guimenu><guimenuitem>Tambahkan Folder</guimenuitem></menuchoice> untuk menampilkan dialog <guilabel>Tambahkan Folder</guilabel>.</para> 
+         </listitem>
+         <listitem>
+           <para>Pilih folder yang ingin Anda tambahkan.</para> 
+         </listitem>
+         <listitem>
+           <para>Klik <guibutton>Tambahkan</guibutton>. <application>Manajer Arsip</application> menambahkan folder ke folder saat ini di arsip.</para> 
+         </listitem>
+      </orderedlist></para>
+    <para>Dialog <guilabel>Tambahkan Folder</guilabel> menyediakan beberapa opsi lanjutan. Lihat <xref linkend="engrampa-add-options"/> untuk informasi lebih lanjut.</para>
+    </section>
+
+  <!-- ======= Converting an Archive to Another Format ============= --> 
+  <section xml:id="engrampa-convert-archive"><info><title>Untuk Mengonversi Arsip ke Format Lain</title></info>
+    
+    <para>Untuk mengonversi arsip ke format lain dan menyimpannya sebagai berkas baru, lakukan langkah-langkah berikut:</para>
+    <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem>
+        <para>Buka arsip yang ingin Anda konversi.</para>
+      </listitem>
+      <listitem>
+        <para>Pilih <menuchoice><guimenu>Arsip</guimenu><guimenuitem>Simpan Sebagai</guimenuitem></menuchoice> untuk menampilkan dialog <guilabel>Simpan</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Masukkan nama arsip baru dalam kotak teks <guilabel>Nama</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Pilih format baru dari daftar turun bawah <guilabel>Jenis arsip</guilabel>. Atau, masukkan ekstensi nama berkas di kotak teks <guilabel>Nama</guilabel>, dan pilih <guilabel>Otomatis</guilabel> dari daftar drop-down <guilabel>Jenis arsip</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Pilih opsi pembuatan yang diperlukan dengan mengklik <guilabel>Opsi Lain</guilabel>. Untuk informasi selengkapnya tentang opsi pembuatan, lihat <xref linkend="engrampa-create-options"/>.</para>
+      </listitem>      
+      <listitem>
+        <para>Klik <guibutton>Simpan</guibutton>.</para>
+        <note>
+          <para>Jika semua berkas dalam arsip dilindungi oleh kata sandi, dan Anda belum menentukannya, <application>Manajer Arsip</application> meminta Anda untuk memasukkan kata sandi.</para>
+          <para>Jika beberapa tetapi tidak semua berkas dalam arsip dilindungi oleh kata sandi, dan Anda belum menentukan kata sandi, <application>Manajer Arsip</application> tidak meminta kata sandi. Namun, <application>Manajer Arsip</application> hanya menyalin berkas yang tidak dilindungi ke arsip baru.</para>
+          <para>Untuk informasi selengkapnya tentang kata sandi, lihat <xref linkend="engrampa-encrypt-files"/>.</para>
+        </note>
+      </listitem>
+    </orderedlist>
+  </section>
+</section>
+
+<!-- ======= Operations on Archive Contents ============= --> 
+<section xml:id="engrampa-modify-contents"><info><title>Memodifikasi Isi Arsip</title></info>
+  
+  <para>Anda dapat memodifikasi konten arsip dengan beberapa cara.</para>
+
+<!-- ======= Encrypting files in an archive  ============= --> 
+    <section xml:id="engrampa-encrypt-files"><info><title>Untuk Mengenkripsi Berkas dalam Arsip</title></info>
+      
+    <para>Untuk keamanan, Anda mungkin ingin mengenkripsi berkas yang Anda tambahkan ke arsip.</para>
+      <para>Jika format arsip mendukung enkripsi, Anda dapat menentukan kata sandi untuk mengenkripsi berkas yang Anda tambahkan ke arsip.</para>
+      <note>
+        <para>Saat ini, hanya arsip 7-Zip, ZIP, RAR, dan ARJ yang mendukung enkripsi.</para>
+      </note>
+     <para>Untuk menentukan kata sandi untuk enkripsi berkas, lakukan langkah-langkah berikut:</para>
+       <orderedlist inheritnum="ignore" continuation="restarts">
+          <listitem><para>Pilih <menuchoice><guimenu>Sunting</guimenu> <guimenuitem>Kata Sandi</guimenuitem></menuchoice> untuk menampilkan dialog <guilabel>Kata Sandi</guilabel>.</para></listitem> 
+<listitem><para>Masukkan kata sandi di kotak teks <guilabel>Kata Sandi</guilabel>.</para></listitem>
+<listitem><para>Klik <guibutton>OK</guibutton>.</para></listitem>
+       </orderedlist>
+    <para><application>Manajer Arsip</application> menggunakan kata sandi untuk mengenkripsi berkas yang Anda tambahkan ke arsip saat ini, dan untuk mendekripsi berkas yang Anda ekstrak dari arsip saat ini. <application>Manajer Arsip</application> menghapus kata sandi saat Anda menutup arsip.</para>
+      <para>Untuk informasi tentang cara memeriksa apakah arsip berisi berkas terenkripsi, lihat <xref linkend="engrampa-extra-info"/>.</para>
+      <note>
+      <para>Enkripsi yang disediakan oleh utilitas arsip lemah dan tidak aman. Jika keamanan penting, gunakan alat enkripsi yang kuat seperti <link xlink:href="http://www.gnupg.org">GNU Privacy Guard</link>.</para>
+      </note>
+    </section>
+
+<!-- ======= Renaming files in an archive  ============= --> 
+  <section xml:id="engrampa-rename-files"><info><title>Untuk Mengganti Nama Berkas dalam Arsip</title></info>
+    
+    <para>Untuk mengganti nama berkas dalam arsip, lakukan langkah-langkah berikut:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Pilih berkas yang ingin Anda ganti namanya.</para>
+        </listitem>
+        <listitem>
+          <para>Pilih <menuchoice><guimenu>Sunting</guimenu><guimenuitem>Ganti Nama</guimenuitem></menuchoice>, atau tekan <keycombo><keycap>F2</keycap></keycombo>, untuk menampilkan dialog <guilabel>Ganti Nama</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Masukkan nama berkas baru di kotak teks <guilabel>Nama berkas baru</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Klik <guibutton>Ganti Nama</guibutton>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Copying files in an archive  ============= --> 
+  <section xml:id="engrampa-copy-files"><info><title>Untuk Menyalin Berkas dalam Arsip</title></info>
+    
+    <para>Untuk menyalin berkas dalam arsip, lakukan langkah-langkah berikut:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Pilih berkas yang ingin Anda salin.</para>
+        </listitem>
+        <listitem>
+          <para>Pilih <menuchoice><guimenu>Sunting</guimenu><guimenuitem>Salin</guimenuitem></menuchoice>, atau tekan <keycombo><keycap>Ctrl</keycap><keycap>C</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Buka lokasi di mana Anda ingin meletakkan berkas yang disalin.</para>
+        </listitem>
+        <listitem>
+          <para>Pilih <menuchoice><guimenu>Sunting</guimenu><guimenuitem>Tempel</guimenuitem></menuchoice>, atau tekan <keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Moving files in an archive  ============= --> 
+  <section xml:id="engrampa-move-files"><info><title>Untuk Memindahkan Berkas dalam Arsip</title></info>
+    
+    <para>Untuk memindahkan berkas dalam arsip, lakukan langkah-langkah berikut:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Pilih berkas yang ingin Anda pindahkan.</para>
+        </listitem>
+        <listitem>
+          <para>Pilih <menuchoice><guimenu>Sunting</guimenu><guimenuitem>Potong</guimenuitem></menuchoice>, atau tekan <keycombo><keycap>Ctrl</keycap><keycap>X</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Buka lokasi tempat Anda ingin meletakkan berkas yang dipindahkan.</para>
+        </listitem>
+        <listitem>
+          <para>Pilih <menuchoice><guimenu>Sunting</guimenu><guimenuitem>Tempel</guimenuitem></menuchoice>, atau tekan <keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Deleting files from an archive  ============= --> 
+  <section xml:id="engrampa-delete-files"><info><title>Untuk Menghapus Berkas Dari Arsip</title></info>
+    
+    <para>Untuk menghapus berkas dari arsip, lakukan langkah-langkah berikut:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Pilih berkas yang ingin Anda hapus.</para>
+        </listitem>
+        <listitem>
+          <para>Pilih <menuchoice><guimenu>Sunting</guimenu><guimenuitem>Hapus</guimenuitem></menuchoice> atau tekan <keycap>Delete</keycap> untuk menampilkan dialog <guilabel>Hapus</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Pilih salah satu opsi hapus berikut ini:</para>
+          <variablelist>
+            <varlistentry>
+              <term><guilabel>Semua berkas</guilabel></term>
+              <listitem>
+                <para>Menghapus semua berkas dari arsip.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term><guilabel>Berkas yang dipilih</guilabel></term>
+              <listitem>
+                <para>Menghapus berkas yang dipilih dari arsip.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term><guilabel>Berkas</guilabel></term>
+              <listitem>
+                <para>Hapus dari arsip semua berkas yang cocok dengan pola yang ditentukan. Lihat <xref linkend="engrampa-pattern"/> untuk informasi selengkapnya tentang pola nama berkas.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+        <listitem>
+          <para>Klik <guibutton>OK</guibutton>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- =============  Modify a File in an Archive ==================== -->
+  <section xml:id="engrampa-modify-archive-file"><info><title>Untuk Mengubah Berkas dalam Arsip</title></info> 
+     
+    <para>Untuk mengubah berkas dalam arsip, lakukan langkah-langkah berikut: <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem><para>Klik ganda berkas yang ingin Anda buka. Atau klik kanan berkas dan pilih <menuchoice><guimenuitem>Buka</guimenuitem></menuchoice>.</para></listitem>
+      <listitem><para>Sunting berkas yang dibuka di langkah 1, lalu simpan perubahan Anda.</para></listitem>
+      <listitem><para><application>Manajer Arsip</application> memperlihatkan dialog konfirmasi, meminta konfirmasi untuk memperbarui berkas dalam arsip dengan perubahan yang Anda buat.</para></listitem>
+      <listitem><para>Klik <guilabel>Perbarui</guilabel>.</para></listitem>
+      </orderedlist></para>
+    <para><application>Manajer Arsip</application> menggunakan hubungan yang ditentukan sistem antara jenis berkas dan program untuk menentukan aplikasi yang sesuai untuk diluncurkan untuk berkas tertentu. Asosiasi ini dapat ditampilkan dan dimodifikasi di tab <guilabel>Buka Dengan</guilabel> dari dialog properti berkas. Jika <application>Manajer Arsip</application> tidak dapat menentukan aplikasi yang sesuai, <application>Manajer Arsip</application> menampilkan dialog <guilabel>Buka Berkas</guilabel> untuk memungkinkan Anda memilih aplikasi, seperti yang dijelaskan di bawah ini.</para>
+    <section xml:id="engrampa-modifiy-archive-file-custom-app"><info><title>Untuk Memodifikasi Berkas dalam Arsip dengan Aplikasi Ubahan</title></info>
+    
+    <para>Anda dapat menggunakan aplikasi yang ditentukan oleh Anda, bukan aplikasi baku, untuk memodifikasi berkas. Untuk menggunakan aplikasi eksternal untuk membuka berkas: <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem><para>Klik kanan berkas tersebut.</para></listitem>
+      <listitem><para>Pilih <menuchoice><guimenuitem>Buka Dengan...</guimenuitem></menuchoice>.</para></listitem>
+      </orderedlist></para>    
+    <para><application>Manajer Arsip</application> menampilkan dialog <guilabel>Buka Berkas</guilabel>, yang mencantumkan semua aplikasi yang dapat membuka berkas dari jenis yang ditentukan. Untuk memilih salah satu aplikasi, klik ganda nama aplikasi atau klik pada nama aplikasi dan kemudian klik <guibutton>Buka</guibutton>. Atau, masukkan nama aplikasi di kotak teks <guilabel>Aplikasi</guilabel> lalu klik <guibutton>Buka</guibutton> untuk meluncurkan aplikasi pilihan Anda.</para>
+    <para>Setelah aplikasi dimulai ikuti prosedur dari langkah 2 seperti yang dijelaskan dalam <xref linkend="engrampa-modify-archive-file"/>.</para>
+    </section>
+  </section>
+</section>
+
+
+<!-- ======= Viewing an archive ============= --> 
+<section xml:id="engrampa-view"><info><title>Melihat Arsip</title></info>
+  
+  <para><application>Manajer Arsip</application> memungkinkan Anda untuk melihat beberapa aspek arsip.</para>
+
+<!-- ======= Archive Properties ============= --> 
+    <section xml:id="engrampa-view-archive-properties"><info><title>Untuk Melihat Properti Arsip</title></info>
+      
+      <para>Untuk menampilkan properti arsip, pilih <menuchoice><guimenu>Arsip</guimenu><guimenuitem>Properti</guimenuitem></menuchoice> untuk menampilkan dialog <guilabel>Properti</guilabel>. Dialog <guilabel>Properti</guilabel> menampilkan informasi berikut tentang arsip: <variablelist>
+	      <varlistentry>
+	        <term><guilabel>Nama</guilabel></term>
+	        <listitem><para>Nama arsip.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Lokasi</guilabel></term>
+	        <listitem><para>Posisi arsip dalam sistem berkas.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Diubah pada</guilabel></term>
+	        <listitem><para>Tanggal dan waktu kapan arsip terakhir diubah.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Ukuran arsip</guilabel></term>
+	        <listitem><para>Ukuran konten arsip saat dikompresi.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Ukuran konten</guilabel></term>
+	        <listitem><para>Ukuran isi arsip saat tidak terkompresi. Informasi ini juga tersedia di bilah status.</para></listitem>
+	      </varlistentry>
+
+	      <varlistentry>
+	        <term><guilabel>Rasio kompresi</guilabel></term>
+	        <listitem><para>Rasio kompresi adalah nilai yang digunakan untuk menggambarkan pengurangan ukuran data. Misalnya rasio kompresi 5 berarti bahwa arsip terkompresi adalah 1/5 ukuran data asli.</para></listitem>
+	      </varlistentry>
+
+	      <varlistentry>
+	        <term><guilabel>Cacah berkas</guilabel></term>
+	        <listitem><para>Cacah berkas dalam arsip.</para></listitem>
+	      </varlistentry>
+            </variablelist></para>
+    </section>
+ 
+
+<!-- ======= Archive Contents ============= --> 
+    <section xml:id="engrampa-view-archive-contents"><info><title>Untuk Melihat Isi Arsip</title></info>
+      
+
+      <para><application>Manajer Arsip</application> menampilkan konten arsip di jendela utama sebagai daftar berkas dengan kolom berikut: <variablelist>
+	  <varlistentry>
+	    <term><guilabel>Nama</guilabel></term>
+	    <listitem><para>Nama berkas atau folder dalam arsip.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Ukuran</guilabel></term>
+	    <listitem><para>Ukuran berkas saat berkas diekstrak dari arsip. Untuk folder, bidang <guilabel>Ukuran</guilabel> kosong. Untuk informasi tentang cara menampilkan ukuran berkas terkompresi, lihat <xref linkend="engrampa-extra-info"/>.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Jenis</guilabel></term>
+	    <listitem><para>Jenis berkas. Untuk folder, nilai dalam bidang <guilabel>Tipe</guilabel> adalah <literal>Folder</literal>.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Tanggal diubah</guilabel></term>
+	    <listitem><para>Tanggal kapan berkas terakhir diubah. Untuk folder, bidang <guilabel>Tanggal diubah</guilabel> kosong.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Lokasi</guilabel></term>
+	    <listitem><para>Path ke berkas di dalam arsip. Kolom ini hanya terlihat ketika jendela dalam tampilan berkas, ketika dalam tampilan folder lokasi berkas ditampilkan di kotak teks <guilabel>Lokasi</guilabel> bilah folder. Untuk informasi selengkapnya tentang jenis tampilan lihat <xref linkend="engrampa-view-type-folder"/>.</para></listitem>
+	  </varlistentry>
+        </variablelist></para>
+      <para>Jika program lain telah memodifikasi arsip sejak <application>Manajer Arsip</application> membuka arsip, pilih <menuchoice><guimenu>Tampilan</guimenu><guimenuitem>Muat Ulang</guimenuitem></menuchoice> untuk memuat ulang konten arsip dari disk.</para>
+      <para>Untuk informasi tentang bagaimana mengubah cara <application>Manajer Arsip</application> menampilkan konten arsip, lihat <xref linkend="engrampa-archive-custom"/>.</para>
+      <para>Untuk tugas yang lebih canggih, gunakan aplikasi yang diinstal pada sistem Anda. Untuk informasi selengkapnya, lihat <xref linkend="engrampa-view-archive-file"/>.</para>
+    </section>
+
+  <!-- =============  Viewing a File in an Archive ==================== -->
+  <section xml:id="engrampa-view-archive-file"><info><title>Untuk Menampilkan Berkas dalam Arsip</title></info> 
+     
+    <para>Untuk menampilkan berkas dalam arsip, ikuti langkah-langkah yang dijelaskan dalam <xref linkend="engrampa-modify-archive-file"/>. Jika Anda menyimpan berkas yang dibuka, klik <guilabel>Batalkan</guilabel> saat <application>Manajer Arsip</application> meminta konfirmasi untuk memperbarui berkas di arsip.</para>
+  </section>
+
+<!-- =============  Testing the Integrity of an Archive ==================== -->
+  <section xml:id="engrampa-test-archive"><info><title>Untuk Menguji Integritas Arsip</title></info> 
+     
+    <para>Terkadang arsip dapat rusak karena alasan tertentu, untuk memeriksa apakah arsip rusak, pilih <menuchoice><guimenu>Arsip</guimenu><guimenuitem>Uji Integritas</guimenuitem></menuchoice>: <itemizedlist>
+              <listitem>
+                <para>Jika arsip tidak mengandung kesalahan, <application>Manajer Arsip</application> membuka dialog <guilabel>Hasil Tes</guilabel> untuk mencantumkan setiap berkas dalam arsip, dan menunjukkan bahwa setiap berkas memiliki status <literal>OK</literal>.</para>
+              </listitem>
+              <listitem>
+                <para>Jika arsip berisi beberapa kesalahan, <application>Manajer Arsip</application> membuka dialog <guilabel>Hasil Tes</guilabel> yang menampilkan bagian arsip yang berisi kesalahan.</para>
+              </listitem>
+            </itemizedlist></para>
+    <para>Arsip yang rusak bisa tidak mungkin diekstraksi, ini dapat menyebabkan hilangnya data. Untuk alasan ini Anda harus menguji integritas arsip sebelum menghapus berkas asli.</para>
+    <para>Jika arsip berisi berkas terenkripsi, <application>Manajer Arsip</application> akan menanyakan kata sandi arsip sebelum melakukan pengujian.</para>
+    <note>
+      <para>Tidak semua jenis arsip mendukung pengujian integritas, berikut ini adalah daftar jenis arsip yang dapat diuji integritasnya: 7-Zip, RAR, ZIP, ACE, ARJ, dan Zoo.</para>
+    </note>
+    <tip><info><title>Tip</title></info>
+      
+      <para>Untuk menguji integritas arsip yang tidak mendukung pengujian integritas, ekstrak semua berkas dari arsip dan periksa apakah operasi berhasil diselesaikan.</para>      
+    </tip>
+  </section>  
+</section>
+    
+<!-- ======= Customizing the Archive Display ============= --> 
+<section xml:id="engrampa-archive-custom"><info><title>Menyesuaikan Tampilan Arsip</title></info>
+  
+  <para>Anda dapat menyesuaikan cara <application>Manajer Arsip</application> menampilkan konten arsip, sebagai berikut:</para>
+  <itemizedlist>
+    <listitem>
+      <para>Beralih antara tampilan folder dan tampilan berkas. Untuk informasi selengkapnya, lihat <xref linkend="engrampa-view-type"/>.</para>
+    </listitem>
+    <listitem>
+      <para>Tentukan urutan untuk menampilkan berkas dalam daftar. Untuk informasi selengkapnya, lihat <xref linkend="engrampa-view-sort"/>.</para>
+    </listitem> 
+    <listitem>
+      <para>Tampilkan detail tambahan tentang konten arsip. Untuk informasi selengkapnya, lihat <xref linkend="engrampa-extra-info"/>.</para>
+    </listitem> 
+  </itemizedlist>
+  <para><application>Manajer Arsip</application> seketika memperbarui tampilan, saat Anda membuat salah satu penyesuaian di atas.</para>
+
+  <section xml:id="engrampa-view-type"><info><title>Untuk Mengatur Tipe Tampilan</title></info>
+    
+    <para>Jika arsip berisi folder, Anda dapat menampilkan konten arsip dalam <xref linkend="engrampa-view-type-folder"/> atau <xref linkend="engrampa-view-type-file"/>.</para>
+
+    <section xml:id="engrampa-view-type-folder"><info><title>Tampilan Folder</title></info>
+      
+      <para><application>Manajer Arsip</application> menampilkan konten arsip dalam tampilan folder secara baku. Untuk memilih tampilan folder secara eksplisit, pilih <menuchoice><guimenu>Tampilan</guimenu><guimenuitem>Tampilan sebagai Folder</guimenuitem></menuchoice>.</para>
+      <para>Dalam tampilan folder, <application>Manajer Arsip</application> menampilkan folder dengan cara yang sama seperti manajer berkas menampilkan folder. Artinya, <application>Manajer Arsip</application> menunjukkan folder di area tampilan dengan ikon folder dan nama folder. Untuk melihat konten folder, klik ganda pada nama folder.</para>
+      <para>Bilah folder, yang hanya ditampilkan oleh <application>Manajer Arsip</application> dalam tampilan folder, berisi komponen yang dijelaskan dalam tabel berikut.</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Komponen</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Keterangan</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/engrampa_leftarrow.png" format="PNG"/> </imageobject> <textobject> <phrase>Memperlihatkan ikon untuk menavigasi mundur dalam daftar riwayat lokasi.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Klik tombol ini untuk menavigasi mundur dalam daftar riwayat lokasi.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/engrampa_rightarrow.png" format="PNG"/> </imageobject> <textobject> <phrase>Menampilkan ikon untuk menavigasi maju dalam daftar riwayat lokasi.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Klik tombol ini untuk menavigasi maju dalam daftar riwayat lokasi.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/engrampa_uparrow.png" format="PNG"/> </imageobject> <textobject> <phrase>Memperlihatkan ikon untuk menavigasi naik satu tingkat di pohon folder.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Klik tombol ini untuk menavigasi naik satu tingkat di pohon folder.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/engrampa_home.png" format="PNG"/> </imageobject> <textobject> <phrase>Memperlihatkan ikon untuk membuka folder tingkat puncak di arsip.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Klik tombol ini untuk membuka folder tingkat puncak di arsip.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><guilabel>Lokasi</guilabel></para>
+              </entry>
+              <entry>
+                <para>Bidang ini memperlihatkan nama path lengkap, di dalam arsip, dari folder saat ini.</para>
+                <para>Untuk mengubah ke tingkat yang berbeda di pohon folder, ketik lokasi baru di kotak teks <guilabel>Lokasi</guilabel> lalu tekan <keycap>Return</keycap>. <application>Manajer Arsip</application> menampilkan konten lokasi baru.</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
+
+    <section xml:id="engrampa-view-type-file"><info><title>Tampilan Berkas</title></info>
+      
+      <para>Untuk memilih tampilan berkas, pilih <menuchoice><guimenu>Tampilan</guimenu><guimenuitem>Lihat Semua Berkas</guimenuitem></menuchoice>.</para>
+      <para>Dalam tampilan berkas, <application>Manajer Arsip</application> menampilkan semua berkas dalam arsip, termasuk berkas dari sub folder, dalam satu daftar.</para>
+    </section>
+
+  </section>
+
+  <section xml:id="engrampa-view-sort"><info><title>Untuk Mengurut Daftar Berkas</title></info>
+    
+    <para>Anda dapat mengurutkan daftar berkas berdasarkan nama, ukuran, jenis, tanggal modifikasi, atau lokasi.</para>
+    <para>Untuk menentukan urutan, klik pada judul kolom yang sesuai.</para>
+    <para>Untuk membalikkan urutan, klik lagi pada judul kolom.</para>
+    <para>Misalnya, untuk mengurutkan daftar berkas berdasarkan tanggal modifikasi, klik pada judul <guilabel>Tanggal diubah</guilabel>. <application>Manajer Arsip</application> mengatur ulang daftar berkas untuk menampilkan berkas berdasarkan tanggal modifikasi, dimulai dengan yang paling awal. Untuk menampilkan berkas terbaru terlebih dahulu, klik lagi judul <guilabel>Tanggal diubah</guilabel>.</para>
+    <para><application>Manajer Arsip</application> selalu melakukan pengurutan sekunder berdasarkan nama berkas. Dalam contoh di atas, <application>Manajer Arsip</application> mengurutkan berdasarkan nama berkas apa pun yang memiliki tanggal modifikasi yang sama.</para>
+  </section>
+
+  <section xml:id="engrampa-extra-info"><info><title>Untuk Menampilkan Detail Tambahan</title></info>
+    
+      <para>Untuk membuka dialog <guilabel>Keluaran Terakhir</guilabel>, pilih <menuchoice><guimenu>Tampilan</guimenu><guimenuitem>Keluaran Terakhir</guimenuitem></menuchoice>: <itemizedlist>
+              <listitem>
+                <para>Jika Anda menguji arsip dalam sesi <application>Manajer Arsip</application> saat ini, dialog <guilabel>Keluaran Terakhir</guilabel> menampilkan hasil pengujian terakhir.</para>
+              </listitem>
+              <listitem>
+                <para>Jika Anda tidak menguji arsip dalam sesi <application>Manajer Arsip</application> saat ini, dialog <guilabel>Keluaran Terakhir</guilabel> menampilkan daftar semua berkas dalam arsip, tetapi tidak menunjukkan status apa pun untuk berkas tersebut. Sebagai gantinya, dialog <guilabel>Keluaran Terakhir</guilabel> menyediakan ukuran terkompresi dari setiap berkas dan persentase kompresi, serta tanggal dan waktu kapan berkas terakhir diubah.</para>
+              </listitem>
+            </itemizedlist></para>
+  </section>
+</section>
+
+<!-- ====== Using the File Manager Popup Menu to Manipulate an Archive ===== -->
+
+<section xml:id="engrampa-fmgr"><info><title>Menggunakan Manajer Berkas untuk Bekerja dengan Arsip</title></info> 
+     
+    <para>Anda dapat menggunakan manajer berkas untuk menambahkan berkas ke arsip, atau untuk mengekstrak berkas dari arsip.</para>
+
+<!-- ======= Adding files Using File Manager Menu  ============= --> 
+    <section xml:id="engrampa-fmgr-add"><info><title>Untuk Menambahkan Berkas ke Arsip dengan Menggunakan Manajer Berkas</title></info>
+      
+           <para>Anda dapat menggunakan manajer berkas untuk menambahkan berkas ke arsip, dengan cara berikut: <itemizedlist>
+             <listitem><para>Seret berkas ke jendela <application>Manajer Arsip</application> dari jendela manajer berkas.</para>
+             </listitem>
+             <listitem><para>Gunakan menu popup manajer berkas untuk menambahkan berkas ke arsip.</para>
+             </listitem>
+          </itemizedlist></para>
+      <para>Untuk menggunakan menu popup manajer berkas untuk menambahkan berkas ke arsip, lakukan langkah-langkah berikut:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>Klik kanan pada berkas atau folder di jendela manajer berkas.</para>
+        </listitem>
+        <listitem><para>Pilih <guimenuitem>Buat Arsip</guimenuitem> dari menu popup manajer berkas untuk menampilkan dialog <application>Manajer Arsip</application> <guilabel>Buat Arsip</guilabel>.</para>
+        </listitem>
+        <listitem><para>Masukkan nama arsip, tanpa ekstensi berkas, dalam kotak teks <guilabel>Arsip</guilabel>.</para>
+        </listitem>
+        <listitem><para>Pilih tipe arsip dari daftar turun bawah.</para>
+        </listitem>
+        <listitem><para>Pilih lokasi tempat menyimpan berkas arsip, dari daftar drop-down <guilabel>Lokasi</guilabel>. Jika lokasi tidak ada dalam daftar, pilih <guilabel>Lainnya...</guilabel> untuk memilihnya dengan dialog <guilabel>Lokasi</guilabel>.</para>
+        </listitem>
+        <listitem><para>Pilih opsi pembuatan yang diperlukan dengan mengklik <guilabel>Opsi Lain</guilabel>. Untuk informasi selengkapnya tentang opsi pembuatan, lihat <xref linkend="engrampa-create-options"/>.</para>
+        </listitem>
+        <listitem><para>Klik <guilabel>Buat</guilabel> untuk menambahkan berkas yang dipilih ke folder akar dari arsip yang ditentukan.</para>
+                 <note><para>Untuk memilih salah satu opsi penambahan tingkat lanjut, Anda harus memanggil <application>Manajer Arsip</application> seperti yang dijelaskan dalam <xref linkend="engrampa-to-start"/>.</para></note>
+        </listitem>
+      </orderedlist>
+    </section>
+
+<!-- ======= Extracting files Using File Manager Menu  ============= --> 
+  <section xml:id="engrampa-fmgr-extract"><info><title>Untuk Mengekstrak Berkas Dari Arsip dengan Menggunakan Manajer Berkas</title></info>
+      
+           <para>Anda dapat menggunakan manajer berkas untuk mengekstrak berkas dari arsip, dengan cara berikut: <itemizedlist>
+             <listitem><para>Seret berkas dari jendela <application>Manajer Arsip</application> ke jendela manajer berkas.</para>
+             </listitem>
+             <listitem><para>Gunakan menu popup manajer berkas untuk mengekstrak berkas dari arsip.</para>
+             </listitem>
+          </itemizedlist></para>
+      <para>Untuk menggunakan menu popup manajer berkas untuk mengekstrak berkas dari arsip, lakukan langkah-langkah berikut:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>Klik kanan pada arsip di jendela manajer berkas.</para>
+        </listitem>
+        <listitem><para>Pilih <guimenuitem>Ekstrak Di Sini</guimenuitem> untuk mengekstrak semua konten arsip ke dalam direktori tempat arsip berada.</para>
+        </listitem>
+      </orderedlist>
+      <note><para>Jika arsip dienkripsi, <application>Manajer Arsip</application> akan meminta untuk memasukkan kata sandi sebelum mengekstrak berkas.</para></note>
+    </section>
+
+</section>
+
+<!-- ======= Create Archive Advanced Options  ============= --> 
+    <section xml:id="engrampa-create-options"><info><title>Opsi Buat</title></info>
+      
+      <para>Saat membuat arsip baru, atau saat mengonversi arsip yang sudah ada ke format lain, klik <guilabel>Opsi Lain</guilabel> untuk menentukan opsi tingkat lanjut berikut:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Kata Sandi</guilabel></term>
+	  <listitem>
+	  <para>Ketik kata sandi yang akan digunakan untuk mengenkripsi arsip. Jika tidak ada kata sandi yang ditentukan, arsip tidak akan dienkripsi.</para>
+	  <note>
+	    <para>Tidak semua jenis arsip mendukung enkripsi. Untuk informasi selengkapnya tentang enkripsi berkas, lihat <xref linkend="engrampa-encrypt-files"/>.</para>
+	  </note>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>	  
+	  <term><guilabel>Enkripsi daftar berkas juga</guilabel></term>
+	  <listitem>
+	  <para>Jika opsi ini dipilih, kata sandi akan diminta bahkan untuk melihat daftar berkas yang terkandung dalam arsip, jika tidak maka akan diminta hanya untuk mengekstrak berkas dari arsip. Opsi ini hanya tersedia jika kata sandi ditentukan.</para>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>	  
+	  <term><guilabel>Pecah dalam volume</guilabel></term>
+	  <listitem>
+	  <para>Pilih opsi ini untuk membagi arsip dalam lebih banyak berkas dengan dimensi yang ditentukan.</para>
+	  <note>
+	    <para>Hanya arsip 7-Zip dan RAR yang mendukung fitur ini.</para>
+	  </note>
+	  </listitem>
+	</varlistentry>
+      </variablelist>
+    </section>
+
+<!-- ======= Add Advanced Options  ============= --> 
+    <section xml:id="engrampa-add-options"><info><title>Opsi Tambah</title></info>
+      
+      <para>Dialog <guilabel>Tambahkan Berkas</guilabel> dan <guilabel>Tambahkan Folder</guilabel> menyediakan opsi berikut:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Tambahkan hanya jika lebih baru</guilabel></term>
+	  <listitem>
+            <para>Pilih opsi ini untuk menambahkan berkas yang ditentukan ke arsip hanya jika arsip tidak berisi berkas yang ditentukan, atau jika arsip berisi versi yang lebih lama dari berkas yang ditentukan. <application>Manajer Arsip</application> menggunakan tanggal modifikasi untuk menentukan berkas mana yang terbaru. Jika versi berkas dalam arsip adalah yang terbaru, <application>Manajer Arsip</application> tidak menambahkan berkas yang ditentukan ke arsip.</para>
+	    <para>Jika Anda tidak memilih opsi ini, <application>Manajer Arsip</application> menambahkan berkas ke arsip dan menimpa konten arsip sebelumnya.</para>
+	    <tip><info><title>Tip</title></info>
+	      
+	      <para>Jika Anda menggunakan <application>Manajer Arsip</application> untuk membuat cadangan, opsi <guilabel>Tambahkan hanya jika yang lebih baru</guilabel> sangat berguna. Misalnya, arsip <filename>backup.tar.gz</filename> berisi cadangan folder utama Anda yang berumur seminggu. Untuk memperbarui arsip agar berisi cadangan folder utama Anda saat ini, lakukan langkah-langkah berikut: <orderedlist inheritnum="ignore" continuation="restarts">
+                      <listitem>
+                        <para>Buka arsip <filename>backup.tar.gz</filename> di <application>Manajer Arsip</application>.</para>
+                      </listitem>
+                      <listitem>
+                        <para>Pilih <menuchoice><guimenu>Sunting</guimenu><guimenuitem>Tambahkan</guimenuitem></menuchoice> untuk menampilkan dialog <guilabel>Tambahkan Folder</guilabel>.</para> 
+                      </listitem>
+                      <listitem>
+                        <para>Pilih folder beranda Anda.</para>
+                      </listitem>
+                      <listitem>
+                        <para>Pilih opsi <guilabel>Tambahkan hanya jika lebih baru</guilabel>.</para>
+                      </listitem>
+                      <listitem>
+                        <para>Klik <guibutton>Tambah</guibutton>.</para>
+                      </listitem>
+                    </orderedlist></para>
+                <para><application>Manajer Arsip</application> secara otomatis menambahkan ke arsip semua berkas yang Anda buat selama minggu lalu, dan memperbarui semua berkas yang Anda modifikasi selama minggu lalu. Namun, <application>Manajer Arsip</application> tidak menghapus dari arsip berkas yang Anda hapus selama minggu lalu. Operasi pembaruan arsip jauh lebih cepat daripada melakukan pencadangan penuh folder beranda Anda.</para>
+	  </tip>
+	</listitem>
+      </varlistentry>
+      </variablelist>
+      <section xml:id="engrampa-add-folder-options"><info><title>Opsi Tambahkan ke Folder</title></info>
+      
+      <para>Opsi berikut tersedia dalam dialog <guilabel>Tambahkan Folder</guilabel> dan memungkinkan untuk secara otomatis memilih dan menambahkan semua berkas yang memenuhi kriteria tertentu:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Sertakan berkas</guilabel></term>
+	  <listitem>
+            <para>Ketik pola nama berkas dalam kotak teks ini untuk menyertakan berkas dengan nama yang cocok dengan pola yang ditentukan. Lihat <xref linkend="engrampa-pattern"/> untuk informasi selengkapnya tentang pola nama berkas.</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Mengecualikan berkas</guilabel></term>
+	  <listitem>
+            <para>Ketik pola nama berkas di kotak teks ini untuk mengecualikan berkas dengan nama yang cocok dengan pola yang ditentukan. Lihat <xref linkend="engrampa-pattern"/> untuk informasi selengkapnya tentang pola nama berkas.</para>
+          </listitem>
+	</varlistentry>
+        <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Mengecualikan folder</guilabel></term>
+	  <listitem>
+            <para>Ketik pola nama berkas di kotak teks ini untuk mengecualikan folder dengan nama yang cocok dengan pola yang ditentukan. Lihat <xref linkend="engrampa-pattern"/> untuk informasi selengkapnya tentang pola nama berkas.</para>
+          </listitem>
+	</varlistentry>      
+       <!-- ============= -->	
+      <varlistentry>
+	<term><guilabel>Sertakan sub folder</guilabel></term>
+	<listitem>
+          <para>Pilih opsi ini untuk menambahkan semua berkas yang cocok dengan pola yang ditentukan, dari folder saat ini dan dari sub folder.</para>
+          <note>
+          <para>Nama berkas, bukan nama sub folder, harus cocok dengan pola yang ditentukan.</para>
+          </note>
+	  <para>Jika Anda tidak memilih opsi ini, <application>Manajer Arsip</application> hanya menambahkan berkas yang cocok dari folder saat ini.</para>
+        </listitem>
+      </varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guilabel>Mengecualikan folder yang merupakan link simbolis</guilabel></term>
+	  <listitem>
+            <para>Pilih opsi ini untuk menghilangkan berkas dari folder yang merupakan tautan simbolis. Tautan simbolis adalah penunjuk atau pintasan ke folder lain.</para>
+	    <para>Jika Anda tidak memilih opsi ini, <application>Manajer Arsip</application> menambahkan berkas yang cocok dari folder yang merupakan tautan simbolis.</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->
+     <varlistentry>
+	<term><guibutton>Simpan Opsi</guibutton></term>
+	  <listitem>
+            <para>Klik tombol ini untuk menyimpan pilihan opsi tambahkan tingkat lanjut saat ini ke berkas. Dialog <guilabel>Opsi Simpan</guilabel> ditampilkan. Masukkan nama berkas deskriptif di kotak teks <guilabel>Nama Opsi</guilabel>, lalu klik <guibutton>Simpan</guibutton>.</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guibutton>Muat Opsi</guibutton></term>
+	  <listitem>
+            <para>Klik tombol ini untuk memuat atau menghapus pilihan opsi penambahan lanjutan yang disimpan sebelumnya. Dialog <guilabel>Opsi Muat</guilabel> ditampilkan.</para>
+            <itemizedlist>
+              <listitem>
+                <para>Untuk memuat sekumpulan opsi, pilih berkas opsi dalam kotak daftar, lalu klik <guibutton>Terapkan</guibutton>.</para>
+              </listitem>
+              <listitem>
+                <para>Untuk menghapus sekumpulan opsi, pilih berkas opsi dalam kotak daftar, lalu klik <guibutton>Hapus</guibutton>. Klik <guibutton>Tutup</guibutton> untuk menutup dialog <guilabel>Opsi Muat</guilabel>.</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guibutton>Atur Ulang Opsi</guibutton></term>
+	  <listitem>
+            <para>Klik tombol ini untuk mengatur ulang pilihan opsi tambahkan lanjutan saat ini ke nilai baku.</para>
+          </listitem>
+	</varlistentry>
+      </variablelist>
+    </section>
+  </section>
+
+<!-- ======= Extract Options  ============= --> 
+  <section xml:id="engrampa-extract-options"><info><title>Opsi Ekstrak</title></info>
+    
+      
+    <para>Dialog <guilabel>Ekstrak</guilabel> menyediakan opsi berikut, yang disimpan saat Anda keluar dari <application>Manajer Arsip</application>:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Ekstrak</guilabel></term>
+	  <listitem>
+            <para>Pilih berkas yang akan diekstrak:</para>
+            <variablelist>
+              <varlistentry>
+                <term><guilabel>Semua berkas</guilabel></term>
+                <listitem>
+                  <para>Ekstrak semua berkas dari arsip.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term><guilabel>Berkas yang dipilih</guilabel></term>
+                <listitem>
+                  <para>Ekstrak berkas yang dipilih dari arsip.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term><guilabel>Berkas</guilabel></term>
+                <listitem>
+                  <para>Ekstrak dari arsip semua berkas yang cocok dengan pola yang ditentukan. Lihat <xref linkend="engrampa-pattern"/> untuk informasi selengkapnya tentang pola nama berkas.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+	  </listitem>
+	</varlistentry>
+	<!-- ============= -->	
+	<varlistentry>
+      <term><guilabel>Tindakan</guilabel></term>
+        <listitem>
+          <para>Pilih opsi ekstrak berikut:</para>	
+          <variablelist>
+	        <varlistentry>
+	          <term><guilabel>Buat ulang folder</guilabel></term>
+	          <listitem><para>Pilih opsi ini untuk merekonstruksi struktur folder saat mengekstraksi berkas yang ditentukan.</para> 
+                <para>Misalnya, Anda menentukan <filename>/tmp</filename> di kotak teks <guilabel>Nama berkas</guilabel> dan memilih untuk mengekstrak semua berkas. Arsip berisi sub folder bernama <filename>doc</filename>. <itemizedlist>
+                  <listitem><para>Jika Anda memilih opsi <guilabel>Buat ulang folder</guilabel>, <application>Manajer Arsip</application> mengekstrak konten sub folder ke <filename>/tmp/doc</filename>.</para>
+                 </listitem>
+                 <listitem><para>Jika Anda tidak memilih opsi <guilabel>Buat ulang folder</guilabel>, <application>Manajer Arsip</application> tidak membuat subfolder apa pun. Sebagai gantinya, <application>Manajer Arsip</application> mengekstrak semua berkas dari arsip, termasuk berkas dari subfolder, ke <filename>/tmp</filename>.</para>
+                 </listitem>
+               </itemizedlist></para></listitem>
+	         </varlistentry>
+             <!-- ============= -->	
+	         <varlistentry>
+	           <term><guilabel>Timpa berkas yang ada</guilabel></term>
+	           <listitem><para>Pilih opsi ini untuk menimpa berkas apa pun di folder tujuan yang memiliki nama yang sama dengan berkas yang ditentukan.</para>
+	             <para>Jika Anda tidak memilih opsi ini, <application>Manajer Arsip</application> tidak mengekstrak berkas yang ditentukan jika berkas yang ada dengan nama yang sama sudah ada di folder tujuan.</para>
+	           </listitem>
+	         </varlistentry>
+             <!-- ============= -->	
+	         <varlistentry>
+	           <term><guilabel>Jangan mengekstrak berkas yang lebih lama</guilabel></term>
+	           <listitem>
+	             <para>Opsi ini hanya efektif saat opsi <guilabel>Timpa berkas yang ada</guilabel> dipilih.</para>
+	             <para>Pilih opsi <guilabel>Jangan ekstrak berkas yang lebih lama</guilabel> untuk mengekstrak berkas yang ditentukan hanya jika folder tujuan tidak berisi berkas yang ditentukan, atau jika folder tujuan berisi versi yang lebih lama dari berkas yang ditentukan. <application>Manajer Arsip</application> menggunakan tanggal modifikasi untuk menentukan berkas mana yang terbaru. Jika versi berkas dalam arsip lebih lama, <application>Manajer Arsip</application> tidak mengekstrak berkas yang ditentukan ke folder tujuan.</para>
+	             <para>Jika Anda tidak memilih opsi <guilabel>Jangan ekstrak berkas yang lebih lama</guilabel> saat opsi <guilabel>Timpa berkas yang ada</guilabel> dipilih, <application>Manajer Arsip</application> mengekstrak berkas yang ditentukan dari arsip dan menimpa konten sebelumnya dari folder tujuan.</para>
+	           </listitem>
+	         </varlistentry>
+	       </variablelist>
+	     </listitem>
+	   </varlistentry>
+     </variablelist>	
+  </section>
+</article>

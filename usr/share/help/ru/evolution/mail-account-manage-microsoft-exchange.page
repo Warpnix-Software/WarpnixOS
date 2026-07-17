@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:e="http://projectmallard.org/experimental/" xmlns:if="http://projectmallard.org/if/1.0/" type="guide" id="mail-account-manage-microsoft-exchange" xml:lang="ru">
+
+  <info>
+    <desc>Добавление и изменение учётной записи Microsoft Exchange в <app>Evolution</app>.</desc>
+
+    <link type="guide" xref="mail-account-management#mail-corporate-account-types"/>
+    <title type="link" role="trail">Microsoft Exchange</title>
+
+    <revision pkgversion="2.30.2" version="0.3" date="2011-07-30" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Параметры учётной записи Microsoft Exchange</title>
+
+<note style="important"><p>В зависимости от версии сервера Microsoft Exchange, с которым требуется установить соединение, следует убедиться, что в системе установлен дополнительный пакет,который обеспечивает работоспособность соответствующих возможностей.</p>
+
+<p>Для подключения к серверу Microsoft Exchange (версии 2007 или более новой) или серверу OpenChange рекомендуется использовать пакет <sys>evolution-ews</sys>.</p>
+<if:choose>
+  <if:when test="action:install">
+    <note style="info package">
+      <p><link action="install:evolution-ews" href="https://gitlab.gnome.org/GNOME/evolution/-/wikis/home#get-the-source-code" style="button">Install evolution-ews</link></p>
+    </note>
+  </if:when>
+</if:choose>
+
+<p>Для работы с предыдущими версиями Microsoft Exchange (или при неполадках в работе <sys>evolution-ews</sys>) попробуйте установить <sys>evolution-mapi</sys>.</p><p>В этом пакете использован программный интерфейс обмена сообщениямиMicrosoft, который также используется в Microsoft Outlook. Впрочем, <sys>evolution-mapi</sys> требует установки <sys>OpenChange</sys> и <sys>Samba 4</sys> и работает не так быстро, как <sys>evolution-ews</sys>.</p>
+
+<if:choose>
+  <if:when test="action:install">
+    <note style="info package">
+      <p><link action="install:evolution-mapi" href="https://gitlab.gnome.org/GNOME/evolution/-/wikis/home#get-the-source-code" style="button">Install evolution-mapi</link></p>
+    </note>
+  </if:when>
+</if:choose>
+
+<p>Если не удаётся определить, какая версия сервера Microsoft Exchange используется, обратитесь к системномуадминистратору.</p></note>
+
+<p>С темами, которые не были затронуты в настоящем руководстве, можно ознакомиться в <link href="https://help.gnome.org/users/evolution/2.32/usage-exchange.html">старом руководстве по работе с <app>Evolution</app></link>.</p>
+
+</page>

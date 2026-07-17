@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" style="task" id="annotation-properties" xml:lang="pt-BR">
+
+  <info>
+    <link type="guide" xref="annotations"/>
+    <desc>Como personalizar o autor, cor, estilo ou ícone de uma anotação</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+
+ <title>Personalizar anotações</title>
+
+<steps>
+ <item>
+  <p>Clique com o botão direito no ícone de anotação no documento</p>
+ </item>
+ <item>
+  <p>Select <gui>Propriedades da anotação…</gui>.</p>
+ </item>
+ <item>
+  <p>Na janela<gui>Propriedades da anotação</gui>, você pode mudar o autor, cor, estilo e ícone da sua nota</p>
+   <note>
+    <p>As propriedades de anotação serão aplicadas apenas à nota que você modificou. Cada nota pode ter um conjunto diferente de propriedades.</p>
+   </note>
+ </item>
+</steps>
+
+
+<section id="change-default">
+ <title>Posso mudar permanentemente as propriedades de anotação padrão?</title>
+<p>As propriedades de anotação padrão (autor, cor, estilo e ícone) só podem ser alteradas em uma determinada nota, conforme mencionado acima. Portanto, se você quiser que todos os ícones das suas anotações sejam <gui>vermelhos</gui> em vez de <gui>amarelos</gui>, terá que alterar o padrão de <gui>amarelo</gui> para <gui>vermelho</gui> individualmente em cada anotação. Não há como salvar configurações padrão diferentes para as propriedades de anotação, por enquanto.</p>
+</section>
+
+</page>

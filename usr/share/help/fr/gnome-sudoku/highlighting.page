@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="highlighting" xml:lang="fr">
+
+  <info>
+   <link type="guide" xref="index#tips"/>
+
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+    <revision pkgversion="3.31.90" version="0.3" date="2019-03-03" status="review"/>
+    <credit type="editor copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <license>
+      <p>Creative Commons Paternité - Partage dans les Mêmes Conditions 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2007-2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2007-2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jean-Baptiste Holcroft</mal:name>
+      <mal:email>jean-baptiste@holcroft.fr</mal:email>
+      <mal:years>2018</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Charles Monzat</mal:name>
+      <mal:email>charles.monzat@free.fr</mal:email>
+      <mal:years>2019-2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Surlignage</title>
+
+<p>Vous pouvez activer le surligneur pour surligner automatiquement la ligne, la colonne et la boîte actuelles d’une couleur différente. Cela peut permettre de voir plus facilement quelles valeurs ne peuvent pas aller dans la case actuelle. Pour activer le surligneur, cliquez sur le bouton de menu situé dans le coin supérieur droit de la fenêtre et sélectionnez <gui style="menuitem">Surligneur</gui>.</p>
+
+</page>

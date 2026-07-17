@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-searching" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="searching-items"/>
+    <link type="guide" xref="calendar-organizing"/>
+
+    <revision pkgversion="3.5.90" version="0.3" date="2012-08-16" status="draft"/>
+
+    <credit type="author">
+      <name its:translate="no">Max Vorobuov</name>
+      <email its:translate="no">vmax0770@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-contact-organize.html.en
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Поиск встреч и собраний.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Поиск элементов календаря</title>
+
+<section id="quick-search">
+  <title>Быстрый поиск</title>
+
+  <p>В представлении календаря можно выполнять быстрый поиск встреч и собраний по сводке или по категории.</p>
+
+  <p>Поиск по сводке:</p>
+
+  <steps>
+    <item>
+      <p>Нажмите кнопку поиска <media type="image" mime="image/png" its:translate="no" src="figures/search-icon.png"/> для просмотра раскрывающегося списка.</p>
+    </item>
+    <item>
+      <p>Выберите из списка критерий для поиска.</p>
+    </item>
+    <item>
+      <p>Введите текст, который следует найти, и нажмите клавишу <key>Enter</key>.</p>
+    </item>
+    <item>
+      <p><app>Evolution</app> отобразит результаты поиска.</p>
+    </item>
+  </steps>
+
+  <p>Поиск по категории:</p>
+
+  <steps>
+    <item>
+      <p>Откройте раскрывающийся список <gui>Показывать</gui>.</p>
+    </item>
+    <item>
+      <p>Выберите категорию из списка.</p>
+    </item>
+    <item>
+      <p><app>Evolution</app> отобразит результаты поиска.</p>
+    </item>
+  </steps>
+
+  <p>Для навигации по результатам можно использовать две кнопки со стрелками, расположенные рядом с полем поиска. Поиск выполняется в текущих включённых календарях. По умолчанию программа выполняет поиск с текущего выбранного дня в заданном направлении в диапазоне 10 лет.</p>
+
+  <p>Чтобы установить несколько критериев для поиска, воспользуйтесь возможностью расширенного поиска (её описание приводится далее).</p>
+
+</section>
+
+  <!-- As advanced-search, clearing-search, saved-searches,
+       editing-a-saved-search are totally identical in all *-searching.page
+       files, this is centrally in one file that's included by XInclude. See
+
+  http://blogs.gnome.org/shaunm/2011/07/21/understanding-xinclude/ for how it works. -->
+
+  <include xmlns="http://www.w3.org/2001/XInclude" href="xinclude-searching.xml" xpointer="xmlns(mal=http://projectmallard.org/1.0/)xpointer(/mal:info/mal:section)"/>
+
+</page>

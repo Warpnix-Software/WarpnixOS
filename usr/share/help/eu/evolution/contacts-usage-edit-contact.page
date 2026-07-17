@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-usage-edit-contact" xml:lang="eu">
+
+  <info>
+    <link type="guide" xref="contacts-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.1" date="2011-08-01" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Zure helbide-liburuko kontaktu bat editatzea.</desc>
+  </info>
+
+  <title>Kontaktu bat editatzea</title>
+
+  <p>Lehendik zure helbide-liburuan dagoen kontaktu bat aldatu nahi baduzu,</p>
+
+  <steps>
+    <item>
+      <p>Kontaktuen zerrendan, egin klik bikoitza editatu nahi duzun kontaktuan edo hautatu kontaktua eta sakatu <key>Enter</key>.</p>
+    </item>
+    <item>
+      <p>Editatu kontaktuaren informazioa.</p>
+    </item>
+    <item>
+      <p>Egin klik <gui style="button">Ados</gui> botoian.</p>
+    </item>
+  </steps>
+
+</page>

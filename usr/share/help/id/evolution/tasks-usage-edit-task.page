@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="tasks-usage-edit-task" xml:lang="id">
+
+  <info>
+    <desc>Editing a task in your task list.</desc>
+    
+    <link type="guide" xref="tasks-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.1" date="2011-08-01" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Menyunting Tugas</title>
+
+<p>If you want to change a task that already exists in your task lists,</p>
+
+<steps>
+<item><p>Double-click on the task that you want to edit in the list of tasks, or right-click on the task and click <gui>Open Task</gui>.</p></item>
+<item><p>Menyunting informasi tugas.</p></item>
+<item><p>Klik tombol <gui style="button">Simpan</gui>, atau <guiseq><gui>Berkas</gui><gui>Simpan</gui></guiseq>.</p></item>
+</steps>
+
+</page>

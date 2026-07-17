@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-labels" xml:lang="uk">
+
+  <info>
+    <desc>Використання міток для категоризації вашої пошти без зміни місця її зберігання у теках.</desc>
+
+    <link type="guide" xref="mail-organizing#advanced"/>
+    <link type="seealso" xref="using-categories"/>
+
+    <revision pkgversion="3.29.90" version="0.4" date="2018-07-25" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Користування мітками</title>
+
+<p>Ви можете додавати кольорові мітки до повідомлень електронної пошти з метою категоризації. Додавання таких міток подібне до визначення <link xref="using-categories">категорій</link> на інших панелях <app>Evolution</app>.</p>
+
+<p>Ви можете виконувати пошук повідомлень із певними мітками за допомогою <link xref="mail-searching">спадного списку швидкого пошуку</link>. Крім того, на основі міток можна створювати <link xref="mail-search-folders">пошукові теки</link>.</p>
+
+<section id="add">
+<title>Додавання мітки до повідомлення</title>
+<p>Щоб призначити мітку до повідомлення, або скористайтеся пунктом меню <guiseq><gui>Повідомлення</gui><gui>Позначити як</gui><gui>Позначка</gui></guiseq> і виберіть мітку, яку слід застосувати, або клацніть правою кнопкою миші на повідомленні, виберіть у контекстному меню пункт <gui>Позначка</gui> і виберіть мітку, яку слід застосувати.</p>
+<p>Ви також можете швидко додати нову мітку за допомогою пункту <gui>Нова позначка</gui>.</p>
+</section>
+
+<section id="manage">
+<title>Керування мітками</title>
+<p>Ви можете додати мітку, змінити мітку і вилучити усі мітки за допомогою сторінки <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Параметри пошти</gui><gui>Позначки</gui></guiseq>. Зауважте, що типові мітки не можна вилучати.</p>
+</section>
+
+</page>

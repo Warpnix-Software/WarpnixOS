@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="sync-with-other-devices" xml:lang="ca">
+
+  <info>
+    <desc>Sincronitzeu les dades d'<app>Evolution</app> amb dispositius de mà i telèfons mòbils.</desc>
+
+    <link type="guide" xref="index#data-migration-and-sync"/>
+
+    <revision pkgversion="3.10.4" version="0.7" date="2017-07-28" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Sincronitzar <app>Evolution</app> amb altres dispositius</title>
+
+<p>Actualment no hi ha "instruccions recomanades" per als usuaris.</p>
+
+<p>Moltes distribucions proporcionen l'aplicació <app><link href="https://syncevolution.org/">SyncEvolution</link></app> que es pot utilitzar en combinació amb dispositius que admeten <link href="https://en.wikipedia.org/wiki/SyncML">SyncML</link>.</p>
+
+<p>En general, es recomana utilitzar aplicacions i dispositius que admetin el mateix <link href="https://en.wikipedia.org/wiki/ActiveSync">protocol activeSync</link> (com <app>SyncEvolution</app>). Una <link href="https://en.wikipedia.org/wiki/List_of_collaborative_software">llista de programari col·laboratiu</link> està disponible a la Viquipèdia.</p>
+
+<p>If you can provide good practices or more information on this topic feel free to file a bug report in <link href="https://gitlab.gnome.org/GNOME/evolution/-/issues/">GNOME's bug tracking system</link>.</p>
+
+</page>

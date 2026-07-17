@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="conv-length" xml:lang="it">
+
+    <info>
+        <link type="guide" xref="index#conversion"/>
+    </info>
+
+	<title>Lunghezza/Area/Volume</title>
+    
+    <p>Per convertire tra unità di lunghezza, area e volume utilizzare l'operatore <em>in</em>.</p>
+    <example>
+    <p>6 metri in pollici</p>
+    <p>1 acre in cm²</p>
+    <p>1 pinta in mL</p>
+    </example>
+    <note>
+    <p>Le conversioni di Lunghezza/Area/Volume devono essere eseguite utilizzando la tastiera.</p>
+    </note>
+</page>

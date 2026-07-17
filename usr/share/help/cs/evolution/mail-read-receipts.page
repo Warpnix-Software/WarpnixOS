@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-read-receipts" xml:lang="cs">
+
+  <info>
+    <desc>Jak zapnout požadování doručenky o přečtení.</desc>
+    
+    <link type="guide" xref="index#mail-advanced"/>
+    <link type="guide" xref="mail-account-manage-imap-plus#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-local-delivery#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-maildir-format-directories#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-mh-format-directories#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-pop#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-directory#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-file#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-usenet-news#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-microsoft-exchange-evo-mapi#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-microsoft-exchange-evo-ews#composing-messages"/>
+
+    <revision pkgversion="3.25.90" version="0.3" date="2017-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  </info>
+
+<title>Vyžádání doručenky o přečtení</title>
+
+<p>Doručenka o přečtení je způsob, jak dostat na vědomí, že lidé od vás obdrželi e-mail. Normálně si může příjemce zvolit, jestli odesilatele uvědomit chce nebo ne, takže to není zcela spolehlivý způsob, jak zkontrolovat, jestli váš e-mail příjemce obdržel.</p>
+
+<p>O doručenku o přečtení můžete požádat pomocí <guiseq><gui>Volby</gui> <gui>Žádat doručenku o přečtení</gui></guiseq> v nabídce editoru zpráv nebo kliknutím na příslušnou ikonu na nástrojové liště.</p>
+
+<p>Co se týká doručenek o přečtení u zpráv, které obdržíte vy, můžete si nastavit, jak se má <app>Evolution</app> chovat, v části <gui>Vytváření zpáv</gui> v <link xref="mail-account-management">předvolbách účtu</link>.</p>
+
+</page>

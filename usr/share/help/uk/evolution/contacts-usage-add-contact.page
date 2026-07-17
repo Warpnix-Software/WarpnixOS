@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-usage-add-contact" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="contacts-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.2" date="2011-09-29" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Додавання запису контакту до вашої адресної книги.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Додавання контакту</title>
+
+  <steps>
+    <item>
+      <p>Виберіть пункт меню <guiseq><gui>Файл</gui><gui>Створити</gui><gui>Контакт</gui></guiseq>, або клацніть правою кнопкою миші на порожньому місці у списку контактів і виберіть у контекстному меню пункт <gui>Створити контакт…</gui> або натисніть комбінацію клавіш <keyseq><key>Shift</key><key>Ctrl</key><key>C</key></keyseq>.</p>
+    </item>
+    <item>
+      <p>Виберіть адресну книгу, до якої має бути додано запис, зі списку <gui>Місце:</gui>.</p>
+    </item>
+    <item>
+      <p>Введіть дані контакту. Зауважте, що у вікні буде декілька вкладок.</p>
+    </item>
+    <item>
+      <p>Ви можете додати фотографію контакту, клацнувши на великому полі (де показано стилізоване зображення особи), розташованому поряд із мітками <gui>Повне ім'я</gui> і <gui>Категорії</gui>.</p>
+    </item>
+    <item>
+      <p>Натисніть кнопку <gui style="button">Гаразд</gui>.</p>
+    </item>
+  </steps>
+
+<section id="contact-quick-add">
+  <title>Швидке додавання контакту з вікна електронної пошти</title>
+
+  <p>Ви також можете додати запис контакту безпосередньо з повідомлення електронної пошти.</p>
+
+  <steps>
+    <item>
+      <p>Клацніть правою кнопкою на адресі електронної пошти у заголовку повідомлення.</p>
+    </item>
+    <item>
+      <p>Виберіть <gui>Додати до адресної книги…</gui>.</p>
+    </item>
+    <item>
+      <p>Або натисніть кнопку <gui style="button">Зміна повного імені</gui>, щоб відкрити вікно <gui>Редактора контактів</gui>, або натисніть кнопку <gui style="button">Гаразд</gui>, щоб безпосередньо додати запис контакту до вибраної адресної книги.</p>
+    </item>
+  </steps>
+
+</section>
+
+</page>

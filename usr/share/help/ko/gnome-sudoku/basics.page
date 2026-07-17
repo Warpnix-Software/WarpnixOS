@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="basics" xml:lang="ko">
+  <info>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+    <link type="guide" xref="index#play"/>
+    <credit type="author copyright">
+      <name>Chris Beiser</name>
+      <email>ctbeiser@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+      <p>크리에이티브 커먼즈 동일조건변경허락 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>전민석</mal:name>
+      <mal:email>cheon7886@naver.com</mal:email>
+      <mal:years>2017, 2018</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>조성호</mal:name>
+      <mal:email>shcho@gnome.org</mal:email>
+      <mal:years>2021, 2023</mal:years>
+    </mal:credit>
+  </info>
+
+<title>기본</title>
+<p>스도쿠는 키보드나 마우스로 플레이할 수 있습니다.</p>
+
+<section id="keyboard">
+<title>키보드 사용하기</title>
+<list>
+  <item><p>칸을 선택하려면 방향키를 눌러 파란색 테두리를 칸에 맞춥니다.</p></item>
+  <item><p>칸에 숫자를 기입하려면 칸을 선택하고 숫자 키를 누릅니다.</p></item>
+  <item><p>칸에 적힌 숫자를 지우려면 칸을 선택하고 <key>Delete</key>, <key>Backspace</key>, <key>0</key> 키를 누릅니다.</p></item>
+</list>
+</section>
+
+
+<section id="mouse">
+<title>마우스 사용하기</title>
+<list>
+	<item><p>칸을 선택하려면 마우스 커서를 칸 위에 두고 누릅니다.</p></item>
+	<item><p>선택한 칸에 숫자를 기입하려면 칸의 가운데를 누른 다음 원하는 숫자를 누릅니다.</p></item>
+	<item><p>선택된 칸에서 숫자를 제거하려면 칸의 가운데를 누른 다음 <gui>지우기</gui>를 누릅니다.</p></item>
+</list>
+</section>
+</page>

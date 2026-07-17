@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<info xmlns="http://projectmallard.org/1.0/">
+
+<section id="advanced-search">
+<title>Pokročilé hledání</title>
+<steps>
+<item><p>Pomocí nabídky <guiseq><gui>Hledat</gui><gui>Pokročilé hledání</gui></guiseq> otevřete dialogové okno.</p></item>
+<item><p>Kliknutím na <gui style="button">Přidat podmínku</gui> můžete přidat libovolný počet pravidel.</p></item>
+<item><p>Vyberte podmínku z rozbalovacího seznamu a pak do textového pole hledaný údaj.</p></item>
+<item><p>Kliknutím na <gui style="button">Budiž</gui> se vám zobrazí výsledky hledání.</p></item>
+</steps>
+</section>
+
+<section id="clearing-search">
+<title>Vymazání výsledků hledání</title>
+<p>Když chcete vymazat zobrazení hledání a vrátit se na výchozí zobrazení, klikněte na ikonu <gui>Vymazat</gui> ve vyhledávacím poli, nebo v nabídkové liště zvolte <guiseq><gui>Hledat</gui><gui>Vymazat</gui></guiseq>. Můžete také použít zmáčknout <keyseq><key>Shift</key><key>Ctrl</key><key>Q</key></keyseq>.</p>
+</section>
+
+<section id="saved-searches">
+<title>Uložená vyhledávání</title>
+<p>Pokud hledáte častěji, určitě se vám to nechce psát pořád dokola. V takovém případě můžete použít uložená vyhledávání.</p>
+<p>Abyste si uložili výsledky svého hledání, buď klikněte v dialogovém okně hledání na <gui>Uložit</gui> místo na <gui>Budiž</gui>, nebo pokud jsou již výsledky hledání zobrazené, vyberte <guiseq><gui>Hledat</gui><gui>Uložit hledání</gui></guiseq>. Od této chvíle bude hledání dostupné přímo v nabídce <gui>Hledat</gui>.</p>
+</section>
+
+<section id="editing-a-saved-search">
+<title>Úprava uložených vyhledávání</title>
+<steps>
+<item><p>Pomocí <guiseq><gui>Hledat</gui><gui>Upravit uložená vyhledávání</gui></guiseq> v nabídkové liště otevřete okno.</p></item>
+<item><p>Kliknutím na tlačítko <gui style="button">Upravit</gui> otevřete oko <gui>Úprava pravidla</gui>.</p></item>
+<item><p>V dialogovém okně upravte název nebo podmínky hledání.</p></item>
+<item><p>Klikněte na <gui>Budiž</gui>.</p></item>
+</steps>
+</section>
+
+</info>

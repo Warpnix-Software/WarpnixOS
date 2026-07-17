@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="flatpak-limitations" xml:lang="uk">
+
+  <info>
+    <desc>Обмеження при використанні пакунка Flatpak <app>Evolution</app>.</desc>
+
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="3.35.91" version="0.1" date="2020-02-21" status="review"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Неможливо надрукувати пошту, додати або зберегти долучення чи відкрити довідку</title>
+
+<p>Якщо ви працюєте із пакунком <link href="https://flathub.org/">Flatpak</link> <app>Evolution</app>, можливості програми буде дещо обмежено. Приклади:</p>
+
+<list>
+  <item><p>Ймовірно, не можна буде додавати або зберігати долучення до повідомлень.</p></item>
+  <item><p>Ви не зможете надрукувати повідомлення на принтері. Це є <link href="https://bugs.webkit.org/show_bug.cgi?id=192748">обмеженням базової бібліотеки WebKitGTK</link>.</p>
+  <p>Щоб надрукувати повідомлення до файла, можете скористатися командою <cmd>flatpak run --filesystem=home org.gnome.Evolution</cmd>.</p></item>
+  <item><p>З метою зменшення розмірів пакунка розробники можуть виключити з нього локальну документацію.</p></item>
+</list>
+</page>

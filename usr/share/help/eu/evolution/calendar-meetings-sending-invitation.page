@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-meetings-sending-invitation" xml:lang="eu">
+
+  <info>
+    <link type="guide" xref="calendar-meetings"/>
+
+    <revision pkgversion="3.28.2" version="0.3" date="2018-07-09" status="stub"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#usage-calendar-rsvp
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Bilerarako gonbita bidaltzea.</desc>
+  </info>
+
+  <title>Bilerarako gonbita bidaltzea</title>
+
+  <p>When you create a meeting (group appointment), you can specify the
+  attendees in several categories, such as "chair" or "required". When you save
+  the meeting listing, each attendee is sent an email with the meeting
+  information, which also gives them the option to respond.</p>
+
+  <p>If you do not need to collect attendance information when you're
+  scheduling an event, and would rather just announce the event, right-click
+  the meeting and select <gui>Forward as iCalendar...</gui>. This opens a new
+  email message with the event notification attached as an announcement.
+  Recipients can add the event to their calendars with one click, but it will
+  not automatically send you email about whether they plan to attend.</p>
+
+  <p>Bilera bat antolatzeko:</p>
+
+  <steps>
+    <item>
+      <p>Egin klik <guiseq><gui>Fitxategia</gui><gui>Berria</gui><gui>Bilera</gui></guiseq> aukerarn</p>
+    </item>
+    <item>
+      <p>Posta-kontu anitz badituzu, hautatu erabiliko dena <gui>Antolatzailea</gui> eremuan bat aukeratuta.</p>
+    </item>
+    <item>
+      <p>Hautatu egutegi bat <gui>Egutegia</gui> goitibeherako zerrendan.</p>
+    </item>
+    <item>
+      <p>Egin klik <gui style="button">Gehitu</gui> botoian gonbidatu nahi dituzun pertsonen posta-helbidea gehitzeko</p>
+    </item>
+    <item>
+      <p>Click <gui>View</gui> in the menu bar to show or hide the
+      <gui>Type</gui>, <gui>Role</gui>, <gui>Status</gui>, and <gui>RSVP</gui>
+      fields.</p>
+    </item>
+    <item>
+      <p>Sartu laburpen bat <gui>Laburpena</gui> eremuan.</p>
+    </item>
+    <item>
+      <p>(Aukerakoa) Idatzi kokaleku bat <gui>Kokalekua</gui> eremuan.</p>
+    </item>
+    <item>
+      <p>To select this event as an all day event, click
+      <guiseq><gui>Options</gui><gui>All Day Event</gui></guiseq>, or click the
+      <gui>All Day Event</gui> button on the toolbar.</p>
+    </item>
+    <item>
+      <p>Hautatu data eta ordua.</p>
+    </item>
+    <item>
+      <p>If the event is not an all day event, select either <gui>For</gui> to
+      specify the duration, or select <gui>Until</gui> to specify the ending
+      time of the event.</p>
+    </item>
+    <item>
+      <p>(Aukerakoa) Sartu deskribapen bat <gui>Deskribapena</gui> eremuan.</p>
+    </item>
+    <item>
+      <p>To query <link xref="calendar-free-busy">free/busy</link> information
+      for the attendees, click the <gui style="button">Free/Busy</gui> button on
+      the toolbar, or the <gui>Schedule</gui> tab.</p>
+    </item>
+    <item>
+      <p>Egin klik <gui>Gorde</gui> aukeran bilera gordetzeko.</p>
+    </item>
+  </steps>
+
+  <p>Posta-mezu bat bidaliko zaie hartzaile guztiei, hauek zure gertaerara gonbidatzeko.</p>
+
+  <p>You can also define a <link xref="calendar-timezones">time zone</link>, a
+  <link xref="using-categories">category</link>, a
+  <link xref="calendar-alarms-and-reminders">reminder</link>, a
+  <link xref="calendar-recurrence">recurrence</link>, or a
+  <link xref="calendar-classifications">classification</link> for the event, or
+  add an attachment.</p>
+
+  <note style="tip">
+    <p>In <app>Evolution</app>, a meeting can have only one organizer, and only
+    the organizer can add participants to that meeting. Though it is possible
+    to change the organizer of a meeting, this is not recommended as a means to
+    invite additional participants to meetings. If you want to invite
+    additional people to a meeting and are not that meeting's organizer, it is
+    recommended that you forward the invitation message you received from the
+    original meeting organiser to additional participants.</p>
+  </note>
+
+</page>

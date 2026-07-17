@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-layout-views" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="calendar-layout"/>
+
+    <revision pkgversion="3.28.2" version="0.3" date="2018-07-10" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-view.html.en
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Користування діапазонами дат (дня, тижня і місяця) для перегляду календаря.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Доступні панелі перегляду</title>
+
+  <p>У <app>Evolution</app> передбачено п'ять різних панелей перегляду даних вашого календаря:</p>
+
+  <list>
+    <item>
+      <p>Перегляд доби</p>
+    </item>
+    <item>
+      <p>Перегляд робочого тижня</p>
+    </item>
+    <item>
+      <p>Перегляд тижня</p>
+    </item>
+    <item>
+      <p>Перегляд місяця</p>
+    </item>
+    <item>
+      <p>У вигляді списку</p>
+    </item>
+  </list>
+
+  <p>Ви можете перемкнути режим перегляду за допомогою кнопок на панелі інструментів або пункту меню <guiseq><gui>Перегляд</gui><gui>Поточний перегляд</gui></guiseq>.</p>
+
+  <p>Ви також можете вибрати довільний діапазон днів за допомогою невеличкого календаря на бічній панелі. Для цього виберіть дні, дані яких ви хочете бачити у вашому календарі.</p>
+
+  <p>Натискання кнопок «Назад» і «Далі» пересуватиме вас назад і вперед сторінками календаря. Якщо ви користуєтеся панелями перегляду тижня або місяця, ви можете пересуватися тижнями або місяцями. Щоб повернутися до розкладу поточного дня, натисніть кнопку <gui>Виділити сьогоднішній день</gui>, яку розташовано між двома кнопками зі стрілками на панелі інструментів.</p>
+
+  <p>Щоб ознайомитися із записами календаря для певної дати, натисніть кнопку <gui>Виділити вказану дату</gui> на панелі інструментів.</p>
+
+</page>

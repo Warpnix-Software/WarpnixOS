@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="using-categories" xml:lang="ca">
+
+  <info>
+    <desc>Ús i gestió de categories per a cites, contactes, notes i tasques.</desc>
+
+    <link type="guide" xref="contacts-organizing"/>
+    <link type="guide" xref="tasks-organizing"/>
+    <link type="guide" xref="calendar-organizing"/>
+
+    <revision pkgversion="3.3.91" version="0.6" date="2012-02-19" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-contact-organize.html.en#usage-contact-organize-group-category -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Ús de categories</title>
+
+<p>Una altra manera d'agrupar contactes, cites, tasques i notes (resumits pel terme «objectes» en el següent text) és marcar-los com pertanyents a diferents categories. Podeu marcar un objecte com si estigués en diverses categories o a cap categoria. Per exemple, a la vostra llibreta d'adreces, poseu un amic a la categoria «Negocis» perquè treballa amb vostè i a la categoria «Amics» perquè és amic.</p>
+
+<note style="tip"><p>Per a mostrar només els objectes d'una categoria concreta, seleccioneu la categoria corresponent a la barra de <link xref="searching-items">cerca</link> ràpida.</p></note>
+
+<section id="set-category-for-object">
+<title>Configuració de categories per a un objecte</title>
+
+<p>Per a marcar un objecte com a pertanyent a una categoria,</p>
+<steps>
+<item><p>Feu doble clic a l'objecte per a mostrar el corresponent editor.</p></item>
+<item><p>Feu clic a <gui style="button">Categories…</gui>. (Si el botó no està disponible, seleccioneu <guiseq><gui>Vista</gui><gui>Categories</gui></guiseq>.)</p></item>
+<item><p>Seleccioneu la categoria de la llista. Podeu seleccionar tantes categories com vulgueu.</p></item>
+</steps>
+
+</section>
+
+<section id="managing-categories">
+<title>Afegir i gestionar categories</title>
+
+<p>Si la llista de categories predeterminada no s'adapta a les vostres necessitats, podeu afegir-hi les vostres pròpies categories directament via <guiseq><gui>Editsr</gui><gui>Categories disponibles</gui></guiseq>, o indirectament quan s'editi un objecte:</p>
+<steps>
+<item><p>Feu doble clic a qualsevol objecte per a mostrar l'editor corresponent.</p></item>
+<item><p>Feu clic a <gui style="button">Categories…</gui>. (Si el botó no està disponible, seleccioneu <guiseq><gui>Vista</gui><gui>Categories</gui></guiseq>.)</p></item>
+<item><p>Introduïu la nova categoria al quadre d'entrada a la part superior.</p></item>
+<item><p>Feu clic a <gui style="button">D'acord</gui>.</p></item>
+<item><p>Ara podreu veure la categoria a <gui>Categories</gui> camp de text a l'editor.</p></item>
+<item><p>Feu clic a <gui style="button">D'acord</gui>.</p></item>
+</steps>
+
+<p>A l'<gui>Editor de categories</gui> podeu editar o configurar el color i la icona per a cada categoria disponible fent clic a <gui style="button">Edita</gui> a la part inferior de la finestra de <gui>Categories</gui>. Premeu <gui style="button">Suprimeix</gui> per a eliminar categories de la llista.</p>
+</section>
+
+</page>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-html-table" xml:lang="ru">
+
+  <info>
+    <desc>Вставка таблицы в редакторе сообщений.</desc>
+    <link type="guide" xref="mail-composer-html#formatting-options-html"/>
+
+    <revision pkgversion="3.5.90" version="0.4" date="2012-08-16" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#bsait2d -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Вставка таблицы в HTML</title>
+
+<p>В письмо можно вставить таблицу (в текущей позиции курсора):</p>
+<steps>
+<item><p>Выберите в строке меню пункт <guiseq><gui>Вставка</gui><gui>Таблица…</gui></guiseq>.</p></item>
+<item><p>Выберите количество строк и столбцов.</p></item>
+<item><p>Выберите тип макета таблицы.</p></item>
+<item><p>Опционально: выберите фоновый цвет или изображение для таблицы.</p></item>
+<item><p>Нажмите кнопку <gui>Закрыть</gui>.</p></item>
+</steps>
+
+<p>Также можно нажать значок <media type="image" its:translate="no" src="./figures/html-composer-insert-table.png"/>, расположенный на второй панели под строкой <gui>Тема</gui>.</p>
+
+</page>

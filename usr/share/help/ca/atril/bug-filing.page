@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="bug-filing" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#getInvolved"/>
+    <desc>Com i on informar de problemes.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Carles Ferrando Garcia</mal:name>
+      <mal:email>carles.ferrando@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert Antoni Buj Gelonch</mal:name>
+      <mal:email>rbuj@fedoraproject.org</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Informeu d'un error a Atril</title>
+<p>Atril és mantingut per una comunitat de voluntaris. Sou benvinguts per participar. Si detecteu algun problema, podeu obrir un <em>informe d'error</em>. Per informar d'un error, aneu a <link href="https://github.com/mate-desktop/atril/issues"/>.</p>
+   <p>Aquest és un sistema de seguiment d'errors on els usuaris i desenvolupadors poden informar sobre errors i fallades, i demanar millores.</p>
+   <p>Per participar-hi necessitareu un compte d'usuari, que us permetrà tenir accés, informar d'errors i fer comentaris. També us cal el registre per rebre actualitzacions per correu electrònic, sobre l'estat del vostre error. Si encara no teniu un compte d'usuari, cliqueu sobre <gui>Sign in / Register</gui> per crear-ne un.</p>
+   <p>Un cop teniu un compte d'usuari, inicieu sessió i cliqueu sobre <gui>Nova incidència</gui>.</p>
+   <p>Empleneu les seccions Títol i Descripció i cliqueu <gui>Enviar incidència</gui>.</p>
+   <p>El vostre informe rebrà un número d'identificació, i el seu estat s'actualitzarà a mesura que es vagi gestionant.</p>
+</page>

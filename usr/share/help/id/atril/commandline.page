@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="commandline" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">Baris perintah</title>
+    <desc>Perintah <cmd>atril</cmd> dapat membuka sejumlah sebarang berkas, pada halaman tertentu, dan dalam berbagai mode.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <credit type="editor">
+    <name>Tiffany Antopolski</name>
+    <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kukuh Syafaat</mal:name>
+      <mal:email>syafaatkukuh@gmail.com</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2021, 2022.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Baris perintah</title>
+<p>Untuk memulai <app>Atril</app> dari baris perintah, ketikkan <cmd>atril</cmd>. Anda dapat membuka berkas tertentu dengan mengetikkan nama berkas setelah perintah atrril:</p>
+
+<screen>atril berkas.pdf</screen>
+<p>Anda dapat membuka beberapa berkas dengan mengetikkan nama-nama berkas setelah perintah atril, memisahkan nama-nama berkas dengan spasi:</p>
+<screen>atril berkas1.pdf berkas2.pdf</screen>
+<p>Atril juga mendukung penanganan berkas pada web. Misalnyam setelah perintah atrril Anda dapat memberikan lokasi dari suatu berkas pada web:</p>
+<section id="open">
+    <title>Membuka suatu dokumen pada halaman tertentu</title>
+    <p>Anda dapat memakai opsi <cmd>--page-label</cmd> untuk membuka sebuah dokumen pada halaman tertentu. Misalnya, untuk membuka sebuah dokumen ke halaman 3, Anda mesti mengetikkan:</p>
+    <screen>atril --page-label=3 berkas.pdf</screen>
+    <p>Label halaman mesti dalam format yang sama dengan nomor halaman yang ditampilkan dalam bilah kepala <app>Atril</app>.</p>
+</section>
+<section id="fullsreen">
+    <title>Membuka sebuah dokumen dalam mode layar penuh</title>
+    <screen>atril --fullscreen berkas.pdf</screen>
+</section>
+<section id="presentation">
+    <title>Membuka sebuah dokumen dalam mode presentasi</title>
+    <screen>atril --presentation berkas.pdf</screen>
+</section>
+<section id="preview">
+    <title>Membuka sebuah dokumen dalam mode pratinjau</title>
+    <screen>atril --preview berkas.pdf</screen>
+</section>
+</page>

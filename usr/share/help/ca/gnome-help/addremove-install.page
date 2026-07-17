@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-install" xml:lang="ca">
+
+  <info>
+    <credit type="author">
+      <name>Equip de documentació de l'Ubuntu</name>
+    </credit>
+    <desc>Utilitzeu l'<app>App Center</app> per instal·lar aplicacions addicionals i fer que l'Ubuntu sigui més útil.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove" group="#first"/>
+    <link type="seealso" xref="addremove-remove"/>
+    <link type="seealso" xref="addremove-install-synaptic"/>
+    <link type="seealso" xref="prefs-language-install"/>
+    <revision version="18.04" date="2018-03-18" status="review"/>
+  </info>
+
+  <title>Instal·la aplicacions addicionals</title>
+
+  <p>Una aplicació és un programari que té una interfície gràfica d'usuari (GUI). L'equip de desenvolupament de l'Ubuntu hem triat un conjunt d'aplicacions per defecte que creiem que fa que l'Ubuntu sigui molt útil per a la majoria de tasques del dia a dia. No obstant, segur que voldreu instal·lar més aplicacions per a fer que l'Ubuntu us sigui més útil. Per instal·lar una aplicació, podeu utilitzar l'<app>App Center</app>.</p>
+
+   <p>Les aplicacions estan disponibles en dos formats: paquets snap i paquets Debian. Es farà referència a una aplicació disponible com a paquet snap a partir d'ara com a <em>snap</em>. Algunes aplicacions estan disponibles en ambdós formats. En aquest cas a l'<app>App Center</app> l'snap es mostrarà primer.</p>
+
+   <p>També podeu voler instaŀlar programari que no disposa d'interfície gràfica d'usuari. Per tal d'instaŀlar aquesta mena de programari, podeu usar el <link xref="addremove-install-synaptic">Synaptic</link>. Noteu que el <app>Synaptic</app> no llista els snaps.</p>
+
+  <p>Per instal·lar una aplicació:</p>
+
+  <steps>
+    <item>
+      <p>Feu clic a la icona de l'<app>App Center</app> a l'<gui>acoblador</gui>, o cerqueu <input>Programari</input> a la barra de cerca d'<em>Activitats</em>.</p>
+    </item>
+    <item>
+      <p>Quan l'<app>App Center</app> s'obri, cerqueu una aplicació o seleccioneu una categoria i trobeu una aplicació a la llista.</p>
+    </item>
+    <item>
+      <p>Seleccioneu l'aplicació que voleu instal·lar i premeu <gui>Instaŀla</gui>.</p>
+    </item>
+    <item>
+      <p>Se us demanarà que us autentiqueu amb la vostra contrasenya. Un cop ho hagueu fet, començarà la instaŀlació. La instaŀlació normalment acaba ràpid, però pot trigar una mica si teniu una connexió a internet lenta.</p>
+
+    </item>
+
+  </steps>
+  
+</page>

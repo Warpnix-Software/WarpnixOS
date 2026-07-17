@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-add-automatically" xml:lang="pt-BR">
+
+  <info>
+    <link type="guide" xref="contacts-usage"/>
+    <link type="seealso" xref="contacts-autocompletion"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-08-19" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Barbara Tobias</name>
+      <email its:translate="no">barbtobias09@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Adicione automaticamente remetentes de correio que você recebeu aos seus contatos.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Fontenelle</mal:name>
+      <mal:email>rafaelff@gnome.org</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Adicionando automaticamente pessoas aos meus contatos</title>
+
+  <p>Você pode adicionar pessoas automaticamente aos seus contatos ao responder ao correio recebido.</p>
+  <steps>
+  <item><p>Selecione <guiseq><gui>Editar</gui><gui>Plug-ins</gui></guiseq>.</p></item>
+  <item><p>Habilitando <gui>Contatos automáticos</gui>.</p>
+<note style="tip"><p>Se um plug-in não estiver disponível em <guiseq><gui>Editar</gui><gui>Plug-ins</gui></guiseq>, pergunte em um fórum de suporte de sua distribuição. Sua distribuição pode ter decidido desabilitar alguns plug-ins ou enviar plug-ins em um pacote separado.</p></note>
+  </item>
+  <item><p>Vá até <guiseq><gui>Editar</gui><gui>Preferências</gui><gui>Contatos</gui> <gui>Contatos automáticos</gui></guiseq>.</p></item>
+  <item><p>Habilite <gui>Criar entradas no catálogo de endereços ao enviar mensagens</gui> e selecione uma lista de endereços no campo suspenso abaixo que receberá os novos contatos.</p></item>
+  </steps>
+
+  <p>A partir de agora, os contatos serão criados automaticamente para remetentes de e-mails recebidos quando você responder a esse e-mail.</p>
+
+</page>

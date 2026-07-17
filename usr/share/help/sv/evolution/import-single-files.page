@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="import-single-files" xml:lang="sv">
+
+  <info>
+    <desc>Importera enstaka filer.</desc>
+    
+    <link type="guide" xref="import-data"/>
+
+    <revision pkgversion="3.31.91" version="0.3" date="2019-03-01" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Sebastian Rasmussen</mal:name>
+      <mal:email>sebras@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017, 2018</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Importera enstaka filer</title>
+
+<p>För att importera enstaka filer (e-post, kalenderdata eller kontakter):</p>
+<steps>
+<item><p>Klicka på <guiseq><gui>Arkiv</gui><gui>Importera</gui></guiseq>.</p></item>
+<item><p>I fliken <gui>Importörstyp</gui>, klicka på <gui>Importera en enda fil</gui>.</p></item>
+<item><p>Välj filen.</p><p>Filtypen kommer att fastställas automatiskt.</p></item>
+<item><p>Välj destinationen (t.ex. mappen i <app>Evolution</app>) för den importerade datan.</p></item>
+</steps>
+
+<note style="tip"><p>Du kan också importera kontakter som du har fått som en vCard-bilaga från ett e-postmeddelande från dess bilagemeny.</p></note>
+
+<note style="tip"><p>När <gui>Filtyp</gui> ställs in till <gui>Kontakter CSV eller Tab</gui> måste kolumnrubrikerna motsvara den första posten i varje objekt på engelska i importörskoden för <link href="https://gitlab.gnome.org/GNOME/evolution/blob/bc5f32786d09823247d8188c5f211dcd354097de/src/addressbook/importers/evolution-csv-importer.c#L228"><app>Evolution</app></link>, <link href="https://gitlab.gnome.org/GNOME/evolution/blob/bc5f32786d09823247d8188c5f211dcd354097de/src/addressbook/importers/evolution-csv-importer.c#L188"><app>Mozilla</app></link> och <link href="https://gitlab.gnome.org/GNOME/evolution/blob/bc5f32786d09823247d8188c5f211dcd354097de/src/addressbook/importers/evolution-csv-importer.c#L93"><app>Outlook</app></link>.</p></note>
+</page>

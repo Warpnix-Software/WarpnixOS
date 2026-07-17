@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="exporting-data-calendar" xml:lang="ru">
+
+  <info>
+    <desc>Экспорт данных календаря из <app>Evolution</app>.</desc>
+
+    <link type="guide" xref="exporting-data"/>
+
+    <revision pkgversion="3.6.4" version="0.4" date="2013-04-20" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Экспорт данных календаря</title>
+
+<p>Чтобы экспортировать календарь целиком, щёлкните по нему правой кнопкой мыши и выберите пункт <gui>Сохранить как</gui>. Доступные форматы: iCalendar (ICS, рекомендуется), разделённые запятыми значения (CSV) и RDF.</p>
+<p>Если требуется экспортировать только одну встречу (или задачу, или заметку), либо выделите встречу и воспользуйтесь пунктом меню <guiseq><gui>Файл</gui><gui>Сохранить как iCalendar…</gui></guiseq>, либо щёлкните по встрече правой кнопкой мыши и выберите пункт <gui>Сохранить как iCalendar…</gui>.</p>
+</page>

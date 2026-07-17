@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-send-account-overrides" xml:lang="uk">
+
+  <info>
+   <desc>Прив'язування вашої пошти до певних тек або отримувачів.</desc>
+   
+   <link type="guide" xref="index#mail-composing-advanced"/>
+   <link type="seealso" xref="mail-folders"/>
+
+ <revision pkgversion="3.13.90" version="0.1" date="2015-03-09" status="draft"/>
+ <revision pkgversion="3.34.3" version="0.2" date="2020-02-11" status="draft"/>
+ <credit type="author">
+   <name its:translate="no">Andre Klapper</name>
+   <email its:translate="no">ak-47@gmx.net</email>
+ </credit>
+ 
+ <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+     
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Надіслати відмови облікового запису</title>
+
+<p>Якщо ви користуєтеся декількома обліковими записами електронної пошти, ви можете визначити, який з облікових записів слід завжди використовувати як вашу адресу відправника:</p>
+<list>
+<item><p>При відповіді на повідомлення з певних <link xref="mail-folders">тек</link>.</p></item>
+<item><p>При відповіді на повідомлення з певних адрес електронної пошти, від користувачів із певними іменами або від якоїсь комбінації імен та адрес електронної пошти.</p></item>
+</list>
+
+<p>За допомогою пункту <gui>Нехтування теки має перевагу над нехтуванням одержувача</gui> можна визначити, як слід поводитися Evolution, коли ви відповідаєте на повідомлення, яке відповідає одразу теці і адресі електронної пошти або імені, які ви визначили.</p>
+
+<p>Доступ до відповідних параметрів можна отримати за допомогою пункту <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Параметри редактора</gui><gui>Обліковий запис відправника</gui></guiseq>.</p>
+
+</page>

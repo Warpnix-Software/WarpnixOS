@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-external-editor" xml:lang="hu">
+
+  <info>
+    <desc>Szövegszerkesztő alkalmazás használata az alapértelmezett levélszerkesztő helyett.</desc>
+    
+    <link type="guide" xref="index#mail-composing-advanced"/>
+
+    <revision pkgversion="3.13.91" version="0.1" date="2015-03-10" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lukács Bence</mal:name>
+      <mal:email>lukacs.bence1 at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kelemen Gábor</mal:name>
+      <mal:email>kelemeng at gnome dot hu</mal:email>
+      <mal:years>2011, 2012, 2013, 2015, 2017, 2018.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nagy Zoltán</mal:name>
+      <mal:email>dzodzie at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Úr Balázs</mal:name>
+      <mal:email>ur.balazs at fsf dot hu</mal:email>
+      <mal:years>2014, 2019, 2021, 2022, 2023, 2024, 2025.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Külső szerkesztő használata</title>
+
+<p>Megírhatja az üzenet törzsét a kedvenc szövegszerkesztő alkalmazásában külsőleg is, így használhatja annak egyedi funkcióit.</p>
+
+<steps>
+<item><p>Válassza a <guiseq><gui>Szerkesztés</gui><gui>Bővítmények</gui></guiseq> menüpontot.</p></item>
+<item><p>Engedélyezze a <gui>Külső szerkesztő</gui> bővítményt.</p></item>
+<item><p>Lépjen a <gui>Beállítás</gui> lapra.</p>
+<note style="tip"><p>Ha egy bővítmény nem érhető el a <guiseq><gui>Szerkesztés</gui><gui>Bővítmények</gui></guiseq> alatt, akkor kérdezzen rá a disztribúciója támogatási fórumán. A disztribúciója dönthetett úgy, hogy letilt néhány bővítményt, vagy a bővítményeket külön csomagban szállítja.</p></note>
+</item>
+<item><p>Állítsa be a megfelelő <gui>Parancsot</gui> az alkalmazás indításához.</p></item>
+<item><p>Ha az <gui>Automatikus indítás új levél szerkesztésekor</gui> nincs beállítva, akkor ki kell választania a levélszerkesztő <guiseq><gui>Fájl</gui><gui>Szerkesztés külső szerkesztővel</gui></guiseq> menüpontját.</p></item>
+</steps>
+
+</page>

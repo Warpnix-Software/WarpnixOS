@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="commandline" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">Línea de órdenes</title>
+    <desc>El comando <cmd>atril</cmd> puede abrir cualquier número de archivos, en páginas específicas, y en varios modos.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <credit type="editor">
+    <name>Tiffany Antopolski</name>
+    <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Toni Estevez</mal:name>
+      <mal:email>toni.estevez@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Francisco Javier F. Serrador</mal:name>
+      <mal:email>serrador@cvs.gnome.org</mal:email>
+      <mal:years>2003-2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Pablo Gonzalo del Campo</mal:name>
+      <mal:email>pablodc@bigfoot.com</mal:email>
+      <mal:years>2002-2003</mal:years>
+    </mal:credit>
+  </info>
+
+<title>La línea de órdenes</title>
+<p>Para iniciar <app>Atril</app> from the command line, type <cmd>atril</cmd>. You can open a specific file by typing the filename after the atril command:</p>
+
+<screen>archivo atril.pdf</screen>
+<p>Puede abrir múltiples archivos escribiendo sus nombres después del comando atril, separando dichos nombre por un espacio:</p>
+<screen>atril archivo1.pdf archivo2.pdf</screen>
+<p>Atril también soporta el manejo de archivos en la web. Por ejemplo, después del comando atril, puede escribir la ruta de una archivo en la web:</p>
+<section id="open">
+    <title>Abriendo un documento en una página específica</title>
+    <p>Puede usar el argumento<cmd>--page-label</cmd> para abrir un documento por una página específica. Por ejemplo, para abrir un documento en la página 3, escriba:</p>
+    <screen>atril --page-label=3 archivo.pdf</screen>
+    <p>La etiqueta de página debe de estar en el mismo formato que el número de página mostrado en la barra superior de  <app>Atril</app>.</p>
+</section>
+<section id="fullsreen">
+    <title>Abriendo un documento a pantalla completa</title>
+    <screen>atril --fulscreen archivo.pdf</screen>
+</section>
+<section id="presentation">
+    <title>Abriendo un documento en modo presentación</title>
+    <screen>atril --presentation archivo.pdf</screen>
+</section>
+<section id="preview">
+    <title>Abriendo un documento en modo previsualización</title>
+    <screen>atril --preview archivo.pdf</screen>
+</section>
+</page>

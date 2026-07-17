@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-timezones" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#calendar-advanced"/>
+
+    <revision pkgversion="3.1.5" version="0.4" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/bshlzlu.html.en -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Использование часовых поясов в календаре.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Использование часовых поясов</title>
+
+  <p><app>Evolution</app> поддерживает использование нескольких часовых поясов.</p>
+
+<section id="default-timezone">
+  <title>Настройка глобальных часовых поясов</title>
+
+  <p>По умолчанию <app>Evolution</app> использует системный часовой пояс. Это поведение можно изменить: <guiseq><gui>Правка</gui><gui>Параметры</gui> <gui>Календарь и задачи</gui><gui>Общие</gui><gui>Время</gui> <gui>Часовой пояс</gui></guiseq>.</p>
+
+  <p>Если приходится часто работать с людьми, которые находятся в другом часовом поясе, можно настроить показ этого пояса в режиме обзора дня календаря: <guiseq><gui>Правка</gui><gui>Параметры</gui> <gui>Календарь и задачи</gui><gui>Общие</gui><gui>Время</gui> <gui>Второй часовой пояс</gui></guiseq>.</p>
+
+</section>
+
+<section id="appointment-timezone">
+  <title>Настройка часового пояса для встречи</title>
+
+  <p>Также можно настроить информацию о часовом поясе отдельно для каждой встречи. Чтобы сделать это, <link xref="calendar-usage">создайте новую или измените существующую встречу</link>. В разделе <gui>Часовой пояс</gui> нажмите кнопку <gui style="button">Выбрать…</gui> для настройки часового пояса.  Например, если вы живёте в Ульяновске, но планируете провести назначенную на послеобеденное время телефонную конференцию с кем-то из Владивостока, нужно убедиться, что ваши расписания скоординированы. Установка часовых поясов для каждой встречи помогает избежать возможной путаницы.</p>
+
+</section>
+
+</page>

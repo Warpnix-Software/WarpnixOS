@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<info xmlns="http://projectmallard.org/1.0/">
+
+<item><p>Remitent:</p>
+<p>L'adreça de correu electrònic del remitent o el nom del remitent.</p></item>
+
+<item><p>Destinataris:</p>
+<p>Els destinataris del missatge.</p></item>
+
+<item><p>CC:</p>
+<p>Només els destinataris CC del missatge.</p></item>
+
+<item><p>CCO:</p>
+<p>Només els destinataris de CCO del missatge. Òbviament, això només es pot aplicar als filtres sortints.</p></item>
+
+<item><p>Remitent o destinataris:</p>
+<p>L'adreça electrònica o el nom del remitent o els destinataris del missatge.</p></item>
+
+<item><p>Assumpte:</p>
+<p>La línia d'assumpte del missatge.</p></item>
+
+<item><p>Capçalera específica:</p>
+<p>Qualsevol encapçalament inclòs <link xref="mail-composer-custom-header-lines">personalitzats</link>.</p>
+<p>Si un missatge fa servir un encapçalament més d'una vegada, <app>Evolution</app> només s'atén a la primera instància, fins i tot si el missatge defineix la capçalera de forma diferent la segona vegada. Per exemple, si un missatge declara a l'encapçalament Reenviar-De: "engineering@example.com" i després es passa com "marketing@example.com", <app>Evolution</app> es filtra com si la segona declaració no es produís. Per a filtrar els missatges que utilitzen encapçalaments diverses vegades, utilitzeu una expressió regular.</p></item>
+
+<item><p>Cos del missatge:</p>
+<p>Cerca en el text del missatge.</p></item>
+
+<item><p>Expressió:</p>
+<p>(Només per als programadors) Localitzar un missatge d'acord amb una expressió que escriviu a l'esquema de llenguatge utilitzat que es defineix<link xref="mail-filters">filtres</link> a <app>Evolution</app>.</p></item>
+
+<item><p>Forma lliure d'expressió:</p>
+<p>(Només per a usuaris avançats) Combineu nombroses condicions utilitzant una<link xref="mail-searching#free-form-expression">sintaxi especial</link>.</p></item>
+
+<item><p>Data d'enviament:</p>
+<p>Filtreu missatges segons la data que s'han enviat. Primer, trieu les condicions del missatge que voleu trobar, com abans d'una data determinada, o després d'una data. A continuació, trieu el temps. El filtre compara la marca de temps del missatge amb el rellotge del sistema quan s'executa el filtre, o l'hora i data específica que hàgiu triat d'un calendari. També podeu cercar un missatge en un interval de temps relatiu al filtre, com ara fa dos a quatre dies.</p></item>
+
+<item><p>Data de recepció:</p>
+<p>Això funciona de la mateixa manera que l'opció data d'enviament, excepte que compara la data en què vau rebre el missatge amb les dates que especifiqueu.</p></item>
+
+<item><p>Etiqueta:</p>
+<p>Els missatges poden etiquetar-se com <link xref="mail-labels">etiquetes</link> importants, treball, personal, per a fer, o més endavant. Podeu establir etiquetes amb altres filtres o manualment.</p></item>
+
+<item><p>Puntuació:</p>
+<p>Estableix la puntuació del missatge a un nombre sencer qualsevol superior a 0. Pot establir-se un filtre o canviar una puntuació i, a continuació, configurar un altre filtre per a moure els missatges marcats. Una puntuació d'un missatge no es basa en res en particular: és simplement un número que pot assignar-se als missatges perquè altres filtres puguin processar-los.</p></item>
+
+<item><p>Mida (kB):</p>
+<p>Ordenacions basades en la mida del missatge en kilobytes.</p></item>
+
+<item><p>Estat:</p>
+<p>Filtres segons l'estat d'un missatge. L'estat pot ser Respost a, Esborrany, Important, Llegit, o No desitjat.</p></item>
+
+<item><p>Seguiment:</p>
+<p>Comprova si el missatge està <link xref="mail-follow-up-flag">marcat per al seguiment</link> o completat (després d'una data determinada).</p></item>
+
+<item><p>Fitxers adjunts:</p>
+<p>Comprova si hi ha un fitxer adjunt al correu electrònic.</p></item>
+
+<item><p>Llista de distribució:</p>
+<p>Filtres basats en la llista de correu de la qual prové el missatge. Aquest filtre comprova una varietat de capçaleres relacionades amb llistes de correu habituals però pot perdre missatges d'alguns servidors de llistes si utilitzen capçaleres no habituals.</p></item>
+
+<item><p>Regex Match:</p>
+<p>(Per a usuaris avançats) Si coneixeu el vostre camí al voltant d'un <link href="https://en.wikipedia.org/wiki/Regular_expression">regex</link>, o expressió regular, aquesta opció us permet cercar patrons complexos de lletres, de manera que pugueu trobar, per exemple, totes les paraules que comencen per «a» i acaben amb «m», i tenen entre sis i quinze lletres de llarg, o tots els missatges que declaren una capçalera en particular dues vegades. <app>Evolution</app> admet la sintaxi d'expressió regular ampliada (ERE).</p></item>
+
+</info>

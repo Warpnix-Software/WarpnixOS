@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-creator" xml:lang="da">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntus dokumentationshold</name>
+    </credit>
+
+    <desc>Konvertér en USB-nøgle til en diskenhed, hvorfra du kan starte og installere Ubuntu.</desc>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <link type="guide" xref="disk"/>
+    <link type="guide" xref="addremove" group="#last"/>
+
+    <revision version="17.10" date="2017-09-26" status="review"/>
+  </info>
+
+  <title>Opret en opstartsdisk</title>
+
+  <p>I denne sammenhæng er en opstartsdisk en USB-nøgle, hvorfra du kan starte og <link href="https://www.ubuntu.com/download/desktop/install-ubuntu-desktop">installere Ubuntu</link>. USB-nøglen skal mindst have en størrelse på 2 GB. Alle data på USB-nøglen vil gå tabt, når du laver opstartsdisken.</p>
+
+  <p>Det forudsættes, at du har hentet et Ubuntu-ISO-aftryk.</p>
+
+  <p>Opret en opstartsdisk fra et Ubuntu ISO-aftryk:</p>
+    
+  <steps>
+    <item>
+      <p>
+        Open <app>Startup Disk Creator</app> via the <em>Activities</em> search bar.
+      </p>
+    </item>
+    <item>
+      <p>Ligger ISO-aftrykket i mappen <gui>Hentet</gui>, og er der kun et ISO-aftryk, vil <app>Oprettelse af startdisk</app> allerede have valgt det. Hvis ikke, så vælg det rigtige ISO-aftryk selv.</p>
+    </item>
+    <item>
+      <p>Har din computer kun en USB-nøgle isat, vil <app>Oprettelse af startdisk</app> allerede have valgt den. I modsat fald skal du selv vælge den rigtige nøgle.</p>
+    </item>
+    <item>
+      <p>Klik på <gui>Opret opstartsdisk</gui>.</p>
+    </item>
+    <item>
+      <p>Klik <gui>Ja</gui> for at bekræfte. Processen burde tage mindre end 10 minutter.</p>
+    </item>
+
+    <item>
+      <p>Når vinduet "Installationen er fuldført" åbner, skal du klikke <gui>Afslut</gui>.</p>
+    </item>
+
+  </steps>
+
+
+
+</page>

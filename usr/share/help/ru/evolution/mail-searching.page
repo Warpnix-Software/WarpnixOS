@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-searching" xml:lang="ru">
+ 
+  <info>
+    <desc>Поиск в сообщениях.</desc>
+    
+    <link type="guide" xref="searching-items"/>
+    <link type="guide" xref="mail-organizing"/>
+ 
+    <revision pkgversion="3.33.90" version="0.7" date="2019-09-05" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Max Vorobuov</name>
+      <email its:translate="no">vmax0770@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+ 
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+ 
+<title>Поиск в письмах</title>
+
+<section id="search-single">
+<title>Поиск в отдельном сообщении</title>
+<p>Чтобы найти текст в отображаемом сообщении, выберите пункт главного меню <guiseq><gui>Правка</gui><gui>Найти в сообщении…</gui></guiseq>.</p>
+</section>
+
+<section id="search-many">
+<title>Поиск в сообщениях</title>
+
+<section id="quick-search">
+<title>Быстрый поиск</title>
+<p>В режиме обзора почты можно выполнить быстрый поиск сообщений с помощью определения условий.</p>
+<steps>
+<item><p>Нажмите кнопку <media type="image" mime="image/png" its:translate="no" src="figures/search-icon.png"/> для открытия раскрывающегося списка.</p></item>
+<item><p>Выберите из списка критерий для поиска.</p>
+<note style="tip"><p>Поиск для учётных записей с удалённым хранением данных (например, IMAP+) может выполняться медленно. Если выбрано условие поиска наподобие <gui>Тело содержит</gui> или <gui>Сообщение содержит</gui>, <app>Evolution</app> находится в сети и папка или папки, в которых будет выполняться поиск, ещё не <link xref="mail-working-offline">скопированы локально для использования в автономном режиме</link>, Evolution автоматически выполнит поиск на стороне почтового сервера, если он объявляет о поддержке такого поиска. При выполнении поиска в данных, которые уже доступны локально (например, поиска получателей или тем писем), поиск будет выполнен локально.</p></note>
+</item>
+<item><p>Выберите в раскрывающемся списке необходимый тип поиска.</p>
+<note style="tip"><p>Для пункта <gui>Текущая учётная запись</gui> термин «учётная запись» подразумевает узлы верхнего уровня в <link xref="intro-main-window#e-mail"> списке почтовых папок</link>, такие как «На этом компьютере» и удалённые учётные записи.</p></note>
+</item>
+<item><p>Введите текст, который следует найти, и нажмите клавишу <key>Enter</key>.</p></item>
+<item><p><app>Evolution</app> отобразит результаты поиска.</p></item>
+</steps>
+<note style="tip"><p>Если начать непосредственно с четвёртого шага, поиск текста будет выполняться в полях темы и адреса, при этом типом поиска будет «Текущая папка».</p></note>
+<note style="tip"><p>Если выполняется поиск сообщений, которые находятся в разных папках, рекомендуется создать папку поиска; смотрите раздел <link xref="mail-search-folders">Использование папок поиска</link>.</p></note>
+<p>Чтобы установить несколько критериев для поиска, воспользуйтесь возможностью расширенного поиска (её описание приводится далее).</p>
+</section>
+
+<!-- As advanced-search, clearing-search, saved-searches, editing-a-saved-search are totally identical in all *-searching.page files, this is centrally in one file that's included by XInclude. See
+http://blogs.gnome.org/shaunm/2011/07/21/understanding-xinclude/ for how it works. -->
+<include xmlns="http://www.w3.org/2001/XInclude" href="xinclude-searching.xml" xpointer="xmlns(mal=http://projectmallard.org/1.0/)xpointer(/mal:info/mal:section)"/>
+
+<section id="free-form-expression">
+<title>«Выражение в произвольной форме»</title>
+<p><gui>Выражение в произвольной форме</gui> — одно из условий поиска, которое позволяет задавать сложные условия. На первом этапе указанное произвольное выражение делится на слова. Если у слова нет (известного) префикса тега, проверяется, содержится ли значение в заголовках «Кому», «Копия» или «Тема». Если требуется использовать пробел или какой-либо другой специальный символ, заключите слово в двойные кавычки. Если требуется использовать сам символ кавычки, продублируйте его в тексте: <code>цитата ""здесь""</code> будет обработана как одно слово <code>цитата "здесь"</code>. Например, при указании фильтра <code>f:John Smith</code> останутся сообщения, содержащие <code>John</code> в поле «От» и <code>Smith</code> в полях «Кому», «Копия» или «Тема», в то время как при указании фильтра <code>f:"John Smith"</code> останутся сообщения, отправителем которых является <code>John Smith</code>.</p>
+<p>Теги указываются в следующем виде: <code>&lt;tag&gt;[-&lt;options&gt;]:value</code>. Теги:</p>
+<table frame="all" rules="rows cols" shade="rows">
+<tr><td><p>Метка</p></td><td><p>Сокращение</p></td><td><p>Значение</p></td></tr>
+<tr><td><p its:translate="no">from</p></td><td><p its:translate="no">f</p></td><td><p its:locNote="Translators: 'From' is a header name, do not translate it">Заголовок «От» должен соответствовать (*)</p></td></tr>
+<tr><td><p its:translate="no">to</p></td><td><p its:translate="no">t</p></td><td><p its:locNote="Translators: 'To' is a header name, do not translate it">Заголовок «Кому» должен соответствовать (*)</p></td></tr>
+<tr><td><p its:translate="no">cc</p></td><td><p its:translate="no">c</p></td><td><p its:locNote="Translators: 'CC' is a header name, do not translate it">Заголовок «Копия» должен соответствовать (*)</p></td></tr>
+<tr><td><p its:translate="no">recips</p></td><td><p its:translate="no">r</p></td><td><p its:locNote="Translators: 'To' and 'CC' are the header names, do not translate it">Заголовок «Кому» или «Копия» должен соответствовать (*)</p></td></tr>
+<tr><td><p its:translate="no">subject</p></td><td><p its:translate="no">s</p></td><td><p its:locNote="Translators: 'Subject' is a header name, do not translate it">Заголовок «Тема» должен соответствовать (*)</p></td></tr>
+<tr><td><p its:translate="no">list</p></td><td><p/></td><td><p>Заголовок «Список рассылки» должен соответствовать (*)</p></td></tr>
+<tr><td><p its:translate="no">header</p></td><td><p its:translate="no">h</p></td><td><p>указанный заголовок должен соответствовать (*)</p>
+<p>синтаксис: <code>h:headerName=value</code>, при этом знак равенства используется в качестве разделителя, а не правила соответствия</p></td></tr>
+<tr><td><p its:translate="no">exists</p></td><td><p its:translate="no">e</p></td><td><p>существует ли указанный заголовок</p></td></tr>
+<tr><td><p its:translate="no">tag</p></td><td><p/></td><td><p>сообщению присвоен указанный пользователем тег</p></td></tr>
+<tr><td><p its:translate="no">flag</p></td><td><p/></td><td><p>установлен ли определённый флаг; известные специальные значения:</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Отвечено</code> — сообщение отмечено как отвеченное</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Удалено</code> — сообщение отмечено как удалённое</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Черновик</code> — сообщение отмечено как черновик</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Отмечено</code> — сообщение отмечено как важное</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Прочитано</code> — сообщение отмечено как прочитанное (не непросмотренное)</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Вложение</code> — сообщение содержит вложение</p>
+<p>Любое другое значение проверяется на наличие.</p></td></tr>
+<tr><td><p its:translate="no">label</p></td><td><p its:translate="no">l</p></td><td><p>отмечено ли сообщение определённой <link xref="mail-labels">меткой</link></p></td></tr>
+<tr><td><p its:translate="no">size</p></td><td><p its:translate="no">sz</p></td><td><p>равен ли размер сообщения (в КБ) указанному значению</p>
+<p>Поддерживаются два параметра, <code>&lt;</code> для получения сообщений меньшего размера и <code>&gt;</code> для получения сообщений большего размера. Пример: при использовании <code>size-&gt;:1024</code> будут показаны сообщения, размер которых превышает 1 МБ.</p></td></tr>
+<tr><td><p its:translate="no">score</p></td><td><p its:translate="no">sc</p></td><td><p>сравнивает тег <code>score</code> сообщения с указанным значением; по умолчанию проверяется равенство, но, как и в случае тега <code>size</code>, можно использовать параметры <code>&lt;</code> и <code>&gt;</code></p></td></tr>
+<tr><td><p its:translate="no">body</p></td><td><p its:translate="no">b</p></td><td><p>проверяет тело сообщения на наличие указанного слова; по умолчанию сравнение выполняется по параметру <code>contains</code> («содержит»), но можно использовать регулярное выражение, если задан параметр <code>regex</code>, <code>re</code> или <code>r</code>.</p></td></tr>
+<tr><td><p its:translate="no">sent</p></td><td><p/></td><td><p>дата «Отправлено» сообщения должна соответствовать (**)</p></td></tr>
+<tr><td><p its:translate="no">received</p></td><td><p its:translate="no">rcv</p></td><td><p>дата «Получено» сообщения должна соответствовать (**)</p></td></tr>
+<tr><td><p its:translate="no">attachment</p></td><td><p its:translate="no">a</p></td><td><p>сообщение содержит (если значением не является одно следующих: <code>no</code>, <code>false</code>, <code>0</code>) вложение. Аналог тега <code>flag:attachment</code>.</p></td></tr>
+<tr><td><p its:translate="no">location</p></td><td><p its:translate="no">m</p></td><td><p>Проверяет расположение сообщения. Значение расположения (URL) можно найти в разделе <gui>Свойства</gui> папки. Пример: <code>location:"На этом компьютере/Входящие"</code></p></td></tr>
+<tr><td><p its:translate="no">mid</p></td><td><p/></td><td><p>Сравнивает идентификатор сообщения.</p></td></tr>
+</table>
+<p>(*) Сравнения заголовков могут иметь параметр типа сравнения. По умолчанию проверяется <code>contains</code> («содержит»). Доступные параметры:</p>
+<table frame="all" rules="rows cols" shade="rows">
+<tr><td><p>Параметр</p></td><td><p>Сокращение</p></td><td><p>Значение</p></td></tr>
+<tr><td><p its:translate="no">contains</p></td><td><p its:translate="no">c</p></td><td><p>сравнение в режиме «содержит»</p></td></tr>
+<tr><td><p its:translate="no">has-words</p></td><td><p its:translate="no">w</p></td><td><p>совпадение при наличии слова целиком</p></td></tr>
+<tr><td><p its:translate="no">matches</p></td><td><p its:translate="no">m</p></td><td><p>точное совпадение со значением</p></td></tr>
+<tr><td><p its:translate="no">starts-with</p></td><td><p its:translate="no">sw</p></td><td><p>заголовок начинается с указанного значения</p></td></tr>
+<tr><td><p its:translate="no">ends-with</p></td><td><p its:translate="no">ew</p></td><td><p>заголовок заканчивается указанным значением</p></td></tr>
+<tr><td><p its:translate="no">soundex</p></td><td><p its:translate="no">se</p></td><td><p>заголовок похож на указанное значение</p></td></tr>
+<tr><td><p its:translate="no">regex</p></td><td><p its:translate="no">r</p></td><td><p>указанное значение является регулярным выражением</p></td></tr>
+<tr><td><p its:translate="no">full-regex</p></td><td><p its:translate="no">fr</p></td><td><p>другой тип регулярного выражения</p></td></tr>
+</table>
+<p>(**) Даты могут быть записаны в относительном виде (положительное число означает <code>в течение последних X дней</code>), а отрицательное относится к будущему. Например, для получения сообщений, которые поступили за последние 10 дней следует указать: <code>recv:10</code>. Также можно использовать точную дату, указав её в формате <code>ГГГГ-ММ-ДД</code> (предпочтительный вариант), формате ISO 8601 или специфичном для локали формате даты / даты и времени. Если средству обработки не удастся разобрать запись даты и времени, условие будет пропущено. При сравнении даты также доступны дополнительные параметры: <code>&lt;</code>, <code>=</code> или <code>&gt;</code> (параметром сравнения по умолчанию является <code>&gt;</code>).</p>
+<p>Имеются три специальных тега, которые требуют использования особого синтаксиса:</p>
+<list>
+<item><p><code its:translate="no">not:(....)</code></p></item>
+<item><p><code its:translate="no">and:(....)</code></p></item>
+<item><p><code its:translate="no">or:(....)</code></p></item>
+</list>
+<p>что позволяет создавать специализированные выражения. Союзом по умолчанию является <code>and</code> («и»). Чтобы изменить его на <code>or</code> («или»), заключите весь фильтр в скобки: <code>or:(....)</code>. Пример: при использовании <code>f:Bugzilla t:John</code> будут показаны все сообщения, которые содержат <code>Bugzilla</code> в поле «От» и <code>John</code> в поле «Кому», в то время как при использовании <code>or:(f:Bugzilla t:John)</code> будут показаны сообщения, поступившие от Bugzilla или адресованные пользователю John.</p>
+</section>
+<section id="free-form-expression-examples">
+<title>Примеры выражений в произвольной форме</title>
+<p>Перечень некоторых выражений в произвольной форме:</p>
+<table rules="rows">
+<tr><td><p>Выражение</p></td><td><p>Значение</p></td></tr>
+<tr><td><p><code>f:John</code></p></td><td><p>Сообщения от <code>John</code></p></td></tr>
+<tr><td><p><code>s-has-words:"green blue"</code></p></td><td><p>Сообщения, поле «Тема» которых одновременно содержит слова <code>green</code> и <code>blue</code></p></td></tr>
+<tr><td><p><code>r-ew:example.com</code></p></td><td><p>Адреса получателей (заголовки «Кому» и «Копия») заканчиваются на <code>example.com</code></p></td></tr>
+<tr><td><p><code>h-starts-with:Cc=Alice</code></p></td><td><p><code>Cc</code> (поле «Копия») начинается словом <code>Alice</code></p></td></tr>
+<tr><td><p><code>e:X-Secret-Header</code></p></td><td><p>В сообщении имеется <code>X-Secret-Header</code></p></td></tr>
+<tr><td><p><code>l:work</code></p></td><td><p>Сообщению присвоена метка <code>work</code> («Работа»)</p></td></tr>
+<tr><td><p><code>sz-&lt;:10</code></p></td><td><p>Размер сообщения меньше 10 КБ</p></td></tr>
+<tr><td><p><code>sz-&gt;:100</code></p></td><td><p>Размер сообщения больше 100 КБ</p></td></tr>
+<tr><td><p><code>b:important</code></p></td><td><p>Тело письма содержит слово <code>important</code></p></td></tr>
+<tr><td><p><code>sent:7</code></p></td><td><p>Сообщения, отправленные за последние 7 дней</p></td></tr>
+<tr><td><p><code>rcv-=:2020-02-02</code></p></td><td><p>Сообщения, полученные 2 февраля 2020 года</p></td></tr>
+<tr><td><p><code>a:1</code></p></td><td><p>Сообщения с вложениями</p></td></tr>
+<tr><td><p><code>a:0</code></p></td><td><p>Сообщения без вложений</p></td></tr>
+<tr><td><p><code>and:(or:(r:Alice r:Bob) not:(r:Smith))</code></p></td><td><p>Сообщения, получателем которых является <code>Alice</code> или <code>Bob</code>, но не <code>Smith</code></p></td></tr>
+<tr><td><p><code>f:Bob rcv-&gt;:2020-01-01 rcv-&lt;:2020-12-31</code></p></td><td><p>Сообщения от <code>Bob</code>, полученные в течение 2020 года</p></td></tr>
+<tr><td><p><code>not:(flag:Seen) f:Bob rcv-&gt;:2020-01-01 rcv-&lt;:2020-12-31</code></p></td><td><p>Непрочитанные сообщения от <code>Bob</code>, полученные в течение 2020 года</p></td></tr>
+<tr><td><p><code>flag:Seen a:1 sz-&gt;:1024 f:Bob rcv:31</code></p></td><td><p>Прочитанные сообщения с вложениями, размер которых превышает 1 МБ, от <code>Bob</code>, полученные за последний 31 день</p></td></tr>
+<tr><td><p><code>m:"На этом компьютере/Входящие"</code></p></td><td><p>Сообщения, которые хранятся в папке <code>На этом компьютере/Входящие</code></p></td></tr>
+<tr><td><p><code>location-no:"На этом компьютере/Входящие"</code></p></td><td><p>Сообщения, которые хранятся в любых папках, кроме папки <code>На этом компьютере/Входящие</code></p></td></tr>
+</table>
+</section>
+</section> 
+</page>

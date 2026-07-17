@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-sorting-folder-list" xml:lang="ca">
+
+  <info>
+    <desc>Ordenació de la llista de carpetes de correu de la subfinestra esquerra.</desc>
+
+    <link type="guide" xref="mail-organizing"/>
+    <link type="guide" xref="mail-layout-changing"/>
+
+    <revision pkgversion="3.3.91" version="0.2" date="2013-06-22" status="draft"/>
+    <revision pkgversion="3.38.4" version="0.3" date="2021-03-28" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Ordenació de la llista de carpetes de correu</title>
+  
+<section id="default-folder-sort-order">
+<title>Ordenació per defecte</title>
+<p>Per defecte, la <link xref="intro-main-window#e-mail">llista de carpetes de correu</link> de la subfinestra esquerra conté els nodes de nivell superior en l'ordre següent:</p>
+<list>
+<item><p><gui>En aquest ordinador</gui>: conté tot el correu dels tipus de compte local (si està configurat)</p></item>
+<item><p>Un o més tipus de compte de correu electrònic remot (si estan configurats)</p></item>
+<item><p><gui><link xref="mail-search-folders">Carpetes de cerca</link></gui> (si estan habilitades)</p></item>
+</list>
+<p>Les carpetes de cada node de nivell superior s'ordenen alfabèticament.</p>
+</section>
+
+<section id="change-folder-sort-order">
+<title>Canvi de l'ordenació</title>
+<list>
+<item>
+<p>Podeu canviar l'ordenació per defecte dels nodes de nivell superior a <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Comptes de correu</gui></guiseq>, arrossegant un compte de la llista cap amunt o cap avall.</p>
+
+<p>Podeu revertir l'ordenació personalitzada seleccionant <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Comptes de correu</gui><gui style="button">Reinicialitza l'ordre</gui></guiseq>.</p>
+</item>
+<item>
+<p>Podeu canviar l'ordre d'ordenació de carpetes a <guiseq><gui>Carpeta</gui> <gui>Edita l'ordre d'ordenació...</gui></guiseq>.</p>
+</item>
+</list>
+</section>
+</page>

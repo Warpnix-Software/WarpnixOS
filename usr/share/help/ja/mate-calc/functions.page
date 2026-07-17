@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="function" xml:lang="ja">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>関数</title>
+    
+    <p>関数を使用するには、関数名の後に関数の引数を挿入します。引数が数値または<link xref="variable">変数</link>でない場合は、引数の前後にカッコを使用します。</p>
+    <example>
+    <p>sin 30</p>
+    <p>abs (5−9)</p>
+    </example>
+    <p>次の関数が定義されています。</p>
+    <table>
+    <tr>
+    <td><p>abs</p></td>
+    <td><p><link xref="absolute">絶対値</link></p></td>
+    </tr>
+    <tr>
+    <td><p>cos</p></td>
+    <td><p><link xref="trigonometry">コサイン</link></p></td>
+    </tr>
+    <tr>
+    <td><p>cosh</p></td>
+    <td><p><link xref="trigonometry">双曲線余弦</link></p></td>
+    </tr>
+    <tr>
+    <td><p>erf</p></td>
+    <td><p>ガウスの誤差関数</p></td>
+    </tr>
+    <tr>
+    <td><p>frac</p></td>
+    <td><p>端数</p></td>
+    </tr>
+    <tr>
+    <td><p>int</p></td>
+    <td><p>整数部</p></td>
+    </tr>
+    <tr>
+    <td><p>ln</p></td>
+    <td><p><link xref="logarithm">自然対数</link></p></td>
+    </tr>
+    <tr>
+    <td><p>log</p></td>
+    <td><p><link xref="logarithm">対数</link></p></td>
+    </tr>
+    <tr>
+    <td><p>not</p></td>
+    <td><p><link xref="boolean">ブール値 NOT</link></p></td>
+    </tr>
+    <tr>
+    <td><p>ones</p></td>
+    <td><p>１の補数</p></td>
+    </tr>
+    <tr>
+    <td><p>sin</p></td>
+    <td><p><link xref="trigonometry">サイン</link></p></td>
+    </tr>
+    <tr>
+    <td><p>sinh</p></td>
+    <td><p><link xref="trigonometry">双曲線正弦</link></p></td>
+    </tr>
+    <tr>
+    <td><p>sqrt</p></td>
+    <td><p><link xref="power">平方根</link></p></td>
+    </tr>
+    <tr>
+    <td><p>tan</p></td>
+    <td><p><link xref="trigonometry">タンジェント</link></p></td>
+    </tr>
+    <tr>
+    <td><p>tanh</p></td>
+    <td><p><link xref="trigonometry">双曲線正接</link></p></td>
+    </tr>
+    <tr>
+    <td><p>twos</p></td>
+    <td><p>２の補数</p></td>
+    </tr>
+    <tr>
+    <td><p>zeta</p></td>
+    <td><p>リーマンのゼータ関数</p></td>
+    </tr>
+    </table>
+    <p><app>MATE 電卓</app>は、ユーザ定義関数をサポートしていません。</p>
+</page>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="earmarks" xml:lang="fr">
+  <info>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+   <link type="guide" xref="index#tips"/>
+    <credit type="author copyright">
+      <name>Thomas Hinkle</name>
+      <email>tmhinkle@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Chris Beiser</name>
+      <email>ctbeiser@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Paternité - Partage dans les Mêmes Conditions 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2007-2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2007-2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jean-Baptiste Holcroft</mal:name>
+      <mal:email>jean-baptiste@holcroft.fr</mal:email>
+      <mal:years>2018</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Charles Monzat</mal:name>
+      <mal:email>charles.monzat@free.fr</mal:email>
+      <mal:years>2019-2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Annotations</title>
+<p>Des annotations peuvent être ajoutées à chaque cellule. Elles permettent de noter les valeurs possibles et d’enregistrer n’importe quel nombre de chiffre dans une cellule. Chaque chiffre ne peut être sélectionné qu’une seule fois.</p>
+
+<p>Pour ajouter des annotations à une cellule :</p>
+
+<steps>
+  <item><p>Sélectionnez la cellule.</p></item>
+  <item><p>Utilisez le raccourci <keyseq><key>Ctrl</key><key>1</key></keyseq> à <keyseq><key>Ctrl</key><key>9</key></keyseq>.</p></item>
+</steps>
+
+<p>Vous pouvez retirer un numéro aux annotations en utilisant à nouveau le raccourci <keyseq><key>Ctrl</key><key>1</key></keyseq> à <keyseq><key>Ctrl</key><key>9</key></keyseq>.</p>
+
+<note><p>Vous pouvez également ajouter des annotations en cliquant sur la cellule tout en pressant <key>Ctrl</key>, ou via un clic droit sur la cellule puis en choisissant un nombre.</p></note>
+
+</page>

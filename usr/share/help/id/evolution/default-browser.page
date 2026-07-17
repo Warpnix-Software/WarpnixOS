@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:e="http://projectmallard.org/experimental/" xmlns:if="http://projectmallard.org/if/1.0/" type="topic" id="default-browser" xml:lang="id">
+
+  <info>
+    <desc>Opening links from an email in a browser and opening the mail composer from an email link on a website.</desc>
+    
+    <link type="guide" xref="index#common-other-problems"/>
+
+    <revision pkgversion="3.8.3" version="0.8" date="2013-07-19" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Membuka tautan di dalam dan dari peramban web</title>
+
+<!-- For GNOME2 the steps are to define the gconf keys /desktop/gnome/url-handlers/http and /https -->
+
+<section id="browser-to-use">
+<title>Mengubah peramban web mana untuk membuka situs-situs web</title>
+
+<if:choose>
+  <if:when test="!platform:gnome-shell !platform:gnome-classic !platform:unity">
+<p>Jika Anda menggunakan <app>Evolution</app> di bawah lingkungan yang berbeda dari GNOME,</p>
+ <steps>
+   <item>
+     <p>Buka aplikasi terminal.</p>
+   </item>
+   <item>
+<p>Cari tahu nama berkas <cmd>.desktop</cmd> untuk peramban pilihan Anda. Tergantung pada peramban dan distribusi Anda, berkas mungkin disebut misalnya <cmd>epiphany.desktop</cmd>, <cmd>firefox.desktop</cmd>, <cmd>google-chrome.desktop</cmd>, <cmd>konqbrowser.desktop</cmd>, atau <cmd>opera-browser.desktop</cmd>. Jika Anda tidak yakin Anda dapat mencari sebagian besar berkas <cmd>.desktop</cmd> di folder <cmd>/usr/share/applications/</cmd>.</p>
+   </item>
+   <item>
+     <p>Ketik perintah ini, ganti <cmd>browser.desktop</cmd> dengan nama berkas aktual, dan tekan <key>Enter</key>:</p>
+     <p><cmd its:translate="no">
+       xdg-settings set default-url-scheme-handler https browser.desktop
+     </cmd></p>
+   </item>
+   <item>
+     <p>Ketik perintah ini, ganti <cmd>browser.desktop</cmd> dengan nama berkas aktual, dan tekan <key>Enter</key>:</p>
+     <p><cmd its:translate="no">
+       xdg-settings set default-url-scheme-handler http browser.desktop
+     </cmd></p>
+   </item>
+   <item>
+     <p><app>Evolution</app> mungkin perlu dimulai ulang agar setelan berlaku.</p>
+   </item>
+ </steps>
+<note style="tip">
+  <p>Jika pesan kesalahan "xdg-settings: command not found" ditampilkan, Anda perlu menginstal paket <sys>xdg-utils</sys>.</p>
+  <if:choose>
+    <if:when test="action:install">
+      <p><link action="install:xdg-utils" style="button">Pasang xdg-utils</link></p>
+    </if:when>
+  </if:choose>
+</note>
+  </if:when>
+<p>Silakan lihat <link xref="help:gnome-help/net-default-browser" href="https://help.gnome.org/users/gnome-help/stable/net-default-browser">Bantuan Desktop GNOME</link>.</p>
+
+<p>Jika peramban yang disukai ditetapkan sebagai aplikasi baku tetapi masih tidak berfungsi dengan benar, silakan hubungi distribusi Anda melalui forum atau pelacak bug mereka.</p>
+
+<note style="tip">
+  <p>Jika pesan kesalahan "Tidak dapat membuka tautan: Operasi tidak didukung" ditampilkan, Anda perlu memasang paket <sys>gvfs</sys>.</p>
+  <if:choose>
+    <if:when test="action:install">
+      <p><link action="install:gvfs" href="https://ftp.gnome.org/pub/gnome/sources/gvfs/" style="button">Memasang gvfs</link></p>
+    </if:when>
+  </if:choose>
+</note>
+</if:choose>
+</section>
+
+
+<section id="email-application-to-use">
+<title>Mengubah aplikasi surel mana yang dipakai untuk menulis surel</title>
+
+<p>Silakan lihat <link xref="help:gnome-help/net-default-email" href="https://help.gnome.org/users/gnome-help/stable/net-default-email">Bantuan Desktop GNOME</link>.</p>
+
+</section>
+
+<section id="advanced-options">
+<title>Opsi tingkat lanjut</title>
+<note style="advanced"><p>Jika Anda memiliki latar belakang teknis, Anda juga dapat mengubah pengaturan ini dengan mendefinisikan penangan skema di <file>$HOME/.local/share/applications/mimeapps.list</file>.</p></note>
+</section>
+
+</page>

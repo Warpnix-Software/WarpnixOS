@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY toolversion "2.15.2">
+<!ENTITY manrevision "2.15.2">
+<!ENTITY date "August 2006">
+<!ENTITY tool "Services Administration Tool">
+]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 06, 2003
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="zh-CN">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>服务管理工具手册</title> 
+    <copyright lang="en">
+      <year>2004-2006</year>
+      <holder>Carlos Garnacho Parro</holder>
+    </copyright>
+
+<!-- translators: uncomment this:
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+   -->
+
+    <publisher role="maintainer"> 
+	 <publishername>Carlos Garnacho Parro</publishername> 
+    </publisher> 
+
+
+<!-- This file  contains link to license for the documentation (GNU FDL), and 
+     other legal stuff such as "NO WARRANTY" statement. Please do not change 
+     any of this. -->
+
+    <authorgroup> 
+      <author lang="en">
+        <firstname>Carlos</firstname>
+        <surname>Garnacho Parro</surname>
+      </author>
+      <!-- This is appropriate place for other contributors: translators,
+           maintainers,  etc. Commented out by default.
+        <othercredit role="translator">
+	      <firstname>Latin</firstname> 
+	      <surname>Translator 1</surname> 
+	      <affiliation> 
+	      	<orgname>Latin Translation Team</orgname> 
+	       	<address> <email>translator@gnome.org</email> </address> 
+	      </affiliation>
+	      <contrib>Latin translation</contrib>
+        </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+	 <revision lang="en">
+	   <revnumber>Services Administration Tool Manual V2.15.2</revnumber>
+	   <date>August 2006</date>
+	   <revdescription>
+          <para role="author" lang="en">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher" lang="en">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+	 <revision lang="en">
+	   <revnumber>Services Administration Tool Manual V0.35</revnumber>
+	   <date>June 2004</date>
+	   <revdescription>
+          <para role="author" lang="en">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher" lang="en">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+    </revhistory>
+
+    <releaseinfo>本手册描述的是 2.15.2 版的服务管理工具。</releaseinfo> 
+
+    <legalnotice> 
+	 <title>反馈</title> 
+	 <para>对系统管理工具或本手册报告错误或提供建议，请遵从<ulink url="ghelp:gnome-feedback" type="help">GNOME 反馈页面</ulink>中的指导。</para>
+    </legalnotice>
+    <abstract role="description">
+      <para>系统管理工具允许您设定系统启动过程中要启动的服务。</para>
+    </abstract> 
+  </articleinfo> 
+
+  <indexterm zone="index" lang="en"> 
+    <primary>Services Administration Tool</primary> 
+  </indexterm> 
+
+  <!-- ============= Document Body ============================= -->
+  <sect1 id="tool-introduction"> 
+    <title>简介</title> 
+    <para><application>服务管理工具</application> 允许您设定系统启动过程中要启动的服务。</para>
+  </sect1>
+
+  <sect1 id="tool-getting-started">
+    <title>开始</title>
+
+    <para>您可以按以下步骤打开 <application>服务管理工具</application>：</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term><guimenu>系统</guimenu> 菜单</term>
+	   <listitem>
+		<para>选择<menuchoice><guisubmenu>系统管理</guisubmenu><guimenuitem>服务</guimenuitem></menuchoice>。</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>命令行</term>
+	   <listitem>
+		<para>执行以下命令：<command>services-admin</command></para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+
+    <para>当您启动 <application>服务管理工具</application>，会提示输入管理员密码，这是必要的，因为此工具所作的改变会影响整个系统。</para>
+
+    <para>输入管理员密码后，会显示如下窗口。</para>
+
+    <figure id="services-main-window">
+	 <title>服务管理工具主窗口</title>
+	 <screenshot>
+	   <mediaobject lang="en">
+		<imageobject>
+		  <imagedata fileref="figures/services-tool.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+		  <phrase>Shows Services Administration Tool main window.</phrase>
+		</textobject>
+	   </mediaobject>
+	 </screenshot>
+    </figure>
+
+    <para><application>服务管理工具</application> 主窗口包含以下元素：</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term>服务列表</term>
+	   <listitem>
+		<para>这是一个安装于系统中主要服务的列表，前面的复选框显示此服务是否为活动的服务。</para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+  </sect1>
+
+  <sect1 id="tool-usage">
+    <title>使用</title>
+
+    <sect2>
+	 <title>要在启动时启用或禁用服务</title>
+	 <para>选中或取消选中服务列表中服务前的复选框。</para>
+    </sect2>
+  </sect1>
+</article>

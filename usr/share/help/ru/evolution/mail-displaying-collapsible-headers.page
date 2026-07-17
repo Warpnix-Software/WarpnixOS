@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-displaying-collapsible-headers" xml:lang="ru">
+
+  <info>
+    <desc>Показ меньшего количества получателей определённого сообщения.</desc>
+
+    <link type="guide" xref="mail-displaying-message"/>
+
+    <revision pkgversion="3.1.5" version="0.2" date="2011-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en#b131oj36 though the setting itself has been removed in 3.1 -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Сворачиваемые заголовки сообщений</title>
+
+<p><app>Evolution</app> сокращает заголовки «Кому», «Копия» и «Скрытая копия» полученных писем и в режиме предварительного просмотра сообщения отображает только пять адресов.</p>
+
+<p>Для просмотра всех получателей нажмите значок <media type="image" its:translate="no" src="./figures/plus-icon.png"/>, расположенный рядом со строкой <gui>Кому</gui> или <gui>Копия</gui>, или щёлкните по троеточию (…) после пяти отображаемых адресов.</p>
+
+<p>Чтобы свернуть все заголовки сообщения для отображения только темы и отправителя в одной строке, нажмите значок <media type="image" its:translate="no" src="./figures/minus-icon.png"/>, расположенный рядом со строкой <gui>От</gui>. Эта функция полезна, когда работа ведётся на небольшом экране.</p>
+ 
+</page>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="contacts-using-several-addressbooks" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="contacts-organizing"/>
+
+    <revision pkgversion="3.8.2" version="0.4" date="2013-06-20" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Afegir diferents tipus de llibretes d'adreces i utilitzar-e més d'una.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Afegir i crear llibretes d'adreces</title>
+
+  <p>You can have multiple address books. For example, you might have one
+  address book for work related contacts and one for private contacts. The sidebar
+  lists those address books, and you can select which address book is
+  shown.</p>
+
+  <p>També podeu fer servir llibretes d'adreces que no estiguin a l'ordinador, com ara a Internet (p. ex., Google) o en una xarxa local (p. ex., LDAP).</p>
+  <p>New contacts are created in the selected address book in the Contacts window. If no address book is selected, new contacts are created in the default address book.</p>
+
+  <section>
+    <title>Collection accounts</title>
+    <p>Different types of mail, address books, calendars, task and memo lists, belonging to the same user, can be added in one step, by utilizing a <link xref="intro-account-types#collection-account">Collection account</link>.</p>
+  </section>
+</page>

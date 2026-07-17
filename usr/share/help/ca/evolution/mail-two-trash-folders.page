@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-two-trash-folders" xml:lang="ca">
+
+  <info>
+    <desc>Com tenir només una carpeta de paperera o de correu brossa per compte.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+    <link type="seealso" xref="mail-default-folder-locations"/>
+
+    <revision pkgversion="3.7.4" version="0.2" date="2013-01-23" status="final"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Es mostren dues carpetes de paperera o de <gui>correu brossa</gui> pel mateix compte</title>
+
+<p>Si utilitzeu un compte de correu remot que disposa de carpetes per a correu brossa i/o <gui>paperera</gui> podreu tenir carpetes duplicades a <app>Evolution</app>.</p>
+<p>Podeu distingir fàcilment les dues papereres <gui>brossa</gui> mirant les seves icones. A <app>Evolution</app> la carpeta d'<gui>escombraries</gui> té una icona especial mentre que l'altra carpeta física d'<gui>escombraries</gui> es mostra com qualsevol altra carpeta.</p>
+
+<p>De forma predeterminada, les carpetes d'<app>Evolution</app> d'<gui>escombraries</gui> i <gui>brossa</gui> són <link xref="mail-search-folders">Carpetes de cerca</link>. Realment no existeixen, sinó que simplement mostren tots els missatges marcats com a brossa o per a esborrar en qualsevol carpeta d'aquest compte.</p>
+
+<p>Per a utilitzar només les carpetes d'escombraries i paperera al servidor de correu, seleccioneu l'opció corresponent a <gui>Utilitza una carpeta real</gui> a <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Comptes de correu</gui><gui style="button">Edita</gui><gui>Predefinits</gui></guiseq>. En aquest cas, <app>Evolution</app> no utilitzarà les carpetes virtuals locals.</p>
+
+</page>

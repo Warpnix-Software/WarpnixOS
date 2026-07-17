@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-send-account-overrides" xml:lang="ca">
+
+  <info>
+   <desc>Assigneu els vostres comptes de correu a determinades carpetes o destinataris.</desc>
+   
+   <link type="guide" xref="index#mail-composing-advanced"/>
+   <link type="seealso" xref="mail-folders"/>
+
+ <revision pkgversion="3.13.90" version="0.1" date="2015-03-09" status="draft"/>
+ <revision pkgversion="3.34.3" version="0.2" date="2020-02-11" status="draft"/>
+ <credit type="author">
+   <name its:translate="no">Andre Klapper</name>
+   <email its:translate="no">ak-47@gmx.net</email>
+ </credit>
+ 
+ <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+     
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Canviar de compte de remitent</title>
+
+<p>Si utilitzeu més d'un compte de correu electrònic, podeu definir quin compte s'ha d'utilitzar com a adreça de remitent:</p>
+<list>
+<item><p>Quan es respon al correu a determinades <link xref="mail-folders">carpetes</link>.</p></item>
+<item><p>En respondre a determinades adreces de correu electrònic, noms o parts d'adreces de correu electrònic.</p></item>
+</list>
+
+<p>La casella de selecció <gui>La sobreescriptura de carpeta té preferència sobre l'escriptura de destinatari</gui> defineix com s'ha de comportar l'Evolution quan es respon a un missatge que coincideix tant amb una carpeta com amb una adreça de correu electrònic o un nom definit.</p>
+
+<p>Aquesta configuració està disponible a <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Preferències de l'editor</gui><gui>Compte d'enviament</gui></guiseq>.</p>
+
+</page>

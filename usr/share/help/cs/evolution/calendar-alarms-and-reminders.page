@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:e="http://projectmallard.org/experimental/" xmlns:if="http://projectmallard.org/if/1.0/" type="topic" id="calendar-alarms-and-reminders" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#calendar"/>
+
+    <revision pkgversion="3.28.2" version="0.5" date="2018-07-10" status="draft"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+     <name its:translate="no">Novell, Inc</name>
+     <!-- Content partially from https://help.gnome.org/users/evolution/2.32/config-prefs-cal.html.en#CACHCGCI -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Jak nastavit připomínání pomocí upozorňování na události.</desc>
+  </info>
+
+  <title>Připomínání událostí</title>
+
+<section id="general-settings">
+  <title>Obecná nastavení</title>
+
+  <p>Pod <guiseq><gui>Upravit</gui> <gui>Předvolby</gui> <gui>Kalendář a úkoly</gui> <gui>Připomenutí</gui></guiseq> můžete vybrat kalendáře, od kterých chcete přijímat oznámení o připomenutí. Když kalendář nevyberete, nebudete dostávat připomenutí pro žádnou z údálostí v tomto kalendáři. Můžete také definovat, jestli zobrazovat připomenutí pro každou událost a pro každé narozeniny a výročí.</p>
+
+  <if:choose>
+    <if:when test="platform:gnome-shell">
+      <p>Ohledně obecných informací o zobrazování připomenutí se podívejte prosím do <link xref="help:gnome-help/shell-notifications" href="https://help.gnome.org/users/gnome-help/stable/shell-notifications">nápovědy k pracovnímu prostředí GNOME</link>.</p>
+    </if:when>
+  </if:choose>
+
+</section>
+
+<section id="manual-reminders">
+  <title>Ruční připomínání</title>
+
+  <p>Mimo obecného nastavení si můžete nastavit také připomenutí v editoru události pro jednu konkrétní událost:</p>
+
+  <steps>
+    <item>
+      <p>Klikněte na <guiseq><gui>Volby</gui> <gui>Připomenutí</gui></guiseq> nebo zmáčkněte tlačítko Připomenutí na nástrojové liště.</p>
+    </item>
+    <item>
+      <p>V rozbalovací nabídce zvolte buď jednu z dostupných výchozích voleb, kdy se má oznámení o přepomenutí zobrazit, nebo zvolte <gui>Vlastní</gui>.</p>
+    </item>
+    <item>
+      <p>V případě volby <gui>Vlastní</gui> může mít připomenutí podobu vyskakovacího oznámení, přehrání zvuku, spuštění programu nebo zaslání e-mailu. Můžete také navolit, jesti se má připomenutí opakovat.</p>
+    </item>
+  </steps>
+
+<note style="info"> <!-- bug 794085 -->
+  <p>Volba <gui>Poslat e-mail</gui> je dostupná jen v případě, že serverová část kalendáře tuto funkcionalitu podporuje.</p>
+</note>
+
+</section>
+
+</page>

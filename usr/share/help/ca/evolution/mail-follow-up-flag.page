@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-follow-up-flag" xml:lang="ca">
+
+  <info>
+    <desc>Ús de banderes per a recordar-vos accions.</desc>
+    
+    <link type="guide" xref="mail-organizing#advanced"/>
+
+    <revision pkgversion="3.0.2" version="0.1" date="2011-08-01" status="candidate"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/stable/usage-mail-organize-columns.html.en#usage-mail-organize-columns-followup -->
+ </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Seguiment de banderes per als correus electrònics</title>
+
+<p>Per a assegurar-vos que no us oblideu d'un missatge, podeu utilitzar la funció de seguiment.</p>
+<steps>
+<item><p>Seleccioneu un o més missatges.</p></item>
+<item><p>Feu clic amb el botó dret en un dels missatges.</p></item>
+<item><p>Feu clic a <gui>Marca per al seguiment…</gui>.</p></item>
+</steps>
+<p>També podeu fer-ho seleccionant els missatges i fent clic a <guiseq><gui>Missatge</gui><gui>Marca com a </gui><gui>Seguiment…</gui></guiseq> o prement <keyseq><key>Maj</key><key>Ctrl</key><key>G</key></keyseq>.</p>
+
+<p>S'obre una finestra que us permet establir el tipus de bandera i la data de venciment.</p>
+
+<p>La mateixa bandera és l'acció que voleu recordar, tal com Crida, Reenvia i Respon.</p>
+
+<p>Després d'afegir una bandera, podeu marcar-la com a completa o eliminar-la completament fent clic amb el botó dret del ratolí al missatge i fent clic a qualsevol de les opcions <gui>Bandera completada</gui> o <gui>Elimina bandera</gui>.</p>
+
+<p>Quan llegiu un missatge marcat, es mostra l'estat del seu estatus a la part superior abans dels encapçalaments del missatge. Un missatge endarrerit podria dir-vos "Aturat: trucar abans del 07 d'abril de 2012, 5:00 PM".</p>
+
+<p>Les banderes us poden ajudar a organitzar el treball de diverses maneres. Per exemple, és possible <link xref="mail-change-columns-in-message-list">afegir una columna estat de la bandera</link> a la vostra llista de missatges i permetre ordenar per aquesta. Alternativament, podeu crear una <link xref="mail-search-folders">carpeta de cerca</link> que mostri tots els missatges marcats i, a continuació, esborrar les banderes quan hàgiu acabat, de manera que la carpeta de cerca només contindrà els missatges amb les pròximes dates de venciment.</p>
+
+<note style="tip"><p>Si preferiu una manera més senzilla per a recordar-vos dels missatges, podeu marcar-los com a importants fent clic amb el botó dret al missatge i, a continuació, fent clic a <gui>Marca com a important</gui>, o seleccionant <guiseq><gui>Missatge</gui><gui>Marca com</gui><gui>Important</gui></guiseq> des de la barra de menú.</p></note>
+
+<!-- TODO: Recheck in 3.30 as https://bugzilla.gnome.org/show_bug.cgi?id=240905 introduced some UI changes! -->
+</page>

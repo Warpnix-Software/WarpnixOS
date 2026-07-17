@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-labels" xml:lang="ca">
+
+  <info>
+    <desc>Utilitzeu etiquetes per a categoritzar el correu mentre es mantingui a les seves carpetes.</desc>
+
+    <link type="guide" xref="mail-organizing#advanced"/>
+    <link type="seealso" xref="using-categories"/>
+
+    <revision pkgversion="3.29.90" version="0.4" date="2018-07-25" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Utilitzar filtres</title>
+
+<p>Podeu afegir etiquetes de colors als correus electrònics per a classificar-los. Seria similar a <link xref="using-categories">Categories</link> en l'altra finestra d'<app>Evolution</app>.</p>
+
+<p>Podeu cercar missatges amb etiquetes específiques utilitzant el <link xref="mail-searching">desplegable de cerca ràpida</link>. També es poden crear <link xref="mail-search-folders">carpetes de cerques</link> basades en etiquetes.</p>
+
+<section id="add">
+<title>Afegir una etiqueta a un missatge</title>
+<p>Per a assignar una etiqueta a un missatge, escolliu <guiseq><gui>Missatges</gui><gui>Marca com a </gui><gui>Etiqueta</gui></guiseq> i escolliu l'etiqueta a aplicar, o feu clic dret al missatge, feu clic a <gui>Etiqueta</gui> i escolliu l'etiqueta a aplicar.</p>
+<p>També podeu afegir ràpidament una etiqueta nova triant <gui>Etiqueta nova</gui>.</p>
+</section>
+
+<section id="manage">
+<title>Gestionar les etiquetes</title>
+<p>Podeu afegir, editar i eliminar totes les etiquetes a <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Preferències de correu</gui><gui>Etiquetes</gui></guiseq>. Tingueu en compte que no podeu eliminar les etiquetes predeterminades.</p>
+</section>
+
+</page>

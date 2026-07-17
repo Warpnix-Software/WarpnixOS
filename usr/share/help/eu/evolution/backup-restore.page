@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="backup-restore" xml:lang="eu">
+
+  <info>
+    <link type="guide" xref="index#data-migration-and-sync"/>
+    <link type="seealso" xref="data-storage"/>
+
+    <revision pkgversion="3.1.5" version="0.4" date="2014-03-23" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Egin babeskopia eta leheneratu <app>Evolution</app> aplikazioaren datuak eta ezarpenak.</desc>
+  </info>
+
+  <title>Egin babeskopia eta leheneratu</title>
+
+  <p><app>Evolution</app> datuen babeskopia egiteko aukera dago. Babeskopian, ezarpenak, posta, kontaktuak, zereginak, zirkularrak eta egutegiak gordetzen dira. GZIP bidez konprimatutako TAR artxibo batean gordeko dira.</p>
+
+<section id="backup">
+  <title>Babeskopia egitea</title>
+
+  <list>
+    <item>
+      <p>Hautatu <guiseq><gui>Fitxategia</gui> <gui>Egin Evolution-en datuek babeskopia…</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Hautatu fitxategi-izen bat eta babeskopia-fitxategia gordeko den karpeta, eta sakatu<gui style="button">Gorde</gui>.</p>
+    </item>
+    <item>
+      <p><app>Evolution</app> ixteko eskatuko dizu aplikazioak. Erantzun <gui style="button"> Bai</gui>.</p>
+    </item>
+  </list>
+
+  <note style="warning">
+    <p>Note that your <link xref="mail-spam">spam filtering</link> settings are
+    not included in the backup file, as these settings are not controlled by
+    <app>Evolution</app> and as developers of spam filtering tools might change
+    implementation details. If you use Bogofilter you will need to back up
+    the hidden folder <file>~/.bogofilter/</file>. If you use SpamAssassin you
+    will need to back up the hidden folder <file>~/.spamassassin/</file>.</p>
+  </note>
+
+</section>
+
+<section id="restore">
+  <title>Leheneratzea</title>
+
+  <list>
+    <item>
+      <p>Hautatu <guiseq><gui>Fitxategia</gui> <gui>Leheneratu Evolution-en datuak…</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Aukeratu fitxategia eta egin klik <gui style="button">Ireki</gui> aukeran.</p>
+    </item>
+    <item>
+      <p><app>Evolution</app> ixteko eskatuko dizu aplikazioak. Erantzun <gui style="button"> Bai</gui>.</p>
+    </item>
+  </list>
+
+  <note style="tip">
+    <p><link xref="intro-first-run">Lehen abioko morroian</link>, <app>Evolution</app> datuak berreskuratu daitezke babeskopia-fitxategi batetik.</p>
+  </note>
+
+</section>
+
+</page>

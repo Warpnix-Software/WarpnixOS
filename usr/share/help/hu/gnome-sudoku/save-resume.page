@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="save-resume" xml:lang="hu">
+
+  <info>
+   <link type="guide" xref="index#play"/>
+
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+    <credit type="author copyright">
+      <name>Thomas Hinkle</name>
+      <email>tmhinkle@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kelemen Gábor</mal:name>
+      <mal:email>kelemeng at gnome dot hu</mal:email>
+      <mal:years>2013.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Úr Balázs</mal:name>
+      <mal:email>ur.balazs at fsf dot hu</mal:email>
+      <mal:years>2014, 2015, 2018, 2019, 2020, 2023, 2024.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Mentés és folytatás</title>
+
+<section id="save">
+<title>A játék mentése</title>
+  <p>A játék automatikusan mentve lesz, amikor bezárja az alkalmazást.</p>
+</section>
+
+<section id="resume">
+<title>A játék folytatása</title>
+  <p>Amikor elindítja a <app>Sudoku</app> játékot, az elmentett játék fog megnyílni.</p>
+  <p>Ha be szeretne fejezni a játékot és újat kezdeni, akkor válassza az <gui>Új feladvány</gui> menüpontot, és kezdje el az új játékot.</p>
+</section>
+
+</page>

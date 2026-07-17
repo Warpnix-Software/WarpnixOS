@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-creator" xml:lang="ko">
+
+  <info>
+    <credit type="author">
+      <name>우분투 문서화 팀</name>
+    </credit>
+
+    <desc>USB flash drive를 Ubuntu를 시작하고 설치할 수 있는 볼륨으로 변환하십시오.</desc>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <link type="guide" xref="disk"/>
+    <link type="guide" xref="addremove" group="#last"/>
+
+    <revision version="17.10" date="2017-09-26" status="review"/>
+  </info>
+
+  <title>시동 디스크 만들기</title>
+
+  <p>스타트업 디스크는 컴퓨터를 시작하고 Ubuntu를 설치할 수 있는 USB 플래시 드라이브입니다. <link href="https://www.ubuntu.com/download/desktop/install-ubuntu-desktop">우분투 설치하기</link> 이 USB 플래시 드라이브의 용량은 최소 2GB 이상이어야 합니다. 스타트업 디스크를 만들 때에는 USB 플래시 드라이브에 저장된 모든 데이터가 삭제됩니다.</p>
+
+  <p>이미 우분투 ISO 이미지를 다운로드한 것으로 가정합니다.</p>
+
+  <p>Ubuntu ISO 으로부터 startup 디스크를 생성합니다:</p>
+    
+  <steps>
+    <item>
+      <p><em>Activities</em> 검색바를 사용하여  <app>Startup Disk Creator</app>를 엽니다.</p>
+    </item>
+    <item>
+      <p><gui>Download</gui> 폴더에 ISO 이미지가 딱 하나 있다면, <app>Startup Disk Creator</app>가 자동으로 해당 이미지를 선택합니다, 만약 이미지가 여러개라면 사용자가 하나의 이미지를 선택하게 합니다.</p>
+    </item>
+    <item>
+      <p>만약 컴퓨터에 오직 하나의 USB flash drive만 연결되어있다면,  <app>Startup Disk Creator</app>가 자동으로 해당 USB flash drive를 선택합니다, 만약 USB flash drive가 여러개라면 사용자가 하나의 USB flash drive를 선택하게 합니다.</p>
+    </item>
+    <item>
+      <p><gui>Make Startup Disk</gui> 를 클릭하십시오.</p>
+    </item>
+    <item>
+      <p>확인을 위해 <gui>Yes</gui> 버튼을 클릭하십시오.</p>
+    </item>
+
+    <item>
+      <p>"Installation Complete" 창이 뜨면 <gui>Quit</gui> 버튼을 클릭하여 설치를 마치십시오.</p>
+    </item>
+
+  </steps>
+
+
+
+</page>

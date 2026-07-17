@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-meetings-replying-to-invitation" xml:lang="uk">
+
+  <info>
+    <desc>Прийняття запрошень на зібрання та надсилання відповідей на запрошення.</desc>
+    
+    <link type="guide" xref="calendar-meetings"/>
+
+    <revision pkgversion="3.1.5" version="0.6" date="2011-08-25" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+ <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#replying-to-rsvp -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+      
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Надсилання відповідей на запрошення на зібрання</title>
+<p>Запити щодо зібрання надсилаються як долучення і показуються як вміст повідомлення електронної пошти. Буде показано усі подробиці щодо події, зокрема час і дати проведення.</p>
+<p>Ви можете вибрати, чи слід відповідати на запрошення, і спосіб відповіді, а також долучити особистий коментар до вашої відповіді. Доступними варіантами є <gui>Відхилити</gui>, умовно прийняти (<gui>Умовно прийняти</gui>) і <gui>Прийняти</gui>. Ви також можете вказати, чи слід позначати час зібрання як вільний у вашому календарі.</p>
+
+<p>Якщо до запиту щодо зібрання вже включено <link xref="calendar-alarms-and-reminders">нагадування</link>, ви можете імпортувати нагадування до вашого календаря позначенням пункту <gui>Успадкувати нагадування</gui>.</p>
+
+<p>Якщо ви натиснете кнопку <gui>Прийняти</gui>, подію буде автоматично додано до вибраного вами календаря.</p>
+<p>Після додавання зібрання до вашого календаря ви можете внести зміни до параметрів зібрання, але якщо початковий організатор надішле оновлення, ваші зміни може бути перезаписано.</p>
+
+<note style="tip"><p>На сторінці <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Календар та завдання</gui><gui>Запрошення на зібрання</gui><gui>Пошук конфліктів</gui></guiseq> ви можете визначити календарі, які буде використано для попередження вас щодо конфліктів у часі зібрань.</p></note>
+</page>

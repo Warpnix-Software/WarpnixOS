@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-add-automatically" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="contacts-usage"/>
+    <link type="seealso" xref="contacts-autocompletion"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-08-19" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Barbara Tobias</name>
+      <email its:translate="no">barbtobias09@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Jak do svých kontaktů automaticky přidávat odesilatele pošty, kterou jste obdrželi.</desc>
+  </info>
+
+  <title>Automatické přidávání lidí do kontaktů</title>
+
+  <p>Můžete nechat automaticky přidávat kontakty ve chvíli, kdy odpovíte na zprávu.</p>
+  <steps>
+  <item><p>Vyberte <guiseq><gui>Upravit</gui> <gui>Zásuvné moduly</gui></guiseq>.</p></item>
+  <item><p>Zapněte <gui>Automatické kontakty</gui>.</p>
+<note style="tip"><p>Pokud se zásuvný modul v <guiseq><gui>Upravit</gui><gui>Zásuvné moduly</gui></guiseq> nenachází, obraťte se prosím do diskuzního fóra podpory své distribuce. Možná se ve vaší distribuci rozhodli zásuvný modul zakázat, nebo jej šíří v samostatném balíčku.</p></note>
+  </item>
+  <item><p>Přejděte do <guiseq><gui>Upravit</gui> <gui>Předvolby</gui> <gui>Kontakty</gui> <gui>Automatické kontakty</gui></guiseq>.</p></item>
+  <item><p>Zapněte <gui>Vytvářet položky v adresáři při odesílání pošty</gui> a v rozbalovacím seznamu níže vyberte adresář, ve kterém budou nové kontakty končit.</p></item>
+  </steps>
+
+  <p>Od této chvíle se budou automaticky vytvářet kontakty pro odesilate pošty ve chvíli, kdy odpovíte na zprávu, kterou jste od něj obdrželi.</p>
+
+</page>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-meetings-delegating" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="calendar-meetings"/>
+
+    <revision pkgversion="3.5.91" version="0.3" date="2012-09-14" status="stub"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/bxqatxt.html -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Делегирование участия в собрании.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Делегирование собраний</title>
+
+  <p>Только участники собрания могут делегировать собрание. Организатор собрания этого сделать не может.</p>
+
+  <steps>
+    <item>
+      <p>В календаре щёлкните правой кнопкой мыши по собранию, которое следует делегировать.</p>
+    </item>
+    <item>
+      <p>Выберите пункт <gui> Поручить собрание…</gui>.</p>
+    </item>
+    <item>
+      <p>Выберите контакты, которым следует поручить участие в собрании.</p>
+    </item>
+    <item>
+      <p>Нажмите кнопку <gui style="button">OK</gui>.</p>
+    </item>
+  </steps>
+
+  <p>Каждый контакт получит копию приглашения на собрание.</p>
+
+</page>

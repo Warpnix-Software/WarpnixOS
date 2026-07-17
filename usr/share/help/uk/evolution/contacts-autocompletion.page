@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-autocompletion" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="index#contacts"/>
+    <link type="guide" xref="index#mail-composing"/>
+    <link type="seealso" xref="contacts-add-automatically"/>
+    <link type="seealso" xref="mail-composer-forward"/>
+    <link type="seealso" xref="mail-composer-reply"/>
+    <link type="seealso" xref="mail-composer-write-new-message"/>
+
+    <revision pkgversion="2.32.1" version="0.1" date="2011-01-05" status="draft"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-to
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Автоматичне доповнення імен та адрес електронної пошти, які ви вводите в редакторі повідомлень.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Автодоповнення записів отримувачів пошти</title>
+
+  <p>Ви можете ввести перші три літери імені або адреси електронної пошти у текстове поле отримувача повідомлення, а <app>Evolution</app> покаже вам список відповідних записів з ваших адресних книг.</p>
+
+  <p>Щоб увімкнути автодоповнення, скористайтеся пунктом <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Контакти</gui> <gui>Автодоповнення</gui></guiseq> і виберіть адресні книги у яких <app>Evolution</app> має шукати відповідники, зі списку.</p>
+
+  <p>Позначте пункт <gui>Завжди показувати адресу контакту автозаповнення</gui>, щоб програма показувала адресу електронної пошти разом із іменем. Це може бути корисним для вибору належного пункту, якщо у контакту є декілька адрес електронної пошти.</p>
+
+  <p>Крім того, ви можете натиснути кнопки <gui>Кому:</gui>, <gui>Копія:</gui> або <gui>Прих.копія:</gui>, щоб отримати писок адрес електронної пошти у ваших записах контактів. Вибирайте адреси і натискайте кнопки зі стрілками, щоб пересунути їх до відповідних стовпчиків адрес.</p>
+
+</page>

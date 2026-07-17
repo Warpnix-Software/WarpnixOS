@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="addremove-sources" xml:lang="lt">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntu documentacijos komanda</name>
+    </credit>
+    <desc>Pridėdami papildomas programų saugyklas galite išplėsti programų sąrašą, kurias galima įdiegti ar atnaujinti.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove"/>
+    <revision version="20.10" date="2020-09-13" status="review"/>
+  </info>
+
+  <title>Pridėti programų saugyklas</title>
+
+  <p>Programinę įrangą galima įdiegti ir iš kitų tiekėjų saugyklų, taip pat, kaip iš numatytųjų Ubuntu programų saugyklų. Jei norite įdiegti programas iš kitų tiekėjų saugyklų, prieš tai privalote pridėti tas saugyklas prie įjungtų saugyklų sąrašo.</p>
+
+  <note style="warning">
+    <p>Pridėkite tik patikimas programinės įrangos saugyklas!</p>
+    <p>Kitų tiekėjų programinės įrangos saugyklos nėra tikrinamos Ubuntu kūrėjų dėl saugumo spragų bei patikimumo, todėl čia gali būti jūsų kompiuteriui pavojingų programų.</p>
+  </note>
+
+<p>
+</p>
+   <p>Programų saugyklą pridėsite:</p>
+
+  <steps>
+    <item>
+      <p>
+        Open <app>Software &amp; Updates</app> via the <em>Activities</em> search bar.
+      </p>
+    </item>
+    <item>
+      <p>Pereikite į <gui>Kitos programų saugyklos</gui> kortelę.</p>
+    </item>
+    <item>
+      <p>Spustelėkite mygtuką <gui>Pridėti...</gui> ir atsidariusiame langelyje įveskite saugykos „APT“ (deb) eilutę. Ją turite rasti saugyklos puslapyje internete, atrodo panašiai į:</p>
+      <p>
+        <code its:translate="no">deb http://archive.ubuntu.com/ubuntu/ resolute main</code>
+      </p>
+    </item>
+    <item>
+      <p>Paspauskite mygtuką <gui>Pridėti saugyklą</gui>. Jei paprašys patvirtinti tapatybę - įveskite savo arba administravimo teises turinčio naudotojo slaptažodį.</p>
+    </item>
+    <item>
+      <p>
+        Close the <app>Software &amp; Updates</app> window. <app>App Center</app> will then
+        check your software sources for new software.
+      </p>
+    </item>
+    <item>
+      <p>Patikima saugykla turi pateikti el. parašo (GPG) raktą, kad galėtų patikrinti atsiųstus programų paketus. Todėl pridėdami kitų tiekėjų saugyklas papildomai turėtumėte įdiegti saugyklos viešąjį raktą (GPG key), kaip tai padaryti turėtų būti aprašyta saugyklos tiekėjo interneto puslapyje.</p>
+    </item>
+  </steps>
+
+</page>

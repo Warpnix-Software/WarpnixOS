@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-ppa" xml:lang="hu">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntu dokumentációs csapat</name>
+    </credit>
+    <desc>PPA-k hozzáadása az Ubuntu által a telepítéshez és frissítésekhez használt szoftverforrások bővítéséhez.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove"/>
+    <link type="seealso" xref="addremove-sources"/>
+    <revision version="20.10" date="2020-09-13" status="review"/>
+  </info>
+
+  <title>Személyes csomagtároló (PPA) hozzáadása</title>
+
+  <p>A <em>személyes csomagtárolók (PPA-k)</em> az Ubuntu felhasználók számára tervezett szoftvertárolók, és ezeket könnyebb telepíteni a harmadik féltől származó egyéb tárolóknál. A PPA-kat gyakran használják kiadás előtti szoftverek terjesztésére, hogy azokat tesztelni lehessen.</p>
+
+  <note style="warning">
+    <p>Csak olyan forrásokból származó szoftvertárolókat adjon hozzá, amelyekben megbízik!</p>
+    <p>A harmadik féltől származó tárolók biztonságát vagy megbízhatóságát nem ellenőrzik az Ubuntu fejlesztői, így azok a számítógépére káros programokat is tartalmazhatnak.</p>
+  </note>
+
+  <steps>
+    <title>PPA telepítése</title>
+    <item>
+      <p>Nyissa meg a PPA áttekintő oldalát, keresse meg az <gui>Adding this PPA to your system</gui> szakaszt. Jegyezze fel a PPA helyét, amelynek ehhez hasonlónak kell lennie: <code>ppa:mozillateam/firefox-next</code>.</p>
+    </item>
+    <item>
+      <p>Nyissa meg a <app>Szoftver és frissítések</app> alkalmazást a <em>Tevékenységek</em> keresősávjából.</p>
+    </item>
+    <item>
+      <p>Váltson az <gui>Egyéb szoftver</gui> lapra.</p>
+    </item>
+    <item>
+      <p>Kattintson a <gui>Hozzáadás</gui> gombra, majd adja meg a PPA helyét (amelyet feljegyzett az 1. lépésben).</p>
+    </item>
+    <item>
+      <p>Nyomja meg a <gui>Forrás hozzáadása</gui> gombot. Adja meg jelszavát a Hitelesítés ablakban.</p>
+    </item>
+    <item>
+      <p>Zárja be a <app>Szoftver és frissítések</app> ablakot. Az <app>Alkalmazásközpont</app> ezután megkeresi az új szoftvereket a szoftverforrásokban.</p>
+    </item>
+  </steps>
+
+</page>

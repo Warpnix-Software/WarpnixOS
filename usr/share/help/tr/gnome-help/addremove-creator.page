@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-creator" xml:lang="tr">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntu Belgelendirme Takımı</name>
+    </credit>
+
+    <desc>Bir USB flash sürücüyü, Ubuntu'yu başlatıp kurabileceğiniz bir ses seviyesine dönüştürün.</desc>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <link type="guide" xref="disk"/>
+    <link type="guide" xref="addremove" group="#last"/>
+
+    <revision version="17.10" date="2017-09-26" status="review"/>
+  </info>
+
+  <title>Başlangıç diski oluşturma</title>
+
+  <p>Bu bağlamda bir başlangıç diski, Ubuntu'yu başlatabileceğiniz ve <link href="https://www.ubuntu.com/download/desktop/install-ubuntu-desktop">kurabileceğiniz</link> bir USB bellektir. USB belleğin kapasitesi en az 2 GB olmalıdır. Başlangıç diskini oluşturduğunuzda USB bellekteki bütün veriler kaybolacaktır.</p>
+
+  <p>Ubuntu ISO görüntüsünü indirdiğiniz varsayıldı.</p>
+
+  <p>Ubuntu ISO yansısından başlangıç diski oluşturmak için:</p>
+    
+  <steps>
+    <item>
+      <p><em>Etkinlikler</em> arama çubuğunu kullanarak <app>Başlangıç ​​Diski Oluşturucusu</app> uygulamasını açın.</p>
+    </item>
+    <item>
+      <p>ISO imajı <gui>İndirilenler</gui> klasörünüzdeyse ve yalnızca bir ISO imajı varsa, <app>Başlangıç ​​Diski Oluşturucusu</app> onu seçecektir, aksi takdirde doğru ISO imajını seçin.</p>
+    </item>
+    <item>
+      <p><app>Başlangıç Diski Oluşturucu</app> onu seçmiş olacak, aksi takdirde doğru sürücüyü seçecek.</p>
+    </item>
+    <item>
+      <p>Click <gui>Başlangıç Diski Oluştur</gui>.</p>
+    </item>
+    <item>
+      <p><gui>Evet</gui> onaylamak için tıklayın. İşlem on dakika veya daha kısa sürmelidir.</p>
+    </item>
+
+    <item>
+      <p><gui>Çık</gui> "Kurulum Tamamlandı" penceresi açıldığında tıklayın.</p>
+    </item>
+
+  </steps>
+
+
+
+</page>

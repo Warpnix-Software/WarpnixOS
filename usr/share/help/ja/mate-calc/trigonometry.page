@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="trigonometry" xml:lang="ja">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>三角法</title>
+    
+    <p>三角法は sin、cos、および tan <link xref="function">関数</link>を使用して実行できます。</p>
+    <example>
+    <p>sin 45</p>
+    </example>
+    <p>使用する角度の単位は、<guiseq><gui>計算機</gui><gui>設定</gui></guiseq>メニューから変更できます。<link xref="mouse">拡張モード</link>では、三角関数のボタンが表示されます。</p>
+    <p>双曲線関数を使用するには、関数の末尾に「h」を追加します。</p>
+    <example>
+    <p>sinh 0.34</p>
+    </example>
+    <p>逆関数は、逆記号 ⁻¹ (<keyseq><key>Ctrl</key><key>I</key></keyseq>) または関数の「a」形式を使用して入力します。次の2つの式は等価です。</p>
+    <example>
+    <p>sin⁻¹ 0.5</p>
+    <p>asin 0.5</p>
+    </example>   
+    <p><link xref="variable">π</link> をキーボードで入力するには、<keyseq><key>Ctrl</key><key>P</key></keyseq> を使用します。</p>
+</page>

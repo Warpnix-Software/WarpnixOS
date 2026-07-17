@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="tasks-caldav" xml:lang="ca">
+
+  <info>
+    <desc>Utilitzeu una llista de tasques CalDAV o una llista d'anotacions en línia.</desc>
+    
+    <link type="guide" xref="tasks-using-several-tasklists"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Utilitzar una llista de tasques o d'anotacions del CalDAV</title>
+
+<p>Per a afegir una llista de tasques o llista d'anotacions com a <app>Evolution</app>, seguiu els següents passos:</p>
+<steps>
+<item><p>Feu clic a <guiseq><gui>Fitxer</gui><gui>Nou</gui><gui>Llista de tasques</gui></guiseq> o <guiseq><gui>Fitxer</gui><gui>Nou</gui><gui>Llista d'anotacions</gui></guiseq>.</p></item>
+<item><p>Seleccioneu el tipus <gui>CalDAV</gui>.</p></item>
+<item>
+   <p>To discover the task lists or memo lists, announced by the server, enter the server address as <gui>URL</gui> and optionally <gui>User</gui>, then click on <gui style="button">Find Task Lists</gui>/<gui style="button">Find Memo Lists</gui>. Select a task or memo list and <gui>User mail</gui>.
+   This prefills the fields <gui>Name</gui>, <gui>Color</gui>, <gui>URL</gui> and (see below) <gui>Email</gui>. The step is optional, and you can overwrite all the discovered settings.</p>
+</item>
+<item><p>Introduïu el nom que preferiu.</p></item>
+<item><p>Opcionalment, seleccioneu un color que vulgueu.</p></item>
+<item><p>Introduïu l'adreça al camp <gui>URL</gui>.</p></item>
+<item><p>Trieu <gui>Utilitza una connexió segura</gui> si voleu connectar-vos de manera segura.</p></item>
+<item><p>Enter your username and email address. When an assigned task is created in the task list, this email address is prefilled as Organizer.</p></item>
+    <item>
+      <p>When an assigned task is created, modified or deleted, a notification can be sent to the other parties.
+      If <gui>Server handles meeting invitations</gui> is selected, <app>Evolution</app> uploads the task and assumes
+      that the server informs other parties. When the option is not selected, <app>Evolution</app> sends an email.</p>
+    </item>
+<item><p>Feu clic a <gui style="button">D'acord</gui>.</p></item>
+</steps>
+
+<p>La llista de tasques s'afegirà a la llista de llistes de tasques a <app>Evolution</app>.</p>
+
+  <section>
+    <title>Collection accounts</title>
+    <p>Different types of mail, address books, calendars, task and memo lists, belonging to the same user, can be added in one step by utilizing a <link xref="intro-account-types#collection-account">Collection account</link>.</p>
+  </section>
+</page>

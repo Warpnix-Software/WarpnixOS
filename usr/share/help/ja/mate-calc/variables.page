@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="variable" xml:lang="ja">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>変数</title>
+    
+    <p>変数に値を割り当てるには、= 記号を使用するか、<link xref="mouse">拡張モード</link>で <gui>x</gui> ボタンを使用して割り当てる変数を選択します。変数名には、大文字または小文字しか使用できません。</p>
+    <example>
+    <p>x=5</p>
+    <p>value=82</p>
+    </example>
+    <p>変数は任意の式で使用でき、割り当てられた値と置換されます。変数は <gui>x</gui> ボタンを使用して挿入できます。</p>
+    <example>
+    <p>6x+3</p>
+    <p>xy−3x+7y−21</p>
+    </example>
+    <p>次の変数は常に定義されています。</p>
+    <table>
+    <tr>
+    <td><p>ans</p></td>
+    <td><p>前回の計算結果</p></td>
+    </tr>
+    <tr>
+    <td><p>e</p></td>
+    <td><p><link xref="logarithm">オイラー数</link></p></td>
+    </tr>
+    <tr>
+    <td><p>π</p></td>
+    <td><p><link xref="trigonometry">円周率</link></p></td>
+    </tr>
+    <tr>
+    <td><p>rand</p></td>
+    <td><p>[0,1] の範囲のランダムな値 (読み取り毎に変化)</p></td>
+    </tr>
+    </table>
+</page>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="forms" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#forms"/>
+    <desc>Treballant amb formularis emplenables.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Carles Ferrando Garcia</mal:name>
+      <mal:email>carles.ferrando@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert Antoni Buj Gelonch</mal:name>
+      <mal:email>rbuj@fedoraproject.org</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Formularis</title>
+<p>Quan empleneu un formulari interactiu, podeu desplaçar-vos pels seus camps clicant sobre ells amb el ratolí. Quan heu acabat d'emplenar un camp de text, premeu <key>Enter</key>.</p>
+
+<p>Podeu fer una selecció en una llista desplegable, clicant sobre la caixa de la llista i desplaçant-vos amb el ratolí fins l'opció escollida.</p>
+<note style="tip">
+ <p>Potser algunes parts del formulari han de ser emplenades a mà <em>després</em> d'imprimir-lo. Per exemple, de vegades cal encerclar alguna cosa, o signar el formulari en un o més llocs. Si ho voleu fer de forma electrònica, podeu provar <link href="http://www.g-loaded.eu/2008/05/03/how-to-annotate-pdf-files-in-linux-using-xournal/">Xournal</link>.</p>
+</note>
+
+
+</page>

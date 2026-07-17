@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="data-storage" xml:lang="uk">
+
+  <info>
+    <desc>Де <app>Evolution</app> зберігає дані на жорсткому диску?</desc>
+    
+    <link type="guide" xref="index#common-other-problems"/>
+
+    <revision pkgversion="3.22.5" version="0.6" date="2017-02-19" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Місця зберігання даних</title>
+
+<note style="tip">
+<p>Цей розділ призначено для досвідчених користувачів, яким наведені дані потрібні для діагностики причин проблем.</p>
+</note>
+
+<p>У <app>Evolution</app> 3.6 та новіших версіях дані зберігаються відповідно до <link href="https://www.freedesktop.org/wiki/Specifications/basedir-spec">специфікації основних каталогів XDG</link>. У типовій системі це означає, що:</p>
+
+<terms>
+<item>
+<title>Файли даних користувача</title>
+<p><file>$HOME/.local/share/evolution</file></p>
+</item>
+<item>
+<title>Різноманітні файли налаштувань і станів</title>
+<p><file>$HOME/.config/evolution</file></p>
+</item>
+<item>
+<title>Параметри облікового запису</title>
+<p><file>$HOME/.config/evolution/sources</file></p>
+</item>
+<item>
+<title>Параметри налаштування у GSettings</title>
+<p><file>$HOME/.config/dconf</file></p>
+<note style="info"><p>У цій теці зберігаються також налаштування інших програм. Щоб було показано лише пов'язані із Evolution дані, ви можете скористатися командами <link href="https://developer.gnome.org/dconf/"><app>Dconf</app></link> <cmd>dconf dump /org/gnome/evolution/</cmd> та <cmd>dconf dump /org/gnome/evolution-data-server/</cmd>.</p></note>
+</item>
+<item>
+<title>Одноразові кеші даних</title>
+<p><file>$HOME/.cache/evolution</file></p>
+</item>
+</terms>
+
+</page>

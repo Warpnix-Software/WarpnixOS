@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="board-size" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#tips"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.3" date="2018-09-01" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2011</years>
+    </credit>
+    <credit type="author copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Florian Purucker</mal:name>
+      <mal:email>florian@purucker.net</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2008, 2012-2013, 2018-2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>christian.kirbach@gmail.com</mal:email>
+      <mal:years>2012-2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jürgen Benvenuti</mal:name>
+      <mal:email>gastornis@posteo.org</mal:email>
+      <mal:years>2022, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Tim Sabsch</mal:name>
+      <mal:email>tim@sabsch.com</mal:email>
+      <mal:years>2023</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Auswahl der Spielfeldgröße</title>
+
+  <p>Beim Start der Anwendung können Sie eine Spielfeldgröße wählen.</p>
+
+  <p>Wählen Sie eine der vorgeschlagenen Rastergrößen:</p>
+  <list>
+    <item><p>ein 8x8-Spielfeld mit 10 Minen</p></item>
+    <item><p>ein 16x16-Spielfeld mit 40 zu findenden Minen</p></item>
+    <item><p>ein 30x16-Spielfeld mit 99 Minen</p></item>
+    <item><p>ein benutzerdefiniertes Spielfeld, in dem Sie die Größe und die Anzahl der Minen selbst wählen können</p></item>
+  </list>
+
+  <p>Um die <link xref="board-size">Spielfeldgröße</link> später zu ändern, klicken Sie auf den Knopf <gui style="button">Schwierigkeit verändern</gui> rechts.</p>
+
+</page>

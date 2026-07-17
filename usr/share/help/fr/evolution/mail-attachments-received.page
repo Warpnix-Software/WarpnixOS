@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-attachments-received" xml:lang="fr">
+
+  <info>
+    <desc>Enregistrer et ouvrir les fichiers attachés aux courriels entrants.</desc>
+
+    <link type="guide" xref="mail-displaying-message"/>
+    <link type="guide" xref="mail-attachments"/>
+
+    <revision pkgversion="3.35.91" version="0.5" date="2020-02-21" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from Reuse https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en#usage-mail-getnsend-get-attach-actions -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marc Lorber</mal:name>
+      <mal:email>Linux-Lorber@club-internet.fr</mal:email>
+      <mal:years>2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jonathan Ernst</mal:name>
+      <mal:email>jonathan@ernstfamily.ch</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alexandre Franke</mal:name>
+      <mal:email>alexandre.franke@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012 </mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervan@gmail.com</mal:email>
+      <mal:years>2013-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yvan Masson</mal:name>
+      <mal:email>yvan@masson-informatique.fr</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Charles Monzat</mal:name>
+      <mal:email>charles.monzat@free.fr</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>vanadiae</mal:name>
+      <mal:email>vanadiae35@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Guillaume Bernard</mal:name>
+      <mal:email>associations@guillaume-bernard.fr</mal:email>
+      <mal:years>2021-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jean-Marc Tissières</mal:name>
+      <mal:email>jmetissieres@gmail.com</mal:email>
+      <mal:years>2022</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Gestion des pièces jointes dans les courriels reçus</title>
+
+<p>Si vous recevez un message avec une ou plusieurs pièces jointes, <app>Evolution</app> affiche le nombre de pièces jointes et un bouton <gui style="button">Enregistrer sous</gui> ou <gui style="button">Tout enregistrer</gui> entre l’en-tête du courriel et son contenu.</p>
+<note style="tip"><p><app>Evolution</app> ne prend pas en charge l’enregistrement de toutes les pièces jointes de tous les messages d’un dossier en une seule fois.</p></note>
+
+<p>La liste des pièces jointes est également disponible en bas du courriel.</p>
+<p>Pour enregistrer une pièce jointe sur le disque, cliquez sur la flèche pointant vers le bas à côté de l’icône de pièce jointe et cliquez sur <gui>Enregistrer sous</gui>.</p>
+<p>Pour ouvrir une pièce jointe dans une autre application, cliquez sur la flèche pointant vers le bas à côté de l’icône de pièce jointe et choisissez une des applications disponibles.</p>
+
+<note style="tip"><p>Les options disponibles pour une pièce jointe dépendent du type de pièce jointe et des applications installées. La base de données MIME de votre environnement de bureau définit quelles applications peuvent être utilisées pour ouvrir un format de fichier spécifique.</p><p>Pour voir la liste des applications enregistrées pour un type MIME, utilisez <cmd>gio mime</cmd>. Exemple : <cmd>gio mime "application/pdf"</cmd></p></note>
+
+</page>

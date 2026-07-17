@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="strategy" xml:lang="pl">
+	<info>
+          <revision version="3.4" date="2012-03-08" status="final"/>
+	  <link type="guide" xref="index#play"/>
+	  <credit type="author copyright">
+	    <name>Radoslav Asparuhov</name>
+	    <email>rasparuhov@gmail.com</email>
+	  <years>2011</years>
+	  </credit>
+	  <credit type="editor">
+	    <name>Tiffany Antopolski</name>
+	    <email>tiffany.antopolski@gmail.com</email>
+	  </credit>
+	  <license>
+		<p>Creative Commons Share Alike 3.0</p>
+	  </license>
+	
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Piotr Drąg</mal:name>
+      <mal:email>piotrdrag@gmail.com</mal:email>
+      <mal:years>2017-2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Aviary.pl</mal:name>
+      <mal:email>community-poland@mozilla.org</mal:email>
+      <mal:years>2017-2023</mal:years>
+    </mal:credit>
+  </info>
+
+	<title>Strategia</title>
+        <p>Każda komórka sudoku ma tylko jedno rozwiązanie. Poniższe strategie pomagają systematycznie znajdować rozwiązania dla każdej komórki.</p>
+ <section id="strategy1">
+	<title>1. strategia:</title>
+	  <steps>
+	    <item><p>Wybierz wiersz z największą liczbą cyfr.</p>
+                  <note><p>Należy wybrać wiersz lub kolumnę z największą liczbą cyfr. Poniższe instrukcje są napisane tak, jakby to wiersz miał ich największą liczbę.</p></note>
+            </item>
+	    <item><p>Ustal, których cyfr brakuje w tym wierszu.</p></item>
+	    <item><p>Wybierz jedną z pustych komórek w tym wierszu. Ustal, które z brakujących cyfr są w tej kolumnie lub w tej grupie.</p></item>
+	    <item><p>Za pomocą <link xref="earmarks">notatek</link> wpisz brakujące cyfry, których nie ma w tej kolumnie lub grupie. Te cyfry są kandydatami dla tej komórki.</p></item>
+	    <item><p>Przejdź do następnej pustej komórki wybranego wiersza i powtórz powyższe działanie. Powtórz je dla każdego wiersza i kolumny, zaczynając od tych z największą liczbą cyfr i kończąc na tych z najmniejszą. Zawsze uważnie szukaj cyfr i nie zapominaj o grupach.</p></item>
+	   </steps>
+            <note><p>Ta strategia pomaga wykrywać komórki, które mają tylko jedno możliwe rozwiązanie. Po ich wykryciu można je wypełnić tym rozwiązaniem i powtarzać strategię do rozwiązania całego sudoku.</p></note>
+<figure>
+  <desc>Przykład użycia 1. strategii.</desc>
+  <media type="image" mime="image/png" src="figures/strategy1.png" width="400" its:translate="no"/>
+</figure>
+
+</section>
+<section id="strategy2">
+
+	<title>2. strategia:</title>
+	  <steps>
+	    <item><p>Znajdź cyfrę, która występuje najczęściej.</p></item>
+	    <item><p>Teraz spójrz na komórki po lewej stronie grupy i znajdź kolumny, w których ta liczba występuje.</p></item>
+  	    <item><p>Przejdź do grupy, która nie zawiera tej cyfry w żadnej komórce. Za pomocą <link xref="earmarks">notatek</link> wpisz tę cyfrę w każdej pustej komórce kolumny, w której ta cyfra nie występuje. Jeśli cyfra występuje w wierszu jednej z tych komórek, to nie wpisuj jej w notatki tej komórki.</p></item>
+	    <item><p>Powtórz ostatnie dwa kroki dla środkowych i prawych stron grup.</p></item>
+            <item><p>Znajdź następną najczęściej występującą cyfrę i powtarzaj działanie dla każdej z 9 cyfr.</p></item>
+	  </steps>
+            <note><p>Ta strategia pomaga wykrywać komórki, które mają tylko jedno możliwe rozwiązanie. Po ich wykryciu można je wypełnić tym rozwiązaniem i powtarzać strategię do rozwiązania całego sudoku.</p></note>
+<figure>
+  <desc>Przykład użycia 2. strategii.</desc>
+  <media type="image" mime="image/png" src="figures/strategy2.png" width="400" its:translate="no"/>
+</figure>
+
+	   <note><p>Powyższe strategie można stosować wymiennie, a także je łączyć.</p></note>
+</section>
+</page>

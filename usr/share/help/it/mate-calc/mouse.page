@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="mouse" xml:lang="it">
+
+    <info>
+        <link type="guide" xref="index#ui"/>
+    </info>
+
+	<title>Utilizzare il mouse</title>
+
+    <p>Tutte le equazioni possono essere inserite utilizzando il mouse. Per accedere ai pulsanti ci sono diversi modi che possono essere selezionati dal menù <gui>Modalità</gui></p>
+    <table>
+    <tr>
+    <td><p>Base</p></td>
+    <td><p>Fornisce i pulsanti adatti ad eseguire <link xref="equation">equazioni elementari</link></p></td>
+    </tr>
+    <tr>
+    <td><p>Avanzata</p></td>
+    <td><p>Fornisce i pulsanti necessari ad eseguire funzioni matematiche avanzate come ad esempio <link xref="trigonometry"/></p></td>
+    </tr>
+    <tr>
+    <td><p>Finanziaria</p></td>
+    <td><p>Fornisce i pulsanti relativi alle <link xref="financial">equazioni finanziarie</link></p></td>
+    </tr>
+    <tr>
+    <td><p>Programmazione</p></td>
+    <td><p>Fornisce i pulsanti dedicati ai programmatori di computer</p></td>
+    </tr>
+    </table>
+</page>

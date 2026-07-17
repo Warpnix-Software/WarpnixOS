@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="calendar-recurrence" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#calendar-advanced"/>
+
+    <revision pkgversion="3.0.2" version="0.1" date="2011-08-01" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+      https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#bxmtcp3
+      -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Mengulangi janji temu.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Menggunakan Pengulangan</title>
+
+  <p>Jika Anda memiliki janji temu yang berlangsung secara teratur, Anda dapat menentukan pengulangannya dengan mengklik tombol <gui>Pengulangan</gui> di <gui>Penyunting Janji Temu</gui> atau dengan mengklik <guiseq><gui>Opsi</gui><gui>Pengulangan</gui></guiseq>. Anda kemudian dapat memilih waktu dan tanggal saat janji berhenti berulang, dan, di bawah <gui>Pengecualian</gui>, pilih hari individual saat janji tidak berulang. Buat pilihan Anda dari kiri ke kanan, dan Anda membentuk kalimat: "Setiap dua minggu pada hari Senin dan Jumat hingga 3 Januari 2015" atau "Setiap bulan pada hari Jumat pertama untuk 12 kejadian."</p>
+
+</page>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="basics" xml:lang="pl">
+  <info>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+    <link type="guide" xref="index#play"/>
+    <credit type="author copyright">
+      <name>Chris Beiser</name>
+      <email>ctbeiser@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Piotr Drąg</mal:name>
+      <mal:email>piotrdrag@gmail.com</mal:email>
+      <mal:years>2017-2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Aviary.pl</mal:name>
+      <mal:email>community-poland@mozilla.org</mal:email>
+      <mal:years>2017-2023</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Podstawy</title>
+<p>Sudoku można rozwiązywać za pomocą klawiatury, myszy lub obu jednocześnie.</p>
+
+<section id="keyboard">
+<title>Używanie klawiatury</title>
+<list>
+  <item><p>Aby zaznaczyć komórkę, użyj klawiszy strzałek do przeniesienia na nią niebieskiej obwódki.</p></item>
+  <item><p>Aby umieścić cyfrę w komórce, zaznacz ją, a następnie naciśnij cyfrę.</p></item>
+  <item><p>Aby usunąć cyfrę z komórki, zaznacz ją, a następnie naciśnij klawisz <key>Delete</key>, <key>Backspace</key> lub <key>0</key>.</p></item>
+</list>
+</section>
+
+
+<section id="mouse">
+<title>Używanie myszy</title>
+<list>
+	<item><p>Aby zaznaczyć komórkę, przesuń na nią mysz i kliknij.</p></item>
+	<item><p>Aby umieścić cyfrę w zaznaczonej komórce, kliknij jej środek, a następnie kliknij cyfrę do wprowadzenia.</p></item>
+	<item><p>Aby usunąć cyfrę z zaznaczonej komórki, kliknij jej środek, a następnie kliknij <gui>Wyczyść</gui>.</p></item>
+</list>
+</section>
+</page>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="tip" id="gnome-on-ubuntu" xml:lang="fr">
+
+  <info>
+    <credit type="author">
+      <name>L'équipe de documentation d'Ubuntu</name>
+    </credit>
+    <desc>Une liste des modifications notables apportées au bureau GNOME dans Ubuntu.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="shell-overview" group="#first"/>
+    <link type="guide" xref="index" group="intro"/>
+    <revision version="0.1" date="2022-04-28" status="review"/>
+  </info>
+
+  <title>À propos de GNOME sur Ubuntu</title>
+
+  <p>Ubuntu Desktop est installé avec une version légèrement modifiée de l'environnement de bureau GNOME. Généralement, ce guide de bureau fera référence à GNOME tel qu'il est publié par les développeurs de GNOME. Voici une liste des différences notables entre GNOME sur Ubuntu et GNOME "Vanilla".</p>
+
+  <list type="disc">
+  <item>
+    <p>Ubuntu est livré avec Firefox au lieu du navigateur Web GNOME.</p>
+  </item>
+  <item>
+    <p>Ubuntu est livré avec le client de bureau à distance Remmina au lieu de GNOME Connections.</p>
+  </item>
+    <item>
+      <p>L'extension AppIndicators est incluse. Cette extension activera les icônes dans le coin supérieur droit de certaines applications.</p>
+    </item>
+    <item>
+      <p>L'extension Ubuntu Dock est incluse. Cette extension fournit la barre latérale gauche pour exécuter des applications.</p>
+    </item>
+    <item>
+      <p>L'extension Desktop Icons NG est incluse. Cette extension permet l'utilisation d'icônes sur le bureau.</p>
+    </item>
+    <item>
+      <p>En plus des fonds d'écran Ubuntu, le thème par défaut est Yaru et la police par défaut est Ubuntu.</p>
+    </item>
+    <item>
+      <p>Les boutons Réduire et Agrandir sont inclus dans les barres de titre des fenêtres.</p>
+    </item>
+  </list>
+
+
+
+</page>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="question" id="flags" xml:lang="ko">
+  <info>
+
+    <link type="guide" xref="index#play"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.5.5" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.3" date="2018-09-01" status="review"/>
+    <revision pkgversion="3.31.91" version="0.4" date="2019-03-03" status="review"/>
+
+    <credit type="author copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+    <credit type="author">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2012</years>
+    </credit>
+
+    <credit type="author copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>임준열</mal:name>
+      <mal:email>purum@postech.ac.kr</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>조성호</mal:name>
+      <mal:email>shcho@gnome.org</mal:email>
+      <mal:years>2021, 2022, 2023</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>깃발 사용 방법</title>
+  <table>
+  <tr>
+   <td>
+     <media type="image" mime="image/svg" src="figures/flags.png" its:translate="no"/>
+   </td>
+   <td>
+     <p>지뢰가 숨어 있을 것 같다고 생각되는 타일을 표시하려면 깃발을 사용합니다. 깃발을 표시하면 실수로 지뢰를 클릭하여 지뢰가 터져서 게임이 끝나는 것을 방지할 수 있습니다.</p>
+     <p>깃발의 정확한 모양새는 테마에 따라 다릅니다. 창 우측 상단의 메뉴 단추를 누른 후 <gui style="menuitem">모양새</gui>를 선택하여 테마를 바꿀 수 있습니다.</p>
+    </td>
+   </tr>
+  </table>
+
+  <section id="flags-put">
+    <title>타일 깃발 표시 방법</title>
+    <table>
+      <tr>
+        <td>
+	  <p>깃발은 누를 수 없습니다. 타일에 깃발을 두려면:</p>
+          <list>
+            <item><p>비어있는 타일에서 오른쪽 마우스 클릭하세요.</p></item>
+          </list>
+        </td>
+        <td>
+          <media type="image" mime="image/svg" width="60" src="figures/flag.svg" its:translate="no"/>
+        </td>
+        </tr>
+      </table>
+
+  </section>
+
+  <section id="flags-blue">
+    <title><em>물음표</em> 깃발 사용</title>
+    <p>타일에 지뢰가 있는지 확실하지 않다면 <em>물음표</em> 깃발을 사용할 수 있습니다.</p>
+    <table>
+      <tr>
+        <td>
+          <p>타일에 <em>잘 모르겠음</em> 깃발 놓기:</p>
+          <list>
+	    <item><p>빈 타일에는 마우스 오른쪽 단추를 두번, 플래그에는 한번 누릅니다.</p></item>
+          </list>
+        </td>
+        <td>
+          <media type="image" mime="image/svg" width="60" src="figures/flag-question.svg" its:translate="no"/>
+        </td>
+      </tr>
+    </table>
+
+  <note>
+    <p>이 깃발을 사용하려면 창 우측 상단의 메뉴 단추를 누른 후 <gui style="checkbox">물음표 깃발 사용</gui> 기본 설정 값을 설정합니다.</p>
+  </note>
+
+  </section>
+  
+</page>

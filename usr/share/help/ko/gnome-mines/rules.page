@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="rules" xml:lang="ko">
+
+  <info>
+    <link type="guide" xref="index#play"/>
+    <link type="seealso" xref="flags"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>임준열</mal:name>
+      <mal:email>purum@postech.ac.kr</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>조성호</mal:name>
+      <mal:email>shcho@gnome.org</mal:email>
+      <mal:years>2021, 2022, 2023</mal:years>
+    </mal:credit>
+  </info>
+
+
+  <title>게임 규칙</title>
+
+  <p><app>지뢰</app>의 목표는 지뢰를 터뜨리지 않고 지뢰밭을 개척하는 게임입니다.</p>
+
+  <steps>
+    <item>
+      <p>세가지 기본 게임판 크기 또는 개별 설정 크기 게임판을 선택하여 시작합니다.</p>
+    </item>
+    <item>
+      <p>게임을 시작하면 타일로 덮힌 게임판으로 시작합니다. 타일을 누르면 벗겨냅니다. 다음 항목이 나타납니다:</p>
+      <list>
+        <item>
+	  <p>색칠한 숫자, 주변 타일에 있는 지뢰의 개수를 나타냅니다. 이 숫자로 지뢰 위치를 알아낼 수 있으며 지뢰 위치에 <link xref="flags">깃발</link>을 표시하면 됩니다.</p>
+        </item>
+        <item>
+	  <p>비어있는 타일, 주변 타일에 지뢰가 없음을 나타냅니다.</p>
+        </item>
+        <item>
+	  <p>지뢰, 터지면 게임이 끝납니다.</p>
+	</item>
+      </list>
+    </item>
+    <item>
+      <p>지뢰가 없는 타일을 모두 알아내서 없앨 때까지 반복합니다.</p>
+    </item>
+  </steps>
+
+  <p>게임을 충분히 빨리 끝낸다면, <link xref="high-scores">고득점 목록</link>에 등극할 수 있습니다.</p>
+
+</page>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-access-gmail-imap-account" xml:lang="hu">
+
+  <info>
+    <desc>Hogyan állíthat be Gmail IMAP fiókot.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+    <link type="guide" xref="google-services"/>
+    <link type="seealso" xref="mail-account-manage-imap-plus"/>
+
+    <revision pkgversion="3.29.91" version="0.4" date="2018-08-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lukács Bence</mal:name>
+      <mal:email>lukacs.bence1 at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kelemen Gábor</mal:name>
+      <mal:email>kelemeng at gnome dot hu</mal:email>
+      <mal:years>2011, 2012, 2013, 2015, 2017, 2018.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nagy Zoltán</mal:name>
+      <mal:email>dzodzie at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Úr Balázs</mal:name>
+      <mal:email>ur.balazs at fsf dot hu</mal:email>
+      <mal:years>2014, 2019, 2021, 2022, 2023, 2024, 2025.</mal:years>
+    </mal:credit>
+  </info>
+
+<!-- Page only exists for the <note>, apart from that nothing special. -->
+
+<title>Gmail IMAP fiók elérése az <app>Evolutionből</app></title>
+
+<p>A Gmail IMAP használatával való eléréséhez be kell kapcsolnia az IMAP protokollt a Google fiókjában. További információkért nézze meg a <link href="https://mail.google.com/support/bin/answer.py?answer=77695">Gmail súgóját</link>.</p>
+
+<p>Ajánlott, hogy a Gmailt internetes fiókként vegye fel a GNOME-ban. További információkért <link xref="help:gnome-help/accounts" href="https://help.gnome.org/users/gnome-help/stable/accounts">tekintse meg a GNOME asztali környezet súgóját</link>. Ha így tesz, akkor a Gmail fiók felsorolásra kerül az Evolutionben.</p>
+
+<p>A fiók Evolutionbe történő beállításához nézze meg az <link xref="mail-account-manage-imap-plus">IMAP+ levelezőfiók beállításokat</link>. Ne feledje, hogy az ilyen fiókok nem minden beállítása szerkeszthető az <app>Evolutionben</app>, és az ilyen fiókok csak az <app>Online fiókokban</app> távolíthatóak el.</p>
+
+<!-- Evolution does not support Google's proprietary SASL XOAUTH2 implementation which makes Evolution a "less secure app" for Google. -->
+<p>Az internetes fiók GNOME-ban történő beállításának alternatívája, hogy engedélyezi a <link href="https://www.google.com/settings/security/lesssecureapps">kevésbé biztonságos alkalmazások elérését a Gmail fiókbeállításokban</link>.</p>
+
+<note style="tip"><p>A jó teljesítmény érdekében javasolt a <gui>Valódi mappa használata kukaként</gui> beállítása <gui>[GMail]/Trash</gui> értékre, és a <gui>Valódi mappa használata a levélszeméthez</gui> beállítása <gui>[GMail]/Spam</gui> értékre a fiók <link xref="mail-default-folder-locations"><gui>Alapbeállításai</gui></link> között.</p></note>
+
+</page>

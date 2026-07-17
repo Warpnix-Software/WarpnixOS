@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="bug-filing" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#get-involved"/>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <credit type="editor copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+      <years>2011</years>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2019</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Informar d'un problema</title>
+<p><app>GNOME Sudoku</app> és un joc mantingut per una comunitat de voluntaris. Si voleu, hi podeu participar. Si detecteu un problema podeu enviar un <em>informe d'error</em>. Per a enviar un informe d'error, aneu a <link href="https://gitlab.gnome.org/GNOME/gnome-sudoku/issues/"/>.</p>
+   <p>Aquest és un sistema de seguiment d'errors en què els usuaris i desenvolupadors poden enviar detalls sobre errors, bloquejos i sol·licitar millores.</p>
+   <p>Per a participar-hi, necessiteu un compte que us donarà la possibilitat d'accedir-hi, d'enviar informes d'errors i de fer comentaris. A més, us heu de registrar per a poder rebre actualitzacions per correu electrònic sobre l'estat de l'informe d'error. Si encara no teniu un compte, feu clic a l'enllaç <gui>Inicia la sessió / Registra'm</gui> per a crear-ne un.</p>
+
+  <p>Once you have an account, log in, and click on <gui>New issue</gui>.
+   Before reporting a bug, please read the <link href="https://handbook.gnome.org/issues/reporting.html">bug writing guidelines</link>, and please <link href="https://gitlab.gnome.org/GNOME/gnome-sudoku/issues">browse</link> for the bug to see if it already exists.
+</p>
+
+   <p>Si sol·liciteu una funció nova, trieu <gui>«1. Feature»</gui> al menú <gui>«Labels»</gui>. Ompliu les seccions títol i descripció i feu clic a <gui>«Submit Issue»</gui>.</p>
+   <p>S'assignarà un número d'identificació al vostre informe i el seu estat s'actualitzarà a mesura que es vagi gestionant.</p>
+</page>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="opening" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#reading"/>
+    <link type="seealso" xref="formats"/>
+    <link type="seealso" xref="commandline"/>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email its:translate="no">tiffany@antopolski.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email its:translate="no">kittykat3756@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal-unported.xml"/>
+
+    <desc>Bagaimana membuka suatu dokumen.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kukuh Syafaat</mal:name>
+      <mal:email>syafaatkukuh@gmail.com</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2021, 2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Membuka sebuah dokumen</title>
+
+  <p>Anda dapat membuka suatu dokumen dengan salah satu cara berikut:</p>
+
+  <list>
+    <item>
+      <p>Klik ganda pada berkas dalam <app>Caja</app> atau <em>manajer berkas</em> Anda.</p>
+      <note style="tip">
+        <p>Mengklik ganda berkas PDF, PostScript, .djvu, .dvi, dan Comic Book Archive membuka mereka dalam <app>Atril</app> secara baku.</p>
+      </note>
+    </item>
+    <item>
+      <p>Klik kanan pada suatu ikon berkas dalam <app>Caja</app> dan klik <guiseq><gui>Buka Dengan</gui><gui>Atril</gui></guiseq>.</p>
+    </item>
+  </list>
+
+  <p>Bila suatu jendela <app>Atril</app> yang kosong telah terbuka, Anda dapat:</p>
+
+  <list>
+    <item>
+      <p>Menyeret suatu berkas ke dalam jendela tersebut dari <app>Caja</app>. Berkas baru akan dibuka dalam suatu jendela baru.</p>
+    </item>
+    <item>
+      <p>Tekan tombol <gui>Buka…</gui> di sudut kiri atas jendela. Dalam dialog <gui>Buka Dokumen</gui>, pilih berkas yang ingin Anda buka, dan klik <gui>Buka</gui>. Berkas akan terbuka di jendela baru.</p>
+    </item>
+  </list>
+
+  <p>Jika dokumen sudah dibuka di jendela <app>Atril</app>, Anda bisa:</p>
+
+  <list>
+    <item>
+      <p>Menyeret suatu berkas ke dalam jendela tersebut dari <app>Caja</app>. Berkas baru akan dibuka dalam suatu jendela baru.</p>
+    </item>
+    <item>
+      <p>Tekan <keyseq><key>Ctrl</key><key>O</key></keyseq>. Dalam dialog <gui>Buka Dokumen</gui>, pilih berkas yang ingin Anda buka, dan klik <gui>Buka</gui>. Berkas akan terbuka di jendela baru.</p>
+    </item>
+  </list>
+
+</page>

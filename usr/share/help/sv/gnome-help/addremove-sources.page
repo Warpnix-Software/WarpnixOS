@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="addremove-sources" xml:lang="sv">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntus dokumentationsgrupp</name>
+    </credit>
+    <desc>Lägg till andra arkiv för att utöka de programkällor Ubuntu använder för installationer och uppgraderingar.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove"/>
+    <revision version="20.10" date="2020-09-13" status="review"/>
+  </info>
+
+  <title>Lägg till fler programförråd</title>
+
+  <p>Program kan hämtas från tredjepartskällor, såväl som från Ubuntus standardprogramarkiv. Om du vill installera program från ett tredjepartsarkiv måste du lägga till det till Ubuntus lista över tillgängliga arkiv.</p>
+
+  <note style="warning">
+    <p>Lägg bara till programarkiv från källor du litar på!</p>
+    <p>Externa arkiv kontrolleras inte för säkerhet eller stabilitet av Ubuntumedlemmar, och kan innehålla program som är skadliga för din dator.</p>
+  </note>
+
+<p>
+</p>
+   <p>För att lägga till ett förråd:</p>
+
+  <steps>
+    <item>
+      <p>Öppna <app>Program &amp; uppdateringar</app> via sökraden för <em>Aktiviteter</em>.</p>
+    </item>
+    <item>
+      <p>Byt till fliken <gui>Övrig programvara</gui>.</p>
+    </item>
+    <item>
+      <p>Klicka på <gui>Lägg till</gui> och skriv in APT-raden för arkivet. Detta bör finnas tillgängligt från arkivets webbplats, och bör se ut så här:</p>
+      <p>
+        <code its:translate="no">deb http://archive.ubuntu.com/ubuntu/ resolute main</code>
+      </p>
+    </item>
+    <item>
+      <p>Klicka på <gui>Lägg till källa</gui>. Ange ditt lösenord i Autentisera-fönstret.</p>
+    </item>
+    <item>
+      <p>Stäng fönstret <app>Program &amp; uppdateringar</app>. <app>Appcentral</app> kommer sedan söka igenom dina programkällor efter nya program.</p>
+    </item>
+    <item>
+      <p>De flesta programförråd tillhandahåller en signeringsnyckel för verifiering av nerladdade paket. Så utöver stegen ovan skall du följa eventuella instruktioner om nerladdning och installation av signeringsnyckeln (GPG-nyckeln).</p>
+    </item>
+  </steps>
+
+</page>

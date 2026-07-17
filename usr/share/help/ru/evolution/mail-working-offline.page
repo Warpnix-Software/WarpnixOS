@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-working-offline" xml:lang="ru">
+
+  <info>
+    <desc>Работа с почтой при отсутствии подключения к сети.</desc>
+<!-- TODO:POST-3-8: Offline work for web calendars etc also exists => create index page for Offline working? -->
+    <link type="guide" xref="index#mail-basic"/>
+
+    <revision pkgversion="3.28.2" version="0.6" date="2018-07-09" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-offline -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Работа в автономном режиме</title>
+
+<p>В <app>Evolution</app> предусмотрена возможность сохранения локальной копии папок, расположенных в удалённых почтовых системах (например, IMAP или Exchange), что позволяет выполнять чтение сообщений.</p>
+
+<note style="warning"><p>Принудительный автономный режим в <app>Evolution</app> относится только к почте и не применяется к контактам и календарям.</p></note>
+
+<p>Для учётных записей POP программа загружает все сообщения в вашу локальную систему, но для учётных записей с удалённым хранением данных обычно загружаются только заголовки. Остальное (например, тело письма) загружается только тогда, когда вы захотите прочитать сообщение. До перехода в автономный режим <app>Evolution</app> загрузит все непрочитанные сообщения из папок, которые вы выбрали для хранения данных.</p>
+
+<section id="accounts">
+<title>Параметры учётной записи</title>
+<p>В разделе настройки <link xref="mail-receiving-options">Параметры получения</link> учётных записей с удалённым хранением данных доступен параметр <gui>Автоматически синхронизировать удалённую почту локально во всех папках</gui>. Он применяется ко всем папкам соответствующей учётной записи.</p>
+<p>Чтобы избежать загрузки большого количества данных, также можно отключить синхронизацию сообщений, возраст которых превышает заданный период времени.</p>
+</section>
+
+<section id="mark-folders">
+<title>Отметка папок для использования в автономном режиме</title>
+<p>Если для учётной записи не установлен флажок <gui>Автоматически синхронизировать удалённую почту локально во всех папках</gui>, можно синхронизировать отдельные папки.</p>
+<p>Чтобы отметить папку для использования в автономном режиме:</p>
+<steps>
+<item><p>Щёлкните по папке правой кнопкой мыши и выберите пункт <gui>Свойства</gui>.</p></item>
+<item><p>Выберите пункт <gui>Скопировать содержимое папки локально для автономной работы</gui>.</p></item>
+</steps>
+</section>
+
+<section id="sync-for-offline">
+<title>Синхронизация сообщений для работы в автономном режиме</title>
+<p>Состояние соединения обозначается значком в строке состояния <link xref="intro-main-window">главного окна</link>. При наличии подключения значок отображает два соединённых кабеля. Если включить автономный режим путём щелчка по значку или выбора пункта меню <guiseq><gui>Файл</gui><gui>Работать автономно</gui></guiseq>, кабели разъединятся. В автономный режим можно перейти либо сразу, либо после синхронизации сетевых папок с локальной копией.</p>
+<p>Чтобы синхронизировать папки без немедленного перехода в автономный режим, выберите пункт меню <guiseq><gui>Файл</gui><gui>Загрузить сообщения для автономной работы</gui></guiseq>.</p>
+</section>
+
+<section id="network-manager-integration">
+<title>Автоматическое управление состоянием подключения</title>
+<p><app>Evolution</app> автоматически распознаёт состояние подключения к сети и действует соответствующим образом. Например, <app>Evolution</app> переключается в автономный режим, когда сеть отключена, и автоматически подключается, когда доступ к сети снова активирован.</p>
+</section>
+
+</page>

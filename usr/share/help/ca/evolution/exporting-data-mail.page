@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="exporting-data-mail" xml:lang="ca">
+
+  <info>
+    <desc>Com exportar les dades de correu electrònic des d'<app>Evolution</app>.</desc>
+
+    <link type="guide" xref="exporting-data"/>
+
+    <revision pkgversion="3.0.2" version="0.4" date="2013-04-20" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Exportar les dades del correu electrònic</title>
+
+<p>Per a desar un correu electrònic a un fitxer en format <link href="https://en.wikipedia.org/wiki/Mbox">mbox</link>, seleccioneu un correu i feu clic a <guiseq><gui>Fitxer</gui><gui>Desa com mbox…</gui></guiseq> o feu clic amb el botó dret sobre el missatge i feu clic a <gui>Desa com mbox…</gui>.</p>
+
+<p>Els mateixos passos s'apliquen per a desar tota una carpeta de correu, però primer heu de marcar tots els missatges.</p>
+<p>Podeu seleccionar tots els missatges d'una carpeta fent clic a <guiseq><gui>Edita</gui><gui>Selecciona-ho tot</gui></guiseq> o prement <keyseq><key>Ctrl</key><key>A</key></keyseq>.</p>
+
+</page>

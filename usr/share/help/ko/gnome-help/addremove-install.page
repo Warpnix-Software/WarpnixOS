@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-install" xml:lang="ko">
+
+  <info>
+    <credit type="author">
+      <name>우분투 문서화 팀</name>
+    </credit>
+    <desc>추가적인 어플리케이션들이 필요하거나 우분투를 더 유용하게 만들기 위해 <app>App Center</app> 앱을 사용하십시오.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove" group="#first"/>
+    <link type="seealso" xref="addremove-remove"/>
+    <link type="seealso" xref="addremove-install-synaptic"/>
+    <link type="seealso" xref="prefs-language-install"/>
+    <revision version="18.04" date="2018-03-18" status="review"/>
+  </info>
+
+  <title>추가 애플리케이션 설치</title>
+
+  <p>애플리케이션은 그래픽 사용자 인터페이스(GUI)가 있는 소프트웨어입니다. 우분투 개발팀은 우분투가 대부분의 일상적인 작업에 매우 유용하다고 생각되는 기본 애플리케이션 세트를 선택했습니다. 하지만 우분투를 더욱 유용하게 사용하기 위해 더 많은 애플리케이션을 설치하고 싶을 것입니다. 애플리케이션을 설치하려면<app>App Center</app>을 사용하면 됩니다.</p>
+
+   <p>애플리케이션은 두 가지 형식으로 제공됩니다: snap 패키지와 데비안 패키지. 이제부터 snap 패키지로 제공되는 애플리케이션을 <em>snap</em>이라고 합니다. 일부 애플리케이션은 두 가지 형식 모두 제공됩니다. 이러한 경우 <app>App Center</app>에서 snap이 먼저 설치됩니다.</p>
+
+   <p>또한 당신은 GUI가 없는 소프트웨어를 설치하기 원할 수 있습니다. 이러한 소프트웨어를 설치하기 위해서는, <link xref="addremove-install-synaptic">Synaptic</link> 를 사용할 수 있습니다. <app>Synaptic</app>은 스냅을 나열하지 않는다는 점을 유의하십시오.</p>
+
+  <p>응용 프로그램을 설치하려면:</p>
+
+  <steps>
+    <item>
+      <p><gui>Dock</gui>에 있는 <app>App Center</app> 아이콘을 클릭하거나, <em>Activities</em> 검색바에 있는 <input>Software</input>를 통해 검색할수 있습니다.</p>
+    </item>
+    <item>
+      <p><app>App Center</app> 앱이 실행되면, 어플리케이션을 검색하거나, 카테고리를 선택해 리스트에서 원하는 어플리케이션을 고를수 있습니다.</p>
+    </item>
+    <item>
+      <p>설치하고 싶은 어플리케이션을 골랐다면,  <gui>Install</gui> 버튼을 클릭하여 설치할수 있습니다.</p>
+    </item>
+    <item>
+      <p>인증을 위해 패스워드 입력을 요청합니다. 설치가 시작될때 한번만 입력하시면 됩니다. 일반적으로 설치과정은 빠르게 진행되지만, 인터넷 속도가 느리다면 조금 더 오래걸릴수도 있습니다.</p>
+
+    </item>
+
+  </steps>
+  
+</page>

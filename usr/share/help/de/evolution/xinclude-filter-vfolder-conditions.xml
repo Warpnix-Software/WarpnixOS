@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<info xmlns="http://projectmallard.org/1.0/">
+
+<item><p>Absender:</p>
+<p>Die E-Mail-Adresse des Absenders oder dessen Name.</p></item>
+
+<item><p>Empfänger:</p>
+<p>Die Empfänger der Nachricht.</p></item>
+
+<item><p>Kopie an:</p>
+<p>Nur die Kopie-Empfänger der Nachricht.</p></item>
+
+<item><p>Blindkopie an:</p>
+<p>Nur die Empfänger im Feld »Blindkopie an«. Selbstverständlich kann dies nur auf Ausgangsfilter angewendet werden.</p></item>
+
+<item><p>Absender oder Empfänger:</p>
+<p>Die E-Mail-Adresse des Absenders oder der Name des Absenders oder Empfängers der Nachricht.</p></item>
+
+<item><p>Betreff:</p>
+<p>Die Betreffzeile der Nachricht.</p></item>
+
+<item><p>Bestimmte Kopfzeile:</p>
+<p>Alle Kopfzeilen einschließlich <link xref="mail-composer-custom-header-lines">angepasste</link>.</p>
+<p>Falls eine Nachricht die gleiche Kopfzeile mehr als einmal benutzt, so wertet <app>Evolution</app> nur ihr erstes Auftreten aus, selbst wenn die Nachricht die Kopfzeile beim zweiten Mal anders definiert. Wenn zum Beispiel eine Nachricht die Kopfzeile »Resent-From:« als »engineering@example.com« und dann nochmals als »marketing@example.com« definiert, so filtert <app>Evolution</app>, als ob der zweite Wert nicht existieren würde. Verwenden Sie reguläre Ausdrücke, um Nachrichten zu filtern, welche die gleichen Kopfzeilen mehr als einmal definieren.</p></item>
+
+<item><p>Nachrichtenrumpf:</p>
+<p>Sucht im eigentlichen Text der Nachricht.</p></item>
+
+<item><p>Ausdruck:</p>
+<p>(Nur für Programmierer) Eine Nachricht mit einem in der Programmiersprache Scheme geschriebenen Ausdruck vergleichen, mit dem <link xref="mail-filters">Filter</link> in <app>Evolution</app> definiert werden.</p></item>
+
+<item><p>Freies Eingabefeld:</p>
+<p>(Nur für fortgeschrittene Benutzer) Zahlreiche Bedingungen mit Hilfe eines <link xref="mail-searching#free-form-expression">Spezielle Syntax</link> kombinieren.</p></item>
+
+<item><p>Verschickt-Datum:</p>
+<p>Filtert Nachrichten gemäß dem Datum, an dem sie verschickt wurden. Wählen Sie zunächst die Bedingungen, die auf eine Nachricht zutreffen sollen, wie zum Beispiel vor einem bestimmten Zeitpunkt oder nach einem bestimmten Zeitpunkt. Wählen Sie dann den Zeitpunkt aus. Der Filter vergleicht den Zeitstempel der Nachricht mit der Systemzeit, wenn der Filter angewendet wird, oder mit einem von Ihnen vorgegebenen Zeitpunkt. Es kann auch in den Nachrichten nach einem relativen Zeitpunkt gesucht werden, also zum Beispiel zwei oder vier Tage zuvor.</p></item>
+
+<item><p>Empfangsdatum:</p>
+<p>Dies funktioniert genau so wie das Filtern gemäß dem Verschickt-Datum, nur dass hierbei der Zeitpunkt verglichen wird, an dem Sie die Nachricht erhalten haben.</p></item>
+
+<item><p>Beschriftung:</p>
+<p>Nachrichten können <link xref="mail-labels">Beschriftungen</link> wie »Wichtig«, »Geschäftlich«, »Persönlich«, »Zu erledigen« oder »Später« haben. Sie können Beschriftungen durch Filter oder per Hand anwenden.</p></item>
+
+<item><p>Bewertung:</p>
+<p>Setzt die Bewertung der Nachricht auf einen ganzzahligen Wert, der größer als 0 ist. Sie können einen Filter haben, der die Bewertung setzt, und einen weiteren Filter, der auf der Bewertung basierend die Nachrichten in Ordner verschiebt. Eine Bewertung basiert auf keinen speziellen Eigenschaften, es handelt sich nur um eine Nummer, die Sie Nachrichten zuweisen können, damit andere Filter diese weiterverarbeiten können.</p></item>
+
+<item><p>Größe (kB):</p>
+<p>Sortiert gemäß der Größe der Nachricht in Kilobyte.</p></item>
+
+<item><p>Status:</p>
+<p>Filtert gemäß dem Status einer Nachricht, der »Beantwortet«, »Entwurf«, »Wichtig«, »Gelesen« oder »Unerwünscht« sein kann.</p></item>
+
+<item><p>Folgenachricht:</p>
+<p>Prüft, ob die Nachricht <link xref="mail-follow-up-flag">zur Nachverfolgung markiert</link> oder abgeschlossen ist (nach einem bestimmten Datum).</p></item>
+
+<item><p>Anlagen:</p>
+<p>Prüft, ob die Nachricht einen Anhang hat.</p></item>
+
+<item><p>Mailingliste:</p>
+<p>Filtert basierend auf der Mailingliste, von der die Nachricht kommt. Dieser Filter prüft aufgrund verschiedener auf Mailinglisten verweisender Kopfzeileneinträge, aber könnte Nachrichten einiger Listenserver nicht berücksichtigen, falls diese unübliche Kopfzeilen enthalten.</p></item>
+
+<item><p>Regex-Treffer:</p>
+<p>(Nur für fortgeschrittene Benutzer) Wenn Sie mit <link href="https://en.wikipedia.org/wiki/Regular_expression">Regex</link> (regulären Ausdrücken) hinreichend vertraut sind, können Sie mit dieser Option nach komplexen Buchstabenmustern suchen. Auf diese Weise finden Sie beispielsweise alle Wörter, die mit »a« beginnen und »m« enden und zwischen sechs und fünfzehn Buchstaben lang sind, oder alle Nachrichten, die eine bestimmte Kopfzeile zweimal deklarieren. <app>Evolution</app> unterstützt die Syntax erweiterter regulärer Ausdrücke (Extended Regular Expression syntax, ERE).</p></item>
+
+</info>

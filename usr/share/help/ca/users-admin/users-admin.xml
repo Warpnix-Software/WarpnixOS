@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY toolversion "2.15.2">
+<!ENTITY manrevision "2.15.2">
+<!ENTITY date "August 2006">
+<!ENTITY tool "Users Administration Tool">
+]>
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 06, 2003
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="ca">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Manual de l'eina d'administració dels usuaris</title> 
+    <copyright lang="en">
+      <year>2004</year>
+      <holder>Carlos Garnacho Parro</holder>
+    </copyright>
+
+<!-- translators: uncomment this:
+  <copyright>
+   <year>2003</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+   -->
+
+    <publisher role="maintainer"> 
+	 <publishername>Carlos Garnacho Parro</publishername> 
+    </publisher> 
+
+
+<!-- This file  contains link to license for the documentation (GNU FDL), and 
+     other legal stuff such as "NO WARRANTY" statement. Please do not change 
+     any of this. -->
+
+    <authorgroup> 
+      <author lang="en">
+        <firstname>Carlos</firstname>
+        <surname>Garnacho Parro</surname>
+      </author>
+      <!-- This is appropriate place for other contributors: translators,
+           maintainers,  etc. Commented out by default.
+        <othercredit role="translator">
+	      <firstname>Latin</firstname> 
+	      <surname>Translator 1</surname> 
+	      <affiliation> 
+	      	<orgname>Latin Translation Team</orgname> 
+	       	<address> <email>translator@gnome.org</email> </address> 
+	      </affiliation>
+	      <contrib>Latin translation</contrib>
+        </othercredit>
+-->
+    </authorgroup>
+
+    <revhistory>
+	 <revision lang="en">
+	   <revnumber>Users Administration Tool Manual V2.15.2</revnumber>
+	   <date>August 2006</date>
+	   <revdescription>
+          <para role="author" lang="en">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher" lang="en">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+	 <revision lang="en">
+	   <revnumber>Users Administration Tool Manual V0.35</revnumber>
+	   <date>June 2004</date>
+	   <revdescription>
+          <para role="author" lang="en">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+          <para role="publisher" lang="en">carlosg@gnome.org (Carlos Garnacho Parro)</para>
+	   </revdescription>
+	 </revision>
+    </revhistory>
+
+    <releaseinfo>Aquest manual descriu la versió 2.15.2 de l'eina d'administració dels usuaris.</releaseinfo> 
+
+    <legalnotice> 
+	 <title>Comentaris</title> 
+	 <para>Per a informar d'un error o fer algun suggeriment sobre l'<application>eina d'administració dels usuaris</application> o aquest manual, seguiu les indicacions a la <ulink url="ghelp:gnome-feedback" type="help">Pàgina de comentaris del GNOME</ulink>.</para>
+    </legalnotice>
+    <abstract role="description">
+      <para>L'eina d'administració dels usuaris us permet afegir, suprimir i modificar els usuaris existents i els grups del sistema.</para>
+    </abstract>
+  </articleinfo> 
+
+  <indexterm zone="index" lang="en"> 
+    <primary>Users Administration Tool</primary> 
+  </indexterm> 
+
+  <!-- ============= Document Body ============================= -->
+  <sect1 id="tool-introduction"> 
+    <title>Introducció</title> 
+    <para>L'<application>eina d'administració dels usuaris</application> us permet afegir, suprimir i modificar els usuaris existents i els grups del vostre sistema.</para> 
+  </sect1>
+
+  <sect1 id="tool-getting-started">
+    <title>Inici</title>
+
+    <para>Podeu iniciar l'<application>eina d'administració dels usuaris</application> de les següents maneres:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term>Menú <guimenu>Sistema</guimenu></term>
+	   <listitem>
+		<para>Trieu <menuchoice><guisubmenu>Administració</guisubmenu><guimenuitem>Usuaris i grups</guimenuitem></menuchoice>.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term>Línia d'ordres</term>
+	   <listitem>
+		<para>Executeu la següent ordre: <command>users-admin</command></para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+
+    <para>Quan inicieu l'<application>eina d'administració dels usuaris</application> se us demanarà la contrasenya de l'administrador. Això és necessari perquè els canvis realitzats amb aquesta eina afectaran tot el sistema.</para>
+
+    <para>Després d'introduir la contrasenya de l'administrador, es mostrarà la següent finestra.</para>
+
+    <figure id="users-main-window">
+	 <title>Finestra principal de l'eina d'administració dels usuaris</title>
+	 <screenshot>
+	   <mediaobject lang="en">
+		<imageobject>
+		  <imagedata fileref="figures/users-tool.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+		  <phrase>Shows Users Administration Tool main window.</phrase>
+		</textobject>
+	   </mediaobject>
+	 </screenshot>
+    </figure>
+
+    <para>La finestra principal de l'<application>eina d'administració dels usuaris</application> conté els següents elements:</para>
+
+    <variablelist>
+	 <varlistentry>
+	   <term lang="en"><guilabel>Users list</guilabel></term>
+	   <listitem>
+		<para>Mostra els usuaris disponibles. Depenent de la clau gconf «/apps/gnome-system-tools/users/showall» també mostrarà els usuaris del sistema.</para>
+	   </listitem>
+	 </varlistentry>
+
+	 <varlistentry>
+	   <term lang="en"><guilabel>User manipulation buttons</guilabel></term>
+	   <listitem>
+		<para>Us permet afegir o suprimir usuaris o modificar els paràmetres dels usuaris.</para>
+	   </listitem>
+	 </varlistentry>
+	 <varlistentry>
+	   <term lang="en"><guilabel>Manage groups button</guilabel></term>
+	   <listitem>
+		<para>Mostra un diàleg similar per a modificar els paràmetres dels grups.</para>
+	   </listitem>
+	 </varlistentry>
+    </variablelist>
+
+    <figure id="users-groups-editor">
+	 <title>Editor de grups de l'eina d'administració dels usuaris</title>
+	 <screenshot>
+	   <mediaobject lang="en">
+		<imageobject>
+		  <imagedata fileref="figures/groups.png" format="PNG"/>
+		</imageobject>
+		<textobject>
+		  <phrase>Groups editor.</phrase>
+		</textobject>
+	   </mediaobject>
+	 </screenshot>
+    </figure>
+  </sect1>
+
+  <sect1 id="tool-usage">
+    <title>Utilització</title>
+
+    <sect2 id="tool-add-new-user">
+	 <title>Per a afegir un usuari nou</title>
+	 <para>Premeu el botó <guilabel>Afegir</guilabel> en el diàleg principal, apareixerà una finestra nova demanant les dades de l'usuari nou. Per a afegir un usuari nou, heu de proporcionar com a mínim el nom d'usuari i la contrasenya (generada automàticament o a mà). Opcionalment podeu especificar o afegir el nom real, la ubicació de l'oficina, el telèfon del treball, el telèfon de casa, el grup principal, l'interpret d'ordres utilitzat, el directori d'inici, l'identificador d'usuari i una llista dels grups secundaris per a l'usuari.</para>
+
+	 <para>El grup principal, l'interpret d'ordres utilitzat, el directori d'inici i l'identificador d'usuari se suposen automàticament depenent del perfil seleccionat.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Per a modificar un usuari existent</title>
+	 <para lang="en">Select the user you want to modify and press the <guilabel>Properties</guilabel> button, a window similar to the one used for adding new users will appear with all the user data, allowing you to modify them.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Per a suprimir un usuari existent</title>
+	 <para>Seleccioneu l'usuari o usuaris que voleu suprimir i premeu el botó <guilabel>Suprimeix</guilabel> en la pestanya <guilabel>Usuaris</guilabel>, degut a la importància d'aquestes dades, s'us demanarà una confirmació per a cada usuari que voleu suprimir.</para>
+
+	 <para>Per raons de seguretat, el directori d'inici dels usuaris suprimits no serà suprimit.</para>
+    </sect2>
+
+    <sect2 id="tool-add-new-group">
+	 <title>Per a afegir un grup nou</title>
+	 <para>Premeu el botó <guilabel>Afegir</guilabel> en el diàleg de grups, apareixerà una finestra nova demanant les dades del grup nou. Per a afegir un grup nou, heu de proporcionar com a mínim el nom del grup i l'identificador del grup. Opcionalment podeu especificar els usuaris que pertanyeran en aquest grup.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Per a modificar un grup existent</title>
+	 <para>Seleccioneu el grup que voleu modificar en el diàleg de grups i premeu el botó <guilabel>Propietats</guilabel>. Apareixerà una finestra amb les dades del grup, permetent-vos modificar-les.</para>
+    </sect2>
+
+    <sect2>
+	 <title>Per a suprimir un grup existent</title>
+	 <para>Seleccioneu el grup o grups que voleu suprimir en el diàleg de grups i premeu el botó <guilabel>Suprimeix</guilabel> en la pestanya de <guilabel>Grups</guilabel>, degut a la importància d'aquestes dades, s'us demanarà una confirmació per a cada grup que voleu suprimir.</para>
+    </sect2>
+  </sect1>
+</article>

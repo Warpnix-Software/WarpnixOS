@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-install-synaptic" xml:lang="da">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntus dokumentationshold</name>
+    </credit>
+
+		<credit type="editor">
+      <name>Greg Beam</name>
+      <email>ki7mt@yahoo.com</email>
+    </credit>
+
+    <link type="guide" xref="addremove"/>
+    <revision pkgversion="0.80.4" version="0" date="2014-01-11" status="review"/>
+                <revision version="18.04" date="2018-03-18" status="review"/>
+                <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Synaptic er et meget stærkt, men også kompliceret, alternativ til <app>App Center</app>.</desc>
+  </info>
+
+  <title>Brug Synaptic til mere avanceret softwarehåndtering</title>
+
+  <p><app>Synaptic pakkehåndtering</app> er mere avanceret og kan gøre nogle ting, som <app>App Center</app> ikke kan. Synaptics grænseflade er mere kompliceret og understøtter ikke nyere <app>App Center</app>-funktioner som bedømmelser og anmeldelser og kan derfor ikke anbefales til nye Ubuntu-brugere.</p>
+
+  <p>Synaptic er som standard ikke installeret, men kan <link href="apt:synaptic">installeres</link> fra Ubuntus pakkearkiv.</p>
+
+  <section id="install-software-with-synaptic">
+    <title>Installér software med Synaptic</title>
+    <steps>
+      <item>
+        <p>Åbn <app>Synaptic</app> fra søgelinjen i <em>Activities</em>. Du skal indtaste din adgangskode i <gui>Godkendelsesvinduet</gui>.</p>
+      </item>
+      <item>
+        <p>Klik <gui>Søg</gui> for at søge efter et program, eller klik på <gui>Sektioner</gui> og se igennem kategorierne for at finde en.</p>
+      </item>
+      <item>
+        <p>Højreklik på det program, du vil installere, og vælg <gui>Markér til installation</gui>.</p>
+      </item>
+      <item>
+        <p>Hvis du bliver bedt om at markere yderligere ændringer, skal du klikke <gui>Markér</gui>.</p>
+      </item>
+      <item>
+        <p>Vælg eventuelle andre programmer, som du kunne tænke dig at installere.</p>
+      </item>
+      <item>
+        <p>Klik på <gui>Anvend</gui> og klik så på <gui>Anvend</gui> i det vindue, som dukker op. De programmer, du vælger, vil blive hentet og installeret.</p>
+      </item>
+    </steps>
+
+    <p>Se <link href="https://help.ubuntu.com/community/SynapticHowto">Synaptic How To</link> for flere oplysninger om brugen af <app>Synaptic</app>.</p>
+
+  </section>
+
+</page>

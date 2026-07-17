@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="tip" id="get-involved" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="more-help"/>
+    <link type="seealso" xref="report-ubuntu-bug"/>
+    <desc>Як і куди повідомляти про помилки у цьому керівництві.</desc>
+
+    <revision pkgversion="3.4.0" date="2012-02-19" status="review"/>
+    <revision version="13.10" date="2013-09-12" status="review"/>
+
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+  <title>Беріть участь у покращенні цього керівництва</title>
+
+
+<p>Ця довідкова система створена співтовариством добровольців. Ми будемо дуже вдячні, якщо ви приймете участь у розвитку. Якщо ви виявили помилку на сторінках довідки (наприклад друкарські помилки, неправильні вказівки або відсутність тем, які повинні бути порушені), то можна <em>повідомити про помилку</em>.</p>
+
+ <p>Щоб повідомити про помилку, натисніть <keyseq><key>Alt</key><key>F2</key></keyseq> й уведіть <input>ubuntu-bug ubuntu-docs</input>. Натисніть клавішу <gui>Enter</gui> для початку процесу збору відомостей про помилку.</p>
+
+ <p>Зверніться до <link xref="report-ubuntu-bug">вказівок з надсилання повідомлень про помилки в Ubuntu</link> для докладних відомостей про те, як повідомити про помилку.</p>
+
+ <p>Дякуємо, що допомагаєте зробити довідку Ubuntu кращою!</p>
+</page>

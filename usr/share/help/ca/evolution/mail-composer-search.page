@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-search" xml:lang="ca">
+
+  <info>
+    <desc>Cerca de text a l'editor de correu.</desc>
+    
+    <link type="guide" xref="index#mail-composing"/>
+    <link type="guide" xref="searching-items"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2013-04-20" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Cercar a l'editor de correu</title>
+
+<p>Al menú <gui>Edita</gui> a l'editor de missatges hi ha diverses funcions de cerca de text disponibles.</p>
+
+<list>
+<item><p><gui>Cerca</gui>:</p><p>Introduïu una paraula o frase, i <app>Evolution</app> la cercarà al missatge.</p></item>
+
+<item><p><gui>Cerca de nou</gui>:</p><p>Seleccioneu aquest element per a repetir l'última cerca que heu realitzat.</p></item>
+
+<item><p><gui>Reemplaça</gui>:</p><p>Cerqueu una paraula o una frase, i reemplaceu-la per una altra cosa.</p></item>
+</list>
+
+<p>Per a tots aquests elements de menú podeu triar si voleu cercar cap enrere en el document des del punt on està el cursor. També podeu determinar si la cerca es distingeix entre majúscules i minúscules.</p>
+<p>Si teniu un perfil tècnic podeu seleccionar l'opció de cerca per tal de poder utilitzar <link href="https://en.wikipedia.org/wiki/Regular_expression">Expressions regulars </link>.</p>
+
+</page>

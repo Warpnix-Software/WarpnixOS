@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-read-receipts" xml:lang="ru">
+
+  <info>
+    <desc>Включение отчётов о прочтении.</desc>
+    
+    <link type="guide" xref="index#mail-advanced"/>
+    <link type="guide" xref="mail-account-manage-imap-plus#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-local-delivery#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-maildir-format-directories#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-mh-format-directories#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-pop#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-directory#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-file#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-usenet-news#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-microsoft-exchange-evo-mapi#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-microsoft-exchange-evo-ews#composing-messages"/>
+
+    <revision pkgversion="3.25.90" version="0.3" date="2017-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Отчёты о прочтении сообщений</title>
+
+<p>Отчёты о прочтении позволяют адресатам подтвердить получение вашего письма. Обычно получатель может выбрать, следует ли отправлять подтверждение, поэтому отчёты о прочтении не являются абсолютно надёжным способом проверки того, было ли получено ваше письмо.</p>
+
+<p>Чтобы запросить отчёт о прочтении, выберите в меню окна редактора пункт <guiseq><gui>Параметры</gui><gui>Запросить уведомление о прочтении</gui></guiseq> или нажмите соответствующий значок на панели инструментов.</p>
+
+<p>Чтобы настроить поведение <app>Evolution</app> в отношении отчётов о прочтении, выберите подходящий параметр в разделе <gui>Отчёты</gui> на странице <gui>Создание сообщений</gui> <link xref="mail-account-management">настроек учётной записи</link>.</p>
+
+</page>

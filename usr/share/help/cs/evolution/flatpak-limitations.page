@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="flatpak-limitations" xml:lang="cs">
+
+  <info>
+    <desc>Jaká jsou omezení při použití aplikace <app>Evolution</app> z balíčku Flatpak.</desc>
+
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="3.35.91" version="0.1" date="2020-02-21" status="review"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+</info>
+
+<title>Nelze vytisknout zprávy, přidat nebo uložit přílohy, nebo otevřít nápovědu</title>
+
+<p>Pokud spouštíte <app>Evolution</app> ve verzi <link href="https://flathub.org/">Flatpak</link>, je zde několik omezení. Například:</p>
+
+<list>
+  <item><p>Není možné přidávat přílohy do e-mailů a ukládat přílony z e-mailů.</p></item>
+  <item><p>Nemůžete tisknout e-maily na tiskárně. Jedná se o <link href="https://bugs.webkit.org/show_bug.cgi?id=192748">omezení podkladové knihovny WebKitGTK</link>.</p>
+  <p>U tisk e-mailu do souboru se dá problém obejít spuštěním <cmd>flatpak run --filesystem=home org.gnome.Evolution</cmd></p></item>
+  <item><p>Z důvodu velikosti balíčku nemusí být jeho součástí místní verze uživateské dokumentace.</p></item>
+</list>
+</page>

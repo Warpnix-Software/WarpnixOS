@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-remove" xml:lang="ko">
+
+  <info>
+    <credit type="author">
+      <name>우분투 문서화 팀</name>
+    </credit>
+    <desc>더 이상 사용하지 않는 애플리케이션을 삭제하세요.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove" group="#first"/>
+    <link type="seealso" xref="addremove-install-synaptic"/>
+    <revision version="18.04" date="2018-03-18" status="review"/>
+  </info>
+
+  <title>애플리케이션 삭제</title>
+
+  <p>어플리케이션은 그래픽 유저 인터페이스 (GUI)를 가진 소프트웨어 입니다.  <app>App Center</app> 를 통해 사용하지 않는 어플리케이션들을 제거할수 있습니다.</p>
+
+   <p>애플리케이션은 두 가지 형식으로 제공됩니다: snap 패키지와 데비안 패키지. 이제부터 snap 패키지로 제공되는 애플리케이션을 <em>snap</em>이라고 합니다. 일부 애플리케이션은 두 가지 형식 모두 제공됩니다. 이러한 경우 <app>App Center</app>에서 snap이 먼저 설치됩니다.</p> 
+
+   <p>그래픽 유저 인터페이스 (GUI)를 가지고 있지 않은 소프트웨어들 지우고 싶을때는 <link xref="addremove-install-synaptic">Synaptic</link>을 사용하면 됩니다. <app>Synaptic</app>은 snap들을 list하는 기능이 없음을 참고하십시오.</p>
+
+  <p>응용 프로그램을 제거하려면:</p>
+    
+  <steps>
+    <item>
+      <p><gui>Dock</gui>에 있는 <app>App Center</app> 아이콘을 클릭하거나, <em>Activities</em> 검색바에 있는 <input>Software</input>를 통해 검색할수 있습니다.</p>
+    </item>
+    <item>
+      <p><app>App Center</app> 이 열리면, 상단에 위치한 <gui>Installed</gui> 버튼을 클릭하십시오.</p>
+    </item>
+    <item>
+      <p>search box를 사용하거나 설치된 어플리케이션들의 리스트를 찾아모녀 삭제하고 싶은 어플리케이션을 찾으십시오.</p>
+    </item>
+    <item>
+      <p>어플리케이션을 선택한후 <gui>Remove</gui> 버튼을 클릭합니다.</p>
+    </item>
+    <item>
+      <p>애플리케이션을 삭제할 것인지 확인하세요.</p>
+    </item>
+    <item>
+      <p>인증을 위해 패스워드를 입력해야 합니다. 패스워드 입력이 끝나면, 어플리케이션이 제거됩니다.</p>
+    </item>
+
+  </steps>
+
+  <note>
+    <p>어떤 어플리케이션들은 정상 동작을 위해 다른 어플리케이션들에 의존하기도 합니다. 만약 다른 어플리케이션이 필요로 하는 어플리케이션을 삭제하려 시도하면, 삭제되기전 사용자로부터 확인을 거친후 진행 됩니다.</p>
+  </note>
+
+</page>

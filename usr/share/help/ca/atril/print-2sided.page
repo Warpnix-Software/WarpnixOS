@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" style="task" id="print-2sided" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="printing"/>
+
+    <desc>Imprimint per les dues cares o en format multipàgina.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Carles Ferrando Garcia</mal:name>
+      <mal:email>carles.ferrando@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert Antoni Buj Gelonch</mal:name>
+      <mal:email>rbuj@fedoraproject.org</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Disseny d'impressió per dues cares i amb múltiples pàgines per cara</title>
+
+<p>Podeu imprimir per les dues cares de cada full de paper:</p>
+
+<steps>
+ <item>
+  <p>Aneu a <guiseq><gui style="menuitem">Fitxer</gui><gui style="menuitem">Imprimeix...</gui></guiseq> i premeu el botó <gui style="button">Imprimir</gui>.</p>
+ </item>
+ <item>
+  <p>Aneu a la pestanya <gui>Configuració de la pàgina</gui> de la finestra d'impressió i escolliu una opció de la llista desplegable <gui>Doble cara</gui>.</p>
+ </item>
+ <item>
+  <p>També podeu imprimir més d'una pàgina del document a cada <em>cara</em> del full. Utilitzeu l'opció <gui>Pàgines per cara</gui> si voleu fer-ho així.</p>
+ </item>
+</steps>
+
+</page>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-searching" xml:lang="hu">
+ 
+  <info>
+    <desc>Üzenetek keresése.</desc>
+    
+    <link type="guide" xref="searching-items"/>
+    <link type="guide" xref="mail-organizing"/>
+ 
+    <revision pkgversion="3.33.90" version="0.7" date="2019-09-05" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Max Vorobuov</name>
+      <email its:translate="no">vmax0770@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+ 
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lukács Bence</mal:name>
+      <mal:email>lukacs.bence1 at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kelemen Gábor</mal:name>
+      <mal:email>kelemeng at gnome dot hu</mal:email>
+      <mal:years>2011, 2012, 2013, 2015, 2017, 2018.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nagy Zoltán</mal:name>
+      <mal:email>dzodzie at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Úr Balázs</mal:name>
+      <mal:email>ur.balazs at fsf dot hu</mal:email>
+      <mal:years>2014, 2019, 2021, 2022, 2023, 2024, 2025.</mal:years>
+    </mal:credit>
+  </info>
+ 
+<title>Levelek keresése</title>
+
+<section id="search-single">
+<title>Keresés egyetlen üzenetben</title>
+<p>A megjelenített üzenetben való kereséshez válassza a <guiseq><gui>Szerkesztés</gui><gui>Keresés üzenetben…</gui></guiseq> menüpontot.</p>
+</section>
+
+<section id="search-many">
+<title>Keresés minden üzenetben</title>
+
+<section id="quick-search">
+<title>Gyors keresés</title>
+<p>A levélnézetben feltételek megadásával gyorsan megkereshet egyes leveleket.</p>
+<steps>
+<item><p>A legördülő lista kibontásához kattintson a <media type="image" mime="image/png" its:translate="no" src="figures/search-icon.png"/> keresés ikonra.</p></item>
+<item><p>Válassza ki a keresési feltételt a listából.</p>
+<note style="tip"><p>Bizonyos keresések lassúak lehetnek a távoli postafiókokon (például IMAP+). Ha olyan keresési feltételt választ, mint például a <gui>Szövegtörzs tartalmazza</gui> vagy az <gui>Üzenet tartalmazza</gui>, és az <app>Evolution</app> online módban van, valamint azok a mappák <link xref="mail-working-offline">még nincsenek helyileg lemásolva a kapcsolat nélküli használathoz</link>, amelyekben keresésre készül, akkor az Evolution automatikusan lefuttatja a keresést a levelezési kiszolgáló oldalán, ha a kiszolgáló meghirdeti a kiszolgáló oldali keresések támogatását. Ha olyan keresési feltételek mentén végez keresést, amelyek már elérhetők helyileg (például az üzenetek címzettjei vagy tárgya), akkor a keresés helyileg lesz lefuttatva.</p></note>
+</item>
+<item><p>Válassza ki a hatókört a szövegmező melletti legördülő listából.</p>
+<note style="tip"><p>A <gui>Jelenlegi fiók</gui> hatókörben a „fiók” kifejezés a <link xref="intro-main-window#e-mail">levélmappalista</link> felsőszintű csomópontjaira vonatkozik, mint például „Ezen a számítógépen” és a távoli postafiókok.</p></note>
+</item>
+<item><p>Adja meg a keresendő szöveget, és nyomja meg az <key>Enter</key> billentyűt.</p></item>
+<item><p>Az <app>Evolution</app> megjeleníti a találatokat.</p></item>
+</steps>
+<note style="tip"><p>Ha közvetlenül a negyedik lépéssel kezdi, akkor keresés a levél tárgyában és címeiben kerül végrehajtásra, és a hatókör a „Jelenlegi mappa” lesz.</p></note>
+<note style="tip"><p>Ha gyakran keres olyan levelekben, amelyek nem ugyanabban a mappában vannak, akkor hasznos lehet egy keresőmappát létrehozni; további részletekért lásd a <link xref="mail-search-folders">Keresőmappák használata</link> szakaszt.</p></note>
+<p>Ha több keresési feltételt szeretne beállítani, akkor használja a Speciális keresést (lásd alább).</p>
+</section>
+
+<!-- As advanced-search, clearing-search, saved-searches, editing-a-saved-search are totally identical in all *-searching.page files, this is centrally in one file that's included by XInclude. See
+http://blogs.gnome.org/shaunm/2011/07/21/understanding-xinclude/ for how it works. -->
+<include xmlns="http://www.w3.org/2001/XInclude" href="xinclude-searching.xml" xpointer="xmlns(mal=http://projectmallard.org/1.0/)xpointer(/mal:info/mal:section)"/>
+
+<section id="free-form-expression">
+<title>Tetszőleges kifejezés</title>
+<p>A keresési feltételek egyike egy <gui>Tetszőleges kifejezés</gui>, amely lehetővé teszi az összetett feltételek meghatározását. Első lépésként az adott tetszőleges kifejezés szavakra lesz bontva. Ha a szónak nincs (ismert) címke előtagja, akkor az érték kerül ellenőrzésre, hogy a címzett, másolat vagy tárgy fejlécekben szerepel-e. Abban az esetben, ha üres karakterekre vagy bármilyen más különleges karakterre van szükség, akkor tegye a szót idézőjelek közé. Ha idézőjelre van szüksége, akkor írjon dupla idézőjelet az idézett szövegen belül. Példa: az <code>idézet ""itt""</code> egy szóként, <code>idézet "itt"</code> formában lesz feldolgozva. Például az <code>f:Kovács János</code> azokat az üzeneteket szűri, ahol a feladó tartalmazza a <code>Kovács</code> vezetéknevet és a címzett, másolat vagy tárgy mezők tartalmazzák a <code>János</code> keresztnevet, míg az <code>f:"Kovács János"</code> azokat az üzeneteket szűri, ahol a küldő <code>Kovács János</code>.</p>
+<p>A címkék szintaxisa: <code>&lt;címke&gt;[-&lt;kapcsolók&gt;]:érték</code>. A címkék a következők:</p>
+<table frame="all" rules="rows cols" shade="rows">
+<tr><td><p>Címke</p></td><td><p>Rövidítés</p></td><td><p>Jelentés</p></td></tr>
+<tr><td><p its:translate="no">from</p></td><td><p its:translate="no">f</p></td><td><p its:locNote="Translators: 'From' is a header name, do not translate it">a „From” fejlécnek egyeznie kell (*)</p></td></tr>
+<tr><td><p its:translate="no">to</p></td><td><p its:translate="no">t</p></td><td><p its:locNote="Translators: 'To' is a header name, do not translate it">a „To” fejlécnek egyeznie kell (*)</p></td></tr>
+<tr><td><p its:translate="no">cc</p></td><td><p its:translate="no">c</p></td><td><p its:locNote="Translators: 'CC' is a header name, do not translate it">a „CC” fejlécnek egyeznie kell (*)</p></td></tr>
+<tr><td><p its:translate="no">recips</p></td><td><p its:translate="no">r</p></td><td><p its:locNote="Translators: 'To' and 'CC' are the header names, do not translate it">a „To” vagy „CC” fejlécnek egyeznie kell (*)</p></td></tr>
+<tr><td><p its:translate="no">subject</p></td><td><p its:translate="no">s</p></td><td><p its:locNote="Translators: 'Subject' is a header name, do not translate it">a „Subject” fejlécnek egyeznie kell (*)</p></td></tr>
+<tr><td><p its:translate="no">list</p></td><td><p/></td><td><p>a levelezőlista fejlécnek egyeznie kell (*)</p></td></tr>
+<tr><td><p its:translate="no">header</p></td><td><p its:translate="no">h</p></td><td><p>a megadott fejlécnek egyeznie kell (*)</p>
+<p>a szintaxis: <code>h:fejlécnév=érték</code>, bár az egyenlőségjel csak elválasztójelként van használva, nem pedig illesztési szabályként</p></td></tr>
+<tr><td><p its:translate="no">exists</p></td><td><p its:translate="no">e</p></td><td><p>a megadott fejléc létezik-e</p></td></tr>
+<tr><td><p its:translate="no">tag</p></td><td><p/></td><td><p>a megadott felhasználói címke be van-e állítva egy üzeneten</p></td></tr>
+<tr><td><p its:translate="no">flag</p></td><td><p/></td><td><p>egy bizonyos jelző be van-e állítva, az ismert különleges értékek:</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Megválaszolt</code> – az üzenet megválaszoltként van megjelölve</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Törölt</code> – az üzenet töröltként van megjelölve</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Piszkozat</code> – az üzenet piszkozatként van megjelölve</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Megjelölt</code> – az üzenet fontosként van megjelölve</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Olvasott</code> – az üzenet olvasottként (nem olvasatlanként) van megjelölve</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Melléklet</code> – az üzenet melléklettel rendelkezik</p>
+<p>Bármely más érték ellenőrzésre kerül, hogy nem üres-e.</p></td></tr>
+<tr><td><p its:translate="no">label</p></td><td><p its:translate="no">l</p></td><td><p>be van-e állítva egy bizonyos <link xref="mail-labels">címke</link> az üzeneten</p></td></tr>
+<tr><td><p its:translate="no">size</p></td><td><p its:translate="no">sz</p></td><td><p>az üzenet mérete KB-ban egyenlő-e a megadott értékkel</p>
+<p>Két kapcsoló értelmezhető: <code>&lt;</code> azon üzenetek lekéréséhez, amelyek mérete kisebb és <code>&gt;</code> azon üzenetek lekéréséhez, amelyek mérete nagyobb a megadottnál. Példa: a <code>size-&gt;:1024</code> azokat az üzeneteket szűri, amelyek 1 MB-nál nagyobbak.</p></td></tr>
+<tr><td><p its:translate="no">score</p></td><td><p its:translate="no">sc</p></td><td><p>összehasonlítja az üzeneten lévő <code>score</code> címkét a megadott értékkel, az alapértelmezett összehasonlítás az egyenlő, de – a <code>size</code> címkéhez hasonlóan – a <code>&lt;</code> és <code>&gt;</code> kapcsolók is használhatók</p></td></tr>
+<tr><td><p its:translate="no">body</p></td><td><p its:translate="no">b</p></td><td><p>ellenőrzi az üzenet törzsét, hogy a megadott szó létezik-e benne, az alapértelmezett összehasonlító kapcsolók a <code>contains</code>, de reguláris kifejezés is használható, ha a kapcsoló a <code>regex</code>, <code>re</code> vagy <code>r</code> kapcsolók egyike.</p></td></tr>
+<tr><td><p its:translate="no">sent</p></td><td><p/></td><td><p>az üzenet elküldési dátumának egyeznie kell (**)</p></td></tr>
+<tr><td><p its:translate="no">received</p></td><td><p its:translate="no">rcv</p></td><td><p>az üzenet fogadási dátumának egyeznie kell (**)</p></td></tr>
+<tr><td><p its:translate="no">attachment</p></td><td><p its:translate="no">a</p></td><td><p>az üzenet rendelkezik (ha az érték nem a <code>no</code>, <code>false</code>, <code>0</code> értékek egyike) melléklettel, hasonló a <code>flag:attachment</code> címkéhez.</p></td></tr>
+<tr><td><p its:translate="no">location</p></td><td><p its:translate="no">m</p></td><td><p>Ellenőrzi az üzenet helyét. A hely értéke (URL) a mappa <gui>Tulajdonságaiban</gui> található. Példa: <code>location:"Ezen a számítógépen/Beérkezett üzenetek"</code></p></td></tr>
+<tr><td><p its:translate="no">mid</p></td><td><p/></td><td><p>Összehasonlítja az üzenet azonosítóját.</p></td></tr>
+</table>
+<p>(*) A fejléc-összehasonlítások rendelkezhetnek illesztési típus kapcsolóval. Az alapértelmezett, hogy egy <code>contains</code> címkét keres. Az elérhető kapcsolók a következők:</p>
+<table frame="all" rules="rows cols" shade="rows">
+<tr><td><p>Kapcsoló</p></td><td><p>Rövidítés</p></td><td><p>Jelentés</p></td></tr>
+<tr><td><p its:translate="no">contains</p></td><td><p its:translate="no">c</p></td><td><p>illeszkedik, ha tartalmazza</p></td></tr>
+<tr><td><p its:translate="no">has-words</p></td><td><p its:translate="no">w</p></td><td><p>illeszkedik, ha teljes szót tartalmaz</p></td></tr>
+<tr><td><p its:translate="no">matches</p></td><td><p its:translate="no">m</p></td><td><p>az érték pontos egyezése</p></td></tr>
+<tr><td><p its:translate="no">starts-with</p></td><td><p its:translate="no">sw</p></td><td><p>a fejléc értéke a megadott értékkel kezdődik</p></td></tr>
+<tr><td><p its:translate="no">ends-with</p></td><td><p its:translate="no">ew</p></td><td><p>a fejléc értéke a megadott értékkel végződik</p></td></tr>
+<tr><td><p its:translate="no">soundex</p></td><td><p its:translate="no">se</p></td><td><p>a fejléc értéke hasonlóan hangzik a megadott értékhez</p></td></tr>
+<tr><td><p its:translate="no">regex</p></td><td><p its:translate="no">r</p></td><td><p>a megadott érték egy reguláris kifejezés</p></td></tr>
+<tr><td><p its:translate="no">full-regex</p></td><td><p its:translate="no">fr</p></td><td><p>egy reguláris kifejezés másik típusa</p></td></tr>
+</table>
+<p>(**) A dátumok írhatók relatívan (a pozitív szám azt jelenti, hogy az <code>elmúlt X napban</code>), míg a negatív szám a jövőbe mutat. Például az elmúlt 10 napban fogadott üzenetek lekéréséhez használja ezt: <code>recv:10</code>. Pontos dátum is használható, a formátum vagy <code>ÉÉÉÉ-HH-NN</code> (az előnyben részesített) ISO 8601 formátum, vagy egy területi beállításra jellemző dátum vagy dátum és idő formátum. Ha a dátum és idő feldolgozása nem sikerül, akkor a feltétel ki lesz hagyva. A dátum-összehasonlításoknak is lehetnek további kapcsolóik, ezek a <code>&lt;</code>, <code>=</code> vagy <code>&gt;</code>, ahol a <code>&gt;</code> az alapértelmezett összehasonlítási kapcsoló.</p>
+<p>Létezik három különleges címke, amelyek különleges jelölést igényelnek. Ezek az alábbiak:</p>
+<list>
+<item><p><code its:translate="no">not:(....)</code></p></item>
+<item><p><code its:translate="no">and:(....)</code></p></item>
+<item><p><code its:translate="no">or:(....)</code></p></item>
+</list>
+<p>amely lehetővé teszi a szakosodott kifejezések létrehozását. Az alapértelmezett (a legkülső) kapcsolat az <code>és</code>. A <code>vagy</code> kapcsolatra való megváltoztatáshoz ágyazza be a teljes szűrőt így: <code>or:(....)</code>. Példa: a <code>f:Bugzilla t:János</code> az összes olyan üzenetet szűri, amely tartalmazza a <code>Bugzilla</code> szót a feladó mezőben és a <code>János</code> nevet a címzett mezőben, míg az <code>or:(f:Bugzilla t:János)</code> a Bugzillától érkező vagy a Jánosnak címzett üzeneteket szűri.</p>
+</section>
+<section id="free-form-expression-examples">
+<title>Tetszőleges kifejezés példák</title>
+<p>A következőkben néhány tetszőleges kifejezés felsorolása következik:</p>
+<table rules="rows">
+<tr><td><p>Kifejezés</p></td><td><p>Jelentés</p></td></tr>
+<tr><td><p><code>f:János</code></p></td><td><p><code>János</code> feladótól érkező üzenetek</p></td></tr>
+<tr><td><p><code>s-has-words:"zöld kék"</code></p></td><td><p>Olyan üzenetek, amelyek tartalmazzák mind a <code>zöld</code>, mind a <code>kék</code> szavakat a tárgyban</p></td></tr>
+<tr><td><p><code>r-ew:example.com</code></p></td><td><p>A címzettek címe (címzett vagy másolat fejlécek) az <code>example.com</code> tartománnyal végződik</p></td></tr>
+<tr><td><p><code>h-starts-with:Cc=Anna</code></p></td><td><p>A <code>Cc</code> (másolat) az <code>Anna</code> szóval kezdődik</p></td></tr>
+<tr><td><p><code>e:X-Titkos-Fejléc</code></p></td><td><p>Létezik egy <code>X-Titkos-Fejléc</code> az üzenetben</p></td></tr>
+<tr><td><p><code>l:munka</code></p></td><td><p>A <code>munka</code> címke be van állítva az üzeneten</p></td></tr>
+<tr><td><p><code>sz-&lt;:10</code></p></td><td><p>Az üzenet mérete kisebb mint 10 KB</p></td></tr>
+<tr><td><p><code>sz-&gt;:100</code></p></td><td><p>Az üzenet mérete nagyobb mint 100 KB</p></td></tr>
+<tr><td><p><code>b:fontos</code></p></td><td><p>A törzs tartalmazza a <code>fontos</code> szót</p></td></tr>
+<tr><td><p><code>sent:7</code></p></td><td><p>Az üzenet az elmúlt 7 napban lett elküldve</p></td></tr>
+<tr><td><p><code>rcv-=:2020-02-02</code></p></td><td><p>Az üzenet 2020. február 2-án érkezett</p></td></tr>
+<tr><td><p><code>a:1</code></p></td><td><p>Melléklettel rendelkező üzenetek</p></td></tr>
+<tr><td><p><code>a:0</code></p></td><td><p>Melléklet nélküli üzenetek</p></td></tr>
+<tr><td><p><code>and:(or:(r:Anna r:Béla) not:(r:Kovács))</code></p></td><td><p>Olyan üzenetek, amelyek címzettje <code>Anna</code> vagy <code>Béla</code>, de nem <code>Kovács</code></p></td></tr>
+<tr><td><p><code>f:Béla rcv-&gt;:2020-01-01 rcv-&lt;:2020-12-31</code></p></td><td><p><code>Béla</code> által küldött üzenetek, amely a 2020-as évben érkeztek</p></td></tr>
+<tr><td><p><code>not:(flag:Olvasott) f:Béla rcv-&gt;:2020-01-01 rcv-&lt;:2020-12-31</code></p></td><td><p><code>Béla</code> által küldött, olvasatlan üzenetek, amely a 2020-as évben érkeztek</p></td></tr>
+<tr><td><p><code>flag:Olvasott a:1 sz-&gt;:1024 f:Béla rcv:31</code></p></td><td><p><code>Béla</code> által küldött, 1 MB-nál nagyobb melléklettel rendelkező, olvasott üzenetek, amelyek az elmúlt 31 napban érkeztek</p></td></tr>
+<tr><td><p><code>m:"Ezen a számítógépen/Beérkezett üzenetek"</code></p></td><td><p>Az <code>Ezen a számítógépen/Beérkezett üzenetek</code> mappában tárolt üzenetek</p></td></tr>
+<tr><td><p><code>location-no:"Ezen a számítógépen/Beérkezett üzenetek"</code></p></td><td><p>Az összes mappában, de nem az <code>Ezen a számítógépen/Beérkezett üzenetek</code> mappában tárolt üzenetek</p></td></tr>
+</table>
+</section>
+</section> 
+</page>

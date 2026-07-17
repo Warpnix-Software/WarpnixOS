@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="backup-restore" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#data-migration-and-sync"/>
+    <link type="seealso" xref="data-storage"/>
+
+    <revision pkgversion="3.1.5" version="0.4" date="2014-03-23" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Mencadangkan dan memulihkan data dan pengaturan <app>Evolution</app> Anda.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Mencadangkan dan memulihkan</title>
+
+  <p>Anda dapat mencadangkan data <app>Evolution</app> Anda. Cadangan menyimpan pengaturan, surat, kontak, tugas, memo, dan kalender Anda. Ini akan disimpan dalam berkas arsip tar terkompresi gzip.</p>
+
+<section id="backup">
+  <title>Membuat cadangan</title>
+
+  <list>
+    <item>
+      <p>Pilih <guiseq><gui>Berkas</gui> <gui>Buat Cadangan Data Evolution...</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Pilih nama berkas dan folder tempat Anda ingin menyimpan berkas cadangan, dan klik <gui style="button">Simpan</gui>.</p>
+    </item>
+    <item>
+      <p>Anda akan diminta untuk menutup <app>Evolution</app>. Jawab dengan <gui style="button">Ya</gui>.</p>
+    </item>
+  </list>
+
+  <note style="warning">
+    <p>Perhatikan bahwa pengaturan <link xref="mail-spam">penapisan spam</link> Anda tidak disertakan dalam berkas cadangan, karena pengaturan ini tidak dikontrol oleh <app>Evolution</app> dan karena pengembang alat penapisan spam dapat mengubah detail implementasi. Jika Anda menggunakan Bogofilter, Anda harus mencadangkan folder tersembunyi <file>~/.bogofilter/</file>. Jika Anda menggunakan SpamAssassin, Anda harus mencadangkan folder tersembunyi <file>~/.spamassassin/</file>.</p>
+  </note>
+
+</section>
+
+<section id="restore">
+  <title>Memulihkan</title>
+
+  <list>
+    <item>
+      <p>Pilih <guiseq><gui>Berkas</gui> <gui>Pulihkan Data Evolution...</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Pilih berkas, dan klik <gui style="button">Buka</gui>.</p>
+    </item>
+    <item>
+      <p>Anda akan diminta untuk menutup <app>Evolution</app>. Jawab dengan <gui style="button">Ya</gui>.</p>
+    </item>
+  </list>
+
+  <note style="tip">
+    <p>Di <link xref="intro-first-run">asisten berjalan pertama</link>, Anda dapat memulihkan data <app>Evolution</app> dari berkas cadangan.</p>
+  </note>
+
+</section>
+
+</page>

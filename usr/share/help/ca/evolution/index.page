@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="index" xml:lang="ca">
+
+  <info>
+    <desc>Gestioneu els correus electrònics, contactes i horaris</desc>
+    <title type="link" role="trail"><app>Evolution</app> Mail and Calendar</title>
+    <title type="text">Correu i calendari d'<app>Evolution</app></title>
+    <revision pkgversion="3.8.2" version="0.7" date="2013-06-22" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Phil Bull</name>
+      <email its:translate="no">philbull@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title><media its:translate="no" type="image" width="48px" height="48px" src="figures/evolution.svg"/> Correu i calendari d'<app>Evolution</app></title>
+
+  <section id="getting-started" style="2column">
+    <title>Primers passos</title>
+  </section>
+
+  <section id="mail-basic" style="2column">
+    <title>Gestió del correu electrònic</title>
+      <section id="mail-advanced" style="2column">
+        <title>Gestió avançada del correu</title>
+      </section>
+  </section>
+
+  <section id="mail-composing" style="2column">
+    <title>Edició de correu</title>
+      <section id="mail-composing-advanced" style="2column">
+        <title>Edició de correu avançada</title>
+    </section>
+  </section>
+
+  <section id="calendar" style="2column">
+    <title>Gestió del calendari</title>
+      <section id="calendar-advanced" style="2column">
+        <title>Gestió avançada del calendari</title>
+    </section>
+  </section>
+
+  <section id="contacts" style="2column">
+    <title>Gestió de contactes</title>
+  </section>
+
+  <section id="memos-and-tasks" style="2column">
+    <title>Gestió de notes i tasques</title>
+  </section>
+
+  <section id="data-migration-and-sync" style="2column">
+    <title>Migració i sincronització de dades</title>
+  </section>
+
+  <section id="tracking-down-problems" style="2column">
+    <title>Localització de problemes</title>
+  </section>
+
+  <section id="common-mail-problems" style="2column">
+    <title>Preguntes i problemes comuns amb el correu</title>
+  </section>
+
+  <section id="common-other-problems" style="2column">
+    <title>Altres preguntes i problemes comuns</title>
+  </section>
+
+  <section id="further-reading" style="2column">
+    <title>Informació relacionada</title>
+  </section>
+
+</page>

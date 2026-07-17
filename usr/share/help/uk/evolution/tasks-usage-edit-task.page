@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="tasks-usage-edit-task" xml:lang="uk">
+
+  <info>
+    <desc>Редагування завдання у вашому списку завдань.</desc>
+    
+    <link type="guide" xref="tasks-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.1" date="2011-08-01" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Редагування завдання</title>
+
+<p>Якщо ви хочете внести зміни до завдання, яке вже є у ваших списках завдань, виконайте такі дії:</p>
+
+<steps>
+<item><p>Двічі клацніть лівою кнопкою миші на пункті завдання, яке ви хочете змінити, у списку завдань або клацніть правою кнопкою миші на пункті завдання і виберіть у контекстному меню пункт <gui>Відкрити завдання</gui>.</p></item>
+<item><p>Редагування даних завдання.</p></item>
+<item><p>Натисніть кнопку <gui style="button">Зберегти</gui> або виберіть пункт меню <guiseq><gui>Файл</gui><gui>Зберегти</gui></guiseq>.</p></item>
+</steps>
+
+</page>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="save-resume" xml:lang="id">
+
+  <info>
+   <link type="guide" xref="index#play"/>
+
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+    <credit type="author copyright">
+      <name>Thomas Hinkle</name>
+      <email>tmhinkle@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020, 2021.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Menyimpan dan melanjutkan</title>
+
+<section id="save">
+<title>Menyimpan permainan Anda</title>
+  <p>Permainan Anda disimpan secara otomatis saat Anda menutup aplikasi.</p>
+</section>
+
+<section id="resume">
+<title>Melanjutkan permainan Anda</title>
+  <p>Setiap kali Anda memulai <app>Sudoku</app>, permainan tersimpan Anda akan dibuka.</p>
+  <p>Jika Anda ingin berhenti memainkan yang itu dan memulai yang lain, cukup pilih <gui>Teka-teki Baru</gui> dan mulai permainan baru Anda.</p>
+</section>
+
+</page>

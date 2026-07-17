@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="forms" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#forms"/>
+    <desc>Bekerja dengan formulir yang dapat diisi.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kukuh Syafaat</mal:name>
+      <mal:email>syafaatkukuh@gmail.com</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2021, 2022.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Formulir</title>
+<p>Saat mengisi formulir interaktif, Anda dapat menavigasi dari bidang ke bidang dengan mengklik bidang dengan tetikus Anda. Ketika Anda selesai mengisi bidang teks, tekan <key>Enter</key>.</p>
+
+<p>Anda dapat membuat pilihan dalam kotak daftar yang dapat digulir dengan mengklik kotak daftar dan menggulir ke pilihan Anda dengan tetikus Anda.</p>
+<note style="tip">
+ <p>Mungkin ada beberapa bagian dari formulir yang mungkin perlu Anda isi dengan tangan <em>setelah</em> Anda mencetak formulir. Misalnya, Anda mungkin harus melingkari hal-hal tertentu, atau menandatangani formulir di satu atau beberapa tempat. Jika Anda berharap melakukan ini secara elektronik, Anda mungkin ingin mencoba <link href="http://www.g-loaded.eu/2008/05/03/how-to-annotate-pdf-files-in-linux-using-xournal/">Xournal</link>.</p>
+</note>
+
+
+</page>

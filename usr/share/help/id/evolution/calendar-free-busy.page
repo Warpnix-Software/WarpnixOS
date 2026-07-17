@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-free-busy" xml:lang="id">
+
+  <info>
+
+    <link type="guide" xref="calendar-sharing-information"/>
+
+    <revision pkgversion="3.28.2" version="0.6" date="2018-07-09" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en
+	   and
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#usage-calendar-freebusy
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Menggunakan tampilan Bebas/Sibuk di server groupware untuk menyiapkan rapat.</desc>
+    <!-- TODO: Really split this into Exchange/Groupware section and normal people section -->
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Informasi bebas/sibuk</title>
+
+  <p>Anda dapat menggunakan pencarian Bebas/Sibuk untuk rapat untuk menentukan ketersediaan undangan.</p>
+
+  <p>Selain alat penjadwalan rapat standar, Anda bisa menggunakan tampilan Bebas/Sibuk untuk memeriksa apakah orang tersedia terlebih dahulu. Fitur Bebas/Sibuk biasanya merupakan fungsi dari server groupware khusus seperti Microsoft Exchange dan Novell GroupWise. Namun, Anda juga dapat menerbitkan informasi Bebas/Sibuk secara daring, dan mengakses informasi Bebas/Sibuk yang diterbitkan di tempat lain. Jika tidak semua orang yang berkolaborasi dengan Anda menerbitkan data Bebas/Sibuk, Anda masih bisa menggunakan <link xref="calendar-meetings-sending-invitation">undangan rapat</link> untuk mengkoordinasikan jadwal dengan orang lain.</p>
+
+  <p>Untuk mengakses tampilan bebas/sibuk:</p>
+
+  <steps>
+    <item>
+      <p>Klik <guiseq> <gui>Berkas</gui><gui>Baru</gui><gui>Rapat</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Klik <gui style="button">Tambahkan</gui> untuk menambahkan alamat surel orang yang ingin Anda undang.</p>
+    </item>
+    <item>
+      <p>Klik tombol <gui style="button">Bebas/Sibuk</gui> pada bilah alat, atau tab <gui>Jadwal</gui>.</p>
+    </item>
+    <item>
+      <p>Sesuaikan waktu rapat, baik dengan menyeret batas rapat atau dengan menggunakan tombol <gui>Autopick</gui> untuk memilih waktu secara otomatis, lalu klik <gui style="button">Tutup</gui>. Peserta di server Exchange memperbarui janji temu secara otomatis; orang lain menerima pemberitahuan surel tentang perubahan rencana apa pun.</p>
+    </item>
+  </steps>
+
+  <list>
+    <item>
+      <p>Daftar Peserta:</p>
+      <p>Daftar Peserta memperlihatkan orang-orang yang telah diundang ke janji.</p>
+    </item>
+    <item>
+      <p>Kisi Jadwal:</p>
+      <p>Kisi Jadwal memperlihatkan informasi Bebas/Sibuk yang dipublikasikan untuk orang yang telah Anda undang. Di sinilah Anda membandingkan jadwal untuk menemukan waktu luang untuk menjadwalkan janji temu. Individu memiliki informasi penjadwalan yang terlihat hanya jika mereka menggunakan Novell GroupWise atau server Microsoft Exchange yang sama dengan Anda (yaitu, jika mereka berada di organisasi yang sama dengan Anda), atau jika mereka menerbitkan informasi bebas/sibuk di alamat web (URL) yang dapat Anda jangkau dan Anda telah memasukkan alamat web tersebut untuk kontak tertentu dalam <link xref="contacts-usage-edit-contact">Penyunting Kontak</link> di bawah <guiseq><gui> Informasi pribadi</gui> <gui>Alamat Web</gui><gui>Bebas/Sibuk</gui></guiseq>.</p>
+    </item>
+  </list>
+
+  <p>Anda dapat menerbitkan kalender dan informasi Bebas/Sibuk ke server WebDAV, server FTP, mesin jarak jauh melalui SSH, atau ke server web lain dengan dukungan HTTP PUT.</p>
+
+  <p>Di lingkungan perusahaan Anda dapat menerbitkan informasi Kalender dan Bebas/Sibuk ke server Exchange atau Groupwise. Perhatikan bahwa Anda harus menggunakan kalender Exchange tingkat teratas jika Anda ingin orang lain bisa mengakses informasi Bebas/Sibuk Anda saat mengundang Anda ke rapat.</p> <p>Server baku dapat didefinisikan di bawah <guiseq><gui>Sunting</gui><gui>Preferensi</gui><gui>Kalender dan Tugas</gui><gui>Informasi Penerbitan</gui><gui>Server Bebas/Sibuk Baku</gui></guiseq>.</p>
+
+<section id="no-groupware">
+  <title>Mengakses Data Bebas/Sibuk Tanpa Server Groupware</title>
+
+  <p>Jika seseorang memberi Anda URL untuk data Bebas/Sibuk atau untuk kalender web mereka, Anda bisa menambahkan URL di bawah <guiseq><gui>Informasi Pribadi</gui><gui>Alamat Web</gui></guiseq> di <link xref="contacts-usage-edit-contact">Penyunting Kontak</link>. Kemudian, ketika Anda menjadwalkan rapat dengan mereka,<app>Evolution</app> mencari jadwal dan menampilkannya dalam data Bebas /Sibuk.</p>
+
+</section>
+
+</page>

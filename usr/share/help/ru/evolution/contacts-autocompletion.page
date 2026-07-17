@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-autocompletion" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#contacts"/>
+    <link type="guide" xref="index#mail-composing"/>
+    <link type="seealso" xref="contacts-add-automatically"/>
+    <link type="seealso" xref="mail-composer-forward"/>
+    <link type="seealso" xref="mail-composer-reply"/>
+    <link type="seealso" xref="mail-composer-write-new-message"/>
+
+    <revision pkgversion="2.32.1" version="0.1" date="2011-01-05" status="draft"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-to
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Автодополнение имён и адресов электронной почты, которые вводятся в окне редактирования сообщения.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Автодополнение получателей почты</title>
+
+  <p>Достаточно указать первые три буквы имени и адреса электронной почты в поле ввода получателя, и <app>Evolution</app> покажет список соответствий из адресных книг.</p>
+
+  <p>Чтобы включить автодополнение, перейдите в раздел <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Контакты</gui> <gui>Автодополнение</gui></guiseq> и выберите из списка те адресные книги, в которых программе <app>Evolution</app> следует выполнять поиск соответствий.</p>
+
+  <p>Включите параметр <gui>Показывать адрес найденного в адресной книге контакта</gui> для показа адреса электронной почты рядом с именем. Эта опция полезна, когда у контакта есть несколько адресов электронной почты.</p>
+
+  <p>Либо можно нажать кнопки <gui>Кому</gui>, <gui>Копия</gui>, <gui>Скрытая копия</gui> для получения списка адресов электронной почты в списке контактов. Выберите адреса и используйте кнопки со стрелками для их перемещения в подходящую колонку адресов.</p>
+
+</page>

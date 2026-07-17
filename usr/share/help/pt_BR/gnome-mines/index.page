@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="task" id="index" xml:lang="pt_BR">
+  <info>
+    <title type="link" role="trail">Mines</title>
+    <title type="link">Mines</title>
+    <title type="text">Mines</title>
+    <revision pkgversion="3.5.5" version="0.1" date="2012-08-12" status="review"/>
+    <credit type="author">
+      <name>Brian Grohe</name>
+      <email>grohe43@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Gilfran Ribeiro</mal:name>
+      <mal:email>eu@gilfran.net</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Giovanni Almeida</mal:name>
+      <mal:email>giovannilombone.io@gmail.com</mal:email>
+      <mal:years>2024</mal:years>
+    </mal:credit>
+  </info>
+
+  <title><media type="image" width="48px" height="48px" its:translate="no" src="figures/org.gnome.Mines.svg"/> Minas</title>
+  <p>
+    <app>Mines</app> is a clone of the game Minesweeper. The aim is to locate
+    all the mines that are hidden under tiles on a rectangular board. You will
+    need to use a combination of logic and luck to find all the mines without
+    triggering an explosion.
+  </p>
+  <section id="play" style="2column">
+    <title>Jogo</title>
+  </section>
+  <section id="tips" style="2column">
+    <title>Dicas úteis</title>
+  </section>
+
+<!--
+  <section id="advanced" style="2column">
+    <title>Advanced</title>
+  </section>
+-->
+  <section id="get-involved" style="2column">
+    <title>Fique por dentro</title>
+  </section>
+
+</page>

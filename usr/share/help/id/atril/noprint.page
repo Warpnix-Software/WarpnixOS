@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:if="http://projectmallard.org/if/1.0/" type="topic" style="task" id="noprint" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#printing"/>
+    <desc>Penulis mungkin telah memasang pembatasan pencetakan pada dokumen.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kukuh Syafaat</mal:name>
+      <mal:email>syafaatkukuh@gmail.com</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2021, 2022.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Saya tak bisa mencetak suatu dokumen</title>
+<section id="why">
+ <title>Alasan yang mungkin bagi gagal cetak</title>
+<p>Sebuah dokumen mungkin tidak dapat dicetak karena:</p>
+ <list>
+  <item><p>Masalah pencetak atau,</p></item>
+  <item><p>Pembatasan pencetakan PDF.</p></item>
+ </list>
+</section>
+
+<section id="printer-problems">
+  <title>Masalah pencetak</title>
+  <p>Ada banyak alasan mengapa pencetak Anda mungkin tidak bekerja. Misalnya, mungkin itu kehabisan kertas atau tinta, atau dicabut, atau rusak.</p>
+  <p>Anda mungkin ingin memeriksa konfigurasi pencetak Anda dalam Pusat Kendali.</p>
+</section>
+
+<section id="pdf-restrictions">
+  <title>Pembatasan pencetakan PDF</title>
+  <p>Beberapa dokumen PDF memiliki pengaturan yang mencegah Anda mencetak mereka. Pengarang dapat mengatur pembatasan pencetakan ini ketika mereka menulis suatu dokumen. Atril menimpa pembatasan ini secara baku, tapi Anda mungkin ingin memeriksa bahwa itu belum dinonaktifkan:</p>
+
+  <note style="important">
+    <p>Anda perlu memasang <app>Penyunting dconf</app> pada komputer Anda untuk mengubah pengaturan ini.</p>
+  </note>
+
+  <steps>
+    <item>
+      <p>Buka <gui>Penyunting dconf</gui>.</p>
+    </item>
+    <item>
+      <p>Ramban ke <sys>/org/mate/atril</sys>.</p>
+    </item>
+    <item>
+      <p>Pastikan bahwa opsi <gui>override-restrictions</gui> dicentang.</p>
+    </item>
+    <item>
+      <p>Kembali ke <app>Atril</app> dan cobalah mencetak dokumen lagi.</p>
+    </item>
+  </steps>
+</section>
+
+</page>

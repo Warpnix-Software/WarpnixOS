@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="data-storage" xml:lang="ca">
+
+  <info>
+    <desc>On desa <app>Evolution</app> les meves dades al disc dur?</desc>
+    
+    <link type="guide" xref="index#common-other-problems"/>
+
+    <revision pkgversion="3.22.5" version="0.6" date="2017-02-19" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Ubicacions de l'emmagatzematge de dades</title>
+
+<note style="tip">
+<p>Això només és rellevant per als usuaris avançats que vulguin depurar problemes.</p>
+</note>
+
+<p>L'<app>Evolution</app> 3.6 o més recent emmagatzema les dades segons l'<link href="https://www.freedesktop.org/wiki/Specifications/basedir-spec">XDG Base Directory Specification</link>. Per defecte, això vol dir:</p>
+
+<terms>
+<item>
+<title>Els fitxers de dades de l'usuari</title>
+<p><file>$HOME/.local/share/evolution</file></p>
+</item>
+<item>
+<title>Diversos fitxers de configuració i d'estat</title>
+<p><file>$HOME/.config/evolution</file></p>
+</item>
+<item>
+<title>Paràmetres del compte</title>
+<p><file>$HOME/.config/evolution/sources</file></p>
+</item>
+<item>
+<title>Paràmetres de configuració a GSettings</title>
+<p><file>$HOME/.config/dconf</file></p>
+<note style="info"><p>Aquesta ubicació també inclou la configuració d'altres aplicacions. Per a mostrar només les dades relacionades amb Evolution a la pantalla, es pot utilitzar <link href="https://developer.gnome.org/dconf/"><app>Dconf</app></link> amb les ordres <cmd>dconf dump /org/gnome/evolution/</cmd> i <cmd>dconf dump /org/gnome/evolution-data-server/</cmd>.</p></note>
+</item>
+<item>
+<title>Memòries cau de dades d'un sol ús</title>
+<p><file>$HOME/.cache/evolution</file></p>
+</item>
+</terms>
+
+</page>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-usage-add-appointment" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="calendar-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.2" date="2011-08-01" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Добавление встречи.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Добавление встречи</title>
+
+  <steps>
+    <item>
+      <p>Чтобы открыть диалоговое окно редактирования встречи, выберите пункт меню <guiseq><gui>Файл</gui><gui>Создать</gui><gui>Встреча</gui></guiseq> или сделайте двойной щелчок по пустому пространству в календаре. В качестве времени новой встречи будет предложено то время, рядом с которым был сделан двойной щелчок в представлении календаря. Также можно напрямую указать время в календаре, а потом скорректировать продолжительность встречи путём перетаскивания отметки с помощью мыши.</p>
+    </item>
+    <item>
+      <p>Если используется диалоговое окно редактирования встречи:</p>
+    </item>
+    <item>
+      <p>Выберите календарь в раскрывающемся списке <gui>Календарь</gui>.</p>
+    </item>
+    <item>
+      <p>Введите краткое описание в поле <gui>Сводка</gui>.</p>
+    </item>
+    <item>
+      <p>(Необязательно) Введите расположение в поле <gui>Расположение</gui>.</p>
+    </item>
+    <item>
+      <p>Чтобы выбрать это собрание как событие на весь день, выберите пункт меню <guiseq><gui>Параметры</gui><gui>Событие на весь день</gui></guiseq> или нажмите на панели инструментов кнопку <gui>Событие на весь день</gui>.</p>
+    </item>
+    <item>
+      <p>Выберите дату и время.</p>
+    </item>
+    <item>
+      <p>(Необязательно) Введите описание в поле <gui>Описание</gui>.</p>
+    </item>
+    <item>
+      <p>Чтобы другие пользователи видели время встречи как <link xref="calendar-free-busy">занятое</link>, выберите пункт меню <guiseq><gui>Параметры</gui> <gui>Показать время как Занят</gui></guiseq>.</p>
+    </item>
+  </steps>
+
+  <p>Кроме того, можно задать для события <link xref="calendar-timezones">часовой пояс</link>, <link xref="using-categories">категорию</link>, <link xref="calendar-alarms-and-reminders">напоминание</link>, <link xref="calendar-recurrence">повторение</link> или <link xref="calendar-classifications">классификацию</link>, а также добавить вложение.</p>
+
+</page>

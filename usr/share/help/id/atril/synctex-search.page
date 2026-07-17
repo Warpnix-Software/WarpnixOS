@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="synctex-search" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#synctex" group="fifth"/>
+    <desc>Beralih antara Atril dan <app>pluma</app>.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kukuh Syafaat</mal:name>
+      <mal:email>syafaatkukuh@gmail.com</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2021, 2022.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Mencari dengan SyncTeX</title>
+<p>Setelah Anda <link xref="synctex-compile">mengkompilasi berkas TeX Anda dengan SyncTeX</link>, Anda akan dapat mencari. SyncTeX bahkan mendukung pencarian maju dan mundur dari berkas yang disertakan.</p>
+
+<section id="forward-search">
+    <title>Pencarian maju: dari TeX ke PDF (dari <app>pluma</app> ke Atril)</title>
+     <p>Pencarian maju memungkinkan Anda untuk mengklik bagian tertentu dari kode sumber TeX, dan melompat ke posisi terkait dalam PDF. Untuk melakukan pencarian maju:</p>
+<steps>
+<item>
+<p>Klik pada suatu baris dalam berkas TeX.</p>
+</item>
+<item>
+<p>Di <app>pluma</app>, klik <guiseq><gui>Alat</gui> <gui>Pencarian Maju</gui></guiseq>. Baris yang sesuai dalam PDF akan ditandai dengan warna merah.</p>
+<p>Atau, Anda dapat menekan <keyseq><key>Ctrl</key><key>Alt</key><key>F</key></keyseq>, atau <keyseq><key>Ctrl</key>klik kiri</keyseq>. Baris yang sesuai dalam PDF akan ditandai dengan warna merah.</p>
+</item>
+</steps>
+<note>
+<p>Jika berkas PDF yang sesuai tidak terbuka, melakukan pencarian maju akan membuka PDF di Atril.</p>
+</note>
+<p>Jika Anda memiliki proyek yang kompleks dengan beberapa berkas TeX, Anda dapat meletakkan</p>
+<code>% mainfile: mainfile.tex</code>
+<p>baik di tiga baris pertama atau terakhir dari setiap berkas TeX yang disertakan, dan pencarian maju akan berfungsi. Pencarian mundur harus selalu berfungsi, bahkan jika Anda tidak menambahkan modeline.</p>
+
+</section>
+
+<section id="backward-search">
+    <title>Pencarian mundur: dari PDF ke TeX (dari Atril ke <app>pluma</app>)</title>
+     <p>Pencarian mundur memungkinkan Anda untuk mengklik baris tertentu dalam berkas PDF, dan melompat ke baris terkait dalam kode sumber TeX.</p>
+<p>Anda dapat melakukan pencarian mundur dengan menekan <keyseq><key>Ctrl</key>klik kiri</keyseq> di Atril. Baris yang sesuai dalam kode sumber TeX akan disorot.</p>
+</section>
+
+</page>

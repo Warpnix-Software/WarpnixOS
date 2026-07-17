@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="memos-usage-edit-memo" xml:lang="uk">
+
+  <info>
+    <desc>Редагування примітки у вашому списку приміток.</desc>
+    
+    <link type="guide" xref="memos-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.2" date="2012-02-19" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Редагування примітки</title>
+
+<p>Якщо ви хочете внести зміни до примітки, яка вже є у ваших списках приміток, виконайте такі дії:</p>
+
+<steps>
+<item><p>Двічі клацніть на пункті примітки, яку ви хочете змінити, у списку приміток або клацніть правою кнопкою миші на пункті примітки і виберіть у контекстному меню пункт <gui>Відкрити примітку</gui>.</p></item>
+<item><p>Редагування відомостей щодо примітки.</p></item>
+<item><p>Натисніть кнопку <gui style="button">Зберегти</gui> або виберіть пункт меню <guiseq><gui>Файл</gui><gui>Зберегти</gui></guiseq>.</p></item>
+</steps>
+</page>

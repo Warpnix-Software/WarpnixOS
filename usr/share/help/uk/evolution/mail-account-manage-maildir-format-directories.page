@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-account-manage-maildir-format-directories" xml:lang="uk">
+
+  <info>
+    <desc>Додавання та редагування облікового запису із поштовими каталогами у форматі Maildir в <app>Evolution</app>.</desc>
+
+    <link type="guide" xref="mail-account-management#mail-local-account-types"/>
+    <title type="link" role="trail">Maildir</title>
+
+    <revision pkgversion="3.5" version="0.6" date="2014-01-27" status="candidate"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Параметри облікових записів поштових каталогів у форматі Maildir</title>
+
+<section id="account-editor">
+<title>Редактор облікових записів</title>
+<p>У <app>Evolution</app> передбачено підтримку специфікації Maildir++.</p>
+<p>Облікові записи пошти можна додати за допомогою сторінки <guiseq><gui>Файл</gui><gui>Створити</gui><gui>Обліковий запис</gui></guiseq> або <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Облікові записи</gui><gui style="button">Додати</gui></guiseq>. Дії здебільшого такі самі, як у <link xref="intro-first-run">помічнику першого запуску</link>, окрім того, що програма не питатиме вас, слід імпортувати дані з інших програм чи відновлювати дані з файла резервної копії.</p>
+<p>До облікових записів пошти можна внести зміни за допомогою пункту <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Облікові записи</gui><gui style="button">Редагувати</gui></guiseq>.</p>
+<p>При редагуванні наявного облікового запису ви отримаєте доступ до таких параметрів:</p>
+
+<section id="identity">
+<info>
+  <title type="link">Профіль (облікові записи поштових каталогів у форматі Maildir)</title>
+  <title type="link" role="trail">Профіль</title>
+</info>
+<title>Особисті дані</title>
+<p>Тут ви визначаєте ваше ім'я та вашу адресу електронної пошти.</p>
+<p>Якщо хочете, можете налаштувати адресу для відповідей (якщо ви хочете, щоб відповіді на повідомлення надсилалися на іншу адресу), вказати організацію (компанію або установу, яку ви представляєте при надсиланні повідомлень з цього облікового запису), ваш типовий <link xref="mail-composer-mail-signatures">підпис</link> для облікового запису та <link href="https://en.wikipedia.org/wiki/Email_alias">альтернативну адресу електронної пошти</link>.</p>
+</section>
+
+<section id="receiving-email">
+<info>
+  <title type="link">Параметри отримання електронної пошти (облікові записи поштових каталогів у форматі Maildir)</title>
+  <title type="link" role="trail">Отримання</title>
+</info>
+<title>Отримання і параметри отримання електронної пошти</title>
+</section>
+
+<section id="sending-email">
+<info>
+  <title type="link">Надсилання пошти (облікові записи поштових каталогів у форматі Maildir)</title>
+  <title type="link" role="trail">Надсилання</title>
+</info>
+<title>Відсилання пошти</title>
+</section>
+
+<section id="defaults">
+<info>
+  <title type="link">Типові параметри (облікові записи поштових каталогів у форматі Maildir)</title>
+  <title type="link" role="trail">Типове</title>
+</info>
+<title>Умовчання</title>
+</section>
+
+<section id="composing-messages">
+<info>
+  <title type="link">Редагування повідомлень (облікові записи поштових каталогів у форматі Maildir)</title>
+  <title type="link" role="trail">Створення</title>
+</info>
+<title>Створення повідомлення</title>
+</section>
+
+<section id="security">
+<info>
+  <title type="link">Безпека (облікові записи поштових каталогів у форматі Maildir)</title>
+  <title type="link" role="trail">Безпека</title>
+</info>
+<title>Безпека</title>
+</section>
+
+</section> <!-- end "account editor" section, now list any account settings stuff related to this account type outside of it -->
+
+<!-- <section id="other-settings">
+<info>
+  <title type="link">Other settings (Maildir Format Mail Directories accounts)</title>
+</info>
+<title>Other settings</title>
+<p>Other account related settings that are not located in the <gui>Account Editor</gui>:</p>
+</section> -->
+
+</page>

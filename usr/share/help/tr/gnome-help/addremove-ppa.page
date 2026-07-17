@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-ppa" xml:lang="tr">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntu Belgelendirme Takımı</name>
+    </credit>
+    <desc>Ubuntu'nun kurulum ve yükseltmeler için kullandığı yazılım kaynaklarını genişletmek için PPA'lar ekleyin.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove"/>
+    <link type="seealso" xref="addremove-sources"/>
+    <revision version="20.10" date="2020-09-13" status="review"/>
+  </info>
+
+  <title>Bir Kişisel Paket Arşivi (PPA) ekleyin</title>
+
+  <p><em>Kişisel Paket Arşivleri (Personal Package Archives, PPA)</em>, Ubuntu kullanıcıları için tasarlanmış yazılım depolarıdır ve diğer üçüncü taraf depolarına göre kurulumları daha kolaydır. PPA'lar genellikle test edilebilmesi için yayın öncesi yazılımı dağıtmak için kullanılır.</p>
+
+  <note style="warning">
+    <p>Sadece güvendiğiniz kaynakların yazılım depolarını ekleyin!</p>
+    <p>Üçüncü taraf yazılım depoları Ubuntu üyelerince güvenlik ve güvenirlik açısından denetlenmemiştir ve bilgisayarınıza zarar verebilecek yazılımlar içerebilir.</p>
+  </note>
+
+  <steps>
+    <title>Bir PPA kur</title>
+    <item>
+      <p>PPA'nın genel görünüm sayfasında <gui>Bu PPA'yı sisteminize ekleme</gui> başlığını arayın. <code>ppa:mozillateam/firefox-next</code> gibi bir şey olan PPA konumunu not edin.</p>
+    </item>
+    <item>
+      <p><app>Yazılım ve Güncellemeler</app> uygulamasını <em>Etkinlikler</em> arama çubuğu aracılığıyla açın.</p>
+    </item>
+    <item>
+      <p><gui>Diğer Yazılımlar</gui> sekmesine geçin.</p>
+    </item>
+    <item>
+      <p><gui>Ekle</gui> düğmesine tıklayın ve PPA'nın konumunu girin (1. adımda belirtildiği gibi).</p>
+    </item>
+    <item>
+      <p><gui>Kaynak Ekle</gui>'ye tıklayın. Yetkilendirme penceresine şifrenizi girin.</p>
+    </item>
+    <item>
+      <p>
+        Close the <app>Software &amp; Updates</app> window. <app>App Center</app> will then
+        check your software sources for new software.
+      </p>
+    </item>
+  </steps>
+
+</page>

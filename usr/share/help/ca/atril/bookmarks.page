@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="bookmarks" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#annotations"/>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email its:translate="no">tiffany@antopolski.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email its:translate="no">kittykat3756@gmail.com</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+
+    <desc>Podeu usar anotacions com ara marcadors.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Carles Ferrando Garcia</mal:name>
+      <mal:email>carles.ferrando@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert Antoni Buj Gelonch</mal:name>
+      <mal:email>rbuj@fedoraproject.org</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Marcadors</title>
+
+  <p>Podeu afegir, reanomenar o eliminar marcadors usant el <app>Visualitzador de Documents</app>.</p>
+
+  <p>Quan obriu un document, hauríeu de tenir un plafó lateral al costat esquerre. Si no el veieu, cliqueu <guiseq><gui style="menuitem">Vista</gui><gui style="menuitem">Plafó lateral</gui></guiseq>, o premeu la tecla <key>F9</key> al vostre teclat.</p>
+
+  <p>A la part inferior d'aquest plafó lateral, seleccioneu els <gui style="button">Marcadors</gui> de la llista desplegable.</p>
+
+  <links type="section"/>
+
+<section id="create">
+  <title>Creant un marcador</title>
+
+  <steps>
+    <item>
+      <p>Al mateix document PDF, desplaceu-vos fins la pàgina on voleu afegir el marcador.</p>
+    </item>
+    <item>
+      <p>Al plafó lateral, seleccioneu <gui style="button">Marcadors</gui> de la llista desplegable.</p>
+    </item>
+    <item>
+      <p>Premeu el botó <gui style="button">+</gui> a la part inferior del plafó lateral. Acabeu d'afegir un marcador, que per defecte porta com a nom el número de la pàgina del document. </p>
+    </item>
+    <item>
+      <p>El marcador apareix ara a la llista de marcadors.</p>
+    </item>
+  </steps>
+
+</section>
+
+<section id="rename">
+  <title>Reanomenar un marcador</title>
+
+  <steps>
+    <item><p>Al plafó lateral, seleccioneu <gui style="button">Marcadors</gui> de la llista desplegable.</p></item>
+    <item><p>Seleccioneu el marcador al plafó lateral.</p></item>
+    <item><p>Cliqueu sobre el nom del marcador.</p></item>
+    <item><p>Introduïu el nou nom.</p></item>
+    <item><p>Premeu <key>Enter</key>.</p></item>
+  </steps>
+
+</section>
+
+<section id="delete">
+  <title>Esborrar un marcador</title>
+
+  <steps>
+   <item><p>Al plafó lateral, seleccioneu <gui style="button">Marcadors</gui> de la llista desplegable.</p></item>
+   <item><p>Premeu el botó <gui style="button">-</gui> a la part inferior del plafó lateral.</p></item>
+  </steps>
+
+</section>
+
+</page>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="tip" id="gnome-on-ubuntu" xml:lang="fi">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntun dokumentointitiimi</name>
+    </credit>
+    <desc>Luettelo Ubuntun huomattavista muokkauksista Gnome-työpöytään.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="shell-overview" group="#first"/>
+    <link type="guide" xref="index" group="intro"/>
+    <revision version="0.1" date="2022-04-28" status="review"/>
+  </info>
+
+  <title>Tietoja Ubuntun Gnomesta</title>
+
+  <p>Ubuntu-työpöytä sisältää hieman mukautetun version Gnome-työpöytäympäristöstä. Tämä ohje sisältää viittaukset Gnomeen sen oletusarvoisten asetusten mukaisesti. Tässä on luettelo näkyvimmistä eroista Ubuntun mukauttaman Gnomen ja oletusarvoisen Gnomen välillä.</p>
+
+  <list type="disc">
+  <item>
+    <p>Ubuntu sisältää Firefox-selaimen Gnomen verkkoselaimen sijaan.</p>
+  </item>
+  <item>
+    <p>Ubuntu sisältää Remmina-etäyhteyssovelluksen Gnomen Yhteykset-sovelluksen sijaan.</p>
+  </item>
+    <item>
+      <p>AppIndicators-laajennus on käytössä. Tämä laajennus mahdollistaa oikean yläkulman ilmoitusalueen kuvakkeet joillekin sovelluksille.</p>
+    </item>
+    <item>
+      <p>Ubuntu Dock -laajennus on käytössä. Tämä laajennus toteuttaa vasemman reunan telakan sovelluskuvakkeiden esittämiseksi.</p>
+    </item>
+    <item>
+      <p>Desktop Icons NG -laajennus on käytössä. Tämä laajennus toteuttaa kuvakkeet työpöydälle.</p>
+    </item>
+    <item>
+      <p>Ubuntu-taustakuvien lisäksi oletusteema on Yaru ja oletusfontti on Ubuntu.</p>
+    </item>
+    <item>
+      <p>Ikkunoiden pienennys- ja suurennuspainikkeet ovat oletusarvoisesti käytössä.</p>
+    </item>
+  </list>
+
+
+
+</page>

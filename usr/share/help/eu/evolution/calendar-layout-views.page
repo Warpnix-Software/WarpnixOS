@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-layout-views" xml:lang="eu">
+
+  <info>
+    <link type="guide" xref="calendar-layout"/>
+
+    <revision pkgversion="3.28.2" version="0.3" date="2018-07-10" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-view.html.en
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Data-barrutiak (eguna, astea, hila) erabiltzea egutegian begiratzeko.</desc>
+  </info>
+
+  <title>Erabilgarri dauden ikuspegiak</title>
+
+  <p><app>Evolution</app> aplikazioak egutegiko datuak ikusteko bost modu ditu:</p>
+
+  <list>
+    <item>
+      <p>Eguneko ikuspegia</p>
+    </item>
+    <item>
+      <p>Lan-asteko ikuspegia</p>
+    </item>
+    <item>
+      <p>Asteko ikuspegia</p>
+    </item>
+    <item>
+      <p>Hileko ikuspegia</p>
+    </item>
+    <item>
+      <p>Zerrenda-ikuspegia</p>
+    </item>
+  </list>
+
+  <p>Ikuspegiz aldatzeko, erabili tresna-barrako botoia edo egin klik <guiseq><gui>Ikusi</gui><gui>Uneko ikuspegia</gui></guiseq> aukeran.</p>
+
+  <p>You can also select an arbitrary range of days in the small calendar in
+  the sidebar. To do this, select the days that you want to view in your
+  calendar.</p>
+
+  <p>The Previous and Next buttons move you forward and back in your calendar
+  pages. If you are using a week or month view, you can move by week or month.
+  To return to today's listing, click the <gui>Select today</gui> button
+  between the two arrow buttons in the toolbar.</p>
+
+  <p>Data jakin bateko egutegi-sarrerak ikusteko, egin klik tresna-barrako <gui>hautatu data zehatz bat</gui> botoian.</p>
+
+</page>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-search-folders" xml:lang="uk">
+
+  <info>
+    <desc>Використання тек пошуку для перегляду повідомлень у одній теці без вилучення їх із початкових тек.</desc>
+
+    <link type="guide" xref="mail-organizing#advanced"/>
+
+    <revision pkgversion="3.25.90" version="0.5" date="2017-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-organize-vfolders.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Користування теками пошуку</title>
+  
+<p>Якщо <link xref="mail-filters">фільтри</link> не є для вас достатньо гнучкими або у вас раз у раз виникає потреба у виконанні однакового <link xref="mail-searching">пошуку</link>, вам варто створити теку пошуку.</p>
+
+<p>Тека пошуку виглядає як <link xref="mail-folders">тека</link>, працює як <link xref="mail-searching">пошук</link>, а налаштовується як <link xref="mail-filters">фільтр</link>. Звичайна тека містить повідомлення, а тека пошуку є лише способом перегляду певних повідомлень, які зберігаються в декількох різних теках. Повідомлення, які містяться у такій теці визначаються програмою динамічно на основі набору критеріїв, які було визначено під час налаштовування теки пошуку.</p>
+
+<p><gui>Віртуальні теки</gui> буде показано у нижній частині <link xref="intro-main-window#e-mail">списку поштових тек</link>.</p>
+
+<note style="tip"><p>Якщо ви раніше не користувалися теками пошуку, позначте пункт <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Облікові записи</gui><gui>Віртуальні теки</gui></guiseq>.</p></note>
+
+<p><app>Evolution</app> автоматично оновлюватиме вміст тек пошуку, коли надходитимуть нові повідомлення, або коли ви вилучатимете повідомлення. Ви також можете вручну оновити вміст теки пошуку або перемиканням на іншу теку з наступним поверненням до попередньої теки, або клацанням правою кнопкою миші на теці пошуку і вибором у контекстному меню пункту <gui>Оновити</gui>.</p>
+
+<p>Тека пошуку <gui>БЕЗВІДПОВІДНОСТІ</gui> є протилежністю до усіх інших тек пошуку: у ній буде показано усі повідомлення, які не буде показано в інших теках пошуку.</p>
+
+<p>Якщо ви використовуєте віддалене сховище електронної пошти, зокрема IMAP, і створили теки пошуку для пошуку у цьому сховищі, вміст теки пошуку <gui>БЕЗВІДПОВІДНОСТІ</gui> формуватиметься і на основі вмісту віддалених тек. Якщо вами не було створено тек пошуку, які шукатимуть вміст у віддаленому сховищі електронної пошти, вміст теки пошуку <gui>БЕЗВІДПОВІДНОСТІ</gui> також не залежитиме від вмісту віддаленого сховища.</p>
+
+<note style="tip"><p>Якщо вам потрібно визначити, у якій фізичній теці зберігається повідомлення, яке показано у теці пошуку, <link xref="mail-change-columns-in-message-list">додайте стовпчик <gui>Адреса</gui></link> до списку повідомлень.</p></note>
+
+</page>

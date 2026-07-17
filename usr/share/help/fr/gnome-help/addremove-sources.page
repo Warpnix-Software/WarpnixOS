@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="addremove-sources" xml:lang="fr">
+
+  <info>
+    <credit type="author">
+      <name>L'équipe de documentation d'Ubuntu</name>
+    </credit>
+    <desc>Ajouter des dépôts pour étendre les ressources de logiciels utilisées par Ubuntu pour l'installation et les mises à jour.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove"/>
+    <revision version="20.10" date="2020-09-13" status="review"/>
+  </info>
+
+  <title>Ajouter des dépôts de logiciels</title>
+
+  <p>Des logiciels sont disponibles à partir de sources tierces, ainsi qu'à partir des sources de logiciels par défaut d'Ubuntu. Si vous souhaitez installer un logiciel à partir d'une source tierce, vous devez l'ajouter à la liste des dépôts d'Ubuntu.</p>
+
+  <note style="warning">
+    <p>Ajoutez seulement des dépôts de logiciels provenant de sources en lesquelles vous avez confiance !</p>
+    <p>La sécurité et la fiabilité des dépôts de logiciels tiers ne sont pas vérifiées par les membres d'Ubuntu. Il est possible qu'un logiciel de ces dépôts puisse endommager votre ordinateur.</p>
+  </note>
+
+<p>
+</p>
+   <p>Pour ajouter un dépôt :</p>
+
+  <steps>
+    <item>
+      <p>Ouvrez <app>Logiciels et mises à jour</app> via la barre de recherche <em>Activitiés</em>.</p>
+    </item>
+    <item>
+      <p>Basculer vers l'onglet <gui>Autres logiciels</gui>.</p>
+    </item>
+    <item>
+      <p>Cliquez sur <gui>Ajouter…</gui> et entrez la ligne APT du dépôt. Celle-ci devrait être disponible à partir du site web du dépôt, et devrait être similaire à :</p>
+      <p>
+        <code its:translate="no">deb http://archive.ubuntu.com/ubuntu/ resolute main</code>
+      </p>
+    </item>
+    <item>
+      <p>Cliquer sur <gui>Ajouter une source de mise à jour</gui>. Entrez votre mot de passe dans la fenêtre d'authentification.</p>
+    </item>
+    <item>
+      <p>Fermez la fenêtre <app>Logiciel et mises à jour</app>. Le <app>Centre d'applications</app> vérifiera ensuite vos sources pour détecter de nouveaux logiciels.</p>
+    </item>
+    <item>
+      <p>La plupart des dépôts fournissent une clé de signature afin d'être en mesure de vérifier les paquets téléchargés. Donc, en plus des étapes ci-dessus, vous devez suivre les instructions sur la façon de télécharger et installer la clé de signature (clé GPG).</p>
+    </item>
+  </steps>
+
+</page>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<info xmlns="http://projectmallard.org/1.0/">
+
+<item><p>Odesílatel:</p>
+<p>E-mailová adresa příjemce nebo jméno příjemce.</p></item>
+
+<item><p>Příjemci:</p>
+<p>Příjemci zprávy.</p></item>
+
+<item><p>Kopie:</p>
+<p>Jen příjemci kopie zprávy.</p></item>
+
+<item><p>Skrytá kopie:</p>
+<p>Jen příjemci skryté kopie zprávy. Samozřejmě lze použít jen u filtrů pro odchozí poštu.</p></item>
+
+<item><p>Odesilatel nebo příjemci:</p>
+<p>E-mailová adresa nebo jméno odesilatele nebo některého z příjemců zprávy.</p></item>
+
+<item><p>Předmět:</p>
+<p>Řádek s předmětem zprávy.</p></item>
+
+<item><p>Určená hlavička:</p>
+<p>Libovolný řádek hlavičky, včetně <link xref="mail-composer-custom-header-lines">vlastních</link>.</p>
+<p>Když zpráva používá některou hlavičku vícekrát, <app>Evolution</app> věnuje pozornost pouze prvnímu výskytu, i když v dalším výskytu zpráva definuje hlavičku jinak. Například, když zpráva deklaruje hlavičku Resent-From jako „vyvoj@priklad.cz“ a v druhém výskytu změní údaj na „obchod@priklad.cz“, <app>Evolution</app> filtr se chová, jako by druhá deklarace neexistovala. Pro filtrování zpráv, které používají nějakou hlavičku vícekrát, použijte regulární výraz.</p></item>
+
+<item><p>Tělo zprávy:</p>
+<p>Hledá ve vlastním textu zprávu.</p></item>
+
+<item><p>Výraz:</p>
+<p>(Jen pro programátory) Porovná zprávu vůči výrazu, který napíšete v jazyce Scheme používaném k definování <link xref="mail-filters">filtrů</link> v aplikaci <app>Evolution</app>.</p></item>
+
+<item><p>Výraz ve volném tvaru:</p>
+<p>(Jen pro pokročilé uživatele) Kombinuje různé podmínky pomocí <link xref="mail-searching#free-form-expression">speciální syntaxe</link>.</p></item>
+
+<item><p>Datum odeslání:</p>
+<p>Filtruje zprávy na základě data, kdy byly odeslány. Nejprve zvolte podmínku, podle které chcete vyhodnocovat, například „před zadaným datem“ nebo „po zadaném datu“. Pak zvolte časový údaj. Filtr porovnává časové razítko zprávy se systémovými hodinami v okamžiku vyhodnocování filtru, nebo s konkrétním datem a časem, které si vyberete v kalendáři. Můžete také hledat zprávy v časovém období relativně vůči filtru, například „před dvěma až čtyřmi dny“.</p></item>
+
+<item><p>Datum přijetí:</p>
+<p>Funguje stejně jako volba Datum odeslání, jen s tím rozdílem, že porovnává zadané datum s okamžikem, kdy jste zprávu přijali.</p></item>
+
+<item><p>Štítek:</p>
+<p>Zpráva může mít některý ze <link xref="mail-labels">štítků</link> Důležité, Pracovní, Osobní, Rozpracované nebo Později. Štítky můžete nastavit pomocí dalších filtrů nebo ručně.</p></item>
+
+<item><p>Skóre:</p>
+<p>Nastaví skóre zprávy na nějaké celé číslo větší než 0. Můžete mít jeden filtr, který nastaví nebo změní skóre zprávy, a pak jiný filtr, který přesune zprávu, která má určité skóre. Skóre zprávy neznamená nic konkrétního, je to prostě jenom číslo, které můžete zprávě přiřadit a další filtry s ním mohou dále pracovat.</p></item>
+
+<item><p>Velikost (kB):</p>
+<p>Seřadí na základě velikosti zprávy v kilobajtech.</p></item>
+
+<item><p>Stav:</p>
+<p>Filtruje podle stavu zprávy. Stav může být Zodpovězeno, Koncept, Důležité, Přečteno nebo Nevyžádané.</p></item>
+
+<item><p>K vyřízení:</p>
+<p>Kontroluje, jestli je zpráva <link xref="mail-follow-up-flag">označená k vyřízení</link> nebo dokončená (po určitém datu).</p></item>
+
+<item><p>Přílohy:</p>
+<p>Kontroluje, jestli má zpráva nějakou přílohu.</p></item>
+
+<item><p>Poštovní konference:</p>
+<p>Filtry založené na poštovních konferencích, ze kterých přichází. Tyto filtry kontrolují celou škálu běžných hlaviček souvisejících s poštovními konferencemi. Pokud ale použijete nějakou méně běžnou, můžete promeškat zprávy z některých serverů.</p></item>
+
+<item><p>Regulární výraz</p>
+<p>(Pro pokročilé uživatele) Pokud znáte program <link href="https://en.wikipedia.org/wiki/Regular_expression">regex</link> nebo se vyznáte v regulárních výrazech, můžete díky této volbě hledat složitější vzory textu. Například všechna slova, která začínají na „m“ a končí na „a“ a mají šest až patnáct znaků, nebo všechny zprávy, které deklarují určitou hlavičku dvakrát. <app>Evolution</app> podporuje syntax rozšířených regulárních výrazů ERE (Extended Regular Expression).</p></item>
+
+</info>

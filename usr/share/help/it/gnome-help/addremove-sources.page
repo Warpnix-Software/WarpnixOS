@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="addremove-sources" xml:lang="it">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntu Documentation Team</name>
+    </credit>
+    <desc>Aggiungi repository per estendere le fonti software utilizzate da Ubuntu per l'installazione e gli aggiornamenti.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove"/>
+    <revision version="20.10" date="2020-09-13" status="review"/>
+  </info>
+
+  <title>Aggiungere repository software</title>
+
+  <p>Il software è disponibile da sorgenti di terze parti, così come dalle sorgenti software predefinite di Ubuntu. Per installare software da sorgenti di terze parti, è necessario aggiungerle all'elenco delle sorgenti disponibili.</p>
+
+  <note style="warning">
+    <p>Aggiungere solamente repository software da fonti fidate!</p>
+    <p>I repository di terze parti non vengono controllati dal gruppo di sicurezza di Ubuntu e potrebbero contenere programmi potenzialmente dannosi.</p>
+  </note>
+
+<p>
+</p>
+   <p>Per aggiungere un repository:</p>
+
+  <steps>
+    <item>
+      <p>Apri <app>Software e amp; Aggiornamenti</app> tramite la barra di ricerca <em>Attività</em>.</p>
+    </item>
+    <item>
+      <p>Selezionare la scheda <gui>Altro software</gui>.</p>
+    </item>
+    <item>
+      <p>Fare clic su <gui>Aggiungi</gui> e inserire l'indirizzo APT del repository. Questo dovrebbe essere reperibile dal sito web del repository e dovrebbe essere simile a:</p>
+      <p>
+        <code its:translate="no">deb http://archive.ubuntu.com/ubuntu/ resolute main</code>
+      </p>
+    </item>
+    <item>
+      <p>Fare clic su <gui>Aggiungi sorgente</gui> e inserire la propria password nella finestra Autenticazione.</p>
+    </item>
+    <item>
+      <p>Chiudi la finestra <app>Software &amp; Updates</app>. <app>App Center</app> effettuerà il controllo delle tue sorgenti di software alla ricerca di nuovo software.</p>
+    </item>
+    <item>
+      <p>La maggior parte dei repository fornisce una chiave di firma per poter verificare i pacchetti scaricati. Pertanto, oltre ai passaggi precedenti, è necessario seguire le possibili istruzioni su come scaricare e installare la chiave di firma (chiave GPG).</p>
+    </item>
+  </steps>
+
+</page>

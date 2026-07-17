@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-google" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="calendar-using-several-calendars"/>
+    <link type="guide" xref="google-services"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-view.html.en#b1a47igh
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Користування інтернет-календарем вашого облікового запису Google.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Користування календарем Google</title>
+
+  <p>Щоб додати такий календар до <app>Evolution</app>, виконайте такі дії:</p>
+
+  <steps>
+    <item>
+      <p>Виберіть пункт <guiseq><gui>Файл</gui><gui>Створити</gui><gui>Календар</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Виберіть тип <gui>Google</gui>.</p>
+    </item>
+    <item>
+      <p>Введіть бажану для вас назву.</p>
+    </item>
+    <item>
+      <p>Якщо хочете, виберіть бажаний колір.</p>
+    </item>
+    <item>
+      <p>Виберіть, чи хочете ви мати можливість переглядати дані у автономному режимі.</p>
+    </item>
+    <item>
+      <p>Введіть ваше ім'я користувача Google.</p>
+    </item>
+    <item>
+      <p>Якщо у вас декілька календарів Google, визначте той з них, яким ви хочете скористатися.</p>
+    </item>
+    <item>
+      <p>Натисніть кнопку <gui style="button">Гаразд</gui>.</p>
+    </item>
+  </steps>
+
+  <p>Календар буде додано до списку календарів в <app>Evolution</app>.</p>
+
+</page>

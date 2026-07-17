@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-default-folder-locations" xml:lang="cs">
+
+  <info>
+    <desc>Jak změnit umístění složek <gui>Koncepty</gui>, <gui>Odeslané</gui>, <gui>Koš</gui> a <gui>Nevyžádané</gui>.</desc>
+
+    <link type="guide" xref="mail-account-manage-imap-plus#defaults"/>
+    <link type="guide" xref="mail-account-manage-local-delivery#defaults"/>
+    <link type="guide" xref="mail-account-manage-maildir-format-directories#defaults"/>
+    <link type="guide" xref="mail-account-manage-mh-format-directories#defaults"/>
+    <link type="guide" xref="mail-account-manage-pop#defaults"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-directory#defaults"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-file#defaults"/>
+    <link type="guide" xref="mail-account-manage-usenet-news#defaults"/>
+    <link type="guide" xref="mail-account-manage-microsoft-exchange-evo-mapi#defaults"/>
+    <link type="guide" xref="mail-account-manage-microsoft-exchange-evo-ews#defaults"/>
+
+    <revision pkgversion="3.32.0" version="0.4" date="2019-03-14" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  </info>
+
+  <title>Umístění složek s poštou</title>
+
+<p>Můžete nastavit odlišná místa, kde chcete uchovávat zprávy, u svých složek <gui>Koncepty</gui> a <gui>Odeslané</gui> v části <gui>Výchozí</gui> v editoru poštovního účtu (<guiseq><gui>Upravit</gui> <gui>Předvolby</gui> <gui>Poštovní účty</gui> <gui style="button">Upravit</gui> <gui>Výchozí</gui></guiseq>).</p>
+<p>Tady si můžete pro tento účet určit <gui>Archivační složku</gui>, kam se budou přesouvat staré zprávy. To vyžaduje, abyste si prvně nastavili záložní složku v <guiseq><gui>Upravit</gui><gui>Předvolby</gui><gui>Předvolby pošty</gui><gui>Obecné</gui><gui>Archivace pošty</gui></guiseq>. Když pak v hlavním okně zvolíte <guiseq><gui>Zpráva</gui> <gui>Archivovat</gui></guiseq>, přesunou se vybrané zprávy do této složky.</p>
+<p>U vzdálených typů účtu (jako jsou účty IMAP) můžete použít i složky Nevyžádané a Koš na serveru pomocí odpovídající volby <gui>Použít skutečnou složku</gui>. V takovém případě se nebudou používat místní <link xref="mail-search-folders">virtuální složky</link> klienta <app>Evolution</app>.</p>
+
+</page>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:uix="http://projectmallard.org/experimental/ui/" type="guide" style="task" id="addremove" xml:lang="zh-CN">
+  <info>
+    <link type="guide" xref="index" group="addremove"/>
+
+    <title role="trail" type="link">添加或删除软件</title>
+
+    <credit type="author">
+      <name>Ubuntu 文档团队</name>
+    </credit>
+
+    <desc>添加和删除应用程序和其他软件。处理其他软件存储库。</desc>
+    <uix:thumb role="experimental-gnome-tiles" src="figures/tile-software.svg"/>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+  <title>安装和卸载软件</title>
+  <links type="topic" style="2column"/>
+
+</page>

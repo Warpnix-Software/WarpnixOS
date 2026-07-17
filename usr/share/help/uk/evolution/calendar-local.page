@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-local" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="calendar-using-several-calendars"/>
+
+    <revision pkgversion="3.10.3" version="0.4" date="2014-01-27" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Додавання іншого локального календаря.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Додавання іншого локального календаря</title>
+
+  <p>Щоб додати інший локальний календар до <app>Evolution</app>, виконайте такі дії:</p>
+
+  <steps>
+    <item>
+      <p>Виберіть пункт <guiseq><gui>Файл</gui><gui>Створити</gui><gui>Календар</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Виберіть тип <gui>На цьому комп'ютері</gui>.</p>
+    </item>
+    <item>
+      <p>Введіть бажану для вас назву.</p>
+    </item>
+    <item>
+      <p>Якщо хочете, виберіть бажаний колір.</p>
+    </item>
+    <item>
+      <p>Якщо ви виберете файл наявного календаря, який вже зберігається на вашому комп'ютері, вам доведеться вказати його розташування і те, слід <app>Evolution</app> лише читати дані з цього файла чи <app>Evolution</app> може додавати і змінювати записи у цьому файлі.</p>
+    </item>
+    <item>
+      <p>Натисніть кнопку <gui style="button">Гаразд</gui>.</p>
+    </item>
+  </steps>
+
+  <p>Календар буде додано до списку календарів в <app>Evolution</app>.</p>
+
+</page>

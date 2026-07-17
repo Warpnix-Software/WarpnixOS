@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="addremove-sources" xml:lang="da">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntus dokumentationshold</name>
+    </credit>
+    <desc>Tilføj arkiver for at udvide antallet af programkilder, Ubuntu bruger til installering og opgraderinger.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove"/>
+    <revision version="20.10" date="2020-09-13" status="review"/>
+  </info>
+
+  <title>Tilføj programarkiver</title>
+
+  <p>Software er tilgængelig både fra Ubuntus standardprogramarkiver og fra tredjepartskilder. Hvis du vil installere software fra et tredjepartsprogramarkiv, skal du føje det til Ubuntus liste over tilgængelige kilder.</p>
+
+  <note style="warning">
+    <p>Tilføj kun programarkiver fra kilder, du stoler på!</p>
+    <p>Tredjepartsprogramarkiver er ikke undersøgt af Ubuntu-medlemmer mht. sikkerhed eller troværdighed og kan derfor indeholde programmer, der kan gøre skade på din computer.</p>
+  </note>
+
+<p>
+</p>
+   <p>Tilføj et arkiv:</p>
+
+  <steps>
+    <item>
+      <p>Åbn <app>Software &amp; opdateringer</app> fra søgelinjen i <em>Aktiviteter</em>.</p>
+    </item>
+    <item>
+      <p>Skift til fanebladet <gui>Anden Software</gui>.</p>
+    </item>
+    <item>
+      <p>Klik på <gui>Tilføj</gui> og angiv arkivets APT-linje. Den bør man kunne hente fra arkivets hjemmeside, og den skulle gerne se ud som dette:</p>
+      <p>
+        <code its:translate="no">deb http://archive.ubuntu.com/ubuntu/ resolute main</code>
+      </p>
+    </item>
+    <item>
+      <p>Klik <gui>Tilføj kilde</gui>. Indtast din adgangskode i godkendelsesvinduet.</p>
+    </item>
+    <item>
+      <p>Luk <app>Software &amp; opdateringer</app>-vinduet. <app>App Center</app> vil så lede efter nye programmer i dine programkilder.</p>
+    </item>
+    <item>
+      <p>De fleste arkiver har en underskriftsnøgle, så hentede pakker kan verificeres. Ud over trinnene nævnt ovenfor, bør du følge eventuelle instruktioner til, hvordan du henter og installerer underskriftsnøglen (GPG-nøgle).</p>
+    </item>
+  </steps>
+
+</page>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="prefs-language-install" xml:lang="ko">
+
+  <info>
+    <link type="guide" xref="addremove" group="#last"/>
+    <link type="seealso" xref="prefs-language"/>
+
+    <desc>더 많은 번역 및 관련 언어 지원 패키지를 설치하세요.</desc>
+    <revision version="17.10" date="2017-09-25" status="review"/>
+    <credit type="author">
+      <name>Gunnar Hjalmarsson</name>
+      <email>gunnarhj@ubuntu.com</email>
+    </credit>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+  <title>언어 설치</title>
+
+  <p>우분투를 설치할때, 영어와 함께 사용자가 선택하는 언어가 같이 설치됩니다, 또 다른 언어들을 추가하는것도 가능합니다.</p>
+
+  <steps>
+    <item>
+      <p><gui xref="shell-introduction#activities">Activities</gui> 개요를 열고 <gui>Region &amp; Language</gui>를 입력하십시오.</p>
+    </item>
+    <item>
+      <p>패널을 열기 위해 <gui>Region &amp; Language</gui> 를 클릭하십시오.</p>
+    </item>
+    <item>
+      <p><gui>Language Support</gui> 를 열기위해선  <gui>Manage Installed Languages</gui> 버튼을 클릭하십시오.</p>
+    </item>
+    <item>
+      <p><gui>Install / Remove Languages...</gui> 를 클릭하십시오. The <gui>Installed Languages</gui> 창에서 현재 사용가능한 언어들의 목록과 설치여부를 보여줍니다.</p>
+    </item>
+    <item>
+      <p>설치하고 싶은 언어를 체크하고, 현재 설치되어 있긴하지만 지우고 싶은 언어을 체크 해제 하십시오.</p>
+    </item>
+    <item>
+      <p><gui>Apply Changes</gui> 를 클릭하십시오.</p>
+    </item>
+    <item>
+      <p><link xref="user-admin-explain">Administrative privileges</link> 가 필요합니다. 비밀번호를 입력하거나, 요청받은 관리자 계정의 비밀번호를 입력하십시오.</p>
+    </item>
+  </steps>
+
+  <p>In addition to the translations used to display menus and messages,
+  with a new language may follow various language support components such
+  as dictionaries for spell checking, fonts and input methods.</p>
+
+  <note>
+    <p>어떤 번역들은 완벽하지 않아서, 특정 어플리케이션이 시스템상에 설정된 언어를 완벽히 지원하지 않을수도 있습니다.</p>
+  </note>
+
+</page>

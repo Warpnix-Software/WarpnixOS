@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-layout-general-formatting" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="calendar-layout"/>
+
+    <revision pkgversion="3.13.90" version="0.3" date="2015-03-10" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/config-prefs-cal.html.en#bshpskx
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <!-- TODO:POST-3-8: Just listing the partially busted UI options (also see
+	 calendar-layout-appointment-display) here is very poor and not
+	 task-oriented, but that's it for the time being. Better ideas welcome.
+	 -->
+
+    <desc>Общие параметры форматирования календаря.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Общие параметры форматирования</title>
+
+  <p>Следующие параметры доступны в разделе настройки <guiseq><gui>Правка</gui><gui>Параметры</gui> <gui>Календарь и задачи</gui><gui>Общие</gui></guiseq>.</p>
+
+<section id="time">
+  <title>Время</title>
+
+  <list>
+    <item>
+      <p>Формат времени:</p>
+      <p>Выберите между 12-часовым (AM/PM) и 24-часовым форматами.</p>
+    </item>
+    <item>
+      <p><link xref="calendar-timezones">Часовой пояс</link> и второй часовой пояс:</p>
+      <p>Город, в котором вы находитесь, и (необязательно) второй город.</p>
+    </item>
+  </list>
+</section>
+
+<section id="work-week">
+  <title>Рабочая неделя</title>
+
+  <list>
+    <item>
+      <p>Неделя начинается с:</p>
+      <p>Выберите день для отображения первого дня каждой недели.</p>
+    </item>
+    <item>
+      <p>Рабочие дни:</p>
+      <p>Укажите, какие дни недели являются рабочими.</p>
+    </item>
+    <item>
+      <p>Начало дня:</p>
+      <p>Укажите время начала рабочего дня.</p>
+    </item>
+    <item>
+      <p>Конец дня:</p>
+      <p>Укажите время окончания рабочего дня.</p>
+    </item>
+  </list>
+
+</section>
+
+<section id="date-time">
+  <title>Формат даты и времени</title>
+
+  <p>Можно установить нужный формат для столбца <gui>Дата</gui>.</p>
+
+  <p>Знаки подстановки в выражении формата — это записи формата strftime. Чтобы ознакомиться с полным перечнем всех доступных форматов strftime, выполните команду <cmd>date --help</cmd> в программе <app>Терминал</app>.</p>
+
+</section>
+
+</page>

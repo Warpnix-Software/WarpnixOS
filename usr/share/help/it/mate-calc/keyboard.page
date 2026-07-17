@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="keyboard" xml:lang="it">
+
+    <info>
+        <link type="guide" xref="index#ui"/>
+    </info>
+
+	<title>Utilizzare la Tastiera</title>
+
+    <p>Tutte le equazioni possono essere inserite utilizzando la tastiera.</p>
+    <p>Le seguenti combinazioni di tasti possono essere utilizzate per inserire caratteri che potrebbero non essere disponibili sulla vostra tastiera.</p>
+    <table>
+    <tr>
+    <td><p>×</p></td>
+    <td><p><key>*</key></p></td>
+    </tr>
+    <tr>
+    <td><p>÷</p></td>
+    <td><p><key>/</key></p></td>
+    </tr>
+    <tr>
+    <td><p>^</p></td>
+    <td><p><key>*</key> due volte</p></td>
+    </tr>
+    <tr>
+    <td><p>√</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>R</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>π</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>P</key></keyseq></p></td>
+    </tr>
+    </table>
+    <p>Per inserire <link xref="superscript">numeri in apice</link> utilizzare<keyseq><key>Ctrl</key> numero,</keyseq> per numeri in pedice usare <keyseq><key>Alt</key> numero</keyseq>.</p>
+    <p>Se siete in <link xref="mouse">modalità  programmazione</link>, per commutare tra le basi numeriche utilizzare:</p>
+    <table>
+    <tr>
+    <td><p>Binario</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>B</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>Ottale</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>O</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>Decimale</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>D</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>Esadecimale</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>H</key></keyseq></p></td>
+    </tr>
+    </table>
+    <p>Per commutare tra gli inserimenti in cronologia si può utilizzare:</p>
+    <table>
+    <tr>
+    <td><p>Inserimento precedente</p></td>
+    <td><p><keyseq><key>Alt</key><key>Freccia sù</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>Inserimento successivo</p></td>
+    <td><p><keyseq><key>Alt</key><key>Freccia giù</key></keyseq></p></td>
+    </tr>
+    </table>
+</page>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="question" id="flags" xml:lang="ru">
+  <info>
+
+    <link type="guide" xref="index#play"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.5.5" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.3" date="2018-09-01" status="review"/>
+    <revision pkgversion="3.31.91" version="0.4" date="2019-03-03" status="review"/>
+
+    <credit type="author copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+    <credit type="author">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2012</years>
+    </credit>
+
+    <credit type="author copyright editor">
+      <name>Екатерина Герасимова (Ekaterina Gerasimova)</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ser82-png</mal:name>
+      <mal:email>asvmail.as@gmail.com</mal:email>
+      <mal:years>2022-2023</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Как использовать флаги</title>
+  <table>
+  <tr>
+   <td>
+     <media type="image" mime="image/svg" src="figures/flags.png" its:translate="no"/>
+   </td>
+   <td>
+     <p>Флаги используются для обозначения ячеек, которые, как вы подозреваете, могут скрывать мину. Установка флага на ячейку не позволяет вам щёлкнуть по ней и, возможно, вызвать взрыв, который завершит игру.</p>
+     <p>Изображение флагов зависит от темы. Вы можете изменить тему, нажав кнопку меню в правом верхнем углу окна и выбрав <gui style="menuitem">Внешний вид</gui>.</p>
+    </td>
+   </tr>
+  </table>
+
+  <section id="flags-put">
+    <title>Как разместить флаг на ячейке</title>
+    <table>
+      <tr>
+        <td>
+	  <p>Ячейку с флагом нельзя нажать. Чтобы разместить флаг на поле:</p>
+          <list>
+            <item><p>щёлкните правой кнопкой мыши по пустому полю.</p></item>
+          </list>
+        </td>
+        <td>
+          <media type="image" mime="image/svg" width="60" src="figures/flag.svg" its:translate="no"/>
+        </td>
+        </tr>
+      </table>
+
+  </section>
+
+  <section id="flags-blue">
+    <title>Использование флага-<em>вопроса</em></title>
+    <p>Если вы не уверены, скрывает ли ячейка мину, можете использовать флаг-<em>вопрос</em>.</p>
+    <table>
+      <tr>
+        <td>
+          <p>Чтобы пометить ячейку флагом <em>Я не уверен</em>:</p>
+          <list>
+	    <item><p>Дважды щёлкните правой кнопкой мыши по пустой ячейке или один раз по флагу.</p></item>
+          </list>
+        </td>
+        <td>
+          <media type="image" mime="image/svg" width="60" src="figures/flag-question.svg" its:translate="no"/>
+        </td>
+      </tr>
+    </table>
+
+  <note>
+    <p>Чтобы включить эти флаги, нажмите кнопку меню в правом верхнем углу окна и включите настройку <gui style="checkbox">Использовать флаги-вопросы</gui>.</p>
+  </note>
+
+  </section>
+  
+</page>

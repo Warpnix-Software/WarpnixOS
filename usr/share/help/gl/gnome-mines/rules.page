@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="rules" xml:lang="gl">
+
+  <info>
+    <link type="guide" xref="index#play"/>
+    <link type="seealso" xref="flags"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Fran Dieguez</mal:name>
+      <mal:email>frandieguez@gnome.org</mal:email>
+      <mal:years>2012-2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marcos Lans</mal:name>
+      <mal:email>marcoslansgarza@gmail.com</mal:email>
+      <mal:years>2018</mal:years>
+    </mal:credit>
+  </info>
+
+
+  <title>Regras do xogo</title>
+
+  <p>O obxectivo en <app>Minas</app> é limpar o campo de minas sen que estoupe ningún dos artefactos.</p>
+
+  <steps>
+    <item>
+      <p>Comece seleccionando un dos tres taboleiros predeterminados ou seleccione un personalizado.</p>
+    </item>
+    <item>
+      <p>O xogo comeza co taboleiro cuberto de teselas. Prema nunha para descubrila. Mostrarase:</p>
+      <list>
+        <item>
+	  <p>Un número de cor que representa o número de minas nas teselas adxacentes. Isto axuda a deducir onde están as minas para poder marcalas con <link xref="flags">bandeiras</link>.</p>
+        </item>
+        <item>
+	  <p>Unha tesela en branco que significa que non hai minas debaixo de ningunha das teselas adxacentes.</p>
+        </item>
+        <item>
+	  <p>Unha mina que estoupará e rematará o xogo.</p>
+	</item>
+      </list>
+    </item>
+    <item>
+      <p>Repita os pasos anteriores ata que descubra todas as teselas que non teñen minas debaixo delas.</p>
+    </item>
+  </steps>
+
+  <p>Se completa o xogo con rapidez dabondo, será engadido á lista de <link xref="high-scores">puntuacións altas</link>.</p>
+
+</page>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="strategy" xml:lang="ca">
+	<info>
+          <revision version="3.4" date="2012-03-08" status="final"/>
+	  <link type="guide" xref="index#play"/>
+	  <credit type="author copyright">
+	    <name>Radoslav Asparuhov</name>
+	    <email>rasparuhov@gmail.com</email>
+	  <years>2011</years>
+	  </credit>
+	  <credit type="editor">
+	    <name>Tiffany Antopolski</name>
+	    <email>tiffany.antopolski@gmail.com</email>
+	  </credit>
+	  <license>
+		<p>Creative Commons Compartir Igual 3.0</p>
+	  </license>
+	
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2019</mal:years>
+    </mal:credit>
+  </info>
+
+	<title>Estratègia</title>
+        <p>En un trencaclosques Sudoku, només hi ha una solució possible per a cada cel·la. Aquests estratagemes t'ajudaran a descobrir la solució per a cada cel·la.</p>
+ <section id="strategy1">
+	<title>Estratègia 1:</title>
+	  <steps>
+	    <item><p>Escolliu la fila amb més números.</p>
+                  <note><p>Intenteu escollir la fila o columna amb més números. Per simplicitat, aquestes instruccions estan escrites assumint que es tracta d'una fila.</p></note>
+            </item>
+	    <item><p>Determineu quins números manquen a la fila.</p></item>
+	    <item><p>Escolliu una cel·la buida d'aquesta fila. Determineu quin dels números que manquen a la fila són presents a la columna o caixa 3×3 de la fila que heu escollit.</p></item>
+	    <item><p>Fent servir les <link xref="earmarks">anotacions</link>, anoteu a la cel·la els números que manquen a la fila i que no són a la columna o a la caixa 3×3. Aquests números són les possibles solucions d'aquesta cel·la.</p></item>
+	    <item><p>Aneu a la següent cel·la buida de la fila que heu escollit i repetiu el mètode anterior. Repetiu aquest mètode per a cada columna i fila de la graella, començant per les que tinguin més números escrits. Tingueu cura a l'hora de buscar números, i no us descuideu de les caixes 3×3.</p></item>
+	   </steps>
+            <note><p>Aquesta estratègia us ajudarà a identificar les cel·les en què només hi ha una tria possible. Quan les identifiqueu, podeu completar-les, i repetir l'estratègia un altre cop fins que hàgiu completat el trencaclosques.</p></note>
+<figure>
+  <desc>Exemple d'ús de l'estratègia 1.</desc>
+  <media type="image" mime="image/png" src="figures/strategy1.png" width="400" its:translate="no"/>
+</figure>
+
+</section>
+<section id="strategy2">
+
+	<title>Estratègia 2:</title>
+	  <steps>
+	    <item><p>Identifiqueu el número que apareix més cops.</p></item>
+	    <item><p>Ara mireu l’alineació vertical de l’esquerra dels quadres 3 × 3 i localitzeu la columna (s) en què apareix aquest número.</p></item>
+  	    <item><p>En aquesta alineació, dirigiu-vos a la caixa 3×3 que no contingui aquest número en cap de les seves caselles. Fent ús de les <link xref="earmarks">anotacions</link>, introduïu aquest número a cada cel·la buida de la columna que no contingui el número en qüestió. Si el número apareix a la fila d'una d'aquestes cel·les, no l'introduïu en aquella cel·la com a anotació.</p></item>
+	    <item><p>Repetiu els dos darrers passos per a l'alineat central i vertical.</p></item>
+            <item><p>Cerqueu el següent número que aparegui més sovint i repetiu l'estratègia amb tots els números de l'1 al 9.</p></item>
+	  </steps>
+            <note><p>Aquesta estratègia us ajudarà a identificar les cel·les en què només hi ha una tria possible. Quan les identifiqueu, podeu completar-les, i repetir l'estratègia un altre cop fins que hàgiu completat el trencaclosques.</p></note>
+<figure>
+  <desc>Exemple d'ús de l'estratègia 2.</desc>
+  <media type="image" mime="image/png" src="figures/strategy2.png" width="400" its:translate="no"/>
+</figure>
+
+	   <note><p>Si cap de les dues estratègies anteriors no et serveix per a resoldre el trencaclosques, pots alternar-les o combinar-les.</p></note>
+</section>
+</page>

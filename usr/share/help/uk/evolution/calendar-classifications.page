@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="calendar-classifications" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="index#calendar-advanced"/>
+
+    <revision pkgversion="3.28.2" version="0.5" date="2018-07-09" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+      https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#bxmtbjb
+      -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Обмеження видимості зустрічей на віддалених серверах.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Використання класифікацій</title>
+
+  <p>Якщо ви користуєтеся календарем на віддаленому сервері (зокрема Novell GroupWise або Microsoft Exchange), ви можете вибрати класифікацію для визначення того, хто зможе його переглядати.</p>
+
+  <p>Щоб вибрати класифікацію для вашої зустріч, виберіть пункт меню <guiseq><gui>Параметри</gui><gui>Класифікація</gui></guiseq> і виберіть класифікацію у редакторі. Типовою категорією є <gui>Загальне</gui>, а загальні записи зустрічей можуть переглядати усі у мережі поширення календаря. Категорія <gui>Приватне</gui> звужує коло доступу. Найвищим рівнем захисту є <gui>Конфіденційне</gui>.</p>
+
+  <p>Вибір рівня залежить від параметрів роботи вашого сервера. Обговоріть це питання з адміністратором вашої системи або скоригуйте ваші параметри делегування.</p>
+
+  <p>Якщо ви хочете, щоб типово ваші записи подій, приміток і завдань класифікувалися як приватні, увімкніть відповідну класифікацію за допомогою сторінки <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Календарі і завдання</gui><gui>Загальне</gui><gui>Різне</gui></guiseq>.</p>
+
+</page>

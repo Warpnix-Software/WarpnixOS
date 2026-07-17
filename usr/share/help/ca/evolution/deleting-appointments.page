@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="deleting-appointments" xml:lang="ca">
+
+  <info>
+    <desc>Suprimir les entrades del calendari per a reduir la mida de la bústia.</desc>
+    
+    <link type="guide" xref="deleting-to-free-disk-space"/>
+
+    <revision pkgversion="2.32.2" version="0.1" date="2011-07-21" status="candidate"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Esborrar permanentment cites antigues</title>
+
+<p>Per a purgar les entrades antigues d'un calendari, aneu a <guiseq><gui>Accions</gui><gui>Purga</gui></guiseq> a la vista de calendari. Se us demanarà de quants dies endarrere cal eliminar els esdeveniments del calendari. L'acció s'aplicarà al calendari obert actualment (seleccionat a la llista de calendaris de l'esquerra); els altres calendaris seguiran sense canvis.</p>
+
+</page>

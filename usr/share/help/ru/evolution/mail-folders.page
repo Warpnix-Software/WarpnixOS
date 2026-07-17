@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-folders" xml:lang="ru">
+
+  <info>
+    <desc>Использование папок для организации почты.</desc>
+
+    <link type="guide" xref="mail-organizing"/>
+    <link type="seealso" xref="mail-filters"/>
+    <link type="seealso" xref="mail-change-columns-in-message-list"/>
+
+    <revision pkgversion="3.0.2" version="0.3" date="2017-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-organize-folders.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Использование папок</title>
+  
+<p><app>Evolution</app>, как и многие другие почтовые системы, хранит почту в папках. Изначально у вас имеется несколько почтовых папок, среди которых «Входящие», «Исходящие» и «Черновики», но вы можете создать их столько, сколько потребуется.</p>
+
+<section id="create-folder">
+<title>Создание папки</title>
+<p>Чтобы создать папку:</p>
+<steps>
+<item><p>Выберите в меню <gui>Папка</gui> пункт <gui>Создать...</gui>. Также можно щёлкнуть в списке папок правой кнопкой мыши и выбрать пункт <gui>Новая папка...</gui>.</p></item>
+<item><p>Укажите имя и расположение папки.</p></item>
+<item><p>Нажмите кнопку <gui>Создать</gui>.</p></item>
+</steps>
+<p>В представлении папок появится новая папка. После этого можно переместить в неё сообщения.</p>
+
+<note style="warning">
+<p>Папка <gui>Входящие</gui> на большинстве серверов IMAP не может содержать одновременно вложенные папки и сообщения. Когда вы создаёте дополнительные папки на вашем почтовом сервере IMAP, создавайте ответвления корневой папки учётной записи IMAP, а не папки «Входящие». Если вы создадите вложенные папки в вашей папке «Входящие», вы потеряете возможность читать существующие в ней сообщения. Если это произошло, переместите созданные папки к учётной записи IMAP.</p>
+</note>
+
+</section>
+
+<section id="use-folder">
+<title>Перемещение сообщений в папки</title>
+<p>Сообщения можно перемещать в папки одним из следующих способов:</p>
+<list>
+<item><p>Перетащите сообщения в папку.</p></item>
+<item><p>Щёлкните правой кнопкой мыши по сообщению и выберите пункт <gui>Переместить в папку</gui>.</p></item>
+<item><p>Выделите сообщение и воспользуйтесь комбинацией клавиш <keyseq><key>Shift</key><key>Ctrl</key><key>V</key></keyseq>.</p></item>
+<item><p>Выделите сообщение и выберите пункт меню <guiseq><gui>Сообщение</gui><gui>Переместить в папку...</gui></guiseq>.</p></item>
+</list>
+
+<p>Для копирования следует выполнить похожие действия.</p>
+
+<note style="tip"><p>Перемещение файлов может выполняться автоматически, если настроить соответствующие <link xref="mail-filters">фильтры</link>.</p></note>
+
+</section>
+
+<!--Reuse https://help.gnome.org/users/evolution/2.32/usage-mail-organize-folders.html.en and add "Novell, Inc" as an author to this page. Mention the combination with filters (see seealso link)-->
+	
+</page>

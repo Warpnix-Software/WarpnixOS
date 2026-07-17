@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="offline" xml:lang="ru">
+
+  <info>
+    <desc>Возврат почты <app>Evolution</app> в сетевой режим работы.</desc>
+    
+    <link type="guide" xref="index#common-other-problems"/>
+    <link type="seealso" xref="mail-working-offline"/>
+
+    <revision pkgversion="3.13.4" version="0.4" date="2015-02-15" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Brian Grohe</name>
+      <email its:translate="no">grohe43@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Patrick O'Callaghan</name>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+<title>Почему почта <app>Evolution</app> работает в автономном режиме?</title>
+<p>Возможно, программа <app>Evolution</app> была запущена с параметром командной строки <cmd>--offline</cmd>, который принудительно включает автономный режим.</p>
+
+<p>Если это не так и <app>Evolution</app> обычно работает в сетевом режиме, но внезапно перестала подключаться к вашим учётным записям, возможно, вы случайно нажали значок подключения, расположенный в левом нижнем углу. При наличии подключения значок имеет вид пары соединённых кабелей. Если кабели разъединены, подключение к вашим учётным записям отсутствует (и кнопка <gui style="button">Отправить / Получить</gui> затенена). Щёлкните по значку для изменения состояния подключения.</p>
+
+<p>Если проблема не решилась и вы уверены, что не нажимали значок, но можете подключиться к сети из других приложений в системе (браузеров, FTP, SSH, ping и так далее), возможно, ваше подключение к сети не настроено надлежащим образом. Дополнительные сведения доступны в <link xref="help:gnome-help/net-problem" href="https://help.gnome.org/users/gnome-help/stable/net-problem">справке по рабочей среде GNOME</link> или на форумах, посвящённых поддержке дистрибутива, в списках рассылки и так далее.</p>
+
+<p>Если требуется принудительно включить сетевой режим <app>Evolution</app>, убедитесь, что <app>Evolution</app> не запущена, откройте окно программы <app>Терминал</app> и введите следующую команду:</p>
+     <p><cmd its:translate="no">
+         GIO_USE_NETWORK_MONITOR=base evolution
+     </cmd></p>
+
+<note style="warning"><p>Принудительный автономный режим в <app>Evolution</app> относится только к почте и не применяется к контактам и календарям.</p></note>
+
+</page>

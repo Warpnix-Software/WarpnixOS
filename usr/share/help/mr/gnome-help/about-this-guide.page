@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="tip" id="about-this-guide" xml:lang="mr">
+
+  <info>
+    <credit type="author">
+      <name>GNOME दस्तऐवजीकरण  प्रोजेक्ट</name>
+      <email>gnome-doc-list@gnome.org</email>
+    </credit>
+    <credit type="author">
+      <name>उबुंटू दस्तऐवजीकरण संघ</name>
+    </credit>
+    <desc>उबुंटू डेस्कटॉप गाईड वापरण्यासाठी काही टिप्स</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="more-help"/>
+    <revision version="17.10" date="2017-05-02" status="review"/>
+  </info>
+
+  <title>ह्या गाईड बद्दल थोडी  माहिती</title>
+
+  <p>हि गाईड तुम्हाला उबुंटू  डेस्कटॉप च्या वैशिष्ट्य ची माहिती देईल , तुमचे कॉम्पुटर संबंधित प्रश्न सोडवेल व तुमचं  कॉम्पुटर चांगल्या प्रकारे वापरण्या साठी टिप्स देईल</p>
+
+  <list type="disc">
+    <item>
+      <p>हे  गाईड छोटे , पण संक्षिप्त विषयांमध्ये विभाजित आहे , म्हणजेच तुम्हाला तुमच्या प्रश्नांचे उत्तरं शोधण्यासाठी पूर्ण पुस्तिका वाचण्याची गरज नाही</p>
+    </item>
+    <item>
+      <p>
+        Related items are linked together. "See Also" links at the bottom of 
+        some pages direct you to related topics.
+      </p>
+    </item>
+    <item>
+      <p>
+        The text input box at the top of this guide acts as a <em>search 
+        bar</em>, and relevant results will appear beneath it as soon as you 
+        start typing. Left-click on any result to open its page.
+      </p>
+    </item>
+    <item>
+      <p>हि गाईड सतत सुधारित केली जात आहे. आम्ही तुम्हाला उपयुक्त माहितीचा व्यापक संग्रह प्रदान करण्याचा प्रयत्न करत असलो तरी, आम्हाला माहित आहे की आम्ही तुमच्या सर्व प्रश्नांची उत्तरे येथे देणार नाही. गोष्टी अधिक उपयुक्त बनवण्यासाठी आम्ही अधिक माहिती जोडत राहू.</p>
+    </item>
+  </list>
+
+  <p>
+    Thank you for taking the time to read the <em>Ubuntu Desktop Guide</em>.
+  </p>
+
+  <p>
+    -- The Ubuntu Documentation team
+  </p>
+
+</page>

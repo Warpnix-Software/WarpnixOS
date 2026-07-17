@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="calendar-recurrence" xml:lang="pt-BR">
+
+  <info>
+    <link type="guide" xref="index#calendar-advanced"/>
+
+    <revision pkgversion="3.0.2" version="0.1" date="2011-08-01" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+      https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#bxmtcp3
+      -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Repetindo compromissos.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Fontenelle</mal:name>
+      <mal:email>rafaelff@gnome.org</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Usando recorrência</title>
+
+  <p>Se você tem um compromisso que ocorre regularmente, pode definir sua recorrência clicando no botão <gui>Recorrência</gui> no <gui>Editor de compromissos</gui> ou clicando em <guiseq><gui>Opções</gui><gui>Recorrência</gui></guiseq>. Você pode então escolher a hora e a data em que o compromisso deixa de ser recorrente e, em <gui>Exceções</gui>, escolher os dias individuais em que o compromisso não é recorrente. Faça suas seleções da esquerda para a direita e você formará uma frase: "A cada duas semanas na segunda e sexta-feira até 3 de janeiro de 2015" ou "Todos os meses na primeira sexta-feira para 12 ocorrências."</p>
+
+</page>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="new-game" xml:lang="eu">
+
+  <info>
+    <link type="guide" xref="index#play"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.5.5" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.12" date="2014-03-08" status="review"/>
+    <revision pkgversion="3.28.0" version="0.2" date="2018-09-01" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2012</years>
+    </credit>
+    <credit type="author copyright">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+    <credit type="editor">
+      <name>Aruna Sankaranarayanan</name>
+      <email>aruna.evam@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Rashi Aswani</name>
+      <email>aswanirashi19@gmail.com</email>
+    </credit>
+  </info>
+
+  <title>Hasi joko berria</title>
+
+  <p>Joko berria hasteko:</p>
+  <steps>
+    <item>
+      <p>Sakatu eskuineko <gui style="button">Jokatu berriro</gui> botoia.</p>
+    </item>
+    <item>
+      <p><link xref="board-size">Taularen tamaina</link> aldatzeko, sakatu eskuineko <gui style="button">Aldatu zailtasuna</gui> botoia.</p>
+    </item>
+  </steps>
+
+  <note>
+  <p>Jadanik joko batean bazaude eta <gui style="button">Hasi hasieratik</gui> botoia sakatzen baduzu, <app>Minak</app> aplikazioak honako galdera egingo dizu: <gui>Mantendu uneko jokoa</gui> ala <gui>Hasi joko berria</gui>. Bigarrena aukeratzen baduzu, uneko jokoa galdu egingo da.</p>
+  </note>
+</page>

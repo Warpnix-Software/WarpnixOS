@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-meetings-sending-invitation" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="calendar-meetings"/>
+
+    <revision pkgversion="3.28.2" version="0.3" date="2018-07-09" status="stub"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#usage-calendar-rsvp
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Mengirim Undangan Rapat.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Mengirim undangan rapat</title>
+
+  <p>Saat membuat rapat (janji grup), Anda dapat menentukan peserta dalam beberapa kategori, seperti "pimpinan" atau "diperlukan". Saat Anda menyimpan daftar rapat, setiap peserta dikirimi surel dengan informasi rapat, yang juga memberi mereka opsi untuk merespons.</p>
+
+  <p>Jika Anda tidak perlu mengumpulkan informasi kehadiran saat menjadwalkan acara, dan lebih suka mengumumkan acara, klik kanan rapat dan pilih <gui>Teruskan sebagai iCalendar...</gui>. Ini membuka pesan surel baru dengan pemberitahuan acara yang dilampirkan sebagai pengumuman. Penerima dapat menambahkan acara ke kalender mereka dengan satu klik, tetapi tidak akan secara otomatis mengirimi Anda surel tentang apakah mereka berencana untuk hadir.</p>
+
+  <p>Untuk menjadwalkan rapat:</p>
+
+  <steps>
+    <item>
+      <p>Klik <guiseq> <gui>Berkas</gui><gui>Baru</gui><gui>Rapat</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Jika Anda memiliki beberapa akun surel, pilih akun yang akan digunakan dengan memilih butir di bidang <gui>Penyelenggara</gui>.</p>
+    </item>
+    <item>
+      <p>Pilih kalender di daftar tarik-turun <gui>Kalender</gui>.</p>
+    </item>
+    <item>
+      <p>Klik <gui style="button">Tambahkan</gui> untuk menambahkan alamat surel orang yang ingin Anda undang.</p>
+    </item>
+    <item>
+      <p>Klik <gui>Tampilkan</gui> di bilah menu untuk memperlihatkan atau menyembunyikan bidang <gui>Tipe</gui>, <gui>Peran</gui>, <gui>Status</gui>, dan <gui>RSVP</gui>.</p>
+    </item>
+    <item>
+      <p>Masukkan ringkasan singkat di bidang <gui>Ringkasan</gui>.</p>
+    </item>
+    <item>
+      <p>(Opsional) Ketik lokasi di bidang <gui>Lokasi</gui>.</p>
+    </item>
+    <item>
+      <p>Untuk memilih acara ini sebagai acara sepanjang hari, klik <guiseq><gui>Opsi</gui><gui>Acara Sepanjang Hari</gui></guiseq>, atau klik tombol <gui>Acara Sepanjang Hari</gui> pada bilah alat.</p>
+    </item>
+    <item>
+      <p>Pilih tanggal dan waktu.</p>
+    </item>
+    <item>
+      <p>Jika acara bukan acara sepanjang hari, pilih <gui>Selama</gui> menentukan durasi, atau pilih <gui>Sampai</gui> untuk menentukan waktu akhir acara.</p>
+    </item>
+    <item>
+      <p>(Opsional) Masukkan deskripsi di bidang <gui>Deskripsi</gui>.</p>
+    </item>
+    <item>
+      <p>Untuk mengkueri informasi <link xref="calendar-free-busy">bebas/sibuk</link> bagi peserta, klik tombol <gui style="button">Bebas/Sibuk</gui> pada bilah alat, atau tab <gui>Jadwal</gui>.</p>
+    </item>
+    <item>
+      <p>Klik <gui>Simpan</gui> untuk menyimpan rapat.</p>
+    </item>
+  </steps>
+
+  <p>Surel dikirim ke semua penerima, mengundang mereka ke acara Anda.</p>
+
+  <p>Anda juga dapat menentukan <link xref="calendar-timezones">zona waktu</link>, <link xref="using-categories">kategori</link>, <link xref="calendar-alarms-and-reminders">pengingat</link>, <link xref="calendar-recurrence">pengulangan</link>, atau <link xref="calendar-classifications">klasifikasi</link> untuk acara tersebut, atau menambahkan lampiran.</p>
+
+  <note style="tip">
+    <p>Di <app>Evolution</app>, rapat hanya dapat memiliki satu penyelenggara, dan hanya penyelenggara yang bisa menambahkan peserta ke rapat tersebut. Meskipun dimungkinkan untuk mengubah penyelenggara rapat, ini tidak disarankan sebagai sarana untuk mengundang peserta tambahan ke rapat. Jika Anda ingin mengundang orang lain ke rapat dan bukan penyelenggara rapat itu, disarankan agar Anda meneruskan pesan undangan yang Anda terima dari penyelenggara rapat asli ke peserta tambahan.</p>
+  </note>
+
+</page>

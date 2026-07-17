@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-moving-emails" xml:lang="ca">
+
+  <info>
+    <desc>Moure correus d'una carpeta a una altra.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="3.8.2" version="0.3" date="2013-05-14" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Correus moguts encara es mostren a la carpeta original</title>
+
+<p>Si el vostre servidor de correu IMAP encara no admet la <link href="https://tools.ietf.org/html/rfc6851">funcionalitat «moure» d'IMAP</link> que es va introduir el gener del 2013, l'<app>Evolution</app> «mou» els missatges copiant i suprimint correus electrònics. La supressió significa «marcar els missatges per a suprimir-los», per tant, tots els missatges originals es conserven fins que se suprimeixin definitivament.</p>
+
+<p>Consulteu el tema <link xref="mail-delete-and-undelete">esborrar correus electrònics</link> per a obtenir instruccions sobre com eliminar missatges de correu electrònic. Tingueu en compte que això també s'aplica a altres tipus de comptes.</p>
+
+</page>

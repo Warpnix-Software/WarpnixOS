@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-write-new-message" xml:lang="uk">
+
+  <info>
+    <desc>Написання нового повідомлення для надсилання кореспонденту.</desc>
+    
+    <link type="guide" xref="index#mail-composing"/>
+
+    <revision pkgversion="3.1.5" version="0.2" date="2011-07-27" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Створення нового повідомлення</title>
+
+<p>Ви можете почати написання нового повідомлення електронної пошти, вибравши пункт меню <guiseq><gui>Файл</gui><gui>Створити</gui><gui>Поштове повідомлення</gui></guiseq>, натискання комбінації клавіш <keyseq><key>Shift</key><key>Ctrl</key><key>M</key></keyseq>, або натисканням кнопки <gui>Створити</gui> на панелі інструментів.</p>
+
+<p>Введіть адресу електронної пошти у полі <gui>Кому:</gui>. Якщо ви хочете ввести декілька адрес, відокремте їх комами. Див. розділ <link xref="mail-composer-several-recipients"/>, щоб дізнатися більше про надсилання повідомлень декільком особам.</p>
+
+<p>Коли написання повідомлення буде завершено, натисніть кнопку <gui>Надіслати</gui> або комбінацію клавіш <keyseq><key>Ctrl</key><key>Enter</key></keyseq>.</p>
+</page>

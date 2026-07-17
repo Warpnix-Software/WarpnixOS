@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="conv-length" xml:lang="sr">
+
+    <info>
+        <link type="guide" xref="index#conversion"/>
+    </info>
+
+	<title>Дужина/Површина/Запремина</title>
+    
+    <p>Да претворите из једне у другу јединицу за дужину, површину и запремину користите „<em>у</em>“ операнд (у напредном режиму).</p>
+    <example>
+    <p>6 метара у инче</p>
+    <p>1 ар у cm²</p>
+    <p>1 пинта у mL</p>
+    </example>
+    <note>
+    <p>Претварања дужине/површине/запремине морају се обавити коришћењем тастатуре.</p>
+    </note>
+</page>

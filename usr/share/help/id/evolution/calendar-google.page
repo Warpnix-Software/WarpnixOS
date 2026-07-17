@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-google" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="calendar-using-several-calendars"/>
+    <link type="guide" xref="google-services"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-view.html.en#b1a47igh
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Menggunakan kalender daring akun Google Anda.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Menggunakan kalender Google</title>
+
+  <p>Untuk menambahkan kalender seperti itu ke <app>Evolution</app>, lakukan langkah-langkah berikut:</p>
+
+  <steps>
+    <item>
+      <p>Klik <guiseq><gui>Berkas</gui><gui>Baru</gui><gui>Kalender</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Pilih jenis <gui>Google</gui>.</p>
+    </item>
+    <item>
+      <p>Masukkan nama yang Anda sukai.</p>
+    </item>
+    <item>
+      <p>Opsional pilih warna yang Anda sukai.</p>
+    </item>
+    <item>
+      <p>Pilih jika Anda ingin bisa menampilkan konten juga saat sedang luring.</p>
+    </item>
+    <item>
+      <p>Masukkan nama pengguna Google Anda.</p>
+    </item>
+    <item>
+      <p>Jika Anda memiliki lebih dari satu kalender Google, tentukan kalender mana yang akan digunakan.</p>
+    </item>
+    <item>
+      <p>Klik <gui style="button">OK</gui>.</p>
+    </item>
+  </steps>
+
+  <p>Kalender akan ditambahkan ke daftar kalender di <app>Evolution</app>.</p>
+
+</page>

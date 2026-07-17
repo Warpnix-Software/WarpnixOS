@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:e="http://projectmallard.org/experimental/" xmlns:if="http://projectmallard.org/if/1.0/" type="topic" id="calendar-alarms-and-reminders" xml:lang="pt-BR">
+
+  <info>
+    <link type="guide" xref="index#calendar"/>
+
+    <revision pkgversion="3.28.2" version="0.5" date="2018-07-10" status="draft"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+     <name its:translate="no">Novell, Inc</name>
+     <!-- Content partially from https://help.gnome.org/users/evolution/2.32/config-prefs-cal.html.en#CACHCGCI -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Configurando notificações de lembretes de compromissos.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Fontenelle</mal:name>
+      <mal:email>rafaelff@gnome.org</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Lembretes para compromissos</title>
+
+<section id="general-settings">
+  <title>Configurações gerais</title>
+
+  <p>Em <guiseq><gui>Editar</gui><gui>Preferências</gui> <gui>Agenda e tarefas</gui><gui>Lembretes</gui></guiseq> você pode selecionar as agendas para as quais deseja receber notificações de lembretes. Se você não selecionar uma agenda, não receberá lembretes para nenhum evento nesta agenda. Você também pode definir se deseja mostrar um lembrete para cada compromisso e para cada nascimento e aniversário.</p>
+
+  <if:choose>
+    <if:when test="platform:gnome-shell">
+      <p>Para informações gerais sobre exibição de lembretes, veja <link xref="help:gnome-help/shell-notifications" href="https://help.gnome.org/users/gnome-help/stable/shell-notifications"> a ajuda do ambiente GNOME</link>.</p>
+    </if:when>
+  </if:choose>
+
+</section>
+
+<section id="manual-reminders">
+  <title>Lembretes manuais</title>
+
+  <p>Além das configurações gerais, você também pode configurar lembretes no editor de compromissos apenas para determinados compromissos:</p>
+
+  <steps>
+    <item>
+      <p>Clique em <guiseq><gui>Opções</gui><gui>Lembretes</gui></guiseq> ou pressione o botão Lembrete na barra de ferramentas.</p>
+    </item>
+    <item>
+      <p>No menu suspenso, escolha uma das opções padrão disponíveis quando mostrar um lembrete de notificação ou escolha <gui>Personalizar</gui>.</p>
+    </item>
+    <item>
+      <p>No caso de <gui>Personalizar</gui>, o lembrete pode ser um pop-up, um som reproduzido, um programa executado ou um e-mail enviado. Você também pode definir se o lembrete deve ser repetido.</p>
+    </item>
+  </steps>
+
+<note style="info"> <!-- bug 794085 -->
+  <p>A opção <gui>Enviar um e-mail</gui> só está disponível se o backend da agenda tiver suporte a essa funcionalidade.</p>
+</note>
+
+</section>
+
+</page>

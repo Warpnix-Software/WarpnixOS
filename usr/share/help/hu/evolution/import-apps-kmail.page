@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="import-apps-kmail" xml:lang="hu">
+
+  <info>
+    <desc>Ha a <app>KMail</app> adatokat nem találja az <app>Evolution</app> importáló.</desc>
+
+    <link type="guide" xref="import-data#import-from-apps"/>
+
+    <revision pkgversion="3.36.2" version="0.1" date="2020-05-31" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lukács Bence</mal:name>
+      <mal:email>lukacs.bence1 at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kelemen Gábor</mal:name>
+      <mal:email>kelemeng at gnome dot hu</mal:email>
+      <mal:years>2011, 2012, 2013, 2015, 2017, 2018.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nagy Zoltán</mal:name>
+      <mal:email>dzodzie at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Úr Balázs</mal:name>
+      <mal:email>ur.balazs at fsf dot hu</mal:email>
+      <mal:years>2014, 2019, 2021, 2022, 2023, 2024, 2025.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>KMail</title>
+
+  <p>Ne feledje, hogy az <app>Evolution</app> csak a KDE 4 könyvtárakat ismerte fel:</p>
+  <list>
+  <item><p><file>$HOME/.kde4/share/apps/kmail/mail</file> a levélhez</p></item>
+  <item><p><file>$HOME/.kde4/share/apps/kabc</file> a névjegyekhez</p></item>
+  </list>
+  
+  <p>Az újabb verziókért kövesse az <link href="https://mail.gnome.org/archives/evolution-list/2020-March/msg00168.html">ebben a bejegyzésben lévő utasításokat</link>. Ha problémába ütközik, akkor nézze meg a <link xref="problems-getting-help"/> fejezetet.</p>
+
+<!-- from https://mail.gnome.org/archives/evolution-list/2019-October/msg00044.html -->
+
+</page>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="board-size" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#tips"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.3" date="2018-09-01" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2011</years>
+    </credit>
+    <credit type="author copyright editor">
+      <name>Екатерина Герасимова (Ekaterina Gerasimova)</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ser82-png</mal:name>
+      <mal:email>asvmail.as@gmail.com</mal:email>
+      <mal:years>2022-2023</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Как изменить размер игрового поля</title>
+
+  <p>Вы можете выбрать размер игрового поля сразу после запуска приложения.</p>
+
+  <p>Выберите один из размеров поля:</p>
+  <list>
+    <item><p>поле 8 х 8 с 10 минами</p></item>
+    <item><p>поле 16 × 16 с 40 минами</p></item>
+    <item><p>поле 30 × 16 с 99 минами</p></item>
+    <item><p>пользовательское поле, где вы выбираете размер и количество мин</p></item>
+  </list>
+
+  <p>Чтобы изменить <link xref="board-size">размер поля</link> позже, нажмите кнопку <gui style="button">Изменить сложность</gui> справа.</p>
+
+</page>

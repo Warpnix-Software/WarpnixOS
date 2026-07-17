@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-ppa" xml:lang="hr">
+
+  <info>
+    <credit type="author">
+      <name>Tim Ubuntu dokumentacije</name>
+    </credit>
+    <desc>Dodavanje PPA repozitorija u svrhu proširenja izvora softvera koje Ubuntu koristi za instalaciju i nadogradnju.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove"/>
+    <link type="seealso" xref="addremove-sources"/>
+    <revision version="20.10" date="2020-09-13" status="review"/>
+  </info>
+
+  <title>Dodavanje Osobne Arhive Paketa (PPA)</title>
+
+  <p><em>Osobna Arhiva Softvera (PPA)</em> su softverski repozitoriji dizajnirani za Ubuntu korisnike i lakše ih je instalirati nego ostale repozitorije treće strane. PPA repozitoriji se često koriste za distribuciju predizdanja softvera kako bi se mogao testirati.</p>
+
+  <note style="warning">
+    <p>Samo dodavajte repozitorije softvera koji su pouzdani!</p>
+    <p>Repozitoriji softvera treće strane nemaju provjerenu sigurnost i pouzdanost od strane Ubuntu članova i mnogi sadrže softver koji je štetan za vaše računalo.</p>
+  </note>
+
+  <steps>
+    <title>Instalacija PPA repozitorija</title>
+    <item>
+      <p>Na stranici pregleda PPA repozitorija, potražite <gui>Adding this PPA to your system</gui>. Zabilježite PPA lokaciju, neku poput ovoga primjera: <code>ppa:mozillateam/firefox-next</code>.</p>
+    </item>
+    <item>
+      <p>Otvorite <app>Softver i nadopune</app> putem <em>Aktivnosti</em> trake pretrage.</p>
+    </item>
+    <item>
+      <p>Odaberite karticu <gui>Ostali softver</gui>.</p>
+    </item>
+    <item>
+      <p>Kliknite <gui>Dodaj...</gui> i upišite lokaciju PPA reprozitorija (kao što je navedeno u 1 koraku)</p>
+    </item>
+    <item>
+      <p>Kliknite na <gui>Dodaj izvor</gui>. Upišite svoju lozinku u prozoru ovjere.</p>
+    </item>
+    <item>
+      <p>
+        Close the <app>Software &amp; Updates</app> window. <app>App Center</app> will then
+        check your software sources for new software.
+      </p>
+    </item>
+  </steps>
+
+</page>

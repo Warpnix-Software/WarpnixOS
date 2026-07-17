@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="customize-ui-items" xml:lang="sv">
+
+  <info>
+    <link type="guide" xref="index#common-other-problems"/>
+    <link type="seealso" xref="mail-layout-changing"/>
+    <link type="seealso" xref="calendar-layout"/>
+
+    <revision pkgversion="3.34.0" version="0.3" date="2019-09-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Flytta och ändra verktygsfältsknappar, menyposter och tangentbordsgenvägar.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Sebastian Rasmussen</mal:name>
+      <mal:email>sebras@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017, 2018</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Anpassa användargränssnitt</title>
+
+<p><app>Evolution</app> tillåter anpassning av sina menyer, verktygsfält och kortkommandon i <guiseq><gui>Visa</gui><gui>Layout</gui><gui>Anpassa…</gui></guiseq>. Verktygsfälten som kan anpassas har ett snabbvalsmenyalternativ för att göra detta.</p>
+
+<p>Dialogrutan <gui>Anpassa användargränssnitt</gui> låter dig lägga till, ta bort och ändra ordning på objekten i verktygsfälten. Använd antingen knapparna bredvid layoutträdet eller dra och släpp objekten.</p>
+
+<p>Förutom anpassningen för <gui>Layout</gui> så är det även möjligt att ändra <gui>Kortkommandon</gui> för åtgärderna. En åtgärd kan ha flera kortkommandon.</p>
+
+<p>Ändringarna i dialogrutan sparas när den stängs och användargränssnittet uppdateras i enlighet med det.</p>
+
+</page>

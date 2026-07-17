@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="import-supported-file-formats" xml:lang="ca">
+
+  <info>
+    <desc>Formats de fitxers admesos per a importar dades.</desc>
+    
+    <link type="guide" xref="import-data"/>
+
+    <revision pkgversion="3.0.2" version="0.3" date="2011-10-13" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/importing-mail-and-settings.html.en#importing-mail -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Formats de fitxers compatibles</title>
+
+<p><app>Evolution</app> pot importar els següents tipus de fitxers:</p>
+
+<section id="mail">
+<title>Correu</title>
+<list>
+<item><p>Berkeley Mailbox (.mbox o sense extensió):</p>
+<p>El format de correu utilitzat per <app>Mozilla</app>, <app>Netscape</app>, <app>Evolution</app> (per a carpetes locals fins a la versió 2.32), <app>Eudora</app>, i altres clients de correu electrònic.</p></item>
+<item><p>Maildir (sense extensió):</p>
+<p>El format utilitzat per <app>Evolution</app> (per a les carpetes locals des de la versió 3.0). No cal importar els fitxers Maildir perquè es pot <link xref="mail-account-manage-maildir-format-directories">configurar un compte Maildir</link> a <app>Evolution</app> i fer que apunti a la carpeta on s'emmagatzemen els fitxers Maildir.</p></item>
+<item><p>Carpetes personals de l'Outlook Express 5/6 (.dbx):</p>
+<p>El format de correu electrònic que utilitza <app>Microsoft Outlook Express 5/6</app>. Per a versions més recents es recomana importar els fitxers PST.</p></item>
+</list>
+</section>
+
+<section id="calendar">
+<title>Calendari</title>
+<list>
+<item><p>vCalendar (.vcs):</p>
+<p>Un format per a emmagatzemar fitxers de calendari, que generalment utilitza <app>Evolution</app>, <app>Microsoft Outlook</app>, <app>Sunbird</app>, i <app>Korganizer</app>.</p></item>
+<item><p>iCalendar o iCal (.ics):</p>
+<p>Un format per a emmagatzemar fitxers de calendari. iCalendar l'utilitza <app>Evolution</app>, <app>Microsoft Outlook</app>, Palm OS handhelds, i altres.</p></item>
+</list>
+</section>
+
+<section id="contacts">
+<title>Contactes</title>
+<list>
+<item><p>Format d'intercanvi de dades LDAP (.ldif):</p>
+<p>Un format de dades estàndard per a targetes de contacte.</p></item>
+<item><p>vCard (.vcf, .gcrd):</p>
+<p>El format del llibre d'adreces emprat pel GNOME, KDE i moltes altres aplicacions de gestió de contactes. Hauríeu de poder exportar a vCard des de qualsevol aplicació de llibreta d'adreces.</p></item>
+</list>
+</section>
+
+<section id="misc">
+<title>Miscel·lània</title>
+<list>
+<item><p><app>Evolution</app>/Mozilla/Outlook CSV/Tab (.csv, .tab):</p>
+<p>CSV (valors separats per comes) o fitxers Tab desats utilitzant <app>Evolution</app>, <app>Microsoft Outlook</app> i <app>Mozilla</app>.</p></item>
+<item><p>Carpetes personals de l'Outlook (.pst):</p>
+<p>Un format de fitxer utilitzat per a emmagatzemar còpies locals de missatges, esdeveniments del calendari i altres elements dins del programari de Microsoft com ara <app>Microsoft Exchange Client</app>, <app>Windows Messaging</app>, i <app>Microsoft Outlook</app>. També s'anomena "taula d'emmagatzematge personal".</p>
+<p>Vegeu <link xref="import-apps-outlook"/> per a més informació.</p>
+</item>
+</list>
+</section>
+
+</page>

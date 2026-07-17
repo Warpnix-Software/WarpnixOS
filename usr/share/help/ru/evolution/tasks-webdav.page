@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="tasks-webdav" xml:lang="ru">
+
+  <info>
+    <desc>Using an online HTTP task list or memo list.</desc>
+    
+    <link type="guide" xref="tasks-using-several-tasklists"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Using a HTTP task or memo list</title>
+
+<p>Списки этого типа доступны только для чтения.</p>
+
+<p>Чтобы добавить такой список задач или список заметок в <app>Evolution</app>, выполните следующие действия:</p>
+<steps>
+<item><p>Выберите пункт меню <guiseq><gui>Файл</gui><gui>Создать</gui><gui>Список задач</gui></guiseq> или <guiseq><gui>Файл</gui><gui>Создать</gui><gui>Список заметок</gui></guiseq>.</p></item>
+<item><p>Выберите тип <gui>В Интернете</gui>.</p></item>
+<item><p>Укажите имя.</p></item>
+<item><p>Выберите цвет (это необязательно).</p></item>
+<item><p>Укажите, следует ли сделать содержимое доступным для просмотра также и в автономном режиме.</p></item>
+<item><p>Введите адрес в поле <gui>URL</gui>.</p></item>
+<item><p>Чтобы использовать защищённое соединение, выберите <gui>Использовать безопасное соединение</gui>.</p></item>
+<item><p>Введите своё имя пользователя.</p></item>
+<item><p>Нажмите кнопку <gui style="button">OK</gui>.</p></item>
+</steps>
+
+<p>Список будет добавлен в <app>Evolution</app>.</p>
+
+</page>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="question" id="flags" xml:lang="eu">
+  <info>
+
+    <link type="guide" xref="index#play"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.5.5" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.3" date="2018-09-01" status="review"/>
+    <revision pkgversion="3.31.91" version="0.4" date="2019-03-03" status="review"/>
+
+    <credit type="author copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+    <credit type="author">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2012</years>
+    </credit>
+
+    <credit type="author copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  </info>
+
+  <title>Nola erabili banderak</title>
+  <table>
+  <tr>
+   <td>
+     <media type="image" mime="image/svg" src="figures/flags.png" its:translate="no"/>
+   </td>
+   <td>
+     <p>Banderak erabiltzen dira mina bat dagoela susmatzen den lauzak markatzeko. Lauza batean bandera bat ezartzen bada, lauza horretan klik egitea eragozten da, horrela leherketa bat gertatu dadin eta jokoa amaitu dadin saihesteko.</p>
+     <p>Banderen itxura zehatza gaiaren araberakoa da. Gaia aldatzeko, sakatu leihoaren goiko eskuineko aldean dagoen menu-botoia eta ondoren hautatu <gui style="menuitem">Itxura</gui>.</p>
+    </td>
+   </tr>
+  </table>
+
+  <section id="flags-put">
+    <title>Nola kokatu banderak lauzetan</title>
+    <table>
+      <tr>
+        <td>
+	  <p>Banderak ez dira klik eginda kokatzen. Hori egiteko:</p>
+          <list>
+            <item><p>egin eskuineko klik lauza zuri batean.</p></item>
+          </list>
+        </td>
+        <td>
+          <media type="image" mime="image/svg" width="60" src="figures/flag.svg" its:translate="no"/>
+        </td>
+        </tr>
+      </table>
+
+  </section>
+
+  <section id="flags-blue">
+    <title><em>Galdera-banderaren</em> erabilera</title>
+    <p>Lauza batek mina bat duen ziur ez badakizu, <em>galdera-bandera</em> erabili dezakezu.</p>
+    <table>
+      <tr>
+        <td>
+          <p><em>Ez nago ziur</em> bandera bat lauza batean kokatzeko:</p>
+          <list>
+	    <item><p>Egin eskuineko klik bi aldiz lauza batean, edo eskuineko klik bakarra bandera duen lauzan.</p></item>
+          </list>
+        </td>
+        <td>
+          <media type="image" mime="image/svg" width="60" src="figures/flag-question.svg" its:translate="no"/>
+        </td>
+      </tr>
+    </table>
+
+  <note>
+    <p>Sakatu goiko eskuineko izkinako menu-botoia eta gaitu <gui style="checkbox">Erabili galdera-banderak</gui> hobespena.</p>
+  </note>
+
+  </section>
+  
+</page>

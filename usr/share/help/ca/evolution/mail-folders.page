@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-folders" xml:lang="ca">
+
+  <info>
+    <desc>Utilitzeu carpetes per a organitzar el vostre correu.</desc>
+
+    <link type="guide" xref="mail-organizing"/>
+    <link type="seealso" xref="mail-filters"/>
+    <link type="seealso" xref="mail-change-columns-in-message-list"/>
+
+    <revision pkgversion="3.0.2" version="0.3" date="2017-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-organize-folders.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Utilitzar carpetes</title>
+  
+<p><app>Evolution</app>, com la majoria de sistemes de correu, utilitza carpetes per a emmagatzemar missatges de correu electrònic. Comença amb unes poques carpetes de correu, com ara la safata d'entrada, de sortida i esborranys. Tanmateix, podeu crear més carpetes si us cal.</p>
+
+<section id="create-folder">
+<title>Crear una carpeta</title>
+<p>Per a crear una carpeta:</p>
+<steps>
+<item><p>Feu clic a la <gui>Carpeta</gui> i seleccioneu <gui>Nova</gui>. També podeu fer clic amb el botó dret en qualsevol lloc de la llista de carpetes i seleccionar l'opció <gui>Carpeta nova</gui>.</p></item>
+<item><p>Especifiqueu el nom i la ubicació de la carpeta.</p></item>
+<item><p>Feu clic al botó <gui>Crea</gui>.</p></item>
+</steps>
+<p>La nova carpeta es mostrarà a la vista de carpeta. A continuació, podeu moure missatges a la carpeta.</p>
+
+<note style="warning">
+<p>Les carpetes <gui>Entrada</gui> a la majoria dels servidors IMAP no poden contenir missatges i subcarpetes. Quan creeu carpetes addicionals al vostre servidor de correu IMAP, ramifiqueu les carpetes des de l'arrel del compte IMAP i no des de la safata d'entrada. La creació de subcarpetes a la safata d'entrada us pot impedir llegir els missatges que hi hagi. Si això passa, moveu les carpetes al compte IMAP.</p>
+</note>
+
+</section>
+
+<section id="use-folder">
+<title>Moure missatges a carpetes</title>
+<p>Podeu moure missatges a les carpetes mitjançant un dels mètodes següents:</p>
+<list>
+<item><p>Arrossegueu els missatges a la carpeta.</p></item>
+<item><p>Feu clic amb el botó dret del ratolí sobre el missatge i seleccioneu l'opció <gui>Mou a la carpeta</gui>.</p></item>
+<item><p>Seleccioneu un missatge i premeu <keyseq><key>Maj</key><key>Ctrl</key><key>V</key></keyseq>.</p></item>
+<item><p>Seleccioneu un missatge i feu clic a <guiseq><gui>Missatge</gui><gui>Moure a la carpeta</gui></guiseq>.</p></item>
+</list>
+
+<p>Els passos per a copiar són similars.</p>
+
+<note style="tip"><p>Els fitxers es poden moure automàticament activant els <link xref="mail-filters">filtres</link>.</p></note>
+
+</section>
+
+<!--Reuse https://help.gnome.org/users/evolution/2.32/usage-mail-organize-folders.html.en and add "Novell, Inc" as an author to this page. Mention the combination with filters (see seealso link)-->
+	
+</page>

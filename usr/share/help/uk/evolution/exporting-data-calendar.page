@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="exporting-data-calendar" xml:lang="uk">
+
+  <info>
+    <desc>Як експортувати дані календаря з <app>Evolution</app>.</desc>
+
+    <link type="guide" xref="exporting-data"/>
+
+    <revision pkgversion="3.6.4" version="0.4" date="2013-04-20" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Експортування даних календаря</title>
+
+<p>Щоб експортувати увесь календар, клацніть правою кнопкою миші на пункті календаря у списку календарів і виберіть у контекстному меню пункт <gui>Зберегти як</gui>. Доступними форматами є формат iCalendar (ICS, рекомендовано), формат відокремлених комами значень (CSV) і формат RDF.</p>
+<p>Якщо ви хочете експортувати лише один запис зустрічі (або завдання чи примітки), або виберіть запис зустрічі і скористайтеся пунктом меню <guiseq><gui>Файл</gui><gui>Зберегти як iCalendar…</gui></guiseq>, або клацніть правою кнопкою миші на пункті зустрічі і виберіть у контекстному меню пункт <gui>Зберегти як iCalendar…</gui>.</p>
+</page>

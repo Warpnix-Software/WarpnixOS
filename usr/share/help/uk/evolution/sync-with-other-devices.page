@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="sync-with-other-devices" xml:lang="uk">
+
+  <info>
+    <desc>Синхронізація даних <app>Evolution</app> із кишеньковими пристроями та мобільними телефонами.</desc>
+
+    <link type="guide" xref="index#data-migration-and-sync"/>
+
+    <revision pkgversion="3.10.4" version="0.7" date="2017-07-28" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Синхронізація <app>Evolution</app> із іншими пристроями</title>
+
+<p>Поки ми не маємо «рекомендованих настанов» для користувачів.</p>
+
+<p>У багатьох дистрибутивах є пакунок програми <app><link href="https://syncevolution.org/">SyncEvolution</link></app>, якою можна скористатися у поєднанні із пристроями, на яких передбачено підтримку <link href="https://en.wikipedia.org/wiki/SyncML">SyncML</link>.</p>
+
+<p>Загалом, рекомендуємо скористатися програмами і пристроями, у яких одночасно передбачено підтримку <link href="https://en.wikipedia.org/wiki/ActiveSync">протоколу ActiveSync</link> (зокрема <app>SyncEvolution</app>). <link href="https://en.wikipedia.org/wiki/List_of_collaborative_software">Список відповідного програмного забезпечення</link> можна знайти на Вікіпедії.</p>
+
+<p>Якщо ви можете повідомити про надійні способи досягти потрібного результату або поділитися додатковими відомостями щодо цієї теми, не вагайтеся і створіть повідомлення про ваду у <link href="https://gitlab.gnome.org/GNOME/evolution/-/issues/">системі стеження за вадами GNOME</link>.</p>
+
+</page>

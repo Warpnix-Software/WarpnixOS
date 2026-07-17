@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="textselection" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#faq"/>
+    <desc>Quan copieu text, el text que s'enganxa podria ser diferent del que heu seleccionat.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Carles Ferrando Garcia</mal:name>
+      <mal:email>carles.ferrando@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert Antoni Buj Gelonch</mal:name>
+      <mal:email>rbuj@fedoraproject.org</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Per què el text que he seleccionat no s'ha copiat correctament?</title>
+
+
+<p>Si seleccioneu i copieu un text d'un document usant Atril i l'enganxeu en una altra aplicació, la formatació es pot alterar. Poden aparèixer també caràcters diferents dels seleccionats inicialment. Això acostuma a passar quan es copia text d'un PDF amb múltiples columnes.</p>
+
+
+ <p>Aquest problema és degut a com gestionen el text alguns formats de document. El text en sí es desa de manera diferent a com es mostra. Això pot fer que una còpia no tingui l'aspecte que s'esperava.</p>
+
+ <p>Malauradament, no hi ha una manera de resoldre aquest problema. Copiar menys text cada vegada, o copiar el text a un editor de text (com <app>pluma</app>) pot minimitzar el problema.</p>
+
+</page>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="number-display" xml:lang="ja">
+
+    <info>
+        <link type="guide" xref="index#number"/>
+    </info>
+
+	<title>数字の書式</title>
+    
+    <p>計算結果の表示形式は、<guiseq><gui>計算機</gui><gui>設定</gui></guiseq>メニューから変更できます。</p>
+    <table>
+    <tr>
+    <td><p>10進数</p></td>
+    <td><p>計算結果は１０進数で表示されます。</p></td>
+    </tr>
+    <tr>
+    <td><p>科学</p></td>
+    <td><p>計算結果は<link xref="scientific">科学的表記</link>で表示されます。</p></td>
+    </tr>
+    <tr>
+    <td><p>工学</p></td>
+    <td><p>指数が常に3の倍数である場合を除き、計算結果は科学的表記で表示されます。</p></td>
+    </tr>
+    <tr>
+    <td><p>2進数</p></td>
+    <td><p>計算結果は<link xref="base">2進数</link>で表示されます。</p></td>
+    </tr>
+    <tr>
+    <td><p>8進数</p></td>
+    <td><p>計算結果は<link xref="base">8進数</link>で表示されます。</p></td>
+    </tr>
+    <tr>
+    <td><p>16進数</p></td>
+    <td><p>計算結果は<link xref="base">１６進数</link>で表示されます。</p></td>
+    </tr>
+    </table>
+    <p>末尾にゼロが表示され、千の区切り文字が表示される場合は、小数点以下の桁数も設定できます。</p>
+</page>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-receiving-options" xml:lang="ca">
+
+  <info>
+    <desc>Opcions de recepció de correu disponibles per a diversos tipus de servidor.</desc>
+
+    <revision pkgversion="2.28.3" version="0.1" date="2010-12-09" status="stub"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Opcions de recepció de correu</title>
+<!-- Please keep sorting and categorization in sync with intro-first-run.page! -->
+  <section id="common-server-types" style="2column">
+    <title>Opcions de recepció de correu per a tipus de servidor comuns</title>
+  </section>
+  <section id="corporate-server-types" style="2column">
+    <title>Opcions de recepció de correu per als servidors de tipus corporatiu</title>
+  </section>
+  <section id="local-account-server-types" style="2column">
+    <title>Opcions de recepció de correu per a tipus de servidors de comptes locals</title>
+  </section>
+
+
+</page>

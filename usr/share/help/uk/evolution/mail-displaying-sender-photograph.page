@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-displaying-sender-photograph" xml:lang="uk">
+
+  <info>
+    <desc>Показ зображення відправника в області заголовка повідомлення.</desc>
+
+    <link type="guide" xref="mail-displaying-message#advanced"/>
+
+    <revision pkgversion="3.13.90" version="0.5" date="2015-03-10" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/config-prefs-mail.html.en#mail-prefs-headers -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Заголовки повідомлення з фотографією</title>
+
+<!-- NB: This is done by "Face" and "X-Face" headers. -->
+<p><app>Evolution</app> автоматично показуватиме фотографію відправника повідомлення праворуч від заголовка повідомлення, якщо цю фотографію було вбудовано відправником до повідомлення.</p>
+<!-- TODO: If I ever manage to find out if the "Edit > Plugins > Face" reliably works, create a topic page covering it linked under <link type="guide" xref="index#mail-composing-advanced" />, and link to it from here and vice versa. -->
+
+<p>Крім того, ви можете увімкнути показ фотографії відправника повідомлення електронної пошти вручну, якщо запис відправника є у одній із ваших адресних книг і має збережену фотографію.</p>
+
+<p>Щоб увімкнути цю функціональну можливість, скористайтеся пунктом <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Параметри пошти</gui><gui>Заголовки</gui><gui>Показувати фотографію відправника у панелі перегляду пошти</gui></guiseq>.</p>
+
+<p>Якщо відповідників контакту буде декілька, завжди буде використано перший з відповідників.</p>
+
+<note style="tip"><p>Ви також можете вбудувати власне зображення до повідомлень, які ви надсилаєте, за допомогою пункту <guiseq><gui>Зміни</gui><gui>Додатки</gui><gui>Фото</gui></guiseq>. Зображення має бути розміром 48 x 48 пікселів і зберігатися у форматі PNG.</p>
+<p>Якщо додатка немає у списку меню <guiseq><gui>Зміни</gui><gui>Додатки</gui></guiseq>, будь ласка, скористайтеся для його додавання форумом підтримки вашого дистрибутива. Можливо, у вашому дистрибутиві розробники вирішили вимкнути якісь додатки або виокремити додатки у інший пакунок.</p></note>
+ 
+ 
+</page>

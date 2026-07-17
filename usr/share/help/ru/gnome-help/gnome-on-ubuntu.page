@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="tip" id="gnome-on-ubuntu" xml:lang="ru">
+
+  <info>
+    <credit type="author">
+      <name>Команда документации Ubuntu</name>
+    </credit>
+    <desc>Список заметных изменений рабочего стола GNOME в Ubuntu.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="shell-overview" group="#first"/>
+    <link type="guide" xref="index" group="intro"/>
+    <revision version="0.1" date="2022-04-28" status="review"/>
+  </info>
+
+  <title>О GNOME в Ubuntu</title>
+
+  <p>Рабочий стол Ubuntu поставляется с немного измененной версией среды рабочего стола GNOME. Как правило, это настольное руководство содержит ссылки на GNOME в том виде, в каком оно опубликовано разработчиками GNOME. Вот список заметных различий между GNOME в Ubuntu и оригинальным GNOME.</p>
+
+  <list type="disc">
+  <item>
+    <p>Ubuntu поставляется с Firefox вместо веб-браузера GNOME.</p>
+  </item>
+  <item>
+    <p>Ubuntu поставляется с клиентом удалённого рабочего стола Remmina вместо GNOME Connections.</p>
+  </item>
+    <item>
+      <p>Расширение AppIndicators включено. Это расширение активирует значки в правом верхнем углу некоторых приложений.</p>
+    </item>
+    <item>
+      <p>Расширение Ubuntu Dock включено. Это расширение предоставляет левую боковую панель для запуска приложений.</p>
+    </item>
+    <item>
+      <p>Расширение Desktop Icons NG включено. Это расширение позволяет использовать значки на рабочем столе.</p>
+    </item>
+    <item>
+      <p>Помимо обоев рабочего стола Ubuntu, по умолчанию используется тема Yaru, а шрифт по умолчанию — Ubuntu.</p>
+    </item>
+    <item>
+      <p>Кнопки свертывания и развертывания находятся в строке заголовка окна.</p>
+    </item>
+  </list>
+
+
+
+</page>

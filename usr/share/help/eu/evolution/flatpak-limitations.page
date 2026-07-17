@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="flatpak-limitations" xml:lang="eu">
+
+  <info>
+    <desc><app>Evolution</app> aplikazioaren Flatpak pakete bat erabiltzean dauden mugak.</desc>
+
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="3.35.91" version="0.1" date="2020-02-21" status="review"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+</info>
+
+<title>Ezin da posta-mezua inprimatu, eranskinak gehitu edo gorde, edo laguntza ireki</title>
+
+<p><app>Evolution</app> aplikazioaren <link href="https://flathub.org/">Flatpak</link> bertsio bat exekutatzen baduzu, hainbat muga izango dituzu. Adibidez:</p>
+
+<list>
+  <item><p>Posta-mezu bati eranskinak gehitzea edo mezu batetik eranskinak erauztea agian ez da posible izango.</p></item>
+  <item><p>You cannot print an email to a printer. This is a
+  <link href="https://bugs.webkit.org/show_bug.cgi?id=192748">limitation of the
+  underlying WebKitGTK library</link>.</p>
+  <p>To print an email to a file, you can run <cmd>flatpak run --filesystem=home
+  org.gnome.Evolution</cmd> as a workaround.</p></item>
+  <item><p>Erabiltzaile-dokumentazio lokala agian ez da paketean sartuta egongo, hura txikiagoa izan dadin.</p></item>
+</list>
+</page>

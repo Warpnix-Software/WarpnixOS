@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="question" id="flags" xml:lang="de">
+  <info>
+
+    <link type="guide" xref="index#play"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.5.5" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.3" date="2018-09-01" status="review"/>
+    <revision pkgversion="3.31.91" version="0.4" date="2019-03-03" status="review"/>
+
+    <credit type="author copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+    <credit type="author">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2012</years>
+    </credit>
+
+    <credit type="author copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Florian Purucker</mal:name>
+      <mal:email>florian@purucker.net</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2008, 2012-2013, 2018-2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>christian.kirbach@gmail.com</mal:email>
+      <mal:years>2012-2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jürgen Benvenuti</mal:name>
+      <mal:email>gastornis@posteo.org</mal:email>
+      <mal:years>2022, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Tim Sabsch</mal:name>
+      <mal:email>tim@sabsch.com</mal:email>
+      <mal:years>2023</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Verwendung von Fahnen</title>
+  <table>
+  <tr>
+   <td>
+     <media type="image" mime="image/svg" src="figures/flags.png" its:translate="no"/>
+   </td>
+   <td>
+     <p>Fahnen werden zum Markieren von Feldern eingesetzt, die verdächtigt werden, eine Mine zu enthalten. Mit dem Setzen einer Fahne auf ein Feld wird verhindert, dass Sie es freilegen und eventuell eine Explosion verursachen, womit das Spiel sofort verloren ist.</p>
+     <p>Das genaue Aussehen der Flaggen hängt vom jeweiligen Thema ab. Sie können das Thema ändern, indem Sie auf den Menüknopf in der rechten oberen Ecke des Fensters klicken und dann <gui style="menuitem">Erscheinungsbild</gui> wählen.</p>
+    </td>
+   </tr>
+  </table>
+
+  <section id="flags-put">
+    <title>So setzen Sie eine Fahne auf ein Feld</title>
+    <table>
+      <tr>
+        <td>
+	  <p>Fahnen können nicht angeklickt werden. So platzieren Sie eine Fahne auf einem Feld:</p>
+          <list>
+            <item><p>Klicken Sie mit der rechten Maustaste auf ein leeres Feld.</p></item>
+          </list>
+        </td>
+        <td>
+          <media type="image" mime="image/svg" width="60" src="figures/flag.svg" its:translate="no"/>
+        </td>
+        </tr>
+      </table>
+
+  </section>
+
+  <section id="flags-blue">
+    <title>Verwendung der <em>Fragen</em>-Fahne</title>
+    <p>Wenn Sie nicht sicher sind, ob sich unter einem Feld eine Mine verbirgt, so können Sie die <em>Fragen</em>-Fahne einsetzen.</p>
+    <table>
+      <tr>
+        <td>
+          <p>So setzen Sie eine <em>Ich bin mir nicht sicher</em>-Fahne auf ein Feld:</p>
+          <list>
+	    <item><p>Klicken Sie zweimal mit der rechten Maustaste auf ein leeres Feld oder einmal auf eine Fahne.</p></item>
+          </list>
+        </td>
+        <td>
+          <media type="image" mime="image/svg" width="60" src="figures/flag-question.svg" its:translate="no"/>
+        </td>
+      </tr>
+    </table>
+
+  <note>
+    <p>Um diese Fahnen zu aktivieren, klicken Sie auf den Menüknopf in der rechten oberen Ecke des Fensters und aktivieren Sie die Option <gui style="checkbox">Fragen-Fahne verwenden</gui>.</p>
+  </note>
+
+  </section>
+  
+</page>

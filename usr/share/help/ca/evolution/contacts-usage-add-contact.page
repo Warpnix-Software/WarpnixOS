@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-usage-add-contact" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="contacts-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.2" date="2011-09-29" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Afegir un contacte a la llibreta d'adreces.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Afegir un contacte</title>
+
+  <steps>
+    <item>
+      <p>Feu clic a <guiseq><gui>Fitxer</gui><gui>Nou</gui><gui>Contacte</gui></guiseq>, o feu clic amb el botó dret a un espai en blanc de la llista de contactes i feu clic a <gui>Contacte nou…</gui>, o premeu <keyseq><key>Maj</key><key>Ctrl</key><key>C</key></keyseq>.</p>
+    </item>
+    <item>
+      <p>Seleccioneu la llibreta d'adreces <gui>On:</gui> a la qual s'afegirà.</p>
+    </item>
+    <item>
+      <p>Introduïu la informació de contacte. Tingueu en compte que hi ha diverses pestanyes.</p>
+    </item>
+    <item>
+      <p>Podeu afegir una fotografia al contacte fent clic al camp (que mostra la silueta d'una persona) al costat de <gui>Nom complet</gui> i <gui>Categories</gui>.</p>
+    </item>
+    <item>
+      <p>Feu clic a <gui style="button">D'acord</gui>.</p>
+    </item>
+  </steps>
+
+<section id="contact-quick-add">
+  <title>Afegir-Ràpid un contacte des de la finestra de correu electrònic</title>
+
+  <p>També podeu afegir un contacte directament des d'un correu electrònic.</p>
+
+  <steps>
+    <item>
+      <p>Feu clic amb el botó dret a l'adreça de correu electrònic de la capçalera del missatge.</p>
+    </item>
+    <item>
+      <p>Seleccioneu <gui>Afegeix a la llibreta d'adreces…</gui>.</p>
+    </item>
+    <item>
+      <p>Premeu <gui style="button">Edita sencer</gui> per a mostrar l'<gui>Editor de contactes</gui>, o feu clic a <gui style="button">D'acord</gui> per a afegir directament el contacte a la llibreta d'adreces seleccionada.</p>
+    </item>
+  </steps>
+
+</section>
+
+</page>

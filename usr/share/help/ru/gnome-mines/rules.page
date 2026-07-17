@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="rules" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#play"/>
+    <link type="seealso" xref="flags"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Екатерина Герасимова (Ekaterina Gerasimova)</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ser82-png</mal:name>
+      <mal:email>asvmail.as@gmail.com</mal:email>
+      <mal:years>2022-2023</mal:years>
+    </mal:credit>
+  </info>
+
+
+  <title>Правила игры</title>
+
+  <p>Цель игры <app>Мины</app> — очистить минное поле, не взорвав ни одной из мин.</p>
+
+  <steps>
+    <item>
+      <p>Начните с выбора одного из трёх предустановленных размеров поля или установите параметры поля для себя.</p>
+    </item>
+    <item>
+      <p>Игра начинается полем с закрытыми ячейками. Нажмите на любую ячейку, чтобы открыть её. Под ней может быть:</p>
+      <list>
+        <item>
+	  <p>Цветное число, обозначающее количество мин в соседних ячейках. Это поможет вам понять, где находятся мины, чтобы пометить их <link xref="flags">флагами</link>.</p>
+        </item>
+        <item>
+	  <p>Пустая ячейка означает, что ни под одной из соседних ячеек нет мин.</p>
+        </item>
+        <item>
+	  <p>Мина, которая взорвётся, завершает игру.</p>
+	</item>
+      </list>
+    </item>
+    <item>
+      <p>Повторяйте предыдущий шаг, пока не найдете все мины, оставшиеся на поле.</p>
+    </item>
+  </steps>
+
+  <p>Если вы пройдете игру достаточно быстро, вы будете добавлены в список <link xref="high-scores">лучших результатов</link>.</p>
+
+</page>

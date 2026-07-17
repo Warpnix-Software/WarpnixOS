@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-layout-appointment-display" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="calendar-layout"/>
+
+    <revision pkgversion="3.26.5" version="0.6" date="2018-03-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/config-prefs-cal.html.en#bshpsxa
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Definiu la visualització de les cites al calendari.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Aparença de cites</title>
+
+  <!-- TODO:POST-3-8: Just listing the partially busted UI options (also see
+       calendar-layout-general-formatting) here is very poor and not
+       task-oriented, but that's it for the time being. Better ideas welcome.
+       -->
+
+  <p>Les següents opcions relacionades amb el calendari estan disponibles a <guiseq><gui>Edita</gui><gui>Preferències</gui> <gui>Calendari i tasques</gui><gui>Mostra</gui></guiseq>.</p>
+
+<section id="general">
+  <title>General</title>
+
+  <list>
+    <item>
+      <p>Divisions de temps:</p>
+      <p>Estableix els increments de temps que es mostren com a línies fines a la visualització diària al calendari.</p>
+    </item>
+    <item>
+      <p>Mostra les hores de finalització de les cites en les visualitzacions setmanals i mensuals:</p>
+      <p>Si hi ha espai, <app>Evolution</app> mostra els temps de finalització a les vistes de setmana i mes per a cada cita.</p>
+    </item>
+    <item>
+      <p>Mostra icones a les cites a la visualització del mes</p>
+    </item>
+    <item>
+      <p>Comprimeix els caps de setmana en la visualització mensual:</p>
+      <p>Seleccioneu aquesta opció per a mostrar els caps de setmana en una casella en comptes de dues en la visualització del mes.</p>
+    </item>
+    <item>
+      <p>Mostra els números de setmana:</p>
+      <p>Mostra els números de la setmana al costat de les respectives setmanes al calendari.</p>
+    </item>
+    <item>
+      <p>Mostra esdeveniments recurrents en cursiva al calendari inferior esquerre.</p>
+    </item>
+    <item>
+      <p>Desplaçar la vista mensual una setmana</p>
+    </item>
+  </list>
+
+</section>
+
+<section id="alerts">
+  <title>Avisos</title>
+
+  <p>Si voleu que se us avisi abans de suprimir qualsevol cita, seleccioneu aquesta opció.</p>
+
+</section>
+
+</page>

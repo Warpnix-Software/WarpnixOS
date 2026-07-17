@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-encryption-gpg-decrypting" xml:lang="ca">
+
+  <info>
+    <desc>Desxifrat i comprovació de la signatura dels missatges GPG rebuts.</desc>
+
+    <link type="guide" xref="mail-encryption#gpg"/>
+
+    <revision pkgversion="2.32.1" version="0.1" date="2011-01-05" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/encryption.html.en#unencrypting -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Desxifrat i comprovació de la signatura dels missatges GPG rebuts</title>
+
+<section id="decryption">
+<title>Desxifrat d'un missatge rebut</title>
+<p>Si rebeu un missatge xifrat, heu de desxifrar-lo abans de poder-lo llegir.</p>
+<p>Quan consulteu un missatge, <app>Evolution</app> us demana la vostra contrasenya GPG. Introduïu-la i es mostrarà el missatge no xifrat.</p>
+<note style="tip"><p>Els remitents han de tenir la vostra clau pública GPG abans de poder enviar-vos un missatge xifrat.</p></note>
+</section>
+
+<section id="signature">
+<title>Comprovació de la signatura d'un missatge rebut</title>
+<p>Per a comprovar la signatura del remitent d'un missatge rebut, desplaceu-vos fins a la part inferior del missatge i feu clic al logotip. <app>Evolution</app> us mostrarà la <gui>Informació de seguretat</gui> del missatge.</p>
+</section>
+</page>

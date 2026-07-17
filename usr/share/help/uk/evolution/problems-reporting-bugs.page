@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="problems-reporting-bugs" xml:lang="uk">
+
+  <info>
+    <desc>Як повідомляти про помилки у програмі.</desc>
+
+    <link type="guide" xref="index#tracking-down-problems"/>
+    <link type="seealso" xref="problems-debug-how-to"/>
+
+    <revision pkgversion="3.34.2" version="0.8" date="2020-01-20" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Як звітувати про вади</title>
+
+<p>Якщо вам не потрібна допомога із налаштовуванням, і ви певні, що виявили помилку або помилкову поведінку у програмному забезпеченні <app>Evolution</app>, або ви хочете попросити про реалізацію якоїсь можливості, ви можете створити звіт у <link href="https://gitlab.gnome.org/GNOME/evolution/issues/">системі стеження за вадами у GNOME</link>. Зауважте, що це потребує реєстрації. Будь ласка, спробуйте уникнути створення звітів-дублікатів і ознайомтеся із <link href="https://wiki.gnome.org/Community/GettingInTouch/BugReportingGuidelines">настановами щодо написання звітів щодо вад</link>.</p><p>Також слід зауважити, що автори дистрибутивів GNOME іноді впроваджують власні зміни до <app>Evolution</app>, які не включено до <app>Evolution</app> у GNOME. Користувачам важко у цьому розібратися, але якщо ви впевнені, що причина у додаткових зміна, будь ласка, створіть звіт щодо вади у <link href="https://wiki.gnome.org/Bugsquad/TriageGuide/NonGnome#Bug_trackers_for_distributions">системі стеження за вадами у вашому дистрибутиві GNOME</link>.</p>
+
+<p>При звітування щодо вад корисними є усі точні відомості, оскільки вони полегшують іншим відтворення та виправлення вади. Якщо можна, будь ласка, включіть відомості, зокрема про версію <app>Evolution</app> (можна визначити за допомогою пункту меню <guiseq><gui>Довідка</gui><gui>Про програму</gui></guiseq>), про ваш дистрибутив і про точні кроки щодо відтворення проблеми, крок за кроком. Щоб дізнатися більше, ознайомтеся із <link href="https://wiki.gnome.org/Community/GettingInTouch/BugReportingGuidelines">настановами щодо написання звітів щодо вад</link>.</p>
+</page>

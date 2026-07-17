@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-composer-custom-header-lines" xml:lang="uk">
+
+  <info>
+    <desc>Використання нетипових полів у заголовку редагованих повідомлень.</desc>
+
+    <link type="guide" xref="index#mail-composing-advanced"/>
+
+    <revision pkgversion="3.0.2" version="0.2" date="2011-07-30" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#b1a5azam -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Нетипові рядки заголовка</title>
+
+<p>Ви можете додавати довільні рядки заголовка до вихідних повідомлень електронної пошти.</p>
+
+<section id="managing">
+<title>Вмикання нетипових заголовків та керування ними</title>
+<p>Щоб налаштувати додаток нетипових заголовків, виконайте такі дії:</p>
+<steps>
+<item><p>Виберіть <guiseq><gui>Зміни</gui><gui>Додатки</gui></guiseq>.</p></item>
+<item><p>Позначте пункт <gui>Додаткові заголовки</gui>.</p>
+<note style="tip"><p>Якщо додатка немає у списку меню <guiseq><gui>Зміни</gui><gui>Додатки</gui></guiseq>, будь ласка, скористайтеся для його додавання форумом підтримки вашого дистрибутива. Можливо, у вашому дистрибутиві розробники вирішили вимкнути якісь додатки або виокремити додатки у інший пакунок.</p></note>
+</item>
+<item><p>Перейдіть на вкладку <gui>Налаштовування</gui>.</p></item>
+<item><p>Ви можете додавати, редагувати та вилучати поля заголовка. Для кожного з доданих полів заголовка ви можете вказати ключі і значення. Ключ використовується як назва нетипового заголовка. Ви можете вказати декілька значень для кожного ключа. Для відокремлення записів значень слід використовувати крапку з комою.</p></item>
+</steps>
+</section>
+
+<section id="inserting">
+<title>Вставляння нетипових заголовків до повідомлення</title>
+<steps>
+<item><p>Виберіть пункт <guiseq><gui>Створити</gui><gui>Поштове повідомлення</gui></guiseq> або натисніть комбінацію клавіш <keyseq><key>Shift</key><key>Ctrl</key><key>M</key></keyseq>, щоб відкрити вікно редактора повідомлень.</p></item>
+<item><p>Виберіть пункт меню <guiseq><gui>Вставка</gui><gui>Додаткові заголовки</gui></guiseq>.</p>
+<p>У вікні <gui>Додаткові заголовки</gui> ви можете переглянути усі визначені поля заголовка та їхні значення.</p></item>
+<item><p>Встановіть значення полів заголовка за допомогою спадного списку.</p></item>
+<item><p>Натисніть кнопку <gui style="button">Гаразд</gui>.</p></item>
+</steps>
+</section>
+
+</page>

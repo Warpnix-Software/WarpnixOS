@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="video-dvd-restricted" xml:lang="tr">
+
+  <info>
+    <link type="guide" xref="media#music" group="#last"/>
+    <link type="seealso" xref="video-dvd"/>
+    
+    <desc>Çoğu ticari DVD şifrelenmiştir ve şifre çözücü yazılım olmadan oynatılamaz.</desc>
+    
+    <credit type="author">
+      <name>Ubuntu Belgelendirme Projesi</name>
+      <email>ubuntu-doc@lists.ubuntu.com</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+<title>DVD oynatmak için gerekli kısıtlanmış çözücüleri nasıl etkinleştirebilirim?</title>
+
+<p>Yasal ve ticari kısıtlamalardan dolayı Ubuntu'da varsayılan olarak DVD desteği sağlanmaz. Çoğu ticari DVD şifrelenmiştir ve onları oynatmak için kod çözücü yazılım gerekir.</p>
+
+<section id="restricted">
+ <title>Alternatif şifre çözme yazılımı kullanın</title>
+
+ <note style="warning"><p>Bazı ülkelerde yasalar, lisanssız kod çözücü yazılımların kullanılmasına izin vermez. Onu kullanma haklarına sahip olduğunuzu doğrulayınız.</p></note>
+
+ <steps>
+  <item><p>Install <link href="apt:libdvdnav4">libdvdnav4</link>, <link href="apt:libdvdread8">libdvdread8</link>,
+<link href="apt:gstreamer1.0-plugins-bad">gstreamer1.0-plugins-bad</link>, <link href="apt:gstreamer1.0-plugins-ugly">gstreamer1.0-plugins-ugly</link>, and <link href="apt:libdvd-pkg">libdvd-pkg</link>.</p></item>
+  <item><p><keyseq><key>Ctrl</key><key>Alt</key><key>T</key></keyseq> tuşlarına basarak bir uçbirim penceresi açın.</p></item>
+  <item><p>Komutu çalıştır</p>
+    <p><cmd its:translate="no">sudo dpkg-reconfigure libdvd-pkg</cmd></p>
+    <p>ve yüklemek için onaylayın <em>libdvdcss2</em>.</p>
+  </item>
+</steps>
+</section>
+</page>

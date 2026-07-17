@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="new-game" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="index#play"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.5.5" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.12" date="2014-03-08" status="review"/>
+    <revision pkgversion="3.28.0" version="0.2" date="2018-09-01" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2012</years>
+    </credit>
+    <credit type="author copyright">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+    <credit type="editor">
+      <name>Aruna Sankaranarayanan</name>
+      <email>aruna.evam@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Rashi Aswani</name>
+      <email>aswanirashi19@gmail.com</email>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2011-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2008</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Iniciar un juego nuevo</title>
+
+  <p>Para iniciar un juego nuevo:</p>
+  <steps>
+    <item>
+      <p>Pulse el botón <gui style="button">Jugar otra vez</gui> situado a la derecha.</p>
+    </item>
+    <item>
+      <p>Para cambiar el <link xref="board-size">tamaño del tablero</link>, pulse el botón <gui style="button">Cambiar la dificultad</gui> situado a la derecha.</p>
+    </item>
+  </steps>
+
+  <note>
+  <p>Si ya había iniciado una partida y pulsa en el botón <gui style="button">Empezar de nuevo</gui>, <app>Mines</app> le preguntará si quiere <gui>Mantener el juego actual</gui> o <gui>Iniciar un juego nuevo</gui>. Si elige la última opción, perderá su partida actual.</p>
+  </note>
+</page>

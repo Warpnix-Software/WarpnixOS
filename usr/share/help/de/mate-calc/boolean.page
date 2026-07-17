@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="boolean" xml:lang="de">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>Boolesche Algebra</title>
+    
+    <p>Für die Boolsche Algebra stehen die Operatoren AND, OR und XOR zur Verfügung.</p>
+    <example>
+    <p>010011₂ AND 110101₂ </p>
+    </example>
+    <p>Im Programmierungsmodus gibt es Tasten für diese Operatoren.</p>
+    <p>Der Operator NOT invertiert die Bit einer Zahl. Die Anzahl der Binärstellen wird im Einstellungsmenu als Wortlänge eingestellt.</p>
+    <example>
+    <p>NOT 010011₂ </p>
+    </example>
+</page>

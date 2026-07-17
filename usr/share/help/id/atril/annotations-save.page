@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="annotations-save" xml:lang="id">
+<info>
+  <link type="guide" xref="index#annotations"/>
+ <desc>Bagaimana menyimpan anotasi Anda.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Shobha Tyagi</name>
+      <email its:translate="no">tyagishobha@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kukuh Syafaat</mal:name>
+      <mal:email>syafaatkukuh@gmail.com</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2021, 2022.</mal:years>
+    </mal:credit>
+  </info>
+<title>Menyimpan sebuah salinan dari suatu PDF teranotasi</title>
+ <p>Untuk menyimpan suatu salinan dari PDF Anda yang teranotasi untuk dilihat di masa mendatang memakai <app>Atril</app> atau sebarang penampil PDF lain <em>yang mendukung anotasi</em>:</p>
+  <steps>
+   <item>
+     <p>Klik <guiseq><gui>Berkas</gui><gui>Simpan Sebagai...</gui></guiseq></p>
+   </item>
+   <item>
+     <p>Pilih suatu nama dan folder tempat menyimpan berkas, lalu klik <gui>Simpan</gui>. PDF akan disimpan di folder yang Anda pilih.</p>
+    </item>
+   </steps>
+   <p>Anotasi ditambahkan sesuai dengan spesifikasi PDF. Maka, kebanyakan pembaca PDF mestinya dapat membaca mereka. Adobe Reader diketahu bisa.</p>
+
+</page>

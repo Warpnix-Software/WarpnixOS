@@ -1,0 +1,1236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+      (Do not remove this comment block.)
+  Maintained by the MATE Documentation Project
+  http://wiki.mate-desktop.org/dev-doc:doc-team-guide
+  Template version: 2.0 beta
+  Template last modified Jan 30, 2002
+-->
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:id="index" xml:lang="sr">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <info><title>Упутство Управљача архивама</title> 
+
+     <abstract>
+       <para>Управљач архива, познат и као Енгрампа, омогућава вам да направите, прегледате, мењаре или распакујете архиву.</para>
+     </abstract>
+
+    <copyright xml:lang="en"><year>2019-2021</year> <holder>Пројекат Мејтове документације</holder></copyright>
+    <copyright><year>2009</year> <holder>Пол Катлер</holder></copyright>	    
+	<copyright><year>2006</year> <year>2008</year> <holder>Паоло Бакилега</holder></copyright> 
+     <copyright><year>2003</year> <year>2004</year> <holder>Sun Microsystems</holder></copyright>
+    <copyright><year>2003</year> <holder>Паоло Бакилега</holder></copyright> 
+    <copyright><year>2002</year> <holder>Александер Кирилов</holder></copyright> 
+
+<!-- An address can be added to the publisher information.  If a role is 
+     not specified, the publisher/author is the same for all versions of the 
+     document.  -->
+    <publisher>
+      <publishername>Пројекат Мејтове документације</publishername>
+    </publisher> 
+    <publisher>
+      <publishername>Пројекат Гномове документације</publishername>
+    </publisher>
+
+  <xi:include href="legal.xml"/>
+  <!-- This file contains link to license for the
+   documentation (GNU FDL), and other legal stuff such as "NO
+   WARRANTY" statement. Please do not change any of this. -->
+
+  <authorgroup>
+      <author><orgname>Пројекат Мејтове документације</orgname> <affiliation> <orgname>Мејтова радна површ</orgname> </affiliation></author>
+      <author><personname> <firstname>Сан </firstname> <surname>Тим Гномове документације</surname> </personname> <affiliation> <orgname>Сан Микросистеми</orgname> </affiliation></author>
+      <author><personname> <firstname>Паоло</firstname> <surname>Бакилега</surname> </personname> <affiliation> <orgname>Пројекат Гномове документације</orgname> </affiliation></author> 
+      <author><personname> <firstname>Александер</firstname> <surname>Кирилов</surname> </personname> <affiliation> <orgname>Пројекат Гномове документације</orgname> </affiliation> <email>kirillov@math.sunysb.edu</email></author> 
+      <author><personname> <firstname>Пол</firstname> <surname>Катлер</surname> </personname> <affiliation> <orgname>Пројекат Гномове документације</orgname> </affiliation> <email>pcutler@foresightlinux.org</email></author>	  
+  </authorgroup>
+	
+	<releaseinfo revision="1.10" role="review">
+	</releaseinfo>
+
+         <revhistory>
+                <revision xml:lang="en"><revnumber>1.10.0</revnumber> <date>Јул 2015.</date> <revdescription>
+                         <para role="author" xml:lang="en">Волфганг Улбрих</para>
+                         <para role="publisher" xml:lang="en">Пројекат Мејтове документације</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.26.0</revnumber> <date>Март 2009.</date> <revdescription>
+                         <para role="author">Пол Катлер</para>
+                         <para role="publisher">Пројекат Гномове документације</para>
+                  </revdescription></revision>
+				
+                <revision><revnumber>2.24.0</revnumber> <date>Јул 2008.</date> <revdescription>
+                         <para role="author">Паоло Бакилега</para>
+                         <para role="publisher">Пројекат Гномове документације</para>
+                  </revdescription></revision>
+				
+                <revision><revnumber>2.6</revnumber> <date>Април 2006.</date> <revdescription>
+                         <para role="author">Паоло Бакилега</para>
+                         <para role="publisher">Пројекат Гномове документације</para>
+                  </revdescription></revision>
+
+                <revision><revnumber>2.5</revnumber> <date>Март 2004.</date> <revdescription>
+                         <para role="author">Тим Sun Гномове документације</para>
+                         <para role="publisher">Пројекат Гномове документације</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.4</revnumber> <date>Фебруар 2004.</date> <revdescription>
+                         <para role="author">Тим Sun Гномове документације</para>
+                         <para role="publisher">Пројекат Гномове документације</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.3</revnumber> <date>Август 2003.</date> <revdescription>
+                         <para role="author">Тим Sun Гномове документације</para>
+                         <para role="publisher">Пројекат Гномове документације</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.2</revnumber> <date>Јун 2003.</date> <revdescription>
+                         <para role="author">Тим Sun Гномове документације</para>
+                         <para role="publisher">Пројекат Гномове документације</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.1</revnumber> <date>Јануар 2003.</date> <revdescription>
+                         <para role="author">Паоло Бакилега</para>                         
+                         <para role="publisher">Пројекат Гномове документације</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.0</revnumber> <date>Јун 2002.</date> <revdescription>
+                         <para role="author">Александер Кирилов</para>                         
+                         <para role="publisher">Пројекат Гномове документације</para>
+                  </revdescription></revision>
+         </revhistory>
+
+    <releaseinfo>Ово упутство описује издање 1.22 Управљача архива.</releaseinfo> 
+  </info> 
+
+  <indexterm zone="index"><primary>Енгрампа</primary></indexterm> 
+  <indexterm zone="index"><primary>енгрампа</primary></indexterm>
+  <indexterm zone="index"><primary>Архивирање</primary></indexterm>
+  <indexterm zone="engrampa-add-files"><primary>Архиве</primary> <secondary>Додавање датотека</secondary></indexterm> 
+  <indexterm zone="engrampa-delete-files"><primary>Архиве</primary> <secondary>Брисање датотека</secondary></indexterm> 
+  <indexterm zone="engrampa-open"><primary>Архиве</primary> <secondary>Отварање</secondary></indexterm> 
+  <indexterm zone="engrampa-view"><primary>Архиве</primary> <secondary>Прегледање</secondary></indexterm> 
+  <indexterm zone="engrampa-extract"><primary>Архиве</primary> <secondary>Распакивање</secondary></indexterm> 
+  <indexterm zone="engrampa-create"><primary>Архиве</primary> <secondary>Стварање</secondary></indexterm> 
+
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+<!-- Use the Introduction section to give a brief overview of what
+     the application is and what it does. -->
+  <section xml:id="engrampa-intro"><info><title>Увод</title></info> 
+     
+    <para>Можете да користите програм <application>Управљач архива</application> да направите, прегледате, измените или распакујете архиву. Архива јесте датотека која делује као садржалац за друге датотеке. Архива може да садржи много датотека, фасцикли и подфасцикли, обично у сажетом облику.</para>
+    <para><application>Упављач архива</application> обезбеђује само графичко сучеље и ослања се на помагала линије наредби као што је „<command>tar</command>“, „<command>gzip</command>“, и „<command>bzip2</command>“ за радње архивирања.</para>
+    <para>Ако сте инсталирали одговарајуће алате линије наредби на вашем систему, <application>Управљач архива</application> подржава формате архива исписане у следећој табели.</para> 
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Формат</para></entry>
+              <entry colname="COLSPEC1" align="left">
+                <para>Проширење назива датотеке</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para>7-зип архива</para></entry>
+              <entry align="left"><para><filename>.7z</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>АЦЕ архива</para></entry>
+              <entry align="left"><para><filename>.ace</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>АлЗип архива</para></entry>
+              <entry align="left"><para><filename>.alz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>АР архива</para></entry>
+              <entry align="left"><para><filename>.ar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>ARJ архива</para></entry>
+              <entry align="left"><para><filename>.arj</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Мајкрософтова кабинет архива</para></entry>
+              <entry align="left"><para><filename>.cab</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>CPIO архива</para></entry>
+              <entry align="left"><para><filename>.cpio</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Дебијан пакет</para></entry>
+              <entry align="left"><para><filename>.deb</filename>, <filename>.udeb</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Електронска издања</para></entry>
+              <entry align="left"><para><filename>.epub</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Сирова ЦД слика (ISO 9660)</para></entry>
+              <entry align="left"><para><filename>.iso</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Јава архива</para></entry>
+              <entry align="left"><para><filename>.jar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>аРхива Ентерпрајз програма</para></entry>
+              <entry align="left"><para><filename>.ear</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Ресурс Веб програма или АРхива Веб програма</para></entry>
+              <entry align="left"><para><filename>.war</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>LHA архива</para></entry>
+              <entry align="left"><para><filename>.lha</filename>, <filename>.lzh</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Рошал АРхива</para></entry>
+              <entry align="left"><para><filename>.rar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Стрип (RAR-ом запакован)</para></entry>
+              <entry align="left"><para><filename>.cbr</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>РПМ пакет</para></entry>
+              <entry align="left"><para><filename>.rpm</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Тар архива</para></entry>
+              <entry align="left"><para><filename>.tar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Тар архива запакована „<command>bzip</command>“-ом</para></entry>
+              <entry align="left"><para><filename>.tar.bz</filename> или <filename>.tbz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Тар архива запакована „<command>bzip2</command>“-ом</para></entry>
+              <entry align="left"><para><filename>.tar.bz2</filename> или <filename>.tbz2</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Тар архива запакована „<command>gzip</command>“-ом</para></entry>
+              <entry align="left"><para>„<filename>.tar.gz</filename>“ или „<filename>.tgz</filename>“ или „<filename>.taz</filename>“</para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Тар архива запакована „<command>lzip</command>“-ом</para></entry>
+              <entry align="left"><para><filename>.tar.lz</filename> или <filename>.tlz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Тар архива запакована „<command>lzop</command>“-ом</para></entry>
+              <entry align="left"><para><filename>.tar.lzo</filename> или <filename>.tzo</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Тар архива запакована „<command>compress</command>“-ом</para></entry>
+              <entry align="left"><para>„<filename>.tar.Z</filename>“ или „<filename>.taZ</filename>“</para></entry>
+            </row>
+             <row valign="top">
+              <entry><para>Тар архива запакована „<command>7zip</command>“-ом</para></entry>
+              <entry align="left"><para><filename>.tar.7z</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>СтафИт архива</para></entry>
+              <entry align="left"><para><filename>.bin</filename> или <filename>.sit</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>ЗИП архива</para></entry>
+              <entry align="left"><para><filename>.zip</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Стрип (ЗИП-ом запакован)</para></entry>
+              <entry align="left"><para><filename>.cbz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Zoo архива</para></entry>
+              <entry align="left"><para><filename>.zoo</filename></para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    <para>Најчешћи формат архиве на Линуксу и Јуниксу сличним системима је тар архива запакована „<command>gzip</command>“-ом или „<command>bzip2</command>“-ом.</para>
+    <para>Најчешћи формат архиве на Мајкрософт Виндоуз системима је архива направљена „<application>PKZIP</application>“-ом или „<application>WinZip</application>“-ом.</para>
+    <section xml:id="engrampa-intro-nonarchive"><info><title>Запаковане не-архивске датотеке</title></info>
+       
+      <para>Запакована не-архивска датотека јесте датотека која је направљена када користите „<command>bzip2</command>“, „<command>gzip</command>“, „<command>lzip</command>“, „<command>lzop</command>“, „<command>compress</command>“ или „<command>rzip</command>“ да запакујете не-архивску датотеку. На пример, „<filename>датотека.txt.gz</filename>“ је направљена када користите „<command>gzip</command>“ да запакујете „<filename>датотеку.txt</filename>“.</para>
+      <para>Можете да користите <application>Управљача архива</application> да направите, отворите и распакујете запаковану не-архивску датотеку.</para> 
+    </section>
+  </section>
+
+<!-- ============= Getting Started =========================== -->
+  <section xml:id="engrampa-get-start"><info><title>Први кораци</title></info>
+    
+    <para>Овај одељак обезбеђује информације о томе како да покренете <application>Управљача архива</application>, и описује корисничко сучеље <application>Управљача архива</application>.</para>
+
+<!-- ============= To Start Engrampa ============================ -->
+         <section xml:id="engrampa-to-start"><info><title>Покретање <application>Управљача архива</application></title></info>
+                
+                <para>Можете да покренете <application>Управљача архива</application> на следеће начине:</para>
+                <variablelist>
+                <varlistentry>
+                <term>Изборник <guimenu>„Програми“</guimenu></term>
+                <listitem>
+                <para>Изаберите „<menuchoice><guisubmenu>Алатке</guisubmenu><guimenuitem>Управљач архива Енгрампа</guimenuitem></menuchoice>“.</para>
+                </listitem>
+                </varlistentry>
+                <varlistentry>
+                <term>Наредба</term>
+                <listitem>
+                <para>Извршите следећу наредбу: <command>engrampa</command></para>
+                </listitem>
+                </varlistentry>
+                </variablelist>
+        </section>
+
+         <section xml:id="engrampa-when-start"><info><title>Након покретања <application>Управљача архива</application></title></info>
+                
+                <para>Када покренете <application>Управљач архива</application>, биће приказан следећи прозор:</para>
+
+                <figure xml:id="engrampa-FIG-main-window"><info><title>Прозор <application>Управљача архива</application></title></info>
+                  
+                  <screenshot>
+                         <mediaobject><imageobject> <imagedata fileref="figures/engrampa_main_window.png" format="PNG"/> </imageobject> <textobject> <phrase>Приказује главни прозор Енгрампе.</phrase> </textobject></mediaobject>
+                  </screenshot>
+                </figure>
+
+                <para>Прозор <application>Управљача архива</application> садржи следеће елементе:</para>
+                <variablelist>
+                  <varlistentry> <term>Трака изборника</term>
+                         <listitem>
+                                <para>Изборници на траци изборника садрже све наредбе које су вам потребне за рад са архивама у <application>Управљачу архива</application>.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Трака алата</term>
+                         <listitem>
+                                <para>Трака алата садржи подскуп наредби којима можете да приступите из траке изборника. <application>Управљач архива</application> приказује траку алата по основи. Да је сакријете, изаберите „<menuchoice><guimenu>Преглед</guimenu><guimenuitem>Трака алата</guimenuitem></menuchoice>“. Да је прикажете, поново изаберите „<menuchoice><guimenu>Преглед</guimenu><guimenuitem>Трака алата</guimenuitem></menuchoice>“.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Трака фасцикли</term>
+                         <listitem>
+                                <para>Трака фасцикли вам омогућава да се крећете међу фасциклама унутар архиве. <application>Управљач архива</application> приказује траку фасцикли само у прегледу фасциклама. Видите <xref linkend="engrampa-view-type-folder"/> за више о томе.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Област приказа</term>
+                         <listitem>
+                                <para>Област приказа приказује садржај архиве.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Трака стања</term>
+                         <listitem>
+                                <para>Трака стања приказује информације о текућој активности <application>Управљача архива</application> и контекстуалне информације о садржају архиве. <application>Управљач архива</application> приказује траку стања по основи. Да је сакријете, изаберите „<menuchoice><guimenu>Преглед</guimenu><guimenuitem>Трака стања</guimenuitem></menuchoice>. Да је прикажете, поново изаберите „<menuchoice><guimenu>Преглед</guimenu><guimenuitem>Трака стања</guimenuitem></menuchoice>“.</para>
+                         </listitem>
+                  </varlistentry>
+                </variablelist>
+                <para>Када урадите десни клик у прозору <application>Управљача архива</application>, програм ће приказати искочни изборник. Овај изборник садржи најчешће контекстуалне наредбе архиве.</para>
+
+     <section xml:id="engrampa-bookmarks"><info><title>Разгледање система датотека</title></info>
+        
+        <para>Неколико прозорчета <application>Управљача архива</application> (<guilabel>Нова</guilabel>, <guilabel>Отвори</guilabel>, <guilabel>Распакуј</guilabel>,...) вам омогућавају да разгледате датотеке и фасцикле на вашем рачунару. Погледајте <link xlink:href="help:mate-user-guide/filechooser-open">Корисничко упутство радне површи</link> да сазнате више о коришћењу прозорчића разгледања датотека.</para>
+        <para>Можете такође да погледате <link xlink:href="help:mate-user-guide/caja-bookmarks">Одељак обележивача</link> корисничког упутства радне површи да сазнате како можете да користите окно „<guilabel>Места</guilabel>“ да приступите вашим омиљеним местима.</para>
+     </section>
+   </section>
+</section>
+
+
+
+<!-- ======= Working with archives ============= --> 
+
+<section xml:id="engrampa-working"><info><title>Рад са архивама</title></info>
+      
+      <para>Када користите <application>Управљача архива</application> за рад са архивом, све измене се одмах чувају на диск. На пример, ако обришете датотеку из архиве, <application>Управљач архива</application> ће обрисати датотеку одмах након што кликнете на „<guibutton>У реду</guibutton>“. Ово понашање се разликује од оног у већини програма, који чувају измене на диск само када изађете из програма или изаберете „<guimenuitem>Сачувај</guimenuitem>“ у изборнику.</para>
+      <para>Ако је архива врло велика, или вам је систем спор, неке радње архиве могу потрајати извесно време. Да прекинете тренутну радњу, притисните <keycap>Esc</keycap>. Или, изаберите „<menuchoice><guimenu>Преглед</guimenu><guimenuitem>Заустави</guimenuitem></menuchoice>“, или кликните „<guibutton>Заустави</guibutton>“ на траци алата.</para>      
+      <para>У <application>Управљачу архива</application>, можете да обавите исту радњу на неколико начина. На пример, можете да отворите архиву на следеће начине: <informaltable frame="all">
+                    <tgroup cols="2" colsep="1" rowsep="1">
+                      <colspec colname="COLSPEC0" colwidth="50*"/>
+                      <colspec colname="COLSPEC1" colwidth="50*"/>
+                      <thead>
+                        <row valign="top">
+                          <entry colname="COLSPEC0">
+                            <para>Компонента кориничког сучеља</para></entry>
+                          <entry colname="COLSPEC1" align="left"> 
+                            <para>Радња</para></entry>
+                        </row>
+                      </thead>
+                      <tbody>
+                        <row valign="top">               
+                          <entry><para>Прозор</para></entry>
+                          <entry><para>Превуците архиву у прозор <application>Управљача архива</application> из другог програма као што је управник датотека.</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Трака изборника</para></entry>
+                          <entry><para>Изаберите „<menuchoice><guimenu>Архива</guimenu><guimenuitem>Отвори</guimenuitem></menuchoice>“.</para>
+           <para>Ако сте недавно отворили архиву, биће исписана у изборнику „<menuchoice><guimenu>Архива</guimenu></menuchoice>“.</para> 
+</entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Трака алата</para></entry>
+                          <entry><para>Кликните на дугме траке алата „<guibutton>Отвори</guibutton>“.</para>
+           <para>Ако сте недавно отворили архиву, кликните на стрелицу на доле поред дугмета траке алата „<guibutton>Отвори</guibutton>“.</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Искочни изборник десног клика</para></entry>
+                          <entry><para>Десни клик на архиву, затим изаберите „<guilabel>Отвори</guilabel>“ из искочног изборника.</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Тастери пречица</para></entry>
+                          <entry><para>Притисните <keycombo><keycap>Ктрл</keycap><keycap>O</keycap></keycombo>.</para></entry>
+                        </row>
+                      </tbody>
+                    </tgroup>
+                  </informaltable></para>
+      <para>Ово упутство документује функционалности са траке изборника.</para>
+
+    <section xml:id="engrampa-pattern"><info><title>Шаблони назива датотека</title></info>
+      
+      <para><application>Управљач архива</application> вам омогућава да додате, распакујете или обришете неколико датотека одједном. Да примените радњу над свим датотекама које одговарају одређеном шаблону, упишите шаблон у поље за текст. Шаблон може да укључи уобичајене симболе џокера као што је <keycap>*</keycap> да би поклопио било коју ниску, и <keycap>?</keycap> да би поклопио било који појединачни симбол. Можете да унесете неколико шаблона раздвојених запетачкама. <application>Управљач архива</application> примењује радњу над свим датотекама које се поклапају са барем једним од шаблона. Примери у следећој табели показују како да користите шаблоне назива датотека за бирање датотека.</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Образац</para></entry>
+              <entry colname="COLSPEC1" align="left"> 
+                <para>Одговарајуће датотеке</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">               
+              <entry><para><filename>*</filename></para></entry>
+              <entry align="left"><para>Све датотеке</para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>*.tar*</filename></para></entry>
+              <entry align="left"><para>Све датотеке са проширењем „<filename>tar</filename>“, укључујући и оне у којима након проширења „<filename>tar</filename>“ следи било који низ симбола, као што је „<filename>датотека.tar.gz</filename>“</para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>*.jpg; *.jpeg</filename></para></entry>
+              <entry align="left"><para>Све датотеке са проширењем „<filename>jpg</filename>“ и све датотеке са проширењем „<filename>jpeg</filename>“</para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>датотека?.gz</filename></para></entry>
+              <entry align="left"><para>Све датотеке са проширењем „<filename>gz</filename>“ које имају назив „датотека“ за којим следи било који усамљени знак, нпр. „<filename>датотека.gz</filename>“, „<filename>датотекаx.gz</filename>.</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
+
+<!-- ======= To open an archive ============= --> 
+
+<section xml:id="engrampa-open"><info><title>Отварање архиве</title></info>
+      
+      <para>Да отворите архиву, урадите следеће: <orderedlist inheritnum="ignore" continuation="restarts">
+          <listitem>
+           <para>Изаберите „<menuchoice><guimenu>Архива</guimenu><guimenuitem>Отвори</guimenuitem></menuchoice>“ да прикажете прозорче „<guilabel>Отвори</guilabel>“. Или притисните <keycombo><keycap>Ктрл</keycap><keycap>O</keycap></keycombo>, или кликните „<guibutton>Отвори</guibutton>“ на траци алата.</para> 
+          </listitem>
+          <listitem>
+           <para>Изаберите архиву коју желите да отворите.</para> 
+          </listitem>
+          <listitem>
+           <para>Кликните <guibutton>Отвори</guibutton>.</para> 
+          </listitem>
+        </orderedlist></para>
+      <para><application>Управљач архива</application> сам одређује врсту датотеке, и приказује: <itemizedlist>
+          <listitem>
+            <para>Назив архиве на насловној траци прозора</para>
+          </listitem>
+          <listitem>
+            <para>Садржај архиве у области за приказ</para>
+          </listitem>
+          <listitem>
+            <para>Број датотека и фасцикли (објеката) у тренутном месту, и њихову величину након распакивања, на траци стања</para>
+          </listitem>
+        </itemizedlist></para>
+      <para>Да отворите другу архиву, поново изаберите „<menuchoice><guimenu>Архива</guimenu><guimenuitem>Отвори</guimenuitem></menuchoice>“. <application>Управљач архива</application> отвара сваку архиву у новом прозору. Не можете отворити другу архиву у истом прозору.</para>
+      <para>Ако покушате да отворите архиву која је направљена у формату који <application>Управљач архива</application> не препознаје, приказаће поруку грешке. Видите <xref linkend="engrampa-intro"/> за списак подржаних формата.</para>
+  </section>
+
+<!-- ======= Selecting files in an archive  ============= --> 
+    <section xml:id="engrampa-select-files"><info><title>Бирање датотека у архиви</title></info>
+      
+    <para>Да изаберете све датотеке у архиви, изаберите „<menuchoice><guimenu>Уређивање</guimenu><guimenuitem>Изабери све</guimenuitem></menuchoice>“ или притисните <keycombo><keycap>Ктрл</keycap><keycap>A</keycap></keycombo>.</para>
+      <para>Да поништите избор свих датотека у архиви, изаберите „<menuchoice><guimenu>Уређивање</guimenu><guimenuitem>Поништи избор</guimenuitem></menuchoice>“ или притисните „<keycombo><keycap>Шифт</keycap><keycap>Ктрл</keycap><keycap>A</keycap></keycombo>“.</para>
+    </section>
+
+  <!-- =========== Extracting Files From an Archive ==================== -->
+
+  <section xml:id="engrampa-extract"><info><title>Распакивање датотека из архиве</title></info> 
+     
+    <para>Да распакујете датотеке из отворене архиве, урадите следеће: <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>Изаберите датотеке које желите да распакујете. Да изаберете још датотека, притисните и држите <keycap>Ктрл</keycap> и кликните на датотеке које желите да изаберете.</para>
+        </listitem>
+        <listitem><para>Изаберите „<menuchoice><guimenu>Архива</guimenu><guimenuitem>Распакуј</guimenuitem></menuchoice>“ да прикажете прозорче „<guilabel>Распакуј</guilabel>“. Или кликните „<guibutton>Распакуј</guibutton>“ на траци алата.</para>
+        </listitem>
+        <listitem><para>Изаберите фасциклу у којој ће <application>Управљач архива</application> распаковати датотеке.</para>
+        </listitem>
+        <listitem><para>Изаберите захтеване опције распакивања. За више о опцијама распакивања, видите <xref linkend="engrampa-extract-options"/>.</para>
+        </listitem>
+        <listitem><para>Кликните „<guibutton>Распакуј</guibutton>“.</para>
+        <note>
+          <para>Ако су све датотеке у архиви заштићене лозинком, а ви је нисте навели, <application>Управљач архива</application> ће затражити да унесете лозинку.</para>
+          <para>Ако су неке а не све датотеке у архиви заштићене лозинком, а ви нисте навели лозинку, <application>Управљач архива</application> неће тражити лозинку. Међутим, <application>Управљач архива</application> ће распаковати само незаштићене датотеке.</para>
+          <para>За више о лозинкама, видите <xref linkend="engrampa-encrypt-files"/>.</para>
+        </note>
+        </listitem>
+        </orderedlist></para>
+      <para><application>Управљач архива</application> такође обезбеђује начине распакивања датотека из архиве у прозору управника датотека, без отварања прозора <application>Управљача архива</application>. Видите <xref linkend="engrampa-fmgr"/> за више о томе.</para>
+    <para>Радња распакивања распакује <emphasis>умножак</emphasis> наведених датотека из архиве. Распаковане датотеке имају иста овлашћења и датум измене као изворне датотеке које су додате у архиву.</para>
+    <para>Радња распакивања не мења садржај архиве. За више о томе како да обришете датотеке из архиве, видите <xref linkend="engrampa-delete-files"/>.</para>
+  </section>
+    
+<!-- ======= Closing the Archive ============= --> 
+  <section xml:id="engrampa-archive-close"><info><title>Затварање архиве</title></info>
+    
+    <para>Да затворите текућу архиву и текући прозор <application>Управљача архива</application>, изаберите „<menuchoice> <guimenu>Архива</guimenu> <guimenuitem>Затвори</guimenuitem> </menuchoice>“, или притисните <keycombo><keycap>Ктрл</keycap><keycap>W</keycap></keycombo>.</para>
+    <note>
+      <para>Не постоји начин да затворите текућу архиву али не и прозор <application>Управљача архива</application>.</para>
+    </note>
+  </section>
+</section>
+
+
+<!-- =============  Creating Archives ============================= -->
+<section xml:id="engrampa-creating"><info><title>Стварање архиве</title></info> 
+     
+    <para>Као додатак отварању постојећих архива, можете такође да направите нове архиве <application>Управљачем архиве</application>.</para>
+    <section xml:id="engrampa-create"><info><title>Прављење архиве</title></info> 
+     
+    <para>Да направите архиву, урадите следеће: <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Изаберите „<menuchoice><guimenu>Архива</guimenu><guimenuitem>Нова</guimenuitem></menuchoice>“ да прикажете прозорче „<guilabel>Нова</guilabel>“. Или притисните <keycombo><keycap>Ктрл</keycap><keycap>N</keycap></keycombo>, или кликните „<guibutton>Нова</guibutton>“ на траци алата.</para>
+        </listitem>
+        <listitem>
+          <para>Наведите фасциклу у коју ће <application>Управљач архива</application> ставити нову архиву кликом на унос на падајућем списку „<guilabel>Сачувај у фасцикли</guilabel>“. Ако се фасцикла не налази на списку, кликните на „<guilabel>Разгледај друге фасцикле</guilabel>“, и изаберите фасциклу. Или, упишите путању у поље „<guilabel>Назив фасцикле</guilabel>“.</para>
+        </listitem>
+        <listitem>
+          <para>Упишите назив нове архиве, укључујући проширење датотеке, у поље „<guilabel>Назив датотеке</guilabel>“. Или можете навести назив архиве без проширења, и да затим изаберете врсту архиве из падајућег изборника „<guilabel>Врста архиве</guilabel>“, на овај начин проширење се самостално додаје.</para>
+        </listitem>
+        <listitem><para>Изаберите потребне опције стварања кликом на „<guilabel>Остала подешавања</guilabel>“. За више о опцијама стварања, видите <xref linkend="engrampa-create-options"/>.</para>
+        </listitem>
+        <listitem>
+          <para>Кликните „<guibutton>Направи</guibutton>“. <application>Управљач архива</application> ће направити празну архиву, али је још увек неће записати на диск.</para>
+        </listitem>
+        <listitem>
+          <para>Додајте датотеке у нову архиву као што је описано у <xref linkend="engrampa-add-files"/>. <note>
+                  <para><application>Управљач архива</application> записује нову архиву на диск само када архива садржи барем једну датотеку. Ако направите нову архиву и изађете из <application>Управљача архива</application> пре него што додате неку датотеку у архиву, <application>Управљач архива</application> ће обрисати архиву.</para>
+                </note></para>
+        </listitem>
+      </orderedlist></para>
+</section>
+
+    <!-- ======= Adding files to an archive  ============= --> 
+  <section xml:id="engrampa-add-files"><info><title>Додавање датотека у архиву</title></info>
+    
+    <para>Да додате датотеке у архиву, урадите следеће: <orderedlist inheritnum="ignore" continuation="restarts">
+         <listitem>
+           <para>Одлучите где у архиви желите да додате датотеке, затим отворите то место у архиви.</para> 
+         </listitem>
+         <listitem>
+           <para>Изаберите „<menuchoice><guimenu>Уређивање</guimenu><guimenuitem>Додај датотеке</guimenuitem></menuchoice>“ да прикажете прозорче „<guilabel>Додај датотеке</guilabel>“, или кликните „<guibutton>Додај датотеке</guibutton>“ на траци алата.</para> 
+         </listitem>
+         <listitem>
+           <para>Изаберите датотеке које желите да додате. Да изаберете још датотека притисните и држите <keycap>Ктрл</keycap> и кликните на датотеке.</para> 
+         </listitem>
+         <listitem>
+           <para>Кликните „<guibutton>Додај</guibutton>“. <application>Управљач архива</application> ће додати датотеке у текућу фасциклу у архиви.</para> 
+         </listitem>
+      </orderedlist></para>
+    <para>Не можете да додате фасцикле у архиву помоћу прозорчета „<guilabel>Додај датотеке</guilabel>“. Да додате фасциклу видите <xref linkend="engrampa-add-folder"/>.</para>
+    <para>Прозорче „<guilabel>Додај датотеке</guilabel>“ обезбеђује опцију „<guilabel>Додај само ако је новија</guilabel>“, видите <xref linkend="engrampa-add-options"/> за више о овој опцији.</para>
+    <para>Можете такође да додате датотеке у архиву у прозору управника датотека, без отварања прозора <application>Управљача архива</application>. Видите <xref linkend="engrampa-fmgr"/> за више о томе.</para>
+    <para>Радња додавања додаје <emphasis>умножак</emphasis> наведених датотека или фасцикли у архиву. <application>Управљач архива</application> не уклања изворне датотеке, које остају неизмењене на систему датотека. Умношци који су додати у архиву имају иста овлашћења и датум измене као изворне датотеке.</para>
+    </section>
+
+<!-- ======= Adding files - Adding folder  ============= --> 
+    <section xml:id="engrampa-add-folder"><info><title>Додавање фасцикле у архиву</title></info>
+      
+    <para>Да додате фасциклу у архиву, урадите следеће: <orderedlist inheritnum="ignore" continuation="restarts">
+         <listitem>
+           <para>Одлучите где у архиви желите да додате датотеке, затим отворите то место у архиви.</para>
+         </listitem>
+         <listitem>
+           <para>Изаберите „<menuchoice><guimenu>Уређивање</guimenu><guimenuitem>Додај фасциклу</guimenuitem></menuchoice>“ да прикажете прозорче „<guilabel>Додајте фасциклу</guilabel>“.</para> 
+         </listitem>
+         <listitem>
+           <para>Изаберите фасциклу коју желите да додате.</para> 
+         </listitem>
+         <listitem>
+           <para>Кликните „<guibutton>Додај</guibutton>“. <application>Управљач архива</application> ће додати фасциклу у текућу фасциклу у архиви.</para> 
+         </listitem>
+      </orderedlist></para>
+    <para>Прозорче „<guilabel>Додајте фасциклу</guilabel>“ обезбеђује неколико напредних опција. Видите <xref linkend="engrampa-add-options"/> за више о томе.</para>
+    </section>
+
+  <!-- ======= Converting an Archive to Another Format ============= --> 
+  <section xml:id="engrampa-convert-archive"><info><title>Претварање архиве у други формат</title></info>
+    
+    <para>Да претворите архиву у други формат и да је сачувате као нову датотеку, урадите следеће:</para>
+    <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem>
+        <para>Отворите архиву коју желите да претворите.</para>
+      </listitem>
+      <listitem>
+        <para>Изаберите „<menuchoice><guimenu>Архива</guimenu><guimenuitem>Сачувај као</guimenuitem></menuchoice>“ да прикажете прозорче „<guilabel>Сачувај</guilabel>“.</para>
+      </listitem>
+      <listitem>
+        <para>Упишите назив нове архиве у поље „<guilabel>Назив</guilabel>“.</para>
+      </listitem>
+      <listitem>
+        <para>Изаберите нови формат са падајућег списка „<guilabel>Врста датотеке</guilabel>“. Или, упишите проширење назива датотеке у поље „<guilabel>Назив</guilabel>“, и изаберите „<guilabel>Самостално</guilabel>“ са падајућег списка „<guilabel>Врста архиве</guilabel>“.</para>
+      </listitem>
+      <listitem>
+        <para>Изаберите потребне опције стварања кликом на „<guilabel>Остала подешавања</guilabel>“. За више о опцијама стварања, видите <xref linkend="engrampa-create-options"/>.</para>
+      </listitem>      
+      <listitem>
+        <para>Кликните „<guibutton>Сачувај</guibutton>“.</para>
+        <note>
+          <para>Ако су све датотеке у архиви заштићене лозинком, а ви је нисте навели, <application>Управљач архива</application> ће затражити да унесете лозинку.</para>
+          <para>Ако су неке а не све датотеке у архиви заштићене лозинком, а ви нисте навели лозинку, <application>Управљач архива</application> неће тражити лозинку. Међутим, <application>Управљач архива</application> ће умножити само незаштићене датотеке у нову архиву.</para>
+          <para>За више о лозинкама, видите <xref linkend="engrampa-encrypt-files"/>.</para>
+        </note>
+      </listitem>
+    </orderedlist>
+  </section>
+</section>
+
+<!-- ======= Operations on Archive Contents ============= --> 
+<section xml:id="engrampa-modify-contents"><info><title>Мењање садржаја архиве</title></info>
+  
+  <para>Можете да измените садржај архиве на неколико начина.</para>
+
+<!-- ======= Encrypting files in an archive  ============= --> 
+    <section xml:id="engrampa-encrypt-files"><info><title>Шифровање датотека у архиви</title></info>
+      
+    <para>Из безбедносних разлога, можете пожелети да шифрујете датотеке које сте додали у архиву.</para>
+      <para>Ако формат архиве подржава шифровање, можете навести лозинку за шифровање датотека које сте додали у архиву.</para>
+      <note>
+        <para>Тренутно, само 7-Zip, ZIP, RAR и ARJ архиве подржавају шифровање.</para>
+      </note>
+     <para>Да наведете лозинку за шифровање датотеке, урадите следеће:</para>
+       <orderedlist inheritnum="ignore" continuation="restarts">
+          <listitem><para>Изаберите „<menuchoice><guimenu>Уређивање</guimenu><guimenuitem>Лозинка</guimenuitem></menuchoice>“ да прикажете прозорче „<guilabel>Лозинка</guilabel>“.</para></listitem> 
+<listitem><para>Упишите лозинку у поље „<guilabel>Лозинка</guilabel>“.</para></listitem>
+<listitem><para>Кликните „<guibutton>У реду</guibutton>“.</para></listitem>
+       </orderedlist>
+    <para><application>Управљач архива</application> користи лозинку за шифровање датотека које сте додали у текућу архиву, и дешифрује датотеке које распакујете из текуће архиве. <application>Управљач архиве</application> брише лозинку када затворите архиву.</para>
+      <para>За више о томе како да проверите да ли архива садржи шифроване датотеке, видите <xref linkend="engrampa-extra-info"/>.</para>
+      <note>
+      <para>Шифровање обезбеђено помагалима архиве је слабо и небезбедно. Ако је безбедност важна, користите јачи алат шифровања као што је <link xlink:href="http://www.gnupg.org">Гнуов чувар приватности</link>.</para>
+      </note>
+    </section>
+
+<!-- ======= Renaming files in an archive  ============= --> 
+  <section xml:id="engrampa-rename-files"><info><title>Преименовање датотеке у архиви</title></info>
+    
+    <para>Да преименујете датотеку у архиви, урадите следеће:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Изаберите датотеку коју желите да преименујете.</para>
+        </listitem>
+        <listitem>
+          <para>Изаберите „<menuchoice><guimenu>Уређивање</guimenu><guimenuitem>Преименуј</guimenuitem></menuchoice>“, или притисните <keycombo><keycap>Ф2</keycap></keycombo>, да прикажете прозорче „<guilabel>Преименуј</guilabel>“.</para>
+        </listitem>
+        <listitem>
+          <para>Упишите назив нове датотеке у поље „<guilabel>Назив нове датотеке</guilabel>“.</para>
+        </listitem>
+        <listitem>
+          <para>Кликните „<guibutton>Преименуј</guibutton>“.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Copying files in an archive  ============= --> 
+  <section xml:id="engrampa-copy-files"><info><title>Умножавање датотека у архиви</title></info>
+    
+    <para>Да умножите датотеке у архиву, урадите следеће:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Изаберите датотеке које желите да умножите.</para>
+        </listitem>
+        <listitem>
+          <para>Изаберите „<menuchoice><guimenu>Уређивање</guimenu><guimenuitem>Умножи</guimenuitem></menuchoice>“, или притисните <keycombo><keycap>Ктрл</keycap><keycap>C</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Отворите место где желите да ставите умножене датотеке.</para>
+        </listitem>
+        <listitem>
+          <para>Изаберите „<menuchoice><guimenu>Уређивање</guimenu><guimenuitem>Убаци</guimenuitem></menuchoice>“, или притисните <keycombo><keycap>Ктрл</keycap><keycap>V</keycap></keycombo>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Moving files in an archive  ============= --> 
+  <section xml:id="engrampa-move-files"><info><title>Премештање датотека у архиву</title></info>
+    
+    <para>Да преместите датотеке у архиву, урадите следеће:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Изаберите датотеке које желите да преместите.</para>
+        </listitem>
+        <listitem>
+          <para>Изаберите „<menuchoice><guimenu>Уређивање</guimenu><guimenuitem>Исеци</guimenuitem></menuchoice>“, или притисните <keycombo><keycap>Ктрл</keycap><keycap>Х</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Отворите место где желите да ставите премештене датотеке.</para>
+        </listitem>
+        <listitem>
+          <para>Изаберите „<menuchoice><guimenu>Уређивање</guimenu><guimenuitem>Убаци</guimenuitem></menuchoice>“, или притисните <keycombo><keycap>Ктрл</keycap><keycap>V</keycap></keycombo>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Deleting files from an archive  ============= --> 
+  <section xml:id="engrampa-delete-files"><info><title>Брисање датотека из архиве</title></info>
+    
+    <para>Да обришете датотеке из архиве, урадите следеће:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Изаберите датотеке које желите да обришете.</para>
+        </listitem>
+        <listitem>
+          <para>Изаберите „<menuchoice><guimenu>Уређивање</guimenu><guimenuitem>Обриши</guimenuitem></menuchoice>“ или притисните <keycap>Обриши</keycap> да прикажете прозорче „<guilabel>Обриши</guilabel>“.</para>
+        </listitem>
+        <listitem>
+          <para>Изаберите једну од следећих опција брисања:</para>
+          <variablelist>
+            <varlistentry>
+              <term><guilabel>Све датотеке</guilabel></term>
+              <listitem>
+                <para>Обрисаће све датотеке из архиве.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term><guilabel>Изабране датотеке</guilabel></term>
+              <listitem>
+                <para>Обрисаће изабране датотеке из архиве.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term><guilabel>Датотеке</guilabel></term>
+              <listitem>
+                <para>Обрисаће из архиве све датотеке које се поклапају са наведеним шаблоном. Видите <xref linkend="engrampa-pattern"/> за више о шаблонима назива датотека.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+        <listitem>
+          <para>Кликните „<guibutton>У реду</guibutton>“.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- =============  Modify a File in an Archive ==================== -->
+  <section xml:id="engrampa-modify-archive-file"><info><title>Мењање датотеке у архиви</title></info> 
+     
+    <para>Да измените датотеку у архиви, урадите следеће: <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem><para>Два пута кликните на датотеку коју желите да отворите. Или десни клик на датотеку и изаберите „<menuchoice><guimenuitem>Отвори</guimenuitem></menuchoice>“.</para></listitem>
+      <listitem><para>Уредите датотеку отворену у кораку 1, и затим сачувајте ваше измене.</para></listitem>
+      <listitem><para><application>Управљач архива</application> приказује прозорче потврђивања, тражећи потврду за освежавање датотеке у архиви са изменама које сте учинили.</para></listitem>
+      <listitem><para>Кликните „<guilabel>Освежи</guilabel>“.</para></listitem>
+      </orderedlist></para>
+    <para><application>Управљач архива</application> користи системски дефинисана придруживања између врста датотека и програма да одреди одговарајући програм за покретање за посебну датотеку. Ова придруживања се могу приказати и изменити у језичку „<guilabel>Отвори програмом</guilabel>“ прозорчета својстава датотеке. Ако <application>Управљач архива</application> не може да одреди одговарајући програм, <application>Управљач архива</application> ће приказати прозорче „<guilabel>Отворите датотеке</guilabel>“ да вам омогући да изаберете програм, као што је описано у наставку.</para>
+    <section xml:id="engrampa-modifiy-archive-file-custom-app"><info><title>Мењање датотеке у архиви произвољним програмом</title></info>
+    
+    <para>Можете да користите програм који ви наведете, уместо основног програма, да измените датотеку. Да користите спољни програм за отварање датотеке: <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem><para>Десни клик на датотеку.</para></listitem>
+      <listitem><para>Изаберите „<menuchoice><guimenuitem>Отвори програмом...</guimenuitem></menuchoice>.</para></listitem>
+      </orderedlist></para>    
+    <para><application>Управљач архиве</application> ће приказати прозорче „<guilabel>Отворите датотеке</guilabel>“, који исписује све програме који могу отворити датотеке наведене врсте. Да изаберете један од програма, два пута кликните на његов назив и затим кликните „<guibutton>Отвори</guibutton>“. Или, упишите назив програма у поље „<guilabel>Програм</guilabel>“ и затим кликните „<guibutton>Отвори</guibutton>“ да покренете програм по вашем избору.</para>
+    <para>Када се програм покрене пратите поступак из корака 2 као што је описано у <xref linkend="engrampa-modify-archive-file"/>.</para>
+    </section>
+  </section>
+</section>
+
+
+<!-- ======= Viewing an archive ============= --> 
+<section xml:id="engrampa-view"><info><title>Прегледање архива</title></info>
+  
+  <para><application>Управљач архива</application> вам омогућава да прикажете неколико особина архиве.</para>
+
+<!-- ======= Archive Properties ============= --> 
+    <section xml:id="engrampa-view-archive-properties"><info><title>Прегледање својстава архиве</title></info>
+      
+      <para>Да прегледате својства архиве, изаберите „<menuchoice><guimenu>Архива</guimenu><guimenuitem>Својства</guimenuitem></menuchoice>“ да прикажете прозорче „<guilabel>Својства</guilabel>“. Прозорче „<guilabel>Својства</guilabel>“ приказује следеће информације о архиви: <variablelist>
+	      <varlistentry>
+	        <term><guilabel>Назив</guilabel></term>
+	        <listitem><para>Назив архиве.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Место</guilabel></term>
+	        <listitem><para>Место архиве у систему датотека.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Последња измена</guilabel></term>
+	        <listitem><para>Датум и време када је датотека последњи пут измењена.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Величина архиве</guilabel></term>
+	        <listitem><para>Величина садржаја архиве када је запакована.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Величина садржаја</guilabel></term>
+	        <listitem><para>Величина архиве када је распакована. Овај податак је такође доступан на траци стања.</para></listitem>
+	      </varlistentry>
+
+	      <varlistentry>
+	        <term><guilabel>Ниво сажимања</guilabel></term>
+	        <listitem><para>Ниво сажимања је вредност која се користи да опише смањење величине података. На пример ниво сажимања 5 значи да је запакована архива само 1/5 величине изворних података.</para></listitem>
+	      </varlistentry>
+
+	      <varlistentry>
+	        <term><guilabel>Број датотека</guilabel></term>
+	        <listitem><para>Број датотека у архиви.</para></listitem>
+	      </varlistentry>
+            </variablelist></para>
+    </section>
+ 
+
+<!-- ======= Archive Contents ============= --> 
+    <section xml:id="engrampa-view-archive-contents"><info><title>Прегледање садржаја архиве</title></info>
+      
+
+      <para><application>Управљач архиве</application> приказује садржај архиве у главном прозору као списак датотека са следећим колонама: <variablelist>
+	  <varlistentry>
+	    <term><guilabel>Назив</guilabel></term>
+	    <listitem><para>Назив датотеке или фасцикле у архиви.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Величина</guilabel></term>
+	    <listitem><para>Величина датотеке када је распакована из архиве. За фасциклу, поље „<guilabel>Величина</guilabel>“ је празно. За више о томе како да прикажете величину запаковане датотеке, видите <xref linkend="engrampa-extra-info"/>.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Врста</guilabel></term>
+	    <listitem><para>Врста датотеке. За фасциклу, вредност у пољу „<guilabel>Врста</guilabel>“ је „<literal>Фасцикла</literal>“.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Датум измене</guilabel></term>
+	    <listitem><para>Датум када је датотека последњи пут измењена. За фасциклу, поље „<guilabel>Датум измене</guilabel>“ је празно.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Место</guilabel></term>
+	    <listitem><para>Путања до датотеке унутар архиве. Ова колона је видљива само када је прозор у прегледу датотека, када је у прегледу фасцикли место датотека приказано у пољу траке фасцикли „<guilabel>Место</guilabel>“. За више о врстама прегледа видите <xref linkend="engrampa-view-type-folder"/>.</para></listitem>
+	  </varlistentry>
+        </variablelist></para>
+      <para>Ако је други програм изменио архиву од када ју је <application>Управљач архива</application> отворио, изаберите „<menuchoice><guimenu>Преглед</guimenu><guimenuitem>Освежи</guimenuitem></menuchoice>“ да поново учитате садржај архиве са диска.</para>
+      <para>За више о томе како да прилагодите начин на који <application>Управљач архиве</application> приказује садржај архиве, видите <xref linkend="engrampa-archive-custom"/>.</para>
+      <para>За напредније задатке, користите програм инсталиран на вашем систему. За више о томе, видите <xref linkend="engrampa-view-archive-file"/>.</para>
+    </section>
+
+  <!-- =============  Viewing a File in an Archive ==================== -->
+  <section xml:id="engrampa-view-archive-file"><info><title>Прегледање датотеке у архиви</title></info> 
+     
+    <para>Да прегледате датотеку у архиви пратите кораке описане у <xref linkend="engrampa-modify-archive-file"/>. Ако сачувате отворену архиву, кликните „<guilabel>Откажи</guilabel>“ када <application>Управљач архиве</application> затражи потврду да освежи датотеку у архиви.</para>
+  </section>
+
+<!-- =============  Testing the Integrity of an Archive ==================== -->
+  <section xml:id="engrampa-test-archive"><info><title>Тестирање целовитости архиве</title></info> 
+     
+    <para>Некада архива може бити оштећена из неког разлога, а да проверите да ли је оштећена или није, изаберите „<menuchoice><guimenu>Архива</guimenu><guimenuitem>Провери целовитост</guimenuitem></menuchoice>“: <itemizedlist>
+              <listitem>
+                <para>Ако архива не садржи грешке, <application>Управљач архиве</application> ће отворити прозорче „<guilabel>Резултат теста</guilabel>“ да испише сваку датотеку у архиви, и да назначи да свака датотека има стање „<literal>У реду</literal>“.</para>
+              </listitem>
+              <listitem>
+                <para>Ако архива садржи неку грешку, <application>Управљач архиве</application> ће отворити прозорче „<guilabel>Резултат теста</guilabel>“ и приказати да део архиве садржи грешке.</para>
+              </listitem>
+            </itemizedlist></para>
+    <para>Оштећену архиву је немогуће распаковати, што може довести до губитка података. Из тог разлога треба да проверите целовитост архиве пре брисања изворних датотека. </para>
+    <para>Ако архива садржи шифроване датотеке, <application>Управљач архива</application> ће затражити лозинку архиве пре обављања теста.</para>
+    <note>
+      <para>Не подржавају све врсте архива проверу целовитости. Ово је списак врста архива над којима се може извршити провера целовитости: 7-Zip, RAR, ZIP, ACE, ARJ and Zoo.</para>
+    </note>
+    <tip><info><title>Савет</title></info>
+      
+      <para>Да проверите целовитост архиве која не подржава проверу целовитости, распакујте све датотеке из архиве и проверите да ли је радња успешно обављена.</para>      
+    </tip>
+  </section>  
+</section>
+    
+<!-- ======= Customizing the Archive Display ============= --> 
+<section xml:id="engrampa-archive-custom"><info><title>Прилагођавање приказа архиве</title></info>
+  
+  <para>Можете да прилагодите начин на који <application>Управљач архиве</application> приказује садржај архиве, као што следи:</para>
+  <itemizedlist>
+    <listitem>
+      <para>Да пребацујете из прегледа у виду фасцикли или датотека. За више о томе, видите <xref linkend="engrampa-view-type"/>.</para>
+    </listitem>
+    <listitem>
+      <para>Да одредите поредак којим се приказуј датотеке на списку. За више о овоме, видите <xref linkend="engrampa-view-sort"/>.</para>
+    </listitem> 
+    <listitem>
+      <para>Да прикажете додатне појединости о садржају архиве. За више о овоме, видите <xref linkend="engrampa-extra-info"/>.</para>
+    </listitem> 
+  </itemizedlist>
+  <para><application>Управљач архиве</application> одмах освежава приказ, када учините нешто од горе наведеног.</para>
+
+  <section xml:id="engrampa-view-type"><info><title>Одређивање врсте прегледа</title></info>
+    
+    <para>Ако архива садржи фасцикле, можете да прикажете садржај архиве у <xref linkend="engrampa-view-type-folder"/> или <xref linkend="engrampa-view-type-file"/>.</para>
+
+    <section xml:id="engrampa-view-type-folder"><info><title>Преглед фасциклом</title></info>
+      
+      <para><application>Управљач архиве</application> приказује садржај архиве у прегледу фасцикле по основи. Да изричито изаберете преглед фасциклом, изаберите „<menuchoice><guimenu>Преглед</guimenu><guimenuitem>Прикажи као фасциклу</guimenuitem></menuchoice>“.</para>
+      <para>У прегледу фасциклом, <application>Управљач архива</application> приказује фасцикле на исти начин као што то ради и управник датотека. Тако је, <application>Управљач архива</application> означава фасцикле у области приказа иконицом и називом фасцикле. Да прикажете садржај фасцикле, два пута кликните на назив фасцикле.</para>
+      <para>Трака фасцикле, коју <application>Управљач архиве</application> приказује само у прегледу фасциклом, садржи компоненте описане у следећој табели.</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Компонента</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Опис</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/engrampa_leftarrow.png" format="PNG"/> </imageobject> <textobject> <phrase>Приказује иконицу за кретање назад на списку историјата места.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Кликните на ово дугме да идете назад на списку историјата места.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/engrampa_rightarrow.png" format="PNG"/> </imageobject> <textobject> <phrase>Приказује иконицу за кретање напред на списку историјата места.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Кликните на ово дугме да идете напред на списку историјата места.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/engrampa_uparrow.png" format="PNG"/> </imageobject> <textobject> <phrase>Приказује иконицу за кретање један ниво на горе у стаблу фасцикле.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Кликните на ово дугме да идете један ниво горе у стаблу фасцикле.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/engrampa_home.png" format="PNG"/> </imageobject> <textobject> <phrase>Приказује иконицу за отварање фасцикле највишег нивоа у архиви.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Кликните на ово дугме да отворите фасциклу највишег нивоа у архиви.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><guilabel>Место</guilabel></para>
+              </entry>
+              <entry>
+                <para>Ово поље покљзује пун назив путање текуће фасцикле, унутар архиве.</para>
+                <para>Да пређете на други ниво у стаблу фасцикле, упишите ново место у поље „<guilabel>Место</guilabel>“ и затим притисните <keycap>Унеси</keycap>. <application>Управљач архиве</application> ће приказати садржај новог места.</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
+
+    <section xml:id="engrampa-view-type-file"><info><title>Преглед датотеком</title></info>
+      
+      <para>Да изаберете преглед датотеком, изаберите „<menuchoice><guimenu>Преглед</guimenu><guimenuitem>Прикажи све датотеке</guimenuitem></menuchoice>“.</para>
+      <para>У прегледу датотека, <application>Управљач архиве</application> приказује све датотеке у архиви на једном списку, укључујући и датотеке из садржаних фасцикли.</para>
+    </section>
+
+  </section>
+
+  <section xml:id="engrampa-view-sort"><info><title>Ређање списка датотека</title></info>
+    
+    <para>Можете да поређате списак датотека према називу, величини, врсти, датуму измене или месту.</para>
+    <para>Да одредите редослед ређања, кликните на заглавље одговарајуће колоне.</para>
+    <para>Да обрнете редослед ређања, поново кликните на заглавље колоне.</para>
+    <para>На пример, да поређате списак датотека по датуму измене, кликните на заглавље „<guilabel>Датум измене</guilabel>“. <application>Управљач архиве</application> ће поново поређати списак датотека да би приказао датотеке према датуму измене, почевши са најскоријим. Да прикажете последње датотеке прве, кликните поново на заглавље „<guilabel>Датум измене</guilabel>“.</para>
+    <para><application>Управљач архива</application> увек обавља друго ређање на основу назива датотеке. У горњем примеру, <application>Управљач архиве</application> ређа према називу све датотеке које имају исти датум измене.</para>
+  </section>
+
+  <section xml:id="engrampa-extra-info"><info><title>Приказивање додатних појединости</title></info>
+    
+      <para>Да отворите прозорче „<guilabel>Последњи испис</guilabel>“, изаберите „<menuchoice><guimenu>Преглед</guimenu><guimenuitem>Последњи излаз</guimenuitem></menuchoice>“: <itemizedlist>
+              <listitem>
+                <para>Ако сте тестирали архиву у текућој сесији <application>Управљача архива</application>, прозорче „<guilabel>Последњи испис</guilabel>“ ће приказати резултат последњег теста.</para>
+              </listitem>
+              <listitem>
+                <para>Ако сте тестирали архиву у текућој сесији <application>Управљача архива</application>, прозорче „<guilabel>Последњи испис</guilabel>“ ће приказати списак свих датотека у архиви, али неће назначити никакво стање за датотеке. Уместо тога, прозорче „<guilabel>Последњи испис</guilabel>“ приказаће величину запаковане сваке датотеке и проценат сажимања, као и датум и време последње измене датотеке.</para>
+              </listitem>
+            </itemizedlist></para>
+  </section>
+</section>
+
+<!-- ====== Using the File Manager Popup Menu to Manipulate an Archive ===== -->
+
+<section xml:id="engrampa-fmgr"><info><title>Коришћење управника датотека за рад са архивом</title></info> 
+     
+    <para>Можете да користите управника датотека да додате датотеке у архиву, или да извадите датотеке из архиве.</para>
+
+<!-- ======= Adding files Using File Manager Menu  ============= --> 
+    <section xml:id="engrampa-fmgr-add"><info><title>Додавање датотека у архиву коришћењем управника датотека</title></info>
+      
+           <para>Можете да користите управника датотека да додате датотеке у архиву, на следеће начине: <itemizedlist>
+             <listitem><para>Превуците датотеке у прозор <application>Управљача архива</application> из прозора управника датотека.</para>
+             </listitem>
+             <listitem><para>Користите искочни иборник управника датотека да додате датотеке у архиву.</para>
+             </listitem>
+          </itemizedlist></para>
+      <para>Да користите искочни изборник управника датотека за додавање датотека у архиву, урадите следеће:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>Десни клик на датотеке или фасцикле у прозору управника датотека.</para>
+        </listitem>
+        <listitem><para>Изаберите „<guimenuitem>Запакуј</guimenuitem>“ из искочног изборника управника датотека да прикажете прозорче „<application>Управљач архива</application> <guilabel>Направи архиву</guilabel>“.</para>
+        </listitem>
+        <listitem><para>Упишите назив архиве, без проширења датотеке, у поље „<guilabel>Назив датотеке</guilabel>“.</para>
+        </listitem>
+        <listitem><para>Изаберите врсту архиве из падајућег списка.</para>
+        </listitem>
+        <listitem><para>Изаберите место где ћете сачувати датотеку архиве, са падајућег списка „<guilabel>Место</guilabel>“. Ако се место не налази на списку изаберите „<guilabel>Друго...</guilabel>“ да га изаберете из прозорчета „<guilabel>Место</guilabel>“.</para>
+        </listitem>
+        <listitem><para>Изаберите потребне опције стварања кликом на „<guilabel>Остала подешавања</guilabel>“. За више о опцијама стварања, видите <xref linkend="engrampa-create-options"/>.</para>
+        </listitem>
+        <listitem><para>Кликните „<guilabel>Направи</guilabel>“ да додате изабране датотеке у корену фасциклу наведене архиве.</para>
+                 <note><para>Да изаберете неку од напредних опција додавања, морате призвати <application>Управљача архива</application> као што је описано у <xref linkend="engrampa-to-start"/>.</para></note>
+        </listitem>
+      </orderedlist>
+    </section>
+
+<!-- ======= Extracting files Using File Manager Menu  ============= --> 
+  <section xml:id="engrampa-fmgr-extract"><info><title>Распакивање датотека из архиве коришћењем управника датотека</title></info>
+      
+           <para>Можете да користите управника датотека да распакујете датотеке из архиве, на следеће начине: <itemizedlist>
+             <listitem><para>Превуците датотеке из прозора <application>Управљача архива</application> у прозор управника датотека.</para>
+             </listitem>
+             <listitem><para>Користите искочни иборник управника датотека да распакујете датотеке из архиве.</para>
+             </listitem>
+          </itemizedlist></para>
+      <para>Да користите искочни изборник управника датотека за распакивање датотека из архиве, урадите следеће:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>Десни клик на архиву у прозору управника датотека.</para>
+        </listitem>
+        <listitem><para>Изаберите „<guimenuitem>Распакуј овде</guimenuitem>“ да распакујете сав садржај архиве у директоријуму у ком се налази архива.</para>
+        </listitem>
+      </orderedlist>
+      <note><para>Ако је архива шифрована, <application>Управљач архива</application> ће затражити да унесете лозинку пре распакивања датотека.</para></note>
+    </section>
+
+</section>
+
+<!-- ======= Create Archive Advanced Options  ============= --> 
+    <section xml:id="engrampa-create-options"><info><title>Опције стварања</title></info>
+      
+      <para>Када правите нову архиву, или када претварате постојећу архиву у други формат, кликните на „<guilabel>Остала подешавања</guilabel>“ да одредите следеће напредне опције:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Лозинка</guilabel></term>
+	  <listitem>
+	  <para>Упишите лозинку која ће се користити за шифровање архиве. Ако лозинка није наведена архива неће бити шифрована.</para>
+	  <note>
+	    <para>Не подржавају све врсте архива шифровање. За више о шифровању датотека, видите <xref linkend="engrampa-encrypt-files"/>.</para>
+	  </note>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>	  
+	  <term><guilabel>Шифруј и списак датотека</guilabel></term>
+	  <listitem>
+	  <para>Ако је ова опција изабрана, лозинка ће бити затражена чак и за преглед списка датотека садржаних у архиви, у супротном биће затражена само за распакивање датотека из архиве. Ова опција је доступна само ако је наведена лозинка.</para>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>	  
+	  <term><guilabel>Подели на делове од</guilabel></term>
+	  <listitem>
+	  <para>Изаберите ову опцију да поделите архиву на више датотека наведене величине.</para>
+	  <note>
+	    <para>Само 7-Zip и RAR архиве подржавају ову могућност.</para>
+	  </note>
+	  </listitem>
+	</varlistentry>
+      </variablelist>
+    </section>
+
+<!-- ======= Add Advanced Options  ============= --> 
+    <section xml:id="engrampa-add-options"><info><title>Опције додавања</title></info>
+      
+      <para>Прозорчићи „<guilabel>Додај датотеке</guilabel>“ и „<guilabel>Додај фасциклу</guilabel>“ пружају следеће опције:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Додај само ако је новија</guilabel></term>
+	  <listitem>
+            <para>Изаберите ову опцију да додате наведену датотеку у архиву само ако архива не садржи наведену датотеку, или ако архива садржи старије издање наведене датотеке. <application>Управљач архива</application> користи датум измене да одреди која датотека је новија. Ако је издање датотеке у архиви новијег датума, <application>Управљач архива</application> неће додати наведену датотеку у архиву.</para>
+	    <para>Ако не изаберете ову опцију, <application>Управљач архива</application> ће додати датотеку у архиву и пребрисаће претходни садржај архиве.</para>
+	    <tip><info><title>Савет</title></info>
+	      
+	      <para>Ако користите „<application>Управљача архива</application> за прављење резерви, опција „<guilabel>Додај само ако је новија</guilabel>“ је врло корисна. На пример, архива „<filename>резерва.tar.gz</filename>“ садржи недељу дана стару резерву ваше личне фасцикле. Да освежите архиву да садржи садашњу резерву ваше личне фасцикле, урадите следеће: <orderedlist inheritnum="ignore" continuation="restarts">
+                      <listitem>
+                        <para>Отворите архиву „<filename>резерва.tar.gz</filename>“ у <application>Управљачу архива</application>.</para>
+                      </listitem>
+                      <listitem>
+                        <para>Изаберите „<menuchoice><guimenu>Уређивање</guimenu><guimenuitem>Додај</guimenuitem></menuchoice>“ да прикажете прозорче „<guilabel>Додајте фасциклу</guilabel>“.</para> 
+                      </listitem>
+                      <listitem>
+                        <para>Изаберите вашу личну фасциклу.</para>
+                      </listitem>
+                      <listitem>
+                        <para>Изаберите опцију „<guilabel>Додај само ако је новија</guilabel>“.</para>
+                      </listitem>
+                      <listitem>
+                        <para>Кликните <guibutton>Додај</guibutton>.</para>
+                      </listitem>
+                    </orderedlist></para>
+                <para><application>Управљач архива</application> сам додаје у архиву све датотеке које сте направили у последњих седам дана, и освежава све датотеке које сте изменили у последњих седам дана. Међутим, <application>Управљач архива</application> не уклања из архиве датотеке које сте обрисали у последњих седам дана. Радња освежавања архиве је много бржа од поновног прављења резерве личне фасцикле.</para>
+	  </tip>
+	</listitem>
+      </varlistentry>
+      </variablelist>
+      <section xml:id="engrampa-add-folder-options"><info><title>Опције додавања фасцикле</title></info>
+      
+      <para>Следеће опције су доступне у прозорчету „<guilabel>Додајте фасциклу</guilabel>“ и омогућавају да аутоматски изаберете и додате све датотеке које задовољавају одређени критеријум:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Укључи датотеке</guilabel></term>
+	  <listitem>
+            <para>Упишите шаблон назива датотеке у ово поље да укључите датотеке са називима који се поклапају са наведеним шаблоном. Видите <xref linkend="engrampa-pattern"/> за више о шаблонима назива датотека.</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Изузми датотеке</guilabel></term>
+	  <listitem>
+            <para>Упишите шаблон назива датотеке у ово поље да изузмете датотеке са називима који се поклапају са наведеним шаблоном. Видите <xref linkend="engrampa-pattern"/> за више о шаблонима назива датотека.</para>
+          </listitem>
+	</varlistentry>
+        <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Изузми фасцикле</guilabel></term>
+	  <listitem>
+            <para>Упишите шаблон назива датотеке у ово поље да изузмете фасцикле са називима који се поклапају са наведеним шаблоном. Видите <xref linkend="engrampa-pattern"/> за више о шаблонима назива датотека.</para>
+          </listitem>
+	</varlistentry>      
+       <!-- ============= -->	
+      <varlistentry>
+	<term><guilabel>Укључи подфасцикле</guilabel></term>
+	<listitem>
+          <para>Изаберите ову опцију да додате све датотеке које се поклапају са наведеним шаблоном, из текуће фасцикле и из садржаних фасцикли.</para>
+          <note>
+          <para>Назив датотеке, а не назив подфасцикле, мора да се поклапа са наведеним шаблоном.</para>
+          </note>
+	  <para>Ако не изаберете ову опцију, <application>Управљач архиве</application> ће додати одговарајуће датотеке само из текуће фасцикле.</para>
+        </listitem>
+      </varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guilabel>Изузми фасцикле које представљају симболичке везе</guilabel></term>
+	  <listitem>
+            <para>Изаберите ову опцију да изоставите датотеке из фасцикли које су симболичке везе. Симболичке везе су показивачи или пречице до других фасцикли.</para>
+	    <para>Ако не изаберете ову опцију, <application>Управљач архиве</application> ће додати одговарајуће датотеке из фасцикли које су симболичке везе.</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->
+     <varlistentry>
+	<term><guibutton>Сачувај подешавања</guibutton></term>
+	  <listitem>
+            <para>Кликните на ово дугме да сачувате тренутни избор напредних опција додавања у датотеку. Приказаће се прозорче „<guilabel>Сачувај подешавања</guilabel>“. Упишите описив назив у поље „<guilabel>Назив опција</guilabel>“, затим кликните „<guibutton>Сачувај</guibutton>“.</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guibutton>Учитај подешавања</guibutton></term>
+	  <listitem>
+            <para>Кликните на ово дугме да учитате или обришете претходно сачуван избор напредних опција додавања. Приказаће се прозорче „<guilabel>Учитавање подешавања</guilabel>“.</para>
+            <itemizedlist>
+              <listitem>
+                <para>Да учитате скуп опција, изаберите датотеку опција из поља списка, затим кликните „<guibutton>Примени</guibutton>“.</para>
+              </listitem>
+              <listitem>
+                <para>Да обришете скуп опција, изаберите датотеку опција из поља списка, затим кликните „<guibutton>Уклони</guibutton>“. Кликните „<guibutton>Затвори</guibutton>“ да затворите прозорче „<guilabel>Учитавање подешавања</guilabel>“.</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guibutton>Врати подешавања</guibutton></term>
+	  <listitem>
+            <para>Кликните на ово дугме да повратите текући избор напредних опција додавања на основне вредности.</para>
+          </listitem>
+	</varlistentry>
+      </variablelist>
+    </section>
+  </section>
+
+<!-- ======= Extract Options  ============= --> 
+  <section xml:id="engrampa-extract-options"><info><title>Опције распакивања</title></info>
+    
+      
+    <para>Прозорче „<guilabel>Распакуј</guilabel>“ пружа следеће опције, које се чувају када изађете из <application>Управљача архива</application>:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Распакуј</guilabel></term>
+	  <listitem>
+            <para>Бира датотеке за распакивање:</para>
+            <variablelist>
+              <varlistentry>
+                <term><guilabel>Све датотеке</guilabel></term>
+                <listitem>
+                  <para>Распакује све датотеке из архиве.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term><guilabel>Изабране датотеке</guilabel></term>
+                <listitem>
+                  <para>Распакује изабране датотеке из архиве.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term><guilabel>Датотеке</guilabel></term>
+                <listitem>
+                  <para>Распакује из архиве све датотеке које се поклапају са наведеним шаблоном. Видите <xref linkend="engrampa-pattern"/> за више о шаблонима назива датотека.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+	  </listitem>
+	</varlistentry>
+	<!-- ============= -->	
+	<varlistentry>
+      <term><guilabel>Радње</guilabel></term>
+        <listitem>
+          <para>Изаберите следеће опције распакивања:</para>	
+          <variablelist>
+	        <varlistentry>
+	          <term><guilabel>Поново направи фасцикле</guilabel></term>
+	          <listitem><para>Изаберите ову опцију да поново изградите структуру фасцикле приликом распакивања наведених датотека.</para> 
+                <para>На пример, навели сте „<filename>/tmp</filename>“ у пољу „<guilabel>Датотеке</guilabel>“ и изабрали сте да распакујете све датотеке. Архива ће садржати подфасциклу под називом „<filename>doc</filename>“. <itemizedlist>
+                  <listitem><para>Ако изаберете опцију „<guilabel>Поново направи фасцикле</guilabel>“, <application>Управљач архива</application> ће распаковати садржај подфасцикле у „<filename>/tmp/doc</filename>“.</para>
+                 </listitem>
+                 <listitem><para>Ако не изаберете опцију „<guilabel>Поново направи фасцикле</guilabel>“, <application>Управљач архива</application> неће направити ни једну подфасциклу. Уместо тога, <application>Управљач архива</application> ће распаковати све датотеке из архиве, укључујући датотеке из подфасцикли, у „<filename>/tmp</filename>“.</para>
+                 </listitem>
+               </itemizedlist></para></listitem>
+	         </varlistentry>
+             <!-- ============= -->	
+	         <varlistentry>
+	           <term><guilabel>Препиши постојеће датотеке</guilabel></term>
+	           <listitem><para>Изаберите ову опцију да препишете све датотеке у одредишној фасцикли која има исти назив као наведене датотеке.</para>
+	             <para>Ако не изаберете ову опцију, <application>Управљач архива</application> неће распаковати наведену датотеку ако већ постоји датотека под истим називом у одредишној фасцикли.</para>
+	           </listitem>
+	         </varlistentry>
+             <!-- ============= -->	
+	         <varlistentry>
+	           <term><guilabel>Немој распаковати старе датотеке</guilabel></term>
+	           <listitem>
+	             <para>Ова опција има дејства само када је изабрана опција „<guilabel>Препиши постојеће датотеке</guilabel>.</para>
+	             <para>Изаберите опцију „<guilabel>Немој распаковати старе датотеке</guilabel> да распакујете наведену датотеку само ако одредишна фасцикла не садржи наведену датотеку, или ако одредишна фасцикла садржи старије издање наведене датотеке. <application>Управљач архива</application> користи датум измене да одреди која датотека је новија. Ако је издање датотеке у архиви старије, <application>Управљач архива</application> неће распаковати наведену датотеку у одредишну фасциклу.</para>
+	             <para>Ако не изаберете опцију „<guilabel>Немој распаковати старе датотеке</guilabel>“ док је изабрана опција „<guilabel>Препиши постојеће датотеке</guilabel>“, <application>Управљач архива</application> ће распаковати наведену датотеку из архиве и преписати претходни садржај одредишне фасцикле.</para>
+	           </listitem>
+	         </varlistentry>
+	       </variablelist>
+	     </listitem>
+	   </varlistentry>
+     </variablelist>	
+  </section>
+</article>

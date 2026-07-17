@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="prefs-language-install" xml:lang="da">
+
+  <info>
+    <link type="guide" xref="addremove" group="#last"/>
+    <link type="seealso" xref="prefs-language"/>
+
+    <desc>Installér flere oversættelser og relaterede sprogunderstøttelsespakker.</desc>
+    <revision version="17.10" date="2017-09-25" status="review"/>
+    <credit type="author">
+      <name>Gunnar Hjalmarsson</name>
+      <email>gunnarhj@ubuntu.com</email>
+    </credit>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+  <title>Installér sprog</title>
+
+  <p>Når du installerer Ubuntu, installeres det sprog, du valgte under installationen, sammen med engelsk. Du kan tilføje flere sprog.</p>
+
+  <steps>
+    <item>
+      <p>Åbn <gui xref="shell-introduction#activities">Aktivititer</gui>-oversigten og begynd at skrive <gui>Region og sprog</gui>.</p>
+    </item>
+    <item>
+      <p>Klik på <gui>Region og sprog</gui> for at åbne panelet.</p>
+    </item>
+    <item>
+      <p>Klik knappen <gui>Håndtér installerede sprog</gui> for at åbne <gui>Sprogunderstøttelse</gui>.</p>
+    </item>
+    <item>
+      <p>Klik <gui>Installér/fjern sprog ...</gui>. Vinduet <gui>Installerede sprog</gui> viser alle tilgængelige sprog med de aktuelt installerede sprog afkrydset.</p>
+    </item>
+    <item>
+      <p>Afkryds de sprog, du vil installere, og fjern afkrydsningen fra de nuværende sprog, du vil fjerne.</p>
+    </item>
+    <item>
+      <p>Klik <gui>Anvend ændringer</gui>.</p>
+    </item>
+    <item>
+      <p><link xref="user-admin-explain">Administrative rettigheder</link> er nødvendige. Indtast din adgangskode eller adgangskoden til den krævede administratorkonto.</p>
+    </item>
+  </steps>
+
+  <p>Ud over oversættelserne af menuer og beskeder kan der med et nyt sprog følge forskellige komponenter med som f.eks. ordbøger til stavekontrol, skrifttyper og indtastningsmetoder.</p>
+
+  <note>
+    <p>Nogle oversættelser kan være ufuldstændige, og visse programmer understøtter måske slet ikke dit sprog.</p>
+  </note>
+
+</page>

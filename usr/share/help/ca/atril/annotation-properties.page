@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" style="task" id="annotation-properties" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="annotations"/>
+    <desc>Com personalitzar l'autor, color, estil o la icona d'una anotació.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Carles Ferrando Garcia</mal:name>
+      <mal:email>carles.ferrando@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert Antoni Buj Gelonch</mal:name>
+      <mal:email>rbuj@fedoraproject.org</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  </info>
+
+ <title>Personalització de les anotacions</title>
+
+<steps>
+ <item>
+  <p>Feu clic dret a la icona de l'anotació al document.</p>
+ </item>
+ <item>
+  <p>Seleccioneu<gui>Propietats de l'Anotació...</gui>.</p>
+ </item>
+ <item>
+  <p>Dins la finestra <gui>Propietats de l'Anotació</gui>, podeu canviar l'autor, el color, l'estil i la icona de la vostra nota.</p>
+   <note>
+    <p>Les propietats de l'anotació s'aplicaran només a la nota per la qual heu fet els canvis. Cada nota pot tenir unes propietats diferents.</p>
+   </note>
+ </item>
+</steps>
+
+
+<section id="change-default">
+ <title>És possible canviar de forma permanent les propietats per defecte de l'anotació?</title>
+<p>Les propietats per defecte de l'anotació (autor, color, estil i icona) només es poden canviar en una nota determinada, com ja s'ha dit. Per tant, si voleu que totes les icones de les vostres notes siguin <gui>vermelles</gui> en lloc de <gui>grogues</gui>, haureu de canviar l'opció de <gui>groc</gui> a <gui>vermell</gui> de forma individual a cada nota. No hi ha una manera d'establir  noves opcions per defecte en les propietats d'anotació, en aquest moment.</p>
+</section>
+
+</page>

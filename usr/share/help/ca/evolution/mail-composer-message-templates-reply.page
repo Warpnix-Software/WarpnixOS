@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-message-templates-reply" xml:lang="ca">
+
+  <info>
+   <desc>Utilitzeu una de les vostres plantilles per a respondre a un missatge</desc>
+   
+   <link type="guide" xref="mail-composer-message-templates#options"/>
+
+ <revision pkgversion="3.5.90" version="0.3" date="2012-08-17" status="draft"/>
+ <credit type="author">
+   <name its:translate="no">Andre Klapper</name>
+   <email its:translate="no">ak-47@gmx.net</email>
+ </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/b1dlaazl.html.en -->
+ </credit>
+ 
+ <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+     
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Ús d'una plantilla com a Resposta</title>
+
+ <steps>
+  <item>
+<p>Feu clic amb el botó dret del ratolí al missatge al qual responeu i, a continuació, feu clic a <gui>Plantilles</gui>.</p>
+<p>Aquesta opció llista totes les plantilles de missatges de la carpeta <gui>Plantilles</gui>.</p>
+  </item>
+  <item>
+<p>Seleccioneu la plantilla que vulgueu utilitzar. Feu canvis si és necessari a la finestra d'edició de correu que s'obrirà.</p>
+  </item>
+  <item>
+<p>Feu clic a <gui>Envia</gui>.</p>
+<p>Quan seleccioneu una plantilla per a respondre, l'Assumpte de la resposta es conserva.</p>
+  </item>
+ </steps>
+
+</page>

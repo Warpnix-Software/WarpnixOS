@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="boolean" xml:lang="ja">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>ブール代数</title>
+    
+    <p>ブール代数は、AND、OR および XOR 演算子を使用して計算できます。</p>
+    <example>
+    <p>010011₂ AND 110101₂</p>
+    </example>
+    <p>これらのシンボルのボタンは、<link xref="mouse">プログラムモード</link>で使用できます。</p>
+    <p>NOT <link xref="function">機能</link>は２進数字を反転させます。文字サイズは<guiseq><gui>計算機</gui><gui>設定</gui></guiseq>メニューから設定します。</p>
+    <example>
+    <p>NOT 010011₂</p>
+    </example>
+</page>

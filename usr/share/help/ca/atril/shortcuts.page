@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="shortcuts" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Veieu una llista de totes les dreceres de teclat.</desc>
+
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <credit type="author">
+       <name>Tiffany Antopolski</name>
+       <email>tiffany.antopolski@gmail.com</email>
+    </credit>
+    <credit type="editor">
+       <name>Taufan Lubis</name>
+       <email>taufanlinux@gmail.com</email>
+    </credit>
+   <credit type="editor">
+       <name>Ronaldi Santosa</name>
+       <email>ronald.santosa@gmail.com</email>
+    </credit>
+   <credit type="editor">
+       <name>Ibnu Amansyah</name>
+       <email>javalander9@gmail.com</email>
+    </credit>
+   <credit type="editor">
+       <name>Andre Klapper</name>
+       <email>ak-47@gmx.net</email>
+    </credit>
+   <credit type="editor">
+       <name>Germán Poo-Caamaño</name>
+       <email>gpoo@gnome.org</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Carles Ferrando Garcia</mal:name>
+      <mal:email>carles.ferrando@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert Antoni Buj Gelonch</mal:name>
+      <mal:email>rbuj@fedoraproject.org</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  </info>
+
+
+<title>Dreceres de teclat</title>
+
+<section id="default-shortcuts"><title>Dreceres per defecte</title>
+<section id="open-close-save-print">
+  <title>Obrint, tancant, desant i imprimint</title>
+  <table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Obre un document.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>O</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Obrir una còpia del document actual.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>N</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Desar una còpia del document actual amb un nom diferent.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>S</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Imprimeix el document actual.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>P</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Tancar la finestra del document actual.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>W</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Recarregar el document (de fet, tanca i torna a obrir el document).</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>R</key></keyseq></p></td>
+    </tr>
+  </table>
+</section>
+
+<section id="move-around">
+    <title>Movent-se pel document</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Moure amunt/avall una pàgina.</p></td>
+        <td><p>Tecles de fletxa</p></td>
+    </tr>
+    <tr>
+        <td><p>Moure amunt/avall una pàgina, diverses línies cada vegada.</p></td>
+        <td><p><key>RePàg</key> / <key>AvPàg</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Anar a la pàgina anterior.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>RePàg</key></keyseq> / <key>P</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Anar a la pàgina següent.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>AvPàg</key></keyseq> / <key>N</key></p></td>
+    </tr>
+<tr>
+        <td><p>Anar a un número de pàgina.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>L</key></keyseq> seguit pel número de pàgina i <key>Enter</key></p></td>
+</tr>
+    <tr>
+        <td><p>Anar a l'inici d'una pàgina (inici del document si la vista en mode <gui>Continu</gui> està seleccionada al menú principal del cantó superior dret).</p></td>
+         <td><p><key>Inici</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Anar al final d'una pàgina (final del document si la vista en mode <gui>Continu</gui> està seleccionada al menú principal del cantó superior dret).</p></td>
+        <td><p><key>Fi</key></p></td>
+    </tr>
+    <tr>
+    	<td><p>Anar a l'inici del document.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>Inici</key></keyseq></p></td>
+    </tr>
+    <tr>
+    	<td><p>Anar al final del document.</p></td>
+         <td><p><keyseq><key>Ctrl</key><key>Fi</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Afegir un marcador a la pàgina actual.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>D</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Eliminar el marcador de la pàgina actual si n'hi ha un.</p></td>
+        <td><p><keyseq><key>Maj</key><key>Ctrl</key><key>D</key></keyseq></p></td>
+    </tr>
+    <tr>
+         <td><p>Mostrar el plafó lateral amb una taula de continguts i marcadors.</p></td>
+         <td><p><key>F9</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Activar la navegació amb cursor, situant un cursor mòbil a les pàgines de text, que us permet seleccionar text amb el teclat.</p></td>
+        <td><p><key>F7</key></p></td>
+    </tr>
+  </table>
+</section>
+
+<section id="copy">
+    <title>Seleccionant i copiant text</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Copiar text destacat.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>C</key></keyseq> / <keyseq><key>Ctrl</key><key>Insert</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Seleccionar tot el text d'un document.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>A</key></keyseq></p></td>
+    </tr>
+</table>
+</section>
+
+<section id="find">
+    <title>Cercant text</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Mostra la barra d'eines que us permet buscar paraules al document. La caixa de cerca es destaca automàticament quan premeu aquesta combinació de tecles, i la cerca començarà tan aviat com hi escriviu alguna cosa. Si prèviament seleccioneu un text al document, aleshores es cercarà el text seleccionat.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>F</key></keyseq> / <key>/</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Anar al següent text trobat.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>G</key></keyseq> / <key>F3</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Anar a l'anterior text trobat.</p></td>
+        <td><p><keyseq><key>Maj</key><key>Ctrl</key><key>G</key></keyseq> / <keyseq><key>Maj</key><key>F3</key></keyseq></p></td>
+    </tr>
+</table>
+</section>
+
+<section id="rotate-zoom">
+    <title>Rotant i fent zoom</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Rotar les pàgines 90 graus en sentit antihorari.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>Fletxa esquerra</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Rotar les pàgines 90 graus en sentit horari.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>Fletxa dreta</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Restablir el zoom.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>0</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Augmentar el zoom.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>+</key></keyseq> / <key>=</key> / <keyseq><key>Ctrl</key><key>=</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Disminuir el zoom.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>-</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Ajustar la pàgina a l'espai de la finestra.</p></td>
+        <td><p><key>F</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Ajustar l'amplada de la pàgina a l'espai disponible.</p></td>
+        <td><p><key>W</key></p></td>
+    </tr>
+</table>
+</section>
+
+<section id="window">
+    <title>Finestra</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Veure el document en pantalla completa.</p></td>
+        <td><p><key>F11</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Iniciar una presentació.</p></td>
+        <td><p><key>F5</key> / <keyseq><key>Shift</key><key>F5</key></keyseq></p></td>
+    </tr>
+</table>
+</section>
+
+<section id="document">
+    <title>Vista del document</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Invertir els colors del fons i del text.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>I</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Canviar la vista del document entre el mode continu i pàgina per pàgina.</p></td>
+        <td><p><key>C</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Mostrar dues pàgines una al costat de l'altra.</p></td>
+        <td><p><key>D</key></p></td>
+    </tr>
+</table>
+</section>
+
+<section id="presentation">
+    <title>Mode de presentació</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Activar i desactivar la pantalla negra.</p></td>
+        <td><p><key>B</key> / <key>.</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Activar i desactivar la pantalla en blanc.</p></td>
+        <td><p><key>W</key></p></td>
+    </tr>
+</table>
+</section>
+
+</section>
+
+</page>

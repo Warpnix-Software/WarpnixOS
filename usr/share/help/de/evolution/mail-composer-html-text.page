@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-html-text" xml:lang="de">
+
+  <info>
+    <desc>Schriftgrößen, Stile und Farben im E-Mail-Editor ändern.</desc>
+    <link type="guide" xref="mail-composer-html#formatting-options-html"/>
+
+    <revision pkgversion="3.5.90" version="0.7" date="2012-08-16" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-html -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andre Klapper</mal:name>
+      <mal:email>ak-47@gmx.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009-2013, 2016-2018, 2020-2021</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009-2013, 2015-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Gabor Karsay</mal:name>
+      <mal:email>gabor.karsay@gmx.at</mal:email>
+      <mal:years>2011-2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Tim Sabsch</mal:name>
+      <mal:email>tim@sabsch.com</mal:email>
+      <mal:years>2018, 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jürgen Benvenuti</mal:name>
+      <mal:email>gastornis@posteo.org</mal:email>
+      <mal:years>2022-2024</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Text in HTML formatieren</title>
+
+     <p>Werkzeuge zur Textformatierung ausschließlich mit HTML befinden sich nur in der zweiten Werkzeugleiste unter der <gui>Betreffzeile</gui>, nachdem das HTML-Format aktiviert wurde. Sie erscheinen ebenso in den Menüs <gui>Einfügen</gui> und <gui>Format</gui> in der Menüleiste.</p>
+     <p>Die Symbole in der Werkzeugleiste werden in den Minihilfen erklärt, welche erscheinen, wenn Sie den Mauszeiger über einen Knopf verschieben.</p>
+
+<section id="text-styles">
+      <title>Textstile:</title>
+      <p>Verwenden Sie diese Knöpfe in der unteren Werkzeugleiste um festzulegen, wie Ihre E-Mail aussehen soll. Wenn Sie Text ausgewählt haben, so wird der Stil auf den gewählten Text angewendet. Falls kein Text ausgewählt ist, so wird der Stil auf das angewendet, was Sie als nächstes schreiben.</p>
+
+<table frame="all" rules="all">
+  <tr>
+    <td><p>Knopf</p></td>
+    <td><p>Beschreibung</p></td>
+  </tr>
+  <tr>
+    <td><p>Standard</p></td>
+    <td><p>Schriftname.</p></td>
+  </tr>
+  <tr>
+    <td><p>+0</p></td>
+    <td><p>Schriftgröße.</p></td>
+  </tr>
+  <tr>
+    <td><p><media type="image" its:translate="no" src="./figures/color-000000.png"/></p></td>
+    <td><p>Textfarbe.</p><p>Die Box zeigt die aktuelle Textfarbe. Wenn Sie Text ausgewählt haben, so wird dieser entsprechend eingefärbt. Falls kein Text ausgewählt ist, so wird das eingefärbt, was Sie als nächstes schreiben.</p></td>
+  </tr>
+  <tr>
+    <td><p><media type="image" its:translate="no" src="./figures/color-ccccccffffff.png" width="26" height="26"/></p></td>
+    <td><p>Hintergrundfarbe des Texts.</p><p>Die Box zeigt die aktuelle Textfarbe. Wenn Sie Text ausgewählt haben, so wird dieser entsprechend eingefärbt. Falls kein Text ausgewählt ist, so wird das eingefärbt, was Sie als nächstes schreiben.</p></td>
+  </tr>
+  <tr>
+    <td><p>Dickes A</p></td>
+    <td><p>Formatierter Text als fett.</p></td>
+  </tr>
+  <tr>
+    <td><p>Kursives A</p></td>
+    <td><p>Formatiert den Text als kursiv.</p></td>
+  </tr>
+  <tr>
+    <td><p>Unterstrichenes A</p></td>
+    <td><p>Unterstreicht Text.</p></td>
+  </tr>
+  <tr>
+    <td><p>Durchgestrichenes A</p></td>
+    <td><p>Streicht Text durch.</p></td>
+  </tr>
+</table>
+
+<p>Die anderen Knöpfe werden unter <link xref="mail-composer-html#formatting-options-html"/> erklärt.</p>
+
+</section>
+
+</page>

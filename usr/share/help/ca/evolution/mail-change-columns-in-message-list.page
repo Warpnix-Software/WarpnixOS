@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-change-columns-in-message-list" xml:lang="ca">
+
+  <info>
+    <desc>Edició de les columnes que es mostren a la llista de missatges.</desc>
+    
+    <link type="guide" xref="mail-layout-changing"/>
+
+    <revision pkgversion="3.30.5" version="0.5" date="2019-02-26" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Canviar les columnes a la llista de missatges</title>
+
+<p>Si voleu canviar les columnes a la llista de missatges de correu electrònic, feu clic amb el botó dret sobre els encapçalaments de columna i escolliu <gui>Afegeix una columna…</gui> o <gui>Suprimeix aquesta columna</gui>.</p>
+<note style="tip"><p>Si teniu una pantalla petita, podeu reemplaçar la columna <gui>Assumpte</gui> per <gui>Assumpte - retallat</gui> que eliminarà els prefixos com ara «Re:», o podeu reemplaçar la columna <gui>De</gui> que mostra el nom del remitent i l'adreça de correu electrònic per la columna <gui>Remitent</gui> que només en mostrarà el nom.</p></note>
+
+<note style="tip"><p>Si voleu tenir el mateix format de columna a totes les carpetes de correu, excepte per a la carpeta <gui>Enviats</gui>, podeu activar <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Preferències de correu</gui><gui>General</gui><gui>Aplica els mateixos paràmetres de visualització a totes les carpetes</gui></guiseq>. Tingueu en compte que aquesta configuració també influeix als <link xref="mail-sorting-message-list#email-threads"><gui>Grups per fils</gui></link> i a la visibilitat de la <gui>Visualització prèvia de missatges</gui> a totes les carpetes.</p></note>
+
+<note style="tip"><p>Si voleu utilitzar una ordenació o unes columnes diferents amb carpetes de correu específiques, assegureu-vos que la casella <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Preferències del correu</gui><gui>General</gui><gui>Aplica els mateixos paràmetres de visualització a totes les carpetes</gui></guiseq> no estigui marcada. A continuació podeu canviar la visualització i desar els canvis a <guiseq><gui>Visualitza</gui><gui>Visualització actual</gui><gui>Desa la visualització personalitzada...</gui></guiseq> i aplicar la visualització a altres carpetes també.</p></note>
+
+</page>

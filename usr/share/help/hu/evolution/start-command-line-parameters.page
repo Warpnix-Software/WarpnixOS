@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="start-command-line-parameters" xml:lang="hu">
+
+  <info>
+    <link type="guide" xref="index#common-other-problems"/>
+
+    <revision pkgversion="3.39.0" version="0.1" date="2020-10-29" status="draft"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Hogyan lehet megjeleníttetni az Evolutionnel egy bizonyos ablakot vagy mappát az alkalmazás indításakor.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lukács Bence</mal:name>
+      <mal:email>lukacs.bence1 at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kelemen Gábor</mal:name>
+      <mal:email>kelemeng at gnome dot hu</mal:email>
+      <mal:years>2011, 2012, 2013, 2015, 2017, 2018.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nagy Zoltán</mal:name>
+      <mal:email>dzodzie at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Úr Balázs</mal:name>
+      <mal:email>ur.balazs at fsf dot hu</mal:email>
+      <mal:years>2014, 2019, 2021, 2022, 2023, 2024, 2025.</mal:years>
+    </mal:credit>
+  </info>
+
+<!-- TODO: Update page with https://gitlab.gnome.org/GNOME/evolution/-/issues/1176#note_946174 -->
+
+  <title>Annak meghatározása, hogy mi jelenjen meg az <app>Evolution</app> indításakor</title>
+
+  <p>Az <app>Evolution</app> az indításakor emlékszik az utoljára használt nézetre.</p>
+
+  <p>Ahhoz, hogy valami mást jeleníttessen meg az <app>Evolutionnel</app> az alkalmazás indítása után, a <app>Terminál</app> alkalmazásból kell futtatnia az alkalmazást, és át kell adnia a megfelelő paramétereket.</p>
+
+  <section id="tools">
+    <title>Ablakok</title>
+
+    <p its:locNote="TO TRANSLATORS: Do NOT translate 'component' here!">Az <app>Evolution</app> egy bizonyos nézetben való indításához adja át a „component” paramétert.</p>
+
+    <p>Példák:</p>
+    <list>
+      <item><p><cmd its:translate="no">evolution --component=calendar</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution --component=contacts</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution --component=mail</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution --component=memos</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution --component=tasks</cmd></p></item>
+    </list>
+  </section>
+
+  <section id="mail-folders">
+    <title>Levélmappák</title>
+
+    <!-- Introduced in https://gitlab.gnome.org/GNOME/evolution/-/issues/1176 : -->
+    <p its:locNote="TO TRANSLATORS: Do NOT translate 'folder' here!">Ahhoz, hogy az <app>Evolution</app> alkalmazással egy bizonyos levélmappát nyittasson meg, adja át a „folder” paramétert.</p>
+
+    <p>Példák:</p>
+    <list>
+      <item><p><cmd its:translate="no">evolution "folder:On This Computer/Inbox"</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution folder:On%20This%20Computer/Inbox</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution folder://local/Inbox</cmd></p></item>
+    </list>
+  </section>
+
+  <section id="mail-composer">
+    <title>Levélszerkesztő</title>
+
+    <p its:locNote="TO TRANSLATORS: Do NOT translate 'folder' here!">Ahhoz, hogy az <app>Evolution</app> alkalmazással egy levélszerkesztő ablakot nyittasson meg néhány előre meghatározott értékkel és tartalommal:</p>
+
+    <p>Példák:</p>
+    <list>
+      <item><p><cmd its:translate="no">evolution mailto:recipient@example.com?cc=cc@example.com\&amp;subject=Your\ subject\ line\&amp;body=Message\ content\&amp;attach=/home/user/file</cmd></p></item>
+    </list>
+  </section>
+
+</page>

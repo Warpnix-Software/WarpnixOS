@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="develop" xml:lang="da">
+
+  <info>
+   <link type="guide" xref="index#getInvolved"/>
+   <desc>Gør <app>Atril</app> bedre.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+
+<title>Hjælp med at udvikle</title>
+ <p>Atril udvikles og vedligeholdes af et frivilligt fællesskab. Du er velkommen til at deltage.</p>
+ <p>Hvis du ønsker at <link href="https://mate-desktop.org/development/">hjælpe med udviklingen</link> af Atril, så opret en <link href="https://github.com/mate-desktop/atril">Pull Request</link>.</p>
+
+</page>

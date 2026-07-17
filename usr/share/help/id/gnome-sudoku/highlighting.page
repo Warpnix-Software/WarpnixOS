@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="highlighting" xml:lang="id">
+
+  <info>
+   <link type="guide" xref="index#tips"/>
+
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+    <revision pkgversion="3.31.90" version="0.3" date="2019-03-03" status="review"/>
+    <credit type="editor copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020, 2021.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Menyoroti</title>
+
+<p>Anda bisa mengaktifkan penyorotan untuk menyorot baris, kolom, dan kotak saat ini secara otomatis dalam warna yang berbeda. Ini dapat mempermudah untuk melihat nilai mana yang tidak dapat masuk ke persegi saat ini. Untuk beralih penyorotan, tekan tombol menu di sudut kanan atas jendela lalu pilih <gui style="menuitem">Penyorot</gui>.</p>
+
+</page>

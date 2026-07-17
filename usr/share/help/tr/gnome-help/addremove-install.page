@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-install" xml:lang="tr">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntu Belgelendirme Takımı</name>
+    </credit>
+    <desc>Ek uygulamalar yüklemek ve Ubuntu'yu daha kullanışlı hale getirmek için <app>Uygulama Merkezi</app>'ni kullanın.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove" group="#first"/>
+    <link type="seealso" xref="addremove-remove"/>
+    <link type="seealso" xref="addremove-install-synaptic"/>
+    <link type="seealso" xref="prefs-language-install"/>
+    <revision version="18.04" date="2018-03-18" status="review"/>
+  </info>
+
+  <title>Ek uygulamalar yükleyin</title>
+
+  <p>Uygulama, grafikli kullanıcı arayüzüne (GUI) sahip bir yazılımdır. Ubuntu geliştirme ekibi, Ubuntu'yu günlük görevlerin çoğu için çok yararlı kıldığını düşündüğümüz varsayılan bir dizi uygulama seçti. Ancak, Ubuntu'yu sizin için daha kullanışlı hale getirmek için elbette daha fazla uygulama yüklemek istersiniz. Bir uygulamayı yüklemek için <app>App Center</app> uygulamasını kullanabilirsiniz.</p>
+
+   <p>Uygulamalar iki biçimde sunulur: snap paketleri ve Debian paketleri. Bir snap paketi olarak sunulan uygulama şu andan itibaren <em>snap</em> olarak anılacaktır. Bazı uygulamalar her iki biçimde de sunulur. Böyle bir durumda snap <app>App Center</app> uygulamasında önce listelenecektir.</p>
+
+   <p>Ayrıca grafikli bir arayüze sahip olmayan bir yazılım da kurmak isteyebilirsiniz. Bu tür bir yazılımı yüklemek için <link xref="addremove-install-synaptic">Synaptic</link> uygulamasını kullanabilirsiniz. <app>Synaptic</app> uygulamasının snap uygulamaları göstermediğini unutmayın.</p>
+
+  <p>Bir uygulamayı kurmak için:</p>
+
+  <steps>
+    <item>
+      <p>
+        Click the <app>App Center</app> icon in the <gui>Dock</gui>, or search
+        for <input>Software</input> in the <em>Activities</em> search bar.
+      </p>
+    </item>
+    <item>
+      <p><app>Uygulama Merkezi</app> başlatıldığında bir uygulama arayın veya bir kategori seçin ve listeden bir uygulama bulun.</p>
+    </item>
+    <item>
+      <p><gui>Yükle</gui> yüklemek istediğiniz uygulamayı seçin ve Tamam'ı tıklayın.</p>
+    </item>
+    <item>
+      <p>Parolanızı girerek kimliğinizi doğrulamanız istenecek. Bunu yaptıktan sonra sonra kurulum başlayacak. Kurulum genellikle hızlı biter, fakat yavaş bir internet bağlantınız varsa biraz zaman alabilir.</p>
+
+    </item>
+
+  </steps>
+  
+</page>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="basics" xml:lang="ru">
+  <info>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+    <link type="guide" xref="index#play"/>
+    <credit type="author copyright">
+      <name>Chris Beiser</name>
+      <email>ctbeiser@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ser82-png</mal:name>
+      <mal:email>asvmail.as@gmail.com</mal:email>
+      <mal:years>2022-2024</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Основное</title>
+<p>В «Судоку» можно играть с помощью клавиатуры, мыши, или и тем, и другим сразу.</p>
+
+<section id="keyboard">
+<title>Использование клавиатуры</title>
+<list>
+  <item><p>Чтобы выбрать ячейку, используйте клавиши со стрелками, чтобы переместить на неё синий контур.</p></item>
+  <item><p>Чтобы поместить число в ячейку, выберите ячейку, а затем введите число.</p></item>
+  <item><p>Чтобы удалить число из ячейки, выберите ячейку, а затем нажмите клавишу <key>Delete</key>, <key>Backspace</key> или клавишу <key>0</key>.</p></item>
+</list>
+</section>
+
+
+<section id="mouse">
+<title>Использование мыши</title>
+<list>
+	<item><p>Чтобы выбрать ячейку, наведите на неё указатель мыши и щёлкните.</p></item>
+	<item><p>Чтобы поместить число в выбранную ячейку, щёлкните по ячейке, а затем выберите число, которое хотите ввести.</p></item>
+	<item><p>Чтобы удалить число из выбранной ячейки, щёлкните по ячейке, а затем нажмите <gui>Очистить</gui>.</p></item>
+</list>
+</section>
+</page>

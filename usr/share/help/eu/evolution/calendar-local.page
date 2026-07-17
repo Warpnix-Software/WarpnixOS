@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-local" xml:lang="eu">
+
+  <info>
+    <link type="guide" xref="calendar-using-several-calendars"/>
+
+    <revision pkgversion="3.10.3" version="0.4" date="2014-01-27" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Beste egutegi lokal bat gehitzea.</desc>
+  </info>
+
+  <title>Beste egutegi lokal bat gehitzea.</title>
+
+  <p><app>Evolution</app> aplikazioan beste eguteko lokal bat gehitzeko, jarraitu honako urratsak:</p>
+
+  <steps>
+    <item>
+      <p>Joan <guiseq><gui>Fitxategia</gui><gui>Berria</gui><gui>Egutegia</gui></guiseq> aukerara.</p>
+    </item>
+    <item>
+      <p>Hautatu <gui>Ordenagailu honetan</gui> mota.</p>
+    </item>
+    <item>
+      <p>Sartu erabili nahi duzun izena.</p>
+    </item>
+    <item>
+      <p>Aukeran, aukeratu erabili nahi duzun kolorea.</p>
+    </item>
+    <item>
+      <p>If you choose to use an existing calendar file which is already
+      located on your computer, you need to provide its location and whether
+      <app>Evolution</app> should only read from the file or if
+      <app>Evolution</app> can also add and alter items in that file.</p>
+    </item>
+    <item>
+      <p>Egin klik <gui style="button">Ados</gui> botoian.</p>
+    </item>
+  </steps>
+
+  <p>Egutegia <app>Evolution</app> aplikazioaren egutegien zerrendari gehituko zaio.</p>
+
+</page>

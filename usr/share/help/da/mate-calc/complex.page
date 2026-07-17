@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="complex" xml:lang="da">
+
+    <info>
+        <link type="guide" xref="index#number"/>
+    </info>
+
+	<title>Komplekse tal</title>
+    
+    <p><app>MATE-lommeregneren</app> understøtter komplekse tal, samt de følgende funktioner i <link xref="mouse">Avanceret tilstand</link>.</p>
+
+    <table>
+
+    <tr>
+    <td><p>Re</p></td>
+    <td><p>Returnerer den reelle del af et komplekst tal. For eksempel:</p>
+    <example>
+    <p>Re (2-5i) = 2</p>
+    </example>
+    </td>
+    </tr>
+
+    <tr>
+    <td><p>Im</p></td>
+    <td><p>Returnerer den imaginære del af et komplekst tal. For eksempel:</p>
+    <example>
+    <p>Im (2-5i) = -5</p>
+    </example>
+    </td>
+    </tr>
+
+    <tr>
+    <td><p>conj</p></td>
+    <td><p>Returnerer konjugatet af et komplekst tal. For eksempel:</p>
+    <example>
+    <p>conj (2-5i) = 2+5i</p>
+    </example>
+    </td>
+    </tr>
+
+    <tr>
+    <td><p>Arg</p></td>
+    <td><p>Returnerer argumentet for et komplekst tal. For eksempel:</p>
+    <example>
+    <p>Arg (2-5i) = -68.1986</p>
+    </example>
+    </td>
+    </tr> 
+
+    </table>
+
+
+</page>

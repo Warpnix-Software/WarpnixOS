@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-received-notification" xml:lang="hu">
+
+  <info>
+    <desc>Újonnan érkezett levelekről szóló értesítések beállításai.</desc>
+
+    <link type="guide" xref="mail-send-and-receive"/>
+    <link type="seealso" xref="calendar-alarms-and-reminders"/>
+
+    <revision pkgversion="3.34.4" version="0.8" date="2020-02-26" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lukács Bence</mal:name>
+      <mal:email>lukacs.bence1 at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kelemen Gábor</mal:name>
+      <mal:email>kelemeng at gnome dot hu</mal:email>
+      <mal:years>2011, 2012, 2013, 2015, 2017, 2018.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nagy Zoltán</mal:name>
+      <mal:email>dzodzie at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Úr Balázs</mal:name>
+      <mal:email>ur.balazs at fsf dot hu</mal:email>
+      <mal:years>2014, 2019, 2021, 2022, 2023, 2024, 2025.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Értesítés új levelekről</title>
+
+<p>Az <app>Evolution</app> mindig értesíti az új levelekről egy kis embléma hozzáadásával a levelezőikonhoz az <link xref="intro-main-window">ablakváltóban</link>.</p>
+<media type="image" src="./figures/new-mail-switcher.png" width="256" its:locNote="Translators: Please make sure that the screenshot does have the small yellow star in the Mail icon">
+  <p>Az ablakváltó elrendezése új üzenet érkezésekor</p>
+</media>
+
+<p>Ahhoz, hogy értesüljön az új üzenetekről is a GNOME asztali értesítésekben:</p>
+<steps>
+<item><p>Válassza a <guiseq><gui>Szerkesztés</gui><gui>Bővítmények</gui></guiseq> menüpontot.</p></item>
+<item><p>Engedélyezze a <gui>Levélértesítés</gui> bővítményt.</p>
+<note style="tip"><p>Ha egy bővítmény nem érhető el a <guiseq><gui>Szerkesztés</gui><gui>Bővítmények</gui></guiseq> alatt, akkor kérdezzen rá a disztribúciója támogatási fórumán. A disztribúciója dönthetett úgy, hogy letilt néhány bővítményt, vagy a bővítményeket külön csomagban szállítja.</p></note>
+</item>
+<item><p>Nyissa meg a <gui style="tab">Beállítás</gui> lapot, és állítsa be az előnyben részesített beállításokat.</p></item>
+<item><p>Nyissa meg a <gui style="tab">Fiókok</gui> lapot azoknak a levelezési fiókoknak a kiválasztásához, amelyeknél látni szeretné az értesítéseket.</p></item>
+</steps>
+
+<p>További információkért nézze meg <link xref="help:gnome-help/shell-notifications" href="https://help.gnome.org/users/gnome-help/stable/shell-notifications">a GNOME asztali környezet súgóját</link>.</p>
+
+<!-- TODO: Quite short -->
+
+</page>

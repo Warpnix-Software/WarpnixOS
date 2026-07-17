@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-composer-priority" xml:lang="ru">
+
+  <info>
+    <desc>Настройка приоритета отправляемых сообщений.</desc>
+
+    <link type="guide" xref="index#mail-composing-advanced"/>
+
+    <revision pkgversion="3.13.90" version="0.3" date="2015-03-09" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#BJEHCDFA -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Установка приоритета исходящих сообщений</title>
+
+<p>Можно изменить приоритет отправляемого сообщения, чтобы получатель знал о его важности. Для изменения приоритета сообщения выберите в менюредактора сообщений пункт <guiseq><gui>Параметры</gui><gui>Изменить приоритет сообщения</gui></guiseq> или нажмите соответствующий значок на панели инструментов.</p>
+
+<note style="tip"><p><app>Evolution</app> будет игнорировать приоритет входящих сообщений, так как предполагается, что определить важность сообщения должен получатель. Можно установить флаг «Важное» для всех сообщений.</p></note>
+<!-- TODO: Nowhere is explained how to set the Important flag. -->
+</page>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="high-scores" xml:lang="ko">
+  <info>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.5.5" version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.2" date="2018-09-01" status="review"/>
+    <revision pkgversion="3.31.91" version="0.3" date="2019-03-03" status="review"/>
+    <link type="guide" xref="index#tips"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2012</years>
+    </credit>
+    <credit type="author copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>임준열</mal:name>
+      <mal:email>purum@postech.ac.kr</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>조성호</mal:name>
+      <mal:email>shcho@gnome.org</mal:email>
+      <mal:years>2021, 2022, 2023</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>고득점</title>
+
+  <p>고득점 순위는 각 지뢰 필드의 종류 별로 10 개의 가장 빠른 시간을 기록합니다.</p>
+
+  <p>고득점 목록을 볼려면, 창 우측 상단의 메뉴 단추를 누른 후 <gui style="menuitem">점수</gui>를 선택합니다. <gui>작은</gui> 게임판 크기의 점수가 기본으로 나타납니다. 다른 크기 게임판의 점수를 보려면 대화상자 상단의 드롭다운 메뉴에서 크기를 선택합니다.</p>
+
+</page>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="prefs-language-install" xml:lang="tr">
+
+  <info>
+    <link type="guide" xref="addremove" group="#last"/>
+    <link type="seealso" xref="prefs-language"/>
+
+    <desc>Daha fazla çeviri ve bağlantılı dil destek paketlerini yükle</desc>
+    <revision version="17.10" date="2017-09-25" status="review"/>
+    <credit type="author">
+      <name>Gunnar Hjalmarsson</name>
+      <email>gunnarhj@ubuntu.com</email>
+    </credit>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+  <title>Dilleri yükle</title>
+
+  <p>Ubuntu kurduğunuzda, kurulumda seçtiğiniz dil ile birlikte İngilizce  kurulur, fakat başka diller de ekleyebilirsiniz.</p>
+
+  <steps>
+    <item>
+      <p><gui xref="shell-introduction#activities">Aktiviteler</gui> genel bakış açın ve yazmaya başlayın <gui>Bölge &amp; Dil</gui>.</p>
+    </item>
+    <item>
+      <p><gui>Bölge &amp; Dil</gui> paneli açmak için tıklayın.</p>
+    </item>
+    <item>
+      <p><gui>Dil Desteği</gui> uygulamasını açmak için <gui>Yüklü Dilleri Yönetin</gui> düğmesine tıklayın.</p>
+    </item>
+    <item>
+      <p><gui>Dilleri Kur / Kaldır ...</gui>ı tıklayın. <gui>Kurulu Diller</gui> penceresi şu anda kurulu diller işaretli olarak tüm mevcut dilleri listeler.</p>
+    </item>
+    <item>
+      <p>Kurmak istediğiniz dilleri işaretleyin ve kaldırmak istediğiniz kurulu dillerin işaretini kaldırın.</p>
+    </item>
+    <item>
+      <p><gui>Değişiklikleri Uygula</gui>ya tıkla.</p>
+    </item>
+    <item>
+      <p><link xref="user-admin-explain">Yönetimsel ayrıcalıklar</link> gerekiyor. Parolanızı ya da yönetici hesabı için istenen parolayı girin.</p>
+    </item>
+  </steps>
+
+  <p>Seçke ve iletileri görüntülemek için kullanılan çevirilere ek olarak yeni bir dil ile sözlükler için yazım denetimi, yazı tipi ve girdi yöntemleri gibi bileşenlerde çeşitli dil desteği bileşenlerini takip edebilirsiniz.</p>
+
+  <note>
+    <p>Bazı çeviriler tamamlanmamış olabilir ve belli uygulamalar dilinizi desteklemiyor olabilir.</p>
+  </note>
+
+</page>

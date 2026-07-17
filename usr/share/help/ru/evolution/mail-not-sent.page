@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-not-sent" xml:lang="ru">
+
+  <info>
+    <desc>Возможные причины того, что отправка писем не выполняется.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="2.28.3" version="0.1" date="2010-10-16" status="review"/>
+    <revision pkgversion="3.36.2" version="0.2" date="2020-04-29" status="review"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Почта не отправлена</title>
+
+<p>Причин того, что письма не отправляются, может быть несколько:</p>
+
+<list>
+<item><p>Недействительный адрес электронной почты. Проверьте, верно ли указаны адреса всех получателей письма. Если сообщение содержит неверный или недействительный адрес, его не получится отправить.</p></item>
+<item><p>Неверные параметры SMTP. Убедитесь, что параметры исходящих сообщений настроены верно. Использование некорректного адреса сервера или способа аутентификации может помешать отправке писем.</p></item>
+<item><p>Автономный режим. Программа <app>Evolution</app> может находиться в автономном режиме. Посмотрите на кнопку <gui style="button">Отправить / Получить</gui>: если она затенена, работа ведётся в автономном режиме. Чтобы подключиться к сети, выберите пункт меню <guiseq><gui>Файл</gui><gui>Работать в сети</gui></guiseq>. После этого кнопка <gui style="button">Отправить / Получить</gui> должна стать активной.</p></item>
+</list>
+
+</page>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-reply" xml:lang="uk">
+
+  <info>
+    <desc>Надсилання відповідей на отримані повідомлення.</desc>
+    
+    <link type="guide" xref="index#mail-composing"/>
+
+    <revision pkgversion="3.3.91" version="0.6" date="2012-02-19" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-reply -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Надсилання відповіді на повідомлення</title>
+
+<section id="general-info">
+<title>Надсилання відповідей на повідомлення електронної пошти</title>
+<p>Щоб відповісти на повідомлення, позначте повідомлення, на яке відповідатимете, у списку повідомлень і натисніть кнопку <gui>Відповісти</gui> на панелі інструментів або клацніть правою кнопкою на пункті повідомлення і виберіть у контекстному меню пункт <gui>Відповісти відправнику</gui>. У відповідь буде відкрито вікно редактора повідомлень. Поля <gui>Кому:</gui> і <gui>Тема:</gui> буде вже заповнено, хоча, якщо хочете, можете внести до них зміни. Крім того, до нового повідомлення буде вставлено увесь текст повідомлення, на яке ви відповідаєте, сірим кольором із синьою лінією збоку (для повідомлень у форматі HTML) або із символом &gt; перед кожним з рядків (у режимі звичайного тексту) на позначення того, що цей текст є частиною попереднього повідомлення.</p>
+<p>Якщо ви читаєте повідомлення із декількома отримувачами, ви можете скористатися пунктом <gui>Відповісти усім</gui> замість пункту <gui>Відповісти</gui>. Якщо у списках полів <gui>Копія:</gui> або <gui>Кому:</gui> дуже багато записів, це може значно заощадити ваш час.</p>
+</section>
+
+<section id="reply-to-all">
+<title>Користування можливістю «Відповісти усім»</title>
+<p>Оксана надсилає повідомлення клієнту і копії повідомлення Миколі та до внутрішнього списку листування компанії для співробітників. Якщо Микола хоче додати коментар, який мають прочитати усі адресати, він використовує пункт <gui>Відповісти усім</gui>. Але якщо він просто хоче повідомити Оксані, що погоджується із нею, йому слід скористатися пунктом <gui>Відповісти</gui>. Його відповідь не буде надіслано нікому з тих, кого Оксана додала до списку «Потайні копії», оскільки цей список не надсилається жодному з адресатів.</p>
+<p>Якщо ви підписані на список листування і хочете, щоб відповідь було надіслано до цього списку, а не відправникові, виберіть пункт <gui>Відповісти у список</gui>, замість пункту <gui>Відповісти</gui> або <gui>Відповісти усім</gui>.</p>
+</section>
+
+<section id="keyboard-shortcuts">
+<title>Клавіатурні скорочення</title>
+<table frame="all" rules="all">
+ <tr>
+  <td><p>Дія</p></td><td><p>Клавіатурні скорочення</p></td>
+ </tr><tr>
+  <td><p>Відповісти відправнику</p></td><td><p><keyseq><key>Ctrl</key><key>R</key></keyseq></p></td>
+ </tr><tr>
+  <td><p>Відповісти до списку листування</p></td><td><p><keyseq><key>Ctrl</key><key>L</key></keyseq></p></td>
+ </tr><tr>
+  <td><p>Відповісти усім</p></td><td><p><keyseq><key>Shift</key><key>Ctrl</key><key>R</key></keyseq></p></td>
+ </tr>
+</table>
+</section>
+
+<section id="default-settings">
+<title>Типові параметри</title>
+<p>Типові параметр відповідей та пересланих повідомлень можна змінити за допомогою пункту <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Параметри редактора</gui><gui>Загальне</gui><gui>Відповіді та переслані</gui><gui>Стиль відповіді</gui></guiseq>.</p>
+</section>
+
+</page>

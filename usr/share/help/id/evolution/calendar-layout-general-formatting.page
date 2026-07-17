@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-layout-general-formatting" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="calendar-layout"/>
+
+    <revision pkgversion="3.13.90" version="0.3" date="2015-03-10" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/config-prefs-cal.html.en#bshpskx
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <!-- TODO:POST-3-8: Just listing the partially busted UI options (also see
+	 calendar-layout-appointment-display) here is very poor and not
+	 task-oriented, but that's it for the time being. Better ideas welcome.
+	 -->
+
+    <desc>Opsi pemformatan umum untuk kalender.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Opsi pemformatan umum</title>
+
+  <p>Opsi berikut ini tersedia di bawah <guiseq><gui>Sunting</gui><gui>Preferensi</gui> <gui>Kalender dan Tugas</gui><gui>Umum</gui></guiseq>.</p>
+
+<section id="time">
+  <title>Waktu</title>
+
+  <list>
+    <item>
+      <p>Format waktu:</p>
+      <p>Pilih antara format waktu dua belas jam (AM/PM) dan dua puluh empat jam.</p>
+    </item>
+    <item>
+      <p><link xref="calendar-timezones">Zona waktu</link> dan Zona kedua:</p>
+      <p>Kota tempat Anda berada, dan opsional kota kedua.</p>
+    </item>
+  </list>
+</section>
+
+<section id="work-week">
+  <title>Minggu Kerja</title>
+
+  <list>
+    <item>
+      <p>Minggu dimulai pada:</p>
+      <p>Pilih hari untuk ditampilkan sebagai yang pertama dalam setiap minggu.</p>
+    </item>
+    <item>
+      <p>Hari kerja:</p>
+      <p>Tentukan hari mana yang merupakan hari kerja.</p>
+    </item>
+    <item>
+      <p>Hari dimulai:</p>
+      <p>Tentukan pada pukul berapa hari kerja Anda dimulai.</p>
+    </item>
+    <item>
+      <p>Hari berakhir:</p>
+      <p>Tentukan pukul berapa hari kerja Anda berakhir.</p>
+    </item>
+  </list>
+
+</section>
+
+<section id="date-time">
+  <title>Format Tanggal/Waktu</title>
+
+  <p>Anda bisa mengubah format kolom <gui>Tanggal</gui> dengan mengatur format pilihan Anda.</p>
+
+  <p>Tempat penampung dalam ekspresi format adalah format strftime. Untuk daftar lengkap format strftime yang tersedia, jalankan <cmd>date --help</cmd> di aplikasi <app>Terminal</app>.</p>
+
+</section>
+
+</page>

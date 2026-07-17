@@ -1,0 +1,1226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+      (Do not remove this comment block.)
+  Maintained by the MATE Documentation Project
+  http://wiki.mate-desktop.org/dev-doc:doc-team-guide
+  Template version: 2.0 beta
+  Template last modified Jan 30, 2002
+-->
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:id="index" xml:lang="ja">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <info><title>書庫マネージャ・マニュアル</title> 
+
+     <abstract>
+       <para>この書庫マネージャは Engrampa という名前でも知られており、これを使うと書庫の作成、表示、変更、解凍を行うことができます。</para>
+     </abstract>
+
+    <copyright xml:lang="en"><year>2019年-2021年</year> <holder>MATE 文書化プロジェクト</holder></copyright>
+    <copyright><year>2009年</year> <holder>Paul Cutler</holder></copyright>	    
+	<copyright><year>2006年</year> <year>2008年</year> <holder>Paolo Bacchilega</holder></copyright> 
+     <copyright><year>2003年</year> <year>2004年</year> <holder>サン・マイクロシステムズ</holder></copyright>
+    <copyright><year>2003年</year> <holder>Paolo Bacchilega</holder></copyright> 
+    <copyright><year>2002年</year> <holder>Alexander Kirillov</holder></copyright> 
+
+<!-- An address can be added to the publisher information.  If a role is 
+     not specified, the publisher/author is the same for all versions of the 
+     document.  -->
+    <publisher>
+      <publishername>MATE 文書化プロジェクト</publishername>
+    </publisher> 
+    <publisher>
+      <publishername>GNOME 文書化プロジェクト</publishername>
+    </publisher>
+
+  <xi:include href="legal.xml"/>
+  <!-- This file contains link to license for the
+   documentation (GNU FDL), and other legal stuff such as "NO
+   WARRANTY" statement. Please do not change any of this. -->
+
+  <authorgroup>
+      <author><orgname>MATE 文書化プロジェクト</orgname> <affiliation> <orgname>MATE デスクトップ</orgname> </affiliation></author>
+      <author><personname> <firstname>Sun</firstname> <surname>GNOME 文書チーム </surname></personname> <affiliation> <orgname>サン・マイクロシステムズ</orgname> </affiliation></author>
+      <author><personname> <firstname>Paolo</firstname> <surname>Bacchilega</surname> </personname> <affiliation> <orgname>GNOME 文書化プロジェクト</orgname> </affiliation></author> 
+      <author><personname> <firstname>Alexander</firstname> <surname>Kirillov</surname> </personname> <affiliation> <orgname>GNOME 文書化プロジェクト</orgname> </affiliation> <email>kirillov@math.sunysb.edu</email></author> 
+      <author><personname> <firstname>Paul</firstname> <surname>Cutler</surname> </personname> <affiliation> <orgname>GNOME 文書化プロジェクト</orgname> </affiliation> <email>pcutler@foresightlinux.org</email></author>	  
+  </authorgroup>
+	
+	<releaseinfo revision="1.10" role="review">
+	</releaseinfo>
+
+         <revhistory>
+                <revision xml:lang="en"><revnumber>1.10.0</revnumber> <date>2015年7月</date> <revdescription>
+                         <para role="author" xml:lang="en">Wolfgang Ulbrich</para>
+                         <para role="publisher" xml:lang="en">MATE 文書化プロジェクト</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.26.0</revnumber> <date>2009年3月</date> <revdescription>
+                         <para role="author">Paul Cutler</para>
+                         <para role="publisher">GNOME 文書化プロジェクト</para>
+                  </revdescription></revision>
+				
+                <revision><revnumber>2.24.0</revnumber> <date>2008年7月</date> <revdescription>
+                         <para role="author">Paolo Bacchilega</para>
+                         <para role="publisher">GNOME 文書化プロジェクト</para>
+                  </revdescription></revision>
+				
+                <revision><revnumber>2.6</revnumber> <date>2006年4月</date> <revdescription>
+                         <para role="author">Paolo Bacchilega</para>
+                         <para role="publisher">GNOME 文書化プロジェクト</para>
+                  </revdescription></revision>
+
+                <revision><revnumber>2.5</revnumber> <date>2004年3月</date> <revdescription>
+                         <para role="author">Sun GNOME 文書化チーム</para>
+                         <para role="publisher">GNOME 文書化プロジェクト</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.4</revnumber> <date>2004年2月</date> <revdescription>
+                         <para role="author">Sun GNOME 文書化チーム</para>
+                         <para role="publisher">GNOME 文書化プロジェクト</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.3</revnumber> <date>2003年8月</date> <revdescription>
+                         <para role="author">Sun GNOME 文書化チーム</para>
+                         <para role="publisher">GNOME 文書化プロジェクト</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.2</revnumber> <date>2003年6月</date> <revdescription>
+                         <para role="author">Sun GNOME 文書化チーム</para>
+                         <para role="publisher">GNOME 文書化プロジェクト</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.1</revnumber> <date>2003年1月</date> <revdescription>
+                         <para role="author">Paolo Bacchilega</para>                         
+                         <para role="publisher">GNOME 文書化プロジェクト</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.0</revnumber> <date>2002年6月</date> <revdescription>
+                         <para role="author">Alexander Kirillov</para>                         
+                         <para role="publisher">GNOME 文書化プロジェクト</para>
+                  </revdescription></revision>
+         </revhistory>
+
+    <releaseinfo>本マニュアルは、書庫マネージャ 1.22 版について説明しています。</releaseinfo> 
+  </info> 
+
+  <indexterm zone="index"><primary>Engrampa</primary></indexterm> 
+  <indexterm zone="index"><primary>engrampa</primary></indexterm>
+  <indexterm zone="index"><primary>書庫</primary></indexterm>
+  <indexterm zone="engrampa-add-files"><primary>書庫</primary> <secondary>ファイルの追加</secondary></indexterm> 
+  <indexterm zone="engrampa-delete-files"><primary>書庫</primary> <secondary>ファイルを削除</secondary></indexterm> 
+  <indexterm zone="engrampa-open"><primary>書庫</primary> <secondary>開く</secondary></indexterm> 
+  <indexterm zone="engrampa-view"><primary>書庫</primary> <secondary>表示</secondary></indexterm> 
+  <indexterm zone="engrampa-extract"><primary>書庫</primary> <secondary>展開</secondary></indexterm> 
+  <indexterm zone="engrampa-create"><primary>書庫</primary> <secondary>作成</secondary></indexterm> 
+
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+<!-- Use the Introduction section to give a brief overview of what
+     the application is and what it does. -->
+  <section xml:id="engrampa-intro"><info><title>はじめに</title></info> 
+     
+    <para><application>書庫マネージャ</application>・アプリケーションを使用して、書庫を作成、表示、修正または解凍できます。書庫とは、他のファイルの入れ物として機能するファイルのことです。書庫には、多くのファイル、フォルダおよびサブフォルダを、通常は圧縮形式で含めることができます。</para>
+    <para><application>書庫マネージャ</application>はグラフィカルなインタフェースのみを提供し、アーカイブの操作には <command>tar</command>、<command>gzip</command>、<command>bzip2</command> などのコマンドライン・ユーティリティを利用します。</para>
+    <para>適切なコマンドライン・ツールがシステムにインストールされている場合には、<application>書庫マネージャ</application>は次の表に示すアーカイブ形式をサポートします。</para> 
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>形式</para></entry>
+              <entry colname="COLSPEC1" align="left">
+                <para>ファイル名の拡張子</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para>7-Zipアーカイブ</para></entry>
+              <entry align="left"><para><filename>.7z</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>ACE アーカイブ</para></entry>
+              <entry align="left"><para><filename>.ace</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>AlZip アーカイブ</para></entry>
+              <entry align="left"><para><filename>.alz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>AR アーカイブ</para></entry>
+              <entry align="left"><para><filename>.ar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>ARJ アーカイブ</para></entry>
+              <entry align="left"><para><filename>.arj</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>キャビネット・アーカイブ</para></entry>
+              <entry align="left"><para><filename>.cab</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>CPIO アーカイブ</para></entry>
+              <entry align="left"><para><filename>.cpio</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Debian パッケージ</para></entry>
+              <entry align="left"><para><filename>.deb</filename>, <filename>.udeb</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>電子書籍</para></entry>
+              <entry align="left"><para><filename>.epub</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>RAW CD イメージ (ISO 9660)</para></entry>
+              <entry align="left"><para><filename>.iso</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>JAR ファイル</para></entry>
+              <entry align="left"><para><filename>.jar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>EAR 形式</para></entry>
+              <entry align="left"><para><filename>.ear</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>WAR 形式</para></entry>
+              <entry align="left"><para><filename>.war</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>LHA アーカイブ</para></entry>
+              <entry align="left"><para><filename>.lha</filename>, <filename>.lzh</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>RAR</para></entry>
+              <entry align="left"><para><filename>.rar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>コミックブック（RAR-圧縮）</para></entry>
+              <entry align="left"><para><filename>.cbr</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>RPM パッケージ</para></entry>
+              <entry align="left"><para><filename>.rpm</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Tar アーカイブ</para></entry>
+              <entry align="left"><para><filename>.tar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><command>bzip</command> で圧縮された tar アーカイブ</para></entry>
+              <entry align="left"><para><filename>.tar.bz</filename> または <filename>.tbz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><command>bzip2</command> で圧縮された tar アーカイブ</para></entry>
+              <entry align="left"><para><filename>.tar.bz2</filename> または <filename>.tbz2</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><command>gzip</command> で圧縮された tar アーカイブ</para></entry>
+              <entry align="left"><para><filename>.tar.gz</filename> または <filename>.tgz</filename> または <filename>.taz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><command>lzip</command> で圧縮された tar アーカイブ</para></entry>
+              <entry align="left"><para><filename>.tar.lz</filename> または <filename>.tlz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><command>lzop</command> で圧縮された tar アーカイブ</para></entry>
+              <entry align="left"><para><filename>.tar.lzo</filename> または <filename>.tzo</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para><command>compress</command> で圧縮された tar アーカイブ</para></entry>
+              <entry align="left"><para><filename>.tar.Z</filename> または <filename>.taZ</filename></para></entry>
+            </row>
+             <row valign="top">
+              <entry><para><command>7zip</command> で圧縮された tar アーカイブ</para></entry>
+              <entry align="left"><para><filename>.tar.7z</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>StuffIt 形式</para></entry>
+              <entry align="left"><para><filename>.bin</filename> または <filename>.sit</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>ZIP アーカイブ</para></entry>
+              <entry align="left"><para><filename>.zip</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>コミックブック（ZIP-圧縮）</para></entry>
+              <entry align="left"><para><filename>.cbz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Zoo アーカイブ</para></entry>
+              <entry align="left"><para><filename>.zoo</filename></para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    <para>Linux や Unix ライクなシステムで最も一般的なアーカイブ形式は、<command>gzip</command> または <command>bzip2</command> で圧縮された tar アーカイブです。</para>
+    <para>マイクロソフト・ウィンドウズにおける最も一般的なアーカイブ形式は、<application>PKZIP</application> または <application>WinZip</application> で作成されたアーカイブです。</para>
+    <section xml:id="engrampa-intro-nonarchive"><info><title>圧縮された非アーカイブファイル</title></info>
+       
+      <para>圧縮された非アーカイブ・ファイルは、非アーカイブ・ファイルを圧縮するために <command>bzip2</command>、<command>gzip</command>、<command>lzip</command>、<command>lzop</command>、<command>compress</command> または <command>rzip</command> を使用した場合に作成されるファイルです。たとえば、<filename>file.txt</filename> を圧縮するために <command>gzip</command> を使用した場合、<filename>file.txt.gz</filename> が作成されます。</para>
+      <para><application>書庫マネージャ</application>を使用すると、圧縮された非アーカイブ・ファイルを作成したり、あるいは抽出したりできます。</para> 
+    </section>
+  </section>
+
+<!-- ============= Getting Started =========================== -->
+  <section xml:id="engrampa-get-start"><info><title>はじめましょう</title></info>
+    
+    <para>この項目では、<application>書庫マネージャ</application>の起動方法と、<application>書庫マネージャ</application>のユーザインタフェースについて説明します。</para>
+
+<!-- ============= To Start Engrampa ============================ -->
+         <section xml:id="engrampa-to-start"><info><title><application>書庫マネージャ</application>を起動するには</title></info>
+                
+                <para>次の方法で<application>書庫マネージャ</application> を起動できます。</para>
+                <variablelist>
+                <varlistentry>
+                <term><guimenu>アプリケーション</guimenu>・メニュー</term>
+                <listitem>
+                <para><menuchoice> <guisubmenu>アクセサリ</guisubmenu> <guimenuitem>書庫マネージャ</guimenuitem> </menuchoice>を選択します。</para>
+                </listitem>
+                </varlistentry>
+                <varlistentry>
+                <term>コマンドライン</term>
+                <listitem>
+                <para>次のコマンドを実行してください： <command>engrampa</command></para>
+                </listitem>
+                </varlistentry>
+                </variablelist>
+        </section>
+
+         <section xml:id="engrampa-when-start"><info><title><application>書庫マネージャ</application>を起動した時</title></info>
+                
+                <para>書庫マネージャを起動すると、次のウィンドウが表示されます。</para>
+
+                <figure xml:id="engrampa-FIG-main-window"><info><title><application>書庫マネージャ</application>のウィンドウ</title></info>
+                  
+                  <screenshot>
+                         <mediaobject><imageobject> <imagedata fileref="figures/engrampa_main_window.png" format="PNG"/> </imageobject> <textobject> <phrase>Engrampa のメインウィンドウを表示します。</phrase> </textobject></mediaobject>
+                  </screenshot>
+                </figure>
+
+                <para><application>書庫マネージャ</application>のウィンドウには、次の項目があります。</para>
+                <variablelist>
+                  <varlistentry> <term>メニューバー</term>
+                         <listitem>
+                                <para>メニューバーのメニューには、<application>書庫マネージャ</application>でアーカイブを操作するために必要なコマンドがすべて含まれています。</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>ツールバー</term>
+                         <listitem>
+                                <para>ツールバーには、メニューバーからアクセスできるコマンドのサブセットが含まれています。既定では、<application>書庫マネージャ</application>にツールバーが表示されます。ツールバーを非表示にするには、<menuchoice><guimenu>表示</guimenu><guimenuitem>ツールバー</guimenuitem></menuchoice>を選択します。ツールバーを表示するには、<menuchoice><guimenu>表示</guimenu><guimenuitem>ツールバー</guimenuitem></menuchoice>を再び選択します。</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>フォルダバー</term>
+                         <listitem>
+                                <para>フォルダバーを使用すると、書庫内のフォルダ間を移動できます。<application>書庫マネージャ</application>では、フォルダ・ビューにのみフォルダバーが表示されます。詳細は、<xref linkend="engrampa-view-type-folder"/>を参照してください。</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>表示領域</term>
+                         <listitem>
+                                <para>表示領域には、書庫の内容が表示されます。</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>ステータスバー</term>
+                         <listitem>
+                                <para>ステータスバーには、現在の<application>書庫マネージャ</application>のアクティビティに関する情報、およびアーカイブの内容に関する概要が表示されます。既定では、<application>書庫マネージャ</application>はステータスバーを表示します。ステータスバーを非表示にするには、<menuchoice><guimenu>表示</guimenu><guimenuitem>ステータスバー</guimenuitem></menuchoice>を選択します。再びこれを表示するには、<menuchoice><guimenu>表示</guimenu><guimenuitem>ステータスバー</guimenuitem></menuchoice>を選択します。</para>
+                         </listitem>
+                  </varlistentry>
+                </variablelist>
+                <para><application>書庫マネージャ</application>・ウィンドウで右クリックすると、ポップアップ・メニューが表示されます。ポップアップ・メニューには、最も一般的なコンテキスト・アーカイブ・コマンドが含まれます。</para>
+
+     <section xml:id="engrampa-bookmarks"><info><title>ファイル・システムをブラウズする</title></info>
+        
+        <para><application>書庫マネージャ</application>の複数のダイアログ・ボックス（<guilabel>新規</guilabel>、<guilabel>開く</guilabel>、<guilabel>展開</guilabel>など）を使用して、コンピュータ上のファイルやフォルダをブラウズできます。ファイルを開くダイアログの詳しい使用方法については、<link xlink:href="help:mate-user-guide/filechooser-open">デスクトップ・ユーザガイド</link>を参照してください。</para>
+        <para><guilabel>場所</guilabel>ペインを使ってお気に入りの場所にアクセスする方法については、「デスクトップ・ユーザガイド」の<link xlink:href="help:mate-user-guide/caja-bookmarks">ブックマーク</link>の項目を参照してください。</para>
+     </section>
+   </section>
+</section>
+
+
+
+<!-- ======= Working with archives ============= --> 
+
+<section xml:id="engrampa-working"><info><title>アーカイブを使って作業する</title></info>
+      
+      <para><application>書庫マネージャ</application>を使用してアーカイブを操作すると、すべての変更が即座にディスクに保存されます。たとえば、アーカイブからファイルを削除すると、<guibutton>OK</guibutton> をクリックすると直ちにファイルが削除されます。この動作は、他の多くのアプリケーションとは異なるので注意してください。つまり、アプリケーションを終了したとき、またはメニューで<guimenuitem>保存</guimenuitem>を選択したときにだけ、変更がディスクに保存されるのではありません。</para>
+      <para>アーカイブが非常に大きい場合、またはシステムの動作が遅い場合は、一部のアーカイブ操作に相当な時間がかかる場合があります。現在の操作を中止するには、<keycap>Esc</keycap> キーを押します。あるいは、<menuchoice><guimenu>表示</guimenu><guimenuitem>停止</guimenuitem></menuchoice>を選択するか、またはツールバーの<guibutton>停止</guibutton>をクリックします。</para>      
+      <para><application>書庫マネージャ</application>では、同じ操作を複数の方法で行うことができます。例えば、次のような方法で書庫を開くことができます。<informaltable frame="all">
+                    <tgroup cols="2" colsep="1" rowsep="1">
+                      <colspec colname="COLSPEC0" colwidth="50*"/>
+                      <colspec colname="COLSPEC1" colwidth="50*"/>
+                      <thead>
+                        <row valign="top">
+                          <entry colname="COLSPEC0">
+                            <para>UI コンポーネント</para></entry>
+                          <entry colname="COLSPEC1" align="left"> 
+                            <para>動作</para></entry>
+                        </row>
+                      </thead>
+                      <tbody>
+                        <row valign="top">               
+                          <entry><para>ウィンドウ</para></entry>
+                          <entry><para>ファイルマネージャなどの別のアプリケーションから、アーカイブを<application>書庫マネージャ</application>・ウィンドウにドラッグします。</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>メニューバー</para></entry>
+                          <entry><para><menuchoice><guimenu>書庫</guimenu><guimenuitem>開く</guimenuitem></menuchoice>を選択します。</para>
+           <para>最近開いたアーカイブは、<menuchoice><guimenu>書庫</guimenu></menuchoice>メニューに直接表示されます。</para> 
+</entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>ツールバー</para></entry>
+                          <entry><para><guibutton>開く</guibutton>ツールバーボタンをクリックします。</para>
+           <para>最近そのアーカイブを開いた場合は、<guibutton>開く</guibutton>ツールバーボタンの近くにある下向き矢印をクリックします。</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>右クリックのポップアップメニュー</para></entry>
+                          <entry><para>アーカイブを右クリックし、ポップアップメニューから<guilabel>開く</guilabel>を選択します。</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>ショートカット・キー</para></entry>
+                          <entry><para><keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo> を押します。</para></entry>
+                        </row>
+                      </tbody>
+                    </tgroup>
+                  </informaltable></para>
+      <para>本マニュアルでは、メニューバーからの機能について説明します。</para>
+
+    <section xml:id="engrampa-pattern"><info><title>ファイル名のパターン</title></info>
+      
+      <para><application>書庫マネージャ</application>では、一度に複数のファイルを追加、展開または削除できます。特定のパターンに一致するすべてのファイルにアクションを適用するには、テキスト・ボックスにパターンを入力します。パターンには、任意の文字列に一致する <keycap>*</keycap> や任意の 1 つの記号に一致する <keycap>?</keycap> などの標準的なワイルドカードの記号を含めることができます。複数のパターンをセミコロンで区切って入力できます。<application>書庫マネージャ</application>では、少なくとも 1 つのパターンに一致するすべてのファイルにアクションが適用されます。次の表の例は、ファイル名パターンを使用してファイルを選択する方法を示しています。</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>パターン</para></entry>
+              <entry colname="COLSPEC1" align="left"> 
+                <para>一致するファイルの例</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">               
+              <entry><para><filename>*</filename></para></entry>
+              <entry align="left"><para>すべてのファイル</para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>*.tar*</filename></para></entry>
+              <entry align="left"><para>拡張子が <filename>tar</filename> のすべてのファイル。拡張子 <filename>tar</filename> の後に一連の符号（<filename>ファイル名.tar.gz</filename> など）が続くファイルも含まれます。</para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>*.jpg; *.jpeg</filename></para></entry>
+              <entry align="left"><para>拡張子 <filename>jpg</filename> のすべてのファイル、および拡張子 <filename>jpeg</filename> のすべてのファイル</para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>file?.gz</filename></para></entry>
+              <entry align="left"><para>「ファイル」という名前の後に任意の 1 文字が続く、拡張子 <filename>gz</filename> を持つすべてのファイル。例：<filename>ファイル2.gz</filename>、<filename>ファイルx.gz</filename> 。</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
+
+<!-- ======= To open an archive ============= --> 
+
+<section xml:id="engrampa-open"><info><title>書庫を開くには</title></info>
+      
+      <para>書庫を開くには、次の手順を実行します。<orderedlist inheritnum="ignore" continuation="restarts">
+          <listitem>
+           <para><menuchoice><guimenu>書庫</guimenu><guimenuitem>開く</guimenuitem></menuchoice>を選択して、<guilabel>開く</guilabel>ダイアログボックスを表示します。または、<keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>を押すか、ツールバーの<guibutton>開く</guibutton>をクリックします。</para> 
+          </listitem>
+          <listitem>
+           <para>開きたい書庫を選択してください。</para> 
+          </listitem>
+          <listitem>
+           <para><guibutton>開く</guibutton>ボタンをクリックしてください。</para> 
+          </listitem>
+        </orderedlist></para>
+      <para><application>書庫マネージャ</application>によって自動的に圧縮形式が判断され、次の情報が表示されます。</para>
+      <para>別の書庫を開くには、もう一度<menuchoice><guimenu>書庫</guimenu><guimenuitem>開く</guimenuitem></menuchoice>を選択します。<application>書庫マネージャ</application>は、各々の書庫を新しいウィンドウで開きます。同じウィンドウで別の書庫を開くことはできません。</para>
+      <para><application>書庫マネージャ</application>が認識しない形式で作成された書庫を開こうとすると、アプリケーションにエラー・メッセージが表示されます。対応可能な形式の一覧については、<xref linkend="engrampa-intro"/>を参照してください。</para>
+  </section>
+
+<!-- ======= Selecting files in an archive  ============= --> 
+    <section xml:id="engrampa-select-files"><info><title>書庫内のファイルを選択するには</title></info>
+      
+    <para>書庫内のすべてのファイルを選択するには、<menuchoice><guimenu>編集</guimenu><guimenuitem>すべて選択</guimenuitem></menuchoice>の順に選択するか、または <keycombo><keycap>Ctrl</keycap><keycap>A</keycap></keycombo> キーを押します。</para>
+      <para>書庫内のすべてのファイル選択を解除するには、<menuchoice><guimenu>編集</guimenu><guimenuitem>すべて選択解除</guimenuitem></menuchoice>を選択するか、または <keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap><keycap>A</keycap></keycombo> を押します。</para>
+    </section>
+
+  <!-- =========== Extracting Files From an Archive ==================== -->
+
+  <section xml:id="engrampa-extract"><info><title>書庫からファイルを展開するには</title></info> 
+     
+    <para>開いている書庫からファイルを展開するには、次の手順を実行します。<orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>展開するファイルを選択します。さらにファイルを選択するには、<keycap>Ctrl</keycap> キーを押しながら選択するファイルをクリックします。</para>
+        </listitem>
+        <listitem><para><menuchoice><guimenu>書庫</guimenu><guimenuitem>展開</guimenuitem></menuchoice>を選択して<guilabel>展開</guilabel>ダイアログボックスを表示します。または、ツールバーの<guibutton>展開</guibutton>をクリックします。</para>
+        </listitem>
+        <listitem><para><application>書庫マネージャ</application>を使って、ファイルの展開をするフォルダを選択します。</para>
+        </listitem>
+        <listitem><para>希望する展開のオプションを選択します。展開オプションの詳細は、<xref linkend="engrampa-extract-options"/>を参照してください。</para>
+        </listitem>
+        <listitem><para><guibutton>展開</guibutton>をクリックしてください。</para>
+        <note>
+          <para>もし書庫内のすべてのファイルがパスワードで保護されていて、パスワードを指定しなかった場合には、<application>書庫マネージャ</application>はパスワードの入力を要求します。</para>
+          <para>書庫内の一部だけのファイルがパスワードで保護されており、しかもそれがパスワードを指定していない場合には、<application>書庫マネージャ</application>はパスワードを要求しません。ただし、<application>書庫マネージャ</application>は、保護されていないファイルだけを展開します。</para>
+          <para>パスワードの詳細については、<xref linkend="engrampa-encrypt-files"/>を参照してください。</para>
+        </note>
+        </listitem>
+        </orderedlist></para>
+      <para><application>書庫マネージャ</application>には、<application>書庫マネージャ</application>・ウィンドウを開かずに、ファイル・マネージャ・ウィンドウ内のアーカイブからファイルを展開する方法もあります。詳細については、<xref linkend="engrampa-fmgr"/>を参照してください。</para>
+    <para>展開操作では、指定したファイルの<emphasis>コピー</emphasis>がアーカイブから展開されます。展開されたファイルには、元の書庫のファイルにあったものと同じ権限と変更日が与えられます。</para>
+    <para>展開操作によってアーカイブの内容が変更されることはありません。書庫からファイルを削除する方法については、<xref linkend="engrampa-delete-files"/>を参照してください。</para>
+  </section>
+    
+<!-- ======= Closing the Archive ============= --> 
+  <section xml:id="engrampa-archive-close"><info><title>この書庫を閉じるには</title></info>
+    
+    <para>現在扱っている書庫および今使用中の<application>書庫マネージャ</application>・ウィンドウを閉じるには、<menuchoice><guimenu>書庫</guimenu><guimenuitem>閉じる</guimenuitem></menuchoice>を選択するか、、または <keycombo><keycap>Ctrl</keycap><keycap>W</keycap></keycombo> を押します。</para>
+    <note>
+      <para>現在の書庫を閉じる方法は、<application>書庫マネージャ</application>・ウィンドウを閉じる以外に方法はありません。</para>
+    </note>
+  </section>
+</section>
+
+
+<!-- =============  Creating Archives ============================= -->
+<section xml:id="engrampa-creating"><info><title>書庫を作成するには</title></info> 
+     
+    <para>既存の書庫を開くだけでなく、<application>書庫マネージャ</application>を使うと新しい書庫を作成することもできます。</para>
+    <section xml:id="engrampa-create"><info><title>書庫を作成するには</title></info> 
+     
+    <para>書庫を作成するには、次の手順を実行します。<orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para><guilabel>新しい</guilabel>ダイアログボックスを表示するには、<menuchoice><guimenu>書庫</guimenu><guimenuitem>新規</guimenuitem></menuchoice>を選択します。あるいは、<keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo> を押すか、またはツールバーの<guibutton>新規</guibutton>をクリックします。</para>
+        </listitem>
+        <listitem>
+          <para><guilabel>フォルダに保存</guilabel>ドロップダウン・リストのエントリをクリックして、書庫マネージャが新規アーカイブを配置するフォルダを指定します。フォルダがリストにない場合は、<guilabel>他のフォルダを参照</guilabel>をクリックしてフォルダを選択します。あるいは、<guilabel>名前</guilabel>テキスト・ボックスにパスを入力します。</para>
+        </listitem>
+        <listitem>
+          <para><guilabel>名前</guilabel>テキスト・ボックスに、ファイル拡張子を含む新しいアーカイブの名前を入力します。または、拡張子を含まないアーカイブ名を指定し、<guilabel>書庫の種類</guilabel>ドロップダウン・メニューからアーカイブ・タイプを選択すると、拡張子が自動的に追加されます。</para>
+        </listitem>
+        <listitem><para><guilabel>その他のオプション</guilabel>をクリックして、必要な作成オプションを選択します。作成オプションの詳細については、<xref linkend="engrampa-create-options"/>を参照してください。</para>
+        </listitem>
+        <listitem>
+          <para><guibutton>新規</guibutton>をクリックします。<application>書庫マネージャ</application>は空の書庫を作成しますが、書庫はだディスクに書き込まれていません。</para>
+        </listitem>
+        <listitem>
+          <para><xref linkend="engrampa-add-files"/>の説明に従って、新しい書庫にファイルを追加します。<note>
+                  <para><application>書庫マネージャ</application>は、新しい書庫に少なくとも1つのファイルが含まれている場合にのみ、その書庫をディスクに書き込みます。もし、新しい書庫を作成してそこにファイルを追加する前に<application>書庫マネージャ</application>を終了すると、<application>書庫マネージャ</application>はその書庫を削除します。</para>
+                </note></para>
+        </listitem>
+      </orderedlist></para>
+</section>
+
+    <!-- ======= Adding files to an archive  ============= --> 
+  <section xml:id="engrampa-add-files"><info><title>ファイルを書庫に追加するには</title></info>
+    
+    <para>ファイルを書庫に追加するには、次の手順を実行します。<orderedlist inheritnum="ignore" continuation="restarts">
+         <listitem>
+           <para>書庫内のファイルを追加したい場所を決定し、書庫内のその場所を開きます。</para> 
+         </listitem>
+         <listitem>
+           <para><menuchoice><guimenu>書庫</guimenu><guimenuitem>ファイルの追加</guimenuitem></menuchoice>を選択して<guilabel>ファイルの追加</guilabel>ダイアログボックスを表示します。または、ツールバーの<guibutton>ファイルの追加</guibutton>をクリックします。</para> 
+         </listitem>
+         <listitem>
+           <para>追加したいファイルを選択します。さらにファイルを選択するには、<keycap>Ctrl</keycap> キーを押しながらファイルをクリックします。</para> 
+         </listitem>
+         <listitem>
+           <para><guibutton>追加</guibutton>をクリックします。<application>書庫マネージャ</application>は、書庫内の現在のフォルダにファイルを追加します。</para> 
+         </listitem>
+      </orderedlist></para>
+    <para><guilabel>ファイルの追加</guilabel>ダイアログボックスで、フォルダを書庫に追加することはできません。フォルダを追加するには、<xref linkend="engrampa-add-folder"/>を参照してください。</para>
+    <para><guilabel>ファイルの追加</guilabel>ダイアログボックスには<guilabel>新しい場合にのみ追加する</guilabel>オプションがあります。このオプションの詳細については、<xref linkend="engrampa-add-options"/>を参照してください。</para>
+    <para><application>書庫マネージャ</application>・ウィンドウを開かずに、ファイルマネージャ・ウィンドウでファイルを書庫に追加することもできます。詳細については、<xref linkend="engrampa-fmgr"/>を参照してください。</para>
+    <para>追加操作では、指定したファイルまたはフォルダの<emphasis>コピー</emphasis>がアーカイブに追加されます。<application>書庫マネージャ</application>は、ファイルシステム内で変更のない元のファイルは削除しません。アーカイブに追加さません。アーカイブに追加されたコピーには、元のファイルと同じ権限および変更日が付与されます。</para>
+    </section>
+
+<!-- ======= Adding files - Adding folder  ============= --> 
+    <section xml:id="engrampa-add-folder"><info><title>フォルダを書庫に追加するには</title></info>
+      
+    <para>フォルダを書庫に追加するには、次の手順を実行します。<orderedlist inheritnum="ignore" continuation="restarts">
+         <listitem>
+           <para>書庫内のファイルを追加したい場所を決定し、書庫内のその場所を開きます。</para>
+         </listitem>
+         <listitem>
+           <para><menuchoice><guimenu>編集</guimenu> <guimenuitem>フォルダの追加</guimenuitem></menuchoice>を選択して、<guilabel>フォルダの追加</guilabel>ダイアログを表示します。</para> 
+         </listitem>
+         <listitem>
+           <para>追加したいフォルダを選択してください。</para> 
+         </listitem>
+         <listitem>
+           <para><guibutton>追加</guibutton>をクリックします。<application>書庫マネージャ</application>は、書庫内の現在のフォルダにフォルダを追加します。</para> 
+         </listitem>
+      </orderedlist></para>
+    <para><guilabel>フォルダの追加</guilabel>ダイアログには、いくつかの拡張オプションがあります。詳細については、<xref linkend="engrampa-add-options"/>を参照してください。</para>
+    </section>
+
+  <!-- ======= Converting an Archive to Another Format ============= --> 
+  <section xml:id="engrampa-convert-archive"><info><title>書庫を別の形式に変換するには</title></info>
+    
+    <para>書庫を別の形式に変換し、新しいファイルとして保存するには、次の手順を実行してください:</para>
+    <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem>
+        <para>変換したい書庫を選択してください。</para>
+      </listitem>
+      <listitem>
+        <para><menuchoice><guimenu>書庫</guimenu><guimenuitem>別名で保存</guimenuitem></menuchoice>を選択すると、<guilabel>保存</guilabel>ダイアログが表示されます。</para>
+      </listitem>
+      <listitem>
+        <para><guilabel>名前</guilabel>テキストボックスに新しい書庫名を入力してください。</para>
+      </listitem>
+      <listitem>
+        <para><guilabel>ファイル形式</guilabel>ドロップダウン・リストから新しい形式を選択します。あるいは、<guilabel>名前</guilabel>テキスト・ボックスにファイル名と拡張子を入力し、<guilabel>ファイル形式</guilabel>ドロップダウン・リストから<guilabel>自動</guilabel>を選択します。</para>
+      </listitem>
+      <listitem>
+        <para><guilabel>その他のオプション</guilabel>をクリックして、必要な作成オプションを選択します。作成オプションの詳細については、<xref linkend="engrampa-create-options"/>を参照してください。</para>
+      </listitem>      
+      <listitem>
+        <para><guibutton>保存</guibutton>をクリックしてください。</para>
+        <note>
+          <para>もし書庫内のすべてのファイルがパスワードで保護されていて、パスワードを指定しなかった場合には、<application>書庫マネージャ</application>はパスワードの入力を要求します。</para>
+          <para>書庫内の全部でなく、その内の一部のファイルがパスワードで保護されていて、かつパスワードを指定していない場合、<application>書庫マネージャ</application>はパスワードを要求しません。ただし、<application>書庫マネージャ</application>は保護されていないファイルだけを新しい書庫へコピーします。</para>
+          <para>パスワードの詳細については、<xref linkend="engrampa-encrypt-files"/>を参照してください。</para>
+        </note>
+      </listitem>
+    </orderedlist>
+  </section>
+</section>
+
+<!-- ======= Operations on Archive Contents ============= --> 
+<section xml:id="engrampa-modify-contents"><info><title>書庫の内容を変更する</title></info>
+  
+  <para>書庫の内容を変更するには、いくつかの方法があります。</para>
+
+<!-- ======= Encrypting files in an archive  ============= --> 
+    <section xml:id="engrampa-encrypt-files"><info><title>書庫内のファイルを暗号化するには</title></info>
+      
+    <para>セキュリティ上の理由で、書庫に追加するファイルの暗号化を希望する場合があります。</para>
+      <para>その書庫形式が暗号化に対応している場合は、書庫に追加するファイルの暗号化パスワードを指定できます。</para>
+      <note>
+        <para>現在のところ、7-Zip、ZIP、RAR、ARJ 形式だけが暗号化に対応します。</para>
+      </note>
+     <para>ファイル暗号化のパスワードを指定するには、次の手順を実行します。</para>
+       <orderedlist inheritnum="ignore" continuation="restarts">
+          <listitem><para><menuchoice><guimenu>編集</guimenu> <guimenuitem>パスワード</guimenuitem></menuchoice>を選択して、<guilabel>パスワード</guilabel>ダイアログを表示します。</para></listitem> 
+<listitem><para><guilabel>パスワード</guilabel>テキストボックスにパスワードを入力してください。</para></listitem>
+<listitem><para><guibutton>OK</guibutton>をクリックします。</para></listitem>
+       </orderedlist>
+    <para><application>書庫マネージャ</application>は、パスワードを使用して、現在の書庫に追加したファイルを暗号化し、現在の書庫から展開したファイルを復号化します。<application>書庫マネージャ</application>は、書庫を閉じたときパスワードを削除します。</para>
+      <para>書庫に暗号化されたファイルが含まれているかどうかを確認する方法については、<xref linkend="engrampa-extra-info"/>を参照してください。</para>
+      <note>
+      <para>書庫用のユーティリティによって提供される暗号化は弱く、安全ではありません。セキュリティが重要な場合は、<link xlink:href="http://www.gnupg.org">GNU Privacy Guard</link> のような強力な暗号化ツールを使用してください。</para>
+      </note>
+    </section>
+
+<!-- ======= Renaming files in an archive  ============= --> 
+  <section xml:id="engrampa-rename-files"><info><title>書庫内のファイル名を変更するには</title></info>
+    
+    <para>書庫内のファイル名を変更するには、次の手順を実行します。</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>名前を変更したいファイルを選択してください。</para>
+        </listitem>
+        <listitem>
+          <para><menuchoice><guimenu>編集</guimenu><guimenuitem>名前の変更</guimenuitem></menuchoice>を選択します。または、<keycombo><keycap>F2</keycap></keycombo> キーを押して、<guilabel>名前の変更</guilabel>ダイアログを表示します。</para>
+        </listitem>
+        <listitem>
+          <para><guilabel>名前の変更</guilabel>テキストボックスへ、新しいファイル名を入力してください。</para>
+        </listitem>
+        <listitem>
+          <para><guibutton>名前の変更</guibutton>をクリックします。</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Copying files in an archive  ============= --> 
+  <section xml:id="engrampa-copy-files"><info><title>書庫の中のファイルをコピーするには</title></info>
+    
+    <para>書庫の中のファイルをコピーするには、次の手順を実行します。</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>コピーしたいファイルを選択してください。</para>
+        </listitem>
+        <listitem>
+          <para><menuchoice><guimenu>編集</guimenu><guimenuitem>コピー</guimenuitem></menuchoice>を選択するか、または <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo> を押します。</para>
+        </listitem>
+        <listitem>
+          <para>コピーしたファイルを置きたい場所を開きます。</para>
+        </listitem>
+        <listitem>
+          <para><menuchoice><guimenu>編集</guimenu><guimenuitem>貼り付け</guimenuitem></menuchoice>を選択するか、または <keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo> を押します。</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Moving files in an archive  ============= --> 
+  <section xml:id="engrampa-move-files"><info><title>書庫内のファイルを移動するには</title></info>
+    
+    <para>書庫内のファイルを移動するには、次の手順を実行します。</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>移動したいファイルを選択してください。</para>
+        </listitem>
+        <listitem>
+          <para><menuchoice><guimenu>編集</guimenu><guimenuitem>切り取り</guimenuitem></menuchoice>を選択するか、または <keycombo><keycap>Ctrl</keycap><keycap>X</keycap></keycombo> を押します。</para>
+        </listitem>
+        <listitem>
+          <para>切り取ったファイルを置きたい場所を開きます。</para>
+        </listitem>
+        <listitem>
+          <para><menuchoice><guimenu>編集</guimenu><guimenuitem>貼り付け</guimenuitem></menuchoice>を選択するか、または <keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo> を押します。</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Deleting files from an archive  ============= --> 
+  <section xml:id="engrampa-delete-files"><info><title>書庫からファイルを削除するには</title></info>
+    
+    <para>書庫からファイルを削除するには、次の手順を実行します。</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>削除したいファイルを選択してください。</para>
+        </listitem>
+        <listitem>
+          <para><menuchoice><guimenu>編集</guimenu><guimenuitem>削除</guimenuitem></menuchoice>を選択します。または、<keycap>Delete</keycap> キーを押して、<guilabel>削除</guilabel>ダイアログを表示します。</para>
+        </listitem>
+        <listitem>
+          <para>次の削除オプションの中からどれかを選択します。</para>
+          <variablelist>
+            <varlistentry>
+              <term><guilabel>すべてのファイル</guilabel></term>
+              <listitem>
+                <para>書庫からすべてのファイルを削除します。</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term><guilabel>選択したファイル</guilabel></term>
+              <listitem>
+                <para>書庫から選択したファイルだけを削除します</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term><guilabel>ファイル</guilabel></term>
+              <listitem>
+                <para>指定したパターンに一致するすべてのファイルを書庫から削除します。ファイル名のパターンに関する詳細は、<xref linkend="engrampa-pattern"/>を参照してください。</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+        <listitem>
+          <para><guibutton>OK</guibutton>をクリックします。</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- =============  Modify a File in an Archive ==================== -->
+  <section xml:id="engrampa-modify-archive-file"><info><title>書庫内のファイルを変更するには</title></info> 
+     
+    <para>書庫内のファイルを修正するには、次の手順を実行します。<orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem><para>開きたいファイルをダブルクリックします。あるいは、ファイル上で右クリックし<menuchoice><guimenuitem>開く</guimenuitem></menuchoice>を選択します。</para></listitem>
+      <listitem><para>ステップ１で開いたファイルを編集し、その後、その変更を保存します。</para></listitem>
+      <listitem><para><application>書庫マネージャ</application>に確認ダイアログ・ボックスが表示され、変更した内容で書庫内のファイルを更新するかどうかの確認を求められます。</para></listitem>
+      <listitem><para><guilabel>更新する</guilabel>ボタンをクリックします。</para></listitem>
+      </orderedlist></para>
+    <para><application>書庫マネージャ</application>は、ファイル形式とプログラム間のシステム定義の関連付けを利用して、特定のファイルに対して起動する適切なアプリケーションを決定します。こうした関連付けは、ファイルのプロパティ・ダイアログの<guilabel>アプリケーションで開く</guilabel>タブで表示および変更できます。書庫マネージャが適切なアプリケーションを判断できない場合、<application>書庫マネージャ</application>は<guilabel>ファイルを開く</guilabel>ダイアログを表示し、アプリケーションを選択できます。これについては、次項で説明します。</para>
+    <section xml:id="engrampa-modifiy-archive-file-custom-app"><info><title>カスタム・アプリケーションを利用して書庫内のファイルを変更するには</title></info>
+    
+    <para>ファイルの既定アプリケーションではなく、任意のアプリケーションを利用してファイルを変更できます。外部アプリケーションを利用してファイルを開くには、次の手順に従います。<orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem><para>ファイルを右クリックします。</para></listitem>
+      <listitem><para><menuchoice><guimenuitem>アプリケーションで開く</guimenuitem></menuchoice>を選択します。</para></listitem>
+      </orderedlist></para>    
+    <para><application>書庫マネージャ</application>は<guilabel>ファイルを開く</guilabel>ダイアログを表示し、指定のファイル形式を開くことが可能なすべてのアプリケーションがリストされます。アプリケーションを選択するには、アプリケーション名をダブルクリックするか、アプリケーション名をクリックして<guibutton>開く</guibutton>をクリックします。または、<guilabel>アプリケーション</guilabel>テキスト・ボックスにアプリケーション名を入力して<guibutton>開く</guibutton>をクリックすると、選択したアプリケーションが起動します。</para>
+    <para>アプリケーションが起動したら、<xref linkend="engrampa-modify-archive-file"/>の説明に沿ってステップ 2 以降の手順に従ってください。</para>
+    </section>
+  </section>
+</section>
+
+
+<!-- ======= Viewing an archive ============= --> 
+<section xml:id="engrampa-view"><info><title>書庫を表示させる</title></info>
+  
+  <para><application>書庫マネージャ</application>は、書庫のいろいろな情報を表示できます。</para>
+
+<!-- ======= Archive Properties ============= --> 
+    <section xml:id="engrampa-view-archive-properties"><info><title>書庫のプロパティを表示するには</title></info>
+      
+      <para>書庫のプロパティを表示するには、<menuchoice><guimenu>書庫</guimenu><guimenuitem>プロパティ</guimenuitem></menuchoice>を選択して<guilabel>プロパティ</guilabel>ダイアログを表示します。<guilabel>プロパティ</guilabel>ダイアログには、書庫に関する次の情報が表示されます。<variablelist>
+	      <varlistentry>
+	        <term><guilabel>名前</guilabel></term>
+	        <listitem><para>書庫の名前。</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>場所</guilabel></term>
+	        <listitem><para>ファイル・システム内の書庫の場所です。</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>更新日時</guilabel></term>
+	        <listitem><para>書庫が最後に変更された日付と時刻です。</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>書庫のサイズ</guilabel></term>
+	        <listitem><para>圧縮時の書庫コンテンツのサイズ。</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>展開後のサイズ</guilabel></term>
+	        <listitem><para>展開時の書庫コンテンツのサイズ。この情報はステータスバーにも表示されます。</para></listitem>
+	      </varlistentry>
+
+	      <varlistentry>
+	        <term><guilabel>圧縮率</guilabel></term>
+	        <listitem><para>圧縮率は、データサイズの縮小を表すために使用される値です。たとえば、圧縮率が5の場合、圧縮された書庫は元のデータサイズの1/5になります。</para></listitem>
+	      </varlistentry>
+
+	      <varlistentry>
+	        <term><guilabel>ファイル数</guilabel></term>
+	        <listitem><para>書庫内のファイルの数。</para></listitem>
+	      </varlistentry>
+            </variablelist></para>
+    </section>
+ 
+
+<!-- ======= Archive Contents ============= --> 
+    <section xml:id="engrampa-view-archive-contents"><info><title>書庫の内容を表示するには</title></info>
+      
+
+      <para><application>書庫マネージャ</application>では、書庫の内容がファイル一覧としてメインウィンドウに表示され、次のような列が表示されます。<variablelist>
+	  <varlistentry>
+	    <term><guilabel>名前</guilabel></term>
+	    <listitem><para>書庫内のファイルまたはフォルダの名前。</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>サイズ</guilabel></term>
+	    <listitem><para>ファイルが書庫から展開されるときのファイルのサイズです。フォルダの場合、<guilabel>サイズ</guilabel>欄は空白です。圧縮ファイルのサイズの表示方法についての詳細は、<xref linkend="engrampa-extra-info"/>を参照してください。</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>種類</guilabel></term>
+	    <listitem><para>ファイルの種類です。フォルダの場合、<guilabel>種類</guilabel>のフィールド値は<literal>フォルダ</literal>になります。</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>更新日時</guilabel></term>
+	    <listitem><para>ファイルが最後に変更された日付です。フォルダの場合、<guilabel>更新日時</guilabel>フィールドは空白です。</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>場所</guilabel></term>
+	    <listitem><para>書庫内のファイルへのパスです。この列は、ウィンドウがファイル・ビューの場合にのみ表示されます。フォルダ・ビューの場合は、ファイルの場所がフォルダバーの<guilabel>場所</guilabel>テキスト・ボックスに表示されます。ビュー・タイプの詳細は、<xref linkend="engrampa-view-type-folder"/>を参照してください。</para></listitem>
+	  </varlistentry>
+        </variablelist></para>
+      <para><application>書庫マネージャ</application>が書庫を開いた後に、別のプログラムが書庫を変更した場合は、<menuchoice><guimenu>表示</guimenu><guimenuitem>更新</guimenuitem></menuchoice>の順に選択して、書庫の内容をディスクから再ロードします。</para>
+      <para><application>書庫マネージャ</application>による書庫内容の表示方法をカスタマイズには、<xref linkend="engrampa-archive-custom"/>を参照してください。</para>
+      <para>より高度なタスクを実行するには、システムにインストールされている別のアプリケーションを使用します。詳細は、<xref linkend="engrampa-view-archive-file"/>を参照してください。</para>
+    </section>
+
+  <!-- =============  Viewing a File in an Archive ==================== -->
+  <section xml:id="engrampa-view-archive-file"><info><title>書庫内のファイルを表示するには</title></info> 
+     
+    <para>書庫内のファイルを表示するには、<xref linkend="engrampa-modify-archive-file"/>で説明する手順に従ってください。もし開いたファイルを保存する場合、<application>書庫マネージャ</application>が書庫内のファイルを更新するかどうかの確認を求めてきたら、<guilabel>キャンセル</guilabel>をクリックします。</para>
+  </section>
+
+<!-- =============  Testing the Integrity of an Archive ==================== -->
+  <section xml:id="engrampa-test-archive"><info><title>アーカイブの整合性をテストするには</title></info> 
+     
+    <para>書庫は何らかの理由で破損する場合があります。書庫が破損しているかどうかを確認するには、<menuchoice><guimenu>書庫</guimenu><guimenuitem>整合性のテスト</guimenuitem></menuchoice>を選択します。：<itemizedlist>
+              <listitem>
+                <para>もし書庫にエラーが含まれていない場合は、<application>書庫マネージャ</application>は<guilabel>テスト結果</guilabel>ダイアログを開いて書庫内の各ファイルを表示し、各ファイルの状態が <literal>OK</literal> であることを示します。</para>
+              </listitem>
+              <listitem>
+                <para>もし書庫にエラーが含まれている場合には、<application>書庫マネージャ</application>は<guilabel>テスト結果</guilabel>ダイアログを開き、書庫の一部にエラーが含まれていることを表示します。</para>
+              </listitem>
+            </itemizedlist></para>
+    <para>破損した書庫は展開できない場合があるので、データが失われる可能性があります。このため、元のファイルを削除する前に書庫の整合性をテストする必要があります。</para>
+    <para>書庫に暗号化されたファイルが含まれている場合、<application>書庫マネージャ</application>はテストを実行する前に、書庫のパスワードを要求します。</para>
+    <note>
+      <para>すべての書庫形式が整合性テストに対応しているわけではありません。整合性テストが可能な書庫形式は次の一覧です。： 7-Zip、RAR、ZIP、ACE、ARJ、Zoo</para>
+    </note>
+    <tip><info><title>使い方のヒント</title></info>
+      
+      <para>整合性テストをサポートしていない書庫の整合性をテストするには、書庫からすべてのファイルを抽出し、操作が正常に完了することを確認します。</para>      
+    </tip>
+  </section>  
+</section>
+    
+<!-- ======= Customizing the Archive Display ============= --> 
+<section xml:id="engrampa-archive-custom"><info><title>書庫の表示をカスタマイズする</title></info>
+  
+  <para><application>書庫マネージャ</application>が書庫の内容を表示する仕方は、次のようにしてカスタマイズできます。</para>
+  <itemizedlist>
+    <listitem>
+      <para>フォルダビューとファイルビューを切り替えます。詳しくは<xref linkend="engrampa-view-type"/>をご覧ください。</para>
+    </listitem>
+    <listitem>
+      <para>リスト内のファイルを表示する順序を指定します。詳細は<xref linkend="engrampa-view-sort"/>をご覧ください。</para>
+    </listitem> 
+    <listitem>
+      <para>書庫の内容についての詳細情報を表示します。詳しくは<xref linkend="engrampa-extra-info"/>をご覧ください。</para>
+    </listitem> 
+  </itemizedlist>
+  <para>上記のいずれかのカスタマイズを行うと、<application>書庫マネージャ</application>は直ちに表示を更新します。</para>
+
+  <section xml:id="engrampa-view-type"><info><title>ビューのタイプを設定するには</title></info>
+    
+    <para>書庫にフォルダが含まれる場合は、<xref linkend="engrampa-view-type-folder"/>または<xref linkend="engrampa-view-type-file"/>のいずれかで書庫の内容を表示できます。</para>
+
+    <section xml:id="engrampa-view-type-folder"><info><title>フォルダビュー</title></info>
+      
+      <para><application>書庫のマネージャ</application>では、書庫の内容が標準でフォルダビューで表示されます。フォルダビューを明確に指定するには、<menuchoice><guimenu>表示</guimenu><guimenuitem>フォルダ形式で表示</guimenuitem></menuchoice>を選択します。</para>
+      <para>フォルダビューでは、<application>書庫マネージャ</application>はファイルマネージャがフォルダを表示するのと同じ方法でフォルダを表示します。つまり、<application>書庫マネージャ</application>は表示領域内のフォルダをフォルダアイコンとフォルダ名で示します。フォルダの内容を表示するには、フォルダ名をダブルクリックします。</para>
+      <para><application>書庫マネージャ</application>がフォルダビューにだけ表示するフォルダバーには、次の表に示すコンポーネントが含まれています。</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>コンポーネント</para></entry>
+              <entry colname="COLSPEC1">
+                <para>説明</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/engrampa_leftarrow.png" format="PNG"/> </imageobject> <textobject> <phrase>場所の履歴リスト内を逆方向に移動するためのアイコンを表示します。</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>場所履歴リスト内を逆方向に移動するには、このボタンをクリックします。</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/engrampa_rightarrow.png" format="PNG"/> </imageobject> <textobject> <phrase>場所履歴リスト内で前方に移動するためのアイコンが表示されます。</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>このボタンをクリックすると、場所履歴リスト内を順方向に移動できます。</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/engrampa_uparrow.png" format="PNG"/> </imageobject> <textobject> <phrase>フォルダツリー内で１つ上の階層へ移動するためのアイコンを表示します。</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>このボタンをクリックすると、フォルダツリー内で１つ上の階層へ移動します。</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/engrampa_home.png" format="PNG"/> </imageobject> <textobject> <phrase>アーカイブ内のルートフォルダを開くためのアイコンを表示します。</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>アーカイブ内のルートフォルダを開くには、このボタンをクリックします。</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><guilabel>場所</guilabel></para>
+              </entry>
+              <entry>
+                <para>この欄には、書庫内にある現在のフォルダのフルパス名が表示されます。</para>
+                <para>フォルダツリー内の別の階層へ変更するには、<guilabel>場所</guilabel>テキストボックスに新しい場所を入力し、<keycap>Return</keycap> キーを押します。新しい場所の内容が<application>書庫マネージャ</application>に表示されます。</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
+
+    <section xml:id="engrampa-view-type-file"><info><title>ファイルビュー</title></info>
+      
+      <para>ファイルビューを選択するには、<menuchoice><guimenu>表示</guimenu><guimenuitem>全ファイルの一覧表示</guimenuitem></menuchoice>を選択します。</para>
+      <para>ファイルビューでは、<application>書庫マネージャ</application>はアーカイブ内のすべてのファイルを１個のリストで表示します。これにはサブフォルダのファイルも含みます。</para>
+    </section>
+
+  </section>
+
+  <section xml:id="engrampa-view-sort"><info><title>ファイル一覧を並び替えるには</title></info>
+    
+    <para>ファイル一覧は、名前、サイズ、種類、更新日時、場所の別で並べ替えることができます。</para>
+    <para>並び替え順を指定するには、対応する列の見出しをクリックします。</para>
+    <para>並び替えを逆順にするには、列見出しをもう一度クリックします。</para>
+    <para>たとえば、ファイル・リストを更新日時で並び替えるには、<guilabel>変更日時</guilabel>という見出しをクリックします。書庫マネージャは、ファイルリストを更新日で並び替え、最も古いものから順にファイルが表示されます。最も新しい更新順にファイルを表示するには、<guilabel>変更日時</guilabel>という見出しを再びクリックします。</para>
+    <para><application>書庫マネージャ</application>では、常にファイル名に基づいて二次的な並び替えが実行されます。前述の例では、<application>書庫マネージャ</application>は同じ変更日時を持つファイルを名前で並び替えます。</para>
+  </section>
+
+  <section xml:id="engrampa-extra-info"><info><title>さらに詳細を表示するには</title></info>
+    
+      <para><guilabel>最後の出力</guilabel>ダイアログを開くには、<menuchoice><guimenu>表示</guimenu><guimenuitem>最後の出力</guimenuitem></menuchoice>を選択します: <itemizedlist>
+              <listitem>
+                <para>現在の<application>書庫マネージャ</application>セッションで書庫をテストした場合、<guilabel>最後の出力</guilabel>ダイアログには直近のテストの結果が表示されます。</para>
+              </listitem>
+              <listitem>
+                <para>現在の<application>書庫マネージャ</application>セッションで書庫をテストしなかった場合、<guilabel>最後の出力</guilabel>ダイアログには書庫内のすべてのファイルのリストが表示されますが、ファイルのステータスは表示されません。代わりに、<guilabel>最後の出力</guilabel>ダイアログには各ファイルの圧縮サイズ、圧縮の割合、およびファイルが最後に更新された日時が表示されます。</para>
+              </listitem>
+            </itemizedlist></para>
+  </section>
+</section>
+
+<!-- ====== Using the File Manager Popup Menu to Manipulate an Archive ===== -->
+
+<section xml:id="engrampa-fmgr"><info><title>ファイルマネージャを利用して書庫を操作する</title></info> 
+     
+    <para>ファイルマネージャを利用して、書庫にファイルを追加したり、書庫からファイルを展開したりできます。</para>
+
+<!-- ======= Adding files Using File Manager Menu  ============= --> 
+    <section xml:id="engrampa-fmgr-add"><info><title>ファイルマネージャを利用して書庫にファイルを追加するには</title></info>
+      
+           <para>ファイルマネージャを利用して、次の方法で書庫にファイルを追加できます。<itemizedlist>
+             <listitem><para>ファイルマネージャ・ウィンドウから<application>書庫マネージャ</application>・ウィンドウへファイルをドラッグします。</para>
+             </listitem>
+             <listitem><para>ファイルマネージャのポップアップメニューを利用して、ファイルを書庫に追加します。</para>
+             </listitem>
+          </itemizedlist></para>
+      <para>ファイルマネージャのポップアップメニューを利用して書庫にファイルを追加するには、次の手順を実行します。</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>ファイルマネージャ・ウィンドウで、ファイルまたはフォルダを右クリックします。</para>
+        </listitem>
+        <listitem><para>ファイルマネージャのポップアップメニューから<guimenuitem>圧縮</guimenuitem>を選択して、<application>書庫マネージャ</application><guilabel>圧縮</guilabel>ダイアログボックスを表示します。</para>
+        </listitem>
+        <listitem><para><guilabel>ファイル名</guilabel>テキスト・ボックスに、拡張子を付けずに書庫名を入力します。</para>
+        </listitem>
+        <listitem><para>ドロップダウンリストから、書庫の形式を選択します。</para>
+        </listitem>
+        <listitem><para>圧縮ファイルを保存する場所を<guilabel>場所</guilabel>ドロップダウンリストから選択します。目的の場所がそのリストにない場合は、<guilabel>その他...</guilabel>を選択して<guilabel>場所</guilabel>ダイアログ・ボックスの中から選択します。</para>
+        </listitem>
+        <listitem><para><guilabel>その他のオプション</guilabel>をクリックして、必要な作成オプションを選択します。作成オプションの詳細については、<xref linkend="engrampa-create-options"/>を参照してください。</para>
+        </listitem>
+        <listitem><para><guilabel>作成</guilabel>をクリックすると、選択したファイルを指定した書庫のルートフォルダへ追加します。</para>
+                 <note><para>高度な追加オプションを選択するには、<xref linkend="engrampa-to-start"/>の説明に沿って<application>書庫マネージャ</application>を起動する必要があります。</para></note>
+        </listitem>
+      </orderedlist>
+    </section>
+
+<!-- ======= Extracting files Using File Manager Menu  ============= --> 
+  <section xml:id="engrampa-fmgr-extract"><info><title>ファイルマネージャを利用して書庫からファイルを展開するには</title></info>
+      
+           <para>ファイルマネージャを使用すると、次の方法で書庫からファイルを展開できます。<itemizedlist>
+             <listitem><para><application>書庫マネージャ</application>・ウィンドウから、ファイルをファイルマネージャ・ウィンドウへドラッグします。</para>
+             </listitem>
+             <listitem><para>ファイルマネージャのポップアップメニューを利用して、ファイルを書庫から展開します。</para>
+             </listitem>
+          </itemizedlist></para>
+      <para>ファイルマネージャのポップアップメニューを利用して書庫からファイルを展開するには、次の手順を実行します。</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>ファイルマネージャ・ウィンドウで、書庫を右クリックします。</para>
+        </listitem>
+        <listitem><para><guimenuitem>ここに展開する</guimenuitem>を選択すると、書庫の内容がすべてその書庫のあるディレクトリに展開されます。</para>
+        </listitem>
+      </orderedlist>
+      <note><para>書庫が暗号化されている場合、<application>書庫マネージャ</application>はファイルを展開する前にパスワードの入力を要求します。</para></note>
+    </section>
+
+</section>
+
+<!-- ======= Create Archive Advanced Options  ============= --> 
+    <section xml:id="engrampa-create-options"><info><title>オプションを作成する</title></info>
+      
+      <para>新しい書庫を作成する場合、または既存の書庫を別の形式に変換する場合は、<guilabel>その他のオプション</guilabel>をクリックして、次の詳細オプションを指定します。</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>パスワード</guilabel></term>
+	  <listitem>
+	  <para>書庫の暗号化に使用するパスワードを入力します。パスワードを指定しない場合、書庫は暗号化されません。</para>
+	  <note>
+	    <para>すべての書庫形式が暗号化に対応しているわけではありません。ファイル暗号化についての詳細は、<xref linkend="engrampa-encrypt-files"/>を参照してください。</para>
+	  </note>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>	  
+	  <term><guilabel>ファイルの一覧も暗号化する</guilabel></term>
+	  <listitem>
+	  <para>このオプションを選択すると、書庫に含まれるファイル一覧を表示する場合にもパスワードが要求されます。それ以外の場合は、書庫からファイルを展開するときだけ要求されます。このオプションは、パスワードが指定されている場合にのみ使用可能です。</para>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>	  
+	  <term><guilabel>次の容量で分割する</guilabel></term>
+	  <listitem>
+	  <para>指定した範囲内で書庫を複数のファイルに分割するには、このオプションを選択します。</para>
+	  <note>
+	    <para>この機能に対応しているのは、7-Zip および RAR アーカイブだけです。</para>
+	  </note>
+	  </listitem>
+	</varlistentry>
+      </variablelist>
+    </section>
+
+<!-- ======= Add Advanced Options  ============= --> 
+    <section xml:id="engrampa-add-options"><info><title>オプションを追加する</title></info>
+      
+      <para><guilabel>ファイルの追加</guilabel>と<guilabel>フォルダの追加</guilabel>ダイアログには、次のオプションがあります。</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>新しい場合にのみ追加</guilabel></term>
+	  <listitem>
+            <para>このオプションを選択すると、書庫に指定したファイルが含まれていない場合、または書庫に指定したファイルの古いバージョンが含まれている場合にだけ、その指定したファイルを書庫に追加します。<application>書庫マネージャ</application>は、更新日時を利用して、どのファイルが最新であるかを判断します。書庫内のファイルのバージョンが最新である場合には、<application>書庫マネージャ</application>は指定のファイルを書庫に追加しません。</para>
+	    <para>このオプションを選択しない場合には、<application>書庫マネージャ</application>はファイルをアーカイブに追加し、以前の書庫の内容を上書きします。</para>
+	    <tip><info><title>使い方のヒント</title></info>
+	      
+	      <para><application>書庫マネージャ</application>を使用してバックアップを作成する場合は、<guilabel>Add only if newer</guilabel> オプションが非常に便利です。たとえば、書庫 <filename>backup.tar.gz</filename> には、ホームフォルダの1週間前のバックアップが含まれています。ホームフォルダの現在のバックアップを含める目的で書庫を更新するには、次の手順を実行します。<orderedlist inheritnum="ignore" continuation="restarts">
+                      <listitem>
+                        <para><application>書庫マネージャ</application>で <filename>backup.tar.gz</filename> アーカイブを開きます。</para>
+                      </listitem>
+                      <listitem>
+                        <para><menuchoice><guimenu>編集</guimenu> <guimenuitem>追加</guimenuitem></menuchoice>を選択し、<guilabel>フォルダの追加</guilabel>ダイアログを表示します。</para> 
+                      </listitem>
+                      <listitem>
+                        <para>ホーム・フォルダを選択する</para>
+                      </listitem>
+                      <listitem>
+                        <para><guilabel>新しい場合にのみ追加</guilabel>オプションを選択します。</para>
+                      </listitem>
+                      <listitem>
+                        <para><guibutton>追加</guibutton>をクリックします。</para>
+                      </listitem>
+                    </orderedlist></para>
+                <para><application>書庫マネージャ</application>では、前の週に作成した全ファイルが自動的に書庫に追加され、前の週に変更した全ファイルが更新されます。ただし、<application>書庫マネージャ</application>では、前の週に削除したファイルは書庫から削除されません。書庫の更新操作は、ホームフォルダの全アップよりもはるかに高速です。</para>
+	  </tip>
+	</listitem>
+      </varlistentry>
+      </variablelist>
+      <section xml:id="engrampa-add-folder-options"><info><title>フォルダオプションへ追加する</title></info>
+      
+      <para><guilabel>フォルダの追加</guilabel>ダイアログボックスでは、次のオプションを使用できます。このオプションを使用すると、特定の条件を満たすような全ファイルを自動的に選択して追加できます。</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>含めるファイル</guilabel></term>
+	  <listitem>
+            <para>このテキストボックスにファイル名パターンを入力すると、指定したパターンに一致する名前のファイルを含めることができます。ファイル名パターンの詳細は、<xref linkend="engrampa-pattern"/>を参照してください。</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>除外するファイル</guilabel></term>
+	  <listitem>
+            <para>このテキストボックスにファイル名パターンを入力すると、指定したパターンに一致する名前のファイルが除外されます。ファイル名パターンの詳細は、<xref linkend="engrampa-pattern"/>を参照してください。</para>
+          </listitem>
+	</varlistentry>
+        <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>除外するフォルダ</guilabel></term>
+	  <listitem>
+            <para>このテキストボックスにファイル名パターンを入力すると、指定したパターンに一致する名前のフォルダが除外されます。ファイル名パターンの詳細は、<xref linkend="engrampa-pattern"/>を参照してください。</para>
+          </listitem>
+	</varlistentry>      
+       <!-- ============= -->	
+      <varlistentry>
+	<term><guilabel>含めるサブフォルダ</guilabel></term>
+	<listitem>
+          <para>このオプションを選択すると、現在のフォルダおよびサブフォルダから、指定したパターンに一致するすべてのファイルを追加します。</para>
+          <note>
+          <para>ファイル名はサブフォルダ名とは異なって、指定したパターンと一致している必要があります。</para>
+          </note>
+	  <para>もしこのオプションを選択しない場合、<application>書庫マネージャ</application>は現在のフォルダ内で一致するファイルだけを追加します。</para>
+        </listitem>
+      </varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guilabel>フォルダがシンボリックリンクの場合は除く</guilabel></term>
+	  <listitem>
+            <para>このオプションを選択すると、フォルダからシンボリックリンクであるファイルを除外します。シンボリックリンクとは、他のフォルダへのポインタまたはショートカットです。</para>
+	    <para>もしこのオプションを選択しない場合、<application>書庫マネージャ</application>はフォルダからシンボリックリンクと一致するファイルも追加します。</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->
+     <varlistentry>
+	<term><guibutton>オプションを保存する</guibutton></term>
+	  <listitem>
+            <para>このボタンをクリックすると、現在選択している追加の拡張オプションをファイルへ保存します。<guilabel>オプションの保存</guilabel>ダイアログボックスが表示されます。<guilabel>オプション名</guilabel>テキスト・ボックスに分かりやすいファイル名を入力し、<guibutton>保存</guibutton>をクリックします。</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guibutton>起動オプション</guibutton></term>
+	  <listitem>
+            <para>このボタンをクリックすると、追加の拡張オプション選択をロードまたは削除できます。<guilabel>起動オプション</guilabel>ダイアログが表示されます。</para>
+            <itemizedlist>
+              <listitem>
+                <para>オプションのセットを開始するには、リストボックスでオプションファイルを選択し、<guibutton>を適用する</guibutton>をクリックします。</para>
+              </listitem>
+              <listitem>
+                <para>オプションのセットを削除するには、リストボックスでオプションファイルを選択し、<guibutton>削除</guibutton>をクリックします。<guibutton>閉じる</guibutton>をクリックして<guilabel>起動オプション</guilabel>ダイアログを閉じます。</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guibutton>オプションをリセットする</guibutton></term>
+	  <listitem>
+            <para>このボタンをクリックすると、現在選択されている追加の拡張オプションが既定値にリセットされます。</para>
+          </listitem>
+	</varlistentry>
+      </variablelist>
+    </section>
+  </section>
+
+<!-- ======= Extract Options  ============= --> 
+  <section xml:id="engrampa-extract-options"><info><title>展開オプション</title></info>
+    
+      
+    <para><guilabel>展開</guilabel>ダイアログには、次のオプションがあります。これは、<application>書庫マネージャ</application>を終了したときに保存されます。</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>展開</guilabel></term>
+	  <listitem>
+            <para>展開するファイルを選択します。</para>
+            <variablelist>
+              <varlistentry>
+                <term><guilabel>すべてのファイル</guilabel></term>
+                <listitem>
+                  <para>書庫からすべてのファイルを展開します。</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term><guilabel>選択したファイル</guilabel></term>
+                <listitem>
+                  <para>書庫から選択したファイルだけを展開します。</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term><guilabel>ファイル</guilabel></term>
+                <listitem>
+                  <para>指定したパターンに一致するすべてのファイルを書庫から展開します。ファイル名のパターンに関する詳細は、<xref linkend="engrampa-pattern"/>を参照してください。</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+	  </listitem>
+	</varlistentry>
+	<!-- ============= -->	
+	<varlistentry>
+      <term><guilabel>オプション</guilabel></term>
+        <listitem>
+          <para>次の中から展開オプションを選択します。</para>	
+          <variablelist>
+	        <varlistentry>
+	          <term><guilabel>フォルダを再作成する</guilabel></term>
+	          <listitem><para>指定したファイルを展開するとき、フォルダ構造を再構築するには、このオプションを選択します。</para> 
+                <para>たとえば、<guilabel>ファイル名</guilabel>テキスト・ボックスで <filename>/tmp</filename> を指定し、すべてのファイルを展開するように選択します。書庫には <filename>doc</filename> というサブフォルダが含まれます。<itemizedlist>
+                  <listitem><para><guilabel>フォルダを再作成する</guilabel>オプションを選択すると、<application>書庫マネージャ</application>はサブフォルダの内容を /tmp/doc へ展開します。</para>
+                 </listitem>
+                 <listitem><para><guilabel>フォルダを再作成する</guilabel>オプションを選択しない場合、<application>書庫マネージャ</application>はサブフォルダを作成しません。代わりに、<application>書庫マネージャ</application>は、サブフォルダのファイルを含む全ファイルを書庫から <filename>/tmp</filename> に展開します。</para>
+                 </listitem>
+               </itemizedlist></para></listitem>
+	         </varlistentry>
+             <!-- ============= -->	
+	         <varlistentry>
+	           <term><guilabel>既存のファイルに上書きする</guilabel></term>
+	           <listitem><para>このオプションを選択すると、展開先において指定したファイルと同じ名前を持つフォルダ内のファイルが上書きされます。</para>
+	             <para>もしこのオプションを選択しないときは、同じ名前の既存のファイルが保存先フォルダにあった場合、<application>書庫マネージャ</application>は指定されたファイルを展開しません。</para>
+	           </listitem>
+	         </varlistentry>
+             <!-- ============= -->	
+	         <varlistentry>
+	           <term><guilabel>古いファイルは展開しない</guilabel></term>
+	           <listitem>
+	             <para>このオプションは、<guilabel>既存のファイルに上書きする</guilabel>オプションが選択されている場合にのみ有効です。</para>
+	             <para><guilabel>古いファイルは展開しない</guilabel>オプションは、展開先のフォルダに指定したファイルが含まれていない場合、または指定したファイルより古いバージョンが含まれている場合にのみ、選択してください。<application>書庫マネージャ</application>は、更新日時を利用してどのファイルが最新であるかを判別します。書庫内のファイルのバージョンが古い場合、<application>書庫マネージャ</application>は指定したファイルを展開予定のフォルダへ展開しません。</para>
+	             <para><guilabel>既存ファイルに上書きする</guilabel>オプションが選択されているとき、<guilabel>古いファイルは展開しない</guilabel>オプションを選択しなかった場合、<application>書庫マネージャ</application>は指定されたファイルを書庫から展開して、保存先フォルダの以前の内容を上書きします。</para>
+	           </listitem>
+	         </varlistentry>
+	       </variablelist>
+	     </listitem>
+	   </varlistentry>
+     </variablelist>	
+  </section>
+</article>

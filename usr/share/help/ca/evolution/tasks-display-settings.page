@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="tasks-display-settings" xml:lang="ca">
+
+  <info>
+    <desc>Opcions per a mostrar la finalització de la tasca i les dates de venciment.</desc>
+    
+    <link type="guide" xref="index#memos-and-tasks"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-08-24" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/config-prefs-cal.html.en#bshpsxa -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Visualització de tasques</title>
+
+<!-- TODO:POST-3-8: Just listing the partially busted UI options (also see calendar-layout-appointment-display) here is very poor and not task-oriented, but that's it for the time being. Better ideas welcome. -->
+
+<p>Les següents opcions relacionades amb la tasca estan disponibles a <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Calendari i tasques</gui><gui>Tasques</gui></guiseq>.</p>
+
+<list>
+<item><p>Tasques per avui:</p>
+<p>Seleccioneu el color de les tasques per avui.</p></item>
+<item><p>Tasques vençudes:</p>
+<p>Seleccioneu el color per a tasques vençudes.</p></item>
+<item><p>Amaga les tasques completades després de:</p>
+<p>Seleccioneu aquesta opció per a ocultar les tasques completades després d'un període de temps mesurat en dies, hores o minuts. Si no seleccioneu aquesta opció, les tasques acabades es mantenen a la vostra llista de tasques, marcades com a completes.</p></item>
+</list>
+
+</page>

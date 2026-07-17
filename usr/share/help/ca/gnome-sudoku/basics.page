@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="basics" xml:lang="ca">
+  <info>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+    <link type="guide" xref="index#play"/>
+    <credit type="author copyright">
+      <name>Chris Beiser</name>
+      <email>ctbeiser@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2019</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Instruccions</title>
+<p>Es pot jugar al Sudoku amb el teclat, el ratolí o qualsevol combinació d'aquestes eines.</p>
+
+<section id="keyboard">
+<title>Utilització del teclat</title>
+<list>
+  <item><p>Per a seleccionar una cel·la, utilitzeu les tecles de les fletxes per a ficar-hi el contorn blau a dins.</p></item>
+  <item><p>Per a ficar un número en una cel·la, seleccioneu la cel·la i, a continuació, premeu el número.</p></item>
+  <item><p>Per a treure un número d'una cel·la, seleccioneu la cel·la i, a continuació, premeu la tecla de <key>Supr</key>, la de <key>Retrocés</key> o la <key>0</key>.</p></item>
+</list>
+</section>
+
+
+<section id="mouse">
+<title>Utilització del ratolí</title>
+<list>
+	<item><p>Per a seleccionar una cel·la, passeu-hi el ratolí per sobre i feu clic.</p></item>
+	<item><p>Per a posar un número en una cel·la seleccionada, feu clic al centre de la cel·la i, a continuació, feu clic al número que hi vulgueu introduir.</p></item>
+	<item><p>Per a treure un número d'una cel·la seleccionada, feu clic al centre de la cel·la i, a continuació, feu clic a <gui>Neteja</gui>.</p></item>
+</list>
+</section>
+</page>

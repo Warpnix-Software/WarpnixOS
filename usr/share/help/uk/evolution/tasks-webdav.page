@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="tasks-webdav" xml:lang="uk">
+
+  <info>
+    <desc>Користування списком завдань або списком приміток HTTP у мережі.</desc>
+    
+    <link type="guide" xref="tasks-using-several-tasklists"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Користування списками завдань або приміток HTTP</title>
+
+<p>Списки цього типу є придатними лише до читання.</p>
+
+<p>Щоб додати такий список завдань або список приміток до <app>Evolution</app>, виконайте такі дії:</p>
+<steps>
+<item><p>Виберіть пункт меню <guiseq><gui>Файл</gui><gui>Створити</gui><gui>Список завдань</gui></guiseq> або <guiseq><gui>Файл</gui><gui>Створити</gui><gui>Список приміток</gui></guiseq>.</p></item>
+<item><p>Виберіть тип <gui>У інтернеті</gui>.</p></item>
+<item><p>Введіть бажану для вас назву.</p></item>
+<item><p>Якщо хочете, виберіть бажаний колір.</p></item>
+<item><p>Виберіть, чи хочете ви мати можливість переглядати дані у автономному режимі.</p></item>
+<item><p>Введіть адресу у поле <gui>URL</gui>.</p></item>
+<item><p>Виберіть <gui>Використовувати безпечне з'єднання</gui>, якщо ви хочете захистити з'єднання.</p></item>
+<item><p>Введіть ваше ім'я користувача.</p></item>
+<item><p>Натисніть кнопку <gui style="button">Гаразд</gui>.</p></item>
+</steps>
+
+<p>Список буде додано до <app>Evolution</app>.</p>
+
+</page>

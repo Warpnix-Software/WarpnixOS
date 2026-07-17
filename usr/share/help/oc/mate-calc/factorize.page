@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="factorize" xml:lang="oc">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yannig Marchegay (Kokoyaya) &lt;yannig@marchegay.org&gt; &amp; Cédric Valmary (totenoc.eu)</mal:name>
+      <mal:email>cvalmary@yahoo.fr</mal:email>
+      <mal:years>Quentin PAGÈS</mal:years>
+    </mal:credit>
+  </info>
+
+	<title>Factorization</title>
+
+    <p>
+    You can factorize the number currently displayed by pressing <keyseq><key>Ctrl</key><key>F</key></keyseq> or by pressing the <gui>fact</gui> button.
+    This button is visible in <link xref="mouse">programming mode</link>.
+    </p>
+    <p>
+    To factorize integers bigger than 2^64 the Miller-Rabin primality test and Pollard's rho algorithm are used.
+    </p>
+</page>

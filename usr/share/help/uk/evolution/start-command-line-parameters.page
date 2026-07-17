@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="start-command-line-parameters" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="index#common-other-problems"/>
+
+    <revision pkgversion="3.39.0" version="0.1" date="2020-10-29" status="draft"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Як наказати Evolution показувати певне вікно або теку після запуску програми.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<!-- TODO: Update page with https://gitlab.gnome.org/GNOME/evolution/-/issues/1176#note_946174 -->
+
+  <title>Визначення того, що буде показано після запуску <app>Evolution</app></title>
+
+  <p>Після запуску <app>Evolution</app> відкриває записану програмою останню панель перегляду, якою ви користувалися.</p>
+
+  <p>Щоб наказати <app>Evolution</app> показати щось інше після запуску програми, вам слід запустити програму з програми <app>Термінал</app> і передати їй вказані параметри.</p>
+
+  <section id="tools">
+    <title>Вікна</title>
+
+    <p its:locNote="TO TRANSLATORS: Do NOT translate 'component' here!">Щоб запустити <app>Evolution</app> із відкритою певною панеллю перегляду, передайте програмі параметр «component».</p>
+
+    <p>Приклади:</p>
+    <list>
+      <item><p><cmd its:translate="no">evolution --component=calendar</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution --component=contacts</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution --component=mail</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution --component=memos</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution --component=tasks</cmd></p></item>
+    </list>
+  </section>
+
+  <section id="mail-folders">
+    <title>Теки електронної пошти</title>
+
+    <!-- Introduced in https://gitlab.gnome.org/GNOME/evolution/-/issues/1176 : -->
+    <p its:locNote="TO TRANSLATORS: Do NOT translate 'folder' here!">Що наказати <app>Evolution</app> відкрити певну теку із поштою, передайте програмі параметр «folder».</p>
+
+    <p>Приклади:</p>
+    <list>
+      <item><p><cmd its:translate="no">evolution "folder:On This Computer/Inbox"</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution folder:On%20This%20Computer/Inbox</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution folder://local/Inbox</cmd></p></item>
+    </list>
+  </section>
+
+  <section id="mail-composer">
+    <title>Редактор повідомлень</title>
+
+    <p its:locNote="TO TRANSLATORS: Do NOT translate 'folder' here!">Щоб наказати <app>Evolution</app> відкрити вікно редактора поштових повідомлень із деякими наперед визначеними значеннями і даними:</p>
+
+    <p>Приклади:</p>
+    <list>
+      <item><p><cmd its:translate="no">evolution mailto:recipient@example.com?cc=cc@example.com\&amp;subject=Your\ subject\ line\&amp;body=Message\ content\&amp;attach=/home/user/file</cmd></p></item>
+    </list>
+  </section>
+
+</page>

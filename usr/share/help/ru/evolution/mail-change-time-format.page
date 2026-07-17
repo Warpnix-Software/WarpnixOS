@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-change-time-format" xml:lang="ru">
+
+  <info>
+    <desc>Изменение форматы даты и времени в списке сообщений.</desc>
+    <link type="guide" xref="mail-layout-changing"/>
+
+    <revision pkgversion="2.32.2" version="0.3" date="2012-02-18" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Формат даты и времени</title>
+<p>Чтобы изменить формат столбца <gui>Дата</gui>, выполните необходимую настройку в разделе <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Настройки почты</gui><gui>Заголовки</gui><gui>Формат даты и времени</gui></guiseq>.</p>
+<p>Знаки подстановки в выражении формата — это записи формата strftime. Чтобы ознакомиться с полным перечнем всех доступных форматов strftime, выполните команду <cmd>date --help</cmd> в программе <app>Терминал</app>.</p>
+<!-- TODO: Time formats settings for Calendar (calendar-layout-appointment-display), Contacts (Edit>Prefs>Contacts) are split everywhere, probably introduce a guide page linking to these three pages -->
+</page>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:e="http://projectmallard.org/experimental/" xmlns:if="http://projectmallard.org/if/1.0/" type="topic" id="mail-composer-spellcheck" xml:lang="ca">
+
+  <info>
+    <desc>En verificació ortogràfica del vostre correu a l'editor.</desc>
+    
+    <link type="guide" xref="index#mail-composing"/>
+
+    <revision pkgversion="3.20.5" version="0.7" date="2016-11-21" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Verificació de l'ortografia</title>
+
+<!-- Instructions are only valid from Evolution 2.24 on -->
+
+<section id="required-packages">
+<title>Prerequisits</title>
+<p>Per a fer servir la correcció ortogràfica dels correus electrònics que escriviu, primer heu d'assegurar-vos que els paquets <sys>hunspell</sys> i <sys>enchant</sys> estan instal·lats pel vostre llenguatge a través de l'eina de gestió de programari de la vostra distribució.</p>
+
+<note style="info package">
+  <p>Pot ser que hàgiu d'instal·lar <sys>hunspell</sys> i/o <sys>enchant</sys> per a dur a terme aquests passos.</p>
+  <if:choose>
+    <if:when test="action:install">
+      <p><link action="install:hunspell" href="http://hunspell.sourceforge.net/" style="button">Instal·la hunspell</link></p>
+      <p><link action="install:enchant" href="http://www.abisource.com/projects/enchant/" style="button">Instal·la enchant</link></p>
+    </if:when>
+  </if:choose>
+</note>
+</section>
+
+<section id="global-preferences">
+<title>Preferències globals</title>
+
+<p>A <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Preferències per l'editor</gui><gui>Comprovació ortogràfica</gui><gui>Opcions</gui></guiseq> podeu definir si la correcció ortogràfica activada mentre escriviu.</p>
+
+<p>També podeu definir quins dels idiomes instal·lats s'utilitzen per a comprovar l'ortografia a la llista que està disponible a <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Preferències del redactor</gui><gui>Comprovació ortogràfica</gui><gui>Idiomes</gui></guiseq> o a l'editor de correu electrònic via <guiseq><gui>Edita</gui><gui>Idioma actual</gui></guiseq>.</p>
+</section>
+
+<section id="composer">
+<title>Verificació ortogràfica manual a l'editor</title>
+<p>Si no necessita tenir activat <gui>Comprova l'ortografia mentre escric</gui> a <link xref="#global-preferences">Preferències del redactor</link> pot executar la comprovació d'ortografia des de l'editor fent clic a <guiseq><gui>Edita</gui><gui>Comprovació ortogràfica…</gui></guiseq> o prement <key>F7</key>.</p>
+</section>
+
+</page>

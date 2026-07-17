@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-cannot-see" xml:lang="fr">
+
+  <info>
+    <desc>Si vous avez reçu ou envoyé un courriel mais que vous ne le trouvez nulle part.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="3.31.5" version="0.5" date="2019-01-18" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Phil Bull</name>
+      <email its:translate="no">philbull@gmail.com</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marc Lorber</mal:name>
+      <mal:email>Linux-Lorber@club-internet.fr</mal:email>
+      <mal:years>2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jonathan Ernst</mal:name>
+      <mal:email>jonathan@ernstfamily.ch</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alexandre Franke</mal:name>
+      <mal:email>alexandre.franke@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012 </mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervan@gmail.com</mal:email>
+      <mal:years>2013-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yvan Masson</mal:name>
+      <mal:email>yvan@masson-informatique.fr</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Charles Monzat</mal:name>
+      <mal:email>charles.monzat@free.fr</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>vanadiae</mal:name>
+      <mal:email>vanadiae35@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Guillaume Bernard</mal:name>
+      <mal:email>associations@guillaume-bernard.fr</mal:email>
+      <mal:years>2021-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jean-Marc Tissières</mal:name>
+      <mal:email>jmetissieres@gmail.com</mal:email>
+      <mal:years>2022</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Je ne peux pas voir certains courriels, où sont-ils ?</title>
+
+<list>
+ <item>
+  <p>Vérifiez si vous <link xref="mail-filters-not-working">utilisez des filtres</link> sur les messages entrants (ou sortants). Ceux-ci pourraient déplacer automatiquement vos messages vers une autre destination.</p>
+ </item>
+ <item>
+  <p>Contrôlez votre <link xref="mail-searching#search-many">champ de recherche dans la barre de recherche</link> juste au-dessus de la liste des messages. Peut-être que la liste déroulante <gui>Afficher</gui> est paramétrée sur <gui>Messages lus</gui> ou le champ de saisie de texte contient quelque chose. Cliquez sur l’icône de balai pour effacer le champ de recherche.</p>
+ </item>
+ <item>
+  <p>Si vous ne voyez aucun message dans un dossier, vérifiez que vous n’avez pas maximisé le panneau d’aperçu des messages (de sorte que le panneau de la liste des messages est masqué). Pour cela, cliquez sur <guiseq><gui>Affichage</gui><gui>Aperçu</gui><gui>Afficher l’aperçu du message</gui></guiseq>.</p>
+ </item>
+ <item>
+  <p>Cliquez sur <guiseq><gui>Affichage</gui><gui>Afficher les messages supprimés</gui></guiseq> et <guiseq><gui>Affichage</gui><gui>Afficher les messages pourriels</gui></guiseq> pour vous assurer que tous les messages sont visibles.</p>
+ </item>
+ <item>
+  <p><link xref="mail-default-folder-locations">Vérifiez vos configurations de dossier.</link> Ils sont peut-être paramétrés dans un autre dossier que celui auquel vous pensez.</p>
+ </item>
+</list>
+
+</page>

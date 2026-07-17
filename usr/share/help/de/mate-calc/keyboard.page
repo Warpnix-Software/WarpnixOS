@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="keyboard" xml:lang="de">
+
+    <info>
+        <link type="guide" xref="index#ui"/>
+    </info>
+
+	<title>Arbeiten mit der Tastatur</title>
+
+    <p>Alle mathematischen Terme können mit der Tastatur eingegeben werden.</p>
+    <p>Die folgenden Tastenkombinationen können für Zeichen verwendet werden, die gewöhnlich auf der Tastatur nicht vorhanden sind.</p>
+    <table>
+    <tr>
+    <td><p>× </p></td>
+    <td><p><key>*</key> </p></td>
+    </tr>
+    <tr>
+    <td><p>÷ 
+ </p></td>
+    <td><p><key>/</key> </p></td>
+    </tr>
+    <tr>
+    <td><p>^</p></td>
+    <td><p><key>*</key>  doppelt</p></td>
+    </tr>
+    <tr>
+    <td><p>√ </p></td>
+    <td><p><keyseq><key>Ctrl</key><key>R</key></keyseq> </p></td>
+    </tr>
+    <tr>
+    <td><p>π </p></td>
+    <td><p><keyseq><key>Ctrl</key><key>P</key></keyseq> </p></td>
+    </tr>
+    </table>
+    <p>Zur Eingabe von <link xref="superscript">hochgestellten Zahlen</link> verwende die Tastenkombination <keyseq><key>Ctrl</key>number</keyseq>, für tiefgestellte  <keyseq><key>Alt</key>number</keyseq>. </p>
+    <p>
+    When in <link xref="mouse">programming mode</link>, to cycle between base digits use:
+    </p>
+    <table>
+    <tr>
+    <td><p>Binär</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>B</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>Oktal</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>O</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>Dezimal</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>D</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>Hexadezimal</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>H</key></keyseq></p></td>
+    </tr>
+    </table>
+    <p>
+    To cycle between history entries you may use:
+    </p>
+    <table>
+    <tr>
+    <td><p>Previous Entry</p></td>
+    <td><p><keyseq><key>Alt</key><key>Up</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>Next Entry</p></td>
+    <td><p><keyseq><key>Alt</key><key>Down</key></keyseq></p></td>
+    </tr>
+    </table>
+</page>

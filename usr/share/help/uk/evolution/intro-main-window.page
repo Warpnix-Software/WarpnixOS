@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="intro-main-window" xml:lang="uk">
+
+  <info>
+    <desc>Пояснення щодо областей вікна <app>Evolution</app>.</desc>
+
+    <link type="guide" xref="index#getting-started"/>
+    <link type="seealso" xref="calendar-layout"/>
+    <link type="seealso" xref="mail-layout-changing"/>
+
+    <revision pkgversion="3.28.2" version="0.9" date="2018-07-09" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Barbara M. Tobias</name>
+      <email its:translate="no">barbtobias09@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/ui-intro.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Головне вікно <app>Evolution</app></title>
+
+<p>У <app>Evolution</app> передбачено функціональні можливості для керування електронною поштою, календарями, записами контактів, записами завдань та примітками. Перемкнутися на панелі керування можна за допомогою кнопок-перемикачів у нижньому лівому куті вікна програми. Перелік кнопок-перемикачів залежить від поточної показаної панелі перегляду.</p>
+
+<section id="e-mail">
+<title>Пошта</title>
+
+<media type="image" src="./figures/window-overview-layers.png" width="800">
+  <p>Головне вікно роботи поштою в <app>Evolution</app></p>
+</media>
+
+<p>Елементи головного вікна роботи з поштою:</p>
+<table frame="all" rules="all">
+  <tr>
+    <td colspan="3"><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-c4a000.png" width="10"/> Рядок меню</p></td>
+  </tr>
+  <tr>
+    <td colspan="3"><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-ce5c00.png" width="10"/> Панель інструментів</p></td>
+  </tr>
+  <tr>
+    <td rowspan="3"><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-8f5902.png" width="10"/> Список тек</p></td>
+    <td colspan="2"><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-4e9a06.png" width="10"/> Панель пошуку</p></td>
+  </tr>
+  <tr>
+    <td><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-204a87.png" width="10"/> Список повідомлень</p></td>
+    <td rowspan="3"><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-a40000.png" width="10"/> Панель «Зробити»</p></td>
+  </tr>
+  <tr>
+    <td rowspan="2"><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-5c3566.png" width="10"/> Панель попереднього перегляду</p></td>
+  </tr>
+  <tr>
+    <td><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-a40000.png" width="10"/> Перемикач</p></td>
+  </tr>
+  <tr>
+    <td colspan="3"><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-2e3436.png" width="10"/> Смужка стану</p></td>
+  </tr>
+</table>
+
+<terms>
+<item>
+<title>Список тек</title>
+<p>На панелі списку тек буде показано список доступних тек для кожного з облікових записів. Щоб переглянути вміст теки, клацніть на пункті із назвою теки — вміст теки буде показано на панелі списку повідомлень.</p>
+<note style="tip"><p>Щоб дізнатися більше, ознайомтеся із розділом <link xref="mail-folders">Користування теками</link>.</p></note>
+</item>
+<item>
+<title>Список повідомлень</title>
+<p>У списку повідомлень буде показано усі прочитані і непрочитані повідомлення у вибраній вами теці. Щоб переглянути повідомлення на панелі попереднього перегляду, клацніть на пункті повідомлення у списку повідомлень.</p>
+</item>
+<item>
+<title>Перемикач</title>
+<p>За допомогою перемикача у нижній частині бічної панелі ви можете перемикатися між інструментами <app>Evolution</app>: пошта, контакти, календарі, примітки і завдання. Вигляд перемикача, зокрема те, чи буде взагалі показано кнопки, можна змінити за допомогою меню <guiseq><gui>Перегляд</gui><gui>Вигляд перемикача</gui></guiseq>.</p>
+<note style="tip"><p>Ви можете вимкнути список тек та бічну панель перемикача за допомогою пункту <guiseq><gui>Перегляд</gui><gui>Розташування</gui><gui>Показати бічну панель</gui></guiseq> або натискання клавіші <key>F9</key>.</p></note>
+</item>
+<item>
+<title>Панель попереднього перегляду</title>
+<p>На панелі попереднього перегляду буде показано повідомлення, пункт якого позначено у списку повідомлень.</p>
+<note style="tip"><p>Ви можете вимкнути показ панелі попереднього перегляду за допомогою пункту <guiseq><gui>Перегляд</gui><gui>Попередній перегляд</gui><gui>Попередній перегляд повідомлення</gui></guiseq>.</p></note>
+</item>
+<item>
+<title>Панель «Зробити»</title>
+<p>На панелі завдань буде показано записи зустрічей з календаря і завдання, час виконання яких визначено у наступні сім днів.</p>
+<note style="tip"><p>Ви можете вимкнути показ панелі завдань за допомогою пункту <guiseq><gui>Перегляд</gui><gui>Розташування</gui><gui>Показувати панель «Зробити»</gui></guiseq>.</p></note>
+</item>
+</terms>
+<note style="tip"><p>Якщо ви випадково сховаєте смужку меню, натисніть клавішу <key>Alt</key> і увімкніть показ смужки за допомогою пункту <guiseq><gui>Перегляд</gui><gui>Розташування</gui><gui>Показати панель меню</gui></guiseq>.</p></note>
+</section>
+
+<section id="calendar">
+<title>Календар</title>
+<p>Елементи головного вікна календаря:</p>
+<table frame="all" rules="all">
+  <tr>
+    <td colspan="3"><p><media type="image" its:translate="no" src="./figures/color-c4a000.png" width="10"/> Рядок меню</p></td>
+  </tr>
+  <tr>
+    <td colspan="3"><p><media type="image" its:translate="no" src="./figures/color-ce5c00.png" width="10"/> Панель інструментів</p></td>
+  </tr>
+  <tr>
+    <td rowspan="2"><p><media type="image" its:translate="no" src="./figures/color-8f5902.png" width="10"/> Список календарів</p></td>
+    <td colspan="2"><p><media type="image" its:translate="no" src="./figures/color-4e9a06.png" width="10"/> Панель пошуку</p></td>
+  </tr>
+  <tr>
+    <td rowspan="3"><p><media type="image" its:translate="no" src="./figures/color-204a87.png" width="10"/> Список зустрічей</p></td>
+    <td><p>Список завдань</p></td>
+  </tr>
+  <tr>
+    <td><p>Панель місяця</p></td>
+    <td rowspan="2"><p>Список приміток</p></td>
+  </tr>
+  <tr>
+    <td><p><media type="image" its:translate="no" src="./figures/color-a40000.png" width="10"/> Перемикач</p></td>
+  </tr>
+  <tr>
+    <td colspan="3"><p><media type="image" its:translate="no" src="./figures/color-2e3436.png" width="10"/> Смужка стану</p></td>
+  </tr>
+</table>
+<terms>
+<item>
+<title>Список зустрічей</title>
+<p>У списку зустрічей буде показано усі ваші заплановані зустрічі протягом визначеного вами діапазону часу.</p>
+</item>
+<item>
+<title>Панель місяця</title>
+<p>На панелі перегляду місяця буде показано невеличкий перегляд календаря на місяць. Щоб переглянути додаткові місяці, перетягніть межу стовпчика праворуч. Ви також можете вибрати діапазон днів на панелі місяця, щоб переглянути нетиповий діапазон днів у списку зустрічей.</p>
+</item>
+<item>
+<title>Список завдань і список приміток</title>
+<p>Завдання та примітки буде показано лише для зручності, їх не пов'язано із жодними зустрічами. Скористайтеся <gui>перемикачем</gui> для переходу до відповідних панелей перегляду.</p>
+</item>
+</terms>
+
+</section>
+
+<section id="contacts">
+<title>Контакти</title>
+<p>Елементи у головному вікні списку контактів:</p>
+<table frame="all" rules="all">
+  <tr>
+    <td colspan="2"><p><media type="image" its:translate="no" src="./figures/color-c4a000.png" width="10"/> Рядок меню</p></td>
+  </tr>
+  <tr>
+    <td colspan="2"><p><media type="image" its:translate="no" src="./figures/color-ce5c00.png" width="10"/> Панель інструментів</p></td>
+  </tr>
+  <tr>
+    <td rowspan="2"><p><media type="image" its:translate="no" src="./figures/color-8f5902.png" width="10"/> Список адресних книг</p></td>
+    <td><p><media type="image" its:translate="no" src="./figures/color-4e9a06.png" width="10"/> Панель пошуку</p></td>
+  </tr>
+  <tr>
+    <td><p><media type="image" its:translate="no" src="./figures/color-204a87.png" width="10"/> Список контактів</p></td>
+  </tr>
+  <tr>
+    <td><p><media type="image" its:translate="no" src="./figures/color-a40000.png" width="10"/> Перемикач</p></td>
+    <td><p><media type="image" its:translate="no" src="./figures/color-5c3566.png" width="10"/> Панель перегляду контактів</p></td>
+  </tr>
+  <tr>
+    <td colspan="2"><p><media type="image" its:translate="no" src="./figures/color-2e3436.png" width="10"/> Смужка стану</p></td>
+  </tr>
+</table>
+<note style="tip"><p>Ви можете увімкнути або вимкнути попередній перегляд контактів за допомогою пункту меню <guiseq><gui>Перегляд</gui><gui>Попередній перегляд</gui><gui>Попередній перегляд контакту</gui></guiseq>.</p></note>
+</section>
+</page>

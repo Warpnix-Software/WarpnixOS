@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="bug-filing" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#get-involved"/>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <credit type="editor copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+      <years>2011</years>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020, 2021.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Melaporkan Masalah</title>
+<p><app>GNOME Sudoku</app> dikelola oleh komunitas relawan. Anda dipersilakan untuk berpartisipasi. Jika Anda melihat masalah, Anda dapat mengajukan <em>laporan kutu</em>. Untuk melaporkan kutu, buka <link href="https://gitlab.gnome.org/GNOME/gnome-sudoku/issues/"/>.</p>
+   <p>Ini adalah sistem pelacakan kutu di mana pengguna dan pengembang dapat mengajukan detail tentang kutu, crash, dan permintaan peningkatan.</p>
+   <p>Untuk berpartisipasi Anda perlu suatu akun yang akan memberi Anda kemampuan mendapatkan akses, melaporkan kutu, dan membuat komentar. Anda juga perlu mendaftar sehingga Anda dapat menerima berita terbaru lewat surel tentang status kutu Anda. Bila Anda belum memiliki akun, klik saja pada taut <gui>Masuk / Mendaftar</gui> untuk membuatnya.</p>
+
+  <p>Once you have an account, log in, and click on <gui>New issue</gui>.
+   Before reporting a bug, please read the <link href="https://handbook.gnome.org/issues/reporting.html">bug writing guidelines</link>, and please <link href="https://gitlab.gnome.org/GNOME/gnome-sudoku/issues">browse</link> for the bug to see if it already exists.
+</p>
+
+   <p>Bila Anda meminta fitur baru, pilih <gui>1. Feature</gui> dalam menu <gui>Labels</gui>. Isi seksi Title and Description dan klik <gui>Submit Issue</gui>.</p>
+   <p>Laporan Anda akan diberi nomor ID, dan statusnya akan diperbarui saat sedang ditangani.</p>
+</page>

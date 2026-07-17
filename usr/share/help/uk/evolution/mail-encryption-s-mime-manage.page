@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-encryption-s-mime-manage" xml:lang="uk">
+
+  <info>
+    <desc>Додавання, редагування, перегляд та вилучення сертифікатів S/MIME.</desc>
+
+    <link type="guide" xref="mail-encryption#s-mime"/>
+
+    <revision pkgversion="3.2.0" version="0.2" date="2011-10-13" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/bshoty0.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Керування сертифікатами S/MIME</title>
+
+<p>За допомогою сертифікатів ви можете безпечно обмінюватися даними шифрованим з'єднанням або підписати повідомлення, підтверджуючи його ідентичність для вашого контакту. Ці параметри стосуються лише шифрування за допомогою S/MIME.</p>
+<p>Ви можете імпортувати, переглядати, редагувати (окрім ваших власних сертифікатів) і вилучати ваші сертифікати за допомогою пункту меню <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Сертифікати</gui></guiseq>.</p>
+
+<note style="tip"><p>Якщо ви бачите повідомлення про помилку «Peer's certificate issuer has been marked as not trusted by the user. (-8172) - Cannot add SMIMEEncKeyPrefs attribute» після додавання вашого поштового сертифіката, перейдіть до <gui>Постачальники</gui> і позначте пункт <gui>Довіряти цій CA для ідентифікації поштових користувачів</gui> для сертифіката.</p></note>
+
+<p>У списку <gui>Ваші сертифікати</gui> буде показано сертифікати, власником яких ви є. Щоб додати сертифікат для підписування, натисніть кнопку <gui style="button">Імпортувати</gui>, виберіть файл для імпортування, натисніть кнопку <gui style="button">Відкрити</gui> і введіть пароль.</p>
+<p>У списку <gui>Сертифікати контактів</gui> буде показано наявний у вас список сертифікатів контактів. За допомогою цих сертифікатів ви можете розшифровувати повідомлення, а також перевіряти підписані повідомлення.</p>
+<p>У списку <gui>Постачальники</gui> буде показано список довірених служб сертифікації, які можуть засвідчити ідентичність вашого власного сертифіката.</p>
+</page>

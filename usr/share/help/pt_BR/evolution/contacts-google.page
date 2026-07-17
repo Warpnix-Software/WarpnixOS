@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-google" xml:lang="pt-BR">
+
+  <info>
+    <link type="guide" xref="contacts-using-several-addressbooks"/>
+    <link type="guide" xref="google-services"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Use o catálogo de endereços online de sua conta do Google.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Fontenelle</mal:name>
+      <mal:email>rafaelff@gnome.org</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Using a Google address book</title>
+
+  <p>Para adicionar tal catálogo de endereços ao <app>Evolution</app>, execute as seguintes etapas:</p>
+
+  <steps>
+    <item>
+      <p>Clique em <guiseq><gui>Arquivo</gui><gui>Novo</gui> <gui>Catalogo de endereços</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Selecione o tipo <gui>Google</gui>.</p>
+    </item>
+    <item>
+      <p>Digite um nome de sua preferência.</p>
+    </item>
+    <item>
+      <p>Escolha se você deseja ser capaz de visualizar o conteúdo também enquanto estiver desconectado.</p>
+    </item>
+    <item>
+      <p>Insira seu nome de usuário Google.</p>
+    </item>
+    <item>
+      <p>Escolha <gui>Usar conexão segura</gui> se você deseja conectar com segurança.</p>
+    </item>
+    <item>
+      <p>Clique em <gui style="button">OK</gui>.</p>
+    </item>
+  </steps>
+
+  <p>O catálogo de endereços será adicionado à lista de catálogos de endereços no <app>Evolution</app>.</p>
+
+</page>

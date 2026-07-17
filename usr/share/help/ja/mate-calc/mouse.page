@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="mouse" xml:lang="ja">
+
+    <info>
+        <link type="guide" xref="index#ui"/>
+    </info>
+
+	<title>マウスを使うには</title>
+
+    <p>すべての数式はマウスを使用して入力できます。すべてのボタンにアクセスするには、<gui>モード</gui>メニューからいくつかのモードを選択して行えます。</p>
+    <table>
+    <tr>
+    <td><p>基本</p></td>
+    <td><p>基本方程式に適したボタンを提供します。</p></td>
+    </tr>
+    <tr>
+    <td><p>拡張</p></td>
+    <td><p><link xref="trigonometry"/>のような高度な数学に適したボタンを提供します。</p></td>
+    </tr>
+    <tr>
+    <td><p>財務</p></td>
+    <td><p><link xref="financial">財務方程式</link>に適したボタンを提供します。</p></td>
+    </tr>
+    <tr>
+    <td><p>プログラム</p></td>
+    <td><p>コンピュータプログラマに適したボタンを提供します。</p></td>
+    </tr>
+    </table>
+</page>

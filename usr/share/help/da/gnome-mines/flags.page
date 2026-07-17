@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="question" id="flags" xml:lang="da">
+  <info>
+
+    <link type="guide" xref="index#play"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.5.5" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.3" date="2018-09-01" status="review"/>
+    <revision pkgversion="3.31.91" version="0.4" date="2019-03-03" status="review"/>
+
+    <credit type="author copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+    <credit type="author">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2012</years>
+    </credit>
+
+    <credit type="author copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  </info>
+
+  <title>Sådan bruges flag</title>
+  <table>
+  <tr>
+   <td>
+     <media type="image" mime="image/svg" src="figures/flags.png" its:translate="no"/>
+   </td>
+   <td>
+     <p>Flag bruges til at markere fliser, hvor du tror, der gemmer sig en mine. Når der sættes et flag på en flise, så kan du ikke klikke på den og muligvis udløse en eksplosion, som afslutter spillet.</p>
+     <p>Flagets udseende afhænger af temaet. Du kan ændre temaet ved at trykke på menuknappen i øverste højre hjørne af vinduet og vælge <gui style="menuitem">Udseende</gui>.</p>
+    </td>
+   </tr>
+  </table>
+
+  <section id="flags-put">
+    <title>Sådan placeres et flag på en flise</title>
+    <table>
+      <tr>
+        <td>
+	  <p>Der kan ikke klikkes på et flag. Sådan placeres et flag på en flise:</p>
+          <list>
+            <item><p>højreklik på en tom flise.</p></item>
+          </list>
+        </td>
+        <td>
+          <media type="image" mime="image/svg" width="60" src="figures/flag.svg" its:translate="no"/>
+        </td>
+        </tr>
+      </table>
+
+  </section>
+
+  <section id="flags-blue">
+    <title>Sådan bruges flag med <em>spørgsmålstegn</em></title>
+    <p>Hvis du er i tvivl om der er en mine under en flise, så kan du bruge flag med <em>spørgsmålstegn</em>.</p>
+    <table>
+      <tr>
+        <td>
+          <p>Sæt et <em>Måske</em>-flag på en flise:</p>
+          <list>
+	    <item><p>Højreklik to gange på en tom flise eller én gang på et flag.</p></item>
+          </list>
+        </td>
+        <td>
+          <media type="image" mime="image/svg" width="60" src="figures/flag-question.svg" its:translate="no"/>
+        </td>
+      </tr>
+    </table>
+
+  <note>
+    <p>Aktivér flagene ved at trykke på menuknappen i øverste højre hjørne af vinduet og aktivere indstillingen <gui style="checkbox">Brug flag med spørgsmålstegn</gui>.</p>
+  </note>
+
+  </section>
+  
+</page>

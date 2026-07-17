@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-change-columns-in-message-list" xml:lang="uk">
+
+  <info>
+    <desc>Редагування стовпчиків даних, які буде показано у списку повідомлень.</desc>
+    
+    <link type="guide" xref="mail-layout-changing"/>
+
+    <revision pkgversion="3.30.5" version="0.5" date="2019-02-26" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Внесення змін до стовпчиків списку повідомлень</title>
+
+<p>Якщо ви хочете внести зміни до стовпчиків у списку повідомлень, клацніть правою кнопкою миші на заголовках стовпчиків і виберіть або пункт <gui>Додати стовпчик…</gui>, або пункт <gui>Вилучити цей стовпчик</gui>.</p>
+<note style="tip"><p>Якщо ви працюєте за екраном із малими розмірами, можете замінити стовпчик <gui>Тема</gui> на стовпчик <gui>Тема — скорочено</gui>. У такому стовпчику програма вилучатиме префікси, зокрема «Re:». Ви також можете замінити стовпчик <gui>Від</gui>, у якому програма показує ім'я і адресу електронної пошти відправника, на стовпчик <gui>Відправник</gui>, у якому буде показано лише ім'я відправника.</p></note>
+
+<note style="tip"><p>Якщо ви хочете мати однакове компонування стовпчиків в усіх теках електронної пошти, окрім теки <gui>Надіслані</gui>, ви можете позначити пункт <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Параметри пошти</gui><gui>Загальне</gui><gui>Застосувати однаковий перегляд налаштувань для всіх тек</gui></guiseq>. Зауважте, що цей параметр також стосується режиму <link xref="mail-sorting-message-list#email-threads"><gui>Групувати за гілками</gui></link> та видимості панелі <gui>Попередній перегляд повідомлення</gui> в усі теках.</p></note>
+
+<note style="tip"><p>Якщо ви хочете змінити упорядкування і/або стовпчики у певних теках електронної пошти, зніміть позначку з пункту <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Параметри пошти</gui><gui>Загальне</gui><gui>Застосувати однаковий перегляд налаштувань для всіх тек</gui></guiseq>. Далі, ви можете змінити параметри перегляду і зберегти зміни за допомогою пункту <guiseq><gui>Перегляд</gui><gui>Поточний перегляд</gui><gui>Зберегти нетиповий перегляд…</gui></guiseq>, а потім застосувати відповідний режим перегляду до інших тек.</p></note>
+
+</page>

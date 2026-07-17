@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-weather" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="calendar-using-several-calendars"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Menampilkan cuaca di kalender.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Menggunakan kalender cuaca</title>
+
+  <p>Kalender tipe ini baca-saja.</p>
+
+  <p>Untuk menambahkan kalender seperti itu ke <app>Evolution</app>, lakukan langkah-langkah berikut:</p>
+
+  <steps>
+    <item>
+      <p>Klik <guiseq><gui>Berkas</gui><gui>Baru</gui><gui>Kalender</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Pilih tipe <gui>Cuaca</gui>.</p>
+    </item>
+    <item>
+      <p>Masukkan nama yang Anda sukai.</p>
+    </item>
+    <item>
+      <p>Opsional pilih warna yang Anda sukai.</p>
+    </item>
+    <item>
+      <p>Pilih jika Anda ingin bisa menampilkan konten juga saat sedang luring.</p>
+    </item>
+    <item>
+      <p>Pilih lokasi dengan memilih benua, negara, dan kota.</p>
+    </item>
+    <item>
+      <p>Pilih <gui>Gunakan koneksi aman</gui> jika Anda ingin tersambung dengan aman.</p>
+    </item>
+    <item>
+      <p>Pilih unit suhu.</p>
+    </item>
+    <item>
+      <p>Klik <gui style="button">OK</gui>.</p>
+    </item>
+  </steps>
+
+  <p>Kalender akan ditambahkan ke daftar kalender di <app>Evolution</app>.</p>
+
+</page>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="tip" id="gnome-on-ubuntu" xml:lang="ca">
+
+  <info>
+    <credit type="author">
+      <name>Equip de documentació de l'Ubuntu</name>
+    </credit>
+    <desc>Una llista de modificacions notables a l'escriptori GNOME, a l'Ubuntu.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="shell-overview" group="#first"/>
+    <link type="guide" xref="index" group="intro"/>
+    <revision version="0.1" date="2022-04-28" status="review"/>
+  </info>
+
+  <title>Sobre el GNOME a l'Ubuntu</title>
+
+  <p>L'Ubuntu Desktop ve instal·lat amb una versió lleugerament modificada de l'entorn d'escriptori GNOME. En general, aquesta guia d'escriptori farà referències al GNOME tal com la publiquen els desenvolupadors del GNOME. Aquí teniu una llista de les diferències notables entre el GNOME a l'Ubuntu i el GNOME estàndard.</p>
+
+  <list type="disc">
+  <item>
+    <p>L'Ubuntu ve amb el Firefox en lloc del navegador Web (el navegador per omissió del GNOME).</p>
+  </item>
+  <item>
+    <p>L'Ubuntu ve amb el client d'escriptori remot Remmina en lloc de Connections (el client per omissió del GNOME).</p>
+  </item>
+    <item>
+      <p>S'hi inclou l'extensió AppIndicators. Aquesta extensió habilitarà les icones a l'extrem superior dret d'algunes aplicacions.</p>
+    </item>
+    <item>
+      <p>S'hi inclou l'extensió Ubuntu Dock. Aquesta extensió proporciona la barra lateral esquerra per executar aplicacions.</p>
+    </item>
+    <item>
+      <p>S'hi inclou l'extensió Desktop Icons NG. Aquesta extensió permet l'ús d'icones a l'escriptori.</p>
+    </item>
+    <item>
+      <p>A més dels fons de pantalla d'escriptori de l'Ubuntu, el tema predeterminat és Yaru i la família tipogràfica predeterminada és Ubuntu.</p>
+    </item>
+    <item>
+      <p>Els botons de minimització i maximització s'inclouen a les barres de títol de la finestra.</p>
+    </item>
+  </list>
+
+
+
+</page>

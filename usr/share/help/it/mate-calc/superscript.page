@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="superscript" xml:lang="it">
+
+    <info>
+        <!-- Place this at the end of the section -->
+        <title type="sort">_</title>
+        <link type="guide" xref="index#ui"/>
+    </info>
+
+	<title>Apice e Pedice</title>
+
+    <p>Alcune equazioni richiederanno numeri da inserire in formato di apice o pedice. Per es.</p>
+    <example>
+    <p><math alttext="x³+2x²−5"> <mrow> <msup> <mi>x</mi> <mn>3</mn> </msup> <mo>+</mo> <mrow> <mn>2</mn> <msup> <mi>x</mi> <mn>2</mn> </msup> </mrow> <mo>-</mo> <mn>5</mn> </mrow> </math></p>
+    </example>
+    <p>Per inserire numeri in apice o pedice con il mouse, selezionate la modalità numerica con i pulsanti <gui>↑n</gui> e <gui>↓n</gui>. Quando uno di questi modi è attivo facendo clic sui pulsanti numerici si inseriranno le cifre rispettivamente in formato apice o pedice. Per tornare alla modalità di inserimento normale fare nuovamente clic sul pulsante attivo.</p>
+    <p>Per inserire un numero in formato apice utilizzando la tastiera tenere premuto il tasto <key>Ctrl</key> mentre si digita il valore desiderato. Tenere premuto invece <key>Alt</key> per avere il numero in formato pedice. </p>
+    <p>La modalità numerica ritorna al formato normale se si digita un qualsiasi simbolo non numerico (per es. +).</p>
+</page>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-composer-html" xml:lang="ca">
+
+  <info>
+    <desc>Canviar tipus de lletra, utilitzar colors i inserir imatges, taules i enllaços.</desc>
+    <link type="guide" xref="index#mail-composing"/>
+
+    <revision pkgversion="3.5.90" version="0.5" date="2012-08-16" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-html -->
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Formatar correus electrònics (en text pla i HTML)</title>
+
+<p/>
+
+<p>Les eines de format de text per a l'alineació bàsica i el format de paràgraf es troben a la barra d'eines que hi ha a sota la línia <gui>Assumpte</gui>. També apareixen al menú <gui>Insereix</gui> i <gui>Formata</gui>.</p>
+     <p>Les icones de la barra d'eines s'expliquen als indicadors de funció que apareixen quan es manté el punter del ratolí sobre els botons.</p>
+
+<p>Normalment, no podreu definir el color o la mida del text ni inserir imatges en missatges. Tanmateix, la majoria de les aplicacions de correu electrònic més noves poden fer-ho utilitzant el format HTML, que és el format que també utilitzen les pàgines web.</p>
+
+<p>Alguns usuaris no tenen clients de correu electrònic compatibles amb HTML o prefereixen no rebre correus electrònics millorats per HTML, ja que són més lents de descàrrega i visualització. Per aquest motiu, <app>Evolution</app> envia el text sense format a menys que sol·liciteu explícitament l'HTML.</p>
+
+  <section id="formatting-options-plain" style="2column">
+    <title>Opcions per a formatar el text pla</title>
+  </section>
+
+  <section id="formatting-options-html" style="2column">
+    <title>Opcions de format només HTML</title>
+  </section>
+
+</page>

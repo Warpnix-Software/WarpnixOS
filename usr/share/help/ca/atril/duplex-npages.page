@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="duplex-npage" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="print-booklet#doubleSided"/>
+
+    <desc>Imprimiu un fullet de n pàgines</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Carles Ferrando Garcia</mal:name>
+      <mal:email>carles.ferrando@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert Antoni Buj Gelonch</mal:name>
+      <mal:email>rbuj@fedoraproject.org</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Fullet de n pàgines</title>
+ <note style="important">
+  <p><em>n</em> és un múltiple de 4.</p>
+ </note>
+
+ <p>Si el nombre de pàgines del vostre document PDF no és un múltiple de 4, hauríeu d'afegir el nombre adient de pàgines en blanc (1, 2 o 3) per fer-lo un múltiple de 4. Per a fer-ho, podeu:</p>
+ <steps>
+ <item>
+  <p>Crear un PDF en blanc amb el <app>LibreOffice Writer</app>.</p>
+ </item>
+ <item>
+  <p>Combinar les pàgines en blanc amb el vostre document PDF mitjançant <app>PDF-Shuffler</app>, situant les pàtines en blanc al final.</p>
+ </item>
+</steps>
+
+
+<steps>
+ <item>
+  <p>Aneu a <guiseq><gui style="menuitem">Fitxer</gui><gui style="menuitem">Imprimeix...</gui></guiseq> i premeu el botó <gui style="button">Imprimir</gui>.</p>
+ </item>
+ <item>
+  <p>Seleccioneu la pestanya <gui>General</gui>.</p>
+  <p>Sota de <em>Interval</em>, seleccioneu <gui>Pàgines:</gui>.</p>
+  <tree>
+   <item>Teclegeu els números de les pàgines en aquest ordre: <item>n, 1, 2, n-1, n-2, 3, 4, n-3, n-4, 5, 6, n-5, n-6, 7, 8, n-7, n-8, 9, 10, n-9, n-10, 11, 12, n-11...</item> <item>... fins que hagueu teclejat un nombre n de pàgines.</item></item>
+  </tree>
+ </item>
+ <item>
+  <p>Seleccioneu la pestanya <gui>Configuració de la pàgina</gui>.</p>
+  <p>Sota de <em>Disposició</em>, al menú <gui>Doble cara</gui>, seleccioneu <gui>Pel costat curt (girar)</gui>.</p>
+  <p>A l'opció <gui>Pàgines per cara</gui>, seleccioneu <gui>2</gui>.</p>
+  <p>Al menú <gui>Ordenació de les pàgines</gui>, seleccioneu <gui>Esquerra a dreta</gui>.</p>
+ </item>
+ <item>
+  <p>Cliqueu <gui>Imprimeix</gui>.</p>
+ </item>
+</steps>
+</page>

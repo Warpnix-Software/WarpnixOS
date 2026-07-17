@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-receiving-options-imap-plus" xml:lang="uk">
+
+  <info>
+    <desc>Параметри отримання пошти для облікових записів IMAP+.</desc>
+
+    <link type="guide" xref="mail-receiving-options#common-server-types"/>
+    <link type="guide" xref="mail-account-manage-imap-plus#receiving-email"/>
+    <revision pkgversion="3.12.9" version="0.3" date="2015-02-15" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mainwindow-starting.html.en#bstggh0 -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Параметри отримання пошти IMAP+</title>
+
+<section id="receiving-email-imap-plus">
+<title>Отримання пошти</title>
+
+<p>На сторінці <gui>Отримання пошти</gui> (доступна за допомогою вибору послідовності пунктів <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Облікові записи</gui><gui style="button">Редагувати</gui><gui>Отримання пошти</gui></guiseq>):</p>
+
+<list>
+<item><p>Введіть адресу сервера електронної пошти у поле <gui>Сервер</gui> і вкажіть ваше ім'я користувача відповідного сервера.</p></item>
+<item><p>Вкажіть, чи хочете ви використовувати захищене з'єднання (TLS або його застарілого попередника — SSL).</p><p>Вам слід позначити цей пункт, якщо на вашому сервері передбачено підтримку відповідної можливості.</p>
+<note style="tip"><p>Надавачі безкоштовних послуг електронної пошти часто надають відомості щодо того, якими з цих параметрів можна скористатися. Якщо ви працюєте у середовищі якоїсь організації, вам варто зв'язатися із адміністратором системи, щоб дізнатися більше про налаштування.</p></note></item>
+<item><p>Виберіть тип розпізнавання зі списку «Автентифікація» або натисніть кнопку <gui style="button">Перевірити підтримувані типи</gui>, щоб наказати <app>Evolution</app> виявити підтримувані механізми розпізнавання. Деякі сервери не показують механізмів розпізнавання, підтримку яких передбачено, тому натискання цієї кнопки не гарантує, що доступні механізми працюватимуть.</p></item>
+<item><p>Вкажіть, чи слід <app>Evolution</app> запам'ятовувати введений пароль.</p></item>
+</list>
+
+</section>
+
+<section id="receiving-options-imap-plus">
+<title>Параметри отримання</title>
+
+<p>На сторінці <gui>Параметри отримання</gui> (доступ до неї можна отримати за допомогою послідовності пунктів <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Облікові записи</gui><gui style="button">Редагувати</gui><gui>Параметри отримання</gui></guiseq>):</p>
+
+<list>
+<item><p>Якщо ви хочете, щоб <app>Evolution</app> автоматично шукала нові повідомлення, позначте пункт <gui>Перевіряти нову пошту кожні … хвилин</gui> і виберіть інтервал між перевірками у хвилинах.</p></item>
+<item><p>Позначте пункт <gui>Використовувати швидку синхронізацію, коли сервер підтримує цю можливість</gui>, якщо на сервері IMAP передбачено підтримку <link href="https://tools.ietf.org/html/rfc5162">розширень IMAP4 для швидкої повторної синхронізації поштової скриньки</link>.</p></item>
+<item><p>Якщо поштовий сервер забороняє декілька одночасних з'єднань <app>Evolution</app> з сервером (наприклад, якщо у вас декілька облікових записів на сервері), встановіть для параметра <gui>Кількість одночасних з'єднань</gui> значення 1.</p></item>
+<item><p>Крім того, ви можете визначити, чи слід <app>Evolution</app> шукати нові повідомлення у всіх теках чи лише у теках із оформленою підпискою.</p></item>
+<item><p>Вкажіть, чи слід <app>Evolution</app> показувати лише <link xref="mail-imap-subscriptions">теки із оформленою підпискою</link>.</p></item>
+<item><p>Вкажіть, чи слід автоматично застосовувати до отриманої вами пошти <link xref="mail-filters">фільтри</link>, ви має бути автоматично фільтровано <link xref="mail-spam-marking">спам</link> та чи <link xref="mail-working-offline">слід синхронізувати пошту на сервері із вашою локальною копією для автономного доступу до неї</link>.</p></item></list>
+
+</section>
+
+</page>

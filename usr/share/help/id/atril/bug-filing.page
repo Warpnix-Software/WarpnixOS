@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="bug-filing" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#getInvolved"/>
+    <desc>Bagaimana dan ke mana melaporkan masalah.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kukuh Syafaat</mal:name>
+      <mal:email>syafaatkukuh@gmail.com</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2021, 2022.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Laporkan suatu bug atas Atril</title>
+<p>Atril dipelihara oleh suatu komunitas voluntir. Partisipasi Anda disambut hangat. Bila Anda menemui masalah Anda dapat mengirim <em>laporan kutu</em>. Untuk melaporkan kutu, pergilah ke <link href="https://github.com/mate-desktop/atril/issues"/>.</p>
+   <p>Ini adalah suatu sistem pelacakan kutu dimana pengguna dan pengembang dapat melaporkan rincian tentang kutu, crash, dan meminta perbaikan.</p>
+   <p>Untuk berpartisipasi Anda perlu suatu akun yang akan memberi Anda hak akses, melaporkan kutu, dan membuat komentar. Anda juga perlu mendaftar sehingga Anda dapat menerima pembaruan lewat surel tentang status kutu Anda. Bila Anda belum punya akun, klik saja pada tautan <gui>Masuk / Mendaftar</gui> untuk membuatnya.</p>
+   <p>Setelah Anda punya akun, masuklah, dan klik pada <gui>Masalah baru</gui>.</p>
+   <p>Isi bagian Judul dan Deskrpisi dan klik <gui>Kirim Laporan Masalah</gui>.</p>
+   <p>Laporan Anda akan diberi nomor ID, dan statusnya akan diperbarui ketika itu ditangani.</p>
+</page>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-html-table" xml:lang="ca">
+
+  <info>
+    <desc>Insereix una taula a l'editor de correu.</desc>
+    <link type="guide" xref="mail-composer-html#formatting-options-html"/>
+
+    <revision pkgversion="3.5.90" version="0.4" date="2012-08-16" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#bsait2d -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Inserir una taula en HTML</title>
+
+<p>Podeu inserir una taula al correu electrònic (a la posició del cursor):</p>
+<steps>
+<item><p>Feu clic a <guiseq><gui>Insereix</gui><gui>Taula…</gui></guiseq> a la barra de menús.</p></item>
+<item><p>Seleccioneu el nombre de files i columnes.</p></item>
+<item><p>Definiu el tipus de disseny de la taula.</p></item>
+<item><p>De forma opcional: Seleccioneu un color o una imatge de fons per a la taula.</p></item>
+<item><p>Feu clic a <gui>Tanca</gui>.</p></item>
+</steps>
+
+<p>Alternativament, també podeu fer servir la <media type="image" its:translate="no" src="./figures/html-composer-insert-table.png"/> icona a la segona barra a sota de la línia de l'<gui>Assumpte</gui>.</p>
+
+</page>

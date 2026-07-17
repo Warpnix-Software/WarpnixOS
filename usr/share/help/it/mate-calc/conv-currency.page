@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="conv-currency" xml:lang="it">
+
+    <info>
+        <link type="guide" xref="index#conversion"/>
+    </info>
+
+	<title>Valuta</title>
+
+    <p>Per convertire valute monetarie, passare alla <link xref="financial">modalità finanziaria</link>, e usare i controlli sulle valute.</p>
+    <p>Potete anche convertire tra valute utilizzando la tastiera e l'operatore <em>in</em>.</p>
+    <example>
+    <p>13.65 USD in GBP</p>
+    </example>
+    <note>
+    <p>Le informazioni sulle valute sono approssimative e non dovrebbero essere utilizzate per prendere decisioni finanziarie.</p>
+    </note>
+</page>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="task" id="annotations" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#annotations"/>
+    <desc>Wie Anmerkungen erstellt und angepasst werden können.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <credit type="author">
+      <name>Andre Klapper</name>
+      <email>ak-47@gmx.net</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  </info>
+
+<title>Anmerkungen hinzufügen</title>
+<p>Eine Anmerkung ist eine Notiz oder ein Kommentar in einem PDF-Dokument. Diese Anmerkungen können mit Atril hinzugefügt werden.</p>
+<p>Wenn du eine Datei öffnest, sollte links im Fenster eine Seitenleiste angezeigt werden. Sollte dies nicht der Fall sein, <guiseq>klicke auf <gui style="menuitem">Ansicht</gui> <gui style="menuitem">Seitenleiste</gui></guiseq> oder drücke die Taste <key>F9</key> auf der Tastatur.</p>
+
+<p>Oben auf der Seitenleiste befinden sich in einer Drop-Down-Liste die Einträge <gui>Vorschaubilder</gui>,<gui>Index</gui>,<gui>Anmerkungen</gui> und <gui>Lesezeichen</gui>, worüber ausgewählt werden kann, was in der Seitenleiste angezeigt werden soll. (Einige Optionen sind möglicherweise für ein paar Dokumente nicht verfügbar).</p>
+<p>Erstellen einer Anmerkung:</p>
+<steps>
+ <item>
+  <p>Wähle <gui style="button">Anmerkungen</gui> aus der Drop-Down-Liste:</p>
+ </item>
+ <item>
+  <p>Klicke auf <gui style="button">Hinzufügen</gui> um eine Text-Anmerkung hinzuzufügen.</p>
+ </item>
+ <item>
+  <p>
+   Click on the spot in the document window you would like to add the annotation to.  Your <em>annotation</em> window will open.
+  </p>
+ </item>
+ <item>
+  <p>
+    Type your text into the <em>annotation</em> window.
+  </p>
+   <note>
+    <p>
+     You can resize the note by clicking and holding the left mouse button on one of the bottom corners of the note, and moving it around.
+    </p>
+   </note>
+ </item>
+ <item>
+  <p>
+    Close the note by clicking on the <gui>x</gui> in the top corner of the note.
+  </p>
+ </item>
+</steps>
+
+
+</page>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:uix="http://projectmallard.org/experimental/ui/" type="guide" style="task" id="addremove" xml:lang="ko">
+  <info>
+    <link type="guide" xref="index" group="addremove"/>
+
+    <title role="trail" type="link">소프트웨어 추가/삭제</title>
+
+    <credit type="author">
+      <name>우분투 문서화 팀</name>
+    </credit>
+
+    <desc>애플리케이션 및 기타 소프트웨어를 추가하고 제거합니다. 추가 소프트웨어 저장소를 관리합니다.</desc>
+    <uix:thumb role="experimental-gnome-tiles" src="figures/tile-software.svg"/>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+  <title>소프트웨어 설치 &amp; 제거</title>
+  <links type="topic" style="2column"/>
+
+</page>

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="intro-keyboard-shortcuts" xml:lang="es">
+
+  <info>
+    <desc>Atajos de teclado que le pueden ahorrar tiempo.</desc>
+
+    <link type="guide" xref="index#getting-started"/>
+    <revision pkgversion="3.30.4" version="0.7" date="2019-01-11" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Raniere Silva</name>
+      <email its:translate="no">raniere@rgaiacs.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en -->
+ </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2012 - 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rodrigo Lledó</mal:name>
+      <mal:email>rodhos92@gmail.com</mal:email>
+      <mal:years>2018</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yolanda Álvarez Pérez</mal:name>
+      <mal:email>yolandaa.alvarez.perez@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Francisco Javier F. Serrador</mal:name>
+      <mal:email>serrador@openshine.com</mal:email>
+      <mal:years>2005, 2006</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Atajos de teclado</title>
+
+<p>Esta página proporciona un resumen de atajos de teclado que le pueden ayudar a usar <app>Evolution</app> de manera más eficiente.</p>
+
+<note style="tip">
+<p>Además de los atajos que se muestran debajo, también puede usar aceleradores para navegar con el teclado.</p> 
+<p>Mantenga pulsada la tecla <key>Alt</key> para revelar <em>aceleradores</em>: las letras subrayadas en elementos de menú, botones y otros controles. Pulse <key>Alt</key> más la letra subrayada para activar un control, como si hubiera pulsado sobre él.</p>
+</note>
+
+
+<section id="global">
+<title>Global</title>
+<table rules="rows" frame="top bottom">
+  <tr xml:id="global-ctrl-1">
+    <td><p><keyseq><key>Ctrl</key><key>1</key></keyseq></p></td>
+    <td><p>Seleccione el componente Correo.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-2">
+    <td><p><keyseq><key>Ctrl</key><key>2</key></keyseq></p></td>
+    <td><p>Seleccione el componente Contactos.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-3">
+    <td><p><keyseq><key>Ctrl</key><key>3</key></keyseq></p></td>
+    <td><p>Seleccione el componente Calendario.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-4">
+    <td><p><keyseq><key>Ctrl</key><key>4</key></keyseq></p></td>
+    <td><p>Seleccione el componente Tareas.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-5">
+    <td><p><keyseq><key>Ctrl</key><key>5</key></keyseq></p></td>
+    <td><p>Seleccione el componente Notas.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-n">
+    <td><p><keyseq><key>Ctrl</key><key>N</key></keyseq></p></td>
+    <td><p>Crear un elemento nuevo en el componente actual.</p></td>
+  </tr>
+  <tr xml:id="global-f6">
+    <td><p><key>F6</key></p></td>
+    <td><p>Cambiar el foco cíclicamente entre paneles.</p></td>
+  </tr>
+  <tr xml:id="global-shift-ctrl-q">
+    <td><p><keyseq><key>Mayús</key><key>Ctrl</key><key>Q</key></keyseq></p></td>
+    <td><p>Limpiar la barra de búsqueda</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-w">
+    <td><p><keyseq><key>Ctrl</key><key>W</key></keyseq></p></td>
+    <td><p>Cerrar ventana.</p></td>
+  </tr>
+  <tr xml:id="global-shift-ctrl-w">
+    <td><p><keyseq><key>Mayús</key><key>Ctrl</key><key>W</key></keyseq></p></td>
+    <td><p>Abrir una ventana nueva.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-q">
+    <td><p><keyseq><key>Ctrl</key><key>Q</key></keyseq></p></td>
+    <td><p>Salir de <app>Evolution</app>.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-p">
+    <td><p><keyseq><key>Ctrl</key><key>P</key></keyseq></p></td>
+    <td><p>Imprimir la selección:</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-s">
+    <td><p><keyseq><key>Ctrl</key><key>S</key></keyseq></p></td>
+    <td><p>Guardar selección.</p></td>
+  </tr>
+  <tr xml:id="global-del">
+    <td><p><key>Supr</key> o <key>Retroceso</key></p></td>
+    <td><p>Eliminar la selección.</p></td>
+  </tr>
+  <tr xml:id="global-shift-ctrl-v">
+    <td><p><keyseq><key>Mayús</key><key>Ctrl</key><key>V</key></keyseq></p></td>
+    <td><p>Mover correos o contactos a una carpeta.</p></td>
+  </tr>
+  <tr xml:id="global-shift-ctrl-y">
+    <td><p><keyseq><key>Mayús</key><key>Ctrl</key><key>Y</key></keyseq></p></td>
+    <td><p>Copiar correos o contactos a una carpeta.</p></td>
+  </tr>
+</table>
+</section>
+
+<section id="mail">
+<title>Correo</title>
+<table rules="rows" frame="top bottom">
+  <tr xml:id="mail-shift-ctrl-m">
+    <td><p><keyseq><key>Mayús</key><key>Ctrl</key><key>M</key></keyseq></p></td>
+    <td><p>Redactar un mensaje de correo nuevo.</p></td>
+  </tr>
+  <tr xml:id="mail-f12">
+    <td><p><key>F12</key></p></td>
+    <td><p>Enviar y recibir mensajes.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-y">
+    <td><p><keyseq><key>Ctrl</key><key>Y</key></keyseq></p></td>
+    <td><p>Aplicar filtros a la selección.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-o">
+    <td><p><keyseq><key>Ctrl</key><key>O</key></keyseq> o <key>Intro</key></p></td>
+    <td><p>Abrir selección en una ventana nueva.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-f">
+    <td><p><keyseq><key>Ctrl</key><key>F</key></keyseq></p></td>
+    <td><p>Selección de reenvío.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-k">
+    <td><p><keyseq><key>Ctrl</key><key>K</key></keyseq></p></td>
+    <td><p>Marcar la selección como leída</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-shift-k">
+    <td><p><keyseq><key>Ctrl</key><key>Mayús</key><key>K</key></keyseq></p></td>
+    <td><p>Marcar la selección como no leída.</p></td>
+  </tr>
+  <tr xml:id="mail-arrow-down">
+    <td><p><key>↓</key></p></td>
+    <td><p>Saltar al siguiente mensaje.</p></td>
+  </tr>
+  <tr xml:id="mail-arrow-up">
+    <td><p><key>↑</key></p></td>
+    <td><p>Saltar al mensaje anterior.</p></td>
+  </tr>
+  <tr xml:id="mail-dot">
+    <td><p><key>.</key> o <key>]</key></p></td>
+    <td><p>Saltar al siguiente mensaje sin leer.</p></td>
+  </tr>
+  <tr xml:id="mail-comma">
+    <td><p><key>,</key> o <key>[</key></p></td>
+    <td><p>Saltar al anterior mensaje sin leer.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-r">
+    <td><p><keyseq><key>Ctrl</key><key>R</key></keyseq></p></td>
+    <td><p>Responder al remitente.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-l">
+    <td><p><keyseq><key>Ctrl</key><key>L</key></keyseq></p></td>
+    <td><p>Responder a la lista.</p></td>
+  </tr>
+  <tr xml:id="mail-shift-ctrl-r">
+    <td><p><keyseq><key>Mayús</key><key>Ctrl</key><key>R</key></keyseq></p></td>
+    <td><p>Responder a todos.</p></td>
+  </tr>
+  <tr xml:id="mail-backspace">
+    <td><p><key>Retroceso</key></p></td>
+    <td><p>Desplazar hacia arriba.</p></td>
+  </tr>
+  <tr xml:id="mail-space">
+    <td><p><key>Espacio</key></p></td>
+    <td><p>Desplazar hacia abajo.</p></td>
+  </tr>
+</table>
+
+<p><key>Espacio</key> y <key>Retroceso</key> también le permiten navegar por correos sin leer a través de distintas carpetas:</p>
+<list>
+<item><p>Al pulsar la barra espaciadora la primera vez, le llevará al siguiente correo no leído.</p></item>
+<item><p>Si el mensaje es más largo que la pantalla, la tecla <key>Espacio</key> funciona como <key>Avanzar Página</key>.</p></item>
+<item><p>Si pulsa <key>Espacio</key> cuando ha llegado al final de la página, le lleva al siguiente mensaje no leído.</p></item>
+<item><p>Si no hay más mensajes sin leer en el buzón de correo, al pulsa <key>Espacio</key> le lleva al siguiente mensaje sin leer en la siguiente carpeta.</p></item>
+<item><p>Si tiene correo nuevo en varias carpetas diferentes, la tecla <key>Espacio</key> conmuta entre esas carpetas. Esta característica le permite cambiar al siguiente mensaje no leído en una carpeta diferente sin tener que pulsar sobre la carpeta.</p></item>
+<item><p><key>Retroceso</key> tiene el mismo comportamiento pero invertido: desplaza hacia arriba por un mensaje y puede saltar al siguiente mensaje sin leer en la carpeta anterior.</p></item>
+</list>
+</section>
+
+<section id="calendar">
+<title>Calendario</title>
+<table rules="rows" frame="top bottom">
+  <tr xml:id="calendar-shift-ctrl-a">
+    <td><p><keyseq><key>Mayús</key><key>Ctrl</key><key>A</key></keyseq></p></td>
+    <td><p>Crear una cita nueva.</p></td>
+  </tr>
+  <tr xml:id="calendar-shift-ctrl-e">
+    <td><p><keyseq><key>Mayús</key><key>Ctrl</key><key>E</key></keyseq></p></td>
+    <td><p>Crear una reunión nueva.</p></td>
+  </tr>
+  <tr xml:id="calendar-shift-ctrl-t">
+    <td><p><keyseq><key>Mayús</key><key>Ctrl</key><key>T</key></keyseq></p></td>
+    <td><p>Crea una tarea nueva.</p></td>
+  </tr>
+  <tr xml:id="calendar-shift-ctrl-o">
+    <td><p><keyseq><key>Mayús</key><key>Ctrl</key><key>O</key></keyseq></p></td>
+    <td><p>Crea una nota nueva.</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-t">
+    <td><p><keyseq><key>Ctrl</key><key>T</key></keyseq></p></td>
+    <td><p>Ir a hoy.</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-g">
+    <td><p><keyseq><key>Ctrl</key><key>G</key></keyseq></p></td>
+    <td><p>Ir a la fecha.</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-y">
+    <td><p><keyseq><key>Ctrl</key><key>Y</key></keyseq></p></td>
+    <td><p>Vista diaria</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-j">
+    <td><p><keyseq><key>Ctrl</key><key>J</key></keyseq></p></td>
+    <td><p>Vista de semana laboral</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-k">
+    <td><p><keyseq><key>Ctrl</key><key>K</key></keyseq></p></td>
+    <td><p>Vista semanal</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-m">
+    <td><p><keyseq><key>Ctrl</key><key>M</key></keyseq></p></td>
+    <td><p>Vista mensual</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-l">
+    <td><p><keyseq><key>Ctrl</key><key>L</key></keyseq></p></td>
+    <td><p>Vista de lista</p></td>
+  </tr>
+</table>
+</section>
+
+<section id="contacts">
+<title>Contactos</title>
+<table rules="rows" frame="top bottom">
+  <tr xml:id="contacts-shift-ctrl-c">
+    <td><p><keyseq><key>Mayús</key><key>Ctrl</key><key>C</key></keyseq></p></td>
+    <td><p>Crear un contacto nuevo</p></td>
+  </tr>
+  <tr xml:id="contacts-shift-ctrl-l">
+    <td><p><keyseq><key>Mayús</key><key>Ctrl</key><key>L</key></keyseq></p></td>
+    <td><p>Crear una lista de contactos nueva.</p></td>
+  </tr>
+</table>
+</section>
+
+<section id="change-keyboard-shortcuts">
+<title>Cambiar los atajos de teclado</title>
+<note style="advanced"><p>Keyboard shortcuts can be changed in <guiseq><gui>View</gui><gui>Layout</gui><gui>Customize…</gui></guiseq>. See the <link xref="customize-ui-items">Customizing user interface</link> section for more information.</p></note>
+</section>
+
+</page>

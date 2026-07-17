@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="tip" id="get-involved" xml:lang="tr">
+
+  <info>
+    <link type="guide" xref="more-help"/>
+    <link type="seealso" xref="report-ubuntu-bug"/>
+    <desc>Bu yardım konuları, sorunların nasıl ve nereye gönderileceğini gösterir.</desc>
+
+    <revision pkgversion="3.4.0" date="2012-02-19" status="review"/>
+    <revision version="13.10" date="2013-09-12" status="review"/>
+
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+  <title>Bu rehberin geliştirilmesine yardımcı ol</title>
+
+
+<p>Bu yardım sistemi gönüllü bir topluluk tarafında oluşturulmuştur. Sizin de katılımınızı her zaman bekleriz. Eğer bu yardım sayfaları ile ilgili bir sorun farkederseniz (yazım hataları, yanlış yönergeler veya bahsedilmesi gereken ama bahsedilmeyen konular gibi) bir <em>hata raporu</em> hazırlayabilirsiniz.</p>
+
+ <p>Hata raporlamak için <keyseq><key>Alt</key><key>F2</key></keyseq> tuşlarına basın ve <input>ubuntu-bug ubuntu-docs</input> yazın. Hata toplama işlemine başlamak için <gui>Enter</gui> tuşuna basın.</p>
+
+ <p>Böceğinizi nasıl dosyalayacağınız hakkında daha fazla bilgi için <link xref="report-ubuntu-bug">Ubuntu böcek bildirim yönergesi</link> bağlantısını inceleyin.</p>
+
+ <p>Ubuntu Yardım'ın daha iyi hale gelmesine yardımcı olduğunuz için teşekkür ederiz!</p>
+</page>

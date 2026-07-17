@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="function" xml:lang="sr">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>Функцијска</title>
+    
+    <p>Функције можете користити уписивањем назива функције за којом следи аргумент функције. Ако аргумент није број или <link xref="variable">променљива</link> тада аргумент ставите у заграде.</p>
+    <example>
+    <p>sin 30</p>
+    <p>abs (5−9)</p>
+    </example>
+    <p>Следеће функције су дефинисане.</p>
+    <table>
+    <tr>
+    <td><p>abs</p></td>
+    <td><p><link xref="absolute">Апсолутна вредност</link></p></td>
+    </tr>
+    <tr>
+    <td><p>cos</p></td>
+    <td><p><link xref="trigonometry">Косинус</link></p></td>
+    </tr>
+    <tr>
+    <td><p>cosh</p></td>
+    <td><p><link xref="trigonometry">Хиперболички косинус</link></p></td>
+    </tr>
+    <tr>
+    <td><p>erf</p></td>
+    <td><p>Гаусова функција грешке</p></td>
+    </tr>
+    <tr>
+    <td><p>frac</p></td>
+    <td><p>Разломљени део</p></td>
+    </tr>
+    <tr>
+    <td><p>int</p></td>
+    <td><p>Целобројни део</p></td>
+    </tr>
+    <tr>
+    <td><p>ln</p></td>
+    <td><p><link xref="logarithm">Природни логаритам</link></p></td>
+    </tr>
+    <tr>
+    <td><p>log</p></td>
+    <td><p><link xref="logarithm">Логаритам</link></p></td>
+    </tr>
+    <tr>
+    <td><p>не</p></td>
+    <td><p><link xref="boolean">Логичко NOT</link></p></td>
+    </tr>
+    <tr>
+    <td><p>јединица</p></td>
+    <td><p>Комплемент јединице</p></td>
+    </tr>
+    <tr>
+    <td><p>sin</p></td>
+    <td><p><link xref="trigonometry">Синус</link></p></td>
+    </tr>
+    <tr>
+    <td><p>sinh</p></td>
+    <td><p><link xref="trigonometry">Хиперболички синус</link></p></td>
+    </tr>
+    <tr>
+    <td><p>sqrt</p></td>
+    <td><p><link xref="power">Квадратни корен</link></p></td>
+    </tr>
+    <tr>
+    <td><p>tan</p></td>
+    <td><p><link xref="trigonometry">Тангенс</link></p></td>
+    </tr>
+    <tr>
+    <td><p>tanh</p></td>
+    <td><p><link xref="trigonometry">Хиперболички тангенс</link></p></td>
+    </tr>
+    <tr>
+    <td><p>двојка</p></td>
+    <td><p>Комплемент двојке</p></td>
+    </tr>
+    <tr>
+    <td><p>zeta</p></td>
+    <td><p>Рајманова зета функција.</p></td>
+    </tr>
+    </table>
+    <p><app>Мејтов дигитрон</app> не подржава функције које дефинише корисник.</p>
+</page>

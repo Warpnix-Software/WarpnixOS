@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-composer-message-templates" xml:lang="ru">
+
+  <info>
+ <desc>Шаблоны сообщений для повторного использования в редакторе.</desc>
+
+ <link type="guide" xref="index#mail-composing-advanced"/>
+
+ <revision pkgversion="3.5.90" version="0.3" date="2012-08-17" status="draft"/>
+ <credit type="author">
+   <name its:translate="no">Andre Klapper</name>
+   <email its:translate="no">ak-47@gmx.net</email>
+ </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/b1dlaazl.html.en -->
+ </credit>
+ 
+ <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Шаблоны сообщений</title>
+<p>Шаблон сообщения — это стандартное сообщение, которое можно в любой момент использовать для отправки письма с такой же структурой.</p>
+<p>Чтобы включить модуль шаблонов сообщений:</p>
+<steps>
+<item><p>Выберите пункт меню <guiseq><gui>Правка</gui><gui>Модули</gui></guiseq>.</p></item>
+<item><p>Включите модуль <gui>Шаблоны</gui>.</p>
+<note style="tip"><p>Если этот модуль не доступен в разделе <guiseq><gui>Правка</gui><gui>Модули</gui></guiseq>, обратитесь на форум поддержки дистрибутива. Возможно, в вашем дистрибутиве разработчики решили отключить некоторые модули или поставлять их как отдельный пакет.</p></note>
+</item>
+</steps>
+
+
+  <section id="options">
+    <title>Шаблоны сообщений</title>
+  </section>
+
+</page>

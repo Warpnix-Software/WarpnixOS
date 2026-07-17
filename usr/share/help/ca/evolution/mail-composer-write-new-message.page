@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-write-new-message" xml:lang="ca">
+
+  <info>
+    <desc>Escriure un nou correu electrònic per a enviar-lo a un destinatari.</desc>
+    
+    <link type="guide" xref="index#mail-composing"/>
+
+    <revision pkgversion="3.1.5" version="0.2" date="2011-07-27" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Redacció d'un nou missatge</title>
+
+<p>Pot començar a escriure un missatge de correu electrònic nou fent clic a <guiseq><gui>Fitxer</gui><gui>Nou</gui><gui>Missatge de correu</gui></guiseq>, prement <keyseq><key>Maj</key><key>Ctrl</key><key>M</key></keyseq>, o fent clic a <gui>Nou</gui> a la barra d'eines.</p>
+
+<p>Introduïu l'adreça de correu electrònic al camp <gui>Per a:</gui>.Si voleu introduir diverses adreces, separeu-les per comes. consulteu <link xref="mail-composer-several-recipients"/>. Per a obtenir més informació sobre l'enviament de missatges a més d'una persona.</p>
+
+<p>Un cop hàgiu escrit el missatge, feu clic a <gui>Envia</gui> o premeu <keyseq><key>Ctrl</key><key>Retorn</key></keyseq>.</p>
+</page>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-folders" xml:lang="uk">
+
+  <info>
+    <desc>Використання тек для упорядковування вашої пошти.</desc>
+
+    <link type="guide" xref="mail-organizing"/>
+    <link type="seealso" xref="mail-filters"/>
+    <link type="seealso" xref="mail-change-columns-in-message-list"/>
+
+    <revision pkgversion="3.0.2" version="0.3" date="2017-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-organize-folders.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Користування теками</title>
+  
+<p><app>Evolution</app>, як більшість поштових систем, використовує теки для зберігання повідомлень електронної пошти. На початку у вас буде декілька тек електронної пошти, зокрема «Вхідні», «Вихідні» та «Чернетки». Втім, якщо потрібно, ви можете створити додаткові теки.</p>
+
+<section id="create-folder">
+<title>Створення теки</title>
+<p>Щоб створити теку, виконайте такі дії:</p>
+<steps>
+<item><p>Натисніть пункт <gui>Тека</gui> і виберіть <gui>Створити</gui>. Ви також можете клацнути правою кнопкою у довільному місці списку тек і вибрати у контекстному меню пункт <gui>Створити теку</gui>.</p></item>
+<item><p>Вкажіть назву і розташування теки.</p></item>
+<item><p>Натисніть кнопку <gui>Створити</gui>.</p></item>
+</steps>
+<p>Нову теку буде показано на панелі теки. Після цього ви можете пересунути повідомлення до теки.</p>
+
+<note style="warning">
+<p>На більшості серверів IMAP у теці <gui>Вхідні</gui> не можуть міститися одночасно повідомлення і підтеки. При створенні додаткових тек на вашому сервері IMAP створюйте відгалуження кореневої теки облікового запису IMAP, а не теки «Вхідні». Створення підтек у вашій теці «Вхідні» може призвести до неможливості читання повідомлень, які вже зберігаються у теці «Вхідні». Якщо таке трапилося, пересуньте теки до кореневої теки облікового запису IMAP.</p>
+</note>
+
+</section>
+
+<section id="use-folder">
+<title>Пересування повідомлень до тек</title>
+<p>Ви можете пересунути повідомлення до тек за допомогою одного з таких способів:</p>
+<list>
+<item><p>Перетягніть повідомлення до теки і скиньте їх туди.</p></item>
+<item><p>Клацніть правою кнопкою на пункті повідомлення і виберіть у контекстному меню пункт <gui>Пересунути до теки</gui>.</p></item>
+<item><p>Виберіть повідомлення і натисніть комбінацію клавіш <keyseq><key>Shift</key><key>Ctrl</key><key>V</key></keyseq>.</p></item>
+<item><p>Виберіть повідомлення і скористайтеся пунктом меню <guiseq><gui>Повідомлення</gui><gui>Пересунути до теки</gui></guiseq>.</p></item>
+</list>
+
+<p>Кроки для копіювання є подібними.</p>
+
+<note style="tip"><p>Пересування файлів можна автоматизувати за допомогою налаштовування <link xref="mail-filters">фільтрів</link>.</p></note>
+
+</section>
+
+<!--Reuse https://help.gnome.org/users/evolution/2.32/usage-mail-organize-folders.html.en and add "Novell, Inc" as an author to this page. Mention the combination with filters (see seealso link)-->
+	
+</page>

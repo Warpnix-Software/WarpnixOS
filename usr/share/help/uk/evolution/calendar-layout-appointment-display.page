@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-layout-appointment-display" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="calendar-layout"/>
+
+    <revision pkgversion="3.26.5" version="0.6" date="2018-03-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/config-prefs-cal.html.en#bshpsxa
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Визначення показу зустрічей у календарі.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Вигляд зустрічей</title>
+
+  <!-- TODO:POST-3-8: Just listing the partially busted UI options (also see
+       calendar-layout-general-formatting) here is very poor and not
+       task-oriented, but that's it for the time being. Better ideas welcome.
+       -->
+
+  <p>На сторінці <guiseq><gui>Зміни</gui><gui>Параметри</gui> <gui>Календар та завдання</gui><gui>Відображення</gui></guiseq> ви знайдете вказані нижче пов'язані із календарем пункти.</p>
+
+<section id="general">
+  <title>Загальне</title>
+
+  <list>
+    <item>
+      <p>Розділювачі часу:</p>
+      <p>Встановлює прирости за часом, які буде показано тонкими лініями на панелі денного планування у календарі.</p>
+    </item>
+    <item>
+      <p>Показувати час завершення зустрічей при перегляді тижню та місяцю:</p>
+      <p>Якщо достатньо місця, <app>Evolution</app> покаже позначки завершення для кожної зустрічі на панелях планування тижня та місяця.</p>
+    </item>
+    <item>
+      <p>Показувати піктограми зустрічі в перегляді місяця</p>
+    </item>
+    <item>
+      <p>Стискати вихідні дні при перегляді місяцю:</p>
+      <p>Позначте цей пункт, щоб програма показувала вихідні одним блоком замість двох на панелі перегляду місяця.</p>
+    </item>
+    <item>
+      <p>Показувати номери тижнів:</p>
+      <p>Показувати номери тижнів поряд із пунктами відповідних тижнів у календарі.</p>
+    </item>
+    <item>
+      <p>Показувати періодичні події курсивом у кнопці зліва від календарю.</p>
+    </item>
+    <item>
+      <p>Прокручувати огляд місяцю по тижнях</p>
+    </item>
+  </list>
+
+</section>
+
+<section id="alerts">
+  <title>Сигнали</title>
+
+  <p>Якщо ви хочете, щоб програма попереджала вас перед вилученням будь-якої зустрічі, позначте цей пункт.</p>
+
+</section>
+
+</page>

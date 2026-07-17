@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-usenet-subscriptions" xml:lang="uk">
+
+  <info>
+    <desc>Підписування на групи новин Usenet.</desc>
+    
+    <link type="guide" xref="mail-account-manage-usenet-news#other-settings"/>
+    <link type="seealso" xref="mail-imap-subscriptions"/>
+
+    <revision pkgversion="3.1.5" version="0.2" date="2011-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en#usage-mail-getnsend-get-news -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+
+<title>Підписування на групи новин</title>
+
+<p>Одразу після створення облікового запису груп новин вас не буде підписано на жодну з груп. Щоб підписатися на групу новин, виконайте такі дії:</p>
+<steps>
+<item><p>Виберіть пункт меню <guiseq><gui>Тека</gui><gui>Підписки</gui></guiseq>.</p></item>
+<item><p>Якщо у вас є облікові записи на декількох серверах, виберіть сервер, на якому ви хочете керувати вашими підписками.</p></item>
+<item><p>Клацніть на позначці групи, щоб додати теку до ваших підписок.</p></item>
+</steps>
+
+</page>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="power" xml:lang="ja">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>累乗と平方根</title>
+    
+    <p>累乗は、値の後に<link xref="superscript">上付き数字</link>を付けることによって入力されます。</p>
+    <example>
+    <p>5²</p>
+    </example>
+    <p>数値の逆数は、逆記号 -¹ (<keyseq><key>Ctrl</key><key>I</key></keyseq>)を使用して入力できます。</p>
+    <example>
+    <p>3⁻¹</p>
+    </example>
+    <p>累乗は、^ 記号を使用して計算することもできます。これによって、累乗を式にすることができます。</p>
+    <example>
+    <p>5^(6−2)</p>
+    </example>
+    <p>キーボードに <key>^</key> キーがない場合は、<key>*</key> キーの2回連打で使用できます。</p>
+    <p>平方根は、記号 (<keyseq><key>Ctrl</key><key>R</key></keyseq>) を使用して計算できます。</p>
+    <example>
+    <p>√2</p>
+    </example>
+    <p>ルート記号の前に<link xref="superscript">下付き数字</link>を置くことによって、 n 乗根を計算できます。</p>
+    <example>
+    <p>₃√2</p>
+    </example>
+</page>

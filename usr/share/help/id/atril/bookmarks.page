@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="bookmarks" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#annotations"/>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email its:translate="no">tiffany@antopolski.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email its:translate="no">kittykat3756@gmail.com</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+    <desc>Anda dapat memakai anotasi seperti markah.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kukuh Syafaat</mal:name>
+      <mal:email>syafaatkukuh@gmail.com</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2021, 2022.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Markah</title>
+
+  <p>Anda dapat menambah, mengubah nama, dan menghapus markah memakai <app>Penampil Dokumen</app>.</p>
+
+  <p>Ketika Anda membuka sebuah berkas, Anda mestinya memiliki panel sisi di sisi kiri jendela. Bila panel sisi tidak tampak, klik <guiseq><gui style="menuitem">Tilik</gui><gui style="menuitem">Panel Sisi</gui></guiseq>, atau tekan tombol <key>F9</key> pada papan ketik.</p>
+
+  <p>Di bagian dasar dari panel sisi ini, pilih <gui style="button">Markah</gui> dari daftar tarik turun.</p>
+
+  <links type="section"/>
+
+<section id="create">
+  <title>Membuat markah</title>
+
+  <steps>
+    <item>
+      <p>Dalam dokumen PDF itu sendiri, navigasikan ke halaman yang ingin Anda tambahi markah.</p>
+    </item>
+    <item>
+      <p>Di panel sisi, pilih <gui style="button">Markah</gui> dari daftar tarik turun.</p>
+    </item>
+    <item>
+      <p>Tekan tombol <gui style="button">+</gui> di bagian bawah panel sisi. Nama baku dari markah yang baru saja Anda tambahkan adalah nomor halaman dokumen.</p>
+    </item>
+    <item>
+      <p>Markah kini tercantum dalam daftar markah.</p>
+    </item>
+  </steps>
+
+</section>
+
+<section id="rename">
+  <title>Mengganti nama markah</title>
+
+  <steps>
+    <item><p>Di panel sisi, pilih <gui style="button">Markah</gui> dari daftar tarik turun.</p></item>
+    <item><p>Pilih markah di panel sisi.</p></item>
+    <item><p>Klik pada nama markah.</p></item>
+    <item><p>Masukkan nama baru.</p></item>
+    <item><p>Tekan <key>Enter</key>.</p></item>
+  </steps>
+
+</section>
+
+<section id="delete">
+  <title>Menghapus markah</title>
+
+  <steps>
+   <item><p>Di panel sisi, pilih <gui style="button">Markah</gui> dari daftar tarik turun.</p></item>
+   <item><p>Tekan tombol <gui style="button">-</gui> di bagian bawah panel sisi.</p></item>
+  </steps>
+
+</section>
+
+</page>

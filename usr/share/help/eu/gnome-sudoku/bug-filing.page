@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="bug-filing" xml:lang="eu">
+
+  <info>
+    <link type="guide" xref="index#get-involved"/>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <credit type="editor copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+      <years>2011</years>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+
+<title>Jakinarazi akats bat</title>
+<p><app>GNOME Sudoku</app> aplikazioa boluntarioen komunitate batek mantentzen du. Ongi etorria izango zara lagundu nahi baduzu. Arazoren bat ikusten baduzu, bete ezazu <em>akatsaren jakinarazpena</em>. Akatsa jakinarazteko, joan <link href="https://gitlab.gnome.org/GNOME/gnome-sudoku/issues"/> gunera.</p>
+   <p>Akatsei segimendua egiteko sistema bat da, erabiltzaileek eta garatzaileek akatsei eta kraskadurei buruzko xehetasunak eman ditzaten edo hobekuntza eskatu ditzaten balio duena.</p>
+   <p>Parte hartzeko, kontu bat sortu beharko duzu. Horrela, akatsak bete, iruzkinak egin eta zure akatsak duen egoerari buruzko eguneratzeak posta bidez eskuratu ahal izango dituzu. Oraindik konturik ez baduzu, egin klik <gui>Hasi saioa / Erregistratu</gui> estekan kontu bat sortzeko.</p>
+
+  <p>Once you have an account, log in, and click on <gui>New issue</gui>.
+   Before reporting a bug, please read the <link href="https://handbook.gnome.org/issues/reporting.html">bug writing guidelines</link>, and please <link href="https://gitlab.gnome.org/GNOME/gnome-sudoku/issues">browse</link> for the bug to see if it already exists.
+</p>
+
+   <p>Eginbide berria eskatu baduzu, aukeratu <gui>Etiketak</gui> menuko <gui>1. eginbidea</gui>. Bete izenburua eta deskribapena eta egin klik <gui>Bidali auzia</gui> aukeran.</p>
+   <p>Zure txostenari ID zenbaki bat emango zaio eta bere egoera eguneratu egingo da aldaketaren bat dagoenean.</p>
+</page>

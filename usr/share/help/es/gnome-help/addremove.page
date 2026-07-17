@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:uix="http://projectmallard.org/experimental/ui/" type="guide" style="task" id="addremove" xml:lang="es">
+  <info>
+    <link type="guide" xref="index" group="addremove"/>
+
+    <title role="trail" type="link">Añadir/eliminar software</title>
+
+    <credit type="author">
+      <name>Equipo de documentación de Ubuntu</name>
+    </credit>
+
+    <desc>Instale y desinstale aplicaciones y otros programas. Gestione los repositorios de «software» adicionales.</desc>
+    <uix:thumb role="experimental-gnome-tiles" src="figures/tile-software.svg"/>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+  <title>Instalar y desinstalar programas</title>
+  <links type="topic" style="2column"/>
+
+</page>

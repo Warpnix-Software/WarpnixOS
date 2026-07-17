@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="default-settings" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="index#faq"/>
+    <desc>Guarda los parámetros actuales como predeterminado para documentos nuevos.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Sindhu S</name>
+      <email>sindhus@live.in</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Toni Estevez</mal:name>
+      <mal:email>toni.estevez@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Francisco Javier F. Serrador</mal:name>
+      <mal:email>serrador@cvs.gnome.org</mal:email>
+      <mal:years>2003-2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Pablo Gonzalo del Campo</mal:name>
+      <mal:email>pablodc@bigfoot.com</mal:email>
+      <mal:years>2002-2003</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Cambia los parámetros predeterminados</title>
+
+  <p>Cuando un documento está abierto por primera vez, los parámetros predefinidos, como preferencias de ampliación y vista de página, son aplicados. Cualquier cambio que haga a estos parámetros son guardados para el documento.</p>
+  <p>Puede guardar los parámetros los cuales actualmente está utilizando por defecto para todos los documentos nuevos pulsando <gui style="menuitem">Editar</gui> y seleccionando <gui style="menuitem">Guardar opciones por defecto como predeterminado</gui>.</p>
+
+  <note style="important">
+    <p>Los parámetros predeterminados nuevos no sobrescriben los parámetros de documentos anteriormente abiertos, solamente son aplicados a los documentos abiertos por primera vez.</p>
+  </note>
+
+</page>

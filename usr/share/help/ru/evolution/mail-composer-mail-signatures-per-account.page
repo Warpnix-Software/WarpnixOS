@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-mail-signatures-per-account" xml:lang="ru">
+
+  <info>
+    <desc>Настройка стандартной подписи для учётной записи электронной почты.</desc>
+    
+    <link type="guide" xref="mail-composer-mail-signatures"/>
+    <link type="guide" xref="mail-account-manage-imap-plus#identity"/>
+    <link type="guide" xref="mail-account-manage-local-delivery#identity"/>
+    <link type="guide" xref="mail-account-manage-maildir-format-directories#identity"/>
+    <link type="guide" xref="mail-account-manage-mh-format-directories#identity"/>
+    <link type="guide" xref="mail-account-manage-pop#identity"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-directory#identity"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-file#identity"/>
+    <link type="guide" xref="mail-account-manage-usenet-news#identity"/>
+    <!-- TODO:POST-3-8: Having 13 guide links here looks really ugly -->
+
+    <revision pkgversion="3.0.2" version="0.3" date="2012-02-19" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Стандартная подпись учётной записи</title>
+
+<p>Можно задать стандартную <link xref="mail-composer-mail-signatures">подпись</link> для каждой из учётных записей почты. Это выполняется в разделе настройки <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Учётные записи</gui><gui style="button">Правка</gui><gui>Учётная запись</gui><gui>Дополнительная информация</gui></guiseq>.</p>
+
+<p>Если для учётной записи задана подпись, но её не следует использовать в конкретном сообщении (или следует использовать другую подпись), эту подпись можно изменить с помощью раскрывающегося списка в верхнем правом углу окна редактора сообщений.</p>
+
+</page>

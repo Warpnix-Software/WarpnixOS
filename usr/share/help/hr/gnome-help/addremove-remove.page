@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-remove" xml:lang="hr">
+
+  <info>
+    <credit type="author">
+      <name>Tim Ubuntu dokumentacije</name>
+    </credit>
+    <desc>Uklanjanje aplikacija koje se više ne koriste.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove" group="#first"/>
+    <link type="seealso" xref="addremove-install-synaptic"/>
+    <revision version="18.04" date="2018-03-18" status="review"/>
+  </info>
+
+  <title>Uklanjanje aplikacija</title>
+
+  <p>An application is software that has a graphical user interface (GUI).
+    You can use <app>App Center</app> to remove applications that you 
+    no longer use.</p>
+
+   <p>Applications are available in two formats: snap packages and Debian packages. 
+   An application available as a snap package is from now on referred to as a <em>snap</em>.
+   Some applications are available in both formats. In such a case in
+   <app>App Center</app> the snap will be listed first.</p> 
+
+   <p>Možda biste htjeli instalirati softver koji nema grafičko korisničko sučelje. Za instalaciju takvog softvera, možete koristiti <link xref="addremove-install-synaptic">Synaptic</link>. Zapamtite da <app>Synaptic</app> ne prikazuje snap pakete.</p>
+
+  <p>Uklanjanje aplikacija:</p>
+    
+  <steps>
+    <item>
+      <p>
+        Click the <app>App Center</app> icon in the <gui>Dock</gui>, or search
+        for <input>Software</input> in the <em>Activities</em> search bar.
+      </p>
+    </item>
+    <item>
+      <p>
+        When <app>App Center</app> opens, click the <gui>Installed</gui> button at 
+        the top.
+      </p>
+    </item>
+    <item>
+      <p>Potražite aplikaciju koju želite ukloniti korištenjem okvira pretrage ili pretraživanjem popisa instaliranih aplikacija.</p>
+    </item>
+    <item>
+      <p>Odaberite aplikaciju i kliknite na <gui>Ukloni</gui>.</p>
+    </item>
+    <item>
+      <p>Potvrdite da želite ukloniti aplikaciju.</p>
+    </item>
+    <item>
+      <p>Biti ćete upitani za ovjeru upisom vaše lozinke. Jednom kada se ovjerite, aplikacija će biti uklonjena.</p>
+    </item>
+
+  </steps>
+
+  <note>
+    <p>Određene aplikacije ovise o drugim aplikacijama kako bi ispravno radile. Ako pokušate ukloniti aplikaciju koja je potrebna drugoj aplikaciji, obje će biti uklonjene. Biti ćete upitani za potvrdu ako želite da se obje uklone prije uklanjanja aplikacija.</p>
+  </note>
+
+</page>

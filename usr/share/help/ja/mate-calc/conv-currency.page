@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="conv-currency" xml:lang="ja">
+
+    <info>
+        <link type="guide" xref="index#conversion"/>
+    </info>
+
+	<title>通貨</title>
+
+    <p>通貨を換算するには、<link xref="financial">財務モード</link>で入力し、通貨管理を利用します。</p>
+    <p>キーボードと <em>in</em> 演算子を使用して通貨を換算することもできます。</p>
+    <example>
+    <p>13.65 USD in GBP</p>
+    </example>
+    <note>
+    <p>通貨情報は概算なので、財務的な判断には使用しないでください。</p>
+    </note>
+</page>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="report-ubuntu-bug" xml:lang="da">
+
+  <info>
+    <link type="guide" xref="more-help"/>
+    <desc>Hvordan og hvor rapporteres fejl i Ubuntu.</desc>
+
+    <revision version="22.04" date="2021-11-28" status="review"/>
+
+    <credit type="author">
+      <name>Ubuntus dokumentationshold</name>
+      <email>ubuntu-doc@lists.ubuntu.com</email>
+    </credit>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+<title>Indrapportér et problem i Ubuntu</title>
+
+<p>If you notice a problem in Ubuntu, you can file a <em>bug report</em>.</p>
+
+<steps>
+ <item>
+  <p>Tast <keyseq><key>Alt</key><key>F2</key></keyseq> og skriv <input>ubuntu-bug &lt;pakkenavn&gt;</input></p>
+  <p>Har du et problem med hardware, eller kender du ikke navnet på det pågældende program, skriver du bare <input>ubuntu-bug</input></p>
+  <note><p>Hvis <cmd>ubuntu-bug</cmd> af en eller anden grund ikke virker, kan du <link href="https://help.ubuntu.com/community/ReportingBugs#Filing_bugs_manually_at_Launchpad.net">indsende en fejlrapport manuelt</link> og gå til trin 4 i denne instruktion.</p></note>
+ </item>
+
+ <item><p>Efter at have kørt en af kommandoerne ovenfor vil Ubuntu indsamle information om fejlen. Det kan tage et par minutter. Hvis du ønsker det, kan du gennemse den indsamlede information. Klik <gui>Send</gui> for at fortsætte.</p>
+ </item>
+
+ <item><p>Et nyt faneblad til videre håndtering af fejlen åbnes i browseren. Ubuntu bruger websitet <app>Launchpad</app> til håndtering af fejlrapporter. Har du ikke en Launchpad-konto, skal du først registrere dig for at kunne indsende fejlrapporten og modtage e-mails om dens status. Det kan du gøre ved at klikke <gui>Create a new account</gui> (opret en ny konto).</p>
+ </item>
+
+
+ <item><p>Indtast en beskrivelse af problemet i feltet "Summary" (sammendrag), efter du har logget på Launchpad.</p>
+ </item>
+
+ <item><p>Når du har klikket <gui>Next</gui>, vil Launchpad søge efter lignende fejl, i fald fejlen er blevet rapporteret. Er fejlen allerede rapportet, kan du markere fejlen som, at den også påvirker dig. Du kan også abonnere på fejlrapporten, så du modtager opdateringer om løsning af fejlen. Er fejlen ikke allerede rapporteret, så klik <gui>No, I need to report a new bug</gui> (nej, jeg vil rapportere en ny fejl).</p>
+ </item>
+
+ <item><p>Udfyld feltet "Description" (beskrivelse) med så meget information, du kan. Det er er vigtigt, at du angiver tre ting:</p>
+
+  <list type="disc">
+  <item><p>Hvad du forventede, der ville ske</p></item>
+  <item><p>Hvad der faktisk skete</p></item>
+  <item><p>Hvis muligt det mindste antal nødvendige trin for at få det til at ske, hvor trin 1 er "start programmet"</p></item></list>
+
+ </item>
+  <item><p>Din rapport får et ID-nummer, og dens status vil blive opdateret, efterhånden som fejlen håndteres. Tak for hjælpen med at forbedre Ubuntu!</p>
+ </item>
+</steps>
+
+<note><p>Får du fejlmeddelelsen "This is not a genuine Ubuntu package" (dette er ikke en ægte Ubuntu-pakke), betyder det, at programmet, du prøver at indsende en fejlrapport på, ikke er fra det officielle Ubuntu-arkiv. Så kan du ikke bruge Ubuntus indbyggede fejlrapporteringsværktøj.</p></note>
+
+<p>Læs den grundige <link href="https://help.ubuntu.com/community/ReportingBugs">onlinedokumentation</link> for mere information om rapportering af fejl i Ubuntu.</p>
+</page>

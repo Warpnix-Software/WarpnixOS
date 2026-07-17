@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-external-editor" xml:lang="ca">
+
+  <info>
+    <desc>Utilitzeu una aplicació d'editor de text en comptes de l'editor de missatges predeterminat.</desc>
+    
+    <link type="guide" xref="index#mail-composing-advanced"/>
+
+    <revision pkgversion="3.13.91" version="0.1" date="2015-03-10" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Ús d'un editor extern</title>
+
+<p>Podeu redactar el cos del missatge externament a la vostra aplicació d'edició de text favorita, per tal d'utilitzar-ne la funcionalitat específica.</p>
+
+<steps>
+<item><p>Seleccioneu <guiseq><gui>Edita</gui><gui>Connectors</gui></guiseq>.</p></item>
+<item><p>Activeu <gui>Editor extern</gui>.</p></item>
+<item><p>Fer clic a la pestanya <gui>Configuració</gui>.</p>
+<note style="tip"><p>Si un connector no està disponible a <guiseq><gui>Edita</gui><gui>Connectors</gui></guiseq>, pregunteu en un fòrum d'assistència de la vostra distribució. La vostra distribució podria haver decidit desactivar alguns connectors o distribuir els connectors en un paquet a part.</p></note>
+</item>
+<item><p>Definiu l'<gui>ordre</gui> corresponent per a iniciar l'aplicació.</p></item>
+<item><p>Si no s'<gui>Inicia automàticament quan s'edita un correu nou</gui>, heu de seleccionar <guiseq><gui>Fitxer</gui><gui>Redacció en un editor extern</gui></guiseq> a l'editor de correu.</p></item>
+</steps>
+
+</page>

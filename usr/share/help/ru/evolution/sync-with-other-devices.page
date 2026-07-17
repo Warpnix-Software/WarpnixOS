@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="sync-with-other-devices" xml:lang="ru">
+
+  <info>
+    <desc>Синхронизация данных <app>Evolution</app> с портативными устройствами и мобильными телефонами.</desc>
+
+    <link type="guide" xref="index#data-migration-and-sync"/>
+
+    <revision pkgversion="3.10.4" version="0.7" date="2017-07-28" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Синхронизация <app>Evolution</app> с другими устройствами</title>
+
+<p>В настоящее время для пользователей нет «рекомендуемых инструкций».</p>
+
+<p>Многие дистрибутивы содержат приложение <app><link href="https://syncevolution.org/">SyncEvolution</link></app>, которое можно использовать для устройств, поддерживающих <link href="https://en.wikipedia.org/wiki/SyncML">SyncML</link>.</p>
+
+<p>В целом, рекомендуется использовать приложения и устройства, которые поддерживают <link href="https://en.wikipedia.org/wiki/ActiveSync">протокол ActiveSync</link> (например, <app>SyncEvolution</app>). На Википедии доступен <link href="https://en.wikipedia.org/wiki/List_of_collaborative_software">перечень соответствующих программ</link>.</p>
+
+<p>If you can provide good practices or more information on this topic feel free to file a bug report in <link href="https://gitlab.gnome.org/GNOME/evolution/-/issues/">GNOME's bug tracking system</link>.</p>
+
+</page>

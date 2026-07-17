@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-attachments-sending" xml:lang="ca">
+
+  <info>
+    <desc>Adjuntar fitxers al correu electrònic que es vol enviar.</desc>
+
+    <link type="guide" xref="index#mail-composing"/>
+    <link type="guide" xref="mail-attachments"/>
+
+    <revision pkgversion="3.0.2" version="0.2" date="2011-07-30" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-compose and https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#b17rcxmf -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Afegir un adjunt a un correu electrònic</title>
+
+<section id="attaching">
+<title>Adjuntar fitxers</title>
+<p>Per a adjuntar un fitxer al vostre editor de correu electrònic:</p>
+<steps>
+<item><p>Feu clic a <gui>Afegeix una adjunció…</gui>, o a <guiseq><gui>Inserta</gui><gui>Adjunció</gui></guiseq>, o premeu <keyseq><key>Ctrl</key><key>M</key></keyseq>.</p></item>
+<item><p>Seleccioneu el fitxer que voleu adjuntar.</p></item>
+<item><p>Feu clic a <gui style="button">D'acord</gui>.</p></item>
+</steps>
+<p>També podeu arrossegar un fitxer a la barra d'adjunts de la finestra d'edició.</p>
+
+<p>Quan envieu el missatge, s'hi acompanya una còpia del fitxer adjunt. Tingueu en compte que, si els fitxers adjunts són molt grans, poden trigar molt a enviar-se i a rebre's.</p>
+</section>
+
+<section id="reminders">
+<title>Recordatori d'adjuncions</title>
+
+<p><app>Evolution</app> té un connector pel Recordatori d'adjuncions que podeu utilitzar per a recordar-vos que adjunteu un fitxer a un correu electrònic. Si es determina que no heu adjuntat el fitxer, es mostrarà una finestra de recordatori abans de l'enviament.</p>
+
+<p>Per a activar el recordatori d'adjuncions:</p>
+<steps>
+<item><p>Seleccioneu <guiseq><gui>Edita</gui><gui>Connectors</gui></guiseq>.</p></item>
+<item><p>Activar <gui>Recordatori d'adjuncions</gui>.</p>
+<note style="tip"><p>Si un connector no està disponible a <guiseq><gui>Edita</gui><gui>Connectors</gui></guiseq>, pregunteu en un fòrum d'assistència de la vostra distribució. La vostra distribució podria haver decidit desactivar alguns connectors o distribuir els connectors en un paquet a part.</p></note>
+</item>
+<item><p>Fer clic a la pestanya <gui>Configuració</gui>.</p></item>
+<item><p>Feu clic a <gui style="button">Afegeix</gui>, a continuació, introduïu paraules clau al vostre idioma com "Adjuntar".</p></item>
+</steps>
+<p>Segons les paraules clau que hàgiu afegit, <app>Evolution</app> cerca el text a tots els missatges que envieu. Si troba alguna de les paraules clau al vostre correu electrònic i no hi ha cap fitxer adjunt, es mostrarà la finestra de recordatori.</p>
+
+</section>
+
+</page>

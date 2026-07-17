@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-composer-custom-header-lines" xml:lang="ca">
+
+  <info>
+    <desc>Ús de camps personalitzats a la capçalera de l'editor de missatges.</desc>
+
+    <link type="guide" xref="index#mail-composing-advanced"/>
+
+    <revision pkgversion="3.0.2" version="0.2" date="2011-07-30" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#b1a5azam -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Línies de capçalera personalitzades</title>
+
+<p>Podeu afegir línies de capçalera arbitràries als correus electrònics sortints.</p>
+
+<section id="managing">
+<title>Habilitació i gestió de capçaleres personalitzades</title>
+<p>Per a configurar el connector de capçalera personalitzat:</p>
+<steps>
+<item><p>Seleccioneu <guiseq><gui>Edita</gui><gui>Connectors</gui></guiseq>.</p></item>
+<item><p>Habilitar la <gui>Capçalera personalitzada</gui>.</p>
+<note style="tip"><p>Si un connector no està disponible a <guiseq><gui>Edita</gui><gui>Connectors</gui></guiseq>, pregunteu en un fòrum d'assistència de la vostra distribució. La vostra distribució podria haver decidit desactivar alguns connectors o distribuir els connectors en un paquet a part.</p></note>
+</item>
+<item><p>Fer clic a la pestanya <gui>Configuració</gui>.</p></item>
+<item><p>Podeu afegir, editar o eliminar els camps de l'encapçalament. Per cada camp de capçalera que afegiu, podeu especificar les claus i els valors. La clau s'utilitza com a títol de la capçalera personalitzada. Podeu introduir diversos valors per a les claus. Heu d'utilitzar un punt i coma per a separar tots els valors que introduïu.</p></item>
+</steps>
+</section>
+
+<section id="inserting">
+<title>Inserir capçaleres personalitzades en un missatge</title>
+<steps>
+<item><p>Feu clic a <guiseq><gui>Nou</gui><gui>Missatge de correu</gui></guiseq> o premeu <keyseq><key>Maj</key><key>Ctrl</key><key>M</key></keyseq> per a obrir la finestra d'edició de missatges.</p></item>
+<item><p>Seleccioneu <guiseq><gui>Insereix</gui><gui>Capçalera personalitzada</gui></guiseq>.</p>
+<p>A la finestra <gui>Capçalera personalitzada pel correu electrònic</gui>, podeu veure tots els camps i els valors definits per a la capçalera.</p></item>
+<item><p>Establiu els valors dels camps de capçalera mitjançant la llista desplegable.</p></item>
+<item><p>Feu clic a <gui style="button">D'acord</gui>.</p></item>
+</steps>
+</section>
+
+</page>

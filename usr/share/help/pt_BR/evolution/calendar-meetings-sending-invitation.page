@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-meetings-sending-invitation" xml:lang="pt-BR">
+
+  <info>
+    <link type="guide" xref="calendar-meetings"/>
+
+    <revision pkgversion="3.28.2" version="0.3" date="2018-07-09" status="stub"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#usage-calendar-rsvp
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Enviando um convite de reunião.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Fontenelle</mal:name>
+      <mal:email>rafaelff@gnome.org</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Enviando um convite de reunião</title>
+
+  <p>Ao criar uma reunião (compromisso de grupo), você pode especificar os participantes em várias categorias, como "presidente" ou "obrigatório". Quando você salva a lista de reuniões, cada participante recebe um e-mail com as informações da reunião, o que também dá a opção de responder.</p>
+
+  <p>Se você não precisa coletar informações de participação ao agendar um evento e prefere apenas anunciar o evento, clique com o botão direito na reunião e selecione <gui>Encaminhar como iCalendar…</gui>. Isso abre uma nova mensagem de e-mail com a notificação do evento anexada como um anúncio. Os destinatários podem adicionar o evento a seus calendários com um clique, mas ele não enviará automaticamente um e-mail informando se eles planejam comparecer.</p>
+
+  <p>Para programar uma reunião:</p>
+
+  <steps>
+    <item>
+      <p>Clique em <guiseq><gui>Arquivo</gui><gui>Novo</gui><gui>Reunião</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Se você tiver várias contas de e-mail, selecione uma para usar selecionando um item no campo <gui>Organizador</gui>.</p>
+    </item>
+    <item>
+      <p>Selecione uma agenda na lista suspensa <gui>Agenda</gui>.</p>
+    </item>
+    <item>
+      <p>Clique em <gui style="button">Adicionar</gui> para adicionar os endereços de e-mail das pessoas que você deseja convidar.</p>
+    </item>
+    <item>
+      <p>Clique em <gui>Ver</gui> na barra de menu para mostrar ou ocultar os campos <gui>Tipo</gui>, <gui>Função</gui>, <gui>Estado</gui> e <gui>RSVP</gui>.</p>
+    </item>
+    <item>
+      <p>Digite um breve resumo no campo <gui>Resumo</gui>.</p>
+    </item>
+    <item>
+      <p>(Opcional) Digite um local no campo <gui>Local</gui>.</p>
+    </item>
+    <item>
+      <p>Para selecionar este evento como um evento de dia inteiro, clique em <guiseq><gui>Opções</gui><gui>Evento de dia inteiro</gui></guiseq> ou clique no botão <gui>Evento de dia inteiro</gui> na barra de ferramentas.</p>
+    </item>
+    <item>
+      <p>Selecione a data e hora.</p>
+    </item>
+    <item>
+      <p>Se o evento não for de dia inteiro, selecione <gui>Por</gui> para especificar a duração ou selecione <gui>Até</gui> para especificar a hora de término do evento.</p>
+    </item>
+    <item>
+      <p>(Opcional) Insira uma descrição no campo <gui>Descrição</gui>.</p>
+    </item>
+    <item>
+      <p>Para consultar informações de <link xref="calendar-free-busy">disponibilidade</link> dos participantes, clique no botão <gui style="button">Disponibilidade</gui> na barra de ferramenta, ou na aba <gui>Programar</gui>.</p>
+    </item>
+    <item>
+      <p>Clique <gui>Salvar</gui> para salvar a reunião.</p>
+    </item>
+  </steps>
+
+  <p>Um e-mail é enviado a todos os destinatários, convidando-os para o seu evento.</p>
+
+  <p>Você também pode definir um <link xref="calendar-timezones">fuso horário</link>, uma <link xref="using-categories">categoria</link>, um <link xref="calendar-alarms-and-reminders">lembrete</link>, uma <link xref="calendar-recurrence">recorrência</link> ou uma <link xref="calendar-classifications">classificação</link> para o evento, ou adicionar um anexo.</p>
+
+  <note style="tip">
+    <p>No <app>Evolution</app>, uma reunião pode ter apenas um organizador e apenas o organizador pode adicionar participantes a essa reunião. Embora seja possível alterar o organizador de uma reunião, isso não é recomendado como um meio de convidar participantes adicionais para as reuniões. Se você deseja convidar outras pessoas para uma reunião e não é o organizador dessa reunião, é recomendável encaminhar a mensagem de convite recebida do organizador original para participantes adicionais.</p>
+  </note>
+
+</page>

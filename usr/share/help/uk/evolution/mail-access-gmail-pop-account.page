@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-access-gmail-pop-account" xml:lang="uk">
+
+  <info>
+    <desc>Як налаштувати обліковий запис POP Gmail.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+    <link type="guide" xref="google-services"/>
+    <link type="seealso" xref="mail-account-manage-pop"/>
+
+    <revision pkgversion="3.11.92" version="0.2" date="2014-03-23" status="review"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+
+
+<title>Доступ до облікового запису POP Gmail з <app>Evolution</app></title>
+
+<p>Виконайте такі дії для налаштовування вашого облікового запису POP Gmail в <app>Evolution</app>:</p>
+
+<steps>
+<item><p>Увійдіть до вашого облікового запису Gmail.</p></item>
+<item><p>Перейдіть до сторінки <guiseq><gui>Налаштування</gui><gui>Пересилання та POP/IMAP</gui></guiseq>. Відкрийте розділ завантаження POP.</p></item>
+<item><p>Увімкніть можливість отримання даних POP позначенням пункту, який відповідає одному з таких варіантів:</p>
+    <list>
+    <item><p>Увімкнути POP для всієї пошти (навіть для пошти, яку вже було завантажено)</p></item>
+    <item><p>Увімкнути POP для пошти, яка надходитиме відтепер</p></item>
+    </list>
+</item>
+<item><p>Вкажіть інші потрібні параметри для цієї можливості Gmail.</p></item>
+<item><p>Щоб визначити параметри облікового запису Gmail, натисніть <gui>Інструкції з налаштування</gui>. Виберіть <gui>Я хочу увімкнути POP</gui> і виберіть <gui>Інший</gui> зі списку клієнтів.</p></item>
+<item><p>У вашому клієнті <app>Evolution</app> перейдіть до сторінки <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Облікові записи</gui></guiseq>. Натисніть кнопку <gui style="button">Додати</gui>.</p></item>
+<item><p>Вкажіть потрібні програмі дані. Параметри облікового запису можна дізнатися на кроці 5.</p></item>
+<!-- Evolution does not support Google's proprietary SASL XOAUTH2 implementation which makes Evolution a "less secure app" for Google. -->
+<item><p>Увімкніть <link href="https://www.google.com/settings/security/lesssecureapps">доступ для менш захищених програм у параметрах вашого облікового запису Gmail</link>.</p></item>
+
+</steps>
+</page>

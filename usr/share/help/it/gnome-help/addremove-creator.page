@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-creator" xml:lang="it">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntu Documentation Team</name>
+    </credit>
+
+    <desc>Converti un'unità flash USB in un volume da cui è possibile avviare e installare Ubuntu.</desc>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <link type="guide" xref="disk"/>
+    <link type="guide" xref="addremove" group="#last"/>
+
+    <revision version="17.10" date="2017-09-26" status="review"/>
+  </info>
+
+  <title>Crea un disco di avvio</title>
+
+  <p>In questo contesto un disco di avvio è un'unità flash USB da cui è possibile avviare e <link href="https://www.ubuntu.com/download/desktop/install-ubuntu-desktop">installare Ubuntu</link>. La capacità dell'unità flash USB deve essere di almeno 2 GB. Tutti i dati sull'unità flash USB andranno persi quando si crea il disco di avvio.</p>
+
+  <p>Si presume che tu abbia scaricato un'immagine ISO di Ubuntu.</p>
+
+  <p>Per creare un disco di avvio da un'immagine ISO di Ubuntu:</p>
+    
+  <steps>
+    <item>
+      <p>Apri <app>Creatore del Disco di Avvio</app> tramite la barra di ricerca <em>Attività</em>.</p>
+    </item>
+    <item>
+      <p>Se l'immagine ISO è nella cartella <gui>Scaricati</gui> e c'è solo un'immagine ISO, <app>Creatore del Disco di Avvio</app> verrà selezionata automaticamente, altrimenti seleziona l'immagine ISO corretta.</p>
+    </item>
+    <item>
+      <p>Se il tuo computer ha una sola unità flash USB, <app>Creatore del Disco di Avvio</app> l'avrà selezionata, altrimenti seleziona l'unità corretta.</p>
+    </item>
+    <item>
+      <p>Clicca <gui>Crea Disco di Avvio</gui>.</p>
+    </item>
+    <item>
+      <p>Clicca <gui>Sì</gui> per confermare. Il processo dovrebbe durare circa dieci minuti.</p>
+    </item>
+
+    <item>
+      <p>Quando si apre la finestra "Installazione completata" fai clic su <gui>Chiudi</gui>.</p>
+    </item>
+
+  </steps>
+
+
+
+</page>

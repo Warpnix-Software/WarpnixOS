@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="print-inprogress-game" xml:lang="uk">
+
+  <info>
+   <link type="guide" xref="index#print"/>
+
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+    <revision pkgversion="3.31.90" version="0.3" date="2019-03-03" status="review"/>
+    <credit type="author copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Друк вашої гри</title>
+ <p>Ви можете надрукувати судоку до файла або на принтері.</p>
+ <p>Щоб надрукувати судоку, яке ви розв'язуєте, виконайте такі дії:</p>
+ <steps>
+  <item><p>Натисніть кнопку меню у верхньому правому куті вікна і виберіть <gui style="menuitem">Надрукувати</gui>.</p></item>
+  <item><p>Виберіть пункт <gui style="menuitem">Надрукувати поточну головоломку…</gui>.</p></item>
+  <item><p>Виберіть принтер.</p></item>
+  <item><p>Натисніть <gui>Надрукувати</gui>.</p></item>
+ </steps>
+ <note><p>Якщо у списку немає вашого принтера, ознайомтеся із настановами щодо <link href="https://help.gnome.org/users/gnome-help/stable/printing-setup.html" xref="help:gnome-help/printing-setup">налаштовування локального принтера</link>.</p></note>
+
+</page>

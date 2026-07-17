@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-external-editor" xml:lang="uk">
+
+  <info>
+    <desc>Використання програми для редагування тексту замість типового редактора повідомлень електронної пошти.</desc>
+    
+    <link type="guide" xref="index#mail-composing-advanced"/>
+
+    <revision pkgversion="3.13.91" version="0.1" date="2015-03-10" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Використання зовнішнього редактора</title>
+
+<p>Ви можете сформувати вміст вашого повідомлення у вашому улюбленому зовнішньому текстовому редакторі, щоб скористатися відповідними функціональними можливостями.</p>
+
+<steps>
+<item><p>Виберіть <guiseq><gui>Зміни</gui><gui>Додатки</gui></guiseq>.</p></item>
+<item><p>Увімкніть <gui>Зовнішній редактор</gui>.</p></item>
+<item><p>Перейдіть на вкладку <gui>Налаштовування</gui>.</p>
+<note style="tip"><p>Якщо додатка немає у списку меню <guiseq><gui>Зміни</gui><gui>Додатки</gui></guiseq>, будь ласка, скористайтеся для його додавання форумом підтримки вашого дистрибутива. Можливо, у вашому дистрибутиві розробники вирішили вимкнути якісь додатки або виокремити додатки у інший пакунок.</p></note>
+</item>
+<item><p>Встановіть відповідну <gui>Команду</gui> для запуску програми.</p></item>
+<item><p>Якщо пункт <gui>Автоматично запускати при редагуванні нової пошти</gui> не позначено, вам слід вибрати пункт меню <guiseq><gui>Файл</gui><gui>Створювати повідомлення у зовнішньому редакторі</gui></guiseq> у редакторі повідомлень.</p></item>
+</steps>
+
+</page>

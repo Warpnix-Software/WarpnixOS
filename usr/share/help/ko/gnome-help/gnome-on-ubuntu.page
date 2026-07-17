@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="tip" id="gnome-on-ubuntu" xml:lang="ko">
+
+  <info>
+    <credit type="author">
+      <name>우분투 문서화 팀</name>
+    </credit>
+    <desc>Ubuntu에서 GNOME 데스크톱에 대한 주목할만한 수정 사항 목록입니다.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="shell-overview" group="#first"/>
+    <link type="guide" xref="index" group="intro"/>
+    <revision version="0.1" date="2022-04-28" status="review"/>
+  </info>
+
+  <title>Ubuntu GNOME의 소개</title>
+
+  <p>Ubuntu Desktop은 GNOME 데스크톱 환경의 약간 수정된 버전이 미리 설치되어 있습니다. 일반적으로 이 데스크톱 안내서는 GNOME 개발자들이 제공하는 GNOME을 참조합니다. 바닐라 GNOME과 우분투 GNOME 간의 주목할 만한 차이점 목록을 제공합니다.</p>
+
+  <list type="disc">
+  <item>
+    <p>Ubuntu는 GNOME 웹 브라우저 대신 Firefox가 함께 제공됩니다.</p>
+  </item>
+  <item>
+    <p>Ubuntu는 GNOME Connections 대신 Remmina 원격 데스크톱 클라이언트가 기본 제공됩니다.</p>
+  </item>
+    <item>
+      <p>AppIndicators 확장 프로그램이 포함되어 있습니다. 이 확장 프로그램을 사용하면 일부 애플리케이션의 오른쪽 상단 모서리에 아이콘이 활성화됩니다.</p>
+    </item>
+    <item>
+      <p>Ubuntu Dock 확장 프로그램이 포함되어 있습니다. 이 확장 프로그램은 실행 중인 애플리케이션을 위한 왼쪽 사이드바를 제공합니다.</p>
+    </item>
+    <item>
+      <p>바탕화면 아이콘 NG 확장 프로그램이 포함되어 있습니다. 이 확장 프로그램을 사용하면 바탕화면에서 아이콘을 사용할 수 있습니다.</p>
+    </item>
+    <item>
+      <p>
+        In addition to Ubuntu desktop wallpapers, the default theme is Yaru and
+        the default font is Ubuntu.
+      </p>
+    </item>
+    <item>
+      <p>창 제목 표시줄에 최소화 및 최대화 버튼이 포함되어 있습니다.</p>
+    </item>
+  </list>
+
+
+
+</page>

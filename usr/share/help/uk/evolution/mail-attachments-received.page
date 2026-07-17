@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-attachments-received" xml:lang="uk">
+
+  <info>
+    <desc>Збереження та відкриття файлів, які було долучено до отриманих повідомлень.</desc>
+
+    <link type="guide" xref="mail-displaying-message"/>
+    <link type="guide" xref="mail-attachments"/>
+
+    <revision pkgversion="3.35.91" version="0.5" date="2020-02-21" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from Reuse https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en#usage-mail-getnsend-get-attach-actions -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Обробка долучень у отриманій пошті</title>
+
+<p>Якщо ви отримаєте повідомлення електронної пошти із одним або декількома файловими долученнями, <app>Evolution</app> покаже кількість долучень і кнопку <gui style="button">Зберегти</gui> або <gui style="button">Зберегти як</gui> між заголовком і вмістом повідомлення електронної пошти.</p>
+<note style="tip"><p>В <app>Evolution</app> не передбачено підтримки збереження усіх долучень до усіх повідомлень до однієї теки одночасно.</p></note>
+
+<p>Список долучень буде також показано у нижній частині повідомлення електронної пошти.</p>
+<p>Щоб зберегти долучення на диск, натисніть кнопку зі стрілкою вниз, яку розташовано поряд із піктограмою долучення, і виберіть пункт <gui>Зберегти як</gui>.</p>
+<p>Щоб відкрити долучення у іншій програмі, натисніть кнопку зі стрілочкою вниз, яку розташовано поряд із пунктом долучення, і виберіть одну із доступних програм.</p>
+
+<note style="tip"><p>Перелік пунктів дій для долучення залежить від типу долучення та програм, які встановлено у вашій системі. Список програм, які можуть працювати із файлами у певних форматах визначаєть базою даних типів MIME стільничного середовища.</p><p>Щоб переглянути список зареєстрованих програм для типу MIME, скористайтеся командою <cmd>gio mime</cmd>. Приклад: <cmd>gio mime "application/pdf"</cmd></p></note>
+
+</page>

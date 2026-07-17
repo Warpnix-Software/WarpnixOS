@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-attachments-received" xml:lang="de">
+
+  <info>
+    <desc>Dateien speichern und öffnen, die an empfangene Nachrichten angehängt sind.</desc>
+
+    <link type="guide" xref="mail-displaying-message"/>
+    <link type="guide" xref="mail-attachments"/>
+
+    <revision pkgversion="3.35.91" version="0.5" date="2020-02-21" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from Reuse https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en#usage-mail-getnsend-get-attach-actions -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andre Klapper</mal:name>
+      <mal:email>ak-47@gmx.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009-2013, 2016-2018, 2020-2021</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009-2013, 2015-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Gabor Karsay</mal:name>
+      <mal:email>gabor.karsay@gmx.at</mal:email>
+      <mal:years>2011-2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Tim Sabsch</mal:name>
+      <mal:email>tim@sabsch.com</mal:email>
+      <mal:years>2018, 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jürgen Benvenuti</mal:name>
+      <mal:email>gastornis@posteo.org</mal:email>
+      <mal:years>2022-2024</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Umgang mit Anlagen in empfangenen Nachrichten</title>
+
+<p>Wenn Sie eine E-Mail mit einem oder mehreren Anhängen erhalten, so zeigt <app>Evolution</app> die Anzahl der Anhänge an und den Knopf <gui style="button">Speichern</gui> bzw. <gui style="button">Alle speichern</gui> zwischen den Kopfzeilen und dem Nachrichtentext der E-Mail.</p>
+<note style="tip"><p><app>Evolution</app> unterstützt nicht das gleichzeitige Speichern aller Dateianhänge aller Nachrichten eines Ordners.</p></note>
+
+<p>Am Ende der E-Mail ist ebenfalls eine Liste aller Anhänge aufgeführt.</p>
+<p>Um einen Anhang auf einen Datenträger abzuspeichern, klicken Sie auf den Abwärtspfeil neben dem Symbol für den Anhang und wählen Sie <gui>Speichern unter</gui>.</p>
+<p>Um einen Anhang in einer anderen Anwendung zu öffnen, klicken Sie auf den Abwärtspfeil neben dem Symbol für Dateianhänge und wählen Sie eine der angebotenen Anwendungen.</p>
+
+<note style="tip"><p>Die für einen Anhang verfügbaren Optionen hängen vom Dateitypen und den auf Ihrem Rechner installierten Anwendungen ab. Die MIME-Datenbank Ihres Systems legt fest, mit welchen Anwendungen spezifische Dateiformate geöffnet werden.</p><p>Mit dem Befehl <cmd>gio mime</cmd> wird eine Liste der für einen MIME-Typ registrierten Anwendungen angezeigt. Beispiel: <cmd>gio mime "application/pdf"</cmd></p></note>
+
+</page>

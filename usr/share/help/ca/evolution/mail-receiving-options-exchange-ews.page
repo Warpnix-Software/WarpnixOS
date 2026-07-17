@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-receiving-options-exchange-ews" xml:lang="ca">
+
+  <info>
+    <desc>Opcions de recepció per a comptes de serveis web d'Exchange.</desc>
+
+    <link type="guide" xref="mail-receiving-options#corporate-server-types"/>
+    <link type="guide" xref="mail-account-manage-microsoft-exchange-evo-ews#receiving-email"/>
+    <revision pkgversion="3.12.9" version="0.3" date="2015-02-15" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Opcions de recepció d'Exchange Web Services</title>
+
+<section id="receiving-email-exchange-ews">
+<title>Recepció de correu</title>
+
+<p>A la pàgina <gui>Rebre correu</gui> (accessible via <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Comptes de correu</gui><gui style="button">Edita</gui><gui>Rebre correu</gui></guiseq>):</p>
+
+<list>
+<item><p>Introduïu el vostre nom d'usuari per a aquest servidor.</p></item>
+<item><p>Introduïu manualment l'URL de l'amfitrió i l'URL OAB o feu clic a <gui style="button">Obté l'URL</gui> que us demanarà la contrasenya i, a continuació, intenta completar automàticament els valors.</p>
+<note style="tip"><p>Si esteu en un entorn d'organització, podeu contactar amb l'administrador del sistema per a obtenir més informació.</p></note></item>
+<item><p>Seleccioneu el tipus d'autenticació a la llista d'autenticació o feu clic a <gui style="button">Comprova els tipus disponibles</gui> per tal que <app>Evolution</app> comprovi els mecanismes d'autentificació suportats. Alguns servidors no avisen dels mecanismes que admeten, de manera que fer clic en aquest botó no garanteix que els mecanismes disponibles funcionin.</p></item>
+</list>
+
+</section>
+
+<section id="receiving-options-exchange-ews">
+<title>Opcions de recepció</title>
+
+<p>A la pàgina <gui>Opcions de recepció</gui> (accessible via <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Comptes de correu</gui><gui style="button">Edita</gui><gui>Opcions de recepció</gui></guiseq>):</p>
+
+<list>
+<item><p>Si voleu que <app>Evolution</app> comprovi automàticament l'existència de nous missatges, feu clic a l'opció <gui>Comproveu si hi ha missatges nous cada … minuts</gui> i seleccioneu la freqüència en minuts.</p></item>
+<item><p>També podeu definir si <app>Evolution</app> ha de comprovar si hi ha missatges nous a totes les carpetes.</p></item>
+<item><p>Si voleu tenir una còpia de la llibreta d'adreces del servidor per a accedir-hi fora de línia, activeu <gui>Memòria cau de la llibreta d'adreces sense connexió</gui> i feu clic a <gui style="button">Recupera la llista</gui>. Després, seleccioneu la llibreta d'adreces a partir de les opcions disponibles.</p></item>
+<item><p>Seleccioneu si voleu que els <link xref="mail-filters">filtres</link> s'apliquin automàticament al correu que rebeu, si <link xref="mail-spam-marking">el correu brossa</link> s'ha de filtrar automàticament, i si <link xref="mail-working-offline"> el correu electrònic al servidor s'ha de sincronitzar amb la vostra còpia local per a tenir-hi accés fora de línia</link>.</p></item>
+</list>
+
+</section>
+
+</page>

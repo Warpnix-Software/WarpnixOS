@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="calendar-classifications" xml:lang="eu">
+
+  <info>
+    <link type="guide" xref="index#calendar-advanced"/>
+
+    <revision pkgversion="3.28.2" version="0.5" date="2018-07-09" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+      https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#bxmtbjb
+      -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Hitzorduen ikusgaitasuna mugatzea urruneko zerbitzarietan.</desc>
+  </info>
+
+  <title>Sailkapenak erabiltzea</title>
+
+  <p>Urruneko zerbitzari bateko (adibidez, Novell GroupWise edo Microsoft Exchange) egutegi bat erabiltzen ari bazara, sailkapen bat aukeratu dezakezu hura nork ikusiko duen zehazteko</p>
+
+  <p>To set a classification for an appointment, click
+  <guiseq><gui>Options</gui><gui>Classification</gui></guiseq> and select a
+  classification in the editor. <gui>Public</gui> is the default category, and
+  a public appointment can be viewed by anyone on the calendar-sharing network.
+  <gui>Private</gui> denotes one level of security, and <gui>Confidential</gui>
+  an even higher level.</p>
+
+  <p>Maila desberdinak zure zerbitzariaren ezarpenen araberakoak dira; kontsultatu zure sistema-administratzailearekin edo doitu zure ordezkaritza-ezarpenak.</p>
+
+  <p>Gertaerak, zirkularrak eta zereginak modu lehenetsian pribatu gisa sailkatu daitezen nahi baduzu, gaitu hobespen hori <guiseq><gui>Editatu</gui><gui>Hobespenak</gui><gui>Egutegia eta zereginak</gui><gui>Orokorra</gui><gui>Bestelakoak</gui></guiseq> aukeran.</p>
+
+</page>

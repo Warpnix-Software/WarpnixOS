@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="earmarks" xml:lang="de">
+  <info>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+   <link type="guide" xref="index#tips"/>
+    <credit type="author copyright">
+      <name>Thomas Hinkle</name>
+      <email>tmhinkle@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Chris Beiser</name>
+      <email>ctbeiser@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2008, 2011-2012, 2018-2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@googlemail.com</mal:email>
+      <mal:years>2011, 2014-2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Tim Sabsch</mal:name>
+      <mal:email>tim@sabsch.com</mal:email>
+      <mal:years>2023</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Notizen</title>
+<p>Notizziffern können zu jedem Kästchen hinzugefügt werden. Dies erlaubt das Hinzufügen möglicher Werte für ein Kästchen oder anderer Daten, die für Sie nützlich sein könnten. In den Notizen werden alle Zeichen in der Reihenfolge der Eingabe gespeichert, allerdings sind mehrfache Eingaben eines Zeichens nicht möglich.</p>
+
+<p>So fügen Sie Notizen zu einem Kästchen hinzu:</p>
+
+<steps>
+  <item><p>Wählen Sie das Kästchen aus.</p></item>
+  <item><p>Drücken Sie <keyseq><key>Strg</key><key>1</key></keyseq> bis <keyseq><key>Strg</key><key>9</key></keyseq>.</p></item>
+</steps>
+
+<p>Sie können eine Ziffer zu den Notizen im oberen Bereich eines Kästchens hinzufügen, indem Sie die Tastenkombinationen von <keyseq><key>Strg</key><key>1</key></keyseq> bis <keyseq><key>Strg</key><key>9</key></keyseq> drücken.</p>
+
+<note><p>Sie können Notizen auch hinzufügen, indem Sie die <key>Strg</key>-Taste gedrückt halten oder mit der rechten Maustaste in ein Kästchen klicken und dann eine Ziffer wählen.</p></note>
+
+</page>

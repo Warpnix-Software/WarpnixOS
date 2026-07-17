@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="synctex-search" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#synctex" group="fifth"/>
+    <desc>Переключение между Atril и <app>pluma</app>.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Тиффани Антропольски</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  </info>
+
+<title>Поиск с помощью SyncTeX</title>
+<p>После того, как вы <link xref="synctex-compile">скомпилировали файл TeX с SyncTeX</link>, вы можете выполнить поиск. SyncTeX поддерживает прямой и обратный поиск даже из подключённого файла.</p>
+
+<section id="forward-search">
+    <title>Прямой поиск: из TeX в PDF (из <app>pluma</app> в Atril)</title>
+     <p>При использовании прямого поиска вы щёлкаете мышью на определённом разделе исходного кода TeX и переходите к соответствующему месте в PDF. Чтобы выполнить прямой поиск:</p>
+<steps>
+<item>
+<p>Щёлкните мышью по строке в файле TeX.</p>
+</item>
+<item>
+<p>В <app>pluma</app> щёлкните <guiseq><gui>Инструменты</gui> <gui>Прямой поиск</gui></guiseq>. Соответствующая строка в PDF будет обведена красным.</p>
+<p>Или нажмите <keyseq><key>Ctrl</key><key>Alt</key><key>F</key></keyseq> или <keyseq><key>Ctrl</key>+левая кнопка мыши</keyseq>. Соответствующая строка в PDF выделится красным цветом.</p>
+</item>
+</steps>
+<note>
+<p>Если соответствующий PDF-файл не открыт, выполнение прямого поиска откроет его в Atril.</p>
+</note>
+<p>При наличии общего проекта с несколькими файлами TeX можно добавить</p>
+<code>% mainfile: mainfile.tex</code>
+<p>либо в первую, либо в последние три строки каждого подключённого файла TeX, после этого начнёт работать прямой поиск. Обратный поиск должен работать всегда, даже если вы не добавляли modeline.</p>
+
+</section>
+
+<section id="backward-search">
+    <title>Обратный поиск: из PDF в TeX (из Atril в <app>pluma</app>)</title>
+     <p>При использовании обратного поиска вы щёлкаете мышью на определённой строке файла PDF и переходите к соответствующей строке исходного кода TeX.</p>
+<p>Вы можете выполнить обратный поиск нажав <keyseq><key>Ctrl</key>и щёлкнув левой кнопкой мыши </keyseq> в Atril. Соответствующая строка в исходном коде TeX будет выделена.</p>
+</section>
+
+</page>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="memos-usage-add-memo" xml:lang="uk">
+
+  <info>
+    <desc>Додавання примітки до вашого списку приміток.</desc>
+    
+    <link type="guide" xref="memos-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.1" date="2011-08-01" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/b15iirao.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Додавання примітки</title>
+
+<steps>
+<item><p>Виберіть пункт меню <guiseq><gui>Файл</gui><gui>Створити</gui><gui>Примітка</gui></guiseq> або натисніть комбінацію клавіш <keyseq><key>Shift</key><key>Ctrl</key><key>O</key></keyseq>.</p></item>
+<item><p>Виберіть список приміток у спадному списку <gui>Список</gui>.</p></item>
+<item><p>Введіть відомості щодо примітки.</p></item>
+<item><p>Натисніть кнопку <gui style="button">Зберегти</gui> або виберіть пункт меню <guiseq><gui>Файл</gui><gui>Зберегти</gui></guiseq>.</p></item>
+</steps>
+
+<p>Якщо ви просто хочете швидко додати примітку введенням резюме, ви можете безпосередньо ввести його у списку приміток.</p>
+
+<p>Ви також можете визначити <link xref="using-categories">категорію</link> або <link xref="calendar-classifications">класифікацію</link> для примітки або додати долучення.</p>
+
+<section id="shared-memos">
+<title>Спільні примітки</title>
+
+<p>Спільні примітки подібні до поштових повідомлень, але відрізняються тим, що їх заплановано на певний день, і вони з'являються у календарі у відповідному записі дати. Ви можете скористатися спільними примітками для показу відпусток, свят, днів сплати, днів народжень тощо. Створені спільні примітки розташовуються у вашому календарі у вказаному пункті дати. Вони не розташовуються у вашій поштовій скриньці або у поштовій скриньці будь-якого іншого користувача.</p>
+
+<p>Щоб надіслати спільну примітку, виконайте такі дії:</p>
+<steps>
+<item><p>Виберіть пункт меню <guiseq><gui>Файл</gui><gui>Створити</gui><gui>Спільна примітка</gui></guiseq> або натисніть комбінацію клавіш <keyseq><key>Shift</key><key>Ctrl</key><key>H</key></keyseq>.</p></item>
+<item><p>Виберіть назву облікового запису організатора зі спадного списку, який розташовано поряд із полем <gui>Організатор</gui>.</p></item>
+<item><p>У полі <gui>Кому</gui> введіть ім'я користувача, потім натисніть клавішу <key>Enter</key>. Повторіть процедуру для додавання інших записів користувачів.</p></item>
+<item><p>Виберіть список завдань (у полі <gui>Список</gui>), у якому ви хочете створити запис.</p></item>
+<item><p>Вкажіть коротке резюме у полі <gui>Зведення</gui>.</p></item>
+<item><p>У полі <gui>Дата початку</gui> введіть дату, коли ця спільна примітка має з'явитися у календарях отримувачів.</p></item>
+<item><p>Натисніть кнопку <gui style="button">Зберегти</gui> або виберіть пункт меню <guiseq><gui>Файл</gui><gui>Зберегти</gui></guiseq>.</p></item>
+</steps>
+</section>
+
+</page>

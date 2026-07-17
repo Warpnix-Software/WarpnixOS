@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-html-link" xml:lang="ca">
+
+  <info>
+    <desc>Inserir un enllaç a l'editor de correu.</desc>
+    <link type="guide" xref="mail-composer-html#formatting-options-html"/>
+
+    <revision pkgversion="3.5.90" version="0.4" date="2012-08-16" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#bsait2a -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Inserir un enllaç en HTML</title>
+
+
+<p>Podeu inserir enllaços al correu electrònic:</p>
+<steps>
+<item><p>Seleccioneu el text que vulgueu convertir en un enllaç.</p></item>
+<item><p>Feu clic a <guiseq><gui>Insereix</gui><gui>Enllaç…</gui></guiseq> a la barra de menú, o feu clic amb el botó dret del ratolí sobre el text seleccionat i feu clic a <gui>Insereix enllaç</gui>.</p></item>
+<item><p>Introduïu l'adreça al camp <gui>URL</gui>.</p></item>
+<item><p>Feu clic a <gui>Tanca</gui>.</p></item>
+</steps>
+
+<p>Alternativament, també podeu fer servir la <media type="image" its:translate="no" src="./figures/html-composer-insert-link.png"/> icona a la segona barra a sota de la línia de l'<gui>Assumpte</gui>.</p>
+
+<p>Si no voleu un text d'enllaç concret, podeu introduir directament l'adreça de l'enllaç. I es reconeixerà automàticament com a un enllaç.</p>
+</page>

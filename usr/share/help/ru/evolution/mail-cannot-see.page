@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-cannot-see" xml:lang="ru">
+
+  <info>
+    <desc>Действия, когда не удаётся найти полученное или отправленное письмо.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="3.31.5" version="0.5" date="2019-01-18" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Phil Bull</name>
+      <email its:translate="no">philbull@gmail.com</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Некоторые письма не отображаются, где они?</title>
+
+<list>
+ <item>
+  <p>Проверьте, <link xref="mail-filters-not-working">используются ли фильтры</link> для входящих (или исходящих) сообщений. Фильтры могут автоматически перемещать сообщения в другие папки.</p>
+ </item>
+ <item>
+  <p>Проверьте <link xref="mail-searching#search-many">представление поиска в панели поиска</link> непосредственно над списком сообщений. Возможно, в раскрывающемся списке <gui>Показывать</gui> выбран фильтр наподобие <gui>Прочитанные</gui> или в поле ввода текста содержится какое-либо значение. Нажмите значок с изображением метлы для очистки поля поиска.</p>
+ </item>
+ <item>
+  <p>Если в папке не видно ни одного письма, проверьте, не было ли развёрнуто окно предварительного просмотра изображения (что привело к скрытию панели списка сообщений): выберите пункт меню <guiseq><gui>Вид</gui><gui>Предварительный просмотр</gui><gui>Предварительный просмотр сообщения</gui></guiseq>.</p>
+ </item>
+ <item>
+  <p>Включите параметр <guiseq><gui>Вид</gui><gui>Показывать удалённые сообщения</gui></guiseq> и параметр <guiseq><gui>Вид</gui><gui>Показывать спам</gui></guiseq> для показа всех сообщений.</p>
+ </item>
+ <item>
+  <p><link xref="mail-default-folder-locations">Проверьте параметры папок.</link> Возможно, нужные параметры были настроены не для тех папок.</p>
+ </item>
+</list>
+
+</page>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-duplicates" xml:lang="ca">
+
+  <info>
+    <desc>Com gestionar missatges de correu electrònic duplicats</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="3.7.4" version="0.6" date="2013-01-23" status="final"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Es baixen els correus electrònics duplicats</title>
+
+<section id="remove">
+<title>Eliminar correus electrònics duplicats</title>
+<p>Per a eliminar correus electrònics duplicats en una carpeta, seleccioneu diversos missatges (o seleccioneu tots els missatges d'una carpeta fent clic <guiseq><gui>Edita</gui><gui>Selecciona-ho tot</gui></guiseq> o prement <keyseq><key>Ctrl</key><key>A</key></keyseq>) i fent clic a <guiseq><gui>Missatge</gui><gui>Suprimeix els missatges duplicats</gui></guiseq>.</p>
+<!-- available by default since 2.91, as per http://mail.gnome.org/archives/evolution-list/2011-August/msg00000.html -->
+</section>
+
+<section id="reasons">
+<title>Motius</title>
+<p>Que es baixin correus electrònics duplicats pot ser degut a una de les següents raons:</p>
+<list>
+<item><p>Hi ha diverses còpies del mateix missatge a la bústia</p></item>
+<item><p><app>Evolution</app> té un problema amb l'extensió UIDL.</p></item>
+<item><p>La memòria cau de fitxers localitzada a <file>$HOME/.local/share/evolution/mail/local/</file> no es pot escriure.</p></item>
+</list>
+</section>
+
+</page>

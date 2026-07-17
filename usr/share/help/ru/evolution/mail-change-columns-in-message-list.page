@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-change-columns-in-message-list" xml:lang="ru">
+
+  <info>
+    <desc>Изменение столбцов, отображаемых в списке сообщений.</desc>
+    
+    <link type="guide" xref="mail-layout-changing"/>
+
+    <revision pkgversion="3.30.5" version="0.5" date="2019-02-26" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Изменение столбцов списка сообщений</title>
+
+<p>Чтобы изменить столбцы в списке сообщений, щёлкните по заголовку столбца правой кнопкой мыши и выберите пункт <gui>Добавить столбец…</gui> или <gui>Убрать этот столбец</gui>.</p>
+<note style="tip"><p>Если работа ведётся на экране небольшого размера, можно заменить столбец <gui>Тема</gui> столбцом <gui>(без темы)</gui>, что приведёт к изъятию приставки (в частности, «Re:»). Также можно заменить столбец <gui>От</gui>, который отображает имя и адрес электронной почты отправителя, столбцом <gui>Отправитель</gui>, который отображает только имя отправителя.</p></note>
+
+<note style="tip"><p>Если компоновка столбцов должна быть одинаковой во всех почтовых папках, за исключением папки <gui>Отправленные</gui>, включите параметр меню <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Настройки почты</gui><gui>Общие</gui><gui>Применить эти параметры отображения для всех папок</gui></guiseq>. Обратите внимание, что этот параметр также влияет на функцию <link xref="mail-sorting-message-list#email-threads"><gui>Группировать по обсуждениям</gui></link> и видимость панели <gui>Предварительный просмотр сообщения</gui> во всех папках.</p></note>
+
+<note style="tip"><p>Если требуется изменить порядок сортировки и/или компоновку столбцов для отдельных почтовых папок, убедитесь, что параметр  меню <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Настройки почты</gui><gui>Общие</gui><gui>Применить эти параметры отображения для всех папок</gui></guiseq> отключён. После этого будет можно изменить параметры просмотра и сохранить изменения, выбрав пункт меню <guiseq><gui>Вид</gui><gui>Текущий вид</gui><gui>Сохранить режим просмотра…</gui></guiseq>, а затем применить соответствующий режим просмотра к другим папкам.</p></note>
+
+</page>

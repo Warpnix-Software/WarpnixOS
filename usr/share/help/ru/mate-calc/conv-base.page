@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="conv-base" xml:lang="ru">
+
+    <info>
+        <link type="guide" xref="index#conversion"/>
+    </info>
+
+	<title>Системы счисления</title>
+    
+    <p>Для преобразования числа в другую систему счисления введите число (или решите уравнение) и измените <link xref="number-display">формат числа</link> в <guiseq><gui>Калькуляторе</gui>, меню <gui>Параметры</gui></guiseq>.</p>
+</page>

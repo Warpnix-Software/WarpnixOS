@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-display-message-source" xml:lang="ru">
+
+  <info>
+    <desc>Показ необработанного содержимого сообщения или всех строк заголовка.</desc>
+
+    <link type="guide" xref="mail-displaying-message#advanced"/>
+
+    <revision pkgversion="3.4.0" version="0.1" date="2012-03-07" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Исходный текст сообщения</title>
+
+<p>Для просмотра данных сообщения выберите пункт меню <guiseq><gui>Вид</gui><gui>Исходный текст сообщения</gui></guiseq> или воспользуйтесь комбинацией клавиш <keyseq><key>Ctrl</key><key>U</key></keyseq>. После этого данные сообщения будут показаны в новом окне.</p>
+
+<p>Для просмотра заголовков сообщения целиком выберите пункт меню <guiseq><gui>Вид</gui><gui>Все заголовки сообщения</gui></guiseq>. После этого на панели просмотра будут показаны все данные заголовков.</p> 
+
+</page>

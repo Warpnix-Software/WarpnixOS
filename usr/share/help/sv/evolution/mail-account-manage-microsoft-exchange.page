@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:e="http://projectmallard.org/experimental/" xmlns:if="http://projectmallard.org/if/1.0/" type="guide" id="mail-account-manage-microsoft-exchange" xml:lang="sv">
+
+  <info>
+    <desc>Lägg till och redigera ett Microsoft Exchange-konto i <app>Evolution</app>.</desc>
+
+    <link type="guide" xref="mail-account-management#mail-corporate-account-types"/>
+    <title type="link" role="trail">Microsoft Exchange</title>
+
+    <revision pkgversion="2.30.2" version="0.3" date="2011-07-30" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Sebastian Rasmussen</mal:name>
+      <mal:email>sebras@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017, 2018</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Inställningar för Microsoft Exchange-konto</title>
+
+<note style="important"><p>Beroende på versionen av Microsoft Exchange-servern som du vill ansluta till kan det krävas att ett extra paket är installerat som tillhandahåller denna funktionalitet.</p>
+
+<p>För att ansluta till en Microsoft Exchange-server (version 2007 eller nyare) eller en OpenChange-server rekommenderas det att använda paketet <sys>evolution-ews</sys>.</p>
+<if:choose>
+  <if:when test="action:install">
+    <note style="info package">
+      <p><link action="install:evolution-ews" href="https://gitlab.gnome.org/GNOME/evolution/-/wikis/home#get-the-source-code" style="button">Installera evolution-ews</link></p>
+    </note>
+  </if:when>
+</if:choose>
+
+<p>För äldre versioner av Microsoft Exchange, eller om <sys>evolution-ews</sys> inte fungerar bra för dig, prova <sys>evolution-mapi</sys>.</p><p>Det använder Microsofts Messaging API som också används av Microsoft Outlook. Men <sys>evolution-mapi</sys> kräver att du installerar <sys>OpenChange</sys> och <sys>Samba 4</sys> och har inte lika bra prestanda som <sys>evolution-ews</sys>.</p>
+
+<if:choose>
+  <if:when test="action:install">
+    <note style="info package">
+      <p><link action="install:evolution-mapi" href="https://gitlab.gnome.org/GNOME/evolution/-/wikis/home#get-the-source-code" style="button">Installera evolution-mapi</link></p>
+    </note>
+  </if:when>
+</if:choose>
+
+<p>Om du är osäker på vilken din Microsoft Exchange-serverversion är bör du kontakta din systemadministratör för mer information.</p></note>
+
+<p>För ämnen som inte täcks in här, se den <link href="https://help.gnome.org/users/evolution/2.32/usage-exchange.html">gamla <app>Evolution</app>-handboken</link>.</p>
+
+</page>

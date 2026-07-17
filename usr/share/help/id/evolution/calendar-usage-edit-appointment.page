@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-usage-edit-appointment" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="calendar-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.2" date="2011-08-01" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Penyuntingan dalam janji di kalender Anda.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Menyunting Janji</title>
+
+  <p>Jika Anda ingin mengubah janji yang sudah ada di kalender Anda:</p>
+
+  <steps>
+    <item>
+      <p>Klik ganda pada janji yang ingin Anda sunting di kalender.</p>
+    </item>
+    <item>
+      <p>Menyunting janji (lihat <link xref="calendar-usage-add-appointment">Menambahkan Janji</link> untuk daftar opsi yang tersedia).</p>
+    </item>
+    <item>
+      <p>Klik tombol <gui style="button">Simpan</gui>, atau <guiseq><gui>Berkas</gui><gui>Simpan</gui></guiseq>.</p>
+    </item>
+  </steps>
+
+</page>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="annotations-save" xml:lang="es">
+<info>
+  <link type="guide" xref="index#annotations"/>
+ <desc>Cómo guardar sus anotaciones.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Shobha Tyagi</name>
+      <email its:translate="no">tyagishobha@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Toni Estevez</mal:name>
+      <mal:email>toni.estevez@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Francisco Javier F. Serrador</mal:name>
+      <mal:email>serrador@cvs.gnome.org</mal:email>
+      <mal:years>2003-2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Pablo Gonzalo del Campo</mal:name>
+      <mal:email>pablodc@bigfoot.com</mal:email>
+      <mal:years>2002-2003</mal:years>
+    </mal:credit>
+  </info>
+<title>Guarda una copia de un PDF con anotaciones</title>
+ <p>Para guardar una copia de sus PDFs anotados para visualizar en el futuro usando <app>Atril</app> o cualquier otro visor de PDFs  <em>que soporte anotaciones</em>:</p>
+  <steps>
+   <item>
+     <p>Haga clic en <guiseq><gui>Archivo</gui><gui>Guardar Como...</gui></guiseq></p>
+   </item>
+   <item>
+     <p>Elija un nombre y una carpeta donde guardar el fichero, y haga clic en <gui>Guardar</gui>. El PDF se guardará en la carpeta que haya seleccionado.</p>
+    </item>
+   </steps>
+   <p>Las anotaciones se añaden de acuerdo a la especificación PDF. Por tanto, la mayoría de lectores de PDF deberían poder leerlas. Es sabido que funciona con Adobe Reader.</p>
+
+</page>

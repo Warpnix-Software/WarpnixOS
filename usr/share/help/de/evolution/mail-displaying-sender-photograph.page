@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-displaying-sender-photograph" xml:lang="de">
+
+  <info>
+    <desc>Ein Foto des Absenders in der Nachrichtenvorschau anzeigen.</desc>
+
+    <link type="guide" xref="mail-displaying-message#advanced"/>
+
+    <revision pkgversion="3.13.90" version="0.5" date="2015-03-10" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/config-prefs-mail.html.en#mail-prefs-headers -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andre Klapper</mal:name>
+      <mal:email>ak-47@gmx.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009-2013, 2016-2018, 2020-2021</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009-2013, 2015-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Gabor Karsay</mal:name>
+      <mal:email>gabor.karsay@gmx.at</mal:email>
+      <mal:years>2011-2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Tim Sabsch</mal:name>
+      <mal:email>tim@sabsch.com</mal:email>
+      <mal:years>2018, 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jürgen Benvenuti</mal:name>
+      <mal:email>gastornis@posteo.org</mal:email>
+      <mal:years>2022-2024</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Fotos in Nachrichtenkopfzeilen</title>
+
+<!-- NB: This is done by "Face" and "X-Face" headers. -->
+<p>Das Foto des Absenders einer E-Mail zeigt <app>Evolution</app> automatisch auf der rechten Seite der Nachrichtenkopfzeilen an, sofern der Absender bereits ein Foto in der Nachricht hinterlegt hat.</p>
+<!-- TODO: If I ever manage to find out if the "Edit > Plugins > Face" reliably works, create a topic page covering it linked under <link type="guide" xref="index#mail-composing-advanced" />, and link to it from here and vice versa. -->
+
+<p>Sie können die Darstellung des Fotos des Absenders einer E-Mail auf der rechten Seite der Nachrichtenvorschau einschalten, sofern der Absender in einem Ihrer Adressbücher mit einem Foto enthalten ist.</p>
+
+<p>Um diese Funktion zu aktivieren, wählen Sie <guiseq><gui>Bearbeiten</gui><gui>Einstellungen</gui><gui>E-Mail-Einstellungen</gui><gui>Kopfzeilen</gui><gui>Foto des Absenders in der Nachrichtenvorschau anzeigen</gui></guiseq> aus.</p>
+
+<p>Im Falle mehrerer Suchtreffer für einen Kontakt wird immer der erste verwendet.</p>
+
+<note style="tip"><p>Fügen Sie Ihr eigenes Bild in Nachrichten ein, die Sie versenden. Nutzen Sie dazu <guiseq><gui>Bearbeiten</gui><gui>Erweiterungen</gui><gui>Gesicht</gui></guiseq>. Das Bild muss die Abmessungen 48 x 48 Pixel haben und im PNG-Format vorliegen.</p>
+<p>Falls eine Erweiterung unter <guiseq><gui>Bearbeiten</gui><gui>Erweiterungen</gui></guiseq> nicht verfügbar ist, fragen Sie bitte in einem Supportforum Ihrer Distribution. Ihre Distribution könnte einige Erweiterungen deaktiviert haben oder diese in einem separaten Paket anbieten.</p></note>
+ 
+ 
+</page>

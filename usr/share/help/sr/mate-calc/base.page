@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="base" xml:lang="sr">
+
+    <info>
+        <link type="guide" xref="index#number"/>
+    </info>
+
+	<title>Основе бројева</title>
+    
+    <p>Да унесете бројеве са нарочитом основом броја користите <link xref="superscript">бројеве индекса</link>. Следећи бројеви су исти.</p>
+    <example>
+    <p>1001011₂</p>    
+    <p>113₈</p>
+    <p>75</p>
+    <p>4B₁₆</p>
+    </example>
+    <p>Када сте у <link xref="mouse">програмерском режиму</link> имате дугмад за бинарне (<keyseq><key>Ктрл</key><key>B</key></keyseq>), окталне (<keyseq><key>Ктрл</key><key>O</key></keyseq>) и хексадецималне (<keyseq><key>Ктрл</key><key>H</key></keyseq>).</p>
+    <p>Да поставите основу чији су резултати приказани промените <link xref="number-display">формат резултата</link>.</p>
+    <p>Да промените основу тренутног резултата користите дугме основе или <keyseq><key>Ктрл</key><key>D</key></keyseq> да прикажете у децималном облику.</p>
+</page>

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="intro-keyboard-shortcuts" xml:lang="sv">
+
+  <info>
+    <desc>Tangentbordsgenvägar som kan spara dig lite tid.</desc>
+
+    <link type="guide" xref="index#getting-started"/>
+    <revision pkgversion="3.30.4" version="0.7" date="2019-01-11" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Raniere Silva</name>
+      <email its:translate="no">raniere@rgaiacs.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en -->
+ </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Sebastian Rasmussen</mal:name>
+      <mal:email>sebras@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017, 2018</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Snabbtangenter</title>
+
+<p>Denna sida tillhandahåller en översikt över tangentbordsgenvägar som kan hjälpa dig att använda <app>Evolution</app> mer effektivt.</p>
+
+<note style="tip">
+<p>Utöver genvägarna listade nedan kan du också använda snabbtangenter för att navigera med tangentbordet.</p> 
+<p>Håll ner <key>Alt</key>-tangenten för att visa <em>snabbtangenter</em>: understrukna bokstäver i menyobjekt, knappar och andra kontroller. Tryck på <key>Alt</key> samt den understrukna bokstaven för att aktivera en kontroll, precis som om du hade klickat på den.</p>
+</note>
+
+
+<section id="global">
+<title>Globalt</title>
+<table rules="rows" frame="top bottom">
+  <tr xml:id="global-ctrl-1">
+    <td><p><keyseq><key>Ctrl</key><key>1</key></keyseq></p></td>
+    <td><p>Välj e-postkomponent.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-2">
+    <td><p><keyseq><key>Ctrl</key><key>2</key></keyseq></p></td>
+    <td><p>Välj kontaktkomponent.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-3">
+    <td><p><keyseq><key>Ctrl</key><key>3</key></keyseq></p></td>
+    <td><p>Välj kalenderkomponent.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-4">
+    <td><p><keyseq><key>Ctrl</key><key>4</key></keyseq></p></td>
+    <td><p>Välj uppgiftskomponent.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-5">
+    <td><p><keyseq><key>Ctrl</key><key>5</key></keyseq></p></td>
+    <td><p>Välj memokomponent.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-n">
+    <td><p><keyseq><key>Ctrl</key><key>N</key></keyseq></p></td>
+    <td><p>Skapa ett nytt objekt i aktuell komponent.</p></td>
+  </tr>
+  <tr xml:id="global-f6">
+    <td><p><key>F6</key></p></td>
+    <td><p>Växla fokus mellan paneler.</p></td>
+  </tr>
+  <tr xml:id="global-shift-ctrl-q">
+    <td><p><keyseq><key>Skift</key><key>Ctrl</key><key>Q</key></keyseq></p></td>
+    <td><p>Töm sökfält.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-w">
+    <td><p><keyseq><key>Ctrl</key><key>W</key></keyseq></p></td>
+    <td><p>Stäng fönster.</p></td>
+  </tr>
+  <tr xml:id="global-shift-ctrl-w">
+    <td><p><keyseq><key>Skift</key><key>Ctrl</key><key>W</key></keyseq></p></td>
+    <td><p>Öppna nytt fönster.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-q">
+    <td><p><keyseq><key>Ctrl</key><key>Q</key></keyseq></p></td>
+    <td><p>Avsluta <app>Evolution</app>.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-p">
+    <td><p><keyseq><key>Ctrl</key><key>P</key></keyseq></p></td>
+    <td><p>Skriv ut markering.</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-s">
+    <td><p><keyseq><key>Ctrl</key><key>S</key></keyseq></p></td>
+    <td><p>Spara markering.</p></td>
+  </tr>
+  <tr xml:id="global-del">
+    <td><p><key>Del</key> eller <key>Backsteg</key></p></td>
+    <td><p>Ta bort markering.</p></td>
+  </tr>
+  <tr xml:id="global-shift-ctrl-v">
+    <td><p><keyseq><key>Skift</key><key>Ctrl</key><key>V</key></keyseq></p></td>
+    <td><p>Flytta e-postmeddelanden eller kontakter till mapp.</p></td>
+  </tr>
+  <tr xml:id="global-shift-ctrl-y">
+    <td><p><keyseq><key>Skift</key><key>Ctrl</key><key>Y</key></keyseq></p></td>
+    <td><p>Kopiera e-postmeddelanden eller kontakter till mapp.</p></td>
+  </tr>
+</table>
+</section>
+
+<section id="mail">
+<title>Post</title>
+<table rules="rows" frame="top bottom">
+  <tr xml:id="mail-shift-ctrl-m">
+    <td><p><keyseq><key>Skift</key><key>Ctrl</key><key>M</key></keyseq></p></td>
+    <td><p>Skapa ett nytt meddelande.</p></td>
+  </tr>
+  <tr xml:id="mail-f12">
+    <td><p><key>F12</key></p></td>
+    <td><p>Skicka och ta emot meddelanden.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-y">
+    <td><p><keyseq><key>Ctrl</key><key>Y</key></keyseq></p></td>
+    <td><p>Tillämpa filter på markering.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-o">
+    <td><p><keyseq><key>Ctrl</key><key>O</key></keyseq> eller <key>Retur</key></p></td>
+    <td><p>Öppna markering i nytt fönster.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-f">
+    <td><p><keyseq><key>Ctrl</key><key>F</key></keyseq></p></td>
+    <td><p>Vidarebefordra markering.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-k">
+    <td><p><keyseq><key>Ctrl</key><key>K</key></keyseq></p></td>
+    <td><p>Markera markeringen som läst.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-shift-k">
+    <td><p><keyseq><key>Ctrl</key><key>Skift</key><key>K</key></keyseq></p></td>
+    <td><p>Markera markeringen som oläst.</p></td>
+  </tr>
+  <tr xml:id="mail-arrow-down">
+    <td><p><key>↓</key></p></td>
+    <td><p>Hoppa till nästa meddelande.</p></td>
+  </tr>
+  <tr xml:id="mail-arrow-up">
+    <td><p><key>↑</key></p></td>
+    <td><p>Hoppa till föregående meddelande.</p></td>
+  </tr>
+  <tr xml:id="mail-dot">
+    <td><p><key>.</key> eller <key>]</key></p></td>
+    <td><p>Hoppa till nästa olästa meddelande.</p></td>
+  </tr>
+  <tr xml:id="mail-comma">
+    <td><p><key>,</key> eller <key>[</key></p></td>
+    <td><p>Hoppa till föregående olästa meddelande.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-r">
+    <td><p><keyseq><key>Ctrl</key><key>R</key></keyseq></p></td>
+    <td><p>Svara till avsändare.</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-l">
+    <td><p><keyseq><key>Ctrl</key><key>L</key></keyseq></p></td>
+    <td><p>Svara till lista.</p></td>
+  </tr>
+  <tr xml:id="mail-shift-ctrl-r">
+    <td><p><keyseq><key>Skift</key><key>Ctrl</key><key>R</key></keyseq></p></td>
+    <td><p>Svara till alla mottagare.</p></td>
+  </tr>
+  <tr xml:id="mail-backspace">
+    <td><p><key>Backsteg</key></p></td>
+    <td><p>Rulla uppåt.</p></td>
+  </tr>
+  <tr xml:id="mail-space">
+    <td><p><key>Blanksteg</key></p></td>
+    <td><p>Rulla nedåt.</p></td>
+  </tr>
+</table>
+
+<p><key>Blanksteg</key> och <key>Backsteg</key> tillåter också navigering bland olästa meddelanden i alla mappar:</p>
+<list>
+<item><p>När du trycker på blanksteg första gången kommer du att flyttas till nästa olästa meddelande.</p></item>
+<item><p>Om meddelanden är längre än en skärm kommer <key>blanksteg</key> att fungera som <key>Page Down</key>.</p></item>
+<item><p>Om du trycker på <key>blanksteg</key> efter att du nått botten på sidan tas du till nästa olästa meddelande.</p></item>
+<item><p>Om det inte finns fler olästa meddelanden i brevlådan, kommer tryck på <key>blanksteg</key> att ta dig till nästa olästa meddelande i nästa mapp.</p></item>
+<item><p>Om nya meddelanden ankommer i ett antal mappar, kommer <key>blanksteg</key> att växla mellan dessa mappar. Denna funktion låter dig växla till nästa olästa meddelande i en annan mapp utan att klicka på mappen.</p></item>
+<item><p><key>Backsteg</key> har samma beteende men omvänt: det rullar uppåt i ett meddelande och kan hoppa till nästa olästa meddelande i föregående mapp.</p></item>
+</list>
+</section>
+
+<section id="calendar">
+<title>Kalender</title>
+<table rules="rows" frame="top bottom">
+  <tr xml:id="calendar-shift-ctrl-a">
+    <td><p><keyseq><key>Skift</key><key>Ctrl</key><key>A</key></keyseq></p></td>
+    <td><p>Skapa ett nytt möte.</p></td>
+  </tr>
+  <tr xml:id="calendar-shift-ctrl-e">
+    <td><p><keyseq><key>Skift</key><key>Ctrl</key><key>E</key></keyseq></p></td>
+    <td><p>Skapa ett nytt sammanträde.</p></td>
+  </tr>
+  <tr xml:id="calendar-shift-ctrl-t">
+    <td><p><keyseq><key>Skift</key><key>Ctrl</key><key>T</key></keyseq></p></td>
+    <td><p>Skapa en ny uppgift.</p></td>
+  </tr>
+  <tr xml:id="calendar-shift-ctrl-o">
+    <td><p><keyseq><key>Skift</key><key>Ctrl</key><key>O</key></keyseq></p></td>
+    <td><p>Skapa ett nytt memo.</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-t">
+    <td><p><keyseq><key>Ctrl</key><key>T</key></keyseq></p></td>
+    <td><p>Gå till i dag.</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-g">
+    <td><p><keyseq><key>Ctrl</key><key>G</key></keyseq></p></td>
+    <td><p>Gå till datum.</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-y">
+    <td><p><keyseq><key>Ctrl</key><key>Y</key></keyseq></p></td>
+    <td><p>Dagsvy</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-j">
+    <td><p><keyseq><key>Ctrl</key><key>J</key></keyseq></p></td>
+    <td><p>Arbetsveckovy</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-k">
+    <td><p><keyseq><key>Ctrl</key><key>K</key></keyseq></p></td>
+    <td><p>Veckovy</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-m">
+    <td><p><keyseq><key>Ctrl</key><key>M</key></keyseq></p></td>
+    <td><p>Månadsvy</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-l">
+    <td><p><keyseq><key>Ctrl</key><key>L</key></keyseq></p></td>
+    <td><p>Listvy</p></td>
+  </tr>
+</table>
+</section>
+
+<section id="contacts">
+<title>Kontakter</title>
+<table rules="rows" frame="top bottom">
+  <tr xml:id="contacts-shift-ctrl-c">
+    <td><p><keyseq><key>Skift</key><key>Ctrl</key><key>C</key></keyseq></p></td>
+    <td><p>Skapa en ny kontakt.</p></td>
+  </tr>
+  <tr xml:id="contacts-shift-ctrl-l">
+    <td><p><keyseq><key>Skift</key><key>Ctrl</key><key>L</key></keyseq></p></td>
+    <td><p>Skapa en ny kontaktlista.</p></td>
+  </tr>
+</table>
+</section>
+
+<section id="change-keyboard-shortcuts">
+<title>Ändra tangentbordsgenvägar</title>
+<note style="advanced"><p>Tangentbordsgenvägar kan ändras i <guiseq><gui>Visa</gui><gui>Layout</gui><gui>Anpassa…</gui></guiseq>. Se avsnittet <link xref="customize-ui-items">Anpassa användargränssnitt</link> för mer information.</p></note>
+</section>
+
+</page>

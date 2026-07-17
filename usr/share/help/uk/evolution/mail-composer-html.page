@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-composer-html" xml:lang="uk">
+
+  <info>
+    <desc>Зміна шрифтів, використання кольорів та вставлення зображень, таблиць та посилань.</desc>
+    <link type="guide" xref="index#mail-composing"/>
+
+    <revision pkgversion="3.5.90" version="0.5" date="2012-08-16" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-html -->
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Форматування повідомлень електронної пошти (у звичайному тексті та HTML)</title>
+
+<p/>
+
+<p>Кнопки форматування тексту для базового вирівнювання та форматування абзаців розташовано на панелі інструментів під рядком <gui>Тема</gui>. Відповідні пункти меню можна знайти у меню <gui>Вставка</gui> і <gui>Формат</gui>.</p>
+     <p>Пояснення щодо піктограм на панелі інструментів наведено у підказках, які з'являються, якщо ви наведете вказівник миші на відповідну кнопку і затримаєте його.</p>
+
+<p>Типово, ви не можете встановити колір і розмір символів тексту або вставити зображення до повідомлення. А Втім, у більшості новітніх програм для роботи з електронною поштою передбачено таку можливість на основі форматування HTML, яке також використовується для вебсторінок.</p>
+
+<p>У декого клієнти електронної пошти не можуть працювати із HTML, а дехто не хоче отримувати повідомлення у форматі HTML, оскільки вони повільніше завантажуються і показуються. Через це <app>Evolution</app> надсилає повідомлення у форматі звичайного тексту, якщо ви явним чином не вкажете програмі, що слід використовувати HTML.</p>
+
+  <section id="formatting-options-plain" style="2column">
+    <title>Варіанти форматування звичайного тексту</title>
+  </section>
+
+  <section id="formatting-options-html" style="2column">
+    <title>Варіанти форматування лише HTML</title>
+  </section>
+
+</page>

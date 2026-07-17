@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-follow-up-flag" xml:lang="uk">
+
+  <info>
+    <desc>Використання прапорців для нагадування про дії.</desc>
+    
+    <link type="guide" xref="mail-organizing#advanced"/>
+
+    <revision pkgversion="3.0.2" version="0.1" date="2011-08-01" status="candidate"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/stable/usage-mail-organize-columns.html.en#usage-mail-organize-columns-followup -->
+ </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Прапорці стеження за повідомленнями</title>
+
+<p>Щоб не забути про повідомлення, ви можете скористатися можливістю стеження.</p>
+<steps>
+<item><p>Позначте одне або декілька повідомлень.</p></item>
+<item><p>Клацніть правою кнопкою миші на одному з повідомлень.</p></item>
+<item><p>Клацніть на пункті <gui>Позначити до виконання…</gui>.</p></item>
+</steps>
+<p>Крім того, ви можете зробити це позначенням повідомлень із наступним вибором пункту меню <guiseq><gui>Повідомлення</gui><gui>Позначити як</gui><gui>До виконання…</gui></guiseq> або натисканням комбінації клавіш <keyseq><key>Shift</key><key>Ctrl</key><key>G</key></keyseq>.</p>
+
+<p>Буде відкрито вікно, за допомогою якого ви можете встановити тип прапорця і кінцеву дату виконання.</p>
+
+<p>Сам прапорець є дією, про яку ви хочете собі нагадати, зокрема дією «Подзвонити», «Переспрямувати» або «Відповісти».</p>
+
+<p>Після додавання прапорця ви можете позначити відповідне завдання як виконане або вилучити прапорець клацанням правою кнопкою миші на повідомленні і вибором пункту <gui>Прапорець «Виконано»</gui> або <gui>Очистити ознаку</gui>.</p>
+
+<p>При читанні повідомлення із прапорцем його прапорець буде показано у верхній частині повідомлення до заголовків повідомлення. Може бути показано повідомлення про простроченість — «Прострочено: Подзвонити від 07 квітня 2012, 17:00.»</p>
+
+<p>Прапорці можуть допомогти вам упорядкувати вашу роботу у декілька способів. Наприклад, ви можете <link xref="mail-change-columns-in-message-list">додати стовпчик стану прапорця</link> до вашого списку повідомлень і упорядкувати його за прапорцями. Крім того, ви можете створити <link xref="mail-search-folders">теку пошуку</link>, у якій буде показано усі ваші повідомлення із прапорцями, а потім зняти прапорці, коли виконаєте завдання. Після цього, у теці пошуку будуть міститися лише повідомлення із термінами виконання у майбутньому.</p>
+
+<note style="tip"><p>Якщо ви надаєте перевагу простішому способу нагадування собі про повідомлення, ви можете позначити повідомлення як важливі — клацніть правою кнопкою миші на пункті повідомлення, потім виберіть у контекстному меню пункт <gui>Позначити як важливе</gui>, або виберіть пункт меню <guiseq><gui>Повідомлення</gui><gui>Позначити як</gui><gui>Важливе</gui></guiseq>.</p></note>
+
+<!-- TODO: Recheck in 3.30 as https://bugzilla.gnome.org/show_bug.cgi?id=240905 introduced some UI changes! -->
+</page>

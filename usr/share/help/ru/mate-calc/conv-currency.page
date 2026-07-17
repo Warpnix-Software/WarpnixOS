@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="conv-currency" xml:lang="ru">
+
+    <info>
+        <link type="guide" xref="index#conversion"/>
+    </info>
+
+	<title>Валюта</title>
+
+    <p>Для конвертирования валют войдите в<link xref="financial">Финансовый режим</link> и испольюзуйте элементы управления валютами.</p>
+    <p>Для конвертирования валют также можно использовать клавиатуру и оператор <em>in</em>.</p>
+    <example>
+    <p>13.65 USD in GBP</p>
+    </example>
+    <note>
+    <p>Информация о курсах валют является приблизительной и её не следует использовать для принятия финансовых решений.</p>
+    </note>
+</page>

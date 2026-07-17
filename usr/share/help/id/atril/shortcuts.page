@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="shortcuts" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Lihat daftar semua pintasan.</desc>
+
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <credit type="author">
+       <name>Tiffany Antopolski</name>
+       <email>tiffany.antopolski@gmail.com</email>
+    </credit>
+    <credit type="editor">
+       <name>Taufan Lubis</name>
+       <email>taufanlinux@gmail.com</email>
+    </credit>
+   <credit type="editor">
+       <name>Ronaldi Santosa</name>
+       <email>ronald.santosa@gmail.com</email>
+    </credit>
+   <credit type="editor">
+       <name>Ibnu Amansyah</name>
+       <email>javalander9@gmail.com</email>
+    </credit>
+   <credit type="editor">
+       <name>Andre Klapper</name>
+       <email>ak-47@gmx.net</email>
+    </credit>
+   <credit type="editor">
+       <name>Germán Poo-Caamaño</name>
+       <email>gpoo@gnome.org</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kukuh Syafaat</mal:name>
+      <mal:email>syafaatkukuh@gmail.com</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2021, 2022.</mal:years>
+    </mal:credit>
+  </info>
+
+
+<title>Pintasan papan ketik</title>
+
+<section id="default-shortcuts"><title>Pintasan baku</title>
+<section id="open-close-save-print">
+  <title>Membuka, menutup, menyimpan, dan mencetak</title>
+  <table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Membuka sebuah dokumen.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>O</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Memebuka suatu salinan dari dokumen saat ini.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>N</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Menyimpan sebuah salinan dari dokumen saat ini dengan suatu nama berkas baru.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>S</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Mencetak dokumen saat ini.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>P</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Menutup jendela dokumen saat ini.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>W</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Memuat ulang dokumen (secara efektik menutup dan membuka ulang dokumen tersebut).</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>R</key></keyseq></p></td>
+    </tr>
+  </table>
+</section>
+
+<section id="move-around">
+    <title>Berpindah-pindah dalam dokumen</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Naik/turun satu halaman.</p></td>
+        <td><p>Tombol panah</p></td>
+    </tr>
+    <tr>
+        <td><p>Naik/turun beberapa baris sekaligus dalam suatu halaman.</p></td>
+        <td><p><key>Page Up</key> / <key>Page Down</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Pergi ke halaman sebelumnya.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>Page Up</key></keyseq> / <key>P</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Pergi ke halaman selanjutnya.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>Page Down</key></keyseq> / <key>N</key></p></td>
+    </tr>
+<tr>
+        <td><p>Pergi ke nomor halaman.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>L</key></keyseq> diikuti dengan nomor halaman dan <key>Enter</key></p></td>
+</tr>
+    <tr>
+        <td><p>Ke awal halaman (awal dokumen jika <gui>Berkelanjutan</gui> dipilih di menu utama di pojok kanan atas).</p></td>
+         <td><p><key>Home</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Ke akhir halaman (akhir dokumen jika <gui>Berkelanjutan</gui> dipilih dalam menu utama di pojok kanan atas).</p></td>
+        <td><p><key>End</key></p></td>
+    </tr>
+    <tr>
+    	<td><p>Ke awal dokumen.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>Home</key></keyseq></p></td>
+    </tr>
+    <tr>
+    	<td><p>Ke akhir dokumen.</p></td>
+         <td><p><keyseq><key>Ctrl</key><key>End</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Menambah markah di halaman saat ini.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>D</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Menghapus markah dalam halaman saat ini bila ada.</p></td>
+        <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>D</key></keyseq></p></td>
+    </tr>
+    <tr>
+         <td><p>Menampilkan panel sisi dengan daftar isi dan markah.</p></td>
+         <td><p><key>F9</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Mengaktifkan navigasi karet dengan menempatkan kursor yang dapat digerakkan di halaman teks, memungkinkan Anda untuk bergerak dan memilih teks dengan papan ketik.</p></td>
+        <td><p><key>F7</key></p></td>
+    </tr>
+  </table>
+</section>
+
+<section id="copy">
+    <title>Memilih dan menyalin teks</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Salin teks yang disorot.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>C</key></keyseq> / <keyseq><key>Ctrl</key><key>Insert</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Memilih semua teks dalam dokumen.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>A</key></keyseq></p></td>
+    </tr>
+</table>
+</section>
+
+<section id="find">
+    <title>Menemukan teks</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Menampilkan bilah alat yang memungkinkan Anda mencari kata dalam dokumen. Kotak pencarian otomatis disorot ketika Anda menekan ini, dan pencarian akan dimulai ketika Anda mengetikkan teks. Jika Anda memilih teks dalam dokumen sebelum mencari, maka pencarian akan dimulai memakai teks itu sebagai masukan.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>F</key></keyseq> / <key>/</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Ke hasil pencarian berikutnya.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>G</key></keyseq> / <key>F3</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Ke hasil pencarian sebelumnya.</p></td>
+        <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>G</key></keyseq> / <keyseq><key>Shift</key><key>F3</key></keyseq></p></td>
+    </tr>
+</table>
+</section>
+
+<section id="rotate-zoom">
+    <title>Memutar dan memperbesar</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Memutar halaman 90 derajat berlawanan arah jarum jam.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>Panah kiri</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Memutar halaman 90 derajat searah jarum jam.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>Panah kanan</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Zum baku.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>0</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Memperbesar.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>+</key></keyseq> / <key>=</key> / <keyseq><key>Ctrl</key><key>=</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Memperkecil.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>-</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Paskan halaman ke dalam jendela.</p></td>
+        <td><p><key>F</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Paskan lebar konten ke ruang yang tersedia.</p></td>
+        <td><p><key>W</key></p></td>
+    </tr>
+</table>
+</section>
+
+<section id="window">
+    <title>Jendela</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Menggunakan layar penuh untuk menilik dokumen.</p></td>
+        <td><p><key>F11</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Memulai presentasi.</p></td>
+        <td><p><key>F5</key> / <keyseq><key>Shift</key><key>F5</key></keyseq></p></td>
+    </tr>
+</table>
+</section>
+
+<section id="document">
+    <title>Tilikan dokumen</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Balikkan warna latar belakang dan teks.</p></td>
+        <td><p><keyseq><key>Ctrl</key><key>I</key></keyseq></p></td>
+    </tr>
+    <tr>
+        <td><p>Bertukar antara tilikan dokumen kontinyu dan halaman demi halaman.</p></td>
+        <td><p><key>C</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Menampilkan dua halaman berdampingan.</p></td>
+        <td><p><key>D</key></p></td>
+    </tr>
+</table>
+</section>
+
+<section id="presentation">
+    <title>Mode presentasi</title>
+<table frame="all" rules="cols" shade="rows">
+    <tr>
+        <td><p>Menjungkitkan layar hitam.</p></td>
+        <td><p><key>B</key> / <key>.</key></p></td>
+    </tr>
+    <tr>
+        <td><p>Menjungkitkan layar putih.</p></td>
+        <td><p><key>W</key></p></td>
+    </tr>
+</table>
+</section>
+
+</section>
+
+</page>

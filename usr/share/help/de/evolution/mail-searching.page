@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-searching" xml:lang="de">
+ 
+  <info>
+    <desc>Suchen nach Nachrichten.</desc>
+    
+    <link type="guide" xref="searching-items"/>
+    <link type="guide" xref="mail-organizing"/>
+ 
+    <revision pkgversion="3.33.90" version="0.7" date="2019-09-05" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Max Vorobuov</name>
+      <email its:translate="no">vmax0770@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+ 
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andre Klapper</mal:name>
+      <mal:email>ak-47@gmx.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009-2013, 2016-2018, 2020-2021</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009-2013, 2015-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Gabor Karsay</mal:name>
+      <mal:email>gabor.karsay@gmx.at</mal:email>
+      <mal:years>2011-2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Tim Sabsch</mal:name>
+      <mal:email>tim@sabsch.com</mal:email>
+      <mal:years>2018, 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jürgen Benvenuti</mal:name>
+      <mal:email>gastornis@posteo.org</mal:email>
+      <mal:years>2022-2024</mal:years>
+    </mal:credit>
+  </info>
+ 
+<title>Nach Nachrichten suchen</title>
+
+<section id="search-single">
+<title>Suchen in einer einzelnen Nachricht</title>
+<p>Klicken Sie zum Suchen nach Text in der angezeigten Nachricht auf <guiseq><gui>Bearbeiten</gui><gui>In Nachricht suchen …</gui></guiseq> im Hauptmenü.</p>
+</section>
+
+<section id="search-many">
+<title>Alle Nachrichten durchsuchen</title>
+
+<section id="quick-search">
+<title>Schnelle Suche</title>
+<p>Durch das Definieren von Bedingungen können Sie in der Nachrichtenansicht schnell nach bestimmten Nachrichten suchen.</p>
+<steps>
+<item><p>Klicken Sie auf das Such-Symbol <media type="image" mime="image/png" its:translate="no" src="figures/search-icon.png"/>, um die Auswahlliste auszuklappen.</p></item>
+<item><p>Wählen Sie das Suchkriterium aus der Liste aus.</p>
+<note style="tip"><p>Einige Suchen könnten langsam sein für entfernte E-Mail-Konten (wie IMAP+). Sofern Sie als Suchkriterium <gui>Rumpf enthält</gui> oder <gui>Nachricht enthält</gui> verwenden , <app>Evolution</app> im Online-Modus ist und die zu durchsuchenden Ordner nicht <link xref="mail-working-offline">lokal heruntergeladen sind</link>, führt Evolution automatisch die Suche auf dem E-Mail-Server aus, wenn er dies unterstützt. Sofern die Suche lokal verfügbare Kriterien umfasst (wie beispielsweise Empfänger oder Betreff) wird sie lokal ausgeführt.</p></note>
+</item>
+<item><p>Wählen Sie den Bereich aus der Auswahlliste rechts neben dem Textfeld aus.</p>
+<note style="tip"><p>Für den Geltungsbereich <gui>Aktuelles Konto</gui> bezieht sich der Begriff »Konto« auf die obersten Knoten in der <link xref="intro-main-window#e-mail">E-Mail-Ordnerliste</link>, wie z.B. »Auf diesem Rechner« und entfernten E-Mail-Konten.</p></note>
+</item>
+<item><p>Geben Sie im Suchfeld den Begriff ein, nach dem Sie suchen möchten, und drücken Sie die <key>Eingabetaste</key>.</p></item>
+<item><p><app>Evolution</app> zeigt die Suchergebnisse an.</p></item>
+</steps>
+<note style="tip"><p>Wenn Sie direkt mit Schritt vier beginnen, so wird im aktuellen Ordner nach dem Suchbegriff im Betreff und den E-Mail-Adressen aller Nachrichten gesucht.</p></note>
+<note style="tip"><p>Wenn Sie häufig nach Nachrichten in einem anderen Ordner suchen, so empfiehlt es sich, dass Sie anstelle dessen einen Suchordner erstellen. Lesen Sie bitte <link xref="mail-search-folders">Suchordner verwenden</link> für weitere Informationen.</p></note>
+<p>Verwenden Sie die Erweiterte Suche, um mehrere Suchbedingungen festzulegen. Diese ist im Folgenden beschrieben.</p>
+</section>
+
+<!-- As advanced-search, clearing-search, saved-searches, editing-a-saved-search are totally identical in all *-searching.page files, this is centrally in one file that's included by XInclude. See
+http://blogs.gnome.org/shaunm/2011/07/21/understanding-xinclude/ for how it works. -->
+<include xmlns="http://www.w3.org/2001/XInclude" href="xinclude-searching.xml" xpointer="xmlns(mal=http://projectmallard.org/1.0/)xpointer(/mal:info/mal:section)"/>
+
+<section id="free-form-expression">
+<title>Freies Eingabefeld</title>
+<p>Eine der Suchbedingungen ist das <gui>Freie Eingabefeld</gui>, mit dem komplexe Bedingungen formuliert werden können. Im ersten Schritt wird das freie Eingabefeld in Wörter aufgeteilt. Falls das Wort kein (bekanntes) Schlüsselwort-Präfix ist, dann wird geprüft, ob der Wert in den Kopfzeilen Von, Kopie-an oder Betreff enthalten ist. Falls ein Leerzeichen oder anderes Sonderzeichen benötigt wird, umschließen Sie es mit doppelten Anführungszeichen. Um ein doppeltes Anführungszeichen anzugeben, setzen Sie es in zwei Anführungszeichen. Ein Beispiel: <code>Zitat ""hier""</code> wird als ein Wort <code>Zitat "hier"</code> interpretiert. Beispielsweise filtert <code>f:Max Mustermann</code> nach Nachrichten, die <code>Max</code> in der Von-Kopfzeile enthalten und die <code>Mustermann</code> in den An-, Kopie-an oder Betreff-Kopfzeilen enthalten. Im Gegensatz dazu filtert <code>f:"Max Muster"</code> nach Nachrichten mit Absender <code>Max Muster</code>.</p>
+<p>Die Syntax der Schlüsselwörter ist <code>&lt;Schlüsselwort&gt;[-&lt;Optionen&gt;]:Wert</code>. Die Schlüsselwörter sind:</p>
+<table frame="all" rules="rows cols" shade="rows">
+<tr><td><p>Schlüsselwort</p></td><td><p>Abkürzung</p></td><td><p>Bedeutung</p></td></tr>
+<tr><td><p its:translate="no">from</p></td><td><p its:translate="no">f</p></td><td><p its:locNote="Translators: 'From' is a header name, do not translate it">Die Von-Kopfzeile sollte übereinstimmen (*)</p></td></tr>
+<tr><td><p its:translate="no">to</p></td><td><p its:translate="no">t</p></td><td><p its:locNote="Translators: 'To' is a header name, do not translate it">Die An-Kopfzeile sollte übereinstimmen (*)</p></td></tr>
+<tr><td><p its:translate="no">cc</p></td><td><p its:translate="no">c</p></td><td><p its:locNote="Translators: 'CC' is a header name, do not translate it">Die Kopie-an-Kopfzeile sollte übereinstimmen (*)</p></td></tr>
+<tr><td><p its:translate="no">recips</p></td><td><p its:translate="no">r</p></td><td><p its:locNote="Translators: 'To' and 'CC' are the header names, do not translate it">Die An- oder Kopie-An-Kopfzeile sollte übereinstimmen (*)</p></td></tr>
+<tr><td><p its:translate="no">subject</p></td><td><p its:translate="no">s</p></td><td><p its:locNote="Translators: 'Subject' is a header name, do not translate it">Die Betreff-Kopfzeile sollte übereinstimmen (*)</p></td></tr>
+<tr><td><p its:translate="no">list</p></td><td><p/></td><td><p>Die Mailingliste-Kopfzeile sollte übereinstimmen (*)</p></td></tr>
+<tr><td><p its:translate="no">header</p></td><td><p its:translate="no">h</p></td><td><p>Die angegebene Kopfzeile sollte übereinstimmen (*)</p>
+<p>Die Syntax lautet: <code>h:KopfzeilenName=Wert</code>, wobei das Gleichzeichen als Trenner dient und nicht als Trefferregel</p></td></tr>
+<tr><td><p its:translate="no">exists</p></td><td><p its:translate="no">e</p></td><td><p>ob die angegebene Kopfzeile vorhanden ist</p></td></tr>
+<tr><td><p its:translate="no">tag</p></td><td><p/></td><td><p>ob das Schlüsselwort des Benutzers in einer Nachricht festgelegt ist</p></td></tr>
+<tr><td><p its:translate="no">flag</p></td><td><p/></td><td><p>ob ein bestimmtes Flag gesetzt ist. Bekannte Spezialwerte sind:</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Answered</code> - Die Nachricht ist als beantwortet gekennzeichnet</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Deleted</code> - Die Nachricht ist als gelöscht gekennzeichnet</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Draft</code> - Die Nachricht ist als Entwurf gekennzeichnet</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Flagged</code> - Die Nachricht ist als wichtig gekennzeichnet</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Seen</code> - Die Nachricht ist als gelesen gekennzeichnet</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Attachment</code> - Die Nachricht enthält einen Anhang</p>
+<p>Jeder andere Wert wird auf Belegung geprüft.</p></td></tr>
+<tr><td><p its:translate="no">label</p></td><td><p its:translate="no">l</p></td><td><p>Ob eine bestimmte <link xref="mail-labels">Beschriftung</link> für die Nachricht vergeben ist</p></td></tr>
+<tr><td><p its:translate="no">size</p></td><td><p its:translate="no">sz</p></td><td><p>ob die Nachrichtengröße in KB dem Wert entspricht</p>
+<p>Zwei Optionen sind möglich: <code>&lt;</code> , um kleinere Nachrichten zu erfassen und <code>&gt;</code>, um größere Nachrichten zu erfassen. Beispiel: <code>size-&gt;:1024</code> filtert auf Nachrichten größer als 1 MB.</p></td></tr>
+<tr><td><p its:translate="no">score</p></td><td><p its:translate="no">sc</p></td><td><p>vergleicht das Schlüsselwort <code>score</code> der Nachricht mit einem angegebenen Wert. Der Standard-Vergleichsoperator ist »entspricht«, aber ähnlich wie bei <code>size</code> sind die Optionen <code>&lt;</code> und <code>&gt;</code> einsetzbar</p></td></tr>
+<tr><td><p its:translate="no">body</p></td><td><p its:translate="no">b</p></td><td><p>prüft, ob der angegebene Wert im Nachrichtenrumpf enthalten ist. Die Standard-Vergleichsoption ist <code>enthält</code>, aber reguläre Ausdrücke sind mit den Optionen <code>regex</code>, <code>re</code> oder <code>r</code> einsetzbar.</p></td></tr>
+<tr><td><p its:translate="no">sent</p></td><td><p/></td><td><p>das Sendedatum der Nachricht sollte übereinstimmen (**)</p></td></tr>
+<tr><td><p its:translate="no">received</p></td><td><p its:translate="no">rcv</p></td><td><p>das Empfangsdatum der Nachricht sollte übereinstimmen (**)</p></td></tr>
+<tr><td><p its:translate="no">attachment</p></td><td><p its:translate="no">a</p></td><td><p>Nachricht enthält einen Anhang (wenn der Wert nicht <code>no</code>, <code>false</code> oder <code>0</code> ist). Vergleichbar mit dem Schlüsselwort <code>flag:attachment</code>.</p></td></tr>
+<tr><td><p its:translate="no">location</p></td><td><p its:translate="no">m</p></td><td><p>Prüft den Nachrichtenort. Der Wert (Adresse) für den Ort steht in den <gui>Eigenschaften</gui> des Ordners. Ein Beispiel: <code>location:"Auf diesem Rechner/Inbox"</code></p></td></tr>
+<tr><td><p its:translate="no">mid</p></td><td><p/></td><td><p>Vergleicht die Nachrichtenkennung.</p></td></tr>
+</table>
+<p>(*) Kopfzeilen-Vergleiche können der Option eines Übereinstimmungstyps unterliegen. Vorgabe ist eine Prüfung durch <code>enthält</code>. Die möglichen Optionen sind:</p>
+<table frame="all" rules="rows cols" shade="rows">
+<tr><td><p>Option</p></td><td><p>Abkürzung</p></td><td><p>Bedeutung</p></td></tr>
+<tr><td><p its:translate="no">contains</p></td><td><p its:translate="no">c</p></td><td><p>Treffer durch Übereinstimmung</p></td></tr>
+<tr><td><p its:translate="no">has-words</p></td><td><p its:translate="no">w</p></td><td><p>Treffer durch Übereinstimmung eines ganzen Worts</p></td></tr>
+<tr><td><p its:translate="no">matches</p></td><td><p its:translate="no">m</p></td><td><p>Exakte Übereinstimmung des Werts</p></td></tr>
+<tr><td><p its:translate="no">starts-with</p></td><td><p its:translate="no">sw</p></td><td><p>Die Kopfzeile beginnt mit dem angegebenen Wert</p></td></tr>
+<tr><td><p its:translate="no">ends-with</p></td><td><p its:translate="no">ew</p></td><td><p>Die Kopfzeile endet mit dem angegebenen Wert</p></td></tr>
+<tr><td><p its:translate="no">soundex</p></td><td><p its:translate="no">se</p></td><td><p>Die Kopfzeile ist ähnlich dem angegebenen Wert</p></td></tr>
+<tr><td><p its:translate="no">regex</p></td><td><p its:translate="no">r</p></td><td><p>Der angegebene Wert ist ein regulärer Ausdruck</p></td></tr>
+<tr><td><p its:translate="no">full-regex</p></td><td><p its:translate="no">fr</p></td><td><p>Eine andere Art eines regulären Ausdrucks</p></td></tr>
+</table>
+<p>(**) Zeiträume können relativ geschrieben werden (positive Zahlen bedeuten <code>in den letzten X Tagen</code>). Negative Zahlen bedeuten Tage in der Zukunft. So werden beispielsweise die empfangenen Nachrichten aus den letzten 10 Tagen ermittelt: <code>recv:10</code>. Ein genaues Datum wird im Format <code>JJJJ-MM-TT</code> (ISO 8601 Format, bevorzugt) angegeben, oder in einem Datums/Zeit-Datums-Format der lokalen Spracheinstellungen. Wenn das Verarbeiten der Angabe fehlschlägt, so wird die Bedingung übersprungen. Ein Datumsvergleich darf zusätzliche Optionen haben. Diese sind <code>&lt;</code>, <code>=</code> und <code>&gt;</code>. Die Vorgabeoption ist <code>&gt;</code>.</p>
+<p>Drei der Schlagworte benötigen eine besondere Notation. Dabei handelt es sich um:</p>
+<list>
+<item><p><code its:translate="no">not:(....)</code></p></item>
+<item><p><code its:translate="no">and:(....)</code></p></item>
+<item><p><code its:translate="no">or:(....)</code></p></item>
+</list>
+<p>womit das Erstellen von speziellen Ausdrücken ermöglicht wird. Die Standard-Verknüpfung (und äußerste) ist <code>UND</code>. Um sie in <code>ODER</code> zu ändern, umschließen Sie den gesamten Filter so: <code>or:(....)</code>. Zum Beispiel: <code>f:Bugzilla t:John</code> filtert alle Nachrichten, die <code>Bugzilla</code> im Von-Feld und <code>John</code> im An:-Feld enthalten. <code>or:(f:Bugzilla t:John)</code> filtert nach Nachrichten von Bugzilla und nach Nachrichten, welche an John adressiert sind.</p>
+</section>
+<section id="free-form-expression-examples">
+<title>Beispielausdrücke des freien Eingabefelds</title>
+<p>Im Folgenden ist eine Liste mit Ausdrücken des freien Eingabefelds:</p>
+<table rules="rows">
+<tr><td><p>Ausdruck</p></td><td><p>Bedeutung</p></td></tr>
+<tr><td><p><code>f:Max</code></p></td><td><p>Nachrichten von <code>Max</code></p></td></tr>
+<tr><td><p><code>s-has-words:"grün blau"</code></p></td><td><p>Nachrichten, die sowohl das Wort <code>grün</code> als auch <code>blau</code> im Betreff enthalten</p></td></tr>
+<tr><td><p><code>r-ew:beispiel.de</code></p></td><td><p>Die Empfängeradresse (An- oder Kopie-An-Kopfzeile) endet mit <code>beispiel.de</code></p></td></tr>
+<tr><td><p><code>h-starts-with:Cc=Erika</code></p></td><td><p>Die Kopie-An-Kopfzeile (<code>Cc</code>) startet mit dem Wort <code>Erika</code></p></td></tr>
+<tr><td><p><code>e:X-Secret-Header</code></p></td><td><p>Ein <code>X-Secret-Header</code> ist in der Nachricht vorhanden</p></td></tr>
+<tr><td><p><code>l:Geschäftlich</code></p></td><td><p>Nachrichten mit der Beschriftung <code>Geschäftlich</code></p></td></tr>
+<tr><td><p><code>sz-&lt;:10</code></p></td><td><p>Die Nachrichtengröße ist kleiner als 10 KB</p></td></tr>
+<tr><td><p><code>sz-&gt;:100</code></p></td><td><p>Die Nachrichtengröße ist größer als 100 KB</p></td></tr>
+<tr><td><p><code>b:wichtig</code></p></td><td><p>Der Rumpf enthält das Wort <code>wichtig</code></p></td></tr>
+<tr><td><p><code>sent:7</code></p></td><td><p>Nachrichten, die innerhalb der letzten sieben Tage gesendet wurden</p></td></tr>
+<tr><td><p><code>rcv-=:2020-02-02</code></p></td><td><p>Nachrichten, die am 2. Februar 2020 empfangen wurden</p></td></tr>
+<tr><td><p><code>a:1</code></p></td><td><p>Nachrichten mit Anlage</p></td></tr>
+<tr><td><p><code>a:0</code></p></td><td><p>Nachrichten ohne Anlage</p></td></tr>
+<tr><td><p><code>and:(or:(r:Max r:Erika) not:(r:Mustermann))</code></p></td><td><p>Nachrichten, deren Empfänger entweder <code>Max</code> oder <code>Erika</code> ist, aber nicht <code>Mustermann</code></p></td></tr>
+<tr><td><p><code>f:Max rcv-&gt;:2020-01-01 rcv-&lt;:2020-12-31</code></p></td><td><p>Nachrichten von <code>Max</code>, die im Laufe des Jahres 2020 empfangen wurden</p></td></tr>
+<tr><td><p><code>not:(flag:Seen) f:Max rcv-&gt;:2020-01-01 rcv-&lt;:2020-12-31</code></p></td><td><p>Ungelesene Nachrichten von <code>Max</code>, die im Laufe des Jahres 2020 empfangen wurden</p></td></tr>
+<tr><td><p><code>flag:Seen a:1 sz-&gt;:1024 f:Max rcv:31</code></p></td><td><p>Gelesene Nachrichten von <code>Max</code> mit einer Anlage größer als 1 MB, die innerhalb der letzten 31 Tage empfangen wurden</p></td></tr>
+<tr><td><p><code>m:"Auf diesem Rechner/Posteingang"</code></p></td><td><p>Im Ordner <code>Auf diesem Rechner/Posteingang</code> gespeicherte Nachrichten</p></td></tr>
+<tr><td><p><code>location-no:"Auf diesem Rechner/Posteingang"</code></p></td><td><p>In einem anderen Ordner als <code>Auf diesem Rechner/Posteingang</code> gespeicherte Nachrichten</p></td></tr>
+</table>
+</section>
+</section> 
+</page>

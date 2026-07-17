@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-word-wrap" xml:lang="uk">
+
+  <info>
+    <desc>У вихідних повідомленнях рядки переносяться на позиції 72 символу.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="3.0.2" version="0.2" date="2017-02-19" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>У вихідних повідомленнях рядки переносяться на позиції 72 символу</title>
+
+<p>Щоб повідомлення було простіше читати, програма переносить рядки на позиції 72 символу. Це значення включено до коду програми — його не можна змінити.</p>
+<p>Щоб вимкнути перенесення рядків в абзаці, позначте абзац і скористайтеся пунктом меню <guiseq><gui>Формат</gui><gui>Стиль параграфа</gui><gui>Попередньо сформатовані</gui></guiseq> у вікні редактора повідомлень.</p>
+
+</page>

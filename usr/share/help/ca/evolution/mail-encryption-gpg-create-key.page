@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-encryption-gpg-create-key" xml:lang="ca">
+
+  <info>
+    <desc>Signatura o xifratge dels missatges que s'enviïn a través de GPG / OpenPGP.</desc>
+
+    <link type="guide" xref="mail-encryption#gpg"/>
+
+    <revision pkgversion="3.12.9" version="0.6" date="2015-03-09" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Crear una clau GPG</title>
+
+<!-- TODO:POST-3-13: Needs a complete rewrite now that https://bugzilla.gnome.org/show_bug.cgi?id=508744 is fixed. -->
+
+<p>Abans de poder rebre o enviar missatges de correu xifrat amb GPG, heu de <link xref="help:seahorse/pgp-create" href="https://help.gnome.org/users/seahorse/stable/pgp-create">generar les vostres claus públiques i privades amb GPG</link>. Després de fer-ho i <link xref="mail-encryption-gpg-set-up">activar <app>Evolution</app> per a utilitzar la clau</link>, heu de compartir <link xref="help:seahorse/pgp-publish" href="https://help.gnome.org/users/seahorse/stable/pgp-publish">la clau pública amb els vostres amics per a permetre'ls enviar missatges xifrats</link>.</p>
+
+</page>

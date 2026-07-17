@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="task" id="annotations" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#annotations"/>
+    <desc>Bagaimana membuat dan menyesuaikan anotasi.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <credit type="author">
+      <name>Andre Klapper</name>
+      <email>ak-47@gmx.net</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kukuh Syafaat</mal:name>
+      <mal:email>syafaatkukuh@gmail.com</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2021, 2022.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Menambah anotasi</title>
+<p>Anotasi adalah sebuah catatan atau komentar yang ditambahkan ke suatu dokumen PDF. Anda dapat menambahkan anotasi memakai Atrril.</p>
+<p>Ketika Anda membuka sebuah berkas, Anda mestinya memiliki panel sisi di sisi kiri jendela. Bila panel sisi tidak tampak, klik <guiseq><gui style="menuitem">Tilik</gui><gui style="menuitem">Panel Sisi</gui></guiseq> atau tekan tombol <key>F9</key> pada papan ketik.</p>
+
+<p>Di puncak panel sisi, butir-butir dalam daftar tarik turun <gui>Gambar Mini</gui>, <gui>Indeks</gui>, <gui>Anotasi</gui>, dan <gui>Markah</gui> memungkinkan Anda memilih apa yang ditampilkan dalam panel sisi. (Beberapa opsi mungkin tidak tersedia bagi beberapa dokumen).</p>
+<p>Untuk membuat anotasi:</p>
+<steps>
+ <item>
+  <p>Pilih <gui style="button">Anotasi</gui> dari daftar tarik turun:</p>
+ </item>
+ <item>
+  <p>Klik pada <gui style="button">Tambah</gui> untuk menambahkan sebuah anotasi teks.</p>
+ </item>
+ <item>
+  <p>Klik pada spot dalam jendela dokumen yang ingin Anda tambahi anotasi. Jendela <em>anotasi</em> Anda akan terbuka.</p>
+ </item>
+ <item>
+  <p>Ketikkan teks Anda ke dalam jendela <em>anotasi</em>.</p>
+   <note>
+    <p>Anda dapat mengubah ukuran catatan dengan mengklik dan menahan tombol kiri tetikus salah pada satu dari pojok bawah catatan, dan menggerakkannya.</p>
+   </note>
+ </item>
+ <item>
+  <p>Tutup catatan dengan mengklik pada <gui>x</gui> di pojok atas catatan.</p>
+ </item>
+</steps>
+
+
+</page>

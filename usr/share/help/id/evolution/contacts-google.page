@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-google" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="contacts-using-several-addressbooks"/>
+    <link type="guide" xref="google-services"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Menggunakan buku alamat daring akun Google Anda.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Using a Google address book</title>
+
+  <p>Untuk menambahkan buku alamat seperti itu ke <app>Evolution,</app>lakukan langkah-langkah berikut:</p>
+
+  <steps>
+    <item>
+      <p>Klik <guiseq><gui>Berkas</gui><gui>Baru</gui> <gui>Buku Alamat</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Pilih jenis <gui>Google</gui>.</p>
+    </item>
+    <item>
+      <p>Masukkan nama yang Anda sukai.</p>
+    </item>
+    <item>
+      <p>Pilih jika Anda ingin bisa menampilkan konten juga saat sedang luring.</p>
+    </item>
+    <item>
+      <p>Masukkan nama pengguna Google Anda.</p>
+    </item>
+    <item>
+      <p>Pilih <gui>Gunakan koneksi aman</gui> jika Anda ingin tersambung dengan aman.</p>
+    </item>
+    <item>
+      <p>Klik <gui style="button">OK</gui>.</p>
+    </item>
+  </steps>
+
+  <p>Buku alamat akan ditambahkan ke daftar buku alamat di <app>Evolution</app>.</p>
+
+</page>

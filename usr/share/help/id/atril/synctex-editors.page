@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="synctex-editors" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#synctex" group="fourth"/>
+    <desc>Penyunting mana yang dapat Anda gunakan untuk menyunting berkas TEX Anda?</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kukuh Syafaat</mal:name>
+      <mal:email>syafaatkukuh@gmail.com</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2021, 2022.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Penyunting yang didukung</title>
+
+<section id="pluma"><title><app>pluma</app></title>
+<p><link xref="synctex-search#forward-search">Pencarian Maju</link> (dari <app>pluma</app> ke Atril) dan <link xref="synctex-search#backward-search">Pencarian mundur</link> (dari Atril ke <app>pluma</app>) keduanya didukung.</p>
+</section>
+
+<section id="vim-latex"><title>Vim-latex</title>
+<p>Plugin <app>pluma</app> berisi skrip python (<file>atril_dbus.py</file>) yang dapat digunakan untuk membuat SyncTeX bekerja dengan Vim. Untuk menggunakan vim-latex bersama dengan Atril, Anda harus mengikuti langkah-langkah selanjutnya:</p>
+<steps>
+ <item>
+  <p>Salin <file>atril_dbus.py</file> ke suatu direktori di path Anda dan berikan izin +x.</p>
+ </item>
+ <item>
+  <p>Ubah berkas <file>~/.vimrc</file> Anda dan tambahkan baris-baris berikut.</p>
+<code>
+let g:Tex_ViewRule_pdf = 'atril_dbus.py'
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_CompileRule_pdf = 'pdflatex --synctex=1 -interaction=nonstopmode $*'
+</code>
+
+  </item>
+  <item>
+   <p>Sekarang Anda dapat menggunakan Pencarian maju dari vim-latex dengan mengetik \ls. Pencarian mundur belum didukung.</p>
+  </item>
+</steps>
+</section>
+</page>

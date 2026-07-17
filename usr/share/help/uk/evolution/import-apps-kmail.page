@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="import-apps-kmail" xml:lang="uk">
+
+  <info>
+    <desc>Якщо дані <app>KMail</app> не вдається знайти за допомогою засобу імпортування <app>Evolution</app>.</desc>
+
+    <link type="guide" xref="import-data#import-from-apps"/>
+
+    <revision pkgversion="3.36.2" version="0.1" date="2020-05-31" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>KMail</title>
+
+  <p>Зауважте, що каталогами KDE 4, які розпізнає <app>Evolution</app>, є лише:</p>
+  <list>
+  <item><p><file>$HOME/.kde4/share/apps/kmail/mail</file> для пошти</p></item>
+  <item><p><file>$HOME/.kde4/share/apps/kabc</file> для контактів</p></item>
+  </list>
+  
+  <p>У свіжіших версіях скористайтеся <link href="https://mail.gnome.org/archives/evolution-list/2020-March/msg00168.html">настановами з цього допису</link>. Якщо у вас виникнуть проблеми, ознайомтеся із розділом <link xref="problems-getting-help"/>.</p>
+
+<!-- from https://mail.gnome.org/archives/evolution-list/2019-October/msg00044.html -->
+
+</page>

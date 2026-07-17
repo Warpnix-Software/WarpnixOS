@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="memos-usage-delete-memo" xml:lang="uk">
+
+  <info>
+    <desc>Вилучення примітки з вашого списку приміток.</desc>
+    
+    <link type="guide" xref="memos-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.1" date="2011-08-01" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Вилучення примітки</title>
+
+<p>Якщо ви хочете вилучити примітку з ваших списків приміток, клацніть правою кнопкою миші на пункті примітки і виберіть у контекстному меню пункт <gui>Вилучити</gui>, або клацніть на примітці і натисніть кнопку <gui>Вилучити</gui> на панелі інструментів, або виберіть пункт меню <guiseq><gui>Зміни</gui><gui>Вилучити примітку</gui></guiseq>.</p>
+
+</page>

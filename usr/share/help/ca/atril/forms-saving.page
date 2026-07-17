@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="forms-saving" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#forms"/>
+    <desc>Assegureu-vos de desar el formulari, altrament tota la informació que heu introduït es perdrà.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Anna Philips</name>
+      <email>anna.cs.au@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Carles Ferrando Garcia</mal:name>
+      <mal:email>carles.ferrando@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert Antoni Buj Gelonch</mal:name>
+      <mal:email>rbuj@fedoraproject.org</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Desant un formulari</title>
+
+<p>Després d'emplenar-lo, disposeu de dues maneres de desar el vostre formulari:</p>
+
+<list type="numbered">
+<item><p>Desar una còpia que podrà ser editada posteriorment (el formulari roman actiu):</p>
+   <steps>
+      <item>
+        <p>Aneu a <guiseq><gui style="menuitem">Fitxer</gui> <gui style="menuitem">Imprimeix...</gui></guiseq> i seleccioneu <gui>Anomena i desa…</gui> o premeu <keyseq><key>Ctrl</key><key>S</key></keyseq> al vostre teclat.</p>
+     </item>
+ <item>
+      <p> 
+Escolliu un nom i carpeta on desar el fitxer, i cliqueu <gui>Desa</gui>. El PDF es desarà a la carpeta que heu escollit.</p>
+    </item>
+   </steps>
+</item>
+<item><p>Per desar una còpia que ja no es pugui editar (per exemple, per enviar el formulari o entregar-lo online):</p>
+   <steps>
+    <item>
+        <p>Aneu a <guiseq><gui style="menuitem">Fitxer</gui> <gui style="menuitem">Imprimeix...</gui></guiseq> i seleccioneu <gui>Imprimeix</gui> o premeu <keyseq><key>Ctrl</key><key>P</key></keyseq> al vostre teclat.</p>
+    </item>
+
+
+    <item>
+      <p>Seleccioneu <gui>Imprimeix a un fitxer</gui> i escolliu PDF com el <gui>Format de sortida</gui>.</p>
+    </item>
+    <item>
+      <p> 
+Escolliu un nom i carpeta on desar el fitxer, i cliqueu <gui>Imprimeix</gui>. El PDF es desarà a la carpeta que heu escollit.</p>
+    </item>
+   </steps>
+</item>
+</list>
+
+<note style="bug">
+<p>Les còpies dels fitxers encriptats no es poden desar ni imprimir.</p>
+</note>
+
+</page>

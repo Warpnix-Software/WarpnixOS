@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-receiving-options-exchange-mapi" xml:lang="uk">
+
+  <info>
+    <desc>Параметри отримання пошти для облікових записів MAPI Exchange.</desc>
+
+    <link type="guide" xref="mail-receiving-options#corporate-server-types"/>
+    <link type="guide" xref="mail-account-manage-microsoft-exchange-evo-mapi#receiving-email"/>
+    <revision pkgversion="3.0.2" version="0.2" date="2011-07-30" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Параметри отримання пошти MAPI Exchange</title>
+
+<section id="receiving-email-exchange-mapi">
+<title>Отримання пошти</title>
+
+<p>На сторінці <gui>Отримання пошти</gui> (доступна за допомогою вибору послідовності пунктів <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Облікові записи</gui><gui style="button">Редагувати</gui><gui>Отримання пошти</gui></guiseq>):</p>
+
+<list>
+<item><p>Введіть адресу сервера електронної пошти у поле <gui>Сервер</gui> і вкажіть ваше ім'я користувача відповідного сервера.</p></item>
+<item><p>Введіть назву домену для відповідного сервера.</p>
+<note style="tip"><p>Якщо ви працюєте у середовищі якоїсь організації, вам варто зв'язатися із адміністратором системи, щоб дізнатися більше про налаштування.</p></note></item>
+<item><p>Виберіть тип розпізнавання зі списку «Автентифікація» або натисніть кнопку <gui style="button">Перевірити підтримувані типи</gui>, щоб наказати <app>Evolution</app> виявити підтримувані механізми розпізнавання. Деякі сервери не показують механізмів розпізнавання, підтримку яких передбачено, тому натискання цієї кнопки не гарантує, що доступні механізми працюватимуть.</p></item>
+<item><p>Вкажіть, чи хочете ви використовувати захищене з'єднання (TLS або його застарілого попередника — SSL).</p></item>
+<item><p>Натисніть кнопку <gui style="button">Автентифікація</gui> і введіть ваш пароль.</p></item>
+</list>
+
+</section>
+
+<section id="receiving-options-exchange-mapi">
+<title>Параметри отримання</title>
+
+<p>На сторінці <gui>Параметри отримання</gui> (доступ до неї можна отримати за допомогою послідовності пунктів <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Облікові записи</gui><gui style="button">Редагувати</gui><gui>Параметри отримання</gui></guiseq>):</p>
+
+<list>
+<item><p>Якщо ви хочете, щоб <app>Evolution</app> автоматично шукала нові повідомлення, позначте пункт <gui>Перевіряти нову пошту кожні … хвилин</gui> і виберіть інтервал між перевірками у хвилинах.</p></item>
+<item><p>Крім того, ви можете визначити, чи слід <app>Evolution</app> шукати нові повідомлення у всіх теках.</p></item>
+</list>
+
+</section>
+
+</page>

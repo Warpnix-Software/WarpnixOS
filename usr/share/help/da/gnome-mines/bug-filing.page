@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="bug-filing" xml:lang="da">
+
+  <info>
+    <link type="guide" xref="index#get-involved"/>
+    <revision pkgversion="3.5.5" version="0.1" date="2012-08-12" status="review"/>
+    <credit type="editor copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+      <years>2011</years>
+    </credit>
+    <license>
+      <p>Creative Commons Deling på samme vilkår 3.0</p>
+    </license>
+  </info>
+
+<title>Hjælp med at gøre <app>Miner</app> bedre</title>
+
+<section id="bug-report">
+<title>Rapportér en fejl eller foreslå en forbedring</title>
+<p><app>Miner</app> vedligeholdes af et fællesskab af frivillige. Du er velkommen til at deltage. Hvis du bemærker et problem, kan du oprette en <em>fejlrapport</em>. Rapportér en fejl ved at gå til <link href="https://gitlab.gnome.org/GNOME/gnome-mines/issues"/>.</p>
+   <p>Det er et fejlsporingssystem, hvor brugere og udviklere kan rapportere detaljer om fejl og nedbrud eller anmode om forbedringer.</p>
+   <p>For at deltage, skal du have en konto hvorved du får adgang samt mulighed for at rapportere fejl, skrive kommentarer og modtage opdateringer om fejlens status via e-mail. Har du ikke allerede en konto, så klik blot på <gui>Log ind/Tilmeld</gui>-linket for at oprette en.</p>
+
+  <p>Når du har en konto, så log ind og klik på <gui>New Issue</gui>. Inden du rapporterer en fejl, så læs venligst <link href="https://wiki.gnome.org/Community/GettingInTouch/BugReportingGuidelines">retningslinjer til fejlrapportering</link> og <link href="https://gitlab.gnome.org/GNOME/gnome-mines/issues">se</link> venligst om fejlen allerede er oprettet.</p>
+
+   <p>Hvis du anmoder om en ny funktion, så vælg <gui>Feature</gui> i <gui>Labels</gui>-menuen. Udfyld titlen og beskrivelsen og klik på <gui>Submit issue</gui>.</p>
+   <p>Din rapport gives et id-nummer og dens status opdateres efterhånden som der arbejdes på den. Tak fordi du hjælper med at gøre <app>Miner</app> bedre!</p>
+</section>
+</page>

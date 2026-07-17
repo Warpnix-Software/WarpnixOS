@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="task" id="print-pagescaling" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="printing"/>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Екатерина Герасимова</name>
+      <email its:translate="no">kittykat3756@gmail.com</email>
+      <years>2015</years>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal-unported.xml"/>
+
+    <desc>Сжатие или расширение документа в соответствии с размером бумаги.</desc>
+  </info>
+
+  <title>Масштабирование страницы при печати</title>
+
+  <p>Чтобы изменить размер бумаги документа (например, чтобы напечатать PDF с размером US Letter на бумаге формата A4), можно изменить формат печати для документа.</p>
+
+  <steps>
+    <item>
+      <p>Откройте меню в правом верхнем углу окна, затем выберите <gui style="menuitem">Печать…</gui>.</p>
+    </item>
+    <item>
+      <p>Выберите вкладку <gui style="tab">Обработка страницы</gui>.</p>
+    </item>
+    <item>
+      <p>Выберите <em>Масштабирование страницы</em> из выпадающего списка.</p>
+      <list>
+        <item>
+          <p><em>Нет</em>: не выполнять масштабирование страниц.</p>
+        </item>
+        <item>
+          <p><em>Сжать до размеров области печати</em>: страницы документа, размер которых превышает область печати, уменьшаются, чтобы вписаться в область печати страницы принтера.</p>
+        </item>
+        <item>
+          <p><em>Подогнать под область печати</em>: страницы документа увеличиваются или уменьшаются по мере необходимости, чтобы вписаться в область печати страницы принтера.</p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Нажмите <gui>Печать</gui>, чтобы распечатать документ.</p>
+    </item>
+  </steps>
+
+</page>

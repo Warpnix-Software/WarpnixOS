@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-several-recipients" xml:lang="ca">
+
+  <info>
+    <desc>Enviament a més d'una persona i utilitzant CC o CCO.</desc>
+    
+    <link type="guide" xref="index#mail-composing"/>
+    <link type="seealso" xref="mail-composer-reply"/>
+    <link type="seealso" xref="mail-composer-forward"/>
+    <link type="seealso" xref="mail-composer-write-new-message"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-27" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-to-types and https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-to -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Enviar un missatge a diversos destinataris</title>
+
+<p>Per a enviar un missatge a més d'una persona, introduïu les adreces a l'editor separant-les amb comes o punts i coma.</p>
+
+<note style="tip"><p>Si escriu correus electrònics amb freqüència als mateixos grups de persones, podeu crear <link xref="contacts-using-contact-lists">llistes de contactes</link> per a enviar-los correus com si tinguessin una adreça única.</p></note>
+
+<section id="to-cc-bcc-meaning">
+<title>Tipus de destinataris</title>
+<p>Els missatges de correu electrònic poden tenir tres tipus diferents de destinataris. La manera més senzilla és posar l'adreça de correu electrònic o adreces al camp <gui>Per a:</gui>. El camp <gui>Cc:</gui> s'utilitza per als destinataris que han de rebre una còpia del missatge, però no són els destinataris principals.</p>
+
+<p>Adreces al camp <gui>Cco:</gui> s'amaguen dels altres destinataris del missatge. Es pot utilitzar per a enviar missatges a grans grups de persones, especialment si no es coneixen o si hi ha un problema de privadesa. El camp <gui>Cco:</gui> no es mostra, feu clic a <guiseq><gui>Vista</gui><gui>Camp Cco</gui></guiseq>.</p>
+</section>
+
+<section id="autocompletion">
+<title>Compleció automàtica</title>
+<p>Es recomana utilitzar la funcionalitat d'<link xref="contacts-autocompletion">Autoemplenament</link> al llibre d'adreces d'<app>Evolution</app> per a introduir adreces. Utilitzar-la evita errors tipogràfics i estalvia temps.</p>
+</section>
+
+<section id="to-cc-bcc-buttons">
+<title>Ús de botons</title>
+
+<p>En lloc d'escriure els noms dels destinataris, també podeu fer clic als botons <gui style="button">Per a:</gui>, <gui style="button">Cc:</gui>, o <gui style="button">Cco:</gui> per a obtenir una llista de les adreces de correu electrònic a la vostra llibreta d'adreces. Seleccioneu les adreces i feu clic als botons de fletxa per a moure's a les columnes d'adreça adequades (Per a:, Cc:, Cco:).</p>
+</section>
+
+</page>

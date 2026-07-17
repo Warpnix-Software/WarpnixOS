@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="base" xml:lang="it">
+
+    <info>
+        <link type="guide" xref="index#number"/>
+    </info>
+
+	<title>Basi numeriche</title>
+    
+    <p>Per inserire un numero in una base particolare, utilizzare il <link xref="superscript">numero con il pedice </link>. Le notazioni seguenti sono equivalenti.</p>
+    <example>
+    <p>1001011₂</p>    
+    <p>113₈</p>
+    <p>75</p>
+    <p>4B₁₆</p>
+    </example>
+    <p>Nella <link xref="mouse">modalità programmazione</link>, si troveranno i pulsanti per la base 2 (<keyseq><key>Ctrl</key> <key>B</key></keyseq>), base 8 (<keyseq><key>Ctrl</key> <key>O</key></keyseq>) e esadecimale (<keyseq><key>Ctrl</key> <key>H</key></keyseq>).</p>
+    <p>Per impostare la base con cui mostrare i risultati modificare il <link xref="number-display">formato del risultato </link>.</p>
+    <p>Per cambiare la base del risultato corrente utilizzare un pulsante per modificare la base oppure <keyseq><key>Ctrl</key> <key>D</key></keyseq> per mostrarlo in forma decimale.</p>
+</page>

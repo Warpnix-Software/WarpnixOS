@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="complex" xml:lang="it">
+
+    <info>
+        <link type="guide" xref="index#number"/>
+    </info>
+
+	<title>Numeri complessi</title>
+    
+    <p><app>MATE Calculator</app> supporta i numeri complessi e le seguenti funzioni se ci si trova nella <link xref="mouse">modalità  Avanzata</link>.</p>
+
+    <table>
+
+    <tr>
+    <td><p>Re</p></td>
+    <td><p>Restituisce la parte reale di un numero complesso. Ad esempio:</p>
+    <example>
+    <p>Re (2-5i) = 2</p>
+    </example>
+    </td>
+    </tr>
+
+    <tr>
+    <td><p>Im</p></td>
+    <td><p>Restituisce la parte immaginaria di un numero complesso. Ad esempio:</p>
+    <example>
+    <p>Im (2-5i) = -5</p>
+    </example>
+    </td>
+    </tr>
+
+    <tr>
+    <td><p>conj</p></td>
+    <td><p>Restituisce il complesso coniugato di un numero complesso. Ad esempio:</p>
+    <example>
+    <p>conj (2-5i) = 2+5i</p>
+    </example>
+    </td>
+    </tr>
+
+    <tr>
+    <td><p>Arg</p></td>
+    <td><p>Restituisce l'argomento di un numero complesso. Ad esempio:</p>
+    <example>
+    <p>Arg (2-5i) = -68.1986</p>
+    </example>
+    </td>
+    </tr> 
+
+    </table>
+
+
+</page>

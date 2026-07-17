@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-sorting-folder-list" xml:lang="de">
+
+  <info>
+    <desc>Die E-Mail-Ordnerliste in der linken Leiste sortieren.</desc>
+
+    <link type="guide" xref="mail-organizing"/>
+    <link type="guide" xref="mail-layout-changing"/>
+
+    <revision pkgversion="3.3.91" version="0.2" date="2013-06-22" status="draft"/>
+    <revision pkgversion="3.38.4" version="0.3" date="2021-03-28" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andre Klapper</mal:name>
+      <mal:email>ak-47@gmx.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009-2013, 2016-2018, 2020-2021</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009-2013, 2015-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Gabor Karsay</mal:name>
+      <mal:email>gabor.karsay@gmx.at</mal:email>
+      <mal:years>2011-2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Tim Sabsch</mal:name>
+      <mal:email>tim@sabsch.com</mal:email>
+      <mal:years>2018, 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jürgen Benvenuti</mal:name>
+      <mal:email>gastornis@posteo.org</mal:email>
+      <mal:years>2022-2024</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Die E-Mail-Ordnerliste sortieren</title>
+  
+<section id="default-folder-sort-order">
+<title>Voreingestellte Sortierreihenfolge</title>
+<p>Standardmäßig enthält die <link xref="intro-main-window#e-mail">Liste der E-Mail-Ordner</link> im linken Teilfenster die Knoten der obersten Ebene in dieser Reihenfolge:</p>
+<list>
+<item><p><gui>Auf diesem Rechner</gui> - enthält alle E-Mail- oder lokalen Kontentypen (falls eingerichtet)</p></item>
+<item><p>Einer oder mehrere E-Mail-Kontentypen (falls eingerichtet)</p></item>
+<item><p><gui><link xref="mail-search-folders">Suchordner</link></gui> (falls aktiviert)</p></item>
+</list>
+<p>Die Ordner unter jedem Knoten der obersten Ebene sind alphabetisch sortiert.</p>
+</section>
+
+<section id="change-folder-sort-order">
+<title>Ändern der Sortierreihenfolge</title>
+<list>
+<item>
+<p>Sie können die vorgegebene Sortierreihenfolge der Knoten der obersten Ebene unter <guiseq><gui>Bearbeiten</gui><gui>Einstellungen</gui><gui>E-Mail-Konten</gui></guiseq> oder durch einfaches Hinauf- oder Hinunterziehen in der Liste ändern.</p>
+
+<p>Sie können die vorgegebene Sortierreihenfolge der Knoten der obersten Ebene unter <guiseq><gui>Bearbeiten</gui><gui>Einstellungen</gui><gui>E-Mail-Konten</gui><gui style="button">Voreinstellung wiederherstellen</gui></guiseq> wiederherstellen.</p>
+</item>
+<item>
+<p>Sie können die Sortierreihenfolge für Ordner über <guiseq><gui>Ordner</gui><gui>Sortierreihenfolge bearbeiten …</gui></guiseq> anpassen.</p>
+</item>
+</list>
+</section>
+</page>

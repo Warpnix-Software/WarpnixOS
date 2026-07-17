@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-sorting-folder-list" xml:lang="es">
+
+  <info>
+    <desc>Ordenar la lista de carpetas de correo en el panel izquierdo.</desc>
+
+    <link type="guide" xref="mail-organizing"/>
+    <link type="guide" xref="mail-layout-changing"/>
+
+    <revision pkgversion="3.3.91" version="0.2" date="2013-06-22" status="draft"/>
+    <revision pkgversion="3.38.4" version="0.3" date="2021-03-28" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2012 - 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rodrigo Lledó</mal:name>
+      <mal:email>rodhos92@gmail.com</mal:email>
+      <mal:years>2018</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yolanda Álvarez Pérez</mal:name>
+      <mal:email>yolandaa.alvarez.perez@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Francisco Javier F. Serrador</mal:name>
+      <mal:email>serrador@openshine.com</mal:email>
+      <mal:years>2005, 2006</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Ordenar la lista de carpetas de correo</title>
+  
+<section id="default-folder-sort-order">
+<title>Orden de clasificación predeterminada</title>
+<p>De manera predeterminada la <link xref="intro-main-window#e-mail">lista de carpetas de correo</link> en el panel izquierdo contiene nodos de nivel superior en el orden siguiente:</p>
+<list>
+<item><p><gui>En este equipo</gui> - contiene todo el correo para las cuentas de tipo locales (si está configurado)</p></item>
+<item><p>Uno o más tipos de cuentas de correo remoto (si está configurado)</p></item>
+<item><p><gui><link xref="mail-search-folders">Buscar carpetas</link></gui> (si está activado)</p></item>
+</list>
+<p>Las carpetas debajo de cada nodo de nivel superior se clasificaron en orden alfabético.</p>
+</section>
+
+<section id="change-folder-sort-order">
+<title>Cambiar el orden de clasificación</title>
+<list>
+<item>
+<p>Puede cambiar el orden de clasificación predeterminada de los nodos de nivel superior bajo <guiseq><gui>Editar</gui><gui>Preferencias</gui><gui>Cuentas de correo</gui></guiseq> arrastrando una cuenta de la lista hacia arriba o hacia abajo.</p>
+
+<p>Puede revertir su orden de clasificación eligiendo <guiseq><gui>Editar</gui><gui>Preferencias</gui><gui>Cuentas de correo</gui><gui style="button">Restaurar predeterminado</gui></guiseq>.</p>
+</item>
+<item>
+<p>Puede cambiar el criterio de ordenación de las carpetas en <guiseq><gui>Carpeta</gui><gui>Editar criterio de ordenación…</gui></guiseq>.</p>
+</item>
+</list>
+</section>
+</page>

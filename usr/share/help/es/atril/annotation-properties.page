@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" style="task" id="annotation-properties" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="annotations"/>
+    <desc>Como personalizar el autor, color, estilo o ícono de una anotación</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Toni Estevez</mal:name>
+      <mal:email>toni.estevez@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Francisco Javier F. Serrador</mal:name>
+      <mal:email>serrador@cvs.gnome.org</mal:email>
+      <mal:years>2003-2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Pablo Gonzalo del Campo</mal:name>
+      <mal:email>pablodc@bigfoot.com</mal:email>
+      <mal:years>2002-2003</mal:years>
+    </mal:credit>
+  </info>
+
+ <title>Personalizar anotaciones</title>
+
+<steps>
+ <item>
+  <p>Botón derecho en el icono de anotación en el documento.</p>
+ </item>
+ <item>
+  <p>Seleccionar <gui>Propiedades de Anotación…</gui>.</p>
+ </item>
+ <item>
+  <p>En la ventana de <gui>Propiedades de Anotación</gui> , puede cambiar autor, color, estilo e icono de su nota.</p>
+   <note>
+    <p>Las propiedades de anotación se aplicarán a la nota para la que hizo los cambios solamente. Cada nota puede tener un conjunto distinto de propiedades.</p>
+   </note>
+ </item>
+</steps>
+
+
+<section id="change-default">
+ <title>¿Puedo cambiar permanentemente las propiedades de anotación por defecto?</title>
+<p>Las propiedades predeterminadas de anotación (autor, color, estilo e icono) solo pueden ser cambiadas en una  nota concreta como se menciona anteriormente. Si quiere que todos los iconos de sus notas sean <gui>rojos</gui>en lugar de <gui>amarillos</gui>, tendrá que cambiar el color predeterminado de  <gui>amarillo</gui> a <gui>rojo</gui> individualmente en cada nota. No es posible guardar diferentes ajustes predeterminados para propiedades de anotación en este momento.</p>
+</section>
+
+</page>

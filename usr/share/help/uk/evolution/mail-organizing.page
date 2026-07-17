@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-organizing" xml:lang="uk">
+
+  <info>
+    <desc>Про теки, упорядкування, пошук, фільтри, пошук у теках та мітки.</desc>
+
+    <link type="guide" xref="index#mail-basic"/>
+    <link type="guide" xref="organizing"/>
+
+    <revision pkgversion="2.32.1" version="0.1" date="2011-01-05" status="stub"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Сортування і упорядковування пошти</title>
+
+<p>У <app>Evolution</app> передбачено декілька можливостей для упорядковування вашої пошти у бажаний для вас спосіб.</p>
+
+  <section id="advanced" style="2column">
+    <title>Додаткові параметри</title>
+  </section>
+</page>

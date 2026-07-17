@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-access-gmail-imap-account" xml:lang="ca">
+
+  <info>
+    <desc>Com configurar un compte IMAP Gmail.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+    <link type="guide" xref="google-services"/>
+    <link type="seealso" xref="mail-account-manage-imap-plus"/>
+
+    <revision pkgversion="3.29.91" version="0.4" date="2018-08-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<!-- Page only exists for the <note>, apart from that nothing special. -->
+
+<title>Accés a un compte IMAP Gmail via <app>Evolution</app></title>
+
+<p>Per a accedir a Gmail via IMAP heu d'activar IMAP al vostre compte de Google. Veure l'<link href="https://mail.google.com/support/bin/answer.py?answer=77695">Ajuda de Gmail</link> per a obtenir més informació.</p>
+
+<p>Es recomana configurar Gmail com a compte en línia al GNOME. <link xref="help:gnome-help/accounts" href="https://help.gnome.org/users/gnome-help/stable/accounts">Consulteu l'ajuda de l'escriptori GNOME</link> per a més informació. Un cop configurat, el compte de Gmail apareixerà a l'Evolution.</p>
+
+<p>Per a configurar el compte a l'Evolution, consulteu <link xref="mail-account-manage-imap-plus">Configuració del compte de correu IMAP+</link>. Tingueu en compte que no totes les opcions d'aquests comptes es poden editar a l'<app>Evolution</app> i que aquests comptes només poden eliminar-se a <app>Comptes en línia</app>.</p>
+
+<!-- Evolution does not support Google's proprietary SASL XOAUTH2 implementation which makes Evolution a "less secure app" for Google. -->
+<p>Com a alternativa a la configuració d'un compte en línia al GNOME, permeteu <link href="https://www.google.com/settings/security/lesssecureapps">l'accés d'aplicacions menys segures a la configuració del vostre compte de Gmail</link>.</p>
+
+<note style="tip"><p>Per motius de rendiment, es recomana <gui>Utilitza una carpeta real per a la paperera</gui> establint-la a <gui>[GMail]/Trash</gui> i <gui>Utilitza una carpeta real per als missatges brossa</gui> configurant <gui>[GMail]/Spam</gui> per al compte <link xref="mail-default-folder-locations"><gui>Valors per defecte</gui></link>.</p></note>
+
+</page>

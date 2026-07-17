@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-usenet-subscriptions" xml:lang="ca">
+
+  <info>
+    <desc>Subscripció als grups de notícies d'Usenet.</desc>
+    
+    <link type="guide" xref="mail-account-manage-usenet-news#other-settings"/>
+    <link type="seealso" xref="mail-imap-subscriptions"/>
+
+    <revision pkgversion="3.1.5" version="0.2" date="2011-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en#usage-mail-getnsend-get-news -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+
+<title>Subscripció als grups de notícies</title>
+
+<p>Quan creeu un compte de grup de notícies, no estareu subscrit a cap grup. Per a subscriure's a un grup de notícies:</p>
+<steps>
+<item><p>Seleccioneu <guiseq><gui>Carpeta</gui><gui>Subscripcions</gui></guiseq>.</p></item>
+<item><p>Si teniu comptes en diversos servidors, seleccioneu el servidor on voleu gestionar les vostres subscripcions.</p></item>
+<item><p>Feu clic a la casella de selecció d'un grup per a afegir una carpeta a les vostres subscripcions.</p></item>
+</steps>
+
+</page>

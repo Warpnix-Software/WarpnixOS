@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="start-command-line-parameters" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#common-other-problems"/>
+
+    <revision pkgversion="3.39.0" version="0.1" date="2020-10-29" status="draft"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Com fer que Evolution mostri una finestra o carpeta específica en iniciar l'aplicació.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<!-- TODO: Update page with https://gitlab.gnome.org/GNOME/evolution/-/issues/1176#note_946174 -->
+
+  <title>Defineix què mostrar en iniciar <app>l'Evolution</app></title>
+
+  <p>Quan s'inicia <app>l'Evolution</app>, recorda l'última visualització que has utilitzat.</p>
+
+  <p>Per a fer que <app>Evolution</app> mostri una altra cosa després d'iniciar l'aplicació, haureu d'executar l'aplicació des de <app>Terminal</app> i passar els paràmetres corresponents.</p>
+
+  <section id="tools">
+    <title>Windows</title>
+
+    <p its:locNote="TO TRANSLATORS: Do NOT translate 'component' here!">Per a iniciar <app>l'Evolution</app> en una visualització específica, passeu el paràmetre «component».</p>
+
+    <p>Exemples:</p>
+    <list>
+      <item><p><cmd its:translate="no">evolution --component=calendar</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution --component=contacts</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution --component=mail</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution --component=memos</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution --component=tasks</cmd></p></item>
+    </list>
+  </section>
+
+  <section id="mail-folders">
+    <title>Carpetes de correu</title>
+
+    <!-- Introduced in https://gitlab.gnome.org/GNOME/evolution/-/issues/1176 : -->
+    <p its:locNote="TO TRANSLATORS: Do NOT translate 'folder' here!">Per a fer que <app>Evolution</app> obri una carpeta de correu específica, passeu el paràmetre «carpeta».</p>
+
+    <p>Exemples:</p>
+    <list>
+      <item><p><cmd its:translate="no">evolution "folder:On This Computer/Inbox"</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution folder:On%20This%20Computer/Inbox</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution folder://local/Inbox</cmd></p></item>
+    </list>
+  </section>
+
+  <section id="mail-composer">
+    <title>Editor del correu electrònic</title>
+
+    <p its:locNote="TO TRANSLATORS: Do NOT translate 'folder' here!">Per a fer que <app>Evolution</app> obri una finestra de l'editor de correu amb alguns valors i contingut predefinits:</p>
+
+    <p>Exemples:</p>
+    <list>
+      <item><p><cmd its:translate="no">evolution mailto:recipient@example.com?cc=cc@example.com\&amp;subject=Your\ subject\ line\&amp;body=Message\ content\&amp;attach=/home/user/file</cmd></p></item>
+    </list>
+  </section>
+
+</page>

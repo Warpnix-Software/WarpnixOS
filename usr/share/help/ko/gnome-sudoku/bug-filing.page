@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="bug-filing" xml:lang="ko">
+
+  <info>
+    <link type="guide" xref="index#get-involved"/>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <credit type="editor copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+      <years>2011</years>
+    </credit>
+    <license>
+      <p>크리에이티브 커먼즈 동일조건변경허락 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>전민석</mal:name>
+      <mal:email>cheon7886@naver.com</mal:email>
+      <mal:years>2017, 2018</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>조성호</mal:name>
+      <mal:email>shcho@gnome.org</mal:email>
+      <mal:years>2021, 2023</mal:years>
+    </mal:credit>
+  </info>
+
+<title>문제 보고</title>
+<p><app>그놈 스도쿠</app>는 기여자 집단이 관리합니다. 여러분의 참여를 환영합니다. 문제를 발견했다면 <em>버그 보고서</em>를 제출할 수 있습니다. 버그를 보고하려면, <link href="https://gitlab.gnome.org/GNOME/gnome-sudoku/issues/"/> 로 이동하십시오.</p>
+   <p>사용자와 개발자가 버그, 치명적 오류, 개선 요청을 제출할 수 있는 버그 추적 시스템입니다.</p>
+   <p>참여하려면 접근 권한을 얻어 버그를 보고하고 답글을 올릴 수 있는 계정이 필요합니다. 버그 처리 상태 최신 내용을 전자메일로 받으려면 가입해야합니다. 계정이 없다면 <gui>Sign in / Register</gui> 링크를 눌러 만드십시오.</p>
+
+  <p>Once you have an account, log in, and click on <gui>New issue</gui>.
+   Before reporting a bug, please read the <link href="https://handbook.gnome.org/issues/reporting.html">bug writing guidelines</link>, and please <link href="https://gitlab.gnome.org/GNOME/gnome-sudoku/issues">browse</link> for the bug to see if it already exists.
+</p>
+
+   <p>새 기능을 제안한다면 <gui>Labels</gui> 메뉴에서 <gui>1. Feature</gui>를 선택하십시오. 제목과 설명 부분을 채워나간 후 <gui>Submit Issue</gui>를 누르십시오.</p>
+   <p>보고서에는 ID 번호가 붙으며, 처리하는대로 최신 상태가 바뀝니다.</p>
+</page>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="flatpak-limitations" xml:lang="de">
+
+  <info>
+    <desc>Einschränkungen bei der Verwendung eines Flatpak-Pakets von <app>Evolution</app>.</desc>
+
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="3.35.91" version="0.1" date="2020-02-21" status="review"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andre Klapper</mal:name>
+      <mal:email>ak-47@gmx.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009-2013, 2016-2018, 2020-2021</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009-2013, 2015-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Gabor Karsay</mal:name>
+      <mal:email>gabor.karsay@gmx.at</mal:email>
+      <mal:years>2011-2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Tim Sabsch</mal:name>
+      <mal:email>tim@sabsch.com</mal:email>
+      <mal:years>2018, 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jürgen Benvenuti</mal:name>
+      <mal:email>gastornis@posteo.org</mal:email>
+      <mal:years>2022-2024</mal:years>
+    </mal:credit>
+  </info>
+
+<title>E-Mails können nicht gedruckt werden, es können keine Anhänge hinzugefügt oder gespeichert oder die Hilfe geöffnet werden</title>
+
+<p>Falls Sie mit einer <link href="https://flathub.org/">Flatpak</link>-Version von <app>Evolution</app> arbeiten, gelten verschiedene Einschränkungen. Einige Beispiele:</p>
+
+<list>
+  <item><p>Das Hinzufügen von Anhängen zu einer E-Mail oder das Speichern von Anhängen aus einer E-Mail könnte nicht möglich sein.</p></item>
+  <item><p>Sie können keine E-Mail an einen Drucker ausgeben. Dies ist eine <link href="https://bugs.webkit.org/show_bug.cgi?id=192748">Einschränkung der zugrunde liegenden WebKitGTK-Bibliothek</link>.</p>
+  <p>Um eine E-Mail in eine Datei zu drucken, können Sie ersatzweise <cmd>flatpak run --filesystem=home org.gnome.Evolution</cmd> ausführen.</p></item>
+  <item><p>Um das Paket klein zu halten, könnte die lokale Benutzerdokumentation nicht verfügbar sein.</p></item>
+</list>
+</page>

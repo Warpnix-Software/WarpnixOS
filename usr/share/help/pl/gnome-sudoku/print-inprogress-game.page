@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="print-inprogress-game" xml:lang="pl">
+
+  <info>
+   <link type="guide" xref="index#print"/>
+
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+    <revision pkgversion="3.31.90" version="0.3" date="2019-03-03" status="review"/>
+    <credit type="author copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Piotr Drąg</mal:name>
+      <mal:email>piotrdrag@gmail.com</mal:email>
+      <mal:years>2017-2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Aviary.pl</mal:name>
+      <mal:email>community-poland@mozilla.org</mal:email>
+      <mal:years>2017-2023</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Drukowanie gry</title>
+ <p>Można wydrukować rozwiązywane sudoku do pliku lub za pomocą drukarki.</p>
+ <p>Aby wydrukować obecnie rozgrywaną grę:</p>
+ <steps>
+  <item><p>Kliknij przycisk menu w górnym prawym rogu okna, a następnie wybierz <gui style="menuitem">Wydrukuj</gui>.</p></item>
+  <item><p>Kliknij <gui style="menuitem">Wydrukuj bieżącą planszę…</gui>.</p></item>
+  <item><p>Wybierz drukarkę.</p></item>
+  <item><p>Kliknij <gui>Wydrukuj</gui>.</p></item>
+ </steps>
+ <note><p>Jeśli na liście nie ma drukarki, to <link href="https://help.gnome.org/users/gnome-help/stable/printing-setup.html" xref="help:gnome-help/printing-setup">Konfiguracja lokalnej drukarki</link> zawiera więcej informacji.</p></note>
+
+</page>

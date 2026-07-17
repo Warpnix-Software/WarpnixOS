@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-default-folder-locations" xml:lang="ca">
+
+  <info>
+    <desc>Canviar la ubicació de les carpetes <gui>Esborranys</gui>, <gui>Enviats</gui>, <gui>Paperera</gui> i <gui>Brossa</gui>.</desc>
+
+    <link type="guide" xref="mail-account-manage-imap-plus#defaults"/>
+    <link type="guide" xref="mail-account-manage-local-delivery#defaults"/>
+    <link type="guide" xref="mail-account-manage-maildir-format-directories#defaults"/>
+    <link type="guide" xref="mail-account-manage-mh-format-directories#defaults"/>
+    <link type="guide" xref="mail-account-manage-pop#defaults"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-directory#defaults"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-file#defaults"/>
+    <link type="guide" xref="mail-account-manage-usenet-news#defaults"/>
+    <link type="guide" xref="mail-account-manage-microsoft-exchange-evo-mapi#defaults"/>
+    <link type="guide" xref="mail-account-manage-microsoft-exchange-evo-ews#defaults"/>
+
+    <revision pkgversion="3.32.0" version="0.4" date="2019-03-14" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Ubicació de les carpetes de correu</title>
+
+<p>Podeu establir un lloc diferent on emmagatzemar missatges a la vostra carpeta <gui>Esborranys</gui> i carpeta <gui>Enviats</gui> a la secció <gui>Predeterminat</gui> de l'editor de comptes de correu (<guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Comptes de correu</gui><gui style="button">Edita</gui><gui>Predeterminat</gui></guiseq>).</p>
+<p>Podeu definir una <gui>carpeta d'arxiu</gui> del compte per a moure-hi missatges antics. Això requereix la configuració prèvia d'una carpeta alternativa a <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Preferències del correu</gui><gui>General</gui><gui>Arxiva el correu</gui></guiseq>. La selecció de <guiseq><gui>Missatge</gui><gui>Arxiva</gui></guiseq> a la finestra principal mou el missatge seleccionat a la carpeta especificada.</p>
+<p>Per als tipus de compte remots (comptes com ara IMAP) podeu utilitzar carpetes al servidor de correu per al correu 'no desitjat' i la 'paperera' seleccionant la corresponent opció a <gui>Utilitza una carpeta real</gui>. En aquest cas, <app>Evolution</app> no utilitzarà les <link xref="mail-search-folders">carpetes virtuals</link> locals.</p>
+
+</page>

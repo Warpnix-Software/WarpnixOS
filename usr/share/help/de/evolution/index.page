@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="index" xml:lang="de">
+
+  <info>
+    <desc>Ihre E-Mails, Kontakte und Ihren Terminplan verwalten</desc>
+    <title type="link" role="trail"><app>Evolution</app> E-Mail und Kalender</title>
+    <title type="text"><app>Evolution</app> E-Mail und Kalender</title>
+    <revision pkgversion="3.8.2" version="0.7" date="2013-06-22" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Phil Bull</name>
+      <email its:translate="no">philbull@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andre Klapper</mal:name>
+      <mal:email>ak-47@gmx.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009-2013, 2016-2018, 2020-2021</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009-2013, 2015-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Gabor Karsay</mal:name>
+      <mal:email>gabor.karsay@gmx.at</mal:email>
+      <mal:years>2011-2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Tim Sabsch</mal:name>
+      <mal:email>tim@sabsch.com</mal:email>
+      <mal:years>2018, 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jürgen Benvenuti</mal:name>
+      <mal:email>gastornis@posteo.org</mal:email>
+      <mal:years>2022-2024</mal:years>
+    </mal:credit>
+  </info>
+
+<title><media its:translate="no" type="image" width="48px" height="48px" src="figures/evolution.svg"/> <app>Evolution</app> E-Mail und -Kalender</title>
+
+  <section id="getting-started" style="2column">
+    <title>Erste Schritte</title>
+  </section>
+
+  <section id="mail-basic" style="2column">
+    <title>Nachrichtenverwaltung</title>
+      <section id="mail-advanced" style="2column">
+        <title>Fortgeschrittene E-Mail-Verwaltung</title>
+      </section>
+  </section>
+
+  <section id="mail-composing" style="2column">
+    <title>Verfassen von Nachrichten</title>
+      <section id="mail-composing-advanced" style="2column">
+        <title>Fortgeschrittene E-Mail-Erstellung</title>
+    </section>
+  </section>
+
+  <section id="calendar" style="2column">
+    <title>Kalenderverwaltung</title>
+      <section id="calendar-advanced" style="2column">
+        <title>Fortgeschrittene Kalenderverwaltung</title>
+    </section>
+  </section>
+
+  <section id="contacts" style="2column">
+    <title>Verwaltung von Kontakten</title>
+  </section>
+
+  <section id="memos-and-tasks" style="2column">
+    <title>Verwaltung von Notizen und Aufgaben</title>
+  </section>
+
+  <section id="data-migration-and-sync" style="2column">
+    <title>Datenmigration und -abgleich</title>
+  </section>
+
+  <section id="tracking-down-problems" style="2column">
+    <title>Eingrenzen von Problemen</title>
+  </section>
+
+  <section id="common-mail-problems" style="2column">
+    <title>Häufig gestellte Fragen und Probleme mit E-Mails</title>
+  </section>
+
+  <section id="common-other-problems" style="2column">
+    <title>Andere häufig gestellte Fragen und Probleme</title>
+  </section>
+
+  <section id="further-reading" style="2column">
+    <title>Weiterer Lesestoff</title>
+  </section>
+
+</page>

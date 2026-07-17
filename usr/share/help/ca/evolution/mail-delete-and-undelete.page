@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-delete-and-undelete" xml:lang="ca">
+
+  <info>
+    <desc>Esborrat, compactat, i restauració de correu electrònic.</desc>
+
+    <link type="guide" xref="index#mail-basic"/>
+    <link type="seealso" xref="mail-moving-emails"/>
+    <link type="seealso" xref="deleting-emails"/>
+
+    <revision pkgversion="3.35.91" version="0.3" date="2020-02-21" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en#usage-mail-getnsend-delete and https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en#usage-mail-getnsend-undelete -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Suprimir i restaurar missatges</title>
+
+<section id="delete">
+<title>Suprimir els missatges</title>
+
+<p>Per a esborrar un missatge, seleccioneu-lo i premeu la tecla <key>Supr</key>, o feu clic al botó <gui style="button">Suprimeix</gui> a la barra d'eines, o premeu <keyseq><key>Ctrl</key><key>D</key></keyseq>, o feu clic amb el botó dret del ratolí al missatge i feu clic a <gui>Suprimeix</gui>.</p>
+
+<p>Quan premeu Esborrar o feu clic a la carpeta <gui>Paperera</gui>, el correu no s'esborra realment, però queda marcat per a suprimir-se. Podeu veure els missatges marcats per a suprimir a la carpeta <gui>Paperera</gui>. Per a veure els missatges esborrats, feu clic a <guiseq><gui>Vista</gui><gui>Mostra els missatges esborrats</gui></guiseq>. Podeu veure els missatges afectats per a suprimir-los més tard.</p>
+
+<p>Per a esborrar permanentment tots els missatges esborrats d'una carpeta, feu clic a la <guiseq><gui>Carpeta</gui><gui>Suprimeix definitivament</gui></guiseq> o premeu <keyseq><key>Ctrl</key><key>E</key></keyseq>.</p>
+
+<note style="tip"><p>Quan es llegeixen missatges en una finestra a part, en suprimir un missatge, se'n mostra el següent. Si preferiu que es tanqui la finestra, executeu l'ordre <cmd>gsettings set org.gnome.evolution.mail browser-close-on-delete-or-junk true</cmd></p></note>
+
+</section>
+
+<section id="undelete">
+<title>Restauració de missatges</title>
+
+<p>Podeu recuperar un missatge eliminat que encara no s'hagin suprimit definitivament. Per a recuperar-lo, seleccioneu el missatge, feu clic a <guiseq><gui>Edita</gui><gui>Recupera el missatge</gui></guiseq>. Nota: Per a que això funcioni, l'opció <guiseq><gui>Vista</gui><gui>Mostra missatges esborrats</gui></guiseq> ha d'estar activa.</p>
+
+<p>Si heu marcat un missatge per a esborrar, la recuperació el desmarca, i el missatge ja no es mostra a la carpeta <gui>Paperera</gui>.</p>
+</section>
+
+</page>

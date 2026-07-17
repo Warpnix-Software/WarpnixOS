@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-usage-add-contact" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="contacts-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.2" date="2011-09-29" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Добавление контакта в адресную книгу.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Добавление контакта</title>
+
+  <steps>
+    <item>
+      <p>Выберите пункт меню <guiseq><gui>Файл</gui><gui>Создать</gui><gui>Контакт</gui></guiseq> или щёлкните правой кнопкой мыши по пустому пространству в списке контактов и выберите пункт <gui>Новый контакт…</gui>, или воспользуйтесь комбинацией клавиш <keyseq><key>Shift</key><key>Ctrl</key><key>C</key></keyseq>.</p>
+    </item>
+    <item>
+      <p>Укажите в поле <gui>Где</gui> адресную книгу, в которую будет добавлен этот контакт.</p>
+    </item>
+    <item>
+      <p>Введите контактную информацию (обратите внимание, что доступны несколько вкладок).</p>
+    </item>
+    <item>
+      <p>Чтобы добавить к контакту фотографию, щёлкните по большому полю (со стилизованным изображением человека) рядом с кнопками <gui>Полное имя</gui> и <gui>Категории</gui>.</p>
+    </item>
+    <item>
+      <p>Нажмите кнопку <gui style="button">OK</gui>.</p>
+    </item>
+  </steps>
+
+<section id="contact-quick-add">
+  <title>Быстрое добавление контакта из окна письма</title>
+
+  <p>Также можно добавить контакт непосредственно из сообщения электронной почты.</p>
+
+  <steps>
+    <item>
+      <p>Щёлкните правой кнопкой мыши по адресу в заголовке сообщения.</p>
+    </item>
+    <item>
+      <p>Выберите пункт <gui>Добавить в адресную книгу…</gui>.</p>
+    </item>
+    <item>
+      <p>Нажмите либо кнопку <gui style="button">Изменить все</gui> для открытия окна <gui>Редактора контактов</gui>, либо кнопку <gui style="button">OK</gui> для непосредственного добавления контакта в выбранную адресную книгу.</p>
+    </item>
+  </steps>
+
+</section>
+
+</page>

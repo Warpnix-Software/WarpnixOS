@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-install" xml:lang="he">
+
+  <info>
+    <credit type="author">
+      <name>מיזם התיעוד של אובונטו</name>
+    </credit>
+    <desc>אפשר להשתמש ב<app>מרכז היישומים</app> כדי להתקין יישומים נוספים ולהפוך את אובונטו לשימושי יותר.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove" group="#first"/>
+    <link type="seealso" xref="addremove-remove"/>
+    <link type="seealso" xref="addremove-install-synaptic"/>
+    <link type="seealso" xref="prefs-language-install"/>
+    <revision version="18.04" date="2018-03-18" status="review"/>
+  </info>
+
+  <title>התקנת יישומים נוספים</title>
+
+  <p>
+    An application is software that has a graphical user interface (GUI).
+    The Ubuntu development team has chosen a default set of applications that we 
+    think makes Ubuntu very useful for most day-to-day tasks. However, you will 
+    certainly want to install more applications to make Ubuntu more useful to you.
+    To install an application, you can use <app>App Center</app>.
+   </p>
+
+   <p>
+    Applications are available in two formats: snap packages and Debian packages.
+    An application available as a snap package is from now on referred to as a <em>snap</em>.
+    Some applications are available in both formats. In such a case in
+    <app>App Center</app> the snap will be listed first.
+   </p>
+
+   <p>יכול להיות שיעניין אותך להתקין תכניות שאין להן מנשק גרפי. כדי להתקין תכניות כאלה ניתן להשתמש ב־<link xref="addremove-install-synaptic">Synaptic</link>. לתשומת לבך: ב־<app>Synaptic</app> לא מופיעות חבילות snap.</p>
+
+  <p>כדי להתקין יישום:</p>
+
+  <steps>
+    <item>
+      <p>
+        Click the <app>App Center</app> icon in the <gui>Dock</gui>, or search
+        for <input>Software</input> in the <em>Activities</em> search bar.
+      </p>
+    </item>
+    <item>
+      <p>
+        When <app>App Center</app> launches, search for an application, or select 
+        a category and find an application from the list.
+      </p>
+    </item>
+    <item>
+      <p>לבחור את היישום שברצונך להתקין וללחוץ על <gui>התקנה</gui>.</p>
+    </item>
+    <item>
+      <p>תופיע בפניך בקשה להתאמת על ידי הקלדת הססמה שלך. לאחר ההקלדה ההתקנה תתחיל. ההתקנה בדרך כלל מסתיימת מהר, אך יתכן שייקח זמן רב יותר אם החיבור שלך לאינטרנט אטי.</p>
+
+    </item>
+
+  </steps>
+  
+</page>

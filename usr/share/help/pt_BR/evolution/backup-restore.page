@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="backup-restore" xml:lang="pt-BR">
+
+  <info>
+    <link type="guide" xref="index#data-migration-and-sync"/>
+    <link type="seealso" xref="data-storage"/>
+
+    <revision pkgversion="3.1.5" version="0.4" date="2014-03-23" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Faça backup e restaure suas datas e configurações do <app>Evolution</app>.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Fontenelle</mal:name>
+      <mal:email>rafaelff@gnome.org</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Fazendo backup e restaurando</title>
+
+  <p>Você pode fazer backup de seus dados do <app>Evolution</app>. O backup salva suas configurações, e-mail, contatos, tarefas, memorandos e calendários. Ele será armazenado em um arquivo tar compactado com gzip.</p>
+
+<section id="backup">
+  <title>Fazendo backup</title>
+
+  <list>
+    <item>
+      <p>Selecione <guiseq><gui>arquivo</gui> <gui>Fazer backup dos dados do Evolution…</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Escolha um nome de arquivo e a pasta onde deseja salvar o arquivo de backup e clique em <gui style="button">Salvar</gui>.</p>
+    </item>
+    <item>
+      <p>Você será solicitado(a) a fechar o <app>Evolution</app>. Responda com <gui style="button">Sim</gui>.</p>
+    </item>
+  </list>
+
+  <note style="warning">
+    <p>Observe que suas configurações de <link xref="mail-spam">filtragem de spam</link> não estão incluídas no arquivo de backup, pois essas configurações não são controladas pelo <app>Evolution</app> e como desenvolvedores de ferramentas de filtragem de spam pode alterar os detalhes de implementação. Se você usar o Bogofilter, você precisará fazer backup da pasta oculta <file>~/.bogofilter/</file>. Se você usar o SpamAssassin, você precisará fazer backup da pasta oculta<file>~/.spamassassin/</file>.</p>
+  </note>
+
+</section>
+
+<section id="restore">
+  <title>Restaurando</title>
+
+  <list>
+    <item>
+      <p>Selecione <guiseq><gui>Arquivo</gui> <gui>Restaurar dados do Evolution…</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Escolha o arquivo e clique em <gui style="button">Open</gui>.</p>
+    </item>
+    <item>
+      <p>Você será solicitado(a) a fechar o <app>Evolution</app>. Responda com <gui style="button">Sim</gui>.</p>
+    </item>
+  </list>
+
+  <note style="tip">
+    <p>No <link xref="intro-first-run">assistente de primeira execução</link>, você pode restaurar dados do <app>Evolution</app> a partir de um arquivo de backup.</p>
+  </note>
+
+</section>
+
+</page>

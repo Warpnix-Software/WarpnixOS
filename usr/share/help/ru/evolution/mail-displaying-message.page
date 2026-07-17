@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-displaying-message" xml:lang="ru">
+
+  <info>
+    <desc>Отображение письма и обработка его вложений.</desc>
+
+    <link type="guide" xref="index#mail-basic"/>
+    <link type="seealso" xref="mail-composer-html"/>
+
+    <revision pkgversion="3.38.4" version="0.4" date="2021-04-10" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Отображение сообщения</title>
+
+<p>Письма могут быть в двух форматах: <link href="https://en.wikipedia.org/wiki/Email#Plain_text_and_HTML">простой текст или HTML</link>. Каждый формат имеет свои преимущества и недостатки.</p>
+
+<p>Способ отображения полученных сообщений HTML можно выбрать в разделе настройки <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Настройки почты</gui><gui>Сообщения HTML</gui></guiseq>. Например, можно отображать их в виде простого текста или запретить загрузку удалённого содержимого.</p>
+
+<note style="tip"><p>Сведения о форматировании писем в редакторе доступны в разделе <link xref="mail-composer-html"/>.</p></note>
+
+  <section id="advanced">
+    <title>Дополнительные возможности</title>
+  </section>
+
+</page>

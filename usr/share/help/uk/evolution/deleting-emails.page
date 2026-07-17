@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="deleting-emails" xml:lang="uk">
+
+  <info>
+    <desc>Вилучення повідомлень електронної пошти або долучень для зменшення розміру поштової скриньки.</desc>
+    
+    <link type="guide" xref="deleting-to-free-disk-space"/>
+    <link type="seealso" xref="mail-moving-emails"/>
+    <link type="guide" xref="mail-attachments"/>
+
+    <revision pkgversion="3.0.2" version="0.3" date="2012-03-08" status="final"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Остаточне вилучення повідомлень або долучень</title>
+
+<section id="emails">
+<title>Пошта</title>
+<p><app>Evolution</app> вилучає повідомлення з серверів IMAP <em>позначаючи</em> повідомлення для вилучення; місце на диску не буде вивільнено, аж доки ви не <em>витрете</em> позначені повідомлення.</p>
+
+<p>Щоб витерти певну теку, скористайтеся пунктом меню <guiseq><gui>Тека</gui><gui>Викреслити</gui></guiseq> або натисніть комбінацію клавіш <keyseq><key>Ctrl</key><key>E</key></keyseq>. Щоб витерти усі теки, скористайтеся пунктом меню <guiseq><gui>Файл</gui><gui>Очистити теку «Вилучені»</gui></guiseq>. Це стосується також інших типів облікових записів.</p>
+</section>
+
+<section id="attachments">
+<title>Долучення</title>
+<p>Щоб вилучити долучення до повідомлення електронної пошти, виберіть повідомлення і скористайтеся пунктом меню <guiseq><gui>Повідомлення</gui><gui>Вилучити долучення</gui></guiseq>.</p>
+</section>
+</page>

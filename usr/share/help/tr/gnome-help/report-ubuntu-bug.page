@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="report-ubuntu-bug" xml:lang="tr">
+
+  <info>
+    <link type="guide" xref="more-help"/>
+    <desc>Ubuntu ile sorunları nasıl ve nereden bildirebilirsiniz.</desc>
+
+    <revision version="22.04" date="2021-11-28" status="review"/>
+
+    <credit type="author">
+      <name>Ubuntu Belgelendirme Takımı</name>
+      <email>ubuntu-doc@lists.ubuntu.com</email>
+    </credit>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+<title>Ubuntu'da bir sorunu rapor edin</title>
+
+<p>Ubuntu'da bir sorun gördüğünüzde, bir <em>hata raporu</em> dosyalayabilirsiniz.</p>
+
+<steps>
+ <item>
+  <p><keyseq><key>Alt</key><key>F2</key></keyseq> ve <input>ubuntu-bug &lt;package name&gt;</input> yazın</p>
+  <p>Donanımsal bir sorununz varsa ya da etkilenen programı bilmiyorsanız yalnızca <input>ubuntu-bug</input> yazın</p>
+  <note><p>Herhangi bir nedenle <cmd>ubuntu-bug</cmd> kullanmak işe yaramazsa, <link href="https://help.ubuntu.com/community/ReportingBugs#Filing_bugs_manually_at_Launchpad.net"> elle bir hata bildirin</link> ve bu talimatta 4. adıma atlayın.</p></note>
+ </item>
+
+ <item><p>Yukarıdaki komutlardan birini çalıştırdıktan sonra Ubuntu hata hakkında bilgi toplayacaktır. Bu işlem birkaç dakika sürebilir. İsterseniz toplanan bilgiyi gözden geçirebilirsiniz. Devam etmek için <gui>Gönder</gui>'e tıklayın.</p>
+ </item>
+
+ <item><p>Hata verisini işlemeye devam etmek için yeni bir tarayıcı sekmesi açılacak. Ubuntu  bunun hata raporlarını yönetmek için <app>Launchpad</app> sitesini kullanıyor. Eğer Launchpad hesabınız yoksa bir hata dosyalamak ve hatanın durumu hakkında e-posta bildirimi almak istiyorsanız bir hesap açmanız gerekli. Bunu <gui>Yeni bir hesap oluştur</gui>'a tıklayarak yapabilirsiniz..</p>
+ </item>
+
+
+ <item><p>Launchpad'te oturum açtığınızda, sorun özeti alanına bir açıklama yazın.</p>
+ </item>
+
+ <item><p><gui>Sonraki</gui>'ni tıkladıktan sonra Launchpad gönderdiğiniz rapordakine benzer hatalar olup olmadığına bakmak için bir arama yapacak. Eğer hata bildirilmemişse, bunun sizi de etkilediğini işaretleyebilirsiniz. Ayrıca hata bildiriminin durum güncellemelerini ve sorun giderme ilerlemesini almak için abone olabilirsiniz. Eğer hata raporlanmamışsa, <gui>Hayır, yeni bir hata bildirmek istiyorum</gui>'u tıklayın.</p>
+ </item>
+
+ <item><p>Açıklama alanını doldurabildiğiniz kadar doldurun. Bu üç şeyi belirtmeki için önemli:</p>
+
+  <list type="disc">
+  <item><p>Ne olmasını bekliyordunuz</p></item>
+  <item><p>Aslında ne oldu</p></item>
+  <item><p>Eğer mümkünse, olması gereken şeylerin birkaç adımlık anlatımı, birinci adım "programı başlatmak" olabilir</p></item></list>
+
+ </item>
+  <item><p>Raporunuza bir kimlik numarası verilecek ve durumunda değişiklik oldukça güncellenecek. Ubuntu'yu daha yapmaya yardım ettiğiniz için teşekkürler!</p>
+ </item>
+</steps>
+
+<note><p>Eğer "Bu özgün bir Ubuntu paketi değil" hatası aldıysanız, göndermeye çalıştığınız hata resmi Ubuntu depolarındaki yazılımlardan kaynaklanmıyor anlamındadır. Bu durumda, Ubuntu'nun sağladığı hata raporu aracını kullanamazsınız.</p></note>
+
+<p>Ubuntu'da hata raporları hakkında ayrıntılı bilgi için lütfen kapsamlı <link href="https://help.ubuntu.com/community/ReportingBugs">çevrimiçi bilgilendirmeyi</link> okuyun.</p>
+</page>

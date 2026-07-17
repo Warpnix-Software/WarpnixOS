@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="addremove-sources" xml:lang="cs">
+
+  <info>
+    <credit type="author">
+      <name>Dokumentační tým Ubuntu</name>
+    </credit>
+    <desc>Přidejte repozitáře pro rozšíření zdrojů softwaru, které Ubuntu používá pro instalaci a aktualizaci.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove"/>
+    <revision version="20.10" date="2020-09-13" status="review"/>
+  </info>
+
+  <title>Přidávání zdrojů softwaru</title>
+
+  <p>Software je dostupný od poskytovatelů třetích stran, stejně tak jako z výchozích repozitářů Ubuntu. Jestliže chcete nainstalovat software z repozitáře třetí strany, musíte ho přidat do seznamu dostupných Ubuntu repozitářů.</p>
+
+  <note style="warning">
+    <p>Přidávejte pouze ty zdroje softwaru, kterým důvěřujete!</p>
+    <p>Zdroje softwaru třetích stran nejsou kontrolovány členy Ubuntu co se týče bezpečnosti a spolehlivosti a mohou obsahovat software nebezpečný pro váš počítač.</p>
+  </note>
+
+<p>
+</p>
+   <p>Pro přidání repozitáře:</p>
+
+  <steps>
+    <item>
+      <p>Otevřete aplikaci <app>Software a aktualizace</app> jejím vyhledáním v přehledu <em>Činnosti</em>.</p>
+    </item>
+    <item>
+      <p>Přejděte na kartu <gui>Ostatní software</gui>.</p>
+    </item>
+    <item>
+      <p>Klikněte na <gui>Přidat</gui> a vložte APT řádku zdroje. Ta by měla být dostupná na webové stránce zdroje softwaru a měla by vypadat podobně jako:</p>
+      <p>
+        <code its:translate="no">deb http://archive.ubuntu.com/ubuntu/ resolute main</code>
+      </p>
+    </item>
+    <item>
+      <p>Klikněte na <gui>Přidat zdroj</gui>. V okně Ověření zadejte své heslo.</p>
+    </item>
+    <item>
+      <p>Zavřete okno <app>Software a aktualizace</app>. <app>Centrum aplikací</app> následně zkontroluje vaše zdroje softwaru na nový software.</p>
+    </item>
+    <item>
+      <p>Většina repozitářů poskytuje podpisový klíč, aby bylo možno ověřit stažené balíky. Kromě výše zmíněných kroků byste se tedy měli řídit instrukcemi jak stáhnout a nainstalovat podpisový klíč (klíč GPG).</p>
+    </item>
+  </steps>
+
+</page>

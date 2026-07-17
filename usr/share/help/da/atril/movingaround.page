@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="movingaround" xml:lang="da">
+
+  <info>
+    <link type="guide" xref="index#reading"/>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email its:translate="no">philbull@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Anna Philips</name>
+      <email its:translate="no">anna.cs.au@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal-unported.xml"/>
+
+    <desc>Naviger, rul og zoom.</desc>
+  </info>
+
+  <title>Naviger i dokumentet</title>
+
+  <p>Du kan bevæge dig rundt på hver af dokumentets sider ved at gøre som følger:</p>
+
+  <list>
+    <item>
+      <p>Rulle op og ned ved hjælp af musehjulet. Flyt rundt på siden ved at bevæge musen:</p>
+      <steps>
+        <item>
+          <p>Højreklik på siden og vælg <gui>Autorul</gui>.</p>
+        </item>
+        <item>
+          <p>Flyt musemarkøren mod bunden af vinduet for at rulle ned; der rulles hurtigere, jo længere du flytter den ned i vinduet.</p>
+        </item>
+        <item>
+          <p>For at standse autorulningen skal du klikke et vilkårligt sted i dokumentet.</p>
+        </item>
+      </steps>
+    </item>
+    <item>
+      <p>Brug dokumentvinduets rullebjælke.</p>
+    </item>
+    <item>
+      <p>Brug pilene for op og ned på tastaturet.</p>
+    </item>
+    <item>
+      <p>Træk siden rundt med musen ved at gribe fat i den. Gør sådan:</p>
+      <list>
+        <item>
+          <p>Flyt musemarkøren til siden og hold midterste museknap nede for at trække den rundt.</p>
+        </item>
+        <item>
+          <p>Hvis ikke du har en midterknap på musen, så skal du holde venstre og højre museknap nede samtidig og så trække.</p>
+        </item>
+      </list>
+    </item>
+  </list>
+
+<section id="between-pages">
+  <title>Skift mellem sider</title>
+
+  <p>Du kan navigere mellem siderne i et dokument med en af følgende fremgangsmåder:</p>
+
+  <list>
+    <item>
+      <p>Tryk på knapperne <keyseq><key>Ctrl</key><key>PgUp</key></keyseq> eller <keyseq><key>Ctrl</key><key>PgDn</key></keyseq> på tastaturet.</p>
+    </item>
+    <item>
+      <p>Gå til en bestemt side:</p>
+      <list>
+        <item>
+          <p>Skriv et sidenummer i <gui style="input">Vælg side</gui> og tryk på <key>Retur</key>.</p>
+        </item>
+        <item>
+          <p>Hvis du vil gå til begyndelsen eller slutningen af dokumentet:</p>
+          <list>
+            <item>
+              <p>Tryk på <keyseq><key>Ctrl</key><key>Home</key></keyseq>.</p>
+            </item>
+            <item>
+              <p>Tryk på <keyseq><key>Ctrl</key><key>End</key></keyseq>.</p>
+            </item>
+          </list>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>For at flytte ti sider ad gangen skal du trykke på <keyseq><key>Skift</key><key>PgUp</key></keyseq> eller <keyseq><key>Skift</key><key>PgDn</key></keyseq>.</p>
+      <note style="tip">
+        <p>Som standard kan du kun bevæge dig inden for en side ad gangen. Hvis du gerne vil bevæge dig mellem flere sider ved at rulle eller ved at trække, skal du gå til menuen <gui style="menuitem">Vis</gui> og vælge <gui style="menuitem">Fortløbende</gui>.</p>
+      </note>
+    </item>
+  </list>
+
+</section>
+
+<section id="navigating">
+  <title>Navigere ved hjælp af en sideliste eller en indholdsfortegnelse</title>
+
+  <p>Når man åbner en fil er der et sidepanel i vinduets venstre side. Hvis sidepanelet ikke er synligt, skal du klikke på <guiseq><gui style="menuitem">Vis</gui> <gui style="menuitem">Sidepanel</gui></guiseq> eller <key>F9</key>.</p>
+
+  <p>Sidepanelet viser en forhåndsvisning af alle siderne i dokumentet.</p>
+
+  <p>Du kan navigere mellem siderne ved at klikke på dem i sidepanelet.</p>
+
+  <note>
+    <p>Nogle dokumenter har et indeks eller en indholdsfortegnelse, som kan vises i sidepanelet. Klik på kombinationsfeltet for <gui>Miniaturebilleder</gui> øverst i sidepanelet og vælg <gui>Indeks</gui> for at få den at se.</p>
+    <note style="tip">
+      <p>De færreste dokumenter bruger denne mulighed, derfor vil du ikke kunne se deres indeks i sidepanelet.</p>
+    </note>
+  </note>
+
+</section>
+
+<section id="zoom">
+  <title>Zoom ind og ud</title>
+
+  <p>For at justere zoomniveau:</p>
+
+  <list>
+    <item>
+      <p>Vælg den ønskede zoom-procent fra kombinationsfeltet i værktøjslinjen.</p>
+    </item>
+    <item>
+      <p>Alternativt, tryk på knapperne <keyseq><key>Ctrl</key><key>+</key></keyseq> for at zoome ind, eller <keyseq><key>Ctrl</key><key>-</key></keyseq> for at zoome ud.</p>
+    </item>
+    <item>
+      <p>Alternativt, hold <key>Ctrl</key> nede og brug musehjulet til at zoome med.</p>
+    </item>
+  </list>
+
+  <note>
+    <p><gui>Tilpas side</gui> vil få en dokumentside til at fylde hele vindues <em>højde</em>.</p>
+    <p><gui>Tilpas bredde</gui> vil få en dokumentside til at fylde hele vinduets <em>bredde</em>.</p>
+    <p>Hvis du vil se to sider på samme tid, side om side som i en bog, skal du gå til <guiseq><gui style="menuitem">Vis</gui><gui style="menuitem">Dobbelt</gui></guiseq> og trykke på <gui style="menuitem">Dobbelt</gui>.</p>
+    <p>Hvis gindstillingen allow-links-change-zoom (tillad at henvisninger ændrer zoomniveauet) er sat til false (falsk), så forhindres henvisninger i at ændre dit zoomniveau.</p>
+  </note>
+
+  <p>Du kan bruge hele skærmen til at få vist dokumentet:</p>
+
+  <list>
+    <item>
+      <p>Tryk <key>F11</key>.</p>
+    </item>
+    <item>
+      <p>For at gå ud af fuldskærmsvisning:</p>
+      <p>Tryk på <key>F11</key> eller <key>Escape</key></p>
+    </item>
+  </list>
+</section>
+
+</page>

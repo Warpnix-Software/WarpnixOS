@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-html-text" xml:lang="cs">
+
+  <info>
+    <desc>Jak změnit velikost, styl a barvu písma v editoru zpráv.</desc>
+    <link type="guide" xref="mail-composer-html#formatting-options-html"/>
+
+    <revision pkgversion="3.5.90" version="0.7" date="2012-08-16" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-html -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+  </info>
+
+<title>Formátování textu v HTML</title>
+
+     <p>Nástroje pro formátování textu, které jsou dostupné jen ve formátu HTML, jsou umístěny ve druhé liště pod řádkem <gui>Předmět</gui> po té, co povolíte formát HTML. Objeví se také v nabídkách <gui>Vložit</gui> a <gui>Formát</gui>.</p>
+     <p>Ikony na nástrojové liště jsou vysvětleny pomocí vysvětlivek, které se objeví, když ukazatelem myši chvíli postojíte na tlačítkem.</p>
+
+<section id="text-styles">
+      <title>Styly textu:</title>
+      <p>Tato tlačítka ve spodnější nástrojové liště použijte k určení vzhledu svých e-mailů. Pokud máte vybraný text, styly se použijí na vybraný text. Pokud text vybraný nemáte, styly se použijí na vše, co nově napíšete.</p>
+
+<table frame="all" rules="all">
+  <tr>
+    <td><p>Tlačítko</p></td>
+    <td><p>Popis</p></td>
+  </tr>
+  <tr>
+    <td><p>Výchozí</p></td>
+    <td><p>Název fontu.</p></td>
+  </tr>
+  <tr>
+    <td><p>+0</p></td>
+    <td><p>Velikost fontu.</p></td>
+  </tr>
+  <tr>
+    <td><p><media type="image" its:translate="no" src="./figures/color-000000.png"/></p></td>
+    <td><p>Barva textu.</p><p>Čtvereček ukazuje aktuální barvu textu. Pokud máte vybraný nějaký text, barva se použije na něj. Pokud text vybraný nemáte, barva se použije na vše, co nově napíšete.</p></td>
+  </tr>
+  <tr>
+    <td><p><media type="image" its:translate="no" src="./figures/color-ccccccffffff.png" width="26" height="26"/></p></td>
+    <td><p>Barva pozadí textu.</p><p>Čtvereček ukazuje aktuální barvu textu. Pokud máte vybraný nějaký text, barva se použije na něj. Pokud text vybraný nemáte, barva se použije na vše, co nově napíšete.</p></td>
+  </tr>
+  <tr>
+    <td><p>Tučné A</p></td>
+    <td><p>Udělá text tučný.</p></td>
+  </tr>
+  <tr>
+    <td><p>A v kurzívě</p></td>
+    <td><p>Udělát text v kurzívě.</p></td>
+  </tr>
+  <tr>
+    <td><p>Podtržené A</p></td>
+    <td><p>Podtrhne text.</p></td>
+  </tr>
+  <tr>
+    <td><p>Přeškrtnuté A</p></td>
+    <td><p>Přeškrtne text.</p></td>
+  </tr>
+</table>
+
+<p>Ostatní tlačítka jsou vysvětlena v části <link xref="mail-composer-html#formatting-options-html"/>.</p>
+
+</section>
+
+</page>

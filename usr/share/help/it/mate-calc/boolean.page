@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="boolean" xml:lang="it">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>Algebra booleana</title>
+    
+    <p>L'algebra booleana può essere calcolata utilizzando gli operatori AND, OR e XOR.</p>
+    <example>
+    <p>010011₂ AND 110101₂</p>
+    </example>
+    <p>I pulsanti per questi simboli sono disponibili in <link xref="mouse">modalità programmazione</link>.</p>
+    <p>La <link xref="function">funzione</link> NOT inverte i bit di un numero. La dimensione della visualizzazione è impostata dal menù <guiseq><gui>Calcolatrice</gui><gui>Preferenze</gui></guiseq>.</p>
+    <example>
+    <p>NOT 010011₂</p>
+    </example>
+</page>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="memos-usage-edit-memo" xml:lang="id">
+
+  <info>
+    <desc>Menyunting memo di daftar memo Anda.</desc>
+    
+    <link type="guide" xref="memos-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.2" date="2012-02-19" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Menyunting Memo</title>
+
+<p>Jika Anda ingin mengubah memo yang sudah ada di daftar memo Anda,</p>
+
+<steps>
+<item><p>Double-click on the memo that you want to edit in the list of memos, or right-click on the memo and click <gui>Open Memo</gui>.</p></item>
+<item><p>Sunting informasi memo.</p></item>
+<item><p>Klik tombol <gui style="button">Simpan</gui>, atau <guiseq><gui>Berkas</gui><gui>Simpan</gui></guiseq>.</p></item>
+</steps>
+</page>

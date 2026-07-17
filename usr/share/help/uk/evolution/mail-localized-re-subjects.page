@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-localized-re-subjects" xml:lang="uk">
+
+  <info>
+    <desc>Уникнення збільшення довжини рядків теми через перекладені префікси «Re:».</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="3.5.90" version="0.1" date="2012-08-16" status="review"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Обробка локалізованих записів «Re:» у темі повідомлення</title>
+
+<p>Традиційно, під час створення відповідей на повідомлення електронної пошти до рядка теми повідомлення додається префікс «Re:». У деяких програмах для роботи з електронною поштою використовуються локалізовані префікси (наприклад, «SV:» для данської мови або «AW:» для німецької). <app>Evolution</app> може виявляти такі префікси для уникнення невиправданого збільшення розмірів рядка теми під час обміну повідомленнями.</p>
+
+<list>
+<item><p>Відкрийте вікно програми <app>Термінал</app>.</p></item>
+<item><p>Віддайте команду <cmd>gsettings set org.gnome.evolution.mail composer-localized-re 'AW,SV'</cmd> (якщо хочете, щоб було розпізнано «AW:» і «SV:»).</p></item>
+</list>
+<p>Ви також можете скористатися для цього командою <app>dconf-editor</app>.</p>
+
+</page>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="task" id="annotations" xml:lang="pt-BR">
+
+  <info>
+    <link type="guide" xref="index#annotations"/>
+    <desc>Como criar e personalizar anotações</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <credit type="author">
+      <name>Andre Klapper</name>
+      <email>ak-47@gmx.net</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  </info>
+
+<title>Adicionando anotações</title>
+<p>Uma anotação é uma nota ou comentário adicionado a um documento PDF. Você pode adicionar anotações utilizando o Atril.</p>
+<p>Quando você abre um arquivo, você deve ter uma barra lateral no lado esquerdo da janela. Se você não tem uma barra lateral visível, clique em <guiseq><gui style="menuitem">Exibir</gui> <gui style="menuitem">Barra lateral</gui></guiseq> ou aperte a tecla <key>F9</key> do seu teclado.</p>
+
+<p>No topo da barra lateral, os itens na lista suspensa <gui>Miniaturas</gui>, <gui>Índice</gui>, <gui>Anotações</gui> e <gui>Marcadores</gui> permitem que você escolha o que será exibido na barra lateral. (Algumas opções podem estar indisponíveis para alguns documentos).</p>
+<p>Para criar uma anotação:</p>
+<steps>
+ <item>
+  <p>Selecione <gui style="button">Anotações</gui> na lista suspensa:</p>
+ </item>
+ <item>
+  <p>Clique em <gui style="button">Adicionar</gui> para adicionar uma anotação de texto.</p>
+ </item>
+ <item>
+  <p>Clique na visualização da janela do documento ao qual você gostaria de adicionar a anotação. Sua janela de <em>anotação</em> será aberta.</p>
+ </item>
+ <item>
+  <p>Digite seu texto na janela de <em>anotação</em>.</p>
+   <note>
+    <p>Você pode redimensionar a nota clicando e segurando com o botão esquerdo do mouse em uma das bordas inferiores da nota, movendo-a ao redor.</p>
+   </note>
+ </item>
+ <item>
+  <p>Feche a nota clicando no <gui>x</gui> na borda superior da nota.</p>
+ </item>
+</steps>
+
+
+</page>

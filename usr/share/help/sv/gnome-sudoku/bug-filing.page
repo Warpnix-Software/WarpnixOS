@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="bug-filing" xml:lang="sv">
+
+  <info>
+    <link type="guide" xref="index#get-involved"/>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <credit type="editor copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+      <years>2011</years>
+    </credit>
+    <license>
+      <p>Creative Commons DelaLika 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Erik Sköldås</mal:name>
+      <mal:email>erik.skoldas@tele2.se</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2018</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Rapportera ett problem</title>
+<p><app>GNOME Sudoku</app> underhålls av en frivillig gemenskap. Du är välkommen att delta. Om du upptäcker ett problem kan du sända in en <em>felrapport</em>. För att sända in en felrapport, gå till <link href="https://gitlab.gnome.org/GNOME/gnome-sudoku/issues/"/>.</p>
+   <p>Det är ett felrapporteringssystem där användare och utvecklare kan lämna information om fel, krascher och önska förbättringar.</p>
+   <p>För att delta behöver du ett konto som kommer att ge dig möjligheten att få tillgång, rapportera fel och kommentera. Du måste också registrera dig så att du kan få uppdateringar via e-post om status för ditt fel. Om du inte redan har ett konto klickar du helt enkelt på länken <gui>Sign in / Register</gui> för att skapa ett.</p>
+
+  <p>När du har ett konto, logga in, klicka på <gui>New Issue</gui>. Innan du rapporterar ett fel, läs <link href="https://handbook.gnome.org/issues/reporting.html">riktlinjerna för felrapporter</link>, och <link href="https://gitlab.gnome.org/GNOME/gnome-sudoku/issues">sök</link> för att se om felet redan är rapporterat.</p>
+
+   <p>Om du önskar en ny funktion, välj <gui>1. Feature</gui> i menyn <gui>Labels</gui>. Fyll i avsnitten Title och Description och klicka på <gui>Submit Issue</gui>.</p>
+   <p>Din rapport kommer att ges ett id-nummer, och dess status kommer att uppdateras när den behandlas.</p>
+</page>

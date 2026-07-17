@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-usage-delete-appointment" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="calendar-usage"/>
+
+    <revision pkgversion="3.3.91" version="0.3" date="2012-02-19" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Menghapus janji di kalender Anda.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Menghapus Janji</title>
+
+  <p>Jika Anda ingin menghapus janji di kalender Anda, klik kanan janji di kalender dan pilih <gui>Hapus Janji</gui>, atau klik janji dan klik <gui>Hapus</gui> di bilah alat atau tekan <keyseq> <key>Ctrl</key><key>D</key></keyseq>. Jika Anda berada dalam <link xref="calendar-layout-views">tampilan daftar</link>, Anda juga bisa menggunakan <guiseq><gui>Sunting</gui><gui>Hapus Janji</gui></guiseq>.</p>
+
+</page>

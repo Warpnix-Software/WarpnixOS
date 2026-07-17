@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="task" id="annotations" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#annotations"/>
+    <desc>Com crear i personalitzar les anotacions.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <credit type="author">
+      <name>Andre Klapper</name>
+      <email>ak-47@gmx.net</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Carles Ferrando Garcia</mal:name>
+      <mal:email>carles.ferrando@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert Antoni Buj Gelonch</mal:name>
+      <mal:email>rbuj@fedoraproject.org</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Afegint anotacions</title>
+<p>Una anotació és una nota o comentari afegit a un document PDF. És possible crear anotacions amb Atril.</p>
+<p>Quan obriu un fitxer, hauríeu de veure un panell lateral a l'esquerra de la finestra. Si no hi ha un panell lateral visible, cliqueu <guiseq><gui style="menuitem">Vista</gui><gui style="menuitem">Panell lateral</gui></guiseq> o premeu la tecla <key>F9</key> al teclat.</p>
+
+<p>A la part superior del panell lateral, els ítems de la llista desplegable <gui>Miniatures</gui>, <gui>Índex</gui>, <gui>Anotacions</gui> i <gui>Marcadors</gui> us permeten escollir el que voleu mostrar al panell lateral. (Algunes opcions poden no estar disponibles per certs documents).</p>
+<p>Per crear una anotació:</p>
+<steps>
+ <item>
+  <p>Seleccioneu <gui style="button">Anotacions</gui> de la llista desplegable:</p>
+ </item>
+ <item>
+  <p>Cliqueu sobre <gui style="button">Afegeix</gui> per afegir una anotació de text.</p>
+ </item>
+ <item>
+  <p>Feu clic al punt del document on voleu afegir l'anotació. La vostra finestra d'<em>anotació</em> s'obrirà.</p>
+ </item>
+ <item>
+  <p>Escriviu el vostre text a la finestra d'<em>anotació</em>.</p>
+   <note>
+    <p>Podeu redimensionar la nota si feu clic esquerre sobre un dels angles inferiors de la nota, i desplaceu el ratolí.</p>
+   </note>
+ </item>
+ <item>
+  <p>Tanqueu la nota clicant sobre la <gui>x</gui> al seu cantó superior.</p>
+ </item>
+</steps>
+
+
+</page>

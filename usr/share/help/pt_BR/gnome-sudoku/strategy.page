@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="strategy" xml:lang="pt_BR">
+	<info>
+          <revision version="3.4" date="2012-03-08" status="final"/>
+	  <link type="guide" xref="index#play"/>
+	  <credit type="author copyright">
+	    <name>Radoslav Asparuhov</name>
+	    <email>rasparuhov@gmail.com</email>
+	  <years>2011</years>
+	  </credit>
+	  <credit type="editor">
+	    <name>Tiffany Antopolski</name>
+	    <email>tiffany.antopolski@gmail.com</email>
+	  </credit>
+	  <license>
+		<p>Creative Commons Compartilha Igual 3.0</p>
+	  </license>
+	
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Vladimir Melo</mal:name>
+      <mal:email>vladimirmelo@foresightlinux.org</mal:email>
+      <mal:years>2007,</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yuri Otávio</mal:name>
+      <mal:email>yuriotavio@hotmail.com</mal:email>
+      <mal:years>2017,</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Fontenelle</mal:name>
+      <mal:email>rafaelff@gnome.org</mal:email>
+      <mal:years>2018.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Leônidas Araújo</mal:name>
+      <mal:email>leorusvellt@hotmail.com</mal:email>
+      <mal:years>2022</mal:years>
+    </mal:credit>
+  </info>
+
+	<title>Estratégia</title>
+        <p>Existe apenas uma possibilidade para cada célula em um quebra-cabeça do Sudoku. As estratégias a seguir ajudarão você a descobrir sistematicamente a solução para cada célula.</p>
+ <section id="strategy1">
+	<title>Estratégia 1:</title>
+	  <steps>
+	    <item><p>Escolha a linha com o maior quantidade de números.</p>
+                  <note><p>Você deve escolher a linha ou coluna com mais números. Por simplicidade, essas instruções são escritas como se uma linha tivesse o maior número de números.</p></note>
+            </item>
+	    <item><p>Determine quais números na linha estão faltando.</p></item>
+	    <item><p>Escolha uma das células vazias nessa linha. Determine quais dos números ausentes estão nessa coluna ou nessa caixa 3×3.</p></item>
+	    <item><p>Usando <link xref="earmarks">marcações</link>, insira os números que faltam e que não estão nessa coluna ou ma caixa 3×3. Esses números são soluções em potencial para essa célula.</p></item>
+	    <item><p>Vá para a próxima célula vazia da linha escolhida e repita o método acima. Repita isso para cada linha e coluna, começando com aqueles com mais números e continuando até o mínimo. Sempre olhe cuidadosamente para os números e não se esqueça das caixas 3×3.</p></item>
+	   </steps>
+            <note><p>Essa estratégia ajudará a revelar as células que têm apenas uma escolha possível. Quando revelado, você pode preencher essas células com essa escolha e repetir a estratégia novamente até que todo o quebra-cabeça seja resolvido.</p></note>
+<figure>
+  <desc>Exemplo de uso da estratégia 1.</desc>
+  <media type="image" mime="image/png" src="figures/strategy1.png" width="400" its:translate="no"/>
+</figure>
+
+</section>
+<section id="strategy2">
+
+	<title>Estratégia 2:</title>
+	  <steps>
+	    <item><p>Encontre o número que aparece com mais frequência.</p></item>
+	    <item><p>Agora olhe para o alinhamento vertical esquerdo das caixas 3×3 e localize as colunas nas quais este número aparece.</p></item>
+  	    <item><p>Nesse alinhamento, vá para uma caixa 3×3 que não contenha esse número em nenhuma de suas células. Usando <link xref="earmarks">marcações</link>, insira esse número em cada célula vazia da coluna na qual esse número não aparece. Se o número aparecer na linha de uma dessas células, não o insira nos marcações da célula.</p></item>
+	    <item><p>Repita os dois últimos passos para os alinhamentos verticais centro e direito.</p></item>
+            <item><p>Encontre o próximo número que aparece mais e repita até que você tenha feito isso para todos os 9 números.</p></item>
+	  </steps>
+            <note><p>Essa estratégia ajudará a revelar as células que têm apenas uma escolha possível. Quando revelado, você pode preencher essas células com essa escolha e repetir a estratégia novamente até que todo o quebra-cabeça seja resolvido.</p></note>
+<figure>
+  <desc>Exemplo de uso da estratégia 2.</desc>
+  <media type="image" mime="image/png" src="figures/strategy2.png" width="400" its:translate="no"/>
+</figure>
+
+	   <note><p>Se nenhuma das estratégias acima resolver o quebra-cabeça sozinho, você poderá alternar estratégias. Você também pode combinar as estratégias.</p></note>
+</section>
+</page>

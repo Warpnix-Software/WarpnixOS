@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="variable" xml:lang="it">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>Variabili</title>
+    
+    <p>Per assegnare un valore ad una variabile utilizzare il simbolo = o scegliere la variabile a cui assegnare il valore con il pulsante <gui>x</gui> disponibile in <link xref="mouse">modalità avanzata</link>. Il nome di una variabile può contenere solo caratteri maiuscoli o minuscoli.</p>
+    <example>
+    <p>x=5</p>
+    <p>value=82</p>
+    </example>
+    <p>Le variabili possono essere utilizzate in ogni equazione e verranno sostituite dal valore loro assegnato. Le variabili possono essere inserite utilizzando il pulsante <gui>x</gui>.</p>
+    <example>
+    <p>6x+3</p>
+    <p>xy−3x+7y−21</p>
+    </example>
+    <p>Le seguenti funzioni sono sempre disponibili.</p>
+    <table>
+    <tr>
+    <td><p>ans</p></td>
+    <td><p>Il risultato del precedente calcolo</p></td>
+    </tr>
+    <tr>
+    <td><p>e</p></td>
+    <td><p><link xref="logarithm">Il numero di Eulero</link></p></td>
+    </tr>
+    <tr>
+    <td><p>π</p></td>
+    <td><p><link xref="trigonometry">Pi</link></p></td>
+    </tr>
+    <tr>
+    <td><p>rand</p></td>
+    <td><p>Valore casuale nell'intervallo [0,1] (cambia ad ogni letura)</p></td>
+    </tr>
+    </table>
+</page>

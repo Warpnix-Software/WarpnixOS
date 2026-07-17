@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-read-receipts" xml:lang="ca">
+
+  <info>
+    <desc>Com habilitar la sol·licitud de rebuts de lectura.</desc>
+    
+    <link type="guide" xref="index#mail-advanced"/>
+    <link type="guide" xref="mail-account-manage-imap-plus#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-local-delivery#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-maildir-format-directories#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-mh-format-directories#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-pop#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-directory#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-file#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-usenet-news#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-microsoft-exchange-evo-mapi#composing-messages"/>
+    <link type="guide" xref="mail-account-manage-microsoft-exchange-evo-ews#composing-messages"/>
+
+    <revision pkgversion="3.25.90" version="0.3" date="2017-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Confirmació de la recepció dels correus electrònics</title>
+
+<p>Llegir les confirmacions de lectura és una manera d'identificar les persones que han rebut el correu electrònic. Normalment, el destinatari pot triar si vol acceptar la confirmació de recepció o no, de manera que no és una forma completament fiable per a comprovar si algú ha rebut els correus electrònics.</p>
+
+<p>Podeu sol·licitar la recepció de la lectura seleccionant <guiseq><gui>Opcions</gui><gui>Sol·licita la confirmació de lectura</gui></guiseq> al menú de la finestra d'edició o fent clic a la icona de la barra d'eines corresponent.</p>
+
+<p>Per a llegir les notificacions de recepció que rebeu, podeu definir el comportament d'<app>Evolution</app> a <gui>Recepció de missatges</gui> a la secció <gui>Redacció de missatges</gui> a <link xref="mail-account-management">preferències del compte</link>.</p>
+
+</page>

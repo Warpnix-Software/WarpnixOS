@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="tasks-searching" xml:lang="uk">
+
+  <info>
+    <desc>Пошук завдань.</desc>
+    
+    <link type="guide" xref="searching-items"/>
+    <link type="guide" xref="tasks-organizing"/>
+
+    <revision pkgversion="3.5.90" version="0.3" date="2012-08-17" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Max Vorobuov</name>
+      <email its:translate="no">vmax0770@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Пошук завдань</title>
+
+<section id="search-single">
+<title>Пошук в окремому завданні</title>
+<p>Щоб виконати пошук тексту у показаному завданні, скористайтеся пунктом головного меню <guiseq><gui>Зміни</gui><gui>Знайти у завданні…</gui></guiseq>.</p>
+</section>
+
+<section id="search-many">
+<title>Пошук у всіх записах завдань</title>
+
+<section id="quick-search">
+<title>Швидкий пошук</title>
+<p>На панелі перегляду завдань ви можете швидко шукати у завданнях за резюме або за категорією.</p>
+<p>Пошук за резюме:</p>
+<steps>
+<item><p>Натисніть піктограму пошуку <media type="image" mime="image/png" its:translate="no" src="figures/search-icon.png"/>, щоб розгорнути спадний список.</p></item>
+<item><p>Виберіть умову пошуку зі списку.</p></item>
+<item><p>Введіть текст, який ви хочете знайти, і натисніть клавішу <key>Enter</key>.</p></item>
+<item><p><app>Evolution</app> показує результати пошуку.</p></item>
+</steps>
+<p>Пошук за категорією:</p>
+<steps>
+<item><p>Клацніть на спадному списку <gui>Показати</gui>.</p></item>
+<item><p>Виберіть категорію зі списку.</p></item>
+<item><p><app>Evolution</app> показує результати пошуку.</p></item>
+</steps>
+<p>Якщо ви хочете встановити декілька умов пошуку, вам слід скористатися можливістю розширеного пошуку, яку описано нижче.</p>
+</section>
+
+<!-- As advanced-search, clearing-search, saved-searches, editing-a-saved-search are totally identical in all *-searching.page files, this is centrally in one file that's included by XInclude. See
+http://blogs.gnome.org/shaunm/2011/07/21/understanding-xinclude/ for how it works. -->
+<include xmlns="http://www.w3.org/2001/XInclude" href="xinclude-searching.xml" xpointer="xmlns(mal=http://projectmallard.org/1.0/)xpointer(/mal:info/mal:section)"/>
+
+</section>
+</page>

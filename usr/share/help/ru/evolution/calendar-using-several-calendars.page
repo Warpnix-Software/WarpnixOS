@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="calendar-using-several-calendars" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="calendar-organizing"/>
+
+    <revision pkgversion="3.1.5" version="0.2" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-multiple.html.en
+	   and
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-view.html.en
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Добавление и использование нескольких календарей или календарей разных типов.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Использование нескольких календарей</title>
+
+  <p>You can have multiple calendars and overlay them one over the other. For
+  example, you might have a schedule of events for work, one for home, and one
+  for your favorite sports team. The sidebar lists those calendars, and you
+  can select or deselect the boxes next to them to show and hide the
+  appointments in your calendar view. By hiding and showing different sets of
+  appointments, you can be sure to avoid conflicts, while keeping a minimum of
+  clutter in your view.</p>
+
+  <p>Appointments for each calendar appear in a different color.</p>
+
+  <p>Также можно использовать календари, которые не сохранены на компьютере, а находятся в Интернете или в локальной сети.</p>
+
+  <p>Например, <link href="http://icalshare.com">веб-сайт icalshare.com</link> содержит развёрнутый список общих календарей в сети, включая национальные и религиозные праздники, фазы Луны, спорт, другие местные и региональные события.</p>
+  <p>New events and meetings are created in the selected calendar in the Calendar window. If no calendar is selected, new events are created in the default calendar.</p>
+</page>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-add-automatically" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="contacts-usage"/>
+    <link type="seealso" xref="contacts-autocompletion"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-08-19" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Barbara Tobias</name>
+      <email its:translate="no">barbtobias09@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Автоматическое добавление отправителей полученных писем в список контактов.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Автоматическое добавление людей в список контактов</title>
+
+  <p>При ответе на полученное письмо можно автоматически добавлять отправителя в список контактов.</p>
+  <steps>
+  <item><p>Выберите пункт меню <guiseq><gui>Правка</gui><gui>Модули</gui></guiseq>.</p></item>
+  <item><p>Включите модуль <gui>Автоматические контакты</gui>.</p>
+<note style="tip"><p>Если этот модуль не доступен в разделе <guiseq><gui>Правка</gui><gui>Модули</gui></guiseq>, обратитесь на форум поддержки дистрибутива. Возможно, в вашем дистрибутиве разработчики решили отключить некоторые модули или поставлять их как отдельный пакет.</p></note>
+  </item>
+  <item><p>Перейдите в раздел <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Контакты</gui> <gui>Автоматические контакты</gui></guiseq>.</p></item>
+  <item><p>Включите параметр <gui>Создавать записи в адресной книге при отправке сообщений</gui> и выберите в расположенном ниже поле с раскрывающемся списком ту адресную книгу, в которую следует помещать новые контакты.</p></item>
+  </steps>
+
+  <p>Теперь при ответе на полученные письма их отправители будут автоматически добавляться в список контактов.</p>
+
+</page>

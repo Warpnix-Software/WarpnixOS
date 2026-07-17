@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="import-supported-file-formats" xml:lang="uk">
+
+  <info>
+    <desc>Підтримувані формати файлів для імпортування даних.</desc>
+    
+    <link type="guide" xref="import-data"/>
+
+    <revision pkgversion="3.0.2" version="0.3" date="2011-10-13" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/importing-mail-and-settings.html.en#importing-mail -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Підтримувані формати файлів</title>
+
+<p><app>Evolution</app> може імпортувати файли таких типів:</p>
+
+<section id="mail">
+<title>Пошта</title>
+<list>
+<item><p>Berkeley Mailbox (.mbox або без суфікса назви):</p>
+<p>Формат повідомлень електронної пошти, який використовується у <app>Mozilla</app>, <app>Netscape</app>, <app>Evolution</app> (для локальних тек, аж до версії 2.32), <app>Eudora</app> та багатьох інших клієнтах електронної пошти.</p></item>
+<item><p>Maildir (без суфікса назви):</p>
+<p>Формат, який використовується <app>Evolution</app> (для локальних тек, починаючи з версії 3.0). Потреби в імпортуванні файлів Maildir немає, оскільки ви можете <link xref="mail-account-manage-maildir-format-directories">налаштувати обліковий запис Maildir</link> в <app>Evolution</app> і вказати на теку, у якій зберігаються файли Maildir.</p></item>
+<item><p>Особисті теки Outlook Express 5/6 (.dbx)</p>
+<p>Формат файлів електронної пошти, який використовувався у <app>Microsoft Outlook Express 5/6</app>. Для новіших версій рекомендуємо скористатися імпортуванням даних PST.</p></item>
+</list>
+</section>
+
+<section id="calendar">
+<title>Календар</title>
+<list>
+<item><p>vCalendar (.vcs):</p>
+<p>Формат для зберігання файлів календарів, який, загалом, використовується у <app>Evolution</app>, <app>Microsoft Outlook</app>, <app>Sunbird</app> і <app>Korganizer</app>.</p></item>
+<item><p>iCalendar або iCal (.ics):</p>
+<p>Формат для зберігання файлів календарів. iCalendar використовується у <app>Evolution</app>, <app>Microsoft Outlook</app>, кишенькових комп'ютерах під керуванням Palm OS та інших програмах.</p></item>
+</list>
+</section>
+
+<section id="contacts">
+<title>Контакти</title>
+<list>
+<item><p>Формат обміну даними системи LDAP (.ldif):</p>
+<p>Стандартний формат даних для карток контактів.</p></item>
+<item><p>vCard (.vcf, .gcrd):</p>
+<p>Формат адресної книги, який використовується розробниками GNOME, KDE і розробниками багатьох інших програм для керування записами контактів. У вас має бути можливість експортувати дані до формату vCard з будь-якої програми для роботи з адресними книгами.</p></item>
+</list>
+</section>
+
+<section id="misc">
+<title>Різне</title>
+<list>
+<item><p><app>Evolution</app>/Mozilla/Outlook CSV/Tab (.csv, .tab):</p>
+<p>Файли CSV (значень, які відокремлено комами) або файли з табуляціями, зберігаються за допомогою <app>Evolution</app>, <app>Microsoft Outlook</app> та <app>Mozilla</app>.</p></item>
+<item><p>Особисті теки Outlook (.pst):</p>
+<p>Формат файлів, який використовується для зберігання локальних копій повідомлень, записів подій календаря ат інших записів у програмному забезпеченні Microsoft, зокрема <app>Microsoft Exchange Client</app>, <app>Windows Messaging</app> та <app>Microsoft Outlook</app>. Цей формат також називають «Personal Storage Table» («Особиста таблиця зберігання»).</p>
+<p>Див. <link xref="import-apps-outlook"/>, щоб дізнатися більше.</p>
+</item>
+</list>
+</section>
+
+</page>

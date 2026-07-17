@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="task" id="print-differentsize" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="printing"/>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email its:translate="no">philbull@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name>Ekaterina Gerasimova</name>
+      <email its:translate="no">kittykat3756@gmail.com</email>
+      <years>2015</years>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Imprimiendo un documento sobre el papel de un tamaño u orientación distinto.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Toni Estevez</mal:name>
+      <mal:email>toni.estevez@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Francisco Javier F. Serrador</mal:name>
+      <mal:email>serrador@cvs.gnome.org</mal:email>
+      <mal:years>2003-2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Pablo Gonzalo del Campo</mal:name>
+      <mal:email>pablodc@bigfoot.com</mal:email>
+      <mal:years>2002-2003</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Cambiando el tamaño del papel cuando imprima</title>
+
+  <p>Si desea cambiar el tamaño del papel de su documento (por ejemplo, imprimir un PDF de tamaño US Letter en un papel A4), puede cambiar el formato de la impresión para el documento.</p>
+
+  <steps>
+    <item>
+      <p>Go to  <guiseq><gui style="menuitem">File</gui><gui style="menuitem">Print</gui></guiseq> and press the <gui style="button">Print</gui> button.</p>
+    </item>
+    <item>
+      <p>Seleccione la pestaña <gui>Configurar página</gui>.</p>
+    </item>
+    <item>
+      <p>Debajo de la columna <em>Papel</em>, elija su <em>Tamaño del papel</em> desde el listado bajado.</p>
+    </item>
+    <item>
+      <p>Pulse <gui>Imprimir</gui> y su documento se imprimirá.</p>
+    </item>
+  </steps>
+
+  <p>Además puede utilizar el menú <em>Orientación</em> para elegir una orientación diferente:</p>
+
+  <list>
+    <item>
+      <p><gui>Retrato</gui></p>
+    </item>
+    <item>
+      <p><gui>Paisaje</gui></p>
+    </item>
+    <item>
+      <p><gui>Retrato invertido</gui></p>
+    </item>
+    <item>
+      <p><gui>Paisaje revertido</gui></p>
+    </item>
+  </list>
+
+</page>

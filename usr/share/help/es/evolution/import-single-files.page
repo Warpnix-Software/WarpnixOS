@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="import-single-files" xml:lang="es">
+
+  <info>
+    <desc>Importar archivos individuales.</desc>
+    
+    <link type="guide" xref="import-data"/>
+
+    <revision pkgversion="3.31.91" version="0.3" date="2019-03-01" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2012 - 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rodrigo Lledó</mal:name>
+      <mal:email>rodhos92@gmail.com</mal:email>
+      <mal:years>2018</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yolanda Álvarez Pérez</mal:name>
+      <mal:email>yolandaa.alvarez.perez@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Francisco Javier F. Serrador</mal:name>
+      <mal:email>serrador@openshine.com</mal:email>
+      <mal:years>2005, 2006</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Importar archivos individuales</title>
+
+<p>Para importar archivos individuales (correo, datos de calendario o contactos):</p>
+<steps>
+<item><p>Pulse <guiseq><gui>Archivo</gui><gui>Importar</gui></guiseq>.</p></item>
+<item><p>En la pestaña <gui>Tipo de importador</gui> pulse <gui>Importar un único archivo</gui>.</p></item>
+<item><p>Elija el archivo.</p><p>Se determinará automáticamente el tipo de archivo.</p></item>
+<item><p>Elija el destino (ej. la carpeta en <app>Evolution</app>) para los datos importados.</p></item>
+</steps>
+
+<note style="tip"><p>También puede importar contactos que haya recibido como un adjunto vCard en un correo desde su menú de adjunto.</p></note>
+
+<note style="tip"><p>Al asignar el <gui>Tipo de archivo</gui> a <gui>CSV de contactos o Pestaña</gui>, los encabezados de columna se deben corresponder con la primera entrada de cada elemento en inglés en el código de importación para <link href="https://gitlab.gnome.org/GNOME/evolution/blob/bc5f32786d09823247d8188c5f211dcd354097de/src/addressbook/importers/evolution-csv-importer.c#L228"><app>Evolution</app></link>, <link href="https://gitlab.gnome.org/GNOME/evolution/blob/bc5f32786d09823247d8188c5f211dcd354097de/src/addressbook/importers/evolution-csv-importer.c#L188"><app>Mozilla</app></link> y <link href="https://gitlab.gnome.org/GNOME/evolution/blob/bc5f32786d09823247d8188c5f211dcd354097de/src/addressbook/importers/evolution-csv-importer.c#L93"><app>Outlook</app></link>.</p></note>
+</page>

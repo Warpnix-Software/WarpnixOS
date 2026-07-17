@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="factorize" xml:lang="ja">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>因数分解</title>
+
+    <p><keyseq><key>Ctrl</key><key>F</key></keyseq> または <gui>fact</gui> ボタンを押すと、現在表示されている数値を因数分解できます。このボタンは<link xref="mouse">プログラムモード</link>で表示されます。</p>
+    <p>2^64 より大きい整数を因数分解するには、ミラー–ラビン素数判定法とポラードの rho アルゴリズムを使用します。</p>
+</page>

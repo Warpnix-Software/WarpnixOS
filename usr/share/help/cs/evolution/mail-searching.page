@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-searching" xml:lang="cs">
+ 
+  <info>
+    <desc>Vyhledávání zpráv.</desc>
+    
+    <link type="guide" xref="searching-items"/>
+    <link type="guide" xref="mail-organizing"/>
+ 
+    <revision pkgversion="3.33.90" version="0.7" date="2019-09-05" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Max Vorobuov</name>
+      <email its:translate="no">vmax0770@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+ 
+  </info>
+ 
+<title>Prohledávání pošty</title>
+
+<section id="search-single">
+<title>Hledání v jedné zprávě</title>
+<p>Chcete-li najít text v zobrazené zprávě, vyberte v hlavní nabídce <guiseq><gui>Upravit</gui> <gui>Najít ve zprávě…</gui></guiseq></p>
+</section>
+
+<section id="search-many">
+<title>Hledání ve všech zprávách</title>
+
+<section id="quick-search">
+<title>Rychlé hledání</title>
+<p>V zobrazení pošty můžete jednoduše hledat zprávy podle definovaných podmínek.</p>
+<steps>
+<item><p>Klikněte na ikonu hledání <media type="image" mime="image/png" its:translate="no" src="figures/search-icon.png"/>, aby se rozbalil seznam.</p></item>
+<item><p>V seznamu vyberte podmínky hledání.</p>
+<note style="tip"><p>U vzdálených poštovních účtů (např. IMAP+) mohou být některá hledání pomalá. Pokud vyberete podmínku hledání jako je <gui>Tělo obsahuje</gui> nebo <gui>Zpráva obsahuje</gui> a <app>Evolution</app> je v režimu on-line a složky, které hodláte prohledat, nejsou <link xref="mail-working-offline">zatím zkopírované lokálně pro použití off-line</link>, Evolution automaticky spustí hledání na straně poštovního serveru, pokud server propaguje podporu pro vyhledávání na straně serveru. Když hledáte podle věcí, které jsou již dostupné lokálně (např. příjemci nebo předmět zprávy), hledání poběží lokálně.</p></note>
+</item>
+<item><p>Vyberte rozsah z rozbalovacího seznamu napravo od textového pole.</p>
+<note style="tip"><p>U rozsahu <gui>Aktuální účet</gui> se výrazem „účet“ míní vrchní uzly v <link xref="intro-main-window#e-mail">seznamu poštovních složek</link>, jako například „V tomto počítači“ nebo vzdálené poštovní účty.</p></note>
+</item>
+<item><p>Zadejte text, který chcete vyhledat, a zmáčkněte <key>Enter</key>.</p></item>
+<item><p><app>Evolution</app> zobrazí výsledky hledání.</p></item>
+</steps>
+<note style="tip"><p>V případě, že začnete přímo čtvrtým krokem, bude se text hledat v předmětu zpráv a v adresách a rozsah bude „Aktuální složka“.</p></note>
+<note style="tip"><p>Pokud často hledáte zprávy, které nejsou ve stejné složce, raději místo toto vytvořte vyhledávací složku; více informací naleznete v <link xref="mail-search-folders">Používání vyhledávacích složek</link>.</p></note>
+<p>Chcete-li nastavit několik podmínek vyhledávání, měli byste použít pokročilé hledání, které je popsáno níže.</p>
+</section>
+
+<!-- As advanced-search, clearing-search, saved-searches, editing-a-saved-search are totally identical in all *-searching.page files, this is centrally in one file that's included by XInclude. See
+http://blogs.gnome.org/shaunm/2011/07/21/understanding-xinclude/ for how it works. -->
+<include xmlns="http://www.w3.org/2001/XInclude" href="xinclude-searching.xml" xpointer="xmlns(mal=http://projectmallard.org/1.0/)xpointer(/mal:info/mal:section)"/>
+
+<section id="free-form-expression">
+<title>Výraz ve volném tvaru</title>
+<p>Jednou z vyhledávacích podmínek je <gui>Výraz ve volném tvaru</gui>, pomocí kterého můžete definovat komplexní podmínky. V prvním kroce je zadaný výraz ve volném tvaru rozdělen na jednotlivá slova. Pokud slovo není předcházeno některou ze známých značek, je kontrolováno v hlavičkách Komu, Kopie a Předmět. Pokud jsou zapotřebí mezery nebo jiné speciální znaky, uzavřete text do dvojitých uvozovek. Dvojité uvozovky uvnitř získáte jejich zdvojením (např. <code>citováno ""zde""</code> je zpracováno vcelku jako <code>citováno "zde"</code>). Například <code>f:Josef Novák</code> filtruje zprávy, ve kterých obsahuje Od jméno <code>Josef</code> a Komu, Kopie nebo Předmět obsahuje <code>Novák</code>, zatímco <code>f:"Josef Novák"</code> filtruje zprávy s odesilatelem <code>Josef Novák</code>.</p>
+<p>Syntax značek je <code>&lt;značka&gt;[-&lt;volby&gt;]:hodnota</code>. Značky jsou:</p>
+<table frame="all" rules="rows cols" shade="rows">
+<tr><td><p>Značka</p></td><td><p>Zkratka</p></td><td><p>Význam</p></td></tr>
+<tr><td><p its:translate="no">from</p></td><td><p its:translate="no">f</p></td><td><p its:locNote="Translators: 'From' is a header name, do not translate it">Měla by vyhovovat hlavička Od. (*)</p></td></tr>
+<tr><td><p its:translate="no">to</p></td><td><p its:translate="no">t</p></td><td><p its:locNote="Translators: 'To' is a header name, do not translate it">Měla by vyhovovat hlavička Komu. (*)</p></td></tr>
+<tr><td><p its:translate="no">cc</p></td><td><p its:translate="no">c</p></td><td><p its:locNote="Translators: 'CC' is a header name, do not translate it">Měla by vyhovovat hlavička Kopie. (*)</p></td></tr>
+<tr><td><p its:translate="no">recips</p></td><td><p its:translate="no">r</p></td><td><p its:locNote="Translators: 'To' and 'CC' are the header names, do not translate it">Měla by vyhovovat hlavička Komu nebo Kopie. (*)</p></td></tr>
+<tr><td><p its:translate="no">subject</p></td><td><p its:translate="no">s</p></td><td><p its:locNote="Translators: 'Subject' is a header name, do not translate it">Měla by vyhovovat hlavička Předmět. (*)</p></td></tr>
+<tr><td><p its:translate="no">list</p></td><td><p/></td><td><p>Měla by vyhovovat hlavička Poštovní konference. (*)</p></td></tr>
+<tr><td><p its:translate="no">header</p></td><td><p its:translate="no">h</p></td><td><p>Měla by vyhovovat zadaná hlavička. (*)</p>
+<p>Syntax je: <code>h:názevHlavičky=hodnota</code>, kde rovnítko je použito jako oddělovač, ne porovnání.</p></td></tr>
+<tr><td><p its:translate="no">exists</p></td><td><p its:translate="no">e</p></td><td><p>Zda zadaná hlavička existuje.</p></td></tr>
+<tr><td><p its:translate="no">tag</p></td><td><p/></td><td><p>Ve zprávě by měl být vložen zadaný uživatelský štítek.</p></td></tr>
+<tr><td><p its:translate="no">flag</p></td><td><p/></td><td><p>Zda je nastaven příslušný příznak. Známé speciální hodnoty jsou:</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Answered</code> – zpráva je označená jako zodpovězená</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Deleted</code> – zpráva je označená jako smazaná</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Draft</code> – zpráva je označená jako koncept</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Flagged</code> – zpráva je označená jako důležitá</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Seen</code> – zpráva je označená jako viděná (není nepřečtená)</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Attachment</code> – zpráva má přílohu</p>
+<p>Jakákoliv jiná hodnota kontroluje neprázdnot příznaku.</p></td></tr>
+<tr><td><p its:translate="no">label</p></td><td><p its:translate="no">l</p></td><td><p>Zda je u zprávy nastaven příslušný <link xref="mail-labels">štítek</link>.</p></td></tr>
+<tr><td><p its:translate="no">size</p></td><td><p its:translate="no">sz</p></td><td><p>Zda je velikost zprávy v kB rovna zadané hodnotě.</p>
+<p>Jsou rozpoznávány dvě možnosti. <code>&lt;</code> vrací zprávy s menší velikostí a <code>&gt;</code> vrací zprávy s větší velikostí, než je zadaná. Příklad: <code>size-&gt;:1024</code> filtruje zprávy, které jsou větší než 1 MB.</p></td></tr>
+<tr><td><p its:translate="no">score</p></td><td><p its:translate="no">sc</p></td><td><p>Porovnává značku <code>score</code> zprávy vůči zadané hodnotě. Výchozí typ porovnávání je, zda je rovno, ale podobně jako u značky <code>size</code>, lze použít volby <code>&lt;</code> a <code>&gt;</code>.</p></td></tr>
+<tr><td><p its:translate="no">body</p></td><td><p its:translate="no">b</p></td><td><p>Kontroluje, zda se v těle zprávy nachází zadané slovo. Výchozí volba porovnávání je <code>contains</code>, ale dá se použít i regulární výraz doplněním volby <code>regex</code>, <code>re</code> or <code>r</code>.</p></td></tr>
+<tr><td><p its:translate="no">sent</p></td><td><p/></td><td><p>Mělo by se vyhovovat datum odeslání zprávy. (**)</p></td></tr>
+<tr><td><p its:translate="no">received</p></td><td><p its:translate="no">rcv</p></td><td><p>Mělo by vyhovovat datum přijetí zprávy. (**)</p></td></tr>
+<tr><td><p its:translate="no">attachment</p></td><td><p its:translate="no">a</p></td><td><p>Zpráva by měla mít přílohu (pokud hodnotou není <code>no</code>, <code>false</code> nebo <code>0</code>). Funguje podobně jako značka <code>flag:attachment</code>.</p></td></tr>
+<tr><td><p its:translate="no">location</p></td><td><p its:translate="no">m</p></td><td><p>Kontroluje umístění zprávy. Hodnotu umístění (URL) lze najít ve <gui>Vlastnostech</gui> složky. Příklad: <code>location:"V tomto počítači/Inbox"</code></p></td></tr>
+<tr><td><p its:translate="no">mid</p></td><td><p/></td><td><p>porovnává ID zprávy</p></td></tr>
+</table>
+<p>(*) Při porovnávání hlaviček lze uvést volbu typu shody. Výchozí je kontrola, zda obsahuje hodnotu (<code>contains</code>). Dostupné volby jsou:</p>
+<table frame="all" rules="rows cols" shade="rows">
+<tr><td><p>Volba</p></td><td><p>Zkratka</p></td><td><p>Význam</p></td></tr>
+<tr><td><p its:translate="no">contains</p></td><td><p its:translate="no">c</p></td><td><p>obsahuje</p></td></tr>
+<tr><td><p its:translate="no">has-words</p></td><td><p its:translate="no">w</p></td><td><p>obsahuje celé slovo</p></td></tr>
+<tr><td><p its:translate="no">matches</p></td><td><p its:translate="no">m</p></td><td><p>shoduje se přesně</p></td></tr>
+<tr><td><p its:translate="no">starts-with</p></td><td><p its:translate="no">sw</p></td><td><p>hodnota hlavičky začíná zadanou hodnotou</p></td></tr>
+<tr><td><p its:translate="no">ends-with</p></td><td><p its:translate="no">ew</p></td><td><p>hodnota hlavičky končí zadanou hodnotou</p></td></tr>
+<tr><td><p its:translate="no">soundex</p></td><td><p its:translate="no">se</p></td><td><p>hodnota hlavičky zní podobně jako zadaná hodnota</p></td></tr>
+<tr><td><p its:translate="no">regex</p></td><td><p its:translate="no">r</p></td><td><p>zadaná hodnota je regulární výraz</p></td></tr>
+<tr><td><p its:translate="no">full-regex</p></td><td><p its:translate="no">fr</p></td><td><p>jiný typ regulárního výrazu</p></td></tr>
+</table>
+<p>(**) Datum může být zapsáno relativně. Kladné číslo znamená <code>v posledních X dnech</code>, zatímco záporné jde do budoucnosti. Například, když chcete získat zprávy přijaté za posledních 10 dní, použijte: <code>recv:10</code>. Lze zadat i přesné datum, kdy formát může být buď <code>RRRR-MM-DD</code> (upřednostňováno), ISO 8601 nebo datum/datum-čas v místním formátu. Pokud zpracování data/času selže, je podmínka vynechána. Porovnávání data má tři dodatečné volby: <code>&lt;</code>, <code>=</code> a <code>&gt;</code>, kdy <code>&gt;</code> je výchozí.</p>
+<p>Existují tři značky, které vyžadují speciální notaci. Jsou to:</p>
+<list>
+<item><p><code its:translate="no">not:(....)</code></p></item>
+<item><p><code its:translate="no">and:(....)</code></p></item>
+<item><p><code its:translate="no">or:(....)</code></p></item>
+</list>
+<p>Umožňují vytvářet specializované výrazy. Výchozí (nejvyšší priorita) spojka je <code>and</code>. Pokud má mít vyšší prioritu <code>or</code>, je třeba celý filter uzavřít do <code>or:(....)</code>. Například: <code>f:Banka t:Honza</code> filtruje všechny zprávy, které obsahují <code>Banka</code> v odesilateli a <code>Honza</code> v příjemci, zatímco <code>or:(f:Banka t:Honza)</code> filtruje zprávy od Banky nebo adresované Honzovi.</p>
+</section>
+<section id="free-form-expression-examples">
+<title>Příklady výrazů ve volném tvaru:</title>
+<p>Zde je uveden seznam pár výrazů ve volném tvaru:</p>
+<table rules="rows">
+<tr><td><p>Výraz</p></td><td><p>Význam</p></td></tr>
+<tr><td><p><code>f:Honza</code></p></td><td><p>Zpráva od uživatele <code>Honza</code>.</p></td></tr>
+<tr><td><p><code>s-has-words:"zelená modrá"</code></p></td><td><p>Zprávy, které mají v předmětu jak slovo <code>zelená</code>, tak <code>modrá</code>.</p></td></tr>
+<tr><td><p><code>r-ew:posta.cz</code></p></td><td><p>Adresy příjemců (hlavičky Komu/Kopie) končí <code>posta.cz</code>.</p></td></tr>
+<tr><td><p><code>h-starts-with:Cc=Alice</code></p></td><td><p><code>Kopie</code> začíná slovem <code>Alice</code></p></td></tr>
+<tr><td><p><code>e:X-Secret-Header</code></p></td><td><p>Ve zprávě se nachází hlavička <code>X-Secret-Header</code>.</p></td></tr>
+<tr><td><p><code>l:work</code></p></td><td><p>U zprávy je nastavený štítek <code>work</code> (Pracovní)</p></td></tr>
+<tr><td><p><code>sz-&lt;:10</code></p></td><td><p>Velikost zprávy je menší než 10 kB.</p></td></tr>
+<tr><td><p><code>sz-&gt;:100</code></p></td><td><p>Velikost zprávy je větší než 100 kB</p></td></tr>
+<tr><td><p><code>b:důležité</code></p></td><td><p>Tělo obsahuje slovo <code>důležité</code></p></td></tr>
+<tr><td><p><code>sent:7</code></p></td><td><p>Zpráva byla posládna v posledních 7 dnech</p></td></tr>
+<tr><td><p><code>rcv-=:2020-02-02</code></p></td><td><p>Zpráva byla přijata 2. února 2020</p></td></tr>
+<tr><td><p><code>a:1</code></p></td><td><p>Zprávy s přílohou</p></td></tr>
+<tr><td><p><code>a:0</code></p></td><td><p>Zprávy bez přílohy</p></td></tr>
+<tr><td><p><code>and:(or:(r:Alice r:Robert) not:(r:Procházka))</code></p></td><td><p>Zprávy, jejímiž příjemcem je <code>Alice</code> nebo <code>Robert</code>, ale ne <code>Procházka</code>.</p></td></tr>
+<tr><td><p><code>f:Robert rcv-&gt;:2020-01-01 rcv-&lt;:2020-12-31</code></p></td><td><p>Zprávy od uživatele <code>Robert</code>, přijaté během roku 2020</p></td></tr>
+<tr><td><p><code>not:(flag:Seen) f:Robert rcv-&gt;:2020-01-01 rcv-&lt;:2020-12-31</code></p></td><td><p>Nepřečtené zprávy od uživatele <code>Robert</code>, přijaté během roku 2020</p></td></tr>
+<tr><td><p><code>flag:Seen a:1 sz-&gt;:1024 f:Robert rcv:31</code></p></td><td><p>Přečtené zprávy s přílohou větší než 1 MB od uživatele <code>Robert</code>, přijaté během posledních 31 dní</p></td></tr>
+<tr><td><p><code>m:"V tomto počítači/Inbox"</code></p></td><td><p>Zprávy uložené ve složce <code>V tomto počítači/Inbox</code></p></td></tr>
+<tr><td><p><code>location-no:"V tomto počítači/Inbox"</code></p></td><td><p>Zprávy uložené ve všech složkách, vyjma <code>V tomto počítači/Inbox</code></p></td></tr>
+</table>
+</section>
+</section> 
+</page>

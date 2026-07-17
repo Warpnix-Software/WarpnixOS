@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-ppa" xml:lang="it">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntu Documentation Team</name>
+    </credit>
+    <desc>Aggiungi PPA per estendere le fonti software utilizzate da Ubuntu per l'installazione e gli aggiornamenti.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove"/>
+    <link type="seealso" xref="addremove-sources"/>
+    <revision version="20.10" date="2020-09-13" status="review"/>
+  </info>
+
+  <title>Aggiungere un PPA (Personal Package Archive)</title>
+
+  <p><em>Personal Package Archives (PPAs)</em> sono repository software progettati per utenti Ubuntu e sono più facili da installare rispetto ad altri repository di terze parti. I PPA vengono spesso utilizzati per distribuire software pre-release in modo che possano essere testati.</p>
+
+  <note style="warning">
+    <p>Aggiungere solamente repository software da fonti fidate!</p>
+    <p>I repository di terze parti non vengono controllati dal gruppo di sicurezza di Ubuntu e potrebbero contenere programmi potenzialmente dannosi.</p>
+  </note>
+
+  <steps>
+    <title>Installare un PPA</title>
+    <item>
+      <p>Nella pagina web del PPA, cercare la dicitura <gui>Adding this PPA to your system</gui> e prendere nota dell'indirizzo che dovrebbe essere simile a questo: <code>ppa:mozillateam/firefox-stable</code>.</p>
+    </item>
+    <item>
+      <p>Apri <app>Software e amp; Aggiornamenti</app> tramite la barra di ricerca <em>Attività</em>.</p>
+    </item>
+    <item>
+      <p>Selezionare la scheda <gui>Altro software</gui>.</p>
+    </item>
+    <item>
+      <p>Clicca <gui>Aggiungi</gui> e inserisci la locazione del PPA (come notato nello step 1).</p>
+    </item>
+    <item>
+      <p>Fare clic su <gui>Aggiungi sorgente</gui> e inserire la propria password nella finestra Autenticazione.</p>
+    </item>
+    <item>
+      <p>Chiudi la finestra <app>Software &amp; Updates</app>. <app>App Center</app> effettuerà il controllo delle tue sorgenti di software alla ricerca di nuovo software.</p>
+    </item>
+  </steps>
+
+</page>

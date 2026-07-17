@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="tasks-display-settings" xml:lang="uk">
+
+  <info>
+    <desc>Параметри для показу завершеності завдань або часу виконання завдань.</desc>
+    
+    <link type="guide" xref="index#memos-and-tasks"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-08-24" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/config-prefs-cal.html.en#bshpsxa -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Показ завдань</title>
+
+<!-- TODO:POST-3-8: Just listing the partially busted UI options (also see calendar-layout-appointment-display) here is very poor and not task-oriented, but that's it for the time being. Better ideas welcome. -->
+
+<p>Доступ до вказаних нижче параметрів, які пов'язано із завданнями, можна отримати за допомогою пункту <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Календар та завдання</gui><gui>Завдання</gui></guiseq>.</p>
+
+<list>
+<item><p>Завдання на сьогодні:</p>
+<p>Вибір кольору для завдань, строк виконання яких визначено як поточну дату.</p></item>
+<item><p>Прострочені завдання:</p>
+<p>Вибір кольору для прострочених завдань.</p></item>
+<item><p>Приховувати виконані завдання через:</p>
+<p>Позначте цей пункт, якщо завершені завдання слід приховувати за вказаний період часу, який вимірюватиметься у днях, годинах або хвилинах. Якщо ви не позначите цей пункт, завершені завдання лишатимуться у вашому списку завдань, позначені як завершені.</p></item>
+</list>
+
+</page>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="deleting-appointments" xml:lang="ru">
+
+  <info>
+    <desc>Удаление записей календаря для уменьшения размера почтового ящика.</desc>
+    
+    <link type="guide" xref="deleting-to-free-disk-space"/>
+
+    <revision pkgversion="2.32.2" version="0.1" date="2011-07-21" status="candidate"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Удаление старых встреч без возможности восстановления</title>
+
+<p>Чтобы очистить старые записи календаря, выберите в режиме обзора календаря пункт меню <guiseq><gui>Действия</gui><gui>Очистить</gui></guiseq>. Будет предложено указать, насколько старыми (в днях) должны события для удаления из календаря. Действие очистки будет применено к текущему открытому календарю (выбранному в расположенном слева списке календарей); к остальным календарям изменения применены не будут.</p>
+
+</page>

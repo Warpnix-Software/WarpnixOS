@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="index" xml:lang="hu">
+
+  <info>
+    <desc>E-mailek, névjegyek és határidők kezelése</desc>
+    <title type="link" role="trail"><app>Evolution</app> levelező és naptár</title>
+    <title type="text"><app>Evolution</app> levelező és naptár</title>
+    <revision pkgversion="3.8.2" version="0.7" date="2013-06-22" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Phil Bull</name>
+      <email its:translate="no">philbull@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lukács Bence</mal:name>
+      <mal:email>lukacs.bence1 at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kelemen Gábor</mal:name>
+      <mal:email>kelemeng at gnome dot hu</mal:email>
+      <mal:years>2011, 2012, 2013, 2015, 2017, 2018.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nagy Zoltán</mal:name>
+      <mal:email>dzodzie at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Úr Balázs</mal:name>
+      <mal:email>ur.balazs at fsf dot hu</mal:email>
+      <mal:years>2014, 2019, 2021, 2022, 2023, 2024, 2025.</mal:years>
+    </mal:credit>
+  </info>
+
+<title><media its:translate="no" type="image" width="48px" height="48px" src="figures/evolution.svg"/> <app>Evolution</app> levelező és naptár</title>
+
+  <section id="getting-started" style="2column">
+    <title>Kezdeti lépések</title>
+  </section>
+
+  <section id="mail-basic" style="2column">
+    <title>Levélkezelés</title>
+      <section id="mail-advanced" style="2column">
+        <title>Speciális levélkezelés</title>
+      </section>
+  </section>
+
+  <section id="mail-composing" style="2column">
+    <title>Levélszerkesztés</title>
+      <section id="mail-composing-advanced" style="2column">
+        <title>Speciális levélszerkesztés</title>
+    </section>
+  </section>
+
+  <section id="calendar" style="2column">
+    <title>Naptárkezelés</title>
+      <section id="calendar-advanced" style="2column">
+        <title>Speciális naptárkezelés</title>
+    </section>
+  </section>
+
+  <section id="contacts" style="2column">
+    <title>Névjegykezelés</title>
+  </section>
+
+  <section id="memos-and-tasks" style="2column">
+    <title>Feljegyzések és feladatok kezelése</title>
+  </section>
+
+  <section id="data-migration-and-sync" style="2column">
+    <title>Adatköltöztetés és -szinkronizálás</title>
+  </section>
+
+  <section id="tracking-down-problems" style="2column">
+    <title>Problémák elhárítása</title>
+  </section>
+
+  <section id="common-mail-problems" style="2column">
+    <title>Levelezéssel kapcsolatos gyakori kérdések és problémák</title>
+  </section>
+
+  <section id="common-other-problems" style="2column">
+    <title>Egyéb gyakori kérdések és problémák</title>
+  </section>
+
+  <section id="further-reading" style="2column">
+    <title>További olvasnivaló</title>
+  </section>
+
+</page>

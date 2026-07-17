@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:uix="http://projectmallard.org/experimental/ui/" type="guide" style="task" id="addremove" xml:lang="fr">
+  <info>
+    <link type="guide" xref="index" group="addremove"/>
+
+    <title role="trail" type="link">Ajouter/supprimer des logiciels</title>
+
+    <credit type="author">
+      <name>L'équipe de documentation d'Ubuntu</name>
+    </credit>
+
+    <desc>Ajouter et supprimer des applications et autres logiciels. Gérer des référentiels de logiciels supplémentaires.</desc>
+    <uix:thumb role="experimental-gnome-tiles" src="figures/tile-software.svg"/>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+  <title>Installer et supprimer des logiciels</title>
+  <links type="topic" style="2column"/>
+
+</page>

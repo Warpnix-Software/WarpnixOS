@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-send-account-overrides" xml:lang="ru">
+
+  <info>
+   <desc>Привязка учётных записей к определённым папкам или получателям.</desc>
+   
+   <link type="guide" xref="index#mail-composing-advanced"/>
+   <link type="seealso" xref="mail-folders"/>
+
+ <revision pkgversion="3.13.90" version="0.1" date="2015-03-09" status="draft"/>
+ <revision pkgversion="3.34.3" version="0.2" date="2020-02-11" status="draft"/>
+ <credit type="author">
+   <name its:translate="no">Andre Klapper</name>
+   <email its:translate="no">ak-47@gmx.net</email>
+ </credit>
+ 
+ <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+     
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Переопределение отправителя</title>
+
+<p>Если используется несколько учётных записей, можно задать ту, которую следует всегда использовать в качестве адреса отправителя:</p>
+<list>
+<item><p>При ответе на письма в определённых <link xref="mail-folders">папках</link>.</p></item>
+<item><p>При ответе на письма с определённых адресов, от определённых отправителей или письма с частями определённых адресов или имён отправителей.</p></item>
+</list>
+
+<p>Флажок <gui>Переназначение для папок имеет приоритет над переназначением для получателей</gui> определяет поведение Evolution при ответе на сообщение, которое соответствует как заданной папке, так и адресу электронной почты или имени.</p>
+
+<p>Эти параметры доступны в разделе настройки <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Настройки редактора</gui><gui>Учётная запись отправителя</gui></guiseq>.</p>
+
+</page>

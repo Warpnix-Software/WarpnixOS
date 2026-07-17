@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="bug-filing" xml:lang="pt-BR">
+
+  <info>
+    <link type="guide" xref="index#getInvolved"/>
+    <desc>Como e onde reportar problemas.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+
+<title>Registrar um bug do Atril</title>
+<p>Atril é mantido por uma comunidade de voluntários. Você é bem-vindo para participar. Se notar algum erro, você pode registrar um <em>Relatório de Bug</em>. Para reportar um bug, vá para <link href="https://github.com/mate-desktop/atril/issues"/>.</p>
+   <p>Esses é um sistema de rastreamento de bugs em que usuários e desenvolvedores podem registrar detalhes sobre bugs, crashes e solicitar melhorias.</p>
+   <p>Para participar, você precisará de uma conta que lhe dará a capacidade de ganhar acesso, registrar bugs e fazer comentários. Também é necessário se registrar para poder receber atualizações do status do seu bug por e-mail. Se você ainda não possui uma conta, apenas clique no link <gui>Entrar / Registrar-se</gui> para criar uma.</p>
+   <p>Uma vez com a conta criada, entre na conta e clique em <gui>Novo registro</gui>.</p>
+   <p>Preencha os campos de Título e Descrição e clique em <gui>Submeter registro</gui>.</p>
+   <p>Seu relatório receberá um número ID, e seus status será atualizado conforme alterações sejam feitas ao problema por ele relatado.</p>
+</page>

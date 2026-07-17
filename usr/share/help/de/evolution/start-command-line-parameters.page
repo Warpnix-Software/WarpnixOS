@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="start-command-line-parameters" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#common-other-problems"/>
+
+    <revision pkgversion="3.39.0" version="0.1" date="2020-10-29" status="draft"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Evolution anweisen, beim Start der Anwendung ein bestimmtes Fenster oder einen bestimmten Ordner anzuzeigen.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andre Klapper</mal:name>
+      <mal:email>ak-47@gmx.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009-2013, 2016-2018, 2020-2021</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009-2013, 2015-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Gabor Karsay</mal:name>
+      <mal:email>gabor.karsay@gmx.at</mal:email>
+      <mal:years>2011-2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Tim Sabsch</mal:name>
+      <mal:email>tim@sabsch.com</mal:email>
+      <mal:years>2018, 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jürgen Benvenuti</mal:name>
+      <mal:email>gastornis@posteo.org</mal:email>
+      <mal:years>2022-2024</mal:years>
+    </mal:credit>
+  </info>
+
+<!-- TODO: Update page with https://gitlab.gnome.org/GNOME/evolution/-/issues/1176#note_946174 -->
+
+  <title>Festlegen, was beim Start von <app>Evolution</app> angezeigt werden soll</title>
+
+  <p>Wenn <app>Evolution</app> startet, wird die zuletzt von Ihnen verwendete Ansicht wieder geöffnet.</p>
+
+  <p>Um <app>Evolution</app> anzuweisen, nach dem Start der Anwendung etwas anderes anzuzeigen, müssen Sie die Anwendung im <app>Terminal</app> starten und die entsprechenden Parameter übergeben.</p>
+
+  <section id="tools">
+    <title>Windows</title>
+
+    <p its:locNote="TO TRANSLATORS: Do NOT translate 'component' here!">Um <app>Evolution</app> in einer bestimmten Ansicht zu starten, übergeben Sie den Parameter »component«.</p>
+
+    <p>Beispiele:</p>
+    <list>
+      <item><p><cmd its:translate="no">evolution --component=calendar</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution --component=contacts</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution --component=mail</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution --component=memos</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution --component=tasks</cmd></p></item>
+    </list>
+  </section>
+
+  <section id="mail-folders">
+    <title>E-Mail-Ordner</title>
+
+    <!-- Introduced in https://gitlab.gnome.org/GNOME/evolution/-/issues/1176 : -->
+    <p its:locNote="TO TRANSLATORS: Do NOT translate 'folder' here!">Um <app>Evolution</app> einen bestimmten E-Mail-Ordner öffnen zu lassen, übergeben Sie den Parameter »folder«.</p>
+
+    <p>Beispiele:</p>
+    <list>
+      <item><p><cmd its:translate="no">evolution "folder:On This Computer/Inbox"</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution folder:On%20This%20Computer/Inbox</cmd></p></item>
+      <item><p><cmd its:translate="no">evolution folder://local/Inbox</cmd></p></item>
+    </list>
+  </section>
+
+  <section id="mail-composer">
+    <title>Nachrichteneditor</title>
+
+    <p its:locNote="TO TRANSLATORS: Do NOT translate 'folder' here!">So weisen Sie <app>Evolution</app> an, einen Nachrichteneditor mit einigen vorgegebenen Werten und Inhalt zu öffnen:</p>
+
+    <p>Beispiele:</p>
+    <list>
+      <item><p><cmd its:translate="no">evolution mailto:recipient@example.com?cc=cc@example.com\&amp;subject=Your\ subject\ line\&amp;body=Message\ content\&amp;attach=/home/user/file</cmd></p></item>
+    </list>
+  </section>
+
+</page>

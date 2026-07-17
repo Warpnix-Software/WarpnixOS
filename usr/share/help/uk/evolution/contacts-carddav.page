@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-carddav" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="contacts-using-several-addressbooks"/>
+
+    <revision pkgversion="3.55" version="0.1" date="2024-11-02" status="final"/>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Використання адресної книги CardDAV з інтернету.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Використання адресної книги CardDAV з інтернету</title>
+
+  <p>Щоб додати таку адресну книгу, виконайте такі дії:</p>
+
+  <steps>
+    <item>
+      <p>Виберіть пункт меню <guiseq><gui>Файл</gui><gui>Створити</gui> <gui>Адресна книга</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Виберіть тип <gui>CardDAV</gui>.</p>
+    </item>
+    <item>
+      <p>Щоб виявити адресні книги, оголошені сервером, введіть адресу сервера у полі <gui>URL</gui> і, якщо треба, <gui>Користувач</gui>, а потім натисніть <gui style="button">Знайти адресні книги</gui>. Виберіть адресну книгу. У результаті буде попередньо заповнено поля <gui>Назва</gui>, <gui>URL</gui>. Цей крок необов’язковий, і ви можете перезаписати всі виявлені налаштування.</p>
+    </item>
+    <item>
+      <p>Введіть бажану для вас назву.</p>
+    </item>
+    <item>
+      <p>Введіть адресу у поле <gui>URL</gui>.</p>
+    </item>
+    <item>
+      <p>Виберіть <gui>Використовувати безпечне з'єднання</gui>, якщо ви хочете захистити з'єднання.</p>
+    </item>
+    <item>
+      <p>Введіть ваше ім'я користувача.</p>
+    </item>
+    <item>
+      <p>Натисніть кнопку <gui style="button">Гаразд</gui>.</p>
+    </item>
+  </steps>
+
+  <p>До списку адресних книг <app>Evolution</app> і <app>Контактах GNOME</app> буде додано нову адресну книгу.</p>
+</page>

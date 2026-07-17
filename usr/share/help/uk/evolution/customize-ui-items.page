@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="customize-ui-items" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="index#common-other-problems"/>
+    <link type="seealso" xref="mail-layout-changing"/>
+    <link type="seealso" xref="calendar-layout"/>
+
+    <revision pkgversion="3.34.0" version="0.3" date="2019-09-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Пересування і зміна кнопок на панелі інструментів, пунктів меню та клавіатурних скорочень.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Налаштовування інтерфейсу користувача</title>
+
+<p>У <app>Evolution</app> можливе налаштовування меню, панелей інструментів та клавіатурних скорочень за допомогою пункту <guiseq><gui>Перегляд</gui><gui>Компонування</gui><gui>Налаштувати…</gui></guiseq>. На панелях інструментів, які можна налаштувати, передбачено пункт контекстного меню для налаштовування.</p>
+
+<p>За допомогою діалогового вікна <gui>Налаштувати інтерфейс користувача</gui> можна додавати, вилучати і перевпорядковувати пункти на панелях інструментів. Або скористайтеся кнопками з боків ієрархії компонування, або перетягніть пункти і скиньте їх у потрібні місця.</p>
+
+<p>Окрім налаштовування <gui>Компонування</gui>, можна змінювати <gui>Скорочення</gui> для дій. Для однієї дії можна визначити декілька клавіатурних скорочень.</p>
+
+<p>Зміни у діалоговому вікні буде збережено під час його закриття, а інтерфейс користувача буде оновлено відповідним чином.</p>
+
+</page>

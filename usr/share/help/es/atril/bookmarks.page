@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="bookmarks" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="index#annotations"/>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email its:translate="no">tiffany@antopolski.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email its:translate="no">kittykat3756@gmail.com</email>
+    </credit>
+
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+    <desc>Puedes usar anotaciones como marcadores.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Toni Estevez</mal:name>
+      <mal:email>toni.estevez@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Francisco Javier F. Serrador</mal:name>
+      <mal:email>serrador@cvs.gnome.org</mal:email>
+      <mal:years>2003-2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Pablo Gonzalo del Campo</mal:name>
+      <mal:email>pablodc@bigfoot.com</mal:email>
+      <mal:years>2002-2003</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Marcadores</title>
+
+  <p>Puede añadir, renombrar o eliminar marcadores usando el  <app>Visor de Documentos</app>.</p>
+
+  <p>Cuando abre un fichero, debe tener un panel lateral en el lado izquierdo de la ventana. Si no tiene un panel lateral visible, haga clic en <guiseq><gui style="menuitem">Ver</gui> <gui style="menuitem">Panel lateral</gui></guiseq>, o pulse la tecla <key>F9</key>  o pulse la tecla 4F94 en su teclado.</p>
+
+  <p>Al final de este panel lateral, seleccione los <gui style="button">Marcadores</gui> en la lista desplegable.</p>
+
+  <links type="section"/>
+
+<section id="create">
+  <title>Crea un marcador</title>
+
+  <steps>
+    <item>
+      <p>En el propio documento PDF, navegue hasta la página en la quiere añadir el marcador.</p>
+    </item>
+    <item>
+      <p>En el panel lateral, seleccione <gui style="button">Marcadores</gui> en el menú desplegable.</p>
+    </item>
+    <item>
+      <p>Pulse el botón <gui style="button">+</gui> al final del panel lateral. El nombre predeterminado del marcador que ha añadido es el número de página del documento.</p>
+    </item>
+    <item>
+      <p>El marcador aparece ahora en la lista de marcadores.</p>
+    </item>
+  </steps>
+
+</section>
+
+<section id="rename">
+  <title>Renombra un marcador</title>
+
+  <steps>
+    <item><p>En el panel lateral, seleccione <gui style="button">Marcadores</gui> en el menú desplegable.</p></item>
+    <item><p>Selecciona un marcador en el panel lateral.</p></item>
+    <item><p>Haga clic en el nombre del marcador.</p></item>
+    <item><p>Ingresa el nuevo nombre.</p></item>
+    <item><p>Pulse <key>Intro</key>.</p></item>
+  </steps>
+
+</section>
+
+<section id="delete">
+  <title>Elimina un marcador</title>
+
+  <steps>
+   <item><p>En el panel lateral, seleccione <gui style="button">Marcadores</gui> en el menú desplegable.</p></item>
+   <item><p>Pulse el botón <gui style="button">-</gui> al final del panel lateral.</p></item>
+  </steps>
+
+</section>
+
+</page>

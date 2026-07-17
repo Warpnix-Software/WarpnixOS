@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-creator" xml:lang="hu">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntu dokumentációs csapat</name>
+    </credit>
+
+    <desc>USB flash-meghajtó átalakítása olyan kötetté, amelyről az Ubuntu elindítható és telepíthető.</desc>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <link type="guide" xref="disk"/>
+    <link type="guide" xref="addremove" group="#last"/>
+
+    <revision version="17.10" date="2017-09-26" status="review"/>
+  </info>
+
+  <title>Indítólemez létrehozása</title>
+
+  <p>Ebben az összefüggésben az indítólemez egy olyan USB flash-meghajtó, amelyről elindíthatja és <link href="https://www.ubuntu.com/download/desktop/install-ubuntu-desktop">telepítheti az Ubuntut</link>. Az USB flash-meghajtó kapacitásának legalább 2 GB-nak kell lennie. Az USB flash-meghajtón lévő adatok elvesznek az indítólemez létrehozásakor.</p>
+
+  <p>Feltételezzük, hogy letöltött egy Ubuntu ISO lemezképet.</p>
+
+  <p>Ubuntu ISO lemezképből való indítólemez létrehozásához:</p>
+    
+  <steps>
+    <item>
+      <p>Nyissa meg az <app>Indítólemez-készítő</app> alkalmazást a <em>Tevékenységek</em> keresősávjából.</p>
+    </item>
+    <item>
+      <p>Ha az ISO lemezkép a <gui>Letöltések</gui> mappában van, és csak egy ISO lemezkép található ott, akkor az <app>Indítólemez-készítő</app> kiválasztja azt, egyébként válassza ki a megfelelő ISO lemezképet.</p>
+    </item>
+    <item>
+      <p>Ha a számítógépben csak egy USB flash-meghajtó van, akkor az <app>Indítólemez-készítő</app> kiválasztja azt, egyébként válassza ki a megfelelő meghajtót.</p>
+    </item>
+    <item>
+      <p>Kattintson az <gui>Indítólemez készítése</gui> gombra.</p>
+    </item>
+    <item>
+      <p>Kattintson az <gui>Igen</gui> gombra a megerősítéshez. A folyamat legfeljebb tíz percet vesz igénybe.</p>
+    </item>
+
+    <item>
+      <p>A „Telepítés befejeződött” ablak megnyílásakor kattintson a <gui>Kilépés</gui> gombra.</p>
+    </item>
+
+  </steps>
+
+
+
+</page>

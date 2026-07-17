@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-displaying-images-in-html" xml:lang="ru">
+
+  <info>
+    <desc>Внедрённые изображения в полученных письмах в формате HTML.</desc>
+
+    <link type="guide" xref="mail-displaying-message"/>
+
+    <revision pkgversion="3.30.4" version="0.5" date="2019-01-19" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en#usage-mail-getnsend-get-attach-html -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Изображения в сообщениях HTML</title>
+
+<p>Когда кто-либо отправляет вам HTML-письмо, которое содержит изображения в теле сообщения (например, приветствие от команды Evolution в папке «Входящие»), <app>Evolution</app> отображает изображение внутри сообщения.</p>
+
+<section id="loading">
+<title>Загрузка изображений</title>
+<p>Некоторые изображения в сообщении являются ссылками, а не частью сообщения. <app>Evolution</app> может загрузить эти изображения из Интернета, но сделает это только по запросу пользователя. Это поведение обусловлено тем, что на загрузку и отображение хранящихся на удалённых серверах изображений может потребоваться много времени. Кроме того, такие изображения даже могут использоваться спамерами для отслеживания того, кто читает почту.Отсутствие автоматической загрузки изображений помогает защитить вашу конфиденциальность.</p>
+
+<p>Чтобы загрузить изображения для отдельного сообщения, выберите пункт меню <guiseq><gui>Вид</gui><gui>Загрузить изображения</gui></guiseq> или воспользуйтесь комбинацией клавиш <keyseq><key>Ctrl</key><key>I</key></keyseq>.</p>
+
+<p>Чтобы настроить стандартное действие по загрузке изображений, перейдите в раздел настройки <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Настройки почты</gui><gui>Сообщения HTML</gui><gui>Загрузка удалённого (не локального) содержимого</gui></guiseq>.</p>
+</section>
+
+<section id="automatically-download">
+<title>Автоматическая загрузка изображений в письмах от знакомых людей</title>
+
+<p>Можно настроить программу на загрузку изображений из писем, присланных пользователями из ваших списков контактов. Для этого перейдите в раздел настройки <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Настройки почты</gui><gui>Сообщения HTML</gui><gui>Загрузка удалённого (не локального) содержимого</gui></guiseq>. Включите параметр <gui>Загружать удалённое (не локальное) содержимое только для сообщений от добавленных контактов</gui>.</p>
+
+<p>Затем перейдите в раздел настройки <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Контакты</gui><gui>Автодополнение</gui></guiseq>. Включите автодополнение, установив флажок <gui>Показывать адрес найденного в адресной книге контакта</gui>.</p>
+</section>
+
+<section id="saving">
+<title>Сохранение изображений</title>
+<p>Для сохранения изображения, встроенного в сообщение HTML, щёлкните по изображению правой кнопкой мыши и выберите пункт <gui>Сохранить изображение…</gui>.</p>
+</section>
+
+</page>

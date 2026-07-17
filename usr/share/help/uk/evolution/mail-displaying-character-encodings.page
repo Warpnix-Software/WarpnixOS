@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-displaying-character-encodings" xml:lang="uk">
+
+  <info>
+    <desc>Якщо літери у повідомлення електронної пошти показано неправильно або не показано взагалі.</desc>
+
+    <link type="guide" xref="mail-displaying-message"/>
+    <link type="guide" xref="index#mail-composing-advanced"/>
+
+    <revision pkgversion="3.3.91" version="0.4" date="2012-02-18" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Кодування символів</title>
+
+<section id="received-messages">
+<title>Отримана пошта</title>
+
+<p>Якщо програма для роботи з електронною поштою відправника працює неправильно або її неправильно налаштовано, прості текстові повідомлення можуть не містити даних щодо використаного кодування символів. Якщо ви отримаєте таке повідомлення, виберіть пункт головного меню <guiseq><gui>Перегляд</gui><gui>Кодування символів</gui></guiseq> і змініть поточне вибране кодування символів на відповідне, яким може бути кодування, яке було використано відправником. Вам доведеться виконувати цю зміну кожного разу, коли ви переглядатимете відповідне повідомлення.</p>
+<p>Щоб зробити цей параметр типовим, скористайтеся пунктом <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Параметри пошти</gui><gui>Загальне</gui><gui>Показ повідомлень</gui><gui>Типовий набір символів</gui></guiseq>.</p>
+
+</section>
+
+<section id="sending-messages">
+<title>Надсилаємо пошту</title>
+
+<p>Малоймовірним випадком є випадок, коли у вас виникне потреба у зміні типового кодування символів повідомлень, які ви надсилаєте. Для цього можете скористатися пунктом <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Параметри редактора</gui><gui>Типова поведінка</gui><gui>Кодування символів</gui></guiseq>.</p>
+<note style="tip"><p>Цей параметр стосується простих текстових повідомлень, оскільки <link xref="mail-composer-html">повідомлення HTML</link> завжди кодуються в UTF-8.</p></note>
+
+</section>
+
+</page>

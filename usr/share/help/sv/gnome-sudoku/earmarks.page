@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="earmarks" xml:lang="sv">
+  <info>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+   <link type="guide" xref="index#tips"/>
+    <credit type="author copyright">
+      <name>Thomas Hinkle</name>
+      <email>tmhinkle@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Chris Beiser</name>
+      <email>ctbeiser@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons DelaLika 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Erik Sköldås</mal:name>
+      <mal:email>erik.skoldas@tele2.se</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2018</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Öronmärkning</title>
+<p>Öronmärkningar (små nummeranteckningar) kan läggas till alla celler. De ger dig möjlighet att markera möjliga värden för en cell. Öronmärkningen låter dig lagra valfritt antal siffror i cellen. Varje siffra kan bara väljas en gång.</p>
+
+<p>För att lägga till en öronmärkning till en cell:</p>
+
+<steps>
+  <item><p>Markera cellen.</p></item>
+  <item><p>Tryck <keyseq><key>Ctrl</key><key>1</key></keyseq> till <keyseq><key>Ctrl</key><key>9</key></keyseq>.</p></item>
+</steps>
+
+<p>Du kan ta bort ett nummer från öronmärkningen genom att trycka <keyseq><key>Ctrl</key><key>1</key></keyseq> till <keyseq><key>Ctrl</key><key>9</key></keyseq> igen.</p>
+
+<note><p>Du kan också lägga till öronmärkningar genom att klicka på cellen under tiden du trycker <key>Ctrl</key>, eller genom att högerklicka på cellen och sedan välja ett nummer.</p></note>
+
+</page>

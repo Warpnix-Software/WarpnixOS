@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="complex" xml:lang="ko">
+
+    <info>
+        <link type="guide" xref="index#number"/>
+    </info>
+
+	<title>Complex Numbers</title>
+    
+    <p><app>MATE 계산기</app>는 <link xref="mouse">고급 모드</link>에서 복잡한 숫자와 다음 함수를 지원합니다.</p>
+
+    <table>
+
+    <tr>
+    <td><p>Re</p></td>
+    <td><p>Returns the real part of a complex number. For example:</p>
+    <example>
+    <p>
+    Re (2-5i) = 2
+    </p>
+    </example>
+    </td>
+    </tr>
+
+    <tr>
+    <td><p>Im</p></td>
+    <td><p>Returns the imaginary part of a complex number. For example:</p>
+    <example>
+    <p>
+    Im (2-5i) = -5
+    </p>
+    </example>
+    </td>
+    </tr>
+
+    <tr>
+    <td><p>conj</p></td>
+    <td><p>Returns the conjugate of a complex number. For example:</p>
+    <example>
+    <p>
+    conj (2-5i) = 2+5i
+    </p>
+    </example>
+    </td>
+    </tr>
+
+    <tr>
+    <td><p>Arg</p></td>
+    <td><p>Returns the argument of a complex number. For example:</p>
+    <example>
+    <p>
+    Arg (2-5i) = -68.1986
+    </p>
+    </example>
+    </td>
+    </tr> 
+
+    </table>
+
+
+</page>

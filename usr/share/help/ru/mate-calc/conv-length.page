@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="conv-length" xml:lang="ru">
+
+    <info>
+        <link type="guide" xref="index#conversion"/>
+    </info>
+
+	<title>Длина/Площадь/Объём</title>
+    
+    <p>Для преобразования между единицами длины, площади и объёма используйте оператор<em>in</em>.</p>
+    <example>
+    <p>6 meters in inches</p>
+    <p>1 acre in cm²</p>
+    <p>1 pint in mL</p>
+    </example>
+    <note>
+    <p>Преобразования единиц длины, площади и объёма должно выполняться с помощью клавиатуры.</p>
+    </note>
+</page>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="offline" xml:lang="ca">
+
+  <info>
+    <desc>Fer que el correu <app>Evolution</app> estigui de nou en línia.</desc>
+    
+    <link type="guide" xref="index#common-other-problems"/>
+    <link type="seealso" xref="mail-working-offline"/>
+
+    <revision pkgversion="3.13.4" version="0.4" date="2015-02-15" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Brian Grohe</name>
+      <email its:translate="no">grohe43@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Patrick O'Callaghan</name>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+<title>Per què està fora de línia el component de correu electrònic d'<app>Evolution</app>?</title>
+<p>Podeu haver iniciat <app>Evolution</app> amb l'opció de la línia d'ordres <cmd>--offline</cmd> per a forçar el mode fora de línia.</p>
+
+<p>Si aquest no és el cas i <app>Evolution</app> normalment funciona, però de sobte ha deixat de connectar-se als vostres comptes de correu electrònic, és possible que hàgiu fet clic a la icona de connexió que hi ha a la cantonada inferior esquerra. Quan s'està connectat, la icona s'assembla a un parell d'endolls connectats. Si els endolls estan separats, no hi ha cap connexió amb els vostres comptes de correu (i el botó <gui style="button">Envia /Rep</gui> està gris). Feu clic a la icona per a canviar el seu estat.</p>
+
+<p>Si el problema persisteix i esteu segur de no haver fet clic a la icona, però encara podeu accedir a la xarxa des d'altres aplicacions del vostre sistema (navegadors, FTP, SSH, ping, etc.) pot ser que la vostra connexió de xarxa no estigui ben configurada. Per a obtenir més informació, consulteu l'<link xref="help:gnome-help/net-problem" href="https://help.gnome.org/users/gnome-help/stable/net-problem">Ajuda d'escriptori</link> o busqueu ajuda als fòrums de suport a la distribució, llistes de correu, etc.</p>
+
+<p>Si voleu forçar a <app>Evolution</app> perquè estigui en mode en línia, assegureu-vos que <app>Evolution</app> no estigui funcionant i obriu una finestra <app>Terminal</app> i escriviu l'ordre següent:</p>
+     <p><cmd its:translate="no">
+         GIO_USE_NETWORK_MONITOR=base evolution
+     </cmd></p>
+
+<note style="warning"><p>El mode fora de línia forçat d'<app>Evolution</app> només es refereix al correu i no s'aplica als contactes i als calendaris.</p></note>
+
+</page>

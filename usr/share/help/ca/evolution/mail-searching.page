@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-searching" xml:lang="ca">
+ 
+  <info>
+    <desc>Cerca de missatges.</desc>
+    
+    <link type="guide" xref="searching-items"/>
+    <link type="guide" xref="mail-organizing"/>
+ 
+    <revision pkgversion="3.33.90" version="0.7" date="2019-09-05" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Max Vorobuov</name>
+      <email its:translate="no">vmax0770@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+ 
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+ 
+<title>Cerca de correu</title>
+
+<section id="search-single">
+<title>Cerca en un sol missatge</title>
+<p>Per a trobar text en el missatge que es mostra, seleccioneu <guiseq><gui>Edita</gui><gui>Cerca en el missatge…</gui></guiseq> des del menú principal.</p>
+</section>
+
+<section id="search-many">
+<title>Cercar a través de missatges</title>
+
+<section id="quick-search">
+<title>Cerca ràpida</title>
+<p>A la vista de correu electrònic, podeu cercar ràpidament missatges definint condicions.</p>
+<steps>
+<item><p>Feu clic a la icona de cerca <media type="image" mime="image/png" its:translate="no" src="figures/search-icon.png"/> per a ampliar la llista desplegable.</p></item>
+<item><p>Seleccioneu la condició de cerca de la llista.</p>
+<note style="tip"><p>Algunes cerques en comptes de correu remots (per exemple, IMAP+) poden ser lentes. Si seleccioneu una condició de cerca com ara <gui>El cos conté</gui> o <gui>El missatge conté</gui> i l'<app>Evolution</app> està en mode en línia i les carpetes a cercar no són <link xref="mail-working-offline">ja copiades localment per a l'ús fora de línia</link>, l'Evolution executa la cerca automàticament al servidor de correu si el servidor admet aquestes cerques. En fer una cerca per criteris ja disponibles localment (per exemple, destinataris o assumptes de missatges), la cerca s'executarà localment.</p></note>
+</item>
+<item><p>Seleccioneu l'àmbit des de la llista desplegable a la dreta a la caixa de text.</p>
+<note style="tip"><p>En l'àmbit del <gui>Compte actual</gui>, el terme "compte" fa referència als nodes del nivell superior a la<link xref="intro-main-window#e-mail"> llista de carpetes de correu</link>, com "En aquest ordinador" i comptes de correu remots.</p></note>
+</item>
+<item><p>Introduïu el text que voleu cercar i premeu <key>Retorn</key>.</p></item>
+<item><p><app>Evolution</app> mostra la llista de resultats.</p></item>
+</steps>
+<note style="tip"><p>Si comenceu directament des del quart pas, el text se cercarà a assumptes i adreces de correu, i l'abast serà la "Carpeta actual".</p></note>
+<note style="tip"><p>Si cerqueu missatges que no es troben a la mateixa carpeta molt sovint, és possible que vulgueu crear una carpeta de cerca; per a més detalls consulteu<link xref="mail-search-folders">Ús de carpetes de cerca</link>.</p></note>
+<p>Si voleu establir diverses condicions de cerca, haureu d'utilitzar la cerca avançada, que es descriu a continuació.</p>
+</section>
+
+<!-- As advanced-search, clearing-search, saved-searches, editing-a-saved-search are totally identical in all *-searching.page files, this is centrally in one file that's included by XInclude. See
+http://blogs.gnome.org/shaunm/2011/07/21/understanding-xinclude/ for how it works. -->
+<include xmlns="http://www.w3.org/2001/XInclude" href="xinclude-searching.xml" xpointer="xmlns(mal=http://projectmallard.org/1.0/)xpointer(/mal:info/mal:section)"/>
+
+<section id="free-form-expression">
+<title>Forma lliure d'expressió</title>
+<p>Una de les condicions de cerca és una <gui>expressió de forma lliure</gui>, que permet definir condicions complexes. Com a primer pas, l'expressió de forma lliure donada es divideix en paraules. Si la paraula no té cap prefix d'etiqueta (conegut), el valor es comprova si es troba a les capçaleres A, CC o Assumpte. En cas que es necessiti un espai en blanc o qualsevol altre caràcter especial, a continuació, tanqueu la paraula en cometes dobles. Per a obtenir unes cometes dobles, el doble dins del text citat; exemple: <code>cite ""here""</code> s'analitza com una paraula <code>cite "here"</code>. Per exemple, <code>f:John Smith</code> filtra els missatges on <code>John</code> és el remitent i el Per a, CC o Tema que contenen <code>Smith</code>, mentre <code>f:"John Smith"</code> filtra els missatges del remitent <code>John Smith</code>.</p>
+<p>La sintaxi de les etiquetes és <code>&lt;tag&gt;[-&lt;options&gt;]:value</code>. Les etiquetes són:</p>
+<table frame="all" rules="rows cols" shade="rows">
+<tr><td><p>Etiqueta</p></td><td><p>Abreviatura</p></td><td><p>Significat</p></td></tr>
+<tr><td><p its:translate="no">from</p></td><td><p its:translate="no">f</p></td><td><p its:locNote="Translators: 'From' is a header name, do not translate it">Des de la capçalera ha de coincidir (*)</p></td></tr>
+<tr><td><p its:translate="no">to</p></td><td><p its:translate="no">t</p></td><td><p its:locNote="Translators: 'To' is a header name, do not translate it">La capçalera ha de coincidir (*)</p></td></tr>
+<tr><td><p its:translate="no">cc</p></td><td><p its:translate="no">c</p></td><td><p its:locNote="Translators: 'CC' is a header name, do not translate it">La capçalera CC ha de coincidir (*)</p></td></tr>
+<tr><td><p its:translate="no">recips</p></td><td><p its:translate="no">r</p></td><td><p its:locNote="Translators: 'To' and 'CC' are the header names, do not translate it">Les capçaleres Per a o CC han de coincidir (*)</p></td></tr>
+<tr><td><p its:translate="no">subject</p></td><td><p its:translate="no">s</p></td><td><p its:locNote="Translators: 'Subject' is a header name, do not translate it">La capçalera del tema ha de coincidir (*)</p></td></tr>
+<tr><td><p its:translate="no">list</p></td><td><p/></td><td><p>La capçalera de la llista de correu ha de coincidir (*)</p></td></tr>
+<tr><td><p its:translate="no">header</p></td><td><p its:translate="no">h</p></td><td><p>la capçalera indicada ha de coincidir (*)</p>
+<p>la sintaxi és: <code>h:headerName=value</code> mentre que el signe igual només s'utilitza com a delimitador, no com a regla de concordança</p></td></tr>
+<tr><td><p its:translate="no">exists</p></td><td><p its:translate="no">e</p></td><td><p>si existeix una capçalera donada</p></td></tr>
+<tr><td><p its:translate="no">tag</p></td><td><p/></td><td><p>l'etiqueta d'usuari indicada està establerta en un missatge</p></td></tr>
+<tr><td><p its:translate="no">flag</p></td><td><p/></td><td><p>si s'ha definit una bandera determinada; Els valors especials coneguts són:</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Answered</code> - el missatge està marcat com a respost</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Deleted</code> - el missatge està marcat com a eliminat</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Draft</code> - el missatge està marcat com a esborrany</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Flagged</code> - el missatge està marcat com a important</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Seen</code> - el missatge està marcat com a vist (no sense llegir)</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Attachment</code> - el missatge té un fitxer adjunt</p>
+<p>Qualsevol altre valor es comprova per la seva no buidor.</p></td></tr>
+<tr><td><p its:translate="no">label</p></td><td><p its:translate="no">l</p></td><td><p>si s'estableix alguna <link xref="mail-labels">etiqueta</link> determinada al missatge</p></td></tr>
+<tr><td><p its:translate="no">size</p></td><td><p its:translate="no">sz</p></td><td><p>si la mida del missatge, en KB, és igual al valor donat</p>
+<p>Es reconeixen dues opcions, <code>&lt;</code> per a obtenir missatges de mida més petita i <code>&gt;</code> per a obtenir missatges amb una mida més gran que la donada. Exemple: <code>size-&gt;:1024</code> filtra els missatges de més d'1 MB.</p></td></tr>
+<tr><td><p its:translate="no">score</p></td><td><p its:translate="no">sc</p></td><td><p><code>score</code> compara l'etiqueta del missatge amb el valor donat; la comparació per defecte és igual, però, es poden utilitzar opcions similars a <code>size</code> a <code>&lt;</code> i <code>&gt;</code></p></td></tr>
+<tr><td><p its:translate="no">body</p></td><td><p its:translate="no">b</p></td><td><p>comprova el cos del missatge per a l'existència de la paraula donada; les opcions de comparació per defecte són per a <code>contains</code>, però es pot utilitzar una expressió regular si l'opció és una de les <code>regex</code>, <code>re</code> or <code>r</code>.</p></td></tr>
+<tr><td><p its:translate="no">sent</p></td><td><p/></td><td><p>la data d'enviament del missatge ha de coincidir (**)</p></td></tr>
+<tr><td><p its:translate="no">received</p></td><td><p its:translate="no">rcv</p></td><td><p>la data de Rebut del missatge ha de coincidir (**)</p></td></tr>
+<tr><td><p its:translate="no">attachment</p></td><td><p its:translate="no">a</p></td><td><p>el missatge té (si el valor no és cap de <code>no</code>, <code>false</code>) <code>0</code>) un fitxer adjunt. Similar a l'etiqueta <code>flag:attachment</code> .</p></td></tr>
+<tr><td><p its:translate="no">location</p></td><td><p its:translate="no">m</p></td><td><p>Comprova la ubicació del missatge. El valor d'ubicació (URL) es pot trobar a la carpeta <gui>Propietats</gui>. Exemple: <code>location:"On This Computer/Inbox"</code></p></td></tr>
+<tr><td><p its:translate="no">mid</p></td><td><p/></td><td><p>Compara l'identificador del missatge.</p></td></tr>
+</table>
+<p>(*) Les comparacions de capçalera poden tenir una opció de tipus coincident. El valor per defecte és comprovar si hi ha un <code>conté</code>. Les opcions disponibles són:</p>
+<table frame="all" rules="rows cols" shade="rows">
+<tr><td><p>Opció</p></td><td><p>Abreviatura</p></td><td><p>Significat</p></td></tr>
+<tr><td><p its:translate="no">contains</p></td><td><p its:translate="no">c</p></td><td><p>coincidències amb el contingut</p></td></tr>
+<tr><td><p its:translate="no">has-words</p></td><td><p its:translate="no">w</p></td><td><p>coincideix si conté tota la paraula</p></td></tr>
+<tr><td><p its:translate="no">matches</p></td><td><p its:translate="no">m</p></td><td><p>coincidència exacta del valor</p></td></tr>
+<tr><td><p its:translate="no">starts-with</p></td><td><p its:translate="no">sw</p></td><td><p>el valor de capçalera comença amb el valor donat</p></td></tr>
+<tr><td><p its:translate="no">ends-with</p></td><td><p its:translate="no">ew</p></td><td><p>el valor de la capçalera acaba amb el valor donat</p></td></tr>
+<tr><td><p its:translate="no">soundex</p></td><td><p its:translate="no">se</p></td><td><p>el valor de la capçalera sona similar al valor donat</p></td></tr>
+<tr><td><p its:translate="no">regex</p></td><td><p its:translate="no">r</p></td><td><p>el valor donat és una expressió regular</p></td></tr>
+<tr><td><p its:translate="no">full-regex</p></td><td><p its:translate="no">fr</p></td><td><p>un altra tipus d'expressió regular</p></td></tr>
+</table>
+<p>(**) Les dates es poden escriure relativament (nombre positiu significa <code>en els últims X dies</code>, mentre que negatiu va cap al futur. Per exemple, per a rebre missatges rebuts en els darrers 10 dies utilitzeu: <code>recv:10</code>. També es pot utilitzar una data exacta, el format pot ser <code>YYYY-MM-DD</code> (el preferit), després el format ISO 8601 o un format específic de configuració regional de data / data i hora. Si l'anàlisi de data i hora falla, s'omet la condició. Les comparacions de dates també poden tenir opcions addicionals, com <code>&lt;</code>, <code>=</code> o <code>&gt;</code>, on el <code>&gt;</code> és l'opció de comparació predeterminada.</p>
+<p>Hi ha tres etiquetes especials, que requereixen una notació especial. Són:</p>
+<list>
+<item><p><code its:translate="no">not:(....)</code></p></item>
+<item><p><code its:translate="no">and:(....)</code></p></item>
+<item><p><code its:translate="no">or:(....)</code></p></item>
+</list>
+<p>que permet crear expressions especialitzades. La conjunció per defecte (la més externa) és <code>and</code>. Per a canviar-lo per <code>or</code> tancar tot el filtre en <code>or:(....)</code>. Per exemple: <code>f:Bugzilla t:John</code> filtra tots els missatges que contenen <code>Bugzilla</code> de remitent i <code>John</code> a Per a, mentre que <code>or:(f:Bugzilla t:John)</code> filtra els missatges de Bugzilla o adreçats a John.</p>
+</section>
+<section id="free-form-expression-examples">
+<title>Exemples d'expressió de forma lliure</title>
+<p>A continuació es mostra una llista d'algunes expressions lliures:</p>
+<table rules="rows">
+<tr><td><p>Expressió</p></td><td><p>Significat</p></td></tr>
+<tr><td><p><code>f:John</code></p></td><td><p>Missatges de <code>John</code></p></td></tr>
+<tr><td><p><code>s-has-words:"green blue"</code></p></td><td><p>Missatges, que contenen <code>blue</code> i <code>green</code> a l'assumpte</p></td></tr>
+<tr><td><p><code>r-ew:example.com</code></p></td><td><p>L'adreça dels destinataris (capçaleres A/Cc) acaba amb <code>example.com</code></p></td></tr>
+<tr><td><p><code>h-starts-with:Cc=Alice</code></p></td><td><p>El <code>Cc</code> comença amb la paraula <code>Alice</code></p></td></tr>
+<tr><td><p><code>e:X-Secret-Header</code></p></td><td><p>Un <code>X-Secret-Header</code> existeix en el missatge</p></td></tr>
+<tr><td><p><code>l:work</code></p></td><td><p>L'etiqueta <code>work</code> està establerta al missatge</p></td></tr>
+<tr><td><p><code>sz-&lt;:10</code></p></td><td><p>La mida del missatge és inferior a 10 KB</p></td></tr>
+<tr><td><p><code>sz-&gt;:100</code></p></td><td><p>La mida del missatge és superior a 100 KB</p></td></tr>
+<tr><td><p><code>b:important</code></p></td><td><p>El cos conté una paraula <code>important</code></p></td></tr>
+<tr><td><p><code>sent:7</code></p></td><td><p>Missatges enviats en els últims 7 dies</p></td></tr>
+<tr><td><p><code>rcv-=:2020-02-02</code></p></td><td><p>Missatges rebuts el 2 de febrer de 2020</p></td></tr>
+<tr><td><p><code>a:1</code></p></td><td><p>Missatges amb fitxer adjunt</p></td></tr>
+<tr><td><p><code>a:0</code></p></td><td><p>Missatges sense fitxers adjunts</p></td></tr>
+<tr><td><p><code>and:(or:(r:Alice r:Bob) not:(r:Smith))</code></p></td><td><p>Missatges el destinatari dels quals és <code>Alice</code> o <code>Bob</code>, però no <code>Smith</code></p></td></tr>
+<tr><td><p><code>f:Bob rcv-&gt;:2020-01-01 rcv-&lt;:2020-12-31</code></p></td><td><p>Missatges de <code>Bob</code>, rebuts durant l'any 2020</p></td></tr>
+<tr><td><p><code>not:(flag:Seen) f:Bob rcv-&gt;:2020-01-01 rcv-&lt;:2020-12-31</code></p></td><td><p>Missatges no llegits de <code>Bob</code>, rebuts durant l'any 2020</p></td></tr>
+<tr><td><p><code>flag:Seen a:1 sz-&gt;:1024 f:Bob rcv:31</code></p></td><td><p>Llegir missatges amb fitxer adjunt de més d'1 MB de <code>Bob</code>, rebuts durant els darrers 31 dies</p></td></tr>
+<tr><td><p><code>m:"On This Computer/Inbox"</code></p></td><td><p>Missatges emmagatzemats a la carpeta <code>On This Computer/Inbox</code></p></td></tr>
+<tr><td><p><code>location-no:"On This Computer/Inbox"</code></p></td><td><p>Missatges emmagatzemats a tota la carpeta excepte a la carpeta <code>On This Computer/Inbox</code></p></td></tr>
+</table>
+</section>
+</section> 
+</page>

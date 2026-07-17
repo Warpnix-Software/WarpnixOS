@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-filters-actions" xml:lang="ca">
+
+  <info>
+    <desc>Accions disponibles per a configurar el filtrat.</desc>
+
+    <link type="seealso" xref="mail-filters"/>
+
+    <revision pkgversion="3.0.2" version="0.2" date="2011-08-25" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-organize-filters.html.en#usage-mail-org-filters-new -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Accions de filtre disponibles</title>
+
+<list>
+<item><p>Mou a la carpeta:</p>
+<p>Mou el missatge a la carpeta que especifiqueu.</p></item>
+
+<item><p>Copia a carpeta:</p>
+<p>Posa una còpia del missatge a la carpeta que especifiqueu.</p></item>
+
+<item><p>Suprimeix:</p>
+<p>Marca el missatge per a suprimir. El missatge es podrà recuperar fins que suprimiu definitivament o buideu la paperera.</p></item>
+
+<item><p>Atura el processament:</p>
+<p>Seleccioneu-ho si voleu que tots els altres filtres ignorin aquest missatge. Tingueu en compte que només s'ignoraran els filtres que figuren després d'aquesta regla en particular.</p></item>
+
+<item><p>Defineix l'etiqueta:</p>
+<p>Afegeix una etiqueta a un missatge.</p></item>
+
+<item><p>Assigna el color:</p>
+<p>Marca el missatge amb el color que trieu.</p></item>
+
+<item><p>Assigna la puntuació:</p>
+<p>Assigna al missatge una puntuació numèrica.</p></item>
+
+<item><p>Ajusta la puntuació:</p>
+<p>Canvia la puntuació numèrica per la quantitat que hàgiu establert.</p></item>
+
+<item><p>Estableix l'estat:</p>
+<p>Estableix l'estat del missatge. L'estat pot ser: respost a, esborrany, important, llegit o no desitjat.</p></item>
+
+<item><p>Desfés la definició de l'estat:</p>
+<p>Si el missatge té un valor d'estat, el desactiva. Si no s'estableix un valor d'estat, no fa res.</p></item>
+
+<item><p>So:</p>
+<p>Fa que el sistema emeti un so.</p></item>
+
+<item><p>Reprodueix un so:</p>
+<p>Seleccioneu un fitxer de so perquè <app>Evolution</app> el reprodueixi.</p></item>
+
+<item><p>Executa el programa:</p>
+<p><app>Evolution</app> executa una aplicació.</p></item>
+
+<item><p>Envia la sortida al programa:</p>
+<p>Envia el missatge a l'aplicació que trieu. No s'espera cap valor de retorn. Aquesta característica es pot utilitzar per a crear publicacions web automàtiques des de missatges de correu electrònic o per al processament posterior de missatges que no admet <app>Evolution</app>.</p></item>
+
+<item><p>Reenvia a:</p>
+<p>Reenvia el missatge a una altra adreça de correu electrònic.</p></item>
+
+</list>
+</page>

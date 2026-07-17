@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="rules" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="index#play"/>
+    <link type="seealso" xref="flags"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Єкатерина Герасимова (Ekaterina Gerasimova)</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+
+  <title>Правила гри</title>
+
+  <p>Метою у <app>Мінах</app> є розмінування мінного поля без спричинення вибуху мін.</p>
+
+  <steps>
+    <item>
+      <p>Спочатку слід вибрати один із трьох типових розмірів поля або вказати параметри нетипового поля.</p>
+    </item>
+    <item>
+      <p>Гра починається із поля, усі клітинки якого закрито плитками. Клацніть на плитці, щоб її зняти. Під плиткою може бути:</p>
+      <list>
+        <item>
+	  <p>Кольорове число, яке відповідає кількості мін під сусідніми плитками. Це число допоможе вам визначити, під якими плитками розташовано міни, щоб ви могли позначити відповідні клітинки <link xref="flags">прапорцями</link>.</p>
+        </item>
+        <item>
+	  <p>Порожня плитка, тобто плитка, під сусідніми плитками якої немає мін.</p>
+        </item>
+        <item>
+	  <p>Міна, яка спричиняє вибух і завершення гри.</p>
+	</item>
+      </list>
+    </item>
+    <item>
+      <p>Повторюйте попередній крок, аж доки не відкриєте усі плитки, під якими немає мін.</p>
+    </item>
+  </steps>
+
+  <p>Якщо ви завершите гру достатньо швидко, ваш результат буде додано до <link xref="high-scores">найкращих результатів</link>.</p>
+
+</page>

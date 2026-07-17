@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="board-size" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="index#tips"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.3" date="2018-09-01" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2011</years>
+    </credit>
+    <credit type="author copyright editor">
+      <name>Єкатерина Герасимова (Ekaterina Gerasimova)</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Як змінити розміри ігрового поля</title>
+
+  <p>Ви можете вибрати розмір поля після запуску програми.</p>
+
+  <p>Виберіть один із таких розмірів:</p>
+  <list>
+    <item><p>поле 8 × 8 із 10 мінами</p></item>
+    <item><p>поле 16 × 16 із 40 мінами</p></item>
+    <item><p>поле 30 × 16 із 99 мінами</p></item>
+    <item><p>нетипове поле, де ви можете вибрати розміри і кількість мін власноруч</p></item>
+  </list>
+
+  <p>Щоб змінити <link xref="board-size">розмір поля</link> згодом, натисніть кнопку <gui style="button">Змінити складність</gui> праворуч.</p>
+
+</page>

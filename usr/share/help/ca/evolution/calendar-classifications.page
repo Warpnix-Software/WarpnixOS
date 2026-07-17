@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="calendar-classifications" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#calendar-advanced"/>
+
+    <revision pkgversion="3.28.2" version="0.5" date="2018-07-09" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+      https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#bxmtbjb
+      -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Restringiu la visibilitat de les cites en servidors remots.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Ús de classificacions</title>
+
+  <p>Si utilitzeu un calendari en un servidor remot (com Novell GroupWise o Microsoft Exchange), podeu seleccionar una classificació per a determinar qui pot veure'l.</p>
+
+  <p>Per a classificar una cita, feu clic a <guiseq><gui>Opcions</gui><gui>Classificació</gui></guiseq> i seleccioneu una classificació a l'editor. <gui>Pública</gui> és la categoria per defecte, i una cita pública la pot veure qualsevol persona a la xarxa d'intercanvi de calendaris. <gui>Privada</gui> assenyala un nivell de seguretat superior, i <gui>Confidencial</gui> un nivell encara més alt.</p>
+
+  <p>Els diferents nivells varien segons la configuració del servidor; consulteu amb l'administrador del sistema o ajusteu la configuració de delegació.</p>
+
+  <p>Si voleu que els esdeveniments, les notes i les tasques es classifiquin com a privats de manera predeterminada, habiliteu la preferència a <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Calendari i tasques</gui><gui>General</gui><gui>Miscel·lània</gui></guiseq>.</p>
+
+</page>

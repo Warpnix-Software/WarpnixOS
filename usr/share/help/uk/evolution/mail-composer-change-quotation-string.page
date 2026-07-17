@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:e="http://projectmallard.org/experimental/" xmlns:if="http://projectmallard.org/if/1.0/" type="topic" id="mail-composer-change-quotation-string" xml:lang="uk">
+
+  <info>
+    <desc>Неможливо змінити початковий запис цитування, який додається у відповідях на повідомлення.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+    <link type="seealso" xref="mail-composer-reply"/>
+    <link type="seealso" xref="mail-composer-forward"/>
+
+    <revision pkgversion="3.25.90" version="0.6" date="2017-08-01" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Зміна запису «У дату, особа пише:» у відповідях</title>
+
+<note style="info package">
+  <p>Для виконання цих дій вам, ймовірно, слід встановити пакунок <sys>dconf-editor</sys>.</p>
+  <if:choose>
+    <if:when test="action:install">
+      <p><link action="install:dconf-editor" href="https://ftp.gnome.org/pub/gnome/sources/dconf/" style="button">Встановити dconf-editor</link></p>
+    </if:when>
+  </if:choose>
+</note>
+
+<p>Досвідчені користувачі можуть змінити цей рядок.</p>
+
+<list>
+<item><p>Запустіть програму <app>dconf-editor</app>.</p></item>
+<item><p>Перейдіть до <code>org.gnome.evolution.mail</code>.</p></item>
+<item><p>Введіть бажаний рядок цитування як значення ключа <code>composer-message-attribution</code>.</p></item>
+</list>
+
+<p its:locNote="Translators: Do NOT translate the variable names inside the ${brackets}!">Типовим рядком українською є: <code>"У ${AbbrevWeekdayName}, ${Year}-${Month}-${Day} у ${24Hour}:${Minute} ${TimeZone}, ${Sender} пише:"</code></p>
+
+<p>Можна скористатися такими замінниками:</p>
+<list>
+<item><p><code its:translate="no">{Sender}</code></p></item>
+<item><p><code its:translate="no">{SenderName}</code></p></item>
+<item><p><code its:translate="no">{SenderEMail}</code></p></item>
+<item><p><code its:translate="no">{AbbrevWeekdayName}</code></p></item>
+<item><p><code its:translate="no">{WeekdayName}</code></p></item>
+<item><p><code its:translate="no">{AbbrevMonthName}</code></p></item>
+<item><p><code its:translate="no">{MonthName}</code></p></item>
+<item><p><code its:translate="no">{Day}</code> (формат: 01-31)</p></item>
+<item><p><code its:translate="no">{ Day}</code> (формат: 1-31)</p></item>
+<item><p><code its:translate="no">{24Hour}</code></p></item>
+<item><p><code its:translate="no">{12Hour}</code></p></item>
+<item><p><code its:translate="no">{AmPmUpper}</code></p></item>
+<item><p><code its:translate="no">{AmPmLower}</code></p></item>
+<item><p><code its:translate="no">{DayOfYear}</code> (формат: 1-366)</p></item>
+<item><p><code its:translate="no">{Month}</code> (формат: 01-12)</p></item>
+<item><p><code its:translate="no">{Minute}</code></p></item>
+<item><p><code its:translate="no">{Seconds}</code></p></item>
+<item><p><code its:translate="no">{2DigitYear}</code> (наприклад, 15 для 2015 року)</p></item>
+<item><p><code its:translate="no">{Year}</code></p></item>
+<item><p><code its:translate="no">{TimeZone}</code></p></item>
+</list>
+
+</page>

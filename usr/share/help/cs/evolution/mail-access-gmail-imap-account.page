@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-access-gmail-imap-account" xml:lang="cs">
+
+  <info>
+    <desc>Jak nastavit účet Gmail IMAP.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+    <link type="guide" xref="google-services"/>
+    <link type="seealso" xref="mail-account-manage-imap-plus"/>
+
+    <revision pkgversion="3.29.91" version="0.4" date="2018-08-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  </info>
+
+<!-- Page only exists for the <note>, apart from that nothing special. -->
+
+<title>Přístup k účtu Gmail IMAP přes <app>Evolution</app></title>
+
+<p>Pokud chcete k Gmailu přistupovat přes IMAP, musít IMAP zapnout ve svém účtu Google. Další informace viz <link href="https://mail.google.com/support/bin/answer.py?answer=77695">Nápověda pro Gmail</link>.</p>
+
+<p>Je doporučeno nastavit Gmail jako účet on-line v GNOME. Na více informací se prosím <link xref="help:gnome-help/accounts" href="https://help.gnome.org/users/gnome-help/stable/accounts">podívejte do nápovědy k uživatelskému prostředí GNOME</link>. Když tak učiníte, účet Gmail se objeví uvedený v aplikaci <app>Evolution</app>.</p>
+
+<p>Ohledně nastavení účtu v <app>Evolutionu</app> se podívejte na kapitolu <link xref="mail-account-manage-imap-plus">Nastavení poštovního účtu IMAP+</link>. Pamatujte ale, že ne všechny volby bude možné upravovat v aplikaci <app>Evolution</app> a takovýto účet bude možné odstranit jen v aplikaci <app>Účty on-line</app>.</p>
+
+<!-- Evolution does not support Google's proprietary SASL XOAUTH2 implementation which makes Evolution a "less secure app" for Google. -->
+<p>Alternativou k nastavení účtu on-line v GNOME je povolit <link href="https://www.google.com/settings/security/lesssecureapps">přístup méně zabezpečených aplikací v nastavení svého účtu Gmail</link>.</p>
+
+<note style="tip"><p>Z důvodů výkonosti je doporučeno <gui>Používat skutečnou složku pro koš</gui> jejím nastavením na <gui>[GMail]/Koš</gui> a <gui>Používat skutečnou složku pro Nevyžádanou poštu</gui> její nastavením na <gui>[GMail]/Nevyžádané</gui> na kartě <link xref="mail-default-folder-locations"><gui>Výchozí hodnoty</gui></link> v nastavení účtu.</p></note>
+
+</page>

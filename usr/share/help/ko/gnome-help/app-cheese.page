@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="app-cheese" xml:lang="ko">
+
+  <info>
+    <credit type="author">
+      <name>우분투 문서화 팀</name>
+      <email>ubuntu-doc@lists.ubuntu.com</email>
+    </credit>
+    <desc>그것은 당신의 개인 사진과 같습니다.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="media#videos"/>
+    <revision version="16.04" date="2016-03-16" status="review"/>
+  </info>
+
+  <title>웹캠으로 재미있는 사진과 영상을 만드세요</title>
+
+  <p><app>Cheese</app> 응용 프로그램과 여러분의 웹캠으로, 여러분은 사진과 동영상을 촬영할 수 있고, 특수 효과를 적용하고 다른 사람들과 재미를 나눌 수 있습니다.</p>
+
+  <p>Cheese 사용에 궁금한점이 있으시면, <link href="help:cheese">Cheese 유저 가이드</link> 를 참조하세요.</p>
+
+</page>

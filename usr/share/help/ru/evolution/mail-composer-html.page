@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-composer-html" xml:lang="ru">
+
+  <info>
+    <desc>Изменение шрифтов, использование цветов, вставка изображений, таблиц и ссылок.</desc>
+    <link type="guide" xref="index#mail-composing"/>
+
+    <revision pkgversion="3.5.90" version="0.5" date="2012-08-16" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-html -->
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Форматирование писем (в режиме простого текста и HTML)</title>
+
+<p/>
+
+<p>Средства форматирования текста, предназначенные для базового выравнивания и форматирования абзацев, доступны на панели инструментов, расположенной под строкой <gui>Тема</gui>. Они также доступны в меню <gui>Вставка</gui> и <gui>Формат</gui>.</p>
+     <p>Для значков на панели инструментов предусмотрены всплывающие подсказки, которые появляются при удержании указателя мыши над кнопками.</p>
+
+<p>Как правило, в текстовом сообщении невозможно задать цвет или размер текста или внедрить изображения. Однако современные почтовые программы позволяют делать это с помощью формата HTML (этот формат также используется для веб-страниц).</p>
+
+<p>У некоторых пользователей нет почтовых клиентов, поддерживающих HTML. Кроме того, часть пользователей предпочитает не принимать отформатированные в HTML письма, так как это занимает больше времени при загрузке и отображении. Поэтому <app>Evolution</app> отправляет сообщения простым текстом, пока явным образом не будет указано использовать HTML.</p>
+
+  <section id="formatting-options-plain" style="2column">
+    <title>Параметры форматирования простого текста</title>
+  </section>
+
+  <section id="formatting-options-html" style="2column">
+    <title>Параметры форматирования, доступные только для HTML</title>
+  </section>
+
+</page>

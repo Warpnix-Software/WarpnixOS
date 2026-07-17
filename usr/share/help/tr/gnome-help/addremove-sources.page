@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="addremove-sources" xml:lang="tr">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntu Belgelendirme Takımı</name>
+    </credit>
+    <desc>Ubuntu'nun kurulum ve yükseltmeler için kullandığı yazılım kaynaklarını genişletmek için depolar ekleyin.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove"/>
+    <revision version="20.10" date="2020-09-13" status="review"/>
+  </info>
+
+  <title>Yazılım depoları ekle</title>
+
+  <p>Yazılımlar, Ubuntu yazılım deposunun yanı sıra üçüncü taraf kaynaklarda da mevcuttur. Eğer üçüncü taraf bir yazılım deposundan bir yazılım kurmak istiyorsanız depoyu Ubuntu'nun mevcut depolar listesine eklemeniz gerekir.</p>
+
+  <note style="warning">
+    <p>Sadece güvendiğiniz kaynakların yazılım depolarını ekleyin!</p>
+    <p>Üçüncü taraf yazılım depoları Ubuntu üyelerince güvenlik ve güvenirlik açısından denetlenmemiştir ve bilgisayarınıza zarar verebilecek yazılımlar içerebilir.</p>
+  </note>
+
+<p>
+</p>
+   <p>Depo eklemek için:</p>
+
+  <steps>
+    <item>
+      <p><app>Yazılım ve Güncellemeler</app> uygulamasını <em>Etkinlikler</em> arama çubuğu aracılığıyla açın.</p>
+    </item>
+    <item>
+      <p><gui>Diğer Yazılımlar</gui> sekmesine geçin.</p>
+    </item>
+    <item>
+      <p><gui>Ekle</gui>'ye tıklayın ve deponun APT satırını girin. Bu, deponun sayfasında mevcut olmalı ve şuna benzemeli:</p>
+      <p>
+        <code its:translate="no">deb http://archive.ubuntu.com/ubuntu/ resolute main</code>
+      </p>
+    </item>
+    <item>
+      <p><gui>Kaynak Ekle</gui>'ye tıklayın. Yetkilendirme penceresine şifrenizi girin.</p>
+    </item>
+    <item>
+      <p>
+        Close the <app>Software &amp; Updates</app> window. <app>App Center</app> will then
+        check your software sources for new software.
+      </p>
+    </item>
+    <item>
+      <p>Çoğu yazılım deposu, indirilen paketleri doğrulamak için bir kayıt anahtarı sağlar. Böylelikle yukarıdaki adımlara ek olarak, kayıt anahtarının (GPG anahtarı) nasıl yükleneceği ve indirileceği için olası yönergeleri izlemelisiniz.</p>
+    </item>
+  </steps>
+
+</page>

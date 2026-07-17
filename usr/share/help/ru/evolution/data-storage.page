@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="data-storage" xml:lang="ru">
+
+  <info>
+    <desc>Где на жёстком диске <app>Evolution</app> хранит мои данные?</desc>
+    
+    <link type="guide" xref="index#common-other-problems"/>
+
+    <revision pkgversion="3.22.5" version="0.6" date="2017-02-19" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Расположения хранилищ данных</title>
+
+<note style="tip">
+<p>Этот раздел предназначен для опытных пользователей, которые планируют заниматься отладкой проблем.</p>
+</note>
+
+<p><app>Evolution</app> 3.6 и более поздних версий хранит данные в соответствии со <link href="https://www.freedesktop.org/wiki/Specifications/basedir-spec">спецификацией базового каталога XDG</link>. По умолчанию это означает:</p>
+
+<terms>
+<item>
+<title>Файлы данных пользователя</title>
+<p><file>$HOME/.local/share/evolution</file></p>
+</item>
+<item>
+<title>Различные файлы конфигурации и состояния</title>
+<p><file>$HOME/.config/evolution</file></p>
+</item>
+<item>
+<title>Параметры учётной записи</title>
+<p><file>$HOME/.config/evolution/sources</file></p>
+</item>
+<item>
+<title>Параметры конфигурации в GSettings</title>
+<p><file>$HOME/.config/dconf</file></p>
+<note style="info"><p>В этом расположении также находятся настройки других приложений. Чтобы просмотреть только данные, относящиеся к Evolution, воспользуйтесь командами <link href="https://developer.gnome.org/dconf/"><app>Dconf</app></link> <cmd>dconf dump /org/gnome/evolution/</cmd> и <cmd>dconf dump /org/gnome/evolution-data-server/</cmd>.</p></note>
+</item>
+<item>
+<title>Освобождаемые кэши данных</title>
+<p><file>$HOME/.cache/evolution</file></p>
+</item>
+</terms>
+
+</page>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-timezones" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="index#calendar-advanced"/>
+
+    <revision pkgversion="3.1.5" version="0.4" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/bshlzlu.html.en -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Використання часових поясів у календарі.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Використання часових поясів</title>
+
+  <p>У <app>Evolution</app> передбачено підтримку роботи із декількома часовими поясами.</p>
+
+<section id="default-timezone">
+  <title>Встановлення загальних часових поясів</title>
+
+  <p>Типово <app>Evolution</app> використовує загальносистемний часовий пояс. Змінити пояс можна за допомогою пункту <guiseq><gui>Зміни</gui><gui>Параметри</gui> <gui>Календар та завдання</gui><gui>Загальне</gui><gui>Час</gui> <gui>Часовий пояс</gui></guiseq>.</p>
+
+  <p>Якщо ви часто працюєте із людьми, які живуть у іншому часовому поясі, ви можете встановити показ другого часового поясу на панелі перегляду розкладу дня календаря. Встановити другий часовий пояс можна за допомогою пункту <guiseq><gui>Зміни</gui><gui>Параметри</gui> <gui>Календар та завдання</gui><gui>Загальне</gui><gui>Час</gui> <gui>Додатковий часовий пояс</gui></guiseq>.</p>
+
+</section>
+
+<section id="appointment-timezone">
+  <title>Встановлення часового поясу для зустрічі</title>
+
+  <p>Ви також можете налаштувати дані часового поясу для кожної окремої зустрічі. Для цього <link xref="calendar-usage">додайте новий або змініть наявний запис зустрічі</link>. На панелі <gui>Часовий пояс</gui> натисніть кнопку <gui style="button">Вибрати…</gui>, щоб налаштувати часовий пояс. Наприклад, якщо ви мешкаєте у Нью-Йорку, але маєте телезустріч із кимось із Каліфорніх, вам слід переконатися, що ваш розклади координовано. Встановлення часових поясів для окремих зустрічей допомагає уникнути потенційних проблем.</p>
+
+</section>
+
+</page>

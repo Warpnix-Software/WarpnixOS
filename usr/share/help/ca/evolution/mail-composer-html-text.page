@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-html-text" xml:lang="ca">
+
+  <info>
+    <desc>Canvieu les mides, els estils i els colors del tipus de lletra a l'editor de correu.</desc>
+    <link type="guide" xref="mail-composer-html#formatting-options-html"/>
+
+    <revision pkgversion="3.5.90" version="0.7" date="2012-08-16" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-html -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Formatar el text en HTML</title>
+
+     <p>Les eines de format de text que només estan disponibles en format HTML es troben a la segona barra d'eines, sota la línia d'<gui>Assumpte</gui> després d'habilitar el format HTML. També apareixen als menús <gui>Insereix</gui> i <gui>Formata</gui>.</p>
+     <p>Les icones de la barra d'eines s'expliquen als indicadors de funció que apareixen quan es manté el punter del ratolí sobre els botons.</p>
+
+<section id="text-styles">
+      <title>Estils de text:</title>
+      <p>Utilitzeu aquests botons de la barra d'eines més baixa per a determinar la forma en què es visualitzarà el vostre correu electrònic. Si teniu text seleccionat, l'estil s'aplicarà al text seleccionat. Si no teniu text seleccionat, l'estil s'aplicarà al que escriviu a continuació.</p>
+
+<table frame="all" rules="all">
+  <tr>
+    <td><p>Botó</p></td>
+    <td><p>Descripció</p></td>
+  </tr>
+  <tr>
+    <td><p>Predeterminat</p></td>
+    <td><p>Nom del tipus de lletra.</p></td>
+  </tr>
+  <tr>
+    <td><p>+0</p></td>
+    <td><p>Mida del tipus de lletra.</p></td>
+  </tr>
+  <tr>
+    <td><p><media type="image" its:translate="no" src="./figures/color-000000.png"/></p></td>
+    <td><p>Color del text.</p><p>El quadre mostra el color de text actual. Si teniu text seleccionat, el color s'aplicarà al text seleccionat. Si no teniu text seleccionat, el color s'aplica a qualsevol cosa que escriviu a continuació.</p></td>
+  </tr>
+  <tr>
+    <td><p><media type="image" its:translate="no" src="./figures/color-ccccccffffff.png" width="26" height="26"/></p></td>
+    <td><p>Color de fons del text.</p><p>El quadre mostra el color de text actual. Si teniu text seleccionat, el color s'aplicarà al text seleccionat. Si no teniu text seleccionat, el color s'aplica a qualsevol cosa que escriviu a continuació.</p></td>
+  </tr>
+  <tr>
+    <td><p>Negreta A</p></td>
+    <td><p>Ressalta el text en negreta.</p></td>
+  </tr>
+  <tr>
+    <td><p>Cursiva A</p></td>
+    <td><p>Posa en cursiva el text.</p></td>
+  </tr>
+  <tr>
+    <td><p>Subratllat A</p></td>
+    <td><p>Subratlla el text.</p></td>
+  </tr>
+  <tr>
+    <td><p>A subratllada</p></td>
+    <td><p>Subratlla el text.</p></td>
+  </tr>
+</table>
+
+<p>Els altres botons s'expliquen a <link xref="mail-composer-html#formatting-options-html"/>.</p>
+
+</section>
+
+</page>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-imap-subscriptions" xml:lang="uk">
+
+  <info>
+    <desc>Підписки на теки IMAP.</desc>
+    
+    <link type="guide" xref="index#mail-advanced"/>
+    <link type="guide" xref="mail-account-manage-imap-plus#other-settings"/>
+
+    <revision pkgversion="3.0.2" version="0.3" date="2011-08-05" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-subscriptions.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+
+<title>Підписки IMAP</title>
+
+<p>Оскільки відкриття багатьох тек IMAP на сервері потребує певного часу, ви можете визначити, у яких теках IMAP слід шукати нові повідомлення і які теки слід показувати у <app>Evolution</app>, а також визначити теки, які слід ігнорувати за допомогою <gui>вікна керування підписками IMAP</gui>.</p>
+<steps>
+<item><p>Виберіть пункт меню <guiseq><gui>Тека</gui><gui>Підписки</gui></guiseq> або клацніть правою кнопкою миші на вузлі верхнього рівня у списку облікового запису електронної пошти і виберіть у контекстному меню пункт <gui>Організувати підписки</gui>.</p></item> 
+<item><p>Якщо у вас є облікові записи на декількох серверах, виберіть сервер, на якому ви хочете керувати вашими підписками.</p></item>
+<item><p><app>Evolution</app> покаже список файлів і тек, які є доступними на сервері IMAP.</p></item>
+<item><p>Позначте файл або теку клацанням на них.</p>
+<p>Вам слід вибрати принаймні теку <gui>Вхідні</gui>. Залежно від способу налаштовування сервера IMAP, до списку доступних файлів може бути включено теки, які не пов'язано із електронною поштою. Якщо це так, ви можете ігнорувати ці теки.</p></item>
+<item><p>Клацніть на позначці теки, щоб додати теку до ваших підписок.</p></item>
+</steps>
+
+</page>

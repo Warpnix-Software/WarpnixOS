@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="tip" id="gnome-on-ubuntu" xml:lang="gl">
+
+  <info>
+    <credit type="author">
+      <name>Equipo de documentación de Ubuntu</name>
+    </credit>
+    <desc>Lista de modificacións notábeis do Escritorio GNOME en Ubuntu.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="shell-overview" group="#first"/>
+    <link type="guide" xref="index" group="intro"/>
+    <revision version="0.1" date="2022-04-28" status="review"/>
+  </info>
+
+  <title>Sobre GNOME en ubuntu</title>
+
+  <p>O Escritorio de Ubuntu vén instalado cunha versión lixeiramente mdoificada do Ambiente de Escritorio GNOME. En xeral, esta guía de escritorio refírese a GNOME tal e como o publican os desenvolvedores de GNOME. Velaquí unha lista das diferenzas notorias entre GNOME en Ubunto e un GNOME simple.</p>
+
+  <list type="disc">
+  <item>
+    <p>Ubuntu vén con Firefox no canto do navegador GNOME Web.</p>
+  </item>
+  <item>
+    <p>Ubuntu vén co cliente de escritorio remoto Remmina no canto de con Conexións de GNOME.</p>
+  </item>
+    <item>
+      <p>Inclúese a extensión Appindicators. Esta extensión activa as iconas no recanto superior dereito dalgunhas aplicacións.</p>
+    </item>
+    <item>
+      <p>Inclúese a extensión da Doca de Ubuntu. Esta extensión fornece a barra lateral esquerda para executar aplicacións.</p>
+    </item>
+    <item>
+      <p>Inclúese a extesnsión de iconas de escritorio NG. Esta extensión activa o uso de iconas no escritorio.</p>
+    </item>
+    <item>
+      <p>Ademais dos fondos de escritorio de Ubuntu, o tema predeterminado é Yaro e o tipo de letra predeterminado é Ubuntu.</p>
+    </item>
+    <item>
+      <p>Inclúense os botóns de minimizar e maximizar nas barras de título das xanelas.</p>
+    </item>
+  </list>
+
+
+
+</page>

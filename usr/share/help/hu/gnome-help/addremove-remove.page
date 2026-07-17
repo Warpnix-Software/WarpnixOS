@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-remove" xml:lang="hu">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntu dokumentációs csapat</name>
+    </credit>
+    <desc>A már nem használt alkalmazások eltávolítása.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove" group="#first"/>
+    <link type="seealso" xref="addremove-install-synaptic"/>
+    <revision version="18.04" date="2018-03-18" status="review"/>
+  </info>
+
+  <title>Alkalmazás eltávolítása</title>
+
+  <p>Az alkalmazás olyan szoftver, amely grafikus felhasználói felülettel (GUI) rendelkezik. Az <app>Alkalmazásközpont</app> használatával eltávolíthatja azokat az alkalmazásokat, amelyeket már nem használ.</p>
+
+   <p>Az alkalmazások két formátumban érhetők el: snap csomagokban és Debian csomagokban. A snap csomagként elérhető alkalmazást mostantól <em>snap</em> néven említjük. Néhány alkalmazás mindkét formátumban elérhető. Ilyen esetben az <app>Alkalmazásközpont</app> alkalmazásban a snap lesz elsőként felsorolva.</p> 
+
+   <p>Olyan szoftvereket is eltávolíthat, amelyek nem rendelkeznek grafikus felhasználói felülettel. Az ilyen szoftverek eltávolításához a <link xref="addremove-install-synaptic">Synaptic</link> alkalmazást használhatja. Ne feledje, hogy a <app>Synaptic</app> nem sorolja fel a snap alkalmazásokat.</p>
+
+  <p>Egy alkalmazás eltávolításához:</p>
+    
+  <steps>
+    <item>
+      <p>Kattintson az <app>Alkalmazásközpont</app> ikonra az <gui>alkalmazásindítón</gui>, vagy keresse meg a <input>Szoftvert</input> a <em>Tevékenységek</em> keresősávjából.</p>
+    </item>
+    <item>
+      <p>Az <app>Alkalmazásközpont</app> megnyílása után kattintson a fenti <gui>Telepített</gui> gombra.</p>
+    </item>
+    <item>
+      <p>Keresse meg az eltávolítani kívánt alkalmazást a keresőmezővel vagy a telepített alkalmazások listájában.</p>
+    </item>
+    <item>
+      <p>Válassza ki az alkalmazást, és kattintson az <gui>Eltávolítás</gui> gombra.</p>
+    </item>
+    <item>
+      <p>Erősítse meg, hogy el szeretné távolítani az alkalmazást.</p>
+    </item>
+    <item>
+      <p>A rendszer arra fogja kérni, hogy hitelesítse magát a jelszava megadásával. Miután ezt megtette, az alkalmazás eltávolításra kerül.</p>
+    </item>
+
+  </steps>
+
+  <note>
+    <p>Egyes alkalmazások működése más alkalmazásoktól függ. Ha megpróbál eltávolítani egy olyan alkalmazást, amelyre egy másik alkalmazásnak szüksége van, akkor mindkét alkalmazás eltávolításra kerül. Az alkalmazások eltávolítása előtt a rendszer megkérdezi, hogy szeretné-e ennek megtörténtét.</p>
+  </note>
+
+</page>

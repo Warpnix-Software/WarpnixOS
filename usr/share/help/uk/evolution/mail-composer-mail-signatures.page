@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-composer-mail-signatures" xml:lang="uk">
+
+  <info>
+    <desc>Користування підписами у нижній частині надісланого вами повідомлення.</desc>
+    
+    <link type="guide" xref="index#mail-composing"/>
+
+    <revision pkgversion="3.25.90" version="0.4" date="2017-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+
+<title>Робота з підписами повідомлень електронної пошти</title>
+
+<p>Підпис складається з одного або декількох рядків тексту (або навіть зображення), які буде додано наприкінці надісланого вами повідомлення. Він може містити відомості щодо контакту та інші дані.</p>
+<note style="tip"><p>Термін «підпис» вживається у іншому контексті для <link xref="mail-encryption">шифрування</link>.</p></note>
+
+<note style="tip"><p>За <link href="https://tools.ietf.org/html/rfc3676#section-4.3">загальноприйнятою давньою угодою</link> підписи завжди починаються із двох дефісів і пробілу в окремому рядку. Це надає змогу багатьом клієнтам електронної пошти автоматично вилучати підписи із цитованого тексту під час створення відповідей.</p></note>
+</page>
+<!-- TODO: The two dashes and a space signature delimiter can be disabled via dconf in org.gnome.evolution.mail.composer-no-signature.delim but don't really want to advertise that -->

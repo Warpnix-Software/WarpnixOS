@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-remove" xml:lang="he">
+
+  <info>
+    <credit type="author">
+      <name>מיזם התיעוד של אובונטו</name>
+    </credit>
+    <desc>הסרת יישומים שאין לך עוד צורך בהם.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove" group="#first"/>
+    <link type="seealso" xref="addremove-install-synaptic"/>
+    <revision version="18.04" date="2018-03-18" status="review"/>
+  </info>
+
+  <title>הסרת יישום</title>
+
+  <p>An application is software that has a graphical user interface (GUI).
+    You can use <app>App Center</app> to remove applications that you 
+    no longer use.</p>
+
+   <p>Applications are available in two formats: snap packages and Debian packages. 
+   An application available as a snap package is from now on referred to as a <em>snap</em>.
+   Some applications are available in both formats. In such a case in
+   <app>App Center</app> the snap will be listed first.</p> 
+
+   <p>יכול להיות שיעניין אותך להסיר תכנה ללא מנשק גרפי. כדי להסיר תכנה מסוג שכזה, ניתן להשתמש ב־<link xref="addremove-install-synaptic">Synaptic</link>. נא לשים לב ש־Snaps אינם מופיעים ב־<app>Synaptic</app>.</p>
+
+  <p>כדי להסיר יישום:</p>
+    
+  <steps>
+    <item>
+      <p>
+        Click the <app>App Center</app> icon in the <gui>Dock</gui>, or search
+        for <input>Software</input> in the <em>Activities</em> search bar.
+      </p>
+    </item>
+    <item>
+      <p>
+        When <app>App Center</app> opens, click the <gui>Installed</gui> button at 
+        the top.
+      </p>
+    </item>
+    <item>
+      <p>לאתר את היישום שמיועד להסרה באמצעות תיבת החיפוש או על ידי סקירת רשימת היישומים המותקנים.</p>
+    </item>
+    <item>
+      <p>לבחור את היישומים וללחוץ על <gui>הסרה</gui>.</p>
+    </item>
+    <item>
+      <p>לאשר את הסרת את היישום.</p>
+    </item>
+    <item>
+      <p>תופיע בקשה לאימות על ידי מילוי ססמה. לאחר שעשית זאת, היישום יוסר.</p>
+    </item>
+
+  </steps>
+
+  <note>
+    <p>חלק מהיישומים נסמכים על יישומיםא אחרים כדי לפעול כראוי. ניסיון להסרת יישום שנחוץ ליישום אחר יוביל לכך ששניהם יוסרו. תהיה לך אפשרות לאשר האם זאת ההתנהגות הרצויה בטרם הסרת היישומים.</p>
+  </note>
+
+</page>

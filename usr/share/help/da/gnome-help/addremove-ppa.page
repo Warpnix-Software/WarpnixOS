@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-ppa" xml:lang="da">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntus dokumentationshold</name>
+    </credit>
+    <desc>Tilføj PPA'er for at udvide antallet af programkilder, Ubuntu bruger til installering og opgraderinger.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove"/>
+    <link type="seealso" xref="addremove-sources"/>
+    <revision version="20.10" date="2020-09-13" status="review"/>
+  </info>
+
+  <title>Tilføj et Personligt pakkearkiv (PPA)</title>
+
+  <p><em>Personlige pakkearkiver (PPA'er)</em> er programarkiver designet til Ubuntu-brugere og er nemmere at installere end andre tredjepartsarkiver. PPA'er bruges ofte til at distribuere programmer før udgivelse, så de kan testes.</p>
+
+  <note style="warning">
+    <p>Tilføj kun programarkiver fra kilder, du stoler på!</p>
+    <p>Tredjepartsprogramarkiver er ikke undersøgt af Ubuntu-medlemmer mht. sikkerhed eller troværdighed og kan derfor indeholde programmer, der kan gøre skade på din computer.</p>
+  </note>
+
+  <steps>
+    <title>Installér et PPA</title>
+    <item>
+      <p>Se efter overskriften <gui>Tilføjelse af dette PPA til dit system</gui> på oversigten over PPA'er. Notér PPA'ets placering, som bør ligne: <code>ppa:mozillateam/firefox-next</code>.</p>
+    </item>
+    <item>
+      <p>Åbn <app>Software &amp; opdateringer</app> fra søgelinjen i <em>Aktiviteter</em>.</p>
+    </item>
+    <item>
+      <p>Skift til fanebladet <gui>Anden Software</gui>.</p>
+    </item>
+    <item>
+      <p>Klik <gui>Tilføj</gui> og indtast PPA'ets placering (som beskrevet under trin 1).</p>
+    </item>
+    <item>
+      <p>Klik <gui>Tilføj kilde</gui>. Indtast din adgangskode i godkendelsesvinduet.</p>
+    </item>
+    <item>
+      <p>Luk <app>Software &amp; opdateringer</app>-vinduet. <app>App Center</app> vil så lede efter nye programmer i dine programkilder.</p>
+    </item>
+  </steps>
+
+</page>

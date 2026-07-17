@@ -1,0 +1,1236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+      (Do not remove this comment block.)
+  Maintained by the MATE Documentation Project
+  http://wiki.mate-desktop.org/dev-doc:doc-team-guide
+  Template version: 2.0 beta
+  Template last modified Jan 30, 2002
+-->
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:id="index" xml:lang="it">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <info><title>Manuale di Archive Manager</title> 
+
+     <abstract>
+       <para>Archive Manager, altrimenti noto come Engrampa, consente di creare, visualizzare, modificare o decomprimere un archivio</para>
+     </abstract>
+
+    <copyright xml:lang="en"><year>2019-2021</year> <holder>Progetto Documentazione di MATE</holder></copyright>
+    <copyright><year>2009</year> <holder>Paul Cutler</holder></copyright>	    
+	<copyright><year>2006</year> <year>2008</year> <holder>Paolo Bacchilega</holder></copyright> 
+     <copyright><year>2003</year> <year>2004</year> <holder>Sun Microsystems</holder></copyright>
+    <copyright><year>2003</year> <holder>Paolo Bacchilega</holder></copyright> 
+    <copyright><year>2002</year> <holder>Alexander Kirillov</holder></copyright> 
+
+<!-- An address can be added to the publisher information.  If a role is 
+     not specified, the publisher/author is the same for all versions of the 
+     document.  -->
+    <publisher>
+      <publishername>Progetto Documentazione di MATE</publishername>
+    </publisher> 
+    <publisher>
+      <publishername>Progetto Documentazione di GNOME</publishername>
+    </publisher>
+
+  <xi:include href="legal.xml"/>
+  <!-- This file contains link to license for the
+   documentation (GNU FDL), and other legal stuff such as "NO
+   WARRANTY" statement. Please do not change any of this. -->
+
+  <authorgroup>
+      <author><orgname>Progetto documentazione di MATE</orgname> <affiliation> <orgname>MATE Desktop</orgname> </affiliation></author>
+      <author><personname> <firstname>Sun </firstname> <surname>Progetto documentazione di GNOME</surname> </personname> <affiliation> <orgname>Sun Microsystems</orgname> </affiliation></author>
+      <author><personname> <firstname>Paolo</firstname> <surname>Bacchilega</surname> </personname> <affiliation> <orgname>Progetto documentazione di GNOME</orgname> </affiliation></author> 
+      <author><personname> <firstname>Alexander</firstname> <surname>Kirillov</surname> </personname> <affiliation> <orgname>Progetto documentazione di GNOME</orgname> </affiliation> <email>kirillov@math.sunysb.edu</email></author> 
+      <author><personname> <firstname>Paul</firstname> <surname>Cutler</surname> </personname> <affiliation> <orgname>Progetto documentazione di GNOME</orgname> </affiliation> <email>pcutler@foresightlinux.org</email></author>	  
+  </authorgroup>
+	
+	<releaseinfo revision="1.10" role="review">
+	</releaseinfo>
+
+         <revhistory>
+                <revision xml:lang="en"><revnumber>1.10.0</revnumber> <date>Luglio 2015</date> <revdescription>
+                         <para role="author" xml:lang="en">Wolfgang Ulbrich</para>
+                         <para role="publisher" xml:lang="en">Progetto Documentazione di MATE</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.26.0</revnumber> <date>Marzo 2009</date> <revdescription>
+                         <para role="author">Paul Cutler</para>
+                         <para role="publisher">Progetto Documentazione di GNOME</para>
+                  </revdescription></revision>
+				
+                <revision><revnumber>2.24.0</revnumber> <date>Luglio 2008</date> <revdescription>
+                         <para role="author">Paolo Bacchilega</para>
+                         <para role="publisher">Progetto Documentazione di GNOME</para>
+                  </revdescription></revision>
+				
+                <revision><revnumber>2.6</revnumber> <date>Aprile 2006</date> <revdescription>
+                         <para role="author">Paolo Bacchilega</para>
+                         <para role="publisher">Progetto Documentazione di GNOME</para>
+                  </revdescription></revision>
+
+                <revision><revnumber>2.5</revnumber> <date>Marzo 2004</date> <revdescription>
+                         <para role="author">Team Documentazione GNOME Sun</para>
+                         <para role="publisher">Progetto Documentazione di GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.4</revnumber> <date>Febbraio 2004</date> <revdescription>
+                         <para role="author">Team Documentazione GNOME Sun</para>
+                         <para role="publisher">Progetto Documentazione di GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.3</revnumber> <date>Agosto 2003</date> <revdescription>
+                         <para role="author">Team Documentazione GNOME Sun</para>
+                         <para role="publisher">Progetto Documentazione di GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.2</revnumber> <date>Giugno 2003</date> <revdescription>
+                         <para role="author">Team Documentazione GNOME Sun</para>
+                         <para role="publisher">Progetto Documentazione di GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.1</revnumber> <date>Gennaio 2003</date> <revdescription>
+                         <para role="author">Paolo Bacchilega</para>                         
+                         <para role="publisher">Progetto Documentazione di GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.0</revnumber> <date>Giugno 2002</date> <revdescription>
+                         <para role="author">Alexander Kirillov</para>                         
+                         <para role="publisher">Progetto Documentazione di GNOME</para>
+                  </revdescription></revision>
+         </revhistory>
+
+    <releaseinfo>Questo manuale descrive la versione 1.22 di Archive Manager</releaseinfo> 
+  </info> 
+
+  <indexterm zone="index"><primary>Engrampa</primary></indexterm> 
+  <indexterm zone="index"><primary>engrampa</primary></indexterm>
+  <indexterm zone="index">Archiviazione</indexterm>
+  <indexterm zone="engrampa-add-files"><primary>Archivi</primary> <secondary>Aggiunta file</secondary></indexterm> 
+  <indexterm zone="engrampa-delete-files"><primary>Archivi</primary> <secondary>Eliminazione file</secondary></indexterm> 
+  <indexterm zone="engrampa-open"><primary>Archivi</primary> <secondary>Apertura</secondary></indexterm> 
+  <indexterm zone="engrampa-view"><primary>Archivi</primary> <secondary>Visualizzazione</secondary></indexterm> 
+  <indexterm zone="engrampa-extract"><primary>Archivi</primary> <secondary>Estrazione</secondary></indexterm> 
+  <indexterm zone="engrampa-create"><primary>Archivi</primary> <secondary>Creazione</secondary></indexterm> 
+
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+<!-- Use the Introduction section to give a brief overview of what
+     the application is and what it does. -->
+  <section xml:id="engrampa-intro"><info><title>Introduzione</title></info> 
+     
+    <para>È possibile utilizzare l'applicazione <application>Archive Manager</application> per creare, visualizzare, modificare o estrarre un archivio. Un archivio è un file che agisce come contenitore di altri file. Un archivio può contenere molti file, cartelle e sottocartelle, di solito in formato compresso.</para>
+    <para><application>Archive Manager</application> fornisce solamente l'interfaccia grafica e si affida a programmi da linea di comando come <command>tar</command>, <command>gzip</command> e <command>bzip2</command> per effettuare le operazioni di archiviazione.</para>
+    <para>Se avete installato gli strumenti a linea di comando adeguati, <application>Archive Manager</application> supporta i formati riportati nella tabella sottostante.</para> 
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Formato</para></entry>
+              <entry colname="COLSPEC1" align="left">
+                <para>Estensione</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para>Archivio 7-zip</para></entry>
+              <entry align="left"><para><filename>.7z</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio ACE</para></entry>
+              <entry align="left"><para><filename>.ace</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio AlZip</para></entry>
+              <entry align="left"><para><filename>.alz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio AR</para></entry>
+              <entry align="left"><para><filename>.ar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio ARJ</para></entry>
+              <entry align="left"><para><filename>.arj</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio Microsoft Cabinet</para></entry>
+              <entry align="left"><para><filename>.cab</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio CPIO</para></entry>
+              <entry align="left"><para><filename>.cpio</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Pacchetto Debian</para></entry>
+              <entry align="left"><para><filename>.deb</filename>, <filename>.udeb</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Pubblicazione elettronica</para></entry>
+              <entry align="left"><para><filename>.epub</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Immagine CD RAW (ISO 9660)</para></entry>
+              <entry align="left"><para><filename>.iso</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio Java</para></entry>
+              <entry align="left"><para><filename>.jar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Enterprise Application aRchive</para></entry>
+              <entry align="left"><para><filename>.ear</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Web Application Resource o Web application ARchive</para></entry>
+              <entry align="left"><para><filename>.war</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio LHA</para></entry>
+              <entry align="left"><para><filename>.lha</filename>, <filename>.lzh</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio Roshal</para></entry>
+              <entry align="left"><para><filename>.rar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Fumetto (RAR-compresso)</para></entry>
+              <entry align="left"><para><filename>.cbr</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Pacchetto RPM</para></entry>
+              <entry align="left"><para><filename>.rpm</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio tar</para></entry>
+              <entry align="left"><para><filename>.tar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio Tar compresso con <command>bzip</command></para></entry>
+              <entry align="left"><para><filename>.tar.bz</filename> o <filename>.tbz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio Tar compresso con <command>bzip2</command></para></entry>
+              <entry align="left"><para><filename>.tar.bz2</filename> o <filename>.tbz2</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio Tar compresso con <command>gzip</command></para></entry>
+              <entry align="left"><para><filename>.tar.gz</filename> o <filename>.tgz</filename> o <filename>.taz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio Tar compresso con <command>lzip</command></para></entry>
+              <entry align="left"><para><filename>.tar.lz</filename> o <filename>.tlz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio Tar compresso con <command>lzop</command></para></entry>
+              <entry align="left"><para><filename>.tar.lzo</filename> o <filename>.tzo</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio Tar compresso con <command>compress</command></para></entry>
+              <entry align="left"><para><filename>.tar.Z</filename> o <filename>.taZ</filename></para></entry>
+            </row>
+             <row valign="top">
+              <entry><para>Archivio Tar compresso con <command>7zip</command></para></entry>
+              <entry align="left"><para><filename>.tar.7z</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio StuffIt</para></entry>
+              <entry align="left"><para><filename>.bin</filename> o <filename>.sit</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio ZIP</para></entry>
+              <entry align="left"><para><filename>.zip</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Fumetto (ZIP-compresso)</para></entry>
+              <entry align="left"><para><filename>.cbz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio zoo</para></entry>
+              <entry align="left"><para><filename>.zoo</filename></para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    <para>Il formato di archivio più diffuso in ambito Linux e nei sistemi derivati da Unix è l'archivio tar compresso con <command>gzip</command> o <command>bzip2</command>.</para>
+    <para>Il formato più diffuso nei sistemi Microsoft Windows è quello degli archivi creati con <application>PKZIP</application> o <application>WinZip</application>.</para>
+    <section xml:id="engrampa-intro-nonarchive"><info><title>File compressi di non-archivio</title></info>
+       
+      <para>Un file compresso di non-archivio è un file creato tramite l'uso di <command>bzip2</command>, <command>gzip</command>, <command>lzip</command>, <command>lzop</command>, <command>compress</command> o <command>rzip</command> per la compressione. Ad esempio, <filename>file.txt.gz</filename> è creato usando <command>gzip</command> per comprimere <filename>file.txt</filename>.</para>
+      <para>Si può usare <application>Gestore di archivi</application> per creare, aprire ed estrarre file compressi del tipo non-archivio.</para> 
+    </section>
+  </section>
+
+<!-- ============= Getting Started =========================== -->
+  <section xml:id="engrampa-get-start"><info><title>Introduzione</title></info>
+    
+    <para>Questa sezione fornisce informazioni sull'uso di <application>Archive Manager</application> e descrive l'interfaccia di <application>Archive Manager</application>.</para>
+
+<!-- ============= To Start Engrampa ============================ -->
+         <section xml:id="engrampa-to-start"><info><title>Avviare <application>Archive Manager</application></title></info>
+                
+                <para>E' possibile avviare <application>Archive Manager</application> nei seguenti modi:</para>
+                <variablelist>
+                <varlistentry>
+                <term>menù <guimenu>Applicazioni</guimenu></term>
+                <listitem>
+                <para>Selezionare <menuchoice><guisubmenu>Accessori</guisubmenu><guimenuitem>Gestore di archivi</guimenuitem></menuchoice>.</para>
+                </listitem>
+                </varlistentry>
+                <varlistentry>
+                <term>Riga di comando</term>
+                <listitem>
+                <para>Avviare il comando: <command>engrampa</command></para>
+                </listitem>
+                </varlistentry>
+                </variablelist>
+        </section>
+
+         <section xml:id="engrampa-when-start"><info><title>Schermata di avvio di <application>Archive Manager</application></title></info>
+                
+                <para>Quando si avvia <application>Archive Manager</application>, viene mostrata la seguente finestra:</para>
+
+                <figure xml:id="engrampa-FIG-main-window"><info><title>Finestra del <application>Archive Manager</application> </title></info>
+                  
+                  <screenshot>
+                         <mediaobject><imageobject> <imagedata fileref="figures/engrampa_main_window.png" format="PNG"/> </imageobject> <textobject> <phrase>Mostra la finestra principale di Engrampa.</phrase> </textobject></mediaobject>
+                  </screenshot>
+                </figure>
+
+                <para>La finestra di <application>Archive Manager</application> contiene i seguenti elementi:</para>
+                <variablelist>
+                  <varlistentry> <term>Barra dei menù</term>
+                         <listitem>
+                                <para>I menù nella Barra dei menù contengono tutti i comandi necessari per lavorare con gli archivi in <application>Archive Manager</application>.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Barra degli strumenti</term>
+                         <listitem>
+                                <para>La barra degli strumenti contiene un sottoinsieme dei comandi accessibili tramite la barra dei menù. Il <application>Gestore di archivi</application> mostra questa barra per impostazione predefinita, ma è possibile nasconderla tramite <menuchoice><guimenu>Visualizza</guimenu><guimenuitem>Barra degli strumenti</guimenuitem></menuchoice>. Per visualizzarla, selezionare  nuovamente <menuchoice><guimenu>Visualizza</guimenu><guimenuitem>Barra degli strumenti</guimenuitem></menuchoice>.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Barra della cartella</term>
+                         <listitem>
+                                <para>La Barra della cartella permette di navigare le varie cartelle contenute in un archivio. <application>Archive Manager</application> mostra questa barra per impostazione predefinita. Vedere <xref linkend="engrampa-view-type-folder"/> per altre informazioni.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Area di visualizzazione</term>
+                         <listitem>
+                                <para>L'area di visualizzazione mostra il contenuto dell'archivio.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Barra di stato</term>
+                         <listitem>
+                                <para>La barra di stato mostra le informazioni relative alle attività svolte da<application>Archive Manager</application> e al contenuto dell'archivio. <application>Archive Manager</application> visualizza la barra di stato per impostazione predefinita. Per nasconderla, selezionare <menuchoice><guimenu>Visualizza</guimenu><guimenuitem>Barra di stato</guimenuitem></menuchoice>. Per mostrarla, selezionare nuovamente <menuchoice><guimenu>Visualizza</guimenu><guimenuitem>Barra di stato</guimenuitem></menuchoice>.</para>
+                         </listitem>
+                  </varlistentry>
+                </variablelist>
+                <para>Quando si fa clic destro sulla finestra di <application>Archive Manager</application>, viene mostrato un menu contestuale che contiene tutti i comandi più comuni per la gestione dell'archivio.</para>
+
+     <section xml:id="engrampa-bookmarks"><info><title>Sfogliare il filesystem</title></info>
+        
+        <para>Diverse finestre di dialogo di <application>Archive Manager</application> (<guilabel>Nuovo</guilabel>, <guilabel>Apri</guilabel>, <guilabel>Estrai</guilabel>,...) permettono di sfogliare le cartelle del computer. Fare riferimento alla <link xlink:href="help:mate-user-guide/filechooser-open">Guida utente di MATE</link> per imparare ad usare le finestre di gestione dei file.</para>
+        <para>È possibile anche fare riferimento alla sezione <link xlink:href="help:mate-user-guide/caja-bookmarks">Segnalibri</link> della guida utente per l'Ambiente Grafico al fine di capire come impostare il riquadro <guilabel>Risorse</guilabel> per accedere ai percorsi preferiti.</para>
+     </section>
+   </section>
+</section>
+
+
+
+<!-- ======= Working with archives ============= --> 
+
+<section xml:id="engrampa-working"><info><title>Lavorare con gli archivi</title></info>
+      
+      <para>Quando si utilizza <application>Archive Manager</application> per lavorare con un archivio, tutte le modifiche vengono salvate immediatamente sul disco. Ad esempio, se si elimina un file da un archivio, <application>Archive Manager</application> elimina il file non appena si fa clic su <guibutton>OK</guibutton>. Questo comportamento è diverso da quello della maggior parte delle applicazioni, che salvano le modifiche solo quando si esce dall'applicazione o si seleziona <guimenuitem>Salva</guimenuitem> nel menu.</para>
+      <para>Se un archivio è molto grande, o se il sistema è lento, alcune operazioni possono richiedere molto tempo. Per interrompere l'azione corrente, premi <keycap>Esc</keycap>. In alternativa, selezionare <menuchoice><guimenu>Visualizza</guimenu><guimenuitem>Stop</guimenuitem></menuchoice> o fare clic su <guibutton>Stop</guibutton> nella barra degli strumenti.</para>      
+      <para>In <application>Archive Manager</application> è possibile compiere la stessa azione in modi diversi. Ad esempio è possibile aprire un archivio nei modi seguenti: <informaltable frame="all">
+                    <tgroup cols="2" colsep="1" rowsep="1">
+                      <colspec colname="COLSPEC0" colwidth="50*"/>
+                      <colspec colname="COLSPEC1" colwidth="50*"/>
+                      <thead>
+                        <row valign="top">
+                          <entry colname="COLSPEC0">
+                            <para>Componente UI</para></entry>
+                          <entry colname="COLSPEC1" align="left"> 
+                            <para>Azione</para></entry>
+                        </row>
+                      </thead>
+                      <tbody>
+                        <row valign="top">               
+                          <entry><para>Finestra</para></entry>
+                          <entry><para>Trascina un archivio nella finestra di <application>Archive Manager</application> da un'altra applicazione come per esempio un gestore di file.</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Barra dei menù</para></entry>
+                          <entry><para>Selezionare <menuchoice><guimenu>Archivio</guimenu><guimenuitem>Apri</guimenuitem></menuchoice>.</para>
+           <para>Se avete aperto un archivio di recente, esso verrà elencato direttamente nel menù <menuchoice><guimenu>Archivio</guimenu></menuchoice>.</para> 
+</entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Barra degli strumenti</para></entry>
+                          <entry><para>Fare clic sul pulsante <guibutton>Apri</guibutton> della barra degli strumenti.</para>
+           <para>Se un archivio è stato aperto recentemente recentemente, fare clic sulla freccia in basso vicino al pulsante <guibutton>Apri</guibutton> nella barra degli strumenti.</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Fare clic col pulsante destro del mouse destro sul menu a comparsa</para></entry>
+                          <entry><para>Fare clic con il tasto destro sull'archivio, poi selezionare <guilabel>Apri</guilabel> dal menu a comparsa.</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Tasti scorciatoia</para></entry>
+                          <entry><para>Premere <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>.</para></entry>
+                        </row>
+                      </tbody>
+                    </tgroup>
+                  </informaltable></para>
+      <para>Questo manuale descrive le funzionalità tramite la barra dei menu.</para>
+
+    <section xml:id="engrampa-pattern"><info><title>Modelli del nome di un file</title></info>
+      
+      <para><application>Archive Manager</application> consente di aggiungere, estrarre o eliminare più file contemporaneamente. Per applicare un'azione a tutti i file che corrispondono ad un modello definito, inserire il criterio nella casella di testo. Il modello può includere simboli jolly standard come <keycap>*</keycap> per corrispondere a qualsiasi stringa e <keycap>?</keycap> per corrispondere ad un singolo simbolo generico. È possibile inserire diversi criteri separati da punti e virgola. Il <application>Archive Manager</application> applica l'azione a tutti i file che corrispondono ad almeno uno dei modelli definiti. Gli esempi della tabella seguente mostrano come utilizzare i modelli per selezionare i file.</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Modello</para></entry>
+              <entry colname="COLSPEC1" align="left"> 
+                <para>File corrispondenti</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">               
+              <entry><para><filename>*</filename></para></entry>
+              <entry align="left"><para>Tutti i file</para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>*.tar*</filename></para></entry>
+              <entry align="left"><para>Tutti i file con estensione <filename>tar</filename>, inclusi quelli in cui l'estensione <filename>tar</filename> è seguita da qualsiasi sequenza di simboli, come <filename>fiename.tar.gz</filename>.</para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>*.jpg; *.jpeg</filename></para></entry>
+              <entry align="left"><para>Tutti i file con estensione <filename>jpg</filename> e tutti i file con estensione <filename>jpeg</filename></para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>file?.gz</filename></para></entry>
+              <entry align="left"><para>Tutti i file con estensione <filename>gz</filename> il cui nome inizia con "file" seguito da un qualsiasi singolo carattere, es. <filename>file2.gz</filename>, <filename>filex.gz</filename>.</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
+
+<!-- ======= To open an archive ============= --> 
+
+<section xml:id="engrampa-open"><info><title>Aprire un archivio</title></info>
+      
+      <para>Per aprire un archivio, seguire questi passaggi: <orderedlist inheritnum="ignore" continuation="restarts">
+          <listitem>
+           <para>Selezionare <menuchoice><guimenu>Archivio</guimenu><guimenuitem>Apri</guimenuitem></menuchoice> per mostrare la finestra di dialogo <guilabel>Apri</guilabel>. Oppure in alternativa digitare <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>, o fare clic su <guibutton>Apri</guibutton> nella barra degli strumenti.</para> 
+          </listitem>
+          <listitem>
+           <para>Selezionare l'archivio che si desidera aprire.</para> 
+          </listitem>
+          <listitem>
+           <para>Fare clic su <guibutton>Apri</guibutton>.</para> 
+          </listitem>
+        </orderedlist></para>
+      <para><application>Archive Manager</application> determina automaticamente il tipo di archivio e mostra: <itemizedlist>
+          <listitem>
+            <para>Il nome dell'archivio nella barra del titolo della finestra</para>
+          </listitem>
+          <listitem>
+            <para>Il contenuto dell'archivio nell'area di visualizzazione</para>
+          </listitem>
+          <listitem>
+            <para>Il numero di file e cartelle (oggetti) nel percorso corrente, con la loro dimensione non compressa, nella barra di stato.</para>
+          </listitem>
+        </itemizedlist></para>
+      <para>Per aprire un altro archivio, selezionare nuovamente <menuchoice><guimenu>Archivio</guimenu><guimenuitem>Apri</guimenuitem></menuchoice>. <application>Archive Manager</application> apre ogni archivio in una nuova finestra. Non è possibile aprire un altro archivio nella medesima finestra.</para>
+      <para>Se si tenta di aprire un archivio in un formato non riconosciuto dal <application>Archive Manager</application>, l'applicazione visualizza un messaggio di errore. Vedere <xref linkend="engrampa-intro"/> per un elenco dei formati supportati.</para>
+  </section>
+
+<!-- ======= Selecting files in an archive  ============= --> 
+    <section xml:id="engrampa-select-files"><info><title>Selezionare i file in un archivio</title></info>
+      
+    <para>Per selezionare tutti i file in un archivio, selezionare <menuchoice><guimenu>Modifica</guimenu><guimenuitem>Seleziona tutto</guimenuitem></menuchoice> o premere <keycombo><keycap>Ctrl</keycap><keycap>A</keycap></keycombo>.</para>
+      <para>Per deselezionare tutti i file di un archivio, selezionare <menuchoice><guimenu>Modifica</guimenu><guimenuitem>Deseleziona tutto</guimenuitem></menuchoice> o premere la combinazione di tasti <keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap><keycap>A</keycap></keycombo>.</para>
+    </section>
+
+  <!-- =========== Extracting Files From an Archive ==================== -->
+
+  <section xml:id="engrampa-extract"><info><title>Estrarre dei file da un archivio</title></info> 
+     
+    <para>Per estrarre i file da un archivio, seguire questi passaggi: <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>Selezionare i file che si vuole estrarre. Per selezionare altri file, tenere premuto Ctrl e fare clic sui file desiderati.</para>
+        </listitem>
+        <listitem><para>Selezionare <menuchoice><guimenu>Archivio</guimenu><guimenuitem>Apri</guimenuitem></menuchoice> per mostrare la finestra di dialogo <guilabel>Apri</guilabel>. In alternativa premere <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>, o fare clic su <guibutton>Apri</guibutton> nella barra degli strumenti.</para>
+        </listitem>
+        <listitem><para>Selezionare la cartella dove <application>Archive Manager</application> estrarrà i file.</para>
+        </listitem>
+        <listitem><para>Selezionare le opzioni di estrazione desiderate. Per ulteriori informazioni sulle opzioni di estrazione, vedere <xref linkend="engrampa-extract-options"/>.</para>
+        </listitem>
+        <listitem><para>Fare clic su <guibutton>Estrai</guibutton>.</para>
+        <note>
+          <para>Se tutti i file dell'archivio sono protetti da una password che non è stata specificata, <application>Archive Manager</application> chiederà di inserirla.</para>
+          <para>Se solo alcuni dei file dell'archivio sono protetti da una password, ma non tutti, e la password non è stata specificata, <application>Archive Manager</application> non chiederà di inserire alcunché. Al contrario, <application>Archive Manager</application> estrarrà solo i file non protetti.</para>
+          <para>Per ulteriori informazioni sulle password, vedere <xref linkend="engrampa-encrypt-files"/>.</para>
+        </note>
+        </listitem>
+        </orderedlist></para>
+      <para><application>Archive Manager</application> fornisce anche degli strumenti per estrarre i file da un archivio senza aprire alcuna finestra di <application>Archive Manager</application>. Vedere <xref linkend="engrampa-fmgr"/> per ulteriori informazioni.</para>
+    <para>L'operazione di estrazione estrae una <emphasis>copia</emphasis> dei file dell'archivio. I file estratti hanno gli stessi permessi e la stessa data di modifica dei file originali contenuti nell'archivio.</para>
+    <para>L'operazione di estrazione non modifica il contenuto dell'archivio. Per informazioni su come eliminare i file da un archivio, vedere <xref linkend="engrampa-delete-files"/>.</para>
+  </section>
+    
+<!-- ======= Closing the Archive ============= --> 
+  <section xml:id="engrampa-archive-close"><info><title>Chiudere un archivio</title></info>
+    
+    <para>Per chiudere l'archivio corrente e la finestra di <application>Archive Manager</application>, selezionare <menuchoice><guimenu>Archivio</guimenu><guimenuitem>Chiudi</guimenuitem></menuchoice> oppure premere <keycombo><keycap>Ctrl</keycap><keycap>W</keycap></keycombo>.</para>
+    <note>
+      <para>Non è possibile chiudere l'archivio senza chiudere anche la finestra di <application>Archive Manager</application> relativa.</para>
+    </note>
+  </section>
+</section>
+
+
+<!-- =============  Creating Archives ============================= -->
+<section xml:id="engrampa-creating"><info><title>Creare archivi</title></info> 
+     
+    <para>Oltre ad aprire gli archivi esistenti, con <application>Archive Manager</application> è anche possibile crearne di nuovi.</para>
+    <section xml:id="engrampa-create"><info><title>Creare un archivio</title></info> 
+     
+    <para>Per creare un archivio, seguire questi passaggi: <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Selezionare <menuchoice><guimenu>Archivio</guimenu><guimenuitem>Nuovo</guimenuitem></menuchoice> per mostrare la finestra di dialogo <guilabel>Nuovo archivio</guilabel>. In alternativa, premere <keycombo><keycap>Ctrl</keycap><keycap>N</keycap></keycombo> o fare clic sul pulsante <guibutton>Nuovo</guibutton> nella barra degli strumenti.</para>
+        </listitem>
+        <listitem>
+          <para>Specificare la cartella in cui <application>Gestore di archivi</application> creerà il nuovo archivio facendo clic su una voce nell'elenco a discesa <guilabel>Nuovo</guilabel>. Se la cartella non è presente nell'elenco, fare clic su <guilabel>Sfoglia</guilabel> e selezionare la cartella. In alternativa, inserire il percorso completo nella casella di testo <guilabel>Nome</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Inserire il nome del nuovo archivio, compresa l'estensione del file, nella casella di testo <guilabel>Nome</guilabel>. In alternativa, scrivere il nome dell'archivio senza estensione e selezionare il tipo di archivio dal menu a discesa <guilabel>Formato del file</guilabel>, in questo modo l'estensione verrà aggiunta automaticamente.</para>
+        </listitem>
+        <listitem><para>Selezionare le opzioni di creazione desiderate cliccando su <guilabel>Altre opzioni</guilabel>. Per ulteriori informazioni sulle opzioni di creazione, vedere <xref linkend="engrampa-create-options"/>.</para>
+        </listitem>
+        <listitem>
+          <para>Fare clic su <guibutton>Nuovo</guibutton>. <application>Archive Manager</application> crea un archivio vuoto, ma non lo scrive ancora sul disco.</para>
+        </listitem>
+        <listitem>
+          <para>Aggiungere i file all'archivio come descritto in <xref linkend="engrampa-add-files"/>. <note>
+                  <para><application>Archive Manager</application> scrive l'archivio su disco solo quando contiene almeno un file. Se si crea un nuovo archivio e si esce da <application>Archive Manager</application> prima di aver aggiunto un file, <application>Archive Manager</application> eliminerà l'archivio.</para>
+                </note></para>
+        </listitem>
+      </orderedlist></para>
+</section>
+
+    <!-- ======= Adding files to an archive  ============= --> 
+  <section xml:id="engrampa-add-files"><info><title>Aggiungere elementi ad un archivio</title></info>
+    
+    <para>Per aggiungere file ad un archivio, seguire questi passaggi: <orderedlist inheritnum="ignore" continuation="restarts">
+         <listitem>
+           <para>Decidere in quale posizione dell'archivio si desidera aggiungere i file e aprire quella posizione nell'archivio.</para> 
+         </listitem>
+         <listitem>
+           <para>Selezionare <menuchoice><guimenu>Modifca</guimenu><guimenuitem>Aggiungi file</guimenuitem></menuchoice> per visualizzare la finestra di dialogo <guilabel>Aggiungi file</guilabel> o fare clic su <guibutton>Aggiungi file</guibutton> nella barra degli strumenti.</para> 
+         </listitem>
+         <listitem>
+           <para>Selezionare i file che si desidera aggiungere. Per selezionarne altri tenere premuto <keycap>Ctrl</keycap> e fare clic sui file.</para> 
+         </listitem>
+         <listitem>
+           <para>Fare clic su <guibutton>Aggiungi</guibutton>. <application>Archive Manager</application> aggiungerà i file alla cartella dell'archivio correntemente visualizzata.</para> 
+         </listitem>
+      </orderedlist></para>
+    <para>Non è possibile aggiungere cartelle ad un archivio tramite <guilabel>Aggiungi file</guilabel>. Per aggiungere una cartella vedere <xref linkend="engrampa-add-folder"/>.</para>
+    <para>La finestra di dialogo <guilabel>Aggiungi file</guilabel> dà accesso all'opzione <guilabel>Aggiungi solo se più recente</guilabel>, vedere <xref linkend="engrampa-add-options"/> per ulteriori informazioni su questa opzione.</para>
+    <para>È anche possibile aggiungere file ad un archivio tramite il gestore dei file, senza dover aprire una finestra del <application>Archive Manager</application>. Vedere <xref linkend="engrampa-fmgr"/> per ulteriori informazioni.</para>
+    <para>L'operazione Aggiungi aggiunge all'archivio <emphasis>una copia</emphasis> dei file o delle cartelle specificate. <application>Archive Manager</application> non rimuove i file originali, che rimangono invariati nel file system locale. Le copie aggiunte all'archivio hanno i medesimi permessi e la stessa data di modifica dei file originali.</para>
+    </section>
+
+<!-- ======= Adding files - Adding folder  ============= --> 
+    <section xml:id="engrampa-add-folder"><info><title>Aggiungere una cartella ad un archivio</title></info>
+      
+    <para>Per aggiungere una cartella ad un archivio, seguire questi passaggi: <orderedlist inheritnum="ignore" continuation="restarts">
+         <listitem>
+           <para>Decidere in quale posizione dell'archivio si desidera aggiungere i file e aprire quella posizione nell'archivio.</para>
+         </listitem>
+         <listitem>
+           <para>Selezionare <menuchoice><guimenu>Modifica</guimenu><guimenuitem>Aggiungi una cartella</guimenuitem></menuchoice> per far apparire la finestra <guilabel>Aggiungi una cartella</guilabel>.</para> 
+         </listitem>
+         <listitem>
+           <para>Selezionare la cartella che si desidera aggiungere.</para> 
+         </listitem>
+         <listitem>
+           <para>Fare clic su <guibutton>Aggiungi</guibutton>. <application>Archive Manager</application> aggiungerà la cartella a quella attualmente aperta nell'archivio.</para> 
+         </listitem>
+      </orderedlist></para>
+    <para>La finestra <guilabel>Aggiungi una cartella</guilabel> fornisce diverse opzioni avanzate. Vedere <xref linkend="engrampa-add-options"/> per ulteriori informazioni.</para>
+    </section>
+
+  <!-- ======= Converting an Archive to Another Format ============= --> 
+  <section xml:id="engrampa-convert-archive"><info><title>Convertire un archivio in un altro formato</title></info>
+    
+    <para>Per convertire un archivio in un altro formato e salvarlo come nuovo file, seguire i seguenti passaggi:</para>
+    <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem>
+        <para>Aprire l'archivio che si desidera convertire</para>
+      </listitem>
+      <listitem>
+        <para>Selezionare <menuchoice><guimenu>Archivio</guimenu><guimenuitem>Salva come</guimenuitem></menuchoice> per mostrare la finestra di dialogo <guilabel>Salva come</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Inserire il nome dell'archivio nel campo <guilabel>Nome</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Selezionare il nuovo formato dall'elenco <guilabel>Formato del file</guilabel>. In alternativa è possibile inserire l'estensione dopo il nome del file nella casella di testo <guilabel>Nome</guilabel> e selezionare <guilabel>Per estensione</guilabel> dall'elenco a discesa <guilabel>Formato del file</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Selezionare le opzioni di creazione desiderate cliccando su <guilabel>Altre opzioni</guilabel>. Per ulteriori informazioni sulle opzioni di creazione, vedere <xref linkend="engrampa-create-options"/>.</para>
+      </listitem>      
+      <listitem>
+        <para>Fare clic su <guibutton>Salva</guibutton>.</para>
+        <note>
+          <para>Se tutti i file dell'archivio sono protetti da una password che non è stata specificata, <application>Archive Manager</application> chiederà di inserirla.</para>
+          <para>Se alcuni, ma non tutti, i file dell'archivio sono protetti da una password che non è stata specificata <application>Archive Manager</application> non richiede la password. In questo caso, il <application>Archive Manager</application>copierà nel nuovo archivio solo i file non protetti.</para>
+          <para>Per ulteriori informazioni sulle password, vedere <xref linkend="engrampa-encrypt-files"/>.</para>
+        </note>
+      </listitem>
+    </orderedlist>
+  </section>
+</section>
+
+<!-- ======= Operations on Archive Contents ============= --> 
+<section xml:id="engrampa-modify-contents"><info><title>Modificare i contenuti dell'archivio</title></info>
+  
+  <para>E' possibile modificare i contenuti dell'archivio in vari modi.</para>
+
+<!-- ======= Encrypting files in an archive  ============= --> 
+    <section xml:id="engrampa-encrypt-files"><info><title>Cifrare i file di un archivio</title></info>
+      
+    <para>Per motivi di sicurezza è anche possibile crittografare i file aggiunti ad un archivio.</para>
+      <para>Se il formato dell'archivio supporta la crittografia, puoi inserire una password per crittografare i file  aggiunti all'archivio.</para>
+      <note>
+        <para>Attualmente supportano la cifratura gli archivi 7-Zip, ZIP,  RAR e ARJ.</para>
+      </note>
+     <para>Per inserire una password di cifratura, seguire questi passaggi:</para>
+       <orderedlist inheritnum="ignore" continuation="restarts">
+          <listitem><para>Selezionare <menuchoice><guimenu>Modifica</guimenu> <guimenuitem>Password</guimenuitem></menuchoice> per mostrare la finestra di dialogo <guilabel>Password</guilabel>.</para></listitem> 
+<listitem><para>Inserire la password nel campo <guilabel>Password</guilabel>.</para></listitem>
+<listitem><para>Fare clic su <guibutton>OK</guibutton>.</para></listitem>
+       </orderedlist>
+    <para><application>Archive Manager</application> utilizza la password per crittografare i file aggiunti all'archivio attuale e per decifrare i file che vengono estratti. <application>Archive Manager</application> dimentica la password quando l'archivio viene chiuso.</para>
+      <para>Per ulteriori informazioni su come verificare se un archivio contiene file cifrati, vedere <xref linkend="engrampa-encrypt-files"/>.</para>
+      <note>
+      <para>La crittografia fornita dalle utilità di archiviazione è debole e insicura. Se per voi la sicurezza è davvero importante, utilizzare uno strumento di crittografia avanzato come <link xlink:href="http://www.gnupg.org">GNU Privacy Guard</link>.</para>
+      </note>
+    </section>
+
+<!-- ======= Renaming files in an archive  ============= --> 
+  <section xml:id="engrampa-rename-files"><info><title>Rinominare un file in un archivio</title></info>
+    
+    <para>Per rinominare un file in un archivio, seguire questi passaggi:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Selezionare il file che si desidera rinominare.</para>
+        </listitem>
+        <listitem>
+          <para>Selezionare <menuchoice><guimenu>Modifica</guimenu><guimenuitem>Rinomina</guimenuitem></menuchoice> o premere <keycombo><keycap>F2</keycap></keycombo>, per mostrare la finestra di dialogo <guilabel>Rinomina</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Inserire il nome del file nella casella <guilabel>Nuovo nome del file</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Fare clic su <guibutton>Rinomina</guibutton>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Copying files in an archive  ============= --> 
+  <section xml:id="engrampa-copy-files"><info><title>Copiare file in un archivio</title></info>
+    
+    <para>Per copiare file in un archivio, seguire questi passaggi:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Selezionare i file che si desidera copiare.</para>
+        </listitem>
+        <listitem>
+          <para>Selezionare <menuchoice><guimenu>Modifica</guimenu><guimenuitem>Copia</guimenuitem> </menuchoice>, o premere <keycombo><keycap>Ctrl</keycap><keycap>C</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Aprire la posizione in cui si desidera che i file vengano copiati.</para>
+        </listitem>
+        <listitem>
+          <para>Selezionare <menuchoice><guimenu>Modifica</guimenu><guimenuitem>Incolla</guimenuitem></menuchoice> o premere <keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Moving files in an archive  ============= --> 
+  <section xml:id="engrampa-move-files"><info><title>Spostare file in un archivio</title></info>
+    
+    <para>Per spostare file in un archivio, seguire questi passaggi:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Selezionare i file che si desidera spostare.</para>
+        </listitem>
+        <listitem>
+          <para>Selezionare <menuchoice><guimenu>Modifica</guimenu><guimenuitem>Taglia</guimenuitem></menuchoice> o premere <keycombo><keycap>Ctrl</keycap><keycap>X</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Aprire la posizione in cui si desidera che i file vengano spostati.</para>
+        </listitem>
+        <listitem>
+          <para>Selezionare <menuchoice><guimenu>Modifica</guimenu><guimenuitem>Incolla</guimenuitem></menuchoice> o premere <keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Deleting files from an archive  ============= --> 
+  <section xml:id="engrampa-delete-files"><info><title>Eliminare file da un archivio</title></info>
+    
+    <para>Per eliminare file da un archivio, seguire questi passaggi:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Selezionare i file che si desidera eliminare.</para>
+        </listitem>
+        <listitem>
+          <para>Selezionare <menuchoice><guimenu>Modifica</guimenu><guimenuitem>Elimina</guimenuitem></menuchoice> o premere <keycap>Canc</keycap> per mostrare la finestra <guilabel>Elimina</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Selezionare una delle seguenti opzioni di eliminazione:</para>
+          <variablelist>
+            <varlistentry>
+              <term><guilabel>Tutti i file</guilabel></term>
+              <listitem>
+                <para>Elimina tutti i file dall'archivio.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term><guilabel>File selezionati</guilabel></term>
+              <listitem>
+                <para>Elimina i file selezionati dall'archivio.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term><guilabel>File</guilabel></term>
+              <listitem>
+                <para>Elimina dall'archivio tutti i file che corrispondono ai criteri specificati. Vedere <xref linkend="engrampa-pattern"/> per ulteriori informazioni sui criteri di selezione dei file.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+        <listitem>
+          <para>Fare clic su <guibutton>OK</guibutton>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- =============  Modify a File in an Archive ==================== -->
+  <section xml:id="engrampa-modify-archive-file"><info><title>Modificare file in un archivio</title></info> 
+     
+    <para>Per modificare i file in un archivio, seguire questi passaggi: <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem><para>Fare doppio clic sul file che si desidera aprire oppure fare clic con il tasto destro del mouse sul file e selezionare <menuchoice><guimenuitem>Apri</guimenuitem></menuchoice>.</para></listitem>
+      <listitem><para>Modificare il file aperto al punto 1 e salvare le modifiche.</para></listitem>
+      <listitem><para>Il <application>Archive Manager</application> mostrerà una finestra di dialogo di conferma per aggiornare il file nell'archivio con le modifiche apportate. </para></listitem>
+      <listitem><para>Fare clic su <guilabel>Aggiorna</guilabel>.</para></listitem>
+      </orderedlist></para>
+    <para><application>Archive Manager</application> utilizza le associazioni tra tipi di file e programmi definite dal sistema per determinare l'applicazione adatta per aprire i file. Queste associazioni possono essere visualizzate e modificate nella scheda <guilabel>Apri con</guilabel> delle proprietà dei file. Se <application>Archive Manager</application> non è in grado di trovare un'applicazione appropriata, <application>Archive Manager</application> visualizzerà la finestra <guilabel>Apri file</guilabel> per lasciarvi selezionare un'applicazione, come descritto di seguito.</para>
+    <section xml:id="engrampa-modifiy-archive-file-custom-app"><info><title>Modificare file con un programma personalizzato</title></info>
+    
+    <para>Per modificare un file, è possibile utilizzare un'applicazione specificata da voi, piuttosto che utilizzare l'applicazione predefinita. Per utilizzare un'applicazione esterna per aprire il file: <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem><para>Fare clic col pulsante destro del mouse sul file.</para></listitem>
+      <listitem><para>Selezionare <menuchoice><guimenuitem>Apri con...</guimenuitem></menuchoice>.</para></listitem>
+      </orderedlist></para>    
+    <para><application>Archive Manager</application> visualizza la finestra di dialogo <guilabel>Apri file</guilabel> che elenca tutte le applicazioni in grado di aprire il file specificato. Per selezionare una delle applicazioni, fare doppio clic sul nome dell'applicazione o eseguire un clic singolo sul nome dell'applicazione e fare clic su <guibutton>Apri</guibutton>. In alternativa, scrivere il nome dell'applicazione nella casella di testo <guilabel>Applicazione</guilabel>, quindi fare clic su <guibutton>Apri</guibutton> per avviare l'applicazione scelta.</para>
+    <para>Una volta avviata l'applicazione, seguire la procedura dal passo 2, come descritto in <xref linkend="engrampa-modify-archive-file"/>.</para>
+    </section>
+  </section>
+</section>
+
+
+<!-- ======= Viewing an archive ============= --> 
+<section xml:id="engrampa-view"><info><title>Visualizzare gli archivi</title></info>
+  
+  <para><application>Archive Manager</application> permette di visualizzare vari aspetti di un archivio.</para>
+
+<!-- ======= Archive Properties ============= --> 
+    <section xml:id="engrampa-view-archive-properties"><info><title>Visualizzare le proprietà di un archivio</title></info>
+      
+      <para>Per visualizzare le proprietà di un archivio, selezionare <menuchoice><guimenu>Archivio</guimenu><guimenuitem>Proprietà</guimenuitem></menuchoice>  per mostrare la finestra di dialogo <guilabel>Proprietà</guilabel>. La finestra <guilabel>Proprietà</guilabel> mostra le seguenti informazioni sull'archivio: <variablelist>
+	      <varlistentry>
+	        <term><guilabel>Nome</guilabel></term>
+	        <listitem><para>Il nome dell'archivio.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Posizione</guilabel></term>
+	        <listitem><para>La posizione dell'archivio sul file system.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Ultima modifica</guilabel></term>
+	        <listitem><para>La data e ora in cui l'archivio è stato modificato l'ultima volta.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Dimensioni archivio</guilabel></term>
+	        <listitem><para>La dimensione del contenuto dell'archivio compresso</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Dimensioni contenuto</guilabel></term>
+	        <listitem><para>Le dimensione del contenuto dell'archivio non compresso. L'informazione è disponibile anche nella barra di stato.</para></listitem>
+	      </varlistentry>
+
+	      <varlistentry>
+	        <term><guilabel>Rapporto di compressione</guilabel></term>
+	        <listitem><para>Il rapporto di compressione è un valore utilizzato per descrivere la riduzione delle dimensioni ottenuta. Ad esempio, un rapporto di compressione di 5 significa che l'archivio compresso è pari a 1/5 della dimensione dei dati originali.</para></listitem>
+	      </varlistentry>
+
+	      <varlistentry>
+	        <term><guilabel>Numero di file</guilabel></term>
+	        <listitem><para>Il numero dei file nell'archivio.</para></listitem>
+	      </varlistentry>
+            </variablelist></para>
+    </section>
+ 
+
+<!-- ======= Archive Contents ============= --> 
+    <section xml:id="engrampa-view-archive-contents"><info><title>Visualizzare i contenuti di un archivio</title></info>
+      
+
+      <para><application>Archive Manager</application> visualizza il contenuto dell'archivio nella finestra principale come elenco di file, con le seguenti colonne : <variablelist>
+	  <varlistentry>
+	    <term><guilabel>Nome</guilabel></term>
+	    <listitem><para>Il nome del file o della cartella nell'archivio.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Dimensione</guilabel></term>
+	    <listitem><para>La dimensione del file una volta estratto dall'archivio. Per le cartelle il campo <guilabel>Dimensione</guilabel> è vuoto. Per informazioni su come visualizzare le dimensioni del file compresso, vedere<xref linkend="engrampa-extra-info"/>.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Tipo</guilabel></term>
+	    <listitem><para>Il tipo di file. Per le cartelle, il valore di <guilabel>Tipo</guilabel> è definito come <literal>Cartella</literal>.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Data ultima modifica</guilabel></term>
+	    <listitem><para>La data in cui l'oggetto è stato modificato l'ultima volta. Per le cartelle la <guilabel>Data ultima modifica</guilabel> è vuota.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Posizione</guilabel></term>
+	    <listitem><para>Il percorso al file all'interno dell'archivio. Questa colonna è visibile solo quando la finestra è in modalità di visualizzazione per file, quando è in modalità di visualizzazione per cartelle la posizione dei file viene visualizzata nella casella di testo <guilabel>Posizione</guilabel> della barra delle cartelle. Per ulteriori informazioni sui tipi di visualizzazione, vedere <xref linkend="engrampa-view-type-folder"/>.</para></listitem>
+	  </varlistentry>
+        </variablelist></para>
+      <para>Se un altro programma ha modificato l'archivio dopo che <application>Archive Manager</application> lo ha aperto, selezionare<menuchoice><guimenu>Visualizza</guimenu><guimenuitem>Aggiorna</guimenuitem></menuchoice> per ricaricare il contenuto dell'archivio dal disco.</para>
+      <para>Per informazioni su come personalizzare il modo in cui <application>Archive Manager</application> mostra i contenuti dell'archivio, vedere <xref linkend="engrampa-archive-custom"/>.</para>
+      <para>Per le attività più avanzate utilizzare un'applicazione installata nel sistema. Per ulteriori informazioni, vedere <xref linkend="engrampa-view-archive-file"/>.</para>
+    </section>
+
+  <!-- =============  Viewing a File in an Archive ==================== -->
+  <section xml:id="engrampa-view-archive-file"><info><title>Visualizzare un file di un archivio</title></info> 
+     
+    <para>Per visualizzare un file in un archivio, seguire la procedura descritta in <xref linkend="engrampa-modify-archive-file"/>. Se si salva il file aperto, fare clic su <guilabel>Annulla</guilabel> quando <application>Gestore di archivi</application> chiede conferma per aggiornare il file nell'archivio.</para>
+  </section>
+
+<!-- =============  Testing the Integrity of an Archive ==================== -->
+  <section xml:id="engrampa-test-archive"><info><title>Verificare l'integrità di un archivio</title></info> 
+     
+    <para>A volte un archivio può essere danneggiato per qualche motivo, per verificarne l'integrità selezionare <menuchoice><guimenu>Archivio</guimenu><guimenuitem>Controlla integrità</guimenuitem></menuchoice>:<itemizedlist>
+              <listitem>
+                <para>Se l'archivio non contiene errori, <application>Archive Manager</application> aprirà la finestra di dialogo <guilabel>Risultato della verifica</guilabel> in cui sono elencati i file con, a fianco, la dicitura <literal>OK</literal>.</para>
+              </listitem>
+              <listitem>
+                <para>Se l'archivio contiene qualche errore, <application>Archive Manager</application> aprirà la finestra di dialogo <guilabel>Risultato della verifica</guilabel> in cui viene mostrata la parta dell'archivio contenente l'errore.</para>
+              </listitem>
+            </itemizedlist></para>
+    <para>Un archivio danneggiato può essere impossibile da estrarre e questo può portare ad una perdita di dati. Per questo motivo è necessario verificare l'integrità dell'archivio prima di cancellare i file originali.</para>
+    <para>Se l'archivio contiene file crittografati, <application>Gestore di archivi</application> chiederà la password dell'archivio prima di eseguire il test.</para>
+    <note>
+      <para>Non tutti i tipi di archivio supportano il test di integrità, i tipi di archivio che possono essere testati sono: 7-Zip, RAR, ZIP, ACE, ARJ e Zoo.</para>
+    </note>
+    <tip><info><title>Suggerimento</title></info>
+      
+      <para>Per verificare l'integrità di un archivio che non supporta il test di integrità, estrai tutti i file dall'archivio e assicurati che l'operazione venga completata con successo.</para>      
+    </tip>
+  </section>  
+</section>
+    
+<!-- ======= Customizing the Archive Display ============= --> 
+<section xml:id="engrampa-archive-custom"><info><title>Personalizzare la visualizzazione di un archivio</title></info>
+  
+  <para>È possibile personalizzare il modo in cui <application>Archive Manager</application> visualizza il contenuto dell'archivio come segue:</para>
+  <itemizedlist>
+    <listitem>
+      <para>Passare dalla visualizzazione per cartelle a quella per file. Per ulteriori informazioni, vedere <xref linkend="engrampa-view-type"/> .</para>
+    </listitem>
+    <listitem>
+      <para>Specificare l'ordine di visualizzazione nella lista. Per ulteriori informazioni, vedere <xref linkend="engrampa-view-sort"/>.</para>
+    </listitem> 
+    <listitem>
+      <para>Mostrare le informazioni aggiuntive sui contenuti dell'archivio. Per ulteriori informazioni, vedere <xref linkend="engrampa-extra-info"/>.</para>
+    </listitem> 
+  </itemizedlist>
+  <para><application>Archive Manager</application> modifica la visualizzazione immediatamente, non appena vengono apportate le personalizzazioni di cui sopra.</para>
+
+  <section xml:id="engrampa-view-type"><info><title>Impostare il tipo di visualizzazione</title></info>
+    
+    <para>Se l'archivio contiene delle cartelle, se ne può puoi mostrare il contenuto in <xref linkend="engrampa-view-type-folder"/> o <xref linkend="engrampa-view-type-file"/>.</para>
+
+    <section xml:id="engrampa-view-type-folder"><info><title>Visualizzazione come cartella</title></info>
+      
+      <para><application>Archive Manager </application> mostrerà i contenuti nella visualizzazione per cartelle come impostazione predefinita. Per selezionare questa modalità manualmente, selezionare <menuchoice><guimenu>Visualizza</guimenu><guimenuitem>Visualizza come una cartella</guimenuitem></menuchoice>.</para>
+      <para>Nella visualizzazione per cartelle, il <application>Archive Manager</application> mostra le cartelle così come farebbe il gestore dei file. Cioè <application>Archive Manager</application> mostrerà le cartelle nell'area di visualizzazione con l'icona di una cartella e il relativo nome. Per vederne il contenuto, basterà fare doppio clic sul nome della cartella.</para>
+      <para>La barra della cartella, che <application>Archive Manager</application> mostra solo nella visualizzazione come cartella, contiene gli strumenti descritti nella tabella seguente.</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Componente</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Descrizione</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/engrampa_leftarrow.png" format="PNG"/> </imageobject> <textobject> <phrase>Mostra l'icona per navigare all'indietro nei percorsi selezionati.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Fare clic su questo pulsante per navigare indietro nella cronologia delle posizioni.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/engrampa_rightarrow.png" format="PNG"/> </imageobject> <textobject> <phrase>Mostra l'icona per navigare in avanti nei percorsi selezionati.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Fare clic su questo pulsante per andare alla posizione successiva della cronologia.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/engrampa_uparrow.png" format="PNG"/> </imageobject> <textobject> <phrase>Mostra l'icona per navigare in sù nell'albero delle cartelle.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Fare clic su questo pulsante per salire di un livello nell'albero gerarchico delle cartelle.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/engrampa_home.png" format="PNG"/> </imageobject> <textobject> <phrase>Mostra l'icona per aprire la posizione di livello più alto dell'archivio.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Fare ciic su questo pulsante per salire al livello più alto dell'albero gerarchico delle cartelle.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><guilabel>Posizione</guilabel></para>
+              </entry>
+              <entry>
+                <para>Questo campo mostra il percorso completo all'interno dell'archivio della cartella attuale.</para>
+                <para>Per passare a un livello diverso nell'albero delle cartelle, inserire manualmente la nuova posizione nella casella di testo <guilabel>Posizione</guilabel> e premere <keycap>Invio</keycap>. <application>Archive Manager</application> visualizzerà il contenuto della nuova posizione.</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
+
+    <section xml:id="engrampa-view-type-file"><info><title>Visualizzazione come elenco di file</title></info>
+      
+      <para>Per selezionare questa visualizzazione, selezionare <menuchoice><guimenu>Visualizza</guimenu><guimenuitem>Visualizza tutti i file</guimenuitem></menuchoice>.</para>
+      <para>Nella vista per file, <application>Gestore di archivi</application> mostrerà tutti i file dell'archivio, compresi quelli contenuti nelle sottocartelle, come un unico elenco.</para>
+    </section>
+
+  </section>
+
+  <section xml:id="engrampa-view-sort"><info><title>Ordinare l'elenco dei file</title></info>
+    
+    <para>È possibile ordinare l'elenco per nome, per dimensione, per tipo, per data di modifica o per posizione.</para>
+    <para>Per selezionare la modalità di ordinamento, farei clic sull'intestazione della colonna corrispondente.</para>
+    <para>Per invertire l'ordine, fare nuovamente clic sull'intestazione della colonna.</para>
+    <para>Ad esempio, per ordinare l'elenco dei file per data di modifica, fare clic sull'intestazione <guilabel>Data ultima modifica</guilabel>. <application>Archive Manager</application> riorganizzerà l'elenco dei file per visualizzarli per data di modifica, a partire dai più antichi. Per visualizzare per prima i file più recenti, fare nuovamente clic sull'intestazione <guilabel>Data ultima modifica</guilabel></para>
+    <para><application>Archive Manager</application> esegue sempre un ordinamento secondario in base al nome del file. Nell'esempio precedente, <application>Archive Manager</application> ordina per nome tutti i file che hanno la stessa data di modifica.</para>
+  </section>
+
+  <section xml:id="engrampa-extra-info"><info><title>Mostrare informazioni aggiuntive</title></info>
+    
+      <para>Per aprire la finestra <guilabel>Ultimo output</guilabel> selezionare <menuchoice><guimenu>Visualizza</guimenu><guimenuitem>Ultimo output</guimenuitem></menuchoice>: <itemizedlist>
+              <listitem>
+                <para>Se l'archivio è stato verificato nella sessione corrente del <application>Archive Manager</application> la voce di menù <guilabel>Ultimo output</guilabel> mostrerà i risultati dell'ultimo test.</para>
+              </listitem>
+              <listitem>
+                <para>Se invece l'archivio non è stato verificato nella sessione attuale del <application>Archive Manager</application>, la voce <guilabel>Ultimo output</guilabel> visualizzerà un elenco di tutti i file presenti nell'archivio, ma non indica alcuno stato dei file. La finestra di dialogo <guilabel>Ultimo output</guilabel> fornisce la dimensione compressa di ciascun file, la percentuale di compressione e la data e l'ora dell'ultima modifica.</para>
+              </listitem>
+            </itemizedlist></para>
+  </section>
+</section>
+
+<!-- ====== Using the File Manager Popup Menu to Manipulate an Archive ===== -->
+
+<section xml:id="engrampa-fmgr"><info><title>Utilizzare il Gestore dei file per operare su un archivio</title></info> 
+     
+    <para>È possibile utilizzare il gestore dei file per aggiungere o estrarre elementi da un archivio.</para>
+
+<!-- ======= Adding files Using File Manager Menu  ============= --> 
+    <section xml:id="engrampa-fmgr-add"><info><title>Aggiungere elementi dal gestore dei file</title></info>
+      
+           <para>È possibile aggiungere file ad un archivio nei seguenti modi: <itemizedlist>
+             <listitem><para>Trascinare i file nella finestra del <application>Archive Manager</application> dal gestore dei file.</para>
+             </listitem>
+             <listitem><para>Utilizzare il menu a comparsa del gestore dei file per aggiungere file ad un archivio.</para>
+             </listitem>
+          </itemizedlist></para>
+      <para>Per utilizzare il menu a comparsa del gestore file per aggiungere elementi a un archivio, seguire questi passaggi:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>Fare clic destro sui file o sulle cartelle nel gestore dei file.</para>
+        </listitem>
+        <listitem><para>Selezionare <guimenuitem>Crea archivio</guimenuitem> dal menù a comparsa del gestore dei file per mostrare la finestra di dialogo di <application>Archive Manager</application> denominata <guilabel>Crea archivio</guilabel>.</para>
+        </listitem>
+        <listitem><para>Inserire il nome dell'archivio, senza estensione, nel campo <guilabel>Archivio</guilabel>.</para>
+        </listitem>
+        <listitem><para>Selezionare il tipo di archivio dalla lista disponibile.</para>
+        </listitem>
+        <listitem><para>Selezionare il percorso in cui salvare il file di archivio, dall'elenco <guilabel>Posizione</guilabel>. Se la posizione non è elencata, selezionare <guilabel>Altro...</guilabel> per aprire la finestra di dialogo <guilabel>Posizione</guilabel>.</para>
+        </listitem>
+        <listitem><para>Selezionare le opzioni di creazione desiderate cliccando su <guilabel>Altre opzioni</guilabel>. Per ulteriori informazioni sulle opzioni di creazione, vedere <xref linkend="engrampa-create-options"/>.</para>
+        </listitem>
+        <listitem><para>Fare clic su <guilabel>Crea</guilabel> per aggiungere i file selezionati alla cartella principale dell'archivio specificato. </para>
+                 <note><para>Per selezionare una delle opzioni avanzate, è necessario richiamare <application>Archive Manager</application> come descritto in <xref linkend="engrampa-to-start"/>.</para></note>
+        </listitem>
+      </orderedlist>
+    </section>
+
+<!-- ======= Extracting files Using File Manager Menu  ============= --> 
+  <section xml:id="engrampa-fmgr-extract"><info><title>Estrarre file da un archivio utilizzando il gestore dei file</title></info>
+      
+           <para>È possibile estrarre i file da un archivio utilizzando il gestore dei file, nei seguenti modi: <itemizedlist>
+             <listitem><para>Trascinare i file dalla finestra del <application>Archive Manager</application> a quella del gestore dei file.</para>
+             </listitem>
+             <listitem><para>Utilizzare il menu a comparsa del gestore dei file per estrarre i file dall'archivio.</para>
+             </listitem>
+          </itemizedlist></para>
+      <para>Per utilizzare il menu a comparsa del gestore file per estrarre elementi da un archivio, seguire questi passaggi:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>Fare clic con il tasto destro sull'archivio dal gestore dei file.</para>
+        </listitem>
+        <listitem><para>Selezionare <guimenuitem>Estrai qui</guimenuitem> per estrarre tutti i contenuti dell'archivio nella cartella in cui si trova l'archivio. </para>
+        </listitem>
+      </orderedlist>
+      <note><para>Se l'archivio è cifrato, <application>Archive Manager</application> chiederà la password prima di estrarre i file.</para></note>
+    </section>
+
+</section>
+
+<!-- ======= Create Archive Advanced Options  ============= --> 
+    <section xml:id="engrampa-create-options"><info><title>Opzioni di creazione</title></info>
+      
+      <para>Creando un nuovo archivio, o convertendone uno esistente in un altro formato, fare clic su <guilabel>Altre Opzioni</guilabel> per specificare le seguenti funzioni avanzate:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Password</guilabel></term>
+	  <listitem>
+	  <para>Inserire la password che sarà utilizzata per cifrare l'archivio. Se non verrà specificata una password, l'archivio non sarà cifrato.</para>
+	  <note>
+	    <para>Non tutti i formati di archiviazione supportano la cifratura. Per ulteriori informazioni sulla cifratura dei file, vedere <xref linkend="engrampa-encrypt-files"/>.</para>
+	  </note>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>	  
+	  <term><guilabel>Cifra anche l'elenco dei file</guilabel></term>
+	  <listitem>
+	  <para>Selezionando questa opzione verrà richiesta la password anche per visualizzare l'elenco dei file contenuti nell'archivio, in caso contrario la password verrà richiesta solo per estrarre i file. Questa opzione è disponibile solo se viene specificata una password.</para>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>	  
+	  <term><guilabel>Dividi in volumi</guilabel></term>
+	  <listitem>
+	  <para>Selezionare questa opzione per dividere l'archivio in più file della dimensione specificata.</para>
+	  <note>
+	    <para>Solo gli archivi 7-Zip e RAR supportano questa funzione.</para>
+	  </note>
+	  </listitem>
+	</varlistentry>
+      </variablelist>
+    </section>
+
+<!-- ======= Add Advanced Options  ============= --> 
+    <section xml:id="engrampa-add-options"><info><title>Opzioni di aggiunta</title></info>
+      
+      <para><guilabel>Aggiungi file</guilabel> e <guilabel>Aggiungi una cartella</guilabel> forniscono le seguenti opzioni:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Aggiungi solo se più recente</guilabel></term>
+	  <listitem>
+            <para>Selezionare questa opzione per aggiungere il file specificato all'archivio solo se non è già presente o se la versione nell'archivio è più vecchia. <application>Archive Manager</application> utilizzerà la data di modifica per determinare quale file è il più recente. Se la versione presente nell'archivio è più recente, <application>Archive Manager</application> non aggiungerà il file specificato all'archivio.</para>
+	    <para>Se non si seleziona questa opzione, <application>Archive Manager</application> aggiungerà il file all'archivio sovrascrivendo i contenuti precedenti.</para>
+	    <tip><info><title>Suggerimento</title></info>
+	      
+	      <para>Se si utilizza <application>Gestore di archivi</application> per creare backup, l'opzione <guilabel>Aggiungi solo se più recente</guilabel> è molto utile. Supponiamo che l'archivio <filename>backup.tar.gz</filename> contenga il backup della scorsa settimana della vostra cartella home. Per aggiornare l'archivio in modo che contenga un backup aggiornato della stessa cartella seguire questi passaggi: <orderedlist inheritnum="ignore" continuation="restarts">
+                      <listitem>
+                        <para>Aprire l'archivio <filename>backup.tar.gz</filename> in <application>Archive Manager</application>.</para>
+                      </listitem>
+                      <listitem>
+                        <para>Selezionare <menuchoice><guimenu>Modifica</guimenu><guimenuitem>Aggiungi</guimenuitem></menuchoice> per mostrare la finestra di dialogo <guilabel>Aggiungi una cartella</guilabel>.</para> 
+                      </listitem>
+                      <listitem>
+                        <para>Selezionare la vostra cartella home.</para>
+                      </listitem>
+                      <listitem>
+                        <para>Selezionare l'opzione <guilabel>Aggiungi solo se più recente</guilabel>.</para>
+                      </listitem>
+                      <listitem>
+                        <para>Fare clic su <guibutton>Aggiungi</guibutton></para>
+                      </listitem>
+                    </orderedlist></para>
+                <para><application>Archive Manager</application> aggiungerà automaticamente all'archivio tutti i file creati nell'ultima settimana e aggiornerà quelli modificati nello stesso periodo. Tuttavia, <application>Archive Manager</application> non rimuoverà dall'archivio i file eliminati durante l'ultima settimana. L'operazione di aggiornamento dell'archivio è molto più veloce di un backup completo della cartella home.</para>
+	  </tip>
+	</listitem>
+      </varlistentry>
+      </variablelist>
+      <section xml:id="engrampa-add-folder-options"><info><title>Opzioni Aggiungi alla cartella</title></info>
+      
+      <para>Le seguenti opzioni sono disponibili nella finestra di dialogo <guilabel>Aggiungi una cartella</guilabel> e permettono di selezionare automaticamente e di aggiungere tutti i file che soddisfano determinati criteri:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Includi i file</guilabel></term>
+	  <listitem>
+            <para>Inserire un modello di nome di file in questa casella di testo per includere i file che corrispondono al modello specificato. Vedere <xref linkend="engrampa-pattern"/> per ulteriori informazioni sui modelli dei nomi di file.</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Escludi i file</guilabel></term>
+	  <listitem>
+            <para>Inserire un modello di nome di file in questa casella di testo per escludere i file con i nomi che corrispondono al modello specificato. Vedere <xref linkend="engrampa-pattern"/> Per maggiori informazioni sui modelli di nomi di file.</para>
+          </listitem>
+	</varlistentry>
+        <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Escludi cartelle</guilabel></term>
+	  <listitem>
+            <para>Inserire un modello di nome di file in questa casella di testo per escludere le cartelle che corrispondono al modello specificato. Vedere <xref linkend="engrampa-pattern"/> per maggiori informazioni sui modelli di nomi di file.</para>
+          </listitem>
+	</varlistentry>      
+       <!-- ============= -->	
+      <varlistentry>
+	<term><guilabel>Includi le sottocartelle</guilabel></term>
+	<listitem>
+          <para>Selezionare questa opzione per aggiungere tutti i file che corrispondono al modello specificato, dalla cartella corrente e dalle sottocartelle.</para>
+          <note>
+          <para>Il nome del file, non il nome della sottocartella, deve corrispondere al modello specificato. </para>
+          </note>
+	  <para>Se non si seleziona questa opzione, <application>Archive Manager</application> aggiungerà i file corrispondenti solo dalla cartella corrente.</para>
+        </listitem>
+      </varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guilabel>Escludi le cartelle che sono collegamenti simbolici</guilabel></term>
+	  <listitem>
+            <para>Selezionare questa opzione per omettere i file delle cartelle che sono collegamenti simbolici. I collegamenti simbolici sono puntatori o scorciatoie ad altre cartelle</para>
+	    <para>Se non si seleziona questa opzione, <application>Archive Manager</application> aggiungerà i file che corrispondono al modello di nome di file dalle cartelle che sono collegamenti simbolici.</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->
+     <varlistentry>
+	<term><guibutton>Salva opzioni</guibutton></term>
+	  <listitem>
+            <para>Fare clic su questo pulsante per salvare su un file la selezione corrente di opzioni di aggiunta avanzate. Sarà mostrata la finestra di dialogo <guilabel>Salva opzioni</guilabel>. Inserire un nome di file descrittivo nella casella di testo <guilabel>Nome opzioni</guilabel>, e quindi fare clic su <guibutton>Salva</guibutton>.</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guibutton>Carica opzioni</guibutton></term>
+	  <listitem>
+            <para>Fare clic su questo pulsante per caricare o cancellare una precedente selezione di opzioni di aggiunta avanzate. Sarà mostrata la finestra di dialogo <guilabel>Carica opzioni</guilabel>.</para>
+            <itemizedlist>
+              <listitem>
+                <para>Per caricare un insieme di opzioni, selezionare il file opzioni e fare clic su <guibutton>Applica</guibutton>.</para>
+              </listitem>
+              <listitem>
+                <para>Per cancellare un insieme di opzioni, selezionare il file di opzioni e fare clic su <guibutton>Rimuovi</guibutton>. Fare clic su <guibutton>Chiudi</guibutton> per chiudere la finestra di dialogo <guilabel>Carica opzioni</guilabel>.</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guibutton>Resetta Opzioni</guibutton></term>
+	  <listitem>
+            <para>Fare clic su su questo pulsante per resettare la selezione corrente di opzioni avanzate di aggiunta ai valori predefiniti.</para>
+          </listitem>
+	</varlistentry>
+      </variablelist>
+    </section>
+  </section>
+
+<!-- ======= Extract Options  ============= --> 
+  <section xml:id="engrampa-extract-options"><info><title>Opzioni di estrazione</title></info>
+    
+      
+    <para>La finestra di dialogo <guilabel>Estrai</guilabel> fornisce le seguenti opzioni, che vengono salvate quando si chiude <application>Archive Manager</application>:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Estrai</guilabel></term>
+	  <listitem>
+            <para>Seleziona i file che saranno estratti:</para>
+            <variablelist>
+              <varlistentry>
+                <term><guilabel>Tutti i file</guilabel></term>
+                <listitem>
+                  <para>Estrai tutti i file dall'archivio.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term><guilabel>File selezionati</guilabel></term>
+                <listitem>
+                  <para>Estrai i seguenti file dall'archivio.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term><guilabel>File</guilabel></term>
+                <listitem>
+                  <para>Estrai dall'archivio tutti i file che corrispondono al modello specificato. Vedere <xref linkend="engrampa-pattern"/> per maggiori informazioni sui modelli di filename.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+	  </listitem>
+	</varlistentry>
+	<!-- ============= -->	
+	<varlistentry>
+      <term><guilabel>Azioni</guilabel></term>
+        <listitem>
+          <para>Selezionare le opzioni di estrazione seguenti:</para>	
+          <variablelist>
+	        <varlistentry>
+	          <term><guilabel>Ri-crea le cartelle</guilabel></term>
+	          <listitem><para>Selezionare questa opzione per ricostruire la struttura delle cartelle quando si estrae il file specificato.</para> 
+                <para>Per esempio, si specifica <filename>/tmp</filename> nell'area di testo <guilabel>Filename</guilabel> e si sceglie di estrarre tutti i file. L'archivio creato conterrà una sotto-cartella chiamata <filename>doc</filename>. <itemizedlist>
+                  <listitem><para>Se si seleziona l'opzione <guilabel>Ri-crea le cartelle</guilabel>, <application>Archive Manager</application> estrae i contenuti della sotto-cartella in <filename>/tmp/doc</filename>.</para>
+                 </listitem>
+                 <listitem><para>Se non si seleziona l'opzione <guilabel>Ri-crea le cartelle</guilabel>, <application>Archive Manager</application> non crea alcuna sotto-cartella. Al contrario, <application>Archive Manager</application> estrae tutti i file dall'archivio, inclusi i file delle sottocartelle, in <filename>/tmp</filename>.</para>
+                 </listitem>
+               </itemizedlist></para></listitem>
+	         </varlistentry>
+             <!-- ============= -->	
+	         <varlistentry>
+	           <term><guilabel>Sovrascrivi i file esistenti</guilabel></term>
+	           <listitem><para>Selezionare questa opzione per sovrascrivere ogni file nella cartella di destinazione che hanno lo stesso nome dei file specificati.</para>
+	             <para>Se non si seleziona questa opzione, <application>Archive Manager</application> non estrarrà il file specificato se nella cartella di destinazione esiste un file con lo stesso nome .</para>
+	           </listitem>
+	         </varlistentry>
+             <!-- ============= -->	
+	         <varlistentry>
+	           <term><guilabel>Non estrarre i file più vecchi</guilabel></term>
+	           <listitem>
+	             <para>Questa opzione è attiva solo se l'opzione <guilabel>Sovrascrivi i file esistenti</guilabel> è selezionata.</para>
+	             <para>Selezionare l'opzione <guilabel>Non estrarre i file più vecchi</guilabel> per estrarre il file specificato solo se esso non è presente nella cartella di destinazione, o se essa contiene una versione più vecchia del file. <application>Archive Manager</application> usa la data di ultima modifica per determinare quale file è il più recente. Se il file nell'archivio è più antico, <application>Archive Manager</application> non estrarrà il file specificato nella cartella di destinazione.</para>
+	             <para>Se non si seleziona l'opzione <guilabel>Non estrarre i file più vecchi</guilabel> mentre è selezionata l'opzione <guilabel>Sovrascrivi i file esistenti</guilabel>,  <application>Gestore di archivi</application> estrarrà il file specificato dall'archivio e sovrascriverà il contenuto precedente della cartella di destinazione.</para>
+	           </listitem>
+	         </varlistentry>
+	       </variablelist>
+	     </listitem>
+	   </varlistentry>
+     </variablelist>	
+  </section>
+</article>

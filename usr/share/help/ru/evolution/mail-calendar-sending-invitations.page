@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-calendar-sending-invitations" xml:lang="ru">
+
+  <info>
+    <desc>Отправка контактам приглашений на встречи по электронной почте.</desc>
+
+    <link type="guide" xref="index#mail-advanced"/>
+    <link type="guide" xref="index#calendar"/>
+    <!-- TODO:NICETOHAVE: Find a better place to link this against. Also I cannot link into two anchors on index so only the first one is shown? -->
+
+    <revision pkgversion="2.32.1" version="0.1" date="2011-07-21" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/rsvp-stuff.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Отправка приглашений по электронной почте</title>
+
+<p>Если внести запись о событии в календарь, затем можно разослать приглашения по списку приглашённых с помощью почтового средства <app>Evolution</app>. Пригласительные карточки рассылаются как вложения в формате iCal.</p>
+
+<p>Чтобы отправить приглашение, щёлкните по записи в календаре правой кнопкой мыши и выберите пункт <gui>Переслать как iCalendar…</gui>.</p>
+
+<p>При получении приглашения есть несколько вариантов:</p>
+
+<list>
+<item><p>Принять:</p><p>Означает, что вы намерены встретиться. При нажатии кнопки «ОК» встреча записывается в ваш календарь.</p></item>
+<item><p>Условно принять:</p><p>Означает, что вы, вероятно, посетите встречу. При нажатии кнопки «ОК» встреча записывается в ваш календарь, но помечается как условная.</p></item>
+<item><p>Отклонить:</p><p>Означает, что вы не можете прибыть на встречу. При нажатии кнопки «ОК» встреча не записывается в ваш календарь, но если включён параметр «Отправить ответ организатору», то ваш ответ направляется организаторам встречи.</p></item>
+<item><p>Отправить ответ организатору:</p><p>Выберите этот параметр, если следует направить ваш ответ организаторам встречи.</p></item>
+</list>
+ 
+</page>

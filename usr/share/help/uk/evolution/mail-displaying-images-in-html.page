@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-displaying-images-in-html" xml:lang="uk">
+
+  <info>
+    <desc>Про вбудовані зображення у отриманих повідомленнях HTML.</desc>
+
+    <link type="guide" xref="mail-displaying-message"/>
+
+    <revision pkgversion="3.30.4" version="0.5" date="2019-01-19" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en#usage-mail-getnsend-get-attach-html -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Зображення у повідомленнях HTML</title>
+
+<p>Якщо хтось надішле вам повідомлення HTML, до вмісту якого буде включено зображення (наприклад, вітальне повідомлення у вашій теці «Вхідні»), <app>Evolution</app> покаже зображення у повідомленні.</p>
+
+<section id="loading">
+<title>Завантаження зображень</title>
+<p>Деякі зображення можуть бути посиланнями у повідомленні, а не частиною повідомлення. <app>Evolution</app> може отримувати такі зображення з інтернету, але не робитиме цього без вашого запиту. Причиною цього є те, що розміщені на віддалених комп'ютерах зображення повільно завантажуються і не одразу показуються, ними можуть скористатися спамери для стеження за прочитанням пошти. Вимикання автоматичного завантаження зображень захищає вас від зовнішніх загроз.</p>
+
+<p>Щоб завантажити зображення для одного повідомлення, виберіть пункт меню <guiseq><gui>Перегляд</gui><gui>Завантажити зображення</gui></guiseq> або натисніть комбінацію клавіш <keyseq><key>Ctrl</key><key>I</key></keyseq>.</p>
+
+<p>Щоб встановити типову дію щодо завантаження зображень, скористайтеся пунктом <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Параметри пошти</gui><gui>Повідомлення HTML</gui><gui>Завантаження віддаленого вмісту</gui></guiseq>.</p>
+</section>
+
+<section id="automatically-download">
+<title>Автоматичне отримання зображень у повідомленнях від тих, кого ви знаєте</title>
+
+<p>Ви можете наказати програмі отримувати зображення з повідомлень електронної пошти, які надіслано вашими контактами. Для цього скористайтеся пунктом <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Параметри пошти</gui><gui>Повідомлення HTML</gui><gui>Завантаження зображень</gui></guiseq>. Позначте пункт <gui>Завантажувати віддалений вміст лише в листах від контактів</gui>.</p>
+
+<p>Далі, скористайтеся пунктом <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Контакти</gui><gui>Автодоповнення</gui></guiseq>. Увімкніть автодоповнення позначенням пункту <gui>Завжди показувати адресу контакту автозаповнення</gui>.</p>
+</section>
+
+<section id="saving">
+<title>Збереження зображень</title>
+<p>Щоб зберегти зображення, яке вбудовано до повідомлення електронної пошти у форматі HTML, клацніть правою кнопкою на зображенні і виберіть у контекстному меню пункт <gui>Зберегти зображення…</gui>.</p>
+</section>
+
+</page>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-two-trash-folders" xml:lang="uk">
+
+  <info>
+    <desc>Як створити єдину теку для смітника та спаму для кожного облікового запису.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+    <link type="seealso" xref="mail-default-folder-locations"/>
+
+    <revision pkgversion="3.7.4" version="0.2" date="2013-01-23" status="final"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Для одного облікового запису показано дві теки «Смітник» або «<gui>Спам</gui>»</title>
+
+<p>Якщо ви користуєтеся поштовим обліковим записом із віддаленим зберіганням даних, у якому теки «Спам» і/або «<gui>Смітник</gui>» зберігаються і на боці сервера, в <app>Evolution</app> може бути показано теки-дублікати.</p>
+<p>Відрізнити дві теки «<gui>Trash</gui>» дуже просто за їхніми піктограмами. В <app>Evolution</app> тека «<gui>Смітник</gui>» має спеціальну піктограму, а інша, фізична» тека «<gui>Trash</gui>» виглядає як будь-які звичайна тека.</p>
+
+<p>Типово, в <app>Evolution</app> теки «<gui>Смітник</gui>» і «<gui>Junk</gui>» є <link xref="mail-search-folders">теками пошуку</link> (віртуальними теками). Ці теки насправді не існують, а є лише відображенням усіх повідомлень, які позначено як спам або позначено до вилучення у будь-якій з тек відповідного облікового запису.</p>
+
+<p>Якщо ви хочете використовувати лише теки «Спам» і «Смітник» з поштового сервера, позначте відповідні пункти <gui>Використовувати справжню теку</gui> на сторінці <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Облікові записи</gui><gui style="button">Редагувати</gui><gui>Умовчання</gui></guiseq>. Після цього, локальні віртуальні теки <app>Evolution</app> не використовуватимуться.</p>
+
+</page>

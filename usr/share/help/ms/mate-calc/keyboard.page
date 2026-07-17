@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="keyboard" xml:lang="ms">
+
+    <info>
+        <link type="guide" xref="index#ui"/>
+    </info>
+
+	<title>Menggunakan Papan Kekunci</title>
+
+    <p>Semua persamaan matematik boleh dimasukkan menggunakan papan kekunci.</p>
+    <p>Gabungan kekunci berikut boleh digunakan untuk memasukkan kekunci yang mungkin tidak tersedia pada papan kekunci anda.</p>
+    <table>
+    <tr>
+    <td><p>×</p></td>
+    <td><p><key>*</key></p></td>
+    </tr>
+    <tr>
+    <td><p>÷</p></td>
+    <td><p><key>/</key></p></td>
+    </tr>
+    <tr>
+    <td><p>^</p></td>
+    <td><p><key>*</key> dua kali</p></td>
+    </tr>
+    <tr>
+    <td><p>√</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>R</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>π</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>P</key></keyseq></p></td>
+    </tr>
+    </table>
+    <p>Untuk masukkan <link xref="superscript">nombor superskrip</link> guna <keyseq><key>Ctrl</key>nombor</keyseq>, untuk subskrip guna <keyseq><key>Alt</key>nombor</keyseq>.</p>
+    <p>Ketika dalam <link xref="mouse">mod pengaturcaraan</link>, untuk mengitar antara digit-digit asas guna:</p>
+    <table>
+    <tr>
+    <td><p>Binari</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>B</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>Oktal</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>O</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>Desimal</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>D</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>Heksadesimal</p></td>
+    <td><p><keyseq><key>Ctrl</key><key>H</key></keyseq></p></td>
+    </tr>
+    </table>
+    <p>Untuk mengitar antara masukan sejarah anda boleh guna:</p>
+    <table>
+    <tr>
+    <td><p>Masukan Terdahulu</p></td>
+    <td><p><keyseq><key>Alt</key><key>Atas</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>Masukan Berikutnya</p></td>
+    <td><p><keyseq><key>Alt</key><key>Bawah</key></keyseq></p></td>
+    </tr>
+    </table>
+</page>

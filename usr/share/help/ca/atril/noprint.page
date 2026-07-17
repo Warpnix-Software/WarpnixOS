@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:if="http://projectmallard.org/if/1.0/" type="topic" style="task" id="noprint" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#printing"/>
+    <desc>L'autor pot haver aplicat restriccions d'impresió al document.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Carles Ferrando Garcia</mal:name>
+      <mal:email>carles.ferrando@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert Antoni Buj Gelonch</mal:name>
+      <mal:email>rbuj@fedoraproject.org</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  </info>
+
+<title>No puc imprimir un document</title>
+<section id="why">
+ <title>Possibles motius per la fallada de la impressió</title>
+<p>Un document pot no imprimir-se degut a:</p>
+ <list>
+  <item><p>Problemes amb la impressora o bé,</p></item>
+  <item><p>restriccions en la impressió PDF.</p></item>
+ </list>
+</section>
+
+<section id="printer-problems">
+  <title>Problemes amb la impressora</title>
+  <p>Hi ha molts possibles motius perquè la vostra impressora no funcioni. Per exemple, pot faltar-li paper o tinta, o pot estar desconnectada o avariada.</p>
+  <p>Convé que comproveu la configuració de la vostra impressora al Centre de Control.</p>
+</section>
+
+<section id="pdf-restrictions">
+  <title>Restriccions en la impressió d'un PDF</title>
+  <p>Alguns documents PDF estan configurats per evitar que els imprimiu. Els autors poden restringir la impressió quan produeixen el document. Atril, per defecte ignora aquesta restricció, però podeu comprovar si aquest comportament no s'ha modificat: </p>
+
+  <note style="important">
+    <p>Heu de tenir instal·lat <app>dconf Editor</app> al vostre ordinador per canviar aquest paràmetre.</p>
+  </note>
+
+  <steps>
+    <item>
+      <p>Obriu <gui>dconf Editor</gui>.</p>
+    </item>
+    <item>
+      <p>Aneu fins <sys>/org/mate/atril</sys>.</p>
+    </item>
+    <item>
+      <p>Verifiqueu que l'opció <gui>override-restrictions</gui> està activada.</p>
+    </item>
+    <item>
+      <p>Torneu a <app>Atril</app> i torneu a provar d'imprimir el document.</p>
+    </item>
+  </steps>
+</section>
+
+</page>

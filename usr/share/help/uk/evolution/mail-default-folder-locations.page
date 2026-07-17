@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-default-folder-locations" xml:lang="uk">
+
+  <info>
+    <desc>Зміна розташування тек <gui>Чернетки</gui>, <gui>Надіслані</gui>, <gui>Смітник</gui> і <gui>Спам</gui>.</desc>
+
+    <link type="guide" xref="mail-account-manage-imap-plus#defaults"/>
+    <link type="guide" xref="mail-account-manage-local-delivery#defaults"/>
+    <link type="guide" xref="mail-account-manage-maildir-format-directories#defaults"/>
+    <link type="guide" xref="mail-account-manage-mh-format-directories#defaults"/>
+    <link type="guide" xref="mail-account-manage-pop#defaults"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-directory#defaults"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-file#defaults"/>
+    <link type="guide" xref="mail-account-manage-usenet-news#defaults"/>
+    <link type="guide" xref="mail-account-manage-microsoft-exchange-evo-mapi#defaults"/>
+    <link type="guide" xref="mail-account-manage-microsoft-exchange-evo-ews#defaults"/>
+
+    <revision pkgversion="3.32.0" version="0.4" date="2019-03-14" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Розташування тек пошти</title>
+
+<p>Ви можете встановити інше місце для зберігання повідомлень у ваших теках <gui>Чернетки</gui> та <gui>Надіслані</gui> за допомогою розділу <gui>Умовчання</gui> редактора облікових записів пошти (<guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Облікові записи</gui><gui style="button">Редагувати</gui><gui>Умовчання</gui></guiseq>).</p>
+<p>Ви можете визначити <gui>Архівну теку</gui> для цього облікового запису для пересування до неї застарілих повідомлень. Для цього спочатку слід створити резервну теку за допомогою сторінки <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Параметри пошти</gui><gui>Загальне</gui><gui>Архівувати пошту</gui></guiseq>. Вибір пункту <guiseq><gui>Повідомлення</gui><gui>Архівувати</gui></guiseq> у головному меню пересуватиме позначення повідомлення до вказаної теки.</p>
+<p>Для типів віддалених облікових записів (облікових записів, подібних до IMAP) ви також можете скористатися теками на сервері електронної пошти для спаму і смітника, вибравши відповідне значення для параметра <gui>Використовувати справжню теку</gui>. У цьому випадку у <app>Evolution</app> не використовуватимуться локальні <link xref="mail-search-folders">віртуальні теки</link>.</p>
+
+</page>

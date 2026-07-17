@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-meetings-replying-to-invitation" xml:lang="eu">
+
+  <info>
+    <desc>Bilerarako gonbita onartzea eta hari erantzutea.</desc>
+    
+    <link type="guide" xref="calendar-meetings"/>
+
+    <revision pkgversion="3.1.5" version="0.6" date="2011-08-25" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+ <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#replying-to-rsvp -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+      
+
+  </info>
+
+<title>Bilera-eskari bati erantzutea</title>
+<p>Bilera-eskaerak eranskin gisa bidaltzen dira eta posta-mezuaren gorputzean bistaratzen dira. Gertaerari buruzko xehetasun guztiak erakusten dira, ordua eta data barne.</p>
+<p>You can choose whether and how to reply to the invitation and add a personal comment to your reply. Available options are to <gui>Decline</gui>, Tentatively Accept (<gui>Tentative</gui>), or <gui>Accept</gui>. You can also decide whether the time of the meeting will still be shown as free in your calendar.</p>
+
+<p>If the meeting request already includes a <link xref="calendar-alarms-and-reminders">reminder</link> you can import the reminder to your calendar by enabling <gui>Inherit reminder</gui>.</p>
+
+<p><gui>Onartu</gui> aukeran klik egiten bada, gertaera automatikoki gehitzen zaio aukeratutako egutegiari.</p>
+<p>Egutegian bilerak gehitu ondoren, horiek aldatu daitezke, baina jatorrizko antolatzaileak eguneratze bat bidaltzen badu, aldaketak gainidatzi egin daitezke.</p>
+
+<note style="tip"><p><guiseq><gui>Editatu</gui><gui>Hobespenak</gui> <gui>Egutegia eta zereginak</gui><gui>Bilera-gonbidapenak</gui><gui>Gatazken bilaketa</gui></guiseq> atalean bilera-gatazken abisuak jasotzeko zein egutegi erabiliko diren definitu daiteke.</p></note>
+</page>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="tasks-usage-add-task" xml:lang="ca">
+
+  <info>
+    <desc>Afegir una tasca a la llista de tasques.</desc>
+    
+    <link type="guide" xref="tasks-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.1" date="2011-08-01" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/stable/usage-calendar-todo.html.en#b1012vcx -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Afegir una tasca</title>
+
+<steps>
+<item><p>Feu clic a <guiseq><gui>Fitxer</gui><gui>Nova</gui><gui>Tasca</gui></guiseq>, o press <keyseq><key>Maj</key><key>Ctrl</key><key>T</key></keyseq>.</p></item>
+<item><p>Seleccioneu una llista de tasques a la llista desplegable <gui>Llista</gui>.</p></item>
+<item><p>Introduïu la informació de la tasca.</p></item>
+<item><p>Feu clic al botó <gui style="button">Desa</gui>, o <guiseq><gui>Fitxer</gui><gui>Desa</gui></guiseq>.</p></item>
+</steps>
+
+<p>Si voleu afegir ràpidament una tasca introduint-ne un breu resum, podeu fer-ho directament a la llista de tasques.</p>
+
+<p>També podeu definir una <link xref="calendar-timezones">zona horària</link>, a <link xref="using-categories">categoria</link>, o a <link xref="calendar-classifications">classificació</link> (via el menú desplegable) per a la tasca, o afegir un adjunt o establir un <link xref="calendar-alarms-and-reminders">recordatori</link> (a través de les pestanyes corresponents).</p>
+
+<section id="assigned-tasks">
+<title>Tasques assignades</title>
+
+<p><app>Evolution</app> es pot utilitzar per a assignar una tasca a diverses persones.</p>
+<p>Quan assigneu una tasca, podeu especificar els assistents en diverses categories, com ara «organitzador» o «obligatori». Quan deseu la tasca, cada assistent rep un correu electrònic amb la informació de la tasca, que també els dona l'opció respondre-la.</p>
+<p>És similar a <link xref="calendar-meetings-sending-invitation">reunions</link>.</p>
+<p>Per a crear una tasca assignada, feu clic a <guiseq><gui>Fitxer</gui><gui>Nova</gui><gui>Tasca assignada</gui></guiseq>.</p>
+</section>
+
+</page>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="factorize" xml:lang="it">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>Scomposizione in fattori</title>
+
+    <p>Potete fattorizzare il numero correntemente visualizzato premendo la combinazione <keyseq><key>Ctrl</key><key>F</key></keyseq> o il pulsante <gui>fact</gui>. Questo pulsante è visibile nella <link xref="mouse">modalità programmazione</link>.</p>
+    <p>Per fattorizzare numeri maggiori di 2^64 vengono impiegati il test di primalltà di Miller-Rabin e l'algoritmo rho di Pollard.</p>
+</page>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="numeric-keypad" xml:lang="da">
+
+  <info>
+    <link type="guide" xref="keyboard"/>
+    <desc>Aktivér det numeriske tastatur som standard.</desc>
+
+    <revision version="18.04" date="2018-03-19" status="review"/>
+
+    <credit type="author">
+      <name>Ubuntus dokumentationshold</name>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+  <title>Numerisk tastatur</title>
+
+  <p>Med tasten <key>Num Lock</key> kan du selv slå det numeriske tastatur til eller fra. Computeres BIOS-indstillinger indeholder også ofte en mulighed for at bestemme, om computeren skal starte med det numeriske tastatur aktiveret. Ellers kan det konfigureres på følgende måde:</p>
+
+  <steps>
+    <item>
+      <p><link href="apt:numlockx">Installér</link> <em>numlockx</em>-pakken.</p>
+    </item>
+    <item>
+      <p>Åbn <app><link xref="startup-applications">Opstartsprogrammer</link></app> og tilføj et opstartsprogram med kommandoen: <cmd>numlockx on</cmd></p>
+    </item>
+  </steps>
+
+  <note style="tip">
+    <p>Det andet trin kan være overflødigt på din computer, så prøv først uden.</p>
+  </note>
+
+</page>

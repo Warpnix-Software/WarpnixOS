@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-layout-views" xml:lang="pt-BR">
+
+  <info>
+    <link type="guide" xref="calendar-layout"/>
+
+    <revision pkgversion="3.28.2" version="0.3" date="2018-07-10" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-view.html.en
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Usando intervalos de data  (dia, semana, mês) para ver no calendário.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Fontenelle</mal:name>
+      <mal:email>rafaelff@gnome.org</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Visões disponíveis</title>
+
+  <p>O <app>Evolution</app> oferece cinco visões diferentes de seus dados de agenda.</p>
+
+  <list>
+    <item>
+      <p>Visão de dia</p>
+    </item>
+    <item>
+      <p>Visão de semana útil</p>
+    </item>
+    <item>
+      <p>Visão de semana</p>
+    </item>
+    <item>
+      <p>Visão de mês</p>
+    </item>
+    <item>
+      <p>Visualização de listas</p>
+    </item>
+  </list>
+
+  <p>Você pode alternar a visão usando os botões na barra de ferramentas, ou clicando <guiseq><gui>Ver</gui><gui>visão atual</gui></guiseq>.</p>
+
+  <p>You can also select an arbitrary range of days in the small calendar in
+  the sidebar. To do this, select the days that you want to view in your
+  calendar.</p>
+
+  <p>Os botões Anterior e Próxima movem você para frente e para trás nas páginas da agenda. Se estiver usando uma visão de semana ou mês, você pode mudar por semana ou mês. Para retornar à lista de hoje, clique no botão <gui>Selecionar hoje</gui> entre os dois botões de seta na barra de ferramentas.</p>
+
+  <p>Para visitar entradas da agenda de uma data específica, clique no botão <gui>Seleciona uma data específica</gui> na barra de ferramentas.</p>
+
+</page>

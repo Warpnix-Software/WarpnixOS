@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-publishing" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="calendar-sharing-information"/>
+
+    <revision pkgversion="3.1.5" version="0.4" date="2011-08-24" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from Reuse
+	   https://help.gnome.org/users/evolution/2.32/config-prefs-cal.html.en#bxjng8p
+	   and
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#publishing-freebusy
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Publiqueu el contingut del vostre calendari públicament.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Publicació de calendaris</title>
+
+  <p>In order to make one of your calendars available to the public, enable the
+  Calendar Publishing plugin from <guiseq><gui>Edit</gui><gui>Preferences</gui>
+  <gui>Plugins</gui></guiseq> and restart <app>Evolution</app> to activate it.</p>
+  <p>You can define calendars to be uploaded to a web server under
+  <guiseq><gui>Edit</gui><gui>Preferences</gui>
+  <gui>Calendar and Tasks</gui>
+  <gui>Publishing Information</gui>
+  <gui>Locations</gui><gui style="button">Add</gui></guiseq>.</p>
+
+  <p>Podeu especificar la ubicació en línia, la freqüència de publicació, el calendari(s) a publicar, i la informació d'autenticació per a carregar.</p>
+
+  <p>Podeu publicar la informació Lliure/Ocupat al Calendari en un servidor WebDAV, un servidor FTP, una màquina remota a través de SSH o qualsevol altre servidor web amb suport HTTP PUT.</p>
+
+  <p>To immediately publish calendar information, click
+  <guiseq><gui>Actions</gui><gui>Publish Calendar Information</gui></guiseq> in
+  the calendar window.</p>
+
+</page>

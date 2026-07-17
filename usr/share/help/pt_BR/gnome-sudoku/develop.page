@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="develop" xml:lang="pt_BR">
+
+  <info>
+   <link type="guide" xref="index#get-involved"/>
+
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <credit type="author copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <license>
+      <p>Creative Commons Compartilha Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Vladimir Melo</mal:name>
+      <mal:email>vladimirmelo@foresightlinux.org</mal:email>
+      <mal:years>2007,</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yuri Otávio</mal:name>
+      <mal:email>yuriotavio@hotmail.com</mal:email>
+      <mal:years>2017,</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Fontenelle</mal:name>
+      <mal:email>rafaelff@gnome.org</mal:email>
+      <mal:years>2018.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Leônidas Araújo</mal:name>
+      <mal:email>leorusvellt@hotmail.com</mal:email>
+      <mal:years>2022</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Ajudando a desenvolver</title>
+ <p>O <app>GNOME Games</app> é desenvolvido e mantido por uma comunidade de voluntários. Você é bem-vindo para participar.</p>
+  <p>Se você quiser <link href="https://wiki.gnome.org/Apps/Sudoku">ajudar a desenvolver o <app>GNOME Sudoku</app></link>, você pode entrar em contato com os desenvolvedores usando <link href="https://matrix.to/#/#gnome-games:gnome.org">#gnome-games:gnome.org</link> em <link xref="help:gnome-help/help-matrix">Matrix</link>, ou <link href="https://web.libera.chat/#gnome-games">#gnome-games</link> em irc.libera.chat, ou via <link href="https://discourse.gnome.org/tag/games">GNOME Discourse</link>.</p>
+
+</page>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-imap-subscriptions" xml:lang="ca">
+
+  <info>
+    <desc>Subscripcions de carpetes IMAP.</desc>
+    
+    <link type="guide" xref="index#mail-advanced"/>
+    <link type="guide" xref="mail-account-manage-imap-plus#other-settings"/>
+
+    <revision pkgversion="3.0.2" version="0.3" date="2011-08-05" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-subscriptions.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+
+<title>Subscripcions IMAP</title>
+
+<p>Com l'obertura de moltes carpetes IMAP al servidor triga temps, podeu definir quines carpetes IMAP comprovar i mostrar a <app>Evolution</app>, i quins ignorar de moment, a través del <gui>Gestor de subscripcions IMAP</gui>.</p>
+<steps>
+<item><p>Seleccioneu <guiseq><gui>Carpeta</gui><gui>Subscripcions</gui></guiseq>, o feu clic amb el botó dret del ratolí al node de nivell superior d'un compte de correu electrònic a la llista de carpetes i fent clic a <gui>Gestiona les subscripcions</gui>.</p></item> 
+<item><p>Si teniu comptes en diversos servidors, seleccioneu el servidor on voleu gestionar les vostres subscripcions.</p></item>
+<item><p><app>Evolution</app> mostra una llista de fitxers i carpetes disponibles al servidor IMAP.</p></item>
+<item><p>Seleccionar un fitxer o carpeta clicant-lo.</p>
+<p>Heu de seleccionar com a mínim la carpeta d'<gui>Entrada</gui>. Segons la configuració del vostre servidor IMAP, la llista de fitxers disponibles pot incloure carpetes que no siguin de correu. Si ho fa, podeu ignorar-les.</p></item>
+<item><p>Feu clic a la casella de selecció d'una carpeta per a afegir-la a les vostres subscripcions.</p></item>
+</steps>
+
+</page>

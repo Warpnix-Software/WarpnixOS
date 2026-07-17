@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="power" xml:lang="ru">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>Степени и корни</title>
+    
+    <p>Возведение в степень осуществляется добавлением <link xref="superscript">надстрочного индекса</link> после значения.</p>
+    <example>
+    <p>5²</p>
+    </example>
+    <p>Обратную величину числа можно ввести с помощью символа «⁻¹» (<keyseq><key>Ctrl</key><key>I</key></keyseq>).</p>
+    <example>
+    <p>3⁻¹</p>
+    </example>
+    <p>Степени можно также вычислять с помощью символа «^». Это позволяет показателю степени быть выражением.</p>
+    <example>
+    <p>5^(6−2)</p>
+    </example>
+    <p>Если на клавиатуре нет клавиши <key>^</key>, можно дважды нажать <key>*</key>.</p>
+    <p>Квадратные корни вычисляются с помощью символа (<keyseq><key>Ctrl</key><key>R</key></keyseq>).</p>
+    <example>
+    <p>√2</p>
+    </example>
+    <p>Для вычисления корня n-ной степени добавьте <link xref="superscript">подстрочный индекс</link> перед знаком корня.</p>
+    <example>
+    <p>₃√2</p>
+    </example>
+</page>

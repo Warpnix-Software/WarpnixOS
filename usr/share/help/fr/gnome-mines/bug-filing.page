@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="bug-filing" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="index#get-involved"/>
+    <revision pkgversion="3.5.5" version="0.1" date="2012-08-12" status="review"/>
+    <credit type="editor copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+      <years>2011</years>
+    </credit>
+    <license>
+      <p>Creative Commons Paternité - Partage dans les Mêmes Conditions 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2007,2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2007-2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervan@gmail.com</mal:email>
+      <mal:years>2012-2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yoann Fievez</mal:name>
+      <mal:email>yoann.fievez@gmail.com</mal:email>
+      <mal:years>2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Julien Hardelin</mal:name>
+      <mal:email>jhardlin@orange.fr</mal:email>
+      <mal:years>2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jean-Baptiste Holcroft</mal:name>
+      <mal:email>jean-baptiste@holcroft.fr</mal:email>
+      <mal:years>2018</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Charles Monzat</mal:name>
+      <mal:email>charles.monzat@free.fr</mal:email>
+      <mal:years>2017-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Irénée Thirion</mal:name>
+      <mal:email>irenee.thirion@e.email</mal:email>
+      <mal:years>2023</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Contribution pour améliorer <app>Mines</app></title>
+
+<section id="bug-report">
+<title>Rapport d’anomalie ou suggestion d’amélioration</title>
+<p><app>Mines</app> est maintenu par une communauté de volontaires. Votre contribution est la bienvenue. Si vous remarquez un problème, vous pouvez remplir un <em>rapport d’anomalie</em> en allant sur <link href="https://gitlab.gnome.org/GNOME/gnome-mines/issues"/>.</p>
+   <p>Il s’agit d’un système de suivi de bogues où les utilisateurs et les développeurs peuvent déposer des informations sur les bogues et les plantages, ou demander des améliorations.</p>
+   <p>Pour participer, vous devez avoir un compte, ce qui vous donnera la possibilité d’obtenir les fichiers de bogues, de faire des commentaires, et de recevoir des mises à jour par e-mail sur l’état de votre bogue. Si vous n’avez pas déjà un compte, il suffit de cliquer sur le lien <gui>Sign in / Register</gui> pour en créer un.</p>
+
+  <p>Une fois que vous avez un compte, connectez-vous. Cliquez sur <gui>New Issue</gui>. Avant de rapporter un bogue, lisez le <link href="https://wiki.gnome.org/Community/GettingInTouch/BugReportingGuidelines">guide sur les rapports de bogues</link>, et effectuez une <link href="https://gitlab.gnome.org/GNOME/gnome-mines/issues">Recherche</link> pour voir si le bogue existe déjà.</p>
+
+   <p>Si vous demandez une nouvelle fonctionnalité, choisissez <gui>Feature</gui> (fonctionnalité) dans le menu <gui>Labels</gui> (libellés). Remplissez les rubriques « Title » (titre) et « Description » puis cliquez sur <gui>Submit issue</gui> (signaler un problème).</p>
+   <p>Votre signalement recevra un numéro d’identification, et son statut sera mis à jour quand il sera traité. Merci de participer à l’amélioration de <app>Mines</app> !</p>
+</section>
+</page>

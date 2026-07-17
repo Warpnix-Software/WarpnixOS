@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="power" xml:lang="de">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>Potenzen und Wurzeln</title>
+    
+    <p>Potenzen können eingegeben werden, indem man den Exponenten als <link xref="superscript">hochgestellte</link> Zahl eingibt.</p>
+    <example>
+    <p>5² </p>
+    </example>
+    <p>Der Kehrwert einer Zahl kann mit dem Symbol ⁻¹ (<keyseq><key>Ctrl</key><key>I</key></keyseq>) eingegeben werden.</p>
+    <example>
+    <p>3⁻¹ </p>
+    </example>
+    <p>Potenzen können auch mit dem Symbol ^ eingegeben werden. Dadurch ist es möglich, auch einen Term als Exponenten einzugeben.</p>
+    <example>
+    <p>5^(6−2) </p>
+    </example>
+    <p>Wenn es auf der Tastatur das Zeichen <key>^</key>  nicht gibt, kann man auch ein doppeltes <key>*</key> verwenden.</p>
+    <p>Quadratwurzeln berechnet man mit dem Symbol √ (<keyseq><key>Ctrl</key><key>R</key></keyseq>). </p>
+    <example>
+    <p>√2 </p>
+    </example>
+    <p>Die n-te Wurzel schreibt man mit einer <link xref="superscript">tiefgestellten</link>  Zahl vor dem Wurzelzeichen.</p>
+    <example>
+    <p>₃√2 </p>
+    </example>
+</page>

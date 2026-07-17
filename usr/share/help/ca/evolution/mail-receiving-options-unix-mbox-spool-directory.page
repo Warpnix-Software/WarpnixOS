@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-receiving-options-unix-mbox-spool-directory" xml:lang="ca">
+
+  <info>
+    <desc>Opcions de recepció dels comptes de directoris estàndard de cues de correu de l'Unix.</desc>
+
+    <link type="guide" xref="mail-receiving-options#local-account-server-types"/>
+    <link type="guide" xref="mail-account-manage-unix-mbox-spool-directory#receiving-email"/>
+    <revision pkgversion="3.12.9" version="0.3" date="2015-02-15" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Opcions de recepció de la carpeta de cua Standard Unix mbox</title>
+
+<section id="receiving-email-unix-mbox-spool-directory">
+<title>Recepció de correu</title>
+
+<p>A la pàgina <gui>Rebre correu</gui> (accessible via <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Comptes de correu</gui><gui style="button">Edita</gui><gui>Rebre correu</gui></guiseq>):</p>
+
+<list>
+<item><p>Trieu el directori fent clic al botó que hi ha al costat de <gui>Camí</gui> a la secció de <gui>Configuració</gui>. A la llista hi ha disponibles carpetes predeterminades. Si el directori no està entre aquestes carpetes, seleccioneu l'última opció<gui>Altre...</gui>. S'obrirà una finestra per a seleccionar el directori.</p></item>
+</list>
+
+</section>
+
+<section id="receiving-options-unix-mbox-spool-directory">
+<title>Opcions de recepció</title>
+
+<p>A la pàgina <gui>Opcions de recepció</gui> (accessible via <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Comptes de correu</gui><gui style="button">Edita</gui><gui>Opcions de recepció</gui></guiseq>):</p>
+
+<list>
+<item><p>Si voleu <link xref="mail-filters">Filtres</link> per a utilitzar automàticament en els nous missatges de la safata d'entrada, activeu <gui>Aplica els filtres als missatges nous de la safata d'entrada</gui>.</p></item>
+</list>
+
+</section>
+
+</page>

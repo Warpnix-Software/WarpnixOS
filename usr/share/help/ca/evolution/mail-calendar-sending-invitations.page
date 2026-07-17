@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-calendar-sending-invitations" xml:lang="ca">
+
+  <info>
+    <desc>Enviar invitacions per a les cites a contactes via correu electrònic.</desc>
+
+    <link type="guide" xref="index#mail-advanced"/>
+    <link type="guide" xref="index#calendar"/>
+    <!-- TODO:NICETOHAVE: Find a better place to link this against. Also I cannot link into two anchors on index so only the first one is shown? -->
+
+    <revision pkgversion="2.32.1" version="0.1" date="2011-07-21" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/rsvp-stuff.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Enviar invitacions per correu electrònic</title>
+
+<p>Si creeu un esdeveniment al component calendari, podeu enviar invitacions a la llista d'assistents a través de l'eina de correu <app>Evolution</app>. La targeta d'invitació s'envia com a fitxer adjunt en format iCal.</p>
+
+<p>Per a enviar una invitació, feu clic amb el botó dret a l'entrada del calendari i trieu <gui>Reenvia com a iCalendar</gui>.</p>
+
+<p>Quan rebeu una invitació, teniu diverses opcions:</p>
+
+<list>
+<item><p>Accepta:</p><p>Indica que assistirà a la reunió. Quan feu clic al botó d'acord, la reunió s'anotarà al vostre calendari.</p></item>
+<item><p>Acceptada provisionalment:</p><p>Indica que probablement assistireu a la reunió. Quan feu clic al botó D'acord, la reunió s'anotarà al calendari, però es marca com a provisional.</p></item>
+<item><p>Declina:</p><p>Indicates you are unable to attend the meeting. The meeting is not entered into your calendar when you click OK, although your response is sent to the meeting host if you have selected the Send reply to organizer option.
+</p></item>
+<item><p>
+Send reply to organizer:</p><p>Seleccioneu aquesta opció si voleu que la vostra resposta s'enviï als organitzadors de la reunió.</p></item>
+</list>
+ 
+</page>

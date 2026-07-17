@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-meetings-replying-to-invitation" xml:lang="ca">
+
+  <info>
+    <desc>Acceptació i resposta a la invitació a una reunió.</desc>
+    
+    <link type="guide" xref="calendar-meetings"/>
+
+    <revision pkgversion="3.1.5" version="0.6" date="2011-08-25" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+ <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#replying-to-rsvp -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+      
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Respondre a una petició de reunió</title>
+<p>Les sol·licituds a reunions s'envien com a fitxers adjunts i es mostren com a cos d'un correu electrònic. Es mostren tots els detalls sobre l'esdeveniment, inclosos l'hora i les dates.</p>
+<p>Podeu triar si i com respondre a una invitació i afegir un comentari personal a la vostra resposta. Les opcions disponibles són a <gui>Declina</gui>, Acceptar provisionalment (<gui>Provisionalment</gui>), o <gui>Accepta</gui>. També podeu decidir si l'hora de la reunió es mostrarà com a lliure al vostre calendari.</p>
+
+<p>Si la sol·licitud de reunió ja inclou un <link xref="calendar-alarms-and-reminders">recordatori</link> podeu importar el recordatori al vostre calendari habilitant <gui>Hereta el recordatori</gui>.</p>
+
+<p>Si feu clic a <gui>Accepta</gui> l'esdeveniment s'afegeix automàticament al calendari que hàgiu triat.</p>
+<p>Després d'haver afegit la reunió al vostre calendari, podeu fer canvis, però si l'organitzador original envia una actualització, els canvis es podrien sobreescriure.</p>
+
+<note style="tip"><p>A <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Calendari i tasques</gui><gui>Invitacions a reunions</gui><gui>Cerca de conflictes</gui></guiseq> podeu definir quins calendaris s'utilitzaran per a avisar-vos de conflictes.</p></note>
+</page>

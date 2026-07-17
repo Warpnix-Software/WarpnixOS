@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-layout-general-formatting" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="calendar-layout"/>
+
+    <revision pkgversion="3.13.90" version="0.3" date="2015-03-10" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/config-prefs-cal.html.en#bshpskx
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <!-- TODO:POST-3-8: Just listing the partially busted UI options (also see
+	 calendar-layout-appointment-display) here is very poor and not
+	 task-oriented, but that's it for the time being. Better ideas welcome.
+	 -->
+
+    <desc>Opcions generals per a formatar el calendari.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Opcions generals per a formatar</title>
+
+  <p>Les següents opcions estan disponibles a <guiseq><gui>Edita</gui><gui>Preferències</gui> <gui>Calendari i tasques</gui><gui>General</gui></guiseq>.</p>
+
+<section id="time">
+  <title>Temps</title>
+
+  <list>
+    <item>
+      <p>Format de l'hora:</p>
+      <p>Trieu entre el format de temps en dotze hores (AM / PM) i vint-i-quatre hores.</p>
+    </item>
+    <item>
+      <p><link xref="calendar-timezones">Zona horària</link> i segona zona:</p>
+      <p>Ciutat on esteu localitzat. i opcionalment una segona ciutat.</p>
+    </item>
+  </list>
+</section>
+
+<section id="work-week">
+  <title>Setmana laborable</title>
+
+  <list>
+    <item>
+      <p>La setmana comença en:</p>
+      <p>Seleccioneu un dia per a mostrar com a primer dia de la setmana.</p>
+    </item>
+    <item>
+      <p>Dies laborables:</p>
+      <p>Definiu quins són els dies de la setmana laborables.</p>
+    </item>
+    <item>
+      <p>El dia comença a les:</p>
+      <p>Definiu a quina hora comença la seva jornada laboral.</p>
+    </item>
+    <item>
+      <p>El dia s'acaba a les:</p>
+      <p>Definiu a quina hora acaba la seva jornada laboral.</p>
+    </item>
+  </list>
+
+</section>
+
+<section id="date-time">
+  <title>Format de data/hora</title>
+
+  <p>Podeu canviar el format de la columna <gui>Data</gui> establint el vostre format preferit.</p>
+
+  <p>Els marcadors de posició en l'expressió de format són strftime. Per a obtenir una llista completa dels formats de temps disponibles, executeu <cmd>date --help</cmd> a l'aplicatiu <app>Terminal</app>.</p>
+
+</section>
+
+</page>

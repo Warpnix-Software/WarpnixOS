@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-receiving-options-imap-plus" xml:lang="ca">
+
+  <info>
+    <desc>Opcions de recepció per als comptes IMAP+.</desc>
+
+    <link type="guide" xref="mail-receiving-options#common-server-types"/>
+    <link type="guide" xref="mail-account-manage-imap-plus#receiving-email"/>
+    <revision pkgversion="3.12.9" version="0.3" date="2015-02-15" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mainwindow-starting.html.en#bstggh0 -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Opcions de recepció IMAP+</title>
+
+<section id="receiving-email-imap-plus">
+<title>Recepció de correu</title>
+
+<p>A la pàgina <gui>Rebre correu</gui> (accessible via <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Comptes de correu</gui><gui style="button">Edita</gui><gui>Rebre correu</gui></guiseq>):</p>
+
+<list>
+<item><p>Introduïu l'adreça del servidor de correu electrònic al camp <gui>Servidor</gui> i introduïu el vostre nom d'usuari per a aquest servidor.</p></item>
+<item><p>Seleccioneu si voleu utilitzar una connexió segura (TLS o el predecessor obsolet SSL).</p><p>Heu d'habilitar aquesta opció si el vostre servidor ho admet.</p>
+<note style="tip"><p>Els proveïdors de webmail gratuïts solen proporcionar informació sobre quina d'aquestes opcions es pot utilitzar. Si us trobeu en l'entorn d'una organització, podeu contactar amb l'administrador del sistema per a obtenir més informació.</p></note></item>
+<item><p>Seleccioneu el tipus d'autenticació a la llista d'autenticació o feu clic a <gui style="button">Comprova els tipus disponibles</gui> per tal que <app>Evolution</app> comprovi els mecanismes d'autentificació suportats. Alguns servidors no avisen dels mecanismes que admeten, de manera que fer clic en aquest botó no garanteix que els mecanismes disponibles funcionin.</p></item>
+<item><p>Seleccionar si voleu que <app>Evolution</app> recordi la vostra contrasenya.</p></item>
+</list>
+
+</section>
+
+<section id="receiving-options-imap-plus">
+<title>Opcions de recepció</title>
+
+<p>A la pàgina <gui>Opcions de recepció</gui> (accessible via <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Comptes de correu</gui><gui style="button">Edita</gui><gui>Opcions de recepció</gui></guiseq>):</p>
+
+<list>
+<item><p>Si voleu que <app>Evolution</app> comprovi automàticament l'existència de nous missatges, feu clic a l'opció <gui>Comproveu si hi ha missatges nous cada … minuts</gui> i seleccioneu la freqüència en minuts.</p></item>
+<item><p>Seleccioneu <gui>Utilitza la resincronització ràpida</gui> si el servidor l'admet si el servidor IMAP admet <link href="https://tools.ietf.org/html/rfc5162">extensions IMAP4 per a la resincronització ràpida de bústies</link>.</p></item>
+<item><p>Si el servidor de correu no permet múltiples connexions concurrents des d'<app>Evolution</app> al servidor (per exemple, quan teniu més d'un compte en aquest servidor), configureu <gui>Nombre de connexions concurrents a utilitzar</gui> a 1.</p></item>
+<item><p>També podeu definir si <app>Evolution</app> comprova si hi ha missatges nous a totes les carpetes o només a les carpetes subscrites.</p></item>
+<item><p>Seleccionar si voleu que <app>Evolution</app> mostri tan sols les <link xref="mail-imap-subscriptions">carpetes subscrites</link>.</p></item>
+<item><p>Seleccioneu si voleu que els <link xref="mail-filters">filtres</link> s'apliquin automàticament al correu que rebeu, si <link xref="mail-spam-marking">el correu brossa</link> s'ha de filtrar automàticament, i si <link xref="mail-working-offline"> el correu electrònic al servidor s'ha de sincronitzar amb la vostra còpia local per a tenir-hi accés fora de línia</link>.</p></item></list>
+
+</section>
+
+</page>

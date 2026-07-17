@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="develop" xml:lang="pt_BR">
+
+  <info>
+   <link type="guide" xref="index#get-involved"/>
+    
+    <revision pkgversion="3.5.5" version="0.1" date="2012-08-12" status="review"/>
+    <credit type="author copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Gilfran Ribeiro</mal:name>
+      <mal:email>eu@gilfran.net</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Giovanni Almeida</mal:name>
+      <mal:email>giovannilombone.io@gmail.com</mal:email>
+      <mal:years>2024</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Ajudar a desenvolver</title>
+ <p>Os <app>Jogos do GNOME</app> são desenvolvidos e mantidos por uma comunidade voluntária. Você é bem-vindo para participar.</p>
+  <p>If you would like to <link href="https://wiki.gnome.org/Apps/Games/Contribute">help
+  develop <app>GNOME Games</app></link>, you can get in touch with the developers at
+  <link href="https://matrix.to/#/#gnome-games:gnome.org">#gnome-games:gnome.org</link>
+  on <link xref="help:gnome-help/help-matrix">Matrix</link> or
+  <link href="https://web.libera.chat/#gnome-games">#gnome-games</link> on irc.libera.chat,
+  or via <link href="https://discourse.gnome.org/tag/games">GNOME Discourse</link>.</p>
+
+</page>

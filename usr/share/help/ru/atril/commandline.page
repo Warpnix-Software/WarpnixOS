@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="commandline" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">Командная строка</title>
+    <desc>Используя команду <cmd>atril</cmd> можно открывать любое количество файлов на определённых страницах и в различных режимах.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Фил Булл</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <credit type="editor">
+    <name>Тиффани Антропольски</name>
+    <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+
+<title>Командная строка</title>
+<p>Чтобы запустить <app>Atril</app> из командной строки, наберите <cmd>atril</cmd>. Вы также можете открыть конкретный файл, введя его название после команды atril:</p>
+
+<screen>atril file.pdf</screen>
+<p>Вы можете открыть сразу несколько файлов, напечатав их названия отделяя друг от друга пробелами после команды atril:</p>
+<screen>atril file1.pdf file2.pdf</screen>
+<p>Atril также поддерживает работу с файлами, расположенными в интернете. Например, после команды atril вы можете указать местоположение файла в интернете:</p>
+<section id="open">
+    <title>Открытие документа на определённой странице</title>
+    <p>Вы можете использовать ключ<cmd>--page-label</cmd>, чтобы открыть документ на конкретной странице. Например, чтобы открыть документ на странице 3, наберите:</p>
+    <screen>atril --page-label=3 file.pdf</screen>
+    <p>Метка страницы должна быть в том же формате, что и номер страницы, отображаемый в строке заголовка <app>Atril</app>.</p>
+</section>
+<section id="fullsreen">
+    <title>Открытие документа в полноэкранном режиме</title>
+    <screen>atril --fullscreen file.pdf</screen>
+</section>
+<section id="presentation">
+    <title>Открытие документа в режиме презентации</title>
+    <screen>atril --presentation file.pdf</screen>
+</section>
+<section id="preview">
+    <title>Открытие документа в режиме предварительного просмотра</title>
+    <screen>atril --preview file.pdf</screen>
+</section>
+</page>

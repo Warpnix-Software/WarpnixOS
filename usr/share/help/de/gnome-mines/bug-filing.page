@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="bug-filing" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#get-involved"/>
+    <revision pkgversion="3.5.5" version="0.1" date="2012-08-12" status="review"/>
+    <credit type="editor copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+      <years>2011</years>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Florian Purucker</mal:name>
+      <mal:email>florian@purucker.net</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2008, 2012-2013, 2018-2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>christian.kirbach@gmail.com</mal:email>
+      <mal:years>2012-2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jürgen Benvenuti</mal:name>
+      <mal:email>gastornis@posteo.org</mal:email>
+      <mal:years>2022, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Tim Sabsch</mal:name>
+      <mal:email>tim@sabsch.com</mal:email>
+      <mal:years>2023</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Helfen Sie, <app>Minen</app> zu verbessern</title>
+
+<section id="bug-report">
+<title>Einen Fehler melden oder einen Verbesserungsvorschlag einreichen</title>
+<p><app>Minen</app> wird von einer Gemeinschaft aus Freiwilligen entwickelt. Sie sind herzlich eingeladen, sich daran zu beteiligen. Falls Sie ein Problem entdecken, können Sie einen <em>Fehlerbericht erstellen</em>. Besuchen Sie hierzu <link href="https://gitlab.gnome.org/GNOME/gnome-mines/issues"/>.</p>
+   <p>Die ist eine Fehlerdatenbank, in der Benutzer und Entwickler Details zu Fehlern, Abstürzen und Erweiterungswünschen hinterlegen.</p>
+   <p>Zum Arbeiten benötigen Sie Anmeldeinformationen, um Zugang zum System zu bekommen, Fehler zu berichten und Kommentare zu schreiben. Sie müssen sich auch registrieren, um Aktualisierungen zu Ihren Fehlerberichten per E-Mail erhalten zu können. Wenn Sie noch keinen Zugang haben, können Sie auf <gui>Sign in/Register</gui> klicken und ein Konto einrichten.</p>
+
+  <p>Sobald die Erstellung des Kontos abgeschlossen ist, melden Sie sich an und klicken Sie auf <gui>New Issue</gui>. Bevor Sie einen Fehler melden, lesen Sie bitte die <link href="https://wiki.gnome.org/Community/GettingInTouch/BugReportingGuidelines">Richtlinien zum Melden von Fehlern</link> und <link href="https://gitlab.gnome.org/GNOME/gnome-mines/issues">schauen Sie bitte nach</link>, ob der Fehler vielleicht schon gemeldet wurde.</p>
+
+   <p>Falls Sie eine Anfrage nach einem neuen Funktionsmerkmal stellen, wählen Sie <gui>Feature</gui> im Menü <gui>Labels</gui>. Füllen Sie die Felder »Title« (Titel) und »Description« (Beschreibung) aus und klicken Sie auf <gui>Submit issue</gui>.</p>
+   <p>Ihr Bericht bekommt eine Kennung (ID) zugewiesen und der Status wird mit laufender Bearbeitung stets aktualisiert. Danke für Ihre Mithilfe bei der Verbesserung von <app>Minen</app>!</p>
+</section>
+</page>

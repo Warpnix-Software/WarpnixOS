@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-install" xml:lang="uk">
+
+  <info>
+    <credit type="author">
+      <name>Команда з документування Ubuntu</name>
+    </credit>
+    <desc>Використовуйте <app>Центр застосунків</app>, щоб установити додаткові програми та зробити Ubuntu більш корисною.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove" group="#first"/>
+    <link type="seealso" xref="addremove-remove"/>
+    <link type="seealso" xref="addremove-install-synaptic"/>
+    <link type="seealso" xref="prefs-language-install"/>
+    <revision version="18.04" date="2018-03-18" status="review"/>
+  </info>
+
+  <title>Встановіть додаткові програми</title>
+
+  <p>Програма — це програмне забезпечення, яке має графічний інтерфейс користувача (GUI). Команда розробників Ubuntu вибрала стандартний набір програм, який, на нашу думку, робить Ubuntu дуже корисним для більшості повсякденних завдань. Однак ви, звичайно, захочете встановити більше програм, щоб зробити Ubuntu більш корисною для вас. Щоб встановити програму, ви можете скористатися <app>Центр застосунків</app>.</p>
+
+   <p>Програми доступні у двох форматах: пакети snap та пакети Debian. Програма, доступна як пакет snap, відтепер буде називатися <em>snap</em>. Деякі програми доступні в обох форматах. У такому випадку в <app>Центр застосунків</app> знімок буде першим у списку.</p>
+
+   <p>Ви також можете встановити програмне забезпечення, яке не має графічного інтерфейсу користувача. Щоб встановити таке програмне забезпечення, ви можете скористатись <link xref="addremove-install-synaptic">Synaptic</link>. Зауважимо, що <app>Synaptic</app> не відображає пакунки snap.</p>
+
+  <p>Щоб встановити програму</p>
+
+  <steps>
+    <item>
+      <p>Клацніть піктограму <app>Центр застосунків</app> в <gui>Панелі задач</gui> або знайдіть <input>Програмне забезпечення</input> на панелі пошуку <em>Дії</em>.</p>
+    </item>
+    <item>
+      <p>Коли запуститься <app>Центр застосунків</app>, знайдіть програму або виберіть категорію та знайдіть програму в списку.</p>
+    </item>
+    <item>
+      <p>
+        Select the application that you want to install and click 
+        <gui>Install</gui>.
+      </p>
+    </item>
+    <item>
+      <p>Вам буде запропоновано автентифікуватись, ввівши пароль. Після цього почнеться встановлення. Воно зазвичай триває недового, але може затягнутися, якщо у вас повільне з'єднання з Інтернетом.</p>
+
+    </item>
+
+  </steps>
+  
+</page>

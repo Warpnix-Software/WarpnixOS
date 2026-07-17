@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="bug-filing" xml:lang="el">
+
+  <info>
+    <link type="guide" xref="index#get-involved"/>
+    <revision pkgversion="3.5.5" version="0.1" date="2012-08-12" status="review"/>
+    <credit type="editor copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+      <years>2011</years>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ελληνική μεταφραστική ομάδα GNOME</mal:name>
+      <mal:email>team@gnome.gr</mal:email>
+      <mal:years>2009-2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μάριος Ζηντίλης</mal:name>
+      <mal:email>m.zindilis@dmajor.org</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μαρία Μαυρίδου</mal:name>
+      <mal:email>mavridou@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Βοηθήστε να κάνουμε καλύτερο το παιχνίδι <app>Νάρκες</app></title>
+
+<section id="bug-report">
+<title>Αναφορά σφάλματος ή πρόταση βελτίωσης</title>
+<p>
+   <app>Mines</app> is maintained by a volunteer community. You are welcome to participate.  If you notice a problem you can file a <em>bug report</em>. To file a bug, go to <link href="https://gitlab.gnome.org/GNOME/gnome-mines/issues"/>.
+   </p>
+   <p>Αυτό είναι ένα σύστημα καταγραφής σφαλμάτων όπου χρήστες και προγραμματιστές μπορούν να στείλουν αναφορές για σφάλματα, καταρρεύσεις ή αιτήματα βελτιώσεων.</p>
+   <p>
+   To participate you need an account, which will give you the ability to gain access, file bugs, make comments, and receive updates by e-mail about the status of your bug. If you don't already have an account, just click on the <gui>Sign in/Register</gui> link to create one.
+   </p>
+
+  <p>Once you have an account, log in, click on <gui>New Issue</gui>. Before
+  reporting a bug, please read the
+  <link href="https://wiki.gnome.org/Community/GettingInTouch/BugReportingGuidelines">bug
+  writing guidelines</link>, and please
+  <link href="https://gitlab.gnome.org/GNOME/gnome-mines/issues">browse</link>
+  for the bug to see if it already exists.</p>
+
+   <p>
+   If you are requesting a new feature, choose <gui>Feature</gui> in the <gui>Labels</gui> menu.
+   Fill in the Title and Description sections and click <gui>Submit issue</gui>.
+   </p>
+   <p>Στην αναφορά σας θα δοθεί ένας αναγνωριστικός αριθμός και η κατάστασή της θα ενημερωθεί όταν θα επεξεργαστεί. Ευχαριστούμε για τη βοήθειά σας να κάνουμε το παιχνίδι <app>Νάρκες</app> καλύτερο!</p>
+</section>
+</page>

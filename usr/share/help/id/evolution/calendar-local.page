@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-local" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="calendar-using-several-calendars"/>
+
+    <revision pkgversion="3.10.3" version="0.4" date="2014-01-27" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Menambahkan kalender lokal lainnya.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Menambahkan kalender lokal lain</title>
+
+  <p>Untuk menambahkan kalender lokal lain ke <app>Evolution</app>, lakukan langkah-langkah berikut:</p>
+
+  <steps>
+    <item>
+      <p>Klik <guiseq><gui>Berkas</gui><gui>Baru</gui><gui>Kalender</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Pilih tipe <gui>Pada Komputer Ini</gui>.</p>
+    </item>
+    <item>
+      <p>Masukkan nama yang Anda sukai.</p>
+    </item>
+    <item>
+      <p>Opsional pilih warna yang Anda sukai.</p>
+    </item>
+    <item>
+      <p>Jika Anda memilih untuk menggunakan berkas kalender yang sudah ada yang sudah ada di komputer Anda, Anda perlu menyediakan lokasinya dan apakah <app>Evolution</app> hanya boleh membaca dari berkas atau apakah <app>Evolution</app> juga dapat menambahkan dan mengubah butir-butir dalam berkas tersebut.</p>
+    </item>
+    <item>
+      <p>Klik <gui style="button">OK</gui>.</p>
+    </item>
+  </steps>
+
+  <p>Kalender akan ditambahkan ke daftar kalender di <app>Evolution</app>.</p>
+
+</page>

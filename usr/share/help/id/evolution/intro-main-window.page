@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="intro-main-window" xml:lang="id">
+
+  <info>
+    <desc>Penjelasan tentang area yang ditunjukkan di jendela <app>Evolution</app>.</desc>
+
+    <link type="guide" xref="index#getting-started"/>
+    <link type="seealso" xref="calendar-layout"/>
+    <link type="seealso" xref="mail-layout-changing"/>
+
+    <revision pkgversion="3.28.2" version="0.9" date="2018-07-09" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Barbara M. Tobias</name>
+      <email its:translate="no">barbtobias09@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/ui-intro.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Jendela utama <app>Evolution</app></title>
+
+<p><app>Evolution</app> menyediakan fungsionalitas untuk Surel, Kalender, Kontak, Tugas, dan Memo. Anda dapat beralih ke fungsionalitas lain dengan menggunakan tombol "Pengalih" di sudut kiri bawah. Tergantung pada fungsionalitas yang ditampilkan, elemen yang ditampilkan di jendela jugaberbeda.</p>
+
+<section id="e-mail">
+<title>Surel</title>
+
+<media type="image" src="./figures/window-overview-layers.png" width="800">
+  <p>Jendela utama surat <app>Evolution</app></p>
+</media>
+
+<p>Elemen yang sesuai di jendela utama surel:</p>
+<table frame="all" rules="all">
+  <tr>
+    <td colspan="3"><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-c4a000.png" width="10"/> Bilah menu</p></td>
+  </tr>
+  <tr>
+    <td colspan="3"><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-ce5c00.png" width="10"/> Bilah alat</p></td>
+  </tr>
+  <tr>
+    <td rowspan="3"><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-8f5902.png" width="10"/> Daftar folder</p></td>
+    <td colspan="2"><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-4e9a06.png" width="10"/> Bilah pencarian</p></td>
+  </tr>
+  <tr>
+    <td><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-204a87.png" width="10"/> Daftar Pesan</p></td>
+    <td rowspan="3"><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-a40000.png" width="10"/> To Do bar</p></td>
+  </tr>
+  <tr>
+    <td rowspan="2"><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-5c3566.png" width="10"/> Panel pratinjau</p></td>
+  </tr>
+  <tr>
+    <td><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-a40000.png" width="10"/> Pengalih</p></td>
+  </tr>
+  <tr>
+    <td colspan="3"><p><media type="image" mime="image/png" its:translate="no" src="./figures/color-2e3436.png" width="10"/> Bilah status</p></td>
+  </tr>
+</table>
+
+<terms>
+<item>
+<title>Daftar folder</title>
+<p>Daftar folder memberi Anda daftar folder yang tersedia untuk setiap akun. Untuk melihat konten folder, klik nama folder dan kontennya ditampilkan dalam daftar pesan.</p>
+<note style="tip"><p>Untuk informasi selengkapnya lihat <link xref="mail-folders">Menggunakan Folder</link>.</p></note>
+</item>
+<item>
+<title>Daftar Pesan</title>
+<p>Daftar pesan menampilkan semua pesan yang sudah dibaca dan belum dibaca yang Anda miliki di folder yang dipilih. Untuk menampilkan surel di panel pratinjau, klik pesan di daftar pesan.</p>
+</item>
+<item>
+<title>Pengalih</title>
+<p>The switcher at the bottom of the sidebar lets you switch between the <app>Evolution</app> tools:  Mail, Contacts, Calendars, Memos and Tasks. The appearance of the Switcher, including whether the buttons should be shown at all, can be changed in the menu <guiseq><gui>View</gui><gui>Switcher Appearance</gui></guiseq>.</p>
+<note style="tip"><p>You can disable the folder list and the switcher sidebar by toggling <guiseq><gui>View</gui><gui>Layout</gui><gui>Show Sidebar</gui></guiseq> or pressing <key>F9</key>.</p></note>
+</item>
+<item>
+<title>Panel Pratinjau</title>
+<p>Panel pratinjau menampilkan pesan yang saat ini dipilih dalam daftar pesan.</p>
+<note style="tip"><p>Anda bisa menonaktifkan panel pratinjau dengan menjungkitkan <guiseq><gui>Tampilan</gui><gui>Pratinjau</gui><gui>Perlihatkan Pratinjau Pesan</gui></guiseq>.</p></note>
+</item>
+<item>
+<title>Bilah Pe Er</title>
+<p>The to do bar displays calendar appointments and tasks with due dates within the next seven days.</p>
+<note style="tip"><p>You can disable the to do bar by toggling <guiseq><gui>View</gui><gui>Layout</gui><gui>Show To Do Bar</gui></guiseq>.</p></note>
+</item>
+</terms>
+<note style="tip"><p>Jika Anda tidak sengaja menyembunyikan bilah menu, tekan <key>Alt</key> dan aktifkan kembali dengan menjungkitkan <guiseq><gui>Tampilan</gui><gui>Tata Letak</gui><gui>Tampilkan Bilah Menu</gui></guiseq>.</p></note>
+</section>
+
+<section id="calendar">
+<title>Kalender</title>
+<p>Elemen di jendela utama kalender:</p>
+<table frame="all" rules="all">
+  <tr>
+    <td colspan="3"><p><media type="image" its:translate="no" src="./figures/color-c4a000.png" width="10"/> Bilah menu</p></td>
+  </tr>
+  <tr>
+    <td colspan="3"><p><media type="image" its:translate="no" src="./figures/color-ce5c00.png" width="10"/> Bilah alat</p></td>
+  </tr>
+  <tr>
+    <td rowspan="2"><p><media type="image" its:translate="no" src="./figures/color-8f5902.png" width="10"/> Daftar kalender</p></td>
+    <td colspan="2"><p><media type="image" its:translate="no" src="./figures/color-4e9a06.png" width="10"/> Bilah pencarian</p></td>
+  </tr>
+  <tr>
+    <td rowspan="3"><p><media type="image" its:translate="no" src="./figures/color-204a87.png" width="10"/> Daftar janji temu</p></td>
+    <td><p>Daftar tugas</p></td>
+  </tr>
+  <tr>
+    <td><p>Panel bulan</p></td>
+    <td rowspan="2"><p>Daftar memo</p></td>
+  </tr>
+  <tr>
+    <td><p><media type="image" its:translate="no" src="./figures/color-a40000.png" width="10"/> Pengalih</p></td>
+  </tr>
+  <tr>
+    <td colspan="3"><p><media type="image" its:translate="no" src="./figures/color-2e3436.png" width="10"/> Bilah status</p></td>
+  </tr>
+</table>
+<terms>
+<item>
+<title>Daftar Janji Temu</title>
+<p>Daftar janji temu menampilkan semua janji terjadwal Anda dalam kerangka waktu yang dipilih.</p>
+</item>
+<item>
+<title>Panel Bulan</title>
+<p>Panel bulan adalah tampilan kecil bulan kalender. Untuk menampilkan bulan tambahan, seret batas kolom ke kanan. Anda juga bisa memilih rentang hari di panel bulan untuk menampilkan rentang hari ubahan dalam daftar janji.</p>
+</item>
+<item>
+<title>Daftar Tugas dan daftar Memo</title>
+<p>Tugas dan memo hanya ditampilkan untuk kenyamanan Anda dan tidak terkait dengan janji temu apa pun. Gunakan <gui>pengalih</gui> untuk pergi ke jendela utama mereka.</p>
+</item>
+</terms>
+
+</section>
+
+<section id="contacts">
+<title>Kontak</title>
+<p>Elemen di jendela utama kontak:</p>
+<table frame="all" rules="all">
+  <tr>
+    <td colspan="2"><p><media type="image" its:translate="no" src="./figures/color-c4a000.png" width="10"/> Bilah menu</p></td>
+  </tr>
+  <tr>
+    <td colspan="2"><p><media type="image" its:translate="no" src="./figures/color-ce5c00.png" width="10"/> Bilah alat</p></td>
+  </tr>
+  <tr>
+    <td rowspan="2"><p><media type="image" its:translate="no" src="./figures/color-8f5902.png" width="10"/> Daftar buku alamat</p></td>
+    <td><p><media type="image" its:translate="no" src="./figures/color-4e9a06.png" width="10"/> Bilah pencarian</p></td>
+  </tr>
+  <tr>
+    <td><p><media type="image" its:translate="no" src="./figures/color-204a87.png" width="10"/> Daftar kontak</p></td>
+  </tr>
+  <tr>
+    <td><p><media type="image" its:translate="no" src="./figures/color-a40000.png" width="10"/> Pengalih</p></td>
+    <td><p><media type="image" its:translate="no" src="./figures/color-5c3566.png" width="10"/> Pratinjau kontak</p></td>
+  </tr>
+  <tr>
+    <td colspan="2"><p><media type="image" its:translate="no" src="./figures/color-2e3436.png" width="10"/> Bilah status</p></td>
+  </tr>
+</table>
+<note style="tip"><p>Anda bisa menonaktifkan pratinjau kontak dengan mengaktifkan <guiseq><gui>Tampilkan</gui><gui>Pratinjau</gui><gui>Pratinjau Kontak</gui></guiseq>.</p></note>
+</section>
+</page>

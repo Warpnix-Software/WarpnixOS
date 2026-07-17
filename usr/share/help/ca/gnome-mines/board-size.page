@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="board-size" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#tips"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.3" date="2018-09-01" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2011</years>
+    </credit>
+    <credit type="author copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Joan Duran</mal:name>
+      <mal:email>jodufi@gmail.com</mal:email>
+      <mal:years>2007, 2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Com canviar la mida del tauler de joc</title>
+
+  <p>Podeu seleccionar una mida de camp a l'inici de l'aplicació.</p>
+
+  <p>Seleccioneu una de les mides de la quadrícula:</p>
+  <list>
+    <item><p>un tauler de 8 × 8 amb 10 mines,</p></item>
+    <item><p>un tauler de 16 x 16 amb 40 mines,</p></item>
+    <item><p>un tauler de 30 x 16 amb 99 mines</p></item>
+    <item><p>un tauler personalitzat del qual podeu escollir la mida i el nombre de mines.</p></item>
+  </list>
+
+  <p>Per a canviar la <link xref="board-size">mida del tauler</link> més tard, premeu el botó <gui style="button">Canvia la dificultat</gui> a la dreta.</p>
+
+</page>

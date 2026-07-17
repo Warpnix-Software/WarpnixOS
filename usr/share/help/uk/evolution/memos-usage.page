@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="memos-usage" xml:lang="uk">
+
+  <info>
+    <desc>Про додавання, редагування та вилучення приміток.</desc>
+    
+    <link type="guide" xref="index#memos-and-tasks"/>
+
+    <revision pkgversion="3.3.91" version="0.2" date="2012-02-18" status="stub"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Додавання, редагування та вилучення приміток</title>
+
+<note style="tip"><p>У поточній версії не передбачено синхронізації приміток із програмами <app>Tomboy</app> та <app>Gnote</app>.</p></note>
+<!-- TODO:POST-3-10: Periodically recheck status of https://gitlab.gnome.org/GNOME/gnote/-/issues/61 (gnote) -->
+
+</page>

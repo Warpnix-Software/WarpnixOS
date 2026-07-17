@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-timezones" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#calendar-advanced"/>
+
+    <revision pkgversion="3.1.5" version="0.4" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/bshlzlu.html.en -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Menggunakan zona waktu di kalender.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Menggunakan zona waktu</title>
+
+  <p><app>Evolution</app> mendukung penggunaan beberapa zona waktu.</p>
+
+<section id="default-timezone">
+  <title>Mengatur zona waktu global Anda</title>
+
+  <p>Secara baku <app>Evolution</app> menggunakan zona waktu seluruh sistem. Ini dapat diubah di bawah <guiseq><gui>Sunting</gui><gui>Preferensi</gui><gui>Kalender dan Tugas</gui><gui>Umum</gui><gui>Waktu</gui><gui>Zona Waktu</gui></guiseq>.</p>
+
+  <p>Jika Anda banyak berurusan dengan orang-orang di zona waktu tertentu lainnya, Anda bisa menampilkan zona waktu kedua itu dalam tampilan hari kalender. Anda bisa mengatur zona waktu kedua di bawah <guiseq><gui>Sunting</gui><gui>Preferensi</gui><gui>Kalender dan Tugas</gui><gui>Umum</gui><gui>Waktu</gui><gui>Zona kedua</gui></guiseq>.</p>
+
+</section>
+
+<section id="appointment-timezone">
+  <title>Mengatur zona waktu untuk janji</title>
+
+  <p>Anda juga dapat mengonfigurasi informasi zona waktu khusus untuk setiap janji temu. Untuk melakukannya, <link xref="calendar-usage">tambahkan janji baru atau sunting janji yang sudah ada</link>. Di bawah <gui>Zona waktu</gui>, klik <gui style="button">Pilih...</gui> untuk mengkustomisasi zona waktu. Misalnya, jika Anda tinggal di New York tetapi mengadakan pertemuan telepon yang ditetapkan dengan seseorang di California, Anda perlu memastikan bahwa jadwal Anda dikoordinasikan. Mengatur zona waktu berdasarkan per janji temu membantu menghindari potensi kebingungan tersebut.</p>
+
+</section>
+
+</page>

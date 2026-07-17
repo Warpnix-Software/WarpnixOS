@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:uix="http://projectmallard.org/experimental/ui/" type="guide" style="task" id="addremove" xml:lang="ta">
+  <info>
+    <link type="guide" xref="index" group="addremove"/>
+
+    <title role="trail" type="link">Add/remove software</title>
+
+    <credit type="author">
+      <name>Ubuntu Documentation Team</name>
+    </credit>
+
+    <desc>Add and remove applications and other software. Handle
+    additional software repositories.</desc>
+    <uix:thumb role="experimental-gnome-tiles" src="figures/tile-software.svg"/>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+  <title>Install &amp; remove software</title>
+  <links type="topic" style="2column"/>
+
+</page>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-vertical-view" xml:lang="ca">
+
+  <info>
+    <desc>Canviar la visualització de correu per a pantalles panoràmiques.</desc>
+    <link type="guide" xref="mail-layout-changing"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+   <credit type="author">
+     <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en#b131ni8g -->
+   </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Visualització vertical</title>
+
+<p><app>Evolution</app> proporciona una vista vertical a més de la vista clàssica. A la vista vertical, el panell de vista prèvia de missatges es troba al costat dret de la llista de missatges en comparació amb la vista clàssica, on el panell de previsualització del missatge es troba sota la llista de missatges. La vista vertical us permet utilitzar l'amplada addicional dels monitors de pantalla ampla.</p>
+
+<p>Per a canviar a la vista vertical, feu clic a <guiseq><gui>Vista</gui><gui>Previsualització</gui><gui>Vista vertical</gui></guiseq>.</p>
+
+<p>A la vista vertical, la llista de missatges conté les capçaleres comprimides en línies dobles, que us permeten utilitzar l'amplada extra a la columna de vista prèvia. Les columnes comprimides tenen el nom i l'adreça del remitent, la icona d'adjunció, la data i l'assumpte a la segona línia.</p>
+
+<p>Per a tornar a la vista clàssica, feu clic a <guiseq><gui>Vista</gui><gui>Vista prèvia</gui><gui>Vista clàssica</gui></guiseq>.</p>
+
+</page>

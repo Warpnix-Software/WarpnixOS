@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="tasks-usage-add-task" xml:lang="uk">
+
+  <info>
+    <desc>Додавання запису завдання до вашого списку завдань.</desc>
+    
+    <link type="guide" xref="tasks-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.1" date="2011-08-01" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/stable/usage-calendar-todo.html.en#b1012vcx -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Додавання завдання</title>
+
+<steps>
+<item><p>Виберіть пункт меню <guiseq><gui>Файл</gui><gui>Створити</gui><gui>Завдання</gui></guiseq> або натисніть комбінацію клавіш <keyseq><key>Shift</key><key>Ctrl</key><key>T</key></keyseq>.</p></item>
+<item><p>Виберіть список завдань у спадному списку <gui>Список</gui>.</p></item>
+<item><p>Введіть дані завдання.</p></item>
+<item><p>Натисніть кнопку <gui style="button">Зберегти</gui> або виберіть пункт меню <guiseq><gui>Файл</gui><gui>Зберегти</gui></guiseq>.</p></item>
+</steps>
+
+<p>Якщо ви просто хочете швидко додати завдання введенням резюме, ви можете безпосередньо ввести його у списку завдань.</p>
+
+<p>Ви також можете визначити <link xref="calendar-timezones">часовий пояс</link>, <link xref="using-categories">категорію</link> або <link xref="calendar-classifications">класифікацію</link> (за допомогою спадного меню) для завдання або додати долучення чи встановити <link xref="calendar-alarms-and-reminders">нагадування</link> (за допомогою відповідних вкладок).</p>
+
+<section id="assigned-tasks">
+<title>Призначення завдань</title>
+
+<p><app>Evolution</app> можна скористатися для пов'язування завдання із декількома виконавцями.</p>
+<p>Коли ви призначаєте завдання, ви можете вказати учасників у декількох категоріях, зокрема «голова» або «обов'язковий». Коли ви зберігаєте завдання, кожному учаснику буде надіслано повідомлення електронної пошти із даними щодо завдання, яке також надасть учасникам можливість відповісти на завдання.</p>
+<p>Увесь процес подібних до організації <link xref="calendar-meetings-sending-invitation">засідань</link>.</p>
+<p>Щоб створити призначене завдання, виберіть пункт меню <guiseq><gui>Файл</gui><gui>Створити</gui><gui>Призначене завдання</gui></guiseq>.</p>
+</section>
+
+</page>

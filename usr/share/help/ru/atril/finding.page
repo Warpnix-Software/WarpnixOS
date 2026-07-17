@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="finding" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#reading"/>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Фил Булл</name>
+      <email its:translate="no">philbull@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Анна Филипс</name>
+      <email its:translate="no">anna.cs.au@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Екатерина Герасимова</name>
+      <email its:translate="no">kittykat3756@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal-unported.xml"/>
+
+    <desc>Поиск слова или фразы в документе.</desc>
+  </info>
+
+  <title>Найти текст в документе</title>
+
+  <steps>
+    <item>
+      <p>Щёлкните <guiseq><gui style="menuitem">Правка</gui> <gui style="menuitem">Найти</gui></guiseq> или <keyseq><key>Ctrl</key><key>F</key></keyseq>, или  <key>/</key> для отображения строки поиска.</p>
+    </item>
+    <item>
+      <p>Начните вводить текст в поисковую строку, и поиск начнется автоматически.</p>
+    </item>
+    <item>
+      <p>Используйте кнопки <gui>Найти предыдущее</gui> и <gui>Найти следующее</gui>, чтобы перемещаться между результами поиска.</p>
+    </item>
+    <item>
+      <p>Чтобы скрыть панель поиска, снова щёлкните в любом месте окна или нажмите клавишу <key>Esc</key>.</p>
+    </item>
+  </steps>
+
+  <note style="tip">
+    <p>Чтобы отфильтровать слова по регистру, вы можете нажать кнопку <gui>Учитывать регистр</gui>.</p>
+
+  </note>
+  <p>Если искомое слово или фраза встречаются в документе хотя бы один раз, вам будет показано, сколько раз результат поиска появляется на текущей странице.</p>
+
+  <note>
+    <p>Поиск текста можно выполнять только по документам в формате PDF. В некоторых документах PDF текст представлен в виде изображения, поэтому в этих документах поиск также работать не будет.</p>
+  </note>
+
+</page>

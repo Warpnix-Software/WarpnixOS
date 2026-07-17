@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="financial" xml:lang="it">
+
+    <info>
+        <link type="guide" xref="index#financial"/>
+    </info>
+
+	<title>Funzioni finanziarie</title>
+    <p>Nella modalità finanziaria sono disponibili i seguenti pulsanti.</p>
+    <table>
+    <tr>
+    <td><p>Ctrm</p></td>
+    <td><p>Calcola il numero di periodi di capitalizzazione necessari ad incrementare l'investimento attuale ad un valore futuro, considerando un tasso d'investimento fisso.</p></td>
+    </tr>
+    <tr>
+    <td><p>Ddb</p></td>
+    <td><p>Calcola il tasso di ammortamento di un bene per un determinato periodo di tempo, utilizzando il metodo a quote dimezzate.</p></td>
+    </tr>
+    <tr>
+    <td><p>Fv</p></td>
+    <td><p>Calcola il valore futuro di un investimento basato su pagamenti uguali ad un tasso d'interesse periodico sul numero di periodi di pagamento.</p></td>
+    </tr>
+    <tr>
+    <td><p>Mlp</p></td>
+    <td><p>Calcola il prezzo di rivendita di un prodotto basandosi sul costo di produzione e il margine lordo desiderato.</p></td>
+    </tr>
+    <tr>
+    <td><p>Pmt</p></td>
+    <td><p>Calcola l'ammontare dei pagamenti periodici di un prestito, quando questi sono dovuti al termine di ogni periodo di pagamento.</p></td>
+    </tr>
+    <tr>
+    <td><p>Pv</p></td>
+    <td><p>Calcola il valore attuale di un investimento basandosi su una serie di pagamenti fissi scontati al tasso d'interesse sul numero di periodi di pagamento.</p></td>
+    </tr>
+    <tr>
+    <td><p>Tasso</p></td>
+    <td><p>Calcola l'interesse periodico necessario ad incrementare l'investimento ad un valore futuro, basandosi sui periodi di capitalizzazione.</p></td>
+    </tr>
+    <tr>
+    <td><p>Sln</p></td>
+    <td><p>Calcola l'ammortamento a quote costanti di un bene in un periodo. L'ammortamento a quote costanti ripartisce il costo ammortizzabile in modo uniforme sulla vita utile di un bene. La vita utile è il numero di periodi, di solito anni, durante i quali un bene viene ammortizzato.</p></td>
+    </tr>
+    <tr>
+    <td><p>Syd</p></td>
+    <td><p>Calcola l'ammortamento di un bene in un determinato periodo di tempo utilizzando il metodo della somma degli anni di durata prevista, SYD. Questo metodo accelera il tasso di ammortamento, in modo che ci sia maggior ammortamento nei periodi iniziali rispetto a quelli successivi. La vita utile è il numero di periodi, di solito anni, durante i quali un bene viene ammortizzato.</p></td>
+    </tr>
+    <tr>
+    <td><p>Termine</p></td>
+    <td><p>Calcola il numero di periodi di pagamento necessari per accumulare, durante il periodo di rendita ordinaria ad un tasso di interesse periodico, un valore futuro.</p></td>
+    </tr>
+    </table>
+    <note>
+    <p>Le funzioni finanziarie non possono essere eseguite utilizzando la tastiera.</p>
+    </note>
+</page>

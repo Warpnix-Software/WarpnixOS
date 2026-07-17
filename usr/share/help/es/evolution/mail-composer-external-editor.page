@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-external-editor" xml:lang="es">
+
+  <info>
+    <desc>Usar una aplicación de edición de texto en lugar del editor de mensajes predeterminado.</desc>
+    
+    <link type="guide" xref="index#mail-composing-advanced"/>
+
+    <revision pkgversion="3.13.91" version="0.1" date="2015-03-10" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2012 - 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rodrigo Lledó</mal:name>
+      <mal:email>rodhos92@gmail.com</mal:email>
+      <mal:years>2018</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yolanda Álvarez Pérez</mal:name>
+      <mal:email>yolandaa.alvarez.perez@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Francisco Javier F. Serrador</mal:name>
+      <mal:email>serrador@openshine.com</mal:email>
+      <mal:years>2005, 2006</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Usar un editor externo</title>
+
+<p>Puede redactar el cuerpo de su mensaje externamente en su editor de texto favorito para poder usar su funcionalidad específica.</p>
+
+<steps>
+<item><p>Seleccione <guiseq><gui>Editar</gui><gui>Complementos</gui></guiseq>.</p></item>
+<item><p>Active <gui>Editor externo</gui>.</p></item>
+<item><p>Pulse la pestaña <gui>Configuración</gui>.</p>
+<note style="tip"><p>Si un complemento no está disponible en <guiseq><gui>Editar</gui><gui>Complementos</gui></guiseq>, pregunte en un foro de soporte para su distribución, ya que ésta puede haber decidido desactivar algunos complementos para distribuirlos en un paquete por separado.</p></note>
+</item>
+<item><p>Establezca el <gui>Comando</gui> correspondiente para iniciar la aplicación.</p></item>
+<item><p>Si la opción <gui>Lanzar automáticamente al editar un correo nuevo</gui> no está activada, necesitará seleccionar <guiseq><gui>Archivo</gui><gui>Redactar en un editor externo</gui></guiseq> en el editor del correo.</p></item>
+</steps>
+
+</page>

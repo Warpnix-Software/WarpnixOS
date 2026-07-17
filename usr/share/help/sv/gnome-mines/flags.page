@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="question" id="flags" xml:lang="sv">
+  <info>
+
+    <link type="guide" xref="index#play"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.5.5" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.3" date="2018-09-01" status="review"/>
+    <revision pkgversion="3.31.91" version="0.4" date="2019-03-03" status="review"/>
+
+    <credit type="author copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+    <credit type="author">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2012</years>
+    </credit>
+
+    <credit type="author copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Erik Sköldås</mal:name>
+      <mal:email>erik.skoldas@tele2.se</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017, 2018</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Hur du använder flaggorna</title>
+  <table>
+  <tr>
+   <td>
+     <media type="image" mime="image/svg" src="figures/flags.png" its:translate="no"/>
+   </td>
+   <td>
+     <p>Flaggor används för att markera rutor som du misstänker kan dölja en mina. Att sätta en flagga på en ruta hindrar dig från att klicka på den och eventuellt orsaka en explosion, vilket skulle avsluta spelet.</p>
+     <p>Flaggornas exakta utseende beror på temat. Du kan ändra temat genom att trycka på menyknappen i fönstrets övre högra hörn och sedan välja <gui style="menuitem">Utseende</gui>.</p>
+    </td>
+   </tr>
+  </table>
+
+  <section id="flags-put">
+    <title>Hur du placerar flaggor på en ruta</title>
+    <table>
+      <tr>
+        <td>
+	  <p>Det går inte att klicka på flaggor. För att placera en flagga på en ruta:</p>
+          <list>
+            <item><p>högerklicka på en täckt ruta.</p></item>
+          </list>
+        </td>
+        <td>
+          <media type="image" mime="image/svg" width="60" src="figures/flag.svg" its:translate="no"/>
+        </td>
+        </tr>
+      </table>
+
+  </section>
+
+  <section id="flags-blue">
+    <title>Att använda <em>frågetecken</em>-flaggan</title>
+    <p>Om du är osäker på om en ruta döljer en mina kan du använda <em>frågetecken</em>-flaggan.</p>
+    <table>
+      <tr>
+        <td>
+          <p>Att placera en <em>Jag är inte säker</em>-flagga på en ruta:</p>
+          <list>
+	    <item><p>Högerklicka två gånger på en tom ruta eller en gång på en flagga.</p></item>
+          </list>
+        </td>
+        <td>
+          <media type="image" mime="image/svg" width="60" src="figures/flag-question.svg" its:translate="no"/>
+        </td>
+      </tr>
+    </table>
+
+  <note>
+    <p>För att aktivera dessa flaggor, tryck på menyknappen i fönstrets övre högra hörn och aktivera inställningen <gui style="checkbox">Använd frågetecken-flaggor</gui>.</p>
+  </note>
+
+  </section>
+  
+</page>

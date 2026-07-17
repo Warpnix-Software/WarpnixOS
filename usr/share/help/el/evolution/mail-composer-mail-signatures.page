@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-composer-mail-signatures" xml:lang="el">
+
+  <info>
+    <desc>Χρήση υπογραφών αλληλογραφίας στο τέλος ενός μηνύματος που στέλνετε.</desc>
+    
+    <link type="guide" xref="index#mail-composing"/>
+
+    <revision pkgversion="3.25.90" version="0.4" date="2017-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ελληνική μεταφραστική ομάδα GNOME</mal:name>
+      <mal:email>team@gnome.gr</mal:email>
+      <mal:years>2009-2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2012-2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Φώτης Τσάμης</mal:name>
+      <mal:email>ftsamis@gmail.com</mal:email>
+      <mal:years>2010-2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Μάριος Ζηντίλης</mal:name>
+      <mal:email>m.zindilis@dmajor.org</mal:email>
+      <mal:years>2009-2010</mal:years>
+    </mal:credit>
+  </info>
+
+
+<title>Εργασία με τους υπογραφές αλληλογραφίας</title>
+
+<p>A signature consists of one or more lines of text (or even a picture) that will be added at the end of an email that you send. It can contain contact information or other things.</p>
+<note style="tip"><p>Ο όρος "υπογραφή" χρησιμοποιείται διαφορετικά από τους όρους <link xref="mail-encryption">κρυπτογράφησης</link>.</p></note>
+
+<note style="tip"><p>Per <link href="https://tools.ietf.org/html/rfc3676#section-4.3">long-standing convention</link>, signatures always start with two dashes and a space in a separate line. This allows many email clients to automatically strip signatures from quotes when replying.</p></note>
+</page>
+<!-- TODO: The two dashes and a space signature delimiter can be disabled via dconf in org.gnome.evolution.mail.composer-no-signature.delim but don't really want to advertise that -->

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="task" id="print-differentsize" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="printing"/>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email its:translate="no">philbull@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name>Ekaterina Gerasimova</name>
+      <email its:translate="no">kittykat3756@gmail.com</email>
+      <years>2015</years>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Mencetak suatu dokumen pada kertas dengan ukuran atau orientasi yang berbeda.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kukuh Syafaat</mal:name>
+      <mal:email>syafaatkukuh@gmail.com</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2021, 2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Mengubah ukuran kertas ketika mencetak</title>
+
+  <p>Jika Anda ingin mengubah ukuran kertas dokumen Anda (misalnya, mencetak PDF ukuran US Letter pada kertas A4), Anda bisa mengubah format pencetakan untuk dokumen tersebut.</p>
+
+  <steps>
+    <item>
+      <p>Pergi ke <guiseq><gui style="menuitem">Berkas</gui><gui style="menuitem">Cetak</gui></guiseq> dan tekan tombol <gui style="button">Cetak</gui>.</p>
+    </item>
+    <item>
+      <p>Pilih tab <gui>Penyiapan Halaman</gui>.</p>
+    </item>
+    <item>
+      <p>Di bawah kolom <em>Kertas</em>, pilih <em>Ukuran kertas</em> Anda dari daftar tarik turun.</p>
+    </item>
+    <item>
+      <p>Klik <gui>Cetak</gui> dan dokumen Anda mestinya tercetak.</p>
+    </item>
+  </steps>
+
+  <p>Anda juga dapat memakai menu <em>Orientasi</em> untuk memilih orientasi lain:</p>
+
+  <list>
+    <item>
+      <p><gui>Potret</gui></p>
+    </item>
+    <item>
+      <p><gui>Lansekap</gui></p>
+    </item>
+    <item>
+      <p><gui>Potret terbalik</gui></p>
+    </item>
+    <item>
+      <p><gui>Lansekap terbalik</gui></p>
+    </item>
+  </list>
+
+</page>

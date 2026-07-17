@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="tip" id="gnome-on-ubuntu" xml:lang="id">
+
+  <info>
+    <credit type="author">
+      <name>Tim Dokumentasi Ubuntu</name>
+    </credit>
+    <desc>Daftar modifikasi penting pada Desktop GNOME di Ubuntu.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="shell-overview" group="#first"/>
+    <link type="guide" xref="index" group="intro"/>
+    <revision version="0.1" date="2022-04-28" status="review"/>
+  </info>
+
+  <title>Perihal GNOME pada Ubuntu</title>
+
+  <p>Desktop Ubuntu dilengkapi dengan versi Lingkungan Desktop GNOME yang sedikit dimodifikasi. Umumnya, panduan desktop ini akan merujuk ke GNOME seperti yang diterbitkan oleh pengembang GNOME. Berikut adalah daftar perbedaan penting antara GNOME di Ubuntu dan GNOME "Vanilla".</p>
+
+  <list type="disc">
+  <item>
+    <p>Ubuntu hadir dengan Firefox, bukan perambah Web GNOME.</p>
+  </item>
+  <item>
+    <p>Ubuntu hadir dengan klien desktop jarak jauh Remmina alih-alih GNOME Connections.</p>
+  </item>
+    <item>
+      <p>Ekstensi AppIndicators disertakan. Ekstensi ini akan mengaktifkan ikon di pojok kanan atas beberapa aplikasi.</p>
+    </item>
+    <item>
+      <p>Ekstensi Dock Ubuntu disertakan. Ekstensi ini menyediakan sidebar kiri untuk menjalankan aplikasi.</p>
+    </item>
+    <item>
+      <p>Ekstensi Desktop Icons NG disertakan. Ekstensi ini memungkinkan penggunaan ikon di desktop.</p>
+    </item>
+    <item>
+      <p>Selain wallpaper desktop Ubuntu, tema defaultnya adalah Yaru dan font defaultnya adalah Ubuntu.</p>
+    </item>
+    <item>
+      <p>Tombol perkecil dan perbesar disertakan pada bilah judul jendela.</p>
+    </item>
+  </list>
+
+
+
+</page>

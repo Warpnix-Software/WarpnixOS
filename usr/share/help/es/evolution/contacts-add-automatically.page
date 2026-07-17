@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-add-automatically" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="contacts-usage"/>
+    <link type="seealso" xref="contacts-autocompletion"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-08-19" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Barbara Tobias</name>
+      <email its:translate="no">barbtobias09@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Añadir automáticamente a sus contactos los remitentes de los correos que ha recibido.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2012 - 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rodrigo Lledó</mal:name>
+      <mal:email>rodhos92@gmail.com</mal:email>
+      <mal:years>2018</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yolanda Álvarez Pérez</mal:name>
+      <mal:email>yolandaa.alvarez.perez@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Francisco Javier F. Serrador</mal:name>
+      <mal:email>serrador@openshine.com</mal:email>
+      <mal:years>2005, 2006</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Añadir personas automáticamente a mis contactos</title>
+
+  <p>Puede añadir gente automáticamente a sus contactos cuando responde al correo recibido.</p>
+  <steps>
+  <item><p>Seleccione <guiseq><gui>Editar</gui><gui>Complementos</gui></guiseq>.</p></item>
+  <item><p>Active <gui>Contactos automáticos</gui>.</p>
+<note style="tip"><p>Si un complemento no está disponible en <guiseq><gui>Editar</gui><gui>Complementos</gui></guiseq>, pregunte en un foro de soporte para su distribución, ya que ésta puede haber decidido desactivar algunos complementos para distribuirlos en un paquete por separado.</p></note>
+  </item>
+  <item><p>Vaya a <guiseq><gui>Editar</gui><gui>Preferencias</gui><gui>Contactos</gui> <gui>Contactos automáticos</gui></guiseq>.</p></item>
+  <item><p>Active <gui>Crear entradas de la libreta de direcciones al enviar correos</gui> y elija una libreta de direcciones en el campo desplegable de abajo en la que crear los contactos nuevos.</p></item>
+  </steps>
+
+  <p>Desde ahora se crearán automáticamente los contactos para los remitentes de correo recibido cuando responda a esos correos.</p>
+
+</page>

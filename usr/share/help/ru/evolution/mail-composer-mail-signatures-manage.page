@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-mail-signatures-manage" xml:lang="ru">
+
+  <info>
+    <desc>Добавление, изменение и удаление подписей электронной почты.</desc>
+    
+    <link type="guide" xref="mail-composer-mail-signatures"/>
+
+    <revision pkgversion="3.25.5" version="0.4" date="2017-07-16" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Управление подписями</title>
+
+<p>Для добавления, изменения или удаления подписей перейдите в раздел настройки <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Настройки редактора</gui><gui>Подписи</gui></guiseq>.</p>
+<p>Чтобы назначить подпись по умолчанию, которая будет использоваться для учётной записи электронной почты, воспользуйтесь <link xref="mail-composer-mail-signatures-per-account">параметрами учётной записи</link>.</p>
+
+<note style="tip"><p>В силу <link href="https://tools.ietf.org/html/rfc3676#section-4.3">давно используемого соглашения</link> подписи всегда начинаются с отдельной строки, состоящей из двух дефисов и пробела. Это позволяет многим почтовым клиентам автоматически убирать подписи из цитат при ответе.</p></note>
+</page>

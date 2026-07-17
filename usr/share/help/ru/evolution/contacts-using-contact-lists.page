@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-using-contact-lists" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="contacts-organizing"/>
+
+    <revision pkgversion="2.32.1" version="0.2" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-contact-organize.html.en#usage-contact-organize-group-list
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Использование списков контактов для группировки контактов.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Использование списков контактов</title>
+
+  <p>Список контактов — это набор контактов с назначенным вами названием. Когда по этому названию отправляется электронное письмо, оно отправляется каждому члену списка. Список контактов отличается от «настоящего» списка рассылки тем, что он существует только на вашем компьютере для вашего удобства, а не является настоящим адресом электронной почты, управляемым приложением списка рассылки на сервере.</p>
+
+  <p>Например, можно создать по одному контакту для каждого члена семьи, затем добавить эти контакты в список контактов под названием «Семья». После этого не потребуется отдельно указывать адрес электронной почты каждого человека; будет достаточно отправить письмо адресату «Семья», и сообщение будет отправлено каждому члену семьи.</p>
+
+<section id="create-contact-list">
+  <title>Создание списка контактов</title>
+
+  <steps>
+    <item>
+      <p>Выберите пункт меню <guiseq><gui>Файл</gui><gui>Создать</gui> <gui>Список контактов</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Укажите имя.</p>
+    </item>
+    <item>
+      <p>Укажите в поле <gui>Где</gui> адресную книгу, в которую будет добавлен этот контакт.</p>
+    </item>
+    <item>
+      <p>Задайте членов списка путём ввода имён или адресов электронной почты (поля ввода поддерживают автодополнение), перетаскивания контактов из окна «Контакты» в список или нажатия кнопки <gui style="button">Выбрать…</gui>.</p>
+    </item>
+    <item>
+      <p>Выберите, следует ли скрывать адреса электронной почты при отправке сообщения этому списку.</p><p>Если список не является совсем маленьким, рекомендуется оставить адреса скрытыми. Результат аналогичен использованию функции «Скрытая копия», рассмотренной в разделе <link xref="mail-composer-several-recipients">Отправка сообщения нескольким получателям</link>.</p>
+    </item>
+    <item>
+      <p>Нажмите кнопку <gui style="button">OK</gui>.</p>
+    </item>
+  </steps>
+
+  <p>Список контактов будет добавлен в выбранную адресную книгу <app>Evolution</app>.</p>
+
+</section>
+
+<section id="send-to-contact-list">
+  <title>Отправка сообщений списку контактов</title>
+
+  <p>Чтобы отправить сообщение списку контактов, укажите название, которое было выбрано для этого списка, как адресата в редакторе сообщений. Также можно щёлкнуть правой кнопкой мыши по списку контактов в адресной книге и выбрать пункт <gui>Отправить сообщение в список</gui>.</p>
+
+</section>
+
+</page>

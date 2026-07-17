@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-plain-text" xml:lang="ru">
+
+  <info>
+    <desc>Изменение выравнивания шрифта и форматирования абзацев в редакторе сообщений.</desc>
+    <link type="guide" xref="mail-composer-html#formatting-options-plain"/>
+
+    <revision pkgversion="3.5.90" version="0.1" date="2012-08-16" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-html -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Форматирование текста в формате простого текста</title>
+
+     <p>Средства форматирования текста расположены на панели инструментов под строкой  <gui>Тема</gui>. Они также доступны в меню <gui>Вставка</gui> и <gui>Формат</gui>.</p>
+     <p>Для значков на панели инструментов предусмотрены всплывающие подсказки, которые появляются при удержании указателя мыши над кнопками.</p>
+
+<section id="headers-and-lists">
+ <title>Заголовки и списки:</title>
+ <p>Слева от верхней панели инструментов можно выбрать стиль: <gui>Нормальный</gui> (стиль текста по умолчанию) или стили с <gui>Заголовок 1</gui> по <gui>Заголовок 6</gui> для указания различных размеров заголовков (от большого (1) до крошечного (6)). Среди других стилей есть <gui>Выровненный</gui>, он предусматривает использование тегов HTML для форматирования блоков текста, а также три типа списков.</p>
+ <p>Например, вместо использования звёздочек для маркирования отступов в списке можно использовать стиль <gui>Маркированный список</gui> из раскрывающегося списка стилей. В <app>Evolution</app> доступны различные стили списка, а также управление переносом слов и множественные уровни отступа.</p>
+</section>
+
+<section id="alignment">
+      <title>Выравнивание:</title>
+      <p>Рядом с раскрывающимся списком стилей находятся три значка абзаца, знакомые пользователям большинства текстовых редакторов. Левая кнопка выравнивает текст по левому краю, центральная кнопка выравнивает текст по центру, правая кнопка выравнивает текст по правому краю.</p>
+</section>
+
+<section id="indentation-rules">
+      <title>Правила отступов:</title>
+      <p>Кнопка со стрелкой влево сокращает отступ абзаца, кнопка со стрелкой вправо — увеличивает его.</p>
+</section>
+
+</page>

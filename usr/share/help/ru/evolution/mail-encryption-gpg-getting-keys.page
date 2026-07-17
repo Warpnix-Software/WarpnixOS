@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-encryption-gpg-getting-keys" xml:lang="ru">
+
+  <info>
+    <desc>Получение и использование открытых ключей GPG.</desc>
+
+    <link type="guide" xref="mail-encryption#gpg"/>
+
+    <revision pkgversion="3.13.90" version="0.3" date="2015-03-09" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/encryption.html.en#encrypt-getting-key -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Получение и использование открытых ключей GPG</title>
+
+<p>Чтобы отправить зашифрованное сообщение, вам нужно использовать открытый ключ получателя в комбинации со своим закрытым ключом. <app>Evolution</app> выполнит шифрование, но вам необходимо <link xref="help:seahorse/pgp-import" href="https://help.gnome.org/users/seahorse/stable/pgp-import">получить открытый ключ и добавить его в набор ключей.</link>.</p>
+</page>

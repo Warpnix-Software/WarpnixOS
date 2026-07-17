@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-displaying-message" xml:lang="hu">
+
+  <info>
+    <desc>E-mail megjelenítése és mellékleteinek kezelése.</desc>
+
+    <link type="guide" xref="index#mail-basic"/>
+    <link type="seealso" xref="mail-composer-html"/>
+
+    <revision pkgversion="3.38.4" version="0.4" date="2021-04-10" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lukács Bence</mal:name>
+      <mal:email>lukacs.bence1 at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kelemen Gábor</mal:name>
+      <mal:email>kelemeng at gnome dot hu</mal:email>
+      <mal:years>2011, 2012, 2013, 2015, 2017, 2018.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nagy Zoltán</mal:name>
+      <mal:email>dzodzie at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Úr Balázs</mal:name>
+      <mal:email>ur.balazs at fsf dot hu</mal:email>
+      <mal:years>2014, 2019, 2021, 2022, 2023, 2024, 2025.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Üzenet megjelenítése</title>
+
+<p>Az e-mailek kétféle formátumban lehetnek: <link href="https://en.wikipedia.org/wiki/Email#Plain_text_and_HTML">egyszerű szöveg vagy HTML</link>. Mindkét formátumnak megvannak a maga előnyei és hátrányai.</p>
+
+<p>A kapott HTML levelek megjelenítésének módja a <guiseq><gui>Szerkesztés</gui><gui>Beállítások</gui><gui>Levelezés beállításai</gui><gui>HTML üzenetek</gui></guiseq> alatt adható meg. Például megjeleníthetők egyszerű szövegként vagy blokkonként betöltött távoli tartalomként.</p>
+
+<note style="tip"><p>A szerkesztőben történő e-mail-formázásához lásd: <link xref="mail-composer-html"/>.</p></note>
+
+  <section id="advanced">
+    <title>Speciális</title>
+  </section>
+
+</page>

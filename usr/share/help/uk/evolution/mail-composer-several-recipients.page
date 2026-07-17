@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-several-recipients" xml:lang="uk">
+
+  <info>
+    <desc>Надсилання повідомлення декільком особам за допомогою полів «Копія» і «Прихована копія».</desc>
+    
+    <link type="guide" xref="index#mail-composing"/>
+    <link type="seealso" xref="mail-composer-reply"/>
+    <link type="seealso" xref="mail-composer-forward"/>
+    <link type="seealso" xref="mail-composer-write-new-message"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-27" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-to-types and https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-to -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Надсилання повідомлення декількома адресатам</title>
+
+<p>Щоб надіслати повідомлення декільком особам, введіть адреси у редакторі повідомлень, відокремивши їх комою або крапкою з комою.</p>
+
+<note style="tip"><p>Якщо ви часто пишете певній групі осіб, ви можете створити <link xref="contacts-using-contact-lists">список контактів</link> для надсилання їм повідомлення так, наче ви надсилаєте повідомлення на одну адресу.</p></note>
+
+<section id="to-cc-bcc-meaning">
+<title>Типи отримувачів</title>
+<p>Повідомлення електронної пошти можуть мати три типи отримувачів. Найпростішим способом визначення отримувача є додавання його адреси електронної пошти до поля <gui>Кому:</gui>. Полем <gui>Копія:</gui> можна скористатися для визначення отримувачів, які мають отримати копію, але не є основними отримувачами.</p>
+
+<p>Адреси у текстовому полі <gui>Прих.копія:</gui> буде приховано від інших отримувачів повідомлення. Такими адресами можна скористатися для надсилання пошти великим групам адресатів, особливо якщо адресати не знають один одного або якщо важлива конфіденційність. Якщо ви не бачите поля <gui>Прих.копія:</gui>, скористайтеся пунктом меню <guiseq><gui>Перегляд</gui><gui>Поле прихованої копії</gui></guiseq>.</p>
+</section>
+
+<section id="autocompletion">
+<title>Автодоповнення</title>
+<p>Для введення адрес рекомендуємо скористатися можливістю <link xref="contacts-autocompletion">автодоповнення</link> адресної книги <app>Evolution</app>. Таким чином ви зможете уникнути друкарських помилок і заощадити час.</p>
+</section>
+
+<section id="to-cc-bcc-buttons">
+<title>Користування кнопками</title>
+
+<p>Замість введення вручну імен отримувачів ви можете натиснути кнопку <gui style="button">Кому:</gui>, <gui style="button">Копія:</gui> або <gui style="button">Прих.копія:</gui>, щоб відкрити список адрес електронної пошти з ваших адресних книг. Виберіть адреси і натисніть кнопки зі стрілочками, щоб пересунути адреси до відповідних стовпчиків адрес (Кому:, Копія:, Прих.копія:).</p>
+</section>
+
+</page>

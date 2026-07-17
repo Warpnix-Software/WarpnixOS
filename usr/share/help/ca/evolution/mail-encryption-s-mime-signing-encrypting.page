@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-encryption-s-mime-signing-encrypting" xml:lang="ca">
+
+  <info>
+    <desc>Signatura o xifrat dels missatges que s'enviïn a través de S/MIME.</desc>
+
+    <link type="guide" xref="mail-encryption#s-mime"/>
+
+    <revision pkgversion="3.13.90" version="0.3" date="2015-03-09" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/encryption.html.en#bsqbdkv -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Signatura o xifrat dels missatges</title>
+
+<p>Un cop hàgiu <link xref="mail-encryption-s-mime-manage">afegit el vostre certificat</link>, podeu signar o xifrar un missatge seleccionant <guiseq><gui>Opcions</gui><gui>Signa S/MIME</gui></guiseq> o <gui>Xifra S/MIME</gui> des del menú d'edició de missatges o fent clic a la icona de la barra d'eines corresponent.</p>
+<note style="tip"><p>La línia Assumpte del missatge no es xifrarà i no s'hauria d'utilitzar per a informació confidencial.</p></note>
+
+<p>Per a tenir tots els missatges signats o xifrats:</p>
+<steps>
+<item><p>Seleccioneu <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Comptes de Correu</gui></guiseq>.</p></item>
+<item><p>Seleccioneu el compte de correu per a xifrar els missatges.</p></item>
+<item><p>Feu clic a <gui style="button">Edita</gui>.</p></item>
+<item><p>Fer clic a la pestanya <gui>Seguretat</gui>.</p></item>
+<item><p>A la secció <gui>MIME segur (S/MIME)</gui>, feu clic a <gui style="button">Selecciona</gui> al costat de <gui>Certificat de signatura</gui> i especifiqueu el camí d'accés al vostre certificat de signatura o feu clic a <gui style="button">Selecciona</gui> al costat del <gui>Certificat de xifratge</gui> i especifiqueu el camí d'accés al vostre certificat de xifratge.</p></item>
+<item><p>Seleccioneu les opcions adequades.</p></item>
+<item><p>Feu clic a <gui style="button">D'acord</gui>.</p></item>
+</steps>
+</page>

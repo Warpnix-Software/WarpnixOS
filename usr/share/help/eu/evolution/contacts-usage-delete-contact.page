@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-usage-delete-contact" xml:lang="eu">
+
+  <info>
+    <link type="guide" xref="contacts-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.1" date="2011-08-01" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Kontaktu bat zure helbide-liburutik ezabatzea.</desc>
+  </info>
+
+  <title>Kontaktu bat ezabatzea</title>
+
+  <p>Zure helbide-liburuetako kontaktu bat ezabatu nahi baduzu, egin eskuineko klik kontaktuan eta hautatu <gui>Ezabatu</gui>, edo egin klik kontaktuan eta egin klik tresna-barrako <gui>Ezabatu</gui> aukeran edo sakatu <keyseq><key>Ctrl</key><key>D</key></keyseq>, edo egin klik <guiseq><gui>Editatu</gui><gui>Ezabatu kontaktua</gui></guiseq> aukeran.</p>
+
+</page>

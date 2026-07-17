@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="earmarks" xml:lang="id">
+  <info>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+   <link type="guide" xref="index#tips"/>
+    <credit type="author copyright">
+      <name>Thomas Hinkle</name>
+      <email>tmhinkle@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Chris Beiser</name>
+      <email>ctbeiser@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020, 2021.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Earmark</title>
+<p>Earmark (catatan numerik kecil) dapat ditambahkan ke sel mana pun. Mereka memungkinkan Anda menandai nilai yang mungkin untuk sel. Earmark memungkinkan Anda menyimpan sejumlah digit dalam sel. Setiap digit hanya dapat dipilih sekali.</p>
+
+<p>Untuk menambahkan earmark ke sel:</p>
+
+<steps>
+  <item><p>Pilih sel.</p></item>
+  <item><p>Tekan <keyseq><key>Ctrl</key><key>1</key></keyseq> hingga <keyseq><key>Ctrl</key><key>9</key></keyseq>.</p></item>
+</steps>
+
+<p>Anda bisa menghapus sebuah angka dari earmark dengan menekan <keyseq><key>Ctrl</key><key>1</key></keyseq> hingga <keyseq><key>Ctrl</key><key>9</key></keyseq> lagi.</p>
+
+<note><p>Anda juga bisa menambahkan earmark dengan mengklik sel sambil menekan <key>Ctrl</key>, atau mengklik kanan sel, lalu memilih angka.</p></note>
+
+</page>

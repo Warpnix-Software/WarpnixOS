@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-usage-edit-appointment" xml:lang="pt-BR">
+
+  <info>
+    <link type="guide" xref="calendar-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.2" date="2011-08-01" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Editando um compromisso em sua agenda.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Fontenelle</mal:name>
+      <mal:email>rafaelff@gnome.org</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Editando um compromisso</title>
+
+  <p>Se você deseja alterar um compromisso que já existe em suas agendas:</p>
+
+  <steps>
+    <item>
+      <p>Efetue clique duplo no compromisso que você deseja editar no calendário.</p>
+    </item>
+    <item>
+      <p>Edite o compromisso (veja <link xref="calendar-usage-add-appointment">Adicionando um compromisso</link> para a lista de opções disponíveis).</p>
+    </item>
+    <item>
+      <p>Clique no botão <gui style="button">Salvar</gui> ou <guiseq><gui>Arquivo</gui><gui>Salvar</gui></guiseq>.</p>
+    </item>
+  </steps>
+
+</page>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-local" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="contacts-using-several-addressbooks"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Додавання ще однієї локальної адресної книги.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Додавання додаткової локальної адресної книги</title>
+
+  <p>Щоб додати іншу локальну адресну книгу до <app>Evolution</app>, виконайте такі дії:</p>
+
+  <steps>
+    <item>
+      <p>Виберіть пункт меню <guiseq><gui>Файл</gui><gui>Створити</gui> <gui>Адресна книга</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Виберіть тип <gui>На цьому комп'ютері</gui>.</p>
+    </item>
+    <item>
+      <p>Введіть бажану для вас назву.</p>
+    </item>
+    <item>
+      <p>Натисніть кнопку <gui style="button">Гаразд</gui>.</p>
+    </item>
+  </steps>
+
+  <p>До списку адресних книг <app>Evolution</app> буде додано нову адресну книгу.</p>
+
+</page>

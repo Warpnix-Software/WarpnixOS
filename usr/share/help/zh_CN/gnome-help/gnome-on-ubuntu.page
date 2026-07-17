@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="tip" id="gnome-on-ubuntu" xml:lang="zh-CN">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntu 文档团队</name>
+    </credit>
+    <desc>Ubuntu GNOME 桌面的重要修改列表。</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="shell-overview" group="#first"/>
+    <link type="guide" xref="index" group="intro"/>
+    <revision version="0.1" date="2022-04-28" status="review"/>
+  </info>
+
+  <title>关于 GNOME on U/buntu</title>
+
+  <p>Ubuntu Desktop 预装了稍作修改的 GNOME 桌面环境。一般情况下，本桌面指南将参考 GNOME 开发者发布的版本。下面是 Ubuntu 上 GNOME 与“原始” GNOME 的显著区别列表。</p>
+
+  <list type="disc">
+  <item>
+    <p>Ubuntu 默认使用 Firefox 而不是 GNOME Web 作为浏览器</p>
+  </item>
+  <item>
+    <p>Ubuntu 默认使用  Remmina 而不是 GNOME Connection 作为远程桌面客户端。</p>
+  </item>
+    <item>
+      <p>AppIndicators 扩展已包含在其中。该扩展将在某些应用程序的右上角启用图标。</p>
+    </item>
+    <item>
+      <p>Ubuntu Dock 扩展已包含在其中。该扩展提供了运行应用程序的左侧边栏。</p>
+    </item>
+    <item>
+      <p>Desktop Icons NG 扩展已包含在其中。该扩展允许在桌面上使用图标。</p>
+    </item>
+    <item>
+      <p>除了 Ubuntu 桌面壁纸外，系统默认主题为 Yaru，默认字体为 Ubuntu。</p>
+    </item>
+    <item>
+      <p>最小化和最大化按钮已包含在窗口标题栏。</p>
+    </item>
+  </list>
+
+
+
+</page>

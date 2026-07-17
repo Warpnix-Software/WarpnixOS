@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-labels" xml:lang="fr">
+
+  <info>
+    <desc>Utiliser des étiquettes pour classer vos courriels tout en les conservant dans leur dossier.</desc>
+
+    <link type="guide" xref="mail-organizing#advanced"/>
+    <link type="seealso" xref="using-categories"/>
+
+    <revision pkgversion="3.29.90" version="0.4" date="2018-07-25" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marc Lorber</mal:name>
+      <mal:email>Linux-Lorber@club-internet.fr</mal:email>
+      <mal:years>2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jonathan Ernst</mal:name>
+      <mal:email>jonathan@ernstfamily.ch</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alexandre Franke</mal:name>
+      <mal:email>alexandre.franke@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012 </mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervan@gmail.com</mal:email>
+      <mal:years>2013-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yvan Masson</mal:name>
+      <mal:email>yvan@masson-informatique.fr</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Charles Monzat</mal:name>
+      <mal:email>charles.monzat@free.fr</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>vanadiae</mal:name>
+      <mal:email>vanadiae35@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Guillaume Bernard</mal:name>
+      <mal:email>associations@guillaume-bernard.fr</mal:email>
+      <mal:years>2021-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jean-Marc Tissières</mal:name>
+      <mal:email>jmetissieres@gmail.com</mal:email>
+      <mal:years>2022</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Utilisation des étiquettes</title>
+
+<p>Vous pouvez ajouter des étiquettes colorées à vos courriels afin de les classer. C’est un concept similaire à celui des <link xref="using-categories">catégories</link> dans les autres fenêtres d’<app>Evolution</app>.</p>
+
+<p>Vous pouvez rechercher des messages possédant des étiquettes spécifiques en utilisant la <link xref="mail-searching">liste déroulante de recherche rapide</link>. Des <link xref="mail-search-folders">dossiers de recherche</link> peuvent également être créés en se basant sur les étiquettes.</p>
+
+<section id="add">
+<title>Ajout d’une étiquette à un message</title>
+<p>Pour attribuer une étiquette à un message, choisissez <guiseq><gui>Message</gui><gui>Marquer comme</gui><gui>Étiquette</gui></guiseq>, ou faites un clic droit sur le message, cliquez sur <gui>Étiquette</gui> et choisissez l’étiquette à appliquer.</p>
+<p>Vous pouvez également attribuer rapidement une nouvelle étiquette en choisissant <gui>Nouvelle étiquette</gui>.</p>
+</section>
+
+<section id="manage">
+<title>Gestion des étiquettes</title>
+<p>Vous pouvez ajouter, modifier et supprimer toutes les étiquettes sous <guiseq><gui>Édition</gui><gui>Préférences</gui><gui>Préférences du courriel</gui><gui>Étiquettes</gui></guiseq>. Notez que vous ne pouvez pas supprimer les étiquettes par défaut.</p>
+</section>
+
+</page>

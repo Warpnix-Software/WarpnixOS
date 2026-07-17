@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-encryption-gpg-create-key" xml:lang="ru">
+
+  <info>
+    <desc>Подписание или шифрование отправляемых сообщений с помощью GPG/OpenPGP.</desc>
+
+    <link type="guide" xref="mail-encryption#gpg"/>
+
+    <revision pkgversion="3.12.9" version="0.6" date="2015-03-09" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Создание ключа GPG</title>
+
+<!-- TODO:POST-3-13: Needs a complete rewrite now that https://bugzilla.gnome.org/show_bug.cgi?id=508744 is fixed. -->
+
+<p>Перед получением или отправкой почты, зашифрованной с помощью GPG, вам необходимо <link xref="help:seahorse/pgp-create" href="https://help.gnome.org/users/seahorse/stable/pgp-create">сгенерировать открытый и закрытый ключи GPG</link>. После этого и <link xref="mail-encryption-gpg-set-up">настройки <app>Evolution</app> на использование ключа</link> потребуется <link xref="help:seahorse/pgp-publish" href="https://help.gnome.org/users/seahorse/stable/pgp-publish">поделиться своим открытым ключом с друзьями, чтобы дать им возможность отправлять вам зашифрованные сообщения</link>.</p>
+
+</page>

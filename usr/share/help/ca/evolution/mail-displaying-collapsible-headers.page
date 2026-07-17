@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-displaying-collapsible-headers" xml:lang="ca">
+
+  <info>
+    <desc>Mostra menys destinataris de correu electrònic d'un missatge concret.</desc>
+
+    <link type="guide" xref="mail-displaying-message"/>
+
+    <revision pkgversion="3.1.5" version="0.2" date="2011-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en#b131oj36 though the setting itself has been removed in 3.1 -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Capçaleres de missatges plegables</title>
+
+<p><app>Evolution</app> comprimeix els encapçalaments Per a, Cc i Cco del correu rebut i només mostra cinc adreces a la vista prèvia del missatge.</p>
+
+<p>Per a veure tots els destinataris, feu clic a la icona <media type="image" its:translate="no" src="./figures/plus-icon.png"/> al costat de les línies <gui>Per a:</gui> o <gui>Cc:</gui>, o feu clic a l'el·lipsi (...) al final de les cinc adreces mostrades.</p>
+
+<p>Per a col·lapsar tots els encapçalaments del missatge i simplement mostrar l'assumpte i l'emissor en una línia, feu clic a la icona <media type="image" its:translate="no" src="./figures/minus-icon.png"/>següent al costat de la línia <gui>Des de:</gui>. Això és útil en pantalles petites.</p>
+ 
+</page>

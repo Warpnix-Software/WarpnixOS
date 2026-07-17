@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-usage-add-appointment" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="calendar-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.2" date="2011-08-01" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Додавання запису зустрічі.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Додавання запису зустрічі</title>
+
+  <steps>
+    <item>
+      <p>Виберіть пункт меню <guiseq><gui>Файл</gui><gui>Створити</gui><gui>Зустріч</gui></guiseq> або двічі клацніть на порожньому місці у календарі, щоб відкрити діалогове вікно запису зустрічі. Позначку часу на панелі перегляду календаря, на якій ви двічі клацнете, буде запропоновано як час нової зустрічі. Ви також можете безпосередньо вписати час у календар, а потім скоригувати тривалість зустрічі перетягуванням позначки за допомогою вказівника миші.</p>
+    </item>
+    <item>
+      <p>Якщо ви користуєтеся вікном «Зустріч»:</p>
+    </item>
+    <item>
+      <p>Виберіть календар зі спадного списку <gui>Календар</gui>.</p>
+    </item>
+    <item>
+      <p>Вкажіть коротке резюме у полі <gui>Зведення</gui>.</p>
+    </item>
+    <item>
+      <p>(Необов'язково) Введіть місце у полі <gui>Адреса</gui>.</p>
+    </item>
+    <item>
+      <p>Щоб вибрати цю подію як подію на увесь день, виберіть <guiseq><gui>Параметри</gui><gui>Подія на весь день</gui></guiseq> або натисніть кнопку <gui>Подія на весь день</gui> на панелі інструментів.</p>
+    </item>
+    <item>
+      <p>Виберіть дату і час.</p>
+    </item>
+    <item>
+      <p>(Необов'язково) Введіть опис у полі <gui>Опис</gui>.</p>
+    </item>
+    <item>
+      <p>Щоб відповідний час було показано як <link xref="calendar-free-busy">зайнятий</link> іншим людям, виберіть пункт меню <guiseq><gui>Параметри</gui> <gui>Показувати час як зайнятий</gui></guiseq>.</p>
+    </item>
+  </steps>
+
+  <p>Ви також можете визначити <link xref="calendar-timezones">часовий пояс</link>, <link xref="using-categories">категорію</link>, <link xref="calendar-alarms-and-reminders">нагадування</link>, <link xref="calendar-recurrence">повторюваність</link> або <link xref="calendar-classifications">класифікацію</link> для події або додати долучення.</p>
+
+</page>

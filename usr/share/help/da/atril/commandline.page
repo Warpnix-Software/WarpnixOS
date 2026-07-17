@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="commandline" xml:lang="da">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <title type="sort">Kommandolinje</title>
+    <desc>Kommandoen <cmd>atril</cmd> kan åbne en lang række filer på forudbestemte sider og i forskellige tilstande.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <credit type="editor">
+    <name>Tiffany Antopolski</name>
+    <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  </info>
+
+<title>Kommandolinjen</title>
+<p>Start <app>Atril</app> fra kommandolinjen ved at skrive <cmd>atril</cmd>. Man kan åbne en bestemt fil ved at skrive filnavnet efter atril-kommandoen:</p>
+
+<screen>atril fil.pdf</screen>
+<p>Man kan åbne flere filer ved at skrive filnavnene efter kommandoen atril, idet man adskiller filnavnene med et mellemrum:</p>
+<screen>atril fil1.pdf fil2.pdf</screen>
+<p>Atril understøtter også håndtering af filer på internettet. Man kan for eksempel efter kommandoen atril angive en filplacering på nettet:</p>
+<section id="open">
+    <title>Åbn et dokument på en bestemt side</title>
+    <p>Man kan bruge <cmd>--page-label</cmd> for at åbne et dokument på en bestemt side. Man åbner for eksempel et dokument på side 3 ved at skrive:</p>
+    <screen>atril --page-label=3 fil.pdf</screen>
+    <p>Sidemærket skal være i samme format som det sidetal der vises i <app>Atril</app>-værktøjslinjen.</p>
+</section>
+<section id="fullsreen">
+    <title>Åbn et dokument i fuldskærmstilstand</title>
+    <screen>atril --fullscreen fil.pdf</screen>
+</section>
+<section id="presentation">
+    <title>Åbn et dokument i præsentationstilstand</title>
+    <screen>atril --presentation fil.pdf</screen>
+</section>
+<section id="preview">
+    <title>Åbn et dokument i forhåndsvisningstilstand</title>
+    <screen>atril --preview fil.pdf</screen>
+</section>
+</page>

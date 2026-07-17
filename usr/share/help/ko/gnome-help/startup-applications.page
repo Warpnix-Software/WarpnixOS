@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="startup-applications" xml:lang="ko">
+
+  <info>
+    <link type="guide" xref="shell-overview#apps"/>
+    <link type="guide" xref="prefs"/>
+    <desc>여러분이 로그인 할 때 시작 될 응용 프로그램을 고르십시오.</desc>
+
+    <revision version="18.04" date="2018-03-19" status="review"/>
+
+    <credit type="author">
+      <name>우분투 문서화 팀</name>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+  <title>시작 응용 프로그램</title>
+
+  <p>시스템에 구성된 기본 시작 응용 프로그램 외에도, 로그인 시 어떤 응용 프로그램이 시작되어야 할 지 구성할 수 있습니다.</p>
+
+  <steps>
+    <item>
+      <p><gui xref="shell-introduction#activities">Activities</gui> 개요를 통해 <gui>Startup Applications</gui>를 여십시오. 또는 <keyseq><key>Alt</key><key>F2</key></keyseq>를 누르고 <cmd>gnome-session-properties</cmd> 명령어를 실행할 수 있습니다.</p>
+    </item>
+    <item>
+      <p><gui>Add</gui> 버튼을 클릭한다음 로그인시에 실행될 명령어를 입력하십시오 (이름과 코멘트는 선택사항 입니다). 예를 들어 파이어폭스가 자동으로 실행되고록 하고 싶으면, <gui>Command</gui> 필드에 <cmd>firefox</cmd> 를 입력한후 <gui>Add</gui> 버튼을 클릭하십시오.</p>
+    </item>
+  </steps>
+
+  <note>
+    <p>명령어를 직접 입력할수도 있고 <gui>Browse...</gui> 버튼을 클릭하여 원하는 명령어를 직접 찾을수 있습니다. 자동으로 실행 되는 어플리케이션들은 일반적으로 <code>/usr/bin</code> 폴더에 위치해 있습니다.</p>
+  </note>
+
+</page>

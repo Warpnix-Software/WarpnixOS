@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-creator" xml:lang="pt">
+
+  <info>
+    <credit type="author">
+      <name>Equipa de documentação do Ubuntu</name>
+    </credit>
+
+    <desc>Converta uma pen USB num volume a partir do qual pode correr e instalar o Ubuntu.</desc>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <link type="guide" xref="disk"/>
+    <link type="guide" xref="addremove" group="#last"/>
+
+    <revision version="17.10" date="2017-09-26" status="review"/>
+  </info>
+
+  <title>Crie um disco de inicialização</title>
+
+  <p>Neste contexto, um disco de inicialização é uma unidade flash USB a partir da qual você pode inicializar e <link href="https://www.ubuntu.com/download/desktop/install-ubuntu-desktop">instalar o Ubuntu</link>. A capacidade da unidade flash USB deve ser de pelo menos 2 GB. Todos os dados na unidade flash USB serão perdidos quando você criar o disco de inicialização.</p>
+
+  <p>Assume-se que já transferiu a imagem ISO do Ubuntu.</p>
+
+  <p>Para criar um disco de arranque de uma imagem ISO Ubuntu:</p>
+    
+  <steps>
+    <item>
+      <p>Abra o <app>Criador de Disco de Arranque</app> através da barra de pesquisa <em>Atividades</em>.</p>
+    </item>
+    <item>
+      <p>Se a imagem ISO estiver na sua pasta <gui>Transferências</gui> e houver apenas uma imagem ISO, o <app>Criador de Disco de Arranque</app> a terá selecionado, caso contrário selecione a imagem ISO correta.</p>
+    </item>
+    <item>
+      <p>
+        If your computer has just one USB flash drive, <app>Startup Disk Creator</app> will have selected it, otherwise select the correct drive.
+      </p>
+    </item>
+    <item>
+      <p>
+        Click <gui>Make Startup Disk</gui>.
+      </p>
+    </item>
+    <item>
+      <p>
+        Click <gui>Yes</gui> to confirm. The process should take ten minutes or less.
+      </p>
+    </item>
+
+    <item>
+      <p>
+        When the "Installation Complete" window opens click <gui>Quit</gui>.
+      </p>
+    </item>
+
+  </steps>
+
+
+
+</page>

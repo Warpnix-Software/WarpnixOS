@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="tip" id="about-this-guide" xml:lang="da">
+
+  <info>
+    <credit type="author">
+      <name>GNOME-dokumentationsprojektet</name>
+      <email>gnome-doc-list@gnome.org</email>
+    </credit>
+    <credit type="author">
+      <name>Ubuntus dokumentationshold</name>
+    </credit>
+    <desc>Et par tips om at bruge Ubuntu-skrivebordsvejledningen.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="more-help"/>
+    <revision version="17.10" date="2017-05-02" status="review"/>
+  </info>
+
+  <title>Om denne vejledning</title>
+
+  <p>Denne vejledning giver dig en rundtur i Ubuntus desktop-funktioner, svarer på dine computerrelaterede spørgsmål, og giver tips om at bruge din computer effektivt.</p>
+
+  <list type="disc">
+    <item>
+      <p>Vejledningen er opdelt i små, ​​opgaveorienterede emner - ikke kapitler. Det betyder, at du ikke behøver at skimme gennem en hel manual for at finde svar på dine spørgsmål.</p>
+    </item>
+    <item>
+      <p>Relaterede elementer er knyttet sammen. "Se også"-links nederst på nogle sider leder dig videre til beslægtede emner.</p>
+    </item>
+    <item>
+      <p>Tekstinputfeltet øverst i denne vejledning fungerer som en <em>søgelinje</em>, og relevante resultater vises under den, så snart du begynder at skrive. Venstreklik på et resultat for at åbne dets side.</p>
+    </item>
+    <item>
+      <p>Vejledningen forbedres løbende. Selvom vi forsøger at give dig en omfattende samling af nyttige oplysninger, ved vi, at vi ikke vil besvare alle dine spørgsmål her. Vi vil blive ved med at tilføje flere oplysninger for at gøre vejledningen mere nyttig.</p>
+    </item>
+  </list>
+
+  <p>Tak fordi du tog dig tid til at læse <em> Ubuntu-skrivebordsguiden</em>.</p>
+
+  <p>— Ubuntus dokumentationshold</p>
+
+</page>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-sorting-folder-list" xml:lang="hu">
+
+  <info>
+    <desc>A levélmappalista rendezése a bal oldalsávban.</desc>
+
+    <link type="guide" xref="mail-organizing"/>
+    <link type="guide" xref="mail-layout-changing"/>
+
+    <revision pkgversion="3.3.91" version="0.2" date="2013-06-22" status="draft"/>
+    <revision pkgversion="3.38.4" version="0.3" date="2021-03-28" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Lukács Bence</mal:name>
+      <mal:email>lukacs.bence1 at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kelemen Gábor</mal:name>
+      <mal:email>kelemeng at gnome dot hu</mal:email>
+      <mal:years>2011, 2012, 2013, 2015, 2017, 2018.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nagy Zoltán</mal:name>
+      <mal:email>dzodzie at gmail dot com</mal:email>
+      <mal:years>2011.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Úr Balázs</mal:name>
+      <mal:email>ur.balazs at fsf dot hu</mal:email>
+      <mal:years>2014, 2019, 2021, 2022, 2023, 2024, 2025.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>A levélmappalista rendezése</title>
+  
+<section id="default-folder-sort-order">
+<title>Alapértelmezett rendezési sorrend</title>
+<p>Alapértelmezetten a bal oldalsávban lévő <link xref="intro-main-window#e-mail">levélmappalista</link> a felső szintű csomópontokat a következő sorrendben tartalmazza:</p>
+<list>
+<item><p><gui>Ezen a számítógépen</gui> – a helyi fióktípusok összes levelét tartalmazza (ha be van állítva)</p></item>
+<item><p>Egy vagy több távoli e-mail-fióktípus (ha be van állítva)</p></item>
+<item><p><gui><link xref="mail-search-folders">Keresőmappák</link></gui> (ha engedélyezve van)</p></item>
+</list>
+<p>Az egyes felső szintű csomópontok alatti mappák betűrendbe vannak rendezve.</p>
+</section>
+
+<section id="change-folder-sort-order">
+<title>A rendezési sorrend megváltoztatása</title>
+<list>
+<item>
+<p>A <guiseq><gui>Szerkesztés</gui><gui>Beállítások</gui><gui>Postafiókok</gui></guiseq> alatt megváltoztathatja a felső szintű csomópontok alapértelmezett rendezési sorrendjét egy fiók felhúzásával vagy lehúzásával a listában.</p>
+
+<p>Az egyéni rendezési sorrendet a <guiseq><gui>Szerkesztés</gui><gui>Beállítások</gui><gui>Postafiókok</gui><gui style="button">Alapértelmezések visszaállítása</gui></guiseq> gomb megnyomásával állíthatja vissza.</p>
+</item>
+<item>
+<p>A mappák rendezési sorrendjét a <guiseq><gui>Mappa</gui><gui>Rendezési sorrend szerkesztése…</gui></guiseq> menüpontban változtathatja meg.</p>
+</item>
+</list>
+</section>
+</page>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-attachments-sending" xml:lang="ru">
+
+  <info>
+    <desc>Вложение файлов в письма для отправки.</desc>
+
+    <link type="guide" xref="index#mail-composing"/>
+    <link type="guide" xref="mail-attachments"/>
+
+    <revision pkgversion="3.0.2" version="0.2" date="2011-07-30" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-compose and https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#b17rcxmf -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Добавление вложений в письмо</title>
+
+<section id="attaching">
+<title>Вложение файлов</title>
+<p>Чтобы прикрепить файл к сообщению в окне редактора:</p>
+<steps>
+<item><p>Нажмите кнопку <gui>Добавить вложение…</gui> или выберите пункт меню <guiseq><gui>Вставка</gui><gui>Вложение...</gui></guiseq>, или воспользуйтесь комбинацией клавиш <keyseq><key>Ctrl</key><key>M</key></keyseq>.</p></item>
+<item><p>Выберите файл, который следует прикрепить.</p></item>
+<item><p>Нажмите кнопку <gui style="button">OK</gui>.</p></item>
+</steps>
+<p>Также можно перетащить файл на панель вложений окна редактора.</p>
+
+<p>При отправке сообщения с ним отправляется копия прикреплённого файла. Помните, что отправка и получение больших вложений может занять значительное время.</p>
+</section>
+
+<section id="reminders">
+<title>Напоминание о вложении</title>
+
+<p>В <app>Evolution</app> есть модуль «Напоминание о вложении», с помощью которого можно напомнить себе прикрепить файл к письму. Если модуль определит, что файл не прикреплён, перед отправкой письма будет показано окно с соответствующим напоминанием.</p>
+
+<p>Чтобы включить модуль напоминания о вложении:</p>
+<steps>
+<item><p>Выберите пункт меню <guiseq><gui>Правка</gui><gui>Модули</gui></guiseq>.</p></item>
+<item><p>Включите модуль <gui>Напоминание о вложении</gui>.</p>
+<note style="tip"><p>Если этот модуль не доступен в разделе <guiseq><gui>Правка</gui><gui>Модули</gui></guiseq>, обратитесь на форум поддержки дистрибутива. Возможно, в вашем дистрибутиве разработчики решили отключить некоторые модули или поставлять их как отдельный пакет.</p></note>
+</item>
+<item><p>Перейдите на вкладку <gui>Настройка</gui>.</p></item>
+<item><p>Нажмите кнопку <gui style="button">Добавить</gui> и введите ключевые слова на своём языке (например, «вложение» или «прикреплено»).</p></item>
+</steps>
+<p>При составлении сообщения <app>Evolution</app> будет выполнять поиск добавленных здесь ключевых слов. Если в сообщении будет найдено ключевое слово (например, «вложение»), но файл не был прикреплён, появится напоминание об отсутствующем вложении.</p>
+
+</section>
+
+</page>

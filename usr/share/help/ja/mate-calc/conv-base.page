@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="conv-base" xml:lang="ja">
+
+    <info>
+        <link type="guide" xref="index#conversion"/>
+    </info>
+
+	<title>数値ベース</title>
+    
+    <p>数値ベース間で変換するには、数値を入力(または方程式を解く)し、<guiseq><gui>計算機</gui><gui>設定</gui></guiseq>メニューから数字の書式を変更します。</p>
+</page>

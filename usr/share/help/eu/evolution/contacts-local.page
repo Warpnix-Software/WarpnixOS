@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-local" xml:lang="eu">
+
+  <info>
+    <link type="guide" xref="contacts-using-several-addressbooks"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Beste helbide-liburu lokal bat gehitzea.</desc>
+  </info>
+
+  <title>Beste helbide-liburu lokal bat gehitzea</title>
+
+  <p><app>Evolution</app> aplikazioari beste helbide-liburu lokal bat gehitzeko, jarraitu honako urratsak:</p>
+
+  <steps>
+    <item>
+      <p>Egin klik <guiseq><gui>Fitxategia</gui><gui>Berria</gui> <gui>Helbide-liburua</gui></guiseq> aukeran.</p>
+    </item>
+    <item>
+      <p>Hautatu <gui>Ordenagailu honetan</gui> mota.</p>
+    </item>
+    <item>
+      <p>Sartu erabili nahi duzun izena.</p>
+    </item>
+    <item>
+      <p>Egin klik <gui style="button">Ados</gui> botoian.</p>
+    </item>
+  </steps>
+
+  <p>Helbide-liburua <app>Evolution</app> aplikazioaren helbide-liburuen zerrendari gehituko zaio.</p>
+
+</page>

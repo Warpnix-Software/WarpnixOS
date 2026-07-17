@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="tasks-display-settings" xml:lang="ru">
+
+  <info>
+    <desc>Параметры отображения состояния завершения задач и их сроков.</desc>
+    
+    <link type="guide" xref="index#memos-and-tasks"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-08-24" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/config-prefs-cal.html.en#bshpsxa -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Отображение задач</title>
+
+<!-- TODO:POST-3-8: Just listing the partially busted UI options (also see calendar-layout-appointment-display) here is very poor and not task-oriented, but that's it for the time being. Better ideas welcome. -->
+
+<p>Следующие параметры задач доступны в разделе настройки <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Календарь и задачи</gui><gui>Задачи</gui></guiseq>.</p>
+
+<list>
+<item><p>Задачи, истекающие сегодня:</p>
+<p>Выберите цвет для задач, истекающих сегодня.</p></item>
+<item><p>Просроченные задачи:</p>
+<p>Выберите цвет для просроченных задач.</p></item>
+<item><p>Скрывать выполненные задачи через:</p>
+<p>Включите этот параметр, чтобы скрывать выполненные задачи по истечении периода времени, измеряемого в днях, часах или минутах. Если этот параметр отключён, выполненные задачи, отмеченные как выполненные, останутся в вашем списке.</p></item>
+</list>
+
+</page>

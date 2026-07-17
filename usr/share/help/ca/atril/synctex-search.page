@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="synctex-search" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="index#synctex" group="fifth"/>
+    <desc>Alterneu Atril i <app>pluma</app>.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Carles Ferrando Garcia</mal:name>
+      <mal:email>carles.ferrando@gmail.com</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Robert Antoni Buj Gelonch</mal:name>
+      <mal:email>rbuj@fedoraproject.org</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Cerca amb SyncTeX</title>
+<p>Un cop heu acabat de <link xref="synctex-compile">compilar el vostre fitxer TeX amb SyncTeX</link>, tindreu la possibilitat de fer cerques. SyncTeX fins i tot suporta la cerca endavant i cap enrere des d'un fitxer inclòs.</p>
+
+<section id="forward-search">
+    <title>Cerca endavant: de TeX a PDF (de <app>pluma</app> a Atril)</title>
+     <p>La cerca endavant us permet clicar en una secció específica de codi font TeX, i saltar a la posició associada al PDF. Per dur a terme la cerca endavant:</p>
+<steps>
+<item>
+<p>Cliqueu sobre una línia al fitxer TeX.</p>
+</item>
+<item>
+<p>A <app>pluma</app>, cliqueu <guiseq><gui>Eines</gui> <gui>Troba el següent</gui></guiseq>. La línia corresponent del PDF es destacarà en vermell.</p>
+<p>Com alternativa, podeu prémer <keyseq><key>Ctrl</key><key>Alt</key><key>F</key></keyseq>, o bé fer <keyseq><key>Ctrl</key>clic esquerre</keyseq>. La línia corresponent al PDF es destacarà en vermell.</p>
+</item>
+</steps>
+<note>
+<p>Si el PDF corresponent no està obert, la cerca endavant obrirà el PDF amb Atril.</p>
+</note>
+<p>Si teniu un projecte complex amb diversos fitxers TeX podeu afegir</p>
+<code>% mainfile: mainfile.tex</code>
+<p>a les primeres o bé a les darreres tres línies de cada fitxer TeX inclòs, i la cerca endavant funcionarà. La cerca cap enrere hauria de funcionar sempre, encara que no afegiu la línia de mode.</p>
+
+</section>
+
+<section id="backward-search">
+    <title>Cerca cap enrere: de PDF a TeX (d'Atril a <app>pluma</app>)</title>
+     <p>La cerca cap enrere us permet clicar sobre una línia específica al fitxer PDF, i saltar a la línia associada al codi font de TeX.</p>
+<p>Podeu fer una cerca cap enrere prement <keyseq><key>Ctrl</key>clic esquerre</keyseq> a l'Atril. La línia corresponent al codi font de TeX es destacarà.</p>
+</section>
+
+</page>

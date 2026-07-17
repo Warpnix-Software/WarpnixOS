@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="task" id="index" xml:lang="da">
+  <info>
+    <title type="link" role="trail">GNOME Sudoku</title>
+    <title type="link">GNOME Sudoku</title>
+    <title type="text">GNOME Sudoku</title>
+
+    <revision pkgversion="3.4" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.15.2" date="2014-01-08" status="final"/>
+    <revision pkgversion="3.26" date="2017-12-05" status="review"/>
+
+    <credit type="author copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="author copyright">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2015</years>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Lær at spille GNOME Sudoku, et logikbaseret opgavespil hvor et gitter skal udfyldes med de korrekte tal.</desc>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>scootergrisen</mal:name>
+      <mal:email/>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title><media type="image" its:translate="no" width="48px" height="48px" src="figures/org.gnome.Sudoku.svg"/> GNOME Sudoku</title>
+
+  <p>GNOME Sudoku er en logikbaseret opgave hvor en firkant på 9×9 skal udfyldes med de korrekte cifre. De unikke opgaver kan spilles på skærmen eller <link xref="index#print">udskrives</link>. Hvis du ikke har tid til at gøre spillet færdigt, så kan du når som helst <link xref="save-resume#resume">fortsætte</link>.</p>
+
+   <section id="play" style="2column">
+    <title>Gameplay</title>
+   </section>
+
+   <section id="tips" style="2column">
+    <title>Nyttige tips</title>
+   </section>
+
+   <section id="print" style="2column">
+    <title>Udskrivning</title>
+   </section>
+
+   <section id="get-involved" style="2column">
+    <title>Vær med</title>
+   </section>
+</page>

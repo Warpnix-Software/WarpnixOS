@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="startup-applications" xml:lang="da">
+
+  <info>
+    <link type="guide" xref="shell-overview#apps"/>
+    <link type="guide" xref="prefs"/>
+    <desc>Vælg, hvilke programmer der skal starte, når du logger på.</desc>
+
+    <revision version="18.04" date="2018-03-19" status="review"/>
+
+    <credit type="author">
+      <name>Ubuntus dokumentationshold</name>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+  <title>Opstartsprogrammer</title>
+
+  <p>Du kan konfigurere, hvilke programmer der skal starte ved login, ud over de programmer der som standard starter op.</p>
+
+  <steps>
+    <item>
+      <p>Åbn <gui>Opstartsprogrammer</gui> fra <gui xref="shell-introduction#activities">Aktiviteter</gui>-oversigten. Alternativt kan du trykke <keyseq><key>Alt</key><key>F2</key></keyseq> og køre kommandoen <cmd>gnome-session-properties</cmd>.</p>
+    </item>
+    <item>
+      <p>Klik <gui>Tilføj</gui> og indtast kommandoen, der skal køres ved login (navn og kommentar er valgfrie). For eksempel kan Firefox startes automatisk ved at skrive <cmd>firefox</cmd> i feltet <gui>Kommando</gui> og bekræfte med <gui>Tilføj</gui>.</p>
+    </item>
+  </steps>
+
+  <note>
+    <p>Du kan enten indtaste kommandoen eller klikke <gui>Gennemse ...</gui>-knappen og vælge en kommando. Programmer, der skal starte op automatisk, ligger typisk i mappen <code>/usr/bin</code>.</p>
+  </note>
+
+</page>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-weather" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="calendar-using-several-calendars"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Показ погоды в календаре.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Использование календаря погоды</title>
+
+  <p>Календари этого типа доступны только для чтения.</p>
+
+  <p>Чтобы добавить такой календарь в <app>Evolution</app>, выполните следующие действия:</p>
+
+  <steps>
+    <item>
+      <p>Выберите пункт меню <guiseq><gui>Файл</gui><gui>Создать</gui><gui>Календарь</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Выберите тип <gui>Погода</gui>.</p>
+    </item>
+    <item>
+      <p>Укажите имя.</p>
+    </item>
+    <item>
+      <p>Выберите цвет (это необязательно).</p>
+    </item>
+    <item>
+      <p>Укажите, следует ли сделать содержимое доступным для просмотра также и в автономном режиме.</p>
+    </item>
+    <item>
+      <p>Выберите местоположение, указав континент, страну и город.</p>
+    </item>
+    <item>
+      <p>Чтобы использовать защищённое соединение, выберите <gui>Использовать безопасное соединение</gui>.</p>
+    </item>
+    <item>
+      <p>Выберите единицы измерения температуры.</p>
+    </item>
+    <item>
+      <p>Нажмите кнопку <gui style="button">OK</gui>.</p>
+    </item>
+  </steps>
+
+  <p>Календарь будет добавлен в список календарей <app>Evolution</app>.</p>
+
+</page>

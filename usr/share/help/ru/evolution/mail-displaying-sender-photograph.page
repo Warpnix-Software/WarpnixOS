@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-displaying-sender-photograph" xml:lang="ru">
+
+  <info>
+    <desc>Показывать фотографию отправителя в области заголовка сообщения.</desc>
+
+    <link type="guide" xref="mail-displaying-message#advanced"/>
+
+    <revision pkgversion="3.13.90" version="0.5" date="2015-03-10" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/config-prefs-mail.html.en#mail-prefs-headers -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Заголовки сообщений с фотографиями</title>
+
+<!-- NB: This is done by "Face" and "X-Face" headers. -->
+<p><app>Evolution</app> автоматически показывает фотографию отправителя письма справа от заголовка сообщения, если отправитель уже встроил фотографию в сообщение.</p>
+<!-- TODO: If I ever manage to find out if the "Edit > Plugins > Face" reliably works, create a topic page covering it linked under <link type="guide" xref="index#mail-composing-advanced" />, and link to it from here and vice versa. -->
+
+<p>Также можно вручную включить показ фотографии отправителя сообщения, если запись отправителя присутствует в одной из ваших адресных книг и для неё имеется сохранённая фотография.</p>
+
+<p>Для включения этой функции выберите пункт меню <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Настройки почты</gui><gui>Заголовки</gui><gui>Показывать фотографию отправителя в панели просмотра почты</gui></guiseq>.</p>
+
+<p>Если для контакта найдено несколько соответствий, всегда будет использоваться первое из них.</p>
+
+<note style="tip"><p>Также можно встроить свою собственную фотографию в отправляемые изображения:<guiseq><gui>Правка</gui><gui>Модули</gui><gui>Фото</gui></guiseq>. Изображение должно быть размером 48 x 48 пикселов и иметь формат PNG.</p>
+<p>Если этот модуль не доступен в разделе <guiseq><gui>Правка</gui><gui>Модули</gui></guiseq>, обратитесь на форум поддержки дистрибутива. Возможно, в вашем дистрибутиве разработчики решили отключить некоторые модули или поставлять их как отдельный пакет.</p></note>
+ 
+ 
+</page>

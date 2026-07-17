@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="numeric-keypad" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="keyboard"/>
+    <desc>Зробіть цифровий блок клавіатури типово увімкненим.</desc>
+
+    <revision version="18.04" date="2018-03-19" status="review"/>
+
+    <credit type="author">
+      <name>Команда з документування Ubuntu</name>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+  <title>Цифровий блок</title>
+
+  <p>За допомогою клавіші <key>Num Lock</key> можна увімкнути або відімкнути цифровий блок клавіатури вручну. Крім того, у налаштуваннях BIOS комп’ютера часто є опція, що дозволяє вказати, чи повинен цифровий блок вмикатися автоматично при завантаженні комп’ютера. Якщо ж такої опції немає існує інший спосіб налаштувати це:</p>
+
+  <steps>
+    <item>
+      <p><link href="apt:numlockx">встановити</link> пакунок <em>numlockx</em>.</p>
+    </item>
+    <item>
+      <p>Відкрийте <app><link xref="startup-applications">Початкові програми</link></app> й додайте нову проґраму з командою: <cmd>numlockx on</cmd></p>
+    </item>
+  </steps>
+
+  <note style="tip">
+    <p>Другий крок може бути зайвим на вашому комп'ютері, тому спробуйте без нього спочатку.</p>
+  </note>
+
+</page>

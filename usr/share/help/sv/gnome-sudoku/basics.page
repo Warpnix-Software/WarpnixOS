@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="basics" xml:lang="sv">
+  <info>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+    <link type="guide" xref="index#play"/>
+    <credit type="author copyright">
+      <name>Chris Beiser</name>
+      <email>ctbeiser@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons DelaLika 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Erik Sköldås</mal:name>
+      <mal:email>erik.skoldas@tele2.se</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2018</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Grunderna</title>
+<p>Sudoku kan spelas med tangentbordet, musen, eller en kombination av de två.</p>
+
+<section id="keyboard">
+<title>Att använda tangentbordet</title>
+<list>
+  <item><p>För att välja en cell, använd piltangenterna för att flytta den blåa ramen på den.</p></item>
+  <item><p>För att skriva ett nummer i en cell, markerar du cellen och skriver sedan in numret.</p></item>
+  <item><p>För att ta bort ett nummer från en cell, markera cellen och tryck sedan på <key>Delete</key>tangenten, <key>Backstegs</key>, eller <key>0</key>tangenten.</p></item>
+</list>
+</section>
+
+
+<section id="mouse">
+<title>Att använda musen</title>
+<list>
+	<item><p>För att välja en cell, placera musen över den och klicka.</p></item>
+	<item><p>För att skriva ett nummer i en markerad cell, klicka i mitten på cellen, och klicka sedan på det nummer du vill mata in.</p></item>
+	<item><p>För att ta bort ett nummer från en cell, klicka i mitten av cellen och klicka sedan på <gui>Rensa</gui>.</p></item>
+</list>
+</section>
+</page>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-searching" xml:lang="sv">
+ 
+  <info>
+    <desc>Sökning efter meddelanden.</desc>
+    
+    <link type="guide" xref="searching-items"/>
+    <link type="guide" xref="mail-organizing"/>
+ 
+    <revision pkgversion="3.33.90" version="0.7" date="2019-09-05" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Max Vorobuov</name>
+      <email its:translate="no">vmax0770@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+ 
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Sebastian Rasmussen</mal:name>
+      <mal:email>sebras@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017, 2018</mal:years>
+    </mal:credit>
+  </info>
+ 
+<title>Sök efter e-post</title>
+
+<section id="search-single">
+<title>Sök i ett enstaka meddelande</title>
+<p>För att hitta text i det visade meddelandet, välj <guiseq><gui>Redigera</gui><gui>Sök i meddelande…</gui></guiseq> från huvudmenyn.</p>
+</section>
+
+<section id="search-many">
+<title>Sök över flera meddelanden</title>
+
+<section id="quick-search">
+<title>Snabbsökning</title>
+<p>I meddelandevyn kan du snabbt söka efter meddelanden genom att definiera villkor.</p>
+<steps>
+<item><p>Klicka på sökikonen <media type="image" mime="image/png" its:translate="no" src="figures/search-icon.png"/> för att expandera rullgardinslistan.</p></item>
+<item><p>Välj sökvillkoret från listan.</p>
+<note style="tip"><p>Några sökningar kan vara långsamma på fjärr-e-postkonton (t.ex. IMAP+). Om du väljer ett sökvillkor som <gui>Meddelandetexten innehåller</gui> eller <gui>Meddelandet innehåller</gui> och <app>Evolution</app> är i anslutet tillstånd och mapparna du söker i inte redan är <link xref="mail-working-offline">kopierade lokalt för frånkopplad användning</link>, kommer Evolution automatiskt att köra sökningen på e-postserversidan om servern annonserar stöd för sökningar på serversidan. Då en sökning görs på sökkriterier som redan finns lokalt (t.ex. mottagare eller meddelandeämnen) så kommer sökningen att köras lokalt.</p></note>
+</item>
+<item><p>Välj räckvidden från rullgardinslistan till höger om textrutan.</p>
+<note style="tip"><p>För räckvidden <gui>Aktuellt konto</gui> refererar termen ”konto” till toppnivånoderna i <link xref="intro-main-window#e-mail"> e-postmapplistan</link>, såsom ”På denna dator” och fjärr-e-postkonton.</p></note>
+</item>
+<item><p>Mata in texten du vill söka efter och tryck <key>Retur</key>.</p></item>
+<item><p><app>Evolution</app> visar sökresultaten.</p></item>
+</steps>
+<note style="tip"><p>Om du börjar direkt från det fjärde steget kommer texten att genomsökas i e-postmeddelandens ämnen och adresser och räckvidden kommer att vara ”Aktuell mapp”.</p></note>
+<note style="tip"><p>Om du söker efter meddelanden som inte är i samma mapp relativt ofta kanske det är bättre att skapa en sökmapp i stället; se <link xref="mail-search-folders">Använda sökmappar</link> för vidare information.</p></note>
+<p>Om du vill ställa in flera sökvillkor bör du använda en Avancerad sökning som beskrivs nedan.</p>
+</section>
+
+<!-- As advanced-search, clearing-search, saved-searches, editing-a-saved-search are totally identical in all *-searching.page files, this is centrally in one file that's included by XInclude. See
+http://blogs.gnome.org/shaunm/2011/07/21/understanding-xinclude/ for how it works. -->
+<include xmlns="http://www.w3.org/2001/XInclude" href="xinclude-searching.xml" xpointer="xmlns(mal=http://projectmallard.org/1.0/)xpointer(/mal:info/mal:section)"/>
+
+<section id="free-form-expression">
+<title>Friformsuttryck</title>
+<p>Ett av sökvillkoren är ett <gui>Friformsuttryck</gui>, vilket tillåter att definiera komplexa villkor. Som det första steget delas det givna friformsuttrycket upp i ord. Om ordet inte har något (känt) taggprefix så testas värdet för om det är i rubrikerna To, CC eller Subject. Omgärda ordet av dubbla citattecken om ett blanksteg eller något annat specialtecken behövs. För att få ett dubbelt citattecken, dubbla det i citerad text; exempelvis tolkas <code>citera ""här""</code> som <code>citera "här"</code>. Till exempel filtrerar <code>f:John Smith</code> meddelanden med From som innehåller <code>John</code> och där To, CC eller Subject innehåller <code>Smith</code>, medan <code>f:"John Smith"</code> filtrerar meddelanden med avsändare <code>John Smith</code>.</p>
+<p>Taggarnas syntax är <code>&lt;tagg&gt;[-&lt;alternativ&gt;]:värde</code>. Taggarna är:</p>
+<table frame="all" rules="rows cols" shade="rows">
+<tr><td><p>Tagg</p></td><td><p>Förkortning</p></td><td><p>Betydelse</p></td></tr>
+<tr><td><p its:translate="no">from</p></td><td><p its:translate="no">f</p></td><td><p its:locNote="Translators: 'From' is a header name, do not translate it">From-rubriken ska matcha (*)</p></td></tr>
+<tr><td><p its:translate="no">to</p></td><td><p its:translate="no">t</p></td><td><p its:locNote="Translators: 'To' is a header name, do not translate it">To-rubriken ska matcha (*)</p></td></tr>
+<tr><td><p its:translate="no">cc</p></td><td><p its:translate="no">c</p></td><td><p its:locNote="Translators: 'CC' is a header name, do not translate it">CC-rubriken ska matcha (*)</p></td></tr>
+<tr><td><p its:translate="no">recips</p></td><td><p its:translate="no">r</p></td><td><p its:locNote="Translators: 'To' and 'CC' are the header names, do not translate it">To- eller CC-rubrikerna ska matcha (*)</p></td></tr>
+<tr><td><p its:translate="no">subject</p></td><td><p its:translate="no">s</p></td><td><p its:locNote="Translators: 'Subject' is a header name, do not translate it">Subject-rubriken ska matcha (*)</p></td></tr>
+<tr><td><p its:translate="no">list</p></td><td><p/></td><td><p>Sändlisterubrik ska matcha (*)</p></td></tr>
+<tr><td><p its:translate="no">header</p></td><td><p its:translate="no">h</p></td><td><p>given rubrik ska matcha (*)</p>
+<p>syntaxen är: <code>h:rubriknamn=värde</code> medan likhetstecken endast används som avgränsare, inte som matchningsregel</p></td></tr>
+<tr><td><p its:translate="no">exists</p></td><td><p its:translate="no">e</p></td><td><p>huruvida en given rubrik existerar</p></td></tr>
+<tr><td><p its:translate="no">tag</p></td><td><p/></td><td><p>given användartagg är inställd på ett meddelande</p></td></tr>
+<tr><td><p its:translate="no">flag</p></td><td><p/></td><td><p>huruvida en viss flagga är satt. Kända specialvärden är:</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Besvarat</code> - meddelandet är markerat som besvarat</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Borttaget</code> - meddelandet är markerat som borttaget</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Utkast</code> - meddelandet är markerat som utkast</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Flaggat</code> - meddelandet är markerat som viktigt</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Läst</code> - meddelandet är markerat som läst (inte oläst)</p>
+<p its:locNote="Translators: This is translated in a 'ffe' context"><code>Bilaga</code> - meddelandet har en bilaga</p>
+<p>Alla andra värden kontrolleras med avseende på deras icke-tomhet.</p></td></tr>
+<tr><td><p its:translate="no">label</p></td><td><p its:translate="no">l</p></td><td><p>huruvida en viss <link xref="mail-labels">etikett</link> är inställd på meddelandet</p></td></tr>
+<tr><td><p its:translate="no">size</p></td><td><p its:translate="no">sz</p></td><td><p>huruvida meddelandestorleken i KB är lika med det angivna värdet</p>
+<p>Två alternativ känns igen, <code>&lt;</code> för att erhålla meddelanden med mindre storlek, och <code>&gt;</code> för att erhålla meddelanden med större storlek än den angivna. Exempel: <code>size-&gt;:1024</code> filtrerar meddelanden som är större än 1MB.</p></td></tr>
+<tr><td><p its:translate="no">score</p></td><td><p its:translate="no">sc</p></td><td><p>jämför <code>score</code>-tagg på meddelandet mot angivet värde; standardjämförelse är likhet, men liksom <code>size</code> kan alternativen <code>&lt;</code> och <code>&gt;</code> användas</p></td></tr>
+<tr><td><p its:translate="no">body</p></td><td><p its:translate="no">b</p></td><td><p>genomsöker meddelandetexten för att se om det angivna ordet finns; standardalternativ för jämförelse är <code>contains</code>, men ett reguljärt uttryck kan användas om alternativet är ett av <code>regex</code>, <code>re</code> eller <code>r</code>.</p></td></tr>
+<tr><td><p its:translate="no">sent</p></td><td><p/></td><td><p>meddelandets skickatdatum ska matcha (**)</p></td></tr>
+<tr><td><p its:translate="no">received</p></td><td><p its:translate="no">rcv</p></td><td><p>meddelandets mottagetdatum ska matcha (**)</p></td></tr>
+<tr><td><p its:translate="no">attachment</p></td><td><p its:translate="no">a</p></td><td><p>meddelandet har (om värdet inte är något av <code>no</code>, <code>nej</code>, <code>false</code>, <code>falskt</code>, <code>0</code>) en bilaga. Liknande taggen <code>flag:bilaga</code>.</p></td></tr>
+<tr><td><p its:translate="no">location</p></td><td><p its:translate="no">m</p></td><td><p>Kontrollerar meddelandeplats. Platsvärdet (URL) kan hittas i mappens <gui>Egenskaper</gui>. Exempel: <code>location:"På denna dator/Inkorg"</code></p></td></tr>
+<tr><td><p its:translate="no">mid</p></td><td><p/></td><td><p>Jämför meddelande-ID.</p></td></tr>
+</table>
+<p>(*) Rubrikjämförelser kan ha ett alternativ för matchningstyp. Standard är <code>contains</code>. Tillgängliga alternativ är:</p>
+<table frame="all" rules="rows cols" shade="rows">
+<tr><td><p>Alternativ</p></td><td><p>Förkortning</p></td><td><p>Betydelse</p></td></tr>
+<tr><td><p its:translate="no">contains</p></td><td><p its:translate="no">c</p></td><td><p>matchar om det innehåller</p></td></tr>
+<tr><td><p its:translate="no">has-words</p></td><td><p its:translate="no">w</p></td><td><p>matchar om det innehåller hela ord</p></td></tr>
+<tr><td><p its:translate="no">matches</p></td><td><p its:translate="no">m</p></td><td><p>matchar exakta värdet</p></td></tr>
+<tr><td><p its:translate="no">starts-with</p></td><td><p its:translate="no">sw</p></td><td><p>rubrikens värde börjar med det angivna värdet</p></td></tr>
+<tr><td><p its:translate="no">ends-with</p></td><td><p its:translate="no">ew</p></td><td><p>rubrikens värde slutar med det angivna värdet</p></td></tr>
+<tr><td><p its:translate="no">soundex</p></td><td><p its:translate="no">se</p></td><td><p>rubrikens värde låter ungefär som angivet värde</p></td></tr>
+<tr><td><p its:translate="no">regex</p></td><td><p its:translate="no">r</p></td><td><p>det angivna värdet är ett reguljärt uttryck</p></td></tr>
+<tr><td><p its:translate="no">full-regex</p></td><td><p its:translate="no">fr</p></td><td><p>en annan typ av reguljärt uttryck</p></td></tr>
+</table>
+<p>(**) Datum kan skrivas relativt (positiva tal betyder <code>under de senaste X dagarna</code>), medan negativa går in i framtiden. För att exempelvis få meddelanden mottagna under de senaste 10 dagarna, använd: <code>recv:10</code>. Ett exakt datum kan också användas, formatet kan vara antingen <code>ÅÅÅÅ-MM-DD</code> (det föredragna), sedan ISO 8601-format eller ett lokalspecifikt format för datum/datum och tid. Om tolkningen av datum/tid misslyckas kommer villkoret att hoppas över. Datumjämförelsen kan också ha extra alternativ, detta är <code>&lt;</code>, <code>=</code> eller <code>&gt;</code>, där <code>&gt;</code> är standardalternativet för jämförelse.</p>
+<p>Det finns tre specialtaggar som kräver särskild notation. De är:</p>
+<list>
+<item><p><code its:translate="no">not:(....)</code></p></item>
+<item><p><code its:translate="no">and:(....)</code></p></item>
+<item><p><code its:translate="no">or:(....)</code></p></item>
+</list>
+<p>som låter dig skapa specialiserade uttryck. Standardhopsättningen (den mest yttre) är <code>and</code>. För att ändra den till <code>or</code> stoppar du in hela filtret i <code>or:(....)</code>. Exempel: <code>f:Bugzilla t:John</code> filtrerar alla meddelanden som innehåller <code>Bugzilla</code> i From och <code>John</code> i To, medan <code>or:(f:Bugzilla t:John)</code> filtrerar meddelanden från Bugzilla eller som adresserats till John.</p>
+</section>
+<section id="free-form-expression-examples">
+<title>Exempel på friformsuttryck</title>
+<p>En lista med några friformsuttryck följer:</p>
+<table rules="rows">
+<tr><td><p>Uttryck</p></td><td><p>Betydelse</p></td></tr>
+<tr><td><p><code>f:John</code></p></td><td><p>Meddelanden från <code>John</code></p></td></tr>
+<tr><td><p><code>s-has-words:"grön blå"</code></p></td><td><p>Meddelanden som innehåller både orden <code>grön</code> och <code>blå</code> i Subject</p></td></tr>
+<tr><td><p><code>r-ew:example.com</code></p></td><td><p>Mottagarnas adresser (To-/Cc-rubriker) slutar med <code>example.com</code></p></td></tr>
+<tr><td><p><code>h-starts-with:Cc=Alice</code></p></td><td><p><code>Cc</code> börjar med ordet <code>Alice</code></p></td></tr>
+<tr><td><p><code>e:X-Hemlig-Rubrik</code></p></td><td><p>Rubriken <code>X-Hemlig-Rubrik</code> finns i meddelandet</p></td></tr>
+<tr><td><p><code>l:jobb</code></p></td><td><p>Etiketten <code>jobb</code> är inställd på meddelandet</p></td></tr>
+<tr><td><p><code>sz-&lt;:10</code></p></td><td><p>Meddelandestorleken är mindre än 10 KB</p></td></tr>
+<tr><td><p><code>sz-&gt;:100</code></p></td><td><p>Meddelandestorleken är mer än 100 KB</p></td></tr>
+<tr><td><p><code>b:viktigt</code></p></td><td><p>Meddelandetexten innehåller ordet <code>viktigt</code></p></td></tr>
+<tr><td><p><code>sent:7</code></p></td><td><p>Meddelanden som har skickats under de senaste sju dagarna</p></td></tr>
+<tr><td><p><code>rcv-=:2020-02-02</code></p></td><td><p>Meddelanden mottagna den 2 februari 2020</p></td></tr>
+<tr><td><p><code>a:1</code></p></td><td><p>Meddelanden med bilagor</p></td></tr>
+<tr><td><p><code>a:0</code></p></td><td><p>Meddelanden utan bilagor</p></td></tr>
+<tr><td><p><code>and:(or:(r:Alice r:Bob) not:(r:Smith))</code></p></td><td><p>Meddelanden vars mottagare är <code>Alice</code> eller <code>Bob</code>, men inte <code>Smith</code></p></td></tr>
+<tr><td><p><code>f:Bob rcv-&gt;:2020-01-01 rcv-&lt;:2020-12-31</code></p></td><td><p>Meddelanden från <code>Bob</code>, mottagna under 2020</p></td></tr>
+<tr><td><p><code>not:(flag:Läst) f:Bob rcv-&gt;:2020-01-01 rcv-&lt;:2020-12-31</code></p></td><td><p>Olästa meddelanden från <code>Bob</code>, mottagna under 2020</p></td></tr>
+<tr><td><p><code>flag:Läst a:1 sz-&gt;:1024 f:Bob rcv:31</code></p></td><td><p>Lästa meddelanden med bilaga större än 1 MB från <code>Bob</code>, mottagna under de senaste 31 dagarna</p></td></tr>
+<tr><td><p><code>m:"På denna dator/Inkorg"</code></p></td><td><p>Meddelanden lagrade i mappen <code>På denna dator/Inkorg</code></p></td></tr>
+<tr><td><p><code>location-no:"På denna dator/Inkorg"</code></p></td><td><p>Meddelanden lagrade i alla mappar utom <code>På denna dator/Inkorg</code></p></td></tr>
+</table>
+</section>
+</section> 
+</page>

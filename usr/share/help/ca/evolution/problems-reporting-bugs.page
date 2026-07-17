@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="problems-reporting-bugs" xml:lang="ca">
+
+  <info>
+    <desc>Com comunicar errors en l'aplicació.</desc>
+
+    <link type="guide" xref="index#tracking-down-problems"/>
+    <link type="seealso" xref="problems-debug-how-to"/>
+
+    <revision pkgversion="3.34.2" version="0.8" date="2020-01-20" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Com informar d'errors</title>
+
+<p>Si no necessiteu ajuda per a la configuració però esteu segur d'haver trobat un error o un comportament incorrecte al programari de l'<app>Evolution</app>, o si voleu sol·licitar una funcionalitat, podeu enviar un informe al <link href="https://gitlab.gnome.org/GNOME/evolution/issues/">sistema de seguiment d'errors del GNOME</link>. Tingueu en compte que heu de registrar-vos-hi prèviament. Intenteu evitar enviar duplicats i consulteu primer la <link href="https://wiki.gnome.org/Community/GettingInTouch/BugReportingGuidelines">guia d'escriptura d'errors</link>.</p><p>Tingueu en compte també, que les distribucions de GNOME a vegades introdueixen els seus propis canvis a <app>Evolution</app> i que no estan inclosos a GNOME <app>Evolution</app>. Això és difícil de reconèixer per part dels usuaris, però si us n'assabenteu, envieu l'informe d'error <link href="https://wiki.gnome.org/Bugsquad/TriageGuide/NonGnome#Bug_trackers_for_distributions">al seguiment d'errors de la vostra distribució GNOME</link>.</p>
+
+<p>Quan hom informa d'errors, convé facilitar una informació precisa, ja que facilita que altres usuaris puguin reproduir i solucionar el problema. Si és possible, incloeu informació com ara la versió de l'<app>Evolution</app> (a <guiseq><gui>Ajuda</gui><gui>Quant a</gui></guiseq>), la vostra distribució i els passos exactes per a reproduir el problema, clic per clic. Vegeu la <link href="https://wiki.gnome.org/Community/GettingInTouch/BugReportingGuidelines">guia d'escriptura d'errors</link> per a més informació.</p>
+</page>

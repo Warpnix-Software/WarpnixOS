@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" style="task" id="annotations" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#annotations"/>
+    <desc>Как создать и изменить аннотацию.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Тиффани Антропольски</name>
+      <email>tiffany@antopolski.com</email>
+    </credit>
+    <credit type="author">
+      <name>Андре Клаппер</name>
+      <email>ak-47@gmx.net</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  </info>
+
+<title>Добавление примечаний</title>
+<p>Примечание — это заметка или комментарий, добавляемый в документ PDF. Вы можете добавлять примечания с помощью Atril.</p>
+<p>Когда вы открываете файл, у вас должна быть видна боковая панель в левой части окна. Если она отсутствует, щёлкните <guiseq><gui style="menuitem">Вид</gui> <gui style="menuitem">Боковая панель</gui></guiseq>, или нажмите клавишу <key>F9</key>.</p>
+
+<p>В верхней части боковой панели элементы раскрывающегося списка <gui>Образцы страниц</gui>, <gui>Содержание</gui>, <gui>Примечания</gui> и <gui>Закладки</gui> позволяют выбрать, что отображать на боковой панели. (Некоторые параметры могут быть недоступны для некоторых документов).</p>
+<p>Чтобы создать примечание:</p>
+<steps>
+ <item>
+  <p>Выберите <gui style="button">Примечания</gui> из выпадающего списка:</p>
+ </item>
+ <item>
+  <p>Щёлкните <gui style="button">Добавить</gui>, чтобы создать текст примечания.</p>
+ </item>
+ <item>
+  <p>Нажмите на место в окне документа, к которому вы хотите добавить примечание. Откроется окно <em>примечания</em>.</p>
+ </item>
+ <item>
+  <p>Введите текст в окно <em>примечания</em>.</p>
+   <note>
+    <p>Размер заметки можно изменять. Для этого нужно перетащить один из углов заметки, удерживая при этом левую кнопку мыши.</p>
+   </note>
+ </item>
+ <item>
+  <p>Закройте заметку, нажав <gui>x</gui> в верхнем углу заметки.</p>
+ </item>
+</steps>
+
+
+</page>

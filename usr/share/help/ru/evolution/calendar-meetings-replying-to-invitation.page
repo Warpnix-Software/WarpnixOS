@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-meetings-replying-to-invitation" xml:lang="ru">
+
+  <info>
+    <desc>Принятие и ответ на приглашение на собрание.</desc>
+    
+    <link type="guide" xref="calendar-meetings"/>
+
+    <revision pkgversion="3.1.5" version="0.6" date="2011-08-25" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+ <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#replying-to-rsvp -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+      
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Ответ на приглашение на собрание</title>
+<p>Приглашения на собрания отправляются как вложения и отображаются в качестве тела письма. Показаны все сведения о событии, включая дату и время.</p>
+<p>Можно выбрать, следует ли ответить на приглашение и как именно, а также добавить к ответу свой собственный комментарий. Доступны следующие варианты: <gui>Отклонить</gui>, <gui>Условно принять</gui> или <gui>Принять</gui>. Также можно указать, следует ли по-прежнему отображать время собрания в качестве свободного в вашем календаре.</p>
+
+<p>Если приглашение на собрание уже содержит <link xref="calendar-alarms-and-reminders">напоминание</link>, можно импортировать его в ваш календарь, включив параметр <gui>Наследовать напоминание</gui>.</p>
+
+<p>Если выбран вариант <gui>Принять</gui>, событие будет автоматически добавлено в выбранный календарь.</p>
+<p>После добавления собрания в календарь можно вносить изменения в сведения о нём, но если настоящий организатор направит обновлённую информацию, внесённые изменения могут быть перезаписаны.</p>
+
+<note style="tip"><p>Чтобы выбрать календари, для которых будут появляться предупреждения о конфликтах собраний, выберите раздел меню <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Календарь и задачи</gui><gui>Приглашения на собрания</gui><gui>Поиск конфликтов</gui></guiseq>.</p></note>
+</page>

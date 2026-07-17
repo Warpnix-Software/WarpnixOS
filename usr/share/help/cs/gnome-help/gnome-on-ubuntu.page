@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="tip" id="gnome-on-ubuntu" xml:lang="cs">
+
+  <info>
+    <credit type="author">
+      <name>Dokumentační tým Ubuntu</name>
+    </credit>
+    <desc>Seznam významných úprav prostředí GNOME v Ubuntu.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="shell-overview" group="#first"/>
+    <link type="guide" xref="index" group="intro"/>
+    <revision version="0.1" date="2022-04-28" status="review"/>
+  </info>
+
+  <title>O GNOME na Ubuntu</title>
+
+  <p>Prostředí Ubuntu se instaluje s mírně upravenou verzí prostředí GNOME Desktop Environment. Obecně platí, že tato příručka pro stolní počítače bude odkazovat na GNOME, jak je publikováno vývojáři GNOME. Zde je seznam významných rozdílů mezi GNOME na Ubuntu a "Vanilla" GNOME.</p>
+
+  <list type="disc">
+  <item>
+    <p>Ubuntu přichází s Firefoxem namísto webového prohlížeče GNOME.</p>
+  </item>
+  <item>
+    <p>Ubuntu přichází s klientem vzdálené plochy Remmina namísto GNOME Connections.</p>
+  </item>
+    <item>
+      <p>Součástí je rozšíření AppIndicators. Toto rozšíření povolí ikony v pravém horním rohu u některých aplikací.</p>
+    </item>
+    <item>
+      <p>Součástí je rozšíření Ubuntu Dock. Toto rozšíření poskytuje levý postranní panel pro spouštění aplikací.</p>
+    </item>
+    <item>
+      <p>Součástí je rozšíření Desktop Icons NG. Toto rozšíření umožňuje použití ikon na ploše.</p>
+    </item>
+    <item>
+      <p>Vedle vlastních tapet na plochu najdete v Ubuntu vlastní výchozí motiv Yaru a výchozím písmem je font Ubuntu.</p>
+    </item>
+    <item>
+      <p>Tlačítka pro minimalizaci a maximalizaci jsou součástí záhlaví oken.</p>
+    </item>
+  </list>
+
+
+
+</page>

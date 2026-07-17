@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="calendar-using-several-calendars" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="calendar-organizing"/>
+
+    <revision pkgversion="3.1.5" version="0.2" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-multiple.html.en
+	   and
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-view.html.en
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Додавання і використання декількох календарів або календарів різних типів.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Використання декількох календарів</title>
+
+  <p>Ви можете користуватися декількома календарями одночасно, нашаровуючи їх один на оден. Наприклад, ви можете мати розклад подій для роботи, для домашніх подій і для подій із вашою улюбленою спортивною командою. На бічній панелі буде показано ці календарі, ви зможете позначати пункти цих календарів або знімати позначки з них, щоб програма показувала або приховувала дані зустрічей з цих календарів на панелі календаря. Приховуванням або показом різних наборів зустрічей ви можете забезпечити уникнення конфліктів, уникнувши захаращення панелі перегляду зайвими записами.</p>
+
+  <p>Зустрічі різних календарів буде показано різними кольорами.</p>
+
+  <p>Ви також можете скористатися календарями, які не зберігаються на вашому комп'ютері, зокрема календарями у інтернеті і у локальній мережі.</p>
+
+  <p>Наприклад, на <link href="http://icalshare.com">сайті icalshare.com</link> наведено широкий список інтернет-календарів спільного використання, до яких включено державні та релігійні свята, фази місяця, спортивні, а також місцеві та регіональні події.</p>
+  <p>Нові записи подій та нарад буде створено у позначеному у вікні календаря календарі. Якщо не позначено жоден календар, записи нових подій буде створено у типовому календарі.</p>
+</page>

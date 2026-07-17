@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:e="http://projectmallard.org/experimental/" xmlns:if="http://projectmallard.org/if/1.0/" type="guide" id="mail-account-manage-microsoft-exchange" xml:lang="ca">
+
+  <info>
+    <desc>Afegir i editar un compte de Microsoft Exchange a <app>Evolution</app>.</desc>
+
+    <link type="guide" xref="mail-account-management#mail-corporate-account-types"/>
+    <title type="link" role="trail">Microsoft Exchange</title>
+
+    <revision pkgversion="2.30.2" version="0.3" date="2011-07-30" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Configuració d'un compte d'Exchange</title>
+
+<note style="important"><p>Segons la versió del servidor de Microsoft Exchange al que us vulgueu connectar, és necessari assegurar-se que hi hagi un paquet addicional que proporcioni aquesta funcionalitat.</p>
+
+<p>Per a connectar-vos a un servidor del Microsoft Exchange (versió 2007 o més recent) o a un servidor OpenChange, es recomana utilitzar el paquet <sys>evolution-ews</sys>.</p>
+<if:choose>
+  <if:when test="action:install">
+    <note style="info package">
+      <p><link action="install:evolution-ews" href="https://gitlab.gnome.org/GNOME/evolution/-/wikis/home#get-the-source-code" style="button">Install evolution-ews</link></p>
+    </note>
+  </if:when>
+</if:choose>
+
+<p>Per a versions anteriors del Microsoft Exchange, o si <sys>evolution-ews</sys> no us funciona bé, proveu <sys>evolution-mapi</sys>.</p><p>Utilitza l'API de missatgeria de Microsoft que també utilitza Microsoft Outlook. No obstant això, <sys>evolution-mapi</sys> requereix instal·lar <sys>OpenChange</sys> i <sys>Samba 4</sys>, i no és tan potent com <sys>evolution-ews</sys>.</p>
+
+<if:choose>
+  <if:when test="action:install">
+    <note style="info package">
+      <p><link action="install:evolution-mapi" href="https://gitlab.gnome.org/GNOME/evolution/-/wikis/home#get-the-source-code" style="button">Install evolution-mapi</link></p>
+    </note>
+  </if:when>
+</if:choose>
+
+<p>Si no esteu segur de la versió del servidor Microsoft Exchange, podeu contactar amb l'administrador del sistema per a obtenir més informació.</p></note>
+
+<p>Per a temes que no es tracten aquí, consulteu <link href="https://help.gnome.org/users/evolution/2.32/usage-exchange.html">l'antic <app>manual d'</app>Evolution</link>.</p>
+
+</page>

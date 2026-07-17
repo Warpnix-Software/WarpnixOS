@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-libreoffice" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="index#data-migration-and-sync"/>
+
+    <revision pkgversion="3.26.6" version="0.3" date="2018-03-26" status="draft"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Використання даних з адресних книг <app>Evolution</app> у документах LibreOffice.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Контакти у LibreOffice</title>
+
+  <p>Ви можете скористатися адресними книгами <app>Evolution</app> як джерелом даних у <app>LibreOffice Writer</app>. Наведені нижче кроки описано для версії LibreOffice 5.4.</p>
+
+  <steps>
+    <item>
+      <p>Виберіть пункт <guiseq><gui>Зміни</gui><gui>База даних Exchange…</gui></guiseq> у меню. У відповідь буде відкрито діалогове вікно <gui>Бази даних Exchange</gui>.</p>
+    </item>
+    <item>
+      <p>На правій панелі під міткою <gui>Доступні бази даних</gui> можна скористатися джерелом <gui>EvolutionLocal</gui>. Клацніть на маленькому трикутничку, щоб отримати список адресних книг <app>Evolution</app>.</p>
+    </item>
+    <item>
+      <p>Виберіть адресну книгу і натисніть кнопку <gui style="button">Визначити</gui>.</p>
+    </item>
+  </steps>
+
+  <p>Це зробить адресну книгу <app>Evolution</app> типовим джерелом даних для LibreOffice. Після цього ви зможете вибрати поле для вставлення до документа LibreOffice за допомогою пункту меню <guiseq><gui>Вставка</gui><gui>Поле</gui></guiseq>.</p>
+
+</page>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="logarithm" xml:lang="sr">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>Логаритми</title>
+    
+    <p>Логаритми се могу израчунати коришћењем „log“ <link xref="function">функције</link>.</p>
+    <example>
+    <p>log 100</p>
+    </example>
+    <p>Да израчунате логаритам са другом основом користите <link xref="superscript">број индекса</link> после функције.</p>
+    <example>
+    <p>log₂ 32</p>
+    </example>
+    <p>Да израчунате природни логаритам користите „ln“ функцију.</p>
+    <example>
+    <p>ln 1.32</p>
+    </example>
+    <p>Ојлеров број можете уписати коришћењем <link xref="variable">променљиве</link> „e“.</p>
+    <example>
+    <p>e^1.32</p>
+    </example>
+</page>

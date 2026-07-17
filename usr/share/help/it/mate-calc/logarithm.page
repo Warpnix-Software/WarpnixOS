@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="logarithm" xml:lang="it">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>Logaritmi</title>
+    
+    <p>I logaritmi possono essere calcolati utilizzando la <link xref="function">funzione</link> log.</p>
+    <example>
+    <p>log 100</p>
+    </example>
+    <p>Per calcolare il logaritmo in una base differente utilizzate un <link xref="superscript">numero in pedice</link> scritto dopo la funzione.</p>
+    <example>
+    <p>log₂ 32</p>
+    </example>
+    <p>Per calcolare il logaritmo naturale utilizzare la funzione ln.</p>
+    <example>
+    <p>ln 1.32</p>
+    </example>
+    <p>Il numero di Eulero può essere inserito utilizzando la <link xref="variable">variabile</link> e.</p>
+    <example>
+    <p>e^1.32</p>
+    </example>
+</page>

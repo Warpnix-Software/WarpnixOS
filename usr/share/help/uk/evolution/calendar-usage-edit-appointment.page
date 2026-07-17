@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-usage-edit-appointment" xml:lang="uk">
+
+  <info>
+    <link type="guide" xref="calendar-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.2" date="2011-08-01" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Редагування запису зустрічі у вашому календарі.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Редагування запису зустрічі</title>
+
+  <p>Якщо ви хочете змінити параметри зустрічі, яку вже записано у ваших календарях, виконайте такі дії:</p>
+
+  <steps>
+    <item>
+      <p>Двічі клацніть на пункті зустрічі, який ви хочете редагувати, у календарі.</p>
+    </item>
+    <item>
+      <p>Змініть запис зустрічі (див. <link xref="calendar-usage-add-appointment">Додавання запису зустрічі</link>, щоб дізнатися більше про доступні параметри).</p>
+    </item>
+    <item>
+      <p>Натисніть кнопку <gui style="button">Зберегти</gui> або виберіть пункт меню <guiseq><gui>Файл</gui><gui>Зберегти</gui></guiseq>.</p>
+    </item>
+  </steps>
+
+</page>

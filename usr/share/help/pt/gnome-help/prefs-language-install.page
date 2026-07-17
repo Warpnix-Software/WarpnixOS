@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="prefs-language-install" xml:lang="pt">
+
+  <info>
+    <link type="guide" xref="addremove" group="#last"/>
+    <link type="seealso" xref="prefs-language"/>
+
+    <desc>Instale mais traduções e pacotes de suporte de idiomas relacionados.</desc>
+    <revision version="17.10" date="2017-09-25" status="review"/>
+    <credit type="author">
+      <name>Gunnar Hjalmarsson</name>
+      <email>gunnarhj@ubuntu.com</email>
+    </credit>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+  <title>Instalar idiomas</title>
+
+  <p>Quando instala o Ubuntu, o idioma que seleciona durante a instalação é instalada juntamente com o Inglês, mas pode adicionar mais idiomas.</p>
+
+  <steps>
+    <item>
+      <p>Open the <gui xref="shell-introduction#activities">Activities</gui> overview and
+      start typing <gui>Region &amp; Language</gui>.</p>
+    </item>
+    <item>
+      <p>Click on <gui>Region &amp; Language</gui> to open the panel.</p>
+    </item>
+    <item>
+      <p>Click the <gui>Manage Installed Languages</gui> button to open <gui>Language
+      Support</gui>.</p>
+    </item>
+    <item>
+      <p>Click <gui>Install / Remove Languages...</gui>. The
+      <gui>Installed Languages</gui> window lists all the available
+      languages, with the currently installed languages checked.</p>
+    </item>
+    <item>
+      <p>Marque os idiomas que quer instalar e desmarque as que estiverem instaladas e pretende remover.</p>
+    </item>
+    <item>
+      <p>Clique em <gui>Aplica Alterações</gui>.</p>
+    </item>
+    <item>
+      <p>São necessários <link xref="user-admin-explain">privilégios administrativos</link>. Introduza a sua palavra-passe ou a palavra-passe para a conta de administrador solicitada.</p>
+    </item>
+  </steps>
+
+  <p>Juntamente com as traduções usadas para mostrar menus e mensagens, com um novo idioma podem vir vários componentes de suporte do idioma, como dicionários para verificação ortográfica, tipos de letras e métodos de entrada para o teclado.</p>
+
+  <note>
+    <p>Algumas traduções podem estar incompletas e certas aplicações podem não suportar o seu idioma de todo.</p>
+  </note>
+
+</page>

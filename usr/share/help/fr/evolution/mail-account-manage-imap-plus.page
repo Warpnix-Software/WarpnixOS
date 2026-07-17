@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-account-manage-imap-plus" xml:lang="fr">
+
+  <info>
+    <desc>Ajouter et modifier un compte de messagerie IMAP+ dans <app>Evolution</app>.</desc>
+
+    <link type="guide" xref="mail-account-management#mail-common-account-types"/>
+    <title type="link" role="trail">IMAP+</title>
+
+    <revision pkgversion="3.4" version="0.4" date="2013-06-22" status="candidate"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marc Lorber</mal:name>
+      <mal:email>Linux-Lorber@club-internet.fr</mal:email>
+      <mal:years>2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jonathan Ernst</mal:name>
+      <mal:email>jonathan@ernstfamily.ch</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alexandre Franke</mal:name>
+      <mal:email>alexandre.franke@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012 </mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervan@gmail.com</mal:email>
+      <mal:years>2013-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yvan Masson</mal:name>
+      <mal:email>yvan@masson-informatique.fr</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Charles Monzat</mal:name>
+      <mal:email>charles.monzat@free.fr</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>vanadiae</mal:name>
+      <mal:email>vanadiae35@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Guillaume Bernard</mal:name>
+      <mal:email>associations@guillaume-bernard.fr</mal:email>
+      <mal:years>2021-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jean-Marc Tissières</mal:name>
+      <mal:email>jmetissieres@gmail.com</mal:email>
+      <mal:years>2022</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Paramètres de compte de messagerie IMAP+</title>
+
+<section id="account-editor">
+<title>Éditeur de comptes</title>
+<p>Les comptes de messagerie peuvent être ajoutés en choisissant <guiseq><gui>Fichier</gui><gui>Nouveau</gui><gui>Compte de messagerie</gui></guiseq> ou via <guiseq><gui>Édition</gui><gui>Préférences</gui><gui>Comptes de messagerie</gui><gui style="button">Ajouter</gui></guiseq>. Les étapes sont presque les mêmes que celles du <link xref="intro-first-run">Lancement d’Evolution pour la première fois</link>, sauf qu’il ne vous est pas demandé d’importer les données d’une autre application ou de faire une restauration à partir d’un fichier de sauvegarde.</p>
+<p>Les comptes de messagerie peuvent être modifiés via <guiseq><gui>Édition</gui><gui>Préférences</gui><gui>Comptes de messagerie</gui><gui style="button">Édition</gui></guiseq> ou en cliquant sur leurs nœuds de premier niveau respectifs dans la liste des dossiers et en choisissant <gui>Propriétés</gui>.</p>
+<p>Les paramètres suivants sont disponibles lors de la modification d’un compte existant :</p>
+
+<section id="identity">
+<info>
+  <title type="link">Identity (IMAP+ accounts)</title>
+  <title type="link" role="trail">Identity</title>
+</info>
+<title>Identité</title>
+<p>Définissez ici votre nom et votre adresse électronique.</p>
+<p>Vous pouvez en option définir une adresse électronique Répondre à (si vous souhaitez que les réponses à vos messages soient envoyées à une adresse différente), définir une organisation (la société dans laquelle vous travaillez ou l’organisation que vous représentez lorsque vous envoyez un courriel à partir de ce compte), votre <link xref="mail-composer-mail-signatures">signature</link> par défaut pour ce compte, et des <link href="https://fr.wikipedia.org/wiki/Alias_(adresse_%C3%A9lectronique)">alias de messagerie</link>.</p>
+</section>
+
+<section id="receiving-email">
+<info>
+  <title type="link">Réception de courriels et options de réception (comptes IMAP+)</title>
+  <title type="link" role="trail">Receiving</title>
+</info>
+<title>Réception de courriels et options de réception</title>
+</section>
+
+<section id="sending-email">
+<info>
+  <title type="link">Envoi des courriels (comptes IMAP+)</title>
+  <title type="link" role="trail">Sending</title>
+</info>
+<title>Envoi du courriel</title>
+</section>
+
+<section id="defaults">
+<info>
+  <title type="link">Par défaut (comptes IMAP+)</title>
+  <title type="link" role="trail">Defaults</title>
+</info>
+<title>Valeurs par défaut</title>
+</section>
+
+<section id="composing-messages">
+<info>
+  <title type="link">Rédaction de messages (comptes IMAP+)</title>
+  <title type="link" role="trail">Composing</title>
+</info>
+<title>Rédaction de messages</title>
+</section>
+
+<section id="security">
+<info>
+  <title type="link">Sécurité (comptes IMAP+)</title>
+  <title type="link" role="trail">Security</title>
+</info>
+<title>Sécurité</title>
+</section>
+
+<!-- Note: There is no "IMAP Headers" tab for IMAP+ under Edit>Prefs>MailAccounts>Edit existing as it was for IMAP. See https://bugzilla.gnome.org/show_bug.cgi?id=655519 -->
+
+</section> <!-- end "account editor" section, now list any account settings stuff related to this account type outside of it -->
+
+<section id="other-settings">
+<info>
+  <title type="link">Autres paramétrages (comptes IMAP+)</title>
+  <title type="link" role="trail">Other settings</title>
+</info>
+<title>Autres paramétrages</title>
+<p>Autres paramétrages liés aux comptes qui ne sont pas situés dans l’<gui>éditeur de comptes</gui> :</p>
+</section>
+
+</page>

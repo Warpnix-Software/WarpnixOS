@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="complex" xml:lang="zh_CN">
+
+    <info>
+        <link type="guide" xref="index#number"/>
+    
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christopher Meng</mal:name>
+      <mal:email>i@cicku.me</mal:email>
+      <mal:years>2012-2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>ravix</mal:name>
+      <mal:email>dr.neemous@gmail.com</mal:email>
+      <mal:years>2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Dianjin Wang</mal:name>
+      <mal:email>1132321739qq@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Cravix</mal:name>
+      <mal:email>dr.neemous@gmail.com</mal:email>
+      <mal:years>2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>nyanyh</mal:name>
+      <mal:email>rebuilty@gmail.com</mal:email>
+      <mal:years>2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>liulitchi</mal:name>
+      <mal:email>xingzuo88@qq.com</mal:email>
+      <mal:years>2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>玉堂白鹤</mal:name>
+      <mal:email>yjwork@qq.com</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mingye Wang</mal:name>
+      <mal:email>arthur200126@gmail.com</mal:email>
+      <mal:years>2015-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>白铭骢</mal:name>
+      <mal:email>jeffbai@aosc.xyz</mal:email>
+      <mal:years>2015-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>刘子兴</mal:name>
+      <mal:email>liushuyu@aosc.xyz</mal:email>
+      <mal:years>2015-2016</mal:years>
+    </mal:credit>
+  </info>
+
+	<title>复数</title>
+    
+    <p>
+    <app>MATE Calculator</app> supports complex numbers, as well as the following functions while in <link xref="mouse">Advanced mode</link>.
+    </p>
+
+    <table>
+
+    <tr>
+    <td><p>Re</p></td>
+    <td><p>Returns the real part of a complex number. For example:</p>
+    <example>
+    <p>
+    Re (2-5i) = 2
+    </p>
+    </example>
+    </td>
+    </tr>
+
+    <tr>
+    <td><p>Im</p></td>
+    <td><p>Returns the imaginary part of a complex number. For example:</p>
+    <example>
+    <p>
+    Im (2-5i) = -5
+    </p>
+    </example>
+    </td>
+    </tr>
+
+    <tr>
+    <td><p>conj</p></td>
+    <td><p>Returns the conjugate of a complex number. For example:</p>
+    <example>
+    <p>
+    conj (2-5i) = 2+5i
+    </p>
+    </example>
+    </td>
+    </tr>
+
+    <tr>
+    <td><p>Arg</p></td>
+    <td><p>Returns the argument of a complex number. For example:</p>
+    <example>
+    <p>
+    Arg (2-5i) = -68.1986
+    </p>
+    </example>
+    </td>
+    </tr> 
+
+    </table>
+
+
+</page>

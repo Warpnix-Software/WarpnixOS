@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-sorting-message-list" xml:lang="uk">
+
+  <info>
+    <desc>Упорядковування списку повідомлень у теці пошти.</desc>
+
+    <link type="guide" xref="mail-organizing"/>
+    <link type="guide" xref="mail-layout-changing"/>
+
+    <revision pkgversion="3.40.4" version="0.11" date="2021-08-20" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-organize-columns.html.en -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Упорядковування списку повідомлень</title>
+  
+<p>У <app>Evolution</app> передбачено можливість упорядковування ваших повідомлень сортуванням у <link xref="intro-main-window#e-mail">списку повідомлень</link>.</p>
+
+<section id="email-threads">
+<title>Упорядковування пошти у гілках пошти</title>
+<p>Для упорядковування повідомлень ви можете скористатися переглядом повідомлень із гілками. Щоб увімкнути цю можливість, скористайтеся пунктом меню <guiseq><gui>Перегляд</gui><gui>Групувати за гілками</gui></guiseq> або комбінацією клавіш <keyseq><key>Ctrl</key><key>T</key></keyseq>.</p>
+<p>Якщо увімкнути цю можливість, відповіді буде згруповано із початковим повідомленням і ви зможете стежити за ходом обговорення, читаючи повідомлення у ньому послідовно.</p>
+<note style="tip"><p><app>Evolution</app> розпізнає заголовки повідомлень <code its:translate="no" its:locNote="Translators: Do NOT translate 'References'">References</code> і <code its:translate="no" its:locNote="Translators: Do NOT translate 'In-Reply-To'">In-Reply-To</code>. Крім того, ви можете увімкнути <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Параметри пошти</gui><gui>Загальне</gui><gui>Показ повідомлень</gui><gui>Повернутись до розбиття повідомлень на гілки за темою</gui></guiseq>.</p></note>
+<p>Коли надійде нове повідомлення, його буде додано під батьківським повідомленням. Гілки буде упорядковано і показано на основі дати найсвіжішого отриманого повідомлення.</p>
+<note style="tip"><p>Досвідчені користувачі можуть ще більше змінити параметри гілки за допомогою команд, які можна віддати у програмі <app>Термінал</app>.</p>
+<list>
+<item>
+<p>Щоб упорядкувати усі гілки за найсвіжішим повідомленням, а не за датою повідомлення, віддайте таку команду:</p>
+<p its:translate="no"><cmd>gsettings set org.gnome.evolution.mail thread-latest true</cmd></p>
+</item>
+<item>
+<p>Щоб скористатися упорядкуванням за зростанням для дочірніх повідомлень у гілці, а не тим самим порядком, що і у корені гілки, скористайтеся такою командою:</p>
+<p its:translate="no"><cmd>gsettings set org.gnome.evolution.mail thread-children-ascending true</cmd></p>
+</item>
+<item>
+<p>Щоб усі гілки було типово згорнуто, а не розгорнуто, скористайтеся такою командою:</p>
+<p its:translate="no"><cmd>gsettings set org.gnome.evolution.mail thread-expand false</cmd></p>
+</item>
+</list>
+</note>
+</section>
+
+<section id="column-headers">
+<title>Упорядковування пошти за допомогою заголовків стовпчиків</title>
+<p>У списку повідомлень буде показано стовпчики, які вказують на те, чи було повідомлення прочитано, те, чи має повідомлення долучення, наскільки важливим є повідомлення, дані щодо відправника, дати та теми повідомлення. Щоб змінити перелік стовпчиків, які буде використано у списку повідомлень, ви можете виконати одну з таких дій:</p>
+<list>
+<item><p>Перетягнути і скинути панелі заголовків стовпчиків</p></item>
+<item><p>Клацнути правою кнопкою на заголовку.</p></item>
+<item><p>Вибрати пункт <gui>Вилучити цей стовпчик</gui> або <gui>Додати стовпчик</gui>.</p></item>
+</list>
+
+<p>У <app>Evolution</app> передбачено можливість упорядковування повідомлень за допомогою цих стовпчиків. Достатньо клацнути на мітці заголовка стовпчика, щоб упорядкувати повідомлення за цим стовпчиком. Напрямок стрілочки у заголовку стовпчика вказує на порядок сортування.</p><p>Ви можете застосувати вторинний критерій сортування, клацнувши на мітці стовпчика із одночасним утримуванням натиснутою клавіші <key>Ctrl</key>.</p>
+
+<note style="tip"><p>Якщо ви хочете змінити упорядкування і/або стовпчики у певних теках електронної пошти, зніміть позначку з пункту <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Параметри пошти</gui><gui>Загальне</gui><gui>Застосувати однаковий перегляд налаштувань для всіх тек</gui></guiseq>. Далі, ви можете змінити параметри перегляду і зберегти зміни за допомогою пункту <guiseq><gui>Перегляд</gui><gui>Поточний перегляд</gui><gui>Зберегти нетиповий перегляд…</gui></guiseq>, а потім застосувати відповідний режим перегляду до інших тек.</p></note>
+
+</section>
+
+<section id="sort-options">
+<title>Користування іншими параметрами сортування</title>
+<p>В <app>Evolution</app> передбачено інші способи упорядковування повідомлень електронної пошти. Ви можете визначити критерій упорядковування, упорядкувати повідомлення за зростанням, за спаданням і відновити початкове упорядковування.</p>
+	<section id="sort-options-by">
+	<title>Упорядкувати за</title>
+		<p>Крім того, ви можете упорядкувати повідомлення за допомогою списку <gui>Упорядкувати за</gui>.</p>
+		<steps>
+		<item><p>Клацніть правою кнопкою на заголовку стовпчика у списку повідомлень.</p></item>
+		<item><p>Виберіть пункт <gui>Упорядкувати за</gui>.</p><p>У відповідь буде відкрито список критеріїв для сортування повідомлень електронної пошти:</p>
+			<list>
+			<item><p>Тема — скорочено</p></item>
+			<item><p>Позначки</p></item>
+			<item><p>Отримувач</p></item>
+			<item><p>Відправник</p></item>
+			<item><p>Адреса</p></item>
+			<item><p>До</p></item>
+			<item><p><link xref="mail-follow-up-flag">Ознака «До виконання»</link></p></item>
+			<item><p>Стан ознаки</p></item>
+			<item><p>Розмір</p></item>
+			<item><p>Кому</p></item>
+			<item><p>Отримано</p></item>
+			<item><p>Дата</p></item>
+			<item><p>Тема</p></item>
+			<item><p>Від</p></item>
+			<item><p>Долучення</p></item>
+			<item><p>Позначено</p></item>
+			<item><p>Стан</p></item>
+			<item><p>Інший</p></item>
+			</list>
+		</item>
+		<item><p>Виберіть варіант, яким ви хочете скористатися для сортування повідомлень електронної пошти.</p></item>
+		</steps>
+	</section>
+
+	<section id="sort-options-ascending">
+	<title>Сортування за зростанням</title>
+		<steps>
+		<item><p>Клацніть правою кнопкою на заголовку стовпчика у списку повідомлень.</p></item>
+		<item><p>Виберіть пункт <gui>Сортування за зростанням</gui>.</p></item>
+		</steps>
+		<p>Повідомлення буде показано так, що найсвіжіші з них будуть наприкінці списку.</p>
+	</section>
+
+	<section id="sort-options-descending">
+	<title>Сортування за спаданням</title>
+		<steps>
+		<item><p>Клацніть правою кнопкою на заголовку стовпчика у списку повідомлень.</p></item>
+		<item><p>Виберіть пункт <gui>Сортування за спаданням</gui>.</p></item>
+		</steps>
+		<p>Повідомлення буде показано так, що найсвіжіші з них будуть на початку списку.</p>
+	</section>
+
+	<section id="sort-options-unsort">
+	<title>Скинути впорядкування</title>
+		<steps>
+		<item><p>Клацніть правою кнопкою на заголовку стовпчика у списку повідомлень.</p></item>
+		<item><p>Виберіть пункт <gui>Скинути впорядкування</gui>.</p></item>
+		</steps>
+		<p>У результаті упорядковування за стовпчиком буде знято — програма відновить сортування за порядком, у якому повідомлення було додано до теки.</p>
+	</section>
+</section>
+
+</page>

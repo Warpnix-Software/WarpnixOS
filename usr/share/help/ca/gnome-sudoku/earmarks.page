@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="earmarks" xml:lang="ca">
+  <info>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+   <link type="guide" xref="index#tips"/>
+    <credit type="author copyright">
+      <name>Thomas Hinkle</name>
+      <email>tmhinkle@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Chris Beiser</name>
+      <email>ctbeiser@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartir Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2019</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Anotacions</title>
+<p>Es poden afegir petites anotacions numèriques a qualsevol cel·la. Us permeten marcar els possibles valors per aquella cel·la. No hi ha límit en el nombre d'anotacions que podeu fer a cada cel·la. Cada dígit pot ser seleccionat un sol cop.</p>
+
+<p>Per a afegir anotacions a una cel·la:</p>
+
+<steps>
+  <item><p>Seleccioneu la cel·la.</p></item>
+  <item><p>Premeu una combinació de tecles entre <keyseq><key>Ctrl</key><key>1</key></keyseq> i <keyseq><key>Ctrl</key><key>9</key></keyseq>.</p></item>
+</steps>
+
+<p>Podeu eliminar un dígit concret de les anotacions prement altra vegada una combinació de tecles entre <keyseq><key>Ctrl</key><key>1</key></keyseq> i <keyseq><key>Ctrl</key><key>9</key></keyseq> .</p>
+
+<note><p>També podeu afegir anotacions fent clic a la cel·la en qüestió mentre premeu la tecla <key>Ctrl</key>, o bé fent clic amb el botó dret del ratolí i escollint el número que desitgeu.</p></note>
+
+</page>

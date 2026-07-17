@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-free-busy" xml:lang="ca">
+
+  <info>
+
+    <link type="guide" xref="calendar-sharing-information"/>
+
+    <revision pkgversion="3.28.2" version="0.6" date="2018-07-09" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en
+	   and
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#usage-calendar-freebusy
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Utilitzeu la vista lliure/ocupat en un servidor de groupware per a configurar reunions.</desc>
+    <!-- TODO: Really split this into Exchange/Groupware section and normal people section -->
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Informació lliure/ocupat</title>
+
+  <p>Podeu utilitzar la cerca lliure/ocupat de reunions per a determinar la disponibilitat dels convidats.</p>
+
+  <p>A més de les eines estàndard de programació de reunions, podeu utilitzar la vista lliure/ocupat per a comprovar si les persones estan disponibles per avançat. La característica lliure/ocupat normalment és una funció de servidors dedicats de groupware, com Microsoft Exchange i Novell GroupWise. Tanmateix, també podeu publicar informació en línia i accedir a informació publicada en altres llocs. Si tots els col·laboradors no publiquen les dades sobre si estan lliures/ocupats, encara podeu utilitzar les <link xref="calendar-meetings-sending-invitation">invitacions a reunions</link> per a coordinar les agendes amb altra gent.</p>
+
+  <p>Per a accedir a la vista lliure/ocupat:</p>
+
+  <steps>
+    <item>
+      <p>Feu clic a <guiseq><gui>Fitxer</gui><gui>Nou</gui><gui>Reunió</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Feu clic a <gui style="button">Afegeix</gui> per a afegir les adreces de correu electrònic de les persones que voleu convidar.</p>
+    </item>
+    <item>
+      <p>Feu clic al botó <gui style="button">Commuta la visualització del temps com a ocupat</gui> de la barra d'eines o a la pestanya <gui>Planificació</gui>.</p>
+    </item>
+    <item>
+      <p>Ajusteu el temps de la reunió, ja sigui arrossegant les vores de la reunió o utilitzant els botons <gui>Tria automàtica</gui> per a triar l'hora automàticament, aleshores feu clic a <gui style="button">Tanca</gui>. Els participants en un servidor Exchange tenen la cita actualitzada automàticament; altres rebran una notificació per correu electrònic de qualsevol canvi en els plans.</p>
+    </item>
+  </steps>
+
+  <list>
+    <item>
+      <p>Llista de participants:</p>
+      <p>La llista de participants mostra les persones que han estat convidades a la cita.</p>
+    </item>
+    <item>
+      <p>Calendari en graella:</p>
+      <p>La Graella d'horaris mostra la informació Lliure/Ocupat publicada per les persones que heu convidat. Aquí és on es comparen els horaris per a trobar temps lliure per a programar una cita. Les persones només tenen la informació de la programació visible si utilitzen el mateix servidor de Novell GroupWise o Microsoft Exchange (és a dir, si es troben en la mateixa organització que la seva) o si publiquen informació de lliure/ocupat en una adreça web (URL) a la que podeu accedir i heu introduït aquesta adreça per al contacte específic a <link xref="contacts-usage-edit-contact">Editor de contactes</link> sota <guiseq><gui>Informació Personal</gui> <gui>Adreces Web</gui><gui>Lliure/Ocupat</gui></guiseq>.</p>
+    </item>
+  </list>
+
+  <p>Podeu publicar la informació Lliure/Ocupat al Calendari en un servidor WebDAV, un servidor FTP, una màquina remota a través de SSH o qualsevol altre servidor web amb suport HTTP PUT.</p>
+
+  <p>En entorns corporatius, podeu publicar la informació Lliure/Ocupat en un servidor Exchange o Groupwise. Tingueu en compte que heu d'utilitzar el calendari d'Exchange de nivell superior si voleu que altres puguin accedir a la vostra informació quan us convidin a una reunió.</p> <p>El servidor per defecte es pot definir a <guiseq><gui>Edita</gui><gui>Preferències</gui> <gui>Calendari i tasques</gui> <gui>Informació de publicació</gui> <gui>Servidor Lliure/Ocupat per defecte</gui></guiseq>.</p>
+
+<section id="no-groupware">
+  <title>Accedir a les dades col·laboratives sense un servidor Groupware</title>
+
+  <p>Si les persones us proporcionen una adreça URL per a dades Lliure/Ocupat o del seu calendari web, podeu afegir l'URL des d'un lloc web <guiseq><gui>Informació Personal</gui><gui>Adreces Web</gui></guiseq> a l'<link xref="contacts-usage-edit-contact">Editor de Contactes</link>. Aleshores, quan programeu una reunió amb ells, <app>Evolution</app> mira el calendari i el mostra amb les dades de Lliure/Ocupat.</p>
+
+</section>
+
+</page>

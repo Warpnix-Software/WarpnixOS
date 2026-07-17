@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-refresh-folders" xml:lang="uk">
+
+  <info>
+    <desc>Способи оновлення вмісту тек <app>Evolution</app>.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="2.28.3" version="0.1" date="2010-10-09" status="final"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Оновлення вмісту тек на поштовому сервері</title>
+
+<p>Щоб оновити вміст ваших локальних тек електронної пошти, скористайтеся пунктом <guiseq><gui>Тека</gui><gui>Оновити</gui></guiseq>. У результаті виконання дії буде отримано усі ваші повідомлення електронної пошти з сервера. Ви зможете прочитати ці повідомлення, а стан прочитання повідомлень буде синхронізовано з сервером.</p>
+
+<p>Крім того, ви можете двічі клацнути лівою кнопкою миші на назві теки або натиснути клавішу <key>F5</key>, щоб оновити її вміст.</p>
+
+</page>

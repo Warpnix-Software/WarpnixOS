@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-usage-delete-contact" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="contacts-usage"/>
+
+    <revision pkgversion="3.0.2" version="0.1" date="2011-08-01" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Удаление контакта из адресной книги.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Удаление контакта</title>
+
+  <p>Для удаления контакта из адресной книги щёлкните по нему правой кнопкой мыши и выберите пункт <gui>Удалить</gui> или щёлкните по контакту и нажмите кнопку <gui>Удалить</gui> на панели инструментов, или воспользуйтесь комбинацией клавиш <keyseq><key>Ctrl</key><key>D</key></keyseq>, или выберите пункт меню <guiseq><gui>Правка</gui><gui>Удалить контакт</gui></guiseq>.</p>
+
+</page>

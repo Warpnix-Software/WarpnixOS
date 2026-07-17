@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="sync-with-other-devices" xml:lang="es">
+
+  <info>
+    <desc>Sincronizar los datos de <app>Evolution</app> con dispositivo de mano o teléfonos móviles.</desc>
+
+    <link type="guide" xref="index#data-migration-and-sync"/>
+
+    <revision pkgversion="3.10.4" version="0.7" date="2017-07-28" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2012 - 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rodrigo Lledó</mal:name>
+      <mal:email>rodhos92@gmail.com</mal:email>
+      <mal:years>2018</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yolanda Álvarez Pérez</mal:name>
+      <mal:email>yolandaa.alvarez.perez@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Francisco Javier F. Serrador</mal:name>
+      <mal:email>serrador@openshine.com</mal:email>
+      <mal:years>2005, 2006</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Sincronizar <app>Evolution</app> con otros dispositivos</title>
+
+<p>Actualmente no hay unas «instrucciones recomendadas» para usuarios.</p>
+
+<p>Muchas distribuciones proporcionan la aplicación <app><link href="https://syncevolution.org/">SyncEvolution</link></app>, que se puede usar junto con dispositivos que soporten <link href="https://es.wikipedia.org/wiki/SyncML">SyncML</link>.</p>
+
+<p>En general, se recomienda usar aplicaciones y dispositivos que soporten el <link href="https://es.wikipedia.org/wiki/ActiveSync">protocolo ActiveSync</link> (como <app>SyncEvolution</app>). Hay disponible una <link href="https://en.wikipedia.org/wiki/List_of_collaborative_software">lista de software colaborativo</link> en la Wikipedia.</p>
+
+<p>If you can provide good practices or more information on this topic feel free to file a bug report in <link href="https://gitlab.gnome.org/GNOME/evolution/-/issues/">GNOME's bug tracking system</link>.</p>
+
+</page>

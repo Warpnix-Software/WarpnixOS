@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="textselection" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="index#faq"/>
+    <desc>Cuando copie texto, el texto que esté pegado puede ser diferente de cuando lo ha seleccionado.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Toni Estevez</mal:name>
+      <mal:email>toni.estevez@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2007-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Francisco Javier F. Serrador</mal:name>
+      <mal:email>serrador@cvs.gnome.org</mal:email>
+      <mal:years>2003-2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Pablo Gonzalo del Campo</mal:name>
+      <mal:email>pablodc@bigfoot.com</mal:email>
+      <mal:years>2002-2003</mal:years>
+    </mal:credit>
+  </info>
+
+<title>¿Por qué el texto que seleccioné no copia apropiadamente?</title>
+
+
+<p>Si resalta y copia texto desde un documento utilizando Atril y después lo pega en otra aplicación, el formato puede alterarse. Además puede contener diferentes caracteres que la selección original. Esto a menudo sucede cuando copia  texto desde un documento PDF con múltiples columnas.</p>
+
+
+ <p>Este problema sucede porque algunos formatos de documentos manipulan texto. El texto actual en el documento es almacenado diferentemente desde la manera que es representado. Esto puede tener un resultado en una copia que no aparece como se esperaba.</p>
+
+ <p>Desafortunadamente, no hay una manera real de reparar este problema. Copiando menos texto a la vez, o copiando el texto dentro de un editor de texto (como <app>Pluma</app>) puede minimizar el problema.</p>
+
+</page>

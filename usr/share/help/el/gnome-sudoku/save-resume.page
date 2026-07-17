@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="save-resume" xml:lang="el">
+
+  <info>
+   <link type="guide" xref="index#play"/>
+
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+    <credit type="author copyright">
+      <name>Thomas Hinkle</name>
+      <email>tmhinkle@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2013, 2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Χρήστος Τριανταφύλλης</mal:name>
+      <mal:email>christriant1995@gmail.com</mal:email>
+      <mal:years>2011</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Αποθήκευση και συνέχιση</title>
+
+<section id="save">
+<title>Αποθήκευση του παιχνιδιού σας</title>
+  <p>
+  Your game is saved automatically when you close the application.
+  </p>
+</section>
+
+<section id="resume">
+<title>Συνέχιση του παιχνιδιού σας</title>
+  <p>
+  Whenever you start <app>Sudoku</app>, your saved game will be opened.
+  </p>
+  <p>
+  If you’d like to stop playing that game and begin another, just select <gui>New Puzzle</gui> and begin your new game.
+  </p>
+</section>
+
+</page>

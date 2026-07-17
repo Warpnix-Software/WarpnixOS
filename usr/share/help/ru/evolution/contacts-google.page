@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-google" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="contacts-using-several-addressbooks"/>
+    <link type="guide" xref="google-services"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Использование сетевой адресной книги учётной записи Google.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Using a Google address book</title>
+
+  <p>Чтобы добавить такую адресную книгу в <app>Evolution</app>, выполните следующие действия:</p>
+
+  <steps>
+    <item>
+      <p>Выберите пункт меню <guiseq><gui>Файл</gui><gui>Создать</gui> <gui>Адресная книга</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Выберите тип <gui>Google</gui>.</p>
+    </item>
+    <item>
+      <p>Укажите имя.</p>
+    </item>
+    <item>
+      <p>Укажите, следует ли сделать содержимое доступным для просмотра также и в автономном режиме.</p>
+    </item>
+    <item>
+      <p>Укажите своё имя пользователя Google.</p>
+    </item>
+    <item>
+      <p>Чтобы использовать защищённое соединение, выберите <gui>Использовать безопасное соединение</gui>.</p>
+    </item>
+    <item>
+      <p>Нажмите кнопку <gui style="button">OK</gui>.</p>
+    </item>
+  </steps>
+
+  <p>Адресная книга будет добавлена в список адресных книг <app>Evolution</app>.</p>
+
+</page>

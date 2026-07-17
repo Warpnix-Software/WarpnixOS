@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="addremove-sources" xml:lang="nl">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntu-documentatieteam</name>
+    </credit>
+    <desc>Andere softwarebronnen toevoegen om de softwarebronnen die Ubuntu gebruikt voor installatie en upgrades uit te breiden.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove"/>
+    <revision version="20.10" date="2020-09-13" status="review"/>
+  </info>
+
+  <title>Softwarebronnen toevoegen</title>
+
+  <p>Naast de standaard Ubuntu softwarebronnen is software ook beschikbaar uit bronnen van derden. Wilt u software van derden installeren, dan moet u die toevoegen aan de lijst met beschikbare bronnen van Ubuntu.</p>
+
+  <note style="warning">
+    <p>Installeer alleen software uit bronnen die u vertrouwt!</p>
+    <p>Softwarebronnen van derden worden niet gecontroleerd op veiligheid door het Ubuntu-team en kunnen software bevatten die schadelijk is voor uw computer.</p>
+  </note>
+
+<p>
+</p>
+   <p>Om een softwarebron toe te voegen:</p>
+
+  <steps>
+    <item>
+      <p>
+        Open <app>Software &amp; Updates</app> via the <em>Activities</em> search bar.
+      </p>
+    </item>
+    <item>
+      <p>Ga naar het tabblad <gui>Overige software</gui>.</p>
+    </item>
+    <item>
+      <p>Klik op <gui>Toevoegen</gui> en voer de APT-regel van de pakketbron in. Deze zou te vinden moeten zijn op de website van de bron en moet er ongeveer zo uit zien:</p>
+      <p>
+        <code its:translate="no">deb http://archive.ubuntu.com/ubuntu/ resolute main</code>
+      </p>
+    </item>
+    <item>
+      <p>Klik op <gui>Toevoegen</gui> en voer uw wachtwoord in in het authenticatievenster.</p>
+    </item>
+    <item>
+      <p>Sluit het <gui>Software &amp; Updates</gui>-venster. <app>App Center</app> zal dan in de softwarebronnen zoeken naar nieuwe software.</p>
+    </item>
+    <item>
+      <p>De meeste softwarebronnen leveren een ondertekensleutel om gedownloade pakketten te kunnen verifiëren. Daarom moet u naast bovengenoemde stappen mogelijk instructies volgen over hoe u de ondertekensleutel (GPG key) moet downloaden en installeren.</p>
+    </item>
+  </steps>
+
+</page>

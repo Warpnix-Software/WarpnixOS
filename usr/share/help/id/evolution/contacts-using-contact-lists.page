@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-using-contact-lists" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="contacts-organizing"/>
+
+    <revision pkgversion="2.32.1" version="0.2" date="2011-07-28" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-contact-organize.html.en#usage-contact-organize-group-list
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Menggunakan daftar kontak untuk mengelompokkan kontak.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Menggunakan Daftar Kontak</title>
+
+  <p>Daftar kontak adalah sekumpulan kontak dengan satu nama panggilan yang Anda buat. Ketika Anda mengirim surel ke nama panggilan ini, itu benar-benar dikirim ke setiap anggota daftar. Ini berbeda dari milis "nyata" karena hanya ada di komputer Anda sebagai kenyamanan bagi Anda, daripada sebagai alamat surel aktual yang dikelola oleh aplikasi milis di server.</p>
+
+  <p>Misalnya, Anda dapat membuat satu kontak untuk setiap anggota keluarga, lalu menambahkan kontak tersebut ke daftar kontak yang disebut "Keluarga". Kemudian, alih-alih memasukkan alamat surel setiap orang satu per satu, Anda dapat mengirim surel ke "Keluarga" dan pesan akan dibagi ke semuanya.</p>
+
+<section id="create-contact-list">
+  <title>Membuat daftar kontak</title>
+
+  <steps>
+    <item>
+      <p>Klik <guiseq><gui>Berkas</gui><gui>Baru</gui> <gui>Daftar Kontak</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Masukkan nama yang Anda sukai.</p>
+    </item>
+    <item>
+      <p>Pilih buku alamat di bawah <gui>Di mana:</gui> tempat itu akan ditambahkan.</p>
+    </item>
+    <item>
+      <p>Tentukan anggota daftar dengan memasukkan nama atau alamat surel kontak (bidang teks mendukung pelengkapan otomatis), atau dengan menyeret kontak dari jendela Kontak ke dalam daftar, atau dengan menggunakan tombol <gui style="button">Pilih…</gui>.</p>
+    </item>
+    <item>
+      <p>Pilih apakah Anda ingin menyembunyikan alamat surel saat Anda mengirim pesan ke daftar.</p><p>Kecuali itu adalah daftar yang sangat kecil, disarankan agar Anda membiarkan alamat disembunyikan. Ini sama dengan menggunakan fitur "Bcc:" yang dibahas dalam <link xref="mail-composer-several-recipients">Mengirim pesan ke beberapa penerima</link>.</p>
+    </item>
+    <item>
+      <p>Klik <gui style="button">OK</gui>.</p>
+    </item>
+  </steps>
+
+  <p>Daftar kontak akan ditambahkan ke buku alamat yang dipilih di <app>Evolution</app>.</p>
+
+</section>
+
+<section id="send-to-contact-list">
+  <title>Mengirim pesan ke daftar kontak</title>
+
+  <p>Untuk mengirim pesan ke daftar kontak, masukkan nama yang Anda pilih untuk daftar kontak sebagai penerima di komposer surel. Anda juga bisa mengklik kanan daftar kontak di buku alamat Anda dan pilih <gui>Kirim Pesan ke Daftar</gui>.</p>
+
+</section>
+
+</page>

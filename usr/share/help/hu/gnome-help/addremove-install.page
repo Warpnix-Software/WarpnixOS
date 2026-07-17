@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="addremove-install" xml:lang="hu">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntu dokumentációs csapat</name>
+    </credit>
+    <desc>Az <app>Alkalmazásközpont</app> használata további alkalmazások telepítéséhez és az Ubuntu még hasznosabbá tételéhez.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove" group="#first"/>
+    <link type="seealso" xref="addremove-remove"/>
+    <link type="seealso" xref="addremove-install-synaptic"/>
+    <link type="seealso" xref="prefs-language-install"/>
+    <revision version="18.04" date="2018-03-18" status="review"/>
+  </info>
+
+  <title>További alkalmazások telepítése</title>
+
+  <p>Az alkalmazás olyan szoftver, amely grafikus felhasználói felülettel (GUI) rendelkezik. Az Ubuntu fejlesztőcsapata olyan alapértelmezett alkalmazáskészletet választott, amely szerintünk nagyon hasznossá teszi az Ubuntut a legtöbb mindennapi feladathoz. Ön azonban minden bizonnyal szeretne majd további alkalmazásokat telepíteni, hogy az Ubuntu még hasznosabbá váljon az Ön számára. Egy alkalmazás telepítéséhez az <app>Alkalmazásközpont</app> alkalmazást használhatja.</p>
+
+   <p>Az alkalmazások két formátumban érhetők el: snap csomagokban és Debian csomagokban. A snap csomagként elérhető alkalmazást mostantól <em>snap</em> néven említjük. Néhány alkalmazás mindkét formátumban elérhető. Ilyen esetben az <app>Alkalmazásközpont</app> alkalmazásban a snap lesz elsőként felsorolva.</p>
+
+   <p>Olyan szoftvereket is telepíthet, amelyek nem rendelkeznek grafikus felhasználói felülettel. Az ilyen szoftverek telepítéséhez a <link xref="addremove-install-synaptic">Synaptic</link> alkalmazást használhatja. Ne feledje, hogy a <app>Synaptic</app> nem sorolja fel a snap alkalmazásokat.</p>
+
+  <p>Egy alkalmazás telepítéséhez:</p>
+
+  <steps>
+    <item>
+      <p>Kattintson az <app>Alkalmazásközpont</app> ikonra az <gui>alkalmazásindítón</gui>, vagy keresse meg a <input>Szoftvert</input> a <em>Tevékenységek</em> keresősávjából.</p>
+    </item>
+    <item>
+      <p>Az <app>Alkalmazásközpont</app> elindulása után kereshet az alkalmazások között, vagy válasszon egy kategóriát, és keresse meg az alkalmazást a listában.</p>
+    </item>
+    <item>
+      <p>Válassza ki a telepíteni kívánt alkalmazást, és kattintson a <gui>Telepítés</gui> gombra.</p>
+    </item>
+    <item>
+      <p>A rendszer megkéri, hogy hitelesítse magát a jelszava megadásával. Ha ezt megtette, akkor a telepítés megkezdődik. A telepítés általában gyorsan befejeződik, de lassú internetkapcsolat esetén eltarthat egy ideig.</p>
+
+    </item>
+
+  </steps>
+  
+</page>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="question" id="flags" xml:lang="pl">
+  <info>
+
+    <link type="guide" xref="index#play"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.5.5" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.3" date="2018-09-01" status="review"/>
+    <revision pkgversion="3.31.91" version="0.4" date="2019-03-03" status="review"/>
+
+    <credit type="author copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+    <credit type="author">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2012</years>
+    </credit>
+
+    <credit type="author copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Piotr Drąg</mal:name>
+      <mal:email>piotrdrag@gmail.com</mal:email>
+      <mal:years>2017-2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Aviary.pl</mal:name>
+      <mal:email>community-poland@mozilla.org</mal:email>
+      <mal:years>2017-2023</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Jak używać flag</title>
+  <table>
+  <tr>
+   <td>
+     <media type="image" mime="image/svg" src="figures/flags.png" its:translate="no"/>
+   </td>
+   <td>
+     <p>Flagi są używane do oznaczania pól podejrzewanych o posiadanie miny. Umieszczenie flagi na polu uniemożliwia przypadkowe kliknięcie i możliwy wybuch, co zakończyłoby grę.</p>
+     <p>Wygląd flag zależy od motywu. Można go zmienić klikając przycisk menu w górnym prawym rogu okna, a następnie wybierając <gui>Wygląd</gui>.</p>
+    </td>
+   </tr>
+  </table>
+
+  <section id="flags-put">
+    <title>Jak umieścić flagę na polu</title>
+    <table>
+      <tr>
+        <td>
+	  <p>Flag nie można kliknąć. Aby umieścić flagę na polu:</p>
+          <list>
+            <item><p>kliknij puste pole prawym przyciskiem myszy.</p></item>
+          </list>
+        </td>
+        <td>
+          <media type="image" mime="image/svg" width="60" src="figures/flag.svg" its:translate="no"/>
+        </td>
+        </tr>
+      </table>
+
+  </section>
+
+  <section id="flags-blue">
+    <title>Korzystanie z flagi niepewności</title>
+    <p>W przypadku braku pewności, czy pole skrywa minę, można użyć flagi niepewności.</p>
+    <table>
+      <tr>
+        <td>
+          <p>Aby umieścić flagę niepewności na polu:</p>
+          <list>
+	    <item><p>Podwójnie kliknij puste pole prawym przyciskiem myszy lub raz w przypadku pola z flagą.</p></item>
+          </list>
+        </td>
+        <td>
+          <media type="image" mime="image/svg" width="60" src="figures/flag-question.svg" its:translate="no"/>
+        </td>
+      </tr>
+    </table>
+
+  <note>
+    <p>Aby włączyć te flagi, kliknij przycisk menu w górnym prawym rogu okna i włącz preferencję <gui style="checkbox">Flagi niepewności</gui>.</p>
+  </note>
+
+  </section>
+  
+</page>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="tip" id="gnome-on-ubuntu" xml:lang="it">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntu Documentation Team</name>
+    </credit>
+    <desc>Un elenco di importanti modifiche al desktop GNOME in Ubuntu.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="shell-overview" group="#first"/>
+    <link type="guide" xref="index" group="intro"/>
+    <revision version="0.1" date="2022-04-28" status="review"/>
+  </info>
+
+  <title>Informazioni su GNOME su Ubuntu</title>
+
+  <p>Ubuntu Desktop viene installato con una versione leggermente modificata dell'ambiente desktop GNOME. In genere, questa guida desktop farà riferimento a GNOME poiché è pubblicato dagli sviluppatori di GNOME. Ecco un elenco delle notevoli differenze tra GNOME su Ubuntu e GNOME "Vanilla".</p>
+
+  <list type="disc">
+  <item>
+    <p>Ubuntu viene fornito con Firefox invece del browser Web GNOME.</p>
+  </item>
+  <item>
+    <p>Ubuntu viene fornito con il client desktop remoto Remmina invece di GNOME Connections.</p>
+  </item>
+    <item>
+      <p>L'estensione AppIndicators è inclusa. Questa estensione abiliterà le icone nell'angolo in alto a destra di alcune applicazioni.</p>
+    </item>
+    <item>
+      <p>L'estensione Ubuntu Dock è inclusa. Questa estensione fornisce la barra laterale sinistra per l'esecuzione delle applicazioni.</p>
+    </item>
+    <item>
+      <p>L'estensione Desktop Icons NG è inclusa. Questa estensione consente l'utilizzo di icone sul desktop.</p>
+    </item>
+    <item>
+      <p>Oltre agli sfondi desktop di Ubuntu, il tema predefinito è Yaru e il carattere predefinito è Ubuntu.</p>
+    </item>
+    <item>
+      <p>I pulsanti Riduci a icona e Ingrandisci sono inclusi nelle barre del titolo della finestra.</p>
+    </item>
+  </list>
+
+
+
+</page>

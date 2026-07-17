@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="factorial" xml:lang="oc">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yannig Marchegay (Kokoyaya) &lt;yannig@marchegay.org&gt; &amp; Cédric Valmary (totenoc.eu)</mal:name>
+      <mal:email>cvalmary@yahoo.fr</mal:email>
+      <mal:years>Quentin PAGÈS</mal:years>
+    </mal:credit>
+  </info>
+
+	<title>Factorials</title>
+    
+    <p>
+    Factorials are entered using the ! symbol.
+    To calculate the factorial of 6 enter the following.
+    </p>
+    <example>
+    <p>
+    6!
+    </p>
+    </example>
+</page>

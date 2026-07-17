@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-spam-marking" xml:lang="ca">
+
+  <info>
+    <desc>Com marcar el correu brossa i el correu no desitjat.</desc>
+
+    <link type="guide" xref="mail-spam"/>
+
+    <revision pkgversion="3.3.91" version="0.4" date="2012-03-07" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Pete Biggs</name>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Barbara Tobias</name>
+      <email its:translate="no">barbtobias09@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-organize-spam.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Marcar com a correu brossa</title>
+
+<p>Mentre SpamAssassin ve amb un conjunt de regles predefinides, Bogofilter s'ha d'ensenyar abans que automàticament filtri el correu no desitjat. Si només entreneu a Bogofilter en missatges dolents, assumirà que tot el correu és dolent (perquè no en veurà cap diferència), per tant, no prendrà decisions fins que la base de dades sigui prou àmplia per a determinar què és i què no és correu brossa. En qualsevol cas, quan comenceu a bloquejar el correu no desitjat, consulteu la carpeta <gui>Brossa</gui> freqüentment per a assegurar-vos que el correu desitjat no es marqui com a correu brossa.</p>
+
+<section id="marking-junk">
+<title>Marcar el correu brossa manualment</title>
+<p>Si <app>Evolution</app> omet correu brossa, feu clic amb el botó dret al missatge i, a continuació, feu clic a <gui>Marca com a brossa</gui>, o marqueu el missatge i premeu <keyseq><key>Ctrl</key><key>J</key></keyseq> o feu clic al botó <gui>Brossa</gui> a la barra d'eines. Quan el corregiu, en el futur el filtre podrà reconèixer missatges similars, i es tornarà més precís a mesura que passi el temps.</p>
+<p>Si el correu desitjat està marcat incorrectament, suprimiu-lo de la carpeta <gui>Brossa</gui> fent clic a sobre amb el botó de la dreta i seleccionant <gui>No el marquis com a brossa</gui> o prement <keyseq><key>Maj</key><key>Ctrl</key><key>J</key></keyseq>, o marcar el missatge i fent clic al botó <gui>No brossa</gui>.</p>
+
+</section>
+</page>

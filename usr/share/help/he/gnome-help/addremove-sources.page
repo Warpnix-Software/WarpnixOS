@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="addremove-sources" xml:lang="he">
+
+  <info>
+    <credit type="author">
+      <name>מיזם התיעוד של אובונטו</name>
+    </credit>
+    <desc>הוספת מאגרים מרחיבה את מקורות התכנה בהם נעשה שימוש על ידי אובונטו להתקנה ולשדרוגים.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove"/>
+    <revision version="20.10" date="2020-09-13" status="review"/>
+  </info>
+
+  <title>הוספת מאגרי תכנה</title>
+
+  <p>
+    Software is available from third-party sources, as well as from the default 
+    Ubuntu software repositories. If you want to install software from a 
+    third-party software repository, you must add it to Ubuntu's list of 
+    available repositories.
+  </p>
+
+  <note style="warning">
+    <p>יש להוסיף מאגרי תכנה ממקורות מהימנים בלבד!</p>
+    <p>אבטחתם ואמינותם של מאגרי תכנה מצד־שלישי אינם נבדקים והם עשויים להזיק למחשב שלך.</p>
+  </note>
+
+<p>
+</p>
+   <p>כדי להוסיף מאגר:</p>
+
+  <steps>
+    <item>
+      <p>
+        Open <app>Software &amp; Updates</app> via the <em>Activities</em> search bar.
+      </p>
+    </item>
+    <item>
+      <p>לעבור ללשונית <gui>תכנה נוספת</gui></p>
+    </item>
+    <item>
+      <p>ללחוץ על <gui>הוספה</gui> ולמלא את שורת ה־ APT של המאגר. היא אמורה להיות זמינה מהאתר של המאגר ואמורה להיראות בערך כך:</p>
+      <p>
+        <code its:translate="no">deb http://archive.ubuntu.com/ubuntu/ resolute main</code>
+      </p>
+    </item>
+    <item>
+      <p>ללחוץ על <gui>הוספת מקור</gui>. למלא את הססמה שלך בחלון האימות.</p>
+    </item>
+    <item>
+      <p>
+        Close the <app>Software &amp; Updates</app> window. <app>App Center</app> will then
+        check your software sources for new software.
+      </p>
+    </item>
+    <item>
+      <p>רוב המאגרים מספקים מפתח חתימה כדי שיהיה אפשר לאמת את החבילות שהתקבלו מהם. לכן, נוסף על הצעדים שלהלן, יכול להיות שתופענה גם הנחיות להורדה ולהתקנה של מפתח חתימה (מפתח GPG) שיהיה עליך לבצע.</p>
+    </item>
+  </steps>
+
+</page>

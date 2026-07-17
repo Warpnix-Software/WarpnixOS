@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="contacts-using-several-addressbooks" xml:lang="sv">
+
+  <info>
+    <link type="guide" xref="contacts-organizing"/>
+
+    <revision pkgversion="3.8.2" version="0.4" date="2013-06-20" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Lägga till olika typer av adressböcker och använda mer än en adressbok.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Sebastian Rasmussen</mal:name>
+      <mal:email>sebras@gmail.com</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Anders Jonsson</mal:name>
+      <mal:email>anders.jonsson@norsjovallen.se</mal:email>
+      <mal:years>2017, 2018</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Lägga till och skapa adressböcker</title>
+
+  <p>Du kan ha flera adressböcker. Du kan till exempel ha en adressbok för arbetsrelaterade kontakter och en för privata kontakter. Sidopanelen listar de adressböckerna och du kan välja vilken adressbok som ska visas.</p>
+
+  <p>Du kan också använda adressböcker som inte finns på din dator, utan till exempel på internet (t.ex. Google) eller på ett lokalt nätverk (t.ex. LDAP).</p>
+  <p>Nya kontakter skapas i den valda adressboken i kontaktfönstret. Om ingen adressbok valts skapas nya kontakter i standardadressboken.</p>
+
+  <section>
+    <title>Samlingskonton</title>
+    <p>Olika typer av e-post, adressböcker, kalendrar, uppgifts- och memolistor som tillhör samma användare kan läggas till i ett steg genom att använda ett <link xref="intro-account-types#collection-account">samlingskonto</link>.</p>
+  </section>
+</page>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-displaying-sender-photograph" xml:lang="ca">
+
+  <info>
+    <desc>Mostra una imatge del remitent a l'àrea de capçalera del missatge.</desc>
+
+    <link type="guide" xref="mail-displaying-message#advanced"/>
+
+    <revision pkgversion="3.13.90" version="0.5" date="2015-03-10" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/config-prefs-mail.html.en#mail-prefs-headers -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Encapçalaments de missatges amb fotografia</title>
+
+<!-- NB: This is done by "Face" and "X-Face" headers. -->
+<p><app>Evolution</app> mostra automàticament la fotografia del remitent d'un correu electrònic al costat dret de l'encapçalament del missatge si el remitent té incrustada una fotografia al missatge.</p>
+<!-- TODO: If I ever manage to find out if the "Edit > Plugins > Face" reliably works, create a topic page covering it linked under <link type="guide" xref="index#mail-composing-advanced" />, and link to it from here and vice versa. -->
+
+<p>També podeu habilitar manualment la visualització de la fotografia del remitent d'un correu electrònic si el remitent es troba en una de les vostres llibretes d'adreces i té una fotografia emmagatzemada.</p>
+
+<p>Per a activar aquesta funcionalitat, seleccioneu <guiseq><gui>Edita</gui><gui>Preferències</gui><gui>Preferències del correu</gui><gui>Capçaleres</gui><gui>Mostra la fotografia del remitent a la vista prèvia del missatge</gui></guiseq>.</p>
+
+<p>Si hi ha diverses coincidències per a un contacte, sempre s'utilitza la primera.</p>
+
+<note style="tip"><p>També podeu inserir la vostra imatge als missatges que envieu a <guiseq><gui>Edita</gui><gui>Connectors</gui><gui>Cara</gui></guiseq>. La imatge ha de tenir una mida de 48 x 48 píxels i estar en format de fitxer PNG.</p>
+<p>Si un connector no està disponible a <guiseq><gui>Edita</gui><gui>Connectors</gui></guiseq>, pregunteu en un fòrum d'assistència de la vostra distribució. La vostra distribució podria haver decidit desactivar alguns connectors o distribuir els connectors en un paquet a part.</p></note>
+ 
+ 
+</page>

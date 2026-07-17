@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-usage-delete-appointment" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="calendar-usage"/>
+
+    <revision pkgversion="3.3.91" version="0.3" date="2012-02-19" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Удаление встречи из календаря.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Удаление встречи</title>
+
+  <p>Чтобы удалить встречу из календаря, щёлкните по встрече в календаре правой кнопкой мыши и выберите пункт <gui>Удалить встречу</gui> или щёлкните по встрече и нажмите кнопку <gui>Удалить</gui> на панели инструментов или воспользуйтесь комбинацией клавиш <keyseq><key>Ctrl</key><key>D</key></keyseq>. Если работа выполняется в <link xref="calendar-layout-views">режиме просмотра списка</link>, также можно выбрать пункт меню <guiseq><gui>Правка</gui><gui>Удалить встречу</gui></guiseq>.</p>
+
+</page>

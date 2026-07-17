@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="calendar-classifications" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#calendar-advanced"/>
+
+    <revision pkgversion="3.28.2" version="0.5" date="2018-07-09" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+      https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#bxmtbjb
+      -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Ограничение видимости встреч на удалённых серверах.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Использование классификаций</title>
+
+  <p>Если календарь используется на удалённом сервере (в частности, NovellGroupWise или Microsoft Exchange), можно выбрать классификацию дляопределения того, кто сможет его просматривать.</p>
+
+  <p>Чтобы указать классификацию для встречи, выберите пункт меню <guiseq><gui>Параметры</gui><gui>Классификация</gui></guiseq> и выберите классификацию в редакторе. Категория по умолчанию — <gui>Публичное</gui>, встреча такого типа доступна для просмотра всем пользователям в сети совместного использования календаря. <gui>Личное</gui> обозначает первый уровень защиты, а <gui>Конфиденциальное</gui> — ещё более высокий уровень.</p>
+
+  <p>Разные уровни различаются в зависимости от параметров сервера; свяжитесь с системным администратором или настройте параметры делегирования.</p>
+
+  <p>Чтобы события, заметки и задачи по умолчанию классифицировались в качестве личных, включите соответствующий параметр: <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Календарь и задачи</gui><gui>Общие</gui><gui>Разное</gui></guiseq>.</p>
+
+</page>

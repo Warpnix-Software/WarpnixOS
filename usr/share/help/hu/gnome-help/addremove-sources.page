@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="addremove-sources" xml:lang="hu">
+
+  <info>
+    <credit type="author">
+      <name>Ubuntu dokumentációs csapat</name>
+    </credit>
+    <desc>Tárolók hozzáadása az Ubuntu által a telepítéshez és frissítésekhez használt szoftverforrások bővítéséhez.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove"/>
+    <revision version="20.10" date="2020-09-13" status="review"/>
+  </info>
+
+  <title>Szoftvertárolók hozzáadása</title>
+
+  <p>A szoftverek harmadik féltől származó forrásokból, valamint az alapértelmezett Ubuntu szoftvertárolókból is elérhetők. Ha harmadik féltől származó szoftvertárolóból szeretne szoftvert telepíteni, akkor hozzá kell adnia azt az Ubuntu elérhető tárolóinak listájához.</p>
+
+  <note style="warning">
+    <p>Csak olyan forrásokból származó szoftvertárolókat adjon hozzá, amelyekben megbízik!</p>
+    <p>A harmadik féltől származó tárolók biztonságát vagy megbízhatóságát nem ellenőrzik az Ubuntu fejlesztői, így azok a számítógépére káros programokat is tartalmazhatnak.</p>
+  </note>
+
+<p>
+</p>
+   <p>Egy tároló hozzáadásához:</p>
+
+  <steps>
+    <item>
+      <p>Nyissa meg a <app>Szoftver és frissítések</app> alkalmazást a <em>Tevékenységek</em> keresősávjából.</p>
+    </item>
+    <item>
+      <p>Váltson az <gui>Egyéb szoftver</gui> lapra.</p>
+    </item>
+    <item>
+      <p>Kattintson a <gui>Hozzáadás</gui> gombra, és adja meg a tároló APT sorát. Ez a tároló weboldaláról érhető el, és a következőhöz hasonlóan néz ki:</p>
+      <p>
+        <code its:translate="no">deb http://archive.ubuntu.com/ubuntu/ resolute main</code>
+      </p>
+    </item>
+    <item>
+      <p>Nyomja meg a <gui>Forrás hozzáadása</gui> gombot. Adja meg jelszavát a Hitelesítés ablakban.</p>
+    </item>
+    <item>
+      <p>Zárja be a <app>Szoftver és frissítések</app> ablakot. Az <app>Alkalmazásközpont</app> ezután megkeresi az új szoftvereket a szoftverforrásokban.</p>
+    </item>
+    <item>
+      <p>A legtöbb tároló biztosít egy aláíró kulcsot a letöltött csomagok ellenőrzéséhez. A fenti lépéseken felül így az aláíró kulcs (GPG kulcs) letöltésére és telepítésére vonatkozó utasításokat is követnie kell.</p>
+    </item>
+  </steps>
+
+</page>

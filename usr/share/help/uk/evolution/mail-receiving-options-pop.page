@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-receiving-options-pop" xml:lang="uk">
+
+  <info>
+    <desc>Параметри отримання пошти для облікових записів POP.</desc>
+
+    <link type="guide" xref="mail-receiving-options#common-server-types"/>
+    <link type="guide" xref="mail-account-manage-pop#receiving-email"/>
+    <revision pkgversion="3.23.2" version="0.6" date="2016-11-29" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Barbara Tobias</name>
+      <email its:translate="no">barbtobias09@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mainwindow-starting.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Параметри отримання POP</title>
+
+<section id="receiving-email-pop">
+<title>Отримання пошти</title>
+
+<p>На сторінці <gui>Отримання пошти</gui> (доступна за допомогою вибору послідовності пунктів <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Облікові записи</gui><gui style="button">Редагувати</gui><gui>Отримання пошти</gui></guiseq>):</p>
+
+<list>
+<item><p>Введіть адресу сервера електронної пошти у поле <gui>Сервер</gui> і вкажіть ваше ім'я користувача відповідного сервера.</p></item>
+<item><p>Вкажіть, чи хочете ви використовувати захищене з'єднання (TLS або його застарілого попередника — SSL).</p><p>Вам слід позначити цей пункт, якщо на вашому сервері передбачено підтримку відповідної можливості.</p>
+<note style="tip"><p>Надавачі безкоштовних послуг електронної пошти часто надають відомості щодо того, якими з цих параметрів можна скористатися. Якщо ви працюєте у середовищі якоїсь організації, вам варто зв'язатися із адміністратором системи, щоб дізнатися більше про налаштування.</p></note></item>
+<item><p>Виберіть тип розпізнавання зі списку «Автентифікація» або натисніть кнопку <gui style="button">Перевірити підтримувані типи</gui>, щоб наказати <app>Evolution</app> виявити підтримувані механізми розпізнавання. Деякі сервери не показують механізмів розпізнавання, підтримку яких передбачено, тому натискання цієї кнопки не гарантує, що доступні механізми працюватимуть.</p></item>
+<item><p>Вкажіть, чи слід <app>Evolution</app> запам'ятовувати введений пароль.</p></item>
+</list>
+
+</section>
+
+<section id="receiving-options-pop">
+<title>Параметри отримання</title>
+
+<p>На сторінці <gui>Параметри отримання</gui> (доступ до неї можна отримати за допомогою послідовності пунктів <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Облікові записи</gui><gui style="button">Редагувати</gui><gui>Параметри отримання</gui></guiseq>):</p>
+
+<list>
+<item><p>Якщо ви хочете, щоб <app>Evolution</app> автоматично шукала нові повідомлення, позначте пункт <gui>Перевіряти нову пошту кожні … хвилин</gui> і виберіть інтервал між перевірками у хвилинах.</p></item>
+<item><p>Якщо ви хочете, щоб повідомлення зберігалися на сервері протягом певного періоду часу, позначте пункт <gui>Залишати повідомлення на сервері</gui> і пункт <gui>Вилучати через … днів</gui> і виберіть кількість днів, протягом яких повідомлення мають зберігатися на сервері. Встановіть значення 0 днів, щоб повідомлення зберігалися на сервері необмежений період часу.</p></item>
+<item><p>Пункт <gui>Вимкнути підтримку усіх розширень POP3</gui> має сенс, лише якщо ви працюєте із застарілими або помилково налаштованими поштовими серверами. <link href="https://tools.ietf.org/html/rfc2449">Розширення POP3</link> забезпечують роботу розширених можливостей, але їхню підтримку передбачено лише для деяких серверів. Якщо у вас виникатимуть проблеми із отриманням пошти, позначення цього пункту може усунути їх.</p></item>
+</list>
+
+</section>
+
+</page>

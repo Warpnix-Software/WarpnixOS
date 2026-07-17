@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-search-folders" xml:lang="ru">
+
+  <info>
+    <desc>Использование папок поиска для просмотра сообщений в одной папке (с их сохранением в исходных папках).</desc>
+
+    <link type="guide" xref="mail-organizing#advanced"/>
+
+    <revision pkgversion="3.25.90" version="0.5" date="2017-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-organize-vfolders.html.en -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Использование папок поиска</title>
+  
+<p>Если <link xref="mail-filters">фильтры</link> не обеспечивают необходимую гибкость настройки и приходится выполнять один и тот же <link xref="mail-searching">поиск</link> снова и снова, рекомендуется создать папку поиска.</p>
+
+<p>Папка поиска выглядит как <link xref="mail-folders">папка</link>, действует как <link xref="mail-searching">поиск</link> и настраивается как <link xref="mail-filters">фильтр</link>. Обычная папка действительно содержит сообщения, но папка поиска является представлением сообщений, которые могут находиться в нескольких различных папках. Сообщения, которые она содержит, определены «на лету» с помощью ранее выбранного пользователем набора критериев.</p>
+
+<p><gui>Папки поиска</gui> отображаются в нижней части <link xref="intro-main-window#e-mail">списка почтовых папок</link>.</p>
+
+<note style="tip"><p>Если вы раньше не использовали папки поиска, включите параметр <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Учётные записи</gui><gui>Папки поиска</gui></guiseq>.</p></note>
+
+<p><app>Evolution</app> автоматически обновляет содержимое папок поиска при получении новых сообщений или удалении писем. Обновление также можно выполнить вручную: либо перейдите в другую папку и затем обратно, либо щёлкните по папке поиска правой кнопкой мыши и выберите пункт <gui>Обновить</gui>.</p>
+
+<p>Папка поиска <gui>Прочее</gui> является противоположностью остальным папкам поиска: в ней показаны все сообщения, которые не отображаются в других папках поиска.</p>
+
+<p>Если используется удалённое хранение почты (например, IMAP) и созданы папки поиска для поиска в этих удалённых хранилищах, папка поиска <gui>Прочее</gui> также осуществит поиск в удалённых папках. Если не было создано ни одной папки поиска для поиска в удалённых хранилищах почты, папка <gui>Прочее</gui> также не будет выполнять поиск в них.</p>
+
+<note style="tip"><p>Если нужно узнать, в какой физической папке находится сообщение, которое отображается в папке поиска, <link xref="mail-change-columns-in-message-list">добавьте столбец <gui>Адрес</gui></link> к списку сообщений.</p></note>
+
+</page>

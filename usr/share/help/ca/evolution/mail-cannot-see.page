@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-cannot-see" xml:lang="ca">
+
+  <info>
+    <desc>Si heu rebut o enviat un correu electrònic, però no el podeu trobar enlloc.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="3.31.5" version="0.5" date="2019-01-18" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Phil Bull</name>
+      <email its:translate="no">philbull@gmail.com</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>No puc veure alguns correus electrònics, on són?</title>
+
+<list>
+ <item>
+  <p>Comproveu si heu <link xref="mail-filters-not-working">utilitzat filtres</link> als missatges entrants (o sortints). Això podria moure els missatges automàticament cap a una altra destinació.</p>
+ </item>
+ <item>
+  <p>Consulteu la vostra <link xref="mail-searching#search-many">visualització de cerca a la barra de cerca</link> situada sobre la llista de missatges. Potser la llista desplegable <gui>Mostra</gui> està establerta en un filtre com a <gui>Missatges llegits</gui>, o l'entrada de text introduïda conté algun valor. Feu clic a la icona amb l'escombra per a esborrar el camp de cerca.</p>
+ </item>
+ <item>
+  <p>Si no podeu veure cap correu electrònic en una carpeta, comproveu que no hàgiu maximitzat la vista prèvia del missatge (de manera que el tauler de la llista de missatges està amagat). Per a fer-ho, feu clic a <guiseq><gui>Vista</gui><gui>Previsualització</gui><gui>Mostra la vista prèvia de missatges</gui></guiseq>.</p>
+ </item>
+ <item>
+  <p>Seleccioneu <guiseq><gui>Visualitza</gui><gui>Mostra els missatges suprimits</gui></guiseq> i <guiseq><gui>Visualitza</gui><gui>Mostra els missatges de correu brossa</gui></guiseq> perquè tots els missatges siguin visibles.</p>
+ </item>
+ <item>
+  <p><link xref="mail-default-folder-locations">Comproveu la configuració de la vostra carpeta.</link> Potser s'han situat en una carpeta diferent a la que pensàveu.</p>
+ </item>
+</list>
+
+</page>

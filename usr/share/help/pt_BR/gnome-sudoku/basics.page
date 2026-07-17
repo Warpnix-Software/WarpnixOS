@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="basics" xml:lang="pt_BR">
+  <info>
+    <revision pkgversion="3.4" version="0.1" date="2012-03-08" status="final"/>
+    <revision pkgversion="3.26" version="0.2" date="2017-12-05" status="review"/>
+    <link type="guide" xref="index#play"/>
+    <credit type="author copyright">
+      <name>Chris Beiser</name>
+      <email>ctbeiser@gmail.com</email>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Michael Hill</name>
+      <email>mdhillca@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Compartilha Igual 3.0</p>
+    </license>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Vladimir Melo</mal:name>
+      <mal:email>vladimirmelo@foresightlinux.org</mal:email>
+      <mal:years>2007,</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yuri Otávio</mal:name>
+      <mal:email>yuriotavio@hotmail.com</mal:email>
+      <mal:years>2017,</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Fontenelle</mal:name>
+      <mal:email>rafaelff@gnome.org</mal:email>
+      <mal:years>2018.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Leônidas Araújo</mal:name>
+      <mal:email>leorusvellt@hotmail.com</mal:email>
+      <mal:years>2022</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Básico</title>
+<p>O Sudoku pode ser jogado usando o teclado, mouse ou qualquer combinação dos dois.</p>
+
+<section id="keyboard">
+<title>Usando o teclado</title>
+<list>
+  <item><p>Para selecionar a célula, use a tecla de seta para mover o esboço azul sobre ele.</p></item>
+  <item><p>Para colocar um número na célula, selecione a célula e então pressione no número.</p></item>
+  <item><p>Para remover o número da célula, selecione a célula e pressione a tecla <key>Delete</key>, a <key>Backspace</key> ou <key>0</key>.</p></item>
+</list>
+</section>
+
+
+<section id="mouse">
+<title>Usando o mouse</title>
+<list>
+	<item><p>Para selecionar uma célula, mova seu mouse sobre ela e clique.</p></item>
+	<item><p>Coloque o número na célula selecionada, clique no centro da célula e depois clique no número que se deseja inserir.</p></item>
+	<item><p>Para remover um número de uma célula selecionada, clique no centro da célula e clique em <gui>Limpar</gui>.</p></item>
+</list>
+</section>
+</page>

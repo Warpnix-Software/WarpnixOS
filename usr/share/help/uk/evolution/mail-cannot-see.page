@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-cannot-see" xml:lang="uk">
+
+  <info>
+    <desc>Ви отримали або надіслали повідомлення, але не можете його ніде знайти.</desc>
+    
+    <link type="guide" xref="index#common-mail-problems"/>
+
+    <revision pkgversion="3.31.5" version="0.5" date="2019-01-18" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Phil Bull</name>
+      <email its:translate="no">philbull@gmail.com</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Програма не показує деяких повідомлень. Де вони?</title>
+
+<list>
+ <item>
+  <p>Перевірте, чи <link xref="mail-filters-not-working">використовуються фільтри</link> для вхідних (або вихідних) повідомлень. Використання фільтрів може призвести до автоматичного пересування ваших повідомлень до інших тек.</p>
+ </item>
+ <item>
+  <p>Перевірте вашу <link xref="mail-searching#search-many">панель пошуку на смужці пошуку</link> безпосередньо над списком повідомлень. Можливо, у спадному списку <gui>Показати</gui> встановлено фільтр, зокрема <gui>Прочитані повідомлення</gui>, або у полі для введення тексту міститься якийсь рядок. Натисніть піктограму із віником, щоб очистити поле пошуку.</p>
+ </item>
+ <item>
+  <p>Якщо програма не показує жодного повідомлення у теці, перевірте, чи не було максимізовано панель попереднього перегляду повідомлень (так, що для панелі списку повідомлень просто не вистачило місця). Для цього скористайтеся пунктом меню <guiseq><gui>Перегляд</gui><gui>Попередній перегляд</gui><gui>Попередній перегляд повідомлення</gui></guiseq>.</p>
+ </item>
+ <item>
+  <p>Позначте пункти меню <guiseq><gui>Перегляд</gui><gui>Показати вилучені листи</gui></guiseq> і <guiseq><gui>Перегляд</gui><gui>Показувати листи зі спамом</gui></guiseq>, щоб забезпечити показ усіх повідомлень.</p>
+ </item>
+ <item>
+  <p><link xref="mail-default-folder-locations">Перевірте параметри ваших тек.</link> Можливо, потрібні вам параметри було встановлено не для тих тек.</p>
+ </item>
+</list>
+
+</page>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="invert-colors" xml:lang="da">
+
+  <info>
+    <link type="guide" xref="index#tips"/>
+
+    <desc>Inverterer man farverne, kan visse tekster være lettere at læse.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Anna Philips</name>
+      <email>anna.cs.au@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  </info>
+
+<title>Inverter farverne på en side</title>
+
+
+ <p>For at skifte sort ud med hvid, hvid med sort, og så fremdeles, skal du gå til menuen <gui style="menuitem">Vis</gui> og vælge <gui style="menuitem">Inverter farver</gui> (eller trykke på <keyseq><key>Ctrl</key><key>I</key></keyseq>).</p>
+
+<note style="tip">
+ <p>Gør du det, kan det være lettere at læse tekst, især hvis du har et svagt syn.</p>
+</note>
+</page>

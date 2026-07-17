@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="deleting-emails" xml:lang="ru">
+
+  <info>
+    <desc>Удаление писем или вложений для уменьшения размера почтового ящика.</desc>
+    
+    <link type="guide" xref="deleting-to-free-disk-space"/>
+    <link type="seealso" xref="mail-moving-emails"/>
+    <link type="guide" xref="mail-attachments"/>
+
+    <revision pkgversion="3.0.2" version="0.3" date="2012-03-08" status="final"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Удаление писем или вложений без возможности восстановления</title>
+
+<section id="emails">
+<title>Почта</title>
+<p><app>Evolution</app> удаляет письма на серверах IMAP путём <em>отметки</em> сообщений на удаление; место освобождается только после <em>очистки</em> отмеченных сообщений пользователем.</p>
+
+<p>Чтобы очистить определённую папку, выберите пункт меню <guiseq><gui>Папка</gui><gui>Уничтожить удалённые</gui></guiseq> или воспользуйтесь комбинацией клавиш <keyseq><key>Ctrl</key><key>E</key></keyseq>. Чтобы очистить все папки, выберите пункт меню <guiseq><gui>Файл</gui><gui>Очистить корзину</gui></guiseq>. Это работает и для других типов учётных записей.</p>
+</section>
+
+<section id="attachments">
+<title>Вложения</title>
+<p>Чтобы удалить вложения письма, выберите сообщение и воспользуйтесь пунктом меню <guiseq><gui>Сообщение</gui><gui>Удалить вложения</gui></guiseq>.</p>
+</section>
+</page>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="logarithm" xml:lang="ja">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>対数</title>
+    
+    <p>対数は、log <link xref="function">関数</link>を使用して計算できます。</p>
+    <example>
+    <p>log 100</p>
+    </example>
+    <p>異なる基数で対数を計算するには、関数の後に<link xref="superscript">下つき数字</link>を付けます。</p>
+    <example>
+    <p>log₂ 32</p>
+    </example>
+    <p>自然対数を計算するには、ln 関数を使用します。</p>
+    <example>
+    <p>ln 1.32</p>
+    </example>
+    <p>オイラー数は、<link xref="variable">変数</link> e を使用して入力できます。</p>
+    <example>
+    <p>e^1.32</p>
+    </example>
+</page>

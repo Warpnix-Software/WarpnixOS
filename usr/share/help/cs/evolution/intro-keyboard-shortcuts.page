@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="intro-keyboard-shortcuts" xml:lang="cs">
+
+  <info>
+    <desc>Jak můžete ušetřit čas pomocí klávesových zkratek.</desc>
+
+    <link type="guide" xref="index#getting-started"/>
+    <revision pkgversion="3.30.4" version="0.7" date="2019-01-11" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Raniere Silva</name>
+      <email its:translate="no">raniere@rgaiacs.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en -->
+ </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+  </info>
+
+<title>Klávesové zkratky</title>
+
+<p>Tato stránka poskytuje přehled klávesových zkratek, které vám pomohou používat aplikaci <app>Evolution</app> efektivněji.</p>
+
+<note style="tip">
+<p>Kromě zkratek uvedených níže můžete pro navigaci pomocí klávesnice použít akcelerátory.</p> 
+<p>Stiskněte klávesu <key>Alt</key> a zobrazí se <em>akcelerátory</em>: podtržené písmena v položkách nabídky, tlačítcích a jiných ovládacích prvcích. Stisknutím <key>Alt</key> a podrženého písmene dosáhnete stejného efektu, jako byste na něj klikli.</p>
+</note>
+
+
+<section id="global">
+<title>Globální</title>
+<table rules="rows" frame="top bottom">
+  <tr xml:id="global-ctrl-1">
+    <td><p><keyseq><key>Ctrl</key><key>1</key></keyseq></p></td>
+    <td><p>Přepnout se na poštu</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-2">
+    <td><p><keyseq><key>Ctrl</key><key>2</key></keyseq></p></td>
+    <td><p>Přepnout se na kontakty</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-3">
+    <td><p><keyseq><key>Ctrl</key><key>3</key></keyseq></p></td>
+    <td><p>Přepnout se na kalendář</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-4">
+    <td><p><keyseq><key>Ctrl</key><key>4</key></keyseq></p></td>
+    <td><p>Přepnout se na úkoly</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-5">
+    <td><p><keyseq><key>Ctrl</key><key>5</key></keyseq></p></td>
+    <td><p>Přepnout se na poznámky</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-n">
+    <td><p><keyseq><key>Ctrl</key><key>N</key></keyseq></p></td>
+    <td><p>Vytvořit novou položku v aktuální části</p></td>
+  </tr>
+  <tr xml:id="global-f6">
+    <td><p><key>F6</key></p></td>
+    <td><p>Cyklicky přepínat zaměření mezi panely</p></td>
+  </tr>
+  <tr xml:id="global-shift-ctrl-q">
+    <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>Q</key></keyseq></p></td>
+    <td><p>Vyčistit vyhledávací lištu</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-w">
+    <td><p><keyseq><key>Ctrl</key><key>W</key></keyseq></p></td>
+    <td><p>Zavřít okno</p></td>
+  </tr>
+  <tr xml:id="global-shift-ctrl-w">
+    <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>W</key></keyseq></p></td>
+    <td><p>Otevřít nové okno</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-q">
+    <td><p><keyseq><key>Ctrl</key><key>Q</key></keyseq></p></td>
+    <td><p>Ukončit <app>Evolution</app></p></td>
+  </tr>
+  <tr xml:id="global-ctrl-p">
+    <td><p><keyseq><key>Ctrl</key><key>P</key></keyseq></p></td>
+    <td><p>Vytisknout výběr</p></td>
+  </tr>
+  <tr xml:id="global-ctrl-s">
+    <td><p><keyseq><key>Ctrl</key><key>S</key></keyseq></p></td>
+    <td><p>Uložit výběr</p></td>
+  </tr>
+  <tr xml:id="global-del">
+    <td><p><key>Del</key> nebo <key>Backspace</key></p></td>
+    <td><p>Smazat výběr</p></td>
+  </tr>
+  <tr xml:id="global-shift-ctrl-v">
+    <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>V</key></keyseq></p></td>
+    <td><p>Přesunout poštu nebo kontakty do složky</p></td>
+  </tr>
+  <tr xml:id="global-shift-ctrl-y">
+    <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>Y</key></keyseq></p></td>
+    <td><p>Zkopírovat poštu nebo kontakty do složky</p></td>
+  </tr>
+</table>
+</section>
+
+<section id="mail">
+<title>Pošta</title>
+<table rules="rows" frame="top bottom">
+  <tr xml:id="mail-shift-ctrl-m">
+    <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>M</key></keyseq></p></td>
+    <td><p>Vytvořit novou zprávu</p></td>
+  </tr>
+  <tr xml:id="mail-f12">
+    <td><p><key>F12</key></p></td>
+    <td><p>Odeslat a přijmout zprávy</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-y">
+    <td><p><keyseq><key>Ctrl</key><key>Y</key></keyseq></p></td>
+    <td><p>Použít na výběr filtry</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-o">
+    <td><p><keyseq><key>Ctrl</key><key>O</key></keyseq> nebo <key>Enter</key></p></td>
+    <td><p>Otevřít výběr v novém okně</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-f">
+    <td><p><keyseq><key>Ctrl</key><key>F</key></keyseq></p></td>
+    <td><p>Přeposlat výběr</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-k">
+    <td><p><keyseq><key>Ctrl</key><key>K</key></keyseq></p></td>
+    <td><p>Označit výběr jako přečtené</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-shift-k">
+    <td><p><keyseq><key>Ctrl</key><key>Shift</key><key>K</key></keyseq></p></td>
+    <td><p>Označit výběr jako nepřečtené</p></td>
+  </tr>
+  <tr xml:id="mail-arrow-down">
+    <td><p><key>↓</key></p></td>
+    <td><p>Přeskočit na následující zprávu</p></td>
+  </tr>
+  <tr xml:id="mail-arrow-up">
+    <td><p><key>↑</key></p></td>
+    <td><p>Přeskočit na předchozí zprávu</p></td>
+  </tr>
+  <tr xml:id="mail-dot">
+    <td><p><key>.</key> nebo <key>]</key></p></td>
+    <td><p>Přeskočit na následující nepřečtenou zprávu</p></td>
+  </tr>
+  <tr xml:id="mail-comma">
+    <td><p><key>,</key> nebo <key>[</key></p></td>
+    <td><p>Přeskočit na předchozí nepřečtenou zprávu</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-r">
+    <td><p><keyseq><key>Ctrl</key><key>R</key></keyseq></p></td>
+    <td><p>Odpovědět odesílateli</p></td>
+  </tr>
+  <tr xml:id="mail-ctrl-l">
+    <td><p><keyseq><key>Ctrl</key><key>L</key></keyseq></p></td>
+    <td><p>Odpovědět seznamu adresátů</p></td>
+  </tr>
+  <tr xml:id="mail-shift-ctrl-r">
+    <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>R</key></keyseq></p></td>
+    <td><p>Odpovědět všem příjemcům</p></td>
+  </tr>
+  <tr xml:id="mail-backspace">
+    <td><p><key>Backspace</key></p></td>
+    <td><p>Posunout nahoru</p></td>
+  </tr>
+  <tr xml:id="mail-space">
+    <td><p><key>mezerník</key></p></td>
+    <td><p>Posunout dolů</p></td>
+  </tr>
+</table>
+
+<p>Klávesami <key>mezerník</key> a <key>backspace</key> se můžete také pohybovat po nepřečtených zprávách napříč složkami:</p>
+<list>
+<item><p>Když zmáčknete mezerník poprvé, přesune vás na následující nepřečtenou zprávu.</p></item>
+<item><p>V případě, že je zpráva delší než obrazovka, funguje <key>mezerník</key> jak <key>Page Down</key>.</p></item>
+<item><p>Pokud zmáčknete <key>mezerník</key> poté, co jste se dostali na konec stránky, přesune vás na další nepřečtenou zprávu.</p></item>
+<item><p>Pokud se v poštovní schránce nenachází žádné další nepřečtené právy, zmáčknutí <key>mezerníku</key> vás přenese na nepřečtenou zprávu v další složce.</p></item>
+<item><p>Pokud nové zprávy přicházejí do více složek, <key>mezerník</key> bude přepínat mezi těmito složkami. Tato funkce vám umožňuje přeskočit na další nepřečtenou zprávu v jiné složce, aniž byste klikali na složku.</p></item>
+<item><p><key>Backspace</key> se chová stejně, ale obráceně: posouvá zprávou nahoru a skáče na další nepřečtenou zprávu v předchozí složce.</p></item>
+</list>
+</section>
+
+<section id="calendar">
+<title>Kalendář</title>
+<table rules="rows" frame="top bottom">
+  <tr xml:id="calendar-shift-ctrl-a">
+    <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>A</key></keyseq></p></td>
+    <td><p>Vytvořit novou událost</p></td>
+  </tr>
+  <tr xml:id="calendar-shift-ctrl-e">
+    <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>E</key></keyseq></p></td>
+    <td><p>Vytvořit novou schůzku</p></td>
+  </tr>
+  <tr xml:id="calendar-shift-ctrl-t">
+    <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>T</key></keyseq></p></td>
+    <td><p>Vytvořit nový úkol</p></td>
+  </tr>
+  <tr xml:id="calendar-shift-ctrl-o">
+    <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>O</key></keyseq></p></td>
+    <td><p>Vytvořit novou poznámku</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-t">
+    <td><p><keyseq><key>Ctrl</key><key>T</key></keyseq></p></td>
+    <td><p>Přejít na dnešní den</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-g">
+    <td><p><keyseq><key>Ctrl</key><key>G</key></keyseq></p></td>
+    <td><p>Přejít na datum</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-y">
+    <td><p><keyseq><key>Ctrl</key><key>Y</key></keyseq></p></td>
+    <td><p>Zobrazení dne</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-j">
+    <td><p><keyseq><key>Ctrl</key><key>J</key></keyseq></p></td>
+    <td><p>Zobrazení pracovního týdne</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-k">
+    <td><p><keyseq><key>Ctrl</key><key>K</key></keyseq></p></td>
+    <td><p>Zobrazení týdne</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-m">
+    <td><p><keyseq><key>Ctrl</key><key>M</key></keyseq></p></td>
+    <td><p>Zobrazení měsíce</p></td>
+  </tr>
+  <tr xml:id="calendar-ctrl-l">
+    <td><p><keyseq><key>Ctrl</key><key>L</key></keyseq></p></td>
+    <td><p>Zobrazení seznamu</p></td>
+  </tr>
+</table>
+</section>
+
+<section id="contacts">
+<title>Kontakty</title>
+<table rules="rows" frame="top bottom">
+  <tr xml:id="contacts-shift-ctrl-c">
+    <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>C</key></keyseq></p></td>
+    <td><p>Vytvořit nový kontakt</p></td>
+  </tr>
+  <tr xml:id="contacts-shift-ctrl-l">
+    <td><p><keyseq><key>Shift</key><key>Ctrl</key><key>L</key></keyseq></p></td>
+    <td><p>Vytvořit nový seznamu kontaktů</p></td>
+  </tr>
+</table>
+</section>
+
+<section id="change-keyboard-shortcuts">
+<title>Změna klávesových zkratek</title>
+<note style="advanced"><p>Keyboard shortcuts can be changed in <guiseq><gui>View</gui><gui>Layout</gui><gui>Customize…</gui></guiseq>. See the <link xref="customize-ui-items">Customizing user interface</link> section for more information.</p></note>
+</section>
+
+</page>

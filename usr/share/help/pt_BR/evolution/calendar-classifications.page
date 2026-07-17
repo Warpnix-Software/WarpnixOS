@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="calendar-classifications" xml:lang="pt-BR">
+
+  <info>
+    <link type="guide" xref="index#calendar-advanced"/>
+
+    <revision pkgversion="3.28.2" version="0.5" date="2018-07-09" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+      https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#bxmtbjb
+      -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Restringindo a visibilidade de compromissos em servidores remotos.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Fontenelle</mal:name>
+      <mal:email>rafaelff@gnome.org</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Usando classificações</title>
+
+  <p>Se você estiver usando uma agenda em um servidor remoto (como Novell GroupWise ou Microsoft Exchange), poderá selecionar uma classificação para determinar quem pode vê-lo.</p>
+
+  <p>Para definir uma classificação para um compromisso, clique em <guiseq><gui>Opções</gui><gui>Classificação</gui></guiseq> e selecione uma classificação no editor. <gui>Público</gui> é a categoria padrão e um compromisso público pode ser visto por qualquer pessoa na rede de compartilhamento de agenda. <gui>Privado</gui> denota um nível de segurança e <gui>Confidencial</gui> um nível ainda mais alto.</p>
+
+  <p>Os diferentes níveis variam dependendo das configurações do servidor; verifique com o administrador do sistema ou ajuste as configurações de delegação.</p>
+
+  <p>Se você deseja que eventos, memorandos e tarefas sejam classificados como privados por padrão, habilite a preferência em <guiseq><gui>Editar</gui><gui>Preferências</gui><gui>Agenda e tarefas</gui><gui>Geral</gui><gui>Diversos</gui></guiseq>.</p>
+
+</page>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="addremove-sources" xml:lang="es">
+
+  <info>
+    <credit type="author">
+      <name>Equipo de documentación de Ubuntu</name>
+    </credit>
+    <desc>Añadir repositorios para ampliar los origenes de software que Ubuntu usa para instalaciones y actualizaciones.</desc>
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    <link type="guide" xref="addremove"/>
+    <revision version="20.10" date="2020-09-13" status="review"/>
+  </info>
+
+  <title>Añadir repositorios de software</title>
+
+  <p>Además de los repositorios de software predeterminados de Ubuntu, también hay programas disponibles en orígenes de terceros. Si quiere instalar programas desde un repositorio de terceros, deberá añadirlo en la lista de repositorios disponibles de Ubuntu.</p>
+
+  <note style="warning">
+    <p>Solo añada repositorios de software que provengan de lugares de su confianza.</p>
+    <p>Los repositorios de software de terceros no son verificados por su seguridad o confiabilidad por miembros de Ubuntu, y pueden contener software dañino para su equipo.</p>
+  </note>
+
+<p>
+</p>
+   <p>Para añadir un repositorio:</p>
+
+  <steps>
+    <item>
+      <p>Abra <app>Software y actualizaciones</app> mediante la barra de búsqueda de <em>Actividades</em>.</p>
+    </item>
+    <item>
+      <p>Vaya a la pestaña <gui>Otro software</gui>.</p>
+    </item>
+    <item>
+      <p>Pulse <gui>Añadir</gui> e introduzca la línea de APT del repositorio. Debería estar disponible en el sitio web del repositorio, y tener un aspecto similar a este:</p>
+      <p>
+        <code its:translate="no">deb http://archive.ubuntu.com/ubuntu/ resolute main</code>
+      </p>
+    </item>
+    <item>
+      <p>Pulse en <gui>Añadir origen</gui>. Introduzca su contraseña en la ventana de autenticación.</p>
+    </item>
+    <item>
+      <p>
+        Close the <app>Software &amp; Updates</app> window. <app>App Center</app> will then
+        check your software sources for new software.
+      </p>
+    </item>
+    <item>
+      <p>La mayoría de los repositorios proporcionan una clave de firma para poder comprobar los paquetes descargados. Así que además de los pasos anteriores debería seguir las posibles instrucciones sobre cómo descargar e instalar la clave de firma (clave GPG).</p>
+    </item>
+  </steps>
+
+</page>

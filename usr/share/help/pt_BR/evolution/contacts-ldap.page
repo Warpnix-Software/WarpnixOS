@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-ldap" xml:lang="pt-BR">
+
+  <info>
+    <link type="guide" xref="contacts-using-several-addressbooks"/>
+
+    <revision pkgversion="3.1.5" version="0.4" date="2015-03-09" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-contact-sharing.html.en
+	   and
+	   https://help.gnome.org/users/evolution/2.32/config-prefs-contact.html.en#bxmw6w5
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Use catálogos de endereços compartilhados em uma rede local.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Fontenelle</mal:name>
+      <mal:email>rafaelff@gnome.org</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Adicionando acesso LDAP</title>
+
+  <p>O protocolo LDAP foi criado para permitir que os usuários compartilhem informações de contato em uma rede, compartilhando o acesso a um diretório central. O LDAP permite que uma empresa mantenha um conjunto compartilhado de informações de contato. Muitas empresas mantêm um catálogo de endereços LDAP comum para todos os seus funcionários ou para contatos de clientes.</p>
+
+<section id="add-ldap-addressbook">
+  <title>Adicionando um catálogo de endereços LDAP</title>
+
+  <steps>
+    <item>
+      <p>Clique em <guiseq><gui>Arquivo</gui><gui>Novo</gui> <gui>Catalogo de endereços</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>In the <gui>Type</gui> field, select
+      <gui>On LDAP Servers</gui>.</p>
+    </item>
+    <item>
+      <p>Digite um nome de sua preferência.</p>
+    </item>
+    <item>
+      <p>In the <gui>Connecting to LDAP</gui> tab:</p>
+      <list>
+        <item>
+          <p>Digite o endereço do servidor, o número da porta (o número padrão é 389) e se deseja se conectar com segurança.</p>
+        </item>
+        <item>
+          <p>Defina o método de login e seu nome de usuário.</p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>In the <gui>Using LDAP</gui> tab you define the following
+      settings:</p>
+      <list>
+        <item>
+	  <p>Base de pesquisa: a base de pesquisa é o ponto de partida para uma pesquisa de diretório. Entre em contato com o administrador do sistema para obter informações sobre as configurações corretas.</p>
+        </item>
+        <item>
+	  <p>Escopo da pesquisa: o escopo da pesquisa é a amplitude de uma determinada pesquisa.</p>
+	  <p>As opções a seguir estão disponíveis:</p>
+          <list>
+            <item>
+	      <p>Um nível: pesquisa uma entrada sob a base da pesquisa.</p>
+	    </item>
+            <item>
+	      <p>Subárvore: pesquisa a base da pesquisa e todas as entradas sob ela.</p>
+            </item>
+          </list>
+        </item>
+        <item>
+	  <p>Filtro de pesquisa: O filtro de pesquisa pode ser definido aqui para todas as entradas LDAP. Por exemplo:</p>
+          <list>
+            <item>
+              <p><code>ObjectClass=*</code>: Lista todos os objetos do servidor.</p>
+	    </item>
+            <item>
+	      <p><code>ObjectClass=User</code>: Lista apenas os usuários.</p>
+	    </item>
+            <item>
+	      <p><code>Filter (|(ObjectClass=User)(ObjectClass=groupOfNames))</code>: Obtém os objetos usuário e lista de contatos.</p>
+	    </item>
+            <item>
+	      <p><code>(&amp;(mail=*)(ObjectClass=*))</code>: Lista os objetos associados com endereços de e-mail.</p>
+	    </item>
+          </list>
+        </item>
+        <item>
+	  <p>Download Limit: The maximum number of results for a given search.
+	  Most servers refuse to send more than 500 contacts, but you can set
+	  the number lower if you want to shorten downloads for very broad
+	  searches. This option is ignored, if <gui>Copy book content locally
+	  for offline operation</gui> is checked.</p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Clique em <gui style="button">OK</gui>.</p>
+    </item>
+  </steps>
+
+  <note style="tip">
+    <p>Se você não tiver certeza sobre algumas configurações, pergunte ao administrador do sistema.</p>
+  </note>
+
+</section>
+
+<section id="ldap-vs-local-addressbooks">
+  <title>Diferentes para catálogos de endereços locais</title>
+
+  <p>Os catálogos de endereços LDAP funcionam como catálogos de endereços locais em seu computador, com as seguintes exceções:</p>
+
+  <list>
+    <item>
+      <p>As pastas de rede estão disponíveis apenas quando você está conectado à rede. Se você usa um laptop ou tem uma conexão de modem, pode desejar copiar ou armazenar em cache parte do diretório da rede. Você faz isso arrastando e soltando os contatos desejados nas listas de endereços locais.</p>
+    </item>
+    <item>
+      <p>You can also mark the network folder for offline usage. To mark the
+      folder, right-click the folder, click <gui>Properties</gui> and select
+      <gui>Copy folder content locally for offline operation</gui>.</p>
+    </item>
+    <item>
+      <p>Para evitar tráfego de rede em excesso, o <app>Evolution</app> normalmente não carrega dados do servidor LDAP ao abrir.</p>
+    </item>
+    <item>
+      <p>Dependendo das configurações do servidor, talvez você não consiga editar todos os campos de um contato armazenado em um servidor LDAP. Alguns servidores proíbem algumas ou todas as mudanças e outros usam um conjunto menor de campos do que o permitido pelo <app>Evolution</app>. Verifique com o administrador do sistema se precisar de configurações diferentes.</p>
+    </item>
+  </list>
+
+</section>
+
+</page>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="question" id="flags" xml:lang="ca">
+  <info>
+
+    <link type="guide" xref="index#play"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.5.5" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.3" date="2018-09-01" status="review"/>
+    <revision pkgversion="3.31.91" version="0.4" date="2019-03-03" status="review"/>
+
+    <credit type="author copyright">
+      <name>Tiffany Antopolski</name>
+      <email>tiffany.antopolski@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+    <credit type="author">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2012</years>
+    </credit>
+
+    <credit type="author copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Joan Duran</mal:name>
+      <mal:email>jodufi@gmail.com</mal:email>
+      <mal:years>2007, 2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Com utilitzar les banderes</title>
+  <table>
+  <tr>
+   <td>
+     <media type="image" mime="image/svg" src="figures/flags.png" its:translate="no"/>
+   </td>
+   <td>
+     <p>Les banderes s'utilitzen per a marcar les caselles que sospiteu que poden amagar una mina. Col·locar una bandera en una casella evita que hi feu clic i que potser provoqueu una explosió, cosa que finalitzaria la partida.</p>
+     <p>L'aspecte exacte de les banderes depèn del tema. Podeu canviar el tema prement el botó de menú de la cantonada superior dreta de la finestra i seleccionant <gui style="menuitem">Aparença</gui>.</p>
+    </td>
+   </tr>
+  </table>
+
+  <section id="flags-put">
+    <title>Com col·locar una bandera en una casella</title>
+    <table>
+      <tr>
+        <td>
+	  <p>No es pot fer clic en una bandera. Per a col·locar una bandera en una casella:</p>
+          <list>
+            <item><p>feu clic amb el botó secundari a una casella no descoberta.</p></item>
+          </list>
+        </td>
+        <td>
+          <media type="image" mime="image/svg" width="60" src="figures/flag.svg" its:translate="no"/>
+        </td>
+        </tr>
+      </table>
+
+  </section>
+
+  <section id="flags-blue">
+    <title>Ús de la bandera de <em>pregunta</em></title>
+    <p>Si no esteu segur si una casella amaga una mina, podeu utilitzar la bandera de <em>pregunta</em>.</p>
+    <table>
+      <tr>
+        <td>
+          <p>Per a col·locar una bandera <em>No estic segur</em> en una casella:</p>
+          <list>
+	    <item><p>feu clic dret dos cops en una casella buida o un cop en una bandera.</p></item>
+          </list>
+        </td>
+        <td>
+          <media type="image" mime="image/svg" width="60" src="figures/flag-question.svg" its:translate="no"/>
+        </td>
+      </tr>
+    </table>
+
+  <note>
+    <p>Per a habilitar aquestes banderes, premeu el botó de menú de la cantonada superior dreta de la finestra i marqueu la casella <gui style="checkbox">Utilitza banderes de pregunta</gui>.</p>
+  </note>
+
+  </section>
+  
+</page>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-enable-html-format" xml:lang="ru">
+
+  <info>
+    <desc>Включение формата HTML в редакторе сообщений.</desc>
+    <link type="guide" xref="mail-composer-html#formatting-options-html"/>
+
+    <revision pkgversion="3.5.90" version="0.1" date="2012-08-16" status="draft"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-html -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Включение формата HTML</title>
+
+<p>Можно преобразовать формат сообщения из простого текста в HTML, выбрав в строке меню <guiseq><gui>Формат</gui><gui>HTML</gui></guiseq>.</p>
+<p>Либо можно изменить значение в первом раскрывающемся списке под полем <gui>Тема</gui> с <gui>Простой текст</gui> на <gui>HTML</gui>.</p>
+<p>Если выбран формат HTML, под полем <gui>Тема</gui> будет показана вторая панель инструментов (она содержит параметры, доступные только для HTML).</p>
+<p>Чтобы по умолчанию отправлять все письма в формате HTML, включите параметр <guiseq><gui>Правка</gui><gui>Параметры</gui><gui>Настройки редактора</gui><gui>Поведение по умолчанию</gui><gui>Форматировать сообщения в HTML</gui></guiseq>.</p>
+
+</page>

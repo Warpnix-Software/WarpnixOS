@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="keyboard" xml:lang="sr">
+
+    <info>
+        <link type="guide" xref="index#ui"/>
+    </info>
+
+	<title>Коришћење тастатуре</title>
+
+    <p>Све математичке једначине се могу унети коришћењем тастатуре.</p>
+    <p>Можете користити следеће комбинације за унос тастера који се можда не налазе на вашој тастатури.</p>
+    <table>
+    <tr>
+    <td><p>×</p></td>
+    <td><p><key>*</key></p></td>
+    </tr>
+    <tr>
+    <td><p>÷</p></td>
+    <td><p><key>/</key></p></td>
+    </tr>
+    <tr>
+    <td><p>^</p></td>
+    <td><p><key>*</key> два пута</p></td>
+    </tr>
+    <tr>
+    <td><p>√</p></td>
+    <td><p><keyseq><key>Ктрл</key><key>R</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>π</p></td>
+    <td><p><keyseq><key>Ктрл</key><key>P</key></keyseq></p></td>
+    </tr>
+    </table>
+    <p>Да упишете <link xref="superscript">бројеве изложиоца</link> користите <keyseq><key>Ктрл</key>број</keyseq>, а за индекс користите <keyseq><key>Алт</key>број</keyseq>.</p>
+    <p>Када сте у <link xref="mouse">програмерском режиму</link>, да кружите кроз цифре основе користите:</p>
+    <table>
+    <tr>
+    <td><p>Бинарна</p></td>
+    <td><p><keyseq><key>Ктрл</key><key>B</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>Октална</p></td>
+    <td><p><keyseq><key>Ктрл</key><key>O</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>Децимална</p></td>
+    <td><p><keyseq><key>Ктрл</key><key>D</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>Хексадецимална</p></td>
+    <td><p><keyseq><key>Ктрл</key><key>H</key></keyseq></p></td>
+    </tr>
+    </table>
+    <p>Да се крећете по уносима историјата можете да користите:</p>
+    <table>
+    <tr>
+    <td><p>Претходни унос</p></td>
+    <td><p><keyseq><key>Алт</key><key>Стрелица горе</key></keyseq></p></td>
+    </tr>
+    <tr>
+    <td><p>Следећи унос</p></td>
+    <td><p><keyseq><key>Алт</key><key>Стрелица доле</key></keyseq></p></td>
+    </tr>
+    </table>
+</page>

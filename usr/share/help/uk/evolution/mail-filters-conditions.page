@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-filters-conditions" xml:lang="uk">
+
+  <info>
+    <desc>Доступні умови для налаштовування фільтрування.</desc>
+
+    <link type="seealso" xref="mail-filters"/>
+
+    <revision pkgversion="3.6.4" version="0.3" date="2013-04-20" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-organize-filters.html.en#usage-mail-org-filters-new -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Доступні умови фільтрування</title>
+
+<list>
+
+<!-- As filter and search folder conditions share a fair amount of options, those ones are centrally in one file that's 
+included by XInclude. See http://blogs.gnome.org/shaunm/2011/07/21/understanding-xinclude/ for how it works. -->
+<include xmlns="http://www.w3.org/2001/XInclude" href="xinclude-filter-vfolder-conditions.xml" xpointer="xmlns(mal=http://projectmallard.org/1.0/)xpointer(/mal:info/mal:item)"/>
+
+<item><p>Обліковий рахунок відправника:</p>
+<p>Фільтрує повідомлення за сервером, з якого їх було отримано. Найкориснішим таке фільтрування є, якщо ви користуєтеся декількома обліковими записами пошти POP.</p></item>
+
+<item><p>Канал до програми:</p>
+<p><app>Evolution</app> може використовувати зовнішню команду для обробки повідомлення і обробляти отримані дані на основі повернутого значення. Команди, які використовуються у цей спосіб, мають повертати ціле значення. Це фільтрування типово використовується для додавання зовнішнього фільтрування небажаної кореспонденції.</p></item>
+
+<item><p>Перевірка на спам:</p>
+<p>Фільтрує на основі результатів перевірки <link xref="mail-spam">повідомлення на небажаність</link>.</p></item>
+
+<item><p>Відповідає усім:</p>
+<p>Застосовує дію завжди до будь-якого повідомлення без врахування подальших умов. Цей варіант може бути корисним наприкінці списку фільтрів повідомлень для обробки усіх повідомлень, які не відповідають жодній іншій умові обробки фільтрами у списку.</p></item>
+
+</list>
+</page>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="numeric-keypad" xml:lang="ko">
+
+  <info>
+    <link type="guide" xref="keyboard"/>
+    <desc>숫자 키패드를 기본으로 활성화합니다.</desc>
+
+    <revision version="18.04" date="2018-03-19" status="review"/>
+
+    <credit type="author">
+      <name>우분투 문서화 팀</name>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+  <title>숫자 키패드</title>
+
+  <p><key>Num Lock</key> 키를 사용하면 키보드상에서 숫자 키패드를 키고 끌수 있습니다. 또한 대부분의 컴퓨터들은 바이오스 설정을 통해 컴퓨터 시작시 숫자 키패드를 활성화할지의 여부를 정할수 있습니다. 만약 두가지 방법 모두 사용할수 없다면 다음 패키지를 설치하여 설정 할수 있습니다:</p>
+
+  <steps>
+    <item>
+      <p>the <em>numlockx</em> 패키지 <link href="apt:numlockx">설치하기</link> .</p>
+    </item>
+    <item>
+      <p>패키지를 설치한후 <app><link xref="startup-applications">Startup Applications</link></app> 을 연다음 다음 명령어를 시작프로그램에 추가하십시오: <cmd>numlockx on</cmd></p>
+    </item>
+  </steps>
+
+  <note style="tip">
+    <p>두 번째 단계는 컴퓨터에서 중복될 수 있으므로 먼저 이 단계 없이 시도해 보세요.</p>
+  </note>
+
+</page>

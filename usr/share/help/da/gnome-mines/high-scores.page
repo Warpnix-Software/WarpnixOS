@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="high-scores" xml:lang="da">
+  <info>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.5.5" version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.2" date="2018-09-01" status="review"/>
+    <revision pkgversion="3.31.91" version="0.3" date="2019-03-03" status="review"/>
+    <link type="guide" xref="index#tips"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2012</years>
+    </credit>
+    <credit type="author copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  </info>
+
+  <title>Bedste resultater</title>
+
+  <p>Bedste resultater viser de 10 hurtigste tider, som hvert minefelt er blevet ryddet i.</p>
+
+  <p>Vis de bedste resultater ved at trykke på menuknappen i øverste højre hjørne af vinduet og vælge <gui style="menuitem">Resultater</gui>. Dialogen viser feltstørrelsen <gui>Lille</gui> som standard; vis andre størrelser ved at vælge dem i rullegardinsmenuen øverst i dialogen.</p>
+
+</page>

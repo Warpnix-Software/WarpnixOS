@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-composer-message-templates" xml:lang="id">
+
+  <info>
+ <desc>Message templates to reuse in the composer.</desc>
+
+ <link type="guide" xref="index#mail-composing-advanced"/>
+
+ <revision pkgversion="3.5.90" version="0.3" date="2012-08-17" status="draft"/>
+ <credit type="author">
+   <name its:translate="no">Andre Klapper</name>
+   <email its:translate="no">ak-47@gmx.net</email>
+ </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/b1dlaazl.html.en -->
+ </credit>
+ 
+ <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Templat Pesan</title>
+<p>A message template is a standard message that you can use at any time to send mail with the same pattern.</p>
+<p>To enable the Message Template Plugin:</p>
+<steps>
+<item><p>Pilih <guiseq><gui>Sunting</gui><gui>Plugin</gui></guiseq>.</p></item>
+<item><p>Memfungsikan <gui>Templat</gui>.</p>
+<note style="tip"><p>Jika plugin tidak tersedia di bawah <guiseq><gui>Sunting</gui><gui>Plugins</gui></guiseq>, maka silakan tanyakan di forum dukungan distribusi Anda. Distribusi Anda mungkin telah memutuskan untuk menonaktifkan beberapa plugin atau mengirim plugin dalam paket terpisah.</p></note>
+</item>
+</steps>
+
+
+  <section id="options">
+    <title>Templat Pesan</title>
+  </section>
+
+</page>

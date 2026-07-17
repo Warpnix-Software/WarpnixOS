@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-html-link" xml:lang="uk">
+
+  <info>
+    <desc>Вставлення посилання на вебсайт у редакторі повідомлень.</desc>
+    <link type="guide" xref="mail-composer-html#formatting-options-html"/>
+
+    <revision pkgversion="3.5.90" version="0.4" date="2012-08-16" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#bsait2a -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Вставлення посилання у HTML</title>
+
+
+<p>Ви можете вставити посилання до повідомлення електронної пошти:</p>
+<steps>
+<item><p>Позначте фрагмент тексту, який ви хочете перетворити на посилання.</p></item>
+<item><p>Або виберіть пункт меню <guiseq><gui>Вставка</gui><gui>Посилання…</gui></guiseq>, або клацніть правою кнопкою миші на позначеному фрагменті тексту і виберіть у контекстному меню пункт <gui>Вставити посилання</gui>.</p></item>
+<item><p>Введіть адресу у поле <gui>URL</gui>.</p></item>
+<item><p>Клацніть на «<gui>Закрити</gui>».</p></item>
+</steps>
+
+<p>Крім того, ви можете скористатися піктограмою <media type="image" its:translate="no" src="./figures/html-composer-insert-link.png"/> на другій панелі під рядком <gui>Тема</gui>.</p>
+
+<p>Якщо вам не потрібен спеціальний текст посилання, ви можете просто ввести адресу посилання безпосередньо. Програма автоматично розпізнає її як посилання.</p>
+</page>

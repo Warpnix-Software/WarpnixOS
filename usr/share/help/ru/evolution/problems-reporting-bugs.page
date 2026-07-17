@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="problems-reporting-bugs" xml:lang="ru">
+
+  <info>
+    <desc>Отправка отчётов об ошибках в приложении.</desc>
+
+    <link type="guide" xref="index#tracking-down-problems"/>
+    <link type="seealso" xref="problems-debug-how-to"/>
+
+    <revision pkgversion="3.34.2" version="0.8" date="2020-01-20" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Отправка отчётов об ошибках</title>
+
+<p>Если вам не требуется помощь с настройкой, но вы уверены, что обнаружили ошибку или неверное поведение программы <app>Evolution</app>, или хотите запросить новую функцию, вы можете отправить отчёт в <link href="https://gitlab.gnome.org/GNOME/evolution/issues/">систему отслеживания ошибок GNOME</link>. Обратите внимание, что для этого потребуется зарегистрироваться. Пожалуйста, попытайтесь избежать создания отчётов-дубликатов и сначала ознакомьтесь с <link href="https://wiki.gnome.org/Community/GettingInTouch/BugReportingGuidelines">рекомендациями по написанию отчётов об ошибках</link>.</p><p>Также обратите внимание, что дистрибутивы GNOME иногда внедряют свои собственные изменения в <app>Evolution</app>, которые не входят в программу <app>Evolution</app> в GNOME. Пользователям сложно в этом разобраться, но если вы уверены, что причина в дополнительных изменениях, пожалуйста, создайте отчёт об ошибке в <link href="https://wiki.gnome.org/Bugsquad/TriageGuide/NonGnome#Bug_trackers_for_distributions">системе отслеживания ошибок вашего дистрибутива GNOME</link>.</p>
+
+<p>При подаче отчётов об ошибках рекомендуется включать точную информацию, поскольку благодаря ей другим пользователям будет проще воспроизвести и исправить ошибку. Если можно, включите следующие данные: версия <app>Evolution</app> (воспользуйтесь пунктом меню <guiseq><gui>Справка</gui><gui>О приложении</gui></guiseq>), ваш дистрибутив и точные действия для воспроизведения проблемы, шаг за шагом. Дополнительные сведения доступны в разделе <link href="https://wiki.gnome.org/Community/GettingInTouch/BugReportingGuidelines">рекомендаций по написанию отчётов об ошибках</link>.</p>
+</page>

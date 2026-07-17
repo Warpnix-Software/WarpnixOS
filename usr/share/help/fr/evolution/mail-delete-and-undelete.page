@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-delete-and-undelete" xml:lang="fr">
+
+  <info>
+    <desc>Supprimer, nettoyer et récupérer les courriels.</desc>
+
+    <link type="guide" xref="index#mail-basic"/>
+    <link type="seealso" xref="mail-moving-emails"/>
+    <link type="seealso" xref="deleting-emails"/>
+
+    <revision pkgversion="3.35.91" version="0.3" date="2020-02-21" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en#usage-mail-getnsend-delete and https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en#usage-mail-getnsend-undelete -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Marc Lorber</mal:name>
+      <mal:email>Linux-Lorber@club-internet.fr</mal:email>
+      <mal:years>2006</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jonathan Ernst</mal:name>
+      <mal:email>jonathan@ernstfamily.ch</mal:email>
+      <mal:years>2007</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Claude Paroz</mal:name>
+      <mal:email>claude@2xlibre.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alexandre Franke</mal:name>
+      <mal:email>alexandre.franke@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bruno Brouard</mal:name>
+      <mal:email>annoa.b@gmail.com</mal:email>
+      <mal:years>2012 </mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Alain Lojewski</mal:name>
+      <mal:email>allomervan@gmail.com</mal:email>
+      <mal:years>2013-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Yvan Masson</mal:name>
+      <mal:email>yvan@masson-informatique.fr</mal:email>
+      <mal:years>2017</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Charles Monzat</mal:name>
+      <mal:email>charles.monzat@free.fr</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>vanadiae</mal:name>
+      <mal:email>vanadiae35@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Guillaume Bernard</mal:name>
+      <mal:email>associations@guillaume-bernard.fr</mal:email>
+      <mal:years>2021-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jean-Marc Tissières</mal:name>
+      <mal:email>jmetissieres@gmail.com</mal:email>
+      <mal:years>2022</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Suppression et récupération de messages</title>
+
+<section id="delete">
+<title>Suppression de messages</title>
+
+<p>Pour supprimer un message, sélectionnez-le et appuyez sur la touche <key>Suppr</key> ou cliquez sur le bouton <gui style="button">Supprimer</gui> de la barre d’outils ou pressez <keyseq><key>Ctrl</key><key>D</key></keyseq> ou faites un clic droit sur le message et choisissez <gui>Supprimer</gui>.</p>
+
+<p>Lorsque vous pressez la touche Suppr ou cliquez sur l’icône de la <gui>Corbeille</gui>, votre message n’est pas détruit, mais marqué pour suppression. Vous pouvez voir tous les messages marqués pour suppression dans le dossier <gui>Corbeille</gui>. Pour afficher les messages marqués pour suppression, cliquez sur <guiseq><gui>Affichage</gui><gui>Afficher les messages supprimés</gui></guiseq>. Ces messages apparaissent barrés avant d’être supprimés plus tard.</p>
+
+<p>Pour effacer définitivement tous les messages supprimés d’un dossier, cliquez sur <guiseq><gui>Dossier</gui><gui>Nettoyer</gui></guiseq> ou appuyez sur <keyseq><key>Ctrl</key><key>E</key></keyseq>.</p>
+
+<note style="tip"><p>Lorsque vous lisez des messages dans une fenêtre séparée, le message suivant s’affiche après avoir supprimé un message. Si vous souhaitez que la fenêtre se ferme à la place, exécutez la commande <cmd>gsettings set org.gnome.evolution.mail browser-close-on-delete-or-junk true</cmd></p></note>
+
+</section>
+
+<section id="undelete">
+<title>Récupération de messages</title>
+
+<p>Vous pouvez récupérer un message qui a été supprimé, mais pas nettoyé. Pour récupérer un message, sélectionnez-le et choisissez <guiseq><gui>Édition</gui><gui>Récupérer le message</gui></guiseq>. Notez que <guiseq><gui>Affichage</gui><gui>Afficher les messages supprimés</gui></guiseq> doit être activé pour que cela fonctionne.</p>
+
+<p>Si vous avez marqué un message pour la suppression, sa récupération retire sa marque et le message n’apparaît plus dans le dossier <gui>Corbeille</gui>.</p>
+</section>
+
+</page>

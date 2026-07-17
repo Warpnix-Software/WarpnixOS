@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="exporting-data-calendar" xml:lang="ca">
+
+  <info>
+    <desc>Com exportar les dades del calendari des d'<app>Evolution</app>.</desc>
+
+    <link type="guide" xref="exporting-data"/>
+
+    <revision pkgversion="3.6.4" version="0.4" date="2013-04-20" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Exportar les dades del calendari</title>
+
+<p>Per a exportar un calendari complet, feu clic amb el botó dret al calendari a la llista de calendaris i feu clic a <gui>Desa com</gui>. Els formats disponibles són: iCalendar (ICS, recomanat), valors separats per comes (CSV) i format RDF.</p>
+<p>Si voleu exportar només una cita (o tasca o nota), seleccioneu la cita i seleccioneu <guiseq><gui>Fitxer</gui><gui>Desa com a iCalendar…</gui></guiseq>, o feu clic amb el botó dret a la cita i feu clic a <gui>Desa com a iCalendar…</gui>.</p>
+</page>

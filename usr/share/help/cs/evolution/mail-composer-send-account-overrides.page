@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-send-account-overrides" xml:lang="cs">
+
+  <info>
+   <desc>Jak přiřadit vaše poštovní účty konkrétním složkám a příjemcům.</desc>
+   
+   <link type="guide" xref="index#mail-composing-advanced"/>
+   <link type="seealso" xref="mail-folders"/>
+
+ <revision pkgversion="3.13.90" version="0.1" date="2015-03-09" status="draft"/>
+ <revision pkgversion="3.34.3" version="0.2" date="2020-02-11" status="draft"/>
+ <credit type="author">
+   <name its:translate="no">Andre Klapper</name>
+   <email its:translate="no">ak-47@gmx.net</email>
+ </credit>
+ 
+ <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+     
+
+  </info>
+
+<title>Přepisování účtu odesilatele</title>
+
+<p>V případě, že používáte více než jeden poštovní účet, můžete určit, který účet by se měl vždy použít jak vaše adresa odesilatele:</p>
+<list>
+<item><p>Když odpovídáte na zprávu v konkrétních <link xref="mail-folders">složkách</link>.</p></item>
+<item><p>Když odpovídáte konkrétním poštovním adresám, jménům nebo části poštovní adresy či jména.</p></item>
+</list>
+
+<p>Zaškrtávací políčko <gui>Nahrazení podle složky má přednost před nahrazením podle příjemce</gui> definuje, jak by se měl Evolution chovat, když odpovídáte na zprávu, která vyhovuje jak složce, tak e-mailové adrese nebo jménu, které jste definovali.</p>
+
+<p>Tato nastavení najdete pod <guiseq><gui>Upravit</gui> <gui>Předvolby</gui> <gui>Předvolby editoru</gui> <gui>Odesílací účet</gui></guiseq>.</p>
+
+</page>

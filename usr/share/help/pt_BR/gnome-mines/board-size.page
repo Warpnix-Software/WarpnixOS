@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="board-size" xml:lang="pt_BR">
+
+  <info>
+    <link type="guide" xref="index#tips"/>
+    <revision version="0.1" date="2012-08-12" status="review"/>
+    <revision pkgversion="3.28.0" version="0.3" date="2018-09-01" status="review"/>
+
+    <credit type="author copyright">
+      <name>Baptiste Mille-Mathias</name>
+      <email>baptistem@gnome.org</email>
+      <years>2011</years>
+    </credit>
+    <credit type="author copyright editor">
+      <name>Ekaterina Gerasimova</name>
+      <email>kittykat3756@gmail.com</email>
+      <years>2012</years>
+    </credit>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Gilfran Ribeiro</mal:name>
+      <mal:email>eu@gilfran.net</mal:email>
+      <mal:years>2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Giovanni Almeida</mal:name>
+      <mal:email>giovannilombone.io@gmail.com</mal:email>
+      <mal:years>2024</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>How to change the game board size</title>
+
+  <p>Você pode escolher o tamanho do campo no menu inicial do aplicativo</p>
+
+  <p>Select one of the grid sizes:</p>
+  <list>
+    <item><p>a 8 × 8 board with 10 mines</p></item>
+    <item><p>a 16 × 16 board with 40 mines</p></item>
+    <item><p>a 30 × 16 board with 99 mines</p></item>
+    <item><p>Um campo customizado, onde você escolhe o tamanho e o número de minas </p></item>
+  </list>
+
+  <p>Para mudar o <link xref="board-size">tamanho do campo minado</link> depois, clique em <gui style="button">Mudar Dificuldade</gui> na direita.</p>
+
+</page>

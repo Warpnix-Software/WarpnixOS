@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" style="task" id="convertpdf" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="index#tips"/>
+    <desc>Anda dapat mengonversi sebuah dokumen ke PDF dengan "mencetak" itu ke suatu berkas.</desc>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Phil Bull</name>
+      <email>philbull@gmail.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Anna Philips</name>
+      <email>anna.cs.au@gmail.com</email>
+    </credit>
+    <license>
+      <p>Creative Commons Share Alike 3.0</p>
+    </license>
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Kukuh Syafaat</mal:name>
+      <mal:email>syafaatkukuh@gmail.com</mal:email>
+      <mal:years>2017.</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2021, 2022.</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Mengonversi sebuah dokumen ke PDF</title>
+
+<p>Anda dapat mengonversi dokumen dengan tipe format berikut menjadi format PDF:</p>
+<list>
+ <item><p>Format berkas Device Independent (.dvi)</p></item>
+ <item><p>PostScript (.ps)</p></item>
+</list>
+<p>Ini bekerja dengan membuka berkas dalam <app>Atril</app> dan "mencetak" dokumen sebagai suatu berkas PDF.</p>
+<steps>
+    <item>
+      <p>Pergi ke <guiseq><gui style="menuitem">Berkas</gui> <gui style="menuitem">Cetak</gui></guiseq> dan pilih <gui>Cetak</gui> atau tekan <keyseq><key>Ctrl</key><key>P</key></keyseq> pada papan ketik Anda.</p>
+    </item>
+    <item>
+      <p>Pilih <gui>Cetak ke Berkas</gui> dan pilih PDF sebagai <gui>Format keluaran</gui>.</p>
+    </item>
+    <item>
+      <p>Pilih suatu nama dan folder tempat menyimpan berkas, lalu klik <gui>Cetak</gui>. PDF akan disimpan di folder yang Anda pilih.</p>
+    </item>
+</steps>
+<note>
+<p>Anda tidak dapat memilih teks dalam berkas PostScript atau .dvi, tapi biasanya Anda dapat melakukan ini dalam berkas PDF. Mengubah berkas .dvi atau PostScript ke PDF tidak akan membuat teks dapat dipilih. Ini karena teks itu sendiri tidak disimpan dalam berkas (itu hanya suatu citra dari seperti apa teks tampak), sehingga tidak ada cara untuk memulihkan itu dan meletakkannya dalam PDF. Anda dapat memakai perangkat lunak <em>Optical Character Recognition</em> (OCR) untuk mengekstrak teks dari berkas bila Anda memerlukannya.</p>
+</note>
+
+</page>

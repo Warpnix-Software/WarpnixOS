@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="contacts-ldap" xml:lang="id">
+
+  <info>
+    <link type="guide" xref="contacts-using-several-addressbooks"/>
+
+    <revision pkgversion="3.1.5" version="0.4" date="2015-03-09" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-contact-sharing.html.en
+	   and
+	   https://help.gnome.org/users/evolution/2.32/config-prefs-contact.html.en#bxmw6w5
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Menggunakan buku alamat bersama di jaringan lokal.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andika Triwidada</mal:name>
+      <mal:email>andika@gmail.com</mal:email>
+      <mal:years>2020-2022.</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Menambahkan akses LDAP</title>
+
+  <p>Protokol LDAP dibuat untuk memungkinkan pengguna berbagi informasi kontak melalui jaringan dengan berbagi akses ke direktori pusat. LDAP memungkinkan perusahaan untuk menyimpan sekumpulan informasi kontak bersama. Banyak perusahaan menyimpan buku alamat LDAP umum untuk semua karyawan mereka atau untuk kontak klien.</p>
+
+<section id="add-ldap-addressbook">
+  <title>Menambahkan buku alamat LDAP</title>
+
+  <steps>
+    <item>
+      <p>Klik <guiseq><gui>Berkas</gui><gui>Baru</gui> <gui>Buku Alamat</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>In the <gui>Type</gui> field, select
+      <gui>On LDAP Servers</gui>.</p>
+    </item>
+    <item>
+      <p>Masukkan nama yang Anda sukai.</p>
+    </item>
+    <item>
+      <p>In the <gui>Connecting to LDAP</gui> tab:</p>
+      <list>
+        <item>
+          <p>Masukkan alamat server, nomor port (nomor baku adalah 389) dan apakah Anda ingin terhubung secara aman.</p>
+        </item>
+        <item>
+          <p>Tentukan metode login dan nama pengguna Anda.</p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>In the <gui>Using LDAP</gui> tab you define the following
+      settings:</p>
+      <list>
+        <item>
+	  <p>Basis Pencarian: Basis pencarian adalah titik awal untuk pencarian direktori. Hubungi administrator sistem Anda untuk informasi tentang setelan yang benar.</p>
+        </item>
+        <item>
+	  <p>Lingkup Pencarian: Lingkup pencarian adalah luas dari pencarian yang diberikan.</p>
+	  <p>Opsi berikut ini tersedia:</p>
+          <list>
+            <item>
+	      <p>One Level: Searches one entry below the Search Base.</p>
+	    </item>
+            <item>
+	      <p>Subtree: Searches the Search Base and all entries below it.</p>
+            </item>
+          </list>
+        </item>
+        <item>
+	  <p>Filter Pencarian: Filter pencarian dapat diatur di sini untuk semua kueri LDAP. Misalnya:</p>
+          <list>
+            <item>
+              <p><code>ObjectClass=*</code>: Mencantumkan semua objek dari server.</p>
+	    </item>
+            <item>
+	      <p><code>ObjectClass=User</code>: Hanya mencantumkan pengguna.</p>
+	    </item>
+            <item>
+	      <p><code>Filter (|(ObjectClass=User)(ObjectClass=groupOfNames))</code>: Mengambil objek Pengguna dan Daftar Kontak.</p>
+	    </item>
+            <item>
+	      <p><code>(&amp;(mail=*)(ObjectClass=*))</code>: Mencantumkan objek yang terkait dengan alamat surel.</p>
+	    </item>
+          </list>
+        </item>
+        <item>
+	  <p>Download Limit: The maximum number of results for a given search.
+	  Most servers refuse to send more than 500 contacts, but you can set
+	  the number lower if you want to shorten downloads for very broad
+	  searches. This option is ignored, if <gui>Copy book content locally
+	  for offline operation</gui> is checked.</p>
+        </item>
+      </list>
+    </item>
+    <item>
+      <p>Klik <gui style="button">OK</gui>.</p>
+    </item>
+  </steps>
+
+  <note style="tip">
+    <p>Jika Anda tidak yakin tentang beberapa setelan, tanyakan kepada administrator sistem Anda.</p>
+  </note>
+
+</section>
+
+<section id="ldap-vs-local-addressbooks">
+  <title>Perbedaan dengan buku alamat lokal</title>
+
+  <p>Buku alamat LDAP berfungsi seperti buku alamat lokal di komputer Anda, dengan pengecualian berikut:</p>
+
+  <list>
+    <item>
+      <p>Folder jaringan hanya tersedia ketika Anda tersambung ke jaringan. Jika Anda menggunakan laptop atau memiliki koneksi modem, Anda mungkin ingin menyalin atau menyimpan beberapa direktori jaringan. Anda melakukan ini dengan menyeret dan menjatuhkan kontak yang Anda inginkan ke dalam buku alamat lokal.</p>
+    </item>
+    <item>
+      <p>Anda juga bisa menandai folder jaringan untuk penggunaan luring. Untuk menandai folder, klik kanan folder, klik <gui>Properti</gui> dan pilih <gui>Salin konten folder secara lokal untuk operasi luring</gui>.</p>
+    </item>
+    <item>
+      <p>Untuk mencegah lalu lintas jaringan berlebih, <app>Evolution</app> biasanya tidak memuat data dari server LDAP saat pembukaan.</p>
+    </item>
+    <item>
+      <p>Bergantung pada pengaturan server Anda, Anda mungkin tidak dapat menyunting semua bidang dalam kontak yang disimpan di server LDAP. Beberapa server melarang beberapa atau semua perubahan, dan yang lain menggunakan set bidang yang lebih kecil daripada yang diizinkan oleh <app>Evolution</app>. Tanyakan kepada administrator sistem jika Anda memerlukan setelan yang berbeda.</p>
+    </item>
+  </list>
+
+</section>
+
+</page>

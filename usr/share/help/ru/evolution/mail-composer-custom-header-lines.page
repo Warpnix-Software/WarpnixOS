@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-composer-custom-header-lines" xml:lang="ru">
+
+  <info>
+    <desc>Использование настраиваемых полей в заголовке написанных сообщений.</desc>
+
+    <link type="guide" xref="index#mail-composing-advanced"/>
+
+    <revision pkgversion="3.0.2" version="0.2" date="2011-07-30" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#b1a5azam -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Настраиваемые строки заголовка</title>
+
+<p>К исходящим письмам можно добавлять произвольные строки заголовка.</p>
+
+<section id="managing">
+<title>Включение настраиваемых заголовков и управление ими</title>
+<p>Для настройки модуля «Дополнительные заголовки»:</p>
+<steps>
+<item><p>Выберите пункт меню <guiseq><gui>Правка</gui><gui>Модули</gui></guiseq>.</p></item>
+<item><p>Включите модуль <gui>Дополнительные заголовки</gui>.</p>
+<note style="tip"><p>Если этот модуль не доступен в разделе <guiseq><gui>Правка</gui><gui>Модули</gui></guiseq>, обратитесь на форум поддержки дистрибутива. Возможно, в вашем дистрибутиве разработчики решили отключить некоторые модули или поставлять их как отдельный пакет.</p></note>
+</item>
+<item><p>Перейдите на вкладку <gui>Настройка</gui>.</p></item>
+<item><p>Можно добавлять, изменять и удалять поля заголовка. Для каждого добавляемого поля заголовка можно указать ключи и значения. Ключ используется в качестве названия настраиваемого заголовка. Для ключей можно указывать несколько значений. Для разделения записей значений следует использовать точку с запятой.</p></item>
+</steps>
+</section>
+
+<section id="inserting">
+<title>Вставка настраиваемых заголовков в сообщение</title>
+<steps>
+<item><p>Выберите пункт меню <guiseq><gui>Создать</gui><gui>Почтовое сообщение</gui></guiseq> или воспользуйтесь комбинацией клавиш <keyseq><key>Shift</key><key>Ctrl</key><key>M</key></keyseq> для открытия окна редактора сообщений.</p></item>
+<item><p>Выберите пункт меню <guiseq><gui>Вставка</gui><gui>Дополнительные заголовки</gui></guiseq>.</p>
+<p>В окне <gui>Дополнительные заголовки сообщений</gui> будут показаны все заданные поля заголовка и их значения.</p></item>
+<item><p>Выберите в раскрывающемся списке значения полей заголовка.</p></item>
+<item><p>Нажмите кнопку <gui style="button">OK</gui>.</p></item>
+</steps>
+</section>
+
+</page>

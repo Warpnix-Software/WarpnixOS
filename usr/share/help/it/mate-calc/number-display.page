@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="number-display" xml:lang="it">
+
+    <info>
+        <link type="guide" xref="index#number"/>
+    </info>
+
+	<title>Formato del Risultato</title>
+    
+    <p>Il formato utilizzato per mostrare il risultato può essere modificato dal menù <guiseq><gui>Calcolatrice</gui> <gui>Preferenze</gui></guiseq></p>
+    <table>
+    <tr>
+    <td><p>Decimale</p></td>
+    <td><p>I risultati verranno mostrati come numeri decimali</p></td>
+    </tr>
+    <tr>
+    <td><p>Scientifico</p></td>
+    <td><p>I risultati saranno mostrati in <link xref="scientific">notazione scientifica</link></p></td>
+    </tr>
+    <tr>
+    <td><p>Ingegneristico</p></td>
+    <td><p>I numeri verranno mostrati in notazione scientifica eccetto il fatto che l'esponente è sempre un multiplo di 3</p></td>
+    </tr>
+    <tr>
+    <td><p>Binario</p></td>
+    <td><p>I risultati verranno mostrati come <link xref="base">numeri binari</link></p></td>
+    </tr>
+    <tr>
+    <td><p>Ottale</p></td>
+    <td><p>I risultati saranno mostrati come <link xref="base">numeri ottali</link></p></td>
+    </tr>
+    <tr>
+    <td><p>Esadecimale</p></td>
+    <td><p>I risultati saranno mostrati come <link xref="base">numeri esadecimali</link></p></td>
+    </tr>
+    </table>
+    <p>Può essere configurato anche il numero di cifre significative, se il numero di zeri terminali e il separatore delle migliaia sono mostrati.</p>
+</page>

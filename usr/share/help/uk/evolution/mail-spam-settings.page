@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" xmlns:e="http://projectmallard.org/experimental/" xmlns:if="http://projectmallard.org/if/1.0/" type="topic" id="mail-spam-settings" xml:lang="uk">
+
+  <info>
+    <desc>Як налаштувати обробку небажаної кореспонденції та спаму.</desc>
+
+    <link type="guide" xref="mail-spam"/>
+    <link type="seealso" xref="mail-spam-marking"/>
+
+    <revision pkgversion="3.25.3" version="0.13" date="2017-07-04" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Patrick O'Callaghan</name>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Pete Biggs</name>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/config-prefs-mail.html.en#mail-prefs-junk -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Юрій Чорноіван</mal:name>
+      <mal:email>yurchor@ukr.net</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Параметри спаму</title>
+
+<section id="junk-tools">
+<title>Інструменти</title>
+<p><app>Evolution</app> надає змогу шукати небажану кореспонденцію або спам за допомогою інструментів <app>Bogofilter</app> або <app>SpamAssassin</app>. Щоб скористатися цими інструментами, вам слід встановити їх за допомогою інструмента керування пакунками вашого дистрибутива.</p>
+
+<note style="info package">
+  <p>Для виконання цих кроків, ймовірно, вам слід встановити <app>Bogofilter</app> або <app>SpamAssassin</app>.</p>
+  <if:choose>
+    <if:when test="action:install">
+      <p><link action="install:bogofilter" href="http://bogofilter.sourceforge.net/" style="button">Встановити bogofilter</link></p>
+      <p><link action="install:spamassassin" href="http://spamassassin.apache.org/" style="button">Встановити spamassassin</link></p>
+    </if:when>
+  </if:choose>
+</note>
+
+<p>SpamAssassin працює на основі набору попереднього визначених правил, тому може визначати спам одразу. У Bogofilter не передбачено типового набору критеріїв пошуку спаму, тому цей інструмент не зможе автоматично фільтрувати пошту одразу після встановлення. Вам слід спочатку <link xref="mail-spam-marking">натренувати його</link>, щоб він запрацював. Ви так само можете коригувати роботу SpamAssassin тренуванням.</p>
+</section>
+
+<section id="junk-folder">
+<title>Тека спаму</title>
+<p>Повідомлення, які позначено як спам (вручну користувачем або автоматично за допомогою SpamAssassin або Bogofilter) буде пересунуто до поштової теки <gui>Спам</gui>.</p>
+<p>Точне місце залежить від <link xref="mail-default-folder-locations">встановленого вами параметра теки зі спамом</link>.</p>
+</section>
+
+<section id="preferences">
+<title>Налаштування обробки спаму</title>
+<p>Ви можете змінити спосіб обробки небажаної кореспонденції в <app>Evolution</app> внісши зміни до параметрів обробки спаму:</p>
+<steps>
+<item><p>Виберіть пункт меню <guiseq><gui>Зміни</gui><gui>Параметри</gui></guiseq> або натисніть комбінацію клавіш <keyseq><key>Shift</key><key>Ctrl</key><key>S</key></keyseq>.</p></item>
+<item><p>Виберіть <gui>Параметри пошти</gui>.</p></item>
+<item><p>Клацніть на вкладці <gui>Спам</gui>. Тут ви можете вказати такі загальні параметри, які буде застосовано до усіх поштових облікових записів:</p>
+<list>
+<item><p>Перевірка вхідних повідомлень на спам. Це загальний параметр: якщо його не позначено, вмикання параметрів пошуку спаму для окремого облікового запису (див. нижче) ні на що не впливатиме.</p></item>
+<item><p>Вилучення спаму при виході та частота вилучення повідомлень зі спамом.</p></item>
+<item><p>Позначення повідомлень як бажаних, якщо запис відправника є в адресній книзі.</p></item>
+<item><p>Перевірка нетипових заголовків пошти (заголовків, які додає ваш поштовий сервер) на спам.</p></item>
+</list>
+</item>
+<item><p>Параметри обробки спаму для окремого облікового запису електронної пошти (доступі для усіх типів облікових записів, окрім облікових записів POP, для яких використовуються загальні параметри) можна встановити за допомогою пункту <guiseq><gui>Зміни</gui><gui>Параметри</gui><gui>Облікові записи</gui><gui style="button">Редагувати</gui><gui>Параметри отримання</gui><gui>Перевіряти, чи є нові повідомлення спамом</gui></guiseq>.</p></item>
+</steps>
+
+<note style="tip"><p>Щоб дізнатися більше та ознайомитися із відповідями на типові питання щодо налаштовування Bogofilter або SpamAssassin, рекомендуємо вивчити, відповідно, списки поширених питань та відповідей на них для <link href="http://bogofilter.sourceforge.net/faq.shtml">Bogofilter</link> та <link href="https://wiki.apache.org/spamassassin/FrequentlyAskedQuestions">SpamAssassin</link>.</p></note>
+</section>
+
+</page>

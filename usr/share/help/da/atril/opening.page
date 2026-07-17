@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" style="task" id="opening" xml:lang="da">
+
+  <info>
+    <link type="guide" xref="index#reading"/>
+    <link type="seealso" xref="formats"/>
+    <link type="seealso" xref="commandline"/>
+    <revision pkgversion="1.25" version="0.1" date="2021-03-13" status="final"/>
+    <credit type="author">
+      <name>Tiffany Antopolski</name>
+      <email its:translate="no">tiffany@antopolski.com</email>
+    </credit>
+    <credit type="editor">
+      <name>Ekaterina Gerasimova</name>
+      <email its:translate="no">kittykat3756@gmail.com</email>
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal-unported.xml"/>
+
+    <desc>Sådan åbnes et dokument.</desc>
+  </info>
+
+  <title>Åbn et dokument</title>
+
+  <p>Du kan åbne et dokument på en af følgende måder:</p>
+
+  <list>
+    <item>
+      <p>Dobbeltklik på filen i <app>Caja</app> eller din <em>filhåndtering</em>.</p>
+      <note style="tip">
+        <p>Dobbeltklik vil som standard åbne PDF-, PostScript-, .djvu-, .dvi- og Comic Book Archive-filer i <app>Atril</app>.</p>
+      </note>
+    </item>
+    <item>
+      <p>Højreklik på et filikon i <app>Caja</app> og klik på <guiseq><gui>Åbn med</gui><gui>Atril</gui></guiseq>.</p>
+    </item>
+  </list>
+
+  <p>Hvis et vindue i <app>Atril</app> allerede er åbent, kan du:</p>
+
+  <list>
+    <item>
+      <p>Trække en fil ind i vinduet fra <app>Caja</app>. Den nye fil åbner i et nyt vindue.</p>
+    </item>
+    <item>
+      <p>Tryk på knappen <gui>Åbn …</gui> i øverste venstre hjørne af vinduet. I dialogen <gui>Åbn dokument</gui> vælges filen, du ønsker at åbne og der klikkes <gui>Åbn</gui>. Filen åbnes i et nyt vindue.</p>
+    </item>
+  </list>
+
+  <p>Hvis et dokument allerede er åbnet i et <app>Atril</app>-vindue, kan du:</p>
+
+  <list>
+    <item>
+      <p>Trække en fil ind i vinduet fra <app>Caja</app>. Den nye fil åbner i et nyt vindue.</p>
+    </item>
+    <item>
+      <p>Trykke på <keyseq><key>Ctrl</key><key>O</key></keyseq>. I dialogboksen <gui>Åbn dokument</gui> skal du vælge den fil, som du vil åbne, og klikke på <gui>Åbn</gui>. Filen åbnes i et nyt vindue.</p>
+    </item>
+  </list>
+
+</page>

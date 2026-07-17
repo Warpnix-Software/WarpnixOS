@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-free-busy" xml:lang="pt-BR">
+
+  <info>
+
+    <link type="guide" xref="calendar-sharing-information"/>
+
+    <revision pkgversion="3.28.2" version="0.6" date="2018-07-09" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en
+	   and
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-apts.html.en#usage-calendar-freebusy
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>Usando a exibição de disponibilidade em um servidor de groupware para configurar reuniões.</desc>
+    <!-- TODO: Really split this into Exchange/Groupware section and normal people section -->
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Rafael Fontenelle</mal:name>
+      <mal:email>rafaelff@gnome.org</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Informações de disponibilidade</title>
+
+  <p>Você pode usar a pesquisa Disponibilidade para reuniões para determinar a disponibilidade dos participantes.</p>
+
+  <p>Além das ferramentas padrão de agendamento de reuniões, você pode usar a exibição Disponibilidade para verificar se as pessoas estão disponíveis com antecedência. O recurso Disponibilidade é normalmente uma função de servidores de groupware dedicados, como Microsoft Exchange e Novell GroupWise. No entanto, você também pode publicar informações de Disponibilidade online e acessar as informações de Disponibilidade publicadas em outro lugar. Se nem todas as pessoas com quem você colabora publicam dados de Disponibilidade, você ainda pode usar <link xref="calendar-meetings-sending-invitation">convites para reuniões</link> para coordenar as programações com outras pessoas.</p>
+
+  <p>Para acessar a visão de disponibilidade:</p>
+
+  <steps>
+    <item>
+      <p>Clique em <guiseq><gui>Arquivo</gui><gui>Novo</gui><gui>Reunião</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Clique em <gui style="button">Adicionar</gui> para adicionar os endereços de e-mail das pessoas que você deseja convidar.</p>
+    </item>
+    <item>
+      <p>Clique no botão <gui style="button">Disponibilidade</gui> na barra de ferramentas ou na aba <gui>Programar</gui>.</p>
+    </item>
+    <item>
+      <p>Ajuste o horário da reunião, arrastando as bordas da reunião ou usando os botões <gui>Autosseleção</gui> para escolher um horário automaticamente e, a seguir, clique em <gui style="button">Fechar</gui>. Os participantes em um servidor Exchange têm o compromisso atualizado automaticamente; outros recebem notificações por e-mail sobre qualquer mudança nos planos.</p>
+    </item>
+  </steps>
+
+  <list>
+    <item>
+      <p>Lista de participantes:</p>
+      <p>A lista de participantes mostra as pessoas que foram convidadas para o compromisso.</p>
+    </item>
+    <item>
+      <p>Grade de programação:</p>
+      <p>A grade de programação mostra as informações de Disponibilidade publicadas para as pessoas que você convidou. É aqui que você compara horários para encontrar tempo livre para agendar o compromisso. Os indivíduos têm informações de programação visíveis apenas se usarem o mesmo servidor Novell GroupWise ou Microsoft Exchange que você (ou seja, se estiverem na mesma organização que você) ou se publicarem informações de disponibilidade em um endereço web (URL) que você pode entrar em contato e digitou o endereço web para o contato específico no <link xref="contacts-usage-edit-contact">Editor de contatos</link> em <guiseq><gui>Informações pessoais</gui> <gui>Endereços Web</gui><gui>Disponibilidade</gui></guiseq>.</p>
+    </item>
+  </list>
+
+  <p>Você pode publicar informações de calendário e de disponibilidade em um servidor WebDAV, servidor FTP, uma máquina remota por meio de SSH ou qualquer outro servidor web com suporte a PUT de HTTP.</p>
+
+  <p>Em ambientes corporativos, você pode publicar informações da agenda e de disponibilidade em um servidor Exchange ou Groupwise. Observe que você deve usar a agenda do Exchange de nível superior se quiser que outras pessoas possam acessar suas informações de Disponibilidade ao convidá-lo para uma reunião.</p> <p>O servidor padrão podem ser definidos em <guiseq><gui>Editar</gui><gui>Preferências</gui> <gui>Agenda e Tarefas</gui> <gui>Informações de publicação</gui> <gui>Servidor padrão de disponibilidade</gui></guiseq>.</p>
+
+<section id="no-groupware">
+  <title>Acessando dados de disponibilidade sem um servidor Groupware</title>
+
+  <p>Se os indivíduos fornecerem a você um URL para dados de Disponibilidade ou para sua agenda web, você pode adicionar o URL em <guiseq><gui>Informações pessoais</gui><gui>Endereços Web</gui></guiseq> no <link xref="contacts-usage-edit-contact">Editor de contatos</link>. Então, quando você agenda uma reunião com eles, o <app>Evolution</app> procura a programação e a exibe nos dados de Disponibilidade.</p>
+
+</section>
+
+</page>

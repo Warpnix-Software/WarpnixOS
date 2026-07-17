@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-several-recipients" xml:lang="ru">
+
+  <info>
+    <desc>Отправка нескольким получателям и использование функции копии или скрытой копии.</desc>
+    
+    <link type="guide" xref="index#mail-composing"/>
+    <link type="seealso" xref="mail-composer-reply"/>
+    <link type="seealso" xref="mail-composer-forward"/>
+    <link type="seealso" xref="mail-composer-write-new-message"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-27" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-to-types and https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-send.html.en#usage-mail-getnsend-send-to -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Отправка сообщения нескольким получателям</title>
+
+<p>Чтобы отправить сообщение нескольким получателям, укажите их адреса в редакторе через запятую или точку с запятой.</p>
+
+<note style="tip"><p>Если вы часто пишете сообщения одним и тем же группам людей, можно создать <link xref="contacts-using-contact-lists">списки контактов</link> и затем отправлять им почту так, как будто они имеют один адрес.</p></note>
+
+<section id="to-cc-bcc-meaning">
+<title>Типы получателей</title>
+<p>У сообщения может быть три разных типа получателей. Проще всего поместить адрес или адреса электронной почты в текстовое поле <gui>Кому</gui>. Текстовое поле <gui>Копия</gui> предназначено для указания адресатов, которые должны получить копию сообщения, но не являются основными получателями.</p>
+
+<p>Адреса списка <gui>Скрытая копия</gui> являются скрытыми от других получателей сообщения. Эту функцию можно использовать для отправки почты большим группам людей, особенно, если они не знают друг друга, или же в целях соблюдения конфиденциальности. Если поле <gui>Скрытая копия</gui> отсутствует, выберите пункт меню <guiseq><gui>Вид</gui><gui>Поле «Скрытая копия»</gui></guiseq>.</p>
+</section>
+
+<section id="autocompletion">
+<title>Автодополнение</title>
+<p>Для ввода адресов рекомендуется использовать функцию <link xref="contacts-autocompletion">Автодополнение</link> адресной книги <app>Evolution</app>. Она позволяет избежать опечаток и сэкономить время.</p>
+</section>
+
+<section id="to-cc-bcc-buttons">
+<title>Использование кнопок</title>
+
+<p>Вместо набора имён получателей также можно нажать кнопки <gui style="button">Кому</gui>, <gui style="button">Копия</gui> или <gui style="button">Скрытая копия</gui> для получения списка адресов электронной почты из адресных книг. Выберите нужные адреса и нажимайте кнопки со стрелками для их перемещения в соответствующие столбцы («Кому», «Копия», «Скрытая копия»).</p>
+</section>
+
+</page>

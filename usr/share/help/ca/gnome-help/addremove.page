@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:uix="http://projectmallard.org/experimental/ui/" type="guide" style="task" id="addremove" xml:lang="ca">
+  <info>
+    <link type="guide" xref="index" group="addremove"/>
+
+    <title role="trail" type="link">Afegeix/suprimeix programari</title>
+
+    <credit type="author">
+      <name>Equip de documentació de l'Ubuntu</name>
+    </credit>
+
+    <desc>Afegiu i elimineu aplicacions i altres programes. Gestioneu dipòsits addicionals de programari.</desc>
+    <uix:thumb role="experimental-gnome-tiles" src="figures/tile-software.svg"/>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+  </info>
+
+  <title>Instal·la i elimina programari</title>
+  <links type="topic" style="2column"/>
+
+</page>

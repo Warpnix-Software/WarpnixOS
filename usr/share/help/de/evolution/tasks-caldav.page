@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="tasks-caldav" xml:lang="de">
+
+  <info>
+    <desc>Eine CalDAV-Aufgaben- oder -Notizliste verwenden.</desc>
+    
+    <link type="guide" xref="tasks-using-several-tasklists"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2011-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Andre Klapper</mal:name>
+      <mal:email>ak-47@gmx.net</mal:email>
+      <mal:years>2007-2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009-2013, 2016-2018, 2020-2021</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009-2013, 2015-2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Gabor Karsay</mal:name>
+      <mal:email>gabor.karsay@gmx.at</mal:email>
+      <mal:years>2011-2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Bernd Homuth</mal:name>
+      <mal:email>dev@hmt.im</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Tim Sabsch</mal:name>
+      <mal:email>tim@sabsch.com</mal:email>
+      <mal:years>2018, 2022</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jürgen Benvenuti</mal:name>
+      <mal:email>gastornis@posteo.org</mal:email>
+      <mal:years>2022-2024</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Eine CalDAV-Aufgaben- oder -Notizliste hinzufügen</title>
+
+<p>So fügen Sie eine Aufgaben- oder Notizenliste zu <app>Evolution</app> hinzu:</p>
+<steps>
+<item><p>Klicken Sie auf <guiseq><gui>Datei</gui><gui>Neu</gui><gui>Aufgabenliste</gui></guiseq> oder <guiseq><gui>Datei</gui><gui>Neu</gui><gui>Notizliste</gui></guiseq>.</p></item>
+<item><p>Wählen Sie den Typ <gui>CalDAV</gui>.</p></item>
+<item>
+   <p>To discover the task lists or memo lists, announced by the server, enter the server address as <gui>URL</gui> and optionally <gui>User</gui>, then click on <gui style="button">Find Task Lists</gui>/<gui style="button">Find Memo Lists</gui>. Select a task or memo list and <gui>User mail</gui>.
+   This prefills the fields <gui>Name</gui>, <gui>Color</gui>, <gui>URL</gui> and (see below) <gui>Email</gui>. The step is optional, and you can overwrite all the discovered settings.</p>
+</item>
+<item><p>Geben Sie den gewünschten Namen ein.</p></item>
+<item><p>Wählen Sie optional die gewünschte Farbe.</p></item>
+<item><p>Geben Sie Ihre E-Mail-Adresse in das Feld <gui>E-Mail-Adresse</gui> ein.</p></item>
+<item><p>Wählen Sie <gui>Eine Sichere Verbindung verwenden</gui>, wenn Sie sich sicher verbinden wollen.</p></item>
+<item><p>Enter your username and email address. When an assigned task is created in the task list, this email address is prefilled as Organizer.</p></item>
+    <item>
+      <p>When an assigned task is created, modified or deleted, a notification can be sent to the other parties.
+      If <gui>Server handles meeting invitations</gui> is selected, <app>Evolution</app> uploads the task and assumes
+      that the server informs other parties. When the option is not selected, <app>Evolution</app> sends an email.</p>
+    </item>
+<item><p>Klicken Sie auf <gui style="button">OK</gui>.</p></item>
+</steps>
+
+<p>Die Aufgabe wird daraufhin zu der Aufgabenliste in <app>Evolution</app> hinzugefügt.</p>
+
+  <section>
+    <title>Collection accounts</title>
+    <p>Different types of mail, address books, calendars, task and memo lists, belonging to the same user, can be added in one step by utilizing a <link xref="intro-account-types#collection-account">Collection account</link>.</p>
+  </section>
+</page>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-composer-search" xml:lang="ru">
+
+  <info>
+    <desc>Поиск текста в редакторе сообщений.</desc>
+    
+    <link type="guide" xref="index#mail-composing"/>
+    <link type="guide" xref="searching-items"/>
+
+    <revision pkgversion="3.1.5" version="0.3" date="2013-04-20" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Поиск в редакторе сообщений</title>
+
+<p>В меню <gui>Правка</gui> редактора сообщений доступны несколько возможностей поиска текста.</p>
+
+<list>
+<item><p><gui>Найти</gui>:</p><p>Введите слово или фразу, и <app>Evolution</app> осуществит её поиск в сообщении.</p></item>
+
+<item><p><gui>Найти снова</gui>:</p><p>Выберите этот пункт для повтора последнего выполненного поиска.</p></item>
+
+<item><p><gui>Заменить</gui>:</p><p>Найти слово или фразу и заменить их чем-либо другим.</p></item>
+</list>
+
+<p>Для всех этих пунктов меню можно выбрать обратное направление осуществления поиска в документе от места, где находится курсор. Также можно задать, должен ли поиск быть чувствительным к регистру.</p>
+<p>Если у вас имеются соответствующие технические знания, для поиска также можно использовать <link href="https://ru.wikipedia.org/wiki/Регулярные_выражения">регулярные выражения</link>.</p>
+
+</page>

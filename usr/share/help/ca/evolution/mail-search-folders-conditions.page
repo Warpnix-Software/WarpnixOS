@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="mail-search-folders-conditions" xml:lang="ca">
+
+  <info>
+    <desc>Condicions disponibles per a configurar les carpetes de cerca.</desc>
+
+    <link type="seealso" xref="mail-search-folders"/>
+
+    <revision pkgversion="3.6.4" version="0.4" date="2013-04-20" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+ <credit type="author">
+   <name its:translate="no">Novell, Inc</name> <!-- Content partially from https://help.gnome.org/users/evolution/2.32/usage-mail-organize-vfolders.html.en -->
+ </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+    
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Condicions de carpeta de <gui>Cerca</gui> disponibles</title>
+
+<list>
+
+<!-- As filter and search folder conditions share a fair amount of options, those ones are centrally in one file that's 
+included by XInclude. See http://blogs.gnome.org/shaunm/2011/07/21/understanding-xinclude/ for how it works. -->
+<include xmlns="http://www.w3.org/2001/XInclude" href="xinclude-filter-vfolder-conditions.xml" xpointer="xmlns(mal=http://projectmallard.org/1.0/)xpointer(/mal:info/mal:item)"/>
+
+<item><p>Ubicació del missatge:</p>
+<p>Comprova si el missatge es troba en una carpeta específica.</p><p>Tingueu en compte que de forma predeterminada, les carpetes d'<app>Evolution</app> <gui>Paperera</gui> i <gui>No desitjat</gui> són carpetes de <link xref="mail-search-folders"><gui>Cerca</gui></link> de manera que no es poden seleccionar aquí.</p></item>
+
+<item><p>Coincideix amb tot:</p>
+<p>Aplica sempre una acció a qualsevol missatge, sense més condicions. Això podria ser útil per, al final de la llista de carpetes de cerca, cobrir els correus electrònics que no coincideixin amb cap de les condicions per a les carpetes de cerca anteriors de la llista.</p></item>
+</list>
+</page>

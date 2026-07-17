@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="trigonometry" xml:lang="it">
+
+    <info>
+        <link type="guide" xref="index#equation"/>
+    </info>
+
+	<title>Trigonometria</title>
+    
+    <p>Calcoli trigonometrici possono essere eseguiti utilizzando le <link xref="function">funzioni</link> sin, cos e tan.</p>
+    <example>
+    <p>sin 45</p>
+    </example>
+    <p>Le unità di misura degli angoli possono essere modificate dal menù <guiseq><gui>Calcolatrice</gui><gui>Preferenze</gui></guiseq>. I comandi trigonometrici sono visibili se ci si trova in <link xref="mouse">modalità Avanzata</link>.</p>
+    <p>Le funzioni iperboliche sono disponibili aggiungendo una "h" alla fine della funzione.</p>
+    <example>
+    <p>sinh 0.34</p>
+    </example>
+    <p>Le funzioni inverse sono inserite utilizzando il simbolo inverso ⁻¹ (<keyseq><key>Ctrl</key><key>I</key></keyseq>) oppure utilizzando la versione "a" della funzione. Le seguenti due equazioni sono equivalenti.</p>
+    <example>
+    <p>sin⁻¹ 0.5</p>
+    <p>asin 0.5</p>
+    </example>   
+    <p>Per inserire il simbolo <link xref="variable">π</link> con la tastiera utilizzare <keyseq><key>Ctrl</key><key>P</key></keyseq>.</p>
+</page>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="deleting-emails" xml:lang="ca">
+
+  <info>
+    <desc>Suprimir correus o fitxers adjunts per a reduir la mida de la bústia.</desc>
+    
+    <link type="guide" xref="deleting-to-free-disk-space"/>
+    <link type="seealso" xref="mail-moving-emails"/>
+    <link type="guide" xref="mail-attachments"/>
+
+    <revision pkgversion="3.0.2" version="0.3" date="2012-03-08" status="final"/>
+    <credit type="author">
+      <name its:translate="no">April Gonzales</name>
+      <email its:translate="no">loonycookie@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Esborrar permanentment correus o fitxers adjunts</title>
+
+<section id="emails">
+<title>Correu</title>
+<p><app>Evolution</app> esborra els correus als servidors IMAP <em>marcant</em> els missatges com per a esborrar; l'espai no s'allibera fins que els correus seleccionats no siguin <em>suprimits definitivament</em>.</p>
+
+<p>Per a suprimir definitivament una carpeta específica, aneu a <guiseq><gui>Carpeta</gui><gui>Buida</gui></guiseq> o premeu <keyseq><key>Ctrl</key><key>E</key></keyseq>. Per a suprimir definitivament totes les carpetes, aneu a <guiseq><gui>Fitxer</gui><gui>Buida paperera</gui></guiseq>. Això també s'aplica a altres tipus de comptes.</p>
+</section>
+
+<section id="attachments">
+<title>Adjuncions</title>
+<p>Per a eliminar els fitxers adjunts d'un correu electrònic, seleccioneu el missatge i feu clic a <guiseq><gui>Missatge</gui><gui>Suprimeix les adjuncions</gui></guiseq>.</p>
+</section>
+</page>

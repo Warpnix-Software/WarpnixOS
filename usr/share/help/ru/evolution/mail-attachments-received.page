@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-attachments-received" xml:lang="ru">
+
+  <info>
+    <desc>Сохранение и открытие файлов, которые вложены в полученные письма.</desc>
+
+    <link type="guide" xref="mail-displaying-message"/>
+    <link type="guide" xref="mail-attachments"/>
+
+    <revision pkgversion="3.35.91" version="0.5" date="2020-02-21" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name> <!-- Content partially from Reuse https://help.gnome.org/users/evolution/2.32/usage-mail-getnsend-read.html.en#usage-mail-getnsend-get-attach-actions -->
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+        
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Обработка вложений в полученных письмах</title>
+
+<p>При получении сообщения, содержащего одно или несколько вложений файлов, <app>Evolution</app> отобразит количество вложений, а также кнопку <gui style="button">Сохранить</gui> или <gui style="button">Сохранить все</gui> между заголовком письма и его содержимым.</p>
+<note style="tip"><p><app>Evolution</app> не позволяет сразу сохранить в одну папку все вложения из всех сообщений.</p></note>
+
+<p>Перечень вложений также доступен в нижней части письма.</p>
+<p>Чтобы сохранить вложение на диск, нажмите кнопку со стрелкой вниз рядом со значком вложения и выберите пункт <gui>Сохранить как</gui>.</p>
+<p>Чтобы открыть вложение в другом приложении, нажмите кнопку со стрелкой вниз рядом со значком вложения и выберите одно из доступных приложений.</p>
+
+<note style="tip"><p>Доступные параметры зависят от типа вложения и набора установленных в системе приложений. Список приложений, которые могут работать сфайлами в определённых форматах, определяется базой данных типов MIME среды рабочего стола.</p><p>Чтобы просмотреть список зарегистрированных приложений для типа MIME, воспользуйтесь командой <cmd>gio mime</cmd>. Пример: <cmd>gio mime "application/pdf"</cmd></p></note>
+
+</page>

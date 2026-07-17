@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="guide" id="mail-composer-mail-signatures" xml:lang="ru">
+
+  <info>
+    <desc>Использование подписей электронной почты в нижней части отправляемого сообщения.</desc>
+    
+    <link type="guide" xref="index#mail-composing"/>
+
+    <revision pkgversion="3.25.90" version="0.4" date="2017-07-28" status="final"/>
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+    
+
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Олеся Герасименко</mal:name>
+      <mal:email>translation-team@basealt.ru</mal:email>
+      <mal:years>2021</mal:years>
+    </mal:credit>
+  </info>
+
+
+<title>Работа с подписями электронной почты</title>
+
+<p>Подпись состоит из одной или нескольких строк текста (или даже изображения), которые добавляются в конце отправляемого письма. Она может содержать контактные данные или другую информацию.</p>
+<note style="tip"><p>Термин «подпись» (в другом значении) также часто используется в связи с <link xref="mail-encryption">шифрованием</link>.</p></note>
+
+<note style="tip"><p>В силу <link href="https://tools.ietf.org/html/rfc3676#section-4.3">давно используемого соглашения</link> подписи всегда начинаются с отдельной строки, состоящей из двух дефисов и пробела. Это позволяет многим почтовым клиентам автоматически убирать подписи из цитат при ответе.</p></note>
+</page>
+<!-- TODO: The two dashes and a space signature delimiter can be disabled via dconf in org.gnome.evolution.mail.composer-no-signature.delim but don't really want to advertise that -->

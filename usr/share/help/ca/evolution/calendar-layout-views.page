@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:its="http://www.w3.org/2005/11/its" type="topic" id="calendar-layout-views" xml:lang="ca">
+
+  <info>
+    <link type="guide" xref="calendar-layout"/>
+
+    <revision pkgversion="3.28.2" version="0.3" date="2018-07-10" status="final"/>
+
+    <credit type="author">
+      <name its:translate="no">Andre Klapper</name>
+      <email its:translate="no">ak-47@gmx.net</email>
+    </credit>
+    <credit type="author">
+      <name its:translate="no">Novell, Inc</name>
+      <!-- Content partially from
+	   https://help.gnome.org/users/evolution/2.32/usage-calendar-view.html.en
+	   -->
+    </credit>
+
+    <include xmlns="http://www.w3.org/2001/XInclude" href="legal.xml"/>
+
+    <desc>S'utilitzen els intervals de dates (dia, setmana, mes) per a veure el calendari.</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jordi Mas i Hernàndez</mal:name>
+      <mal:email>jmas@softcatala.org</mal:email>
+      <mal:years>2014, 2019, 2020, 2023</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jaume Jorba</mal:name>
+      <mal:email>jaume.jorba@gmail.com</mal:email>
+      <mal:years>2018, 2019</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Miquel-Àngel Burgos i Fradeja</mal:name>
+      <mal:email>miquel.angel.burgos@gmail.com</mal:email>
+      <mal:years>2020</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Vistes disponibles</title>
+
+  <p><app>Evolution</app> ofereix cinc vistes diferents de les dades del calendari:</p>
+
+  <list>
+    <item>
+      <p>Visualització de dia</p>
+    </item>
+    <item>
+      <p>Visualització de setmana laborable</p>
+    </item>
+    <item>
+      <p>Visualització de setmana</p>
+    </item>
+    <item>
+      <p>Visualització de mes</p>
+    </item>
+    <item>
+      <p>Visualització de mes</p>
+    </item>
+  </list>
+
+  <p>Podeu canviar la vista utilitzant els botons de la barra d'eines o fent clic <guiseq><gui>Vista</gui><gui>Vista actual</gui></guiseq>.</p>
+
+  <p>You can also select an arbitrary range of days in the small calendar in
+  the sidebar. To do this, select the days that you want to view in your
+  calendar.</p>
+
+  <p>Els botons Anterior i Següent us desplacen endavant i enrere a les pàgines del calendari. Si feu servir una vista setmanal o mensual, podeu moure-us per setmanes o per mesos. Per a tornar a la fitxa d'avui, feu clic al botó <gui>Selecciona avui</gui> entre els dos botons fletxa de la barra d'eines.</p>
+
+  <p>Per a visitar les entrades del calendari per a una data específica, feu clic al botó <gui>Selecciona una data concreta</gui> a la barra d'eines.</p>
+
+</page>
