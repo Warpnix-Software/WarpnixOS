@@ -1,0 +1,13 @@
+[Unit]
+Description=PulseAudio Sound Server (System Mode)
+After=network.target
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/pulseaudio --system --realtime --no-cpu-limit --disallow-exit --disallow-module-loading
+Restart=on-failure
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target   

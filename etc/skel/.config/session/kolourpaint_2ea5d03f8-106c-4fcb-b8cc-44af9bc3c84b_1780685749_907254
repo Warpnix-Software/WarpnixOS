@@ -1,0 +1,13 @@
+[1]
+Session Document Url=
+Session Not-From-Url Document Size=400,300
+
+[Number]
+NumberOfWindows=1
+
+[WindowProperties1]
+ClassName=kpMainWindow
+ObjectName=MainWindow#1
+
+[WindowProperties1][Toolbar Tool Box]
+ToolButtonStyle=IconOnly

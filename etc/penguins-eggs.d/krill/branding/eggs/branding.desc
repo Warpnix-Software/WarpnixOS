@@ -1,0 +1,31 @@
+# branding.desc on Warpnix penguins-eggs 26.6.2
+---
+componentName: eggs
+images:
+  productIcon: eggs-logo.png
+  productLogo: eggs-logo.png
+  productWelcome: welcome.png
+slideshow: show.qml
+slideshowAPI: 1
+strings:
+  bootloaderEntryName: Warpnix
+  knownIssuesUrl: https://github.com/pieroproietti/penguins-eggs/issues/
+  productName: WARPNIXOS1COREWARPNIXOS 1
+  productUrl: https://sites.google.com/view/warpnix/
+  releaseNotesUrl: https://bugs.launchpad.net/ubuntu/
+  shortProductName: warpnixos1coreWarpnixOS 1
+  shortVersion: 2026.06.25
+  shortVersionedName: WARPNIXOS1COREWARPNIXOS 1 2026-06-25
+  supportUrl: https://sites.google.com/view/warpnix
+  version: '2026-06-25'
+  versionedName: warpnixos1coreWarpnixOS 1 (2026.06.25)
+style:
+  SidebarBackground: '#292F34'
+  sidebarBackground: '#292F34'
+  SidebarBackgroundCurrent: '#D35400'
+  sidebarBackgroundCurrent: '#D35400'
+  SidebarText: '#FFFFFF'
+  sidebarText: '#FFFFFF'
+  SidebarTextCurrent: '#292F34'
+  sidebarTextCurrent: '#292F34'
+welcomeStyleCalamares: true

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Mail Reader (Evolution)
+Comment=Read your e-mails
+Icon=evolution-mail
+Exec=evolution
+Actions=
+Categories=X-XFCE;X-Xfce-Toplevel;

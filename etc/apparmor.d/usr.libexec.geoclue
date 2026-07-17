@@ -1,0 +1,93 @@
+# vim:syntax=apparmor
+abi <abi/3.0>,
+
+include <tunables/global>
+
+/usr/libexec/geoclue flags=(attach_disconnected) {
+  include <abstractions/base>
+  include <abstractions/dbus-strict>
+  include <abstractions/gnome>
+  include <abstractions/nameservice>
+
+  /etc/geoclue/geoclue.conf r,
+  /etc/geoclue/conf.d/ r,
+  /etc/geoclue/conf.d/*.conf r,
+  /etc/geolocation r,
+  /proc/sys/net/ipv6/conf/all/disable_ipv6 r,
+  /proc/*/cgroup r,
+  /usr/libexec/geoclue mr,
+
+  # own dbus name
+  dbus bind
+       bus=system
+       name=org.freedesktop.GeoClue2,
+  dbus send
+       bus=system
+       path=/org/freedesktop/DBus
+       interface=org.freedesktop.DBus
+       member={RequestName,ReleaseName}
+       peer=(name=org.freedesktop.DBus),
+
+  # register objects
+  dbus (send receive)
+       bus=system
+       path=/org/freedesktop/GeoClue2{,/**}
+       interface={org.freedesktop.GeoClue2{,.*},org.freedesktop.DBus.*},
+
+  # auth
+  dbus send
+       bus=system
+       path=/org/freedesktop/DBus
+       interface=org.freedesktop.DBus
+       member={GetConnectionUnixUser,GetConnectionUnixProcessID}
+       peer=(name=org.freedesktop.DBus),
+
+  # use Avahi
+  dbus send
+       bus=system
+       path=/
+       interface=org.freedesktop.DBus.Peer
+       member=Ping
+       peer=(name=org.freedesktop.Avahi),
+  dbus send
+       bus=system
+       path=/
+       interface=org.freedesktop.Avahi.Server
+       peer=(name=org.freedesktop.Avahi),
+  dbus (send receive)
+       bus=system
+       path=/Client[0-9]*/ServiceBrowser[0-9]*
+       interface=org.freedesktop.Avahi.ServiceBrowser,
+
+  # use wpa_supplicant
+  dbus (send receive)
+       bus=system
+       path=/fi/w1/wpa_supplicant1{,/**}
+       interface={fi.w1.wpa_supplicant1{,.*},org.freedesktop.DBus.Properties},
+  dbus receive
+       bus=system
+       path=/org/freedesktop
+       interface=org.freedesktop.DBus.ObjectManager
+       member=InterfacesRemoved,
+
+  # use ModemManager
+  dbus send
+       bus=system
+       path=/org/freedesktop/ModemManager1
+       interface={org.freedesktop.DBus.ObjectManager,org.freedesktop.DBus.Properties},
+
+  # use NetworkManager
+  dbus send
+       bus=system
+       path=/org/freedesktop
+       interface=org.freedesktop.DBus.ObjectManager
+       member=GetManagedObjects,
+  dbus (send receive)
+       bus=system
+       path=/org/freedesktop/NetworkManager{,/**}
+       interface={org.freedesktop.NetworkManager{,.*},org.freedesktop.DBus.Properties},
+
+
+  # Site-specific additions and overrides. See local/README for details.
+  #include if exists <local/usr.libexec.geoclue>
+}

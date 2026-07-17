@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Install WarpnixOS 1
+Comment=
+Exec=sudo eggs krill
+Icon=install-system
+Path=
+Terminal=true
+StartupNotify=false

@@ -1,0 +1,12 @@
+[stream-properties]
+Audio/Sink:node.name:auto_null={"channelMap":["FL", "FR"], "mute":false, "volume":1.000000, "channelVolumes":[1.000000, 1.000000]}
+Output/Audio:application.name:Firefox={"channelMap":["FL", "FR"], "volume":1.000000, "channelVolumes":[1.000000, 1.000000], "mute":false}
+Output/Audio:application.name:speech-dispatcher-dummy={"channelMap":["MONO"], "volume":1.000000, "mute":false, "channelVolumes":[1.000000]}
+Output/Audio:application.name:Chromium={"mute":false, "channelMap":["FL", "FR"], "channelVolumes":[1.000000, 1.000000], "volume":1.000000}
+Output/Audio:application.name:FMOD={"mute":false, "channelMap":["FL", "FR"], "channelVolumes":[1.000000, 1.000000], "volume":1.000000}
+Output/Audio:application.name:FMOD\sEx\sApp={"mute":false, "channelMap":[], "channelVolumes":[1.000000, 1.000000], "volume":1.000000}
+Output/Audio:media.role:Movie={"channelMap":["FL", "FR"], "volume":1.000000, "channelVolumes":[0.125000, 0.125000], "mute":false}
+Output/Audio:application.id:mpv={"channelMap":["FC"], "mute":false, "volume":1.000000, "channelVolumes":[1.000000]}
+Output/Audio:media.role:Music={"channelMap":["FL", "FR"], "volume":1.000000, "channelVolumes":[1.000000, 1.000000], "mute":false}
+Input/Audio:application.id:org.PulseAudio.pavucontrol={"volume":1.000000, "mute":false, "channelMap":["MONO"], "channelVolumes":[1.000000]}
+Output/Audio:application.name:Brave={"channelVolumes":[1.000000, 1.000000], "mute":false, "channelMap":["FL", "FR"], "volume":1.000000}

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Install WarpnixOS
+Comment=Start Calamares installer automatically
+Exec=/usr/local/bin/start-calamares-delayed.sh   
+Icon=calamares
+Terminal=false
+NoDisplay=false
+OnlyShowIn=XFCE;
+X-XFCE-Source=file:///etc/xdg/autostart/calamares-autostart.desktop   

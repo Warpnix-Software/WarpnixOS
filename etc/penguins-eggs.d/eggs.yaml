@@ -1,0 +1,20 @@
+compression: fast
+force_installer: false
+initrd_img: /boot/initrd.img-7.0.0-14-generic
+make_efi: true
+make_isohybrid: true
+make_md5sum: false
+root_passwd: 'evolution'
+snapshot_basename: WarpnixOS 1
+snapshot_dir: /home/eggs/
+snapshot_excludes: /etc/penguins-eggs.d/exclude.list
+snapshot_mnt: /home/eggs/mnt/
+snapshot_prefix:
+ssh_pass: false
+theme: eggs
+timezone: America/New_York
+user_opt: live
+user_opt_passwd: 'evolution'
+version: 1.0.0
+vmlinuz: /boot/vmlinuz-7.0.0-22-generic
+

@@ -1,0 +1,54 @@
+=== START CALAMARES 3.3.14
+2026-06-13 - 18:54:17 [6]: void CalamaresApplication::init()
+2026-06-13 - 18:54:17 [6]:     Calamares version: 3.3.14 
+2026-06-13 - 18:54:17 [6]:     .. Using Qt version: 6.10.2 
+2026-06-13 - 18:54:17 [6]:     .. Build type: None 
+2026-06-13 - 18:54:17 [6]:     .. Using Boost Python 
+2026-06-13 - 18:54:17 [6]:     .. Using settings: "/etc/calamares/settings.conf" 
+2026-06-13 - 18:54:17 [6]:     .. Using log file: "/home/warpdev/.cache/calamares/session.log" 
+2026-06-13 - 18:54:17 [6]:     .. Languages: QList("ar", "as", "ast", "az", "az_AZ", "be", "bg", "bn", "ca", "ca@valencia", "cs_CZ", "da", "de", "el", "en", "en_GB", "eo", "es", "es_AR", "es_MX", "et", "eu", "fa", "fi_FI", "fr", "fur", "gl", "he", "hi", "hr", "hu", "id", "is", "it_IT", "ja", "ka", "ko", "lt", "ml", "mr", "nb", "nl", "oc", "pl", "pt_BR", "pt_PT", "ro", "ru", "si", "sk", "sl", "sq", "sr", "sr@latin", "sv", "tg", "th", "tr_TR", "uk", "vi", "zh_CN", "zh_TW") 
+2026-06-13 - 18:54:17 [6]: bool Calamares::initQmlModulesDir()
+2026-06-13 - 18:54:17 [6]:     Using Calamares QML directory "/usr/share/calamares/qml" 
+2026-06-13 - 18:54:17 [6]: Calamares::Branding::Branding(const QString&, QObject*, qreal)
+2026-06-13 - 18:54:17 [6]:     Using Calamares branding file at "/etc/calamares/branding/warpnixos/branding.desc" 
+2026-06-13 - 18:54:17 [1]: void bail(const QString&, const QString&)
+2026-06-13 - 18:54:17 [1]:     ERROR: FATAL in "/etc/calamares/branding/warpnixos/branding.desc" 
+     The branding component name should match the name of the component directory.
+
+
+
+=== START CALAMARES 3.3.14
+2026-06-15 - 15:54:47 [6]: void CalamaresApplication::init()
+2026-06-15 - 15:54:47 [6]:     Calamares version: 3.3.14 
+2026-06-15 - 15:54:47 [6]:     .. Using Qt version: 6.10.2 
+2026-06-15 - 15:54:47 [6]:     .. Build type: None 
+2026-06-15 - 15:54:47 [6]:     .. Using Boost Python 
+2026-06-15 - 15:54:47 [6]:     .. Using settings: "/etc/calamares/settings.conf" 
+2026-06-15 - 15:54:47 [6]:     .. Using log file: "/home/warpdev/.cache/calamares/session.log" 
+2026-06-15 - 15:54:47 [6]:     .. Languages: QList("ar", "as", "ast", "az", "az_AZ", "be", "bg", "bn", "ca", "ca@valencia", "cs_CZ", "da", "de", "el", "en", "en_GB", "eo", "es", "es_AR", "es_MX", "et", "eu", "fa", "fi_FI", "fr", "fur", "gl", "he", "hi", "hr", "hu", "id", "is", "it_IT", "ja", "ka", "ko", "lt", "ml", "mr", "nb", "nl", "oc", "pl", "pt_BR", "pt_PT", "ro", "ru", "si", "sk", "sl", "sq", "sr", "sr@latin", "sv", "tg", "th", "tr_TR", "uk", "vi", "zh_CN", "zh_TW") 
+2026-06-15 - 15:54:47 [6]: bool Calamares::initQmlModulesDir()
+2026-06-15 - 15:54:47 [6]:     Using Calamares QML directory "/usr/share/calamares/qml" 
+2026-06-15 - 15:54:47 [6]: Calamares::Branding::Branding(const QString&, QObject*, qreal)
+2026-06-15 - 15:54:47 [6]:     Using Calamares branding file at "/etc/calamares/branding/warpnixos/branding.desc" 
+2026-06-15 - 15:54:47 [1]: void bail(const QString&, const QString&)
+2026-06-15 - 15:54:47 [1]:     ERROR: FATAL in "/etc/calamares/branding/warpnixos/branding.desc" 
+     The branding component name should match the name of the component directory.
+
+
+
+=== START CALAMARES 3.3.14
+2026-06-17 - 10:19:58 [6]: void CalamaresApplication::init()
+2026-06-17 - 10:19:58 [6]:     Calamares version: 3.3.14 
+2026-06-17 - 10:19:58 [6]:     .. Using Qt version: 6.10.2 
+2026-06-17 - 10:19:58 [6]:     .. Build type: None 
+2026-06-17 - 10:19:58 [6]:     .. Using Boost Python 
+2026-06-17 - 10:19:58 [6]:     .. Using settings: "/etc/calamares/settings.conf" 
+2026-06-17 - 10:19:58 [6]:     .. Using log file: "/home/warpdev/.cache/calamares/session.log" 
+2026-06-17 - 10:19:58 [6]:     .. Languages: QList("ar", "as", "ast", "az", "az_AZ", "be", "bg", "bn", "ca", "ca@valencia", "cs_CZ", "da", "de", "el", "en", "en_GB", "eo", "es", "es_AR", "es_MX", "et", "eu", "fa", "fi_FI", "fr", "fur", "gl", "he", "hi", "hr", "hu", "id", "is", "it_IT", "ja", "ka", "ko", "lt", "ml", "mr", "nb", "nl", "oc", "pl", "pt_BR", "pt_PT", "ro", "ru", "si", "sk", "sl", "sq", "sr", "sr@latin", "sv", "tg", "th", "tr_TR", "uk", "vi", "zh_CN", "zh_TW") 
+2026-06-17 - 10:19:58 [6]: bool Calamares::initQmlModulesDir()
+2026-06-17 - 10:19:58 [6]:     Using Calamares QML directory "/usr/share/calamares/qml" 
+2026-06-17 - 10:19:58 [6]: Calamares::Branding::Branding(const QString&, QObject*, qreal)
+2026-06-17 - 10:19:58 [6]:     Using Calamares branding file at "/etc/calamares/branding/warpnixos/branding.desc" 
+2026-06-17 - 10:19:58 [1]: void bail(const QString&, const QString&)
+2026-06-17 - 10:19:58 [1]:     ERROR: FATAL in "/etc/calamares/branding/warpnixos/branding.desc" 
+     The branding component name should match the name of the component directory.

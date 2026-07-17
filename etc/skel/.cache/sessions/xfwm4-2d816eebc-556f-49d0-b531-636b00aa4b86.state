@@ -1,0 +1,47 @@
+[CLIENT] 0x440000c
+  [CLIENT_LEADER] 0x4400001
+  [WINDOW_ROLE] Thunar-1781279954-1897581731
+  [RES_NAME] thunar
+  [RES_CLASS] Thunar
+  [WM_NAME] oxygen - Thunar
+  [WM_COMMAND] (1) "thunar"
+  [GEOMETRY] (0,24,1600,820)
+  [GEOMETRY-MAXIMIZED] (669,24,640,480)
+  [SCREEN] 0
+  [DESK] 0
+  [FLAGS] 0x10300
+[CLIENT] 0x1a00668
+  [CLIENT_ID] 2a733524f-de59-43d7-848b-48e818cb6141
+  [CLIENT_LEADER] 0x1a00001
+  [WINDOW_ROLE] Thunar-1781279427-4091848242
+  [RES_NAME] Thunar
+  [RES_CLASS] Thunar
+  [WM_NAME] xfce4 - Thunar
+  [WM_COMMAND] (1) "Thunar"
+  [GEOMETRY] (0,24,1600,820)
+  [GEOMETRY-MAXIMIZED] (0,24,640,480)
+  [SCREEN] 0
+  [DESK] 0
+  [FLAGS] 0x10300
+[CLIENT] 0x4a00004
+  [RES_NAME] brave-browser
+  [RES_CLASS] Brave-browser
+  [WM_NAME] Therizinosaurus720 on Scratch - Brave
+  [GEOMETRY] (0,0,1600,844)
+  [GEOMETRY-MAXIMIZED] (-5,0,1620,866)
+  [SCREEN] 0
+  [DESK] 0
+  [FLAGS] 0x10300
+[CLIENT] 0x4600003
+  [CLIENT_ID] 20ade8707-9b36-4cbc-a98c-095871904d83
+  [CLIENT_LEADER] 0x4600001
+  [WINDOW_ROLE] xfce4-terminal-1781279945-569836274
+  [RES_NAME] xfce4-terminal
+  [RES_CLASS] Xfce4-terminal
+  [WM_NAME] Terminal - warpdev@warpnixOS-devmachine: ~
+  [WM_COMMAND] (1) "xfce4-terminal"
+  [GEOMETRY] (5,29,659,438)
+  [GEOMETRY-MAXIMIZED] (5,29,659,438)
+  [SCREEN] 0
+  [DESK] 0
+  [FLAGS] 0x10000

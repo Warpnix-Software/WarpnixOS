@@ -1,0 +1,52 @@
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+_apt:x:42:65534::/nonexistent:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:998:998:systemd Network Management:/:/usr/sbin/nologin
+dhcpcd:x:996:996:DHCP Client Daemon:/usr/lib/dhcpcd:/bin/false
+messagebus:x:995:995:System Message Bus:/nonexistent:/usr/sbin/nologin
+syslog:x:100:101::/nonexistent:/usr/sbin/nologin
+systemd-resolve:x:989:989:systemd Resolver:/:/usr/sbin/nologin
+_chrony:x:988:988:Chrony Daemon:/var/lib/chrony:/usr/sbin/nologin
+tss:x:987:987:tss user for tpm2:/:/usr/sbin/nologin
+uuidd:x:101:104::/run/uuidd:/usr/sbin/nologin
+whoopsie:x:102:108::/nonexistent:/bin/false
+dnsmasq:x:999:65534:dnsmasq:/var/lib/misc:/usr/sbin/nologin
+avahi:x:103:109:Avahi mDNS daemon:/run/avahi-daemon:/usr/sbin/nologin
+nm-openvpn:x:985:985:NetworkManager OpenVPN:/var/lib/openvpn/chroot:/usr/sbin/nologin
+tcpdump:x:984:984:tcpdump:/nonexistent:/usr/sbin/nologin
+speech-dispatcher:x:104:29:Speech Dispatcher:/run/speech-dispatcher:/bin/false
+usbmux:x:105:46:usbmux daemon:/var/lib/usbmux:/usr/sbin/nologin
+cups-pk-helper:x:106:110:user for cups-pk-helper service:/nonexistent:/usr/sbin/nologin
+fwupd-refresh:x:983:983:Firmware update daemon:/var/lib/fwupd:/usr/sbin/nologin
+sddm:x:107:111:Simple Desktop Display Manager:/var/lib/sddm:/bin/false
+saned:x:108:112::/var/lib/saned:/usr/sbin/nologin
+cups-browsed:x:109:110::/nonexistent:/usr/sbin/nologin
+pipewire:x:982:982:system user for pipewire:/nonexistent:/usr/sbin/nologin
+hplip:x:110:7:HPLIP system user:/run/hplip:/bin/false
+polkitd:x:981:981:User for polkitd:/:/usr/sbin/nologin
+rtkit:x:980:980:RealtimeKit:/proc:/usr/sbin/nologin
+colord:x:979:979:colord colour management daemon:/var/lib/colord:/usr/sbin/nologin
+geoclue:x:111:114::/var/lib/geoclue:/usr/sbin/nologin
+warpdev:x:1000:1000:User:/home/warpdev:/bin/bash
+lightdm:x:112:115:Light Display Manager:/var/lib/lightdm:/bin/false
+_flatpak:x:113:117:Flatpak system-wide installation helper:/nonexistent:/usr/sbin/nologin
+vboxadd:x:997:1::/var/run/vboxadd:/bin/false
+systemd-oom:x:973:973:systemd Userspace OOM Killer:/:/usr/sbin/nologin
+gnome-remote-desktop:x:972:972:GNOME Remote Desktop:/var/lib/gnome-remote-desktop:/usr/sbin/nologin
+gdm:x:971:971:Gnome Display Manager:/var/lib/gdm3:/bin/false
+pulse:x:114:118::/run/pulse:/usr/sbin/nologin

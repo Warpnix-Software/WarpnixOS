@@ -1,0 +1,15 @@
+network:
+  version: 2
+  ethernets:
+    enp0s3:
+      renderer: NetworkManager
+      match: {}
+      dhcp4: true
+      dhcp6: true
+      ipv6-address-generation: "stable-privacy"
+      networkmanager:
+        uuid: "1eef7e45-3b9d-3043-bee3-fc5925c90273"
+        name: "netplan-enp0s3"
+        passthrough:
+          connection.timestamp: "1781553276"
+          proxy._: ""
