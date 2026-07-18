@@ -1,0 +1,7 @@
+[Plugin]
+Version = 45.0
+Module = mpris
+Name = MPRIS
+License = LGPL
+Description = Bridge DLNA to MPRIS2
+Copyright = Copyright © Rygel maintainers
