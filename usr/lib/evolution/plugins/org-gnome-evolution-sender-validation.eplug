@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<e-plugin-list>
+	<e-plugin type="shlib" location="/usr/lib/evolution/plugins/liborg-gnome-evolution-sender-validation.so" id="org.gnome.evolution.sender-validation" name="Sender Validation">
+		<description>Validates sender before sending an e-mail against a list of recipients and for them assigned expected send account.</description>
+		<hook class="org.gnome.evolution.mail.events:1.0">
+			<event target="message" id="composer.presendchecks" handle="org_gnome_evolution_sender_validation_presendchecks"/>
+		</hook>
+	</e-plugin>
+</e-plugin-list>

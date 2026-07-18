@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<e-plugin-list>
+  <e-plugin type="shlib" location="/usr/lib/evolution/plugins/liborg-gnome-mail-to-task.so" id="org.gnome.evolution.plugin.mailToTask" name="Mail-to-Task">
+    <author name="Rodrigo Moya" email="rodrigo@novell.com"/>
+    <description>Convert a mail message to a task.</description>
+
+    <hook class="org.gnome.evolution.ui:1.0">
+      <ui-manager id="org.gnome.evolution.mail.browser" callback="mail_to_task_mail_browser_init"/>
+      <ui-manager id="org.gnome.evolution.mail" callback="mail_to_task_mail_shell_view_init"/>
+    </hook>
+
+  </e-plugin>
+</e-plugin-list>

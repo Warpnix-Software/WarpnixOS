@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<e-plugin-list>
+  <e-plugin type="shlib" location="/usr/lib/evolution/plugins/liborg-gnome-mailing-list-actions.so" id="org.gnome.plugin.mailing-list.actions" domain="evolution" name="Mailing List Actions">
+        <author name="Meilof Veeningen" email="meilof@wanadoo.nl"/>
+    <description>Perform common mailing list actions (subscribe, unsubscribe, etc.).</description>
+
+    <hook class="org.gnome.evolution.ui:1.0">
+      <ui-manager id="org.gnome.evolution.mail" callback="mailing_list_actions_mail_shell_view_init"/>
+      <ui-manager id="org.gnome.evolution.mail.browser" callback="mailing_list_actions_mail_browser_init"/>
+    </hook>
+
+  </e-plugin>
+</e-plugin-list>
