@@ -101,4 +101,4 @@ Target Environment: Light-to-medium spec computers running over standard hardwar
 
 You can find me on Scratch @Therizinosaurus720. It would be great to give me a follow :-)
 Comment any bugs or errors you find at the WarpnixOS studio on Scratch: https://scratch.mit.edu/studios/51273178/
-to RAM (Not Recommended): Loads the entire OS workspace directly into memory. This heavily restricts memory for apps to run smoothly and requires a minimum of 8 GB RAM to operate.
+Find me on Youtube: https://www.youtube.com/@WarpdevOfficial
