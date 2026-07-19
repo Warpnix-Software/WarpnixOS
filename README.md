@@ -48,12 +48,12 @@ To prepare your installation media, you will need:
 WarpnixOS can be run in three different configurations:
 
    1. Hard Disk Installation (Recommended): Overwrites or partitions your internal drive for permanent use and maximum performance.
-   2. Live Media Mode: Runs directly off the flashed USB drive without changing your local computer files. Performance depends on your flash drive speed.
+   2. Live Media Mode: Runs directly off the flashed drive without changing your local computer files. Performance depends on your flash drive speed.
       --------------------------------
 ## Installation Guide (To Hard Disk)
 
    1. Shut down the target computer completely.
-   2. Insert your bootable WarpnixOS USB flash drive.
+   2. Insert your bootable WarpnixOS USB flash drive or DVD.
    3. Turn on the computer while repeatedly pressing your manufacturer's boot menu key (Common keys: Fn, F8, F9, F11, or F12).
    4. Select your USB drive from the startup boot menu using the arrow keys and press Enter.
    5. Select the first option from the system bootloader menu.
@@ -94,12 +94,19 @@ If running directly from the USB drive without installing:
 ## And of course, like all good stuff should be, WarpnixOS is FOSS, open sourced under the GNU GPL 3.0 license
 
 ##About the Project
+
 Creator: Yusuf Ali 
-Initial Release Date: 2026 
+
+Initial Release Date: 2026
+
 Initial development machine: VirtualBox VM on Zorin OS/Thinkpad T410
+
 Remaster Engine: Penguins' Eggs (Krill CLI Installer Framework) 
+
 Target Environment: Light-to-medium spec computers running over standard hardware infrastructures.
 
 You can find me on Scratch @Therizinosaurus720. It would be great to give me a follow :-)
+
 Comment any bugs or errors you find at the WarpnixOS studio on Scratch: https://scratch.mit.edu/studios/51273178/
+
 Find me on Youtube: https://www.youtube.com/@WarpdevOfficial
