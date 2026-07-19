@@ -56,8 +56,7 @@ WarpnixOS can be run in three different configurations:
    4. Select your USB drive from the startup boot menu using the arrow keys and press Enter.
    5. Select the first option from the system bootloader menu.
    6. Wait for the desktop taskbar and environment icons to completely finish loading.
-   7. Open the system Terminal from the taskbar (located between the File Manager and Brave Browser icons).
-   8. Initialize the installer by running the following command:
+   7. Initialize the installer by double-clicking 'Install system' on the desktop or opening the Terminal and running the following command:
    
      sudo eggs krill
    
