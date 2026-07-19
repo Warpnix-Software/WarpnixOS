@@ -5,6 +5,10 @@ NOTICE: WARPNIXOS 1 IS NOT RELEASED YET NOR IS THE SOURCE CODE. WATCH THIS SPACE
 WarpnixOS is an XFCE Linux distribution that combines speed, older hardware compatibility, and nostalgic design language for a fun and intuitive desktop experience. 
 Major features include full APT and FlatPak support built in, an easy and familiar Windows-like UI, and low system requirements, needing just a 1.3 GHz processor and 3 GB RAM. 
 I hope you enjoy!! :-D
+
+<img width="1600" height="900" alt="Screenshot_2026-07-19_12-38-14" src="https://github.com/user-attachments/assets/25a64c05-f36c-476c-b6a7-21a904349418" />
+
+
 ------------------------------
 ## Minimum System Requirements
 Before installing, ensure your target hardware meets these minimum standards:
