@@ -46,10 +46,12 @@ To prepare your installation media, you will need:
 
 ------------------------------
 ## Deployment Modes
-WarpnixOS can be run in three different configurations:
+WarpnixOS can be run in two different configurations:
 
    1. Hard Disk Installation (Recommended): Overwrites or partitions your internal drive for permanent use and maximum performance.
-   2. Live Media Mode: Runs directly off the flashed drive without changing your local computer files. Performance depends on your flash drive speed.
+   2. Live media Mode: Runs directly off the flashed drive without changing your local computer files. Performance depends on your flash drive speed.
+
+ 
       --------------------------------
 ## Installation Guide (To Hard Disk)
 
