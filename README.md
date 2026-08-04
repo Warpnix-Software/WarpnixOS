@@ -96,13 +96,16 @@ If running directly from the USB drive without installing:
 ## FAQ
 
 1: When will WarpnixOS 2 be released?
-   January 20, 2027 (hopefully). WarpnixOS is planned to have a new major release every six months, with 3.0 release on July 20, 2027 and so on.
+   Early 2027.
 
 2: Can I install other desktop environments on WarpnixOS?
    Yes. WarpnixOS is officially tested and confirmed to be compatible with Openbox, KDE Plasma, XFCE, and LxQt.
 
 3: How new does my computer have to be to run WarpnixOS smoothly? 
    To run WarpnixOS at bare minimum speed, you will require a computer from around 2010 or later. To run it smoothly, you will need a computer from around 2012-2013 or later.
+
+4: How long will major WarpnixOS versions be supported?
+   Each WarpnixOS major release will have a 2 year lifespan.
 
 ## And that's it! WarpnixOS is a long journey nearly 2 years in the making. So thank you for looking at it (and hopefully) trying it out!
 ## And of course, like all good stuff should be, WarpnixOS is FOSS, open sourced under the GNU GPL 3.0 license
