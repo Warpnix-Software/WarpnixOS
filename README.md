@@ -93,6 +93,248 @@ If running directly from the USB drive without installing:
 
 --------------------------------
 
+## Dual Booting WarpnixOS with Windows 
+
+WarpnixOS can be installed alongside Windows. This allows you to choose between Windows and WarpnixOS when your computer starts.
+
+> [!WARNING]
+> **Back up your important files before partitioning or installing an operating system.**
+>
+> Partitioning the wrong disk or selecting the wrong partition during installation can result in permanent data loss. If you are unsure about a partition, stop and verify it before continuing.
+
+### 1. Create space for WarpnixOS
+
+First, boot into Windows 10.
+
+Open **Disk Management**:
+
+1. Press `Windows + R`.
+2. Enter `diskmgmt.msc`.
+3. Press **Enter**.
+4. Find your Windows partition, usually the `C:` drive.
+5. Right-click the Windows partition.
+6. Select **Shrink Volume**.
+7. Enter the amount of space you want to use for WarpnixOS.
+8. Complete the operation.
+
+After shrinking the Windows partition, you should have **unallocated space** on the disk.
+
+For example:
+
+```text
++-------------------------------+-------------------+
+|          Windows 10            |   Unallocated     |
+|             C:                |      Space        |
++-------------------------------+-------------------+
+```
+
+Do **not** create a new Windows volume in the unallocated space. Leave it available for the WarpnixOS installation.
+
+We recommend having at least **20 GB** available for WarpnixOS. More space is recommended if you plan to install applications, games, or store files.
+
+### 2. Disable Windows Fast Startup
+
+It is recommended to disable Windows Fast Startup before setting up a Windows/Linux dual boot.
+
+Open:
+
+**Control Panel → Hardware and Sound → Power Options → Choose what the power buttons do**
+
+Click **Change settings that are currently unavailable**, disable **Turn on fast startup**, and save the changes.
+
+### 3. Create a WarpnixOS USB installer
+
+Download the latest WarpnixOS ISO from the [WarpnixOS GitHub repository](https://github.com/Warpnix-Software/WarpnixOS).
+
+Create a bootable USB using a tool such as [Rufus](https://rufus.ie/).
+
+> [!WARNING]
+> Creating a bootable USB will erase the contents of the USB drive. Make sure the USB does not contain important files.
+
+For Rufus, use:
+
+```text
+Partition scheme: MBR
+Target system:    BIOS or UEFI
+File system:      FAT32
+```
+
+When Rufus asks which writing mode to use, select **ISO Image mode**.
+
+### 4. Boot the WarpnixOS USB
+
+Insert the WarpnixOS USB and restart the computer.
+
+Open the computer's boot menu. The key depends on the manufacturer. Common keys include:
+
+```text
+F12
+F11
+F9
+F8
+Esc
+```
+
+Select the WarpnixOS USB from the boot menu.
+
+Once WarpnixOS has started, open a terminal.
+
+### 5. Identify the correct installation target
+
+Before running the installer, inspect the storage devices connected to your computer:
+
+```bash
+lsblk
+```
+
+For additional filesystem information, you can use:
+
+```bash
+lsblk -f
+```
+
+Example output:
+
+```text
+NAME        SIZE TYPE FSTYPE
+nvme0n1   476.9G disk
+├─nvme0n1p1  100M part vfat
+├─nvme0n1p2  350G part ntfs
+├─nvme0n1p3   16M part
+└─nvme0n1p4 126.9G part
+```
+
+Your output will be different depending on your computer.
+
+`lsblk` identifies the disks and partitions currently detected by Linux. Use it together with the partition layout you created in Windows to determine which storage should be used for WarpnixOS.
+
+For example:
+
+```text
+/dev/nvme0n1
+```
+
+represents an entire disk, while:
+
+```text
+/dev/nvme0n1p2
+```
+
+represents a partition on that disk.
+
+> [!WARNING]
+> **Do not guess which disk or partition is Windows.**
+>
+> Verify the storage layout before continuing. Selecting the wrong disk or partition can erase Windows and your personal files.
+
+### 6. Start the WarpnixOS installer
+
+Start the installer with:
+
+```bash
+sudo eggs krill
+```
+
+Follow the installer prompts.
+
+When the installer asks where WarpnixOS should be installed, select the **partition/installation target corresponding to the space you prepared for WarpnixOS**.
+
+Do **not** select the Windows partition.
+
+Do **not** select the entire disk if you intend to keep Windows.
+
+Do **not** select the Windows recovery partition.
+
+### 7. Be careful with the EFI System Partition
+
+Windows systems using UEFI normally have a small **EFI System Partition**, usually formatted as FAT32.
+
+It may look similar to:
+
+```text
+/dev/nvme0n1p1
+```
+
+with a size of around 100–500 MB.
+
+This partition is used for boot files.
+
+When dual booting, the existing EFI System Partition can be used by the bootloader. **Do not format or delete the Windows EFI System Partition.**
+
+The Windows installation itself should remain untouched.
+
+### 8. Complete the installation
+
+After confirming that the correct WarpnixOS installation target has been selected, continue through the installer.
+
+Allow the installer to configure the bootloader.
+
+When installation is complete, reboot the computer and remove the installation USB.
+
+### 9. Choose between Windows and WarpnixOS
+
+After installation, the bootloader should provide an option to start either operating system.
+
+Depending on the configuration, you may see entries similar to:
+
+
+WarpnixOS
+Advanced options for WarpnixOS
+Windows Boot Manager
+
+Select **WarpnixOS** to boot WarpnixOS.
+
+Select **Windows Boot Manager** to boot Windows 10.
+
+### Troubleshooting
+
+#### Windows does not appear in the boot menu
+
+If WarpnixOS starts but Windows is not listed, do not immediately reinstall Windows or delete any partitions.
+
+First verify that the Windows partitions still exist:
+
+```bash
+lsblk -f
+```
+
+If the Windows partition and EFI System Partition are still present, the issue may be related to bootloader configuration or Windows detection.
+
+#### You are unsure which partition to select
+
+**Stop. Do not continue with the installation.**
+
+Run:
+
+```bash
+lsblk -f
+```
+
+and carefully identify the disks and partitions.
+
+If you cannot determine which partition contains Windows and which space is intended for WarpnixOS, get help before continuing.
+
+### Dual Boot Checklist
+
+Before confirming the installation, make sure:
+
+* [ ] Important Windows files are backed up.
+* [ ] Windows has been safely shrunk.
+* [ ] There is enough space available for WarpnixOS.
+* [ ] The WarpnixOS USB has been created successfully.
+* [ ] You have checked the storage layout with `lsblk`.
+* [ ] You have identified the correct WarpnixOS installation target.
+* [ ] You are **not** selecting the Windows partition.
+* [ ] You are **not** erasing the entire Windows disk.
+* [ ] You are **not** formatting the Windows EFI System Partition.
+* [ ] You understand which partition the installer will modify.
+
+> [!CAUTION]
+> **If you are unsure, stop before confirming the installation.**
+>
+> Double-check the output of `lsblk` and make sure the installation target is the space you intentionally prepared for WarpnixOS.
+
+
 ## FAQ
 
 1: When will WarpnixOS 2 be released?
