@@ -98,7 +98,7 @@ If running directly from the USB drive without installing:
 WarpnixOS can be installed alongside Windows. This allows you to choose between Windows and WarpnixOS when your computer starts.
 
 > [!WARNING]
-> **Back up your important files before partitioning or installing an operating system.**
+> **Back up your important files before partitioning or installing a new operating system.**
 >
 > Partitioning the wrong disk or selecting the wrong partition during installation can result in permanent data loss. If you are unsure about a partition, stop and verify it before continuing.
 
@@ -302,7 +302,7 @@ If the Windows partition and EFI System Partition are still present, the issue m
 
 #### You are unsure which partition to select
 
-**Stop. Do not continue with the installation.**
+**STOP AND TAKE A BREATH. Do not continue with the installation.**
 
 Run:
 
@@ -330,7 +330,7 @@ Before confirming the installation, make sure:
 * [ ] You understand which partition the installer will modify.
 
 > [!CAUTION]
-> **If you are unsure, stop before confirming the installation.**
+> **If you are unsure, STOP AND ASK SOMEONE WHO IS MORE KNOWLEDGEABLE IN TECHNOLOGY OR SEARCH THE INTERNET FOR ANSWERS before confirming the installation.**
 >
 > Double-check the output of `lsblk` and make sure the installation target is the space you intentionally prepared for WarpnixOS.
 
