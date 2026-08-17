@@ -1,5 +1,5 @@
 ## WarpnixOS 
-
+## VISIT US ON THE WEB! https://warpnix-os.lovable.app/  
 WarpnixOS is an XFCE Linux distribution that combines speed, older hardware compatibility, and nostalgic design language for a fun and intuitive desktop experience. It was originally released on July 20th, 2026.
 
 Major features include full APT and FlatPak support built in, an easy and familiar Windows-like UI, and low system requirements, needing just a 1.3 GHz processor and 3 GB RAM. 
