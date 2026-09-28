@@ -356,7 +356,7 @@ Before confirming the installation, make sure:
 
 ## About the Project
 
-Creator: Yusuf Ali 
+Creator: Therizinosaurus720
 
 Initial Release Date: 2026
 
