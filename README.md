@@ -32,11 +32,10 @@ WarpnixOS isn't trying to win a benchmark contest. It's trying to make using you
 
 These are the project's target requirements. Actual compatibility depends on your hardware, drivers, and the release you're installing.
 
-| Processor | 1.3 GHz Intel or AMD CPU | A newer dual-core or better |
-| Example CPUs | Intel Pentium SU4100, AMD Athlon II Neo K325, or equivalent | Any compatible newer CPU |
-| RAM | 3 GB | 4 GB or more |
-| Graphics | Compatible GPU; 512 MB VRAM target | Supported graphics hardware with working drivers |
-| Storage | 20 GB available space | More room for apps and files |
+Processor: 1.3 GHz Intel or AMD CPU
+RAM: 3 GB 
+Graphics: 2000s or later PCIE/integrated GPU; 512 MB VRAM target
+Storage  20 GB hard drive
 
 **A quick note:** Meeting the minimum requirements doesn't guarantee that every graphics card, Wi-Fi adapter, or other device will work out of the box. Hardware compatibility varies.
 
