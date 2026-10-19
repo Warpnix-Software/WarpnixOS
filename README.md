@@ -1,7 +1,5 @@
 # WarpnixOS
 
-### A little nostalgia. A little speed. A whole lot of Linux.
-
 **Website:** https://warpnix-os.lovable.app/  
 **GitHub:** https://github.com/Warpnix-Software/WarpnixOS
 
