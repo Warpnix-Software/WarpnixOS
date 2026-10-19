@@ -376,6 +376,6 @@ This project has been a long time coming. We're still learning, still building, 
 
 ---
 
-*WarpnixOS is an independent community project and is not affiliated with or endorsed by Microsoft. Windows is a trademark of Microsoft Corporation.*
+*WarpnixOS is an indie software project and is not affiliated with or endorsed by Microsoft, and nor do we support Microsoft nor endorse them or their controversial decisions in any way. Windows is a trademark of Microsoft Corporation.*
 
 *WarpnixOS is distributed under the GNU General Public License, version 3.0 (GPL-3.0), subject to the terms of the project's license and any applicable third-party licenses.*
